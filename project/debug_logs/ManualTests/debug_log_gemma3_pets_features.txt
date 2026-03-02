@@ -1,0 +1,91 @@
+=== DEBUG LOG: gemma3 | pets | Prompt: features ===
+
+--- CONFIG: N=2, K=2, Q=5 ---
+Query 1: Expected: [Bombay] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Predominantly gray fur
+- Large, pointed ears
+- Long, curved tail
+
+<response>American Bulldog</response>
+----------------------------------------
+Query 2: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Dark blue fur
+- Pointed ears
+- Sloping posture
+<response>Bombay</response>
+----------------------------------------
+Query 3: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Blue-gray fur
+- Pointed ears
+- Large eyes
+
+<response>Bombay</response>
+----------------------------------------
+Query 4: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Dark blue fur
+- Long white whiskers
+- Rounded face
+
+<response>Bombay</response>
+----------------------------------------
+Query 5: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Dark gray fur
+- Pointed ears
+- Long tail
+
+<response>Bombay</response>
+----------------------------------------
+Query 6: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Short muzzle
+- Droopy face
+- Wrinkled forehead
+<response>American Bulldog</response>
+----------------------------------------
+Query 7: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Dark brown muzzle
+- Drooping jowls
+- Medium-sized, triangular ears
+
+<response>American Bulldog</response>
+----------------------------------------
+Query 8: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Wrinkled face
+- Drooping lips
+- Short muzzle
+
+<response>American Bulldog</response>
+----------------------------------------
+Query 9: Expected: [American Bulldog] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Dark blue fur
+- Sloping back
+- Pointed ears
+<response>Bombay</response>
+----------------------------------------
+Query 10: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Grayish-brown skin
+- Long, slender legs
+- Large, dark eyes
+
+<response>American Bulldog</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,5): 8.0000

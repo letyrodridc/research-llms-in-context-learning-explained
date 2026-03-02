@@ -1,0 +1,114 @@
+=== DEBUG LOG: qwen-vl | dtd | Prompt: rulebased ===
+
+--- CONFIG: N=2, K=2, Q=5 ---
+Query 1: Expected: [crosshatched] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN crystalline
+Rule Check:
+- The Target Image contains the exact features specified in the rule for crystalline.
+<response>crystalline</response>
+----------------------------------------
+Query 2: Expected: [crosshatched] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN crystalline
+Rule Check:
+- The Target Image contains the exact features specified in the rule for crystalline.
+<response>crystalline</response>
+----------------------------------------
+Query 3: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN crosshatched
+Rule Check:
+- The Target Image contains the exact features specified in the rule for crosshatched.
+<response>crosshatched</response>
+----------------------------------------
+Query 4: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN crosshatched
+Rule Check:
+- The Target Image contains the exact features specified in the rule for crosshatched.
+<response>crosshatched</response>
+----------------------------------------
+Query 5: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN crosshatched
+Rule Check:
+- The Target Image contains the exact features specified in the rule for crosshatched.
+<response>crosshatched</response>
+----------------------------------------
+Query 6: Expected: [crystalline] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN crosshatched
+Rule Check:
+- The Target Image contains the exact features specified in the rule for crosshatched.
+<response>crosshatched</response>
+----------------------------------------
+Query 7: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN crystalline
+Rule Check:
+- The Target Image contains the exact features specified in the rule for crystalline.
+<response>crystalline</response>
+----------------------------------------
+Query 8: Expected: [crystalline] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN crosshatched
+Rule Check:
+- The Target Image contains the exact features specified in the rule for crosshatched.
+<response>crosshatched</response>
+----------------------------------------
+Query 9: Expected: [crystalline] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN crosshatched
+Rule Check:
+- The Target Image contains the exact features specified in the rule for crosshatched.
+<response>crosshatched</response>
+----------------------------------------
+Query 10: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN crystalline
+Rule Check:
+- The Target Image contains the exact features specified in the rule for crystalline.
+<response>crystalline</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,5): 0.5000

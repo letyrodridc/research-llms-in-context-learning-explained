@@ -1,0 +1,2660 @@
+=== DEBUG LOG: gemma3 | cifar10 | Prompt: axioms_ontology_v2 ===
+
+--- CONFIG: N=2, K=2, Q=5 ---
+Query 1: Expected: [deer] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>deer</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- deer ⊑ hasLegs (Necessary condition)
+- deer ⊑ hasLongNeck (Necessary condition)
+- deer ⊑ hasAntlers (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, white, purple
+- hasShape/Part: long legs, elongated neck, antler-like structure
+- hasTexture: smooth, slightly fuzzy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a long neck (deer ⊑ hasLongNeck) and legs (deer ⊑ hasLegs). Furthermore, it displays a structure resembling antlers (hasAntlers). The presence of antlers is a sufficient condition for classifying the entity as a deer (deer ⊑ hasAntlers). Therefore, based on these observed properties, the image is classified as a deer.
+----------------------------------------
+Query 2: Expected: [deer] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [various colors] (Necessary condition)
+- cat ⊑ hasShape/Part [rounded shapes, irregular outline] (Necessary condition)
+- cat ⊑ hasTexture [fuzzy, soft] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [purple, blue, pink, green, orange]
+- hasShape/Part: [irregular outline, rounded shapes, multiple small protrusions]
+- hasTexture: [fuzzy, soft]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a range of colors (purple, blue, pink, green, orange), rounded shapes, an irregular outline, and a fuzzy texture. These properties align with the necessary conditions defined in the TBox for a cat. The presence of these features validates the classification as a cat.
+----------------------------------------
+Query 3: Expected: [deer] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [black, grey, white] (Necessary condition)
+- cat ⊑ hasShape/Part [pointed ears, small nose, whiskers] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, grey, white]
+- hasShape/Part: [pointed ears, small nose, indistinct whiskers]
+- hasTexture: [furry]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of black, grey, and white coloration (hasColor), pointed ears and a small nose (hasShape/Part), and a furry texture (hasTexture). These properties align with the necessary conditions defined for a cat in the TBox. Therefore, based on the observed properties, the image is classified as a cat.
+----------------------------------------
+Query 4: Expected: [deer] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [black, brown, white] (Necessary condition)
+- cat ⊑ hasShape/Part [rounded head, pointed ears, indistinct body] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, brown, purple, green]
+- hasShape/Part: [rounded head, indistinct body, elongated shape]
+- hasTexture: [furry]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a furry texture (hasTexture [furry]), a rounded head shape, and an indistinct body. These properties align with the necessary conditions for a cat (cat ⊑ hasColor [black, brown, white], cat ⊑ hasShape/Part [rounded head, pointed ears, indistinct body], cat ⊑ hasTexture [furry]). While the colors observed (black, brown, purple, green) are not explicitly defined in the TBox, the presence of the other necessary features is sufficient to classify the entity as a cat.
+----------------------------------------
+Query 5: Expected: [deer] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [purple, blue, pink] (Necessary condition)
+- cat ⊑ hasShape/Part [elongated body, pointed ears, small head] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [purple, blue, pink]
+- hasShape/Part: [elongated body, pointed ears, small head]
+- hasTexture: [furry]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a purple, blue, and pink coloration (hasColor), an elongated body with pointed ears and a small head (hasShape/Part), and a furry texture (hasTexture). These properties align with the necessary conditions defined for a cat in the TBox. Therefore, the image is classified as a cat.
+----------------------------------------
+Query 6: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [black, brown, grey] (Necessary condition)
+- cat ⊑ hasShape/Part [triangular ears, rounded head, elongated body] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, brown, grey, purple]
+- hasShape/Part: [triangular shapes resembling ears, rounded head, elongated body, irregular contours]
+- hasTexture: [appears furry]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of colors (black, brown, grey, purple) and shapes (triangular ear-like structures, rounded head, elongated body) along with a furry texture. These observed properties align with the necessary conditions defined in the TBox for a cat. The presence of these features validates the classification as a cat.
+----------------------------------------
+Query 7: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasEarsPointed (Necessary condition)
+- cat ⊑ hasFacialFeaturesRound (Necessary condition)
+- cat ⊑ hasFur (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: black, white, grey
+- hasShape/Part: pointed ears, round face, elongated body, whiskers
+- hasTexture: short fur
+
+4. Logical Explanation (DL & NL):
+The image exhibits pointed ears (hasEarsPointed), a round face (hasFacialFeaturesRound), and fur (hasFur). These properties are necessary conditions for being a cat. The presence of these features aligns with the established axioms, therefore the image is classified as a cat.
+----------------------------------------
+Query 8: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [gray, pink, purple] (Necessary condition)
+- cat ⊑ hasShape/Part [triangular ears, rounded face, small body] (Necessary condition)
+- cat ⊑ hasTexture [soft fur] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [gray, pink, purple]
+- hasShape/Part: [triangular ears, rounded face, irregular body shape]
+- hasTexture: [appears soft]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of gray, pink, and purple coloration (hasColor). It also displays triangular ear shapes and a rounded face (hasShape/Part), along with a texture that appears soft (hasTexture). These observed properties align with the necessary conditions defined for a cat in the TBox. Therefore, the image is classified as a cat.
+----------------------------------------
+Query 9: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [various shades of blue, pink, green] (Necessary condition)
+- cat ⊑ hasShape/Part [rounded head, pointed ears, curved body] (Necessary condition)
+- cat ⊑ hasTexture [soft, furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [various shades of blue, pink, green, purple]
+- hasShape/Part: [rounded head, pointed ears, curved body, indistinct tail]
+- hasTexture: [appears soft and furry]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a range of blue, pink, green, and purple hues (hasColor), a rounded head with pointed ears and a curved body (hasShape/Part), and a texture that appears soft and furry (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a cat. Therefore, based on the visual evidence, the image is classified as a cat.
+----------------------------------------
+Query 10: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [green, pink, blue] (Necessary condition)
+- cat ⊑ hasShape/Part [curved lines, irregular shape] (Necessary condition)
+- cat ⊑ hasTexture [smooth, undefined] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [green, pink, blue]
+- hasShape/Part: [curved lines, irregular shape, pointed tip]
+- hasTexture: [smooth, undefined]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of green, pink, and blue colors (hasColor), along with curved lines and an irregular shape, and a smooth, undefined texture (hasShape/Part, hasTexture). These properties align with the necessary conditions defined in the TBox for a cat. The presence of these features validates the classification as a cat.
+----------------------------------------
+-> FINAL ACCURACY for (2,2,5): 0.6000
+
+--- CONFIG: N=2, K=2, Q=8 ---
+Query 1: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [various colors] (Necessary condition)
+- cat ⊑ hasShape/Part [rounded features, pointed ears] (Necessary condition)
+- cat ⊑ hasTexture [furry texture] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, pink, green, purple]
+- hasShape/Part: [rounded head, pointed ears, elongated body]
+- hasTexture: [appears furry]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of colors (blue, pink, green, purple), rounded head features, pointed ears, an elongated body, and a furry texture. These properties align with the necessary conditions defined for a cat in the TBox. The presence of these features validates the assumption that the image represents a cat.
+----------------------------------------
+Query 2: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor blue, green (Necessary condition)
+- cat ⊑ hasShape/Part rounded ears, pointed nose (Necessary condition)
+- cat ⊑ hasTexture soft fur (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green
+- hasShape/Part: rounded ears, pointed nose, circular eyes
+- hasTexture: soft fur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a blue and green coloration (hasColor blue, green), rounded ears, and a pointed nose (hasShape/Part rounded ears, pointed nose). These properties align with the necessary conditions defined in the TBox for a cat. The presence of soft fur (hasTexture soft fur) further validates the classification. Therefore, based on the observed properties, the image is classified as a cat.
+----------------------------------------
+Query 3: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor black
+- cat ⊑ hasShape/Part roundedShape
+- cat ⊑ hasTexture fuzzy
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: black, grey
+- hasShape/Part: roundedShape, irregularShape
+- hasTexture: fuzzy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a `hasColor` of black and grey, a `hasShape/Part` of a rounded and irregular shape, and a `hasTexture` of fuzzy. These properties align with the TBox axioms defining a cat, specifically the necessary conditions of having a black/grey color, a rounded shape, and a fuzzy texture. Therefore, the image is classified as a cat.
+----------------------------------------
+Query 4: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasEars (Necessary condition)
+- cat ⊑ hasTail (Necessary condition)
+- cat ⊑ hasFur (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: gray, black, purple
+- hasShape/Part: triangular ears, long tail, rounded body
+- hasTexture: fluffy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rounded body, triangular ears, and a long tail. These properties (hasRoundedBody, hasTriangularEars, hasLongTail) are all necessary conditions for a cat. The presence of fur (hasFur) further validates the classification. Therefore, based on the observed properties and the established axioms, the image is classified as a cat.
+----------------------------------------
+Query 5: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [yellow, blue, pink] (Necessary condition)
+- cat ⊑ hasShape/Part [triangular ears, rounded face, small eyes] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [yellow, blue, pink]
+- hasShape/Part: [triangular ears, rounded face, small eyes]
+- hasTexture: [furry]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of yellow, blue, and pink coloration (hasColor), triangular ears, a rounded face, and small eyes (hasShape/Part), and a furry texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for classifying an entity as a cat. Therefore, based on these visual cues, the image is classified as a cat.
+----------------------------------------
+Query 6: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [black, brown, white] (Necessary condition)
+- cat ⊑ hasShape/Part [rounded ears, pointed nose, fluffy texture] (Necessary condition)
+- hasShape/Part [rounded ears, pointed nose, fluffy texture] ⊑ cat (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, brown, white]
+- hasShape/Part: [rounded ears, pointed nose, fluffy texture, elongated body]
+- hasTexture: [fluffy]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of black, brown, and white coloration (hasColor). It also displays features consistent with a cat, including rounded ears, a pointed nose, and a fluffy texture (hasShape/Part, hasTexture). The presence of these features satisfies the sufficient condition for cat classification (hasShape/Part [rounded ears, pointed nose, fluffy texture] ⊑ cat), and validates the necessary conditions related to color. Therefore, the image is classified as a cat.
+----------------------------------------
+Query 7: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor brown, pink (Necessary condition)
+- cat ⊑ hasShape/Part head, eyes, ears, body (Necessary condition)
+- cat ⊑ hasTexture fur (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, pink
+- hasShape/Part: head, eyes, ears, body
+- hasTexture: fur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a brown and pink coloration (hasColor brown, pink), a discernible head, eyes, ears, and body (hasShape/Part head, eyes, ears, body), and a fur-like texture (hasTexture fur). These observed properties align with the necessary conditions defined in the TBox for a cat. Therefore, the image is classified as a cat.
+----------------------------------------
+Query 8: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [brown, green, purple] (Necessary condition)
+- cat ⊑ hasShape/Part [rounded edges, triangular ears, small head] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, green, purple]
+- hasShape/Part: [rounded edges, triangular protrusions resembling ears, small head]
+- hasTexture: [appears furry]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of brown, green, and purple coloration (hasColor). It also displays rounded edges, triangular protrusions resembling ears, and a small head (hasShape/Part). Furthermore, the image appears to have a furry texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a cat. Therefore, based on these visual characteristics, the image is classified as a cat.
+----------------------------------------
+Query 9: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasColor [yellow, gray] (Necessary condition)
+- truck ⊑ hasShape/Part [rectangular body, wheels, cab] (Necessary condition)
+- truck ⊑ hasTexture [rough] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [yellow, gray, black]
+- hasShape/Part: [rectangular body, wheels, cab, prominent front grill]
+- hasTexture: [rough]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rectangular body, wheels, and a cab, all of which are necessary conditions for a truck (truck ⊑ hasShape/Part [rectangular body, wheels, cab]). The presence of yellow, gray, and black colors, combined with a rough texture, further validates this classification. The prominent front grill is a characteristic feature often associated with trucks, strengthening the classification. Therefore, based on the observed properties matching the necessary conditions defined in the TBox, the image is classified as a truck.
+----------------------------------------
+Query 10: Expected: [truck] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [green, pink] (Necessary condition)
+- cat ⊑ hasShape/Part [rounded shape, pointed ears] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [green, pink, blue]
+- hasShape/Part: [rounded shape, pointed ears, elongated body]
+- hasTexture: [furry]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rounded shape, pointed ears, and a furry texture. These properties align with the necessary conditions defined in the TBox for a cat. The presence of green, pink, and blue colors, while not explicitly defined in the TBox, do not contradict the cat classification. Therefore, based on the observed shape, ears, and texture, the image is classified as a cat.
+----------------------------------------
+Query 11: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasColor [gray, white, black]
+- truck ⊑ hasShape/Part [rectangular body, wheels, windows]
+- truck ⊑ hasTexture [smooth, metallic]
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [gray, white]
+- hasShape/Part: [rectangular body, wheels, windows]
+- hasTexture: [smooth, metallic]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rectangular body, wheels, and windows, all of which are necessary properties for a truck (truck ⊑ hasShape/Part [rectangular body, wheels, windows]). The observed colors, gray and white, are also consistent with typical truck colors (truck ⊑ hasColor [gray, white, black]). Therefore, based on the presence of these features, the image is classified as a truck.
+----------------------------------------
+Query 12: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasColor [various colors, including red, blue, and green]
+- truck ⊑ hasShape/Part [rectangular body, wheels, windows]
+- truck ⊑ hasTexture [rough, metallic]
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: red, blue, green
+- hasShape/Part: rectangular body, wheels, windows, cab
+- hasTexture: rough, metallic
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rectangular body (hasShape/Part), wheels (hasShape/Part), windows (hasShape/Part), and a cab (hasShape/Part). The observed colors (hasColor: red, blue, green) are consistent with the general color palette often found in trucks. The rough, metallic texture (hasTexture) further supports the classification. These properties collectively satisfy the TBox axioms for a truck, indicating that the image depicts a truck.
+----------------------------------------
+Query 13: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasColor [red, blue, green] (Necessary condition)
+- truck ⊑ hasShape/Part [rectangular body, wheels, windows] (Necessary condition)
+- hasShape/Part [rectangular body, wheels, windows] ⊑ truck (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [red, purple, green]
+- hasShape/Part: [rectangular body, wheels, windows]
+- hasTexture: [smooth, metallic]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rectangular body, wheels, and windows (hasShape/Part). This satisfies the sufficient condition for a truck (hasShape/Part [rectangular body, wheels, windows] ⊑ truck). The observed colors (red, purple, green) are consistent with the necessary condition for a truck (truck ⊑ hasColor [red, blue, green]). Therefore, the image is classified as a truck.
+----------------------------------------
+Query 14: Expected: [truck] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [green, pink] (Necessary condition)
+- cat ⊑ hasShape/Part [elongated body, rounded head] (Necessary condition)
+- cat ⊑ hasTexture [smooth, soft] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [green, pink, blue]
+- hasShape/Part: [elongated body, curved lines, rounded protrusions]
+- hasTexture: [smooth, irregular]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of green and pink colors (hasColor), an elongated body shape with curved lines and rounded protrusions (hasShape/Part), and a smooth, irregular texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a cat. While the texture is irregular, the overall color and shape characteristics strongly suggest a feline form.
+----------------------------------------
+Query 15: Expected: [truck] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [various colors] (Necessary condition)
+- cat ⊑ hasShape/Part [rounded shapes, irregular outline] (Necessary condition)
+- cat ⊑ hasTexture [fuzzy, soft] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, pink, blue, green, black
+- hasShape/Part: irregular outline, rounded shapes, amorphous blob
+- hasTexture: fuzzy, soft
+
+4. Logical Explanation (DL & NL):
+The image exhibits a range of colors (purple, pink, blue, green, black), an irregular outline with rounded shapes, and a fuzzy, soft texture. These properties align with the necessary conditions defined for a cat in the TBox. While the colors are varied, the overall shape and texture are consistent with the general visual characteristics of a cat. Therefore, based on the observed properties, the image is classified as a cat.
+----------------------------------------
+Query 16: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasColor [yellow, purple] (Necessary condition)
+- truck ⊑ hasShape/Part [rectangular body, wheels, cab] (Necessary condition)
+- truck ⊑ hasTexture [smooth] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [yellow, purple]
+- hasShape/Part: [rectangular body, wheels, cab-like structure]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rectangular body, wheels, and a cab-like structure, all of which are necessary conditions for a truck. The observed colors (yellow and purple) are also consistent with the general color palette associated with trucks. Therefore, based on the presence of these features, the image is classified as a truck.
+----------------------------------------
+-> FINAL ACCURACY for (2,2,8): 0.8125
+
+--- CONFIG: N=2, K=1, Q=5 ---
+Query 1: Expected: [bird] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [purple, green, blue] (Necessary condition)
+- cat ⊑ hasShape/Part [rounded shapes, irregular contours] (Necessary condition)
+- cat ⊑ hasTexture [patchy, mottled] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [purple, green, blue, pink]
+- hasShape/Part: [rounded shapes, irregular contours, undefined edges]
+- hasTexture: [patchy, mottled, complex]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of purple, green, and blue colors (hasColor), rounded shapes and irregular contours (hasShape/Part), and a patchy, mottled texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for the class 'cat'. Therefore, based on the visual evidence, the image is classified as a cat.
+----------------------------------------
+Query 2: Expected: [bird] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasShape/Part [triangular ears] (Necessary condition)
+- cat ⊑ hasShape/Part [elongated body] (Necessary condition)
+- cat ⊑ hasColor [yellow/brown] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: yellow, brown, white
+- hasShape/Part: triangular ears, elongated body, pointed tail
+- hasTexture: fluffy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a fluffy texture, a yellow/brown coloration, triangular ears, and an elongated body. These properties align with the necessary conditions defined in the TBox for classifying an entity as a cat. Specifically, the presence of triangular ears and an elongated body are key indicators, validating the classification.
+----------------------------------------
+Query 3: Expected: [bird] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasShape/Part [triangular ears] (Necessary condition)
+- cat ⊑ hasShape/Part [elongated body] (Necessary condition)
+- cat ⊑ hasShape/Part [tail] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: grey, white, black
+- hasShape/Part: triangular ears, elongated body, tail, rounded head
+- hasTexture: smooth, fluffy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a body with an elongated shape, triangular ears, and a tail. These properties align with the necessary conditions defined in the TBox for classifying an entity as a cat. The presence of these features is sufficient to classify the image as a cat.
+----------------------------------------
+Query 4: Expected: [bird] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasShape/Part [triangular ear] (Necessary condition)
+- cat ⊑ hasColor [various shades of orange, pink, and green] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: orange, pink, green
+- hasShape/Part: triangular ear, elongated body, curved tail
+- hasTexture: furry
+
+4. Logical Explanation (DL & NL):
+The image exhibits a triangular ear (hasShape/Part), various shades of orange, pink, and green (hasColor), and a furry texture (hasTexture). These properties align with the necessary conditions defined in the TBox for classifying an entity as a cat. The presence of a triangular ear is a key indicator, validating the classification.
+----------------------------------------
+Query 5: Expected: [bird] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>bird</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- bird ⊑ hasShape/Part [elongated body, wings, beak] (Necessary condition)
+- hasShape/Part [elongated body, wings, beak] ⊑ bird (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, white, red
+- hasShape/Part: elongated body, wings, beak
+- hasTexture: smooth, feathery
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated body, wings, and a beak (hasShape/Part [elongated body, wings, beak]). This satisfies the sufficient condition for being a bird (hasShape/Part [elongated body, wings, beak] ⊑ bird), and validates the necessary condition (bird ⊑ hasShape/Part [elongated body, wings, beak]). The colors observed (blue, white, red) are not defining characteristics, but do not contradict the classification.
+----------------------------------------
+Query 6: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasVisualFeature [elongated ears, triangular face, rounded body] (Necessary condition)
+- hasVisualFeature [elongated ears, triangular face, rounded body] ⊑ cat (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: gray, white, black
+- hasShape/Part: elongated ears, triangular face, rounded body, pointed nose
+- hasTexture: smooth, soft
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rounded body, elongated ears, and a triangular face. These features align with the TBox axioms defining a cat. The presence of these visual features (elongated ears, triangular face, rounded body) is sufficient to classify the entity as a cat.
+----------------------------------------
+Query 7: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasShape/Part [triangular ears] (Necessary condition)
+- cat ⊑ hasColor [varied, including pink, blue, and green] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, blue, green, purple
+- hasShape/Part: triangular shapes resembling ears, rounded body shape
+- hasTexture: appears to have a somewhat fuzzy or textured surface
+
+4. Logical Explanation (DL & NL):
+The image exhibits triangular shapes that resemble ears, a rounded body shape, and a furry texture. These properties align with the necessary conditions defined in the TBox for classifying an entity as a cat. Specifically, the presence of triangular ear-like shapes (hasShape/Part [triangular ears]) is a necessary condition for being a cat. The observed colors (pink, blue, green, purple) are also consistent with the general color range associated with cats, further validating the classification.
+----------------------------------------
+Query 8: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [black, white, grey] (Necessary condition)
+- cat ⊑ hasShape/Part [triangular ears, rounded face, whiskers] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, white, grey]
+- hasShape/Part: [triangular ears, rounded face, whiskers]
+- hasTexture: [furry]
+
+4. Logical Explanation (DL & NL):
+The image exhibits the properties of having black, white, and grey colors (hasColor), triangular ears, a rounded face, and whiskers (hasShape/Part), and a furry texture (hasTexture). These properties align with the necessary conditions defined in the TBox for classifying an entity as a cat. Therefore, based on the observed properties, the image is classified as a cat.
+----------------------------------------
+Query 9: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [yellow, black, pink] (Necessary condition)
+- cat ⊑ hasShape/Part [triangular ears, rounded body] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [yellow, black, pink, grey]
+- hasShape/Part: [triangular ears, rounded body, elongated tail]
+- hasTexture: [furry]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rounded body shape, triangular ears, and a furry texture. These properties (hasShape/Part, hasTexture) are necessary conditions for being a cat. The presence of yellow, black, pink, and grey colors (hasColor) are also consistent with the visual characteristics of a cat. Therefore, based on the observed properties and the established axioms, the image is classified as a cat.
+----------------------------------------
+Query 10: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasShape/Part [triangular ears] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+- cat ⊑ hasColor [varied, including brown, black, and white] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, black, white, purple
+- hasShape/Part: triangular ears, rounded body, indistinct tail
+- hasTexture: furry
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rounded body shape and triangular ears, which are necessary conditions for being a cat. The presence of a furry texture and a varied color palette (brown, black, white, purple) further validates the classification. The observed features align with the axioms defined in the TBox, therefore the image is classified as a cat.
+----------------------------------------
+-> FINAL ACCURACY for (2,1,5): 0.6000
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasColor blue
+- ship ⊑ hasShape/Part elongatedHull
+- ship ⊑ hasTexture smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, grey
+- hasShape/Part: elongatedHull, mast
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly blue color (hasColor blue), an elongated hull shape (hasShape/Part elongatedHull), and a smooth texture (hasTexture smooth). These properties align with the axioms defined for a ship. The presence of a mast further supports the classification. Therefore, based on the observed properties and the established axioms, the entity is classified as a ship.
+----------------------------------------
+Query 2: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasShape/Part [elongated hull] (Necessary condition)
+- hasShape/Part [elongated hull] ⊑ ship (Sufficient condition)
+- ship ⊑ hasColor [blue, white] (Necessary condition)
+- hasColor [blue, white] ⊑ ship (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, white, purple]
+- hasShape/Part: [elongated hull, curved structure, multiple smaller protrusions]
+- hasTexture: [smooth, slightly irregular]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a prominent elongated hull (hasShape/Part [elongated hull]), which is a necessary and sufficient condition for a ship (ship ⊑ hasShape/Part [elongated hull] and hasShape/Part [elongated hull] ⊑ ship). The presence of blue and white colors (hasColor [blue, white]) further validates this classification, as these are common colors associated with ships (ship ⊑ hasColor [blue, white] and hasColor [blue, white] ⊑ ship). The additional purple color and smaller protrusions do not contradict the core features of a ship.
+----------------------------------------
+Query 3: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasColor blue
+- ship ⊑ hasShape/Part hull
+- ship ⊑ hasTexture smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, white, grey
+- hasShape/Part: hull, mast, sail
+- hasTexture: smooth, reflective
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly blue color (hasColor blue), a distinct hull shape (hasShape/Part hull), and a smooth, reflective texture (hasTexture smooth). These properties align with the TBox axioms defining a ship. The presence of a mast and sail (hasShape/Part mast, hasShape/Part sail) further reinforces the classification as a ship. Therefore, based on the observed properties and their relationship to the established axioms, the image is classified as a ship.
+----------------------------------------
+Query 4: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasShape/Part [hull] (Necessary condition)
+- hasShape/Part [hull] ⊑ ship (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, dark grey
+- hasShape/Part: hull, elongated shape, pointed front
+- hasTexture: smooth, reflective surface
+
+4. Logical Explanation (DL & NL):
+The image exhibits a distinct hull shape (hasShape/Part [hull]), which is a sufficient condition for classifying the entity as a ship. The presence of a smooth, reflective surface and the elongated shape further validate this classification. The observed colors (blue and dark grey) are consistent with typical ship appearances.
+----------------------------------------
+Query 5: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasShape/Part [hull] (Necessary condition)
+- ship ⊑ hasShape/Part [mast] (Necessary condition)
+- ship ⊑ hasColor [blue] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, white, pink]
+- hasShape/Part: [hull, mast]
+- hasTexture: [smooth, irregular]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a blue color (hasColor [blue]), a hull-like structure (hasShape/Part [hull]), and a mast-like structure (hasShape/Part [mast]). These properties align with the necessary conditions defined in the TBox for a ship. Therefore, based on the observed visual features, the entity is classified as a ship.
+----------------------------------------
+Query 6: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasColor [blue, grey, white] (Necessary condition)
+- ship ⊑ hasShape/Part [hull, mast, deck] (Necessary condition)
+- ship ⊑ hasTexture [smooth, reflective] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, grey, white]
+- hasShape/Part: [hull, mast-like structure, deck-like structure]
+- hasTexture: [smooth, reflective]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly blue, grey, and white color scheme (hasColor [blue, grey, white]). It also displays a hull, a mast-like structure, and a deck-like structure (hasShape/Part [hull, mast-like structure, deck-like structure]). The surface appears smooth and reflective (hasTexture [smooth, reflective]). These observed properties align with the necessary conditions defined in the TBox for a ship (ship ⊑ hasColor [blue, grey, white]; ship ⊑ hasShape/Part [hull, mast, deck]; ship ⊑ hasTexture [smooth, reflective]). Therefore, the image is classified as a ship.
+----------------------------------------
+Query 7: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasColor blue, gray (Necessary condition)
+- ship ⊑ hasShape/Part hull, mast (Necessary condition)
+- ship ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, gray, white
+- hasShape/Part: hull, curved structure, pointed end
+- hasTexture: smooth, reflective
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly blue and gray color (hasColor blue, gray), a hull-like structure (hasShape/Part hull), and a smooth texture (hasTexture smooth). These observed properties align with the necessary conditions defined in the TBox for a ship (ship ⊑ hasColor blue, gray; ship ⊑ hasShape/Part hull; ship ⊑ hasTexture smooth). Therefore, the image is classified as a ship.
+----------------------------------------
+Query 8: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasColor [blue, grey, white] (Necessary condition)
+- ship ⊑ hasShape/Part [elongated hull, mast, deck] (Necessary condition)
+- ship ⊑ hasTexture [smooth, reflective] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, grey, white, purple]
+- hasShape/Part: [elongated hull, multiple masts, deck, complex superstructure]
+- hasTexture: [smooth, reflective, slightly rough]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly blue, grey, and white color scheme (satisfying ship ⊑ hasColor [blue, grey, white]). It also displays an elongated hull, multiple masts, and a deck (satisfying ship ⊑ hasShape/Part [elongated hull, mast, deck]). The smooth and reflective texture further aligns with the characteristics of a ship. Therefore, based on the observed properties, the entity is classified as a ship.
+----------------------------------------
+Query 9: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasColor [blue, grey, white] (Necessary condition)
+- ship ⊑ hasShape/Part [hull, mast, deck] (Necessary condition)
+- ship ⊑ hasTexture [smooth, reflective] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, purple, green, white]
+- hasShape/Part: [elongated hull, curved structure resembling a mast, irregular deck-like areas]
+- hasTexture: [smooth, slightly reflective]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly blue and purple coloration (hasColor [blue, purple, green, white]), along with a long, elongated hull-like structure and a curved element suggestive of a mast (hasShape/Part [elongated hull, curved structure resembling a mast, irregular deck-like areas]). The smooth and slightly reflective texture (hasTexture [smooth, slightly reflective]) further aligns with the characteristics of a ship as defined by the TBox axioms. Therefore, based on the observed properties, the entity is classified as a ship.
+----------------------------------------
+Query 10: Expected: [horse] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasShape/Part [hull] (Necessary condition)
+- hasShape/Part [hull] ⊑ ship (Sufficient condition)
+- ship ⊑ hasColor [blue, white] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, white, grey]
+- hasShape/Part: [hull, mast, deck]
+- hasTexture: [smooth, reflective]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a prominent hull (hasShape/Part [hull]), which is a necessary and sufficient condition for a ship (hasShape/Part [hull] ⊑ ship). Furthermore, the image displays blue and white colors (hasColor [blue, white]), which are also characteristics of a ship (ship ⊑ hasColor [blue, white]). Therefore, based on the presence of a hull and the observed colors, the entity is classified as a ship.
+----------------------------------------
+Query 11: Expected: [horse] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasShape/Part [hull] (Necessary condition)
+- hasShape/Part [hull] ⊑ ship (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, purple, white
+- hasShape/Part: hull, mast, deck
+- hasTexture: smooth, reflective
+
+4. Logical Explanation (DL & NL):
+The image exhibits a distinct hull shape (hasShape/Part [hull]), which is a sufficient condition for classifying the entity as a ship. The presence of a mast and deck further validates this classification. The colors observed (blue, purple, white) are consistent with typical ship appearances, though not defining characteristics.
+----------------------------------------
+Query 12: Expected: [horse] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasColor [blue, grey, white] (Necessary condition)
+- ship ⊑ hasShape/Part [hull, mast, deck] (Necessary condition)
+- ship ⊑ hasTexture [smooth, reflective] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, grey, white]
+- hasShape/Part: [hull, mast, deck, multiple curved surfaces]
+- hasTexture: [smooth, reflective]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly blue, grey, and white color scheme (satisfying `hasColor [blue, grey, white]`). It also displays a hull, mast, and deck-like structure, along with multiple curved surfaces (satisfying `hasShape/Part [hull, mast, deck, multiple curved surfaces]`). The surface appears smooth and reflective (`hasTexture [smooth, reflective]`). These observed properties align with the necessary conditions defined in the TBox for a ship, therefore, the image is classified as a ship.
+----------------------------------------
+Query 13: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>horse</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- horse ⊑ hasColor brown, green (Necessary condition)
+- horse ⊑ hasShape/Part four legs, elongated neck, head (Necessary condition)
+- horse ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, green
+- hasShape/Part: four legs, elongated neck, head
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a brown and green coloration (hasColor brown, green), possesses four legs, an elongated neck, and a head (hasShape/Part four legs, elongated neck, head), and appears to have a smooth texture (hasTexture smooth). These observed properties align with the necessary conditions defined in the TBox for a horse. Therefore, the image is classified as a horse.
+----------------------------------------
+Query 14: Expected: [horse] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasShape/Part [elongated hull] (Necessary condition)
+- hasShape/Part [elongated hull] ⊑ ship (Sufficient condition)
+- ship ⊑ hasColor [blue, white] (Necessary condition)
+- hasColor [blue, white] ⊑ ship (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, purple, pink]
+- hasShape/Part: [elongated hull, multiple angular protrusions]
+- hasTexture: [rough, irregular]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a prominent elongated hull (hasShape/Part), which is a sufficient condition for classifying the entity as a ship. The presence of blue and purple hues (hasColor) further validates this classification, as blue and white are necessary conditions for a ship. While the texture appears rough and irregular, it does not contradict the core visual features defining a ship. Therefore, based on the observed elongated hull and color characteristics, the entity is classified as a ship.
+----------------------------------------
+Query 15: Expected: [horse] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasShape/Part [hull, mast, deck] (Necessary condition)
+- hasShape/Part [hull, mast, deck] ⊑ ship (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, purple, pink, white
+- hasShape/Part: hull, mast, deck, elongated shape
+- hasTexture: smooth, curved
+
+4. Logical Explanation (DL & NL):
+The image exhibits a hull, a mast, and a deck (hasShape/Part [hull, mast, deck]). This satisfies the sufficient condition for a ship (hasShape/Part [hull, mast, deck] ⊑ ship), therefore classifying the entity as a ship. The observed colors (blue, purple, pink, white) are not defining characteristics but are consistent with a ship's appearance.
+----------------------------------------
+Query 16: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>horse</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- horse ⊑ hasVisualFeature [elongated body with four legs and a head] (Necessary condition)
+- hasVisualFeature [elongated body with four legs and a head] ⊑ horse (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, brown, green
+- hasShape/Part: elongated body, four legs, head, neck
+- hasTexture: smooth, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated body with four legs and a head (hasShape/Part), which aligns with the necessary and sufficient condition for a horse as defined in the TBox. The observed colors (purple, brown, green) and texture (smooth, slightly blurred) are consistent with a typical horse appearance, further validating the classification.
+----------------------------------------
+Query 17: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>horse</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- horse ⊑ hasVisualFeature [elongated body with four legs and a head] (Necessary condition)
+- hasVisualFeature [elongated body with four legs and a head] ⊑ horse (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, black, grey
+- hasShape/Part: elongated body, four legs, head, tail
+- hasTexture: smooth, slightly rough
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated body with four legs and a head (hasShape/Part), which aligns with the necessary and sufficient condition for a horse as defined in the TBox. The observed colors (brown, black, grey) and texture (smooth, slightly rough) further validate the classification, although they are not explicitly defined in the TBox. Therefore, based on the prominent visual features, the image is classified as a horse.
+----------------------------------------
+Query 18: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>horse</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- horse ⊑ hasShape/Part [four legs, elongated neck, head] (Necessary condition)
+- horse ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, grey, white
+- hasShape/Part: four legs, elongated neck, head
+- hasTexture: furry
+
+4. Logical Explanation (DL & NL):
+The image exhibits the properties of having four legs, an elongated neck, a head, and a furry texture. These properties are necessary conditions for a horse (horse ⊑ hasShape/Part [four legs, elongated neck, head]; horse ⊑ hasTexture [furry]). Therefore, based on these observed features, the entity is classified as a horse.
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9): 0.7222
+
+--- CONFIG: N=3, K=1, Q=5 ---
+Query 1: Expected: [truck] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>airplane</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- airplane ⊑ hasShape/Part [wings] (Necessary condition)
+- airplane ⊑ hasShape/Part [fuselage] (Necessary condition)
+- airplane ⊑ hasColor [silver/grey] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [silver/grey, red, blue]
+- hasShape/Part: [wings, fuselage, tail]
+- hasTexture: [smooth, metallic]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a smooth, metallic texture (hasTexture: [smooth, metallic]) and possesses distinct wings and a fuselage (hasShape/Part: [wings, fuselage, tail]). The dominant colors are silver/grey (hasColor: [silver/grey, red, blue]), which aligns with the necessary conditions for an airplane as defined in the TBox. Therefore, based on the presence of wings, a fuselage, and a metallic appearance, the image is classified as an airplane.
+----------------------------------------
+Query 2: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasColor [blue, red, silver]
+- truck ⊑ hasShape/Part [rectangular body, wheels, windows, grill]
+- truck ⊑ hasTexture [smooth, metallic]
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, silver]
+- hasShape/Part: [rectangular body, wheels, windows, grill]
+- hasTexture: [smooth, metallic]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rectangular body, wheels, windows, and a grill, all while displaying blue and silver colors and a smooth, metallic texture. These observed properties align with the TBox axioms defining a truck. The presence of these features (blue/silver color, rectangular body, wheels, windows, grill, smooth metallic texture) collectively satisfies the necessary conditions for classifying the entity as a truck.
+----------------------------------------
+Query 3: Expected: [truck] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>airplane</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- airplane ⊑ hasShape/Part [wings] (Necessary condition)
+- airplane ⊑ hasShape/Part [fuselage] (Necessary condition)
+- airplane ⊑ hasColor [silver/grey] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [silver, blue, purple]
+- hasShape/Part: [wings, fuselage, tail]
+- hasTexture: [smooth, metallic]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a smooth, metallic texture and displays distinct wings and a fuselage. The presence of wings and a fuselage (hasShape/Part [wings], hasShape/Part [fuselage]) are necessary conditions for an airplane. The observed color (hasColor [silver, blue, purple]) aligns with the typical coloration of airplanes. Therefore, based on the presence of these features, the image is classified as an airplane.
+----------------------------------------
+Query 4: Expected: [truck] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>airplane</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- airplane ⊑ hasShape/Part [wings] (Necessary condition)
+- airplane ⊑ hasShape/Part [fuselage] (Necessary condition)
+- airplane ⊑ hasColor [silver/grey] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [silver, blue, white]
+- hasShape/Part: [wings, fuselage, tail]
+- hasTexture: [smooth, metallic]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a smooth, metallic texture and displays distinct wings and a fuselage. The presence of wings and a fuselage (hasShape/Part [wings], hasShape/Part [fuselage]) are necessary conditions for an airplane. The observed color (hasColor [silver, blue, white]) further validates this classification. Therefore, based on the presence of these features, the image is classified as an airplane.
+----------------------------------------
+Query 5: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasShape/Part [rectangular body] (Necessary condition)
+- truck ⊑ hasShape/Part [wheels] (Necessary condition)
+- truck ⊑ hasColor [grey/blue] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: grey, blue
+- hasShape/Part: rectangular body, wheels
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rectangular body and wheels, which are necessary conditions for a truck. The observed colors, grey and blue, are also consistent with the typical colors of a truck. Therefore, based on the presence of these features, the image is classified as a truck.
+----------------------------------------
+Query 6: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [black, grey] (Necessary condition)
+- cat ⊑ hasShape/Part [elongated body, pointed ears, tail] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, grey]
+- hasShape/Part: [elongated body, pointed ears, tail]
+- hasTexture: [furry]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of black and grey coloration (hasColor), an elongated body with pointed ears and a tail (hasShape/Part), and a furry texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for classifying an entity as a cat. Therefore, based on the visual evidence, the entity is classified as a cat.
+----------------------------------------
+Query 7: Expected: [cat] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>airplane</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- airplane ⊑ hasShape/Part [wing] (Necessary condition)
+- airplane ⊑ hasShape/Part [fuselage] (Necessary condition)
+- airplane ⊑ hasColor [silver/grey] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [silver/grey, blue]
+- hasShape/Part: [wing, fuselage, tail]
+- hasTexture: [smooth, metallic]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a prominent wing and fuselage structure, which are necessary components of an airplane (airplane ⊑ hasShape/Part [wing], airplane ⊑ hasShape/Part [fuselage]). The observed color, a metallic silver/grey, is also consistent with the typical appearance of an airplane. Therefore, based on the presence of these necessary features, the image is classified as an airplane.
+----------------------------------------
+Query 8: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [brown, grey] (Necessary condition)
+- cat ⊑ hasShape/Part [triangular ears, rounded body] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, grey, white]
+- hasShape/Part: [triangular ears, rounded body, pointed nose]
+- hasTexture: [furry]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rounded body, triangular ears, and a pointed nose, all of which are necessary conditions for a cat. The observed colors (brown, grey, white) are also consistent with the typical coloration of cats. Therefore, based on the presence of these features, the image is classified as a cat.
+----------------------------------------
+Query 9: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasShape/Part [ears, eyes, nose, whiskers, tail] (Necessary condition)
+- cat ⊑ hasColor [various colors, including brown, black, white] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, white, pink]
+- hasShape/Part: [ears, eyes, nose, whiskers, tail]
+- hasTexture: [furry]
+
+4. Logical Explanation (DL & NL):
+The image exhibits the properties of having ears, eyes, a nose, whiskers, and a tail (hasShape/Part). It also displays a furry texture (hasTexture) and a combination of brown, white, and pink colors (hasColor). These observed properties align with the necessary conditions defined in the TBox for a cat, therefore, the image is classified as a cat.
+----------------------------------------
+Query 10: Expected: [cat] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>airplane</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- airplane ⊑ hasColor blue, white (Necessary condition)
+- airplane ⊑ hasShape elongatedBody, wings (Necessary condition)
+- airplane ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor blue, white
+- hasShape elongatedBody, wings
+- hasTexture smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a blue and white color (hasColor blue, white), an elongated body with wings (hasShape elongatedBody, wings), and a smooth texture (hasTexture smooth). These properties align with the necessary conditions defined in the TBox for an airplane. Therefore, based on the observed visual features, the image is classified as an airplane.
+----------------------------------------
+Query 11: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>airplane</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- airplane ⊑ hasColor [blue, white, silver] (Necessary condition)
+- airplane ⊑ hasShape/Part [wings, fuselage, tail] (Necessary condition)
+- airplane ⊑ hasTexture [smooth, metallic] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, white, silver]
+- hasShape/Part: [wings, fuselage, tail]
+- hasTexture: [smooth, metallic]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a smooth, metallic texture (hasTexture [smooth, metallic]). It also displays distinct wings, a fuselage, and a tail (hasShape/Part [wings, fuselage, tail]). The dominant colors are blue, white, and silver (hasColor [blue, white, silver]). These observed properties align with the necessary conditions defined in the TBox for an airplane, therefore classifying it as an airplane.
+----------------------------------------
+Query 12: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>airplane</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- airplane ⊑ hasShape/Part [fuselage, wings, tail] (Necessary condition)
+- airplane ⊑ hasColor [silver, white, red] (Necessary condition)
+- airplane ⊑ hasTexture [smooth, metallic] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [silver, white, red]
+- hasShape/Part: [fuselage, wings, tail]
+- hasTexture: [smooth, metallic]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a smooth, metallic texture (hasTexture [smooth, metallic]). It also displays a distinct fuselage, wings, and tail (hasShape/Part [fuselage, wings, tail]), and a combination of silver, white, and red colors (hasColor [silver, white, red]). These observed properties align with the necessary conditions defined in the TBox for an airplane, thus justifying its classification as an airplane.
+----------------------------------------
+Query 13: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>airplane</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- airplane ⊑ hasShape/Part [wing] (Necessary condition)
+- airplane ⊑ hasShape/Part [fuselage] (Necessary condition)
+- airplane ⊑ hasColor [silver/grey] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [silver/grey, blue]
+- hasShape/Part: [wing, elongated body]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a distinct elongated body and a prominent wing structure. The observed color is predominantly silver/grey, aligning with the necessary conditions defined for an airplane. The presence of a wing and fuselage, combined with the silver/grey color, satisfies the TBox axioms, leading to the classification as an airplane.
+----------------------------------------
+Query 14: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>airplane</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- airplane ⊑ hasShape elongated_body_with_wings (Necessary condition)
+- airplane ⊑ hasShape tail_fin (Necessary condition)
+- hasShape elongated_body_with_wings ⊑ airplane (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, white
+- hasShape/Part: elongated_body, wings, tail_fin
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated body with wings and a tail fin (hasShape elongated_body_with_wings, hasShape tail_fin). These properties are necessary conditions for an airplane (airplane ⊑ hasShape elongated_body_with_wings, airplane ⊑ hasShape tail_fin). The presence of these shapes, combined with the smooth texture and blue/white color, satisfies the sufficient condition (hasShape elongated_body_with_wings ⊑ airplane), leading to the classification as an airplane.
+----------------------------------------
+Query 15: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>airplane</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- airplane ⊑ hasShape/Part [wings] (Necessary condition)
+- airplane ⊑ hasShape/Part [fuselage] (Necessary condition)
+- airplane ⊑ hasColor [silver/grey] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [silver, grey, black]
+- hasShape/Part: [wings, fuselage, tail]
+- hasTexture: [smooth, metallic]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a smooth, metallic texture (hasTexture) and displays distinct wings and a fuselage (hasShape/Part). The dominant colors are silver and grey (hasColor). These observed properties align with the necessary conditions defined in the TBox for an airplane: it must have wings, a fuselage, and typically a silver/grey color. Therefore, the image is classified as an airplane.
+----------------------------------------
+-> FINAL ACCURACY for (3,1,5): 0.6667
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [bird] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>bird</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- bird ⊑ hasColor [brown, white] (Necessary condition)
+- bird ⊑ hasShape/Part [beak, head, body] (Necessary condition)
+- bird ⊑ hasTexture [feathery] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, white, yellow]
+- hasShape/Part: [beak-like protrusion, rounded head, indistinct body shape]
+- hasTexture: [appears somewhat smooth, possibly feathery]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of brown, white, and yellow coloration (hasColor). It also presents a beak-like protrusion and a rounded head shape (hasShape/Part). While the body shape is indistinct, the presence of these features, particularly the beak and head shape, aligns with the necessary conditions for a bird as defined in the TBox. The texture appears smooth, potentially indicating feathers, further supporting the classification as a bird.
+----------------------------------------
+Query 2: Expected: [bird] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [brown, black, white] (Necessary condition)
+- cat ⊑ hasShape/Part [triangular ears, rounded body, tail] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, black, white]
+- hasShape/Part: [triangular ears, rounded body, tail]
+- hasTexture: [furry]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of brown, black, and white coloration (hasColor), triangular ears, a rounded body, and a tail (hasShape/Part), and a furry texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a cat. Therefore, based on the visual evidence, the image is classified as a cat.
+----------------------------------------
+Query 3: Expected: [bird] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>bird</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- bird ⊑ hasShape beak (Necessary condition)
+- bird ⊑ hasShape wings (Necessary condition)
+- bird ⊑ hasShape tail (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: black, white, grey
+- hasShape/Part: beak, wings, tail, body
+- hasTexture: smooth, feathery
+
+4. Logical Explanation (DL & NL):
+The image exhibits a distinct beak, wings, and tail, all of which are necessary conditions for classifying an entity as a bird. The presence of these shapes, combined with the observed smooth, feathery texture, aligns with the established axioms for birds. Therefore, the image is classified as a bird.
+----------------------------------------
+Query 4: Expected: [bird] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasShape [elongated body with rounded features] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+- cat ⊑ hasColor [varied, often including brown, black, white, and grey] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, blue, green, purple
+- hasShape/Part: elongated body, rounded head, curved tail-like feature
+- hasTexture: fuzzy, irregular
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated body with rounded features (hasShape), a fuzzy texture (hasTexture), and a mix of pink, blue, green, and purple colors (hasColor). These properties align with the necessary conditions defined for a cat in the TBox. While the colors are not typical, the overall shape and texture strongly suggest a feline form. Therefore, the image is classified as a cat.
+----------------------------------------
+Query 5: Expected: [bird] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasVisualFeature [elongated body with a pointed head] (Necessary condition)
+- hasVisualFeature [elongated body with a pointed head] ⊑ cat (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, purple, green, blue
+- hasShape/Part: elongated body, pointed head, curved tail, rounded base
+- hasTexture: fuzzy, irregular edges
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated body with a pointed head, a curved tail, and a rounded base, all of which align with the visual features associated with a cat. The presence of these features satisfies the sufficient condition for classifying the entity as a cat.
+----------------------------------------
+Query 6: Expected: [bird] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasShape elongatedHull (Necessary condition)
+- ship ⊑ hasColor blue (Necessary condition)
+- ship ⊑ hasPart mast (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue
+- hasShape/Part: elongatedHull
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated hull (hasShape elongatedHull) and a dominant blue color (hasColor blue). These properties are necessary conditions for a ship (ship ⊑ hasShape elongatedHull and ship ⊑ hasColor blue). The smooth texture further supports the classification as a ship. Therefore, based on the observed properties and the established axioms, the image is classified as a ship.
+----------------------------------------
+Query 7: Expected: [bird] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>bird</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- bird ⊑ hasShape beak (Necessary condition)
+- bird ⊑ hasShape wings (Necessary condition)
+- bird ⊑ hasColor [various colors] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, white, black
+- hasShape/Part: beak, wings, body
+- hasTexture: smooth, feathery
+
+4. Logical Explanation (DL & NL):
+The image exhibits a shape consistent with a bird, specifically featuring a beak and wings. The presence of these features (beak and wings) are necessary conditions for being a bird, as defined in the TBox. The observed colors (blue, white, black) are also consistent with a bird, further validating the classification. Therefore, based on the presence of beak, wings, and a general bird-like shape, the image is classified as a bird.
+----------------------------------------
+Query 8: Expected: [bird] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>bird</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- bird ⊑ hasShape [elongated body with wings] (Necessary condition)
+- bird ⊑ hasColor [varied, often includes blue/green] (Necessary condition)
+- hasShape [elongated body with wings] ⊑ bird (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, turquoise, white
+- hasShape/Part: elongated body, wings, pointed beak
+- hasTexture: smooth, feathery
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated body with wings (hasShape), and a color palette including blue and turquoise (hasColor). This satisfies the necessary conditions for a bird (bird ⊑ hasShape [elongated body with wings] and bird ⊑ hasColor [varied, often includes blue/green]). The presence of an elongated body with wings is sufficient to classify the entity as a bird (hasShape [elongated body with wings] ⊑ bird).
+----------------------------------------
+Query 9: Expected: [bird] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasShape [elongated body with a tail] (Necessary condition)
+- cat ⊑ hasShape [triangular ears] (Necessary condition)
+- cat ⊑ hasColor [varied, often including black, white, and grey] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, brown, yellow
+- hasShape/Part: elongated body, tail, triangular ears
+- hasTexture: smooth, slightly fuzzy
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated body with a tail and triangular ears (hasShape), which are necessary conditions for a cat. The presence of varied colors including blue, brown, and yellow (hasColor) aligns with the general color characteristics often observed in cats. Therefore, based on the observed shape and color, the entity is classified as a cat.
+----------------------------------------
+Query 10: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasShape/Part [hull] (Necessary condition)
+- ship ⊑ hasColor [blue, white] (Necessary condition)
+- ship ⊑ hasTexture [smooth] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, pink, purple]
+- hasShape/Part: [elongated hull, pointed bow, flat top]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a smooth texture and a distinct elongated hull shape, which are necessary conditions for a ship. The presence of blue and pink/purple colors, while not definitive, are consistent with ship appearances. The pointed bow further supports the classification as a ship. Therefore, based on the observed hull shape and texture, and validated by the color, the image is classified as a ship.
+----------------------------------------
+Query 11: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasColor [blue, white, yellow] (Necessary condition)
+- ship ⊑ hasShape/Part [elongated hull, pointed bow, defined stern] (Necessary condition)
+- ship ⊑ hasTexture [smooth, reflective] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, white, yellow]
+- hasShape/Part: [elongated hull, pointed bow, defined stern]
+- hasTexture: [smooth, reflective]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of blue, white, and yellow colors (hasColor), an elongated hull with a pointed bow and defined stern (hasShape/Part), and a smooth, reflective texture (hasTexture). These properties align with the necessary conditions defined in the TBox for a ship. Therefore, based on the observed visual features, the image is classified as a ship.
+----------------------------------------
+Query 12: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasShape/Part [hull] (Necessary condition)
+- ship ⊑ hasColor [blue, white] (Necessary condition)
+- ship ⊑ hasTexture [smooth] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, white, grey]
+- hasShape/Part: [hull, pointed bow, visible deck]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a hull (hasShape/Part), predominantly blue and white colors (hasColor), and a smooth texture (hasTexture). These properties align with the necessary conditions defined for a ship in the TBox. Therefore, the image is classified as a ship.
+----------------------------------------
+Query 13: Expected: [ship] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasShape [triangular ears] (Necessary condition)
+- cat ⊑ hasShape [elongated body] (Necessary condition)
+- cat ⊑ hasShape [rounded head] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, purple, blue, green
+- hasShape/Part: triangular ears, elongated body, rounded head
+- hasTexture: fuzzy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rounded head, triangular ears, and an elongated body. These features align with the necessary conditions defined in the TBox for a cat. The presence of these shapes and textures validates the classification as a cat.
+----------------------------------------
+Query 14: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasShape/Part [elongated hull] (Necessary condition)
+- ship ⊑ hasColor [blue, grey, white] (Necessary condition)
+- ship ⊑ hasTexture [smooth, reflective] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [grey, white, blue]
+- hasShape/Part: [elongated hull, distinct bow and stern, visible deck]
+- hasTexture: [smooth, reflective]
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated hull (hasShape/Part), predominantly grey, white, and blue (hasColor), with a smooth and reflective texture (hasTexture). These properties align with the necessary conditions defined for a ship in the TBox. The presence of a distinct bow and stern further supports the classification as a ship.
+----------------------------------------
+Query 15: Expected: [ship] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>bird</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- bird ⊑ hasShape [beak] (Necessary condition)
+- bird ⊑ hasShape [wings] (Necessary condition)
+- bird ⊑ hasColor [brown] (Necessary condition)
+- bird ⊑ hasColor [blue] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, brown, white]
+- hasShape/Part: [beak, wings, head]
+- hasTexture: [feathery]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a distinct beak and wings, which are necessary conditions for being a bird. The presence of brown, blue, and white coloration, combined with a feathery texture, further validates the classification. The observed shape and color properties satisfy the axioms defined for the bird class.
+----------------------------------------
+Query 16: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasShape [elongated hull] (Necessary condition)
+- ship ⊑ hasColor [blue, white] (Necessary condition)
+- ship ⊑ hasPart [mast] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, purple, pink]
+- hasShape/Part: [elongated hull, curved top, indistinct mast-like structure]
+- hasTexture: [smooth, slightly irregular]
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated hull (hasShape), predominantly blue and purple hues (hasColor), and a vaguely defined structure resembling a mast (hasPart). These properties align with the necessary conditions for a ship as defined in the TBox. While the colors aren't precisely "blue, white" as stated in the TBox, the presence of blue and a general elongated shape with a potential mast structure is sufficient to classify it as a ship.
+----------------------------------------
+Query 17: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasShape/Part [elongated hull] (Necessary condition)
+- ship ⊑ hasColor [blue, grey, white] (Necessary condition)
+- ship ⊑ hasTexture [smooth, reflective] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, grey, pink, white]
+- hasShape/Part: [elongated hull, vertical structure, curved edges]
+- hasTexture: [smooth, reflective]
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated hull (hasShape/Part), predominantly blue, grey, pink, and white colors (hasColor), and a smooth, reflective texture (hasTexture). These properties align with the necessary conditions defined for a ship in the TBox. The presence of an elongated hull, combined with the observed colors and texture, strongly suggests the entity is a ship.
+----------------------------------------
+Query 18: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasShape/Part [elongated hull] (Necessary condition)
+- ship ⊑ hasColor [blue, grey, white] (Necessary condition)
+- ship ⊑ hasTexture [smooth] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, grey, purple, white]
+- hasShape/Part: [elongated hull, pointed bow, visible deck]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated hull (hasShape/Part), predominantly blue, grey, purple, and white colors (hasColor), and a smooth texture (hasTexture). These properties align with the necessary conditions defined for a ship in the TBox. The presence of an elongated hull, combined with the observed colors and texture, strongly suggests the entity is a ship.
+----------------------------------------
+Query 19: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasShape [triangular ears] (Necessary condition)
+- cat ⊑ hasShape [rounded face] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, beige
+- hasShape/Part: triangular ears, rounded face, pointed nose
+- hasTexture: furry
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rounded face and triangular ears, which are necessary conditions for being a cat. The presence of a furry texture further validates this classification. Therefore, based on the observed properties, the image is classified as a cat.
+----------------------------------------
+Query 20: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [various colors] (Necessary condition)
+- cat ⊑ hasShape/Part [triangular ears, rounded head, whiskers] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [purple, pink, green, brown]
+- hasShape/Part: [triangular shape resembling ears, rounded head, indistinct facial features]
+- hasTexture: [appears furry]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of colors (purple, pink, green, brown) and a shape reminiscent of a cat's head with triangular features suggesting ears and a rounded head. The texture appears furry. These observed properties align with the necessary conditions defined in the TBox for a cat. While the colors are varied, the presence of the characteristic ear shape and furry texture strongly suggests the entity is a cat.
+----------------------------------------
+Query 21: Expected: [cat] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>bird</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- bird ⊑ hasShape/Part: wings (Necessary condition)
+- bird ⊑ hasColor: brown, white (Necessary condition)
+- bird ⊑ hasTexture: feathery (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, pink, green, blue
+- hasShape/Part: elongated body, wing-like structures
+- hasTexture: irregular, feathery-appearing
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated body and wing-like structures (hasShape/Part), along with a mix of brown, pink, green, and blue colors (hasColor). The texture appears irregular and feathery (hasTexture). These observed properties align with the necessary conditions for a bird as defined in the TBox: birds must have wings, exhibit brown and white coloration, and possess a feathery texture. Therefore, the image is classified as a bird.
+----------------------------------------
+Query 22: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasShape [feline form] (Necessary condition)
+- cat ⊑ hasColor [various shades of grey/black/white] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: grey, black, white
+- hasShape/Part: feline form, pointed ears, rounded head, tail
+- hasTexture: furry
+
+4. Logical Explanation (DL & NL):
+The image exhibits a feline form (hasShape), a combination of grey, black, and white coloration (hasColor), and a furry texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for classifying an entity as a cat. Therefore, based on the visual evidence, the entity is classified as a cat.
+----------------------------------------
+Query 23: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasShape [elongated body with a tail] (Necessary condition)
+- cat ⊑ hasShape [triangular ears] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, blue, green
+- hasShape/Part: elongated body, tail, triangular ears
+- hasTexture: furry
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated body with a tail and triangular ears, which are necessary conditions for a cat. The presence of a furry texture further validates this classification. Therefore, based on the observed shape and texture, the image is classified as a cat.
+----------------------------------------
+Query 24: Expected: [cat] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasColor [blue, white] (Necessary condition)
+- ship ⊑ hasShape/Part [elongated hull, pointed bow, visible mast] (Necessary condition)
+- ship ⊑ hasTexture [smooth, reflective surface] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, white]
+- hasShape/Part: [elongated hull, pointed bow, visible mast]
+- hasTexture: [smooth, reflective surface]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a blue and white color scheme (hasColor [blue, white]), an elongated hull with a pointed bow and a visible mast (hasShape/Part [elongated hull, pointed bow, visible mast]), and a smooth, reflective surface (hasTexture [smooth, reflective surface]). These properties align with the necessary conditions defined in the TBox for a ship. Therefore, the image is classified as a ship.
+----------------------------------------
+Query 25: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasShape [rounded form] (Necessary condition)
+- cat ⊑ hasShape [ear-like protrusions] (Necessary condition)
+- cat ⊑ hasColor [varied, often including brown, black, and white] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, purple, orange
+- hasShape/Part: rounded form, two ear-like protrusions
+- hasTexture: fuzzy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rounded form and two ear-like protrusions, which are necessary conditions for being a cat. The presence of green, purple, and orange coloration, while not definitive, is consistent with the varied color patterns often observed in cats. Therefore, based on the observed shape and partial color information, the image is classified as a cat.
+----------------------------------------
+Query 26: Expected: [cat] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasColor [blue, grey, white] (Necessary condition)
+- ship ⊑ hasShape/Part [elongated hull, pointed bow, visible mast] (Necessary condition)
+- ship ⊑ hasTexture [smooth, reflective surface] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, grey, white]
+- hasShape/Part: [elongated hull, curved shape, visible vertical structure resembling a mast]
+- hasTexture: [smooth, reflective surface]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly blue, grey, and white color scheme (satisfying hasColor [blue, grey, white]). It also displays an elongated hull with a curved shape and a visible vertical structure resembling a mast (satisfying hasShape/Part [elongated hull, curved shape, visible vertical structure resembling a mast]). The surface appears smooth and reflective (satisfying hasTexture [smooth, reflective surface]). These observed properties align with the necessary conditions defined for a ship in the TBox, therefore, the image is classified as a ship.
+----------------------------------------
+Query 27: Expected: [cat] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasShape/Part [elongated hull] (Necessary condition)
+- ship ⊑ hasColor [blue, white] (Necessary condition)
+- ship ⊑ hasTexture [smooth] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, purple, white]
+- hasShape/Part: [elongated hull, pointed bow, vertical structure]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated hull (hasShape/Part), predominantly blue and purple with white accents (hasColor), and a smooth texture (hasTexture). These properties align with the necessary conditions defined for a ship in the TBox. The presence of a pointed bow and a vertical structure further supports the classification as a ship.
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9): 0.5926
+
+--- CONFIG: N=4, K=1, Q=5 ---
+Query 1: Expected: [frog] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>horse</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- horse ⊑ hasColor brown
+- horse ⊑ hasShape/Part elongatedBody
+- horse ⊑ hasTexture smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, dark brown
+- hasShape/Part: elongatedBody, fourLegs, head
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly brown color (hasColor brown), an elongated body shape (hasShape/Part elongatedBody), and a smooth texture (hasTexture smooth). These properties align with the established axioms for a horse. Therefore, based on the observed properties and the defined axioms, the image is classified as a horse.
+----------------------------------------
+Query 2: Expected: [frog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>frog</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- frog ⊑ hasColor green, brown (Necessary condition)
+- frog ⊑ hasShape/Part rounded body, large eyes (Necessary condition)
+- frog ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, purple, blue
+- hasShape/Part: rounded body, irregular shape
+- hasTexture: smooth, mottled
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rounded body (hasShape/Part), a smooth texture (hasTexture), and a combination of green, purple, and blue colors (hasColor). These properties align with the necessary conditions defined in the TBox for a frog. While the specific color combination isn't explicitly defined, the presence of a rounded body and smooth texture, combined with the general color palette, strongly suggests the entity is a frog.
+----------------------------------------
+Query 3: Expected: [frog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>frog</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- frog ⊑ hasColor green, brown (Necessary condition)
+- frog ⊑ hasShape/Part rounded body, large eyes (Necessary condition)
+- frog ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, brown, purple
+- hasShape/Part: rounded body, large circular features resembling eyes
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rounded body (hasShape/Part), a smooth texture (hasTexture), and a combination of green, brown, and purple colors (hasColor). These observed properties align with the necessary conditions defined in the TBox for a frog. Specifically, the rounded body and large circular features resembling eyes strongly suggest a frog-like form, and the presence of green and brown colors are consistent with typical frog coloration. Therefore, based on these visual cues, the image is classified as a frog.
+----------------------------------------
+Query 4: Expected: [frog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>frog</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- frog ⊑ hasColor green
+- frog ⊑ hasShape/Part roundedBody
+- frog ⊑ hasTexture smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, purple, blue
+- hasShape/Part: roundedBody, irregularShape
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rounded body (hasShape/Part) and a predominantly green color (hasColor). While the colors are not exclusively green, the presence of green alongside a rounded body aligns with the necessary conditions for a frog as defined in the TBox. The smooth texture further supports this classification. Therefore, based on the observed properties, the image is classified as a frog.
+----------------------------------------
+Query 5: Expected: [frog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>frog</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- frog ⊑ hasColor green, brown (Necessary condition)
+- frog ⊑ hasShape/Part rounded body, large eyes (Necessary condition)
+- frog ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, purple, brown
+- hasShape/Part: rounded body, irregular shape
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rounded body (hasShape/Part), a smooth texture (hasTexture), and a combination of green, purple, and brown colors (hasColor). These properties align with the necessary conditions defined for a frog in the TBox. Therefore, the image is classified as a frog.
+----------------------------------------
+Query 6: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasWheelCount 4 (Necessary condition)
+- truck ⊑ hasShape [box-like shape] (Necessary condition)
+- truck ⊑ hasColor [various colors] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, white, black
+- hasShape/Part: box-like shape, wheels, cab
+- hasTexture: smooth, metallic
+
+4. Logical Explanation (DL & NL):
+The image exhibits a box-like shape (hasShape [box-like shape]), which is a necessary condition for a truck. It also displays wheels (hasShape/Part: wheels) and a cab, further supporting the truck classification. The presence of various colors (hasColor [various colors]) is also consistent with trucks. Therefore, based on these observed properties, the image is classified as a truck.
+----------------------------------------
+Query 7: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasColor [blue, grey, yellow] (Necessary condition)
+- truck ⊑ hasShape/Part [rectangular body, wheels, windows, cab] (Necessary condition)
+- truck ⊑ hasTexture [rough, metallic] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, grey, yellow]
+- hasShape/Part: [rectangular body, wheels, windows, cab]
+- hasTexture: [rough, metallic]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rectangular body, wheels, windows, and a cab, all while displaying blue, grey, and yellow colors and a rough, metallic texture. These observed properties (hasColor [blue, grey, yellow], hasShape/Part [rectangular body, wheels, windows, cab], hasTexture [rough, metallic]) satisfy the necessary conditions defined in the TBox for a truck. Therefore, the image is classified as a truck.
+----------------------------------------
+Query 8: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasColor [blue, red, green] (Necessary condition)
+- truck ⊑ hasShape/Part [rectangular body, wheels, windows] (Necessary condition)
+- truck ⊑ hasTexture [smooth, metallic] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, green, purple, red]
+- hasShape/Part: [rectangular body, wheels, windows, curved edges]
+- hasTexture: [smooth, slightly reflective]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rectangular body (hasShape/Part), wheels (hasShape/Part), and windows (hasShape/Part). It also displays a combination of blue, green, purple, and red colors (hasColor). These observed properties align with the necessary conditions defined in the TBox for a truck. The smooth and slightly reflective texture (hasTexture) further supports this classification. Therefore, based on the presence of these features, the image is classified as a truck.
+----------------------------------------
+Query 9: Expected: [truck] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasColor blue, gray (Necessary condition)
+- ship ⊑ hasShape hull, deck, mast (Necessary condition)
+- ship ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, gray
+- hasShape/Part: hull, deck, undefined structure resembling a mast
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly blue and gray color (hasColor blue, gray), a discernible hull and deck (hasShape hull, deck), and a smooth texture (hasTexture smooth). These observed properties align with the necessary conditions defined in the TBox for a ship (ship ⊑ hasColor blue, gray; ship ⊑ hasShape hull, deck; ship ⊑ hasTexture smooth). While the presence of a structure resembling a mast is not explicitly defined as sufficient, its presence further supports the classification as a ship.
+----------------------------------------
+Query 10: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasColor [red, blue, black] (Necessary condition)
+- truck ⊑ hasShape/Part [rectangular body, wheels, windows] (Necessary condition)
+- truck ⊑ hasTexture [rough, metallic] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [red, black, blue]
+- hasShape/Part: [rectangular body, wheels, windows, cab]
+- hasTexture: [rough, metallic]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rectangular body, wheels, windows, and a cab, all of which are necessary features for a truck (truck ⊑ hasShape/Part [rectangular body, wheels, windows, cab]). The observed colors (red, black, blue) are also consistent with the typical colors of a truck (truck ⊑ hasColor [red, blue, black]). The rough, metallic texture further supports the classification as a truck (truck ⊑ hasTexture [rough, metallic]). Therefore, based on the presence of these necessary features, the image is classified as a truck.
+----------------------------------------
+Query 11: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasColor blue, gray (Necessary condition)
+- ship ⊑ hasShape elongated hull (Necessary condition)
+- ship ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, gray, white
+- hasShape/Part: elongated hull, pointed bow, visible deck
+- hasTexture: smooth, reflective
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly blue and gray color (hasColor blue, gray), an elongated hull shape (hasShape elongated hull), and a smooth texture (hasTexture smooth). These observed properties align with the necessary conditions defined in the TBox for a ship. Therefore, the image is classified as a ship.
+----------------------------------------
+Query 12: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasColor [blue, white] (Necessary condition)
+- ship ⊑ hasShape/Part [elongated hull, mast, deck] (Necessary condition)
+- ship ⊑ hasTexture [smooth, reflective] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, white, grey]
+- hasShape/Part: [elongated hull, angled structure resembling a mast, flat surface]
+- hasTexture: [smooth, reflective]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly blue and white color scheme (hasColor [blue, white, grey]), an elongated hull shape with an angled structure resembling a mast (hasShape/Part [elongated hull, angled structure resembling a mast, flat surface]), and a smooth, reflective texture (hasTexture [smooth, reflective]). These properties align with the necessary conditions defined in the TBox for a ship (ship ⊑ hasColor [blue, white], ship ⊑ hasShape/Part [elongated hull, mast, deck], ship ⊑ hasTexture [smooth, reflective]). Therefore, the image is classified as a ship.
+----------------------------------------
+Query 13: Expected: [ship] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasRectangularBody (Necessary condition)
+- truck ⊑ hasWheels (Necessary condition)
+- truck ⊑ hasCab (Necessary condition)
+- hasRectangularBody ∧ hasWheels ∧ hasCab ⊑ truck (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: dark blue, light green, pink
+- hasShape/Part: rectangular body, wheels, cab-like structure, enclosed space
+- hasTexture: smooth, slightly blurred edges
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rectangular body (hasRectangularBody), wheels (hasWheels), and a cab-like structure (hasCab). These properties collectively satisfy the sufficient condition for a truck (hasRectangularBody ∧ hasWheels ∧ hasCab ⊑ truck). Therefore, the image is classified as a truck.
+----------------------------------------
+Query 14: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasColor blue, gray (Necessary condition)
+- ship ⊑ hasShape hull, mast (Necessary condition)
+- ship ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, gray, white
+- hasShape/Part: hull, elongated shape, pointed front
+- hasTexture: smooth, reflective surface
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly blue and gray color (hasColor blue, gray), a distinct hull and elongated shape (hasShape hull, elongated shape), and a smooth, reflective texture (hasTexture smooth). These observed properties align with the necessary conditions defined in the TBox for a ship (ship ⊑ hasColor blue, gray; ship ⊑ hasShape hull, mast; ship ⊑ hasTexture smooth). Therefore, based on these visual characteristics, the entity is classified as a ship.
+----------------------------------------
+Query 15: Expected: [ship] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasColor [blue, red, yellow] (Necessary condition)
+- truck ⊑ hasShape/Part [rectangular body, wheels, cab] (Necessary condition)
+- truck ⊑ hasTexture [rough, metallic] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, red, yellow]
+- hasShape/Part: [rectangular body, wheels, cab]
+- hasTexture: [rough, metallic]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rectangular body, wheels, and a cab, all while displaying blue, red, and yellow colors, and a rough, metallic texture. These observed properties (hasColor [blue, red, yellow], hasShape/Part [rectangular body, wheels, cab], hasTexture [rough, metallic]) satisfy the necessary conditions defined in the TBox for a truck. Therefore, the image is classified as a truck.
+----------------------------------------
+Query 16: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>horse</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- horse ⊑ hasFourLegs (Necessary condition)
+- horse ⊑ hasLongNeck (Necessary condition)
+- horse ⊑ hasHead (Necessary condition)
+- horse ⊑ hasBody (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, grey, blue
+- hasShape/Part: four legs, long neck, head, body
+- hasTexture: smooth, slightly fuzzy
+
+4. Logical Explanation (DL & NL):
+The image exhibits four legs, a long neck, a head, and a body. These properties are necessary conditions for a horse (horse ⊑ hasFourLegs, horse ⊑ hasLongNeck, horse ⊑ hasHead, horse ⊑ hasBody). The observed colors and texture are consistent with a typical horse appearance, further validating the classification.
+----------------------------------------
+Query 17: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>horse</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- horse ⊑ hasShape/Part [elongated body, four legs, head] (Necessary condition)
+- horse ⊑ hasColor [brown, black, white] (Necessary condition)
+- horse ⊑ hasTexture [smooth, fur-like] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, grey]
+- hasShape/Part: [elongated body, four legs, head, neck]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated body, four legs, and a head, which are necessary features for a horse (horse ⊑ hasShape/Part [elongated body, four legs, head]). The observed colors (blue and grey) are consistent with the possible colors of a horse (horse ⊑ hasColor [brown, black, white]). The smooth texture also aligns with the expected texture of a horse. Therefore, based on these observed properties, the image is classified as a horse.
+----------------------------------------
+Query 18: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>horse</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- horse ⊑ hasFourLegs (Necessary condition)
+- horse ⊑ hasBody (Necessary condition)
+- horse ⊑ hasHead (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, white
+- hasShape/Part: four legs, body, head, neck
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a four-legged entity with a distinct body, head, and neck. The presence of these features (four legs, body, head, neck) aligns with the necessary conditions for a horse as defined in the TBox. The observed colors and texture are consistent with a typical horse appearance, further validating the classification.
+----------------------------------------
+Query 19: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>horse</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- horse ⊑ hasFourLegs (Necessary condition)
+- horse ⊑ hasLongNeck (Necessary condition)
+- horse ⊑ hasBody (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: light blue, white
+- hasShape/Part: four legs, long neck, body, head
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a body, four legs, and a long neck (hasBody, hasFourLegs, hasLongNeck). These properties are necessary conditions for a horse. The observed color (light blue, white) does not contradict the horse classification. Therefore, based on the presence of these key features, the image is classified as a horse.
+----------------------------------------
+Query 20: Expected: [horse] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>ship</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- ship ⊑ hasShape/Part [elongated hull] (Necessary condition)
+- ship ⊑ hasColor [blue, grey] (Necessary condition)
+- ship ⊑ hasTexture [smooth] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, purple, black]
+- hasShape/Part: [elongated hull, pointed front, flat top]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated hull (hasShape/Part), predominantly blue and purple coloration (hasColor), and a smooth texture (hasTexture). These properties align with the necessary conditions defined for a ship in the TBox. The presence of an elongated hull, combined with the observed colors and texture, strongly suggests the entity is a ship.
+----------------------------------------
+-> FINAL ACCURACY for (4,1,5): 0.7500
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [deer] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>deer</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- deer ⊑ hasColor brown, tan (Necessary condition)
+- deer ⊑ hasShape elongatedBody, antlers (Necessary condition)
+- deer ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, tan, pink
+- hasShape/Part: elongatedBody, head, neck, legs
+- hasTexture: smooth, slightly fuzzy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly brown and tan coloration (hasColor), an elongated body shape (hasShape), and a smooth texture (hasTexture). These properties align with the necessary conditions defined for a deer in the TBox. While the pink coloration is not explicitly mentioned in the TBox, it doesn't contradict the established characteristics, and the overall shape and texture strongly suggest a deer. Therefore, based on the observed properties and their relation to the TBox axioms, the image is classified as a deer.
+----------------------------------------
+Query 2: Expected: [deer] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasShape [elongated body with pointed ears and tail] (Necessary condition)
+- cat ⊑ hasColor [varied, often including shades of grey, brown, black, or white] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, green, purple, pink]
+- hasShape/Part: [elongated body, pointed protrusions resembling ears, indistinct tail]
+- hasTexture: [appears furry, though somewhat obscured]
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated body shape with protrusions that resemble ears and a tail, which aligns with the necessary condition for a cat. The presence of a furry texture, though somewhat obscured, further supports this classification. The varied colors (blue, green, purple, pink) are consistent with the broad range of colors observed in cats, satisfying the necessary condition related to color. Therefore, based on the observed shape, texture, and color, the image is classified as a cat.
+----------------------------------------
+Query 3: Expected: [deer] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [various shades of blue, purple, pink] (Necessary condition)
+- cat ⊑ hasShape/Part [elongated body, pointed ears, small head] (Necessary condition)
+- cat ⊑ hasTexture [smooth, somewhat fuzzy] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: shades of blue, purple, pink, green
+- hasShape/Part: elongated body, pointed ears, small head, curved tail
+- hasTexture: smooth, slightly fuzzy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of colors (shades of blue, purple, pink, and green) and shapes (elongated body, pointed ears, small head, curved tail) consistent with the necessary conditions for a cat as defined in the TBox. The observed texture, which is smooth and slightly fuzzy, further validates the classification. Therefore, based on the observed properties matching the axioms, the image is classified as a cat.
+----------------------------------------
+Query 4: Expected: [deer] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>deer</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- deer ⊑ hasShape/Part [antlers] (Necessary condition)
+- deer ⊑ hasColor [brown, white] (Necessary condition)
+- deer ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, white, green]
+- hasShape/Part: [antlers, elongated body, legs]
+- hasTexture: [furry]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a shape resembling an elongated body with legs and, crucially, antlers. The presence of antlers (hasShape/Part [antlers]) is a necessary condition for a deer (deer ⊑ hasShape/Part [antlers]). The observed colors (brown, white, green) and furry texture (hasTexture [furry]) further validate the classification, aligning with the necessary conditions for a deer. Therefore, based on the observed features, the image is classified as a deer.
+----------------------------------------
+Query 5: Expected: [deer] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [various colors] (Necessary condition)
+- cat ⊑ hasShape/Part [elongated body, pointed ears, tail] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [green, purple, black, white]
+- hasShape/Part: [elongated body, pointed ears, tail, curved lines]
+- hasTexture: [furry]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a furry texture (hasTexture: furry), an elongated body with pointed ears and a tail (hasShape/Part: elongated body, pointed ears, tail, curved lines), and a variety of colors including green, purple, black, and white (hasColor: [green, purple, black, white]). These observed properties align with the necessary conditions for a cat as defined in the TBox. Therefore, the image is classified as a cat.
+----------------------------------------
+Query 6: Expected: [deer] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasShape/Part [triangular ears] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+- cat ⊑ hasColor [varied, often including grey, black, white, or brown] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [purple, blue, red, green]
+- hasShape/Part: [triangular shapes resembling ears, elongated body]
+- hasTexture: [appears somewhat fuzzy/textured]
+
+4. Logical Explanation (DL & NL):
+The image exhibits triangular shapes that resemble ears, an elongated body, and a fuzzy texture. These properties align with the necessary conditions for a cat as defined in the TBox. The presence of these features, particularly the ear-like shapes and texture, strongly suggests the image depicts a cat.
+----------------------------------------
+Query 7: Expected: [deer] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [various shades of blue, purple, and green] (Necessary condition)
+- cat ⊑ hasShape/Part [elongated body, pointed ears, small head] (Necessary condition)
+- cat ⊑ hasTexture [fuzzy, irregular edges] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: shades of blue, purple, green, and pink
+- hasShape/Part: elongated body, rounded head, small, pointed features
+- hasTexture: fuzzy, irregular edges, somewhat amorphous
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of colors (blue, purple, green, pink) and a shape with an elongated body, a rounded head, and small, pointed features. It also displays a fuzzy texture with irregular edges. These observed properties align with the necessary conditions defined in the TBox for a cat. Therefore, based on the visual evidence, the image is classified as a cat.
+----------------------------------------
+Query 8: Expected: [deer] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasShape [triangular ears] (Necessary condition)
+- cat ⊑ hasShape [elongated body] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+- cat ⊑ hasColor [various shades of brown/grey] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, grey, purple
+- hasShape/Part: triangular ears, elongated body, rounded head, short tail
+- hasTexture: furry
+
+4. Logical Explanation (DL & NL):
+The image exhibits a furry texture, a rounded head, triangular ears, and an elongated body. These properties align with the necessary conditions defined for a cat in the TBox. The observed colors (brown, grey, purple) are also consistent with the expected color range for a cat. Therefore, based on these visual characteristics, the image is classified as a cat.
+----------------------------------------
+Query 9: Expected: [deer] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasColor [brown, grey] (Necessary condition)
+- truck ⊑ hasShape/Part [rectangular body, wheels, windows] (Necessary condition)
+- truck ⊑ hasTexture [rough] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, grey, white]
+- hasShape/Part: [rectangular body, wheels, windows, cab]
+- hasTexture: [rough]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rectangular body, wheels, windows, and a cab, all of which are necessary features for a truck. The observed colors (brown, grey, white) are also consistent with typical truck colors. Therefore, based on the presence of these necessary features and the observed colors, the image is classified as a truck.
+----------------------------------------
+Query 10: Expected: [horse] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasShape/Part [rectangular body] (Necessary condition)
+- truck ⊑ hasColor [gray, black, white] (Necessary condition)
+- truck ⊑ hasShape/Part [wheels] (Necessary condition)
+- truck ⊑ hasShape/Part [windows] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [gray, black, white]
+- hasShape/Part: [rectangular body, wheels, windows]
+- hasTexture: [smooth, metallic]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rectangular body, wheels, and windows, all of which are necessary conditions for a truck. The observed colors (gray, black, white) are also consistent with typical truck colors. Therefore, based on the presence of these features, the image is classified as a truck.
+----------------------------------------
+Query 11: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- horse ⊑ hasShape/Part [elongated body, four legs, head with ears] (Necessary condition)
+- horse ⊑ hasColor [brown, black, white] (Necessary condition)
+- horse ⊑ hasTexture [smooth, fur-like] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, grey, purple]
+- hasShape/Part: [elongated body, four legs, head with prominent ears, long neck]
+- hasTexture: [smooth, slightly fuzzy]
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated body, four legs, a head with prominent ears, and a long neck (hasShape/Part). It also displays a combination of brown, grey, and purple hues (hasColor) with a smooth, slightly fuzzy texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a horse. Therefore, based on the visual evidence, the image is classified as a horse.
+----------------------------------------
+Query 12: Expected: [horse] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasShape/Part [rounded ears, pointed nose, whiskers] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+- cat ⊑ hasColor [varied, often including black, white, grey, brown] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: grey, white, black
+- hasShape/Part: rounded ears, pointed nose, indistinct whiskers
+- hasTexture: furry
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of grey, white, and black coloration (hasColor), along with discernible rounded ears and a pointed nose (hasShape/Part). The presence of a furry texture (hasTexture) further supports the classification. These observed properties align with the necessary conditions defined in the TBox for a cat. While the whiskers are indistinct, the other features are sufficient to classify the image as a cat.
+----------------------------------------
+Query 13: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- horse ⊑ hasVisualFeature [elongated body with four legs] (Necessary condition)
+- hasVisualFeature [elongated body with four legs] ⊑ horse (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, green, purple
+- hasShape/Part: elongated body, four legs, head, tail
+- hasTexture: smooth, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated body and four legs (hasShape/Part), which satisfies the TBox condition for a horse. The presence of these features, combined with the observed colors and texture, validates the classification as a horse.
+----------------------------------------
+Query 14: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>horse</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- horse ⊑ hasShape/Part [elongated body, four legs, head with ears] (Necessary condition)
+- horse ⊑ hasColor [brown, black, white] (Necessary condition)
+- horse ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, tan, white]
+- hasShape/Part: [elongated body, four legs, head with prominent ears, long neck]
+- hasTexture: [furry]
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated body, four legs, a head with prominent ears, and a long neck (hasShape/Part). It also displays brown, tan, and white coloration (hasColor) and a furry texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a horse. Therefore, based on the visual evidence, the entity is classified as a horse.
+----------------------------------------
+Query 15: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>horse</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- horse ⊑ hasShape/Part [elongated body, four legs, head with ears] (Necessary condition)
+- horse ⊑ hasColor [brown, black, white] (Necessary condition)
+- horse ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [gray, white]
+- hasShape/Part: [elongated body, four legs, head with prominent ears, long neck]
+- hasTexture: [appears furry]
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated body, four legs, a head with prominent ears, and a long neck (hasShape/Part). It also displays gray and white coloration (hasColor) and a furry texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a horse. Therefore, the image is classified as a horse.
+----------------------------------------
+Query 16: Expected: [horse] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasShape/Part [triangular ears] (Necessary condition)
+- cat ⊑ hasShape/Part [rounded body] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, brown, purple
+- hasShape/Part: triangular ears, rounded body, small nose, whiskers
+- hasTexture: furry
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rounded body and triangular ears, which are necessary conditions for being a cat. The presence of a furry texture further validates this classification. Therefore, based on the observed properties and the established axioms, the image is classified as a cat.
+----------------------------------------
+Query 17: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- horse ⊑ hasShape/Part [elongated body, four legs, head with ears] (Necessary condition)
+- horse ⊑ hasColor [brown, black, grey] (Necessary condition)
+- horse ⊑ hasTexture [smooth, fur-like] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, black]
+- hasShape/Part: [elongated body, four legs, head with ears]
+- hasTexture: [smooth, fur-like]
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated body, four legs, a head with ears, and a smooth, fur-like texture, all of which are necessary conditions for a horse. The observed colors (brown and black) are also consistent with horses. Therefore, based on these observed properties and the established axioms, the image is classified as a horse.
+----------------------------------------
+Query 18: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- horse ⊑ hasColor brown, black, white (Necessary condition)
+- horse ⊑ hasShape/Part elongatedBody, fourLegs, head (Necessary condition)
+- horse ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, pink, blue
+- hasShape/Part: elongatedBody, fourLegs, head, curvedNeck
+- hasTexture: smooth, irregular
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated body, four legs, and a head, which are necessary conditions for a horse. The presence of brown, pink, and blue colors, combined with a smooth texture and a curved neck, aligns with the general visual characteristics associated with horses as observed in the few-shot examples. While the colors are not a strict definition, they validate the overall shape and structure, leading to the classification of "horse."
+----------------------------------------
+Query 19: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasShape/Part [rectangular body, cab, wheels] (Necessary condition)
+- truck ⊑ hasColor [various colors] (Necessary condition)
+- truck ⊑ hasTexture [rough, metallic] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, purple, green, yellow]
+- hasShape/Part: [rectangular body, cab, wheels, windows]
+- hasTexture: [rough, metallic]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rectangular body, a distinct cab area, and wheels, all of which are necessary components of a truck (as defined by the TBox). The observed colors (blue, purple, green, yellow) and rough, metallic texture are consistent with the general characteristics of a truck, further validating the classification. The presence of a cab and windows further reinforces the identification as a truck.
+----------------------------------------
+Query 20: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasShape/Part [rectangular body] (Necessary condition)
+- truck ⊑ hasColor [various colors] (Necessary condition)
+- truck ⊑ hasTexture [smooth surface] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, pink, white]
+- hasShape/Part: [rectangular body, wheels, windows, cab]
+- hasTexture: [smooth surface]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rectangular body (hasShape/Part), a smooth surface (hasTexture), and a variety of colors (hasColor). These properties align with the necessary conditions defined for a truck in the TBox. Therefore, the image is classified as a truck.
+----------------------------------------
+Query 21: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasShape/Part [rectangular body] (Necessary condition)
+- truck ⊑ hasColor [various colors] (Necessary condition)
+- truck ⊑ hasTexture [smooth, metallic] (Necessary condition)
+- hasShape/Part [rectangular body] ⊑ truck (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, black, silver]
+- hasShape/Part: [rectangular body, wheels, windows, cab]
+- hasTexture: [smooth, metallic]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rectangular body (hasShape/Part), various colors including blue, black, and silver (hasColor), and a smooth, metallic texture (hasTexture). These properties align with the TBox axioms defining a truck. The presence of a rectangular body is a sufficient condition for classifying the entity as a truck. The observed colors and texture further validate this classification.
+----------------------------------------
+Query 22: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasColor [blue, white] (Necessary condition)
+- truck ⊑ hasShape/Part [rectangular body, wheels, windows] (Necessary condition)
+- truck ⊑ hasTexture [smooth, metallic] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, white, grey]
+- hasShape/Part: [rectangular body, wheels, windows, grill]
+- hasTexture: [smooth, metallic]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rectangular body, wheels, windows, and a grill, all of which are necessary features for a truck (truck ⊑ hasShape/Part [rectangular body, wheels, windows, grill]). The observed colors (blue, white, grey) are consistent with typical truck colors (truck ⊑ hasColor [blue, white]). The smooth, metallic texture further supports the classification as a truck (truck ⊑ hasTexture [smooth, metallic]). Therefore, the combination of these observed properties satisfies the necessary conditions for classifying the entity as a truck.
+----------------------------------------
+Query 23: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasShape/Part [rectangular body, wheels, windows] (Necessary condition)
+- truck ⊑ hasColor [various colors] (Necessary condition)
+- truck ⊑ hasTexture [smooth, possibly metallic] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, green, pink, purple]
+- hasShape/Part: [rectangular body, wheels, windows]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rectangular body, wheels, and windows (hasShape/Part), and displays a variety of colors (hasColor). These properties align with the necessary conditions defined for a truck in the TBox. Therefore, based on the observed features, the image is classified as a truck.
+----------------------------------------
+Query 24: Expected: [truck] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- horse ⊑ hasVisualFeature [elongated body shape] (Necessary condition)
+- horse ⊑ hasVisualFeature [four legs] (Necessary condition)
+- horse ⊑ hasVisualFeature [head with ears] (Necessary condition)
+- hasVisualFeature [elongated body shape] ∧ hasVisualFeature [four legs] ∧ hasVisualFeature [head with ears] ⊑ horse (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, grey, purple
+- hasShape/Part: elongated body, four legs, head with prominent ears, tail
+- hasTexture: smooth, slightly blurred edges
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated body shape, four legs, and a head with prominent ears. These features align with the necessary conditions for a horse as defined in the TBox. The combination of these features satisfies the sufficient condition, leading to the classification of the image as a horse.
+----------------------------------------
+Query 25: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasShape/Part [rectangular body] (Necessary condition)
+- truck ⊑ hasColor [various colors] (Necessary condition)
+- truck ⊑ hasTexture [rough surface] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [green, red, white, purple]
+- hasShape/Part: [rectangular body, prominent front section, enclosed space]
+- hasTexture: [rough surface, irregular edges]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rectangular body (hasShape/Part), a variety of colors including green, red, and white (hasColor), and a rough surface texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a truck. The presence of a rectangular body and enclosed space strongly suggests a vehicle, and the combination of these features, along with the observed colors and texture, leads to the classification as a truck.
+----------------------------------------
+Query 26: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasColor [blue, white] (Necessary condition)
+- truck ⊑ hasShape/Part [rectangular body, wheels, windows] (Necessary condition)
+- truck ⊑ hasTexture [smooth, metallic] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, white, grey]
+- hasShape/Part: [rectangular body, wheels, windows, cab]
+- hasTexture: [smooth, metallic]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rectangular body, wheels, windows, and a cab, all of which are necessary features for a truck (truck ⊑ hasShape/Part [rectangular body, wheels, windows, cab]). The observed colors (blue, white, grey) are consistent with typical truck colors (truck ⊑ hasColor [blue, white]). The smooth, metallic texture further supports the classification as a truck (truck ⊑ hasTexture [smooth, metallic]). Therefore, based on the presence of these necessary features, the image is classified as a truck.
+----------------------------------------
+Query 27: Expected: [truck] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [various colors] (Necessary condition)
+- cat ⊑ hasShape/Part [rounded shape, pointed ears] (Necessary condition)
+- cat ⊑ hasTexture [furry texture] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, green, pink, blue
+- hasShape/Part: rounded shape, triangular ears, elongated body
+- hasTexture: furry texture
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rounded shape, triangular ears, and a furry texture. These properties align with the necessary conditions defined in the TBox for a cat. The presence of various colors (purple, green, pink, blue) is also consistent with the general characteristics of cats, as they can exhibit a wide range of colors. Therefore, based on the observed properties and the established axioms, the image is classified as a cat.
+----------------------------------------
+Query 28: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasShape/Part [triangular ears] (Necessary condition)
+- cat ⊑ hasShape/Part [elongated body] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, brown, pink
+- hasShape/Part: triangular ears, elongated body, rounded head
+- hasTexture: furry
+
+4. Logical Explanation (DL & NL):
+The image exhibits a furry texture, a rounded head, and triangular ears, and an elongated body. These properties align with the necessary conditions defined in the TBox for a cat. Therefore, the image is classified as a cat.
+----------------------------------------
+Query 29: Expected: [cat] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- truck ⊑ hasShape/Part [rectangular body] (Necessary condition)
+- truck ⊑ hasColor [various colors] (Necessary condition)
+- truck ⊑ hasTexture [rough surface] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [orange, brown, white]
+- hasShape/Part: [rectangular body, wheels, cab]
+- hasTexture: [rough surface]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rectangular body (hasShape/Part), a variety of colors including orange, brown, and white (hasColor), and a rough surface texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a truck. Therefore, the image is classified as a truck.
+----------------------------------------
+Query 30: Expected: [cat] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>deer</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- deer ⊑ hasVisualFeature [elongated body shape] (Necessary condition)
+- deer ⊑ hasVisualFeature [distinct head and neck] (Necessary condition)
+- deer ⊑ hasVisualFeature [four legs] (Necessary condition)
+- hasVisualFeature [elongated body shape] ⊑ deer (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, purple
+- hasShape/Part: elongated body, distinct head, neck, four legs, pointed ears
+- hasTexture: smooth, undefined
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated body shape, a distinct head and neck, and four legs. These visual features align with the necessary conditions for a deer as defined in the TBox. The presence of an elongated body shape is also a sufficient condition for classifying the entity as a deer. Therefore, based on these observed properties, the image is classified as a deer.
+----------------------------------------
+Query 31: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasShape/Part [rounded ears] (Necessary condition)
+- cat ⊑ hasShape/Part [whiskers] (Necessary condition)
+- cat ⊑ hasColor [yellowish-green] (Necessary condition)
+- cat ⊑ hasShape/Part [oval face] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: yellowish-green, purple
+- hasShape/Part: rounded ears, oval face, small nose
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a yellowish-green color (cat ⊑ hasColor [yellowish-green]), rounded ears (cat ⊑ hasShape/Part [rounded ears]), an oval face (cat ⊑ hasShape/Part [oval face]), and a smooth texture. These properties collectively satisfy the necessary conditions for a cat, leading to the classification.
+----------------------------------------
+Query 32: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasShape/Part: pointy ears
+- cat ⊑ hasShape/Part: elongated body
+- cat ⊑ hasShape/Part: tail
+- cat ⊑ hasColor: various shades of grey/black
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: dark grey, purple
+- hasShape/Part: pointy ears, elongated body, short tail
+- hasTexture: smooth, somewhat fuzzy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark grey/purple coloration (hasColor) and possesses pointy ears, an elongated body, and a short tail (hasShape/Part). These observed properties align with the TBox axioms defining a cat. The presence of pointy ears, an elongated body, and a tail, combined with the dark grey/purple coloration, are sufficient to classify the entity as a cat.
+----------------------------------------
+Query 33: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasColor [various shades of brown, grey, and white] (Necessary condition)
+- cat ⊑ hasShape/Part [triangular ears, rounded head, elongated body] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, blue, brown
+- hasShape/Part: rounded head, elongated body, pointed ears
+- hasTexture: furry
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rounded head, elongated body, and pointed ears (hasShape/Part), along with a furry texture (hasTexture) and a mix of purple, blue, and brown colors (hasColor). These observed properties align with the necessary conditions defined in the TBox for a cat. Therefore, the image is classified as a cat.
+----------------------------------------
+Query 34: Expected: [cat] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- horse ⊑ hasColor brown, gray, black (Necessary condition)
+- horse ⊑ hasShape longLegs, elongatedBody, headWithEars (Necessary condition)
+- horse ⊑ hasTexture smoothFur (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, purple, blue
+- hasShape/Part: elongatedBody, headWithEars, longLegs
+- hasTexture: smoothFur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a body with elongated features, a head with ears, and long legs. The observed colors (brown, purple, blue) are consistent with the color range associated with horses. The smooth fur texture further supports the classification. Therefore, based on the presence of these features, the image is classified as a horse.
+----------------------------------------
+Query 35: Expected: [cat] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- horse ⊑ hasColor brown, tan (Necessary condition)
+- horse ⊑ hasShape/Part fourLegs, head, neck (Necessary condition)
+- horse ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, tan, pink
+- hasShape/Part: fourLegs, head, neck, elongatedBody
+- hasTexture: smooth, slightly rough
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dominant color palette of brown and tan, alongside the presence of four legs, a head, and a neck. These properties align with the necessary conditions defined for a horse in the TBox. The smooth texture further validates the classification. Therefore, based on the observed properties and their relationship to the established axioms, the image is classified as a horse.
+----------------------------------------
+Query 36: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- cat ⊑ hasShape/Part [triangular ears] (Necessary condition)
+- cat ⊑ hasShape/Part [elongated body] (Necessary condition)
+- cat ⊑ hasTexture [furry] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, purple, brown
+- hasShape/Part: triangular shapes resembling ears, elongated body, curved lines
+- hasTexture: fuzzy, irregular
+
+4. Logical Explanation (DL & NL):
+The image exhibits a fuzzy texture and elongated body, which are necessary conditions for a cat. The presence of triangular shapes resembling ears further supports the classification. Therefore, based on the observed properties and the established axioms, the image is classified as a cat.
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.5556

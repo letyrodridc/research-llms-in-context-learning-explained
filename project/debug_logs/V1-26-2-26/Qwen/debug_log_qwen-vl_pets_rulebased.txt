@@ -1,0 +1,1700 @@
+=== DEBUG LOG: qwen-vl | pets | Prompt: rulebased ===
+
+--- CONFIG: N=2, K=2, Q=5 ---
+Query 1: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Bombay
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Bombay.
+<response>Bombay</response>
+----------------------------------------
+Query 2: Expected: [Bombay] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN American Bulldog
+Rule Check:
+- The Target Image contains the exact features specified in the rule for American Bulldog.
+<response>American Bulldog</response>
+----------------------------------------
+Query 3: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Bombay
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Bombay.
+<response>Bombay</response>
+----------------------------------------
+Query 4: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Bombay
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Bombay.
+<response>Bombay</response>
+----------------------------------------
+Query 5: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Bombay
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Bombay.
+<response>Bombay</response>
+----------------------------------------
+Query 6: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN American Bulldog
+Rule Check:
+- The Target Image contains the exact features specified in the rule for American Bulldog.
+<response>American Bulldog</response>
+----------------------------------------
+Query 7: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN American Bulldog
+Rule Check:
+- The Target Image contains the exact features specified in the rule for American Bulldog.
+<response>American Bulldog</response>
+----------------------------------------
+Query 8: Expected: [American Bulldog] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Bombay
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Bombay.
+<response>Bombay</response>
+----------------------------------------
+Query 9: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN American Bulldog
+Rule Check:
+- The Target Image contains the exact features specified in the rule for American Bulldog.
+<response>American Bulldog</response>
+----------------------------------------
+Query 10: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN American Bulldog
+Rule Check:
+- The Target Image contains the exact features specified in the rule for American Bulldog.
+<response>American Bulldog</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,5): 0.8000
+
+--- CONFIG: N=2, K=2, Q=8 ---
+Query 1: Expected: [English Setter] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN German Shorthaired
+Rule Check:
+- The Target Image contains the exact features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 2: Expected: [English Setter] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN German Shorthaired
+Rule Check:
+- The Target Image contains the exact features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 3: Expected: [English Setter] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN German Shorthaired
+Rule Check:
+- The Target Image contains the exact features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 4: Expected: [English Setter] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN German Shorthaired
+Rule Check:
+- The Target Image contains the exact features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 5: Expected: [English Setter] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN German Shorthaired
+Rule Check:
+- The Target Image contains the exact features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 6: Expected: [English Setter] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN German Shorthaired
+Rule Check:
+- The Target Image contains the exact features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 7: Expected: [English Setter] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN German Shorthaired
+Rule Check:
+- The Target Image contains the exact features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 8: Expected: [English Setter] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN German Shorthaired
+Rule Check:
+- The Target Image contains the exact features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 9: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN German Shorthaired
+Rule Check:
+- The Target Image contains the exact features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 10: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN German Shorthaired
+Rule Check:
+- The Target Image contains the exact features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 11: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN German Shorthaired
+Rule Check:
+- The Target Image contains the exact features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 12: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN German Shorthaired
+Rule Check:
+- The Target Image contains the exact features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 13: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN German Shorthaired
+Rule Check:
+- The Target Image contains the exact features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 14: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN German Shorthaired
+Rule Check:
+- The Target Image contains the exact features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 15: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN German Shorthaired
+Rule Check:
+- The Target Image contains the exact features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 16: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN German Shorthaired
+Rule Check:
+- The Target Image contains the exact features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,8): 0.5000
+
+--- CONFIG: N=2, K=1, Q=5 ---
+Query 1: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Japanese Chin
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 2: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Japanese Chin
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 3: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Japanese Chin
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 4: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Japanese Chin
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 5: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Japanese Chin
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 6: Expected: [British Shorthair] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN British Shorthair
+Rule Check:
+- The Target Image contains the exact features specified in the rule for British Shorthair.
+<response>British Shorthair</response>
+----------------------------------------
+Query 7: Expected: [British Shorthair] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Japanese Chin
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 8: Expected: [British Shorthair] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN British Shorthair
+Rule Check:
+- The Target Image contains the exact features specified in the rule for British Shorthair.
+<response>British Shorthair</response>
+----------------------------------------
+Query 9: Expected: [British Shorthair] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN British Shorthair
+Rule Check:
+- The Target Image contains the exact features specified in the rule for British Shorthair.
+<response>British Shorthair</response>
+----------------------------------------
+Query 10: Expected: [British Shorthair] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN British Shorthair
+Rule Check:
+- The Target Image contains the exact features specified in the rule for British Shorthair.
+<response>British Shorthair</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,5): 0.9000
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Samoyed
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Samoyed.
+<response>Samoyed</response>
+----------------------------------------
+Query 2: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Samoyed
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Samoyed.
+<response>Samoyed</response>
+----------------------------------------
+Query 3: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Samoyed
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Samoyed.
+<response>Samoyed</response>
+----------------------------------------
+Query 4: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Staffordshire Bull Terrier]
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Samoyed]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for both Staffordshire Bull Terrier and Samoyed.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 5: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Staffordshire Bull Terrier]
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Samoyed]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Staffordshire Bull Terrier.
+- The Target Image does not contain the exact features specified in the rule for Samoyed.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 6: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Samoyed
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Samoyed.
+<response>Samoyed</response>
+----------------------------------------
+Query 7: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Samoyed
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Samoyed.
+<response>Samoyed</response>
+----------------------------------------
+Query 8: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Samoyed
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Samoyed.
+<response>Samoyed</response>
+----------------------------------------
+Query 9: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Samoyed
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Samoyed.
+<response>Samoyed</response>
+----------------------------------------
+Query 10: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 11: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 12: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 13: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 14: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 15: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 16: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 17: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 18: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9): 0.8889
+
+--- CONFIG: N=3, K=1, Q=5 ---
+Query 1: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Japanese Chin
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 2: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Japanese Chin
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 3: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Japanese Chin
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 4: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Japanese Chin
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 5: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 6: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 7: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 8: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 9: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 10: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 11: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Persian
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Persian.
+<response>Persian</response>
+----------------------------------------
+Query 12: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Persian
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Persian.
+<response>Persian</response>
+----------------------------------------
+Query 13: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Persian
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Persian.
+<response>Persian</response>
+----------------------------------------
+Query 14: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Persian
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Persian.
+<response>Persian</response>
+----------------------------------------
+Query 15: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Persian
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Persian.
+<response>Persian</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,5): 0.6000
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [Pomeranian] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 2: Expected: [Pomeranian] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 3: Expected: [Pomeranian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Pomeranian
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Pomeranian.
+<response>Pomeranian</response>
+----------------------------------------
+Query 4: Expected: [Pomeranian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Pomeranian
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Pomeranian.
+<response>Pomeranian</response>
+----------------------------------------
+Query 5: Expected: [Pomeranian] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 6: Expected: [Pomeranian] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 7: Expected: [Pomeranian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Pomeranian
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Pomeranian.
+<response>Pomeranian</response>
+----------------------------------------
+Query 8: Expected: [Pomeranian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Pomeranian
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Pomeranian.
+<response>Pomeranian</response>
+----------------------------------------
+Query 9: Expected: [Pomeranian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Pomeranian
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Pomeranian.
+<response>Pomeranian</response>
+----------------------------------------
+Query 10: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 11: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Japanese Chin
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 12: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 13: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Japanese Chin
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 14: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 15: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Pomeranian
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Pomeranian.
+<response>Pomeranian</response>
+----------------------------------------
+Query 16: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 17: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 18: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 19: Expected: [Wheaten Terrier] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 20: Expected: [Wheaten Terrier] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 21: Expected: [Wheaten Terrier] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 22: Expected: [Wheaten Terrier] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 23: Expected: [Wheaten Terrier] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 24: Expected: [Wheaten Terrier] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 25: Expected: [Wheaten Terrier] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 26: Expected: [Wheaten Terrier] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 27: Expected: [Wheaten Terrier] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9): 0.2593
+
+--- CONFIG: N=4, K=1, Q=5 ---
+Query 1: Expected: [Pug] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 2: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Pug
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Pug.
+<response>Pug</response>
+----------------------------------------
+Query 3: Expected: [Pug] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 4: Expected: [Pug] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 5: Expected: [Pug] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 6: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Persian
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Persian.
+<response>Persian</response>
+----------------------------------------
+Query 7: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Persian
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Persian.
+<response>Persian</response>
+----------------------------------------
+Query 8: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Persian
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Persian.
+<response>Persian</response>
+----------------------------------------
+Query 9: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Persian
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Persian.
+<response>Persian</response>
+----------------------------------------
+Query 10: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Persian
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Persian.
+<response>Persian</response>
+----------------------------------------
+Query 11: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN German Shorthaired
+Rule Check:
+- The Target Image contains the exact features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 12: Expected: [German Shorthaired] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 13: Expected: [German Shorthaired] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 14: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN German Shorthaired
+Rule Check:
+- The Target Image contains the exact features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 15: Expected: [German Shorthaired] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 16: Expected: [Boxer] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 17: Expected: [Boxer] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 18: Expected: [Boxer] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Boxer
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Boxer.
+<response>Boxer</response>
+----------------------------------------
+Query 19: Expected: [Boxer] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 20: Expected: [Boxer] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Boxer
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Boxer.
+<response>Boxer</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,5): 0.5000
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [Staffordshire Bull Terrier] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 2: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Available class]
+Rule Check:
+- [Step-by-step reasoning]
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 3: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- [Step-by-step reasoning]
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 4: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 5: Expected: [Staffordshire Bull Terrier] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Available class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Available class].
+<response>[Available class]</response>
+----------------------------------------
+Query 6: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 7: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Staffordshire Bull Terrier]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 8: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Available class]
+Rule Check:
+- [Step-by-step reasoning]
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 9: Expected: [Staffordshire Bull Terrier] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 10: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 11: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Available class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Available class].
+<response>[Available class]</response>
+----------------------------------------
+Query 12: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Japanese Chin
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 13: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Japanese Chin
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 14: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Available class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Available class].
+<response>[Available class]</response>
+----------------------------------------
+Query 15: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Available class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Available class].
+<response>[Available class]</response>
+----------------------------------------
+Query 16: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Japanese Chin
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 17: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 18: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Available class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Available class].
+<response>[Available class]</response>
+----------------------------------------
+Query 19: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- [Step-by-step reasoning]
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 20: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Available class]
+Rule Check:
+- [Step-by-step reasoning]
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 21: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Available class]
+Rule Check:
+- [Step-by-step reasoning]
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 22: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Available class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Available class].
+<response>[Available class]</response>
+----------------------------------------
+Query 23: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 24: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Available class]
+Rule Check:
+- [Step-by-step reasoning]
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 25: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 26: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Available class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Available class].
+<response>[Available class]</response>
+----------------------------------------
+Query 27: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 28: Expected: [Bombay] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Available class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Available class].
+<response>[Available class]</response>
+----------------------------------------
+Query 29: Expected: [Bombay] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 30: Expected: [Bombay] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 31: Expected: [Bombay] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Available class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Available class].
+<response>[Available class]</response>
+----------------------------------------
+Query 32: Expected: [Bombay] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Available class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Available class].
+<response>[Available class]</response>
+----------------------------------------
+Query 33: Expected: [Bombay] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Available class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Available class].
+<response>[Available class]</response>
+----------------------------------------
+Query 34: Expected: [Bombay] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Available class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Available class].
+<response>[Available class]</response>
+----------------------------------------
+Query 35: Expected: [Bombay] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Class].
+<response>[Class]</response>
+----------------------------------------
+Query 36: Expected: [Bombay] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN [Available class]
+Rule Check:
+- The Target Image contains the exact features specified in the rule for [Available class].
+<response>[Available class]</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.2500

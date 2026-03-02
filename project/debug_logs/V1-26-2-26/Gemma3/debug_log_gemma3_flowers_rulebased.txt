@@ -1,0 +1,1697 @@
+=== DEBUG LOG: gemma3 | flowers | Prompt: rulebased ===
+
+--- CONFIG: N=2, K=2, Q=5 ---
+Query 1: Expected: [71] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of green and blue pixels]
+- [Presence of purple pixels]
+Knowledge Base:
+- IF [Presence of green and blue pixels] AND [Presence of purple pixels] THEN 71
+Rule Check:
+- The Target Image contains both green and blue pixels, and also purple pixels. This matches the features specified in the rule for 71.
+<response>71</response>
+----------------------------------------
+Query 2: Expected: [71] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 71
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 71.
+<response>71</response>
+----------------------------------------
+Query 3: Expected: [71] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 1
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 1.
+<response>1</response>
+----------------------------------------
+Query 4: Expected: [71] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 71
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 71.
+<response>71</response>
+----------------------------------------
+Query 5: Expected: [71] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of multiple green leaf-like structures]
+- [Central, slightly darker, clustered area]
+Knowledge Base:
+- IF [Presence of multiple green leaf-like structures] AND [Central, slightly darker, clustered area] THEN 71
+Rule Check:
+- The Target Image exhibits multiple green leaf-like structures and a central, slightly darker, clustered area. This matches the features specified in the rule for 71.
+<response>71</response>
+----------------------------------------
+Query 6: Expected: [1] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 1
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 1.
+<response>1</response>
+----------------------------------------
+Query 7: Expected: [1] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 1
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 1.
+<response>1</response>
+----------------------------------------
+Query 8: Expected: [1] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 1
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 1.
+<response>1</response>
+----------------------------------------
+Query 9: Expected: [1] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 1
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 1.
+<response>1</response>
+----------------------------------------
+Query 10: Expected: [1] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 1
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 1.
+<response>1</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,5): 0.9000
+
+--- CONFIG: N=2, K=2, Q=8 ---
+Query 1: Expected: [101] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a central, star-like shape with multiple points
+- [Dominant green and pink color palette]
+Knowledge Base:
+- IF [Presence of a central, star-like shape with multiple points] AND [Dominant green and pink color palette] THEN 101
+Rule Check:
+- The Target Image exhibits a central, star-like shape with multiple points and a dominant green and pink color palette. This matches the rule for 101.
+<response>101</response>
+----------------------------------------
+Query 2: Expected: [101] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of jagged, irregular blue-green shapes]
+- [Presence of purple and pink blotches]
+Knowledge Base:
+- IF [Presence of jagged, irregular blue-green shapes] AND [Presence of purple and pink blotches] THEN 101
+Rule Check:
+- The Target Image exhibits jagged, irregular blue-green shapes and purple and pink blotches. This matches the features specified in the rule for 101.
+<response>101</response>
+----------------------------------------
+Query 3: Expected: [101] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 5
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 5.
+<response>5</response>
+----------------------------------------
+Query 4: Expected: [101] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1: Central stalk with multiple thin protrusions]
+- [Concrete observable feature 2: Five petal-like structures radiating outwards]
+Knowledge Base:
+- IF Central stalk with multiple thin protrusions AND Five petal-like structures radiating outwards THEN 5
+Rule Check:
+- The Target Image exhibits a central stalk with multiple thin protrusions and five petal-like structures radiating outwards. This matches the features specified in the rule for 5.
+<response>5</response>
+----------------------------------------
+Query 5: Expected: [101] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 101
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 101.
+<response>101</response>
+----------------------------------------
+Query 6: Expected: [101] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of thin, elongated green structures]
+- [Central, star-like shape with multiple points]
+Knowledge Base:
+- IF [Presence of thin, elongated green structures] AND [Central, star-like shape with multiple points] THEN 101
+Rule Check:
+- The Target Image exhibits thin, elongated green structures and a central star-like shape. This matches the features specified in the rule for 101.
+<response>101</response>
+----------------------------------------
+Query 7: Expected: [101] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 5
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 5.
+<response>5</response>
+----------------------------------------
+Query 8: Expected: [101] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 5
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 5.
+<response>5</response>
+----------------------------------------
+Query 9: Expected: [5] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular, fragmented pink and purple patches]
+- [Presence of elongated, pale-blue structures extending downwards]
+Knowledge Base:
+- IF [Presence of irregular, fragmented pink and purple patches] AND [Presence of elongated, pale-blue structures extending downwards] THEN 5
+Rule Check:
+- The Target Image exhibits irregular, fragmented pink and purple patches and elongated, pale-blue structures extending downwards. This matches the features specified in the rule for 5.
+<response>5</response>
+----------------------------------------
+Query 10: Expected: [5] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 5
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 5.
+<response>5</response>
+----------------------------------------
+Query 11: Expected: [5] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 5
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 5.
+<response>5</response>
+----------------------------------------
+Query 12: Expected: [5] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 5
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 5.
+<response>5</response>
+----------------------------------------
+Query 13: Expected: [5] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 5
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 5.
+<response>5</response>
+----------------------------------------
+Query 14: Expected: [5] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 5
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 5.
+<response>5</response>
+----------------------------------------
+Query 15: Expected: [5] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 101
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 101.
+<response>101</response>
+----------------------------------------
+Query 16: Expected: [5] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 5
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 5.
+<response>5</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,8): 0.6875
+
+--- CONFIG: N=2, K=1, Q=5 ---
+Query 1: Expected: [19] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Curved white petal]
+- [Dark purple center]
+Knowledge Base:
+- IF [Curved white petal] AND [Dark purple center] THEN 19
+Rule Check:
+- The Target Image exhibits a curved white petal and a dark purple center, matching the features specified in the rule for 19.
+<response>19</response>
+----------------------------------------
+Query 2: Expected: [19] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Large, rounded, blue-ish petals]
+- [Central, thin, green stem]
+Knowledge Base:
+- IF [Large, rounded, blue-ish petals] AND [Central, thin, green stem] THEN 100
+Rule Check:
+- The Target Image exhibits large, rounded, blue-ish petals and a central, thin, green stem. This matches the features specified in the rule for 100.
+<response>100</response>
+----------------------------------------
+Query 3: Expected: [19] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dominant blue color]
+- [Rounded petal shape]
+Knowledge Base:
+- IF [Dominant blue color] AND [Rounded petal shape] THEN 100
+Rule Check:
+- The Target Image exhibits a dominant blue color and a rounded petal shape, matching the features specified in the rule for 100.
+<response>100</response>
+----------------------------------------
+Query 4: Expected: [19] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Large areas of pink]
+- [Presence of yellow patches]
+Knowledge Base:
+- IF [Large areas of pink] AND [Presence of yellow patches] THEN 100
+Rule Check:
+- The Target Image exhibits large areas of pink and the presence of yellow patches, matching the criteria for class 100.
+<response>100</response>
+----------------------------------------
+Query 5: Expected: [19] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Large, curved, green petal]
+- [Blue-green coloration]
+Knowledge Base:
+- IF [Large, curved, green petal] AND [Blue-green coloration] THEN 19
+Rule Check:
+- The Target Image exhibits a large, curved, green petal and a blue-green coloration. This matches the features specified in the rule for class 19.
+<response>19</response>
+----------------------------------------
+Query 6: Expected: [100] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Large green leaf-like structure]
+- [Curved white edges]
+Knowledge Base:
+- IF [Large green leaf-like structure] AND [Curved white edges] THEN 19
+Rule Check:
+- The Target Image exhibits a large green leaf-like structure and curved white edges. This matches the features specified in the rule for class 19.
+<response>19</response>
+----------------------------------------
+Query 7: Expected: [100] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Bright white central petals]
+- [Blue-green leaf-like structures]
+Knowledge Base:
+- IF [Bright white central petals] AND [Blue-green leaf-like structures] THEN 19
+Rule Check:
+- The Target Image exhibits bright white central petals and blue-green leaf-like structures, matching the criteria for class 19.
+<response>19</response>
+----------------------------------------
+Query 8: Expected: [100] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Bright pink petals]
+- [Curled petal shape]
+Knowledge Base:
+- IF [Bright pink petals] AND [Curled petal shape] THEN 19
+Rule Check:
+- The Target Image exhibits bright pink petals and a curled petal shape. This matches the features specified in the rule for class 19.
+<response>19</response>
+----------------------------------------
+Query 9: Expected: [100] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Greenish-yellow petal edges]
+- [Red central structure]
+Knowledge Base:
+- IF [Greenish-yellow petal edges] AND [Red central structure] THEN 19
+Rule Check:
+- The Target Image exhibits greenish-yellow petal edges and a red central structure. This matches the rule for class 19.
+<response>19</response>
+----------------------------------------
+Query 10: Expected: [100] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Yellow petal]
+- [Purple center]
+Knowledge Base:
+- IF [Yellow petal] AND [Purple center] THEN 100
+Rule Check:
+- The Target Image contains yellow petals and a purple center, matching the features specified in the rule for 100.
+<response>100</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,5): 0.3000
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [3] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of green pixels]
+- [Presence of pink pixels]
+Knowledge Base:
+- IF [Presence of green pixels] AND [Presence of pink pixels] THEN 84
+Rule Check:
+- The Target Image contains green pixels and pink pixels. This matches the rule for class 84.
+<response>84</response>
+----------------------------------------
+Query 2: Expected: [3] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of green pixels]
+- [Presence of purple pixels]
+Knowledge Base:
+- IF [Presence of green pixels] AND [Presence of purple pixels] THEN 3
+Rule Check:
+- The Target Image contains green pixels and purple pixels. This matches the rule for class 3.
+<response>3</response>
+----------------------------------------
+Query 3: Expected: [3] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of large areas of red]
+- [Presence of irregular turquoise shapes]
+Knowledge Base:
+- IF [Presence of large areas of red] AND [Presence of irregular turquoise shapes] THEN 84
+Rule Check:
+- The Target Image contains large areas of red and irregular turquoise shapes, matching the rule for class 84.
+<response>84</response>
+----------------------------------------
+Query 4: Expected: [3] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dominant teal color]
+- [Irregular, jagged edges]
+Knowledge Base:
+- IF [Dominant teal color] AND [Irregular, jagged edges] THEN 3
+Rule Check:
+- The Target Image exhibits a dominant teal color and irregular, jagged edges. This matches the rule for class 3.
+<response>3</response>
+----------------------------------------
+Query 5: Expected: [3] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dominant pink color]
+- [Presence of blue patches]
+Knowledge Base:
+- IF [Dominant pink color] AND [Presence of blue patches] THEN 3
+Rule Check:
+- The Target Image exhibits a dominant pink color and the presence of blue patches. This matches the rule for class 3.
+<response>3</response>
+----------------------------------------
+Query 6: Expected: [3] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of large pink areas]
+- [Presence of green and blue areas]
+Knowledge Base:
+- IF [Presence of large pink areas] AND [Presence of green and blue areas] THEN 84
+Rule Check:
+- The Target Image contains large pink areas and green and blue areas. This matches the rule for class 84.
+<response>84</response>
+----------------------------------------
+Query 7: Expected: [3] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Large areas of purple and pink]
+- [Presence of green patches]
+Knowledge Base:
+- IF [Large areas of purple and pink] AND [Presence of green patches] THEN 84
+Rule Check:
+- The Target Image exhibits large areas of purple and pink, and also contains green patches. This matches the rule for 84.
+<response>84</response>
+----------------------------------------
+Query 8: Expected: [3] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of text]
+- [Dominant turquoise color]
+Knowledge Base:
+- IF [Presence of text] AND [Dominant turquoise color] THEN 84
+Rule Check:
+- The Target Image contains text and a dominant turquoise color. This matches the rule for 84.
+<response>84</response>
+----------------------------------------
+Query 9: Expected: [3] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of large areas of green pixels]
+- [Presence of purple and pink pixel clusters]
+Knowledge Base:
+- IF [Presence of large areas of green pixels] AND [Presence of purple and pink pixel clusters] THEN 84
+Rule Check:
+- The Target Image exhibits large areas of green pixels and also contains purple and pink pixel clusters. This matches the rule for class 84.
+<response>84</response>
+----------------------------------------
+Query 10: Expected: [84] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of pink and green swirling patterns]
+- [Dominance of irregular, jagged edges]
+Knowledge Base:
+- IF [Presence of pink and green swirling patterns] AND [Dominance of irregular, jagged edges] THEN 3
+Rule Check:
+- The Target Image exhibits pink and green swirling patterns and a dominance of irregular, jagged edges. This matches the rule for class 3.
+<response>3</response>
+----------------------------------------
+Query 11: Expected: [84] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of blue pixels]
+- [Presence of green pixels]
+Knowledge Base:
+- IF [Presence of blue pixels] AND [Presence of green pixels] THEN 3
+Rule Check:
+- The Target Image contains both blue and green pixels. This matches the rule for class 3.
+<response>3</response>
+----------------------------------------
+Query 12: Expected: [84] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of bright green pixels]
+- [Presence of dark blue pixels]
+Knowledge Base:
+- IF [Presence of bright green pixels] AND [Presence of dark blue pixels] THEN 84
+Rule Check:
+- The Target Image contains bright green pixels and dark blue pixels. This matches the rule for class 84.
+<response>84</response>
+----------------------------------------
+Query 13: Expected: [84] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of green and purple blotches]
+- [Presence of pink and red areas]
+Knowledge Base:
+- IF [Presence of green and purple blotches] AND [Presence of pink and red areas] THEN 3
+Rule Check:
+- The Target Image exhibits both green and purple blotches, and also contains pink and red areas. This matches the rule for class 3.
+<response>3</response>
+----------------------------------------
+Query 14: Expected: [84] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of circular green shapes]
+- [Dominant purple and green color palette]
+Knowledge Base:
+- IF [Presence of circular green shapes] AND [Dominant purple and green color palette] THEN 3
+Rule Check:
+- The Target Image exhibits circular green shapes and a dominant purple and green color palette. This matches the rule for class 3.
+<response>3</response>
+----------------------------------------
+Query 15: Expected: [84] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of bright green pixels]
+- [Presence of swirling purple patterns]
+Knowledge Base:
+- IF [Presence of bright green pixels] AND [Presence of swirling purple patterns] THEN 3
+Rule Check:
+- The Target Image exhibits both bright green pixels and swirling purple patterns. This matches the rule for class 3.
+<response>3</response>
+----------------------------------------
+Query 16: Expected: [84] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of green and pink blotches]
+- [Presence of blue and purple areas]
+Knowledge Base:
+- IF [Presence of green and pink blotches] AND [Presence of blue and purple areas] THEN 3
+Rule Check:
+- The Target Image exhibits both green and pink blotches, and also contains blue and purple areas. This matches the rule for class 3.
+<response>3</response>
+----------------------------------------
+Query 17: Expected: [84] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of pink petal-like structures]
+- [Presence of green leaf-like structures]
+Knowledge Base:
+- IF [Presence of pink petal-like structures] AND [Presence of green leaf-like structures] THEN 3
+Rule Check:
+- The Target Image exhibits both pink petal-like structures and green leaf-like structures. This matches the rule for class 3.
+<response>3</response>
+----------------------------------------
+Query 18: Expected: [84] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of large areas of blue pixels]
+- [Presence of large areas of red pixels]
+Knowledge Base:
+- IF [Presence of large areas of blue pixels] AND [Presence of large areas of red pixels] THEN 84
+Rule Check:
+- The Target Image contains large areas of blue pixels and large areas of red pixels. This matches the rule for 84.
+<response>84</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9): 0.2778
+
+--- CONFIG: N=3, K=1, Q=5 ---
+Query 1: Expected: [44] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of large purple areas]
+- [Presence of green edges]
+Knowledge Base:
+- IF [Presence of large purple areas] AND [Presence of green edges] THEN 44
+Rule Check:
+- The Target Image contains large purple areas and green edges, matching the rule for 44.
+<response>44</response>
+----------------------------------------
+Query 2: Expected: [44] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of turquoise pixels]
+- [Presence of pink and purple swirls]
+Knowledge Base:
+- IF [Presence of turquoise pixels] AND [Presence of pink and purple swirls] THEN 44
+Rule Check:
+- The Target Image contains turquoise pixels and pink and purple swirls, matching the rule for 44.
+<response>44</response>
+----------------------------------------
+Query 3: Expected: [44] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of bright green pixels]
+- [Presence of pink and purple blotches]
+Knowledge Base:
+- IF [Presence of bright green pixels] AND [Presence of pink and purple blotches] THEN 93
+Rule Check:
+- The Target Image contains bright green pixels and pink and purple blotches, matching the features specified in the rule for 93.
+<response>93</response>
+----------------------------------------
+Query 4: Expected: [44] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of pink and purple swirls]
+- [Dominant green foliage]
+Knowledge Base:
+- IF [Presence of pink and purple swirls] AND [Dominant green foliage] THEN 93
+Rule Check:
+- The Target Image exhibits pink and purple swirls and dominant green foliage, matching the features specified in the rule for 93.
+<response>93</response>
+----------------------------------------
+Query 5: Expected: [44] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of purple and green swirling patterns]
+- [Dominant yellow background]
+Knowledge Base:
+- IF [Presence of purple and green swirling patterns] AND [Dominant yellow background] THEN 44
+Rule Check:
+- The Target Image exhibits purple and green swirling patterns and a dominant yellow background, matching the criteria for class 44.
+<response>44</response>
+----------------------------------------
+Query 6: Expected: [93] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 44
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 44.
+<response>44</response>
+----------------------------------------
+Query 7: Expected: [93] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of purple pixels]
+- [Presence of green pixels]
+Knowledge Base:
+- IF [Presence of purple pixels] AND [Presence of green pixels] THEN 93
+Rule Check:
+- The Target Image contains purple pixels and green pixels, which matches the rule for class 93.
+<response>93</response>
+----------------------------------------
+Query 8: Expected: [93] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of elongated, curved shapes]
+- [Dominant blue background]
+Knowledge Base:
+- IF [Presence of elongated, curved shapes] AND [Dominant blue background] THEN 93
+Rule Check:
+- The Target Image exhibits elongated, curved shapes and a dominant blue background. This matches the features specified in the rule for 93.
+<response>93</response>
+----------------------------------------
+Query 9: Expected: [93] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of large areas of bright pink]
+- [Presence of swirling, chaotic patterns]
+Knowledge Base:
+- IF [Presence of large areas of bright pink] AND [Presence of swirling, chaotic patterns] THEN 93
+Rule Check:
+- The Target Image exhibits large areas of bright pink and swirling, chaotic patterns. This matches the features specified in the rule for 93.
+<response>93</response>
+----------------------------------------
+Query 10: Expected: [93] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of large areas of blue]
+- [Presence of pink and purple blotches]
+Knowledge Base:
+- IF [Presence of large areas of blue] AND [Presence of pink and purple blotches] THEN 44
+Rule Check:
+- The Target Image exhibits large areas of blue and pink/purple blotches, matching the criteria for class 44.
+<response>44</response>
+----------------------------------------
+Query 11: Expected: [100] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of red-orange blotches]
+- [Presence of dark blue areas]
+Knowledge Base:
+- IF [Presence of red-orange blotches] AND [Presence of dark blue areas] THEN 44
+Rule Check:
+- The Target Image contains red-orange blotches and dark blue areas, matching the features specified in the rule for 44.
+<response>44</response>
+----------------------------------------
+Query 12: Expected: [100] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dominant pink color]
+- [Presence of green patches]
+Knowledge Base:
+- IF [Dominant pink color] AND [Presence of green patches] THEN 93
+Rule Check:
+- The Target Image exhibits a dominant pink color and the presence of green patches, matching the criteria for class 93.
+<response>93</response>
+----------------------------------------
+Query 13: Expected: [100] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of dark purple pixels]
+- [Presence of teal-colored swirls]
+Knowledge Base:
+- IF [Presence of dark purple pixels] AND [Presence of teal-colored swirls] THEN 44
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 44.
+<response>44</response>
+----------------------------------------
+Query 14: Expected: [100] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of pink pixels]
+- [Presence of green pixels]
+Knowledge Base:
+- IF [Presence of pink pixels] AND [Presence of green pixels] THEN 44
+Rule Check:
+- The Target Image contains pink pixels and green pixels, which matches the rule for class 44.
+<response>44</response>
+----------------------------------------
+Query 15: Expected: [100] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of large areas of green and purple pixels]
+- [Presence of scattered pink pixels]
+Knowledge Base:
+- IF [Presence of large areas of green and purple pixels] AND [Presence of scattered pink pixels] THEN 93
+Rule Check:
+- The Target Image exhibits large areas of green and purple pixels, and also contains scattered pink pixels. This matches the rule for class 93.
+<response>93</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,5): 0.4000
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [85] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of green radial lines]
+- [Dominant purple hue]
+Knowledge Base:
+- IF [Presence of green radial lines] AND [Dominant purple hue] THEN 42
+Rule Check:
+- The Target Image exhibits green radial lines and a dominant purple hue, matching the criteria for class 42.
+<response>42</response>
+----------------------------------------
+Query 2: Expected: [85] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Bright red petals]
+- [Central light blue area]
+Knowledge Base:
+- IF [Bright red petals] AND [Central light blue area] THEN 85
+Rule Check:
+- The Target Image contains bright red petals and a central light blue area, matching the features specified in the rule for 85.
+<response>85</response>
+----------------------------------------
+Query 3: Expected: [85] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of radial pink and blue segments]
+- [Dominant green background]
+Knowledge Base:
+- IF [Presence of radial pink and blue segments] AND [Dominant green background] THEN 85
+Rule Check:
+- The Target Image exhibits radial pink and blue segments and a dominant green background, matching the criteria for class 85.
+<response>85</response>
+----------------------------------------
+Query 4: Expected: [85] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of radial pink and purple segments]
+- [Dominant green background]
+Knowledge Base:
+- IF [Presence of radial pink and purple segments] AND [Dominant green background] THEN 42
+Rule Check:
+- The Target Image exhibits radial pink and purple segments and a dominant green background, matching the criteria for class 42.
+<response>42</response>
+----------------------------------------
+Query 5: Expected: [85] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of bright yellow pixels]
+- [Presence of blue-green central structure]
+Knowledge Base:
+- IF [Presence of bright yellow pixels] AND [Presence of blue-green central structure] THEN 79
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 79.
+<response>79</response>
+----------------------------------------
+Query 6: Expected: [85] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of purple petal edges]
+- [Dominant green background]
+Knowledge Base:
+- IF [Presence of purple petal edges] AND [Dominant green background] THEN 42
+Rule Check:
+- The Target Image exhibits purple petal edges and a dominant green background, matching the criteria for class 42.
+<response>42</response>
+----------------------------------------
+Query 7: Expected: [85] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of pink petal edges]
+- [Central area with a mix of blue and green pixels]
+Knowledge Base:
+- IF [Presence of pink petal edges] AND [Central area with a mix of blue and green pixels] THEN 85
+Rule Check:
+- The Target Image exhibits pink petal edges and a central area with a mix of blue and green pixels, matching the rule for class 85.
+<response>85</response>
+----------------------------------------
+Query 8: Expected: [85] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of pink pixels]
+- [Presence of green pixels]
+Knowledge Base:
+- IF [Presence of pink pixels] AND [Presence of green pixels] THEN 79
+Rule Check:
+- The Target Image contains pink pixels and green pixels, which matches the rule for 79.
+<response>79</response>
+----------------------------------------
+Query 9: Expected: [85] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Large areas of pink pixels]
+- [Presence of green pixels within the central shape]
+Knowledge Base:
+- IF [Large areas of pink pixels] AND [Presence of green pixels within the central shape] THEN 42
+Rule Check:
+- The Target Image contains large areas of pink pixels and also has the presence of green pixels within the central shape. This matches the rule for 42.
+<response>42</response>
+----------------------------------------
+Query 10: Expected: [42] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 42
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 42.
+<response>42</response>
+----------------------------------------
+Query 11: Expected: [42] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of vertical purple lines]
+- [Dominant green and purple color palette]
+Knowledge Base:
+- IF [Presence of vertical purple lines] AND [Dominant green and purple color palette] THEN 42
+Rule Check:
+- The Target Image exhibits vertical purple lines and a dominant green and purple color palette, matching the criteria for class 42.
+<response>42</response>
+----------------------------------------
+Query 12: Expected: [42] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of purple and pink swirling patterns]
+- [Dominant green background]
+Knowledge Base:
+- IF [Presence of purple and pink swirling patterns] AND [Dominant green background] THEN 79
+Rule Check:
+- The Target Image exhibits purple and pink swirling patterns and a dominant green background, matching the criteria for class 79.
+<response>79</response>
+----------------------------------------
+Query 13: Expected: [42] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of large pink areas]
+- [Presence of green jagged edges]
+Knowledge Base:
+- IF [Presence of large pink areas] AND [Presence of green jagged edges] THEN 42
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 42.
+<response>42</response>
+----------------------------------------
+Query 14: Expected: [42] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of large pink and purple swirling shapes]
+- [Dominant green background texture]
+Knowledge Base:
+- IF [Presence of large pink and purple swirling shapes] AND [Dominant green background texture] THEN 79
+Rule Check:
+- The Target Image exhibits large pink and purple swirling shapes and a dominant green background texture. This matches the rule for 79.
+<response>79</response>
+----------------------------------------
+Query 15: Expected: [42] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of purple pixels]
+- [Presence of green pixels]
+Knowledge Base:
+- IF [Presence of purple pixels] AND [Presence of green pixels] THEN 79
+Rule Check:
+- The Target Image contains purple pixels and green pixels, which matches the rule for 79.
+<response>79</response>
+----------------------------------------
+Query 16: Expected: [42] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Large areas of pink]
+- [Irregular, jagged edges]
+Knowledge Base:
+- IF [Large areas of pink] AND [Irregular, jagged edges] THEN 85
+Rule Check:
+- The Target Image contains large areas of pink and irregular, jagged edges, which match the rule for 85.
+<response>85</response>
+----------------------------------------
+Query 17: Expected: [42] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of bright pink pixels]
+- [Presence of green jagged edges]
+Knowledge Base:
+- IF [Presence of bright pink pixels] AND [Presence of green jagged edges] THEN 79
+Rule Check:
+- The Target Image contains bright pink pixels and green jagged edges, which matches the rule for 79.
+<response>79</response>
+----------------------------------------
+Query 18: Expected: [42] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of jagged blue edges]
+- [Dominant pink and purple color patches]
+Knowledge Base:
+- IF [Presence of jagged blue edges] AND [Dominant pink and purple color patches] THEN 79
+Rule Check:
+- The Target Image exhibits jagged blue edges and dominant pink and purple color patches, matching the criteria for class 79.
+<response>79</response>
+----------------------------------------
+Query 19: Expected: [79] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of large areas of green]
+- [Presence of purple swirls]
+Knowledge Base:
+- IF [Presence of large areas of green] AND [Presence of purple swirls] THEN 42
+Rule Check:
+- The Target Image contains large areas of green and purple swirls, matching the features specified in the rule for 42.
+<response>42</response>
+----------------------------------------
+Query 20: Expected: [79] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of purple pixels]
+- [Presence of green pixels]
+Knowledge Base:
+- IF [Presence of purple pixels] AND [Presence of green pixels] THEN 79
+Rule Check:
+- The Target Image contains purple pixels and green pixels, which matches the rule for 79.
+<response>79</response>
+----------------------------------------
+Query 21: Expected: [79] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Bright yellow background]
+- [Central, irregular, dark green and purple shape]
+Knowledge Base:
+- IF [Bright yellow background] AND [Central, irregular, dark green and purple shape] THEN 79
+Rule Check:
+- The Target Image contains a bright yellow background and a central, irregular, dark green and purple shape. This matches the rule for 79.
+<response>79</response>
+----------------------------------------
+Query 22: Expected: [79] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of red pixels]
+- [Presence of green pixels]
+Knowledge Base:
+- IF [Presence of red pixels] AND [Presence of green pixels] THEN 79
+Rule Check:
+- The Target Image contains both red and green pixels, matching the criteria for class 79.
+<response>79</response>
+----------------------------------------
+Query 23: Expected: [79] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of purple pixels]
+- [Presence of green pixels]
+Knowledge Base:
+- IF [Presence of purple pixels] AND [Presence of green pixels] THEN 79
+Rule Check:
+- The Target Image contains purple pixels and green pixels, which matches the rule for 79.
+<response>79</response>
+----------------------------------------
+Query 24: Expected: [79] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a thin, dark, vertical line]
+- [Dominant pink and purple coloration]
+Knowledge Base:
+- IF [Presence of a thin, dark, vertical line] AND [Dominant pink and purple coloration] THEN 79
+Rule Check:
+- The Target Image exhibits a thin, dark, vertical line and a dominant pink and purple coloration. This matches the features specified in the rule for 79.
+<response>79</response>
+----------------------------------------
+Query 25: Expected: [79] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a distinct horizontal line]
+- [Dominant purple and green color palette]
+Knowledge Base:
+- IF [Presence of a distinct horizontal line] AND [Dominant purple and green color palette] THEN 42
+Rule Check:
+- The Target Image contains a distinct horizontal line and a dominant purple and green color palette, matching the criteria for class 42.
+<response>42</response>
+----------------------------------------
+Query 26: Expected: [79] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dominant purple color]
+- [Central dark vertical line]
+Knowledge Base:
+- IF [Dominant purple color] AND [Central dark vertical line] THEN 85
+Rule Check:
+- The Target Image exhibits a dominant purple color and a central dark vertical line, matching the features specified in the rule for 85.
+<response>85</response>
+----------------------------------------
+Query 27: Expected: [79] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of green patches]
+- [Presence of red swirls]
+Knowledge Base:
+- IF [Presence of green patches] AND [Presence of red swirls] THEN 79
+Rule Check:
+- The Target Image contains green patches and red swirls, which matches the rule for 79.
+<response>79</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9): 0.4444
+
+--- CONFIG: N=4, K=1, Q=5 ---
+Query 1: Expected: [86] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 60
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 60.
+<response>60</response>
+----------------------------------------
+Query 2: Expected: [86] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 27
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 27.
+<response>27</response>
+----------------------------------------
+Query 3: Expected: [86] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of jagged pink and purple lines]
+- [Dominance of green and teal shapes]
+Knowledge Base:
+- IF [Presence of jagged pink and purple lines] AND [Dominance of green and teal shapes] THEN 27
+Rule Check:
+- The Target Image exhibits jagged pink and purple lines and a dominance of green and teal shapes. This matches the features specified in the rule for 27.
+<response>27</response>
+----------------------------------------
+Query 4: Expected: [86] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 27
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 27.
+<response>27</response>
+----------------------------------------
+Query 5: Expected: [86] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of elongated, thin, purple-ish structures]
+- [Dominant pink and green color palette]
+Knowledge Base:
+- IF [Presence of elongated, thin, purple-ish structures] AND [Dominant pink and green color palette] THEN 65
+Rule Check:
+- The Target Image exhibits elongated, thin, purple-ish structures and a dominant pink and green color palette. This matches the features specified in the rule for 65.
+<response>65</response>
+----------------------------------------
+Query 6: Expected: [27] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 27
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 27.
+<response>27</response>
+----------------------------------------
+Query 7: Expected: [27] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 60
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 60.
+<response>60</response>
+----------------------------------------
+Query 8: Expected: [27] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular, fragmented pink shapes]
+- [Presence of irregular, fragmented blue shapes]
+Knowledge Base:
+- IF [Presence of irregular, fragmented pink shapes] AND [Presence of irregular, fragmented blue shapes] THEN 27
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 27.
+<response>27</response>
+----------------------------------------
+Query 9: Expected: [27] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of jagged, irregular pink lines]
+- [Dominance of teal and green hues]
+Knowledge Base:
+- IF [Presence of jagged, irregular pink lines] AND [Dominance of teal and green hues] THEN 27
+Rule Check:
+- The Target Image exhibits jagged, irregular pink lines and a dominance of teal and green hues. This matches the features specified in the rule for 27.
+<response>27</response>
+----------------------------------------
+Query 10: Expected: [27] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of large areas of bright pink]
+- [Presence of irregular blue patches]
+Knowledge Base:
+- IF [Presence of large areas of bright pink] AND [Presence of irregular blue patches] THEN 27
+Rule Check:
+- The Target Image contains large areas of bright pink and irregular blue patches, matching the features specified in the rule for 27.
+<response>27</response>
+----------------------------------------
+Query 11: Expected: [65] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Thin, elongated green petals]
+- [Central, circular, light purple core]
+Knowledge Base:
+- IF [Thin, elongated green petals] AND [Central, circular, light purple core] THEN 65
+Rule Check:
+- The Target Image exhibits thin, elongated green petals and a central, circular, light purple core. This matches the features specified in the rule for 65.
+<response>65</response>
+----------------------------------------
+Query 12: Expected: [65] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of many thin, dark blue-green spikes radiating outwards]
+- [Dominant presence of purple and pink background]
+Knowledge Base:
+- IF [Presence of many thin, dark blue-green spikes radiating outwards] AND [Dominant presence of purple and pink background] THEN 65
+Rule Check:
+- The Target Image exhibits many thin, dark blue-green spikes radiating outwards and a dominant purple and pink background. This matches the features specified in the rule for 65.
+<response>65</response>
+----------------------------------------
+Query 13: Expected: [65] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of many thin, elongated, dark green structures radiating outwards]
+- [Dominant purple and pink background]
+Knowledge Base:
+- IF [Presence of many thin, elongated, dark green structures radiating outwards] AND [Dominant purple and pink background] THEN 65
+Rule Check:
+- The Target Image exhibits many thin, elongated, dark green structures radiating outwards and a dominant purple and pink background. This matches the features specified in the rule for 65.
+<response>65</response>
+----------------------------------------
+Query 14: Expected: [65] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Long, thin, green protrusions radiating outwards]
+- [Central, circular, dark core]
+Knowledge Base:
+- IF [Long, thin, green protrusions radiating outwards] AND [Central, circular, dark core] THEN 65
+Rule Check:
+- The Target Image exhibits long, thin, green protrusions radiating outwards and a central, circular, dark core. This matches the features specified in the rule for 65.
+<response>65</response>
+----------------------------------------
+Query 15: Expected: [65] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of radiating lines]
+- [Central circular structure]
+Knowledge Base:
+- IF [Presence of radiating lines] AND [Central circular structure] THEN 65
+Rule Check:
+- The Target Image exhibits radiating lines and a central circular structure, matching the features specified in the rule for 65.
+<response>65</response>
+----------------------------------------
+Query 16: Expected: [60] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- Presence of jagged, irregular green edges
+- Dominant presence of pink and purple hues
+Knowledge Base:
+- IF Presence of jagged, irregular green edges AND Dominant presence of pink and purple hues THEN 65
+Rule Check:
+- The Target Image exhibits jagged, irregular green edges and a dominant presence of pink and purple hues. This matches the features specified in the rule for 65.
+<response>65</response>
+----------------------------------------
+Query 17: Expected: [60] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of jagged pink edges]
+- [Dominant green color]
+Knowledge Base:
+- IF [Presence of jagged pink edges] AND [Dominant green color] THEN 60
+Rule Check:
+- The Target Image exhibits jagged pink edges and a dominant green color, matching the features specified in the rule for 60.
+<response>60</response>
+----------------------------------------
+Query 18: Expected: [60] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of jagged, irregular green and blue shapes]
+- [Dominant presence of pink and purple hues]
+Knowledge Base:
+- IF [Presence of jagged, irregular green and blue shapes] AND [Dominant presence of pink and purple hues] THEN 65
+Rule Check:
+- The Target Image exhibits jagged, irregular green and blue shapes and a dominant presence of pink and purple hues. This matches the rule for 65.
+<response>65</response>
+----------------------------------------
+Query 19: Expected: [60] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of thin, vertical, light-blue lines]
+- [Dominant green color with pink and purple patches]
+Knowledge Base:
+- IF [Presence of thin, vertical, light-blue lines] AND [Dominant green color with pink and purple patches] THEN 60
+Rule Check:
+- The Target Image exhibits thin, vertical, light-blue lines and a dominant green color with pink and purple patches. This matches the features specified in the rule for 60.
+<response>60</response>
+----------------------------------------
+Query 20: Expected: [60] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of vertical, elongated shapes]
+- [Dominant green and pink color palette]
+Knowledge Base:
+- IF [Presence of vertical, elongated shapes] AND [Dominant green and pink color palette] THEN 60
+Rule Check:
+- The Target Image exhibits vertical, elongated shapes and a dominant green and pink color palette. This matches the features specified in the rule for 60.
+<response>60</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,5): 0.6000
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [63] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Blue petals]
+- [Pink center]
+Knowledge Base:
+- IF [Blue petals] AND [Pink center] THEN 63
+Rule Check:
+- The Target Image contains blue petals and a pink center, matching the features specified in the rule for 63.
+<response>63</response>
+----------------------------------------
+Query 2: Expected: [63] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 17
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 17.
+<response>17</response>
+----------------------------------------
+Query 3: Expected: [63] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of pink and green pixels]
+- [Central circular area with red and pink coloration]
+Knowledge Base:
+- IF [Presence of pink and green pixels] AND [Central circular area with red and pink coloration] THEN 31
+Rule Check:
+- The Target Image exhibits both the presence of pink and green pixels and a central circular area with red and pink coloration. This matches the rule for class 31.
+<response>31</response>
+----------------------------------------
+Query 4: Expected: [63] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 63
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 63.
+<response>63</response>
+----------------------------------------
+Query 5: Expected: [63] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Blue petals]
+- [Red edges]
+Knowledge Base:
+- IF [Blue petals] AND [Red edges] THEN 63
+Rule Check:
+- The Target Image contains blue petals and red edges, which matches the features specified in the rule for 63.
+<response>63</response>
+----------------------------------------
+Query 6: Expected: [63] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 63
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 63.
+<response>63</response>
+----------------------------------------
+Query 7: Expected: [63] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Blue petal color]
+- [Green central area]
+Knowledge Base:
+- IF [Blue petal color] AND [Green central area] THEN 31
+Rule Check:
+- The Target Image exhibits a blue petal color and a green central area, matching the features specified in the rule for 31.
+<response>31</response>
+----------------------------------------
+Query 8: Expected: [63] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- Blue petals
+- Red petal edges
+Knowledge Base:
+- IF Blue petals AND Red petal edges THEN 63
+Rule Check:
+- The Target Image contains blue petals and red petal edges, which matches the rule for 63.
+<response>63</response>
+----------------------------------------
+Query 9: Expected: [63] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 63
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 63.
+<response>63</response>
+----------------------------------------
+Query 10: Expected: [51] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 31
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 31.
+<response>31</response>
+----------------------------------------
+Query 11: Expected: [51] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 17
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 17.
+<response>17</response>
+----------------------------------------
+Query 12: Expected: [51] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a central, circular, dark blue region]
+- [Petals exhibiting a predominantly pink and red coloration]
+Knowledge Base:
+- IF [Presence of a central, circular, dark blue region] AND [Petals exhibiting a predominantly pink and red coloration] THEN 63
+Rule Check:
+- The Target Image exhibits a central, circular, dark blue region and petals predominantly pink and red. This matches the features specified in the rule for 63.
+<response>63</response>
+----------------------------------------
+Query 13: Expected: [51] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a central, circular, dark blue area]
+- [Presence of radiating, petal-like structures with a pinkish-purple hue]
+Knowledge Base:
+- IF [Presence of a central, circular, dark blue area] AND [Presence of radiating, petal-like structures with a pinkish-purple hue] THEN 63
+Rule Check:
+- The Target Image exhibits a central, circular, dark blue area and radiating petal-like structures with a pinkish-purple hue. This matches the features specified in the rule for 63.
+<response>63</response>
+----------------------------------------
+Query 14: Expected: [51] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 31
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 31.
+<response>31</response>
+----------------------------------------
+Query 15: Expected: [51] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 17
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 17.
+<response>17</response>
+----------------------------------------
+Query 16: Expected: [51] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of circular, dark red areas]
+- [Dominant green color]
+Knowledge Base:
+- IF [Presence of circular, dark red areas] AND [Dominant green color] THEN 17
+Rule Check:
+- The Target Image contains circular, dark red areas and a dominant green color, matching the features specified in the rule for 17.
+<response>17</response>
+----------------------------------------
+Query 17: Expected: [51] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of blue pixels]
+- [Presence of pink pixels]
+Knowledge Base:
+- IF [Presence of blue pixels] AND [Presence of pink pixels] THEN 17
+Rule Check:
+- The Target Image contains both blue and pink pixels, matching the features specified in the rule for 17.
+<response>17</response>
+----------------------------------------
+Query 18: Expected: [51] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of pink petal edges]
+- [Central dark purple area]
+Knowledge Base:
+- IF [Presence of pink petal edges] AND [Central dark purple area] THEN 31
+Rule Check:
+- The Target Image exhibits pink petal edges and a central dark purple area, matching the features specified in the rule for 31.
+<response>31</response>
+----------------------------------------
+Query 19: Expected: [31] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 17
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 17.
+<response>17</response>
+----------------------------------------
+Query 20: Expected: [31] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of pink pixels]
+- [Presence of green pixels]
+Knowledge Base:
+- IF [Presence of pink pixels] AND [Presence of green pixels] THEN 17
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 17.
+<response>17</response>
+----------------------------------------
+Query 21: Expected: [31] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Red petals]
+- [Green stems]
+Knowledge Base:
+- IF [Red petals] AND [Green stems] THEN 31
+Rule Check:
+- The Target Image contains red petals and green stems, which matches the features specified in the rule for 31.
+<response>31</response>
+----------------------------------------
+Query 22: Expected: [31] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 31
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 31.
+<response>31</response>
+----------------------------------------
+Query 23: Expected: [31] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of bright green pixels]
+- [Presence of purple and pink blotches]
+Knowledge Base:
+- IF [Presence of bright green pixels] AND [Presence of purple and pink blotches] THEN 17
+Rule Check:
+- The Target Image contains bright green pixels and purple/pink blotches, matching the features specified in the rule for class 17.
+<response>17</response>
+----------------------------------------
+Query 24: Expected: [31] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 63
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 63.
+<response>63</response>
+----------------------------------------
+Query 25: Expected: [31] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of dark blue patches]
+- [Presence of brown areas]
+Knowledge Base:
+- IF [Presence of dark blue patches] AND [Presence of brown areas] THEN 17
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 17.
+<response>17</response>
+----------------------------------------
+Query 26: Expected: [31] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 31
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 31.
+<response>31</response>
+----------------------------------------
+Query 27: Expected: [31] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of purple and pink swirls]
+- [Dominant pink background]
+Knowledge Base:
+- IF [Presence of purple and pink swirls] AND [Dominant pink background] THEN 17
+Rule Check:
+- The Target Image exhibits purple and pink swirls and a dominant pink background, matching the features specified in the rule for 17.
+<response>17</response>
+----------------------------------------
+Query 28: Expected: [17] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 51
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 51.
+<response>51</response>
+----------------------------------------
+Query 29: Expected: [17] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of pink patches]
+- [Presence of green patches]
+Knowledge Base:
+- IF [Presence of pink patches] AND [Presence of green patches] THEN 17
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 17.
+<response>17</response>
+----------------------------------------
+Query 30: Expected: [17] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 51
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 51.
+<response>51</response>
+----------------------------------------
+Query 31: Expected: [17] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of red petals]
+- [Presence of purple hues]
+Knowledge Base:
+- IF [Presence of red petals] AND [Presence of purple hues] THEN 63
+Rule Check:
+- The Target Image exhibits both red petals and purple hues, matching the criteria for class 63.
+<response>63</response>
+----------------------------------------
+Query 32: Expected: [17] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of purple and green blotches]
+- [Presence of pink petal-like structures]
+Knowledge Base:
+- IF [Presence of purple and green blotches] AND [Presence of pink petal-like structures] THEN 31
+Rule Check:
+- The Target Image contains purple and green blotches and pink petal-like structures, which matches the rule for class 31.
+<response>31</response>
+----------------------------------------
+Query 33: Expected: [17] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 31
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 31.
+<response>31</response>
+----------------------------------------
+Query 34: Expected: [17] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 31
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 31.
+<response>31</response>
+----------------------------------------
+Query 35: Expected: [17] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 17
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 17.
+<response>17</response>
+----------------------------------------
+Query 36: Expected: [17] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN 17
+Rule Check:
+- The Target Image contains the exact features specified in the rule for 17.
+<response>17</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.3333

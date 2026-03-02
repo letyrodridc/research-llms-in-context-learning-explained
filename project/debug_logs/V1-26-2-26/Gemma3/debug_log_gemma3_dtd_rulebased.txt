@@ -1,0 +1,1698 @@
+=== DEBUG LOG: gemma3 | dtd | Prompt: rulebased ===
+
+--- CONFIG: N=2, K=2, Q=5 ---
+Query 1: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN crosshatched
+Rule Check:
+- The Target Image contains the exact features specified in the rule for crosshatched.
+<response>crosshatched</response>
+----------------------------------------
+Query 2: Expected: [crosshatched] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN crystalline
+Rule Check:
+- The Target Image contains the exact features specified in the rule for crystalline.
+<response>crystalline</response>
+----------------------------------------
+Query 3: Expected: [crosshatched] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN crystalline
+Rule Check:
+- The Target Image contains the exact features specified in the rule for crystalline.
+<response>crystalline</response>
+----------------------------------------
+Query 4: Expected: [crosshatched] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN crystalline
+Rule Check:
+- The Target Image contains the exact features specified in the rule for crystalline.
+<response>crystalline</response>
+----------------------------------------
+Query 5: Expected: [crosshatched] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN crystalline
+Rule Check:
+- The Target Image contains the exact features specified in the rule for crystalline.
+<response>crystalline</response>
+----------------------------------------
+Query 6: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN crystalline
+Rule Check:
+- The Target Image contains the exact features specified in the rule for crystalline.
+<response>crystalline</response>
+----------------------------------------
+Query 7: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN crystalline
+Rule Check:
+- The Target Image contains the exact features specified in the rule for crystalline.
+<response>crystalline</response>
+----------------------------------------
+Query 8: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN crystalline
+Rule Check:
+- The Target Image contains the exact features specified in the rule for crystalline.
+<response>crystalline</response>
+----------------------------------------
+Query 9: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN crystalline
+Rule Check:
+- The Target Image contains the exact features specified in the rule for crystalline.
+<response>crystalline</response>
+----------------------------------------
+Query 10: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN crystalline
+Rule Check:
+- The Target Image contains the exact features specified in the rule for crystalline.
+<response>crystalline</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,5): 0.6000
+
+--- CONFIG: N=2, K=2, Q=8 ---
+Query 1: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of small, irregular colored patches]
+- [Dominant blue color]
+Knowledge Base:
+- IF [Presence of small, irregular colored patches] AND [Dominant blue color] THEN blotchy
+Rule Check:
+- The Target Image exhibits small, irregular colored patches and a dominant blue color, matching the features specified in the rule for "blotchy".
+<response>blotchy</response>
+----------------------------------------
+Query 2: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN woven
+Rule Check:
+- The Target Image contains the exact features specified in the rule for woven.
+<response>woven</response>
+----------------------------------------
+Query 3: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of short, angled, brown lines]
+- [Dominant blue-green background]
+Knowledge Base:
+- IF [Presence of short, angled, brown lines] AND [Dominant blue-green background] THEN woven
+Rule Check:
+- The Target Image exhibits short, angled, brown lines and a dominant blue-green background, matching the criteria for the "woven" class.
+<response>woven</response>
+----------------------------------------
+Query 4: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of intersecting, parallel lines]
+- [Dominant blue and yellow color palette]
+Knowledge Base:
+- IF [Presence of intersecting, parallel lines] AND [Dominant blue and yellow color palette] THEN woven
+Rule Check:
+- The Target Image exhibits intersecting, parallel lines and a dominant blue and yellow color palette. This matches the criteria for the "woven" class.
+<response>woven</response>
+----------------------------------------
+Query 5: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Parallel lines]
+- [Interwoven texture]
+Knowledge Base:
+- IF [Parallel lines] AND [Interwoven texture] THEN woven
+Rule Check:
+- The Target Image contains parallel lines and an interwoven texture. This matches the features specified in the rule for woven.
+<response>woven</response>
+----------------------------------------
+Query 6: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN blotchy
+Rule Check:
+- The Target Image contains the exact features specified in the rule for blotchy.
+<response>blotchy</response>
+----------------------------------------
+Query 7: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN blotchy
+Rule Check:
+- The Target Image contains the exact features specified in the rule for blotchy.
+<response>blotchy</response>
+----------------------------------------
+Query 8: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN blotchy
+Rule Check:
+- The Target Image contains the exact features specified in the rule for blotchy.
+<response>blotchy</response>
+----------------------------------------
+Query 9: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Small, irregular patches of blue
+- [Concrete observable feature 2] Background of green and pink
+Knowledge Base:
+- IF Small, irregular patches of blue AND Background of green and pink THEN blotchy
+Rule Check:
+- The Target Image contains small, irregular patches of blue and a background of green and pink, matching the features specified in the rule for blotchy.
+<response>blotchy</response>
+----------------------------------------
+Query 10: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of repeating, parallel lines]
+- [Varied color along the lines: red, green, purple]
+Knowledge Base:
+- IF [Presence of repeating, parallel lines] AND [Varied color along the lines: red, green, purple] THEN woven
+Rule Check:
+- The Target Image exhibits repeating, parallel lines and varied colors (red, green, purple) along those lines. This matches the rule for "woven".
+<response>woven</response>
+----------------------------------------
+Query 11: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN blotchy
+Rule Check:
+- The Target Image contains the exact features specified in the rule for blotchy.
+<response>blotchy</response>
+----------------------------------------
+Query 12: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN blotchy
+Rule Check:
+- The Target Image contains the exact features specified in the rule for blotchy.
+<response>blotchy</response>
+----------------------------------------
+Query 13: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN blotchy
+Rule Check:
+- The Target Image contains the exact features specified in the rule for blotchy.
+<response>blotchy</response>
+----------------------------------------
+Query 14: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular, non-linear patches of color]
+- [Dominance of pink and green pixels]
+Knowledge Base:
+- IF [Presence of irregular, non-linear patches of color] AND [Dominance of pink and green pixels] THEN blotchy
+Rule Check:
+- The Target Image exhibits irregular, non-linear patches of color and a dominance of pink and green pixels, matching the criteria for the "blotchy" class.
+<response>blotchy</response>
+----------------------------------------
+Query 15: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN blotchy
+Rule Check:
+- The Target Image contains the exact features specified in the rule for blotchy.
+<response>blotchy</response>
+----------------------------------------
+Query 16: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN blotchy
+Rule Check:
+- The Target Image contains the exact features specified in the rule for blotchy.
+<response>blotchy</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,8): 0.6875
+
+--- CONFIG: N=2, K=1, Q=5 ---
+Query 1: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Vertical lines with varied color]
+- [Dark vertical streaks]
+Knowledge Base:
+- IF [Vertical lines with varied color] AND [Dark vertical streaks] THEN pleated
+Rule Check:
+- The Target Image exhibits vertical lines with varied color and dark vertical streaks, matching the criteria for the 'pleated' class.
+<response>pleated</response>
+----------------------------------------
+Query 2: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Parallel lines]
+- [Curved lines]
+Knowledge Base:
+- IF [Parallel lines] THEN pleated
+Rule Check:
+- The Target Image contains parallel lines.
+<response>pleated</response>
+----------------------------------------
+Query 3: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Parallel lines]
+- [Red and green color bands]
+Knowledge Base:
+- IF [Parallel lines] AND [Red and green color bands] THEN pleated
+Rule Check:
+- The Target Image exhibits parallel lines and red and green color bands. This matches the features specified in the rule for "pleated".
+<response>pleated</response>
+----------------------------------------
+Query 4: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Thin, wavy, blue lines]
+- [Thin, wavy, green lines]
+Knowledge Base:
+- IF [Thin, wavy, blue lines] AND [Thin, wavy, green lines] THEN pleated
+Rule Check:
+- The Target Image contains thin, wavy blue lines and thin, wavy green lines. This matches the features specified in the rule for "pleated".
+<response>pleated</response>
+----------------------------------------
+Query 5: Expected: [pleated] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Parallel lines with a diagonal orientation]
+- [Alternating color bands]
+Knowledge Base:
+- IF [Parallel lines with a diagonal orientation] AND [Alternating color bands] THEN crosshatched
+Rule Check:
+- The Target Image exhibits parallel lines with a diagonal orientation and alternating color bands. This matches the rule for "crosshatched".
+<response>crosshatched</response>
+----------------------------------------
+Query 6: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Visible vertical lines]
+- [Visible horizontal lines]
+Knowledge Base:
+- IF [Visible vertical lines] AND [Visible horizontal lines] THEN crosshatched
+Rule Check:
+- The Target Image contains visible vertical and horizontal lines. This matches the features specified in the rule for crosshatched.
+<response>crosshatched</response>
+----------------------------------------
+Query 7: Expected: [crosshatched] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Swirling brown patterns]
+- [Dark green rectangular area]
+Knowledge Base:
+- IF [Swirling brown patterns] THEN pleated
+Rule Check:
+- The Target Image contains swirling brown patterns, which matches the features specified in the rule for "pleated".
+<response>pleated</response>
+----------------------------------------
+Query 8: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Parallel dark lines]
+- [Angular, diagonal arrangement]
+Knowledge Base:
+- IF [Parallel dark lines] AND [Angular, diagonal arrangement] THEN crosshatched
+Rule Check:
+- The Target Image exhibits parallel dark lines and an angular, diagonal arrangement. This matches the features specified in the rule for crosshatched.
+<response>crosshatched</response>
+----------------------------------------
+Query 9: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Randomly distributed small colored dots]
+- [Dominant blue color]
+Knowledge Base:
+- IF [Randomly distributed small colored dots] THEN crosshatched
+Rule Check:
+- The Target Image exhibits randomly distributed small colored dots. This matches the features specified in the rule for crosshatched.
+<response>crosshatched</response>
+----------------------------------------
+Query 10: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Thin, diagonal blue lines]
+- [Dense, short, blue lines forming a grid]
+Knowledge Base:
+- IF [Thin, diagonal blue lines] AND [Dense, short, blue lines forming a grid] THEN crosshatched
+Rule Check:
+- The Target Image contains thin, diagonal blue lines and dense, short, blue lines forming a grid. This matches the features specified in the rule for crosshatched.
+<response>crosshatched</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,5): 0.8000
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [grid] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Randomly distributed colored pixels]
+- [No discernible repeating pattern]
+Knowledge Base:
+- IF [Randomly distributed colored pixels] AND [No discernible repeating pattern] THEN matted
+Rule Check:
+- The Target Image exhibits randomly distributed colored pixels and lacks a discernible repeating pattern. This matches the features specified in the rule for "matted".
+<response>matted</response>
+----------------------------------------
+Query 2: Expected: [grid] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Randomly distributed colored pixels]
+Knowledge Base:
+- IF [Randomly distributed colored pixels] THEN matted
+Rule Check:
+- The Target Image contains the exact features specified in the rule for matted.
+<response>matted</response>
+----------------------------------------
+Query 3: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Regular, repeating square pattern]
+- [Thin, blue lines separating squares]
+Knowledge Base:
+- IF [Regular, repeating square pattern] AND [Thin, blue lines separating squares] THEN grid
+Rule Check:
+- The Target Image exhibits a regular, repeating square pattern.
+- The Target Image contains thin, blue lines separating the squares.
+- Both conditions of the rule for "grid" are met.
+<response>grid</response>
+----------------------------------------
+Query 4: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Small square shapes]
+- [Repeating pattern]
+Knowledge Base:
+- IF [Small square shapes] AND [Repeating pattern] THEN grid
+Rule Check:
+- The Target Image contains small square shapes and a repeating pattern. This matches the rule for "grid".
+<response>grid</response>
+----------------------------------------
+Query 5: Expected: [grid] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Small, irregular shapes]
+- [Dominant blue color]
+Knowledge Base:
+- IF [Small, irregular shapes] AND [Dominant blue color] THEN matted
+Rule Check:
+- The Target Image contains small, irregular shapes and a dominant blue color, matching the features specified in the rule for "matted".
+<response>matted</response>
+----------------------------------------
+Query 6: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Small, uniformly sized squares]
+- [Regular, repeating pattern of squares]
+Knowledge Base:
+- IF [Small, uniformly sized squares] AND [Regular, repeating pattern of squares] THEN grid
+Rule Check:
+- The Target Image contains small, uniformly sized squares arranged in a regular, repeating pattern. This matches the features specified in the rule for "grid".
+<response>grid</response>
+----------------------------------------
+Query 7: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Repeating triangular shapes]
+- [Regular, repeating pattern]
+Knowledge Base:
+- IF [Repeating triangular shapes] AND [Regular, repeating pattern] THEN grid
+Rule Check:
+- The Target Image exhibits repeating triangular shapes arranged in a regular, repeating pattern. This matches the criteria for the "grid" class.
+<response>grid</response>
+----------------------------------------
+Query 8: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of many small, distinct squares]
+- [Squares are uniformly distributed]
+Knowledge Base:
+- IF [Presence of many small, distinct squares] AND [Squares are uniformly distributed] THEN grid
+Rule Check:
+- The Target Image contains many small, distinct squares that are uniformly distributed. This matches the rule for "grid".
+<response>grid</response>
+----------------------------------------
+Query 9: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Regularly spaced blue lines]
+- [Yellow background]
+Knowledge Base:
+- IF [Regularly spaced blue lines] AND [Yellow background] THEN grid
+Rule Check:
+- The Target Image contains regularly spaced blue lines and a yellow background, matching the rule for "grid".
+<response>grid</response>
+----------------------------------------
+Query 10: Expected: [matted] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Small, irregular colored pixels]
+- [Dominant blue color]
+Knowledge Base:
+- IF [Small, irregular colored pixels] AND [Dominant blue color] THEN matted
+Rule Check:
+- The Target Image contains small, irregular colored pixels and a dominant blue color, matching the features specified in the rule for "matted".
+<response>matted</response>
+----------------------------------------
+Query 11: Expected: [matted] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Curled, brown strands]
+- [Gray, tangled texture]
+Knowledge Base:
+- IF [Curled, brown strands] AND [Gray, tangled texture] THEN matted
+Rule Check:
+- The Target Image contains the exact features specified in the rule for matted.
+<response>matted</response>
+----------------------------------------
+Query 12: Expected: [matted] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of many small, irregularly colored pixels]
+- [Dominant colors: pink, green, and blue]
+Knowledge Base:
+- IF [Presence of many small, irregularly colored pixels] THEN matted
+Rule Check:
+- The Target Image exhibits a high density of small, irregularly colored pixels. This matches the feature described in the rule for "matted".
+<response>matted</response>
+----------------------------------------
+Query 13: Expected: [matted] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Irregular, swirling shapes]
+- [Dominant blue-purple color]
+Knowledge Base:
+- IF [Irregular, swirling shapes] AND [Dominant blue-purple color] THEN matted
+Rule Check:
+- The Target Image exhibits irregular, swirling shapes and a dominant blue-purple color, matching the features specified in the rule for "matted".
+<response>matted</response>
+----------------------------------------
+Query 14: Expected: [matted] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Brown textured surface]
+- [Green foliage in the background]
+Knowledge Base:
+- IF [Brown textured surface] AND [Green foliage in the background] THEN matted
+Rule Check:
+- The Target Image exhibits a brown textured surface and green foliage in the background, matching the features specified in the rule for "matted".
+<response>matted</response>
+----------------------------------------
+Query 15: Expected: [matted] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular pink spots]
+- [Dominant blue and green color palette]
+Knowledge Base:
+- IF [Presence of irregular pink spots] AND [Dominant blue and green color palette] THEN matted
+Rule Check:
+- The Target Image exhibits irregular pink spots and a dominant blue and green color palette, matching the criteria for the "matted" class.
+<response>matted</response>
+----------------------------------------
+Query 16: Expected: [matted] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Small, irregular, multicolored pixels]
+- [Dominant purple color]
+Knowledge Base:
+- IF [Small, irregular, multicolored pixels] AND [Dominant purple color] THEN matted
+Rule Check:
+- The Target Image contains small, irregular, multicolored pixels and a dominant purple color, matching the features specified in the rule for "matted".
+<response>matted</response>
+----------------------------------------
+Query 17: Expected: [matted] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Small, irregularly colored pixels]
+- [Dominant gray color]
+Knowledge Base:
+- IF [Small, irregularly colored pixels] AND [Dominant gray color] THEN matted
+Rule Check:
+- The Target Image contains small, irregularly colored pixels and a dominant gray color, matching the features specified in the rule for "matted".
+<response>matted</response>
+----------------------------------------
+Query 18: Expected: [matted] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Irregular, clustered shapes]
+- [Dominant purple and green hues]
+Knowledge Base:
+- IF [Irregular, clustered shapes] AND [Dominant purple and green hues] THEN matted
+Rule Check:
+- The Target Image exhibits irregular, clustered shapes and a dominant presence of purple and green hues. This matches the features specified in the rule for "matted".
+<response>matted</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9): 0.8333
+
+--- CONFIG: N=3, K=1, Q=5 ---
+Query 1: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Vertical blue lines]
+- [Yellow background]
+Knowledge Base:
+- IF [Vertical blue lines] AND [Yellow background] THEN gauzy
+Rule Check:
+- The Target Image contains vertical blue lines and a yellow background, matching the features specified in the rule for gauzy.
+<response>gauzy</response>
+----------------------------------------
+Query 2: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a repeating, small, geometric pattern]
+- [Dominant color: brown]
+Knowledge Base:
+- IF [Presence of a repeating, small, geometric pattern] AND [Dominant color: brown] THEN blotchy
+Rule Check:
+- The Target Image exhibits a repeating, small, geometric pattern and a dominant brown color. This matches the features specified in the rule for blotchy.
+<response>blotchy</response>
+----------------------------------------
+Query 3: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Vertical streaks of varying colors]
+- [Irregular, fragmented shapes]
+Knowledge Base:
+- IF [Vertical streaks of varying colors] AND [Irregular, fragmented shapes] THEN gauzy
+Rule Check:
+- The Target Image exhibits vertical streaks of varying colors and irregular, fragmented shapes. This matches the features specified in the rule for "gauzy".
+<response>gauzy</response>
+----------------------------------------
+Query 4: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Presence of swirling patterns
+- [Concrete observable feature 2] Dominant pink and purple hues
+Knowledge Base:
+- IF Presence of swirling patterns AND Dominant pink and purple hues THEN flecked
+Rule Check:
+- The Target Image exhibits swirling patterns and a dominant presence of pink and purple hues. This matches the features specified in the rule for "flecked".
+<response>flecked</response>
+----------------------------------------
+Query 5: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Presence of diagonal lines
+- [Concrete observable feature 2] Presence of scattered pixels
+Knowledge Base:
+- IF Presence of diagonal lines AND Presence of scattered pixels THEN gauzy
+Rule Check:
+- The Target Image contains the exact features specified in the rule for gauzy.
+<response>gauzy</response>
+----------------------------------------
+Query 6: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dominant blue pixels]
+- [Dominant yellow pixels]
+Knowledge Base:
+- IF [Dominant blue pixels] AND [Dominant yellow pixels] THEN flecked
+Rule Check:
+- The Target Image contains dominant blue pixels and dominant yellow pixels, matching the features specified in the rule for "flecked".
+<response>flecked</response>
+----------------------------------------
+Query 7: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dominant color: pink]
+- [Dense, scattered pattern]
+Knowledge Base:
+- IF [Dominant color: pink] AND [Dense, scattered pattern] THEN flecked
+Rule Check:
+- The Target Image exhibits a dominant pink color and a dense, scattered pattern. This matches the features specified in the rule for "flecked".
+<response>flecked</response>
+----------------------------------------
+Query 8: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN flecked
+Rule Check:
+- The Target Image contains the exact features specified in the rule for flecked.
+<response>flecked</response>
+----------------------------------------
+Query 9: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of small, irregular colored pixels]
+- [Dominant blue and pink color palette]
+Knowledge Base:
+- IF [Presence of small, irregular colored pixels] AND [Dominant blue and pink color palette] THEN flecked
+Rule Check:
+- The Target Image exhibits small, irregular colored pixels and a dominant blue and pink color palette. This matches the features specified in the rule for "flecked".
+<response>flecked</response>
+----------------------------------------
+Query 10: Expected: [flecked] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dominant blue pixels]
+- [Presence of brown pixels]
+Knowledge Base:
+- IF [Dominant blue pixels] AND [Presence of brown pixels] THEN gauzy
+Rule Check:
+- The Target Image exhibits dominant blue pixels and the presence of brown pixels, matching the features defined in the rule for "gauzy".
+<response>gauzy</response>
+----------------------------------------
+Query 11: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dominant red pixels]
+- [Horizontal green stripes]
+Knowledge Base:
+- IF [Dominant red pixels] AND [Horizontal green stripes] THEN blotchy
+Rule Check:
+- The Target Image exhibits dominant red pixels and horizontal green stripes, matching the features specified in the rule for "blotchy".
+<response>blotchy</response>
+----------------------------------------
+Query 12: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dominant blue color]
+- [Scattered small yellow dots]
+Knowledge Base:
+- IF [Dominant blue color] AND [Scattered small yellow dots] THEN flecked
+Rule Check:
+- The Target Image exhibits a dominant blue color and scattered small yellow dots, matching the features specified in the rule for "flecked".
+<response>flecked</response>
+----------------------------------------
+Query 13: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular, clustered pink areas]
+- [Dominance of yellow and blue pixels]
+Knowledge Base:
+- IF [Presence of irregular, clustered pink areas] AND [Dominance of yellow and blue pixels] THEN blotchy
+Rule Check:
+- The Target Image exhibits irregular, clustered pink areas and a dominance of yellow and blue pixels, matching the criteria for the "blotchy" class.
+<response>blotchy</response>
+----------------------------------------
+Query 14: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of many small, irregular, colorful patches]
+- [Dominance of red and green hues]
+Knowledge Base:
+- IF [Presence of many small, irregular, colorful patches] AND [Dominance of red and green hues] THEN blotchy
+Rule Check:
+- The Target Image exhibits many small, irregular, colorful patches and a dominance of red and green hues. This matches the criteria for the "blotchy" class.
+<response>blotchy</response>
+----------------------------------------
+Query 15: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of scattered blue pixels]
+- [Presence of scattered green pixels]
+Knowledge Base:
+- IF [Presence of scattered blue pixels] AND [Presence of scattered green pixels] THEN flecked
+Rule Check:
+- The Target Image contains scattered blue pixels and scattered green pixels, matching the features specified in the rule for "flecked".
+<response>flecked</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,5): 0.6667
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [stained] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of large areas of pink]
+- [Presence of green patches]
+Knowledge Base:
+- IF [Presence of large areas of pink] AND [Presence of green patches] THEN stained
+Rule Check:
+- The Target Image contains large areas of pink and green patches, matching the features specified in the rule for "stained".
+<response>stained</response>
+----------------------------------------
+Query 2: Expected: [stained] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dominant blue color]
+- [Presence of green and red pixels]
+Knowledge Base:
+- IF [Dominant blue color] AND [Presence of green and red pixels] THEN stained
+Rule Check:
+- The Target Image exhibits a dominant blue color and the presence of green and red pixels, matching the criteria for the "stained" class.
+<response>stained</response>
+----------------------------------------
+Query 3: Expected: [stained] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of pink pixels]
+- [Presence of blue pixels]
+Knowledge Base:
+- IF [Presence of pink pixels] AND [Presence of blue pixels] THEN stained
+Rule Check:
+- The Target Image contains pink and blue pixels, matching the features specified in the rule for "stained".
+<response>stained</response>
+----------------------------------------
+Query 4: Expected: [stained] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of pink regions]
+- [Presence of blue regions]
+Knowledge Base:
+- IF [Presence of pink regions] AND [Presence of blue regions] THEN stained
+Rule Check:
+- The Target Image contains pink and blue regions, matching the features specified in the rule for "stained".
+<response>stained</response>
+----------------------------------------
+Query 5: Expected: [stained] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of many distinct colors]
+- [Random distribution of pixels]
+Knowledge Base:
+- IF [Presence of many distinct colors] AND [Random distribution of pixels] THEN interlaced
+Rule Check:
+- The Target Image exhibits a presence of many distinct colors and a random distribution of pixels, matching the criteria for the "interlaced" class.
+<response>interlaced</response>
+----------------------------------------
+Query 6: Expected: [stained] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of magenta pixels]
+- [Presence of blue pixels]
+Knowledge Base:
+- IF [Presence of magenta pixels] AND [Presence of blue pixels] THEN interlaced
+Rule Check:
+- The Target Image contains magenta and blue pixels, matching the features specified in the rule for interlaced.
+<response>interlaced</response>
+----------------------------------------
+Query 7: Expected: [stained] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of many small, varied colored pixels]
+- [Dominant presence of blue pixels]
+Knowledge Base:
+- IF [Presence of many small, varied colored pixels] AND [Dominant presence of blue pixels] THEN interlaced
+Rule Check:
+- The Target Image exhibits many small, varied colored pixels and a dominant presence of blue pixels. This matches the rule for "interlaced".
+<response>interlaced</response>
+----------------------------------------
+Query 8: Expected: [stained] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dominant green pixels]
+- [Scattered blue pixels]
+Knowledge Base:
+- IF [Dominant green pixels] AND [Scattered blue pixels] THEN blotchy
+Rule Check:
+- The Target Image exhibits dominant green pixels and scattered blue pixels, matching the features specified in the rule for "blotchy".
+<response>blotchy</response>
+----------------------------------------
+Query 9: Expected: [stained] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular, mottled orange patches]
+- [Presence of irregular, mottled teal patches]
+Knowledge Base:
+- IF [Presence of irregular, mottled orange patches] AND [Presence of irregular, mottled teal patches] THEN stained
+Rule Check:
+- The Target Image exhibits irregular, mottled orange patches and irregular, mottled teal patches. This matches the features specified in the rule for "stained".
+<response>stained</response>
+----------------------------------------
+Query 10: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of small, scattered blue pixels]
+- [Presence of small, scattered green pixels]
+Knowledge Base:
+- IF [Presence of small, scattered blue pixels] AND [Presence of small, scattered green pixels] THEN interlaced
+Rule Check:
+- The Target Image contains the exact features specified in the rule for interlaced.
+<response>interlaced</response>
+----------------------------------------
+Query 11: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of large red areas]
+- [Presence of large green areas]
+Knowledge Base:
+- IF [Presence of large red areas] AND [Presence of large green areas] THEN interlaced
+Rule Check:
+- The Target Image contains large red and green areas, matching the features specified in the rule for interlaced.
+<response>interlaced</response>
+----------------------------------------
+Query 12: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of many small, distinct colored pixels]
+- [Dominant blue color]
+Knowledge Base:
+- IF [Presence of many small, distinct colored pixels] AND [Dominant blue color] THEN interlaced
+Rule Check:
+- The Target Image exhibits many small, distinct colored pixels and a dominant blue color, matching the features specified in the rule for "interlaced".
+<response>interlaced</response>
+----------------------------------------
+Query 13: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of distinct, parallel, wavy lines]
+- [Dominant color palette of red, purple, and blue]
+Knowledge Base:
+- IF [Presence of distinct, parallel, wavy lines] AND [Dominant color palette of red, purple, and blue] THEN interlaced
+Rule Check:
+- The Target Image exhibits distinct, parallel, wavy lines and a dominant color palette of red, purple, and blue. This matches the criteria for the "interlaced" class.
+<response>interlaced</response>
+----------------------------------------
+Query 14: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of red pixels]
+- [Presence of green pixels]
+Knowledge Base:
+- IF [Presence of red pixels] AND [Presence of green pixels] THEN stained
+Rule Check:
+- The Target Image contains the exact features specified in the rule for stained.
+<response>stained</response>
+----------------------------------------
+Query 15: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dominant color: pink]
+- [Presence of blue pixels]
+Knowledge Base:
+- IF [Dominant color: pink] AND [Presence of blue pixels] THEN stained
+Rule Check:
+- The Target Image exhibits a dominant pink color and the presence of blue pixels, matching the features specified in the rule for "stained".
+<response>stained</response>
+----------------------------------------
+Query 16: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dominant green pixels]
+- [Dominant purple pixels]
+Knowledge Base:
+- IF [Dominant green pixels] AND [Dominant purple pixels] THEN blotchy
+Rule Check:
+- The Target Image exhibits dominant green and purple pixels, matching the features defined in the rule for "blotchy".
+<response>blotchy</response>
+----------------------------------------
+Query 17: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of circular purple and green patches]
+- [Presence of irregular orange and blue areas]
+Knowledge Base:
+- IF [Presence of circular purple and green patches] AND [Presence of irregular orange and blue areas] THEN stained
+Rule Check:
+- The Target Image exhibits circular purple and green patches and irregular orange and blue areas, matching the features defined in the rule for "stained."
+<response>stained</response>
+----------------------------------------
+Query 18: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of bright pink pixels]
+- [Presence of bright teal pixels]
+Knowledge Base:
+- IF [Presence of bright pink pixels] AND [Presence of bright teal pixels] THEN interlaced
+Rule Check:
+- The Target Image contains bright pink pixels and bright teal pixels, matching the features specified in the rule for interlaced.
+<response>interlaced</response>
+----------------------------------------
+Query 19: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of swirling patterns]
+- [Dominant purple and yellow hues]
+Knowledge Base:
+- IF [Presence of swirling patterns] AND [Dominant purple and yellow hues] THEN interlaced
+Rule Check:
+- The Target Image exhibits swirling patterns and a dominant presence of purple and yellow hues, matching the criteria for the "interlaced" class.
+<response>interlaced</response>
+----------------------------------------
+Query 20: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Curved lines forming a repeating pattern]
+- [Circular overall shape]
+Knowledge Base:
+- IF [Curved lines forming a repeating pattern] AND [Circular overall shape] THEN interlaced
+Rule Check:
+- The Target Image exhibits curved lines forming a repeating pattern and a circular overall shape. This matches the features specified in the rule for "interlaced".
+<response>interlaced</response>
+----------------------------------------
+Query 21: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of many distinct, small colored pixels]
+- [Circular shape]
+Knowledge Base:
+- IF [Presence of many distinct, small colored pixels] AND [Circular shape] THEN interlaced
+Rule Check:
+- The Target Image exhibits a high density of small, distinct colored pixels and a circular shape. This matches the features specified in the rule for "interlaced".
+<response>interlaced</response>
+----------------------------------------
+Query 22: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of many small, distinct colored pixels]
+- [Dominant blue and purple hues]
+Knowledge Base:
+- IF [Presence of many small, distinct colored pixels] AND [Dominant blue and purple hues] THEN interlaced
+Rule Check:
+- The Target Image exhibits many small, distinct colored pixels and a dominant presence of blue and purple hues. This matches the features specified in the rule for "interlaced".
+<response>interlaced</response>
+----------------------------------------
+Query 23: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of curved, looping shapes]
+- [Dominant pink and turquoise color palette]
+Knowledge Base:
+- IF [Presence of curved, looping shapes] AND [Dominant pink and turquoise color palette] THEN interlaced
+Rule Check:
+- The Target Image exhibits curved, looping shapes and a dominant pink and turquoise color palette, matching the criteria for the "interlaced" class.
+<response>interlaced</response>
+----------------------------------------
+Query 24: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of sharp, angular lines]
+- [Dominant blue and red color palette]
+Knowledge Base:
+- IF [Presence of sharp, angular lines] AND [Dominant blue and red color palette] THEN interlaced
+Rule Check:
+- The Target Image exhibits sharp, angular lines and a dominant blue and red color palette, matching the features specified in the rule for "interlaced."
+<response>interlaced</response>
+----------------------------------------
+Query 25: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of swirling patterns]
+- [Dominant teal color]
+Knowledge Base:
+- IF [Presence of swirling patterns] AND [Dominant teal color] THEN interlaced
+Rule Check:
+- The Target Image exhibits swirling patterns and a dominant teal color, matching the criteria for the "interlaced" class.
+<response>interlaced</response>
+----------------------------------------
+Query 26: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of repeating circular shapes]
+- [Dominant yellow color]
+Knowledge Base:
+- IF [Presence of repeating circular shapes] AND [Dominant yellow color] THEN interlaced
+Rule Check:
+- The Target Image exhibits repeating circular shapes and a dominant yellow color, matching the features specified in the rule for "interlaced".
+<response>interlaced</response>
+----------------------------------------
+Query 27: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of many small, varied colored pixels]
+- [Dominant presence of blue and green pixels]
+Knowledge Base:
+- IF [Presence of many small, varied colored pixels] AND [Dominant presence of blue and green pixels] THEN interlaced
+Rule Check:
+- The Target Image exhibits many small, varied colored pixels and a dominant presence of blue and green pixels. This matches the rule for "interlaced".
+<response>interlaced</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9): 0.5556
+
+--- CONFIG: N=4, K=1, Q=5 ---
+Query 1: Expected: [perforated] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Small, scattered, irregular blue dots]
+- [Dominant green background]
+Knowledge Base:
+- IF [Small, scattered, irregular blue dots] AND [Dominant green background] THEN stained
+Rule Check:
+- The Target Image contains small, scattered, irregular blue dots and a dominant green background, matching the features specified in the rule for stained.
+<response>stained</response>
+----------------------------------------
+Query 2: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Circular shapes]
+- [Regular spacing between shapes]
+Knowledge Base:
+- IF [Circular shapes] AND [Regular spacing between shapes] THEN perforated
+Rule Check:
+- The Target Image contains circular shapes and regular spacing between them, matching the features specified in the rule for perforated.
+<response>perforated</response>
+----------------------------------------
+Query 3: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of numerous circular holes]
+- [Dark outlines surrounding the holes]
+Knowledge Base:
+- IF [Presence of numerous circular holes] AND [Dark outlines surrounding the holes] THEN perforated
+Rule Check:
+- The Target Image exhibits numerous circular holes and dark outlines surrounding them, matching the features defined in the rule for "perforated."
+<response>perforated</response>
+----------------------------------------
+Query 4: Expected: [perforated] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dense, random distribution of small colored pixels]
+- [Dominant pink and blue color presence]
+Knowledge Base:
+- IF [Dense, random distribution of small colored pixels] AND [Dominant pink and blue color presence] THEN stained
+Rule Check:
+- The Target Image exhibits a dense, random distribution of small colored pixels and a dominant presence of pink and blue. This matches the features specified in the rule for "stained".
+<response>stained</response>
+----------------------------------------
+Query 5: Expected: [perforated] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN stained
+Rule Check:
+- The Target Image contains the exact features specified in the rule for stained.
+<response>stained</response>
+----------------------------------------
+Query 6: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of diagonal lines forming a repeating "V" shape]
+- [Alternating color bands of green and blue]
+Knowledge Base:
+- IF [Presence of diagonal lines forming a repeating "V" shape] AND [Alternating color bands of green and blue] THEN zigzagged
+Rule Check:
+- The Target Image exhibits diagonal lines forming a repeating "V" shape and alternating color bands of green and blue. This matches the features specified in the rule for zigzagged.
+<response>zigzagged</response>
+----------------------------------------
+Query 7: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of diagonal lines]
+- [Lines are not perfectly straight]
+Knowledge Base:
+- IF [Presence of diagonal lines] AND [Lines are not perfectly straight] THEN zigzagged
+Rule Check:
+- The Target Image exhibits diagonal lines that are not perfectly straight, matching the features specified in the rule for zigzagged.
+<response>zigzagged</response>
+----------------------------------------
+Query 8: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of repeating angled lines]
+- [Lines forming a zigzag pattern]
+Knowledge Base:
+- IF [Presence of repeating angled lines] AND [Lines forming a zigzag pattern] THEN zigzagged
+Rule Check:
+- The Target Image exhibits repeating angled lines that form a zigzag pattern. This matches the criteria for the "zigzagged" class.
+<response>zigzagged</response>
+----------------------------------------
+Query 9: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of diagonal lines forming a repeating "V" shape]
+- [Alternating color bands of pink and blue]
+Knowledge Base:
+- IF [Presence of diagonal lines forming a repeating "V" shape] AND [Alternating color bands of pink and blue] THEN zigzagged
+Rule Check:
+- The Target Image exhibits diagonal lines forming a repeating "V" shape and alternating color bands of pink and blue. This matches the features specified in the rule for zigzagged.
+<response>zigzagged</response>
+----------------------------------------
+Query 10: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Sharp, repeating angled lines forming a "V" shape]
+- [Lines are arranged in a repeating pattern]
+Knowledge Base:
+- IF [Sharp, repeating angled lines forming a "V" shape] AND [Lines are arranged in a repeating pattern] THEN zigzagged
+Rule Check:
+- The Target Image exhibits sharp, repeating angled lines forming a "V" shape, and these lines are arranged in a repeating pattern. This matches the criteria for the "zigzagged" class.
+<response>zigzagged</response>
+----------------------------------------
+Query 11: Expected: [stained] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Irregular, swirling blue and turquoise patches]
+- [Randomly distributed pink and green pixels]
+Knowledge Base:
+- IF [Irregular, swirling blue and turquoise patches] AND [Randomly distributed pink and green pixels] THEN stained
+Rule Check:
+- The Target Image contains irregular, swirling blue and turquoise patches and randomly distributed pink and green pixels, matching the features specified in the rule for stained.
+<response>stained</response>
+----------------------------------------
+Query 12: Expected: [stained] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN stained
+Rule Check:
+- The Target Image contains the exact features specified in the rule for stained.
+<response>stained</response>
+----------------------------------------
+Query 13: Expected: [stained] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN stained
+Rule Check:
+- The Target Image contains the exact features specified in the rule for stained.
+<response>stained</response>
+----------------------------------------
+Query 14: Expected: [stained] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular, mottled patches of turquoise]
+- [Dominant brown and beige color palette]
+Knowledge Base:
+- IF [Presence of irregular, mottled patches of turquoise] AND [Dominant brown and beige color palette] THEN stained
+Rule Check:
+- The Target Image exhibits irregular, mottled patches of turquoise and a dominant brown and beige color palette, matching the criteria for the "stained" class.
+<response>stained</response>
+----------------------------------------
+Query 15: Expected: [stained] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dense, random arrangement of small colored pixels]
+- [Dominant green color]
+Knowledge Base:
+- IF [Dense, random arrangement of small colored pixels] AND [Dominant green color] THEN stained
+Rule Check:
+- The Target Image exhibits a dense, random arrangement of small colored pixels and a dominant green color, matching the features specified in the rule for stained.
+<response>stained</response>
+----------------------------------------
+Query 16: Expected: [grooved] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Thin, horizontal, blue lines]
+- [Light brown background]
+Knowledge Base:
+- IF [Thin, horizontal, blue lines] AND [Light brown background] THEN grooved
+Rule Check:
+- The Target Image contains thin, horizontal, blue lines and a light brown background, matching the features specified in the rule for grooved.
+<response>grooved</response>
+----------------------------------------
+Query 17: Expected: [grooved] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Parallel lines
+- [Concrete observable feature 2] Lines are slightly angled
+Knowledge Base:
+- IF Parallel lines AND Lines are slightly angled THEN grooved
+Rule Check:
+- The Target Image contains parallel lines that are slightly angled. This matches the features specified in the rule for grooved.
+<response>grooved</response>
+----------------------------------------
+Query 18: Expected: [grooved] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Parallel ridges
+- [Consistent linear texture]
+Knowledge Base:
+- IF [Parallel ridges] AND [Consistent linear texture] THEN grooved
+Rule Check:
+- The Target Image exhibits parallel ridges and a consistent linear texture, matching the criteria for "grooved."
+<response>grooved</response>
+----------------------------------------
+Query 19: Expected: [grooved] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dense, random distribution of pixels
+- [Dominant blue color]
+Knowledge Base:
+- IF [Dense, random distribution of pixels] AND [Dominant blue color] THEN stained
+Rule Check:
+- The Target Image exhibits a dense, random distribution of pixels and a dominant blue color, matching the features specified in the rule for stained.
+<response>stained</response>
+----------------------------------------
+Query 20: Expected: [grooved] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Curved lines]
+- [Parallel arrangement]
+Knowledge Base:
+- IF [Curved lines] AND [Parallel arrangement] THEN grooved
+Rule Check:
+- The Target Image exhibits curved lines arranged in a parallel fashion. This matches the features specified in the rule for "grooved".
+<response>grooved</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,5): 0.8000
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a circular object]
+- [Background texture resembling flecks]
+Knowledge Base:
+- IF [Presence of a circular object] AND [Background texture resembling flecks] THEN flecked
+Rule Check:
+- The Target Image contains a circular object and a background texture resembling flecks. This matches the rule for "flecked".
+<response>flecked</response>
+----------------------------------------
+Query 2: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Small, scattered dots of yellow
+- [Concrete observable feature 2] Dense, random distribution of colored pixels
+Knowledge Base:
+- IF Small, scattered dots of yellow AND Dense, random distribution of colored pixels THEN flecked
+Rule Check:
+- The Target Image contains the exact features specified in the rule for flecked.
+<response>flecked</response>
+----------------------------------------
+Query 3: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Small, scattered dots of red, yellow, and blue]
+- [Presence of a circular, metallic object]
+Knowledge Base:
+- IF [Small, scattered dots of red, yellow, and blue] AND [Presence of a circular, metallic object] THEN flecked
+Rule Check:
+- The Target Image contains small, scattered dots of red, yellow, and blue, and a circular, metallic object. This matches the features specified in the rule for "flecked".
+<response>flecked</response>
+----------------------------------------
+Query 4: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Small, uniformly distributed colored pixels]
+Knowledge Base:
+- IF [Small, uniformly distributed colored pixels] THEN flecked
+Rule Check:
+- The Target Image contains small, uniformly distributed colored pixels, matching the features specified in the rule for flecked.
+<response>flecked</response>
+----------------------------------------
+Query 5: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Small, scattered dots of various colors.
+- [Concrete observable feature 2] A vertical, slightly darker, blurred line running through the center.
+Knowledge Base:
+- IF [Small, scattered dots of various colors] AND [A vertical, slightly darker, blurred line running through the center] THEN flecked
+Rule Check:
+- The Target Image contains the exact features specified in the rule for flecked.
+<response>flecked</response>
+----------------------------------------
+Query 6: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Small, scattered red dots
+- [Concrete observable feature 2] Predominantly blue-grey background
+Knowledge Base:
+- IF Small, scattered red dots AND Predominantly blue-grey background THEN flecked
+Rule Check:
+- The Target Image contains small, scattered red dots and a predominantly blue-grey background, matching the features specified in the rule for "flecked".
+<response>flecked</response>
+----------------------------------------
+Query 7: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Tiny, uniformly distributed colored dots.
+- [Concrete observable feature 2] Random distribution of colors (blue, green, pink).
+Knowledge Base:
+- IF Tiny, uniformly distributed colored dots AND Random distribution of colors THEN flecked
+Rule Check:
+- The Target Image exhibits tiny, uniformly distributed colored dots and a random distribution of colors. This matches the rule for "flecked".
+<response>flecked</response>
+----------------------------------------
+Query 8: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dense scattering of small red dots
+- [Dense scattering of small blue dots
+- [Dense scattering of small green dots
+Knowledge Base:
+- IF [Dense scattering of small red dots] AND [Dense scattering of small blue dots] AND [Dense scattering of small green dots] THEN flecked
+Rule Check:
+- The Target Image contains the exact features specified in the rule for flecked.
+<response>flecked</response>
+----------------------------------------
+Query 9: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Small, scattered dots of red, blue, and yellow.
+- [Concrete observable feature 2] A predominantly yellow background.
+Knowledge Base:
+- IF Small, scattered dots of red, blue, and yellow AND A predominantly yellow background THEN flecked
+Rule Check:
+- The Target Image contains small, scattered dots of red, blue, and yellow against a predominantly yellow background, matching the rule for "flecked".
+<response>flecked</response>
+----------------------------------------
+Query 10: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Square shapes arranged in a grid]
+- [Distinct borders between the squares]
+Knowledge Base:
+- IF [Square shapes arranged in a grid] AND [Distinct borders between the squares] THEN chequered
+Rule Check:
+- The Target Image exhibits square shapes arranged in a grid and has distinct borders between the squares. This matches the rule for "chequered".
+<response>chequered</response>
+----------------------------------------
+Query 11: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Square grid pattern]
+- [Repeating square shapes]
+Knowledge Base:
+- IF [Square grid pattern] AND [Repeating square shapes] THEN chequered
+Rule Check:
+- The Target Image exhibits a square grid pattern and repeating square shapes. This matches the features specified in the rule for "chequered".
+<response>chequered</response>
+----------------------------------------
+Query 12: Expected: [chequered] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of closely spaced, parallel, horizontal lines]
+- [Dominant teal color]
+Knowledge Base:
+- IF [Presence of closely spaced, parallel, horizontal lines] AND [Dominant teal color] THEN gauzy
+Rule Check:
+- The Target Image exhibits closely spaced, parallel, horizontal lines and a dominant teal color. This matches the features specified in the rule for "gauzy".
+<response>gauzy</response>
+----------------------------------------
+Query 13: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Square shapes]
+- [Regular grid pattern]
+Knowledge Base:
+- IF [Square shapes] AND [Regular grid pattern] THEN chequered
+Rule Check:
+- The Target Image exhibits square shapes arranged in a regular grid pattern, matching the features defined in the rule for "chequered".
+<response>chequered</response>
+----------------------------------------
+Query 14: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Square-shaped blocks
+- [Concrete observable feature 2] Repeating pattern of blocks
+Knowledge Base:
+- IF Square-shaped blocks AND Repeating pattern of blocks THEN chequered
+Rule Check:
+- The Target Image contains square-shaped blocks and a repeating pattern of blocks, which matches the rule for chequered.
+<response>chequered</response>
+----------------------------------------
+Query 15: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Small, regularly spaced squares
+- [Varied colors within the squares]
+Knowledge Base:
+- IF [Small, regularly spaced squares] AND [Varied colors within the squares] THEN chequered
+Rule Check:
+- The Target Image contains small, regularly spaced squares and varied colors within those squares, matching the criteria for "chequered".
+<response>chequered</response>
+----------------------------------------
+Query 16: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Square grid pattern]
+- [Distinct, colored squares]
+Knowledge Base:
+- IF [Square grid pattern] AND [Distinct, colored squares] THEN chequered
+Rule Check:
+- The Target Image exhibits a square grid pattern and distinct, colored squares. This matches the features specified in the rule for "chequered".
+<response>chequered</response>
+----------------------------------------
+Query 17: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Small, square shapes
+- [Concrete observable feature 2] Repeating pattern of squares
+Knowledge Base:
+- IF Small, square shapes AND Repeating pattern of squares THEN chequered
+Rule Check:
+- The Target Image contains small, square shapes and a repeating pattern of squares. This matches the rule for "chequered".
+<response>chequered</response>
+----------------------------------------
+Query 18: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Square grid pattern]
+- [Alternating red and blue squares]
+Knowledge Base:
+- IF [Square grid pattern] AND [Alternating red and blue squares] THEN chequered
+Rule Check:
+- The Target Image exhibits a square grid pattern and alternating red and blue squares. This matches the features specified in the rule for "chequered".
+<response>chequered</response>
+----------------------------------------
+Query 19: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Intersecting lines forming a grid pattern.
+- [Concrete observable feature 2] Predominantly blue and yellow colors.
+Knowledge Base:
+- IF Intersecting lines forming a grid pattern AND Predominantly blue and yellow colors THEN chequered
+Rule Check:
+- The Target Image exhibits intersecting lines forming a grid pattern and predominantly blue and yellow colors. This matches the rule for "chequered".
+<response>chequered</response>
+----------------------------------------
+Query 20: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Dense, small, irregular colored pixels.
+- [Concrete observable feature 2] Overall circular shape.
+Knowledge Base:
+- IF [Dense, small, irregular colored pixels] AND [Overall circular shape] THEN flecked
+Rule Check:
+- The Target Image contains the exact features specified in the rule for flecked.
+<response>flecked</response>
+----------------------------------------
+Query 21: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Horizontal bands of varying colors]
+- [Irregular, distorted edges between bands]
+Knowledge Base:
+- IF [Horizontal bands of varying colors] AND [Irregular, distorted edges between bands] THEN gauzy
+Rule Check:
+- The Target Image exhibits horizontal bands of varying colors and irregular, distorted edges between them, matching the features defined in the rule for "gauzy".
+<response>gauzy</response>
+----------------------------------------
+Query 22: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Vertical, irregular streaks
+- [Concrete observable feature 2] Soft, blurred edges
+Knowledge Base:
+- IF Vertical, irregular streaks AND Soft, blurred edges THEN gauzy
+Rule Check:
+- The Target Image contains vertical, irregular streaks and soft, blurred edges, which match the features specified in the rule for gauzy.
+<response>gauzy</response>
+----------------------------------------
+Query 23: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Vertical lines of varying thickness]
+- [Irregular, broken edges along the lines]
+Knowledge Base:
+- IF [Vertical lines of varying thickness] AND [Irregular, broken edges along the lines] THEN gauzy
+Rule Check:
+- The Target Image exhibits vertical lines of varying thickness and irregular, broken edges along these lines, matching the features defined in the rule for "gauzy".
+<response>gauzy</response>
+----------------------------------------
+Query 24: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Vertical lines of varying color and width]
+- [Irregular, distorted shapes]
+Knowledge Base:
+- IF [Vertical lines of varying color and width] AND [Irregular, distorted shapes] THEN gauzy
+Rule Check:
+- The Target Image exhibits vertical lines of varying color and width, and irregular, distorted shapes. This matches the features specified in the rule for gauzy.
+<response>gauzy</response>
+----------------------------------------
+Query 25: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Vertical lines of varying color]
+- [Irregular, distorted shapes]
+Knowledge Base:
+- IF [Vertical lines of varying color] AND [Irregular, distorted shapes] THEN gauzy
+Rule Check:
+- The Target Image contains vertical lines of varying color and irregular, distorted shapes, which matches the features specified in the rule for gauzy.
+<response>gauzy</response>
+----------------------------------------
+Query 26: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN flecked
+Rule Check:
+- The Target Image contains the exact features specified in the rule for flecked.
+<response>flecked</response>
+----------------------------------------
+Query 27: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Vertical lines of varying thickness]
+- [Small, rectangular blocks]
+Knowledge Base:
+- IF [Vertical lines of varying thickness] AND [Small, rectangular blocks] THEN chequered
+Rule Check:
+- The Target Image exhibits vertical lines of varying thickness and small, rectangular blocks. This matches the features defined in the rule for "chequered".
+<response>chequered</response>
+----------------------------------------
+Query 28: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of repeating angled lines]
+- [Lines forming a zigzag pattern]
+Knowledge Base:
+- IF [Presence of repeating angled lines] AND [Lines forming a zigzag pattern] THEN zigzagged
+Rule Check:
+- The Target Image exhibits repeating angled lines that form a zigzag pattern. This matches the features specified in the rule for zigzagged.
+<response>zigzagged</response>
+----------------------------------------
+Query 29: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Sharp angled lines forming a repeating "V" shape]
+- [Repeating pattern of alternating light and dark areas]
+Knowledge Base:
+- IF [Sharp angled lines forming a repeating "V" shape] AND [Repeating pattern of alternating light and dark areas] THEN zigzagged
+Rule Check:
+- The Target Image exhibits sharp angled lines forming a repeating "V" shape and a repeating pattern of alternating light and dark areas. This matches the criteria for the "zigzagged" class.
+<response>zigzagged</response>
+----------------------------------------
+Query 30: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of diagonal lines]
+- [Repetitive pattern of angled lines]
+Knowledge Base:
+- IF [Presence of diagonal lines] AND [Repetitive pattern of angled lines] THEN zigzagged
+Rule Check:
+- The Target Image exhibits a repetitive pattern of angled lines, which aligns with the features specified in the rule for zigzagged.
+<response>zigzagged</response>
+----------------------------------------
+Query 31: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of repeating angled lines]
+- [Alternating color bands of green and blue]
+Knowledge Base:
+- IF [Presence of repeating angled lines] AND [Alternating color bands of green and blue] THEN zigzagged
+Rule Check:
+- The Target Image exhibits repeating angled lines and alternating color bands of green and blue, matching the criteria for the "zigzagged" class.
+<response>zigzagged</response>
+----------------------------------------
+Query 32: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of repeating V-shaped lines]
+- [Alternating light and dark bands forming the V-shapes]
+Knowledge Base:
+- IF [Presence of repeating V-shaped lines] AND [Alternating light and dark bands forming the V-shapes] THEN zigzagged
+Rule Check:
+- The Target Image exhibits repeating V-shaped lines and alternating light and dark bands forming these shapes. This matches the criteria for the "zigzagged" class.
+<response>zigzagged</response>
+----------------------------------------
+Query 33: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Pink jagged lines]
+- [Blue background]
+Knowledge Base:
+- IF [Pink jagged lines] AND [Blue background] THEN zigzagged
+Rule Check:
+- The Target Image contains pink jagged lines and a blue background, matching the features specified in the rule for zigzagged.
+<response>zigzagged</response>
+----------------------------------------
+Query 34: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of diagonal lines forming a repeating "V" shape]
+- [Alternating bands of dark blue and light green]
+Knowledge Base:
+- IF [Presence of diagonal lines forming a repeating "V" shape] AND [Alternating bands of dark blue and light green] THEN zigzagged
+Rule Check:
+- The Target Image exhibits diagonal lines forming a repeating "V" shape and alternating bands of dark blue and light green. This matches the features specified in the rule for zigzagged.
+<response>zigzagged</response>
+----------------------------------------
+Query 35: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Horizontal stripes]
+- [Repeating pattern of small shapes]
+Knowledge Base:
+- IF [Horizontal stripes] AND [Repeating pattern of small shapes] THEN zigzagged
+Rule Check:
+- The Target Image exhibits horizontal stripes and a repeating pattern of small shapes. This matches the features specified in the rule for zigzagged.
+<response>zigzagged</response>
+----------------------------------------
+Query 36: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of repeating diagonal lines]
+- [Lines forming a V-shape]
+Knowledge Base:
+- IF [Presence of repeating diagonal lines] AND [Lines forming a V-shape] THEN zigzagged
+Rule Check:
+- The Target Image exhibits repeating diagonal lines that form a V-shape. This matches the features specified in the rule for zigzagged.
+<response>zigzagged</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.8611

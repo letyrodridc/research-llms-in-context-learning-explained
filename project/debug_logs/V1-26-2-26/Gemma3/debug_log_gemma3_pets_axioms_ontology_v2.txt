@@ -1,0 +1,2697 @@
+=== DEBUG LOG: gemma3 | pets | Prompt: axioms_ontology_v2 ===
+
+--- CONFIG: N=2, K=2, Q=5 ---
+Query 1: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Bombay</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Bombay ⊑ hasColor black
+- Bombay ⊑ hasShape felineBody
+- Bombay ⊑ hasTexture shortFur
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: black, grey
+- hasShape/Part: felineBody, largeEars, longTail
+- hasTexture: shortFur
+
+4. Logical Explanation (DL & NL):
+The image exhibits `hasColor black` and `hasColor grey`, which aligns with the TBox axiom stating that a Bombay must `hasColor black`. The presence of `hasShape felineBody`, `hasShape largeEars`, and `hasTexture shortFur` further supports the classification. Therefore, based on the observed properties and the established axioms, the image is classified as a Bombay.
+----------------------------------------
+Query 2: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Bombay</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Bombay ⊑ hasColor black
+- Bombay ⊑ hasShape feline
+- Bombay ⊑ hasTexture shortFur
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: black, dark blue
+- hasShape/Part: feline body, pointed ears, whiskers, paws
+- hasTexture: short, sleek fur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly black and dark blue coloration (hasColor: black, dark blue), a feline body shape with pointed ears and whiskers (hasShape/Part: feline body, pointed ears, whiskers, paws), and a short, sleek fur texture (hasTexture: short, sleek fur). These observed properties align with the TBox axioms defining a Bombay cat, specifically the necessary condition of having black fur and the general feline shape and texture. Therefore, the image is classified as a Bombay.
+----------------------------------------
+Query 3: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Bombay</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Bombay ⊑ hasColor blackOrDarkBlue (Necessary condition)
+- Bombay ⊑ hasShape felineFacialFeatures (Necessary condition)
+- Bombay ⊑ hasTexture shortAndDenseFur (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: black, dark blue
+- hasShape/Part: feline facial features, pointed ears, whiskers
+- hasTexture: short, dense fur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark coloration (black and dark blue), possesses feline facial features, and displays short, dense fur. These observed properties align with the necessary conditions defined in the TBox for the Bombay class. Therefore, the image is classified as a Bombay.
+----------------------------------------
+Query 4: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Bombay</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Bombay ⊑ hasColor darkBlue (Necessary condition)
+- Bombay ⊑ hasShape roundedHead (Necessary condition)
+- Bombay ⊑ hasTexture sleekFur (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: darkBlue
+- hasShape/Part: roundedHead, prominentWhiskers
+- hasTexture: sleekFur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark blue color (hasColor: darkBlue), a rounded head shape (hasShape: roundedHead), and sleek fur texture (hasTexture: sleekFur). These properties align with the necessary conditions defined in the TBox for the Bombay class. Therefore, the image is classified as a Bombay.
+----------------------------------------
+Query 5: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Bombay</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Bombay ⊑ hasColor black
+- Bombay ⊑ hasShape feline
+- Bombay ⊑ hasTexture smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: black
+- hasShape/Part: head, ears, eyes, whiskers, tail, paws
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly black color (hasColor black), a feline shape (hasShape feline), and a smooth texture (hasTexture smooth). These properties align with the established axioms for the Bombay class. Therefore, based on the observed visual characteristics, the entity is classified as a Bombay.
+----------------------------------------
+Query 6: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>American Bulldog</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- American Bulldog ⊑ hasColor [dark brown, tan] (Necessary condition)
+- American Bulldog ⊑ hasShape/Part [broad head, muscular build, short muzzle] (Necessary condition)
+- American Bulldog ⊑ hasTexture [short, smooth coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, tan, grey]
+- hasShape/Part: [broad head, muscular build, short muzzle, floppy ears]
+- hasTexture: [short, smooth coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of properties: a brown and tan coloration, a broad head, a muscular build, a short muzzle, floppy ears, and a short, smooth coat. These properties align with the necessary conditions defined in the TBox for an American Bulldog. The observed coloration and physical features are consistent with the established visual characteristics of the breed, thus justifying the classification.
+----------------------------------------
+Query 7: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Bulldog</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- American Bulldog ⊑ hasColor [dark brown, grey, black] (Necessary condition)
+- American Bulldog ⊑ hasShape/Part [broad head, muscular build, short muzzle] (Necessary condition)
+- American Bulldog ⊑ hasTexture [short, dense coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [dark brown, grey, black]
+- hasShape/Part: [broad head, muscular build, short muzzle, wrinkled face]
+- hasTexture: [short, dense coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark brown, grey, and black coloration (hasColor), a broad head, muscular build, and short muzzle (hasShape/Part), and a short, dense coat (hasTexture). These observed properties align with the necessary conditions defined in the TBox for an American Bulldog. Therefore, the image is classified as an American Bulldog.
+----------------------------------------
+Query 8: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>American Bulldog</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- American Bulldog ⊑ hasColor [dark brown, black] (Necessary condition)
+- American Bulldog ⊑ hasShape/Part [broad head, wrinkled face, muscular build] (Necessary condition)
+- American Bulldog ⊑ hasTexture [short, smooth coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [dark brown, black]
+- hasShape/Part: [broad head, wrinkled face, muscular build]
+- hasTexture: [short, smooth coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark brown and black coloration (hasColor), a broad head and wrinkled face (hasShape/Part), and a short, smooth coat (hasTexture). These observed properties align with the necessary conditions defined in the TBox for an American Bulldog. Therefore, based on the visual evidence, the entity is classified as an American Bulldog.
+----------------------------------------
+Query 9: Expected: [American Bulldog] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Bombay</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Bombay ⊑ hasColor darkBlue (Necessary condition)
+- Bombay ⊑ hasShape felineBody (Necessary condition)
+- Bombay ⊑ hasTexture sleekFur (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: darkBlue
+- hasShape/Part: felineBody, head, tail, paws
+- hasTexture: sleekFur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark blue color (hasColor: darkBlue), a feline body shape (hasShape/Part: felineBody), and sleek fur texture (hasTexture: sleekFur). These properties align with the necessary conditions defined in the TBox for the Bombay class. Therefore, based on the observed visual features, the entity is classified as a Bombay.
+----------------------------------------
+Query 10: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Bulldog</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- American Bulldog ⊑ hasColor gray
+- American Bulldog ⊑ hasShape muscularBuild
+- American Bulldog ⊑ hasTexture shortFur
+
+3. ABox (Observed Properties & Assertions):
+- hasColor gray
+- hasShape muscularBuild
+- hasTexture shortFur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a gray color (hasColor gray), a muscular build (hasShape muscularBuild), and short fur (hasTexture shortFur). These properties align with the TBox axioms defining an American Bulldog. Therefore, the image is classified as an American Bulldog.
+----------------------------------------
+-> FINAL ACCURACY for (2,2,5): 0.9000
+
+--- CONFIG: N=2, K=2, Q=8 ---
+Query 1: Expected: [English Setter] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>English Setter</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- English Setter ⊑ hasColor brown
+- English Setter ⊑ hasShape/Part long snout
+- English Setter ⊑ hasTexture feathered
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, white
+- hasShape/Part: long snout, slender body, feathered tail
+- hasTexture: feathered, smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly brown and white coloration (hasColor brown, hasColor white), a long snout (hasShape/Part long snout), a slender body, and a feathered tail (hasTexture feathered). These observed properties align with the axioms defining an English Setter (English Setter ⊑ hasColor brown, English Setter ⊑ hasShape/Part long snout, English Setter ⊑ hasTexture feathered). Therefore, the image is classified as an English Setter.
+----------------------------------------
+Query 2: Expected: [English Setter] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>English Setter</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- English Setter ⊑ hasColor [brown, white] (Necessary condition)
+- English Setter ⊑ hasShape/Part [long snout, floppy ears, slender body] (Necessary condition)
+- English Setter ⊑ hasTexture [smooth coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, white]
+- hasShape/Part: [long snout, floppy ears, slender body]
+- hasTexture: [smooth coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dog with brown and white coloration (hasColor: [brown, white]). It also displays a long snout, floppy ears, and a slender body (hasShape/Part: [long snout, floppy ears, slender body]). The coat appears smooth (hasTexture: [smooth coat]). These observed properties align with the necessary conditions defined in the TBox for an English Setter. Therefore, the image is classified as an English Setter.
+----------------------------------------
+Query 3: Expected: [English Setter] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>German Shorthaired</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- German Shorthaired ⊑ hasColor brown, white, black (Necessary condition)
+- German Shorthaired ⊑ hasShape long snout, floppy ears (Necessary condition)
+- German Shorthaired ⊑ hasTexture wiry coat (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, white, black
+- hasShape/Part: long snout, floppy ears, muscular build
+- hasTexture: wiry coat
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of brown, white, and black coloration (hasColor), a long snout and floppy ears (hasShape/Part), and a wiry coat texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for German Shorthaired. Therefore, based on the visual evidence, the entity is classified as a German Shorthaired.
+----------------------------------------
+Query 4: Expected: [English Setter] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>English Setter</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- English Setter ⊑ hasColor brown
+- English Setter ⊑ hasShape long_legs
+- English Setter ⊑ hasTexture feathered
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, white
+- hasShape/Part: long_legs, elongated_body
+- hasTexture: feathered, wiry
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly brown and white coloration (hasColor brown, hasColor white), possesses long legs (hasShape long_legs) and an elongated body, and displays a feathered and wiry texture (hasTexture feathered, hasTexture wiry). These observed properties align with the axioms defining an English Setter, specifically the necessary conditions of having brown coloration, long legs, and a feathered texture. Therefore, the image is classified as an English Setter.
+----------------------------------------
+Query 5: Expected: [English Setter] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>German Shorthaired</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- German Shorthaired ⊑ hasColor brown, white, black (Necessary condition)
+- German Shorthaired ⊑ hasShape/Part long snout, floppy ears (Necessary condition)
+- German Shorthaired ⊑ hasTexture wiry (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, white, black
+- hasShape/Part: long snout, floppy ears
+- hasTexture: wiry
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of brown, white, and black coloration (hasColor), a long snout, and floppy ears (hasShape/Part), and a wiry texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a German Shorthaired. Therefore, based on these visual characteristics, the image is classified as a German Shorthaired.
+----------------------------------------
+Query 6: Expected: [English Setter] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>German Shorthaired</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- German Shorthaired ⊑ hasColor brown, black, white (Necessary condition)
+- German Shorthaired ⊑ hasShape long snout, floppy ears (Necessary condition)
+- German Shorthaired ⊑ hasTexture wiry (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, black, white
+- hasShape/Part: long snout, floppy ears
+- hasTexture: wiry
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of brown, black, and white coloration (hasColor), a long snout, and floppy ears (hasShape/Part), and a wiry texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a German Shorthaired. Therefore, the image is classified as a German Shorthaired.
+----------------------------------------
+Query 7: Expected: [English Setter] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>German Shorthaired</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- German Shorthaired ⊑ hasColor blue-gray (Necessary condition)
+- German Shorthaired ⊑ hasShape long_legs (Necessary condition)
+- German Shorthaired ⊑ hasTexture wiry (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor blue-gray
+- hasShape long_legs
+- hasTexture wiry
+
+4. Logical Explanation (DL & NL):
+The image exhibits a blue-gray coloration, long legs, and a wiry texture. These properties align with the necessary conditions defined in the TBox for the class German Shorthaired. Therefore, based on the observed properties, the entity is classified as a German Shorthaired.
+----------------------------------------
+Query 8: Expected: [English Setter] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>German Shorthaired</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- German Shorthaired ⊑ hasColor brown, white, black (Necessary condition)
+- German Shorthaired ⊑ hasShape/Part long snout, floppy ears (Necessary condition)
+- German Shorthaired ⊑ hasTexture wiry (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, white, black
+- hasShape/Part: long snout, floppy ears
+- hasTexture: wiry
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of brown, white, and black coloration (hasColor), a long snout, and floppy ears (hasShape/Part), and a wiry texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for the class German Shorthaired. Therefore, the image is classified as a German Shorthaired.
+----------------------------------------
+Query 9: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>German Shorthaired</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- German Shorthaired ⊑ hasColor brown, black, white (Necessary condition)
+- German Shorthaired ⊑ hasShape long snout, floppy ears (Necessary condition)
+- German Shorthaired ⊑ hasTexture wiry coat (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, black, white
+- hasShape/Part: long snout, floppy ears
+- hasTexture: wiry coat
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of brown, black, and white coloration (hasColor), a long snout, and floppy ears (hasShape/Part), and a wiry coat texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for German Shorthaired. Therefore, the image is classified as a German Shorthaired.
+----------------------------------------
+Query 10: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>German Shorthaired</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- German Shorthaired ⊑ hasColor brownAndWhite (Necessary condition)
+- German Shorthaired ⊑ hasShape longMuzzle (Necessary condition)
+- German Shorthaired ⊑ hasTexture shortAndDenseCoat (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor brownAndWhite
+- hasShape longMuzzle
+- hasTexture shortAndDenseCoat
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dog with a brown and white coloration (hasColor brownAndWhite), a long muzzle (hasShape longMuzzle), and a short, dense coat (hasTexture shortAndDenseCoat). These properties align with the necessary conditions defined in the TBox for a German Shorthaired, thus justifying the classification.
+----------------------------------------
+Query 11: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>German Shorthaired</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- German Shorthaired ⊑ hasColor brownAndWhite (Necessary condition)
+- German Shorthaired ⊑ hasShape elongatedBody (Necessary condition)
+- German Shorthaired ⊑ hasTexture wiryCoat (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor brownAndWhite
+- hasShape elongatedBody
+- hasTexture wiryCoat
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of brown and white coloration (hasColor brownAndWhite), an elongated body shape (hasShape elongatedBody), and a wiry coat texture (hasTexture wiryCoat). These observed properties align with the necessary conditions defined in the TBox for the German Shorthaired class. Therefore, the image is classified as a German Shorthaired.
+----------------------------------------
+Query 12: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>German Shorthaired</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- German Shorthaired ⊑ hasColor brown
+- German Shorthaired ⊑ hasShape/Part long snout
+- German Shorthaired ⊑ hasTexture wiry
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, black
+- hasShape/Part: long snout, floppy ears
+- hasTexture: wiry, short fur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly brown and black coloration (hasColor: brown, black), a distinct long snout (hasShape/Part: long snout), and a wiry texture (hasTexture: wiry). These observed properties align with the axioms defining a German Shorthaired, specifically the presence of brown/black coloration, a long snout, and a wiry coat. Therefore, the image is classified as a German Shorthaired.
+----------------------------------------
+Query 13: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>German Shorthaired</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- German Shorthaired ⊑ hasColor brown
+- German Shorthaired ⊑ hasShape/Part long snout
+- German Shorthaired ⊑ hasTexture wiry
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, white
+- hasShape/Part: long snout, floppy ears
+- hasTexture: wiry
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly brown and white coloration (hasColor: brown, white), a distinct long snout (hasShape/Part: long snout), and a wiry texture (hasTexture: wiry). These observed properties align with the axioms defining a German Shorthaired, specifically the necessary conditions of having brown coloration, a long snout, and a wiry texture. Therefore, the image is classified as a German Shorthaired.
+----------------------------------------
+Query 14: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>German Shorthaired</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- German Shorthaired ⊑ hasColor brownAndWhite (Necessary condition)
+- German Shorthaired ⊑ hasShape dogLike (Necessary condition)
+- German Shorthaired ⊑ hasTexture wiry (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: greyAndWhite
+- hasShape/Part: dogLike, fourLegs, head, tail
+- hasTexture: short, dense
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dog-like shape (hasShape dogLike), a grey and white coloration (hasColor greyAndWhite), and a short, dense texture (hasTexture short, dense). These properties align with the necessary conditions defined for a German Shorthaired dog in the TBox. While the color isn't precisely "brownAndWhite", the overall combination of shape, texture, and a light coloration is consistent with the established visual characteristics of a German Shorthaired.
+----------------------------------------
+Query 15: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>German Shorthaired</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- German Shorthaired ⊑ hasColor brown
+- German Shorthaired ⊑ hasShape long_snout
+- German Shorthaired ⊑ hasTexture wiry_coat
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, grey
+- hasShape/Part: long_snout, slender_body, long_legs
+- hasTexture: wiry_coat
+
+4. Logical Explanation (DL & NL):
+The image exhibits a wiry coat (hasTexture: wiry_coat), a brown and grey coloration (hasColor: brown, grey), and a long snout (hasShape/Part: long_snout). These properties align with the TBox axioms defining a German Shorthaired, specifically the necessary conditions of having a wiry coat, brown/grey coloration, and a long snout. Therefore, the image is classified as a German Shorthaired.
+----------------------------------------
+Query 16: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>German Shorthaired</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- German Shorthaired ⊑ hasColor brown-gray (Necessary condition)
+- German Shorthaired ⊑ hasShape elongatedBody (Necessary condition)
+- German Shorthaired ⊑ hasTexture wiryCoat (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown-gray
+- hasShape/Part: elongatedBody, fourLegs, head, tail
+- hasTexture: wiryCoat
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dominant brown-gray coloration (hasColor: brown-gray), an elongated body shape (hasShape: elongatedBody), and a wiry coat texture (hasTexture: wiryCoat). These observed properties align with the necessary conditions defined in the TBox for a German Shorthaired. Therefore, based on these visual characteristics, the image is classified as a German Shorthaired.
+----------------------------------------
+-> FINAL ACCURACY for (2,2,8): 0.6875
+
+--- CONFIG: N=2, K=1, Q=5 ---
+Query 1: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Japanese Chin</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Japanese Chin ⊑ hasLongFlowingHair (Necessary condition)
+- Japanese Chin ⊑ hasSmallFlatFace (Necessary condition)
+- hasSmallFlatFace ⊑ Japanese Chin (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, black, white
+- hasShape/Part: long flowing hair, small flat face, upright ears, compact body
+- hasTexture: fluffy, smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a compact body, long flowing hair, and a small flat face. The presence of "hasSmallFlatFace" is a sufficient condition for "Japanese Chin" according to our TBox. The other observed properties ("hasLongFlowingHair", "hasColor: brown, black, white") are consistent with and validate the classification as a Japanese Chin, satisfying the necessary conditions outlined in the TBox.
+----------------------------------------
+Query 2: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>British Shorthair</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- British Shorthair ⊑ hasColor gray
+- British Shorthair ⊑ hasShape/Part roundedHead
+- British Shorthair ⊑ hasTexture denseFur
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: gray, blue, purple
+- hasShape/Part: roundedHead, largeBody, shortLegs
+- hasTexture: denseFur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a gray coloration (hasColor gray), a rounded head shape (hasShape/Part roundedHead), and dense fur texture (hasTexture denseFur). These properties align with the axioms defining a British Shorthair. The presence of gray coloration, a rounded head, and dense fur are necessary conditions for classifying the entity as a British Shorthair.
+----------------------------------------
+Query 3: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>British Shorthair</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- British Shorthair ⊑ hasColor grayOrBlue (Necessary condition)
+- British Shorthair ⊑ hasShape roundFace (Necessary condition)
+- British Shorthair ⊑ hasTexture denseCoat (Necessary condition)
+- Japanese Chin ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ Japanese Chin (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: gray, blue
+- hasShape/Part: roundFace, largeEyes, shortNose
+- hasTexture: denseCoat
+
+4. Logical Explanation (DL & NL):
+The image exhibits a gray/blue coloration (hasColor: gray, blue), a round face (hasShape/Part: roundFace), and a dense coat texture (hasTexture: denseCoat). These properties align with the necessary conditions defined for a British Shorthair in the TBox. While the Japanese Chin has a general "visual feature" that allows for classification, the specific observed properties of color, face shape, and coat texture strongly indicate a British Shorthair.
+----------------------------------------
+Query 4: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Japanese Chin</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Japanese Chin ⊑ hasVisualFeature [distinctive facial wrinkles and large, prominent eyes] (Necessary condition)
+- hasVisualFeature [distinctive facial wrinkles and large, prominent eyes] ⊑ Japanese Chin (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Black, White, Brown
+- hasShape/Part: Rounded head, large eyes, prominent muzzle, wrinkled face, short snout, compact body
+- hasTexture: Short, smooth fur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rounded head, large eyes, a prominent muzzle, and a wrinkled face. These features align with the "hasVisualFeature" axiom associated with Japanese Chins. The presence of these distinct facial characteristics, specifically the wrinkles and large eyes, is sufficient to classify the entity as a Japanese Chin.
+----------------------------------------
+Query 5: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Japanese Chin</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Japanese Chin ⊑ hasColor Black
+- Japanese Chin ⊑ hasShape/Part FlatFace
+- Japanese Chin ⊑ hasTexture LongFur
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Black, DarkGrey
+- hasShape/Part: FlatFace, LargeEyes, SmallNose
+- hasTexture: LongFur, Fluffy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly black and dark grey coloration (hasColor Black, hasColor DarkGrey). It also displays a distinct flat facial structure (hasShape/Part FlatFace) and long, fluffy fur (hasTexture LongFur). These observed properties align with the axioms defining a Japanese Chin, specifically the necessary conditions of having black coloration, a flat face, and long fur. Therefore, the image is classified as a Japanese Chin.
+----------------------------------------
+Query 6: Expected: [British Shorthair] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Japanese Chin</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Japanese Chin ⊑ hasVisualFeature [flat face] (Necessary condition)
+- Japanese Chin ⊑ hasVisualFeature [plume-like hair] (Necessary condition)
+- hasVisualFeature [flat face] ⊑ Japanese Chin (Sufficient condition)
+- hasVisualFeature [plume-like hair] ⊑ Japanese Chin (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: black, white, grey
+- hasShape/Part: flat face, large eyes, plume-like hair around ears and neck, small body
+- hasTexture: smooth, fluffy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a flat face and plume-like hair around the ears and neck. These visual features satisfy the necessary and sufficient conditions defined in the TBox for a Japanese Chin. The observed colors (black, white, grey) are consistent with the breed's typical coloration, further validating the classification.
+----------------------------------------
+Query 7: Expected: [British Shorthair] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>British Shorthair</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- British Shorthair ⊑ hasColor gray
+- British Shorthair ⊑ hasShape roundFace
+- British Shorthair ⊑ hasTexture denseFur
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: gray, blue
+- hasShape: roundFace, compactBody
+- hasTexture: denseFur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a gray coloration (hasColor gray), a round face (hasShape roundFace), and dense fur (hasTexture denseFur). These properties align with the axioms defining a British Shorthair. The presence of gray coloration and a round face are necessary conditions, while the dense fur texture further validates the classification. Therefore, based on the observed properties, the entity is classified as a British Shorthair.
+----------------------------------------
+Query 8: Expected: [British Shorthair] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>British Shorthair</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- British Shorthair ⊑ hasColor gray
+- British Shorthair ⊑ hasShape roundedHead
+- British Shorthair ⊑ hasTexture denseFur
+
+3. ABox (Observed Properties & Assertions):
+- hasColor gray, blue
+- hasShape roundedHead, compactBody
+- hasTexture denseFur, fluffy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly gray coloration (hasColor gray), a rounded head shape (hasShape roundedHead), and a dense, fluffy fur texture (hasTexture denseFur). These observed properties align with the axioms defined for the British Shorthair class. The presence of gray fur, a rounded head, and dense fur are all necessary conditions for classifying the entity as a British Shorthair.
+----------------------------------------
+Query 9: Expected: [British Shorthair] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>British Shorthair</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- British Shorthair ⊑ hasColor gray
+- British Shorthair ⊑ hasShape roundedBody
+- British Shorthair ⊑ hasTexture denseFur
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: gray, silver
+- hasShape/Part: roundedBody, largeHead, shortLegs
+- hasTexture: denseFur, plush
+
+4. Logical Explanation (DL & NL):
+The image exhibits a gray coloration (hasColor gray), a rounded body shape (hasShape roundedBody), and dense fur texture (hasTexture denseFur). These properties align with the axioms defining a British Shorthair. The presence of a rounded body and dense fur, combined with the gray coloration, are sufficient conditions to classify the entity as a British Shorthair.
+----------------------------------------
+Query 10: Expected: [British Shorthair] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>British Shorthair</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- British Shorthair ⊑ hasColor gray
+- British Shorthair ⊑ hasShape roundFace
+- British Shorthair ⊑ hasTexture denseFur
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: gray, blue
+- hasShape: roundFace, compactBody
+- hasTexture: denseFur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a gray coloration (hasColor gray), a round face (hasShape roundFace), and dense fur (hasTexture denseFur). These properties align with the axioms defining a British Shorthair. The presence of gray coloration and a round face are sufficient conditions to classify the entity as a British Shorthair.
+----------------------------------------
+-> FINAL ACCURACY for (2,1,5): 0.7000
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Samoyed</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Samoyed ⊑ hasVisualFeature [fluffy_white_coat] (Necessary condition)
+- hasVisualFeature [fluffy_white_coat] ⊑ Samoyed (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: white, cream, light brown
+- hasShape/Part: long snout, curled tail, thick fur, four legs
+- hasTexture: fluffy, dense
+
+4. Logical Explanation (DL & NL):
+The image exhibits a fluffy, dense coat that is predominantly white with cream and light brown highlights. This aligns with the TBox axiom stating that a Samoyed is characterized by a "fluffy_white_coat". The observed "fluffy, dense" texture and the overall white coloration are sufficient to classify the entity as a Samoyed.
+----------------------------------------
+Query 2: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Samoyed</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Samoyed ⊑ hasVisualFeature [fluffy_white_coat] (Necessary condition)
+- hasVisualFeature [fluffy_white_coat] ⊑ Samoyed (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: white, grey
+- hasShape/Part: head, body, legs, tail
+- hasTexture: fluffy, dense
+
+4. Logical Explanation (DL & NL):
+The image exhibits a fluffy, dense coat, predominantly white with grey undertones. This aligns with the TBox axiom stating that a Samoyed is characterized by a fluffy white coat (hasVisualFeature [fluffy_white_coat]). The presence of this feature is sufficient to classify the entity as a Samoyed.
+----------------------------------------
+Query 3: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasColor [dark_brown, black, white] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasShape/Part [muscular_build, short_muzzle, erect_ears] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasTexture [short_coat] (Necessary condition)
+- Samoyed ⊑ hasColor [white, cream] (Necessary condition)
+- Samoyed ⊑ hasShape/Part [fluffy_coat, curled_tail] (Necessary condition)
+- Samoyed ⊑ hasTexture [thick_fur] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [dark_brown, black, white]
+- hasShape/Part: [muscular_build, short_muzzle, erect_ears]
+- hasTexture: [short_coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits `hasColor [dark_brown, black, white]`, `hasShape/Part [muscular_build, short_muzzle, erect_ears]`, and `hasTexture [short_coat]`. These properties satisfy the necessary conditions for a Staffordshire Bull Terrier (Staffordshire Bull Terrier ⊑ hasColor [dark_brown, black, white], Staffordshire Bull Terrier ⊑ hasShape/Part [muscular_build, short_muzzle, erect_ears], and Staffordshire Bull Terrier ⊑ hasTexture [short_coat]). The image does not exhibit the properties associated with a Samoyed (e.g., `hasColor [white, cream]`, `hasShape/Part [fluffy_coat, curled_tail]`, `hasTexture [thick_fur]`). Therefore, the image is classified as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 4: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Samoyed</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Samoyed ⊑ hasVisualFeature [fluffy_white_coat] (Necessary condition)
+- hasVisualFeature [fluffy_white_coat] ⊑ Samoyed (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: white, grey
+- hasShape/Part: quadruped, head, legs, tail
+- hasTexture: fluffy, dense
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dense, fluffy white coat (hasTexture: fluffy, hasColor: white), which satisfies the TBox condition for a Samoyed. The presence of a quadrupedal form with a head, legs, and tail (hasShape/Part) further validates the classification. The slight grey coloration is consistent with variations within the Samoyed breed.
+----------------------------------------
+Query 5: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Samoyed</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Samoyed ⊑ hasColor White
+- Samoyed ⊑ hasShape FluffyCoat
+- hasColor White ⊑ Samoyed (Sufficient)
+- hasShape FluffyCoat ⊑ Samoyed (Sufficient)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: White
+- hasShape/Part: FourLegs, Head, Tail
+- hasTexture: Fluffy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dominant color of White (hasColor White). This satisfies the TBox axiom stating that Samoyed ⊑ hasColor White. Furthermore, the image shows a Fluffy texture (hasTexture Fluffy) and a FluffyCoat shape (hasShape FluffyCoat), both of which are sufficient conditions for classifying the entity as a Samoyed. Therefore, based on the observed properties of color and texture, the entity is classified as a Samoyed.
+----------------------------------------
+Query 6: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasColor [dark_brown, white] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasShape/Part [muscular_build, short_muzzle, floppy_ears] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasTexture [short_coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [dark_brown, white, grey]
+- hasShape/Part: [muscular_build, short_muzzle, floppy_ears, upright_ears]
+- hasTexture: [short_coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark brown and white coloration (hasColor), a muscular build, a short muzzle, and floppy ears (hasShape/Part), and a short coat (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Staffordshire Bull Terrier. While the upright ears are not explicitly mentioned in the TBox, they do not contradict the established necessary conditions, and the overall combination of features strongly suggests the presence of a Staffordshire Bull Terrier.
+----------------------------------------
+Query 7: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasColor [dark_grey_to_blue] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasShape/Part [muscular_build, short_muzzle, erect_ears] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasTexture [short_smooth_coat] (Necessary condition)
+- Samoyed ⊑ hasColor [white_to_cream] (Necessary condition)
+- Samoyed ⊑ hasShape/Part [fluffy_coat, curled_tail] (Necessary condition)
+- Samoyed ⊑ hasTexture [thick_double_coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: dark_grey_to_blue
+- hasShape/Part: muscular_build, short_muzzle, erect_ears
+- hasTexture: short_smooth_coat
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark grey to blue color (hasColor: dark_grey_to_blue), a muscular build, a short muzzle, and erect ears (hasShape/Part: muscular_build, short_muzzle, erect_ears), and a short, smooth coat (hasTexture: short_smooth_coat). These properties align with the necessary conditions for a Staffordshire Bull Terrier as defined in the TBox. The absence of white/cream coloration and a fluffy/thick coat, which are necessary for a Samoyed, further supports the classification as a Staffordshire Bull Terrier. Therefore, the observed properties are sufficient to classify the entity as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 8: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Samoyed</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Samoyed ⊑ hasVisualFeature [fluffy_white_coat] (Necessary condition)
+- hasVisualFeature [fluffy_white_coat] ⊑ Samoyed (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: white, light beige
+- hasShape/Part: rounded head, pointed ears, fluffy tail
+- hasTexture: fluffy, dense
+
+4. Logical Explanation (DL & NL):
+The image exhibits a fluffy, dense coat that is predominantly white and light beige. This aligns with the "hasVisualFeature [fluffy_white_coat]" axiom, which is a sufficient condition for classifying the entity as a Samoyed. The rounded head and pointed ears further support this classification, consistent with the general morphology of a Samoyed.
+----------------------------------------
+Query 9: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasColor [dark_brown, grey] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasShape/Part [muscular_build, short_muzzle, floppy_ears] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasTexture [short_coat] (Necessary condition)
+- Samoyed ⊑ hasColor [white] (Necessary condition)
+- Samoyed ⊑ hasTexture [fluffy_coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [dark_brown, grey]
+- hasShape/Part: [muscular_build, short_muzzle, floppy_ears]
+- hasTexture: [short_coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark brown and grey coloration (hasColor), a muscular build, a short muzzle, and floppy ears (hasShape/Part), and a short coat texture (hasTexture). These observed properties align with the necessary conditions defined for a Staffordshire Bull Terrier in the TBox. The absence of the "white" color and "fluffy_coat" texture, which are necessary for a Samoyed, further supports the classification as a Staffordshire Bull Terrier. Therefore, the observed properties are sufficient to classify the entity as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 10: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasVisualFeature [short, muscular build, broad head, wrinkled face] (Necessary condition)
+- hasVisualFeature [short, muscular build, broad head, wrinkled face] ⊑ Staffordshire Bull Terrier (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, black, white
+- hasShape/Part: short legs, broad head, wrinkled face, muscular build, compact body
+- hasTexture: short, smooth coat
+
+4. Logical Explanation (DL & NL):
+The image exhibits a short, muscular build, a broad head, and a wrinkled face (hasShape/Part). These features align with the necessary and sufficient conditions defined in the TBox for a Staffordshire Bull Terrier. The observed colors (brown, black, white) do not contradict the classification, as they are common coat colors for this breed. Therefore, based on the presence of the key physical features, the image is classified as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 11: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasVisualFeature [distinctive facial markings] (Necessary condition)
+- hasVisualFeature [distinctive facial markings] ⊑ Staffordshire Bull Terrier (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: dark brown, black, white
+- hasShape/Part: broad head, muscular build, floppy ears, short muzzle
+- hasTexture: short, smooth coat
+
+4. Logical Explanation (DL & NL):
+The image exhibits distinctive facial markings, specifically a dark brown/black patch over the eyes and a white chest. This aligns with the TBox axiom stating that a Staffordshire Bull Terrier has distinctive facial markings. The presence of this feature is sufficient to classify the entity as a Staffordshire Bull Terrier. The other observed properties (color, shape, texture) are consistent with the general characteristics of the breed, but the facial markings are the key distinguishing feature.
+----------------------------------------
+Query 12: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasColor [dark_brown, black, white] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasShape/Part [broad_head, muscular_build, short_muzzle] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasTexture [short_smooth_coat] (Necessary condition)
+- Samoyed ⊑ hasColor [white, cream] (Necessary condition)
+- Samoyed ⊑ hasTexture [thick_fluffy_coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [dark_brown, black, white]
+- hasShape/Part: [broad_head, muscular_build, short_muzzle]
+- hasTexture: [short_smooth_coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits `hasColor [dark_brown, black, white]`, `hasShape/Part [broad_head, muscular_build, short_muzzle]`, and `hasTexture [short_smooth_coat]`. These properties satisfy the necessary conditions for a Staffordshire Bull Terrier (Staffordshire Bull Terrier ⊑ hasColor [dark_brown, black, white], Staffordshire Bull Terrier ⊑ hasShape/Part [broad_head, muscular_build, short_muzzle], and Staffordshire Bull Terrier ⊑ hasTexture [short_smooth_coat]). The image does not exhibit the `hasColor [white, cream]` or `hasTexture [thick_fluffy_coat]` properties that are necessary for a Samoyed. Therefore, the image is classified as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 13: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasVisualFeature [broad head, muscular build, short muzzle] (Necessary condition)
+- hasVisualFeature [broad head, muscular build, short muzzle] ⊑ Staffordshire Bull Terrier (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: grey, blue, purple
+- hasShape/Part: broad head, muscular build, short muzzle, visible ears
+- hasTexture: patchy, mottled
+
+4. Logical Explanation (DL & NL):
+The image exhibits a broad head, muscular build, and short muzzle (hasShape/Part). These features align with the necessary and sufficient conditions defined in the TBox for a Staffordshire Bull Terrier. The observed colors (grey, blue, purple) and patchy texture (hasTexture) do not contradict the classification and further validate the presence of the defining features. Therefore, the image is classified as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 14: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasDarkColor (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasCompactBuild (Necessary condition)
+- hasCompactBuild ⊑ Staffordshire Bull Terrier (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: dark brown, black
+- hasShape/Part: short muzzle, muscular build, broad head
+- hasTexture: short, smooth coat
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark brown/black color (hasColor), a compact build (hasCompactBuild), and a short muzzle with a muscular build and broad head (hasShape/Part). The presence of a dark color and a compact build aligns with the necessary conditions for a Staffordshire Bull Terrier. The compact build also satisfies the sufficient condition, leading to the classification as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 15: Expected: [Staffordshire Bull Terrier] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Samoyed</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Samoyed ⊑ hasVisualFeature [fluffy_white_coat] (Necessary condition)
+- hasVisualFeature [fluffy_white_coat] ⊑ Samoyed (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: white, grey
+- hasShape/Part: head, ears, paws, body
+- hasTexture: fluffy, dense
+
+4. Logical Explanation (DL & NL):
+The image exhibits a fluffy, dense coat, predominantly white with grey undertones. This aligns with the TBox axiom stating that a Samoyed is characterized by a "fluffy_white_coat". The presence of this visual feature is sufficient to classify the entity as a Samoyed.
+----------------------------------------
+Query 16: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasVisualFeature [distinctive muscular build and broad head] (Necessary condition)
+- hasVisualFeature [distinctive muscular build and broad head] ⊑ Staffordshire Bull Terrier (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: dark grey, black, white
+- hasShape/Part: broad head, muscular build, short muzzle, prominent chest
+- hasTexture: short, dense coat
+
+4. Logical Explanation (DL & NL):
+The image exhibits a distinctive muscular build and a broad head (hasVisualFeature). This satisfies the sufficient condition for a Staffordshire Bull Terrier. The observed colors (dark grey, black, white) and texture (short, dense coat) are consistent with the general appearance of the breed, further validating the classification.
+----------------------------------------
+Query 17: Expected: [Staffordshire Bull Terrier] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Samoyed</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Samoyed ⊑ hasVisualFeature [fluffy white fur] (Necessary condition)
+- hasVisualFeature [fluffy white fur] ⊑ Samoyed (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: white, grey
+- hasShape/Part: head, snout, paws, body
+- hasTexture: fluffy, dense
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dense, fluffy texture and a predominantly white coloration with grey undertones. This aligns with the TBox axiom stating that a Samoyed is characterized by fluffy white fur. The observed "fluffy white fur" (ABox) satisfies the sufficient condition for classification as a Samoyed.
+----------------------------------------
+Query 18: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasColor [dark_brown, black, white] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasShape/Part [short_muzzle, muscular_build, broad_chest] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasTexture [short_smooth_coat] (Necessary condition)
+- Samoyed ⊑ hasColor [white, cream] (Necessary condition)
+- Samoyed ⊑ hasTexture [fluffy_coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [dark_brown, black, white]
+- hasShape/Part: [short_muzzle, muscular_build, broad_chest, floppy_ears]
+- hasTexture: [short_smooth_coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark brown and black coloration with white markings (hasColor: [dark_brown, black, white]). It also displays a short muzzle, muscular build, and broad chest (hasShape/Part: [short_muzzle, muscular_build, broad_chest, floppy_ears]), and a short, smooth coat (hasTexture: [short_smooth_coat]). These properties align with the necessary conditions defined for a Staffordshire Bull Terrier in the TBox. While the image does not exhibit the white or cream coloration or fluffy coat characteristic of a Samoyed, the observed features strongly support the classification as a Staffordshire Bull Terrier.
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9): 0.6667
+
+--- CONFIG: N=3, K=1, Q=5 ---
+Query 1: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Japanese Chin ⊑ hasColor [black, white, tan] (Necessary condition)
+- Japanese Chin ⊑ hasShape/Part [flat face, large eyes, curled tail] (Necessary condition)
+- Japanese Chin ⊑ hasTexture [shiny coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, white, tan]
+- hasShape/Part: [flat face, large eyes, curled tail]
+- hasTexture: [shiny coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of black, white, and tan coloration (hasColor), a flat face and large eyes (hasShape/Part), and a shiny coat (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Japanese Chin. Therefore, based on the visual evidence, the entity is classified as a Japanese Chin.
+----------------------------------------
+Query 2: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Persian</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Persian ⊑ hasLongFur (Necessary condition)
+- hasLongFur ⊑ Persian (Sufficient condition)
+- Persian ⊑ hasFlattenedFace (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Cream, White, Grey
+- hasShape/Part: Flattened face, prominent nose, large eyes, fluffy ears
+- hasTexture: Long, flowing fur
+
+4. Logical Explanation (DL & NL):
+The image exhibits "hasLongFur", "hasFlattenedFace", and "hasColor Cream, White, Grey". These properties align with the TBox axioms defining a Persian cat. The presence of long, flowing fur (hasLongFur) is a sufficient condition for classifying the entity as a Persian. The flattened face (hasFlattenedFace) is a necessary condition, and the observed colors further validate the classification.
+----------------------------------------
+Query 3: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Japanese Chin ⊑ hasVisualFeature [flat face] (Necessary condition)
+- hasVisualFeature [flat face] ⊑ Japanese Chin (Sufficient condition)
+- Japanese Chin ⊑ hasVisualFeature [dark eyes] (Necessary condition)
+- hasVisualFeature [dark eyes] ⊑ Japanese Chin (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: black, white, grey
+- hasShape/Part: flat face, dark eyes, small body
+- hasTexture: fluffy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a "flat face" and "dark eyes", which are sufficient conditions for classifying the entity as a Japanese Chin according to the TBox. The presence of fluffy texture and a small body further validates this classification.
+----------------------------------------
+Query 4: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Samoyed</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Samoyed ⊑ hasColor White
+- Samoyed ⊑ hasShape FluffyCoat
+- Samoyed ⊑ hasTexture ThickFur
+
+3. ABox (Observed Properties & Assertions):
+- hasColor White
+- hasShape FluffyCoat
+- hasTexture ThickFur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly white color (hasColor White), a fluffy coat appearance (hasShape FluffyCoat), and a thick fur texture (hasTexture ThickFur). These properties align with the established axioms for the Samoyed class, indicating that the entity in the image is a Samoyed.
+----------------------------------------
+Query 5: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Japanese Chin ⊑ hasColor [black, white] (Necessary condition)
+- Japanese Chin ⊑ hasShape/Part [flat face, large eyes] (Necessary condition)
+- Japanese Chin ⊑ hasTexture [smooth coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, white, grey]
+- hasShape/Part: [flat face, large, dark eyes, short snout]
+- hasTexture: [smooth coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of black and white coloration (hasColor), a flat facial structure with large, dark eyes and a short snout (hasShape/Part), and a smooth coat texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Japanese Chin. The presence of these features validates the classification as a Japanese Chin.
+----------------------------------------
+Query 6: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Greyhound</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Samoyed ⊑ hasVisualFeature [fluffy, white fur]
+- Japanese Chin ⊑ hasVisualFeature [flat face, large eyes]
+- Persian ⊑ hasVisualFeature [long, flowing fur, flattened face]
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: grey, dark grey
+- hasShape/Part: long legs, streamlined body, narrow chest, pointed snout
+- hasTexture: short, smooth fur
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a streamlined body, long legs, and a pointed snout. These features do not align with the visual characteristics of a Samoyed (fluffy, white fur), a Japanese Chin (flat face, large eyes), or a Persian (long, flowing fur, flattened face). The observed color and texture are consistent with a Greyhound. Therefore, based on the observed properties and the provided axioms, the image is classified as a Greyhound.
+----------------------------------------
+Query 7: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Samoyed</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Samoyed ⊑ hasColor White
+- Samoyed ⊑ hasTexture Fluffy
+- Samoyed ⊑ hasShape ThickCoat
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: White, Cream
+- hasShape/Part: Head, Ears, Tail, Paws
+- hasTexture: Fluffy, Dense
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly white and cream coloration (hasColor: White, Cream). It also displays a visibly fluffy and dense coat texture (hasTexture: Fluffy, Dense). The presence of a thick coat (hasShape: ThickCoat) combined with the white coloration strongly aligns with the characteristics defined in the TBox for a Samoyed. Therefore, based on these observed properties, the image is classified as a Samoyed.
+----------------------------------------
+Query 8: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Persian</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Persian ⊑ hasLongFur: true (Necessary condition)
+- Persian ⊑ hasFlatFace: true (Necessary condition)
+- hasLongFur: true ∧ hasFlatFace: true ⊑ Persian (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: white, grey
+- hasShape/Part: fluffy head, flattened face, long fur
+- hasTexture: fluffy, dense
+
+4. Logical Explanation (DL & NL):
+The image exhibits a fluffy head and a flattened face (hasShape/Part), and the fur appears long and dense (hasTexture). The dominant colors are white and grey (hasColor). These observations satisfy the TBox axioms stating that a Persian cat must have long fur and a flat face. Therefore, the image is classified as a Persian.
+----------------------------------------
+Query 9: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Samoyed</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Samoyed ⊑ hasColor white
+- Samoyed ⊑ hasShape fluffyCoat
+- Samoyed ⊑ hasTexture thickFur
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: white, grey
+- hasShape: quadruped, elongatedBody
+- hasTexture: thickFur, fluffy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a quadruped with a predominantly white and grey coloration (hasColor: white, grey) and a fluffy coat (hasShape: fluffyCoat). The texture appears to be thick fur (hasTexture: thickFur). These observed properties align with the axioms defining a Samoyed: a Samoyed must have a white coloration, a fluffy coat, and thick fur. Therefore, the image is classified as a Samoyed.
+----------------------------------------
+Query 10: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Samoyed</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Samoyed ⊑ hasColor White
+- Samoyed ⊑ hasTexture Fluffy
+- Samoyed ⊑ hasShape ThickFur
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: White, Gray
+- hasShape/Part: Head, Body, Paws
+- hasTexture: Fluffy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly white color (hasColor: White, Gray) and a fluffy texture (hasTexture: Fluffy). The presence of a thick fur (hasShape: ThickFur) aligns with the established axioms for a Samoyed. Therefore, based on these observed properties, the image is classified as a Samoyed.
+----------------------------------------
+Query 11: Expected: [Persian] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Samoyed</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Samoyed ⊑ hasColor White
+- Samoyed ⊑ hasTexture Fluffy
+- Samoyed ⊑ hasShape ThickFur
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: White, Gray
+- hasShape/Part: Head, Body, Paws
+- hasTexture: Fluffy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly white color (hasColor: White, Gray) and a fluffy texture (hasTexture: Fluffy). The presence of a thick fur (hasShape: ThickFur) aligns with the established axioms for a Samoyed. Therefore, based on these observed properties, the image is classified as a Samoyed.
+----------------------------------------
+Query 12: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Persian</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Persian ⊑ hasLongFur: true (Necessary condition)
+- Persian ⊑ hasFlatFace: true (Necessary condition)
+- hasFlatFace ⊑ Persian (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, beige, white
+- hasShape/Part: flattened face, large eyes, long fur
+- hasTexture: fluffy, dense
+
+4. Logical Explanation (DL & NL):
+The image exhibits a flattened face (hasFlatFace) and long, fluffy fur (hasLongFur). The presence of a flattened face is a sufficient condition for classifying the entity as a Persian. The observed color and texture further validate this classification, as Persian cats are often characterized by these features.
+----------------------------------------
+Query 13: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Persian</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Persian ⊑ hasLongFur: true (Necessary condition)
+- Persian ⊑ hasFlatFace: true (Necessary condition)
+- hasFlatFace ⊑ Persian (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Cream, White, Light Brown
+- hasShape/Part: Flat face, prominent nose, long fur, large eyes
+- hasTexture: Fluffy, dense fur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a flat face and dense, long fur. The presence of a flat face (hasFlatFace) is a sufficient condition for Persian classification. The observed color (Cream, White, Light Brown) and fluffy texture are consistent with the typical appearance of a Persian cat, further validating the classification. The long fur (hasLongFur) is a necessary condition for a Persian, and is also observed in the image.
+----------------------------------------
+Query 14: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Persian</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Persian ⊑ hasLongFur (Necessary condition)
+- Persian ⊑ hasFlatFace (Necessary condition)
+- hasLongFur ⊑ Persian (Sufficient condition)
+- hasFlatFace ⊑ Persian (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: beige, brown
+- hasShape/Part: flat face, large eyes, fluffy chest, long fur
+- hasTexture: fluffy, dense
+
+4. Logical Explanation (DL & NL):
+The image exhibits `hasLongFur` and `hasFlatFace`. According to the TBox, both `hasLongFur` and `hasFlatFace` are sufficient conditions for classifying an entity as a Persian. Therefore, based on the observed properties, the image is classified as a Persian.
+----------------------------------------
+Query 15: Expected: [Persian] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Samoyed</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Samoyed ⊑ hasColor White
+- Samoyed ⊑ hasTexture Fluffy
+- Samoyed ⊑ hasShape ThickCoat
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: White, Gray
+- hasShape/Part: Head, Body, Paws
+- hasTexture: Fluffy, Dense
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly white color (hasColor: White, Gray) and a visibly fluffy texture (hasTexture: Fluffy, Dense). The presence of a thick coat (hasShape: ThickCoat) is also apparent. These properties align with the established axioms for a Samoyed, where a white color, fluffy texture, and thick coat are necessary conditions for classification. Therefore, based on the observed visual features, the entity is classified as a Samoyed.
+----------------------------------------
+-> FINAL ACCURACY for (3,1,5): 0.6000
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [Pomeranian] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Pomeranian</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Pomeranian ⊑ hasColor [various shades of brown and black] (Necessary condition)
+- Pomeranian ⊑ hasShape/Part [small, fluffy body, pointed snout, erect ears] (Necessary condition)
+- Pomeranian ⊑ hasTexture [dense, double coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, black, tan
+- hasShape/Part: small body, fluffy fur, pointed snout, erect ears
+- hasTexture: dense, fluffy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a small body covered in fluffy fur, a pointed snout, and erect ears. The dominant colors are brown, black, and tan. These observed properties (hasColor, hasShape/Part, hasTexture) align with the necessary conditions defined in the TBox for a Pomeranian. Therefore, the image is classified as a Pomeranian.
+----------------------------------------
+Query 2: Expected: [Pomeranian] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Pomeranian</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Pomeranian ⊑ hasColor [various shades of orange, cream, and brown] (Necessary condition)
+- Pomeranian ⊑ hasShape/Part [fluffy, rounded head, pointed ears, bushy tail] (Necessary condition)
+- Pomeranian ⊑ hasTexture [dense, soft fur] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: orange, cream, brown
+- hasShape/Part: fluffy head, pointed ears, bushy tail
+- hasTexture: dense, soft fur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a fluffy head, pointed ears, and a bushy tail, all of which are necessary conditions for a Pomeranian. The observed colors (orange, cream, and brown) are also consistent with the typical coloration of Pomeranians. Therefore, based on the presence of these necessary conditions, the image is classified as a Pomeranian.
+----------------------------------------
+Query 3: Expected: [Pomeranian] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Pomeranian</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Pomeranian ⊑ hasColor [various shades of brown and tan] (Necessary condition)
+- Pomeranian ⊑ hasShape/Part [fluffy ruff around the neck] (Necessary condition)
+- Pomeranian ⊑ hasTexture [dense, soft fur] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, tan, cream
+- hasShape/Part: fluffy ruff around the neck, small muzzle, pointed ears
+- hasTexture: dense, soft fur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of properties consistent with a Pomeranian. Specifically, the presence of various shades of brown and tan fur (hasColor), a fluffy ruff around the neck (hasShape/Part), and dense, soft fur (hasTexture) align with the necessary conditions defined in the TBox for Pomeranian classification. The observed features collectively satisfy the axioms, leading to the classification as a Pomeranian.
+----------------------------------------
+Query 4: Expected: [Pomeranian] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Japanese Chin ⊑ hasColor [black, white] (Necessary condition)
+- Japanese Chin ⊑ hasShape/Part [flat face, large eyes] (Necessary condition)
+- Japanese Chin ⊑ hasTexture [smooth coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, white, grey]
+- hasShape/Part: [flat face, large eyes, curled tail]
+- hasTexture: [smooth coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a smooth coat (hasTexture), a flat face, and large eyes (hasShape/Part), alongside a color palette of black, white, and grey (hasColor). These observed properties align with the necessary conditions defined in the TBox for a Japanese Chin. The presence of these features validates the classification as a Japanese Chin.
+----------------------------------------
+Query 5: Expected: [Pomeranian] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Japanese Chin ⊑ hasColor [black, white, tan] (Necessary condition)
+- Japanese Chin ⊑ hasShape/Part [flat face, large eyes, plumed tail] (Necessary condition)
+- Japanese Chin ⊑ hasTexture [silky fur] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, white, brown]
+- hasShape/Part: [flat face, large eyes, curled tail]
+- hasTexture: [silky fur]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of black, white, and brown coloration (hasColor), a flat facial structure and large eyes (hasShape/Part), and silky fur (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Japanese Chin. Therefore, based on the visual evidence, the image is classified as a Japanese Chin.
+----------------------------------------
+Query 6: Expected: [Pomeranian] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Pomeranian</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Pomeranian ⊑ hasColor [various shades of brown, cream, and black] (Necessary condition)
+- Pomeranian ⊑ hasShape/Part [fluffy ruff around the neck] (Necessary condition)
+- Pomeranian ⊑ hasTexture [dense, fluffy fur] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, cream, black
+- hasShape/Part: fluffy ruff around the neck, small snout, erect ears
+- hasTexture: dense, fluffy fur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of brown, cream, and black coloration (hasColor). It also displays a prominent fluffy ruff around the neck (hasShape/Part) and dense, fluffy fur (hasTexture). These observed properties align with the necessary conditions defined in the TBox for Pomeranian, thus justifying the classification.
+----------------------------------------
+Query 7: Expected: [Pomeranian] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Pomeranian</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Pomeranian ⊑ hasColor [various shades of brown and tan] (Necessary condition)
+- Pomeranian ⊑ hasShape/Part [fluffy coat, small muzzle, erect ears] (Necessary condition)
+- Pomeranian ⊑ hasTexture [dense, soft fur] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, tan, white
+- hasShape/Part: fluffy coat, small muzzle, erect ears
+- hasTexture: dense, soft fur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of brown, tan, and white coloration (hasColor). It also displays a fluffy coat, a small muzzle, and erect ears (hasShape/Part). The texture appears dense and soft (hasTexture). These observed properties align with the necessary conditions defined in the TBox for Pomeranian, thus justifying the classification.
+----------------------------------------
+Query 8: Expected: [Pomeranian] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Pomeranian</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Pomeranian ⊑ hasColor [light brown, cream] (Necessary condition)
+- Pomeranian ⊑ hasShape/Part [fluffy tail, small snout, erect ears] (Necessary condition)
+- Pomeranian ⊑ hasTexture [dense, soft fur] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [light brown, cream, white]
+- hasShape/Part: [fluffy tail, small snout, erect ears, compact body]
+- hasTexture: [dense, soft fur]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a light brown and cream coloration (hasColor), a fluffy tail, small snout, and erect ears (hasShape/Part), and dense, soft fur (hasTexture). These observed properties align with the necessary conditions defined in the TBox for Pomeranian. Therefore, based on the visual evidence, the image is classified as a Pomeranian.
+----------------------------------------
+Query 9: Expected: [Pomeranian] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Pomeranian</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Pomeranian ⊑ hasColor [cream, orange, brown] (Necessary condition)
+- Pomeranian ⊑ hasShape/Part [fluffy coat, small muzzle, curled tail] (Necessary condition)
+- Pomeranian ⊑ hasTexture [dense, soft] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [cream, orange, brown]
+- hasShape/Part: [fluffy coat, small muzzle, curled tail]
+- hasTexture: [dense, soft]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a fluffy coat, a small muzzle, a curled tail, and a color palette of cream, orange, and brown. These observed properties (hasColor, hasShape/Part, hasTexture) all satisfy the necessary conditions defined in the TBox for a Pomeranian. Therefore, the image is classified as a Pomeranian.
+----------------------------------------
+Query 10: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Japanese Chin ⊑ hasColor [black, white] (Necessary condition)
+- Japanese Chin ⊑ hasShape/Part [flat face, large eyes] (Necessary condition)
+- Japanese Chin ⊑ hasTexture [smooth coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, white, grey]
+- hasShape/Part: [flat face, large eyes, curled tail]
+- hasTexture: [smooth coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of black, white, and grey coloration (hasColor), a flat face and large eyes (hasShape/Part), and a smooth coat (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Japanese Chin. The presence of these features validates the classification as a Japanese Chin.
+----------------------------------------
+Query 11: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>French Bulldog</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Pomeranian ⊑ hasTexture Fluffy (Necessary condition)
+- Japanese Chin ⊑ hasVisualFeature [flat face, large eyes] (Necessary condition)
+- Wheaten Terrier ⊑ hasColor Cream (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Grey, White
+- hasShape/Part: Wrinkled face, short muzzle, muscular build
+- hasTexture: Smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a wrinkled face and short muzzle, which are characteristic features of a French Bulldog. While the TBox does not explicitly define French Bulldog, the observed properties align with a general "dog-like" appearance, and the lack of fluffy texture (ruling out Pomeranian) and the absence of a flat face (ruling out Japanese Chin) and cream color (ruling out Wheaten Terrier) leads to the classification of French Bulldog.
+----------------------------------------
+Query 12: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Wheaten Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Wheaten Terrier ⊑ hasVisualFeature [fluffy, wavy coat] (Necessary condition)
+- Wheaten Terrier ⊑ hasColor [tan, cream, gray] (Necessary condition)
+- hasVisualFeature [fluffy, wavy coat] ⊑ Wheaten Terrier (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [tan, cream, gray]
+- hasShape/Part: [elongated snout, floppy ears, bushy tail]
+- hasTexture: [fluffy, wavy coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a fluffy, wavy coat and a color palette of tan, cream, and gray. These visual features align with the necessary conditions defined in the TBox for a Wheaten Terrier. The presence of a fluffy, wavy coat is a sufficient condition to classify the entity as a Wheaten Terrier. The observed colors further validate this classification.
+----------------------------------------
+Query 13: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Japanese Chin ⊑ hasColor [dark blue/gray] (Necessary condition)
+- Japanese Chin ⊑ hasShape/Part [flat face, large eyes] (Necessary condition)
+- Japanese Chin ⊑ hasTexture [dense, straight coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: dark blue/gray, black
+- hasShape/Part: flat face, large, dark eyes, prominent forehead
+- hasTexture: dense, straight coat
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark blue/gray coloration (hasColor), a flat face with large, dark eyes and a prominent forehead (hasShape/Part), and a dense, straight coat (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Japanese Chin. Therefore, based on the visual evidence, the entity is classified as a Japanese Chin.
+----------------------------------------
+Query 14: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Japanese Chin ⊑ hasColor blackAndWhite (Necessary condition)
+- Japanese Chin ⊑ hasShape flatFace (Necessary condition)
+- Japanese Chin ⊑ hasTexture silky (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor blackAndWhite
+- hasShape flatFace
+- hasTexture silky
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of black and white coloration (hasColor blackAndWhite), a distinct flat facial structure (hasShape flatFace), and a silky texture (hasTexture silky). These observed properties align with the necessary conditions defined in the TBox for a Japanese Chin. Therefore, based on these visual characteristics, the entity is classified as a Japanese Chin.
+----------------------------------------
+Query 15: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Pomeranian</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Pomeranian ⊑ hasColor: [various shades of brown and white] (Necessary condition)
+- Pomeranian ⊑ hasShape/Part: [fluffy, rounded head, pointed ears, bushy tail] (Necessary condition)
+- Pomeranian ⊑ hasTexture: [thick, double coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, white, grey]
+- hasShape/Part: [fluffy head, pointed ears, bushy tail, compact body]
+- hasTexture: [thick, fluffy coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a fluffy head, pointed ears, a bushy tail, and a compact body, all of which are consistent with the necessary conditions for a Pomeranian as defined in the TBox. The observed colors (brown, white, grey) are also typical of Pomeranians. Therefore, based on these observed properties, the image is classified as a Pomeranian.
+----------------------------------------
+Query 16: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Wheaten Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Wheaten Terrier ⊑ hasColor [light brown, cream] (Necessary condition)
+- Wheaten Terrier ⊑ hasShape/Part [long snout, floppy ears, bushy tail] (Necessary condition)
+- Wheaten Terrier ⊑ hasTexture [wavy coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [light brown, grey]
+- hasShape/Part: [long snout, floppy ears, visible paws]
+- hasTexture: [wavy coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a light brown and grey coloration (hasColor), a long snout and floppy ears (hasShape/Part), and a wavy coat texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Wheaten Terrier. While the color is not a perfect match to the "cream" specified in the TBox, the combination of the other features strongly suggests the image depicts a Wheaten Terrier.
+----------------------------------------
+Query 17: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Japanese Chin ⊑ hasColor blackAndWhite (Necessary condition)
+- Japanese Chin ⊑ hasShape/Part flatFace (Necessary condition)
+- Japanese Chin ⊑ hasTexture silky (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor blackAndWhite
+- hasShape/Part flatFace
+- hasTexture silky
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of black and white coloration (hasColor blackAndWhite), a distinct flat facial structure (hasShape/Part flatFace), and a silky texture (hasTexture silky). These observed properties align with the necessary conditions defined in the TBox for a Japanese Chin. Therefore, based on these visual cues, the entity is classified as a Japanese Chin.
+----------------------------------------
+Query 18: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Japanese Chin ⊑ hasColor blackAndWhite (Necessary condition)
+- Japanese Chin ⊑ hasShape flatFace (Necessary condition)
+- Japanese Chin ⊑ hasTexture longFlowingHair (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor blackAndWhite
+- hasShape flatFace
+- hasTexture longFlowingHair
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of black and white coloration (hasColor blackAndWhite), a flattened facial structure (hasShape flatFace), and long, flowing hair (hasTexture longFlowingHair). These properties align with the necessary conditions defined in the TBox for a Japanese Chin. Therefore, based on the observed visual features, the entity is classified as a Japanese Chin.
+----------------------------------------
+Query 19: Expected: [Wheaten Terrier] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Pomeranian</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Pomeranian ⊑ hasColor: light brown, cream (Necessary condition)
+- Pomeranian ⊑ hasShape/Part: fluffy tail, pointed ears (Necessary condition)
+- Pomeranian ⊑ hasTexture: dense, soft fur (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: light brown, grey
+- hasShape/Part: fluffy tail, pointed ears
+- hasTexture: dense, soft fur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a light brown and grey coloration (hasColor), a fluffy tail, and pointed ears (hasShape/Part), and a dense, soft fur texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for Pomeranian. Therefore, based on the visual evidence, the entity is classified as a Pomeranian.
+----------------------------------------
+Query 20: Expected: [Wheaten Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Wheaten Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Wheaten Terrier ⊑ hasTexture [curly/wavy] (Necessary condition)
+- Wheaten Terrier ⊑ hasColor [beige/light brown] (Necessary condition)
+- hasTexture [curly/wavy] ⊑ Wheaten Terrier (Sufficient condition)
+- hasColor [beige/light brown] ⊑ Wheaten Terrier (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [beige, light brown, grey]
+- hasShape/Part: [long snout, floppy ears, compact body]
+- hasTexture: [curly, wavy]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of properties that align with the axioms defining a Wheaten Terrier. Specifically, the observed texture is curly/wavy, and the color is a shade of beige/light brown. Both of these properties are sufficient conditions for classifying the entity as a Wheaten Terrier, as defined in the TBox. The presence of a long snout, floppy ears, and a compact body further validates this classification, although these are not explicitly defined in the TBox but are consistent with the general appearance of a Wheaten Terrier.
+----------------------------------------
+Query 21: Expected: [Wheaten Terrier] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Japanese Chin ⊑ hasColor [black, white, tan] (Necessary condition)
+- Japanese Chin ⊑ hasShape/Part [flat face, large eyes, plumed tail] (Necessary condition)
+- Japanese Chin ⊑ hasTexture [smooth coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, white, brown]
+- hasShape/Part: [flat face, large eyes, curled tail]
+- hasTexture: [smooth coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a smooth coat (hasTexture), a flat face, and large eyes (hasShape/Part), alongside a color combination of black, white, and brown (hasColor). These observed properties align with the necessary conditions defined in the TBox for a Japanese Chin. Therefore, based on the visual evidence, the image is classified as a Japanese Chin.
+----------------------------------------
+Query 22: Expected: [Wheaten Terrier] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Japanese Chin ⊑ hasColor [dark_brown, light_tan] (Necessary condition)
+- Japanese Chin ⊑ hasShape/Part [small_head, large_eyes, short_muzzle] (Necessary condition)
+- Japanese Chin ⊑ hasTexture [dense_fur] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [dark_brown, light_tan, black]
+- hasShape/Part: [small_head, large_eyes, short_muzzle, curled_tail]
+- hasTexture: [dense_fur]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark brown and light tan coloration (hasColor), a small head with large eyes and a short muzzle (hasShape/Part), and dense fur (hasTexture). These properties align with the necessary conditions defined in the TBox for a Japanese Chin. The presence of these features validates the classification as a Japanese Chin.
+----------------------------------------
+Query 23: Expected: [Wheaten Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Wheaten Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Wheaten Terrier ⊑ hasColor WheatColor (Necessary condition)
+- Wheaten Terrier ⊑ hasShape MediumBuild (Necessary condition)
+- Wheaten Terrier ⊑ hasTexture WiryCoat (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: WheatColor, Brown
+- hasShape/Part: FourLegs, Head, Body
+- hasTexture: WiryCoat
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dominant WheatColor, a MediumBuild shape, and a WiryCoat texture. These properties align with the necessary conditions defined in the TBox for a Wheaten Terrier. Therefore, based on the observed visual features, the image is classified as a Wheaten Terrier.
+----------------------------------------
+Query 24: Expected: [Wheaten Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Wheaten Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Wheaten Terrier ⊑ hasColor lightBrown (Necessary condition)
+- Wheaten Terrier ⊑ hasShape longBody (Necessary condition)
+- Wheaten Terrier ⊑ hasTexture wiry (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: lightBrown, tan
+- hasShape/Part: longBody, fourLegs, head, tail
+- hasTexture: wiry
+
+4. Logical Explanation (DL & NL):
+The image exhibits a light brown and tan coloration (hasColor), a long body shape (hasShape), and a wiry texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Wheaten Terrier. Therefore, based on these visual characteristics, the image is classified as a Wheaten Terrier.
+----------------------------------------
+Query 25: Expected: [Wheaten Terrier] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>French Bulldog</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Pomeranian ⊑ hasTexture Fluffy (Necessary condition)
+- Japanese Chin ⊑ hasVisualFeature [flat face, large eyes] (Necessary condition)
+- Wheaten Terrier ⊑ hasColor Cream (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Brown, Black
+- hasShape/Part: Wrinkled face, muscular build, short legs
+- hasTexture: Short, smooth coat
+
+4. Logical Explanation (DL & NL):
+The image exhibits a wrinkled face and muscular build, which are not characteristic of Pomeranians (fluffy texture), Japanese Chins (flat face and large eyes), or Wheaten Terriers (cream color). While none of the axioms perfectly match, the observed features align most closely with a bulldog-type breed. The short, smooth coat further supports this classification. Therefore, based on the observed properties, the image is classified as a French Bulldog.
+----------------------------------------
+Query 26: Expected: [Wheaten Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Wheaten Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Wheaten Terrier ⊑ hasColor lightBrown (Necessary condition)
+- Wheaten Terrier ⊑ hasShape longBody (Necessary condition)
+- Wheaten Terrier ⊑ hasTexture wiry (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor lightBrown
+- hasShape longBody
+- hasTexture wiry
+
+4. Logical Explanation (DL & NL):
+The image exhibits a light brown color (hasColor lightBrown), a long body shape (hasShape longBody), and a wiry texture (hasTexture wiry). These properties align with the necessary conditions defined in the TBox for a Wheaten Terrier. Therefore, based on the observed properties, the image is classified as a Wheaten Terrier.
+----------------------------------------
+Query 27: Expected: [Wheaten Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Wheaten Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Wheaten Terrier ⊑ hasVisualFeature [fluffy, dense coat] (Necessary condition)
+- Wheaten Terrier ⊑ hasColor [beige, tan, brown] (Necessary condition)
+- Wheaten Terrier ⊑ hasShape/Part [distinct beard and eyebrows] (Necessary condition)
+- hasVisualFeature [fluffy, dense coat] ⊑ Wheaten Terrier (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [beige, tan, brown]
+- hasShape/Part: [distinct beard and eyebrows, fluffy ears]
+- hasTexture: [dense, fluffy]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dense, fluffy coat (hasVisualFeature [fluffy, dense coat]), which is a necessary condition for a Wheaten Terrier. The observed colors (hasColor [beige, tan, brown]) are also consistent with the typical coloration of a Wheaten Terrier. Furthermore, the presence of a distinct beard and eyebrows (hasShape/Part [distinct beard and eyebrows]) strongly supports the classification. Therefore, the combination of these properties satisfies the necessary and sufficient conditions for classifying the entity as a Wheaten Terrier.
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9): 0.6296
+
+--- CONFIG: N=4, K=1, Q=5 ---
+Query 1: Expected: [Pug] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Boxer</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Boxer ⊑ hasColor brown
+- Boxer ⊑ hasShape/Part wrinkledFace
+- Boxer ⊑ hasTexture shortHair
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, grey
+- hasShape/Part: wrinkledFace, muscularBuild, shortTail
+- hasTexture: shortHair
+
+4. Logical Explanation (DL & NL):
+The image exhibits a brown and grey coloration (hasColor brown, hasColor grey), a wrinkled face (hasShape/Part wrinkledFace), a muscular build (hasShape/Part muscularBuild), a short tail (hasShape/Part shortTail), and short hair (hasTexture shortHair). These properties align with the TBox axioms defining a Boxer, specifically the necessary conditions of having a wrinkled face, brown coloration, and short hair. Therefore, the image is classified as a Boxer.
+----------------------------------------
+Query 2: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Pug</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Pug ⊑ hasColor [brown, black, grey] (Necessary condition)
+- Pug ⊑ hasShape/Part [short snout, wrinkled face, curled tail] (Necessary condition)
+- Pug ⊑ hasTexture [smooth coat] (Necessary condition)
+
+3. ABox (Obsered Properties & Assertions):
+- hasColor: [brown, black, grey]
+- hasShape/Part: [short snout, wrinkled face, curled tail]
+- hasTexture: [smooth coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a brown, black, and grey coloration (hasColor), a short snout, wrinkled face, and curled tail (hasShape/Part), and a smooth coat (hasTexture). These properties align with the necessary conditions defined in the TBox for a Pug. Therefore, based on the observed visual features, the image is classified as a Pug.
+----------------------------------------
+Query 3: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Pug</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Pug ⊑ hasColor [gray, black, brown] (Necessary condition)
+- Pug ⊑ hasShape/Part [short snout, wrinkled face, curled tail] (Necessary condition)
+- Pug ⊑ hasTexture [smooth fur] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [gray, black, brown]
+- hasShape/Part: [short snout, wrinkled face, curled tail]
+- hasTexture: [smooth fur]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of gray, black, and brown coloration (hasColor), a short snout, a wrinkled face, and a curled tail (hasShape/Part), and smooth fur (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Pug. Therefore, based on the visual evidence, the entity is classified as a Pug.
+----------------------------------------
+Query 4: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Pug</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Pug ⊑ hasColor [dark brown, black] (Necessary condition)
+- Pug ⊑ hasShape/Part [short snout, wrinkled face, curled tail] (Necessary condition)
+- Pug ⊑ hasTexture [short, smooth coat] (Necessary condition)
+
+3. ABox (Obsered Properties & Assertions):
+- hasColor: [dark brown, black]
+- hasShape/Part: [short snout, wrinkled face, curled tail]
+- hasTexture: [short, smooth coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark brown and black coloration (hasColor), a short snout, wrinkled face, and curled tail (hasShape/Part), and a short, smooth coat (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Pug. Therefore, the image is classified as a Pug.
+----------------------------------------
+Query 5: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Pug</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Pug ⊑ hasColor [tan, black, dark brown] (Necessary condition)
+- Pug ⊑ hasShape/Part [short snout, wrinkled face, curled tail] (Necessary condition)
+- Pug ⊑ hasTexture [short, dense coat] (Necessary condition)
+
+3. ABox (Obsed Properties & Assertions):
+- hasColor: [tan, black, dark brown]
+- hasShape/Part: [short snout, wrinkled face, curled tail]
+- hasTexture: [short, dense coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a tan, black, and dark brown coloration (hasColor), a short snout, wrinkled face, and curled tail (hasShape/Part), and a short, dense coat (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Pug. Therefore, the image is classified as a Pug.
+----------------------------------------
+Query 6: Expected: [Persian] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Pug</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Pug ⊑ hasColor [brown, black, grey] (Necessary condition)
+- Pug ⊑ hasShape/Part [brachycephalic face, curled tail, short legs] (Necessary condition)
+- Pug ⊑ hasTexture [wrinkled skin] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, black, grey]
+- hasShape/Part: [brachycephalic face, curled tail, short legs]
+- hasTexture: [wrinkled skin]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of brown, black, and grey coloration (hasColor), a brachycephalic face, a curled tail, and short legs (hasShape/Part), and wrinkled skin (hasTexture). These observed properties align with the necessary conditions defined in the TBox for the class Pug. Therefore, based on the visual evidence, the image is classified as a Pug.
+----------------------------------------
+Query 7: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Persian</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Persian ⊑ hasLongFur: true (Necessary condition)
+- Persian ⊑ hasFlatFace: true (Necessary condition)
+- hasFlatFace ⊑ Persian (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: cream, white, light brown
+- hasShape/Part: fluffy face, large eyes, small ears, paws
+- hasTexture: fluffy, long fur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a fluffy texture and a flattened facial structure (hasLongFur: true, hasFlatFace: true). These properties align with the TBox axioms defining a Persian cat. The presence of long fur (necessary condition) and a flat face (sufficient condition) strongly suggests the entity is a Persian.
+----------------------------------------
+Query 8: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Persian</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Persian ⊑ hasLongFur: true (Necessary condition)
+- Persian ⊑ hasFlatFace: true (Necessary condition)
+- hasLongFur: true ∧ hasFlatFace: true ⊑ Persian (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: grey, white
+- hasShape/Part: long fur, flattened face, pointed ears, slender body
+- hasTexture: fluffy, silky
+
+4. Logical Explanation (DL & NL):
+The image exhibits a flattened face and long, fluffy fur. These properties align with the TBox axioms defining a Persian cat. Specifically, the presence of both long fur and a flattened face (hasLongFur: true ∧ hasFlatFace: true) is sufficient to classify the entity as a Persian. The observed grey and white coloration is consistent with Persian cats, but not defining in itself.
+----------------------------------------
+Query 9: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Persian</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Persian ⊑ hasLongFur: true (Necessary condition)
+- Persian ⊑ hasFlatFace: true (Necessary condition)
+- hasFlatFace ⊑ Persian (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: grey, white
+- hasShape/Part: flattened face, long fur, curled tail
+- hasTexture: fluffy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a flattened face (hasFlatFace) and long, fluffy fur (hasLongFur). The presence of a flattened face is a sufficient condition for Persian classification (hasFlatFace ⊑ Persian). The long, fluffy fur (hasLongFur) is a necessary condition for Persian, validating the assumption. The observed colors (grey and white) are consistent with Persian coat colors, further supporting the classification.
+----------------------------------------
+Query 10: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Persian</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Persian ⊑ hasLongFur: true (Necessary condition)
+- Persian ⊑ hasFluffyAppearance: true (Necessary condition)
+- hasFluffyAppearance ⊑ Persian (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, white, beige
+- hasShape/Part: head, body, legs, tail
+- hasTexture: long, fluffy, dense fur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dense, fluffy fur texture (hasTexture: long, fluffy, dense fur) and a generally fluffy appearance (hasFluffyAppearance). This satisfies the sufficient condition for Persian (hasFluffyAppearance ⊑ Persian). The observed colors (brown, white, beige) are consistent with Persian coloration, further validating the classification. The presence of a head, body, legs, and tail are necessary for any animal, but the combination of these features with the fluffy texture strongly suggests a Persian cat.
+----------------------------------------
+Query 11: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>German Shorthaired</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- German Shorthaired ⊑ hasColor [dark brown, black, white] (Necessary condition)
+- German Shorthaired ⊑ hasShape/Part [long snout, floppy ears, muscular build] (Necessary condition)
+- German Shorthaired ⊑ hasTexture [short, dense coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [dark brown, black, white]
+- hasShape/Part: [long snout, floppy ears, muscular build]
+- hasTexture: [short, dense coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark brown and black coloration with white markings (hasColor). It also displays a long snout, floppy ears, and a muscular build (hasShape/Part). The coat appears to be short and dense (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a German Shorthaired dog. Therefore, based on these visual characteristics, the image is classified as a German Shorthaired.
+----------------------------------------
+Query 12: Expected: [German Shorthaired] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Persian</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Persian ⊑ hasLongFur: true (Necessary condition)
+- Persian ⊑ hasFlatFace: true (Necessary condition)
+- hasLongFur: true ∧ hasFlatFace: true ⊑ Persian (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, white, brown
+- hasShape/Part: flattened face, large eyes, fluffy fur
+- hasTexture: fluffy, dense
+
+4. Logical Explanation (DL & NL):
+The image exhibits a flattened face (hasFlatFace: true) and dense, fluffy fur (hasTexture: fluffy, dense). The presence of long fur (hasLongFur: true) is also evident. These properties collectively satisfy the sufficient condition for classifying the entity as a Persian. The observed colors (blue, white, brown) are not defining characteristics and do not influence the classification.
+----------------------------------------
+Query 13: Expected: [German Shorthaired] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Pug</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Pug ⊑ hasColor [dark brown, black, tan] (Necessary condition)
+- Pug ⊑ hasShape/Part [short snout, wrinkled face, curled tail] (Necessary condition)
+- Pug ⊑ hasTexture [smooth coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [dark brown, black, tan]
+- hasShape/Part: [short snout, wrinkled face, curled tail]
+- hasTexture: [smooth coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark brown and black coloration (hasColor), a short snout and wrinkled face (hasShape/Part), and a smooth coat (hasTexture). These properties align with the necessary conditions defined in the TBox for a Pug. Therefore, based on the observed properties, the image is classified as a Pug.
+----------------------------------------
+Query 14: Expected: [German Shorthaired] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Boxer</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Boxer ⊑ hasColor brown
+- Boxer ⊑ hasShape/Part wrinkledFace
+- Boxer ⊑ hasTexture shortHair
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, black
+- hasShape/Part: wrinkledFace, muscularBuild, shortLegs
+- hasTexture: shortHair
+
+4. Logical Explanation (DL & NL):
+The image exhibits a brown and black coloration (hasColor brown, hasColor black), a wrinkled face (hasShape/Part wrinkledFace), a muscular build (hasShape/Part muscularBuild), short legs (hasShape/Part shortLegs), and short hair (hasTexture shortHair). These properties align with the axioms defining a Boxer (Boxer ⊑ hasColor brown, Boxer ⊑ hasShape/Part wrinkledFace, Boxer ⊑ hasTexture shortHair), therefore, the image is classified as a Boxer.
+----------------------------------------
+Query 15: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>German Shorthaired</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- German Shorthaired ⊑ hasColor brown
+- German Shorthaired ⊑ hasShape longLegs
+- German Shorthaired ⊑ hasTexture smoothCoat
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, white
+- hasShape/Part: longLegs, pointedEars, elongatedBody
+- hasTexture: smoothCoat
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of brown and white coloration (hasColor brown, hasColor white), possesses long legs (hasShape longLegs), and a smooth coat (hasTexture smoothCoat). These properties align with the TBox axioms defining a German Shorthaired, thus justifying the classification. The presence of pointed ears and an elongated body further supports this classification.
+----------------------------------------
+Query 16: Expected: [Boxer] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>German Shorthaired</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- German Shorthaired ⊑ hasColor brownAndWhite (Necessary condition)
+- German Shorthaired ⊑ hasShape longLegsAndLeanBody (Necessary condition)
+- German Shorthaired ⊑ hasTexture shortAndDenseFur (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor brownAndWhite
+- hasShape longLegsAndLeanBody
+- hasTexture shortAndDenseFur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of brown and white coloration (hasColor brownAndWhite), a long-legged and lean body shape (hasShape longLegsAndLeanBody), and short, dense fur texture (hasTexture shortAndDenseFur). These properties align with the necessary conditions defined in the TBox for the German Shorthaired class. Therefore, the image is classified as a German Shorthaired.
+----------------------------------------
+Query 17: Expected: [Boxer] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Boxer</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Boxer ⊑ hasColor [brown, black, tan] (Necessary condition)
+- Boxer ⊑ hasShape/Part [prominent muzzle, muscular build, droopy jowls] (Necessary condition)
+- Boxer ⊑ hasTexture [short, sleek fur] (Necessary condition)
+
+3. ABox (Obsered Properties & Assertions):
+- hasColor: [brown, black, tan]
+- hasShape/Part: [prominent muzzle, muscular build, droopy jowls]
+- hasTexture: [short, sleek fur]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of brown, black, and tan coloration (hasColor), a prominent muzzle, a muscular build, and droopy jowls (hasShape/Part), and short, sleek fur (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Boxer. Therefore, based on the visual evidence, the entity is classified as a Boxer.
+----------------------------------------
+Query 18: Expected: [Boxer] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Boxer</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Boxer ⊑ hasColor [brown, black, white] (Necessary condition)
+- Boxer ⊑ hasShape/Part [square jaw, short muzzle, muscular build] (Necessary condition)
+- Boxer ⊑ hasTexture [short, sleek coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, black, white]
+- hasShape/Part: [square jaw, short muzzle, muscular build, collar]
+- hasTexture: [short, sleek coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of brown, black, and white coloration (hasColor). It also displays a square jaw, short muzzle, and a muscular build (hasShape/Part). The coat appears short and sleek (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Boxer. Therefore, based on the visual evidence, the image is classified as a Boxer.
+----------------------------------------
+Query 19: Expected: [Boxer] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Persian</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Persian ⊑ hasLongFur (Necessary condition)
+- hasLongFur ⊑ Persian (Sufficient condition)
+- Persian ⊑ hasFlatFace (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: white, grey
+- hasShape/Part: flattened face, large eyes, fluffy fur, pointed ears
+- hasTexture: fluffy, dense
+
+4. Logical Explanation (DL & NL):
+The image exhibits a flattened face (hasFlatFace) and dense, fluffy fur (hasLongFur). These properties are necessary conditions for a Persian cat. The presence of these features, combined with the observed color and shape, strongly suggests the entity is a Persian. The fluffy fur (hasLongFur) is a sufficient condition to classify it as a Persian.
+----------------------------------------
+Query 20: Expected: [Boxer] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Boxer</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Boxer ⊑ hasColor [brown, black, white] (Necessary condition)
+- Boxer ⊑ hasShape/Part [square jaw, muscular build, floppy ears] (Necessary condition)
+- Boxer ⊑ hasTexture [short, smooth coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, black]
+- hasShape/Part: [square jaw, muscular build, floppy ears]
+- hasTexture: [short, smooth coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a brown and black coloration (hasColor), a square jaw and muscular build (hasShape/Part), and a short, smooth coat (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Boxer. Therefore, the image is classified as a Boxer.
+----------------------------------------
+-> FINAL ACCURACY for (4,1,5): 0.6500
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [Staffordshire Bull Terrier] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Miniature Pinscher</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Miniature Pinscher ⊑ hasColor BlackAndRed (Necessary condition)
+- Miniature Pinscher ⊑ hasShape ErectEars (Necessary condition)
+- Miniature Pinscher ⊑ hasTexture SmoothCoat (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor BlackAndTan
+- hasShape ErectEars
+- hasTexture SmoothCoat
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of black and tan coloration (hasColor BlackAndTan), erect ears (hasShape ErectEars), and a smooth coat (hasTexture SmoothCoat). These properties align with the necessary conditions defined in the TBox for a Miniature Pinscher. Therefore, based on the observed visual features, the image is classified as a Miniature Pinscher.
+----------------------------------------
+Query 2: Expected: [Staffordshire Bull Terrier] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Bombay</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Bombay ⊑ hasColor black
+- Bombay ⊑ hasShape roundedHead
+- Bombay ⊑ hasShape largeEyes
+- Bombay ⊑ hasTexture sleekFur
+
+3. ABox (Observed Properties & Assertions):
+- hasColor black
+- hasShape roundedHead
+- hasShape largeEyes
+- hasTexture sleekFur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a black color (hasColor black), a rounded head shape (hasShape roundedHead), large eyes (hasShape largeEyes), and sleek fur (hasTexture sleekFur). These properties align with the axioms defined for the Bombay class, making it a sufficient condition for classification. Therefore, the image is classified as a Bombay.
+----------------------------------------
+Query 3: Expected: [Staffordshire Bull Terrier] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Japanese Chin ⊑ hasColor blackAndWhite (Necessary condition)
+- Japanese Chin ⊑ hasShape/Part largeHeadAndLargeEyes (Necessary condition)
+- Japanese Chin ⊑ hasTexture silky (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor blackAndWhite
+- hasShape/Part largeHeadAndLargeEyes
+- hasTexture silky
+
+4. Logical Explanation (DL & NL):
+The image exhibits a black and white coloration (hasColor blackAndWhite), a large head and large eyes (hasShape/Part largeHeadAndLargeEyes), and a silky texture (hasTexture silky). These observed properties align with the necessary conditions defined in the TBox for a Japanese Chin. Therefore, the image is classified as a Japanese Chin.
+----------------------------------------
+Query 4: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasColor [dark_brown, black] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasShape/Part [muscular_build, short_muzzle] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasTexture [short_smooth_coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [dark_brown, black]
+- hasShape/Part: [muscular_build, short_muzzle, upright_ears]
+- hasTexture: [short_smooth_coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark brown and black coloration (hasColor), a muscular build and short muzzle (hasShape/Part), and a short, smooth coat (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Staffordshire Bull Terrier. Therefore, based on the visual evidence, the image is classified as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 5: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasColor [dark_brown, black] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasShape/Part [muscular_build, broad_chest, short_muzzle] (Necessary condition)
+- hasColor [dark_brown, black] ⊑ Staffordshire Bull Terrier (Sufficient condition)
+- hasShape/Part [muscular_build, broad_chest, short_muzzle] ⊑ Staffordshire Bull Terrier (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [dark_brown, black]
+- hasShape/Part: [muscular_build, broad_chest, short_muzzle, compact_body]
+- hasTexture: [short_smooth_coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark brown and black coloration (hasColor [dark_brown, black]), a muscular build, a broad chest, and a short muzzle (hasShape/Part [muscular_build, broad_chest, short_muzzle, compact_body]). These properties are both necessary and sufficient conditions for classifying the entity as a Staffordshire Bull Terrier, as defined in the TBox. The observed features align with the established visual characteristics of the breed.
+----------------------------------------
+Query 6: Expected: [Staffordshire Bull Terrier] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Miniature Pinscher</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Miniature Pinscher ⊑ hasColor BlackAndRed (Necessary condition)
+- Miniature Pinscher ⊑ hasShape ErectEars (Necessary condition)
+- Miniature Pinscher ⊑ hasTexture SmoothCoat (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor BlackAndBrown
+- hasShape ErectEars
+- hasTexture SmoothCoat
+
+4. Logical Explanation (DL & NL):
+The image exhibits a smooth coat (hasTexture SmoothCoat), black and brown coloration (hasColor BlackAndBrown), and erect ears (hasShape ErectEars). These properties align with the necessary conditions defined in the TBox for Miniature Pinscher. Therefore, the image is classified as a Miniature Pinscher.
+----------------------------------------
+Query 7: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasColor [brown, black, white] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasShape/Part [muscular build, short muzzle, broad head] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasTexture [short, smooth coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, black, white]
+- hasShape/Part: [muscular build, short muzzle, broad head]
+- hasTexture: [short, smooth coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of brown, black, and white coloration (hasColor), a muscular build, a short muzzle, and a broad head (hasShape/Part), and a short, smooth coat (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Staffordshire Bull Terrier. Therefore, based on the visual evidence, the image is classified as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 8: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasColor [black, tan, white] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasShape/Part [muscular build, broad head, short muzzle] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasTexture [short, smooth coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, tan]
+- hasShape/Part: [muscular build, broad head, short muzzle]
+- hasTexture: [short, smooth coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of black and tan coloration (hasColor), a muscular build, a broad head, and a short muzzle (hasShape/Part), and a short, smooth coat (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Staffordshire Bull Terrier. Therefore, based on the visual evidence, the entity is classified as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 9: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasColor [dark_blue, grey] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasShape/Part [muscular_build, short_muzzle, broad_chest] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasTexture [short_coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [dark_blue, grey]
+- hasShape/Part: [muscular_build, short_muzzle, broad_chest]
+- hasTexture: [short_coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark blue/grey color (hasColor), a muscular build, a short muzzle, and a broad chest (hasShape/Part), and a short coat (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Staffordshire Bull Terrier. Therefore, based on the visual evidence, the image is classified as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 10: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasColor [dark_brown, black] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasShape/Part [muscular_build, broad_chest, short_muzzle] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasTexture [short_smooth_coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [dark_brown, black]
+- hasShape/Part: [muscular_build, broad_chest, short_muzzle]
+- hasTexture: [short_smooth_coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark brown and black coloration (hasColor), a muscular build with a broad chest and short muzzle (hasShape/Part), and a short, smooth coat (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Staffordshire Bull Terrier. Therefore, based on these visual characteristics, the image is classified as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 11: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasColor [brown, black, white] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasShape/Part [muscular build, short muzzle, broad head] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasTexture [short, smooth coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, black, white]
+- hasShape/Part: [muscular build, short muzzle, broad head]
+- hasTexture: [short, smooth coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of brown, black, and white coloration (hasColor), a muscular build, a short muzzle, and a broad head (hasShape/Part), and a short, smooth coat (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Staffordshire Bull Terrier. Therefore, based on the visual evidence, the image is classified as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 12: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Japanese Chin</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Japanese Chin ⊑ hasColor Black
+- Japanese Chin ⊑ hasShape/Part FlatFace
+- Japanese Chin ⊑ hasTexture Fluffy
+
+3. ABox (Observed Properties & Assertions):
+- hasColor Black
+- hasShape/Part FlatFace
+- hasTexture Fluffy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a black color (hasColor Black), a flat face (hasShape/Part FlatFace), and a fluffy texture (hasTexture Fluffy). These properties align with the TBox axioms defining a Japanese Chin, therefore the image is classified as a Japanese Chin.
+----------------------------------------
+Query 13: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>English Bulldog</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasVisualFeature [compact build, muscular shoulders, broad chest] (Necessary condition)
+- Miniature Pinscher ⊑ hasVisualFeature [sleek body, erect ears, black and tan markings] (Necessary condition)
+- Bombay ⊑ hasVisualFeature [short, dense black coat, round eyes] (Necessary condition)
+- Japanese Chin ⊑ hasVisualFeature [plumed tail, large, dark eyes, short muzzle] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: grey, white
+- hasShape/Part: wrinkled face, short legs, stout body, loose skin
+- hasTexture: smooth coat, loose skin folds
+
+4. Logical Explanation (DL & NL):
+The image exhibits a stout body, wrinkled face, and short legs. While these features are not exclusive to any single breed in the provided examples, the combination of these characteristics most closely aligns with the general visual features associated with English Bulldogs. The observed "hasShape/Part" properties (wrinkled face, short legs, stout body, loose skin) are consistent with a breed known for its distinctive, loose-skinned appearance. The lack of specific markings (like black and tan in Miniature Pinschers) and the absence of a plumed tail (Japanese Chin) further support this classification.
+----------------------------------------
+Query 14: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasColor [dark_blue, grey] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasShape/Part [broad_head, muscular_build] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasTexture [short_smooth_coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [dark_blue, grey]
+- hasShape/Part: [broad_head, muscular_build, short_muzzle]
+- hasTexture: [short_smooth_coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark blue/grey coloration (hasColor), a broad head and muscular build (hasShape/Part), and a short, smooth coat (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Staffordshire Bull Terrier. Therefore, based on the visual evidence, the image is classified as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 15: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasColor [brown, white] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasShape/Part [muscular build, short muzzle, broad head] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasTexture [short, smooth coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, white, black]
+- hasShape/Part: [muscular build, short muzzle, broad head, floppy ears]
+- hasTexture: [short, smooth coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of properties consistent with a Staffordshire Bull Terrier. The presence of a muscular build, short muzzle, broad head, and short, smooth coat (hasShape/Part and hasTexture) are necessary conditions for the class. The observed colors (brown, white, black) align with typical Staffordshire Bull Terrier colorations, further validating the classification. Therefore, based on the observed properties, the image is classified as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 16: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Japanese Chin ⊑ hasColor [black, white] (Necessary condition)
+- Japanese Chin ⊑ hasShape/Part [flat face, large eyes, plume-like tail] (Necessary condition)
+- hasColor [black, white] ⊑ Japanese Chin (Sufficient condition)
+- hasShape/Part [flat face, large eyes, plume-like tail] ⊑ Japanese Chin (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [gray, black]
+- hasShape/Part: [flat face, large eyes, plume-like tail]
+- hasTexture: [smooth, short fur]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a gray and black coloration (hasColor [gray, black]), a flat face, large eyes, and a plume-like tail (hasShape/Part [flat face, large eyes, plume-like tail]). These properties align with the necessary and sufficient conditions defined in the TBox for Japanese Chin. Specifically, the presence of both the characteristic coloration and facial/tail features strongly suggests the entity is a Japanese Chin.
+----------------------------------------
+Query 17: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Japanese Chin ⊑ hasColor [black, white, tan] (Necessary condition)
+- Japanese Chin ⊑ hasShape/Part [large, erect ears, short muzzle, curled tail] (Necessary condition)
+- Japanese Chin ⊑ hasTexture [smooth, short coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue-gray, white]
+- hasShape/Part: [large, erect ears, short muzzle, curled tail]
+- hasTexture: [smooth, short coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a blue-gray and white coloration (hasColor), large erect ears, a short muzzle, and a curled tail (hasShape/Part), and a smooth, short coat (hasTexture). These observed properties align with the necessary conditions defined in the TBox for Japanese Chin. Therefore, based on the visual evidence, the image is classified as a Japanese Chin.
+----------------------------------------
+Query 18: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasColor [tan, white, brindle] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasShape/Part [broad head, muscular build, short muzzle] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasTexture [short, smooth coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [tan, white, brindle]
+- hasShape/Part: [broad head, muscular build, short muzzle, floppy ears]
+- hasTexture: [short, smooth coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of properties: a tan and white brindle coloration (hasColor), a broad head and muscular build with a short muzzle (hasShape/Part), and a short, smooth coat (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Staffordshire Bull Terrier. The presence of these features collectively validates the classification as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 19: Expected: [Miniature Pinscher] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Miniature Pinscher</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Miniature Pinscher ⊑ hasColor BlackAndRed (Necessary condition)
+- Miniature Pinscher ⊑ hasShape ErectEars (Necessary condition)
+- Miniature Pinscher ⊑ hasTexture ShortSmoothCoat (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor BlackAndTan
+- hasShape ErectEars
+- hasTexture ShortSmoothCoat
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of black and tan coloration (hasColor BlackAndTan), erect ears (hasShape ErectEars), and a short, smooth coat (hasTexture ShortSmoothCoat). These properties align with the necessary conditions defined in the TBox for Miniature Pinscher. Therefore, based on these observed features, the image is classified as a Miniature Pinscher.
+----------------------------------------
+Query 20: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasColor [dark_brown, black] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasShape/Part [muscular_build, broad_chest, short_muzzle] (Necessary condition)
+- hasColor [dark_brown, black] ⊑ Staffordshire Bull Terrier (Sufficient condition)
+- hasShape/Part [muscular_build, broad_chest, short_muzzle] ⊑ Staffordshire Bull Terrier (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [dark_brown, black]
+- hasShape/Part: [muscular_build, broad_chest, short_muzzle, compact_body]
+- hasTexture: [short_smooth_coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark brown and black coloration (hasColor [dark_brown, black]), a muscular build, a broad chest, and a short muzzle (hasShape/Part [muscular_build, broad_chest, short_muzzle, compact_body]). These properties align with the necessary and sufficient conditions defined in the TBox for a Staffordshire Bull Terrier. Specifically, the observed color and shape/part features are sufficient to classify the entity as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 21: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasColor [dark_brown, black] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasShape/Part [muscular_build, broad_chest, short_muzzle] (Necessary condition)
+- hasColor [dark_brown, black] ⊑ Staffordshire Bull Terrier (Sufficient condition)
+- hasShape/Part [muscular_build, broad_chest, short_muzzle] ⊑ Staffordshire Bull Terrier (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [dark_brown, black]
+- hasShape/Part: [muscular_build, broad_chest, short_muzzle, floppy_ears]
+- hasTexture: [short_smooth_coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark brown and black coloration (hasColor [dark_brown, black]), a muscular build, a broad chest, and a short muzzle (hasShape/Part [muscular_build, broad_chest, short_muzzle]). These properties are both necessary and sufficient conditions for classifying the entity as a Staffordshire Bull Terrier, as defined in the TBox. The presence of floppy ears is a further validating characteristic, though not explicitly defined in the TBox, it aligns with the general appearance of the breed.
+----------------------------------------
+Query 22: Expected: [Miniature Pinscher] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Miniature Pinscher</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Miniature Pinscher ⊑ hasColor Black
+- Miniature Pinscher ⊑ hasShape ErectEars
+- Miniature Pinscher ⊑ hasTexture SmoothCoat
+- hasColor Black ⊑ Miniature Pinscher (Sufficient)
+- hasShape ErectEars ⊑ Miniature Pinscher (Sufficient)
+- hasTexture SmoothCoat ⊑ Miniature Pinscher (Sufficient)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor Black
+- hasShape ErectEars
+- hasTexture SmoothCoat
+- hasObject Ball
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly black color (hasColor Black), erect ears (hasShape ErectEars), and a smooth coat (hasTexture SmoothCoat). These properties are sufficient conditions for classifying the entity as a Miniature Pinscher, as defined by the TBox axioms. The presence of a ball (hasObject Ball) is an incidental property and does not affect the classification.
+----------------------------------------
+Query 23: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasColor [dark_brown, black] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasShape/Part [muscular_build, broad_chest, short_muzzle] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasTexture [short_smooth_coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [dark_brown, black]
+- hasShape/Part: [muscular_build, broad_chest, short_muzzle]
+- hasTexture: [short_smooth_coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark brown and black coloration (hasColor), a muscular build with a broad chest and short muzzle (hasShape/Part), and a short, smooth coat (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Staffordshire Bull Terrier. Therefore, based on these visual characteristics, the image is classified as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 24: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Japanese Chin ⊑ hasColor blackAndWhite (Necessary condition)
+- Japanese Chin ⊑ hasShape largeEars (Necessary condition)
+- Japanese Chin ⊑ hasTexture silky (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor blackAndWhite
+- hasShape largeEars
+- hasTexture silky
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of black and white coloration (hasColor blackAndWhite), large ears (hasShape largeEars), and a silky texture (hasTexture silky). These properties align with the necessary conditions defined in the TBox for a Japanese Chin. Therefore, based on the observed properties and the established axioms, the image is classified as a Japanese Chin.
+----------------------------------------
+Query 25: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasColor [dark brown, tan] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasShape/Part [broad head, muscular build] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasTexture [short, smooth coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [dark brown, tan, black]
+- hasShape/Part: [broad head, muscular build, short muzzle]
+- hasTexture: [short, smooth coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark brown and tan coloration (hasColor), a broad head and muscular build (hasShape/Part), and a short, smooth coat (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Staffordshire Bull Terrier. While not a perfect match to the exact color combination, the overall morphology and texture strongly suggest the classification as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 26: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasColor [dark_brown, black] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasShape/Part [broad_head, muscular_build] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasTexture [short_smooth_coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [dark_brown, black]
+- hasShape/Part: [broad_head, muscular_build]
+- hasTexture: [short_smooth_coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark brown/black color (hasColor), a broad head and muscular build (hasShape/Part), and a short, smooth coat (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Staffordshire Bull Terrier. Therefore, based on these visual characteristics, the image is classified as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 27: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Japanese Chin ⊑ hasErectLargeEars (Necessary condition)
+- Japanese Chin ⊑ hasShortMuzzle (Necessary condition)
+- Japanese Chin ⊑ hasPlumedTail (Necessary condition)
+- hasPlumedTail ⊑ Japanese Chin (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: fawn, black
+- hasShape/Part: erect large ears, short muzzle, plumed tail
+- hasTexture: smooth, short fur
+
+4. Logical Explanation (DL & NL):
+The image exhibits erect, large ears, a short muzzle, and a plumed tail. These properties align with the necessary conditions for a Japanese Chin (hasErectLargeEars, hasShortMuzzle, hasPlumedTail). Furthermore, the presence of a plumed tail is a sufficient condition for classifying the entity as a Japanese Chin (hasPlumedTail ⊑ Japanese Chin). Therefore, based on these observed properties, the image is classified as a Japanese Chin.
+----------------------------------------
+Query 28: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Bombay</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Bombay ⊑ hasColor black (Necessary condition)
+- Bombay ⊑ hasShape triangularEars (Necessary condition)
+- Bombay ⊑ hasTexture sleekFur (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: black
+- hasShape/Part: triangularEars, pointedNose, largeEyes
+- hasTexture: sleekFur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly black color (hasColor: black), triangular ears (hasShape/Part: triangularEars), a pointed nose, large eyes, and sleek fur (hasTexture: sleekFur). These observed properties align with the necessary conditions defined in the TBox for the Bombay class. Therefore, the image is classified as a Bombay.
+----------------------------------------
+Query 29: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Bombay</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Bombay ⊑ hasColor blue-grey (Necessary condition)
+- Bombay ⊑ hasShape roundedFace (Necessary condition)
+- Bombay ⊑ hasTexture shortDenseFur (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor blue-grey
+- hasShape roundedFace
+- hasTexture shortDenseFur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a blue-grey color (hasColor blue-grey), a rounded face shape (hasShape roundedFace), and short, dense fur texture (hasTexture shortDenseFur). These properties align with the necessary conditions defined in the TBox for the Bombay class. Therefore, the image is classified as a Bombay.
+----------------------------------------
+Query 30: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Bombay</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Bombay ⊑ hasColor gray
+- Bombay ⊑ hasShape/Part feline features
+- Bombay ⊑ hasTexture shortFur
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: gray
+- hasShape/Part: feline features, long tail, pointed ears
+- hasTexture: shortFur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a gray color (hasColor: gray), possesses feline features (hasShape/Part: feline features), and has short fur (hasTexture: shortFur). These properties align with the TBox axioms defining a Bombay cat, therefore the image is classified as a Bombay.
+----------------------------------------
+Query 31: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Bombay</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Bombay ⊑ hasColor black
+- Bombay ⊑ hasShape feline
+- Bombay ⊑ hasTexture shortFur
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: black
+- hasShape: feline
+- hasTexture: shortFur
+
+4. Logical Explanation (DL & NL):
+The image exhibits 'hasColor black', 'hasShape feline', and 'hasTexture shortFur'. These properties align with the TBox axioms defining a Bombay cat. Specifically, the observed black color, feline shape, and short fur texture are necessary and sufficient conditions to classify the entity as a Bombay.
+----------------------------------------
+Query 32: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Bombay</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Bombay ⊑ hasColor blue-black (Necessary condition)
+- Bombay ⊑ hasShape roundedHead (Necessary condition)
+- Bombay ⊑ hasShape pointedEars (Necessary condition)
+- Bombay ⊑ hasTexture shortFur (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor blue-black
+- hasShape roundedHead
+- hasShape pointedEars
+- hasTexture shortFur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a blue-black color (hasColor blue-black), a rounded head (hasShape roundedHead), pointed ears (hasShape pointedEars), and short fur (hasTexture shortFur). These properties align with the TBox axioms defining a Bombay cat, thus justifying the classification. The presence of all these features collectively satisfies the necessary conditions for a Bombay.
+----------------------------------------
+Query 33: Expected: [Bombay] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Staffordshire Bull Terrier</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Staffordshire Bull Terrier ⊑ hasColor [dark_brown, black] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasShape/Part [broad_head, muscular_build, short_muzzle] (Necessary condition)
+- Staffordshire Bull Terrier ⊑ hasTexture [smooth_coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [dark_brown, black]
+- hasShape/Part: [broad_head, muscular_build, short_muzzle]
+- hasTexture: [smooth_coat]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark brown and black coloration (hasColor), a broad head, muscular build, and short muzzle (hasShape/Part), and a smooth coat (hasTexture). These observed properties align with the necessary conditions defined in the TBox for a Staffordshire Bull Terrier. Therefore, based on the visual evidence, the image is classified as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 34: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Bombay</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Bombay ⊑ hasColor Black
+- Bombay ⊑ hasShape RoundedHead
+- Bombay ⊑ hasShape SlenderBody
+
+3. ABox (Observed Properties & Assertions):
+- hasColor DarkGray
+- hasShape RoundedHead
+- hasShape SlenderBody
+- hasTexture ShortFur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark gray color (hasColor DarkGray), a rounded head (hasShape RoundedHead), and a slender body (hasShape SlenderBody). These properties align with the TBox axioms defining a Bombay cat, specifically the necessary conditions of having a black/dark gray color, a rounded head, and a slender body. The short fur texture (hasTexture ShortFur) further supports this classification, although it wasn't explicitly defined in the TBox. Therefore, based on the observed properties, the image is classified as a Bombay.
+----------------------------------------
+Query 35: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Bombay</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Bombay ⊑ hasColor darkGrayOrBlue (Necessary condition)
+- Bombay ⊑ hasShape pointedEars (Necessary condition)
+- Bombay ⊑ hasTexture sleekFur (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor darkGray
+- hasShape pointedEars
+- hasTexture sleekFur
+
+4. Logical Explanation (DL & NL):
+The image exhibits `hasColor darkGray`, `hasShape pointedEars`, and `hasTexture sleekFur`. These properties align with the TBox axioms defining a Bombay cat, specifically the necessary conditions of having dark gray fur, pointed ears, and sleek fur. Therefore, the image is classified as a Bombay.
+----------------------------------------
+Query 36: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Bombay</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Bombay ⊑ hasColor black
+- Bombay ⊑ hasShape roundedHead
+- Bombay ⊑ hasShape slenderBody
+
+3. ABox (Observed Properties & Assertions):
+- hasColor darkBrown
+- hasShape roundedHead
+- hasShape slenderBody
+- hasTexture shortFur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark brown coloration (hasColor darkBrown), a rounded head shape (hasShape roundedHead), and a slender body shape (hasShape slenderBody). These observed properties align with the TBox axioms defining a Bombay cat, specifically the necessary conditions of having a black color, a rounded head, and a slender body. Therefore, the image is classified as a Bombay.
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.5000

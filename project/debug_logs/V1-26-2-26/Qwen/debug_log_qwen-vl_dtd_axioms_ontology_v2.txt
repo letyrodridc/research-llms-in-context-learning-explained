@@ -1,0 +1,2625 @@
+=== DEBUG LOG: qwen-vl | dtd | Prompt: axioms_ontology_v2 ===
+
+--- CONFIG: N=2, K=2, Q=5 ---
+Query 1: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crosshatched</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crosshatched ⊑ hasVisualFeature [crosshatched pattern] (Necessary condition)
+- hasVisualFeature [crosshatched pattern] ⊑ crosshatched (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [red]
+- hasShape/Part: [crosshatched pattern]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a red color, a crosshatched pattern, and a smooth texture. These properties match the TBox axioms for crosshatched, which states that crosshatched ⊑ hasVisualFeature [crosshatched pattern] and hasVisualFeature [crosshatched pattern] ⊑ crosshatched. Therefore, the target image is classified as crosshatched.
+----------------------------------------
+Query 2: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crosshatched</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crosshatched ⊑ hasVisualFeature [crosshatched pattern] (Necessary condition)
+- hasVisualFeature [crosshatched pattern] ⊑ crosshatched (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black and white]
+- hasShape/Part: [a circular shape with a hole in the center]
+- hasTexture: [a crosshatched pattern]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a circular shape with a hole in the center, which matches the necessary condition of having a crosshatched pattern. The crosshatched pattern is a sufficient condition for the classification as crosshatched.
+----------------------------------------
+Query 3: Expected: [crosshatched] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crystalline</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crystalline ⊑ hasVisualFeature [crystal-like structure] (Necessary condition)
+- hasVisualFeature [crystal-like structure] ⊑ crystalline (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [red, blue, green]
+- hasShape/Part: [crystal-like structure]
+- hasTexture: [smooth, shiny]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a crystal-like structure, which satisfies the TBox condition for crystalline.
+----------------------------------------
+Query 4: Expected: [crosshatched] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crystalline</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crystalline ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ crystalline (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, green]
+- hasShape/Part: [crystal-like shapes]
+- hasTexture: [smooth, transparent]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include crystal-like shapes and smooth, transparent texture, which satisfy the TBox axioms for crystalline.
+----------------------------------------
+Query 5: Expected: [crosshatched] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crystalline</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crystalline ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ crystalline (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, green]
+- hasShape/Part: [crystal-like structure]
+- hasTexture: [smooth, transparent]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a crystal-like structure, which satisfies the TBox condition for crystalline. The smooth and transparent texture further supports this classification.
+----------------------------------------
+Query 6: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crystalline</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crystalline ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ crystalline (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [Red, Blue, Yellow] (The image contains red, blue, and yellow colors)
+- hasShape/Part: [Hexagonal, Angular] (The image has hexagonal and angular shapes)
+- hasTexture: [Smooth, Transparent] (The image has a smooth and transparent texture)
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include red, blue, and yellow colors, hexagonal and angular shapes, and a smooth and transparent texture. These properties match the TBox axioms for crystalline, which states that crystalline objects have specific visual features that are necessary and sufficient for classification.
+----------------------------------------
+Query 7: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crystalline</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crystalline ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ crystalline (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [actual dominant colors observed in the image]
+- hasShape/Part: [actual physical parts or shapes observed in the image]
+- hasTexture: [actual texture observed in the image]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for crystalline, indicating that the image contains crystalline features.
+----------------------------------------
+Query 8: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crystalline</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crystalline ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ crystalline (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [actual dominant colors observed in the image]
+- hasShape/Part: [actual physical parts or shapes observed in the image]
+- hasTexture: [actual texture observed in the image]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for crystalline, indicating that the image contains crystalline features.
+----------------------------------------
+Query 9: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crystalline</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crystalline ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ crystalline (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, green]
+- hasShape/Part: [crystal-like shapes]
+- hasTexture: [smooth, transparent]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include crystal-like shapes and smooth, transparent texture, which satisfy the TBox axioms for crystalline.
+----------------------------------------
+Query 10: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crystalline</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crystalline ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ crystalline (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [actual dominant colors observed in the image]
+- hasShape/Part: [actual physical parts or shapes observed in the image]
+- hasTexture: [actual texture observed in the image]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for crystalline, indicating that the image contains crystalline features.
+----------------------------------------
+-> FINAL ACCURACY for (2,2,5): 0.7000
+
+--- CONFIG: N=2, K=2, Q=8 ---
+Query 1: Expected: [woven] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, yellow, orange] (The image has a mix of brown, yellow, and orange colors.)
+- hasShape/Part: [stripes, dots, circles] (The image contains stripes, dots, and circles.)
+- hasTexture: [grainy, rough] (The texture appears grainy and rough.)
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a mix of colors (brown, yellow, orange), shapes (stripes, dots, circles), and texture (grainy, rough). These properties satisfy the TBox axioms for blotchy, which are based on the few-shot examples provided. The necessary condition (blotchy ⊑ hasVisualFeature [feature]) is met because the image contains visual features that are characteristic of blotchy. The sufficient condition (hasVisualFeature [feature] ⊑ blotchy) is also met because the image shows visual features that are sufficient to classify it as blotchy. Therefore, the target image is classified as blotchy based on the visual evidence and the axioms defined in the TBox.
+----------------------------------------
+Query 2: Expected: [woven] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, green, yellow]
+- hasShape/Part: [dots, circles]
+- hasTexture: [grainy, rough]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include specific colors (brown, green, yellow), shapes (dots, circles), and texture (grainy, rough). These properties satisfy the TBox axioms for blotchy, which are based on the few-shot examples provided. Therefore, the target image is classified as blotchy.
+----------------------------------------
+Query 3: Expected: [woven] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [green, yellow, orange]
+- hasShape/Part: [dots, circles]
+- hasTexture: [blotchy]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include green, yellow, and orange colors, which satisfy the TBox condition for blotchy. The presence of dots and circles, along with the blotchy texture, validate the classification as blotchy.
+----------------------------------------
+Query 4: Expected: [woven] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, green, yellow]
+- hasShape/Part: [dots, circles]
+- hasTexture: [grainy, rough]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include brown, green, and yellow colors, which satisfy the TBox condition for blotchy. The presence of dots and circles, along with the grainy and rough texture, also support the classification as blotchy.
+----------------------------------------
+Query 5: Expected: [woven] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor: [dominant colors observed in the image]
+- hasShape/Part: [physical parts or shapes observed in the image]
+- hasTexture: [actual texture observed in the image]
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [actual dominant colors of the target image]
+- hasShape/Part: [physical parts or shapes observed in the target image]
+- hasTexture: [actual texture observed in the target image]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for the chosen class, justifying the classification.
+----------------------------------------
+Query 6: Expected: [woven] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, green, yellow]
+- hasShape/Part: [dots, circles]
+- hasTexture: [grainy, rough]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include brown, green, and yellow colors, which satisfy the TBox condition for blotchy. The presence of dots and circles, along with the grainy and rough texture, also validate the classification as blotchy.
+----------------------------------------
+Query 7: Expected: [woven] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor [brown, green, yellow] (Necessary condition)
+- hasShape/Part [dots, circles] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, green, yellow
+- hasShape/Part: dots, circles
+- hasTexture: rough, uneven
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include brown, green, and yellow colors, as well as dots and circles. These properties satisfy the TBox axioms for blotchy, which include having a rough and uneven texture, and being composed of dots and circles.
+----------------------------------------
+Query 8: Expected: [woven] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor: [brown, orange, yellow] (Necessary condition)
+- hasShape/Part: [dots, circles] (Sufficient condition)
+- hasTexture: [smooth, uniform] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, orange, yellow]
+- hasShape/Part: [dots, circles]
+- hasTexture: [smooth, uniform]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for blotchy. The image has smooth, uniform texture and contains dots and circles, which are sufficient conditions for the classification.
+----------------------------------------
+Query 9: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, yellow, green, blue]
+- hasShape/Part: [blotches of different colors]
+- hasTexture: [grainy, rough]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include various colors and shapes, which satisfy the TBox condition for blotchy. The visual evidence shows that the image contains different colored blotches, which is a necessary and sufficient condition for the classification as blotchy.
+----------------------------------------
+Query 10: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor: [dominant colors observed in the image]
+- hasShape/Part: [physical parts or shapes observed in the image]
+- hasTexture: [actual texture observed in the image]
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [actual dominant colors of the target image]
+- hasShape/Part: [physical parts or shapes observed in the target image]
+- hasTexture: [actual texture observed in the target image]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for the chosen class, justifying the classification.
+----------------------------------------
+Query 11: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor: [The image has a pattern of various colors, including yellow, orange, and green.]
+- hasShape/Part: [The image contains circular shapes and dots.]
+- hasTexture: [The texture appears to be a combination of smooth and rough areas, with a mix of solid and dotted patterns.]
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [The image has a pattern of various colors, including yellow, orange, and green.]
+- hasShape/Part: [The image contains circular shapes and dots.]
+- hasTexture: [The texture appears to be a combination of smooth and rough areas, with a mix of solid and dotted patterns.]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for blotchy. The image contains a pattern of various colors, circular shapes, and a mix of smooth and rough textures, which are characteristic of a blotchy pattern.
+----------------------------------------
+Query 12: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor: [brown, green, yellow] (Necessary condition)
+- hasShape/Part: [dots, circles] (Sufficient condition)
+- hasTexture: [grainy, rough] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, green, yellow
+- hasShape/Part: dots, circles
+- hasTexture: grainy, rough
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for blotchy:
+  - The image has brown, green, and yellow colors, which are necessary for the classification.
+  - The image contains dots and circles, which are sufficient to classify it as blotchy.
+  - The grainy and rough texture is a necessary condition for the classification.
+----------------------------------------
+Query 13: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor [brown, yellow, green] (Necessary condition)
+- hasShape/Part [dots, circles] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, yellow, green
+- hasShape/Part: dots, circles
+- hasTexture: rough, uneven
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include brown, yellow, and green colors, as well as dots and circles. These properties satisfy the TBox axioms for blotchy, which include having a rough and uneven texture, and being composed of dots and circles.
+----------------------------------------
+Query 14: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, yellow, green]
+- hasShape/Part: [irregular shapes, splatters]
+- hasTexture: [grainy, rough]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include irregular shapes and splatters, which satisfy the TBox condition for blotchy. The dominant colors (brown, yellow, green) and the grainy texture also support the classification as blotchy.
+----------------------------------------
+Query 15: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, white, and black]
+- hasShape/Part: [dots of various sizes and colors]
+- hasTexture: [rough and uneven]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include brown, white, and black colors, as well as dots of various sizes and colors. These features satisfy the TBox axioms for blotchy, which states that blotchy has visual features. Therefore, the image is classified as blotchy.
+----------------------------------------
+Query 16: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor [dominant colors observed in the image]
+- hasShape/Part [physical parts or shapes observed in the image]
+- hasTexture [actual texture observed in the image]
+
+3. ABox (Observed Properties & Assertions):
+- hasColor [e.g., brown, green, yellow]
+- hasShape/Part [e.g., circles, dots]
+- hasTexture [e.g., rough, smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for blotchy, which includes having a pattern of irregularly shaped colored areas.
+----------------------------------------
+-> FINAL ACCURACY for (2,2,8): 0.5000
+
+--- CONFIG: N=2, K=1, Q=5 ---
+Query 1: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>pleated</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- pleated ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ pleated (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [pink, brown]
+- hasShape/Part: [curtain, pleats]
+- hasTexture: [fabric]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include [pink, brown] colors, [curtain] shape, and [fabric] texture. These properties satisfy the TBox axioms for pleated, making it the correct classification.
+----------------------------------------
+Query 2: Expected: [pleated] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crosshatched</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crosshatched ⊑ hasVisualFeature [crosshatch pattern] (Necessary condition)
+- hasVisualFeature [crosshatch pattern] ⊑ crosshatched (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black and white]
+- hasShape/Part: [curved lines forming a pattern]
+- hasTexture: [crosshatch texture]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a crosshatch pattern, which satisfies the TBox condition for crosshatched.
+----------------------------------------
+Query 3: Expected: [pleated] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crosshatched</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crosshatched ⊑ hasVisualFeature [crosshatch pattern] (Necessary condition)
+- hasVisualFeature [crosshatch pattern] ⊑ crosshatched (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black and white]
+- hasShape/Part: [a series of intersecting lines forming a pattern]
+- hasTexture: [a textured surface with a crosshatch pattern]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a crosshatch pattern, which satisfies the TBox condition for crosshatched.
+----------------------------------------
+Query 4: Expected: [pleated] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crosshatched</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crosshatched ⊑ hasVisualFeature [crosshatch pattern] (Necessary condition)
+- hasVisualFeature [crosshatch pattern] ⊑ crosshatched (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black and white]
+- hasShape/Part: [crosshatch pattern]
+- hasTexture: [crosshatch pattern]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for crosshatched, as it shows a crosshatch pattern which is a necessary and sufficient visual feature for the classification.
+----------------------------------------
+Query 5: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>pleated</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- pleated ⊑ hasShape [shape] (Necessary condition)
+- hasShape [shape] ⊑ pleated (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [pink, green]
+- hasShape/Part: [curved, pleated]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a pleated shape and smooth texture, which satisfy the TBox axioms for pleated.
+----------------------------------------
+Query 6: Expected: [crosshatched] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>pleated</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- pleated ⊑ hasShape [folded, pleated] (Necessary condition)
+- hasShape [folded, pleated] ⊑ pleated (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [pink, purple]
+- hasShape/Part: [pleats]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include pleats, which satisfy the TBox condition for pleated.
+----------------------------------------
+Query 7: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crosshatched</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crosshatched ⊑ hasVisualFeature [crosshatch pattern] (Necessary condition)
+- hasVisualFeature [crosshatch pattern] ⊑ crosshatched (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black and white]
+- hasShape/Part: [a drawing of a face]
+- hasTexture: [crosshatch pattern]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a crosshatch pattern, which satisfies the TBox condition for crosshatched.
+----------------------------------------
+Query 8: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crosshatched</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crosshatched ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ crosshatched (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [pink, brown]
+- hasShape/Part: [curved lines, leaf-like shapes]
+- hasTexture: [smooth, repetitive]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include [curved lines, leaf-like shapes], which satisfy the TBox condition for crosshatched.
+----------------------------------------
+Query 9: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crosshatched</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crosshatched ⊑ hasVisualFeature [crosshatch pattern] (Necessary condition)
+- hasVisualFeature [crosshatch pattern] ⊑ crosshatched (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: black and white
+- hasShape/Part: lines forming a crosshatch pattern
+- hasTexture: visible crosshatch lines
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a crosshatch pattern, which satisfies the TBox condition for crosshatched.
+----------------------------------------
+Query 10: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crosshatched</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crosshatched ⊑ hasVisualFeature [crosshatch pattern] (Necessary condition)
+- hasVisualFeature [crosshatch pattern] ⊑ crosshatched (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [The image has a mix of colors, but the dominant colors are shades of brown and black.]
+- hasShape/Part: [The image shows a close-up of a textured surface with a crosshatch pattern.]
+- hasTexture: [The texture is a crosshatch pattern, which is visible in the image.]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a crosshatch pattern, which matches the TBox axiom for crosshatched. The crosshatch pattern is a necessary and sufficient condition for the classification of the image as crosshatched.
+----------------------------------------
+-> FINAL ACCURACY for (2,1,5): 0.6000
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grid ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ grid (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [The image has a gradient of colors, including shades of blue, green, yellow, and red.]
+- hasShape/Part: [The image consists of a series of squares arranged in a grid pattern.]
+- hasTexture: [The texture appears to be a woven or knitted fabric-like material.]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a gradient of colors, a grid pattern, and a woven texture. These properties match the TBox axioms for grid, which states that it has a visual feature that is necessary and sufficient for classification.
+----------------------------------------
+Query 2: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasShape [grid] ⊑ grid (Necessary condition)
+- grid ⊑ hasShape [grid] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black and white]
+- hasShape/Part: [squares forming a grid]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a grid pattern, which satisfies the TBox condition for grid. The grid is composed of squares, which is a necessary and sufficient condition for the classification.
+----------------------------------------
+Query 3: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grid ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ grid (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black and white]
+- hasShape/Part: [squares]
+- hasTexture: [grid pattern]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for grid. The image shows a pattern of squares arranged in a grid, which satisfies the necessary and sufficient conditions for the class grid.
+----------------------------------------
+Query 4: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasShape [square] ⊑ grid (Necessary condition)
+- grid ⊑ hasShape [square] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, white]
+- hasShape/Part: [squares]
+- hasTexture: [grid]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include squares and a grid pattern, which satisfy the TBox axioms for a grid.
+----------------------------------------
+Query 5: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasShape [square] ⊑ grid (Necessary condition)
+- grid ⊑ hasShape [square] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, white]
+- hasShape/Part: [squares]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include squares, which satisfy the TBox condition for grid. The blue and white colors and smooth texture are not directly relevant to the classification but are observed in the image.
+----------------------------------------
+Query 6: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grid ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ grid (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [The image has a grid pattern with a combination of colors, including shades of blue, green, and yellow.]
+- hasShape/Part: [The image consists of square tiles arranged in a grid pattern.]
+- hasTexture: [The texture appears to be smooth and uniform across the tiles.]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include the grid pattern, which satisfies the TBox condition for grid. The grid pattern is a necessary and sufficient condition for the classification.
+----------------------------------------
+Query 7: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grid ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ grid (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, white]
+- hasShape/Part: [triangular shapes]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a pattern of triangular shapes with a smooth texture, which matches the TBox axioms for grid. The triangular shapes are a necessary condition for the classification, while the smooth texture is a sufficient condition.
+----------------------------------------
+Query 8: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grid ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ grid (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [The image has a dominant color of black and white]
+- hasShape/Part: [The image consists of a series of squares arranged in a grid pattern]
+- hasTexture: [The texture appears to be a grid of squares with a consistent pattern]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a series of squares arranged in a grid pattern, which matches the TBox axioms for a grid. The necessary condition (grid ⊑ hasVisualFeature [feature]) is satisfied by the visual evidence of the squares, and the sufficient condition (hasVisualFeature [feature] ⊑ grid) confirms that the observed squares are indeed part of a grid.
+----------------------------------------
+Query 9: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grid ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ grid (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: black
+- hasShape/Part: grid
+- hasTexture: grid pattern
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for grid. The black color and grid pattern observed in the image satisfy the necessary and sufficient conditions for the grid class.
+----------------------------------------
+Query 10: Expected: [matted] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasShape [grid] ⊑ grid (Necessary condition)
+- grid ⊑ hasShape [grid] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black and white]
+- hasShape/Part: [squares and lines forming a grid pattern]
+- hasTexture: [smooth and uniform]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a grid pattern, which satisfies the TBox condition for grid. The grid pattern is composed of squares and lines, which are part of the grid. The smooth and uniform texture of the grid pattern is consistent with the observed properties.
+----------------------------------------
+Query 11: Expected: [matted] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasShape [grid] ⊑ grid (Necessary condition)
+- grid ⊑ hasShape [grid] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [white]
+- hasShape/Part: [squares]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a grid pattern with white squares and a smooth texture. These properties match the TBox axioms for the grid class, which states that an entity is a grid if it has a grid shape and is composed of squares. Therefore, the target image is classified as a grid.
+----------------------------------------
+Query 12: Expected: [matted] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grid ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ grid (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, green]
+- hasShape/Part: [squares, lines]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include brown and green colors, which are not specific enough to classify it as a grid. However, the presence of squares and lines, along with the smooth texture, align with the TBox axioms for a grid. Therefore, the classification is based on the observed shapes and the smooth texture, which are sufficient conditions for the grid class.
+----------------------------------------
+Query 13: Expected: [matted] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasShape [grid] ⊑ grid (Necessary condition)
+- grid ⊑ hasShape [grid] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [white]
+- hasShape/Part: [squares]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a grid pattern with white squares and a smooth texture. These properties match the TBox axioms for the grid class, which states that an entity is a grid if it has a grid shape and is composed of squares. Therefore, the target image is classified as a grid.
+----------------------------------------
+Query 14: Expected: [matted] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasShape [grid] ⊑ grid (Necessary condition)
+- grid ⊑ hasShape [grid] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [white]
+- hasShape/Part: [squares]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a grid pattern with white squares and a smooth texture. These properties match the TBox axioms for the grid class, which states that an entity is a grid if it has a grid shape and is composed of squares. Therefore, the target image is classified as a grid.
+----------------------------------------
+Query 15: Expected: [matted] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasShape [square] ⊑ grid (Necessary condition)
+- grid ⊑ hasShape [square] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [white]
+- hasShape/Part: [squares]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include squares, which satisfy the TBox condition for grid.
+----------------------------------------
+Query 16: Expected: [matted] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasShape [grid] ⊑ grid (Necessary condition)
+- grid ⊑ hasShape [grid] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [green, yellow]
+- hasShape/Part: [squares, lines]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include green and yellow colors, which are not specific enough to classify it as a grid. However, the presence of squares and lines, along with the smooth texture, align with the TBox axioms for a grid. The necessary condition (hasShape [grid]) is satisfied by the observed shapes, and the sufficient condition (grid ⊑ hasShape [grid]) confirms the classification.
+----------------------------------------
+Query 17: Expected: [matted] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasShape [grid] ⊑ grid (Necessary condition)
+- grid ⊑ hasShape [grid] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [white]
+- hasShape/Part: [squares]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a grid pattern with white squares and a smooth texture. These properties match the TBox axioms for the grid class, which states that an entity is a grid if it has a grid shape and is composed of squares. Therefore, the target image is classified as a grid.
+----------------------------------------
+Query 18: Expected: [matted] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>matted</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- matted ⊑ hasVisualFeature [e.g., hair texture observed in this image] (Necessary condition)
+- hasVisualFeature [e.g., hair texture observed in this image] ⊑ matted (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown]
+- hasShape/Part: [hair]
+- hasTexture: [matted]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for matted, which states that matted is a class of entities that have a specific visual feature (e.g., hair texture). The observed hair texture in the target image satisfies the necessary and sufficient conditions for the matted class.
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9): 0.5556
+
+--- CONFIG: N=3, K=1, Q=5 ---
+Query 1: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>gauzy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- gauzy ⊑ hasVisualFeature [translucent, thin, delicate] (Necessary condition)
+- hasVisualFeature [translucent, thin, delicate] ⊑ gauzy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [white, light, translucent]
+- hasShape/Part: [curtain, fabric, stripes]
+- hasTexture: [soft, delicate, thin]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include translucent, thin, and delicate fabric, which match the TBox axioms for gauzy. The translucent and thin properties are necessary to classify the fabric as gauzy, while the delicate property is sufficient to confirm the classification.
+----------------------------------------
+Query 2: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor [black, white] ⊑ blotchy (Necessary condition)
+- blotchy ⊑ hasColor [black, white] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: black and white
+- hasShape/Part: circular or oval blotches
+- hasTexture: rough or uneven surface
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include black and white colors, which satisfy the TBox condition for blotchy. The observed shapes and textures also align with the visual axioms for blotchy.
+----------------------------------------
+Query 3: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>gauzy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- gauzy ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ gauzy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [white, sheer]
+- hasShape/Part: [curtain, fabric]
+- hasTexture: [light, airy]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a white, sheer curtain with light and airy texture. These features satisfy the TBox axioms for gauzy, which are necessary and sufficient conditions for classification.
+----------------------------------------
+Query 4: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>gauzy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- gauzy ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ gauzy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [beige, light brown]
+- hasShape/Part: [curled, pleated]
+- hasTexture: [soft, sheer]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a light brown, curled, and pleated texture, which satisfy the TBox condition for gauzy.
+----------------------------------------
+Query 5: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, black]
+- hasShape/Part: [large, irregularly shaped]
+- hasTexture: [rough, uneven]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include large, irregularly shaped, rough, and uneven texture, which satisfy the TBox axioms for blotchy.
+----------------------------------------
+Query 6: Expected: [flecked] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, black]
+- hasShape/Part: [stains, spots]
+- hasTexture: [rough, uneven]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include brown and black colors, stains, and spots, which satisfy the TBox condition for blotchy.
+----------------------------------------
+Query 7: Expected: [flecked] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, black]
+- hasShape/Part: [large, irregular]
+- hasTexture: [rough, uneven]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include large, irregular shapes and a rough, uneven texture, which satisfy the TBox axioms for blotchy.
+----------------------------------------
+Query 8: Expected: [flecked] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor: [black, brown] (Necessary condition)
+- hasShape/Part: [large, irregular] (Sufficient condition)
+- hasTexture: [rough, uneven] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: black, brown
+- hasShape/Part: large, irregular
+- hasTexture: rough, uneven
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for blotchy. The image has large, irregular shapes with rough, uneven texture, which are sufficient conditions for the classification.
+----------------------------------------
+Query 9: Expected: [flecked] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>gauzy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- gauzy ⊑ hasTextured [light, semi-transparent] (Necessary condition)
+- hasTextured [light, semi-transparent] ⊑ gauzy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [white, light orange]
+- hasShape/Part: [curtain, fabric]
+- hasTexture: [light, semi-transparent]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a light, semi-transparent fabric, which matches the TBox axioms for gauzy. The light color and semi-transparent texture are sufficient to classify the image as gauzy.
+----------------------------------------
+Query 10: Expected: [flecked] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, black, and white]
+- hasShape/Part: [a pattern of irregularly shaped, dark brown blotches against a lighter background]
+- hasTexture: [a rough, uneven texture]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a pattern of irregularly shaped, dark brown blotches against a lighter background, which matches the TBox axiom for blotchy. The rough, uneven texture also supports the classification as blotchy.
+----------------------------------------
+Query 11: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, black]
+- hasShape/Part: [stripes, spots]
+- hasTexture: [rough, uneven]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include brown and black colors, stripes and spots, and a rough, uneven texture. These features satisfy the TBox axioms for blotchy, which are necessary and sufficient conditions for the classification.
+----------------------------------------
+Query 12: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor: [The image has a dominant color that is not explicitly mentioned, but it is likely to be a neutral or muted tone, possibly gray or brown.]
+- hasShape/Part: [The image shows a surface with irregular shapes and patches, suggesting a non-uniform texture or pattern.]
+- hasTexture: [The texture appears to be rough and uneven, with visible variations in color and shape.]
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [The image has a neutral or muted tone, possibly gray or brown.]
+- hasShape/Part: [The image shows a surface with irregular shapes and patches, suggesting a non-uniform texture or pattern.]
+- hasTexture: [The texture appears to be rough and uneven, with visible variations in color and shape.]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for "blotchy." The image shows a surface with irregular shapes and patches, suggesting a non-uniform texture or pattern, which is consistent with the definition of "blotchy."
+----------------------------------------
+Query 13: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, black, and white]
+- hasShape/Part: [a large, irregularly shaped, and somewhat flat object]
+- hasTexture: [a rough, uneven surface with patches of different colors]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a large, irregularly shaped, and somewhat flat object with a rough, uneven surface and patches of different colors. These properties match the TBox axioms for blotchy, which states that blotchy is a class of objects that have a visual feature [feature] that is necessary and sufficient for classification. Therefore, the target image is classified as blotchy.
+----------------------------------------
+Query 14: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, yellow, and white]
+- hasShape/Part: [leaves, stems]
+- hasTexture: [rough, uneven]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include brown, yellow, and white colors, which satisfy the TBox condition for blotchy. The rough and uneven texture of the leaves and stems also align with the visual axioms for blotchy.
+----------------------------------------
+Query 15: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasVisualFeature [e.g., irregular patches of different colors or textures] (Necessary condition)
+- hasVisualFeature [e.g., irregular patches of different colors or textures] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [various shades of brown and black]
+- hasShape/Part: [irregular patches of different colors]
+- hasTexture: [rough and uneven surface]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include irregular patches of different colors and textures, which satisfy the TBox axioms for blotchy.
+----------------------------------------
+-> FINAL ACCURACY for (3,1,5): 0.5333
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [stained] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor [brown] ⊑ stained (Necessary condition)
+- stained ⊑ hasColor [brown] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown
+- hasShape/Part: paper
+- hasTexture: water marks
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a brown color, which satisfies the TBox condition for stained. The brown color is a necessary condition for the classification as stained, and the stained property is a sufficient condition for the brown color.
+----------------------------------------
+Query 2: Expected: [stained] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor: [yellow, brown] (Necessary condition)
+- hasShape/Part: [stain] (Sufficient condition)
+- hasTexture: [darker patches on a lighter background] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: yellow, brown
+- hasShape/Part: stain
+- hasTexture: darker patches on a lighter background
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for stained. The yellow and brown colors, along with the presence of a stain, validate the classification.
+----------------------------------------
+Query 3: Expected: [stained] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor [brown, yellow] ⊑ stained (Necessary condition)
+- stained ⊑ hasColor [brown, yellow] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, yellow
+- hasShape/Part: a pattern of brown and yellow
+- hasTexture: a rough, uneven surface
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include brown and yellow colors, which satisfy the TBox condition for stained. The rough, uneven surface and the pattern of brown and yellow also support the classification as stained.
+----------------------------------------
+Query 4: Expected: [stained] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- stained ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ stained (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, dark]
+- hasShape/Part: [stain, fabric]
+- hasTexture: [rough, uneven]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a brown and dark stain on the fabric, which satisfies the TBox condition for stained.
+----------------------------------------
+Query 5: Expected: [stained] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor [green, brown] ⊑ stained (Necessary condition)
+- stained ⊑ hasColor [green, brown] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, brown
+- hasShape/Part: paper, ink
+- hasTexture: rough, uneven
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include green and brown colors, which satisfy the TBox condition for stained. The rough and uneven texture of the paper also aligns with the visual evidence of the target image.
+----------------------------------------
+Query 6: Expected: [stained] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [red, pink, white]
+- hasShape/Part: [triangular shapes]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include triangular shapes and smooth texture, which satisfy the TBox condition for interlaced.
+----------------------------------------
+Query 7: Expected: [stained] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor: [dominant colors observed in the image]
+- hasShape/Part: [physical parts or shapes observed in the image]
+- hasTexture: [actual texture observed in the image]
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [actual dominant colors of the target image]
+- hasShape/Part: [physical parts or shapes observed in the target image]
+- hasTexture: [actual texture observed in the target image]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for the chosen class. For example, if the target image has a specific color pattern that aligns with the TBox axioms for "blotchy," then the classification is justified.
+----------------------------------------
+Query 8: Expected: [stained] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor [brown] ⊑ stained (Necessary condition)
+- stained ⊑ hasColor [brown] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown
+- hasShape/Part: circular
+- hasTexture: rough
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a brown circular shape with a rough texture, which matches the TBox axioms for stained. The brown color is a necessary condition for the classification, while the circular shape and rough texture are sufficient conditions.
+----------------------------------------
+Query 9: Expected: [stained] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasShape [curved lines] (Necessary condition)
+- hasShape [curved lines] ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, black]
+- hasShape/Part: [curved lines]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include curved lines, which satisfy the TBox condition for interlaced.
+----------------------------------------
+Query 10: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor [green, brown] ⊑ stained (Necessary condition)
+- stained ⊑ hasColor [green, brown] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, brown
+- hasShape/Part: paper, ink
+- hasTexture: rough, uneven
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include green and brown colors, which satisfy the TBox condition for stained. The rough and uneven texture of the paper also aligns with the visual axioms of stained.
+----------------------------------------
+Query 11: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor [green, brown] ⊑ stained (Necessary condition)
+- stained ⊑ hasColor [green, brown] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, brown
+- hasShape/Part: irregular, splatter-like
+- hasTexture: rough, uneven
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include green and brown colors, which satisfy the TBox condition for stained. The irregular, splatter-like shape and rough, uneven texture also align with the visual axioms for stained.
+----------------------------------------
+Query 12: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor: [green, brown] (Necessary condition)
+- hasShape/Part: [stain] (Sufficient condition)
+- hasTexture: [rough, uneven] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green and brown
+- hasShape/Part: a stain
+- hasTexture: rough and uneven
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for stained. The green and brown colors, the presence of a stain, and the rough, uneven texture are all necessary and sufficient conditions for the classification of the image as stained.
+----------------------------------------
+Query 13: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasShape [interlaced pattern] (Necessary condition)
+- hasShape [interlaced pattern] ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, black]
+- hasShape/Part: [interlaced lines]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include interlaced lines and a smooth texture, which satisfy the TBox axioms for interlaced.
+----------------------------------------
+Query 14: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- stained ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ stained (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, dark]
+- hasShape/Part: [curved lines, irregular shapes]
+- hasTexture: [rough, uneven]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include curved lines and irregular shapes, which satisfy the TBox condition for stained.
+----------------------------------------
+Query 15: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor [brown, green, yellow] ⊑ stained (Necessary condition)
+- stained ⊑ hasColor [brown, green, yellow] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, green, yellow
+- hasShape/Part: abstract, irregular shapes
+- hasTexture: rough, uneven surface
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include brown, green, and yellow colors, which satisfy the TBox condition for stained. The abstract, irregular shapes and rough, uneven surface also align with the visual axioms of stained.
+----------------------------------------
+Query 16: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasShape [curved lines] (Necessary condition)
+- hasShape [curved lines] ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [green, brown]
+- hasShape/Part: [curved lines]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include curved lines, which satisfy the TBox condition for interlaced.
+----------------------------------------
+Query 17: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor: [green, brown] (Necessary condition)
+- hasShape/Part: [leaf, spots] (Sufficient condition)
+- hasTexture: [rough, uneven] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green and brown
+- hasShape/Part: leaf with spots
+- hasTexture: rough and uneven
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for blotchy. The leaf has a rough and uneven texture, and it has green and brown colors with spots, which are sufficient to classify it as blotchy.
+----------------------------------------
+Query 18: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasColor: [dominant colors observed in the image]
+- hasShape/Part: [physical parts or shapes observed in the image]
+- hasTexture: [actual texture observed in the image]
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [actual dominant colors observed in the image]
+- hasShape/Part: [physical parts or shapes observed in the image]
+- hasTexture: [actual texture observed in the image]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for the chosen class. The observed colors, shapes, and texture align with the defined visual features for the chosen class.
+----------------------------------------
+Query 19: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasVisualFeature [e.g., overlapping lines or patterns]
+- hasVisualFeature [e.g., overlapping lines or patterns] ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [green, brown]
+- hasShape/Part: [overlapping lines, patterns]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include overlapping lines and patterns, which satisfy the TBox condition for interlaced.
+----------------------------------------
+Query 20: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasShape [interlaced pattern] (Necessary condition)
+- hasShape [interlaced pattern] ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [green, brown]
+- hasShape/Part: [interlaced pattern]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include an interlaced pattern, which satisfies the TBox condition for interlaced.
+----------------------------------------
+Query 21: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [green, yellow]
+- hasShape/Part: [circular patterns]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include green and yellow colors, circular patterns, and a smooth texture. These features satisfy the TBox axioms for interlaced, which include having visual features that are necessary and sufficient for the classification.
+----------------------------------------
+Query 22: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasShape [curved lines] (Necessary condition)
+- hasShape [curved lines] ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, beige]
+- hasShape/Part: [curved lines]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include curved lines and smooth texture, which satisfy the TBox axioms for interlaced.
+----------------------------------------
+Query 23: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasShape [interlaced pattern] (Necessary condition)
+- hasShape [interlaced pattern] ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, beige]
+- hasShape/Part: [interlaced pattern]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include an interlaced pattern, which satisfies the TBox condition for interlaced.
+----------------------------------------
+Query 24: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasVisualFeature [e.g., interwoven lines or patterns] (Necessary condition)
+- hasVisualFeature [e.g., interwoven lines or patterns] ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [green, brown] (The image has a green and brown color scheme)
+- hasShape/Part: [interwoven lines] (The image features interwoven lines)
+- hasTexture: [smooth] (The texture appears smooth)
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include interwoven lines and a smooth texture, which satisfy the TBox axioms for interlaced.
+----------------------------------------
+Query 25: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasShape [interlaced pattern] (Necessary condition)
+- hasShape [interlaced pattern] ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, black]
+- hasShape/Part: [interlaced pattern]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include an interlaced pattern, which satisfies the TBox condition for interlaced.
+----------------------------------------
+Query 26: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasShape [interlaced pattern] (Necessary condition)
+- hasShape [interlaced pattern] ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black and white]
+- hasShape/Part: [interlaced geometric shapes]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include an interlaced pattern, which satisfies the TBox condition for interlaced.
+----------------------------------------
+Query 27: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [green, yellow]
+- hasShape/Part: [curved lines, interwoven patterns]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include green and yellow colors, curved lines, and interwoven patterns. These features satisfy the TBox axioms for interlaced, which are necessary and sufficient conditions for the classification.
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9): 0.6296
+
+--- CONFIG: N=4, K=1, Q=5 ---
+Query 1: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>perforated</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasPerforatedHoles ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ hasPerforatedHoles (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [Gray]
+- hasShape/Part: [Circular holes]
+- hasTexture: [Metallic]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include circular holes, which satisfy the TBox condition for perforated.
+----------------------------------------
+Query 2: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>perforated</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- perforated ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ perforated (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [Blue, White]
+- hasShape/Part: [Circular holes]
+- hasTexture: [Smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include circular holes, which satisfy the TBox condition for perforated.
+----------------------------------------
+Query 3: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>perforated</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasShape/Part [circle] ⊑ perforated (Necessary condition)
+- perforated ⊑ hasShape/Part [circle] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [white, gray]
+- hasShape/Part: [holes]
+- hasTexture: [metallic]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include holes, which satisfy the TBox condition for perforated.
+----------------------------------------
+Query 4: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>perforated</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasPerforatedShape ⊑ hasShape [shape] (Necessary condition)
+- hasShape [shape] ⊑ hasPerforatedShape (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, metallic]
+- hasShape/Part: [holes, metal]
+- hasTexture: [metallic, smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include holes and metal, which satisfy the TBox axioms for hasPerforatedShape and hasShape. The brown and metallic colors are not directly relevant to the classification but are observed in the image.
+----------------------------------------
+Query 5: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>perforated</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasPerforatedShape: ⊑ hasShape [shape] (Necessary condition)
+- hasShape [shape] ⊑ hasPerforatedShape (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [white, gray]
+- hasShape/Part: [holes, rectangular]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include holes and a rectangular shape, which satisfy the TBox axioms for having a perforated shape.
+----------------------------------------
+Query 6: Expected: [zigzagged] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>perforated</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasPerforation [pattern] ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ hasPerforation [pattern] (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [Blue, White]
+- hasShape/Part: [Circular holes]
+- hasTexture: [Metallic]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include circular holes (hasShape/Part) and a metallic texture (hasTexture). These features satisfy the TBox axioms for perforated, which states that perforated has circular holes and a metallic texture.
+----------------------------------------
+Query 7: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>zigzagged</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- zigzagged ⊑ hasShape [zigzag pattern] (Necessary condition)
+- hasShape [zigzag pattern] ⊑ zigzagged (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [Blue, White]
+- hasShape/Part: [zigzag pattern]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a zigzag pattern, which satisfies the TBox condition for zigzagged. The dominant colors are blue and white, and the texture appears smooth.
+----------------------------------------
+Query 8: Expected: [zigzagged] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>perforated</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasPerforatedShape ⊑ hasShape [shape] (Necessary condition)
+- hasShape [shape] ⊑ hasPerforatedShape (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [Gray]
+- hasShape/Part: [Circular holes]
+- hasTexture: [Metallic]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a shape with circular holes, which matches the TBox axiom for hasPerforatedShape. The observed color and texture are not directly relevant to the classification but are noted for completeness.
+----------------------------------------
+Query 9: Expected: [zigzagged] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>perforated</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasPerforatedShape ⊑ hasShape (Necessary condition)
+- hasShape ⊑ hasPerforatedShape (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [White, Gray]
+- hasShape/Part: [Circular holes]
+- hasTexture: [Metallic]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include circular holes, which satisfy the TBox axiom for hasPerforatedShape. This is a sufficient condition to classify the image as perforated.
+----------------------------------------
+Query 10: Expected: [zigzagged] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>perforated</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasPerforatedShape ⊑ hasShape [shape] (Necessary condition)
+- hasShape [shape] ⊑ hasPerforatedShape (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [white, black] (The image has a white background with black perforations)
+- hasShape/Part: [holes] (The image shows holes in a surface)
+- hasTexture: [perforated] (The surface has a perforated texture)
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include holes and a perforated texture, which satisfy the TBox axioms for perforated. The holes are a part of the shape, and the texture is consistent with the perforated shape.
+----------------------------------------
+Query 11: Expected: [stained] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>perforated</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasPerforatedShape ⊑ hasShape [shape] (Necessary condition)
+- hasShape [shape] ⊑ hasPerforatedShape (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, white]
+- hasShape/Part: [holes, grid-like structure]
+- hasTexture: [smooth, metallic]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include holes and a grid-like structure, which satisfy the TBox axioms for hasPerforatedShape. The smooth and metallic texture does not affect the classification.
+----------------------------------------
+Query 12: Expected: [stained] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- stained ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ stained (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, white] (The image shows brown and white stains on a surface)
+- hasShape/Part: [stain] (The image shows a specific stain shape)
+- hasTexture: [wet, uneven] (The texture of the stain appears uneven and wet)
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a specific stain shape and texture, which satisfy the TBox condition for stained.
+----------------------------------------
+Query 13: Expected: [stained] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasStain: ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ hasStain (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, yellow]
+- hasShape/Part: [stain, fabric]
+- hasTexture: [dirt, fabric]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a brown and yellow stain on the fabric, which satisfies the TBox condition for stained.
+----------------------------------------
+Query 14: Expected: [stained] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- stained ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ stained (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, white]
+- hasShape/Part: [stain, fabric]
+- hasTexture: [dirt, fabric]
+
+4. Logical Explanation (DL & NL):
+- The ABox assertion presents [feature], which satisfies the TBox condition for stained.
+----------------------------------------
+Query 15: Expected: [stained] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- hasStain: ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ hasStain (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, yellow]
+- hasShape/Part: [stain spot]
+- hasTexture: [dirt, discoloration]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a brown and yellow stain spot, which satisfies the TBox condition for hasStain.
+----------------------------------------
+Query 16: Expected: [grooved] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grooved</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grooved ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ grooved (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, gray]
+- hasShape/Part: [stripes, grooves]
+- hasTexture: [rough, ridged]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include grooves and a rough texture, which satisfy the TBox condition for grooved.
+----------------------------------------
+Query 17: Expected: [grooved] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grooved</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grooved ⊑ hasVisualFeature [e.g., ridges or lines observed in this image] (Necessary condition)
+- hasVisualFeature [e.g., ridges or lines observed in this image] ⊑ grooved (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [The actual dominant colors of the target image]
+- hasShape/Part: [The actual physical parts or shapes you see in the target image]
+- hasTexture: [The actual texture you see in the target image]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for grooved, indicating that the ridges or lines observed in the image are sufficient to classify it as grooved.
+----------------------------------------
+Query 18: Expected: [grooved] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grooved</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grooved ⊑ hasShape [grooved] (Necessary condition)
+- hasShape [grooved] ⊑ grooved (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, white]
+- hasShape/Part: [grooved surface]
+- hasTexture: [smooth, repetitive]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a grooved surface, which satisfies the TBox condition for grooved.
+----------------------------------------
+Query 19: Expected: [grooved] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grooved</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grooved ⊑ hasSurfaceFeature [feature] (Necessary condition)
+- hasSurfaceFeature [feature] ⊑ grooved (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown]
+- hasShape/Part: [wooden surface]
+- hasTexture: [grooved surface]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a brown wooden surface with grooved texture, which satisfies the TBox condition for grooved.
+----------------------------------------
+Query 20: Expected: [grooved] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grooved</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grooved ⊑ hasVisualFeature [e.g., ridges or lines observed in this image] (Necessary condition)
+- hasVisualFeature [e.g., ridges or lines observed in this image] ⊑ grooved (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [The actual dominant colors of the target image]
+- hasShape/Part: [The actual physical parts or shapes you see in the target image]
+- hasTexture: [The actual texture you see in the target image]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for grooved, indicating that the ridges or lines observed in the image are sufficient to classify it as grooved.
+----------------------------------------
+-> FINAL ACCURACY for (4,1,5): 0.7500
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [flecked] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>gauzy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- gauzy ⊑ hasTextured [light, semi-transparent] (Necessary condition)
+- hasTextured [light, semi-transparent] ⊑ gauzy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [white, light blue]
+- hasShape/Part: [curtain, fabric]
+- hasTexture: [light, semi-transparent]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a light, semi-transparent curtain. The TBox axioms indicate that gauzy is defined by having a light, semi-transparent texture. Therefore, the observed properties match the necessary and sufficient conditions for the classification of the image as gauzy.
+----------------------------------------
+Query 2: Expected: [flecked] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasShape [square] (Necessary condition)
+- hasShape [square] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [green, white]
+- hasShape/Part: [squares]
+- hasTexture: [checkered pattern]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a checkered pattern with squares, which matches the TBox axioms for chequered. The chequered pattern is defined by having squares, which is a necessary and sufficient condition for the classification.
+----------------------------------------
+Query 3: Expected: [flecked] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasVisualFeature [e.g., alternating light and dark squares] (Necessary condition)
+- hasVisualFeature [e.g., alternating light and dark squares] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black and white]
+- hasShape/Part: [alternating light and dark squares]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for chequered. The alternating light and dark squares observed in the image satisfy the necessary and sufficient conditions for chequered.
+----------------------------------------
+Query 4: Expected: [flecked] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>gauzy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- gauzy ⊑ hasVisualFeature [texture] (Necessary condition)
+- hasVisualFeature [texture] ⊑ gauzy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [white, light pink, light orange]
+- hasShape/Part: [curtains]
+- hasTexture: [light, semi-transparent]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include light colors and semi-transparent curtains, which satisfy the TBox condition for gauzy.
+----------------------------------------
+Query 5: Expected: [flecked] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, white]
+- hasShape/Part: [squares]
+- hasTexture: [checkered pattern]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a checkered pattern, which satisfies the TBox condition for chequered.
+----------------------------------------
+Query 6: Expected: [flecked] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>gauzy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- gauzy ⊑ hasVisualFeature [texture] (Necessary condition)
+- hasVisualFeature [texture] ⊑ gauzy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [white, light blue]
+- hasShape/Part: [curtain]
+- hasTexture: [light, semi-transparent]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a curtain with a light, semi-transparent texture, which satisfies the TBox condition for gauzy.
+----------------------------------------
+Query 7: Expected: [flecked] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasVisualFeature [e.g., alternating light and dark squares] (Necessary condition)
+- hasVisualFeature [e.g., alternating light and dark squares] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black and white]
+- hasShape/Part: [alternating light and dark squares]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for chequered. The alternating light and dark squares observed in the image satisfy the necessary and sufficient conditions for chequered.
+----------------------------------------
+Query 8: Expected: [flecked] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasShape [square] (Necessary condition)
+- hasShape [square] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, white]
+- hasShape/Part: [squares]
+- hasTexture: [checkered pattern]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a checkered pattern with squares of black and white. The TBox axioms indicate that chequered is defined by having squares, which is a necessary and sufficient condition for the classification.
+----------------------------------------
+Query 9: Expected: [flecked] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasVisualFeature [e.g., specific pattern observed in this image] (Necessary condition)
+- hasVisualFeature [e.g., specific pattern observed in this image] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black and white]
+- hasShape/Part: [squares]
+- hasTexture: [checkered pattern]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for chequered. The image shows a pattern of squares in black and white, which is a necessary and sufficient condition for the classification as chequered.
+----------------------------------------
+Query 10: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasVisualFeature [e.g., alternating squares or rectangles of different colors] (Necessary condition)
+- hasVisualFeature [e.g., alternating squares or rectangles of different colors] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black and white]
+- hasShape/Part: [alternating squares or rectangles]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for chequered. The alternating squares or rectangles of different colors (black and white) satisfy the necessary and sufficient conditions for the chequered class.
+----------------------------------------
+Query 11: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasVisualFeature [e.g., alternating colored squares or rectangles] (Necessary condition)
+- hasVisualFeature [e.g., alternating colored squares or rectangles] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black and white]
+- hasShape/Part: [alternating colored squares or rectangles]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for chequered. The alternating colored squares or rectangles observed in the image satisfy the necessary and sufficient conditions for being classified as chequered.
+----------------------------------------
+Query 12: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasPattern [pattern] (Necessary condition)
+- hasPattern [pattern] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, white] (The image has a brown and white checkered pattern)
+- hasShape/Part: [squares] (The image consists of square shapes)
+- hasTexture: [checkered] (The texture of the image is checkered)
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for chequered. The image has a pattern of squares, which is a necessary and sufficient condition for it to be classified as chequered.
+----------------------------------------
+Query 13: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasShape [square] (Necessary condition)
+- hasShape [square] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black and white]
+- hasShape/Part: [squares]
+- hasTexture: [checkered pattern]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for chequered. The image shows squares arranged in a checkered pattern, which satisfies the necessary and sufficient conditions for chequered.
+----------------------------------------
+Query 14: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasVisualFeature [e.g., specific pattern observed in this image] (Necessary condition)
+- hasVisualFeature [e.g., specific pattern observed in this image] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [Green and white]
+- hasShape/Part: [Square shapes]
+- hasTexture: [Checkered pattern]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for chequered, as it has a specific pattern of square shapes in green and white colors, which is a necessary and sufficient condition for the classification.
+----------------------------------------
+Query 15: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasShape [square] (Necessary condition)
+- hasShape [square] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, white]
+- hasShape/Part: [squares]
+- hasTexture: [checkered pattern]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for chequered. The image shows squares of brown and white, which is a characteristic of a chequered pattern.
+----------------------------------------
+Query 16: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, white]
+- hasShape/Part: [squares]
+- hasTexture: [checkered pattern]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a checkered pattern, which satisfies the TBox condition for chequered.
+----------------------------------------
+Query 17: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasVisualFeature [e.g., alternating light and dark squares] (Necessary condition)
+- hasVisualFeature [e.g., alternating light and dark squares] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black and white]
+- hasShape/Part: [alternating light and dark squares]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for chequered. The alternating light and dark squares observed in the image satisfy the necessary and sufficient conditions for chequered.
+----------------------------------------
+Query 18: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasShape [square] (Necessary condition)
+- hasShape [square] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, white]
+- hasShape/Part: [squares]
+- hasTexture: [checkered pattern]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for chequered. The image shows a pattern of squares in black and white, which is a sufficient condition for the classification as chequered.
+----------------------------------------
+Query 19: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>gauzy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- gauzy ⊑ hasTexture [light, semi-transparent] (Necessary condition)
+- hasTexture [light, semi-transparent] ⊑ gauzy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [green, white]
+- hasShape/Part: [curtain, window]
+- hasTexture: [light, semi-transparent]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include light, semi-transparent texture, and the presence of a curtain and window. These properties match the TBox axioms for gauzy, which states that gauzy is characterized by light, semi-transparent texture. Therefore, the target image is classified as gauzy.
+----------------------------------------
+Query 20: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>gauzy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- gauzy ⊑ hasVisualFeature [texture] (Necessary condition)
+- hasVisualFeature [texture] ⊑ gauzy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [white]
+- hasShape/Part: [fabric]
+- hasTexture: [light, sheer]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a white fabric with a light, sheer texture, which satisfies the TBox condition for gauzy.
+----------------------------------------
+Query 21: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>gauzy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- gauzy ⊑ hasVisualFeature [texture] (Necessary condition)
+- hasVisualFeature [texture] ⊑ gauzy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [white, light pink, light orange]
+- hasShape/Part: [vertical stripes]
+- hasTexture: [light, sheer, translucent]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include vertical stripes, light colors, and a sheer texture. These features match the TBox axioms for gauzy, which is defined by having a specific texture (Necessary & Sufficient condition).
+----------------------------------------
+Query 22: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>gauzy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- gauzy ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ gauzy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, white]
+- hasShape/Part: [long, sheer]
+- hasTexture: [translucent]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include long, sheer, and translucent, which satisfy the TBox condition for gauzy.
+----------------------------------------
+Query 23: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>gauzy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- gauzy ⊑ hasVisualFeature [texture] (Necessary condition)
+- hasVisualFeature [texture] ⊑ gauzy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [white]
+- hasShape/Part: [translucent fabric]
+- hasTexture: [light, airy, delicate]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a translucent fabric with a light, airy, and delicate texture, which satisfies the TBox condition for gauzy.
+----------------------------------------
+Query 24: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>gauzy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- gauzy ⊑ hasTextured [light, semi-transparent] (Necessary condition)
+- hasTextured [light, semi-transparent] ⊑ gauzy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [white, light pink, light purple]
+- hasShape/Part: [curtain, window]
+- hasTexture: [light, semi-transparent]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include light, semi-transparent curtains, which satisfy the TBox condition for gauzy.
+----------------------------------------
+Query 25: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>gauzy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- gauzy ⊑ hasTextured [light, semi-transparent] (Necessary condition)
+- hasTextured [light, semi-transparent] ⊑ gauzy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [white, light green]
+- hasShape/Part: [curtain, fabric]
+- hasTexture: [light, semi-transparent]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a light, semi-transparent curtain. This matches the TBox axiom for gauzy, which states that gauzy is a type of fabric with light, semi-transparent properties.
+----------------------------------------
+Query 26: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasVisualFeature [e.g., specific pattern observed in this image] (Necessary condition)
+- hasVisualFeature [e.g., specific pattern observed in this image] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black and white]
+- hasShape/Part: [squares]
+- hasTexture: [checkered pattern]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for chequered, as it has a specific pattern of squares in black and white, which is a necessary and sufficient condition for the classification.
+----------------------------------------
+Query 27: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>gauzy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- gauzy ⊑ hasTexture [light, semi-transparent] (Necessary condition)
+- hasTexture [light, semi-transparent] ⊑ gauzy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [white, light green]
+- hasShape/Part: [curtain, fabric]
+- hasTexture: [light, semi-transparent]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a light, semi-transparent fabric, which matches the TBox axiom for gauzy.
+----------------------------------------
+Query 28: Expected: [zigzagged] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black and white]
+- hasShape/Part: [squares]
+- hasTexture: [checkered pattern]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a checkered pattern, which satisfies the TBox condition for chequered.
+----------------------------------------
+Query 29: Expected: [zigzagged] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasVisualFeature [e.g., alternating colored squares or rectangles] (Necessary condition)
+- hasVisualFeature [e.g., alternating colored squares or rectangles] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black and white]
+- hasShape/Part: [alternating squares or rectangles]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for chequered. The alternating black and white squares or rectangles satisfy the necessary and sufficient conditions for the chequered class.
+----------------------------------------
+Query 30: Expected: [zigzagged] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasShape [square] (Necessary condition)
+- hasShape [square] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [green, white]
+- hasShape/Part: [squares]
+- hasTexture: [grainy]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include squares and a grainy texture, which satisfy the TBox axioms for chequered.
+----------------------------------------
+Query 31: Expected: [zigzagged] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, white]
+- hasShape/Part: [squares]
+- hasTexture: [checkered pattern]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a checkered pattern, which satisfies the TBox condition for chequered.
+----------------------------------------
+Query 32: Expected: [zigzagged] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black and white]
+- hasShape/Part: [square shapes]
+- hasTexture: [checkered pattern]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a checkered pattern, which satisfies the TBox condition for chequered.
+----------------------------------------
+Query 33: Expected: [zigzagged] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasShape [square] (Necessary condition)
+- hasShape [square] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, white]
+- hasShape/Part: [squares]
+- hasTexture: [checkered pattern]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for chequered. The image has a pattern of squares, which is a necessary and sufficient condition for the chequered class.
+----------------------------------------
+Query 34: Expected: [zigzagged] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasVisualFeature [feature] (Necessary condition)
+- hasVisualFeature [feature] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [Green and white]
+- hasShape/Part: [Square shapes]
+- hasTexture: [Grungy texture]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include green and white colors, square shapes, and a grungy texture. These features satisfy the TBox axioms for chequered, which include having a visual feature that is a combination of these properties.
+----------------------------------------
+Query 35: Expected: [zigzagged] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasVisualFeature [e.g., alternating squares of different colors] (Necessary condition)
+- hasVisualFeature [e.g., alternating squares of different colors] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, white]
+- hasShape/Part: [alternating squares]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image match the TBox axioms for chequered. The alternating squares of different colors satisfy the necessary and sufficient conditions for the chequered class.
+----------------------------------------
+Query 36: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>zigzagged</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- zigzagged ⊑ hasShape [zigzag] (Necessary condition)
+- hasShape [zigzag] ⊑ zigzagged (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [black, white]
+- hasShape/Part: [zigzag pattern]
+- hasTexture: [smooth]
+
+4. Logical Explanation (DL & NL):
+- The ABox properties of the target image include a zigzag pattern (hasShape [zigzag]) which satisfies the TBox condition for zigzagged.
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.5000

@@ -1,0 +1,177 @@
+=== DEBUG LOG: gemma3 | dtd | Prompt: classification ===
+
+--- CONFIG: N=2, K=2, Q=5 ---
+Query 1: Expected: [crosshatched] | Extracted: [crosshatched] -> Correct: True
+Query 2: Expected: [crosshatched] | Extracted: [crystalline] -> Correct: False
+Query 3: Expected: [crosshatched] | Extracted: [crystalline] -> Correct: False
+Query 4: Expected: [crosshatched] | Extracted: [crystalline] -> Correct: False
+Query 5: Expected: [crosshatched] | Extracted: [crystalline] -> Correct: False
+Query 6: Expected: [crystalline] | Extracted: [crystalline] -> Correct: True
+Query 7: Expected: [crystalline] | Extracted: [crystalline] -> Correct: True
+Query 8: Expected: [crystalline] | Extracted: [crystalline] -> Correct: True
+Query 9: Expected: [crystalline] | Extracted: [crystalline] -> Correct: True
+Query 10: Expected: [crystalline] | Extracted: [crystalline] -> Correct: True
+-> FINAL ACCURACY for (2,2,5): 0.6000
+
+--- CONFIG: N=2, K=2, Q=8 ---
+Query 1: Expected: [woven] | Extracted: [blotchy] -> Correct: False
+Query 2: Expected: [woven] | Extracted: [woven] -> Correct: True
+Query 3: Expected: [woven] | Extracted: [woven] -> Correct: True
+Query 4: Expected: [woven] | Extracted: [woven] -> Correct: True
+Query 5: Expected: [woven] | Extracted: [woven] -> Correct: True
+Query 6: Expected: [woven] | Extracted: [blotchy] -> Correct: False
+Query 7: Expected: [woven] | Extracted: [blotchy] -> Correct: False
+Query 8: Expected: [woven] | Extracted: [blotchy] -> Correct: False
+Query 9: Expected: [blotchy] | Extracted: [blotchy] -> Correct: True
+Query 10: Expected: [blotchy] | Extracted: [woven] -> Correct: False
+Query 11: Expected: [blotchy] | Extracted: [blotchy] -> Correct: True
+Query 12: Expected: [blotchy] | Extracted: [blotchy] -> Correct: True
+Query 13: Expected: [blotchy] | Extracted: [blotchy] -> Correct: True
+Query 14: Expected: [blotchy] | Extracted: [blotchy] -> Correct: True
+Query 15: Expected: [blotchy] | Extracted: [blotchy] -> Correct: True
+Query 16: Expected: [blotchy] | Extracted: [blotchy] -> Correct: True
+-> FINAL ACCURACY for (2,2,8): 0.6875
+
+--- CONFIG: N=2, K=1, Q=5 ---
+Query 1: Expected: [pleated] | Extracted: [pleated] -> Correct: True
+Query 2: Expected: [pleated] | Extracted: [pleated] -> Correct: True
+Query 3: Expected: [pleated] | Extracted: [pleated] -> Correct: True
+Query 4: Expected: [pleated] | Extracted: [pleated] -> Correct: True
+Query 5: Expected: [pleated] | Extracted: [pleated] -> Correct: True
+Query 6: Expected: [crosshatched] | Extracted: [crosshatched] -> Correct: True
+Query 7: Expected: [crosshatched] | Extracted: [pleated] -> Correct: False
+Query 8: Expected: [crosshatched] | Extracted: [crosshatched] -> Correct: True
+Query 9: Expected: [crosshatched] | Extracted: [crosshatched] -> Correct: True
+Query 10: Expected: [crosshatched] | Extracted: [crosshatched] -> Correct: True
+-> FINAL ACCURACY for (2,1,5): 0.9000
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [grid] | Extracted: [matted] -> Correct: False
+Query 2: Expected: [grid] | Extracted: [matted] -> Correct: False
+Query 3: Expected: [grid] | Extracted: [grid] -> Correct: True
+Query 4: Expected: [grid] | Extracted: [grid] -> Correct: True
+Query 5: Expected: [grid] | Extracted: [matted] -> Correct: False
+Query 6: Expected: [grid] | Extracted: [grid] -> Correct: True
+Query 7: Expected: [grid] | Extracted: [grid] -> Correct: True
+Query 8: Expected: [grid] | Extracted: [grid] -> Correct: True
+Query 9: Expected: [grid] | Extracted: [grid] -> Correct: True
+Query 10: Expected: [matted] | Extracted: [matted] -> Correct: True
+Query 11: Expected: [matted] | Extracted: [matted] -> Correct: True
+Query 12: Expected: [matted] | Extracted: [matted] -> Correct: True
+Query 13: Expected: [matted] | Extracted: [matted] -> Correct: True
+Query 14: Expected: [matted] | Extracted: [matted] -> Correct: True
+Query 15: Expected: [matted] | Extracted: [matted] -> Correct: True
+Query 16: Expected: [matted] | Extracted: [matted] -> Correct: True
+Query 17: Expected: [matted] | Extracted: [matted] -> Correct: True
+Query 18: Expected: [matted] | Extracted: [matted] -> Correct: True
+-> FINAL ACCURACY for (2,1,9): 0.8333
+
+--- CONFIG: N=3, K=1, Q=5 ---
+Query 1: Expected: [gauzy] | Extracted: [gauzy] -> Correct: True
+Query 2: Expected: [gauzy] | Extracted: [gauzy] -> Correct: True
+Query 3: Expected: [gauzy] | Extracted: [gauzy] -> Correct: True
+Query 4: Expected: [gauzy] | Extracted: [gauzy] -> Correct: True
+Query 5: Expected: [gauzy] | Extracted: [flecked] -> Correct: False
+Query 6: Expected: [flecked] | Extracted: [flecked] -> Correct: True
+Query 7: Expected: [flecked] | Extracted: [flecked] -> Correct: True
+Query 8: Expected: [flecked] | Extracted: [flecked] -> Correct: True
+Query 9: Expected: [flecked] | Extracted: [blotchy] -> Correct: False
+Query 10: Expected: [flecked] | Extracted: [flecked] -> Correct: True
+Query 11: Expected: [blotchy] | Extracted: [blotchy] -> Correct: True
+Query 12: Expected: [blotchy] | Extracted: [flecked] -> Correct: False
+Query 13: Expected: [blotchy] | Extracted: [flecked] -> Correct: False
+Query 14: Expected: [blotchy] | Extracted: [blotchy] -> Correct: True
+Query 15: Expected: [blotchy] | Extracted: [flecked] -> Correct: False
+-> FINAL ACCURACY for (3,1,5): 0.6667
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [stained] | Extracted: [stained] -> Correct: True
+Query 2: Expected: [stained] | Extracted: [blotchy] -> Correct: False
+Query 3: Expected: [stained] | Extracted: [blotchy] -> Correct: False
+Query 4: Expected: [stained] | Extracted: [stained] -> Correct: True
+Query 5: Expected: [stained] | Extracted: [interlaced] -> Correct: False
+Query 6: Expected: [stained] | Extracted: [interlaced] -> Correct: False
+Query 7: Expected: [stained] | Extracted: [interlaced] -> Correct: False
+Query 8: Expected: [stained] | Extracted: [blotchy] -> Correct: False
+Query 9: Expected: [stained] | Extracted: [stained] -> Correct: True
+Query 10: Expected: [blotchy] | Extracted: [blotchy] -> Correct: True
+Query 11: Expected: [blotchy] | Extracted: [interlaced] -> Correct: False
+Query 12: Expected: [blotchy] | Extracted: [interlaced] -> Correct: False
+Query 13: Expected: [blotchy] | Extracted: [stained] -> Correct: False
+Query 14: Expected: [blotchy] | Extracted: [stained] -> Correct: False
+Query 15: Expected: [blotchy] | Extracted: [blotchy] -> Correct: True
+Query 16: Expected: [blotchy] | Extracted: [blotchy] -> Correct: True
+Query 17: Expected: [blotchy] | Extracted: [stained] -> Correct: False
+Query 18: Expected: [blotchy] | Extracted: [stained] -> Correct: False
+Query 19: Expected: [interlaced] | Extracted: [interlaced] -> Correct: True
+Query 20: Expected: [interlaced] | Extracted: [interlaced] -> Correct: True
+Query 21: Expected: [interlaced] | Extracted: [interlaced] -> Correct: True
+Query 22: Expected: [interlaced] | Extracted: [stained] -> Correct: False
+Query 23: Expected: [interlaced] | Extracted: [blotchy] -> Correct: False
+Query 24: Expected: [interlaced] | Extracted: [interlaced] -> Correct: True
+Query 25: Expected: [interlaced] | Extracted: [blotchy] -> Correct: False
+Query 26: Expected: [interlaced] | Extracted: [interlaced] -> Correct: True
+Query 27: Expected: [interlaced] | Extracted: [interlaced] -> Correct: True
+-> FINAL ACCURACY for (3,1,9): 0.4444
+
+--- CONFIG: N=4, K=1, Q=5 ---
+Query 1: Expected: [perforated] | Extracted: [stained] -> Correct: False
+Query 2: Expected: [perforated] | Extracted: [perforated] -> Correct: True
+Query 3: Expected: [perforated] | Extracted: [perforated] -> Correct: True
+Query 4: Expected: [perforated] | Extracted: [stained] -> Correct: False
+Query 5: Expected: [perforated] | Extracted: [perforated] -> Correct: True
+Query 6: Expected: [zigzagged] | Extracted: [zigzagged] -> Correct: True
+Query 7: Expected: [zigzagged] | Extracted: [zigzagged] -> Correct: True
+Query 8: Expected: [zigzagged] | Extracted: [zigzagged] -> Correct: True
+Query 9: Expected: [zigzagged] | Extracted: [zigzagged] -> Correct: True
+Query 10: Expected: [zigzagged] | Extracted: [zigzagged] -> Correct: True
+Query 11: Expected: [stained] | Extracted: [stained] -> Correct: True
+Query 12: Expected: [stained] | Extracted: [stained] -> Correct: True
+Query 13: Expected: [stained] | Extracted: [stained] -> Correct: True
+Query 14: Expected: [stained] | Extracted: [stained] -> Correct: True
+Query 15: Expected: [stained] | Extracted: [stained] -> Correct: True
+Query 16: Expected: [grooved] | Extracted: [grooved] -> Correct: True
+Query 17: Expected: [grooved] | Extracted: [grooved] -> Correct: True
+Query 18: Expected: [grooved] | Extracted: [grooved] -> Correct: True
+Query 19: Expected: [grooved] | Extracted: [stained] -> Correct: False
+Query 20: Expected: [grooved] | Extracted: [grooved] -> Correct: True
+-> FINAL ACCURACY for (4,1,5): 0.8500
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [flecked] | Extracted: [flecked] -> Correct: True
+Query 2: Expected: [flecked] | Extracted: [flecked] -> Correct: True
+Query 3: Expected: [flecked] | Extracted: [flecked] -> Correct: True
+Query 4: Expected: [flecked] | Extracted: [flecked] -> Correct: True
+Query 5: Expected: [flecked] | Extracted: [flecked] -> Correct: True
+Query 6: Expected: [flecked] | Extracted: [flecked] -> Correct: True
+Query 7: Expected: [flecked] | Extracted: [flecked] -> Correct: True
+Query 8: Expected: [flecked] | Extracted: [flecked] -> Correct: True
+Query 9: Expected: [flecked] | Extracted: [flecked] -> Correct: True
+Query 10: Expected: [chequered] | Extracted: [chequered] -> Correct: True
+Query 11: Expected: [chequered] | Extracted: [chequered] -> Correct: True
+Query 12: Expected: [chequered] | Extracted: [gauzy] -> Correct: False
+Query 13: Expected: [chequered] | Extracted: [chequered] -> Correct: True
+Query 14: Expected: [chequered] | Extracted: [chequered] -> Correct: True
+Query 15: Expected: [chequered] | Extracted: [chequered] -> Correct: True
+Query 16: Expected: [chequered] | Extracted: [chequered] -> Correct: True
+Query 17: Expected: [chequered] | Extracted: [chequered] -> Correct: True
+Query 18: Expected: [chequered] | Extracted: [chequered] -> Correct: True
+Query 19: Expected: [gauzy] | Extracted: [chequered] -> Correct: False
+Query 20: Expected: [gauzy] | Extracted: [flecked] -> Correct: False
+Query 21: Expected: [gauzy] | Extracted: [gauzy] -> Correct: True
+Query 22: Expected: [gauzy] | Extracted: [gauzy] -> Correct: True
+Query 23: Expected: [gauzy] | Extracted: [gauzy] -> Correct: True
+Query 24: Expected: [gauzy] | Extracted: [gauzy] -> Correct: True
+Query 25: Expected: [gauzy] | Extracted: [gauzy] -> Correct: True
+Query 26: Expected: [gauzy] | Extracted: [gauzy] -> Correct: True
+Query 27: Expected: [gauzy] | Extracted: [gauzy] -> Correct: True
+Query 28: Expected: [zigzagged] | Extracted: [zigzagged] -> Correct: True
+Query 29: Expected: [zigzagged] | Extracted: [zigzagged] -> Correct: True
+Query 30: Expected: [zigzagged] | Extracted: [zigzagged] -> Correct: True
+Query 31: Expected: [zigzagged] | Extracted: [zigzagged] -> Correct: True
+Query 32: Expected: [zigzagged] | Extracted: [zigzagged] -> Correct: True
+Query 33: Expected: [zigzagged] | Extracted: [zigzagged] -> Correct: True
+Query 34: Expected: [zigzagged] | Extracted: [zigzagged] -> Correct: True
+Query 35: Expected: [zigzagged] | Extracted: [zigzagged] -> Correct: True
+Query 36: Expected: [zigzagged] | Extracted: [zigzagged] -> Correct: True
+-> FINAL ACCURACY for (4,1,9): 0.9167

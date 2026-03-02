@@ -1,0 +1,114 @@
+=== DEBUG LOG: gemma3 | pets | Prompt: rulebased ===
+
+--- CONFIG: N=2, K=2, Q=5 ---
+Query 1: Expected: [Bombay] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN American Bulldog
+Rule Check:
+- The Target Image does not contain the exact features specified in the rule for Bombay. The Target Image does contain the exact features specified in the rule for American Bulldog.
+<response>American Bulldog</response>
+----------------------------------------
+Query 2: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark blue fur]
+- [Pointed ears]
+Knowledge Base:
+- IF [Dark blue fur] AND [Pointed ears] THEN Bombay
+Rule Check:
+- The Target Image contains dark blue fur and pointed ears, which match the features specified in the rule for Bombay.
+<response>Bombay</response>
+----------------------------------------
+Query 3: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Blue-grey fur]
+- [Pointed ears]
+Knowledge Base:
+- IF [Blue-grey fur] AND [Pointed ears] THEN Bombay
+Rule Check:
+- The Target Image exhibits blue-grey fur and pointed ears. This matches the features defined in the rule for Bombay.
+<response>Bombay</response>
+----------------------------------------
+Query 4: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- Dark blue fur
+- Long white whiskers
+Knowledge Base:
+- IF Dark blue fur AND Long white whiskers THEN Bombay
+Rule Check:
+- The Target Image contains dark blue fur and long white whiskers, matching the criteria for the Bombay class.
+<response>Bombay</response>
+----------------------------------------
+Query 5: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Bombay
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Bombay.
+<response>Bombay</response>
+----------------------------------------
+Query 6: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN American Bulldog
+Rule Check:
+- The Target Image contains the exact features specified in the rule for American Bulldog.
+<response>American Bulldog</response>
+----------------------------------------
+Query 7: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Short muzzle
+- [Concrete observable feature 2] Wrinkled face
+Knowledge Base:
+- IF Short muzzle AND Wrinkled face THEN American Bulldog
+Rule Check:
+- The Target Image contains a short muzzle and a wrinkled face, matching the features specified in the rule for American Bulldog.
+<response>American Bulldog</response>
+----------------------------------------
+Query 8: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Wrinkled face]
+- [Short muzzle]
+Knowledge Base:
+- IF [Wrinkled face] AND [Short muzzle] THEN American Bulldog
+Rule Check:
+- The Target Image exhibits a wrinkled face and a short muzzle, matching the features specified in the rule for American Bulldog.
+<response>American Bulldog</response>
+----------------------------------------
+Query 9: Expected: [American Bulldog] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Bombay
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Bombay.
+<response>Bombay</response>
+----------------------------------------
+Query 10: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN American Bulldog
+Rule Check:
+- The Target Image contains the exact features specified in the rule for American Bulldog.
+<response>American Bulldog</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,5): 0.8000

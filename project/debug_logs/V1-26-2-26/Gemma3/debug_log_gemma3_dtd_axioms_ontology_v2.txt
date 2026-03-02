@@ -1,0 +1,2540 @@
+=== DEBUG LOG: gemma3 | dtd | Prompt: axioms_ontology_v2 ===
+
+--- CONFIG: N=2, K=2, Q=5 ---
+Query 1: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>crosshatched</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crosshatched ⊑ hasTexture [intersecting lines] (Necessary condition)
+- hasTexture [intersecting lines] ⊑ crosshatched (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, pink, green
+- hasShape/Part: rectangular area
+- hasTexture: intersecting lines, grid-like pattern
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by intersecting lines forming a grid-like pattern. This aligns with the TBox axiom stating that if an entity has a texture of intersecting lines, it is classified as crosshatched. The presence of this texture is sufficient to classify the image as crosshatched.
+----------------------------------------
+Query 2: Expected: [crosshatched] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>crystalline</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crystalline ⊑ hasColor blue, purple
+- crystalline ⊑ hasShape circular
+- crystalline ⊑ hasTexture complex
+
+3. ABox (Observed Properties & Assertions):
+- hasColor blue, purple, gray
+- hasShape circular
+- hasTexture complex, irregular
+
+4. Logical Explanation (DL & NL):
+The image exhibits a circular shape (hasShape circular) and a complex, irregular texture (hasTexture complex). It also displays blue and purple hues (hasColor blue, purple). These properties align with the TBox axioms defining crystalline structures, which are characterized by complex textures, circular shapes, and often exhibit blue or purple coloration. Therefore, the image is classified as crystalline.
+----------------------------------------
+Query 3: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>crosshatched</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crosshatched ⊑ hasVisualFeature [intersecting lines] (Necessary condition)
+- hasVisualFeature [intersecting lines] ⊑ crosshatched (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: white, gray, black, blue
+- hasShape/Part: irregular shapes, lines, curves
+- hasTexture: dense, intersecting lines, rough
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by dense, intersecting lines (hasVisualFeature [intersecting lines]). This satisfies the TBox condition for crosshatched. The presence of intersecting lines is sufficient to classify the image as crosshatched.
+----------------------------------------
+Query 4: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>crosshatched</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crosshatched ⊑ hasRegularGridPattern (Necessary condition)
+- hasRegularGridPattern ⊑ crosshatched (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: yellow, blue, pink
+- hasShape/Part: rectangular shapes, intersecting lines
+- hasTexture: regular grid pattern
+
+4. Logical Explanation (DL & NL):
+The image exhibits a regular grid pattern (hasRegularGridPattern), which, according to the TBox, is a sufficient condition for the entity to be classified as crosshatched. The presence of intersecting lines and rectangular shapes further validates the observed grid pattern.
+----------------------------------------
+Query 5: Expected: [crosshatched] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>crystalline</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crystalline ⊑ hasTexture [granular] (Necessary condition)
+- hasTexture [granular] ⊑ crystalline (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, gray, purple, white
+- hasShape/Part: irregular, scattered
+- hasTexture: granular, speckled
+
+4. Logical Explanation (DL & NL):
+The image exhibits a granular texture (hasTexture [granular]). According to the TBox, a granular texture is sufficient to classify the image as crystalline (hasTexture [granular] ⊑ crystalline). The observed colors and irregular shapes are not directly relevant to the classification, but do not contradict the crystalline classification.
+----------------------------------------
+Query 6: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>crystalline</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crystalline ≡ hasTexture [complex, repeating geometric pattern]
+- crystalline ⊑ hasColor [varied, often iridescent]
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, green, white, black
+- hasShape/Part: radial symmetry, branching patterns, irregular shapes
+- hasTexture: complex, repeating geometric pattern, layered appearance
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, repeating geometric pattern (hasTexture), which aligns with the necessary and sufficient condition for being crystalline (crystalline ≡ hasTexture [complex, repeating geometric pattern]). The varied colors (hasColor) are consistent with the general characteristic of crystalline structures, further supporting the classification. The radial symmetry and branching patterns (hasShape/Part) are also common visual features associated with crystalline forms.
+----------------------------------------
+Query 7: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>crystalline</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crystalline ⊑ hasVisualFeature [complex, irregular shapes] (Necessary condition)
+- hasVisualFeature [complex, irregular shapes] ⊑ crystalline (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, blue, grey, white
+- hasShape/Part: irregular, fragmented, angular, branching
+- hasTexture: rough, uneven, complex
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex arrangement of irregular shapes and fragmented structures, characterized by a rough and uneven texture. These visual features align with the TBox axioms defining "crystalline," where the presence of complex, irregular shapes is both necessary and sufficient for classification as crystalline. The observed colors (purple, blue, grey, white) do not contradict this classification and are consistent with the visual appearance of crystalline structures.
+----------------------------------------
+Query 8: Expected: [crystalline] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>crosshatched</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crosshatched ⊑ hasTexture [irregular, intersecting lines]
+- hasTexture [irregular, intersecting lines] ⊑ crosshatched
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, blue, green, red
+- hasShape/Part: small, irregular shapes, lines
+- hasTexture: irregular, intersecting lines, grainy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by irregular, intersecting lines and a grainy appearance. This aligns with the TBox axiom stating that crosshatched entities possess a texture of irregular, intersecting lines. Therefore, the observed texture is sufficient to classify the image as crosshatched.
+----------------------------------------
+Query 9: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>crystalline</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crystalline ⊑ hasTexture jagged
+- crystalline ⊑ hasColor varied
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, blue, green, purple, brown
+- hasShape/Part: irregular shapes, fragmented edges
+- hasTexture: jagged, fractured, complex
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by jagged and fractured edges, alongside a varied color palette. This aligns with the TBox axioms stating that crystalline structures are associated with a jagged texture and a varied color profile. Therefore, the observed properties satisfy the necessary conditions for classification as crystalline.
+----------------------------------------
+Query 10: Expected: [crystalline] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>crosshatched</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crosshatched ⊑ hasTexture IntersectingLines (Necessary condition)
+- hasTexture IntersectingLines ⊑ crosshatched (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, grey, yellow
+- hasShape/Part: irregular shapes, lines
+- hasTexture: IntersectingLines
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by intersecting lines (hasTexture IntersectingLines). According to the TBox, the presence of this texture is a sufficient condition for the image to be classified as crosshatched (hasTexture IntersectingLines ⊑ crosshatched). Therefore, the image is classified as crosshatched.
+----------------------------------------
+-> FINAL ACCURACY for (2,2,5): 0.6000
+
+--- CONFIG: N=2, K=2, Q=8 ---
+Query 1: Expected: [woven] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasTexture Random
+- blotchy ⊑ hasColor Varied
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, red, yellow
+- hasShape/Part: small, irregular pixels
+- hasTexture: Random
+
+4. Logical Explanation (DL & NL):
+The image exhibits a random texture (hasTexture Random), which is a necessary condition for being blotchy (blotchy ⊑ hasTexture Random). The image also displays a varied color palette (hasColor blue, red, yellow), which is a necessary condition for being blotchy (blotchy ⊑ hasColor Varied). Therefore, based on these observed properties, the image is classified as blotchy.
+----------------------------------------
+Query 2: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- woven ⊑ hasTexture InterwovenPattern (Necessary condition)
+- hasTexture InterwovenPattern ⊑ woven (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, purple, yellow
+- hasShape/Part: repeating diagonal lines, small squares
+- hasTexture: InterwovenPattern
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by interwoven diagonal lines and small squares (hasTexture InterwovenPattern). This texture satisfies the sufficient condition for being classified as "woven" (hasTexture InterwovenPattern ⊑ woven). Therefore, the image is classified as "woven".
+----------------------------------------
+Query 3: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>woven</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- woven ⊑ hasShape/Part [elongated, parallel lines] (Necessary condition)
+- hasShape/Part [elongated, parallel lines] ⊑ woven (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, brown, green, yellow
+- hasShape/Part: elongated, parallel lines, rectangular shapes
+- hasTexture: repeating pattern, interlaced
+
+4. Logical Explanation (DL & NL):
+The image exhibits elongated, parallel lines and rectangular shapes arranged in a repeating pattern, which aligns with the TBox axiom stating that woven textures are characterized by elongated, parallel lines. The presence of this shape/part is sufficient to classify the image as woven. The observed colors (blue, brown, green, yellow) do not contradict this classification and are merely incidental properties.
+----------------------------------------
+Query 4: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>woven</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- woven ⊑ hasShape/Part [interlacing threads] (Necessary condition)
+- hasShape/Part [interlacing threads] ⊑ woven (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, red, yellow
+- hasShape/Part: interlacing threads, rectangular segments
+- hasTexture: rough, patterned
+
+4. Logical Explanation (DL & NL):
+The image exhibits interlacing threads (hasShape/Part), which is a necessary and sufficient condition for being classified as "woven". The presence of blue, red, and yellow colors (hasColor) does not affect the classification, as woven materials can have various colors. The rough, patterned texture (hasTexture) further supports the observation of interlacing threads, validating the classification as "woven".
+----------------------------------------
+Query 5: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>woven</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- woven ⊑ hasRegularPattern (Necessary condition)
+- hasRegularPattern ⊑ woven (Sufficient condition)
+- woven ⊑ hasLinearElements (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, gray, yellow
+- hasShape/Part: rectangular elements, parallel lines
+- hasTexture: repeating, grid-like
+
+4. Logical Explanation (DL & NL):
+The image exhibits a repeating grid-like texture composed of rectangular elements and parallel lines. This aligns with the TBox axioms, where a regular pattern and linear elements are necessary and sufficient conditions for classifying an entity as "woven." The observed colors (blue, gray, yellow) do not contradict the classification, as they are merely visual attributes of the woven material.
+----------------------------------------
+Query 6: Expected: [woven] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasColor [varied] (Necessary condition)
+- blotchy ⊑ hasShape/Part [irregular patches] (Necessary condition)
+- blotchy ⊑ hasTexture [uneven] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, blue, green
+- hasShape/Part: irregular patches, small shapes
+- hasTexture: uneven, granular
+
+4. Logical Explanation (DL & NL):
+The image exhibits a varied color palette (brown, blue, green), irregular patches, and an uneven, granular texture. These observed properties align with the TBox axioms defining "blotchy," where a blotchy entity must have varied colors, irregular patches, and an uneven texture. Therefore, the image is classified as blotchy.
+----------------------------------------
+Query 7: Expected: [woven] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasTexture Irregular (Necessary condition)
+- hasTexture Irregular ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, green, pink, blue
+- hasShape/Part: irregular patches, amorphous shapes
+- hasTexture: irregular, mottled, non-uniform
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by irregular patches and amorphous shapes (hasTexture Irregular). According to the TBox, a texture described as "Irregular" is sufficient to classify the image as "blotchy" (hasTexture Irregular ⊑ blotchy). Therefore, the image is classified as blotchy.
+----------------------------------------
+Query 8: Expected: [woven] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasTexture Irregular (Necessary condition)
+- hasTexture Irregular ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, yellow, green, blue
+- hasShape/Part: small, irregular shapes, scattered
+- hasTexture: irregular, mottled, non-uniform
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by irregular, mottled, and non-uniform patterns (hasTexture Irregular). According to the TBox, if an entity has an irregular texture, it is classified as blotchy (hasTexture Irregular ⊑ blotchy). Therefore, the observed texture properties satisfy the necessary and sufficient conditions for the entity to be classified as blotchy.
+----------------------------------------
+Query 9: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasColor [blue, green, pink] (Necessary condition)
+- blotchy ⊑ hasShape/Part [irregular patches] (Necessary condition)
+- blotchy ⊑ hasTexture [rough, uneven] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, green, pink]
+- hasShape/Part: [irregular patches]
+- hasTexture: [rough, uneven]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a pattern of irregular patches with a color palette of blue, green, and pink, and a rough, uneven texture. These observed properties (hasColor [blue, green, pink], hasShape/Part [irregular patches], hasTexture [rough, uneven]) satisfy the necessary conditions defined in the TBox for the class "blotchy". Therefore, the image is classified as blotchy.
+----------------------------------------
+Query 10: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>woven</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- woven ⊑ hasVisualFeature [interlocking lines] (Necessary condition)
+- hasVisualFeature [interlocking lines] ⊑ woven (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, purple, green, red
+- hasShape/Part: parallel lines, curves, repeating patterns
+- hasTexture: rough, layered, irregular
+
+4. Logical Explanation (DL & NL):
+The image exhibits a pattern of interlocking lines and repeating shapes, which aligns with the "hasVisualFeature [interlocking lines]" property. This property is sufficient to classify the image as "woven" according to the established TBox. The observed colors and texture further validate the presence of a woven-like structure.
+----------------------------------------
+Query 11: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasTexture Irregular (Necessary condition)
+- hasTexture Irregular ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Gray, White, Black, Yellow, Red
+- hasShape/Part: Small, irregular patches, amorphous shapes
+- hasTexture: Irregular, mottled, uneven
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by irregular, mottled, and uneven patches of various colors (Gray, White, Black, Yellow, Red). This texture aligns with the TBox axiom stating that "blotchy" entities must have an "Irregular" texture. Therefore, observing this irregular texture is sufficient to classify the image as "blotchy."
+----------------------------------------
+Query 12: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasTexture Irregular (Necessary condition)
+- hasTexture Irregular ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, teal, brown, green
+- hasShape/Part: amorphous shapes, irregular patches
+- hasTexture: irregular, mottled, chaotic
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by irregular, mottled, and chaotic patterns. This aligns with the TBox axiom stating that a blotchy entity must have an irregular texture. The presence of irregular patches and amorphous shapes further supports this classification. Therefore, the observed texture (hasTexture Irregular) is sufficient to classify the image as blotchy.
+----------------------------------------
+Query 13: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasTexture Irregular (Necessary condition)
+- hasTexture Irregular ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: gray, white, purple, yellow
+- hasShape/Part: amorphous shapes, irregular patches
+- hasTexture: irregular, mottled, uneven
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by irregular, mottled, and uneven patches, as indicated by the 'hasTexture Irregular' property. This property is sufficient to classify the image as 'blotchy' according to the TBox axioms. The presence of gray, white, purple, and yellow colors does not contradict this classification; it simply describes the color palette within the blotchy texture.
+----------------------------------------
+Query 14: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasIrregularShape (Necessary condition)
+- blotchy ⊑ hasVariedColor (Necessary condition)
+- hasVariedColor ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, green, brown, purple
+- hasShape/Part: irregular patches, amorphous shapes
+- hasTexture: rough, uneven
+
+4. Logical Explanation (DL & NL):
+The image exhibits a varied color palette (pink, green, brown, purple) and consists of irregular patches and amorphous shapes. The presence of varied color satisfies the sufficient condition for being blotchy (hasVariedColor ⊑ blotchy). The irregular shapes also align with the necessary condition of having an irregular shape (blotchy ⊑ hasIrregularShape). Therefore, based on these observed properties, the image is classified as blotchy.
+----------------------------------------
+Query 15: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasColor [varied, vibrant] (Necessary condition)
+- blotchy ⊑ hasShape/Part [irregular patches] (Necessary condition)
+- blotchy ⊑ hasTexture [uneven, amorphous] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [pink, green, blue, yellow, purple]
+- hasShape/Part: [irregular patches, amorphous shapes, distinct numerical glyph "3"]
+- hasTexture: [uneven, amorphous, chaotic]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a wide range of vibrant colors (pink, green, blue, yellow, purple), irregular patches, and an uneven, amorphous texture. These observed properties align with the TBox axioms defining "blotchy," where a blotchy entity must have varied, vibrant colors, irregular patches, and an uneven, amorphous texture. The presence of a numerical glyph "3" does not contradict the blotchy classification; it is simply an additional feature within the blotchy texture. Therefore, the image is classified as blotchy.
+----------------------------------------
+Query 16: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasTexture Irregular (Necessary condition)
+- hasTexture Irregular ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, purple
+- hasShape/Part: scattered, amorphous shapes
+- hasTexture: irregular, mottled
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture described as "irregular" and "mottled" (hasTexture Irregular). According to the TBox, if an entity has an irregular texture, it is classified as "blotchy" (hasTexture Irregular ⊑ blotchy). Therefore, the image is classified as blotchy.
+----------------------------------------
+-> FINAL ACCURACY for (2,2,8): 0.6875
+
+--- CONFIG: N=2, K=1, Q=5 ---
+Query 1: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>pleated</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- pleated ⊑ hasShape VerticalFolds (Necessary condition)
+- hasShape VerticalFolds ⊑ pleated (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, blue, purple, pink
+- hasShape/Part: vertical lines, repeating patterns, distinct folds
+- hasTexture: rough, uneven, layered
+
+4. Logical Explanation (DL & NL):
+The image exhibits a pattern of vertical lines and distinct folds. These folds are visually represented as "VerticalFolds". The presence of "VerticalFolds" is a sufficient condition for the image to be classified as "pleated" according to the TBox. The observed colors (green, blue, purple, pink) do not invalidate this classification, as they are not defining properties of "pleated" in the provided context.
+----------------------------------------
+Query 2: Expected: [pleated] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crosshatched</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crosshatched ⊑ hasTexture [intersecting lines] (Necessary condition)
+- hasTexture [intersecting lines] ⊑ crosshatched (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: yellow, blue, pink
+- hasShape/Part: parallel lines, angled lines
+- hasTexture: intersecting lines, dense grid-like pattern
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by intersecting lines, forming a dense grid-like pattern. This aligns with the TBox axiom stating that crosshatched textures are defined by the presence of intersecting lines (hasTexture [intersecting lines]). The observed texture (hasTexture [intersecting lines]) is sufficient to classify the image as crosshatched.
+----------------------------------------
+Query 3: Expected: [pleated] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crosshatched</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crosshatched ⊑ hasTexture ParallelLines (Necessary condition)
+- hasTexture ParallelLines ⊑ crosshatched (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: red, green, blue
+- hasShape/Part: parallel lines
+- hasTexture: closely spaced, intersecting lines forming a grid-like pattern
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by closely spaced, intersecting lines forming a grid-like pattern. This aligns with the TBox axiom stating that crosshatched textures are defined by the presence of parallel lines (hasTexture ParallelLines). The observation of this texture (hasTexture ParallelLines) is sufficient to classify the image as crosshatched.
+----------------------------------------
+Query 4: Expected: [pleated] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crosshatched</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crosshatched ⊑ hasTexture [intersecting lines] (Necessary condition)
+- hasTexture [intersecting lines] ⊑ crosshatched (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, pink
+- hasShape/Part: parallel lines, diagonal lines
+- hasTexture: intersecting lines, linear texture
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by intersecting lines (hasTexture [intersecting lines]). This satisfies the sufficient condition for being classified as crosshatched (hasTexture [intersecting lines] ⊑ crosshatched). The presence of blue, green, and pink colors is not relevant to the classification, as the defining characteristic is the intersecting linear texture.
+----------------------------------------
+Query 5: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>pleated</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- pleated ⊑ hasShape RepeatingFold (Necessary condition)
+- hasShape RepeatingFold ⊑ pleated (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, purple, orange
+- hasShape/Part: repeating angled folds, parallel lines
+- hasTexture: smooth, regular
+
+4. Logical Explanation (DL & NL):
+The image exhibits a repeating pattern of angled folds, which aligns with the "hasShape RepeatingFold" property. This property is sufficient to classify the image as "pleated" according to the established TBox. The presence of green, purple, and orange colors is a characteristic but not defining feature of the pleated texture.
+----------------------------------------
+Query 6: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crosshatched</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crosshatched ⊑ hasVisualFeature [intersecting lines] (Necessary condition)
+- hasVisualFeature [intersecting lines] ⊑ crosshatched (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, yellow, red
+- hasShape/Part: fabric, folds, straps
+- hasTexture: intersecting lines, woven
+
+4. Logical Explanation (DL & NL):
+The image exhibits a distinct texture characterized by intersecting lines. This aligns with the TBox axiom stating that if an entity has a visual feature of intersecting lines, it is classified as crosshatched. The presence of this visual feature (intersecting lines) is sufficient to classify the image as crosshatched.
+----------------------------------------
+Query 7: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crosshatched</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crosshatched ⊑ hasTexture [intersecting lines] (Necessary condition)
+- hasTexture [intersecting lines] ⊑ crosshatched (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, blue, green
+- hasShape/Part: circular, spiral
+- hasTexture: intersecting lines, dense, irregular
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by intersecting lines, which aligns with the TBox axiom stating that crosshatched textures are defined by the presence of intersecting lines. The presence of this texture, specifically the dense and irregular arrangement of intersecting lines, is sufficient to classify the image as crosshatched. The colors (brown, blue, green) are incidental and do not affect the classification.
+----------------------------------------
+Query 8: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crosshatched</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crosshatched ⊑ hasVisualFeature [intersecting lines] (Necessary condition)
+- hasVisualFeature [intersecting lines] ⊑ crosshatched (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, purple, pink
+- hasShape/Part: numerous short, angled lines intersecting at various points
+- hasTexture: rough, fragmented, layered
+
+4. Logical Explanation (DL & NL):
+The image exhibits numerous short, angled lines intersecting at various points (hasShape/Part). This visual feature aligns with the TBox axiom stating that the presence of intersecting lines is a sufficient condition for an entity to be classified as crosshatched. Therefore, based on the observed intersecting lines, the image is classified as crosshatched.
+----------------------------------------
+Query 9: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crosshatched</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crosshatched ⊑ hasTexture DenseGrid (Necessary condition)
+- hasTexture DenseGrid ⊑ crosshatched (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, red, yellow
+- hasShape/Part: rectangular area
+- hasTexture: Dense, intersecting lines forming a grid-like pattern.
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by dense, intersecting lines forming a grid-like pattern (hasTexture: DenseGrid). This satisfies the sufficient condition for being classified as crosshatched (hasTexture DenseGrid ⊑ crosshatched). The presence of this grid-like texture is sufficient to classify the image as crosshatched.
+----------------------------------------
+Query 10: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>crosshatched</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- crosshatched ⊑ hasTexture IntersectingLines (Necessary condition)
+- hasTexture IntersectingLines ⊑ crosshatched (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, red, green
+- hasShape/Part: lines, angles
+- hasTexture: IntersectingLines
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by intersecting lines (hasTexture IntersectingLines). This satisfies the sufficient condition for being classified as crosshatched (hasTexture IntersectingLines ⊑ crosshatched). The presence of blue, red, and green colors is incidental to the classification and does not affect the determination of the texture as crosshatched.
+----------------------------------------
+-> FINAL ACCURACY for (2,1,5): 0.7000
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [grid] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>matted</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- matted ⊑ hasTexture RandomPixelation (Necessary condition)
+- hasTexture RandomPixelation ⊑ matted (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, purple, green, red
+- hasShape/Part: small, irregular pixels
+- hasTexture: RandomPixelation
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by random pixelation (hasTexture RandomPixelation). This satisfies the sufficient condition for being classified as "matted" (hasTexture RandomPixelation ⊑ matted). The presence of this texture is enough to classify the image as "matted" based on the established axioms.
+----------------------------------------
+Query 2: Expected: [grid] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>matted</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- matted ⊑ hasVisualFeature [random, dense pattern] (Necessary condition)
+- hasVisualFeature [random, dense pattern] ⊑ matted (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, yellow, red, green
+- hasShape/Part: small, irregular pixels
+- hasTexture: dense, chaotic, random
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dense, chaotic, and random arrangement of small, irregularly shaped pixels in various colors (blue, yellow, red, green). This aligns with the "hasVisualFeature [random, dense pattern]" property, which is a sufficient condition for classifying the image as "matted." The observed texture and pixel arrangement strongly suggest a matted appearance rather than a structured grid.
+----------------------------------------
+Query 3: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grid ⊑ hasRegularShape (Necessary condition)
+- hasRegularShape ⊑ grid (Sufficient condition)
+- grid ⊑ hasRepeatingPattern (Necessary condition)
+- hasRepeatingPattern ⊑ grid (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: red, blue
+- hasShape/Part: squares, lines
+- hasTexture: uniform, regular
+
+4. Logical Explanation (DL & NL):
+The image exhibits a regular, repeating pattern of squares and lines. The presence of a `hasRegularShape` and `hasRepeatingPattern` satisfies the axioms defining a `grid`. Therefore, the image is classified as a grid.
+----------------------------------------
+Query 4: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grid ⊑ hasRegularStructure (Necessary condition)
+- hasRegularStructure ⊑ grid (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, purple, green, yellow
+- hasShape/Part: small squares, lines, repeating patterns
+- hasTexture: uniform, repeating, pixelated
+
+4. Logical Explanation (DL & NL):
+The image exhibits a highly regular structure composed of small squares and lines arranged in a repeating pattern. This aligns with the TBox axiom stating that a grid must have a regular structure. The presence of this regular structure (hasRegularStructure) is sufficient to classify the image as a grid. The observed colors (blue, purple, green, yellow) and pixelated texture are incidental properties that do not affect the classification.
+----------------------------------------
+Query 5: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grid ⊑ hasShape RepeatingGeometricPattern (Necessary condition)
+- hasShape RepeatingGeometricPattern ⊑ grid (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, pink, yellow
+- hasShape/Part: small squares, diagonal lines, repeating pattern
+- hasTexture: pixelated, rough
+
+4. Logical Explanation (DL & NL):
+The image exhibits a `hasShape RepeatingGeometricPattern` due to the presence of small squares and diagonal lines arranged in a repeating pattern. This satisfies the sufficient condition for the entity to be classified as a `grid`. The observed colors (blue, green, pink, yellow) are incidental and do not affect the classification.
+----------------------------------------
+Query 6: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grid ⊑ hasRegularShape (Necessary condition)
+- hasRegularShape ⊑ grid (Sufficient condition)
+- grid ⊑ hasRepeatingUnit (Necessary condition)
+- hasRepeatingUnit ⊑ grid (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: red, green, blue, yellow, purple
+- hasShape/Part: square, rectangle
+- hasTexture: uniform, patterned
+
+4. Logical Explanation (DL & NL):
+The image exhibits a regular, repeating pattern of squares and rectangles (hasRegularShape and hasRepeatingUnit). The presence of a uniform, patterned texture further validates the classification as a grid. The observed colors (red, green, blue, yellow, purple) are incidental to the grid structure itself and do not influence the classification. Therefore, the image satisfies the necessary and sufficient conditions for being a grid.
+----------------------------------------
+Query 7: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grid ⊑ hasVisualFeature [repeating geometric pattern] (Necessary condition)
+- hasVisualFeature [repeating geometric pattern] ⊑ grid (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: red, green, blue, yellow
+- hasShape/Part: triangles, lines, small squares
+- hasTexture: repeating, pixelated, geometric
+
+4. Logical Explanation (DL & NL):
+The image exhibits a repeating geometric pattern composed of triangles, lines, and small squares, all arranged in a structured manner. This aligns with the TBox axiom stating that a grid must have a repeating geometric pattern (hasVisualFeature [repeating geometric pattern]). The presence of this feature is sufficient to classify the image as a grid.
+----------------------------------------
+Query 8: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grid ⊑ hasVisualFeature [repeating pattern] (Necessary condition)
+- hasVisualFeature [repeating pattern] ⊑ grid (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, yellow, red, purple
+- hasShape/Part: small squares, rectangular arrangement
+- hasTexture: pixelated, uniform
+
+4. Logical Explanation (DL & NL):
+The image exhibits a repeating pattern of small squares arranged in a rectangular fashion (hasShape/Part). This aligns with the "hasVisualFeature [repeating pattern]" axiom, which is a sufficient condition for classifying the image as a grid. The observed colors (blue, green, yellow, red, purple) are irrelevant to the classification, as the defining characteristic is the repeating pattern.
+----------------------------------------
+Query 9: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grid</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grid ⊑ hasRegularShape (Necessary condition)
+- hasRegularShape ⊑ grid (Sufficient condition)
+- grid ⊑ hasIntersections (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: yellow, blue
+- hasShape/Part: squares, lines, intersections
+- hasTexture: uniform, repeating
+
+4. Logical Explanation (DL & NL):
+The image exhibits a repeating pattern of squares and lines, forming a regular grid structure. The presence of 'hasRegularShape' and 'hasIntersections' satisfies the TBox axioms for a 'grid'. The uniform texture and repeating pattern further validate the classification.
+----------------------------------------
+Query 10: Expected: [matted] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>matted</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- matted ⊑ hasVisualFeature [complex, irregular texture] (Necessary condition)
+- hasVisualFeature [complex, irregular texture] ⊑ matted (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, blue, green, pink, orange
+- hasShape/Part: small, irregular shapes, scattered elements
+- hasTexture: dense, chaotic, interwoven, irregular
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dense, chaotic, and interwoven texture composed of small, irregular shapes and scattered elements, with a mix of purple, blue, green, pink, and orange colors. This aligns with the "hasVisualFeature [complex, irregular texture]" property, which is a sufficient condition for classifying the image as "matted." The observed texture is complex and irregular, fulfilling the necessary condition for the "matted" class.
+----------------------------------------
+Query 11: Expected: [matted] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>matted</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- matted ⊑ hasVisualFeature [irregular, tangled texture] (Necessary condition)
+- hasVisualFeature [irregular, tangled texture] ⊑ matted (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, gray, white, hints of yellow
+- hasShape/Part: irregular clumps, interwoven strands
+- hasTexture: tangled, rough, uneven, dense
+
+4. Logical Explanation (DL & NL):
+The image exhibits a visual feature of an irregular, tangled texture. This texture aligns with the TBox axiom stating that if something is matted, it must have an irregular, tangled texture. The observed texture (brown, gray, white, with interwoven strands and irregular clumps) satisfies the sufficient condition for classification as "matted."
+----------------------------------------
+Query 12: Expected: [matted] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>matted</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- matted ⊑ hasTexture [irregular, dense, and seemingly random arrangement of small elements] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, green, blue
+- hasShape/Part: small, irregular shapes, scattered throughout the image, with a human figure partially visible.
+- hasTexture: irregular, dense, and seemingly random arrangement of small, colored elements.
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by an irregular, dense, and seemingly random arrangement of small elements (hasTexture). This aligns with the necessary condition defined in the TBox for the class "matted". The presence of this texture is sufficient to classify the image as "matted".
+----------------------------------------
+Query 13: Expected: [matted] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>matted</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- matted ⊑ hasVisualFeature [irregular, interwoven texture] (Necessary condition)
+- hasVisualFeature [irregular, interwoven texture] ⊑ matted (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, purple, yellow, red
+- hasShape/Part: irregular loops, tangled strands, amorphous shapes
+- hasTexture: tangled, interwoven, irregular, rough
+
+4. Logical Explanation (DL & NL):
+The image exhibits an irregular, interwoven texture characterized by tangled strands and amorphous shapes. This aligns with the TBox axiom stating that "matted" entities possess an "irregular, interwoven texture." The observed texture (irregular loops, tangled strands, amorphous shapes) satisfies the sufficient condition for classification as "matted."
+----------------------------------------
+Query 14: Expected: [matted] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>matted</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- matted ⊑ hasVisualFeature [complex, irregular texture] (Necessary condition)
+- hasVisualFeature [complex, irregular texture] ⊑ matted (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, green, blue
+- hasShape/Part: rocks, vegetation, ground
+- hasTexture: rough, uneven, tangled, complex
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, irregular texture across its surface, characterized by rough, uneven, and tangled elements. This aligns with the TBox axiom stating that if an entity has a complex, irregular texture, it is classified as "matted." The observed colors (brown, green, blue) and shapes (rocks, vegetation, ground) are incidental to the classification; the defining characteristic is the texture.
+----------------------------------------
+Query 15: Expected: [matted] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>matted</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- matted ⊑ hasVisualFeature [complex, irregular texture] (Necessary condition)
+- hasVisualFeature [complex, irregular texture] ⊑ matted (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, blue, pink, yellow
+- hasShape/Part: irregular shapes, small patches, interconnected areas
+- hasTexture: complex, irregular, interwoven, non-uniform
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, irregular texture composed of interwoven patches of various colors (green, blue, pink, yellow). This aligns with the TBox axiom stating that "matted" entities possess a "complex, irregular texture." The presence of this texture is sufficient to classify the image as "matted."
+----------------------------------------
+Query 16: Expected: [matted] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>matted</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- matted ⊑ hasVisualFeature [irregular, dense pattern] (Necessary condition)
+- hasVisualFeature [irregular, dense pattern] ⊑ matted (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, green, yellow, blue, red
+- hasShape/Part: small, irregular shapes, clustered together
+- hasTexture: dense, chaotic, seemingly random
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dense, chaotic texture composed of small, irregular shapes and a variety of colors. This aligns with the "hasVisualFeature [irregular, dense pattern]" property. Since this property is sufficient for classifying an entity as "matted", the image is classified as matted.
+----------------------------------------
+Query 17: Expected: [matted] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>matted</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- matted ⊑ hasVisualFeature [random, chaotic pattern] (Necessary condition)
+- hasVisualFeature [random, chaotic pattern] ⊑ matted (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: gray, blue, red, green
+- hasShape/Part: small, irregular pixels
+- hasTexture: chaotic, random, noisy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a chaotic, random arrangement of pixels with a mix of gray, blue, red, and green colors. This aligns with the "hasVisualFeature [random, chaotic pattern]" axiom, which is a sufficient condition for classifying the image as "matted." The observed chaotic texture and irregular pixel shapes support this classification.
+----------------------------------------
+Query 18: Expected: [matted] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>matted</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- matted ⊑ hasTexture tangled (Necessary condition)
+- hasTexture tangled ⊑ matted (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, pink, green, brown
+- hasShape/Part: irregular clumps, interwoven strands
+- hasTexture: tangled, dense, uneven
+
+4. Logical Explanation (DL & NL):
+The image exhibits a `hasTexture` of tangled and dense interwoven strands. This satisfies the sufficient condition for `matted` as defined in the TBox. The presence of irregular clumps and a variety of colors (purple, pink, green, brown) further supports the classification as "matted" due to the inherent visual complexity associated with a tangled texture.
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9): 0.8889
+
+--- CONFIG: N=3, K=1, Q=5 ---
+Query 1: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasTexture IrregularPatches (Necessary condition)
+- hasTexture IrregularPatches ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, yellow, purple, black
+- hasShape/Part: vertical lines, irregular shapes, clustered areas
+- hasTexture: IrregularPatches
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by "IrregularPatches." According to the TBox, the presence of "IrregularPatches" (hasTexture IrregularPatches) is a sufficient condition for the image to be classified as "blotchy." The observed texture aligns with the definition of "blotchy" as defined in the TBox.
+----------------------------------------
+Query 2: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>flecked</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- flecked ⊑ hasTexture [small, irregular spots] (Necessary condition)
+- hasTexture [small, irregular spots] ⊑ flecked (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, green, purple
+- hasShape/Part: irregular, central mass
+- hasTexture: small, irregular spots
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by small, irregular spots (hasTexture [small, irregular spots]). This satisfies the sufficient condition for being flecked (hasTexture [small, irregular spots] ⊑ flecked), therefore classifying the image as flecked. The presence of brown, green, and purple colors is not relevant to the classification, as the defining characteristic is the spotted texture.
+----------------------------------------
+Query 3: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasTexture [irregular patches] (Necessary condition)
+- hasTexture [irregular patches] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, pink, green, yellow
+- hasShape/Part: vertical streaks, fragmented lines, irregular shapes
+- hasTexture: irregular patches, mottled appearance
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by irregular patches and a mottled appearance (hasTexture [irregular patches]). This satisfies the sufficient condition for being blotchy (hasTexture [irregular patches] ⊑ blotchy), therefore classifying the image as blotchy. The presence of various colors (purple, pink, green, yellow) does not contradict this classification, as blotchiness can occur across a range of colors.
+----------------------------------------
+Query 4: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasTexture [irregular patches] (Necessary condition)
+- hasTexture [irregular patches] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, purple, brown, yellow
+- hasShape/Part: folds, curves, overlapping layers
+- hasTexture: irregular patches, uneven surface
+
+4. Logical Explanation (DL & NL):
+The image exhibits an uneven surface with irregular patches (hasTexture [irregular patches]). This satisfies the sufficient condition for being blotchy (hasTexture [irregular patches] ⊑ blotchy), therefore classifying the image as blotchy. The presence of pink, purple, brown, and yellow colors is not relevant to the classification, as the defining characteristic is the irregular texture.
+----------------------------------------
+Query 5: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasTexture IrregularPattern
+- hasTexture IrregularPattern ⊑ blotchy
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, yellow, red
+- hasShape/Part: irregular lines, fragmented shapes
+- hasTexture: mottled, uneven, irregular pattern
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by an irregular pattern (hasTexture IrregularPattern). According to the TBox, an entity with an irregular texture is classified as blotchy (hasTexture IrregularPattern ⊑ blotchy). Therefore, the observed irregular pattern in the image is sufficient to classify it as blotchy.
+----------------------------------------
+Query 6: Expected: [flecked] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasTexture IrregularPatches (Necessary condition)
+- hasTexture IrregularPatches ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, yellow
+- hasShape/Part: horizontal lines, irregular areas
+- hasTexture: IrregularPatches
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by "IrregularPatches". According to the TBox, the presence of "IrregularPatches" (hasTexture IrregularPatches) is a sufficient condition for the image to be classified as "blotchy". The observed texture aligns with the definition of "blotchy" as defined in the TBox.
+----------------------------------------
+Query 7: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>flecked</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- flecked ⊑ hasTexture [scattered, small elements] (Necessary condition)
+- hasTexture [scattered, small elements] ⊑ flecked (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, green, orange
+- hasShape/Part: numerous small, irregular shapes
+- hasTexture: scattered, small elements
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by scattered, small elements (hasTexture [scattered, small elements]). This satisfies the sufficient condition for being flecked (hasTexture [scattered, small elements] ⊑ flecked), therefore the image is classified as flecked.
+----------------------------------------
+Query 8: Expected: [flecked] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasTexture [irregular patches] (Necessary condition)
+- hasTexture [irregular patches] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, yellow
+- hasShape/Part: vertical line, scattered dots
+- hasTexture: irregular patches of color, mottled appearance
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by irregular patches of color (blue and yellow) scattered across a background. This aligns with the TBox axiom stating that blotchy entities have an irregular patch-like texture. The presence of this texture is sufficient to classify the image as blotchy.
+----------------------------------------
+Query 9: Expected: [flecked] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasVisualFeature [irregular, clustered patches of color] (Necessary condition)
+- hasVisualFeature [irregular, clustered patches of color] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, pink, purple, green, yellow
+- hasShape/Part: irregular shapes, scattered pixels
+- hasTexture: rough, uneven, mottled
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by irregular, clustered patches of color (blue, pink, purple, green, and yellow) and scattered pixels. This aligns with the TBox axiom stating that blotchy entities have irregular, clustered patches of color. Therefore, the observed visual feature (irregular, clustered patches of color) is sufficient to classify the image as blotchy.
+----------------------------------------
+Query 10: Expected: [flecked] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasVisualFeature [irregular, clustered patches] (Necessary condition)
+- hasVisualFeature [irregular, clustered patches] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, brown, yellow
+- hasShape/Part: amorphous, irregular shapes
+- hasTexture: rough, patchy, clustered
+
+4. Logical Explanation (DL & NL):
+The image exhibits irregular, clustered patches of color (blue, brown, and yellow). This aligns with the TBox axiom stating that blotchy entities have irregular, clustered patches as a visual feature. Therefore, the observed visual feature is sufficient to classify the image as blotchy.
+----------------------------------------
+Query 11: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasVisualFeature [irregular, clustered patches of color] (Necessary condition)
+- hasVisualFeature [irregular, clustered patches of color] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: red, green, blue, yellow
+- hasShape/Part: irregular shapes, clustered areas
+- hasTexture: rough, uneven, patchy
+
+4. Logical Explanation (DL & NL):
+The image exhibits irregular shapes and clustered areas of color (red, green, blue, yellow) with a rough and uneven texture. This aligns with the TBox definition of "blotchy," where the presence of irregular, clustered patches of color is both a necessary and sufficient condition for the image to be classified as blotchy. The observed visual features directly satisfy the axioms defining the "blotchy" class.
+----------------------------------------
+Query 12: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasTexture [irregular patches] (Necessary condition)
+- hasTexture [irregular patches] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, yellow, red
+- hasShape/Part: scattered dots, irregular shapes
+- hasTexture: irregular patches, mottled appearance
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by irregular patches of color (blue, yellow, and red). This aligns with the TBox axiom stating that blotchy textures are characterized by irregular patches. Therefore, the observed texture (irregular patches) is sufficient to classify the image as blotchy.
+----------------------------------------
+Query 13: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasTexture IrregularPatches (Necessary condition)
+- hasTexture IrregularPatches ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: yellow, purple, blue, green
+- hasShape/Part: irregular, clustered areas, amorphous shapes
+- hasTexture: IrregularPatches
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by irregular patches and clustered amorphous shapes. This aligns with the TBox axiom stating that blotchy entities have an IrregularPatches texture. Therefore, the observed texture (IrregularPatches) is sufficient to classify the image as blotchy.
+----------------------------------------
+Query 14: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasTexture IrregularPatches (Necessary condition)
+- hasTexture IrregularPatches ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Red, Green, Blue, Purple, Yellow
+- hasShape/Part: Numerous small, irregularly shaped areas
+- hasTexture: Irregular patches of color, creating a mottled appearance.
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by numerous small, irregularly shaped areas of varying colors (Red, Green, Blue, Purple, Yellow). This aligns with the TBox axiom stating that "blotchy" entities must have an "IrregularPatches" texture. The presence of this texture is sufficient to classify the image as "blotchy."
+----------------------------------------
+Query 15: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasTexture [irregular patches] (Necessary condition)
+- hasTexture [irregular patches] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, purple, red, brown
+- hasShape/Part: scattered irregular shapes, amorphous regions
+- hasTexture: irregular patches, mottled appearance
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by irregular patches and a mottled appearance (hasTexture [irregular patches]). This satisfies the sufficient condition for being blotchy (hasTexture [irregular patches] ⊑ blotchy), therefore classifying the image as blotchy. The presence of various colors (blue, green, purple, red, brown) does not contradict this classification, as blotchiness can occur across a range of colors.
+----------------------------------------
+-> FINAL ACCURACY for (3,1,5): 0.4000
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [stained] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- stained ⊑ hasColor [red, green, blue] (Necessary condition)
+- stained ⊑ hasShape/Part [irregular patches] (Necessary condition)
+- stained ⊑ hasTexture [uneven, mottled] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [red, green, blue, pink, yellow]
+- hasShape/Part: [irregular patches, amorphous shapes]
+- hasTexture: [uneven, mottled, chaotic]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of red, green, blue, pink, and yellow colors (hasColor). It also displays irregular patches and amorphous shapes (hasShape/Part), and an uneven, mottled, chaotic texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for the class "stained". Therefore, the image is classified as "stained".
+----------------------------------------
+Query 2: Expected: [stained] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- stained ⊑ hasColor [blue, green] (Necessary condition)
+- stained ⊑ hasShape/Part [irregular patches] (Necessary condition)
+- stained ⊑ hasTexture [uneven, mottled] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [blue, green]
+- hasShape/Part: [irregular patches, jagged edges]
+- hasTexture: [uneven, mottled, rough]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dominant presence of blue and green colors (hasColor [blue, green]). It also displays irregular patches and jagged edges (hasShape/Part [irregular patches, jagged edges]), and an uneven, mottled, rough texture (hasTexture [uneven, mottled, rough]). These observed properties align with the necessary conditions defined in the TBox for the class "stained". Therefore, the image is classified as "stained".
+----------------------------------------
+Query 3: Expected: [stained] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- stained ⊑ hasColor [brown, green, blue, pink] (Necessary condition)
+- stained ⊑ hasShape/Part [irregular patches, amorphous shapes] (Necessary condition)
+- stained ⊑ hasTexture [uneven, mottled] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, green, blue, pink]
+- hasShape/Part: [irregular patches, amorphous shapes, elongated areas]
+- hasTexture: [uneven, mottled, patchy]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of brown, green, blue, and pink colors (hasColor). It also displays irregular patches and amorphous shapes (hasShape/Part), and an uneven, mottled, patchy texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for the class "stained". Therefore, based on the visual evidence, the image is classified as "stained".
+----------------------------------------
+Query 4: Expected: [stained] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- stained ⊑ hasVisualFeature [irregular, mottled pattern] (Necessary condition)
+- hasVisualFeature [irregular, mottled pattern] ⊑ stained (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, teal, purple, brown
+- hasShape/Part: irregular, swirling shapes, amorphous regions
+- hasTexture: mottled, uneven, patchy
+
+4. Logical Explanation (DL & NL):
+The image exhibits an irregular, mottled pattern across its surface, characterized by swirling shapes and amorphous regions. This aligns with the TBox axiom stating that a stained entity must have an irregular, mottled pattern. The observed colors (pink, teal, purple, brown) are not explicitly defined in the TBox, but the overall visual texture and shape are consistent with the definition of "stained" as having an irregular, mottled pattern, thus satisfying the sufficient condition.
+----------------------------------------
+Query 5: Expected: [stained] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasVisualFeature [complex, interwoven pattern] (Necessary condition)
+- hasVisualFeature [complex, interwoven pattern] ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: predominantly green, blue, yellow, and pink
+- hasShape/Part: numerous small, irregular shapes arranged in a seemingly random, yet interconnected pattern.
+- hasTexture: rough, uneven, and visually complex, suggesting an overlapping or interwoven structure.
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, interwoven pattern (hasVisualFeature [complex, interwoven pattern]). This satisfies the sufficient condition for being classified as "interlaced" (hasVisualFeature [complex, interwoven pattern] ⊑ interlaced). The presence of multiple colors (hasColor: predominantly green, blue, yellow, and pink) does not contradict this classification, as the interwoven pattern is the defining characteristic.
+----------------------------------------
+Query 6: Expected: [stained] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- stained ⊑ hasColor [varied, irregular patches of color]
+- stained ⊑ hasShape/Part [irregular, amorphous shapes]
+- stained ⊑ hasTexture [uneven, mottled]
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [pink, blue, green, purple, yellow, brown]
+- hasShape/Part: [irregular, amorphous shapes, patches]
+- hasTexture: [mottled, uneven, irregular]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a varied and irregular distribution of colors (pink, blue, green, purple, yellow, brown), forming amorphous shapes and a mottled, uneven texture. These observed properties align with the axioms defining "stained," where a stained entity is characterized by varied, irregular color patches, amorphous shapes, and an uneven texture. Therefore, the image is classified as "stained."
+----------------------------------------
+Query 7: Expected: [stained] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasVisualFeature [complex, irregular pattern] (Necessary condition)
+- hasVisualFeature [complex, irregular pattern] ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: predominantly cyan, magenta, yellow, and green
+- hasShape/Part: numerous small, irregularly shaped pixels
+- hasTexture: chaotic, seemingly random distribution of colors and shapes
+
+4. Logical Explanation (DL & NL):
+The image exhibits a chaotic, seemingly random distribution of colors and shapes at a pixel level. This aligns with the "complex, irregular pattern" described in the TBox as a sufficient condition for being classified as "interlaced." The presence of this visual feature validates the classification.
+----------------------------------------
+Query 8: Expected: [stained] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasVisualFeature [irregular, clustered color variations] (Necessary condition)
+- hasVisualFeature [irregular, clustered color variations] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, blue, pink, turquoise
+- hasShape/Part: scattered, amorphous regions
+- hasTexture: grainy, uneven, mottled
+
+4. Logical Explanation (DL & NL):
+The image exhibits scattered, amorphous regions with irregular, clustered color variations (green, blue, pink, turquoise, and grainy texture). This satisfies the TBox condition for "blotchy," where the presence of irregular, clustered color variations is both a necessary and sufficient condition for the image to be classified as "blotchy."
+----------------------------------------
+Query 9: Expected: [stained] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- stained ⊑ hasColor [brown, teal, purple] (Necessary condition)
+- stained ⊑ hasShape/Part [irregular patches] (Necessary condition)
+- stained ⊑ hasTexture [uneven, mottled] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [brown, teal, purple]
+- hasShape/Part: [irregular patches, curved lines]
+- hasTexture: [uneven, mottled, granular]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of brown, teal, and purple colors (hasColor). It also displays irregular patches and curved lines (hasShape/Part), and a mottled, granular texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for the class "stained." Therefore, the image is classified as "stained."
+----------------------------------------
+Query 10: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasTexture Irregular
+- blotchy ⊑ hasShape Clumped
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, blue, pink
+- hasShape/Part: small, irregular patches
+- hasTexture: Irregular, clustered
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by irregular, clustered patches (hasShape Clumped, hasTexture Irregular). This aligns with the TBox axioms defining "blotchy" as having an irregular texture and a clumped shape. Therefore, the image is classified as blotchy.
+----------------------------------------
+Query 11: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- stained ⊑ hasColor [red, green, blue] (Necessary condition)
+- stained ⊑ hasShape/Part [irregular blob] (Necessary condition)
+- stained ⊑ hasTexture [patchy] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [red, green, blue]
+- hasShape/Part: [irregular blob]
+- hasTexture: [patchy]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a patchy texture, a combination of red, green, and blue colors, and an irregular blob-like shape. These observed properties align with the necessary conditions defined in the TBox for the class "stained". Therefore, the image is classified as "stained".
+----------------------------------------
+Query 12: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasVisualFeature [complex, repeating pattern] (Necessary condition)
+- hasVisualFeature [complex, repeating pattern] ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, red, yellow
+- hasShape/Part: numerous small, irregularly arranged pixels
+- hasTexture: grainy, speckled, with a distinct repeating pattern across the image.
+
+4. Logical Explanation (DL & NL):
+The image exhibits a grainy texture composed of numerous small, irregularly arranged pixels, forming a complex, repeating pattern. This satisfies the TBox condition for "interlaced". The presence of the "complex, repeating pattern" (as described in the ABox) is sufficient to classify the image as "interlaced" according to the TBox.
+----------------------------------------
+Query 13: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasShape/Part [repeating linear patterns] (Necessary condition)
+- hasShape/Part [repeating linear patterns] ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, teal, red, pink
+- hasShape/Part: repeating linear patterns, parallel lines, wavy lines
+- hasTexture: rough, uneven
+
+4. Logical Explanation (DL & NL):
+The image exhibits repeating linear patterns and parallel lines, which aligns with the TBox axiom stating that "interlaced" entities have "repeating linear patterns." The presence of these patterns is sufficient to classify the image as "interlaced." The observed colors (purple, teal, red, pink) are incidental and do not influence the classification.
+----------------------------------------
+Query 14: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- stained ⊑ hasColor [yellow, red, green] (Necessary condition)
+- hasColor [yellow, red, green] ⊑ stained (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [red, green, yellow]
+- hasShape/Part: irregular patches
+- hasTexture: mottled, uneven
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of red, green, and yellow colors, alongside irregular patches and a mottled, uneven texture. This aligns with the TBox axioms, where the presence of these colors (red, green, yellow) is both a necessary and sufficient condition for the entity to be classified as "stained." The irregular patches and mottled texture further validate the "stained" classification.
+----------------------------------------
+Query 15: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasVisualFeature [irregular, clustered color variation] (Necessary condition)
+- hasVisualFeature [irregular, clustered color variation] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, green, blue, purple
+- hasShape/Part: irregular clusters, scattered patches
+- hasTexture: mottled, uneven, granular
+
+4. Logical Explanation (DL & NL):
+The image exhibits irregular clusters of pink, green, blue, and purple colors, forming a mottled and uneven texture. This aligns with the "irregular, clustered color variation" visual feature defined in the TBox as a sufficient condition for being classified as "blotchy." Therefore, the observed properties satisfy the TBox axioms, leading to the classification of the image as blotchy.
+----------------------------------------
+Query 16: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasTexture [irregular patches] (Necessary condition)
+- hasTexture [irregular patches] ⊑ blotchy (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, purple
+- hasShape/Part: irregular shapes, distinct areas
+- hasTexture: irregular patches, mottled appearance
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by irregular patches and a mottled appearance (hasTexture [irregular patches]). This satisfies the sufficient condition for being blotchy (hasTexture [irregular patches] ⊑ blotchy), therefore classifying the image as blotchy. The presence of green and purple colors is not directly relevant to the classification, but does describe the visual appearance.
+----------------------------------------
+Query 17: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- stained ⊑ hasVisualFeature [irregular, mottled pattern] (Necessary condition)
+- hasVisualFeature [irregular, mottled pattern] ⊑ stained (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, green, orange, blue
+- hasShape/Part: curved edge, irregular surface
+- hasTexture: mottled, irregular, patchy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a mottled, irregular pattern across its surface, with a mix of purple, green, orange, and blue colors. This aligns with the TBox axiom stating that if an entity is stained, it must exhibit an irregular, mottled pattern. The observed irregular surface and mottled texture, combined with the color variations, are sufficient to classify the image as "stained."
+----------------------------------------
+Query 18: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- stained ⊑ hasVisualFeature [irregular, mottled pattern] (Necessary condition)
+- hasVisualFeature [irregular, mottled pattern] ⊑ stained (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: magenta, teal, red, green, blue, purple
+- hasShape/Part: irregular patches, mottled areas
+- hasTexture: rough, uneven, chaotic
+
+4. Logical Explanation (DL & NL):
+The image exhibits a visual feature of irregular patches and mottled areas. This aligns with the TBox axiom stating that if an image is stained, it must show an irregular, mottled pattern. The presence of this feature is sufficient to classify the image as stained.
+----------------------------------------
+Query 19: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasTexture [complex interwoven patterns] (Necessary condition)
+- hasTexture [complex interwoven patterns] ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, yellow, green, grey
+- hasShape/Part: circular shapes, swirling patterns, interconnected lines
+- hasTexture: complex interwoven patterns, resembling a chaotic yet organized network of lines and curves.
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by complex interwoven patterns. This texture, as defined in the TBox, is a sufficient condition for the image to be classified as "interlaced." The observed swirling patterns and interconnected lines contribute to the overall interwoven texture, validating the classification.
+----------------------------------------
+Query 20: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasComplexInterwovenStructure (Necessary condition)
+- hasComplexInterwovenStructure ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: silver, light blue
+- hasShape/Part: circular, interwoven lines, knot-like structures, repeating patterns
+- hasTexture: smooth, metallic sheen
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex interwoven structure composed of repeating patterns and knot-like shapes. This aligns with the TBox axiom stating that an interlaced entity must have a complex interwoven structure. The presence of this interwoven structure is sufficient to classify the image as interlaced.
+----------------------------------------
+Query 21: Expected: [interlaced] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasTexture irregularPattern
+- hasTexture irregularPattern ⊑ blotchy
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: predominantly green and blue, with scattered red and yellow
+- hasShape/Part: circular central form, surrounded by indistinct edges
+- hasTexture: irregular, mottled, and uneven distribution of colors, creating a "blotchy" appearance.
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by an irregular pattern of colors (hasTexture irregularPattern). According to the TBox, a texture with an irregular pattern is sufficient to classify the image as blotchy (hasTexture irregularPattern ⊑ blotchy). The observed irregular pattern in the image aligns with the definition of "blotchy" as defined by the TBox.
+----------------------------------------
+Query 22: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasTextureComplexPattern (Necessary condition)
+- hasTextureComplexPattern ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, blue, green, brown, yellow
+- hasShape/Part: irregular shapes, fragmented lines, scattered dots
+- hasTexture: complex, interwoven, chaotic, dense
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by complex, interwoven, and chaotic patterns. This aligns with the TBox axiom stating that "interlaced" entities must have a "hasTextureComplexPattern". The observed texture in the ABox satisfies the sufficient condition for the entity to be classified as "interlaced".
+----------------------------------------
+Query 23: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasShape/Part [curvilinear lines] (Necessary condition)
+- hasShape/Part [curvilinear lines] ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, purple, teal
+- hasShape/Part: numerous curvilinear lines, circular shapes, irregular loops
+- hasTexture: chaotic, dense, interwoven
+
+4. Logical Explanation (DL & NL):
+The image exhibits numerous curvilinear lines and irregular loops, which aligns with the TBox axiom stating that "interlaced" entities must have curvilinear lines as a part. The presence of these shapes, combined with the chaotic and interwoven texture, strongly suggests the image is interlaced. The observed colors (pink, purple, teal) do not contradict this classification and are therefore irrelevant to the reasoning.
+----------------------------------------
+Query 24: Expected: [interlaced] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- stained ⊑ hasColor [varied, dark hues]
+- stained ⊑ hasShape/Part [irregular, amorphous shapes]
+- stained ⊑ hasTexture [uneven, mottled]
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [dark blues, reds, yellows, grays]
+- hasShape/Part: [irregular, winding, amorphous shapes, interconnected lines]
+- hasTexture: [mottled, uneven, patchy]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a range of dark hues (blues, reds, yellows, grays), irregular and winding shapes, and a mottled, uneven texture. These observed properties align with the TBox axioms defining "stained." Specifically, the presence of varied dark hues, amorphous shapes, and an uneven texture are all necessary conditions for an entity to be classified as "stained" according to the established knowledge base.
+----------------------------------------
+Query 25: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasComplexPattern (Necessary condition)
+- hasComplexPattern ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: teal, pink, purple, orange
+- hasShape/Part: curved lines, loops, swirls
+- hasTexture: chaotic, dense, interwoven
+
+4. Logical Explanation (DL & NL):
+The image exhibits a chaotic, interwoven texture with complex patterns of curved lines and loops. This aligns with the TBox axioms, where "interlaced" is defined as having a complex pattern. The observed "chaotic, dense, interwoven" texture and "curved lines, loops, swirls" shapes are sufficient to classify the image as "interlaced."
+----------------------------------------
+Query 26: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>interlaced</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- interlaced ⊑ hasRecurringPattern (Necessary condition)
+- hasRecurringPattern ⊑ interlaced (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: yellow, blue, red
+- hasShape/Part: repeating circular shapes, interconnected lines, diamond-like spaces
+- hasTexture: pixelated, dense, complex
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dense, pixelated texture with repeating circular shapes connected by lines, forming a complex, interconnected pattern. This pattern is a recurring visual feature (hasRecurringPattern), which, according to the TBox, is sufficient to classify the image as interlaced. The presence of the recurring pattern validates the classification.
+----------------------------------------
+Query 27: Expected: [interlaced] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>blotchy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- blotchy ⊑ hasTexture Irregular
+- blotchy ⊑ hasShape Random
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, yellow, purple, red
+- hasShape/Part: scattered pixels, amorphous regions
+- hasTexture: irregular, mottled, granular
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by irregular, mottled, and granular patterns, as indicated by the 'hasTexture' property. This aligns with the TBox axiom stating that "blotchy ⊑ hasTexture Irregular". Furthermore, the image contains scattered pixels and amorphous regions, which can be described as random shapes, satisfying the axiom "blotchy ⊑ hasShape Random". Therefore, based on these observed properties, the image is classified as blotchy.
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9): 0.5556
+
+--- CONFIG: N=4, K=1, Q=5 ---
+Query 1: Expected: [perforated] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- stained ⊑ hasColor [varied colors] (Necessary condition)
+- stained ⊑ hasTexture [irregular patches] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, red, yellow
+- hasShape/Part: irregular patches, scattered dots
+- hasTexture: mottled, uneven, irregular
+
+4. Logical Explanation (DL & NL):
+The image exhibits a visual texture characterized by irregular patches and scattered dots, with a mix of blue, green, red, and yellow colors. This aligns with the TBox axioms, where "stained" necessitates the presence of varied colors and an irregular patch-like texture. The observed properties in the ABox satisfy the necessary conditions defined in the TBox, thus justifying the classification as "stained."
+----------------------------------------
+Query 2: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>perforated</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- perforated ⊑ hasVisualFeature [circular openings] (Necessary condition)
+- hasVisualFeature [circular openings] ⊑ perforated (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, blue, green
+- hasShape/Part: numerous circular openings, interconnected network
+- hasTexture: bumpy, irregular surface with repeating circular patterns
+
+4. Logical Explanation (DL & NL):
+The image exhibits a repeating pattern of circular openings within an interconnected network. This aligns with the TBox axiom stating that if an image has visual features of circular openings, it is classified as perforated. The observed "hasShape/Part" property of numerous circular openings directly satisfies the "hasVisualFeature [circular openings]" condition, leading to the classification of "perforated."
+----------------------------------------
+Query 3: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- perforated ⊑ hasShape circle
+- perforated ⊑ hasTexture repeatingPattern
+- hasShape circle ⊑ perforated (Sufficient)
+- hasTexture repeatingPattern ⊑ perforated (Sufficient)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, green, pink, blue
+- hasShape/Part: numerous circular holes, interconnected network
+- hasTexture: repeatingPattern, porous
+
+4. Logical Explanation (DL & NL):
+The image exhibits a repeating pattern of circular holes (hasShape circle) within a porous network (hasTexture repeatingPattern). These properties are sufficient conditions for the entity to be classified as perforated, as defined by the TBox axioms. The presence of numerous circular holes and a repeating pattern directly aligns with the visual characteristics of a perforated entity.
+----------------------------------------
+Query 4: Expected: [perforated] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- stained ⊑ hasVisualFeature [irregular, mottled pattern] (Necessary condition)
+- hasVisualFeature [irregular, mottled pattern] ⊑ stained (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, blue, green, brown
+- hasShape/Part: irregular blotches, mottled areas
+- hasTexture: rough, uneven, speckled
+
+4. Logical Explanation (DL & NL):
+The image exhibits a visual feature of irregular, mottled areas with a rough and uneven texture, and a mix of pink, blue, green, and brown colors. This satisfies the TBox condition that a stained entity must have an irregular, mottled pattern. The presence of this pattern, combined with the observed texture and color variations, is sufficient to classify the image as stained.
+----------------------------------------
+Query 5: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- perforated ⊑ hasShape [circular openings] (Necessary condition)
+- hasShape [circular openings] ⊑ perforated (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, pink
+- hasShape/Part: circular openings, interconnected network
+- hasTexture: patterned, repeating
+
+4. Logical Explanation (DL & NL):
+The image exhibits a repeating pattern of circular openings within an interconnected network. This aligns with the TBox axiom stating that perforated entities must have circular openings (necessary condition). The presence of these circular openings, combined with the overall patterned texture, is sufficient to classify the image as perforated.
+----------------------------------------
+Query 6: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>zigzagged</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- zigzagged ⊑ hasShape ZigzagPattern (Necessary condition)
+- hasShape ZigzagPattern ⊑ zigzagged (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, teal, pink
+- hasShape/Part: repeating angled lines, V-shapes, diagonal segments
+- hasTexture: slightly rough, pixelated
+
+4. Logical Explanation (DL & NL):
+The image exhibits a repeating pattern of angled lines forming V-shapes and diagonal segments. This aligns with the "hasShape ZigzagPattern" property. Since "hasShape ZigzagPattern" is a sufficient condition for "zigzagged", the image is classified as zigzagged. The observed colors (green, teal, pink) do not affect the classification, as the zigzag pattern is the defining characteristic.
+----------------------------------------
+Query 7: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>zigzagged</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- zigzagged ⊑ hasShape [interlocking diagonal lines] (Necessary condition)
+- hasShape [interlocking diagonal lines] ⊑ zigzagged (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, purple, white, brown
+- hasShape/Part: interlocking diagonal lines, angled segments, repeating pattern
+- hasTexture: rough, pixelated
+
+4. Logical Explanation (DL & NL):
+The image exhibits interlocking diagonal lines forming a repeating pattern. This satisfies the TBox condition that zigzagged entities must have interlocking diagonal lines (necessary condition). The presence of this shape, combined with the observed colors and texture, is sufficient to classify the image as zigzagged.
+----------------------------------------
+Query 8: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>zigzagged</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- zigzagged ⊑ hasVisualFeature [repeating diagonal pattern] (Necessary condition)
+- hasVisualFeature [repeating diagonal pattern] ⊑ zigzagged (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, yellow, pink
+- hasShape/Part: repeating diagonal lines, rectangular sections
+- hasTexture: patterned, linear
+
+4. Logical Explanation (DL & NL):
+The image exhibits a repeating diagonal pattern (hasVisualFeature [repeating diagonal pattern]). This satisfies the sufficient condition for the entity to be classified as zigzagged (hasVisualFeature [repeating diagonal pattern] ⊑ zigzagged). The presence of blue, yellow, and pink colors and the linear texture are consistent with the general characteristics of a zigzagged pattern, but do not directly contribute to the classification.
+----------------------------------------
+Query 9: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>zigzagged</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- zigzagged ⊑ hasShape ZigzagPattern (Necessary condition)
+- hasShape ZigzagPattern ⊑ zigzagged (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, blue, green
+- hasShape/Part: repeating angled lines, V-shaped segments
+- hasTexture: rough, pixelated
+
+4. Logical Explanation (DL & NL):
+The image exhibits a repeating pattern of angled lines forming V-shaped segments. This aligns with the "hasShape ZigzagPattern" property. Since "hasShape ZigzagPattern" is a sufficient condition for "zigzagged", the image is classified as zigzagged. The observed colors (pink, blue, green) are irrelevant to the classification, as the defining characteristic is the zigzag pattern itself.
+----------------------------------------
+Query 10: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>zigzagged</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- zigzagged ⊑ hasVisualFeature [repeating V-shaped pattern] (Necessary condition)
+- hasVisualFeature [repeating V-shaped pattern] ⊑ zigzagged (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, yellow
+- hasShape/Part: repeating V-shaped pattern, angled lines
+- hasTexture: slightly rough, patterned
+
+4. Logical Explanation (DL & NL):
+The image exhibits a repeating V-shaped pattern, which aligns with the "hasVisualFeature [repeating V-shaped pattern]" property. This property is sufficient for classifying the image as "zigzagged" according to the TBox. The observed colors (blue, green, yellow) and slightly rough texture are validating features, but not essential for the classification itself.
+----------------------------------------
+Query 11: Expected: [stained] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- stained ⊑ hasVisualFeature [irregular, mottled pattern] (Necessary condition)
+- hasVisualFeature [irregular, mottled pattern] ⊑ stained (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, red, green, pink
+- hasShape/Part: irregular blotches, mottled areas, amorphous shapes
+- hasTexture: rough, uneven, chaotic
+
+4. Logical Explanation (DL & NL):
+The image exhibits a visual feature of irregular, mottled patterns with a chaotic texture and a mix of blue, red, green, and pink colors. This aligns with the TBox axiom stating that if an image is stained, it must exhibit an irregular, mottled pattern. The observed irregular shapes and mottled areas, combined with the varied colors, are sufficient to classify the image as stained.
+----------------------------------------
+Query 12: Expected: [stained] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- stained ⊑ hasVisualFeature [irregular, mottled pattern] (Necessary condition)
+- hasVisualFeature [irregular, mottled pattern] ⊑ stained (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, green, blue, brown
+- hasShape/Part: irregular shapes, mottled areas, curved lines
+- hasTexture: mottled, irregular, uneven
+
+4. Logical Explanation (DL & NL):
+The image exhibits a mottled texture with irregular shapes and a mix of pink, green, blue, and brown colors. This aligns with the TBox axiom stating that a stained entity must have an irregular, mottled pattern as a visual feature. The observed irregular shapes and mottled areas in the ABox satisfy the sufficient condition for classification as "stained."
+----------------------------------------
+Query 13: Expected: [stained] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- stained ⊑ hasColor [varied colors] (Necessary condition)
+- stained ⊑ hasShape/Part [irregular patches] (Necessary condition)
+- stained ⊑ hasTexture [uneven] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, brown, green, pink
+- hasShape/Part: irregular patches, amorphous shapes
+- hasTexture: uneven, mottled
+
+4. Logical Explanation (DL & NL):
+The image exhibits a varied color palette (purple, brown, green, pink), irregular patches, and an uneven, mottled texture. These observed properties align with the TBox axioms defining "stained," where a stained entity is characterized by varied colors, irregular patches, and an uneven texture. Therefore, the image is classified as "stained."
+----------------------------------------
+Query 14: Expected: [stained] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- stained ⊑ hasVisualFeature [irregular, mottled pattern] (Necessary condition)
+- hasVisualFeature [irregular, mottled pattern] ⊑ stained (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, green, purple, white
+- hasShape/Part: irregular patches, mottled areas, amorphous shapes
+- hasTexture: rough, uneven, mottled
+
+4. Logical Explanation (DL & NL):
+The image exhibits a visual feature of irregular, mottled patches and amorphous shapes across a range of brown, green, purple, and white colors. This aligns with the TBox axiom stating that if an image is stained, it must exhibit an irregular, mottled pattern. The observed irregular patches and mottled areas are sufficient to classify the image as stained.
+----------------------------------------
+Query 15: Expected: [stained] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grooved</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grooved ⊑ hasTexture linear-ridges (Necessary condition)
+- hasTexture linear-ridges ⊑ grooved (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, blue, pink
+- hasShape/Part: small, repeating lines
+- hasTexture: dense, interwoven linear ridges
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by dense, interwoven linear ridges (hasTexture linear-ridges). This property is a sufficient condition for the image to be classified as "grooved" (hasTexture linear-ridges ⊑ grooved). The presence of this texture aligns with the established axiom, thus justifying the classification.
+----------------------------------------
+Query 16: Expected: [grooved] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grooved</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grooved ⊑ hasTexture linearParallelLines (Necessary condition)
+- hasTexture linearParallelLines ⊑ grooved (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: beige, light blue, green
+- hasShape/Part: thin, elongated lines
+- hasTexture: repeating, closely spaced, linear parallel lines
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by repeating, closely spaced, linear parallel lines. This aligns with the TBox axiom stating that "grooved" entities have a "linearParallelLines" texture (hasTexture linearParallelLines ⊑ grooved). Therefore, the observed texture is sufficient to classify the image as "grooved."
+----------------------------------------
+Query 17: Expected: [grooved] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grooved</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grooved ⊑ hasTexture parallelLines (Necessary condition)
+- hasTexture parallelLines ⊑ grooved (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, yellow, red
+- hasShape/Part: repeating linear segments
+- hasTexture: parallel lines, ridges
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by parallel lines and ridges (hasTexture parallelLines). According to the TBox, the presence of a texture with parallel lines is a sufficient condition for the image to be classified as "grooved" (hasTexture parallelLines ⊑ grooved). Therefore, the observed texture aligns with the definition of "grooved."
+----------------------------------------
+Query 18: Expected: [grooved] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grooved</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grooved ⊑ hasTexture parallelLines (Necessary condition)
+- hasTexture parallelLines ⊑ grooved (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, yellow
+- hasShape/Part: rectangular surface, ridges
+- hasTexture: closely spaced, parallel lines running horizontally and vertically
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by closely spaced, parallel lines running across the surface. This aligns with the TBox axiom stating that "grooved" entities must have a "parallelLines" texture (necessary condition). Furthermore, the presence of this "parallelLines" texture is sufficient to classify the entity as "grooved." The observed colors (blue and yellow) are irrelevant to the classification based on the provided few-shot examples, which focus solely on texture.
+----------------------------------------
+Query 19: Expected: [grooved] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>stained</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- stained ⊑ hasVisualFeature [random, chaotic pattern] (Necessary condition)
+- hasVisualFeature [random, chaotic pattern] ⊑ stained (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, red, green, yellow
+- hasShape/Part: small, irregular pixels
+- hasTexture: chaotic, random, dense
+
+4. Logical Explanation (DL & NL):
+The image exhibits a chaotic, random pattern composed of small, irregular pixels across a range of colors (blue, red, green, yellow). This aligns with the TBox axiom stating that if an image is stained, it must exhibit a random, chaotic pattern. The presence of this pattern is sufficient to classify the image as stained.
+----------------------------------------
+Query 20: Expected: [grooved] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>grooved</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- grooved ⊑ hasTexture parallelLines (Necessary condition)
+- hasTexture parallelLines ⊑ grooved (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, blue, pink
+- hasShape/Part: curved lines, repeating segments
+- hasTexture: parallel lines, undulating surface
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by parallel lines and an undulating surface. This aligns with the TBox axiom stating that "grooved" entities must have a "parallelLines" texture. The observed "hasTexture parallelLines" in the ABox satisfies the sufficient condition for the entity to be classified as "grooved."
+----------------------------------------
+-> FINAL ACCURACY for (4,1,5): 0.8000
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>flecked</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- flecked ⊑ hasVisualFeature [irregular, small, dispersed spots] (Necessary condition)
+- hasVisualFeature [irregular, small, dispersed spots] ⊑ flecked (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, yellow
+- hasShape/Part: circular object (button), fabric
+- hasTexture: irregular, small, dispersed spots of varying color on a textured background
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by irregular, small, dispersed spots of varying color (blue and yellow) on a textured background. This aligns with the TBox axiom stating that if an image has the visual feature of irregular, small, dispersed spots, it is classified as flecked. The presence of these spots, combined with the overall texture, satisfies the sufficient condition for classification as "flecked."
+----------------------------------------
+Query 2: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>flecked</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- flecked ⊑ hasTexture [random speckles] (Necessary condition)
+- hasTexture [random speckles] ⊑ flecked (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, grey, yellow
+- hasShape/Part: vertical seam, distinct regions
+- hasTexture: random speckles, granular
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by random speckles (hasTexture [random speckles]). This satisfies the sufficient condition for being flecked (hasTexture [random speckles] ⊑ flecked). The presence of blue, grey, and yellow colors is consistent with the general concept of "flecked" as it doesn't preclude any specific color palette. The vertical seam and distinct regions are incidental details and do not affect the classification.
+----------------------------------------
+Query 3: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>flecked</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- flecked ⊑ hasTexture speckled (Necessary condition)
+- hasTexture speckled ⊑ flecked (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: light blue, yellow, red
+- hasShape/Part: button, thread
+- hasTexture: speckled
+
+4. Logical Explanation (DL & NL):
+The image exhibits a speckled texture (hasTexture speckled). According to the TBox, if an entity has a speckled texture, it is classified as flecked (hasTexture speckled ⊑ flecked). Therefore, the image is classified as flecked.
+----------------------------------------
+Query 4: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>flecked</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- flecked ⊑ hasTexture [randomly distributed small spots] (Necessary condition)
+- hasTexture [randomly distributed small spots] ⊑ flecked (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, red, yellow
+- hasShape/Part: small, irregular spots
+- hasTexture: densely packed, randomly distributed spots
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by densely packed, randomly distributed spots of blue, red, and yellow. This aligns with the TBox axiom stating that "flecked" entities have a texture of randomly distributed small spots. The presence of this texture is sufficient to classify the image as "flecked."
+----------------------------------------
+Query 5: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>flecked</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- flecked ⊑ hasTexture speckled (Necessary condition)
+- hasTexture speckled ⊑ flecked (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, yellow, red
+- hasShape/Part: irregular patches, small dots
+- hasTexture: speckled, granular
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by small, irregular patches and dots (hasTexture speckled). This texture aligns with the TBox axiom stating that "flecked" entities must have a speckled texture (flecked ⊑ hasTexture speckled). Therefore, the image is classified as "flecked" because the observed speckled texture is sufficient to satisfy the definition of a flecked entity.
+----------------------------------------
+Query 6: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>flecked</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- flecked ⊑ hasTexture speckled (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, grey, red
+- hasShape/Part: irregular patches, scattered dots
+- hasTexture: speckled, grainy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by scattered dots and irregular patches of color (blue, grey, and red). This aligns with the TBox axiom stating that "flecked" entities must have a "speckled" texture. Therefore, the observed speckled texture is sufficient to classify the image as "flecked."
+----------------------------------------
+Query 7: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>flecked</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- flecked ⊑ hasTexture speckled (Necessary condition)
+- hasTexture speckled ⊑ flecked (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: cyan, magenta, blue, green
+- hasShape/Part: tiny dots, random distribution
+- hasTexture: speckled, granular
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by tiny, randomly distributed dots (hasShape/Part: tiny dots, random distribution) and a speckled appearance (hasTexture: speckled, granular). This satisfies the TBox condition that a flecked entity must have a speckled texture (hasTexture speckled ⊑ flecked). Therefore, the image is classified as flecked.
+----------------------------------------
+Query 8: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>flecked</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- flecked ⊑ hasTexture [scattered_dots] (Necessary condition)
+- hasTexture [scattered_dots] ⊑ flecked (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: yellow, blue, red
+- hasShape/Part: small dots
+- hasTexture: scattered_dots
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by "scattered_dots". According to the TBox, the presence of "scattered_dots" is a sufficient condition for an entity to be classified as "flecked". Therefore, based on the observed texture, the image is classified as "flecked".
+----------------------------------------
+Query 9: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>flecked</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- flecked ⊑ hasTexture speckled (Necessary condition)
+- hasTexture speckled ⊑ flecked (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: yellow, blue, red
+- hasShape/Part: small dots, scattered elements
+- hasTexture: speckled, grainy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by small, scattered dots (hasShape/Part) across a predominantly yellow background (hasColor). This texture aligns with the "speckled" texture described in the TBox axiom for "flecked". Therefore, observing this speckled texture is sufficient to classify the image as "flecked".
+----------------------------------------
+Query 10: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasShape [square] (Necessary condition)
+- hasShape [square] ⊑ chequered (Sufficient condition)
+- chequered ⊑ hasArrangement [regular grid] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue
+- hasShape/Part: square
+- hasArrangement: regular grid
+
+4. Logical Explanation (DL & NL):
+The image exhibits a regular grid of squares (hasArrangement [regular grid]). Each element within the grid is a square (hasShape [square]). Therefore, based on the established axioms, the image is classified as chequered. The dominant color is blue, but the color itself is not a defining characteristic of the "chequered" pattern.
+----------------------------------------
+Query 11: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasRegularGridPattern (Necessary condition)
+- hasRegularGridPattern ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, grey
+- hasShape/Part: square, grid
+- hasTexture: uniform, repeating
+
+4. Logical Explanation (DL & NL):
+The image exhibits a regular grid pattern composed of squares. The presence of a "hasRegularGridPattern" (as observed in the ABox) satisfies the sufficient condition for the entity to be classified as "chequered" (as defined in the TBox). The observed colors (blue and grey) are incidental to the classification; the key feature is the repeating grid structure.
+----------------------------------------
+Query 12: Expected: [chequered] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>zigzagged</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- zigzagged ⊑ hasShape repeatingVshape (Necessary condition)
+- hasShape repeatingVshape ⊑ zigzagged (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: teal, orange
+- hasShape/Part: repeating V-shaped lines
+- hasTexture: linear, slightly irregular
+
+4. Logical Explanation (DL & NL):
+- The image exhibits a repeating V-shaped pattern (hasShape repeatingVshape). This satisfies the sufficient condition for the class "zigzagged" as defined in the TBox. The presence of this shape is enough to classify the image as zigzagged.
+----------------------------------------
+Query 13: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasShape [regular grid of squares] (Necessary condition)
+- hasShape [regular grid of squares] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, grey, red
+- hasShape/Part: numerous squares arranged in a grid pattern
+- hasTexture: smooth, uniform
+
+4. Logical Explanation (DL & NL):
+The image exhibits a regular grid of squares (hasShape [regular grid of squares]). This satisfies the sufficient condition for being chequered (hasShape [regular grid of squares] ⊑ chequered), therefore the image is classified as chequered. The colors (blue, grey, red) are irrelevant to the classification, as the defining characteristic is the grid pattern.
+----------------------------------------
+Query 14: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasShape [regular square grid] (Necessary condition)
+- hasShape [regular square grid] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, green, blue, yellow
+- hasShape/Part: small, regularly spaced squares forming a grid
+- hasTexture: slightly blurred, pixelated
+
+4. Logical Explanation (DL & NL):
+The image exhibits a pattern of small, regularly spaced squares forming a grid (hasShape [regular square grid]). This satisfies the sufficient condition for being chequered (hasShape [regular square grid] ⊑ chequered), therefore the image is classified as chequered. The observed colors (pink, green, blue, yellow) are irrelevant to the classification, as the defining characteristic is the grid-like arrangement of squares.
+----------------------------------------
+Query 15: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasShape [regular square grid] (Necessary condition)
+- hasShape [regular square grid] ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, purple, yellow, pink
+- hasShape/Part: small, regularly spaced squares forming a grid
+- hasTexture: slightly blurred, pixelated
+
+4. Logical Explanation (DL & NL):
+The image exhibits a pattern of small, regularly spaced squares forming a grid (hasShape [regular square grid]). This satisfies the sufficient condition for being chequered (hasShape [regular square grid] ⊑ chequered), therefore the image is classified as chequered. The presence of various colors (hasColor: blue, green, purple, yellow, pink) does not contradict this classification; it simply describes the visual appearance of the grid.
+----------------------------------------
+Query 16: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasRegularGridStructure (Necessary condition)
+- hasRegularGridStructure ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, orange, pink
+- hasShape/Part: square, grid
+- hasTexture: slightly distressed, faded
+
+4. Logical Explanation (DL & NL):
+The image exhibits a clear `hasRegularGridStructure` due to the presence of a repeating square grid pattern. This satisfies the sufficient condition for being classified as `chequered`. The colors observed (blue, green, orange, pink) are incidental to the classification and do not affect it.
+----------------------------------------
+Query 17: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasShape RegularGrid (Necessary condition)
+- hasShape RegularGrid ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, purple, pink
+- hasShape/Part: square, grid, repeating pattern
+- hasTexture: slightly blurred, pixelated
+
+4. Logical Explanation (DL & NL):
+The image exhibits a repeating pattern of squares arranged in a regular grid (hasShape RegularGrid). This satisfies the sufficient condition for being chequered (hasShape RegularGrid ⊑ chequered). The presence of various colors (blue, green, purple, pink) does not contradict this classification, as chequered patterns can have diverse color palettes.
+----------------------------------------
+Query 18: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasShape Square
+- chequered ⊑ hasArrangement RegularGrid
+- hasShape Square ⊑ chequered (Sufficient)
+- hasArrangement RegularGrid ⊑ chequered (Sufficient)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: red, blue
+- hasShape/Part: square
+- hasArrangement: RegularGrid
+- hasTexture: uniform
+
+4. Logical Explanation (DL & NL):
+The image exhibits a regular grid arrangement of squares (hasArrangement RegularGrid). Each square is a distinct shape (hasShape Square). The presence of a regular grid of squares, combined with the observed colors, satisfies the axioms defining a chequered pattern. Therefore, the image is classified as chequered.
+----------------------------------------
+Query 19: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasRegularGridPattern (Necessary condition)
+- hasRegularGridPattern ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, yellow, red
+- hasShape/Part: intersecting lines, squares, grid
+- hasTexture: rough, patterned
+
+4. Logical Explanation (DL & NL):
+The image exhibits a clear pattern of intersecting lines forming squares, which constitutes a regular grid pattern. The presence of this "hasRegularGridPattern" satisfies the sufficient condition for the entity to be classified as "chequered". The observed colors (blue, yellow, red) do not invalidate this classification, as they are merely incidental properties of the grid.
+----------------------------------------
+Query 20: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>flecked</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- flecked ⊑ hasTexture speckled (Necessary condition)
+- hasTexture speckled ⊑ flecked (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: yellow, red, blue, green
+- hasShape/Part: circular area, irregular edges
+- hasTexture: speckled, granular, dense
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by numerous small, irregular spots or specks (hasTexture speckled). This texture aligns with the TBox axiom stating that if an entity is flecked, it must have a speckled texture. The presence of this speckled texture is sufficient to classify the image as "flecked."
+----------------------------------------
+Query 21: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>gauzy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- gauzy ⊑ hasTexture blurred (Necessary condition)
+- gauzy ⊑ hasShape irregular (Necessary condition)
+- gauzy ⊑ hasColor varied (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, red, blue, green, brown
+- hasShape/Part: horizontal bands, irregular edges
+- hasTexture: blurred, indistinct
+
+4. Logical Explanation (DL & NL):
+The image exhibits a blurred texture (hasTexture blurred), irregular shapes (hasShape irregular), and a varied color palette (hasColor varied). These properties align with the TBox axioms defining "gauzy". Therefore, the image is classified as gauzy.
+----------------------------------------
+Query 22: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>flecked</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- flecked ⊑ hasTexture [irregular speckles] (Necessary condition)
+- hasTexture [irregular speckles] ⊑ flecked (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, grey, yellow, red
+- hasShape/Part: vertical folds, irregular edges
+- hasTexture: irregular speckles, mottled appearance
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by irregular speckles (hasTexture [irregular speckles]). This texture is a sufficient condition for the entity to be classified as flecked (hasTexture [irregular speckles] ⊑ flecked). The presence of irregular speckles, as observed in the ABox, satisfies the TBox axiom, leading to the classification as "flecked."
+----------------------------------------
+Query 23: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>gauzy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- gauzy ⊑ hasTexture blurryVerticalLines (Necessary condition)
+- gauzy ⊑ hasColor varied (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, pink
+- hasShape/Part: rectangular shape, vertical lines
+- hasTexture: blurry, irregular, vertical
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by blurry, irregular, and predominantly vertical lines. This aligns with the TBox axiom stating that "gauzy" entities must have a "blurryVerticalLines" texture. The presence of varied colors (blue, green, pink) also satisfies the TBox axiom that "gauzy" entities have varied colors. Therefore, based on these observed properties, the image is classified as "gauzy".
+----------------------------------------
+Query 24: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>gauzy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- gauzy ⊑ hasTexture blurryVerticalLines (Necessary condition)
+- gauzy ⊑ hasColor varied (Necessary condition)
+- gauzy ⊑ hasShape irregularRectangles (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, purple, blue, pink, yellow
+- hasShape/Part: vertical lines, irregular rectangles
+- hasTexture: blurry, streaky, fragmented
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by blurry, streaky, and fragmented elements. These elements manifest as irregular rectangles and vertical lines, with a varied color palette including green, purple, blue, pink, and yellow. This aligns with the TBox axioms defining "gauzy" as requiring a blurry texture with vertical lines, varied colors, and irregular rectangles. Therefore, the image is classified as "gauzy."
+----------------------------------------
+Query 25: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>gauzy</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- gauzy ⊑ hasTexture [irregular, vertical streaks] (Necessary condition)
+- gauzy ⊑ hasColor [varied, often pastel] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [purple, pink, green, yellow, blue]
+- hasShape/Part: [vertical streaks, irregular lines, fragmented shapes]
+- hasTexture: [irregular, vertical streaks, seemingly translucent]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by irregular, vertical streaks, aligning with the necessary condition for "gauzy." The varied pastel colors also align with the typical visual characteristics of gauzy materials. Therefore, based on the observed texture and color, the image is classified as "gauzy."
+----------------------------------------
+Query 26: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>flecked</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- flecked ⊑ hasTexture [irregular speckles] (Necessary condition)
+- hasTexture [irregular speckles] ⊑ flecked (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, brown, white, green
+- hasShape/Part: rectangular shapes, vertical lines, irregular edges
+- hasTexture: irregular speckles, mottled appearance
+
+4. Logical Explanation (DL & NL):
+The image exhibits a texture characterized by irregular speckles (hasTexture [irregular speckles]). This texture is a sufficient condition for the image to be classified as "flecked" (hasTexture [irregular speckles] ⊑ flecked). The presence of irregular speckles, as observed in the ABox, satisfies the TBox axiom, leading to the classification of the image as "flecked".
+----------------------------------------
+Query 27: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>chequered</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- chequered ⊑ hasRegularGridPattern (Necessary condition)
+- hasRegularGridPattern ⊑ chequered (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, yellow, red
+- hasShape/Part: small squares, lines
+- hasTexture: grid-like, repeating pattern
+
+4. Logical Explanation (DL & NL):
+The image exhibits a repeating pattern of small squares arranged in a grid-like structure. This aligns with the TBox axiom stating that a "chequered" entity must have a "regular grid pattern." The observed "hasRegularGridPattern" in the ABox is sufficient to classify the image as "chequered."
+----------------------------------------
+Query 28: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>zigzagged</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- zigzagged ⊑ hasShape RepeatingZigzag (Necessary condition)
+- hasShape RepeatingZigzag ⊑ zigzagged (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: magenta, black, yellow, blue, green
+- hasShape/Part: repeating zigzag patterns, horizontal lines separating the zigzag patterns
+- hasTexture: grainy, pixelated
+
+4. Logical Explanation (DL & NL):
+The image exhibits a repeating zigzag pattern, which aligns with the TBox axiom stating that zigzagged entities have a "RepeatingZigzag" shape. The presence of this shape, as observed in the ABox, is sufficient to classify the image as "zigzagged." The other observed properties (colors and texture) are not defining characteristics of the zigzag pattern itself, but they are consistent with the visual appearance of a zigzagged entity.
+----------------------------------------
+Query 29: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>zigzagged</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- zigzagged ⊑ hasVisualFeature [repeating V-shaped pattern] (Necessary condition)
+- hasVisualFeature [repeating V-shaped pattern] ⊑ zigzagged (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, grey, yellow
+- hasShape/Part: repeating V-shaped pattern, diagonal lines
+- hasTexture: slightly blurred, grainy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a repeating V-shaped pattern, which aligns with the "hasVisualFeature [repeating V-shaped pattern]" property. This property is sufficient for classifying the image as "zigzagged" according to the TBox. The observed colors (blue, grey, yellow) and grainy texture are consistent with the general appearance of zigzagged patterns, further validating the classification.
+----------------------------------------
+Query 30: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>zigzagged</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- zigzagged ⊑ hasShape RepeatingVShape (Necessary condition)
+- hasShape RepeatingVShape ⊑ zigzagged (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, gray, brown, pink, green
+- hasShape/Part: repeating V-shaped segments, diagonal lines
+- hasTexture: grainy, irregular
+
+4. Logical Explanation (DL & NL):
+The image exhibits a repeating V-shaped pattern (hasShape RepeatingVShape). This satisfies the sufficient condition for the entity to be classified as zigzagged (hasShape RepeatingVShape ⊑ zigzagged). The presence of various colors (hasColor: blue, gray, brown, pink, green) does not invalidate this classification, as the zigzag pattern is the defining characteristic.
+----------------------------------------
+Query 31: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>zigzagged</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- zigzagged ⊑ hasShape RepeatingVShape (Necessary condition)
+- hasShape RepeatingVShape ⊑ zigzagged (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, blue, pink, purple
+- hasShape/Part: repeating V-shaped segments, diagonal lines
+- hasTexture: slightly blurred, pixelated
+
+4. Logical Explanation (DL & NL):
+The image exhibits a repeating V-shaped pattern (hasShape RepeatingVShape). This satisfies the sufficient condition for the class "zigzagged" (hasShape RepeatingVShape ⊑ zigzagged). The presence of green, blue, pink, and purple colors (hasColor) does not invalidate the zigzag pattern, and therefore does not contradict the classification.
+----------------------------------------
+Query 32: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>zigzagged</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- zigzagged ⊑ hasShape RepeatingVShape (Necessary condition)
+- hasShape RepeatingVShape ⊑ zigzagged (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: yellow, purple, light blue
+- hasShape/Part: repeating V-shaped segments
+- hasTexture: smooth, uniform
+
+4. Logical Explanation (DL & NL):
+The image exhibits a repeating V-shaped pattern (hasShape RepeatingVShape). This satisfies the sufficient condition for the entity to be classified as zigzagged (hasShape RepeatingVShape ⊑ zigzagged). The presence of yellow, purple, and light blue colors (hasColor) does not contradict this classification and is therefore irrelevant to the reasoning process.
+----------------------------------------
+Query 33: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>zigzagged</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- zigzagged ⊑ hasShape [series of connected, angled lines forming a repeating V-shape] (Necessary condition)
+- hasShape [series of connected, angled lines forming a repeating V-shape] ⊑ zigzagged (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, pink, green
+- hasShape/Part: series of connected, angled lines forming a repeating V-shape
+- hasTexture: smooth, repeating
+
+4. Logical Explanation (DL & NL):
+The image exhibits a series of connected, angled lines forming a repeating V-shape (hasShape). This satisfies the sufficient condition for the class "zigzagged" as defined in the TBox. The presence of blue, pink, and green colors is a characteristic but not defining feature of the zigzag pattern.
+----------------------------------------
+Query 34: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>zigzagged</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- zigzagged ⊑ hasShape zigzag (Necessary condition)
+- hasShape zigzag ⊑ zigzagged (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, pink
+- hasShape/Part: repeating zigzag pattern
+- hasTexture: slightly rough, pixelated
+
+4. Logical Explanation (DL & NL):
+The image exhibits a repeating zigzag pattern (hasShape zigzag). This satisfies the sufficient condition for the entity to be classified as zigzagged (hasShape zigzag ⊑ zigzagged). The colors (blue, green, pink) are incidental and do not affect the classification.
+----------------------------------------
+Query 35: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>zigzagged</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- zigzagged ⊑ hasVisualFeature [repeating diagonal lines] (Necessary condition)
+- hasVisualFeature [repeating diagonal lines] ⊑ zigzagged (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, blue, white, green
+- hasShape/Part: repeating diagonal lines, rectangular blocks
+- hasTexture: pixelated, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The image exhibits a repeating pattern of diagonal lines within rectangular blocks. This aligns with the TBox axiom stating that zigzagged patterns are characterized by repeating diagonal lines (hasVisualFeature [repeating diagonal lines]). The presence of this feature is sufficient to classify the image as zigzagged.
+----------------------------------------
+Query 36: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>zigzagged</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- zigzagged ⊑ hasShape repeating-V-shapes (Necessary condition)
+- hasShape repeating-V-shapes ⊑ zigzagged (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: dark blue, light blue, yellow
+- hasShape/Part: repeating-V-shapes, diagonal lines
+- hasTexture: smooth, uniform
+
+4. Logical Explanation (DL & NL):
+The image exhibits repeating V-shapes and diagonal lines (hasShape repeating-V-shapes). This satisfies the sufficient condition for the entity to be classified as zigzagged (hasShape repeating-V-shapes ⊑ zigzagged). The presence of dark blue, light blue, and yellow colors (hasColor) does not contradict this classification and is therefore a validating feature.
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.8333

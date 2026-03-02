@@ -1,0 +1,201 @@
+=== DEBUG LOG: gemma3 | pets | Prompt: axioms_ontology_v2 ===
+
+--- CONFIG: N=2, K=2, Q=5 ---
+Query 1: Expected: [Bombay] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Bulldog</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- American Bulldog ⊑ hasBodyShape [compact, muscular] (Necessary condition)
+- American Bulldog ⊑ hasHeadShape [broad, square] (Necessary condition)
+- American Bulldog ⊑ hasEarShape [rose-bud] (Necessary condition)
+- American Bulldog ⊑ hasTailLength [short] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: gray, black
+- hasShape/Part: compact body, muscular build, broad head, square head, rose-bud ears, short tail
+- hasTexture: short, dense coat
+
+4. Logical Explanation (DL & NL):
+The observed properties in the ABox align with the TBox axioms defining an American Bulldog. The image exhibits a compact, muscular body, a broad and square head, rose-bud ears, and a short tail. The color (gray and black) is consistent with common American Bulldog coat colors. Therefore, the combination of these features satisfies the necessary conditions for classifying the entity as an American Bulldog.
+----------------------------------------
+Query 2: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Bombay</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Bombay ⊑ hasColor Black
+- Bombay ⊑ hasShape Feline
+- Bombay ⊑ hasTexture ShortFur
+- hasColor Black ⊑ Bombay (Sufficient)
+- hasShape Feline ⊑ Bombay (Necessary)
+- hasTexture ShortFur ⊑ Bombay (Necessary)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Black
+- hasShape/Part: Feline body, pointed ears, whiskers
+- hasTexture: Short, sleek fur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly black color (hasColor Black), a feline body shape (hasShape Feline), and short, sleek fur (hasTexture ShortFur). These observed properties align with the TBox axioms defining a Bombay cat. Specifically, the presence of black fur (hasColor Black) is a sufficient condition for classifying the entity as a Bombay (hasColor Black ⊑ Bombay). The feline shape and short fur are necessary conditions, further validating the classification.
+----------------------------------------
+Query 3: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Bombay</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Bombay ⊑ hasColor black
+- Bombay ⊑ hasShape triangularEars
+- Bombay ⊑ hasTexture sleekFur
+- hasColor black ⊑ Bombay (Sufficient)
+- hasShape triangularEars ⊑ Bombay (Necessary)
+- hasTexture sleekFur ⊑ Bombay (Necessary)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: black
+- hasShape/Part: triangularEars, roundedFace, whiskers
+- hasTexture: sleekFur
+
+4. Logical Explanation (DL & NL):
+The observed properties in the ABox align with the TBox axioms. The image exhibits a black color (hasColor black), triangular ears (hasShape triangularEars), and sleek fur (hasTexture sleekFur). These properties are necessary and sufficient for classifying the entity as a Bombay. The presence of a rounded face and whiskers further validates the Bombay classification, although they are not explicitly defined in the TBox.
+----------------------------------------
+Query 4: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Bombay</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Bombay ⊑ hasColor blackOrDarkGrey (Necessary condition)
+- Bombay ⊑ hasShape triangularEars (Necessary condition)
+- Bombay ⊑ hasTexture sleekFur (Necessary condition)
+- hasColor blackOrDarkGrey ⊑ Bombay (Sufficient condition)
+- hasShape triangularEars ⊑ Bombay (Sufficient condition)
+- hasTexture sleekFur ⊑ Bombay (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: dark grey
+- hasShape/Part: triangular ears, rounded face, prominent whiskers
+- hasTexture: sleek fur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dark grey color (hasColor: dark grey), triangular ears (hasShape/Part: triangular ears), and sleek fur (hasTexture: sleekFur). These observed properties align with the TBox axioms defining a Bombay cat. Specifically, the presence of dark grey fur, triangular ears, and sleek fur are sufficient conditions (P ⊑ C) to classify the entity as a Bombay.
+----------------------------------------
+Query 5: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Bombay</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- Bombay ⊑ hasColor black
+- Bombay ⊑ hasShape feline
+- Bombay ⊑ hasTexture shortFur
+- hasColor black ⊑ Bombay (Sufficient)
+- hasShape feline ⊑ Bombay (Necessary)
+- hasTexture shortFur ⊑ Bombay (Necessary)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: black
+- hasShape/Part: feline body, tail, ears, paws
+- hasTexture: shortFur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly black color (hasColor black), a feline body shape (hasShape feline), and short fur texture (hasTexture shortFur). These observed properties align with the TBox axioms defining a Bombay cat. Specifically, the presence of black fur (hasColor black) is a sufficient condition for classifying the entity as a Bombay (hasColor black ⊑ Bombay). The feline shape and short fur are necessary conditions, further validating the classification.
+----------------------------------------
+Query 6: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>American Bulldog</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- AmericanBulldog ⊑ hasBroadHead (Necessary condition)
+- AmericanBulldog ⊑ hasDroopingLips (Necessary condition)
+- AmericanBulldog ⊑ hasMuscularBuild (Necessary condition)
+- hasBroadHead ⊑ AmericanBulldog (Sufficient condition)
+- hasDroopingLips ⊑ AmericanBulldog (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: grey, white
+- hasShape/Part: broad head, drooping lips, muscular build, short muzzle
+- hasTexture: short, smooth fur
+
+4. Logical Explanation (DL & NL):
+The image exhibits a broad head, drooping lips, and a muscular build. These properties (hasBroadHead, hasDroopingLips, hasMuscularBuild) are necessary conditions for being an American Bulldog. The presence of these features, combined with the observed colors and texture, strongly suggests the entity is an American Bulldog. The broad head and drooping lips are particularly strong indicators, acting as sufficient conditions for the classification.
+----------------------------------------
+Query 7: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Bulldog</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- American Bulldog ⊑ hasBroadHead (Necessary condition)
+- American Bulldog ⊑ hasMuscularBuild (Necessary condition)
+- American Bulldog ⊑ hasDroopingLips (Necessary condition)
+- hasDroopingLips ⊑ American Bulldog (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: dark brown, black, grey
+- hasShape/Part: broad head, muscular build, drooping lips, short muzzle
+- hasTexture: short, dense coat
+
+4. Logical Explanation (DL & NL):
+The image exhibits a broad head, muscular build, and drooping lips (hasBroadHead, hasMuscularBuild, hasDroopingLips). The presence of drooping lips is a sufficient condition for classifying the entity as an American Bulldog. The observed colors and coat texture are consistent with the general appearance of an American Bulldog, validating the assumption.
+----------------------------------------
+Query 8: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Bulldog</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- AmericanBulldog ⊑ hasWrinkledFace (Necessary condition)
+- AmericanBulldog ⊑ hasShortMuzzle (Necessary condition)
+- AmericanBulldog ⊑ hasDroopingLips (Necessary condition)
+- hasWrinkledFace ⊑ AmericanBulldog (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: brown, black, tan
+- hasShape/Part: broad head, square jaw, wrinkled face, short muzzle, drooping lips
+- hasTexture: short, smooth coat
+
+4. Logical Explanation (DL & NL):
+The image exhibits a broad head, square jaw, wrinkled face, short muzzle, and drooping lips (hasShape/Part). These properties are necessary conditions for an American Bulldog (AmericanBulldog ⊑ hasWrinkledFace, AmericanBulldog ⊑ hasShortMuzzle, AmericanBulldog ⊑ hasDroopingLips). The presence of these features, combined with the observed coloration, strongly suggests the entity is an American Bulldog. The wrinkled face is a sufficient condition (hasWrinkledFace ⊑ AmericanBulldog), further solidifying the classification.
+----------------------------------------
+Query 9: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Bulldog</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- American Bulldog ⊑ hasBodyShape [muscular, compact] (Necessary condition)
+- American Bulldog ⊑ hasHeadShape [broad, square] (Necessary condition)
+- American Bulldog ⊑ hasEarShape [rose-bud] (Necessary condition)
+- American Bulldog ⊑ hasTailLength [short] (Necessary condition)
+- hasBodyShape [muscular, compact] ⊑ American Bulldog (Sufficient condition)
+- hasHeadShape [broad, square] ⊑ American Bulldog (Sufficient condition)
+- hasEarShape [rose-bud] ⊑ American Bulldog (Sufficient condition)
+- hasTailLength [short] ⊑ American Bulldog (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue-grey
+- hasShape/Part: muscular body, broad head, short tail, rose-bud ears
+- hasTexture: short, dense coat
+
+4. Logical Explanation (DL & NL):
+The image exhibits a muscular body, a broad head, short tail, and rose-bud ears. These properties align with the TBox axioms defining an American Bulldog. Specifically, the observed `hasBodyShape [muscular, compact]`, `hasHeadShape [broad, square]`, `hasEarShape [rose-bud]`, and `hasTailLength [short]` are sufficient conditions to classify the entity as an American Bulldog. The observed color (blue-grey) is consistent with the breed, but not a defining characteristic.
+----------------------------------------
+Query 10: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Bulldog</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- American Bulldog ⊑ hasColor [gray, brown, black] (Necessary condition)
+- American Bulldog ⊑ hasShape [muscular build, broad head, powerful jaw] (Necessary condition)
+- American Bulldog ⊑ hasTexture [short, dense coat] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: gray, brown
+- hasShape: muscular build, broad head
+- hasTexture: short, dense coat
+
+4. Logical Explanation (DL & NL):
+The observed properties (gray/brown color, muscular build, broad head, short dense coat) align with the necessary conditions defined in the TBox for American Bulldogs. The presence of these features validates the classification as an American Bulldog.
+----------------------------------------
+-> FINAL ACCURACY for (2,2,5): 0.9000

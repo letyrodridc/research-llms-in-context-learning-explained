@@ -1,0 +1,1706 @@
+=== DEBUG LOG: gemma3 | pets | Prompt: rulebased ===
+
+--- CONFIG: N=2, K=2, Q=5 ---
+Query 1: Expected: [Bombay] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN American Bulldog
+Rule Check:
+- The Target Image does not contain the exact features specified in the rule for Bombay. The Target Image does contain the exact features specified in the rule for American Bulldog.
+<response>American Bulldog</response>
+----------------------------------------
+Query 2: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark blue fur]
+- [Pointed ears]
+Knowledge Base:
+- IF [Dark blue fur] AND [Pointed ears] THEN Bombay
+Rule Check:
+- The Target Image contains dark blue fur and pointed ears, which match the features specified in the rule for Bombay.
+<response>Bombay</response>
+----------------------------------------
+Query 3: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Blue-grey fur]
+- [Pointed ears]
+Knowledge Base:
+- IF [Blue-grey fur] AND [Pointed ears] THEN Bombay
+Rule Check:
+- The Target Image exhibits blue-grey fur and pointed ears. This matches the features defined in the rule for Bombay.
+<response>Bombay</response>
+----------------------------------------
+Query 4: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- Dark blue fur
+- Long white whiskers
+Knowledge Base:
+- IF Dark blue fur AND Long white whiskers THEN Bombay
+Rule Check:
+- The Target Image contains dark blue fur and long white whiskers, matching the features specified in the rule for Bombay.
+<response>Bombay</response>
+----------------------------------------
+Query 5: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Bombay
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Bombay.
+<response>Bombay</response>
+----------------------------------------
+Query 6: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN American Bulldog
+Rule Check:
+- The Target Image contains the exact features specified in the rule for American Bulldog.
+<response>American Bulldog</response>
+----------------------------------------
+Query 7: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Short muzzle
+- [Concrete observable feature 2] Wrinkled face
+Knowledge Base:
+- IF Short muzzle AND Wrinkled face THEN American Bulldog
+Rule Check:
+- The Target Image contains a short muzzle and a wrinkled face, matching the features specified in the rule for American Bulldog.
+<response>American Bulldog</response>
+----------------------------------------
+Query 8: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Wrinkled face]
+- [Short muzzle]
+Knowledge Base:
+- IF [Wrinkled face] AND [Short muzzle] THEN American Bulldog
+Rule Check:
+- The Target Image exhibits a wrinkled face and a short muzzle, matching the features specified in the rule for American Bulldog.
+<response>American Bulldog</response>
+----------------------------------------
+Query 9: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN American Bulldog
+Rule Check:
+- The Target Image contains the exact features specified in the rule for American Bulldog.
+<response>American Bulldog</response>
+----------------------------------------
+Query 10: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN American Bulldog
+Rule Check:
+- The Target Image contains the exact features specified in the rule for American Bulldog.
+<response>American Bulldog</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,5): 0.9000
+
+--- CONFIG: N=2, K=2, Q=8 ---
+Query 1: Expected: [English Setter] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of brown fur]
+- [Presence of long, floppy ears]
+Knowledge Base:
+- IF [Presence of brown fur] AND [Presence of long, floppy ears] THEN English Setter
+Rule Check:
+- The Target Image exhibits both brown fur and long, floppy ears. This matches the criteria for the English Setter class.
+<response>English Setter</response>
+----------------------------------------
+Query 2: Expected: [English Setter] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN German Shorthaired
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN English Setter
+Rule Check:
+- The Target Image does not contain the exact features specified in the rule for English Setter.
+- The Target Image does not contain the exact features specified in the rule for German Shorthaired.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Query 3: Expected: [English Setter] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Grayish-blue fur
+- [Concrete observable feature 2] Dark nose
+Knowledge Base:
+- IF Grayish-blue fur AND Dark nose THEN English Setter
+Rule Check:
+- The Target Image contains the exact features specified in the rule for English Setter.
+<response>English Setter</response>
+----------------------------------------
+Query 4: Expected: [English Setter] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN English Setter
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN German Shorthaired
+Rule Check:
+- The Target Image does not contain the exact features specified in the rule for German Shorthaired.
+- The Target Image does not contain the exact features specified in the rule for English Setter.
+<response>English Setter</response>
+----------------------------------------
+Query 5: Expected: [English Setter] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Greyish-blue fur]
+- [Drooping ears]
+Knowledge Base:
+- IF [Greyish-blue fur] AND [Drooping ears] THEN English Setter
+Rule Check:
+- The Target Image contains the exact features specified in the rule for English Setter.
+<response>English Setter</response>
+----------------------------------------
+Query 6: Expected: [English Setter] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Dark brown nose
+- [Concrete observable feature 2] Light brown fur patches
+Knowledge Base:
+- IF Dark brown nose AND Light brown fur patches THEN German Shorthaired
+Rule Check:
+- The Target Image exhibits a dark brown nose and light brown fur patches, matching the criteria for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 7: Expected: [English Setter] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Grayish-blue fur
+- [Concrete observable feature 2] Long, floppy ears
+Knowledge Base:
+- IF Grayish-blue fur AND Long, floppy ears THEN German Shorthaired
+Rule Check:
+- The Target Image exhibits grayish-blue fur and long, floppy ears, matching the features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 8: Expected: [English Setter] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark blue fur patch]
+- [Brown and tan mottled fur]
+Knowledge Base:
+- IF [Dark blue fur patch] AND [Brown and tan mottled fur] THEN German Shorthaired
+Rule Check:
+- The Target Image contains a dark blue fur patch and brown and tan mottled fur, matching the features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 9: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark brown fur patches]
+- [Floppy ears]
+Knowledge Base:
+- IF [Dark brown fur patches] AND [Floppy ears] THEN German Shorthaired
+Rule Check:
+- The Target Image contains dark brown fur patches and floppy ears, which matches the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 10: Expected: [German Shorthaired] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark brown speckled coat]
+- [Long, floppy ears]
+Knowledge Base:
+- IF [Dark brown speckled coat] AND [Long, floppy ears] THEN English Setter
+Rule Check:
+- The Target Image exhibits a dark brown speckled coat and long, floppy ears. These features match the rule for English Setter.
+<response>English Setter</response>
+----------------------------------------
+Query 11: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dense, speckled black and white pattern]
+- [Long, slender snout]
+Knowledge Base:
+- IF [Dense, speckled black and white pattern] AND [Long, slender snout] THEN German Shorthaired
+Rule Check:
+- The Target Image exhibits a dense, speckled black and white pattern and a long, slender snout. These features match the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 12: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark brown fur]
+- [Red collar]
+Knowledge Base:
+- IF [Dark brown fur] AND [Red collar] THEN German Shorthaired
+Rule Check:
+- The Target Image contains dark brown fur and a red collar, which matches the features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 13: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Pale grey fur]
+- [Drooping ears]
+Knowledge Base:
+- IF [Pale grey fur] AND [Drooping ears] THEN German Shorthaired
+Rule Check:
+- The Target Image contains pale grey fur and drooping ears, which matches the features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 14: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Light grey fur
+- [Concrete observable feature 2] Dark grey nose
+Knowledge Base:
+- IF Light grey fur AND Dark grey nose THEN German Shorthaired
+Rule Check:
+- The Target Image contains light grey fur and a dark grey nose, which matches the features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 15: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Greyish-brown fur]
+- [Long snout]
+Knowledge Base:
+- IF [Greyish-brown fur] AND [Long snout] THEN German Shorthaired
+Rule Check:
+- The Target Image contains greyish-brown fur and a long snout, which matches the features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 16: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Greyish-brown fur]
+- [Long, floppy ears]
+Knowledge Base:
+- IF [Greyish-brown fur] AND [Long, floppy ears] THEN German Shorthaired
+Rule Check:
+- The Target Image exhibits greyish-brown fur and long, floppy ears, matching the features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,8): 0.6875
+
+--- CONFIG: N=2, K=1, Q=5 ---
+Query 1: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Long, fluffy, light brown fur]
+- [Pointed, erect ears]
+Knowledge Base:
+- IF [Long, fluffy, light brown fur] AND [Pointed, erect ears] THEN Japanese Chin
+Rule Check:
+- The Target Image exhibits long, fluffy, light brown fur and pointed, erect ears. This matches the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 2: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark, dense fur]
+- [Large, rounded head]
+Knowledge Base:
+- IF [Dark, dense fur] AND [Large, rounded head] THEN Japanese Chin
+Rule Check:
+- The Target Image exhibits dark, dense fur and a large, rounded head. This matches the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 3: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dense, short fur]
+- [Rounded head shape]
+Knowledge Base:
+- IF [Dense, short fur] AND [Rounded head shape] THEN British Shorthair
+Rule Check:
+- The Target Image exhibits dense, short fur and a rounded head shape. These features match the rule for British Shorthair.
+<response>British Shorthair</response>
+----------------------------------------
+Query 4: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dense, short fur]
+- [Rounded head shape]
+Knowledge Base:
+- IF [Dense, short fur] AND [Rounded head shape] THEN British Shorthair
+Rule Check:
+- The Target Image exhibits dense, short fur and a rounded head shape. These features match the rule for British Shorthair.
+<response>British Shorthair</response>
+----------------------------------------
+Query 5: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark, long fur around the face
+- [Small, dark eyes]
+Knowledge Base:
+- IF [Dark, long fur around the face] AND [Small, dark eyes] THEN Japanese Chin
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 6: Expected: [British Shorthair] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark blue-grey fur]
+- [Pointed, erect ears]
+Knowledge Base:
+- IF [Dark blue-grey fur] AND [Pointed, erect ears] THEN Japanese Chin
+Rule Check:
+- The Target Image exhibits dark blue-grey fur and pointed, erect ears. This matches the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 7: Expected: [British Shorthair] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Short, rounded ears]
+- [Dense, fluffy fur]
+Knowledge Base:
+- IF [Short, rounded ears] AND [Dense, fluffy fur] THEN Japanese Chin
+Rule Check:
+- The Target Image exhibits short, rounded ears and dense, fluffy fur. This matches the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 8: Expected: [British Shorthair] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Short, rounded ears]
+- [Dense, fluffy fur]
+Knowledge Base:
+- IF [Short, rounded ears] AND [Dense, fluffy fur] THEN British Shorthair
+Rule Check:
+- The Target Image exhibits short, rounded ears and dense, fluffy fur. This matches the features specified in the rule for British Shorthair.
+<response>British Shorthair</response>
+----------------------------------------
+Query 9: Expected: [British Shorthair] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Short, dense fur]
+- [Rounded head shape]
+Knowledge Base:
+- IF [Short, dense fur] AND [Rounded head shape] THEN British Shorthair
+Rule Check:
+- The Target Image exhibits short, dense fur and a rounded head shape, matching the features defined in the rule for British Shorthair.
+<response>British Shorthair</response>
+----------------------------------------
+Query 10: Expected: [British Shorthair] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Short, rounded ears]
+- [Dense, short fur]
+Knowledge Base:
+- IF [Short, rounded ears] AND [Dense, short fur] THEN British Shorthair
+Rule Check:
+- The Target Image exhibits short, rounded ears and dense, short fur. These features match the rule for British Shorthair.
+<response>British Shorthair</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,5): 0.6000
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Long, shaggy, light brown fur]
+- [Floppy ears]
+Knowledge Base:
+- IF [Long, shaggy, light brown fur] AND [Floppy ears] THEN Samoyed
+Rule Check:
+- The Target Image exhibits long, shaggy, light brown fur and floppy ears. This matches the features specified in the rule for Samoyed.
+<response>Samoyed</response>
+----------------------------------------
+Query 2: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Short, flat face]
+- [Wrinkled skin]
+Knowledge Base:
+- IF [Short, flat face] AND [Wrinkled skin] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image exhibits a short, flat face and wrinkled skin, matching the features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 3: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark blue/black fur patches]
+- [Floppy ears]
+Knowledge Base:
+- IF [Dark blue/black fur patches] AND [Floppy ears] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image exhibits dark blue/black fur patches and floppy ears. This matches the features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 4: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Greyish-blue fur]
+- [Long snout]
+Knowledge Base:
+- IF [Greyish-blue fur] AND [Long snout] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image exhibits greyish-blue fur and a long snout, matching the features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 5: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Grayish-blue fur]
+- [Pointed ears]
+Knowledge Base:
+- IF [Grayish-blue fur] AND [Pointed ears] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image exhibits grayish-blue fur and pointed ears. This matches the features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 6: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Black fur]
+- [Pointed ears]
+Knowledge Base:
+- IF [Black fur] AND [Pointed ears] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image exhibits black fur and pointed ears. These features match the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 7: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark gray fur]
+- [Triangular ears]
+Knowledge Base:
+- IF [Dark gray fur] AND [Triangular ears] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image exhibits dark gray fur and triangular ears. This matches the features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 8: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Orange-brown fur]
+- [Floppy ears]
+Knowledge Base:
+- IF [Orange-brown fur] AND [Floppy ears] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image exhibits orange-brown fur and floppy ears, matching the features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 9: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Short, pointed ears]
+- [Grey, short fur]
+Knowledge Base:
+- IF [Short, pointed ears] AND [Grey, short fur] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image exhibits short, pointed ears and grey, short fur. This matches the features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 10: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Short, broad muzzle
+- [Wrinkled face]
+Knowledge Base:
+- IF [Short, broad muzzle] AND [Wrinkled face] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image exhibits a short, broad muzzle and a wrinkled face. These features match the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 11: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark brown muzzle
+- [Floppy ears]
+Knowledge Base:
+- IF [Dark brown muzzle] AND [Floppy ears] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image contains a dark brown muzzle and floppy ears. This matches the features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 12: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dense, short, dark fur]
+- [Floppy ears]
+Knowledge Base:
+- IF [Dense, short, dark fur] AND [Floppy ears] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image exhibits dense, short, dark fur and floppy ears. This matches the features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 13: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Short muzzle]
+- [Wrinkled face]
+Knowledge Base:
+- IF [Short muzzle] AND [Wrinkled face] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image exhibits a short muzzle and a wrinkled face, matching the features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 14: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Wrinkled face]
+- [Short snout]
+Knowledge Base:
+- IF [Wrinkled face] AND [Short snout] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image exhibits a wrinkled face and a short snout, matching the features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 15: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Greyish-blue fur]
+- [Drooping ears]
+Knowledge Base:
+- IF [Greyish-blue fur] AND [Drooping ears] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image exhibits greyish-blue fur and drooping ears, matching the features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 16: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark brown stripes]
+- [Short muzzle]
+Knowledge Base:
+- IF [Dark brown stripes] AND [Short muzzle] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image exhibits dark brown stripes and a short muzzle, matching the features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 17: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark gray fur]
+- [Large, dark eyes]
+Knowledge Base:
+- IF [Dark gray fur] AND [Large, dark eyes] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image exhibits dark gray fur and large, dark eyes, matching the features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 18: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark, short fur]
+- [Floppy ears]
+Knowledge Base:
+- IF [Dark, short fur] AND [Floppy ears] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image exhibits dark, short fur and floppy ears. These features match the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9): 0.5556
+
+--- CONFIG: N=3, K=1, Q=5 ---
+Query 1: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Long, flowing, white fur]
+- [Dark nose]
+Knowledge Base:
+- IF [Long, flowing, white fur] AND [Dark nose] THEN Samoyed
+Rule Check:
+- The Target Image exhibits long, flowing, white fur and a dark nose. This matches the features specified in the rule for Samoyed.
+<response>Samoyed</response>
+----------------------------------------
+Query 2: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Greyish-brown fur]
+- [Wrinkled skin]
+Knowledge Base:
+- IF [Greyish-brown fur] AND [Wrinkled skin] THEN Japanese Chin
+Rule Check:
+- The Target Image exhibits greyish-brown fur and wrinkled skin, matching the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 3: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Japanese Chin
+Rule Check:
+- The Target Image does not contain the exact features specified in the rule for Japanese Chin.
+- The Target Image does not contain the exact features specified in the rule for Samoyed.
+- The Target Image does not contain the exact features specified in the rule for Persian.
+
+<response>Japanese Chin</response>
+----------------------------------------
+Query 4: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark blue fur]
+- [Large, pointed ears]
+Knowledge Base:
+- IF [Dark blue fur] AND [Large, pointed ears] THEN Japanese Chin
+Rule Check:
+- The Target Image exhibits dark blue fur and large, pointed ears. This matches the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 5: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark gray fur]
+- [Drooping ears]
+Knowledge Base:
+- IF [Dark gray fur] AND [Drooping ears] THEN Japanese Chin
+Rule Check:
+- The Target Image exhibits dark gray fur and drooping ears, matching the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 6: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Grey-blue coat]
+- [Long snout]
+Knowledge Base:
+- IF [Grey-blue coat] AND [Long snout] THEN Japanese Chin
+Rule Check:
+- The Target Image exhibits a grey-blue coat and a long snout. This matches the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 7: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Long, fluffy white fur]
+- [Dark nose]
+Knowledge Base:
+- IF [Long, fluffy white fur] AND [Dark nose] THEN Samoyed
+Rule Check:
+- The Target Image exhibits long, fluffy white fur and a dark nose. This matches the features specified in the rule for Samoyed.
+<response>Samoyed</response>
+----------------------------------------
+Query 8: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Long, fluffy white fur
+- [Concrete observable feature 2] Pointed ears
+Knowledge Base:
+- IF Long, fluffy white fur AND Pointed ears THEN Samoyed
+Rule Check:
+- The Target Image exhibits long, fluffy white fur and pointed ears. This matches the features specified in the rule for Samoyed.
+<response>Samoyed</response>
+----------------------------------------
+Query 9: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Grayish-blue fur]
+- [Pointed ears]
+Knowledge Base:
+- IF [Grayish-blue fur] AND [Pointed ears] THEN Japanese Chin
+Rule Check:
+- The Target Image contains grayish-blue fur and pointed ears, which match the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 10: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Greyish-blue fur]
+- [Triangular ears]
+Knowledge Base:
+- IF [Greyish-blue fur] AND [Triangular ears] THEN Samoyed
+Rule Check:
+- The Target Image contains greyish-blue fur and triangular ears, which match the features specified in the rule for Samoyed.
+<response>Samoyed</response>
+----------------------------------------
+Query 11: Expected: [Persian] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Greyish-blue fur]
+- [Fluffy texture]
+Knowledge Base:
+- IF [Greyish-blue fur] AND [Fluffy texture] THEN Japanese Chin
+Rule Check:
+- The Target Image contains greyish-blue fur and a fluffy texture, matching the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 12: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Long, fluffy, light brown fur]
+- [Large, round, yellow eyes]
+Knowledge Base:
+- IF [Long, fluffy, light brown fur] AND [Large, round, yellow eyes] THEN Persian
+Rule Check:
+- The Target Image exhibits long, fluffy, light brown fur and large, round, yellow eyes. This matches the features specified in the rule for Persian.
+<response>Persian</response>
+----------------------------------------
+Query 13: Expected: [Persian] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Long, flowing, white fur]
+- [Fluffy, dense ruff around the neck]
+Knowledge Base:
+- IF [Long, flowing, white fur] AND [Fluffy, dense ruff around the neck] THEN Samoyed
+Rule Check:
+- The Target Image exhibits long, flowing white fur and a fluffy, dense ruff around the neck. This matches the features specified in the rule for Samoyed.
+<response>Samoyed</response>
+----------------------------------------
+Query 14: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Long, fluffy, light brown fur]
+- [Bushy white beard]
+Knowledge Base:
+- IF [Long, fluffy, light brown fur] AND [Bushy white beard] THEN Persian
+Rule Check:
+- The Target Image exhibits long, fluffy, light brown fur and a bushy white beard. This matches the features specified in the rule for Persian.
+<response>Persian</response>
+----------------------------------------
+Query 15: Expected: [Persian] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Short, pointed snout
+- [Concrete observable feature 2] Dark, dense fur
+Knowledge Base:
+- IF Short, pointed snout AND Dark, dense fur THEN Japanese Chin
+Rule Check:
+- The Target Image exhibits a short, pointed snout and dark, dense fur. This matches the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,5): 0.6000
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [Pomeranian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark brown fur]
+- [Small, erect ears]
+Knowledge Base:
+- IF [Dark brown fur] AND [Small, erect ears] THEN Pomeranian
+Rule Check:
+- The Target Image exhibits dark brown fur and small, erect ears, matching the features specified in the rule for Pomeranian.
+<response>Pomeranian</response>
+----------------------------------------
+Query 2: Expected: [Pomeranian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Light brown fur
+- [Concrete observable feature 2] Pointed ears
+Knowledge Base:
+- IF Light brown fur AND Pointed ears THEN Pomeranian
+Rule Check:
+- The Target Image exhibits light brown fur and pointed ears, matching the features specified in the rule for Pomeranian.
+<response>Pomeranian</response>
+----------------------------------------
+Query 3: Expected: [Pomeranian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dense, curly fur]
+- [Small, rounded nose]
+Knowledge Base:
+- IF [Dense, curly fur] AND [Small, rounded nose] THEN Pomeranian
+Rule Check:
+- The Target Image exhibits dense, curly fur and a small, rounded nose, matching the features specified in the rule for Pomeranian.
+<response>Pomeranian</response>
+----------------------------------------
+Query 4: Expected: [Pomeranian] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dominant color: purple]
+- [Presence of white fur patches]
+Knowledge Base:
+- IF [Dominant color: purple] AND [Presence of white fur patches] THEN Japanese Chin
+Rule Check:
+- The Target Image exhibits a dominant purple color and the presence of white fur patches, matching the criteria for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 5: Expected: [Pomeranian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Light brown fur
+- [Concrete observable feature 2] Fluffy texture
+Knowledge Base:
+- IF Light brown fur AND Fluffy texture THEN Pomeranian
+Rule Check:
+- The Target Image exhibits light brown fur and a fluffy texture, matching the features specified in the rule for Pomeranian.
+<response>Pomeranian</response>
+----------------------------------------
+Query 6: Expected: [Pomeranian] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Brown and tan fur patches
+- [Floppy ears
+Knowledge Base:
+- IF [Brown and tan fur patches] AND [Floppy ears] THEN Wheaten Terrier
+Rule Check:
+- The Target Image contains brown and tan fur patches and floppy ears, matching the features specified in the rule for Wheaten Terrier.
+<response>Wheaten Terrier</response>
+----------------------------------------
+Query 7: Expected: [Pomeranian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dense, fluffy, light brown fur]
+- [Rounded, floppy ears]
+Knowledge Base:
+- IF [Dense, fluffy, light brown fur] AND [Rounded, floppy ears] THEN Pomeranian
+Rule Check:
+- The Target Image exhibits dense, fluffy, light brown fur and rounded, floppy ears. This matches the features specified in the rule for Pomeranian.
+<response>Pomeranian</response>
+----------------------------------------
+Query 8: Expected: [Pomeranian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Long, fluffy, white fur]
+- [Small, dark eyes]
+Knowledge Base:
+- IF [Long, fluffy, white fur] AND [Small, dark eyes] THEN Pomeranian
+Rule Check:
+- The Target Image exhibits long, fluffy, white fur and small, dark eyes, matching the features specified in the rule for Pomeranian.
+<response>Pomeranian</response>
+----------------------------------------
+Query 9: Expected: [Pomeranian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dense, fluffy, curled fur]
+- [Small, rounded head]
+Knowledge Base:
+- IF [Dense, fluffy, curled fur] AND [Small, rounded head] THEN Pomeranian
+Rule Check:
+- The Target Image exhibits dense, fluffy, curled fur and a small, rounded head, matching the features specified in the rule for Pomeranian.
+<response>Pomeranian</response>
+----------------------------------------
+Query 10: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Long, flowing gray fur
+- [Concrete observable feature 2] Drooping ears
+Knowledge Base:
+- IF Long, flowing gray fur AND Drooping ears THEN Japanese Chin
+Rule Check:
+- The Target Image exhibits long, flowing gray fur and drooping ears, matching the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 11: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Wrinkled face]
+- [Short snout]
+Knowledge Base:
+- IF [Wrinkled face] AND [Short snout] THEN Japanese Chin
+Rule Check:
+- The Target Image exhibits a wrinkled face and a short snout, matching the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 12: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Light brown fur]
+- [Floppy ears]
+Knowledge Base:
+- IF [Light brown fur] AND [Floppy ears] THEN Wheaten Terrier
+Rule Check:
+- The Target Image contains light brown fur and floppy ears, which matches the features specified in the rule for Wheaten Terrier.
+<response>Wheaten Terrier</response>
+----------------------------------------
+Query 13: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark blue fur]
+- [Drooping face]
+Knowledge Base:
+- IF [Dark blue fur] AND [Drooping face] THEN Japanese Chin
+Rule Check:
+- The Target Image exhibits dark blue fur and a drooping face, matching the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 14: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark blue-grey fur]
+- [Small, triangular ears]
+- [Compact body shape]
+Knowledge Base:
+- IF [Dark blue-grey fur] AND [Small, triangular ears] AND [Compact body shape] THEN Japanese Chin
+Rule Check:
+- The Target Image exhibits dark blue-grey fur, small triangular ears, and a compact body shape. These features match the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 15: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Long, shaggy, white fur]
+- [Pointed ears]
+Knowledge Base:
+- IF [Long, shaggy, white fur] AND [Pointed ears] THEN Wheaten Terrier
+Rule Check:
+- The Target Image exhibits long, shaggy, white fur and pointed ears. This matches the features specified in the rule for Wheaten Terrier.
+<response>Wheaten Terrier</response>
+----------------------------------------
+Query 16: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dominant gray color]
+- [Floppy ears]
+Knowledge Base:
+- IF [Dominant gray color] AND [Floppy ears] THEN Japanese Chin
+Rule Check:
+- The Target Image exhibits a dominant gray color and floppy ears, matching the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 17: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dominant blue-grey color]
+- [Compact body shape]
+Knowledge Base:
+- IF [Dominant blue-grey color] AND [Compact body shape] THEN Japanese Chin
+Rule Check:
+- The Target Image exhibits a dominant blue-grey color and a compact body shape, matching the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 18: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Long, flowing, dark fur]
+- [Pointed ears]
+Knowledge Base:
+- IF [Long, flowing, dark fur] AND [Pointed ears] THEN Japanese Chin
+Rule Check:
+- The Target Image exhibits long, flowing, dark fur and pointed ears. This matches the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 19: Expected: [Wheaten Terrier] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark gray fur]
+- [Floppy ears]
+Knowledge Base:
+- IF [Dark gray fur] AND [Floppy ears] THEN Japanese Chin
+Rule Check:
+- The Target Image exhibits dark gray fur and floppy ears, matching the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 20: Expected: [Wheaten Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Long, shaggy, brown fur]
+- [Drooping ears]
+Knowledge Base:
+- IF [Long, shaggy, brown fur] AND [Drooping ears] THEN Wheaten Terrier
+Rule Check:
+- The Target Image exhibits long, shaggy, brown fur and drooping ears, matching the features specified in the rule for Wheaten Terrier.
+<response>Wheaten Terrier</response>
+----------------------------------------
+Query 21: Expected: [Wheaten Terrier] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Light brown fur
+- [Concrete observable feature 2] Compact body shape
+Knowledge Base:
+- IF Light brown fur AND Compact body shape THEN Pomeranian
+Rule Check:
+- The Target Image exhibits light brown fur and a compact body shape, matching the features specified in the rule for Pomeranian.
+<response>Pomeranian</response>
+----------------------------------------
+Query 22: Expected: [Wheaten Terrier] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark blue fur patch]
+- [Light brown fur covering most of the body]
+Knowledge Base:
+- IF [Dark blue fur patch] AND [Light brown fur covering most of the body] THEN Japanese Chin
+Rule Check:
+- The Target Image contains a dark blue fur patch and light brown fur covering most of the body, matching the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 23: Expected: [Wheaten Terrier] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dense, curly brown fur]
+- [Small, rounded ears]
+Knowledge Base:
+- IF [Dense, curly brown fur] AND [Small, rounded ears] THEN Pomeranian
+Rule Check:
+- The Target Image exhibits dense, curly brown fur and small, rounded ears. These features match the rule for Pomeranian.
+<response>Pomeranian</response>
+----------------------------------------
+Query 24: Expected: [Wheaten Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Brownish-grey fur]
+- [Long, shaggy fur]
+Knowledge Base:
+- IF [Brownish-grey fur] AND [Long, shaggy fur] THEN Wheaten Terrier
+Rule Check:
+- The Target Image exhibits brownish-grey fur and long, shaggy fur, matching the features specified in the rule for Wheaten Terrier.
+<response>Wheaten Terrier</response>
+----------------------------------------
+Query 25: Expected: [Wheaten Terrier] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Short, dense, brown fur]
+- [Wrinkled face]
+Knowledge Base:
+- IF [Short, dense, brown fur] AND [Wrinkled face] THEN Japanese Chin
+Rule Check:
+- The Target Image exhibits short, dense, brown fur and a wrinkled face. This matches the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 26: Expected: [Wheaten Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark brown fur]
+- [Floppy ears]
+Knowledge Base:
+- IF [Dark brown fur] AND [Floppy ears] THEN Wheaten Terrier
+Rule Check:
+- The Target Image exhibits dark brown fur and floppy ears, matching the features specified in the rule for Wheaten Terrier.
+<response>Wheaten Terrier</response>
+----------------------------------------
+Query 27: Expected: [Wheaten Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Brown and tan curly fur]
+- [Floppy ears]
+Knowledge Base:
+- IF [Brown and tan curly fur] AND [Floppy ears] THEN Wheaten Terrier
+Rule Check:
+- The Target Image exhibits brown and tan curly fur and floppy ears, matching the features specified in the rule for Wheaten Terrier.
+<response>Wheaten Terrier</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9): 0.6667
+
+--- CONFIG: N=4, K=1, Q=5 ---
+Query 1: Expected: [Pug] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Boxer
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Boxer.
+<response>Boxer</response>
+----------------------------------------
+Query 2: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Wrinkled face]
+- [Short muzzle]
+Knowledge Base:
+- IF [Wrinkled face] AND [Short muzzle] THEN Pug
+Rule Check:
+- The Target Image contains a wrinkled face and a short muzzle, which matches the features specified in the rule for Pug.
+<response>Pug</response>
+----------------------------------------
+Query 3: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Wrinkled face]
+- [Short muzzle]
+Knowledge Base:
+- IF [Wrinkled face] AND [Short muzzle] THEN Pug
+Rule Check:
+- The Target Image contains a wrinkled face and a short muzzle, which matches the features specified in the rule for Pug.
+<response>Pug</response>
+----------------------------------------
+Query 4: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- Wrinkled face
+- Short muzzle
+Knowledge Base:
+- IF Wrinkled face AND Short muzzle THEN Pug
+Rule Check:
+- The Target Image exhibits a wrinkled face and a short muzzle. These features match the rule for Pug.
+<response>Pug</response>
+----------------------------------------
+Query 5: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- Wrinkled face
+- Short muzzle
+Knowledge Base:
+- IF Wrinkled face AND Short muzzle THEN Pug
+Rule Check:
+- The Target Image exhibits a wrinkled face and a short muzzle. This matches the features specified in the rule for Pug.
+<response>Pug</response>
+----------------------------------------
+Query 6: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Persian
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Persian.
+<response>Persian</response>
+----------------------------------------
+Query 7: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Persian
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Persian.
+<response>Persian</response>
+----------------------------------------
+Query 8: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Persian
+Rule Check:
+- The Target Image does not contain the exact features specified in the rule for Pug, Boxer, or German Shorthaired. The Target Image contains the exact features specified in the rule for Persian.
+<response>Persian</response>
+----------------------------------------
+Query 9: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Persian
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Persian.
+<response>Persian</response>
+----------------------------------------
+Query 10: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Long, thick, brown fur]
+- [Fluffy mane around the neck]
+Knowledge Base:
+- IF [Long, thick, brown fur] AND [Fluffy mane around the neck] THEN Persian
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Persian.
+<response>Persian</response>
+----------------------------------------
+Query 11: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark speckled fur]
+- [Drooping ears]
+Knowledge Base:
+- IF [Dark speckled fur] AND [Drooping ears] THEN German Shorthaired
+Rule Check:
+- The Target Image contains dark speckled fur and drooping ears, which matches the features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 12: Expected: [German Shorthaired] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Boxer
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Boxer.
+<response>Boxer</response>
+----------------------------------------
+Query 13: Expected: [German Shorthaired] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark brown fur patches]
+- [Short muzzle]
+Knowledge Base:
+- IF [Dark brown fur patches] AND [Short muzzle] THEN Pug
+Rule Check:
+- The Target Image contains dark brown fur patches and a short muzzle, matching the features specified in the rule for Pug.
+<response>Pug</response>
+----------------------------------------
+Query 14: Expected: [German Shorthaired] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark, short fur]
+- [Compact body shape]
+Knowledge Base:
+- IF [Dark, short fur] AND [Compact body shape] THEN Pug
+Rule Check:
+- The Target Image exhibits dark, short fur and a compact body shape. This matches the features specified in the rule for Pug.
+<response>Pug</response>
+----------------------------------------
+Query 15: Expected: [German Shorthaired] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Boxer
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Boxer.
+<response>Boxer</response>
+----------------------------------------
+Query 16: Expected: [Boxer] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Long, slender legs
+- [Concrete observable feature 2] Sleek, short fur
+Knowledge Base:
+- IF Long, slender legs AND Sleek, short fur THEN German Shorthaired
+Rule Check:
+- The Target Image contains the exact features specified in the rule for German Shorthaired.
+<response>German Shorthaired</response>
+----------------------------------------
+Query 17: Expected: [Boxer] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Wrinkled face]
+- [Short snout]
+Knowledge Base:
+- IF [Wrinkled face] AND [Short snout] THEN Pug
+Rule Check:
+- The Target Image contains a wrinkled face and a short snout, which matches the features specified in the rule for Pug.
+<response>Pug</response>
+----------------------------------------
+Query 18: Expected: [Boxer] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Short muzzle]
+- [Drooping face]
+Knowledge Base:
+- IF [Short muzzle] AND [Drooping face] THEN Pug
+Rule Check:
+- The Target Image contains a short muzzle and a drooping face, which matches the features specified in the rule for Pug.
+<response>Pug</response>
+----------------------------------------
+Query 19: Expected: [Boxer] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Boxer
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Boxer.
+<response>Boxer</response>
+----------------------------------------
+Query 20: Expected: [Boxer] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Wrinkled face]
+- [Drooping jowls]
+Knowledge Base:
+- IF [Wrinkled face] AND [Drooping jowls] THEN Boxer
+Rule Check:
+- The Target Image exhibits a wrinkled face and drooping jowls. These features match the rule for Boxer.
+<response>Boxer</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,5): 0.6000
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [Staffordshire Bull Terrier] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Short, erect ears
+- [Concrete observable feature 2] Dark, dense fur
+Knowledge Base:
+- IF Short, erect ears AND Dark, dense fur THEN Japanese Chin
+Rule Check:
+- The Target Image exhibits short, erect ears and dark, dense fur. This matches the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 2: Expected: [Staffordshire Bull Terrier] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Dark, short fur
+- [Concrete observable feature 2] Rounded head shape
+Knowledge Base:
+- IF Dark, short fur AND Rounded head shape THEN Bombay
+Rule Check:
+- The Target Image exhibits dark, short fur and a rounded head shape. This matches the features specified in the rule for Bombay.
+<response>Bombay</response>
+----------------------------------------
+Query 3: Expected: [Staffordshire Bull Terrier] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Miniature Pinscher
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Miniature Pinscher.
+<response>Miniature Pinscher</response>
+----------------------------------------
+Query 4: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 5: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark, short fur]
+- [Floppy ears]
+Knowledge Base:
+- IF [Dark, short fur] AND [Floppy ears] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 6: Expected: [Staffordshire Bull Terrier] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark brown fur]
+- [Pointed ears]
+Knowledge Base:
+- IF [Dark brown fur] AND [Pointed ears] THEN Miniature Pinscher
+Rule Check:
+- The Target Image exhibits dark brown fur and pointed ears, matching the features specified in the rule for Miniature Pinscher.
+<response>Miniature Pinscher</response>
+----------------------------------------
+Query 7: Expected: [Staffordshire Bull Terrier] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Miniature Pinscher
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Miniature Pinscher.
+<response>Miniature Pinscher</response>
+----------------------------------------
+Query 8: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 9: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Short muzzle
+- [Concrete observable feature 2] Wrinkled forehead
+Knowledge Base:
+- IF Short muzzle AND Wrinkled forehead THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image contains a short muzzle and a wrinkled forehead, matching the features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 10: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Wrinkled face
+- [Concrete observable feature 2] Short muzzle
+Knowledge Base:
+- IF Wrinkled face AND Short muzzle THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image contains a wrinkled face and a short muzzle, matching the features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 11: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Japanese Chin
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 12: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Long, flowing white and grey fur
+- [Concrete observable feature 2] Pointed, erect ears
+Knowledge Base:
+- IF Long, flowing white and grey fur AND Pointed, erect ears THEN Japanese Chin
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 13: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Wrinkled face]
+- [Short muzzle]
+Knowledge Base:
+- IF [Wrinkled face] AND [Short muzzle] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image contains a wrinkled face and a short muzzle, matching the features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 14: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Miniature Pinscher
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Miniature Pinscher.
+<response>Miniature Pinscher</response>
+----------------------------------------
+Query 15: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Dark brown fur
+- [Concrete observable feature 2] Pointed ears
+Knowledge Base:
+- IF Dark brown fur AND Pointed ears THEN Miniature Pinscher
+Rule Check:
+- The Target Image contains dark brown fur and pointed ears, which matches the rule for Miniature Pinscher.
+<response>Miniature Pinscher</response>
+----------------------------------------
+Query 16: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Light grey fur
+- [Concrete observable feature 2] Floppy ears
+Knowledge Base:
+- IF Light grey fur AND Floppy ears THEN Japanese Chin
+Rule Check:
+- The Target Image contains light grey fur and floppy ears, which matches the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 17: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Blue-grey fur]
+- [Large, round eyes]
+Knowledge Base:
+- IF [Blue-grey fur] AND [Large, round eyes] THEN Bombay
+Rule Check:
+- The Target Image exhibits blue-grey fur and large, round eyes. This matches the features defined in the rule for Bombay.
+<response>Bombay</response>
+----------------------------------------
+Query 18: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Wrinkled face]
+- [Short muzzle]
+Knowledge Base:
+- IF [Wrinkled face] AND [Short muzzle] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image exhibits a wrinkled face and a short muzzle, matching the features associated with Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 19: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark gray fur]
+- [Pointed ears]
+Knowledge Base:
+- IF [Dark gray fur] AND [Pointed ears] THEN Japanese Chin
+Rule Check:
+- The Target Image contains dark gray fur and pointed ears. This matches the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 20: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 21: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark gray fur]
+- [Drooping ears]
+Knowledge Base:
+- IF [Dark gray fur] AND [Drooping ears] THEN Japanese Chin
+Rule Check:
+- The Target Image exhibits dark gray fur and drooping ears, matching the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 22: Expected: [Miniature Pinscher] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Long snout
+- [Concrete observable feature 2] Large erect ears
+Knowledge Base:
+- IF Long snout AND Large erect ears THEN Miniature Pinscher
+Rule Check:
+- The Target Image contains a long snout and large erect ears, which matches the features specified in the rule for Miniature Pinscher.
+<response>Miniature Pinscher</response>
+----------------------------------------
+Query 23: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark gray fur]
+- [Short muzzle]
+Knowledge Base:
+- IF [Dark gray fur] AND [Short muzzle] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image exhibits dark gray fur and a short muzzle, matching the features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 24: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Large, pointed ears
+- [Short, smooth fur
+Knowledge Base:
+- IF [Large, pointed ears] AND [Short, smooth fur] THEN Japanese Chin
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 25: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Japanese Chin
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 26: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark brown fur]
+- [Short muzzle]
+Knowledge Base:
+- IF [Dark brown fur] AND [Short muzzle] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image contains dark brown fur and a short muzzle, matching the features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 27: Expected: [Miniature Pinscher] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Large, erect ears
+- [Concrete observable feature 2] Smooth, short, tan-colored fur
+Knowledge Base:
+- IF Large, erect ears AND Smooth, short, tan-colored fur THEN Japanese Chin
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 28: Expected: [Bombay] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Black fur]
+- [Pointed ears]
+Knowledge Base:
+- IF [Black fur] AND [Pointed ears] THEN Japanese Chin
+Rule Check:
+- The Target Image contains black fur and pointed ears. This matches the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 29: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark blue fur]
+- [Pointed ears]
+Knowledge Base:
+- IF [Dark blue fur] AND [Pointed ears] THEN Bombay
+Rule Check:
+- The Target Image contains dark blue fur and pointed ears, which matches the rule for Bombay.
+<response>Bombay</response>
+----------------------------------------
+Query 30: Expected: [Bombay] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Gray fur
+- [Concrete observable feature 2] Pointed ears
+Knowledge Base:
+- IF Gray fur AND Pointed ears THEN Japanese Chin
+Rule Check:
+- The Target Image contains gray fur and pointed ears, which matches the features specified in the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 31: Expected: [Bombay] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Short, dark fur]
+- [Pointed ears]
+Knowledge Base:
+- IF [Short, dark fur] AND [Pointed ears] THEN Japanese Chin
+Rule Check:
+- The Target Image exhibits short, dark fur and pointed ears. These features match the rule for Japanese Chin.
+<response>Japanese Chin</response>
+----------------------------------------
+Query 32: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Blue-grey fur]
+- [Large, round eyes]
+Knowledge Base:
+- IF [Blue-grey fur] AND [Large, round eyes] THEN Bombay
+Rule Check:
+- The Target Image exhibits blue-grey fur and large, round eyes, matching the features specified in the rule for Bombay.
+<response>Bombay</response>
+----------------------------------------
+Query 33: Expected: [Bombay] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark, short muzzle
+- [Floppy ears]
+Knowledge Base:
+- IF [Dark, short muzzle] AND [Floppy ears] THEN Staffordshire Bull Terrier
+Rule Check:
+- The Target Image contains a dark, short muzzle and floppy ears, matching the features specified in the rule for Staffordshire Bull Terrier.
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 34: Expected: [Bombay] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN Miniature Pinscher
+Rule Check:
+- The Target Image contains the exact features specified in the rule for Miniature Pinscher.
+<response>Miniature Pinscher</response>
+----------------------------------------
+Query 35: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark gray fur]
+- [Large, round eyes]
+Knowledge Base:
+- IF [Dark gray fur] AND [Large, round eyes] THEN Bombay
+Rule Check:
+- The Target Image contains dark gray fur and large, round eyes, matching the features specified in the rule for Bombay.
+<response>Bombay</response>
+----------------------------------------
+Query 36: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1] Brown fur
+- [Concrete observable feature 2] Slanted eyes
+Knowledge Base:
+- IF Brown fur AND Slanted eyes THEN Bombay
+Rule Check:
+- The Target Image contains brown fur and slanted eyes, which matches the features specified in the rule for Bombay.
+<response>Bombay</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.3333

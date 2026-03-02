@@ -1,0 +1,177 @@
+=== DEBUG LOG: gemma3 | flowers | Prompt: classification ===
+
+--- CONFIG: N=2, K=2, Q=5 ---
+Query 1: Expected: [71] | Extracted: [71] -> Correct: True
+Query 2: Expected: [71] | Extracted: [71] -> Correct: True
+Query 3: Expected: [71] | Extracted: [71] -> Correct: True
+Query 4: Expected: [71] | Extracted: [71] -> Correct: True
+Query 5: Expected: [71] | Extracted: [71] -> Correct: True
+Query 6: Expected: [1] | Extracted: [1] -> Correct: True
+Query 7: Expected: [1] | Extracted: [1] -> Correct: True
+Query 8: Expected: [1] | Extracted: [1] -> Correct: True
+Query 9: Expected: [1] | Extracted: [1] -> Correct: True
+Query 10: Expected: [1] | Extracted: [1] -> Correct: True
+-> FINAL ACCURACY for (2,2,5): 1.0000
+
+--- CONFIG: N=2, K=2, Q=8 ---
+Query 1: Expected: [101] | Extracted: [5] -> Correct: False
+Query 2: Expected: [101] | Extracted: [101] -> Correct: True
+Query 3: Expected: [101] | Extracted: [5] -> Correct: False
+Query 4: Expected: [101] | Extracted: [5] -> Correct: False
+Query 5: Expected: [101] | Extracted: [101] -> Correct: True
+Query 6: Expected: [101] | Extracted: [5] -> Correct: False
+Query 7: Expected: [101] | Extracted: [5] -> Correct: False
+Query 8: Expected: [101] | Extracted: [5] -> Correct: False
+Query 9: Expected: [5] | Extracted: [5] -> Correct: True
+Query 10: Expected: [5] | Extracted: [5] -> Correct: True
+Query 11: Expected: [5] | Extracted: [5] -> Correct: True
+Query 12: Expected: [5] | Extracted: [5] -> Correct: True
+Query 13: Expected: [5] | Extracted: [101] -> Correct: False
+Query 14: Expected: [5] | Extracted: [5] -> Correct: True
+Query 15: Expected: [5] | Extracted: [101] -> Correct: False
+Query 16: Expected: [5] | Extracted: [5] -> Correct: True
+-> FINAL ACCURACY for (2,2,8): 0.5000
+
+--- CONFIG: N=2, K=1, Q=5 ---
+Query 1: Expected: [19] | Extracted: [19] -> Correct: True
+Query 2: Expected: [19] | Extracted: [100] -> Correct: False
+Query 3: Expected: [19] | Extracted: [100] -> Correct: False
+Query 4: Expected: [19] | Extracted: [100] -> Correct: False
+Query 5: Expected: [19] | Extracted: [100] -> Correct: False
+Query 6: Expected: [100] | Extracted: [100] -> Correct: True
+Query 7: Expected: [100] | Extracted: [100] -> Correct: True
+Query 8: Expected: [100] | Extracted: [100] -> Correct: True
+Query 9: Expected: [100] | Extracted: [100] -> Correct: True
+Query 10: Expected: [100] | Extracted: [100] -> Correct: True
+-> FINAL ACCURACY for (2,1,5): 0.6000
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [3] | Extracted: [3] -> Correct: True
+Query 2: Expected: [3] | Extracted: [3] -> Correct: True
+Query 3: Expected: [3] | Extracted: [3] -> Correct: True
+Query 4: Expected: [3] | Extracted: [3] -> Correct: True
+Query 5: Expected: [3] | Extracted: [3] -> Correct: True
+Query 6: Expected: [3] | Extracted: [3] -> Correct: True
+Query 7: Expected: [3] | Extracted: [3] -> Correct: True
+Query 8: Expected: [3] | Extracted: [3] -> Correct: True
+Query 9: Expected: [3] | Extracted: [3] -> Correct: True
+Query 10: Expected: [84] | Extracted: [3] -> Correct: False
+Query 11: Expected: [84] | Extracted: [3] -> Correct: False
+Query 12: Expected: [84] | Extracted: [3] -> Correct: False
+Query 13: Expected: [84] | Extracted: [3] -> Correct: False
+Query 14: Expected: [84] | Extracted: [3] -> Correct: False
+Query 15: Expected: [84] | Extracted: [3] -> Correct: False
+Query 16: Expected: [84] | Extracted: [3] -> Correct: False
+Query 17: Expected: [84] | Extracted: [3] -> Correct: False
+Query 18: Expected: [84] | Extracted: [3] -> Correct: False
+-> FINAL ACCURACY for (2,1,9): 0.5000
+
+--- CONFIG: N=3, K=1, Q=5 ---
+Query 1: Expected: [44] | Extracted: [44] -> Correct: True
+Query 2: Expected: [44] | Extracted: [44] -> Correct: True
+Query 3: Expected: [44] | Extracted: [93] -> Correct: False
+Query 4: Expected: [44] | Extracted: [44] -> Correct: True
+Query 5: Expected: [44] | Extracted: [44] -> Correct: True
+Query 6: Expected: [93] | Extracted: [44] -> Correct: False
+Query 7: Expected: [93] | Extracted: [44] -> Correct: False
+Query 8: Expected: [93] | Extracted: [93] -> Correct: True
+Query 9: Expected: [93] | Extracted: [100] -> Correct: False
+Query 10: Expected: [93] | Extracted: [44] -> Correct: False
+Query 11: Expected: [100] | Extracted: [44] -> Correct: False
+Query 12: Expected: [100] | Extracted: [44] -> Correct: False
+Query 13: Expected: [100] | Extracted: [44] -> Correct: False
+Query 14: Expected: [100] | Extracted: [44] -> Correct: False
+Query 15: Expected: [100] | Extracted: [93] -> Correct: False
+-> FINAL ACCURACY for (3,1,5): 0.3333
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [85] | Extracted: [85] -> Correct: True
+Query 2: Expected: [85] | Extracted: [85] -> Correct: True
+Query 3: Expected: [85] | Extracted: [85] -> Correct: True
+Query 4: Expected: [85] | Extracted: [85] -> Correct: True
+Query 5: Expected: [85] | Extracted: [85] -> Correct: True
+Query 6: Expected: [85] | Extracted: [85] -> Correct: True
+Query 7: Expected: [85] | Extracted: [79] -> Correct: False
+Query 8: Expected: [85] | Extracted: [85] -> Correct: True
+Query 9: Expected: [85] | Extracted: [85] -> Correct: True
+Query 10: Expected: [42] | Extracted: [42] -> Correct: True
+Query 11: Expected: [42] | Extracted: [79] -> Correct: False
+Query 12: Expected: [42] | Extracted: [79] -> Correct: False
+Query 13: Expected: [42] | Extracted: [85] -> Correct: False
+Query 14: Expected: [42] | Extracted: [42] -> Correct: True
+Query 15: Expected: [42] | Extracted: [42] -> Correct: True
+Query 16: Expected: [42] | Extracted: [85] -> Correct: False
+Query 17: Expected: [42] | Extracted: [79] -> Correct: False
+Query 18: Expected: [42] | Extracted: [79] -> Correct: False
+Query 19: Expected: [79] | Extracted: [79] -> Correct: True
+Query 20: Expected: [79] | Extracted: [79] -> Correct: True
+Query 21: Expected: [79] | Extracted: [79] -> Correct: True
+Query 22: Expected: [79] | Extracted: [85] -> Correct: False
+Query 23: Expected: [79] | Extracted: [85] -> Correct: False
+Query 24: Expected: [79] | Extracted: [79] -> Correct: True
+Query 25: Expected: [79] | Extracted: [85] -> Correct: False
+Query 26: Expected: [79] | Extracted: [79] -> Correct: True
+Query 27: Expected: [79] | Extracted: [79] -> Correct: True
+-> FINAL ACCURACY for (3,1,9): 0.6296
+
+--- CONFIG: N=4, K=1, Q=5 ---
+Query 1: Expected: [86] | Extracted: [27] -> Correct: False
+Query 2: Expected: [86] | Extracted: [27] -> Correct: False
+Query 3: Expected: [86] | Extracted: [27] -> Correct: False
+Query 4: Expected: [86] | Extracted: [27] -> Correct: False
+Query 5: Expected: [86] | Extracted: [27] -> Correct: False
+Query 6: Expected: [27] | Extracted: [27] -> Correct: True
+Query 7: Expected: [27] | Extracted: [65] -> Correct: False
+Query 8: Expected: [27] | Extracted: [27] -> Correct: True
+Query 9: Expected: [27] | Extracted: [27] -> Correct: True
+Query 10: Expected: [27] | Extracted: [27] -> Correct: True
+Query 11: Expected: [65] | Extracted: [65] -> Correct: True
+Query 12: Expected: [65] | Extracted: [65] -> Correct: True
+Query 13: Expected: [65] | Extracted: [65] -> Correct: True
+Query 14: Expected: [65] | Extracted: [65] -> Correct: True
+Query 15: Expected: [65] | Extracted: [65] -> Correct: True
+Query 16: Expected: [60] | Extracted: [27] -> Correct: False
+Query 17: Expected: [60] | Extracted: [65] -> Correct: False
+Query 18: Expected: [60] | Extracted: [60] -> Correct: True
+Query 19: Expected: [60] | Extracted: [60] -> Correct: True
+Query 20: Expected: [60] | Extracted: [27] -> Correct: False
+-> FINAL ACCURACY for (4,1,5): 0.5500
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [63] | Extracted: [63] -> Correct: True
+Query 2: Expected: [63] | Extracted: [63] -> Correct: True
+Query 3: Expected: [63] | Extracted: [31] -> Correct: False
+Query 4: Expected: [63] | Extracted: [63] -> Correct: True
+Query 5: Expected: [63] | Extracted: [63] -> Correct: True
+Query 6: Expected: [63] | Extracted: [63] -> Correct: True
+Query 7: Expected: [63] | Extracted: [31] -> Correct: False
+Query 8: Expected: [63] | Extracted: [63] -> Correct: True
+Query 9: Expected: [63] | Extracted: [63] -> Correct: True
+Query 10: Expected: [51] | Extracted: [51] -> Correct: True
+Query 11: Expected: [51] | Extracted: [31] -> Correct: False
+Query 12: Expected: [51] | Extracted: [63] -> Correct: False
+Query 13: Expected: [51] | Extracted: [51] -> Correct: True
+Query 14: Expected: [51] | Extracted: [17] -> Correct: False
+Query 15: Expected: [51] | Extracted: [17] -> Correct: False
+Query 16: Expected: [51] | Extracted: [51] -> Correct: True
+Query 17: Expected: [51] | Extracted: [31] -> Correct: False
+Query 18: Expected: [51] | Extracted: [31] -> Correct: False
+Query 19: Expected: [31] | Extracted: [31] -> Correct: True
+Query 20: Expected: [31] | Extracted: [51] -> Correct: False
+Query 21: Expected: [31] | Extracted: [31] -> Correct: True
+Query 22: Expected: [31] | Extracted: [31] -> Correct: True
+Query 23: Expected: [31] | Extracted: [51] -> Correct: False
+Query 24: Expected: [31] | Extracted: [51] -> Correct: False
+Query 25: Expected: [31] | Extracted: [17] -> Correct: False
+Query 26: Expected: [31] | Extracted: [51] -> Correct: False
+Query 27: Expected: [31] | Extracted: [17] -> Correct: False
+Query 28: Expected: [17] | Extracted: [51] -> Correct: False
+Query 29: Expected: [17] | Extracted: [17] -> Correct: True
+Query 30: Expected: [17] | Extracted: [51] -> Correct: False
+Query 31: Expected: [17] | Extracted: [31] -> Correct: False
+Query 32: Expected: [17] | Extracted: [31] -> Correct: False
+Query 33: Expected: [17] | Extracted: [31] -> Correct: False
+Query 34: Expected: [17] | Extracted: [51] -> Correct: False
+Query 35: Expected: [17] | Extracted: [51] -> Correct: False
+Query 36: Expected: [17] | Extracted: [51] -> Correct: False
+-> FINAL ACCURACY for (4,1,9): 0.3889

@@ -1,0 +1,2719 @@
+=== DEBUG LOG: gemma3 | flowers | Prompt: axioms_ontology_v2 ===
+
+--- CONFIG: N=2, K=2, Q=5 ---
+Query 1: Expected: [71] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>71</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 71 ⊑ hasColor Blue, Green (Necessary condition)
+- 71 ⊑ hasShape/Part Petal, Stem (Necessary condition)
+- 71 ⊑ hasTexture Complex, Irregular (Necessary condition)
+- hasColor Blue, Green ⊑ 71 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Blue, Green, Purple
+- hasShape/Part: Petal, Stem, Bud
+- hasTexture: Complex, Irregular, Veined
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of blue, green, and purple colors (hasColor Blue, Green, Purple). It also displays petal-like structures and a stem (hasShape/Part Petal, Stem, Bud), and a complex, irregular, and veined texture (hasTexture Complex, Irregular, Veined). These observed properties align with the TBox axioms defining class 71, specifically the necessary conditions of having blue and green colors, petal and stem shapes, and a complex texture. The presence of these features is sufficient to classify the image as 71.
+----------------------------------------
+Query 2: Expected: [71] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>71</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 71 ⊑ hasColor Green
+- 71 ⊑ hasShape/Part Petal
+- 71 ⊑ hasTexture Complex
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Green, Yellow, Pink, Purple
+- hasShape/Part: Multiple petals, central core, stem-like structure
+- hasTexture: Irregular, layered, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex texture and multiple petal-like shapes, predominantly in green, yellow, pink, and purple. This aligns with the TBox axioms defining class 71, which necessitates the presence of green color, petal-like shapes, and a complex texture. The observed colors and shapes are consistent with the characteristics associated with class 71.
+----------------------------------------
+Query 3: Expected: [71] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>71</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 71 ⊑ hasColor green, pink, blue (Necessary condition)
+- 71 ⊑ hasShape/Part petal, stem (Necessary condition)
+- 71 ⊑ hasTexture complex, layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, pink, blue, white
+- hasShape/Part: petal, stem, leaves
+- hasTexture: complex, layered, irregular
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, layered texture with a combination of green, pink, blue, and white colors. It also contains petal and stem-like structures. These observed properties (hasColor, hasShape/Part, hasTexture) align with the necessary conditions defined in the TBox for class 71. Therefore, based on the visual evidence, the image is classified as 71.
+----------------------------------------
+Query 4: Expected: [71] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>71</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 71 ⊑ hasColor [green, blue, yellow] (Necessary condition)
+- 71 ⊑ hasShape/Part [petal, stem, leaf-like structure] (Necessary condition)
+- 71 ⊑ hasTexture [complex, irregular] (Necessary condition)
+- hasColor [green, blue, yellow] ∧ hasShape/Part [petal, stem, leaf-like structure] ∧ hasTexture [complex, irregular] ⊑ 71 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [green, blue, yellow, pink]
+- hasShape/Part: [petal, stem, leaf-like structure, irregular lobes]
+- hasTexture: [complex, irregular, mottled]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of green, blue, yellow, and pink colors (hasColor). It also displays petal-like structures, a stem, and irregular lobes (hasShape/Part). The texture appears complex and irregular (hasTexture). These observed properties align with the sufficient condition axiom stating that the presence of green, blue, yellow, pink colors, petal-like structures, a stem, irregular lobes, and a complex, irregular texture collectively imply the entity is classified as 71.
+----------------------------------------
+Query 5: Expected: [71] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>71</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 71 ⊑ hasColor Green
+- 71 ⊑ hasShape/Part Petal
+- 71 ⊑ hasTexture Complex
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Green, Yellow, Pink
+- hasShape/Part: Petal, Stem, Leaves
+- hasTexture: Complex, Veined
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex texture and is predominantly green with hints of yellow and pink. It also contains petal-like structures and a stem. These properties align with the TBox axioms for class 71, which states that 71 must have a green color, petal-like shapes, and a complex texture. Therefore, the image is classified as 71.
+----------------------------------------
+Query 6: Expected: [1] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>1</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 1 ⊑ hasColor green, purple, pink (Necessary condition)
+- 1 ⊑ hasShape/Part rounded, central core (Necessary condition)
+- 1 ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, purple, pink, white
+- hasShape/Part: rounded, central core, elongated stem
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of green, purple, and pink colors (hasColor), a rounded shape with a central core (hasShape/Part), and a smooth texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for class 1. Therefore, based on the provided few-shot examples and the observed visual features, the image is classified as 1.
+----------------------------------------
+Query 7: Expected: [1] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>1</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 1 ⊑ hasColor [green, blue, purple] (Necessary condition)
+- 1 ⊑ hasShape/Part [rounded top, rounded bottom, central connection] (Necessary condition)
+- 1 ⊑ hasTexture [complex, mottled] (Necessary condition)
+- hasColor [green, blue, purple] ∧ hasShape/Part [rounded top, rounded bottom, central connection] ∧ hasTexture [complex, mottled] ⊑ 1 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [green, blue, purple]
+- hasShape/Part: [rounded top, rounded bottom, central connection]
+- hasTexture: [complex, mottled]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, mottled texture with a color palette of green, blue, and purple. It also displays a rounded top, a rounded bottom, and a central connection between the two rounded portions. These observed properties (hasColor, hasShape/Part, hasTexture) align with the sufficient condition defined in the TBox for class 1. Therefore, the image is classified as 1.
+----------------------------------------
+Query 8: Expected: [1] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>1</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 1 ⊑ hasColor purple, green, orange (Necessary condition)
+- 1 ⊑ hasShape/Part rounded top, rounded bottom (Necessary condition)
+- 1 ⊑ hasTexture bumpy (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, green, orange
+- hasShape/Part: rounded top, rounded bottom
+- hasTexture: bumpy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a purple, green, and orange coloration, a rounded top and bottom shape, and a bumpy texture. These observed properties align with the necessary conditions defined in the TBox for class 1. Therefore, the image is classified as 1.
+----------------------------------------
+Query 9: Expected: [1] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>1</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 1 ≡ hasShape/Part [rounded top, bulbous base] (Necessary & Sufficient)
+- 1 ⊑ hasColor [varied, including purple, green, and blue] (Necessary)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, green, blue, pink
+- hasShape/Part: rounded top, bulbous base, central stem
+- hasTexture: mottled, complex surface
+
+4. Logical Explanation (DL & NL):
+The image exhibits a rounded top and a bulbous base (hasShape/Part), which, according to the TBox, is both necessary and sufficient to classify the entity as 1. The presence of varied colors (purple, green, blue, pink) is a necessary condition, and is observed in the image. The mottled texture is an additional observed property, but not directly used in the classification.
+----------------------------------------
+Query 10: Expected: [1] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>71</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 71 ⊑ hasColor Green, Yellow, Brown (Necessary condition)
+- 71 ⊑ hasShape/Part Petal, Stem (Necessary condition)
+- 71 ⊑ hasTexture Smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Green, Yellow, Brown, Blue
+- hasShape/Part: Petal, Stem, Central Core
+- hasTexture: Smooth, Slightly Rough
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of green, yellow, and brown colors (hasColor), along with petal and stem structures (hasShape/Part), and a smooth texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for class 71. The presence of a central core is a further characteristic consistent with the visual features associated with class 71. Therefore, based on the observed properties and their relationship to the established axioms, the image is classified as 71.
+----------------------------------------
+-> FINAL ACCURACY for (2,2,5): 0.9000
+
+--- CONFIG: N=2, K=2, Q=8 ---
+Query 1: Expected: [101] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>5</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 5 ⊑ hasColor blue, green, purple (Necessary condition)
+- 5 ⊑ hasShape/Part star-like structure, central stem (Necessary condition)
+- 5 ⊑ hasTexture complex, irregular (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, purple, pink
+- hasShape/Part: star-like structure, central stem, multiple petals
+- hasTexture: complex, irregular, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The image exhibits a star-like structure with a central stem and multiple petals, alongside a complex and irregular texture, and a color palette including blue, green, purple, and pink. These observed properties (hasColor, hasShape/Part, hasTexture) align with the necessary conditions defined in the TBox for class 5. Therefore, based on the provided few-shot examples and the observed visual features, the image is classified as 5.
+----------------------------------------
+Query 2: Expected: [101] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>101</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 101 ⊑ hasShape/Part [leaf-like structure] (Necessary condition)
+- hasShape/Part [leaf-like structure] ⊑ 101 (Sufficient condition)
+- 101 ⊑ hasTexture [complex, detailed surface] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, purple
+- hasShape/Part: central leaf-like structure, elongated stem, multiple leaflets
+- hasTexture: complex, detailed surface with intricate patterns
+
+4. Logical Explanation (DL & NL):
+The image exhibits a central leaf-like structure (hasShape/Part) and a complex, detailed surface texture (hasTexture). These properties satisfy the necessary and sufficient conditions defined in the TBox for class 101. The presence of a leaf-like structure is sufficient to classify the entity as 101, and the complex texture validates this assumption.
+----------------------------------------
+Query 3: Expected: [101] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>5</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 5 ⊑ hasColor Blue, Green, Purple (Necessary condition)
+- 5 ⊑ hasShape Star-like (Necessary condition)
+- 5 ⊑ hasTexture Complex, Irregular (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Blue, Green, Purple, Red
+- hasShape/Part: Central star-like shape, radiating appendages, irregular patterns
+- hasTexture: Complex, Irregular, Distorted
+
+4. Logical Explanation (DL & NL):
+The image exhibits a central star-like shape (hasShape Star-like) and a complex, irregular texture (hasTexture Complex, Irregular). It also displays a mix of blue, green, purple, and red colors (hasColor Blue, Green, Purple, Red). These observed properties align with the necessary conditions defined in the TBox for class 5. Therefore, based on the visual evidence, the image is classified as 5.
+----------------------------------------
+Query 4: Expected: [101] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>5</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 5 ⊑ hasColor green
+- 5 ⊑ hasShape/Part petals
+- 5 ⊑ hasShape/Part stem
+- 5 ⊑ hasTexture smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, yellow
+- hasShape/Part: petals, stem
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits green color, petals, a stem, and a smooth texture. These properties align with the TBox axioms defining class 5. The presence of petals and a stem, combined with a predominantly green color and smooth texture, strongly suggests the image represents a flower, which is classified as 5.
+----------------------------------------
+Query 5: Expected: [101] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>101</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 101 ⊑ hasColor green, blue, purple (Necessary condition)
+- 101 ⊑ hasShape/Part leaf-like structure (Necessary condition)
+- 101 ⊑ hasTexture complex, irregular (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, blue, purple, pink
+- hasShape/Part: leaf-like structure, branching pattern, complex veins
+- hasTexture: complex, irregular, mottled
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, irregular texture and a leaf-like structure, with dominant colors of green, blue, purple, and pink. These observed properties (hasColor, hasShape/Part, hasTexture) all satisfy the necessary conditions defined in the TBox for class 101. Therefore, the image is classified as 101.
+----------------------------------------
+Query 6: Expected: [101] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>101</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 101 ⊑ hasShape/Part: leaf-like structure
+- hasShape/Part: leaf-like structure ⊑ 101 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, blue, purple
+- hasShape/Part: central leaf-like structure with multiple leaflets, elongated stem
+- hasTexture: complex, detailed surface texture
+
+4. Logical Explanation (DL & NL):
+The image exhibits a central leaf-like structure with multiple leaflets and an elongated stem. This aligns with the TBox axiom stating that a leaf-like structure is sufficient to classify the entity as 101. The observed colors (green, blue, purple) and complex texture further support this classification, although they are not explicitly defined in the TBox.
+----------------------------------------
+Query 7: Expected: [101] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>5</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 5 ⊑ hasShape/Part [elongated body, two wings, long legs] (Necessary condition)
+- hasShape/Part [elongated body, two wings, long legs] ⊑ 5 (Sufficient condition)
+- 5 ⊑ hasColor [various iridescent colors] (Necessary condition)
+- hasColor [various iridescent colors] ⊑ 5 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [purple, green, blue, pink]
+- hasShape/Part: [elongated body, two wings, long legs]
+- hasTexture: [smooth, slightly reflective]
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated body, two wings, and long legs (hasShape/Part), which are sufficient conditions for classifying the entity as 5. Furthermore, the image displays a variety of iridescent colors (hasColor), which is also a sufficient condition for classifying the entity as 5. The presence of both these properties validates the classification.
+----------------------------------------
+Query 8: Expected: [101] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>5</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 5 ⊑ hasColor green, purple (Necessary condition)
+- 5 ⊑ hasShape/Part petal, stem (Necessary condition)
+- 5 ⊑ hasTexture complex, intricate (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, purple, yellow
+- hasShape/Part: petal, stem, stamen
+- hasTexture: complex, intricate, layered
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, intricate texture and displays green, purple, and yellow colors. It also contains petals and a stem. These observed properties (hasColor green, purple, yellow; hasShape/Part petal, stem, stamen; hasTexture complex, intricate, layered) align with the necessary conditions defined in the TBox for class 5. Therefore, the image is classified as 5.
+----------------------------------------
+Query 9: Expected: [5] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>5</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 5 ⊑ hasColor blue, pink, green (Necessary condition)
+- 5 ⊑ hasShape/Part complex, branching structure (Necessary condition)
+- 5 ⊑ hasTexture irregular, mottled (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, pink, green, purple
+- hasShape/Part: complex, branching structure, elongated protrusions
+- hasTexture: irregular, mottled, dense
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, branching structure with irregular, mottled texture and a mix of blue, pink, green, and purple colors. These observed properties (hasColor, hasShape/Part, hasTexture) all align with the necessary conditions defined in the TBox for class 5. Therefore, based on the provided few-shot examples and the observed visual features, the image is classified as 5.
+----------------------------------------
+Query 10: Expected: [5] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>5</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 5 ⊑ hasShape/Part [bulbous head] (Necessary condition)
+- 5 ⊑ hasShape/Part [long stalk] (Necessary condition)
+- 5 ⊑ hasTexture [smooth] (Necessary condition)
+- hasShape/Part [bulbous head] ∧ hasShape/Part [long stalk] ∧ hasTexture [smooth] ⊑ 5 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, green, blue
+- hasShape/Part: bulbous head, long stalk, multiple thin legs
+- hasTexture: smooth (on the head)
+
+4. Logical Explanation (DL & NL):
+The image exhibits a bulbous head, a long stalk, and a smooth texture. These properties align with the TBox axioms defining class 5. The presence of a bulbous head and a long stalk, combined with a smooth texture, is sufficient to classify the entity as 5. The observed colors (purple, green, blue) do not contradict the classification and are therefore irrelevant to the reasoning process.
+----------------------------------------
+Query 11: Expected: [5] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>5</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 5 ⊑ hasColor green
+- 5 ⊑ hasShape/Part elongatedLeaves
+- 5 ⊑ hasTexture complexVeinPattern
+- hasColor green ⊑ 5 (Sufficient)
+- hasShape/Part elongatedLeaves ⊑ 5 (Sufficient)
+- hasTexture complexVeinPattern ⊑ 5 (Sufficient)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, purple, pink
+- hasShape/Part: elongatedLeaves, centralStem, branchingStructure
+- hasTexture: complexVeinPattern, irregularEdges
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dominant green color (hasColor green), elongated leaves (hasShape/Part elongatedLeaves), and a complex vein pattern (hasTexture complexVeinPattern). These properties are sufficient conditions for classifying the entity as 5, according to the established TBox axioms. The presence of these features aligns with the visual characteristics associated with class 5.
+----------------------------------------
+Query 12: Expected: [5] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>5</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 5 ⊑ hasShape/Part: complex, multi-lobed structure
+- hasShape/Part: complex, multi-lobed structure ⊑ 5 (Sufficient condition)
+- 5 ⊑ hasColor: green, purple, pink (Necessary condition)
+- hasColor: green, purple, pink ⊑ 5 (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, purple, pink, blue
+- hasShape/Part: complex, multi-lobed structure with elongated central stem and radiating appendages
+- hasTexture: intricate, somewhat blurred, with a layered appearance
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, multi-lobed structure and a color palette including green, purple, and pink. These observed properties align with the TBox axioms defining class 5. The presence of a complex, multi-lobed structure is sufficient to classify the entity as 5, and the observed colors are necessary characteristics of 5.
+----------------------------------------
+Query 13: Expected: [5] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>5</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 5 ⊑ hasShape/Part [butterfly wings] (Necessary condition)
+- hasShape/Part [butterfly wings] ⊑ 5 (Sufficient condition)
+- 5 ⊑ hasTexture [complex patterns] (Necessary condition)
+- hasTexture [complex patterns] ⊑ 5 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, purple
+- hasShape/Part: butterfly wings, elongated body
+- hasTexture: intricate, patterned
+
+4. Logical Explanation (DL & NL):
+The image exhibits butterfly wings and complex patterns. The presence of butterfly wings (hasShape/Part [butterfly wings]) is a sufficient condition for classifying the entity as 5. The observed intricate, patterned texture (hasTexture [complex patterns]) further validates this classification, as complex patterns are a necessary characteristic of 5. The colors (blue, green, purple) are not defining features, but are consistent with the appearance of a butterfly.
+----------------------------------------
+Query 14: Expected: [5] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>5</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 5 ⊑ hasColor blue, green, purple (Necessary condition)
+- 5 ⊑ hasShape/Part leaf-like structure (Necessary condition)
+- 5 ⊑ hasTexture complex, irregular (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, purple, pink
+- hasShape/Part: leaf-like structure, central stem, irregular lobes
+- hasTexture: complex, irregular, mottled
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, irregular texture and a leaf-like structure, and displays a combination of blue, green, purple, and pink colors. These observed properties (hasColor, hasShape/Part, hasTexture) align with the necessary conditions defined in the TBox for class 5. Therefore, the image is classified as 5.
+----------------------------------------
+Query 15: Expected: [5] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>101</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 101 ⊑ hasColor blue
+- 101 ⊑ hasShape/Part leaf-like structure
+- 101 ⊑ hasTexture complex vein pattern
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, purple
+- hasShape/Part: leaf-like structure, elongated stem
+- hasTexture: complex vein pattern, irregular edges
+
+4. Logical Explanation (DL & NL):
+The image exhibits a blue coloration (hasColor blue), a leaf-like structure (hasShape/Part leaf-like structure), and a complex vein pattern (hasTexture complex vein pattern). These observed properties align with the TBox axioms defining class 101. Therefore, the image is classified as 101.
+----------------------------------------
+Query 16: Expected: [5] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>5</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 101 ⊑ hasShape LeafLike (Necessary condition)
+- 5 ⊑ hasShape InsectLike (Necessary condition)
+- hasShape InsectLike ⊑ 5 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Purple, Green, Pink
+- hasShape/Part: Long body, six legs, wings, antennae
+- hasTexture: Rough, segmented
+
+4. Logical Explanation (DL & NL):
+The image exhibits a distinct "InsectLike" shape, characterized by a long body, six legs, wings, and antennae. This satisfies the sufficient condition for class "5". While the image also has a "LeafLike" shape, the presence of insect-specific features (legs, wings, antennae) overrides the potential for it to be a leaf. Therefore, the observed properties strongly indicate that the entity is an insect.
+----------------------------------------
+-> FINAL ACCURACY for (2,2,8): 0.6250
+
+--- CONFIG: N=2, K=1, Q=5 ---
+Query 1: Expected: [19] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>19</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 19 ⊑ hasShape/Part: spathe
+- 19 ⊑ hasShape/Part: spadix
+- 19 ⊑ hasColor: green
+- 19 ⊑ hasColor: white
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, yellow, white
+- hasShape/Part: elongated spathe, central spadix
+- hasTexture: smooth, waxy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a distinct spathe and spadix structure, which are key components of a Calla Lily (class 19). The presence of green and white coloration, combined with the smooth, waxy texture, further validates this classification. The observed 'hasShape/Part' properties (spathe and spadix) are necessary conditions for the entity to be classified as 19. The observed colors (green, white, yellow) are also consistent with the typical coloration of a Calla Lily, further strengthening the classification.
+----------------------------------------
+Query 2: Expected: [19] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>19</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 19 ⊑ hasVisualFeature [petal-like structure] (Necessary condition)
+- hasVisualFeature [petal-like structure] ⊑ 19 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, white, green, purple
+- hasShape/Part: two large rounded structures resembling petals, a central stalk, smaller petal-like structures emerging from the center.
+- hasTexture: smooth, slightly glossy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a distinct petal-like structure, which is a necessary and sufficient condition for classifying it as 19. The presence of rounded, petal-like structures, along with a central stalk and smaller petal-like features, aligns with the visual characteristics associated with 19 as defined by the TBox. The observed colors (blue, white, green, purple) do not contradict this classification and are consistent with the general appearance of 19.
+----------------------------------------
+Query 3: Expected: [19] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>19</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 19 ⊑ hasColor Blue (Necessary condition)
+- 19 ⊑ hasShape Petal (Necessary condition)
+- hasColor Blue ⊑ 19 (Sufficient condition)
+- hasShape Petal ⊑ 19 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Blue, White
+- hasShape/Part: Petal, Stem
+- hasTexture: Smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dominant blue color and a petal-like shape. The presence of the blue color (hasColor Blue) is a necessary condition for classifying the entity as 19 (as defined in the TBox). The petal shape (hasShape Petal) is also a necessary condition.  The combination of these properties satisfies the sufficient conditions for 19, leading to the classification.
+----------------------------------------
+Query 4: Expected: [19] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>19</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 19 ⊑ hasColor Purple, Blue, Green (Necessary condition)
+- 19 ⊑ hasShape Curved, Elongated (Necessary condition)
+- hasColor Purple, Blue, Green ⊑ 19 (Sufficient condition)
+- hasShape Curved, Elongated ⊑ 19 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Purple, Blue, Green
+- hasShape/Part: Curved, Elongated, Petal-like structures
+- hasTexture: Smooth, Glossy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of colors (Purple, Blue, Green) and a curved, elongated shape with petal-like structures. These observed properties align with the TBox axioms defining class 19. Specifically, the presence of Purple, Blue, and Green colors, along with the curved and elongated shape, are sufficient conditions to classify the image as 19. The petal-like structures further validate this classification, as they are consistent with the visual characteristics associated with 19.
+----------------------------------------
+Query 5: Expected: [19] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>19</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 19 ⊑ hasColor Green
+- 19 ⊑ hasShape/Part Petal
+- 19 ⊑ hasTexture Smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Green, Blue, Red
+- hasShape/Part: Petal, Stem, Leaf
+- hasTexture: Smooth, Glossy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly green color (hasColor Green), which is a necessary condition for class 19. It also displays petal-like structures (hasShape/Part Petal) and a smooth, glossy texture (hasTexture Smooth), further validating the classification as 19. The presence of a stem and leaf are consistent with a floral structure, reinforcing the classification.
+----------------------------------------
+Query 6: Expected: [100] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>19</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 19 ⊑ hasShape/Part spatulateLeaf (Necessary condition)
+- hasShape/Part spatulateLeaf ⊑ 19 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, yellow, red, blue
+- hasShape/Part: spatulateLeaf, stem, veins
+- hasTexture: smooth, glossy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a spatulateLeaf shape, which is a necessary and sufficient condition for classifying it as 19. The presence of green, yellow, red, and blue colors, along with a stem and veins, further validates the observation of the spatulateLeaf shape. The smooth, glossy texture is consistent with the expected appearance of a leaf. Therefore, based on the observed spatulateLeaf shape, the image is classified as 19.
+----------------------------------------
+Query 7: Expected: [100] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>100</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 100 ⊑ hasColor Blue, Purple, Green (Necessary condition)
+- 100 ⊑ hasShape/Part Petals, Stem, Leaves (Necessary condition)
+- 100 ⊑ hasTexture Smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Blue, Purple, Green
+- hasShape/Part: Petals, Stem, Leaves
+- hasTexture: Smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of blue, purple, and green colors (hasColor Blue, Purple, Green). It also displays petals, a stem, and leaves (hasShape/Part Petals, Stem, Leaves), and a smooth texture (hasTexture Smooth). These observed properties align with the necessary conditions defined in the TBox for class 100. Therefore, based on the visual evidence, the image is classified as 100.
+----------------------------------------
+Query 8: Expected: [100] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>19</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 19 ⊑ hasColor Pink
+- 19 ⊑ hasShape Spiral
+- hasShape Spiral ⊑ 19 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Pink, Green, Yellow
+- hasShape/Part: Spiral, central core, petal-like structures
+- hasTexture: Smooth, slightly glossy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a prominent spiral shape (hasShape Spiral). According to the TBox, a spiral shape is sufficient to classify the entity as 19. The presence of pink coloration (hasColor Pink) aligns with the TBox axiom for 19, further validating the classification. The observed smooth and slightly glossy texture is consistent with the general appearance of a flower, reinforcing the classification.
+----------------------------------------
+Query 9: Expected: [100] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>19</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 19 ⊑ hasVisualFeature [elongated, curved, petal-like structures] (Necessary condition)
+- hasVisualFeature [elongated, curved, petal-like structures] ⊑ 19 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, red, brown, purple
+- hasShape/Part: elongated, curved, petal-like structures, central core, layered appearance
+- hasTexture: smooth, slightly glossy
+
+4. Logical Explanation (DL & NL):
+The image exhibits elongated, curved, petal-like structures, a layered appearance, and a smooth, slightly glossy texture. These visual features align with the TBox axiom stating that if an entity has elongated, curved, petal-like structures, it is classified as 19. The observed colors (green, red, brown, purple) are not explicitly defined in the TBox but do not contradict the classification. Therefore, the presence of the key shape/part features is sufficient to classify the image as 19.
+----------------------------------------
+Query 10: Expected: [100] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>100</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 100 ⊑ hasColor Yellow, Purple, Green (Necessary condition)
+- 100 ⊑ hasShape/Part Petal, Stem, Bud (Necessary condition)
+- 100 ⊑ hasTexture Smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Yellow, Purple, Green
+- hasShape/Part: Petal, Stem, Bud
+- hasTexture: Smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of Yellow, Purple, and Green colors (hasColor). It also displays distinct Petals, a Stem, and Buds (hasShape/Part). The surface appears Smooth (hasTexture). These observed properties align with the necessary conditions defined in the TBox for class 100. Therefore, based on the visual evidence, the image is classified as 100.
+----------------------------------------
+-> FINAL ACCURACY for (2,1,5): 0.7000
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [3] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>3</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 3 ⊑ hasVisualFeature [complex, swirling patterns] (Necessary condition)
+- hasVisualFeature [complex, swirling patterns] ⊑ 3 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, purple, blue, yellow, red
+- hasShape/Part: irregular, amorphous shapes, swirling lines, fragmented forms
+- hasTexture: chaotic, abstract, distorted
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex arrangement of swirling patterns and irregular shapes, characterized by a chaotic and distorted texture. This aligns with the TBox axiom stating that "3" is associated with "complex, swirling patterns." The observed "hasVisualFeature" of complex, swirling patterns is sufficient to classify the image as "3."
+----------------------------------------
+Query 2: Expected: [3] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>84</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 84 ⊑ hasVisualFeature [complex, chaotic, multi-colored pattern] (Necessary condition)
+- hasVisualFeature [complex, chaotic, multi-colored pattern] ⊑ 84 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, purple, green, blue, orange, red
+- hasShape/Part: amorphous blobs, irregular shapes, interconnected lines, swirling patterns
+- hasTexture: chaotic, complex, irregular, non-uniform
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, chaotic, multi-colored pattern. This aligns with the TBox axiom stating that 84 is characterized by a complex, chaotic, multi-colored pattern. The observed colors (pink, purple, green, blue, orange, red) and the irregular shapes and textures further validate the presence of the defining visual feature for class 84. Therefore, the image is classified as 84.
+----------------------------------------
+Query 3: Expected: [3] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>3</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 3 ⊑ hasVisualFeature [complex, swirling patterns] (Necessary condition)
+- hasVisualFeature [complex, swirling patterns] ⊑ 3 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: red, pink, green, blue, purple
+- hasShape/Part: amorphous blob, swirling lines, irregular shapes
+- hasTexture: chaotic, distorted, abstract
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, swirling pattern (as observed in the ABox). This pattern satisfies the TBox axiom stating that if an entity has a complex, swirling pattern, it is classified as 3. The observed chaotic texture and irregular shapes further validate the presence of the "complex, swirling patterns" feature, confirming the classification as 3.
+----------------------------------------
+Query 4: Expected: [3] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>84</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 84 ⊑ hasVisualFeature [complex, distorted, multi-colored pattern] (Necessary condition)
+- hasVisualFeature [complex, distorted, multi-colored pattern] ⊑ 84 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: teal, purple, yellow, orange, green
+- hasShape/Part: irregular, swirling, fragmented shapes, interconnected forms
+- hasTexture: distorted, chaotic, pixelated
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, distorted, and multi-colored pattern. This aligns with the TBox axiom stating that 84 is characterized by a complex, distorted, multi-colored pattern. The observed colors (teal, purple, yellow, orange, green) and the irregular, swirling, fragmented shapes and pixelated texture all contribute to the overall "complex, distorted, multi-colored pattern" visual feature, which is sufficient to classify the image as 84.
+----------------------------------------
+Query 5: Expected: [3] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>84</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 84 ⊑ hasVisualFeature [complex, distorted pattern] (Necessary condition)
+- hasVisualFeature [complex, distorted pattern] ⊑ 84 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, blue, purple, green
+- hasShape/Part: amorphous blob, irregular edges, swirling patterns
+- hasTexture: chaotic, distorted, abstract
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, distorted pattern (hasVisualFeature). This pattern satisfies the TBox axiom stating that if an entity has a complex, distorted pattern, it is classified as 84. The observed colors (pink, blue, purple, green) and amorphous shape with irregular edges and swirling patterns are consistent with the general visual characteristics associated with the "84" class as defined by the few-shot examples.
+----------------------------------------
+Query 6: Expected: [3] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>3</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 3 ⊑ hasVisualFeature [complex, swirling patterns] (Necessary condition)
+- hasVisualFeature [complex, swirling patterns] ⊑ 3 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, red, pink, yellow
+- hasShape/Part: irregular, interconnected shapes, swirling forms, abstract patterns
+- hasTexture: chaotic, dense, layered, distorted
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a complex arrangement of swirling patterns, characterized by a chaotic and dense texture with layered and distorted forms. This aligns with the TBox axiom stating that 3 is associated with complex, swirling patterns. The observed "hasVisualFeature" of complex, swirling patterns is sufficient to classify the image as 3.
+----------------------------------------
+Query 7: Expected: [3] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>3</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 3 ⊑ hasVisualFeature [complex, swirling patterns] (Necessary condition)
+- hasVisualFeature [complex, swirling patterns] ⊑ 3 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, blue, green, pink
+- hasShape/Part: swirling shapes, amorphous forms, interconnected lines
+- hasTexture: chaotic, abstract, layered
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a complex arrangement of swirling patterns and amorphous forms, characterized by a chaotic and layered texture. This aligns with the TBox axiom stating that 3 is associated with complex, swirling patterns. The observed "hasVisualFeature" of swirling shapes and chaotic texture is sufficient to classify the image as 3.
+----------------------------------------
+Query 8: Expected: [3] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>3</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 3 ⊑ hasVisualFeature [abstract, distorted patterns] (Necessary condition)
+- hasVisualFeature [abstract, distorted patterns] ⊑ 3 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: turquoise, purple, yellow, pink, blue
+- hasShape/Part: distorted lines, amorphous blobs, text ("Girl's Sweet Pea")
+- hasTexture: chaotic, swirling, abstract
+
+4. Logical Explanation (DL & NL):
+The image exhibits a chaotic arrangement of swirling, distorted lines and amorphous blobs, along with abstract patterns. This aligns with the TBox axiom stating that 3 is characterized by having abstract, distorted patterns. The presence of these visual features (as described in the ABox) is sufficient to classify the image as 3.
+----------------------------------------
+Query 9: Expected: [3] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>3</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 3 ⊑ hasVisualFeature [complex, swirling patterns] (Necessary condition)
+- hasVisualFeature [complex, swirling patterns] ⊑ 3 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, purple, green, blue, brown
+- hasShape/Part: amorphous blobs, irregular lines, interconnected forms
+- hasTexture: chaotic, swirling, abstract
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, swirling pattern (as observed in the ABox). This pattern satisfies the TBox axiom stating that if an entity has a complex, swirling pattern, it is classified as 3. The presence of pink, purple, green, blue, and brown colors, along with amorphous blobs and irregular lines, contributes to the overall chaotic and swirling texture, further validating the classification as 3.
+----------------------------------------
+Query 10: Expected: [84] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>84</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 84 ⊑ hasVisualFeature [complex, distorted, multi-colored pattern] (Necessary condition)
+- hasVisualFeature [complex, distorted, multi-colored pattern] ⊑ 84 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, green, blue, purple, red
+- hasShape/Part: swirling patterns, distorted forms, amorphous shapes
+- hasTexture: chaotic, irregular, abstract
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, distorted, and multi-colored pattern. This aligns with the TBox axiom stating that 84 is characterized by a complex, distorted, multi-colored pattern. The observed colors (pink, green, blue, purple, red) and the swirling, distorted shapes and chaotic texture further validate the presence of the defining visual feature for class 84. Therefore, the image is classified as 84.
+----------------------------------------
+Query 11: Expected: [84] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>84</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 84 ⊑ hasVisualFeature [complex, swirling, abstract pattern] (Necessary condition)
+- hasVisualFeature [complex, swirling, abstract pattern] ⊑ 84 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, purple, pink, yellow
+- hasShape/Part: swirling shapes, abstract forms, interconnected patterns, circular elements
+- hasTexture: chaotic, dense, irregular, complex
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, swirling, abstract pattern. This pattern aligns with the necessary and sufficient condition defined in the TBox for class 84. The observed colors (blue, green, purple, pink, yellow) and shapes (swirling shapes, abstract forms, interconnected patterns, circular elements) contribute to the overall complex and abstract visual feature, which is sufficient to classify the image as 84.
+----------------------------------------
+Query 12: Expected: [84] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>3</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 3 ⊑ hasVisualFeature [complex, swirling pattern] (Necessary condition)
+- hasVisualFeature [complex, swirling pattern] ⊑ 3 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, red, yellow, purple
+- hasShape/Part: swirling shapes, interconnected lines, abstract forms
+- hasTexture: chaotic, dense, irregular
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, swirling pattern composed of various colors (blue, green, red, yellow, purple) and abstract shapes. This aligns with the TBox axiom stating that 3 is characterized by a complex, swirling pattern. The observed "complex, swirling pattern" (ABox) satisfies the sufficient condition for classifying the image as 3.
+----------------------------------------
+Query 13: Expected: [84] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>84</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 3 ≡ hasShape Circular (Necessary & Sufficient)
+- 84 ≡ hasVisualFeature ComplexPattern (Necessary & Sufficient)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, purple, green, blue
+- hasShape/Part: irregular, swirling, interconnected forms
+- hasTexture: chaotic, abstract, non-uniform
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, chaotic, and abstract pattern. This aligns with the TBox axiom stating that 84 is defined by having a ComplexPattern. The presence of irregular, swirling, and interconnected forms, combined with a variety of colors (pink, purple, green, blue), strongly suggests the entity is an instance of 84. The image does not display a circular shape, which would be required for classification as 3. Therefore, based on the observed visual features and the established axioms, the classification as 84 is justified.
+----------------------------------------
+Query 14: Expected: [84] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>3</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 3 ⊑ hasColor green
+- 3 ⊑ hasShape/Part petal
+- 3 ⊑ hasTexture smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, purple, teal
+- hasShape/Part: circular shape, multiple petals, central core
+- hasTexture: smooth, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The image exhibits a central core surrounded by multiple petal-like structures, predominantly green in color with hints of purple and teal. This aligns with the TBox axioms for class 3, which states that it must have a green color, petal-like shapes, and a smooth texture. The observed properties (green color, petal shapes, smooth texture) are sufficient to classify the image as 3.
+----------------------------------------
+Query 15: Expected: [84] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>84</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 84 ⊑ hasVisualFeature [complex, swirling, distorted patterns] (Necessary condition)
+- hasVisualFeature [complex, swirling, distorted patterns] ⊑ 84 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, purple, green, yellow, blue
+- hasShape/Part: swirling shapes, distorted forms, complex patterns, circular elements
+- hasTexture: chaotic, irregular, abstract
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex arrangement of swirling shapes and distorted forms, characterized by chaotic and irregular textures. These visual features align with the "hasVisualFeature [complex, swirling, distorted patterns]" axiom, which is a sufficient condition for classifying the image as 84. The presence of these patterns validates the classification, as they are consistent with the defining characteristics of 84 as established by the few-shot examples.
+----------------------------------------
+Query 16: Expected: [84] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>3</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 3 ⊑ hasColor Blue, Green, Purple (Necessary condition)
+- 3 ⊑ hasShape/Part Complex, Irregular (Necessary condition)
+- 3 ⊑ hasTexture Distorted (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Blue, Green, Purple, Pink
+- hasShape/Part: Complex, Irregular, Swirls, Blobs
+- hasTexture: Distorted, Abstract
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a combination of blue, green, and purple colors (hasColor Blue, Green, Purple). It also displays a complex and irregular shape with swirls and blobs (hasShape/Part Complex, Irregular, Swirls, Blobs), and a distorted texture (hasTexture Distorted). These observed properties align with the necessary conditions defined in the TBox for class 3. Therefore, based on the visual evidence, the image is classified as 3.
+----------------------------------------
+Query 17: Expected: [84] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>3</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 3 ⊑ hasColor Red, Green, Blue (Necessary condition)
+- 3 ⊑ hasShape/Part Petal, Stem, Leaves (Necessary condition)
+- 3 ⊑ hasTexture Organic (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Red, Green, Blue, Pink
+- hasShape/Part: Petal, Stem, Leaves, Bud
+- hasTexture: Organic, Irregular
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of Red, Green, Blue, and Pink colors (hasColor). It also displays distinct petal, stem, and leaf structures (hasShape/Part), and an organic, irregular texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for class 3. Therefore, based on the visual evidence, the image is classified as 3.
+----------------------------------------
+Query 18: Expected: [84] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>3</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 3 ⊑ hasVisualFeature [complex, swirling patterns] (Necessary condition)
+- hasVisualFeature [complex, swirling patterns] ⊑ 3 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, purple, red, green, white
+- hasShape/Part: amorphous blob, swirling lines, irregular shapes
+- hasTexture: chaotic, distorted, abstract
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, swirling pattern (hasVisualFeature). This pattern satisfies the TBox axiom stating that if an entity has a complex, swirling pattern, it is classified as 3. The observed colors (blue, purple, red, green, white) and irregular shapes are consistent with the general visual characteristics associated with the "3" class as demonstrated in the previous example.
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9): 0.5556
+
+--- CONFIG: N=3, K=1, Q=5 ---
+Query 1: Expected: [44] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>44</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 44 ⊑ hasColor Purple
+- 44 ⊑ hasShape/Part Petal
+- 44 ⊑ hasTexture Smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Purple, Green, Yellow
+- hasShape/Part: Petal, Stem, Leaf
+- hasTexture: Smooth, Glossy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dominant purple color (hasColor Purple), a petal-like shape (hasShape/Part Petal), and a smooth texture (hasTexture Smooth). These properties align with the TBox axioms defining class 44. Therefore, the image is classified as 44.
+----------------------------------------
+Query 2: Expected: [44] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>100</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 93 ⊑ hasShape/Part: petal
+- 100 ⊑ hasShape/Part: complex floral structure
+- 44 ⊑ hasTexture: abstract, swirling patterns
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: pink, purple, blue, green
+- hasShape/Part: complex floral structure, multiple petals, central core
+- hasTexture: swirling, layered, somewhat chaotic
+
+4. Logical Explanation (DL & NL):
+The image exhibits a "complex floral structure" (hasShape/Part), which is a sufficient condition for classifying it as 100. While it also has swirling textures (hasTexture), this is not a defining characteristic. The presence of petals (hasShape/Part) is consistent with 93, but the overall structure is more complex than a simple petal arrangement. Therefore, the "complex floral structure" property strongly indicates a classification of 100.
+----------------------------------------
+Query 3: Expected: [44] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>100</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 100 ⊑ hasColor green, yellow, purple (Necessary condition)
+- 100 ⊑ hasShape/Part rosette, petal, leaf (Necessary condition)
+- 100 ⊑ hasTexture complex, layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, yellow, purple, pink
+- hasShape/Part: rosette, petal, leaf, stem
+- hasTexture: complex, layered, slightly ruffled
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, layered texture with rosette, petal, and leaf shapes, and a color palette including green, yellow, purple, and pink. These observed properties (hasColor, hasShape/Part, hasTexture) all align with the necessary conditions defined in the TBox for class 100. Therefore, based on the visual evidence, the image is classified as 100.
+----------------------------------------
+Query 4: Expected: [44] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>100</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 93 ⊑ hasColor Purple, Pink, Green (Necessary condition)
+- 100 ⊑ hasColor Purple, Yellow, Green (Necessary condition)
+- 44 ⊑ hasShape Circular, Petal-like (Necessary condition)
+- 100 ⊑ hasShape Circular, Petal-like, Central_Stamen (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Purple, Pink, Green, Yellow
+- hasShape/Part: Circular, Petal-like, Central_Stamen
+- hasTexture: Smooth, Layered
+
+4. Logical Explanation (DL & NL):
+The image exhibits a circular shape with petal-like structures and a central stamen. The presence of a central stamen (hasShape/Part: Central_Stamen) is a sufficient condition (Sufficient condition) for classifying the entity as 100. While the image also has purple, pink, green, and yellow colors (hasColor: Purple, Pink, Green, Yellow), these are necessary but not sufficient on their own. The combination of the shape and the stamen definitively classifies it as 100.
+----------------------------------------
+Query 5: Expected: [44] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>100</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 100 ⊑ hasColor Purple, Green, Yellow (Necessary condition)
+- 100 ⊑ hasShape/Part Circular, Spiral (Necessary condition)
+- 100 ⊑ hasTexture Complex, Layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Purple, Green, Yellow
+- hasShape/Part: Circular, Spiral, Bud
+- hasTexture: Complex, Layered, Organic
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of purple, green, and yellow colors (hasColor Purple, Green, Yellow). It also displays circular and spiral shapes, along with what appears to be a bud-like structure (hasShape/Part Circular, Spiral, Bud). The texture is complex and layered (hasTexture Complex, Layered, Organic). These observed properties align with the necessary conditions defined in the TBox for class 100, therefore, the image is classified as 100.
+----------------------------------------
+Query 6: Expected: [93] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>100</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 100 ⊑ hasColor Purple, Pink, Green (Necessary condition)
+- 100 ⊑ hasShape/Part Petal, Stem, Bud (Necessary condition)
+- 100 ⊑ hasTexture Smooth, Layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Purple, Pink, Green, Red
+- hasShape/Part: Petal, Stem, Bud, Leaf
+- hasTexture: Smooth, Layered, Slightly Rough
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of purple, pink, green, and red colors (hasColor). It also displays petal, stem, bud, and leaf structures (hasShape/Part). The texture appears smooth and layered, with a slight roughness (hasTexture). These observed properties align with the necessary conditions defined in the TBox for class 100, therefore, the image is classified as 100.
+----------------------------------------
+Query 7: Expected: [93] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>93</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 93 ⊑ hasColor magenta, green, purple (Necessary condition)
+- 93 ⊑ hasShape/Part irregular, fragmented (Necessary condition)
+- 93 ⊑ hasTexture chaotic (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: magenta, green, purple, blue
+- hasShape/Part: irregular, fragmented, branching
+- hasTexture: chaotic, dense
+
+4. Logical Explanation (DL & NL):
+The image exhibits a chaotic texture, irregular fragmented shapes, and a color palette dominated by magenta, green, and purple. These observed properties align with the necessary conditions defined in the TBox for class 93. Therefore, based on the visual evidence, the image is classified as 93.
+----------------------------------------
+Query 8: Expected: [93] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>100</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 100 ⊑ hasColor purple, green, blue (Necessary condition)
+- 100 ⊑ hasShape petal, stem (Necessary condition)
+- 100 ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor purple, green, blue
+- hasShape petal, stem
+- hasTexture smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits purple, green, and blue colors (hasColor purple, green, blue), possesses petal and stem structures (hasShape petal, stem), and displays a smooth texture (hasTexture smooth). These observed properties align with the necessary conditions defined in the TBox for class 100. Therefore, the image is classified as 100.
+----------------------------------------
+Query 9: Expected: [93] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>100</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 100 ⊑ hasVisualFeature [complex, swirling patterns] (Necessary condition)
+- hasVisualFeature [complex, swirling patterns] ⊑ 100 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, green, blue, yellow
+- hasShape/Part: central spherical form, radiating lines, petal-like structures
+- hasTexture: intricate, layered, swirling
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, swirling pattern, which aligns with the sufficient condition for classifying it as 100. The presence of radiating lines and petal-like structures further supports this classification, as these are consistent with the visual features associated with 100. The observed colors (purple, green, blue, yellow) do not contradict the classification and are consistent with the general visual complexity of 100.
+----------------------------------------
+Query 10: Expected: [93] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>93</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 93 ⊑ hasColor Purple
+- 93 ⊑ hasShape/Part ComplexFloralStructure
+- 93 ⊑ hasTexture Irregular
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Purple, Green, Blue
+- hasShape/Part: ComplexFloralStructure, Petals, Stem
+- hasTexture: Irregular, Detailed
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex floral structure with a predominantly purple hue and irregular texture. This aligns with the TBox axioms defining class 93, where it is necessary for an entity to have a purple color, a complex floral structure, and an irregular texture. The observed properties in the ABox satisfy these necessary conditions, thus justifying the classification as 93.
+----------------------------------------
+Query 11: Expected: [100] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>93</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 93 ⊑ hasColor Red, Purple, Green (Necessary condition)
+- 93 ⊑ hasShape/Part Petals, Stem (Necessary condition)
+- 93 ⊑ hasTexture Complex, Layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Red, Purple, Green, Blue
+- hasShape/Part: Petals, Stem, Leaves
+- hasTexture: Complex, Layered, Irregular
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a complex, layered texture with petals, a stem, and leaves, and a color palette including red, purple, green, and blue. These observed properties (hasColor Red, Purple, Green, Blue; hasShape/Part Petals, Stem, Leaves; hasTexture Complex, Layered, Irregular) align with the necessary conditions defined in the TBox for class 93. Therefore, the image is classified as 93.
+----------------------------------------
+Query 12: Expected: [100] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>100</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 100 ⊑ hasColor purple, yellow, green (Necessary condition)
+- 100 ⊑ hasShape petal, stamen, pistil (Necessary condition)
+- 100 ⊑ hasTexture smooth, layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, yellow, green
+- hasShape/Part: petal, stamen, pistil, central core
+- hasTexture: smooth, layered, slightly glossy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of purple, yellow, and green colors (hasColor), along with distinct petal, stamen, and pistil structures (hasShape/Part), and a smooth, layered texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for class 100. Therefore, based on the visual evidence, the image is classified as 100.
+----------------------------------------
+Query 13: Expected: [100] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>44</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 44 ⊑ hasColor Purple, Green, Blue (Necessary condition)
+- 44 ⊑ hasShape/Part Circular, Swirls (Necessary condition)
+- 44 ⊑ hasTexture Abstract, Complex (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Purple, Green, Blue
+- hasShape/Part: Circular, Swirls, Irregular shapes
+- hasTexture: Abstract, Complex, Distorted
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of purple, green, and blue colors (hasColor). It also displays circular and swirling shapes alongside irregular forms (hasShape/Part). The texture appears abstract and complex (hasTexture). These observed properties align with the necessary conditions defined in the TBox for class 44. Therefore, based on the visual evidence, the image is classified as 44.
+----------------------------------------
+Query 14: Expected: [100] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>100</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 100 ⊑ hasColor Purple, Yellow, Green (Necessary condition)
+- 100 ⊑ hasShape Spiral, Circular (Necessary condition)
+- 100 ⊑ hasTexture Complex, Layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Purple, Yellow, Green
+- hasShape/Part: Spiral, Circular, Central Core
+- hasTexture: Complex, Layered, Swirling
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, layered texture with swirling patterns and a central core, alongside a color palette of purple, yellow, and green. These observed properties (hasColor Purple, Yellow, Green; hasShape Spiral, Circular; hasTexture Complex, Layered) align with the necessary conditions defined in the TBox for class 100. Therefore, based on the visual evidence, the image is classified as 100.
+----------------------------------------
+Query 15: Expected: [100] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>100</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 93 ⊑ hasColor Purple, Pink, Green (Necessary condition)
+- 100 ⊑ hasColor Yellow, Purple, Green (Necessary condition)
+- 44 ⊑ hasShape Circular, Swirling (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Yellow, Purple, Green
+- hasShape/Part: Circular, Swirling, Petal-like structures
+- hasTexture: Complex, layered, organic
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of Yellow, Purple, and Green colors, which is a necessary condition for class 100. Furthermore, the presence of Circular and Swirling shapes, along with petal-like structures, aligns with the visual characteristics associated with class 100. While class 44 also has a swirling shape, the color profile is more indicative of class 100. Class 93 is ruled out due to the dominant presence of purple and pink, which are not prominent in the target image. Therefore, based on the observed color and shape properties, the image is classified as 100.
+----------------------------------------
+-> FINAL ACCURACY for (3,1,5): 0.4000
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [85] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>79</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 79 ⊑ hasColor Green
+- 79 ⊑ hasShape/Part RadialSymmetry
+- 79 ⊑ hasTexture Complex
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Green, Purple, Blue
+- hasShape/Part: RadialSymmetry, CentralCore, Petal-like structures
+- hasTexture: Irregular, Detailed
+
+4. Logical Explanation (DL & NL):
+The image exhibits a radial symmetry (hasShape/Part: RadialSymmetry) and a complex texture (hasTexture: Complex). It also prominently displays green hues (hasColor: Green). These properties align with the established axioms for class 79, which states that 79 must have a green color, radial symmetry, and a complex texture. Therefore, based on the observed properties, the image is classified as 79.
+----------------------------------------
+Query 2: Expected: [85] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>42</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 42 ⊑ hasColor Red, Green, Blue (Necessary condition)
+- 42 ⊑ hasShape/Part Petal, Center (Necessary condition)
+- 42 ⊑ hasTexture Smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Red, Green, Blue
+- hasShape/Part: Petal, Center
+- hasTexture: Smooth
+
+4. Logical Explanation (DL & NL):
+The target image exhibits the properties of having Red, Green, and Blue colors, Petals and a Center, and a Smooth texture. These properties align with the necessary conditions defined in the TBox for class 42. Therefore, based on the observed visual features, the image is classified as 42.
+----------------------------------------
+Query 3: Expected: [85] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>85</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 85 ⊑ hasColor Pink, Blue, Green (Necessary condition)
+- 85 ⊑ hasShape RadialSymmetry (Necessary condition)
+- 85 ⊑ hasPart Petal (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Pink, Blue, Green
+- hasShape: RadialSymmetry
+- hasPart: Petal
+
+4. Logical Explanation (DL & NL):
+The image exhibits a radial symmetry (hasShape RadialSymmetry) and contains petals (hasPart Petal), and a combination of pink, blue, and green colors (hasColor Pink, Blue, Green). These observed properties align with the necessary conditions defined in the TBox for class 85. Therefore, the image is classified as 85.
+----------------------------------------
+Query 4: Expected: [85] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>79</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 79 ⊑ hasColor magenta, green, yellow (Necessary condition)
+- 79 ⊑ hasShape/Part radial petals (Necessary condition)
+- 79 ⊑ hasTexture complex, layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: magenta, green, yellow
+- hasShape/Part: radial petals, central core
+- hasTexture: complex, layered, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a combination of magenta, green, and yellow colors (hasColor), radial petals (hasShape/Part), and a complex, layered texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for class 79. Therefore, based on the visual evidence, the image is classified as 79.
+----------------------------------------
+Query 5: Expected: [85] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>85</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 85 ⊑ hasColor Purple, Blue, White (Necessary condition)
+- 85 ⊑ hasShape/Part Petal, Stem (Necessary condition)
+- 85 ⊑ hasTexture Smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Purple, Blue, White
+- hasShape/Part: Petal, Stem
+- hasTexture: Smooth
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a combination of purple, blue, and white colors (hasColor Purple, Blue, White). It also displays petal and stem structures (hasShape/Part Petal, Stem), and a smooth texture (hasTexture Smooth). These observed properties align with the necessary conditions defined in the TBox for class 85. Therefore, based on the visual evidence, the image is classified as 85.
+----------------------------------------
+Query 6: Expected: [85] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>85</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 85 ⊑ hasColor Purple, Green, Yellow (Necessary condition)
+- 85 ⊑ hasShape Petal, CentralDisk (Necessary condition)
+- 85 ⊑ hasTexture Smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Purple, Green, Yellow
+- hasShape/Part: Petal, CentralDisk
+- hasTexture: Smooth
+
+4. Logical Explanation (DL & NL):
+The target image exhibits the properties of having purple, green, and yellow colors (hasColor), petal and central disk shapes (hasShape), and a smooth texture (hasTexture). These properties align with the necessary conditions defined in the TBox for class 85. Therefore, based on the observed visual features, the image is classified as 85.
+----------------------------------------
+Query 7: Expected: [85] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>85</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 85 ⊑ hasColor Pink, Green, Blue (Necessary condition)
+- 85 ⊑ hasShape Petal, CentralDisk (Necessary condition)
+- 85 ⊑ hasTexture Complex, Layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Pink, Green, Blue
+- hasShape/Part: Petal, CentralDisk
+- hasTexture: Complex, Layered
+
+4. Logical Explanation (DL & NL):
+The target image exhibits the properties of having Pink, Green, and Blue colors (hasColor), a Petal and CentralDisk shape (hasShape/Part), and a Complex, Layered texture (hasTexture). These properties align with the necessary conditions defined in the TBox for class 85. Therefore, based on the observed visual features, the image is classified as 85.
+----------------------------------------
+Query 8: Expected: [85] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>85</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 85 ⊑ hasColor Purple, Green, Blue (Necessary condition)
+- 85 ⊑ hasShape Petal, Stem (Necessary condition)
+- 85 ⊑ hasTexture Smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Purple, Green, Blue
+- hasShape/Part: Petal, Central Core, Stem-like structure
+- hasTexture: Smooth, slightly irregular
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a combination of purple, green, and blue colors (hasColor Purple, Green, Blue). It also displays petal-like structures and a central core, along with a stem-like structure (hasShape Petal, Stem). The texture appears smooth and slightly irregular (hasTexture Smooth). These observed properties align with the necessary conditions defined for class 85, which states that 85 must have purple, green, and blue colors, petal and stem-like shapes, and a smooth texture. Therefore, the image is classified as 85.
+----------------------------------------
+Query 9: Expected: [85] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>79</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 79 ⊑ hasColor [purple, green, blue] (Necessary condition)
+- 79 ⊑ hasShape/Part [petal, central core] (Necessary condition)
+- 79 ⊑ hasTexture [smooth, layered] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [purple, green, blue]
+- hasShape/Part: [petal, central core, stem]
+- hasTexture: [smooth, layered, slightly glossy]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of purple, green, and blue colors (hasColor), possesses petal-like structures and a central core (hasShape/Part), and displays a smooth, layered, and slightly glossy texture (hasTexture). These observed properties align with the necessary conditions defined for class 79 in the TBox. Therefore, based on the visual evidence, the image is classified as 79.
+----------------------------------------
+Query 10: Expected: [42] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>85</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 85 ⊑ hasColor [yellow, brown, blue] (Necessary condition)
+- 85 ⊑ hasShape/Part [petals, stem, leaves] (Necessary condition)
+- 85 ⊑ hasTexture [smooth, layered] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [yellow, brown, blue]
+- hasShape/Part: [petals, stem, leaves]
+- hasTexture: [smooth, layered]
+
+4. Logical Explanation (DL & NL):
+The target image exhibits the properties of having yellow, brown, and blue colors (hasColor), petals, a stem, and leaves (hasShape/Part), and a smooth, layered texture (hasTexture). These properties align with the necessary conditions defined in the TBox for class 85. Therefore, based on the observed visual features, the image is classified as 85.
+----------------------------------------
+Query 11: Expected: [42] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>85</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 85 ⊑ hasColor purple, green, pink (Necessary condition)
+- 85 ⊑ hasShape/Part complex, layered structure (Necessary condition)
+- 85 ⊑ hasTexture irregular, organic (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, green, pink, brown
+- hasShape/Part: complex, layered, branching structure, elongated form
+- hasTexture: irregular, organic, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a complex, layered structure with irregular, organic textures and a color palette dominated by purple, green, and pink. These observed properties (hasColor purple, green, pink; hasShape/Part complex, layered structure; hasTexture irregular, organic) align with the necessary conditions defined in the TBox for class 85. Therefore, based on the provided few-shot examples and the observed visual features, the image is classified as 85.
+----------------------------------------
+Query 12: Expected: [42] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>42</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 42 ⊑ hasColor Purple, Blue, Green (Necessary condition)
+- 42 ⊑ hasShape/Part Petal, Stem, Leaf (Necessary condition)
+- 42 ⊑ hasTexture Smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Purple, Blue, Green
+- hasShape/Part: Petal, Stem, Leaf
+- hasTexture: Smooth
+
+4. Logical Explanation (DL & NL):
+The target image exhibits the properties of having purple, blue, and green colors, petal, stem, and leaf shapes, and a smooth texture. These properties align with the necessary conditions defined in the TBox for class 42. Therefore, based on the observed visual features, the image is classified as 42.
+----------------------------------------
+Query 13: Expected: [42] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>79</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 79 ⊑ hasColor Purple
+- 79 ⊑ hasShape/Part Petal
+- 79 ⊑ hasTexture Complex
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Purple, Green, Blue
+- hasShape/Part: Petal, Stem, Complex Curves
+- hasTexture: Irregular, Detailed
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dominant purple color (hasColor Purple), a petal-like shape (hasShape/Part Petal), and a complex texture (hasTexture Complex). These observed properties align with the axioms defining class 79. Therefore, the image is classified as 79.
+----------------------------------------
+Query 14: Expected: [42] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>42</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 42 ⊑ hasColor magenta, green, pink (Necessary condition)
+- 42 ⊑ hasShape/Part rounded petals, central core (Necessary condition)
+- 42 ⊑ hasTexture complex, layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: magenta, green, pink, purple
+- hasShape/Part: rounded petals, central core, multiple layers
+- hasTexture: complex, layered, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of magenta, green, and pink colors (hasColor), possesses rounded petals and a central core (hasShape/Part), and displays a complex, layered texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for class 42. Therefore, based on the visual evidence, the image is classified as 42.
+----------------------------------------
+Query 15: Expected: [42] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>85</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 85 ⊑ hasColor purple, blue, green (Necessary condition)
+- 85 ⊑ hasShape/Part radial petals, central core (Necessary condition)
+- 85 ⊑ hasTexture complex, layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, blue, green, white
+- hasShape/Part: radial petals, central core, elongated structures
+- hasTexture: complex, layered, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of purple, blue, and green colors (hasColor), radial petals, and a central core (hasShape/Part). The texture appears complex and layered (hasTexture). These observed properties align with the necessary conditions defined for class 85 in the TBox. Therefore, based on the visual evidence, the image is classified as 85.
+----------------------------------------
+Query 16: Expected: [42] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>42</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 42 ⊑ hasColor magenta, purple, blue, green (Necessary condition)
+- 42 ⊑ hasShape/Part petal, stem, leaf (Necessary condition)
+- 42 ⊑ hasTexture smooth, layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: magenta, purple, blue, green, red
+- hasShape/Part: petal, stem, leaf, complex layered structure
+- hasTexture: smooth, layered, slightly irregular
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of magenta, purple, blue, green, and red colors (hasColor). It also displays petal, stem, and leaf-like structures, along with a complex layered structure (hasShape/Part). The texture appears smooth and layered (hasTexture). These observed properties align with the necessary conditions defined in the TBox for class 42. Therefore, based on the visual evidence, the image is classified as 42.
+----------------------------------------
+Query 17: Expected: [42] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>85</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 85 ⊑ hasColor green, pink, purple (Necessary condition)
+- 85 ⊑ hasShape/Part multiple petal-like structures (Necessary condition)
+- 85 ⊑ hasTexture complex, layered (Necessary condition)
+- hasColor green, pink, purple ⊑ 85 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, pink, purple, blue
+- hasShape/Part: central core, multiple petal-like structures, stem-like structure
+- hasTexture: complex, layered, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of green, pink, and purple colors (hasColor), along with multiple petal-like structures radiating from a central core and a stem-like structure (hasShape/Part). The texture appears complex and layered (hasTexture). These observed properties align with the TBox axioms defining class 85, specifically the necessary conditions of having those colors, shapes, and textures. The presence of the specific color combination (green, pink, purple) is sufficient to classify the entity as 85.
+----------------------------------------
+Query 18: Expected: [42] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>42</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 42 ⊑ hasColor magenta, teal, purple (Necessary condition)
+- 42 ⊑ hasShape/Part complex, layered, petal-like structures (Necessary condition)
+- 42 ⊑ hasTexture irregular, slightly blurred (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: magenta, teal, purple, pink
+- hasShape/Part: complex, layered, petal-like structures, central core
+- hasTexture: irregular, slightly blurred, organic
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a combination of magenta, teal, and purple colors (hasColor), complex layered petal-like structures (hasShape/Part), and an irregular, slightly blurred texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for class 42. Therefore, based on the visual evidence, the image is classified as 42.
+----------------------------------------
+Query 19: Expected: [79] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>85</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 85 ⊑ hasColor purple, green, brown (Necessary condition)
+- 85 ⊑ hasShape/Part petal, stem, leaf (Necessary condition)
+- 85 ⊑ hasTexture complex, layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, green, brown, blue
+- hasShape/Part: petal, central core, curved structures
+- hasTexture: complex, layered, swirling
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a combination of purple, green, and brown colors (hasColor), along with petal-like structures and curved forms (hasShape/Part). The complex and layered texture (hasTexture) is also present. These observed properties align with the necessary conditions defined for class 85, which states that 85 must have purple, green, and brown colors, petal/stem/leaf shapes, and a complex, layered texture. Therefore, the image is classified as 85.
+----------------------------------------
+Query 20: Expected: [79] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>85</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 85 ⊑ hasColor purple, green, yellow (Necessary condition)
+- 85 ⊑ hasShape/Part petal, stem (Necessary condition)
+- 85 ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, green, yellow
+- hasShape/Part: petal, stem
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a combination of purple, green, and yellow colors (hasColor), possesses petal and stem structures (hasShape/Part), and displays a smooth texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for class 85. Therefore, based on the visual evidence, the image is classified as 85.
+----------------------------------------
+Query 21: Expected: [79] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>79</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 79 ⊑ hasColor green, purple, white (Necessary condition)
+- 79 ⊑ hasShape/Part complex, layered structure (Necessary condition)
+- 79 ⊑ hasTexture rough, uneven (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, yellow, purple, white
+- hasShape/Part: complex, layered, central core, elongated stem
+- hasTexture: rough, uneven, mottled
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, layered structure with a rough, uneven texture and a color palette including green, yellow, purple, and white. These observed properties (hasColor, hasShape/Part, hasTexture) align with the necessary conditions defined in the TBox for class 79. Therefore, based on the visual evidence, the image is classified as 79.
+----------------------------------------
+Query 22: Expected: [79] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>79</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 79 ⊑ hasColor [red, green, yellow] (Necessary condition)
+- 79 ⊑ hasShape/Part [petal, stem] (Necessary condition)
+- 79 ⊑ hasTexture [smooth, layered] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [red, green, yellow, purple]
+- hasShape/Part: [petal, stem, curved shape]
+- hasTexture: [smooth, layered, slightly bumpy]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of red, green, yellow, and purple colors (hasColor), along with distinct petal and stem structures (hasShape/Part), and a smooth, layered texture (hasTexture). These observed properties align with the necessary conditions defined for class 79 in the TBox. Therefore, based on the visual evidence, the image is classified as 79.
+----------------------------------------
+Query 23: Expected: [79] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>79</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 79 ⊑ hasColor purple, blue, green (Necessary condition)
+- 79 ⊑ hasShape/Part elongated, curved, central core (Necessary condition)
+- 79 ⊑ hasTexture complex, layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, blue, green, brown
+- hasShape/Part: elongated, curved, central core, irregular edges
+- hasTexture: complex, layered, mottled
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of purple, blue, and green colors (hasColor), an elongated and curved shape with a central core and irregular edges (hasShape/Part), and a complex, layered, and mottled texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for class 79. Therefore, based on the visual evidence, the image is classified as 79.
+----------------------------------------
+Query 24: Expected: [79] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>85</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 85 ⊑ hasColor purple, blue, pink (Necessary condition)
+- 85 ⊑ hasShape/Part rounded, central core, radiating structures (Necessary condition)
+- 85 ⊑ hasTexture complex, layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, blue, pink
+- hasShape/Part: rounded, central core, radiating structures, thin stem
+- hasTexture: complex, layered, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of purple, blue, and pink colors (hasColor), a rounded shape with a central core and radiating structures (hasShape/Part), and a complex, layered texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for class 85. Therefore, based on the visual evidence, the image is classified as 85.
+----------------------------------------
+Query 25: Expected: [79] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>79</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 79 ⊑ hasColor [purple, blue, green, yellow] (Necessary condition)
+- 79 ⊑ hasShape/Part [circular, rounded, central core] (Necessary condition)
+- 79 ⊑ hasTexture [swirling, complex, layered] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [purple, blue, green, yellow]
+- hasShape/Part: [circular, rounded, central core, horizontal line]
+- hasTexture: [swirling, complex, layered]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a swirling, complex, layered texture with a circular, rounded shape and a central core, and displays purple, blue, green, and yellow colors. These observed properties align with the necessary conditions defined for class 79 in the TBox. Therefore, the image is classified as 79.
+----------------------------------------
+Query 26: Expected: [79] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>85</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 85 ⊑ hasColor purple
+- 85 ⊑ hasShape circular
+- 85 ⊑ hasPart centralOpening
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, blue
+- hasShape/Part: circular, centralOpening
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a predominantly purple and blue color (hasColor purple, hasColor blue). It also displays a circular shape (hasShape circular) and a distinct central opening (hasPart centralOpening). These observed properties align with the axioms defining class 85, which states that entities belonging to this class must have a purple color, a circular shape, and a central opening. Therefore, the image is classified as 85.
+----------------------------------------
+Query 27: Expected: [79] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>85</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 85 ⊑ hasColor Green, Yellow, Red (Necessary condition)
+- 85 ⊑ hasShape/Part Petal, Stem (Necessary condition)
+- 85 ⊑ hasTexture Smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Green, Yellow, Red, Brown
+- hasShape/Part: Petal, Stem, Bud
+- hasTexture: Smooth, Slightly Rough
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a combination of green, yellow, red, and brown colors (hasColor), along with petal and stem structures (hasShape/Part), and a smooth texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for class 85. Therefore, based on the visual evidence, the image is classified as 85.
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9): 0.4815
+
+--- CONFIG: N=4, K=1, Q=5 ---
+Query 1: Expected: [86] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>86</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 86 ⊑ hasColor blue, green, white (Necessary condition)
+- 86 ⊑ hasShape/Part petal, stem, leaves (Necessary condition)
+- 86 ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, white, purple
+- hasShape/Part: petal, stem, leaves, complex curves
+- hasTexture: smooth, slightly irregular
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a combination of blue, green, and white colors, along with petal, stem, and leaf-like structures, and a smooth texture. These observed properties align with the necessary conditions defined in the TBox for class 86. The presence of these features validates the classification of the image as belonging to class 86.
+----------------------------------------
+Query 2: Expected: [86] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>60</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 60 ⊑ hasShape/Part: petal-like structures (Necessary condition)
+- 60 ⊑ hasColor: green, blue, purple (Necessary condition)
+- hasShape/Part: petal-like structures ⊑ 60 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, blue, purple, pink
+- hasShape/Part: multiple elongated, petal-like structures radiating from a central point.
+- hasTexture: somewhat smooth, with subtle variations in color and texture.
+
+4. Logical Explanation (DL & NL):
+The image exhibits multiple elongated, petal-like structures radiating from a central point (hasShape/Part). This satisfies the sufficient condition for class 60. The presence of green, blue, purple, and pink colors (hasColor) aligns with the necessary condition for class 60, further validating the classification. Therefore, based on the observed shape and color characteristics, the image is classified as 60.
+----------------------------------------
+Query 3: Expected: [86] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>65</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 65 ⊑ hasColor magenta, green, purple (Necessary condition)
+- 65 ⊑ hasShape/Part radial symmetry, petal-like structures (Necessary condition)
+- hasColor magenta, green, purple ⊑ 65 (Sufficient condition)
+- hasShape/Part radial symmetry, petal-like structures ⊑ 65 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: magenta, green, purple, pink
+- hasShape/Part: radial symmetry, multiple petal-like structures, central core
+- hasTexture: smooth, slightly blurred edges
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a radial symmetry and multiple petal-like structures (hasShape/Part), which are sufficient conditions for classification as 65. Furthermore, the presence of magenta, green, purple, and pink colors (hasColor) also aligns with the necessary conditions defined for 65. Therefore, based on the observed properties and the established axioms, the image is classified as 65.
+----------------------------------------
+Query 4: Expected: [86] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>86</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 86 ⊑ hasColor green, yellow, blue (Necessary condition)
+- 86 ⊑ hasShape/Part central core, radiating petals (Necessary condition)
+- 86 ⊑ hasTexture smooth, layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, yellow, blue
+- hasShape/Part: central core, radiating petals, curved edges
+- hasTexture: smooth, layered, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The image exhibits a central core surrounded by radiating petals, with a color palette dominated by green, yellow, and blue, and a smooth, layered texture. These observed properties (hasColor green, yellow, blue; hasShape/Part central core, radiating petals, curved edges; hasTexture smooth, layered) align with the necessary conditions defined in the TBox for class 86. Therefore, the image is classified as 86.
+----------------------------------------
+Query 5: Expected: [86] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>65</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 65 ⊑ hasColor Purple, Green, Pink (Necessary condition)
+- 65 ⊑ hasShape/Part elongated, petal-like structures (Necessary condition)
+- 65 ⊑ hasTexture Complex, layered (Necessary condition)
+- hasColor Purple, Green, Pink ⊑ 65 (Sufficient condition)
+- hasShape/Part elongated, petal-like structures ⊑ 65 (Sufficient condition)
+- hasTexture Complex, layered ⊑ 65 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Purple, Green, Pink, Blue
+- hasShape/Part: elongated, petal-like structures, branching forms
+- hasTexture: Complex, layered, irregular
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a combination of purple, green, and pink colors, along with elongated, petal-like structures and a complex, layered texture. These observed properties align with the TBox axioms defining class 65. Specifically, the presence of purple, green, and pink colors, the petal-like structures, and the complex texture are all sufficient conditions to classify the image as 65. The image satisfies all necessary conditions and possesses the sufficient characteristics associated with class 65.
+----------------------------------------
+Query 6: Expected: [27] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>65</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 65 ⊑ hasColor blue, green, purple
+- 65 ⊑ hasShape/Part petal, multiple, radial
+- 65 ⊑ hasTexture smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, purple, pink
+- hasShape/Part: petal, multiple, radial, central core
+- hasTexture: smooth, slightly irregular
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a radial structure composed of multiple petals (hasShape/Part), displaying a combination of blue, green, purple, and pink hues (hasColor), and a smooth texture (hasTexture). These observed properties align with the TBox axioms defining class 65, which necessitates the presence of a radial structure with petals, a color palette including blue, green, and purple, and a smooth texture. Therefore, the image is classified as 65.
+----------------------------------------
+Query 7: Expected: [27] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>65</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 65 ⊑ hasShape/Part [radial symmetry] (Necessary condition)
+- 65 ⊑ hasColor [purple, blue, green] (Necessary condition)
+- hasShape/Part [radial symmetry] ∧ hasColor [purple, blue, green] ⊑ 65 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [purple, blue, green, teal]
+- hasShape/Part: [central core, radiating petals, radial symmetry]
+- hasTexture: [smooth, slightly blurred edges]
+
+4. Logical Explanation (DL & NL):
+The image exhibits radial symmetry (hasShape/Part) and a color palette of purple, blue, and green (hasColor). These properties, as defined in the TBox, are sufficient to classify the image as 65. The observed radial symmetry and color combination align with the established visual characteristics of class 65.
+----------------------------------------
+Query 8: Expected: [27] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>86</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 86 ⊑ hasColor magenta, purple, blue (Necessary condition)
+- 86 ⊑ hasShape/Part radial, petal-like structures (Necessary condition)
+- 86 ⊑ hasTexture complex, layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: magenta, purple, blue, teal
+- hasShape/Part: radial, petal-like structures, irregular curves
+- hasTexture: complex, layered, somewhat chaotic
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a combination of magenta, purple, and blue colors, alongside radial and petal-like structures, and a complex, layered texture. These observed properties align with the necessary conditions defined in the TBox for class 86. The presence of these features strongly suggests that the image represents an instance of class 86.
+----------------------------------------
+Query 9: Expected: [27] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>60</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 60 ⊑ hasColor blue, green, purple (Necessary condition)
+- 60 ⊑ hasShape/Part petal, stem (Necessary condition)
+- 60 ⊑ hasTexture complex, irregular (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, purple, red
+- hasShape/Part: petal, stem, irregular shapes
+- hasTexture: complex, irregular, mottled
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a combination of blue, green, and purple colors, along with petal and stem-like structures, and a complex, irregular texture. These observed properties align with the necessary conditions defined in the TBox for class 60. Therefore, based on the visual evidence, the image is classified as 60.
+----------------------------------------
+Query 10: Expected: [27] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>60</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 60 ⊑ hasColor blue, green, purple (Necessary condition)
+- 60 ⊑ hasShape/Part irregular, swirling patterns (Necessary condition)
+- 60 ⊑ hasTexture chaotic, distorted (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, purple, red
+- hasShape/Part: irregular, swirling patterns, fragmented shapes
+- hasTexture: chaotic, distorted, pixelated
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a chaotic texture and irregular swirling patterns, alongside a mix of blue, green, purple, and red colors. These observed properties align with the necessary conditions defined in the TBox for class 60. The presence of these features validates the classification of the image as 60.
+----------------------------------------
+Query 11: Expected: [65] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>65</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 65 ⊑ hasColor green, purple
+- 65 ⊑ hasShape/Part radial petals
+- 65 ⊑ hasTexture smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, purple, pink
+- hasShape/Part: central disc, radial petals, circular overall shape
+- hasTexture: smooth, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The image exhibits a central disc surrounded by radial petals, predominantly in shades of green, purple, and pink, with a smooth texture. This aligns with the TBox axioms for class 65, which states that a 65 must have a smooth texture, a central disc, radial petals, and a color scheme including green and purple. Therefore, the observed properties satisfy the necessary and sufficient conditions for classifying the image as a 65.
+----------------------------------------
+Query 12: Expected: [65] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>65</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 65 ⊑ hasColor blue, green (Necessary condition)
+- 65 ⊑ hasShape radial (Necessary condition)
+- 65 ⊑ hasTexture complex (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, purple
+- hasShape/Part: central core, radiating spikes, circular outline
+- hasTexture: intricate, layered, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The image exhibits a central core surrounded by radiating spikes and a circular outline. The dominant colors are blue and green, with hints of purple. These observed properties (hasColor blue, green; hasShape radial; hasTexture complex) align with the necessary conditions defined in the TBox for class 65. Therefore, based on the visual evidence, the image is classified as 65.
+----------------------------------------
+Query 13: Expected: [65] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>65</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 65 ⊑ hasColor green, purple
+- 65 ⊑ hasShape/Part radial symmetry, petal-like structures
+- 65 ⊑ hasTexture smooth, layered
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, purple, pink
+- hasShape/Part: radial symmetry, numerous petal-like structures, central core
+- hasTexture: smooth, slightly glossy
+
+4. Logical Explanation (DL & NL):
+The image exhibits radial symmetry and numerous petal-like structures, which are consistent with the TBox axioms defining class 65. The observed colors (green, purple, pink) also align with the TBox's requirement for green and purple coloration. Therefore, the observed properties are sufficient to classify the image as 65.
+----------------------------------------
+Query 14: Expected: [65] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>65</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 65 ⊑ hasColor green
+- 65 ⊑ hasShape radialSymmetry
+- 65 ⊑ hasTexture smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, purple, pink
+- hasShape/Part: central disc, radiating petals, circular form
+- hasTexture: smooth, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The image exhibits a central disc surrounded by radiating petals, forming a circular shape. The dominant color is green, with supporting shades of purple and pink. This aligns with the TBox axioms for class 65, which states that 65 entities must have a green color, radial symmetry, and a smooth texture. The observed properties in the ABox satisfy these necessary conditions, leading to the classification of the image as 65.
+----------------------------------------
+Query 15: Expected: [65] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>65</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 65 ⊑ hasColor Purple, Blue, Black (Necessary condition)
+- 65 ⊑ hasShape RadialSymmetry (Necessary condition)
+- 65 ⊑ hasPart Petal (Necessary condition)
+- hasColor Purple, Blue, Black ⊑ 65 (Sufficient condition)
+- hasShape RadialSymmetry ⊑ 65 (Sufficient condition)
+- hasPart Petal ⊑ 65 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor Purple, Blue, Black
+- hasShape RadialSymmetry
+- hasPart Petal
+
+4. Logical Explanation (DL & NL):
+The image exhibits a radial symmetry (hasShape RadialSymmetry) and contains petal-like structures (hasPart Petal), and displays a color palette of purple, blue, and black (hasColor Purple, Blue, Black). These observed properties align with the sufficient conditions defined in the TBox for class 65. Therefore, the image is classified as 65.
+----------------------------------------
+Query 16: Expected: [60] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>86</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 86 ⊑ hasColor Green, Purple, Pink (Necessary condition)
+- 86 ⊑ hasShape/Part Leaf-like structures (Necessary condition)
+- 86 ⊑ hasTexture Irregular, Textured (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Green, Purple, Pink
+- hasShape/Part: Leaf-like structures, elongated shapes, branching patterns
+- hasTexture: Irregular, Textured, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a combination of green, purple, and pink colors (hasColor). It also displays leaf-like structures and elongated shapes with branching patterns (hasShape/Part). The texture appears irregular and textured (hasTexture). These observed properties align with the necessary conditions defined in the TBox for class 86. Therefore, based on the visual evidence, the image is classified as 86.
+----------------------------------------
+Query 17: Expected: [60] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>60</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 60 ⊑ hasColor green, purple, blue (Necessary condition)
+- 60 ⊑ hasShape/Part radial symmetry, central core (Necessary condition)
+- 60 ⊑ hasTexture complex, layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, purple, blue, pink
+- hasShape/Part: radial symmetry, central core, elongated structures
+- hasTexture: complex, layered, irregular
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a combination of green, purple, blue, and pink colors (hasColor). It also displays radial symmetry and a central core (hasShape/Part), alongside a complex and layered texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for class 60. Therefore, based on the visual evidence, the image is classified as 60.
+----------------------------------------
+Query 18: Expected: [60] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>60</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 60 ⊑ hasColor purple, green, blue (Necessary condition)
+- 60 ⊑ hasShape/Part complex, branching structure (Necessary condition)
+- 60 ⊑ hasTexture chaotic, irregular (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, green, blue, pink
+- hasShape/Part: complex, branching structure, central core, irregular protrusions
+- hasTexture: chaotic, irregular, fragmented
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a complex, branching structure with chaotic and irregular textures, and a color palette dominated by purple, green, and blue. These observed properties (hasColor purple, green, blue; hasShape/Part complex, branching structure; hasTexture chaotic, irregular) align with the necessary conditions defined in the TBox for class 60. Therefore, based on the visual evidence, the image is classified as 60.
+----------------------------------------
+Query 19: Expected: [60] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>60</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 60 ⊑ hasColor green, purple, pink (Necessary condition)
+- 60 ⊑ hasShape/Part stem, leaves, flower (Necessary condition)
+- 60 ⊑ hasTexture complex, irregular (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: green, purple, pink, blue
+- hasShape/Part: stem, leaves, flower-like structure, branching
+- hasTexture: complex, irregular, mottled
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a combination of green, purple, and pink colors (hasColor), along with a stem, leaves, and a flower-like structure (hasShape/Part). The texture is complex and irregular (hasTexture). These observed properties align with the necessary conditions defined in the TBox for class 60. Therefore, based on the visual evidence, the image is classified as 60.
+----------------------------------------
+Query 20: Expected: [60] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>60</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 60 ⊑ hasShape/Part [elongated central structure] (Necessary condition)
+- 60 ⊑ hasColor [green, purple, pink] (Necessary condition)
+- 60 ⊑ hasTexture [complex, irregular] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [green, purple, pink, white]
+- hasShape/Part: [elongated central structure, branching structures, irregular shapes]
+- hasTexture: [complex, irregular, mottled]
+
+4. Logical Explanation (DL & NL):
+The image exhibits an elongated central structure, a combination of green, purple, pink, and white colors, and a complex, irregular texture. These observed properties align with the necessary conditions defined in the TBox for class 60. Therefore, based on the visual evidence, the image is classified as 60.
+----------------------------------------
+-> FINAL ACCURACY for (4,1,5): 0.5500
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [63] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>63</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 63 ⊑ hasColor blue, green, red (Necessary condition)
+- 63 ⊑ hasShape radial symmetry (Necessary condition)
+- 63 ⊑ hasPart petal (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, red
+- hasShape: radial symmetry
+- hasPart: petal
+
+4. Logical Explanation (DL & NL):
+The image exhibits a radial symmetry and contains petals, and the dominant colors are blue, green, and red. These observed properties (hasColor blue, green, red; hasShape radial symmetry; hasPart petal) align with the necessary conditions defined in the TBox for class 63. Therefore, the image is classified as 63.
+----------------------------------------
+Query 2: Expected: [63] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>17</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 17 ⊑ hasColor Blue
+- 17 ⊑ hasShape/Part Petal
+- 17 ⊑ hasTexture Smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Blue
+- hasShape/Part: Petal, Stem, Leaves
+- hasTexture: Smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dominant blue color (hasColor Blue), a petal-like shape (hasShape/Part Petal), and a smooth texture (hasTexture Smooth). These observed properties align with the axioms defined for class 17, therefore, the image is classified as 17.
+----------------------------------------
+Query 3: Expected: [63] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>31</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 31 ⊑ hasColor blue
+- 31 ⊑ hasShape/Part radialPetals
+- 31 ⊑ hasTexture smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, pink
+- hasShape/Part: radialPetals, centralDisc, stem, leaves
+- hasTexture: smooth, slightly glossy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a central disc surrounded by radial petals, and a dominant blue color. This aligns with the TBox axioms for class 31, which states that it must have a blue color and radial petals. The presence of a smooth texture further validates this classification. The observed colors (blue, green, pink) are consistent with variations within the class, while the presence of a stem and leaves are expected features of a floral entity.
+----------------------------------------
+Query 4: Expected: [63] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>63</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 63 ⊑ hasColor blue, red (Necessary condition)
+- 63 ⊑ hasShape/Part petals, central_disk (Necessary condition)
+- 63 ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, red
+- hasShape/Part: petals, central_disk
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of blue and red colors (hasColor blue, red), possesses petals and a central disk (hasShape/Part petals, central_disk), and appears to have a smooth texture (hasTexture smooth). These observed properties align with the necessary conditions defined in the TBox for class 63. Therefore, the image is classified as 63.
+----------------------------------------
+Query 5: Expected: [63] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>63</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 63 ⊑ hasColor Blue
+- 63 ⊑ hasShape Petal
+- 63 ⊑ hasTexture Smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Blue
+- hasShape/Part: Petal, central disc
+- hasTexture: Smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dominant blue color (hasColor Blue), a petal-like shape (hasShape Petal), and a smooth texture (hasTexture Smooth). These observed properties align with the axioms defined for class 63, therefore, the image is classified as 63.
+----------------------------------------
+Query 6: Expected: [63] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>63</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 63 ⊑ hasColor blue
+- 63 ⊑ hasColor red
+- 63 ⊑ hasShape petal
+- 63 ⊑ hasPart stem
+- 63 ⊑ hasTexture smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, red
+- hasShape/Part: petal, stem
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits the properties of having blue and red colors (hasColor blue, hasColor red), a petal shape (hasShape petal), a stem (hasPart stem), and a smooth texture (hasTexture smooth). These properties align with the axioms defined for class 63, therefore, the image is classified as 63.
+----------------------------------------
+Query 7: Expected: [63] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>31</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 31 ⊑ hasColor blue
+- 31 ⊑ hasShape/Part central circular structure
+- 31 ⊑ hasTexture smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green
+- hasShape/Part: central circular structure, green stem, leaf-like structures
+- hasTexture: smooth, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The image exhibits a central circular structure with a predominantly blue color and smooth texture. This aligns with the TBox axioms defining class 31, which states that 31 must have a blue color, a central circular structure, and a smooth texture. The presence of green and leaf-like structures are consistent with the general appearance of a flower, further validating the classification as 31.
+----------------------------------------
+Query 8: Expected: [63] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>63</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 63 ⊑ hasColor blue
+- 63 ⊑ hasColor red
+- 63 ⊑ hasShape petal
+- 63 ⊑ hasTexture smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, red
+- hasShape/Part: petal, central disc
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits both blue and red colors (hasColor blue, hasColor red), and possesses petal-like shapes and a central disc (hasShape petal, hasShape central disc). The texture appears smooth (hasTexture smooth). These observed properties align with the TBox axioms defining class 63, therefore, the image is classified as 63.
+----------------------------------------
+Query 9: Expected: [63] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>63</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 63 ⊑ hasColor blue
+- 63 ⊑ hasShape/Part petal
+- 63 ⊑ hasTexture smooth
+- hasColor blue ⊑ 63 (Sufficient)
+- hasShape/Part petal ⊑ 63 (Sufficient)
+- hasTexture smooth ⊑ 63 (Sufficient)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, white
+- hasShape/Part: petal, central disc
+- hasTexture: smooth, slightly glossy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dominant blue color (hasColor blue), a distinct petal structure (hasShape/Part petal), and a smooth, slightly glossy texture (hasTexture smooth). These properties align with the TBox axioms defining class 63. The presence of blue color, petal shape, and smooth texture are sufficient conditions to classify the image as 63.
+----------------------------------------
+Query 10: Expected: [51] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>51</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 51 ⊑ hasColor blue, purple, white (Necessary condition)
+- 51 ⊑ hasShape/Part petals, stem, leaves (Necessary condition)
+- 51 ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, purple, white, green
+- hasShape/Part: petals, stem, leaves, central disc
+- hasTexture: smooth, slightly fuzzy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of blue, purple, and white colors, along with petals, a stem, and leaves. The texture appears smooth with a slight fuzziness. These observed properties align with the necessary conditions defined in the TBox for class 51. The presence of petals, a stem, and leaves, combined with the color characteristics, strongly suggests that the image represents an instance of class 51.
+----------------------------------------
+Query 11: Expected: [51] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>31</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 31 ⊑ hasColor Purple
+- 31 ⊑ hasShape Petal
+- 31 ⊑ hasTexture Smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Purple, Green
+- hasShape/Part: Petal, Stem
+- hasTexture: Smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a purple color (hasColor Purple), a petal-like shape (hasShape Petal), and a smooth texture (hasTexture Smooth). These properties align with the TBox axioms defining class 31. Therefore, the image is classified as 31.
+----------------------------------------
+Query 12: Expected: [51] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>51</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 51 ⊑ hasColor [red, pink, blue] (Necessary condition)
+- 51 ⊑ hasShape/Part [petal, central disc] (Necessary condition)
+- 51 ⊑ hasTexture [smooth, layered] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [red, pink, blue, purple]
+- hasShape/Part: [petal, central disc, rounded edges]
+- hasTexture: [smooth, layered, slightly ruffled]
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a combination of red, pink, blue, and purple colors (hasColor), possesses petals and a central disc (hasShape/Part), and displays a smooth, layered, and slightly ruffled texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for class 51. Therefore, based on the visual evidence, the image is classified as 51.
+----------------------------------------
+Query 13: Expected: [51] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>51</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 31 ⊑ hasColor Purple
+- 31 ⊑ hasShape/Part Petal
+- 51 ⊑ hasColor Red
+- 51 ⊑ hasShape/Part CentralDisc
+- 51 ≡ hasColor Red ∧ hasShape/Part CentralDisc
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Red, Purple
+- hasShape/Part: CentralDisc, Petal
+- hasTexture: Smooth, Slightly Textured
+
+4. Logical Explanation (DL & NL):
+The image exhibits both Red color and a CentralDisc shape/part. According to the TBox, the presence of both Red color and a CentralDisc shape/part is necessary and sufficient (C ≡ P) to classify the entity as 51. The presence of Purple color is consistent with the broader class of 31, but the CentralDisc is a defining characteristic of 51.
+----------------------------------------
+Query 14: Expected: [51] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>63</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 63 ⊑ hasColor blue
+- 63 ⊑ hasShape/Part petal
+- 63 ⊑ hasTexture smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green
+- hasShape/Part: petal, stem, leaves
+- hasTexture: smooth, slightly rough
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dominant blue color (hasColor blue), a petal-like shape (hasShape/Part petal), and a smooth texture (hasTexture smooth). These properties align with the TBox axioms defining class 63. While the presence of green is not explicitly stated in the TBox, it doesn't contradict the core defining features of 63, thus validating the classification.
+----------------------------------------
+Query 15: Expected: [51] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>17</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 17 ⊑ hasColor blue, purple (Necessary condition)
+- 17 ⊑ hasShape/Part petals, stem (Necessary condition)
+- 17 ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, purple, green
+- hasShape/Part: petals, stem, leaves
+- hasTexture: smooth, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of blue and purple colors, possesses petals and a stem, and displays a smooth texture. These observed properties align with the necessary conditions defined in the TBox for class 17. Therefore, based on the provided few-shot examples and the observed visual features, the image is classified as 17.
+----------------------------------------
+Query 16: Expected: [51] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>31</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 31 ⊑ hasColor blue, green (Necessary condition)
+- 31 ⊑ hasShape/Part petals, stem (Necessary condition)
+- 31 ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, red
+- hasShape/Part: petals, central disc, stem
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of blue and green colors, possesses petals and a stem, and appears to have a smooth texture. These observed properties align with the necessary conditions defined in the TBox for class 31. Therefore, based on the visual evidence, the image is classified as 31.
+----------------------------------------
+Query 17: Expected: [51] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>31</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 17 ⊑ hasColor Blue, hasColor Purple, hasShape Petal, hasTexture Smooth
+- 51 ⊑ hasColor Red, hasShape Petal, hasTexture Smooth
+- 63 ⊑ hasColor Blue, hasShape Petal, hasTexture Smooth
+- 31 ⊑ hasColor Green, hasColor Purple, hasShape Petal, hasTexture Smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor Purple, hasColor Blue, hasColor Green
+- hasShape Petal
+- hasTexture Smooth
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a combination of purple, blue, and green colors, alongside a petal shape and a smooth texture. This aligns with the TBox axioms for class 31, which states that 31 entities must have a combination of green, purple, and blue colors, a petal shape, and a smooth texture. Therefore, based on the observed properties, the image is classified as 31.
+----------------------------------------
+Query 18: Expected: [51] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>51</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 51 ⊑ hasColor blue, purple, green (Necessary condition)
+- 51 ⊑ hasShape/Part petals, stem, leaves (Necessary condition)
+- 51 ⊑ hasTexture complex, layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, purple, green, pink
+- hasShape/Part: petals, stem, leaves, central core
+- hasTexture: complex, layered, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex layered texture, a central core, petals, a stem, and leaves, and a color palette including blue, purple, green, and pink. These observed properties align with the necessary conditions defined in the TBox for class 51. The presence of these features strongly suggests the image represents an instance of class 51.
+----------------------------------------
+Query 19: Expected: [31] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>51</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 51 ⊑ hasColor blue, purple, pink (Necessary condition)
+- 51 ⊑ hasShape/Part petals, central core (Necessary condition)
+- 51 ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, purple, pink
+- hasShape/Part: petals, central core, stem
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of blue, purple, and pink colors (hasColor), possesses petals and a central core (hasShape/Part), and appears to have a smooth texture (hasTexture). These observed properties align with the necessary conditions defined in the TBox for class 51. Therefore, based on the visual evidence, the image is classified as 51.
+----------------------------------------
+Query 20: Expected: [31] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>63</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 63 ⊑ hasColor purple
+- 63 ⊑ hasShape/Part petals
+- 63 ⊑ hasTexture complex
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, pink, green
+- hasShape/Part: numerous petals, central core, stem-like structures
+- hasTexture: intricate, layered, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex structure with numerous petals, predominantly purple and pink hues, and a slightly blurred, layered texture. This aligns with the TBox axioms for class 63, which states that it must have purple color, petals, and a complex texture. The observed properties in the ABox satisfy the necessary conditions defined in the TBox, thus justifying the classification as 63.
+----------------------------------------
+Query 21: Expected: [31] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>31</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 31 ⊑ hasColor purple
+- 31 ⊑ hasShape/Part petal
+- 31 ⊑ hasTexture smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: red, orange
+- hasShape/Part: petal, stem
+- hasTexture: smooth, slightly ruffled
+
+4. Logical Explanation (DL & NL):
+The image exhibits a smooth texture and distinct petal shapes, aligning with the TBox axioms for class 31. While the dominant color is red and orange, the presence of petals and a smooth texture are sufficient conditions to classify the image as 31, as the TBox states that 31 must have these properties.
+----------------------------------------
+Query 22: Expected: [31] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>51</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 51 ⊑ hasColor [red, pink, green] (Necessary condition)
+- 51 ⊑ hasShape/Part [petal, multiple petals, central core] (Necessary condition)
+- hasShape/Part [petal] ⊑ hasColor [red, pink, green] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: [red, pink, green, blue]
+- hasShape/Part: [petal, multiple petals, central core, curved edges]
+- hasTexture: [smooth, slightly blurred]
+
+4. Logical Explanation (DL & NL):
+The image exhibits a central core surrounded by multiple petals displaying a combination of red, pink, green, and blue colors. This aligns with the TBox axioms for class 51, which states that a 51 must have petals, a central core, and a color palette including red, pink, and green. The observed colors and shapes are consistent with the necessary conditions defined for class 51, therefore justifying its classification.
+----------------------------------------
+Query 23: Expected: [31] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>51</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 51 ⊑ hasColor [purple, green, blue] (Necessary condition)
+- 51 ⊑ hasShape/Part [petal, leaf, stem] (Necessary condition)
+- 51 ⊑ hasTexture [complex, layered] (Necessary condition)
+- hasColor [purple, green, blue] ∧ hasShape/Part [petal, leaf, stem] ∧ hasTexture [complex, layered] ⊑ 51 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, green, blue
+- hasShape/Part: petal, leaf, stem, complex arrangement
+- hasTexture: complex, layered, irregular
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex arrangement of petals, leaves, and stems, displaying a layered and irregular texture. The dominant colors are purple, green, and blue. These observed properties (hasColor [purple, green, blue], hasShape/Part [petal, leaf, stem, complex arrangement], and hasTexture [complex, layered, irregular]) satisfy the sufficient condition for class 51. Therefore, the image is classified as 51.
+----------------------------------------
+Query 24: Expected: [31] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>63</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 63 ⊑ hasColor blue, purple (Necessary condition)
+- 63 ⊑ hasShape/Part multiple petals, central core (Necessary condition)
+- 63 ⊑ hasTexture complex, layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, purple, green
+- hasShape/Part: multiple petals, dense central core, stem
+- hasTexture: complex, layered, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex, layered texture with multiple petals and a dense central core, and a dominant color palette of blue and purple. These observed properties (hasColor blue, purple; hasShape/Part multiple petals, central core; hasTexture complex, layered) align with the necessary conditions defined in the TBox for class 63. Therefore, the image is classified as 63.
+----------------------------------------
+Query 25: Expected: [31] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>51</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 51 ⊑ hasColor Blue
+- 51 ⊑ hasShape/Part Petal
+- 51 ⊑ hasTexture Smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Blue, Green, Purple
+- hasShape/Part: Petal, Stem, Leaves
+- hasTexture: Smooth, Irregular
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dominant blue color (hasColor Blue), a petal-like shape (hasShape/Part Petal), and a smooth texture (hasTexture Smooth). These properties align with the TBox axioms defining class 51. Therefore, the image is classified as 51.
+----------------------------------------
+Query 26: Expected: [31] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>63</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 63 ⊑ hasColor Blue
+- 63 ⊑ hasShape/Part Petal
+- 63 ⊑ hasTexture Smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Blue, Purple, Green
+- hasShape/Part: Petal, Stem, Leaves
+- hasTexture: Smooth, Slightly Textured
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dominant blue color (hasColor Blue), a petal-like shape (hasShape/Part Petal), and a smooth texture (hasTexture Smooth). These properties align with the TBox axioms defining class 63. While other colors and parts are present, the core visual characteristics strongly suggest a classification as 63.
+----------------------------------------
+Query 27: Expected: [31] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>51</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 51 ⊑ hasColor purple
+- 51 ⊑ hasShape/Part petal
+- 51 ⊑ hasTexture smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, pink
+- hasShape/Part: petal, stem, bud
+- hasTexture: smooth, slightly glossy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dominant purple color (hasColor purple), a petal-like shape (hasShape/Part petal), and a smooth texture (hasTexture smooth). These properties align with the TBox axioms defining class 51. Therefore, the image is classified as 51.
+----------------------------------------
+Query 28: Expected: [17] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>51</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 51 ⊑ hasColor blue, purple, green (Necessary condition)
+- 51 ⊑ hasShape/Part petal, stem, leaf (Necessary condition)
+- 51 ⊑ hasTexture complex, layered (Necessary condition)
+- hasColor blue, purple, green ⊑ 51 (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, purple, green
+- hasShape/Part: petal, stem, leaf, complex structure
+- hasTexture: complex, layered, irregular
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex structure with petals, stems, and leaves, displaying a combination of blue, purple, and green colors, and a layered, irregular texture. These observed properties (hasColor blue, purple, green; hasShape/Part petal, stem, leaf, complex structure; hasTexture complex, layered, irregular) satisfy the TBox axioms for class 51. Specifically, the presence of the observed colors, shapes, and texture is sufficient to classify the image as 51.
+----------------------------------------
+Query 29: Expected: [17] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>51</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 51 ⊑ hasColor blue, purple, green (Necessary condition)
+- 51 ⊑ hasShape/Part petals, central core (Necessary condition)
+- 51 ⊑ hasTexture complex, layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, purple, green, pink
+- hasShape/Part: petals, central core, stem, leaves
+- hasTexture: complex, layered, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The image exhibits a complex layered texture and a central core surrounded by petals, with a color palette dominated by blue, purple, and green. These observed properties (hasColor, hasShape/Part, hasTexture) align with the necessary conditions defined in the TBox for class 51. Therefore, based on the visual evidence, the image is classified as 51.
+----------------------------------------
+Query 30: Expected: [17] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>31</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 31 ⊑ hasColor purple, blue, green (Necessary condition)
+- 31 ⊑ hasShape/Part petals, central disc (Necessary condition)
+- 31 ⊑ hasTexture complex, layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, blue, green, pink
+- hasShape/Part: petals, central disc, stem, leaves
+- hasTexture: complex, layered, slightly blurred
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a combination of purple, blue, green, and pink colors (hasColor), along with distinct petals and a central disc (hasShape/Part). The texture appears complex and layered (hasTexture). These observed properties align with the necessary conditions defined in the TBox for class 31. The presence of these features validates the classification of the image as belonging to class 31.
+----------------------------------------
+Query 31: Expected: [17] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>63</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 63 ⊑ hasColor Blue
+- 63 ⊑ hasShape/Part Petal
+- 63 ⊑ hasTexture Smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Red, Pink
+- hasShape/Part: Petal, Central Disk
+- hasTexture: Smooth, Slightly Irregular
+
+4. Logical Explanation (DL & NL):
+The image exhibits a central disk-like structure and petal-like extensions, which aligns with the TBox axioms for class 63. While the dominant color is red and pink rather than blue as specified in the TBox, the presence of petals and a smooth texture are sufficient to classify it as 63. The color variation is considered a minor deviation from the ideal, but the core structural features are present.
+----------------------------------------
+Query 32: Expected: [17] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>31</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 31 ⊑ hasColor blue, purple, green (Necessary condition)
+- 31 ⊑ hasShape/Part petals, stem, leaves (Necessary condition)
+- 31 ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, purple, green
+- hasShape/Part: petals, stem, leaves
+- hasTexture: smooth
+
+4. Logical Explanation (DL & NL):
+The target image exhibits the properties of having blue, purple, and green colors, petals, a stem, leaves, and a smooth texture. These properties align with the necessary conditions defined in the TBox for class 31. Therefore, based on the observed visual features, the image is classified as 31.
+----------------------------------------
+Query 33: Expected: [17] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>51</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 51 ⊑ hasColor blue, green, pink (Necessary condition)
+- 51 ⊑ hasShape/Part petals, stem, leaves (Necessary condition)
+- 51 ⊑ hasTexture smooth (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green, pink, red
+- hasShape/Part: petals, central core, stem, leaves
+- hasTexture: smooth, slightly ruffled
+
+4. Logical Explanation (DL & NL):
+The image exhibits a combination of blue, green, and pink colors (hasColor), along with distinct petals, a central core, a stem, and leaves (hasShape/Part). The texture appears smooth with slight ruffling (hasTexture). These observed properties align with the necessary conditions defined in the TBox for class 51. Therefore, based on the visual evidence, the image is classified as 51.
+----------------------------------------
+Query 34: Expected: [17] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>63</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 63 ⊑ hasColor blue
+- 63 ⊑ hasShape/Part petal
+- 63 ⊑ hasTexture smooth
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: blue, green
+- hasShape/Part: petal, stem, leaves
+- hasTexture: smooth, slightly glossy
+
+4. Logical Explanation (DL & NL):
+The image exhibits a dominant blue color (hasColor blue), a petal-like shape (hasShape/Part petal), and a smooth texture (hasTexture smooth). These properties align with the TBox axioms defining class 63. The presence of a stem and leaves further supports the classification, as these are commonly associated with floral structures. Therefore, based on the observed properties and their relationship to the established axioms, the image is classified as 63.
+----------------------------------------
+Query 35: Expected: [17] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>51</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 51 ⊑ hasColor purple, blue, green (Necessary condition)
+- 51 ⊑ hasShape/Part petals, stem, leaves (Necessary condition)
+- 51 ⊑ hasTexture complex, layered (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: purple, blue, green
+- hasShape/Part: petals, stem, leaves
+- hasTexture: complex, layered
+
+4. Logical Explanation (DL & NL):
+The target image exhibits a complex layered texture, a combination of purple, blue, and green colors, and displays petals, a stem, and leaves. These observed properties align with the necessary conditions defined in the TBox for class 51. Therefore, the image is classified as 51.
+----------------------------------------
+Query 36: Expected: [17] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>51</response>
+
+2. TBox (Knowledge Base - Deduced Axioms):
+- 17 ⊑ hasColor Blue (Necessary condition)
+- 51 ⊑ hasShape ComplexFloralStructure (Necessary condition)
+- 63 ⊑ hasColor Purple (Necessary condition)
+- 31 ⊑ hasTexture DensePetalArrangement (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasColor: Green, Pink, Purple, Yellow
+- hasShape/Part: ComplexFloralStructure, MultiplePetals, Stem, Leaves
+- hasTexture: Irregular, Dense
+
+4. Logical Explanation (DL & NL):
+The image exhibits a "ComplexFloralStructure" (hasShape/Part), which is a necessary condition for class 51. While the colors present (Green, Pink, Purple, Yellow) don't perfectly align with the color constraints of other classes (Blue for 17, Purple for 63), the presence of the complex floral structure is the dominant and defining visual feature. Therefore, based on the provided examples and the observed properties, the image is classified as 51.
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.3056

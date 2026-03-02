@@ -1,0 +1,177 @@
+=== DEBUG LOG: qwen-vl | pets | Prompt: classification ===
+
+--- CONFIG: N=2, K=2, Q=5 ---
+Query 1: Expected: [Bombay] | Extracted: [Bombay] -> Correct: True
+Query 2: Expected: [Bombay] | Extracted: [Bombay] -> Correct: True
+Query 3: Expected: [Bombay] | Extracted: [Bombay] -> Correct: True
+Query 4: Expected: [Bombay] | Extracted: [Bombay] -> Correct: True
+Query 5: Expected: [Bombay] | Extracted: [Bombay] -> Correct: True
+Query 6: Expected: [American Bulldog] | Extracted: [American Bulldog] -> Correct: True
+Query 7: Expected: [American Bulldog] | Extracted: [American Bulldog] -> Correct: True
+Query 8: Expected: [American Bulldog] | Extracted: [American Bulldog] -> Correct: True
+Query 9: Expected: [American Bulldog] | Extracted: [American Bulldog] -> Correct: True
+Query 10: Expected: [American Bulldog] | Extracted: [American Bulldog] -> Correct: True
+-> FINAL ACCURACY for (2,2,5): 1.0000
+
+--- CONFIG: N=2, K=2, Q=8 ---
+Query 1: Expected: [English Setter] | Extracted: [German Shorthaired] -> Correct: False
+Query 2: Expected: [English Setter] | Extracted: [German Shorthaired] -> Correct: False
+Query 3: Expected: [English Setter] | Extracted: [German Shorthaired] -> Correct: False
+Query 4: Expected: [English Setter] | Extracted: [English Setter] -> Correct: True
+Query 5: Expected: [English Setter] | Extracted: [English Setter] -> Correct: True
+Query 6: Expected: [English Setter] | Extracted: [English Setter] -> Correct: True
+Query 7: Expected: [English Setter] | Extracted: [English Setter] -> Correct: True
+Query 8: Expected: [English Setter] | Extracted: [English Setter] -> Correct: True
+Query 9: Expected: [German Shorthaired] | Extracted: [German Shorthaired] -> Correct: True
+Query 10: Expected: [German Shorthaired] | Extracted: [German Shorthaired] -> Correct: True
+Query 11: Expected: [German Shorthaired] | Extracted: [German Shorthaired] -> Correct: True
+Query 12: Expected: [German Shorthaired] | Extracted: [German Shorthaired] -> Correct: True
+Query 13: Expected: [German Shorthaired] | Extracted: [German Shorthaired] -> Correct: True
+Query 14: Expected: [German Shorthaired] | Extracted: [German Shorthaired] -> Correct: True
+Query 15: Expected: [German Shorthaired] | Extracted: [German Shorthaired] -> Correct: True
+Query 16: Expected: [German Shorthaired] | Extracted: [German Shorthaired] -> Correct: True
+-> FINAL ACCURACY for (2,2,8): 0.8125
+
+--- CONFIG: N=2, K=1, Q=5 ---
+Query 1: Expected: [Japanese Chin] | Extracted: [Japanese Chin] -> Correct: True
+Query 2: Expected: [Japanese Chin] | Extracted: [Japanese Chin] -> Correct: True
+Query 3: Expected: [Japanese Chin] | Extracted: [Japanese Chin] -> Correct: True
+Query 4: Expected: [Japanese Chin] | Extracted: [Japanese Chin] -> Correct: True
+Query 5: Expected: [Japanese Chin] | Extracted: [Japanese Chin] -> Correct: True
+Query 6: Expected: [British Shorthair] | Extracted: [British Shorthair] -> Correct: True
+Query 7: Expected: [British Shorthair] | Extracted: [British Shorthair] -> Correct: True
+Query 8: Expected: [British Shorthair] | Extracted: [British Shorthair] -> Correct: True
+Query 9: Expected: [British Shorthair] | Extracted: [British Shorthair] -> Correct: True
+Query 10: Expected: [British Shorthair] | Extracted: [British Shorthair] -> Correct: True
+-> FINAL ACCURACY for (2,1,5): 1.0000
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [Samoyed] | Extracted: [Samoyed] -> Correct: True
+Query 2: Expected: [Samoyed] | Extracted: [Samoyed] -> Correct: True
+Query 3: Expected: [Samoyed] | Extracted: [Samoyed] -> Correct: True
+Query 4: Expected: [Samoyed] | Extracted: [Samoyed] -> Correct: True
+Query 5: Expected: [Samoyed] | Extracted: [Samoyed] -> Correct: True
+Query 6: Expected: [Samoyed] | Extracted: [Samoyed] -> Correct: True
+Query 7: Expected: [Samoyed] | Extracted: [Samoyed] -> Correct: True
+Query 8: Expected: [Samoyed] | Extracted: [Samoyed] -> Correct: True
+Query 9: Expected: [Samoyed] | Extracted: [Samoyed] -> Correct: True
+Query 10: Expected: [Staffordshire Bull Terrier] | Extracted: [Staffordshire Bull Terrier] -> Correct: True
+Query 11: Expected: [Staffordshire Bull Terrier] | Extracted: [Staffordshire Bull Terrier] -> Correct: True
+Query 12: Expected: [Staffordshire Bull Terrier] | Extracted: [Staffordshire Bull Terrier] -> Correct: True
+Query 13: Expected: [Staffordshire Bull Terrier] | Extracted: [Staffordshire Bull Terrier] -> Correct: True
+Query 14: Expected: [Staffordshire Bull Terrier] | Extracted: [Staffordshire Bull Terrier] -> Correct: True
+Query 15: Expected: [Staffordshire Bull Terrier] | Extracted: [Staffordshire Bull Terrier] -> Correct: True
+Query 16: Expected: [Staffordshire Bull Terrier] | Extracted: [Staffordshire Bull Terrier] -> Correct: True
+Query 17: Expected: [Staffordshire Bull Terrier] | Extracted: [Staffordshire Bull Terrier] -> Correct: True
+Query 18: Expected: [Staffordshire Bull Terrier] | Extracted: [Staffordshire Bull Terrier] -> Correct: True
+-> FINAL ACCURACY for (2,1,9): 1.0000
+
+--- CONFIG: N=3, K=1, Q=5 ---
+Query 1: Expected: [Japanese Chin] | Extracted: [Japanese Chin] -> Correct: True
+Query 2: Expected: [Japanese Chin] | Extracted: [Japanese Chin] -> Correct: True
+Query 3: Expected: [Japanese Chin] | Extracted: [Japanese Chin] -> Correct: True
+Query 4: Expected: [Japanese Chin] | Extracted: [Japanese Chin] -> Correct: True
+Query 5: Expected: [Japanese Chin] | Extracted: [Japanese Chin] -> Correct: True
+Query 6: Expected: [Samoyed] | Extracted: [Samoyed] -> Correct: True
+Query 7: Expected: [Samoyed] | Extracted: [Samoyed] -> Correct: True
+Query 8: Expected: [Samoyed] | Extracted: [Samoyed] -> Correct: True
+Query 9: Expected: [Samoyed] | Extracted: [Samoyed] -> Correct: True
+Query 10: Expected: [Samoyed] | Extracted: [Samoyed] -> Correct: True
+Query 11: Expected: [Persian] | Extracted: [Persian] -> Correct: True
+Query 12: Expected: [Persian] | Extracted: [Persian] -> Correct: True
+Query 13: Expected: [Persian] | Extracted: [Persian] -> Correct: True
+Query 14: Expected: [Persian] | Extracted: [Persian] -> Correct: True
+Query 15: Expected: [Persian] | Extracted: [Persian] -> Correct: True
+-> FINAL ACCURACY for (3,1,5): 1.0000
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [Pomeranian] | Extracted: [Pomeranian] -> Correct: True
+Query 2: Expected: [Pomeranian] | Extracted: [Pomeranian] -> Correct: True
+Query 3: Expected: [Pomeranian] | Extracted: [Pomeranian] -> Correct: True
+Query 4: Expected: [Pomeranian] | Extracted: [Pomeranian] -> Correct: True
+Query 5: Expected: [Pomeranian] | Extracted: [Pomeranian] -> Correct: True
+Query 6: Expected: [Pomeranian] | Extracted: [Pomeranian] -> Correct: True
+Query 7: Expected: [Pomeranian] | Extracted: [Pomeranian] -> Correct: True
+Query 8: Expected: [Pomeranian] | Extracted: [Pomeranian] -> Correct: True
+Query 9: Expected: [Pomeranian] | Extracted: [Pomeranian] -> Correct: True
+Query 10: Expected: [Japanese Chin] | Extracted: [Pomeranian] -> Correct: False
+Query 11: Expected: [Japanese Chin] | Extracted: [Japanese Chin] -> Correct: True
+Query 12: Expected: [Japanese Chin] | Extracted: [Pomeranian] -> Correct: False
+Query 13: Expected: [Japanese Chin] | Extracted: [Japanese Chin] -> Correct: True
+Query 14: Expected: [Japanese Chin] | Extracted: [Japanese Chin] -> Correct: True
+Query 15: Expected: [Japanese Chin] | Extracted: [Pomeranian] -> Correct: False
+Query 16: Expected: [Japanese Chin] | Extracted: [Pomeranian] -> Correct: False
+Query 17: Expected: [Japanese Chin] | Extracted: [Japanese Chin] -> Correct: True
+Query 18: Expected: [Japanese Chin] | Extracted: [Japanese Chin] -> Correct: True
+Query 19: Expected: [Wheaten Terrier] | Extracted: [Pomeranian] -> Correct: False
+Query 20: Expected: [Wheaten Terrier] | Extracted: [Wheaten Terrier] -> Correct: True
+Query 21: Expected: [Wheaten Terrier] | Extracted: [Pomeranian] -> Correct: False
+Query 22: Expected: [Wheaten Terrier] | Extracted: [Wheaten Terrier] -> Correct: True
+Query 23: Expected: [Wheaten Terrier] | Extracted: [Pomeranian] -> Correct: False
+Query 24: Expected: [Wheaten Terrier] | Extracted: [Pomeranian] -> Correct: False
+Query 25: Expected: [Wheaten Terrier] | Extracted: [Wheaten Terrier] -> Correct: True
+Query 26: Expected: [Wheaten Terrier] | Extracted: [Pomeranian] -> Correct: False
+Query 27: Expected: [Wheaten Terrier] | Extracted: [Pomeranian] -> Correct: False
+-> FINAL ACCURACY for (3,1,9): 0.6296
+
+--- CONFIG: N=4, K=1, Q=5 ---
+Query 1: Expected: [Pug] | Extracted: [Pug] -> Correct: True
+Query 2: Expected: [Pug] | Extracted: [Pug] -> Correct: True
+Query 3: Expected: [Pug] | Extracted: [Pug] -> Correct: True
+Query 4: Expected: [Pug] | Extracted: [Pug] -> Correct: True
+Query 5: Expected: [Pug] | Extracted: [Pug] -> Correct: True
+Query 6: Expected: [Persian] | Extracted: [Persian] -> Correct: True
+Query 7: Expected: [Persian] | Extracted: [Persian] -> Correct: True
+Query 8: Expected: [Persian] | Extracted: [Persian] -> Correct: True
+Query 9: Expected: [Persian] | Extracted: [Persian] -> Correct: True
+Query 10: Expected: [Persian] | Extracted: [Persian] -> Correct: True
+Query 11: Expected: [German Shorthaired] | Extracted: [Boxer] -> Correct: False
+Query 12: Expected: [German Shorthaired] | Extracted: [Pug] -> Correct: False
+Query 13: Expected: [German Shorthaired] | Extracted: [Pug] -> Correct: False
+Query 14: Expected: [German Shorthaired] | Extracted: [German Shorthaired] -> Correct: True
+Query 15: Expected: [German Shorthaired] | Extracted: [Pug] -> Correct: False
+Query 16: Expected: [Boxer] | Extracted: [Boxer] -> Correct: True
+Query 17: Expected: [Boxer] | Extracted: [Boxer] -> Correct: True
+Query 18: Expected: [Boxer] | Extracted: [Boxer] -> Correct: True
+Query 19: Expected: [Boxer] | Extracted: [Pug] -> Correct: False
+Query 20: Expected: [Boxer] | Extracted: [Boxer] -> Correct: True
+-> FINAL ACCURACY for (4,1,5): 0.7500
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [Staffordshire Bull Terrier] | Extracted: [Miniature Pinscher] -> Correct: False
+Query 2: Expected: [Staffordshire Bull Terrier] | Extracted: [Staffordshire Bull Terrier] -> Correct: True
+Query 3: Expected: [Staffordshire Bull Terrier] | Extracted: [Miniature Pinscher] -> Correct: False
+Query 4: Expected: [Staffordshire Bull Terrier] | Extracted: [Staffordshire Bull Terrier] -> Correct: True
+Query 5: Expected: [Staffordshire Bull Terrier] | Extracted: [Staffordshire Bull Terrier] -> Correct: True
+Query 6: Expected: [Staffordshire Bull Terrier] | Extracted: [Staffordshire Bull Terrier] -> Correct: True
+Query 7: Expected: [Staffordshire Bull Terrier] | Extracted: [Staffordshire Bull Terrier] -> Correct: True
+Query 8: Expected: [Staffordshire Bull Terrier] | Extracted: [Staffordshire Bull Terrier] -> Correct: True
+Query 9: Expected: [Staffordshire Bull Terrier] | Extracted: [Staffordshire Bull Terrier] -> Correct: True
+Query 10: Expected: [Japanese Chin] | Extracted: [Japanese Chin] -> Correct: True
+Query 11: Expected: [Japanese Chin] | Extracted: [Miniature Pinscher] -> Correct: False
+Query 12: Expected: [Japanese Chin] | Extracted: [Japanese Chin] -> Correct: True
+Query 13: Expected: [Japanese Chin] | Extracted: [Japanese Chin] -> Correct: True
+Query 14: Expected: [Japanese Chin] | Extracted: [Miniature Pinscher] -> Correct: False
+Query 15: Expected: [Japanese Chin] | Extracted: [Japanese Chin] -> Correct: True
+Query 16: Expected: [Japanese Chin] | Extracted: [Japanese Chin] -> Correct: True
+Query 17: Expected: [Japanese Chin] | Extracted: [Miniature Pinscher] -> Correct: False
+Query 18: Expected: [Japanese Chin] | Extracted: [Staffordshire Bull Terrier] -> Correct: False
+Query 19: Expected: [Miniature Pinscher] | Extracted: [Miniature Pinscher] -> Correct: True
+Query 20: Expected: [Miniature Pinscher] | Extracted: [Miniature Pinscher] -> Correct: True
+Query 21: Expected: [Miniature Pinscher] | Extracted: [Miniature Pinscher] -> Correct: True
+Query 22: Expected: [Miniature Pinscher] | Extracted: [Miniature Pinscher] -> Correct: True
+Query 23: Expected: [Miniature Pinscher] | Extracted: [Miniature Pinscher] -> Correct: True
+Query 24: Expected: [Miniature Pinscher] | Extracted: [Miniature Pinscher] -> Correct: True
+Query 25: Expected: [Miniature Pinscher] | Extracted: [Miniature Pinscher] -> Correct: True
+Query 26: Expected: [Miniature Pinscher] | Extracted: [Miniature Pinscher] -> Correct: True
+Query 27: Expected: [Miniature Pinscher] | Extracted: [Staffordshire Bull Terrier] -> Correct: False
+Query 28: Expected: [Bombay] | Extracted: [Bombay] -> Correct: True
+Query 29: Expected: [Bombay] | Extracted: [Bombay] -> Correct: True
+Query 30: Expected: [Bombay] | Extracted: [Bombay] -> Correct: True
+Query 31: Expected: [Bombay] | Extracted: [Bombay] -> Correct: True
+Query 32: Expected: [Bombay] | Extracted: [Bombay] -> Correct: True
+Query 33: Expected: [Bombay] | Extracted: [Bombay] -> Correct: True
+Query 34: Expected: [Bombay] | Extracted: [Bombay] -> Correct: True
+Query 35: Expected: [Bombay] | Extracted: [Bombay] -> Correct: True
+Query 36: Expected: [Bombay] | Extracted: [Bombay] -> Correct: True
+-> FINAL ACCURACY for (4,1,9): 0.8056

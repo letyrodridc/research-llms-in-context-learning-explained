@@ -1,0 +1,1345 @@
+=== DEBUG LOG: gemma3 | dtd | Prompt: features ===
+
+--- CONFIG: N=2, K=2, Q=5 ---
+Query 1: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Blue hue
+- Horizontal lines
+- Rough texture
+
+<response>crosshatched</response>
+----------------------------------------
+Query 2: Expected: [crosshatched] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Circular shape
+- Concentric rings
+- Blue-gray central area
+
+<response>crystalline</response>
+----------------------------------------
+Query 3: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Irregular white lines
+- Dark blue streaks
+- Dense, granular texture
+
+<response>crosshatched</response>
+----------------------------------------
+Query 4: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Jagged edges
+- Scattered pink dots
+- Predominantly yellow color
+
+<response>crosshatched</response>
+----------------------------------------
+Query 5: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Dense, irregular pattern
+- Predominantly gray and blue tones
+- Small, scattered black spots
+
+<response>crosshatched</response>
+----------------------------------------
+Query 6: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Irregular, jagged edges
+- Predominantly purple and green coloration
+- Concentric, radiating patterns
+
+<response>crystalline</response>
+----------------------------------------
+Query 7: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Irregular dark blue shapes
+- Light purple patches
+- Scattered red dots
+
+<response>crystalline</response>
+----------------------------------------
+Query 8: Expected: [crystalline] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Irregular dark blue patches
+- Scattered bright yellow dots
+- Predominantly brown and turquoise texture
+
+<response>crosshatched</response>
+----------------------------------------
+Query 9: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Irregular, fragmented shapes
+- Varied color patches (pink, blue, green)
+- Rough, uneven texture
+
+<response>crystalline</response>
+----------------------------------------
+Query 10: Expected: [crystalline] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- [Concrete observable feature 1, e.g., Specific color/texture]
+- [Concrete observable feature 2, e.g., Specific shape/part]
+- [Concrete observable feature 3, e.g., Specific distinctive mark]
+<response>crosshatched</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,5): 7.0000
+
+--- CONFIG: N=2, K=2, Q=8 ---
+Query 1: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Small, irregular colored pixels
+- Predominantly blue, red, and yellow colors
+- Randomly distributed color variations
+
+<response>blotchy</response>
+----------------------------------------
+Query 2: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Repeating diamond shapes
+- Intersecting lines
+- Gray and blue color palette
+<response>woven</response>
+----------------------------------------
+Query 3: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Rectangular shapes
+- Diagonal arrangement
+- Blue and green background
+
+<response>woven</response>
+----------------------------------------
+Query 4: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Intersecting dark blue lines
+- Bright yellow/orange accents
+- Repeating diagonal pattern
+<response>woven</response>
+----------------------------------------
+Query 5: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Repeating diagonal lines
+- Small rectangular shapes
+- Predominantly blue and gray colors
+<response>woven</response>
+----------------------------------------
+Query 6: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Small, irregular shapes
+- Predominantly blue and brown colors
+- Random distribution of shapes
+
+<response>blotchy</response>
+----------------------------------------
+Query 7: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Irregular, dense texture
+- Varied color distribution
+- Lack of distinct repeating pattern
+
+<response>blotchy</response>
+----------------------------------------
+Query 8: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Small, irregular purple shapes
+- Dominant yellow-green background
+- Random distribution of color pixels
+
+<response>blotchy</response>
+----------------------------------------
+Query 9: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Small blue dots
+- Green background texture
+- Pink speckles
+
+<response>blotchy</response>
+----------------------------------------
+Query 10: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Repeating curved lines
+- Irregular, jagged edges
+- Predominantly blue and purple hues
+
+<response>woven</response>
+----------------------------------------
+Query 11: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Irregular gray patches
+- Scattered red dots
+- Yellow speckles
+<response>blotchy</response>
+----------------------------------------
+Query 12: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Irregular, fragmented shapes
+- Predominantly pink and teal colors
+- Random, non-repeating pattern
+<response>blotchy</response>
+----------------------------------------
+Query 13: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Grayish-white dominant color
+- Irregular, swirling patterns
+- Dark gray streaks
+
+<response>blotchy</response>
+----------------------------------------
+Query 14: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Irregular dark patches
+- Randomly distributed green pixels
+- Predominantly pink and purple color
+<response>blotchy</response>
+----------------------------------------
+Query 15: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Randomly distributed color patches
+- Irregular, amorphous shapes
+- No discernible repeating pattern
+
+<response>blotchy</response>
+----------------------------------------
+Query 16: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Green and purple pixels
+- Irregular, scattered distribution
+- No discernible linear pattern
+
+<response>blotchy</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,8): 11.0000
+
+--- CONFIG: N=2, K=1, Q=5 ---
+Query 1: Expected: [pleated] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Vertical lines
+- Dark vertical streaks
+- Irregular texture
+
+<response>crosshatched</response>
+----------------------------------------
+Query 2: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Repeating curved lines
+- Yellow background
+- Blue and red lines
+
+<response>pleated</response>
+----------------------------------------
+Query 3: Expected: [pleated] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Parallel lines
+- Reddish-pink background
+- Thin, light blue lines
+
+<response>crosshatched</response>
+----------------------------------------
+Query 4: Expected: [pleated] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Jagged blue lines
+- Bright green dashes
+- Wavy pattern
+
+<response>crosshatched</response>
+----------------------------------------
+Query 5: Expected: [pleated] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Repeating diagonal lines
+- Alternating orange, green, and purple sections
+- Zigzag pattern
+
+<response>crosshatched</response>
+----------------------------------------
+Query 6: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Vertical blue lines
+- Yellow and red pixel pattern
+- Light blue fabric
+
+<response>crosshatched</response>
+----------------------------------------
+Query 7: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Concentric curved lines
+- Dark central void
+- Swirling pattern
+
+<response>crosshatched</response>
+----------------------------------------
+Query 8: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Diagonal lines
+- Gray and pink color
+- Repeating angled shapes
+
+<response>crosshatched</response>
+----------------------------------------
+Query 9: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Dense, small red dots
+- Dense, small blue dots
+- Dense, small yellow dots
+
+<response>crosshatched</response>
+----------------------------------------
+Query 10: Expected: [crosshatched] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Diagonal blue lines
+- Pink speckled texture
+- Thin green line separating textures
+
+<response>crosshatched</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,5): 6.0000
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Randomly distributed colored pixels
+- High density of small squares
+- Overall uniform texture
+
+<response>grid</response>
+----------------------------------------
+Query 2: Expected: [grid] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Dense, small colored pixels
+- Predominantly blue color
+- Randomly distributed colored dots
+
+<response>matted</response>
+----------------------------------------
+Query 3: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Repeating square shapes
+- Red and blue color blocks
+- Thin blue lines separating squares
+<response>grid</response>
+----------------------------------------
+Query 4: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Small square shapes
+- Repeating pattern
+- Blue and purple color
+
+<response>grid</response>
+----------------------------------------
+Query 5: Expected: [grid] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Small, irregular shapes
+- Predominantly blue background
+- Scattered bright colors (pink, green, yellow)
+<response>matted</response>
+----------------------------------------
+Query 6: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Small square shapes
+- Repeating pattern
+- Uniform spacing between squares
+<response>grid</response>
+----------------------------------------
+Query 7: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Repeating triangular shapes
+- Predominantly red color
+- Dark blue central shape
+
+<response>grid</response>
+----------------------------------------
+Query 8: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Regularly spaced square shapes
+- Uniform arrangement in rows and columns
+- Small, dark squares within larger squares
+
+<response>grid</response>
+----------------------------------------
+Query 9: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Regular square grid pattern
+- Thin blue lines forming the grid
+- Bright yellow background
+
+<response>grid</response>
+----------------------------------------
+Query 10: Expected: [matted] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Dense, irregular pattern
+- Predominantly blue and green hues
+- Small, scattered bright pink spots
+
+<response>matted</response>
+----------------------------------------
+Query 11: Expected: [matted] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Brown and gray swirling texture
+- Dark brown irregular streaks
+- Dense, tangled appearance
+
+<response>matted</response>
+----------------------------------------
+Query 12: Expected: [matted] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Predominantly turquoise color
+- Scattered pink spots
+- Irregular, non-geometric arrangement
+
+<response>matted</response>
+----------------------------------------
+Query 13: Expected: [matted] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Swirling purple and blue texture
+- Scattered bright yellow spots
+- Red streaks
+
+<response>matted</response>
+----------------------------------------
+Query 14: Expected: [matted] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Dark brown irregular shapes
+- Small blue dots
+- Green foliage at the top
+
+<response>matted</response>
+----------------------------------------
+Query 15: Expected: [matted] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Irregular blue patches
+- Scattered pink dots
+- Green background texture
+
+<response>matted</response>
+----------------------------------------
+Query 16: Expected: [matted] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Purple hue
+- Yellow speckles
+- Dark central area
+<response>matted</response>
+----------------------------------------
+Query 17: Expected: [matted] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Randomly distributed colored pixels
+- Predominantly gray color
+- Small, irregular shapes
+
+<response>matted</response>
+----------------------------------------
+Query 18: Expected: [matted] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Dense, interwoven texture
+- Predominantly purple and green hues
+- Irregular, rounded shapes
+
+<response>matted</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9): 16.0000
+
+--- CONFIG: N=3, K=1, Q=5 ---
+Query 1: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Vertical blue-gray lines
+- Yellow background
+- Irregular dark shapes
+
+<response>blotchy</response>
+----------------------------------------
+Query 2: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Brown and green mottled pattern
+- Irregular, curved edges
+- Central darker area
+
+<response>blotchy</response>
+----------------------------------------
+Query 3: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Vertical streaks of varying colors
+- Irregular, fragmented shapes
+- Predominantly purple and green hues
+
+<response>blotchy</response>
+----------------------------------------
+Query 4: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Curving lines
+- Pink and purple hues
+- Wrinkled texture
+<response>blotchy</response>
+----------------------------------------
+Query 5: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Blue and white vertical streaks
+- Scattered red pixels
+- Yellow irregular patches
+<response>blotchy</response>
+----------------------------------------
+Query 6: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Predominantly blue pixels
+- Scattered green pixels
+- Horizontal blue line
+
+<response>flecked</response>
+----------------------------------------
+Query 7: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Dense pink and green pixels
+- Scattered dark pixels
+- Overall speckled appearance
+
+<response>flecked</response>
+----------------------------------------
+Query 8: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Scattered yellow dots
+- Predominantly blue color
+- Vertical blue streak
+
+<response>flecked</response>
+----------------------------------------
+Query 9: Expected: [flecked] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Randomly distributed pixels
+- Predominantly blue and pink hues
+- Horizontal dark line
+
+<response>blotchy</response>
+----------------------------------------
+Query 10: Expected: [flecked] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Blue and purple patches
+- Brown and yellow base color
+- Irregular, scattered texture
+
+<response>blotchy</response>
+----------------------------------------
+Query 11: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Red and pink clusters
+- Horizontal green stripes
+- Blue and brown horizontal line
+
+<response>blotchy</response>
+----------------------------------------
+Query 12: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Blue background
+- Scattered yellow dots
+- Irregular red spots
+
+<response>flecked</response>
+----------------------------------------
+Query 13: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Yellowish-purple clusters
+- Blue-green background
+- Scattered pink spots
+
+<response>blotchy</response>
+----------------------------------------
+Query 14: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Randomly distributed pixels
+- Mixture of red, green, and blue hues
+- Irregular, undefined shapes
+
+<response>blotchy</response>
+----------------------------------------
+Query 15: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Randomly distributed pixels
+- Dark blue area
+- Varied color patches
+
+<response>blotchy</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,5): 7.0000
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [stained] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Dominant pink hue
+- Irregular, swirling pattern
+- Green areas surrounding pink
+<response>blotchy</response>
+----------------------------------------
+Query 2: Expected: [stained] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Dominant blue color
+- Irregular green edges
+- Scattered red dots
+
+<response>blotchy</response>
+----------------------------------------
+Query 3: Expected: [stained] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Irregular pink patches
+- Blue and purple streaks
+- Green and brown base color
+<response>blotchy</response>
+----------------------------------------
+Query 4: Expected: [stained] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Swirling patterns
+- Varied color patches (pink, blue, teal)
+- Irregular edges
+
+<response>blotchy</response>
+----------------------------------------
+Query 5: Expected: [stained] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Varied color pixels
+- Scattered blue spots
+- Overall mottled appearance
+
+<response>blotchy</response>
+----------------------------------------
+Query 6: Expected: [stained] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Bright pink patches
+- Blue and purple areas
+- Green and yellow speckles
+<response>blotchy</response>
+----------------------------------------
+Query 7: Expected: [stained] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Randomly distributed pixels
+- Mixture of blue, green, and pink hues
+- High pixel density
+
+<response>blotchy</response>
+----------------------------------------
+Query 8: Expected: [stained] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Predominantly green color
+- Scattered pink pixels
+- Random blue pixels
+<response>blotchy</response>
+----------------------------------------
+Query 9: Expected: [stained] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Mottled brown and teal patches
+- Irregular, swirling patterns
+- Areas of light beige
+
+<response>stained</response>
+----------------------------------------
+Query 10: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Scattered blue dots
+- Scattered green dots
+- Scattered pink dots
+
+<response>interlaced</response>
+----------------------------------------
+Query 11: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Red and pink clusters
+- Blue background
+- Scattered yellow pixels
+
+<response>blotchy</response>
+----------------------------------------
+Query 12: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Randomly distributed colored pixels
+- Predominantly blue hue
+- Small, scattered red pixels
+
+<response>interlaced</response>
+----------------------------------------
+Query 13: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Wavy lines
+- Irregular edges
+- Varied color patches
+
+<response>blotchy</response>
+----------------------------------------
+Query 14: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Dominant red pixels
+- Scattered green pixels
+- Yellowish-brown central area
+<response>stained</response>
+----------------------------------------
+Query 15: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Predominantly pink and purple hues
+- Scattered turquoise pixels
+- Randomly distributed green pixels
+<response>blotchy</response>
+----------------------------------------
+Query 16: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Green and purple color distribution
+- Irregular purple patches
+- Green background texture
+
+<response>blotchy</response>
+----------------------------------------
+Query 17: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Circular patches of purple
+- Irregular green streaks
+- Brown and orange mottled areas
+<response>stained</response>
+----------------------------------------
+Query 18: Expected: [blotchy] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Randomly distributed bright pink pixels
+- Scattered bright red pixels
+- Dominant teal and green hues
+
+<response>blotchy</response>
+----------------------------------------
+Query 19: Expected: [interlaced] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Swirling patterns
+- Irregular curves
+- Varied color distribution
+
+<response>blotchy</response>
+----------------------------------------
+Query 20: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Interconnected loops
+- Circular overall shape
+- Repeating pattern
+- Dark lines on a light background
+
+<response>interlaced</response>
+----------------------------------------
+Query 21: Expected: [interlaced] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Circular shape
+- Randomly distributed colors
+- Speckled texture
+
+<response>blotchy</response>
+----------------------------------------
+Query 22: Expected: [interlaced] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Varied color speckles
+- Dark brown patches
+- Blue and purple hues
+<response>blotchy</response>
+----------------------------------------
+Query 23: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Pink curved lines
+- Scattered green pixels
+- Purple background texture
+
+<response>interlaced</response>
+----------------------------------------
+Query 24: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Jagged edges
+- Dark gray shapes
+- Light blue background
+- Red outlines
+<response>interlaced</response>
+----------------------------------------
+Query 25: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Swirling patterns
+- Irregular curves
+- Turquoise background
+<response>interlaced</response>
+----------------------------------------
+Query 26: Expected: [interlaced] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Repeating circular shapes
+- Blue and yellow color combination
+- Dense, patterned arrangement
+
+<response>interlaced</response>
+----------------------------------------
+Query 27: Expected: [interlaced] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Randomly distributed pixels
+- Dominant blue and green hues
+- Small dark spots
+
+<response>blotchy</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9): 11.0000
+
+--- CONFIG: N=4, K=1, Q=5 ---
+Query 1: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Small circular shapes
+- Blue color
+- Scattered pattern
+<response>perforated</response>
+----------------------------------------
+Query 2: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Circular shapes
+- Small, evenly spaced
+- Pink and blue coloration
+<response>perforated</response>
+----------------------------------------
+Query 3: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Circular holes
+- Dark circular centers
+- Light gray surrounding the holes
+<response>perforated</response>
+----------------------------------------
+Query 4: Expected: [perforated] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Dense, irregular speckling
+- Predominantly pink and blue coloration
+- Mottled brown area
+
+<response>stained</response>
+----------------------------------------
+Query 5: Expected: [perforated] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Four-lobed shapes
+- Blue and pink coloration
+- Repeating pattern
+
+<response>stained</response>
+----------------------------------------
+Query 6: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Repeating angled lines
+- V-shaped pattern
+- Teal color
+<response>zigzagged</response>
+----------------------------------------
+Query 7: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Diagonal lines
+- Varying line widths
+- White and brown coloration
+<response>zigzagged</response>
+----------------------------------------
+Query 8: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Repeating angled lines
+- Blue and yellow coloration
+- Sharp, defined zig-zag pattern
+<response>zigzagged</response>
+----------------------------------------
+Query 9: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Repeating angled lines
+- V-shaped pattern
+- Alternating pink and blue colors
+<response>zigzagged</response>
+----------------------------------------
+Query 10: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Angled lines
+- Repeating V-shape
+- Diagonal pattern
+<response>zigzagged</response>
+----------------------------------------
+Query 11: Expected: [stained] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Irregular swirling pattern
+- Varied color patches (pink, green, blue)
+- No distinct linear or circular features
+
+<response>stained</response>
+----------------------------------------
+Query 12: Expected: [stained] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Irregular, curving lines
+- Patches of pink and green
+- Dark, irregular central area
+<response>stained</response>
+----------------------------------------
+Query 13: Expected: [stained] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Irregular green patches
+- Dominant purple background
+- Brown mottled areas
+<response>stained</response>
+----------------------------------------
+Query 14: Expected: [stained] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Irregular brown patches
+- Scattered turquoise spots
+- Dark vertical line
+
+<response>stained</response>
+----------------------------------------
+Query 15: Expected: [stained] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Randomly distributed pixels
+- Predominantly green color
+- Small, irregular shapes
+
+<response>stained</response>
+----------------------------------------
+Query 16: Expected: [grooved] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Thin, horizontal lines
+- Light blue lines across a beige background
+- Uneven spacing between lines
+<response>grooved</response>
+----------------------------------------
+Query 17: Expected: [grooved] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Parallel lines
+- Blue color
+- Yellow color
+<response>grooved</response>
+----------------------------------------
+Query 18: Expected: [grooved] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Parallel ridges
+- Consistent linear texture
+- Blue and yellow color
+<response>grooved</response>
+----------------------------------------
+Query 19: Expected: [grooved] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Dense, irregular pattern
+- Mixture of red, blue, and green pixels
+- Small, scattered dark spots
+
+<response>stained</response>
+----------------------------------------
+Query 20: Expected: [grooved] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Curved lines
+- Parallel arrangement
+- Green and blue coloration
+
+<response>grooved</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,5): 17.0000
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Circular shape
+- Dark central area
+- Light colored border
+<response>flecked</response>
+----------------------------------------
+Query 2: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Blue color
+- Yellow speckles
+- Gray vertical stripe
+
+<response>flecked</response>
+----------------------------------------
+Query 3: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Small, scattered red dots
+- Small, scattered yellow dots
+- Light blue background
+<response>flecked</response>
+----------------------------------------
+Query 4: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Dense, small colored dots
+- Predominantly blue color
+- Random distribution of red and yellow dots
+
+<response>flecked</response>
+----------------------------------------
+Query 5: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Dense, small dots
+- Predominantly blue color
+- Vertical stripe
+
+<response>flecked</response>
+----------------------------------------
+Query 6: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Small, scattered red spots
+- Small, scattered yellow spots
+- Predominantly grey-blue color
+
+<response>flecked</response>
+----------------------------------------
+Query 7: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Dense, small colored dots
+- Randomly distributed colors (blue, green, pink)
+- Uniform texture
+
+<response>flecked</response>
+----------------------------------------
+Query 8: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Small, scattered red dots
+- Small, scattered blue dots
+- Small, scattered dark purple dots
+- Predominantly yellow background
+
+<response>flecked</response>
+----------------------------------------
+Query 9: Expected: [flecked] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Small, scattered dots
+- Predominantly yellow background
+- Presence of blue and red dots
+
+<response>flecked</response>
+----------------------------------------
+Query 10: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Square shapes
+- Uniform grid pattern
+- Blue color
+
+<response>chequered</response>
+----------------------------------------
+Query 11: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Square grid pattern
+- Uniformly sized squares
+- Repeating square units
+<response>chequered</response>
+----------------------------------------
+Query 12: Expected: [chequered] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Horizontal lines
+- Teal color
+- Irregular texture
+
+<response>gauzy</response>
+----------------------------------------
+Query 13: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Square grid pattern
+- Alternating red and blue squares
+- Uniform square size
+
+<response>chequered</response>
+----------------------------------------
+Query 14: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Square shapes
+- Repeating pattern
+- Uniform grid
+<response>chequered</response>
+----------------------------------------
+Query 15: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Square grid pattern
+- Uniformly sized squares
+- Varied colors within squares
+<response>chequered</response>
+----------------------------------------
+Query 16: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Square shapes
+- Regular grid pattern
+- Uniformly sized squares
+<response>chequered</response>
+----------------------------------------
+Query 17: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Square shapes
+- Regularly spaced divisions
+- Dark central areas within shapes
+<response>chequered</response>
+----------------------------------------
+Query 18: Expected: [chequered] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Square grid pattern
+- Alternating red and blue squares
+- Uniform square shape
+
+<response>chequered</response>
+----------------------------------------
+Query 19: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Intersecting diagonal lines
+- Square grid pattern
+- Blue and yellow color combination
+
+<response>chequered</response>
+----------------------------------------
+Query 20: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Dense, small dots
+- Predominantly red and yellow colors
+- Irregular dark lines
+
+<response>flecked</response>
+----------------------------------------
+Query 21: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Horizontal bands of color
+- Irregular edges between bands
+- Varied color palette (red, blue, green, brown)
+<response>gauzy</response>
+----------------------------------------
+Query 22: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Vertical streaks
+- Irregular edges
+- Blue hue
+
+<response>gauzy</response>
+----------------------------------------
+Query 23: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Vertical lines
+- Irregular gaps between lines
+- Blue and green color palette
+<response>gauzy</response>
+----------------------------------------
+Query 24: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Vertical lines
+- Irregular color distribution
+- Distorted pixel patterns
+<response>gauzy</response>
+----------------------------------------
+Query 25: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Vertical lines
+- Irregular color distribution
+- Distorted pixel patterns
+<response>gauzy</response>
+----------------------------------------
+Query 26: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Irregular dark shapes
+- Light grey background
+- Vertical streaks of blue
+<response>gauzy</response>
+----------------------------------------
+Query 27: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Features & Label):
+Features:
+- Vertical lines
+- Small square shapes
+- Blue and yellow color
+
+<response>chequered</response>
+----------------------------------------
+Query 28: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Repeating angled lines
+- Sharp, distinct zig-zag shape
+- Dark lines against lighter background
+
+<response>zigzagged</response>
+----------------------------------------
+Query 29: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Diagonal lines
+- Repeating V-shape
+- Light blue background
+
+<response>zigzagged</response>
+----------------------------------------
+Query 30: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Diagonal lines
+- Repeating V-shape
+- Irregular color bands
+
+<response>zigzagged</response>
+----------------------------------------
+Query 31: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Repeating angled lines
+- V-shaped pattern
+- Alternating color bands
+<response>zigzagged</response>
+----------------------------------------
+Query 32: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Repeating angled lines
+- Yellow stripes
+- Purple background
+<response>zigzagged</response>
+----------------------------------------
+Query 33: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Repeating angled lines
+- V-shaped pattern
+- Blue background
+
+<response>zigzagged</response>
+----------------------------------------
+Query 34: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Jagged diagonal lines
+- Repeating V-shape pattern
+- Dark blue color
+
+<response>zigzagged</response>
+----------------------------------------
+Query 35: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Repeating triangular shapes
+- Horizontal bands
+- Predominantly purple and blue colors
+<response>zigzagged</response>
+----------------------------------------
+Query 36: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features & Label):
+Features:
+- Repeating diagonal lines
+- Sharp angled transitions
+- Wavy pattern
+
+<response>zigzagged</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 32.0000

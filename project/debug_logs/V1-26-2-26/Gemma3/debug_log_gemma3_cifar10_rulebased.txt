@@ -1,0 +1,1697 @@
+=== DEBUG LOG: gemma3 | cifar10 | Prompt: rulebased ===
+
+--- CONFIG: N=2, K=2, Q=5 ---
+Query 1: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a tall, vertical structure]
+- [Dominant grey-blue coloration]
+Knowledge Base:
+- IF [Presence of a tall, vertical structure] AND [Dominant grey-blue coloration] THEN deer
+Rule Check:
+- The Target Image exhibits a tall, vertical structure and a dominant grey-blue coloration. This matches the features specified in the rule for deer.
+<response>deer</response>
+----------------------------------------
+Query 2: Expected: [deer] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of pink regions]
+- [Presence of purple regions]
+Knowledge Base:
+- IF [Presence of pink regions] AND [Presence of purple regions] THEN cat
+Rule Check:
+- The Target Image contains the exact features specified in the rule for cat.
+<response>cat</response>
+----------------------------------------
+Query 3: Expected: [deer] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular purple and green shapes]
+- [Presence of dark brown irregular shapes]
+Knowledge Base:
+- IF [Presence of irregular purple and green shapes] AND [Presence of dark brown irregular shapes] THEN cat
+Rule Check:
+- The Target Image contains the exact features specified in the rule for cat.
+<response>cat</response>
+----------------------------------------
+Query 4: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular purple shapes]
+- [Presence of irregular green shapes]
+Knowledge Base:
+- IF [Presence of irregular purple shapes] AND [Presence of irregular green shapes] THEN deer
+Rule Check:
+- The Target Image contains the exact features specified in the rule for deer.
+<response>deer</response>
+----------------------------------------
+Query 5: Expected: [deer] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of pink regions]
+- [Presence of blue regions]
+Knowledge Base:
+- IF [Presence of pink regions] AND [Presence of blue regions] THEN cat
+Rule Check:
+- The Target Image contains the exact features specified in the rule for cat.
+<response>cat</response>
+----------------------------------------
+Query 6: Expected: [cat] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular purple shapes]
+- [Presence of orange and brown swirls]
+Knowledge Base:
+- IF [Presence of irregular purple shapes] AND [Presence of orange and brown swirls] THEN deer
+Rule Check:
+- The Target Image contains irregular purple shapes and orange and brown swirls, matching the features specified in the rule for deer.
+<response>deer</response>
+----------------------------------------
+Query 7: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of pointed ears]
+- [Dark central area]
+Knowledge Base:
+- IF [Presence of pointed ears] AND [Dark central area] THEN cat
+Rule Check:
+- The Target Image exhibits pointed ears and a dark central area. This matches the features specified in the rule for "cat".
+<response>cat</response>
+----------------------------------------
+Query 8: Expected: [cat] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular purple shapes]
+- [Presence of irregular green shapes]
+Knowledge Base:
+- IF [Presence of irregular purple shapes] AND [Presence of irregular green shapes] THEN deer
+Rule Check:
+- The Target Image contains the exact features specified in the rule for deer.
+<response>deer</response>
+----------------------------------------
+Query 9: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Blue-green swirling pattern]
+- [Pink and purple irregular shapes]
+Knowledge Base:
+- IF [Blue-green swirling pattern] AND [Pink and purple irregular shapes] THEN cat
+Rule Check:
+- The Target Image contains a blue-green swirling pattern and pink and purple irregular shapes, which match the features specified in the rule for cat.
+<response>cat</response>
+----------------------------------------
+Query 10: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of dark, irregular shapes]
+- [Dominance of green and purple hues]
+Knowledge Base:
+- IF [Presence of dark, irregular shapes] AND [Dominance of green and purple hues] THEN cat
+Rule Check:
+- The Target Image exhibits dark, irregular shapes and a dominance of green and purple hues. This matches the features specified in the rule for "cat".
+<response>cat</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,5): 0.5000
+
+--- CONFIG: N=2, K=2, Q=8 ---
+Query 1: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular, swirling blue and pink shapes]
+- [Presence of irregular, swirling green shapes]
+Knowledge Base:
+- IF [Presence of irregular, swirling blue and pink shapes] AND [Presence of irregular, swirling green shapes] THEN cat
+Rule Check:
+- The Target Image contains the exact features specified in the rule for cat.
+<response>cat</response>
+----------------------------------------
+Query 2: Expected: [cat] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN truck
+Rule Check:
+- The Target Image contains the exact features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 3: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN cat
+Rule Check:
+- The Target Image contains the exact features specified in the rule for cat.
+<response>cat</response>
+----------------------------------------
+Query 4: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of dark grey areas]
+- [Presence of purple areas]
+Knowledge Base:
+- IF [Presence of dark grey areas] AND [Presence of purple areas] THEN cat
+Rule Check:
+- The Target Image contains the exact features specified in the rule for cat.
+<response>cat</response>
+----------------------------------------
+Query 5: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular, swirling blue and green shapes]
+- [Presence of pink and red irregular shapes]
+Knowledge Base:
+- IF [Presence of irregular, swirling blue and green shapes] AND [Presence of pink and red irregular shapes] THEN cat
+Rule Check:
+- The Target Image contains the exact features specified in the rule for cat.
+<response>cat</response>
+----------------------------------------
+Query 6: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN cat
+Rule Check:
+- The Target Image contains the exact features specified in the rule for cat.
+<response>cat</response>
+----------------------------------------
+Query 7: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark brown central shape]
+- [Small red dot within the central shape]
+Knowledge Base:
+- IF [Dark brown central shape] AND [Small red dot within the central shape] THEN cat
+Rule Check:
+- The Target Image contains a dark brown central shape and a small red dot within it, matching the features specified in the rule for cat.
+<response>cat</response>
+----------------------------------------
+Query 8: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN cat
+Rule Check:
+- The Target Image contains the exact features specified in the rule for cat.
+<response>cat</response>
+----------------------------------------
+Query 9: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN truck
+Rule Check:
+- The Target Image contains the exact features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 10: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of red color]
+- [Presence of green color]
+Knowledge Base:
+- IF [Presence of red color] AND [Presence of green color] THEN truck
+Rule Check:
+- The Target Image contains the exact features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 11: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of rectangular shapes]
+- [Dominant presence of dark blue and pink colors]
+Knowledge Base:
+- IF [Presence of rectangular shapes] AND [Dominant presence of dark blue and pink colors] THEN truck
+Rule Check:
+- The Target Image exhibits rectangular shapes and a dominant presence of dark blue and pink colors, matching the rule for "truck".
+<response>truck</response>
+----------------------------------------
+Query 12: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN truck
+Rule Check:
+- The Target Image contains the exact features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 13: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of purple rectangular shapes]
+- [Presence of green background]
+Knowledge Base:
+- IF [Presence of purple rectangular shapes] AND [Presence of green background] THEN truck
+Rule Check:
+- The Target Image contains purple rectangular shapes and a green background, matching the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 14: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of pink and green swirling patterns]
+- [Presence of blue background]
+Knowledge Base:
+- IF [Presence of pink and green swirling patterns] AND [Presence of blue background] THEN truck
+Rule Check:
+- The Target Image exhibits pink and green swirling patterns and a blue background, matching the criteria for the "truck" class.
+<response>truck</response>
+----------------------------------------
+Query 15: Expected: [truck] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular, swirling purple and blue shapes]
+- [Dominance of green and pink color regions]
+Knowledge Base:
+- IF [Presence of irregular, swirling purple and blue shapes] AND [Dominance of green and pink color regions] THEN cat
+Rule Check:
+- The Target Image exhibits irregular, swirling purple and blue shapes and a dominance of green and pink color regions. This matches the features specified in the rule for "cat".
+<response>cat</response>
+----------------------------------------
+Query 16: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a rectangular shape]
+- [Dominant purple color]
+Knowledge Base:
+- IF [Presence of a rectangular shape] AND [Dominant purple color] THEN truck
+Rule Check:
+- The Target Image exhibits a rectangular shape and a dominant purple color, matching the criteria for the "truck" class.
+<response>truck</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,8): 0.8750
+
+--- CONFIG: N=2, K=1, Q=5 ---
+Query 1: Expected: [bird] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Large areas of purple]
+- [Presence of dark blue patches]
+Knowledge Base:
+- IF [Large areas of purple] AND [Presence of dark blue patches] THEN cat
+Rule Check:
+- The Target Image contains large areas of purple and dark blue patches, matching the rule for "cat".
+<response>cat</response>
+----------------------------------------
+Query 2: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a long, curved yellow shape]
+- [Presence of a dark, irregular shape]
+Knowledge Base:
+- IF [Presence of a long, curved yellow shape] AND [Presence of a dark, irregular shape] THEN bird
+Rule Check:
+- The Target Image contains a long, curved yellow shape and a dark, irregular shape. This matches the rule for "bird".
+<response>bird</response>
+----------------------------------------
+Query 3: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a distinct, elongated, vertical shape]
+- [Presence of a curved, hook-like feature at the bottom]
+Knowledge Base:
+- IF [Presence of a distinct, elongated, vertical shape] AND [Presence of a curved, hook-like feature at the bottom] THEN bird
+Rule Check:
+- The Target Image exhibits a distinct, elongated, vertical shape and a curved, hook-like feature at the bottom, matching the criteria for the 'bird' class.
+<response>bird</response>
+----------------------------------------
+Query 4: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a curved blue shape]
+- [Dominant orange background]
+Knowledge Base:
+- IF [Presence of a curved blue shape] AND [Dominant orange background] THEN bird
+Rule Check:
+- The Target Image exhibits a curved blue shape and a dominant orange background, matching the criteria for the "bird" class.
+<response>bird</response>
+----------------------------------------
+Query 5: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Long thin shape]
+- [Yellowish-brown horizontal line]
+Knowledge Base:
+- IF [Long thin shape] AND [Yellowish-brown horizontal line] THEN bird
+Rule Check:
+- The Target Image exhibits a long thin shape and a yellowish-brown horizontal line. This matches the features specified in the rule for bird.
+<response>bird</response>
+----------------------------------------
+Query 6: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a dark central region]
+- [Presence of a light, curved edge]
+Knowledge Base:
+- IF [Presence of a dark central region] AND [Presence of a light, curved edge] THEN cat
+Rule Check:
+- The Target Image exhibits a dark central region and a light, curved edge, matching the criteria for the 'cat' class.
+<response>cat</response>
+----------------------------------------
+Query 7: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of red patches]
+- [Presence of blue patches]
+Knowledge Base:
+- IF [Presence of red patches] AND [Presence of blue patches] THEN cat
+Rule Check:
+- The Target Image contains red patches and blue patches, which matches the rule for "cat".
+<response>cat</response>
+----------------------------------------
+Query 8: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark central region]
+- [Triangular protrusions above the central region]
+Knowledge Base:
+- IF [Dark central region] AND [Triangular protrusions above the central region] THEN cat
+Rule Check:
+- The Target Image exhibits a dark central region and triangular protrusions above it, matching the features defined in the rule for "cat".
+<response>cat</response>
+----------------------------------------
+Query 9: Expected: [cat] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of red areas]
+- [Presence of blue areas]
+Knowledge Base:
+- IF [Presence of red areas] AND [Presence of blue areas] THEN bird
+Rule Check:
+- The Target Image contains both red and blue areas, matching the rule for "bird".
+<response>bird</response>
+----------------------------------------
+Query 10: Expected: [cat] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of dark brown irregular shapes]
+- [Presence of light blue irregular shapes]
+Knowledge Base:
+- IF [Presence of dark brown irregular shapes] AND [Presence of light blue irregular shapes] THEN bird
+Rule Check:
+- The Target Image contains the exact features specified in the rule for bird.
+<response>bird</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,5): 0.7000
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of long, curved blue lines]
+- [Presence of a distinct green area]
+Knowledge Base:
+- IF [Presence of long, curved blue lines] AND [Presence of a distinct green area] THEN ship
+Rule Check:
+- The Target Image exhibits long, curved blue lines and a distinct green area. This matches the rule for "ship".
+<response>ship</response>
+----------------------------------------
+Query 2: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Irregular, wavy blue lines]
+- [Pink and purple irregular shapes]
+Knowledge Base:
+- IF [Irregular, wavy blue lines] AND [Pink and purple irregular shapes] THEN ship
+Rule Check:
+- The Target Image contains irregular, wavy blue lines and pink and purple irregular shapes. This matches the rule for ship.
+<response>ship</response>
+----------------------------------------
+Query 3: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Blue dominant color]
+- [Sharp, elongated shape]
+Knowledge Base:
+- IF [Blue dominant color] AND [Sharp, elongated shape] THEN ship
+Rule Check:
+- The Target Image exhibits a dominant blue color and a sharp, elongated shape. This matches the criteria for the "ship" class.
+<response>ship</response>
+----------------------------------------
+Query 4: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark central mass]
+- [Curved blue outline]
+Knowledge Base:
+- IF [Dark central mass] AND [Curved blue outline] THEN ship
+Rule Check:
+- The Target Image contains a dark central mass and a curved blue outline. This matches the features specified in the rule for ship.
+<response>ship</response>
+----------------------------------------
+Query 5: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Large blue area]
+- [Pink triangular shape]
+Knowledge Base:
+- IF [Large blue area] AND [Pink triangular shape] THEN ship
+Rule Check:
+- The Target Image contains a large blue area and a pink triangular shape. This matches the features specified in the rule for ship.
+<response>ship</response>
+----------------------------------------
+Query 6: Expected: [ship] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a distinct, curved, dark-blue outline]
+- [Presence of a large, light-blue area below the curved outline]
+Knowledge Base:
+- IF [Presence of a distinct, curved, dark-blue outline] AND [Presence of a large, light-blue area below the curved outline] THEN horse
+Rule Check:
+- The Target Image exhibits a distinct, curved, dark-blue outline and a large, light-blue area below it. This matches the rule for "horse".
+<response>horse</response>
+----------------------------------------
+Query 7: Expected: [ship] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of blue and purple contours]
+- [Presence of green areas]
+Knowledge Base:
+- IF [Presence of blue and purple contours] AND [Presence of green areas] THEN horse
+Rule Check:
+- The Target Image exhibits both blue and purple contours and green areas. This matches the rule for horse.
+<response>horse</response>
+----------------------------------------
+Query 8: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a large, dark, irregular shape]
+- [Presence of a lighter, curved shape adjacent to the dark shape]
+Knowledge Base:
+- IF [Presence of a large, dark, irregular shape] AND [Presence of a lighter, curved shape adjacent to the dark shape] THEN ship
+Rule Check:
+- The Target Image exhibits a large, dark, irregular shape. It also shows a lighter, curved shape adjacent to the dark shape. These features match the rule for "ship".
+<response>ship</response>
+----------------------------------------
+Query 9: Expected: [ship] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular, interconnected purple shapes]
+- [Dominance of green and purple color regions]
+Knowledge Base:
+- IF [Presence of irregular, interconnected purple shapes] AND [Dominance of green and purple color regions] THEN horse
+Rule Check:
+- The Target Image exhibits irregular, interconnected purple shapes and a dominance of green and purple color regions. This matches the rule for "horse".
+<response>horse</response>
+----------------------------------------
+Query 10: Expected: [horse] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Large blue area]
+- [Curved pink outline]
+Knowledge Base:
+- IF [Large blue area] AND [Curved pink outline] THEN ship
+Rule Check:
+- The Target Image contains a large blue area and a curved pink outline. This matches the rule for ship.
+<response>ship</response>
+----------------------------------------
+Query 11: Expected: [horse] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Irregular pink and purple shapes]
+- [Blue and green wavy lines]
+Knowledge Base:
+- IF [Irregular pink and purple shapes] AND [Blue and green wavy lines] THEN ship
+Rule Check:
+- The Target Image contains irregular pink and purple shapes and blue and green wavy lines. This matches the rule for ship.
+<response>ship</response>
+----------------------------------------
+Query 12: Expected: [horse] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark purple irregular shape]
+- [Light blue irregular shape]
+Knowledge Base:
+- IF [Dark purple irregular shape] AND [Light blue irregular shape] THEN ship
+Rule Check:
+- The Target Image contains the exact features specified in the rule for ship.
+<response>ship</response>
+----------------------------------------
+Query 13: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Greenish-brown blob]
+- [Rounded edges]
+Knowledge Base:
+- IF [Greenish-brown blob] AND [Rounded edges] THEN horse
+Rule Check:
+- The Target Image contains a greenish-brown blob and rounded edges, matching the features specified in the rule for horse.
+<response>horse</response>
+----------------------------------------
+Query 14: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Irregular, jagged pink edges]
+- [Large areas of blue and purple]
+Knowledge Base:
+- IF [Irregular, jagged pink edges] AND [Large areas of blue and purple] THEN horse
+Rule Check:
+- The Target Image contains irregular, jagged pink edges and large areas of blue and purple. This matches the features specified in the rule for horse.
+<response>horse</response>
+----------------------------------------
+Query 15: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Long neck]
+- [Humped back]
+Knowledge Base:
+- IF [Long neck] AND [Humped back] THEN horse
+Rule Check:
+- The Target Image exhibits a long neck and a humped back. This matches the features specified in the rule for horse.
+<response>horse</response>
+----------------------------------------
+Query 16: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Long, thin neck]
+- [Four legs]
+Knowledge Base:
+- IF [Long, thin neck] AND [Four legs] THEN horse
+Rule Check:
+- The Target Image exhibits a long, thin neck and four legs. This matches the features specified in the rule for horse.
+<response>horse</response>
+----------------------------------------
+Query 17: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Long, thin, dark shape]
+- [Four distinct legs]
+Knowledge Base:
+- IF [Long, thin, dark shape] AND [Four distinct legs] THEN horse
+Rule Check:
+- The Target Image contains a long, thin, dark shape and four distinct legs. This matches the rule for horse.
+<response>horse</response>
+----------------------------------------
+Query 18: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Large grey area]
+- [Curved dark line]
+Knowledge Base:
+- IF [Large grey area] AND [Curved dark line] THEN horse
+Rule Check:
+- The Target Image contains a large grey area and a curved dark line. This matches the features specified in the rule for horse.
+<response>horse</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9): 0.6667
+
+--- CONFIG: N=3, K=1, Q=5 ---
+Query 1: Expected: [truck] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a horizontal blue line]
+- [Presence of a large green area above the blue line]
+Knowledge Base:
+- IF [Presence of a horizontal blue line] AND [Presence of a large green area above the blue line] THEN airplane
+Rule Check:
+- The Target Image contains a horizontal blue line and a large green area above it, matching the features specified in the rule for airplane.
+<response>airplane</response>
+----------------------------------------
+Query 2: Expected: [truck] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular, jagged pink and purple outlines]
+- [Presence of large, irregular turquoise areas]
+Knowledge Base:
+- IF [Presence of irregular, jagged pink and purple outlines] AND [Presence of large, irregular turquoise areas] THEN airplane
+Rule Check:
+- The Target Image exhibits irregular, jagged pink and purple outlines and large, irregular turquoise areas. This matches the rule for airplane.
+<response>airplane</response>
+----------------------------------------
+Query 3: Expected: [truck] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of jagged, irregular purple shapes]
+- [Dominance of blue and green color regions]
+Knowledge Base:
+- IF [Presence of jagged, irregular purple shapes] AND [Dominance of blue and green color regions] THEN airplane
+Rule Check:
+- The Target Image exhibits jagged, irregular purple shapes and a dominance of blue and green color regions, matching the criteria for the "airplane" class.
+<response>airplane</response>
+----------------------------------------
+Query 4: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular, swirling blue and purple shapes]
+- [Dominance of dark brown and grey areas]
+Knowledge Base:
+- IF [Presence of irregular, swirling blue and purple shapes] AND [Dominance of dark brown and grey areas] THEN truck
+Rule Check:
+- The Target Image exhibits irregular, swirling blue and purple shapes and a dominance of dark brown and grey areas. This matches the rule for "truck".
+<response>truck</response>
+----------------------------------------
+Query 5: Expected: [truck] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of curved blue lines]
+- [Presence of pink and green areas]
+Knowledge Base:
+- IF [Presence of curved blue lines] AND [Presence of pink and green areas] THEN cat
+Rule Check:
+- The Target Image contains the exact features specified in the rule for cat.
+<response>cat</response>
+----------------------------------------
+Query 6: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark central mass]
+- [Irregular, jagged edges]
+Knowledge Base:
+- IF [Dark central mass] AND [Irregular, jagged edges] THEN cat
+Rule Check:
+- The Target Image exhibits a dark central mass and irregular, jagged edges, matching the features associated with the 'cat' class.
+<response>cat</response>
+----------------------------------------
+Query 7: Expected: [cat] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a large, roughly rectangular, blue-outlined area]
+- [Presence of a jagged, pink-outlined area adjacent to the blue area]
+Knowledge Base:
+- IF [Presence of a large, roughly rectangular, blue-outlined area] AND [Presence of a jagged, pink-outlined area adjacent to the blue area] THEN truck
+Rule Check:
+- The Target Image exhibits a large, roughly rectangular, blue-outlined area and a jagged, pink-outlined area adjacent to it. This matches the rule for "truck".
+<response>truck</response>
+----------------------------------------
+Query 8: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a rounded, central shape]
+- [Dominant brown color]
+Knowledge Base:
+- IF [Presence of a rounded, central shape] AND [Dominant brown color] THEN cat
+Rule Check:
+- The Target Image exhibits a rounded, central shape and a dominant brown color, matching the features specified in the rule for "cat".
+<response>cat</response>
+----------------------------------------
+Query 9: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a distinct, elongated vertical shape]
+- [Presence of a rounded base]
+Knowledge Base:
+- IF [Presence of a distinct, elongated vertical shape] AND [Presence of a rounded base] THEN cat
+Rule Check:
+- The Target Image exhibits a distinct, elongated vertical shape and a rounded base, matching the features specified in the rule for "cat".
+<response>cat</response>
+----------------------------------------
+Query 10: Expected: [cat] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dominant teal color]
+- [Irregular, blob-like shapes]
+Knowledge Base:
+- IF [Dominant teal color] AND [Irregular, blob-like shapes] THEN truck
+Rule Check:
+- The Target Image exhibits a dominant teal color and irregular, blob-like shapes. This matches the features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 11: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a large blue area]
+- [Presence of a green area]
+Knowledge Base:
+- IF [Presence of a large blue area] AND [Presence of a green area] THEN airplane
+Rule Check:
+- The Target Image contains a large blue area and a green area, matching the features specified in the rule for airplane.
+<response>airplane</response>
+----------------------------------------
+Query 12: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Long, elongated red shape]
+- [Presence of a distinct, smaller red appendage below the main shape]
+Knowledge Base:
+- IF [Long, elongated red shape] AND [Presence of a distinct, smaller red appendage below the main shape] THEN airplane
+Rule Check:
+- The Target Image exhibits a long, elongated red shape and a smaller red appendage below it, matching the features specified in the rule for airplane.
+<response>airplane</response>
+----------------------------------------
+Query 13: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Curved shape]
+- [Green color]
+Knowledge Base:
+- IF [Curved shape] AND [Green color] THEN airplane
+Rule Check:
+- The Target Image exhibits a curved shape and is predominantly green. This matches the features specified in the rule for airplane.
+<response>airplane</response>
+----------------------------------------
+Query 14: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Long, slender shape]
+- [Prominent tail fin]
+Knowledge Base:
+- IF [Long, slender shape] AND [Prominent tail fin] THEN airplane
+Rule Check:
+- The Target Image exhibits a long, slender shape and a prominent tail fin. This matches the features specified in the rule for airplane.
+<response>airplane</response>
+----------------------------------------
+Query 15: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of jagged, irregular blue lines]
+- [Dominance of pink and green color regions]
+Knowledge Base:
+- IF [Presence of jagged, irregular blue lines] AND [Dominance of pink and green color regions] THEN airplane
+Rule Check:
+- The Target Image exhibits jagged, irregular blue lines and a dominance of pink and green color regions, matching the criteria for the "airplane" class.
+<response>airplane</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,5): 0.6000
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Swirling purple and blue patterns]
+- [Central yellow area]
+Knowledge Base:
+- IF [Swirling purple and blue patterns] AND [Central yellow area] THEN bird
+Rule Check:
+- The Target Image exhibits swirling purple and blue patterns and a central yellow area, matching the features defined in the rule for "bird".
+<response>bird</response>
+----------------------------------------
+Query 2: Expected: [bird] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark brown central shape]
+- [Irregular purple border]
+Knowledge Base:
+- IF [Dark brown central shape] AND [Irregular purple border] THEN cat
+Rule Check:
+- The Target Image contains a dark brown central shape and an irregular purple border, matching the features specified in the rule for cat.
+<response>cat</response>
+----------------------------------------
+Query 3: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark beak]
+- [Long tail feathers]
+Knowledge Base:
+- IF [Dark beak] AND [Long tail feathers] THEN bird
+Rule Check:
+- The Target Image exhibits a dark beak and long tail feathers, matching the features specified in the rule for bird.
+<response>bird</response>
+----------------------------------------
+Query 4: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Irregular, wavy blue and green lines]
+- [Large areas of pink and purple]
+Knowledge Base:
+- IF [Irregular, wavy blue and green lines] AND [Large areas of pink and purple] THEN bird
+Rule Check:
+- The Target Image contains irregular, wavy blue and green lines and large areas of pink and purple, matching the features specified in the rule for bird.
+<response>bird</response>
+----------------------------------------
+Query 5: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Irregular, jagged edges]
+- [Dominant purple and green color regions]
+Knowledge Base:
+- IF [Irregular, jagged edges] AND [Dominant purple and green color regions] THEN bird
+Rule Check:
+- The Target Image exhibits irregular, jagged edges and dominant purple and green color regions. This matches the features specified in the rule for bird.
+<response>bird</response>
+----------------------------------------
+Query 6: Expected: [bird] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark grey central mass]
+- [Pale yellow outline]
+Knowledge Base:
+- IF [Dark grey central mass] AND [Pale yellow outline] THEN ship
+Rule Check:
+- The Target Image exhibits a dark grey central mass and a pale yellow outline, matching the features specified in the rule for ship.
+<response>ship</response>
+----------------------------------------
+Query 7: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark blue central shape]
+- [Red outline]
+Knowledge Base:
+- IF [Dark blue central shape] AND [Red outline] THEN bird
+Rule Check:
+- The Target Image contains a dark blue central shape and a red outline, which matches the features specified in the rule for bird.
+<response>bird</response>
+----------------------------------------
+Query 8: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Bright turquoise outline]
+- [Dark central core]
+Knowledge Base:
+- IF [Bright turquoise outline] AND [Dark central core] THEN bird
+Rule Check:
+- The Target Image exhibits a bright turquoise outline and a dark central core, matching the features defined in the rule for "bird".
+<response>bird</response>
+----------------------------------------
+Query 9: Expected: [bird] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark blue central shape]
+- [Irregular edge outline]
+Knowledge Base:
+- IF [Dark blue central shape] AND [Irregular edge outline] THEN ship
+Rule Check:
+- The Target Image contains a dark blue central shape and an irregular edge outline, matching the features specified in the rule for ship.
+<response>ship</response>
+----------------------------------------
+Query 10: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark blue central area]
+- [Pink outline]
+Knowledge Base:
+- IF [Dark blue central area] AND [Pink outline] THEN ship
+Rule Check:
+- The Target Image contains a dark blue central area and a pink outline, which matches the features specified in the rule for ship.
+<response>ship</response>
+----------------------------------------
+Query 11: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a long, curved, dark shape]
+- [Presence of a lighter, horizontal band]
+Knowledge Base:
+- IF [Presence of a long, curved, dark shape] AND [Presence of a lighter, horizontal band] THEN ship
+Rule Check:
+- The Target Image exhibits a long, curved, dark shape and a lighter, horizontal band. This matches the features specified in the rule for "ship".
+<response>ship</response>
+----------------------------------------
+Query 12: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN ship
+Rule Check:
+- The Target Image contains the exact features specified in the rule for ship.
+<response>ship</response>
+----------------------------------------
+Query 13: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark purple area]
+- [Pinkish-purple area]
+Knowledge Base:
+- IF [Dark purple area] AND [Pinkish-purple area] THEN ship
+Rule Check:
+- The Target Image contains the exact features specified in the rule for ship.
+<response>ship</response>
+----------------------------------------
+Query 14: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of dark, elongated shape]
+- [Presence of curved lines]
+Knowledge Base:
+- IF [Presence of dark, elongated shape] AND [Presence of curved lines] THEN ship
+Rule Check:
+- The Target Image exhibits a dark, elongated shape and curved lines. This matches the features specified in the rule for ship.
+<response>ship</response>
+----------------------------------------
+Query 15: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Blue-green color patches]
+- [Curved dark shapes]
+Knowledge Base:
+- IF [Blue-green color patches] AND [Curved dark shapes] THEN ship
+Rule Check:
+- The Target Image contains blue-green color patches and curved dark shapes, which match the rule for ship.
+<response>ship</response>
+----------------------------------------
+Query 16: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Irregular, jagged edges]
+- [Dominant blue and green color patches]
+Knowledge Base:
+- IF [Irregular, jagged edges] AND [Dominant blue and green color patches] THEN ship
+Rule Check:
+- The Target Image exhibits irregular, jagged edges and dominant blue and green color patches. This matches the features specified in the rule for ship.
+<response>ship</response>
+----------------------------------------
+Query 17: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of dark, horizontal line]
+- [Presence of irregular, pink shapes]
+Knowledge Base:
+- IF [Presence of dark, horizontal line] AND [Presence of irregular, pink shapes] THEN ship
+Rule Check:
+- The Target Image contains a dark, horizontal line and irregular pink shapes. This matches the rule for ship.
+<response>ship</response>
+----------------------------------------
+Query 18: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular, jagged edges]
+- [Dominant presence of blue and green hues]
+Knowledge Base:
+- IF [Presence of irregular, jagged edges] AND [Dominant presence of blue and green hues] THEN ship
+Rule Check:
+- The Target Image exhibits irregular, jagged edges and a dominant presence of blue and green hues. This matches the features specified in the rule for "ship".
+<response>ship</response>
+----------------------------------------
+Query 19: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Brown fur patches]
+- [Pointed ears]
+Knowledge Base:
+- IF [Brown fur patches] AND [Pointed ears] THEN cat
+Rule Check:
+- The Target Image exhibits brown fur patches and pointed ears, which match the features specified in the rule for "cat".
+<response>cat</response>
+----------------------------------------
+Query 20: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN cat
+Rule Check:
+- The Target Image contains the exact features specified in the rule for cat.
+<response>cat</response>
+----------------------------------------
+Query 21: Expected: [cat] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular, jagged edges]
+- [Dominance of red and green color regions]
+Knowledge Base:
+- IF [Presence of irregular, jagged edges] AND [Dominance of red and green color regions] THEN bird
+Rule Check:
+- The Target Image exhibits irregular, jagged edges and a dominance of red and green color regions, matching the features defined in the rule for "bird".
+<response>bird</response>
+----------------------------------------
+Query 22: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark purple hue]
+- [Irregular, rounded shape]
+Knowledge Base:
+- IF [Dark purple hue] AND [Irregular, rounded shape] THEN cat
+Rule Check:
+- The Target Image exhibits a dark purple hue and an irregular, rounded shape, matching the features defined in the rule for "cat".
+<response>cat</response>
+----------------------------------------
+Query 23: Expected: [cat] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular pink and green shapes]
+- [Dominance of blue and turquoise hues]
+Knowledge Base:
+- IF [Presence of irregular pink and green shapes] AND [Dominance of blue and turquoise hues] THEN bird
+Rule Check:
+- The Target Image exhibits irregular pink and green shapes and a dominance of blue and turquoise hues, matching the features specified in the rule for bird.
+<response>bird</response>
+----------------------------------------
+Query 24: Expected: [cat] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular, jagged edges]
+- [Dominant purple color]
+Knowledge Base:
+- IF [Presence of irregular, jagged edges] AND [Dominant purple color] THEN ship
+Rule Check:
+- The Target Image exhibits irregular, jagged edges and a dominant purple color, matching the criteria for the "ship" class.
+<response>ship</response>
+----------------------------------------
+Query 25: Expected: [cat] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Large central purple area]
+- [Green outline surrounding the purple area]
+Knowledge Base:
+- IF [Large central purple area] AND [Green outline surrounding the purple area] THEN bird
+Rule Check:
+- The Target Image contains a large central purple area and a green outline surrounding it, matching the features specified in the rule for bird.
+<response>bird</response>
+----------------------------------------
+Query 26: Expected: [cat] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark purple patches]
+- [Irregular green shapes]
+Knowledge Base:
+- IF [Dark purple patches] AND [Irregular green shapes] THEN ship
+Rule Check:
+- The Target Image contains dark purple patches and irregular green shapes, which match the rule for ship.
+<response>ship</response>
+----------------------------------------
+Query 27: Expected: [cat] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Irregular purple shapes]
+- [Dominant teal color]
+Knowledge Base:
+- IF [Irregular purple shapes] AND [Dominant teal color] THEN ship
+Rule Check:
+- The Target Image contains irregular purple shapes and a dominant teal color, matching the features specified in the rule for ship.
+<response>ship</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9): 0.6667
+
+--- CONFIG: N=4, K=1, Q=5 ---
+Query 1: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Dark brown irregular shape]
+- [Purple outline]
+Knowledge Base:
+- IF [Dark brown irregular shape] AND [Purple outline] THEN frog
+Rule Check:
+- The Target Image contains a dark brown irregular shape and a purple outline, which matches the features specified in the rule for frog.
+<response>frog</response>
+----------------------------------------
+Query 2: Expected: [frog] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN truck
+Rule Check:
+- The Target Image contains the exact features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 3: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Curved outline]
+- [Central circular feature]
+Knowledge Base:
+- IF [Curved outline] AND [Central circular feature] THEN frog
+Rule Check:
+- The Target Image contains a curved outline and a central circular feature, matching the rule for frog.
+<response>frog</response>
+----------------------------------------
+Query 4: Expected: [frog] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Irregular, winding purple lines]
+- [Dominant teal color]
+Knowledge Base:
+- IF [Irregular, winding purple lines] AND [Dominant teal color] THEN ship
+Rule Check:
+- The Target Image contains the exact features specified in the rule for ship.
+<response>ship</response>
+----------------------------------------
+Query 5: Expected: [frog] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN ship
+Rule Check:
+- The Target Image contains the exact features specified in the rule for ship.
+<response>ship</response>
+----------------------------------------
+Query 6: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a rounded, elongated shape with a distinct upper curve. ]
+- [Presence of a dark, central void within the shape.]
+Knowledge Base:
+- IF [Presence of a rounded, elongated shape with a distinct upper curve.] AND [Presence of a dark, central void within the shape.] THEN truck
+Rule Check:
+- The Target Image exhibits a rounded, elongated shape with a distinct upper curve and a dark, central void. This matches the features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 7: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN truck
+Rule Check:
+- The Target Image contains the exact features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 8: Expected: [truck] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular, rounded shapes with varying colors]
+- [Dominance of blue and green hues]
+Knowledge Base:
+- IF [Presence of irregular, rounded shapes with varying colors] AND [Dominance of blue and green hues] THEN frog
+Rule Check:
+- The Target Image exhibits irregular, rounded shapes with varying colors and a dominance of blue and green hues. This matches the features specified in the rule for frog.
+<response>frog</response>
+----------------------------------------
+Query 9: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN truck
+Rule Check:
+- The Target Image contains the exact features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 10: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of sharp, angular edges]
+- [Dominant red and green color regions]
+Knowledge Base:
+- IF [Presence of sharp, angular edges] AND [Dominant red and green color regions] THEN truck
+Rule Check:
+- The Target Image exhibits sharp, angular edges and dominant red and green color regions, matching the criteria for the "truck" class.
+<response>truck</response>
+----------------------------------------
+Query 11: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a long, curving blue line]
+- [Presence of a large pink area]
+Knowledge Base:
+- IF [Presence of a long, curving blue line] AND [Presence of a large pink area] THEN ship
+Rule Check:
+- The Target Image contains a long, curving blue line and a large pink area. This matches the features specified in the rule for ship.
+<response>ship</response>
+----------------------------------------
+Query 12: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a curved, elongated shape]
+- [Presence of a horizontal line above the curved shape]
+Knowledge Base:
+- IF [Presence of a curved, elongated shape] AND [Presence of a horizontal line above the curved shape] THEN ship
+Rule Check:
+- The Target Image exhibits a curved, elongated shape and a horizontal line above it. This matches the features defined in the rule for "ship".
+<response>ship</response>
+----------------------------------------
+Query 13: Expected: [ship] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a rounded, dark central shape]
+- [Presence of a horizontal, elongated structure below the central shape]
+Knowledge Base:
+- IF [Presence of a rounded, dark central shape] AND [Presence of a horizontal, elongated structure below the central shape] THEN frog
+Rule Check:
+- The Target Image exhibits a rounded, dark central shape and a horizontal, elongated structure below it. This matches the features specified in the rule for frog.
+<response>frog</response>
+----------------------------------------
+Query 14: Expected: [ship] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a large, irregular pink area]
+- [Presence of a complex, winding green and blue border]
+Knowledge Base:
+- IF [Presence of a large, irregular pink area] AND [Presence of a complex, winding green and blue border] THEN truck
+Rule Check:
+- The Target Image contains a large, irregular pink area and a complex, winding green and blue border. This matches the features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 15: Expected: [ship] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Irregular, jagged edges]
+- [Dominant blue and pink color regions]
+Knowledge Base:
+- IF [Irregular, jagged edges] AND [Dominant blue and pink color regions] THEN truck
+Rule Check:
+- The Target Image contains irregular, jagged edges and dominant blue and pink color regions, matching the features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 16: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN horse
+Rule Check:
+- The Target Image contains the exact features specified in the rule for horse.
+<response>horse</response>
+----------------------------------------
+Query 17: Expected: [horse] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN ship
+Rule Check:
+- The Target Image contains the exact features specified in the rule for ship.
+<response>ship</response>
+----------------------------------------
+Query 18: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a vertical, elongated structure]
+- [Presence of a curved, horizontal structure below the vertical structure]
+Knowledge Base:
+- IF [Presence of a vertical, elongated structure] AND [Presence of a curved, horizontal structure below the vertical structure] THEN horse
+Rule Check:
+- The Target Image exhibits a vertical, elongated structure and a curved, horizontal structure below it, matching the features defined in the rule for "horse".
+<response>horse</response>
+----------------------------------------
+Query 19: Expected: [horse] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Pale blue outline]
+- [Rounded shape]
+Knowledge Base:
+- IF [Pale blue outline] AND [Rounded shape] THEN frog
+Rule Check:
+- The Target Image contains a pale blue outline and a rounded shape, matching the features specified in the rule for frog.
+<response>frog</response>
+----------------------------------------
+Query 20: Expected: [horse] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN ship
+Rule Check:
+- The Target Image contains the exact features specified in the rule for ship.
+<response>ship</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,5): 0.5000
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [deer] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN horse
+Rule Check:
+- The Target Image contains the exact features specified in the rule for horse.
+<response>horse</response>
+----------------------------------------
+Query 2: Expected: [deer] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN truck
+Rule Check:
+- The Target Image contains the exact features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 3: Expected: [deer] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN cat
+Rule Check:
+- The Target Image contains the exact features specified in the rule for cat.
+<response>cat</response>
+----------------------------------------
+Query 4: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a vertical, elongated shape]
+- [Presence of a rounded, bulbous top]
+Knowledge Base:
+- IF [Presence of a vertical, elongated shape] AND [Presence of a rounded, bulbous top] THEN deer
+Rule Check:
+- The Target Image exhibits a vertical, elongated shape and a rounded, bulbous top. This matches the features specified in the rule for deer.
+<response>deer</response>
+----------------------------------------
+Query 5: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Green irregular shapes]
+- [Purple irregular shapes]
+Knowledge Base:
+- IF [Green irregular shapes] AND [Purple irregular shapes] THEN deer
+Rule Check:
+- The Target Image contains the exact features specified in the rule for deer.
+<response>deer</response>
+----------------------------------------
+Query 6: Expected: [deer] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of jagged, irregular red edges]
+- [Presence of swirling blue and green areas]
+Knowledge Base:
+- IF [Presence of jagged, irregular red edges] AND [Presence of swirling blue and green areas] THEN cat
+Rule Check:
+- The Target Image exhibits jagged, irregular red edges and swirling blue and green areas. This matches the features specified in the rule for "cat".
+<response>cat</response>
+----------------------------------------
+Query 7: Expected: [deer] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Irregular, jagged edges]
+- [Dominant blue and green color palette]
+Knowledge Base:
+- IF [Irregular, jagged edges] AND [Dominant blue and green color palette] THEN truck
+Rule Check:
+- The Target Image exhibits irregular, jagged edges and a dominant blue and green color palette. This matches the features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 8: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN deer
+Rule Check:
+- The Target Image contains the exact features specified in the rule for deer.
+<response>deer</response>
+----------------------------------------
+Query 9: Expected: [deer] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN truck
+Rule Check:
+- The Target Image contains the exact features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 10: Expected: [horse] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of sharp, angular edges]
+- [Dominant purple hue]
+Knowledge Base:
+- IF [Presence of sharp, angular edges] AND [Dominant purple hue] THEN truck
+Rule Check:
+- The Target Image exhibits sharp, angular edges and a dominant purple hue, matching the features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 11: Expected: [horse] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Irregular, wavy magenta lines]
+- [Diffuse, blurry orange patches]
+Knowledge Base:
+- IF [Irregular, wavy magenta lines] AND [Diffuse, blurry orange patches] THEN cat
+Rule Check:
+- The Target Image contains the exact features specified in the rule for cat.
+<response>cat</response>
+----------------------------------------
+Query 12: Expected: [horse] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a large, irregular, purple-ish shape]
+- [Presence of a smaller, irregular, white-ish shape adjacent to the purple shape]
+Knowledge Base:
+- IF [Presence of a large, irregular, purple-ish shape] AND [Presence of a smaller, irregular, white-ish shape adjacent to the purple shape] THEN truck
+Rule Check:
+- The Target Image exhibits a large, irregular, purple-ish shape and a smaller, irregular, white-ish shape adjacent to it. This matches the rule for "truck".
+<response>truck</response>
+----------------------------------------
+Query 13: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a long, curved shape]
+- [Presence of a smaller, distinct protrusion]
+Knowledge Base:
+- IF [Presence of a long, curved shape] AND [Presence of a smaller, distinct protrusion] THEN horse
+Rule Check:
+- The Target Image exhibits a long, curved shape and a smaller, distinct protrusion. This matches the features defined in the rule for "horse".
+<response>horse</response>
+----------------------------------------
+Query 14: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a long, curved, dark purple line]
+- [Presence of a large, irregular, light green area]
+Knowledge Base:
+- IF [Presence of a long, curved, dark purple line] AND [Presence of a large, irregular, light green area] THEN horse
+Rule Check:
+- The Target Image contains the exact features specified in the rule for horse.
+<response>horse</response>
+----------------------------------------
+Query 15: Expected: [horse] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN cat
+Rule Check:
+- The Target Image contains the exact features specified in the rule for cat.
+<response>cat</response>
+----------------------------------------
+Query 16: Expected: [horse] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of large, rounded ears]
+- [Presence of a long, thin neck]
+Knowledge Base:
+- IF [Presence of large, rounded ears] AND [Presence of a long, thin neck] THEN deer
+Rule Check:
+- The Target Image exhibits the features of large, rounded ears and a long, thin neck. This matches the rule for deer.
+<response>deer</response>
+----------------------------------------
+Query 17: Expected: [horse] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a dark, elongated central shape]
+- [Presence of a rectangular lower section]
+Knowledge Base:
+- IF [Presence of a dark, elongated central shape] AND [Presence of a rectangular lower section] THEN truck
+Rule Check:
+- The Target Image exhibits a dark, elongated central shape and a rectangular lower section. This matches the features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 18: Expected: [horse] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN cat
+Rule Check:
+- The Target Image contains the exact features specified in the rule for cat.
+<response>cat</response>
+----------------------------------------
+Query 19: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of rectangular shape]
+- [Presence of wheels]
+Knowledge Base:
+- IF [Presence of rectangular shape] AND [Presence of wheels] THEN truck
+Rule Check:
+- The Target Image exhibits a rectangular shape and the presence of wheels. This matches the features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 20: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a large, rectangular shape]
+- [Dominant pink and blue color palette]
+Knowledge Base:
+- IF [Presence of a large, rectangular shape] AND [Dominant pink and blue color palette] THEN truck
+Rule Check:
+- The Target Image exhibits a large, rectangular shape and a dominant pink and blue color palette. This matches the features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 21: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN truck
+Rule Check:
+- The Target Image contains the exact features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 22: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN truck
+Rule Check:
+- The Target Image contains the exact features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 23: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of rectangular shape]
+- [Presence of circular shapes at the bottom]
+Knowledge Base:
+- IF [Presence of rectangular shape] AND [Presence of circular shapes at the bottom] THEN truck
+Rule Check:
+- The Target Image exhibits a rectangular shape and circular shapes at the bottom, matching the features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 24: Expected: [truck] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a curved, elongated shape]
+- [Dominant blue and green color palette]
+Knowledge Base:
+- IF [Presence of a curved, elongated shape] AND [Dominant blue and green color palette] THEN horse
+Rule Check:
+- The Target Image exhibits a curved, elongated shape and a dominant blue and green color palette. This matches the features specified in the rule for horse.
+<response>horse</response>
+----------------------------------------
+Query 25: Expected: [truck] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN deer
+Rule Check:
+- The Target Image contains the exact features specified in the rule for deer.
+<response>deer</response>
+----------------------------------------
+Query 26: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN truck
+Rule Check:
+- The Target Image contains the exact features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 27: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Irregular, jagged edges]
+- [Dominant purple hue]
+Knowledge Base:
+- IF [Irregular, jagged edges] AND [Dominant purple hue] THEN truck
+Rule Check:
+- The Target Image exhibits irregular, jagged edges and a dominant purple hue, matching the features associated with the "truck" class.
+<response>truck</response>
+----------------------------------------
+Query 28: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular, swirling magenta patterns]
+- [Dominance of teal and brown color regions]
+Knowledge Base:
+- IF [Presence of irregular, swirling magenta patterns] AND [Dominance of teal and brown color regions] THEN cat
+Rule Check:
+- The Target Image exhibits irregular, swirling magenta patterns and a dominance of teal and brown color regions. This matches the features specified in the rule for "cat".
+<response>cat</response>
+----------------------------------------
+Query 29: Expected: [cat] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Orange irregular shape]
+- [Blue and green swirling patterns]
+Knowledge Base:
+- IF [Orange irregular shape] AND [Blue and green swirling patterns] THEN truck
+Rule Check:
+- The Target Image contains the exact features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 30: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN cat
+Rule Check:
+- The Target Image contains the exact features specified in the rule for cat.
+<response>cat</response>
+----------------------------------------
+Query 31: Expected: [cat] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Large central green area
+- [Dark purple outline]
+Knowledge Base:
+- IF [Large central green area] AND [Dark purple outline] THEN truck
+Rule Check:
+- The Target Image contains a large central green area and a dark purple outline, matching the features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 32: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN cat
+Rule Check:
+- The Target Image contains the exact features specified in the rule for cat.
+<response>cat</response>
+----------------------------------------
+Query 33: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Large central purple area]
+- [Small circular red area at the bottom]
+Knowledge Base:
+- IF [Large central purple area] AND [Small circular red area at the bottom] THEN cat
+Rule Check:
+- The Target Image contains the exact features specified in the rule for cat.
+<response>cat</response>
+----------------------------------------
+Query 34: Expected: [cat] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of a long, curved, blue-green line]
+- [Presence of a large, irregular purple area]
+Knowledge Base:
+- IF [Presence of a long, curved, blue-green line] AND [Presence of a large, irregular purple area] THEN truck
+Rule Check:
+- The Target Image contains the exact features specified in the rule for truck.
+<response>truck</response>
+----------------------------------------
+Query 35: Expected: [cat] | Correct: False
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Concrete observable feature 1]
+- [Concrete observable feature 2]
+Knowledge Base:
+- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN horse
+Rule Check:
+- The Target Image contains the exact features specified in the rule for horse.
+<response>horse</response>
+----------------------------------------
+Query 36: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features, Rules & Logic):
+Features:
+- [Presence of irregular, jagged purple outlines]
+- [Dominance of blue and green color regions]
+Knowledge Base:
+- IF [Presence of irregular, jagged purple outlines] AND [Dominance of blue and green color regions] THEN cat
+Rule Check:
+- The Target Image exhibits irregular, jagged purple outlines and a dominance of blue and green color regions. This matches the features specified in the rule for "cat".
+<response>cat</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.4722
