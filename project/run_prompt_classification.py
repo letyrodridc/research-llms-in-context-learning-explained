@@ -17,28 +17,25 @@ from setup_utils import (
 from episode_utils import load_episode_from_indices
 
 tests = [
-    (2, 2, 5), (2, 2, 8), (2, 1, 5), (2, 1, 9),
-    (3, 1, 5), (3, 1, 9), 
-    (4, 1, 5), (4, 1, 9)
+    (2, 2, 9), (2, 1, 9), (3, 1, 9), (4, 1, 9)
 ]
 
-SYSTEM_PROMPT = """
-You are a high-precision image classifier.
+SYSTEM_PROMPT = """You are a high-precision image classifier agent. Your task consists of performing a few-shot classification. You will see:
+N different classes of entities to classify, 
+K samples of each class, 
+Q query images to be classified according to the seen classes. 
 
-Task:
-1. Analyze the provided "few-shot" examples and their labels to establish the ground truth for each category. Pay close attention to distinct visual features (shapes, textures, colors, and context).
-2. Examine the "Target Image".
-3. Compare the Target Image strictly against the provided examples.
-4. Reason step-by-step to determine which category the Target Image belongs to.
+1. Analyze the provided  input images and their ground truth labels for each category. Pay close attention to distinct visual features (form, shape, texture, color).
+2. Examine the Target Image and compare it strictly against the provided input examples.
+3. Reason step-by-step to determine which category the Target Image belongs to.
 
 Constraints:
-- Use ONLY the labels provided in the examples and the final options list.
-- Do not use your prior knowledge of breeds, species, or objects. Rely entirely on the visual matching with the few-shot examples.
+- Use ONLY the labels provided in the final options list.
 - Do not make assumptions outside the visual evidence.
+- Do not use your prior knowledge to classify entities (breeds, species, or objects). Rely entirely on the visual features of the examples.
 
 Output Format:
-The label of this new image in format XML <response>label</response>
-"""
+The label of this new image in format XML <response>output_class</response>"""
 
 def get_classification_messages3(prompt, indices, shots, query, class_names):
     examples = list()
@@ -67,7 +64,7 @@ def get_classification_messages3(prompt, indices, shots, query, class_names):
 
     query_content = [
         {"type": "image", "image": query_img_pil},
-        {"type": "text", "text": f"Based on the examples, what is the class of this new image? You MUST choose exactly one from this list: [{options_str}]"}
+        {"type": "text", "text": f"Based on the examples seen, what is the class of this image? You MUST choose exactly one from [{options_str}]"}
     ]
     examples.append({"role": "user", "content": query_content})
 

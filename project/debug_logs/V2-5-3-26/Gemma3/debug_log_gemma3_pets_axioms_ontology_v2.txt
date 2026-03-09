@@ -1,0 +1,463 @@
+=== DEBUG LOG: gemma3 | pets | Prompt: axioms_ontology_v2 ===
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Bombay</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Bombay) ⊑ hasVisualFeature(DarkFur) [dark, slate grey fur] (Necessary condition)
+- hasVisualFeature(BrightYellowEyes) [bright yellow eyes] ⊑ class(Bombay) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature DarkFur [slate grey fur]
+- hasVisualFeature BrightYellowEyes [bright yellow eyes]
+4. Logical Explanation (DL):
+The ABox assertion presents DarkFur and BrightYellowEyes, which satisfies the Sufficient condition hasVisualFeature(BrightYellowEyes) ⊑ class(Bombay) and the Necessary condition class(Bombay) ⊑ hasVisualFeature(DarkFur) so it is classified as Bombay.
+----------------------------------------
+Query 2: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Bombay</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Bombay) ⊑ hasVisualFeature(SolidBlackFur) [color and fur texture] (Necessary condition)
+- hasVisualFeature(SolidBlackFur) [color and fur texture] ⊑ class(Bombay) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature SolidBlackFur [entire body covered in solid black fur with yellow eyes]
+4. Logical Explanation (DL):
+The ABox assertion presents SolidBlackFur, which satisfies the Sufficient condition [axiom] hasVisualFeature(SolidBlackFur) ⊑ class(Bombay) so it is classified as Bombay.
+----------------------------------------
+Query 3: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Bombay</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Bombay) ≡ hasVisualFeature(SolidBlackFur) [solid black fur] (Necessary & Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature SolidBlackFur
+4. Logical Explanation (DL):
+The ABox assertion presents SolidBlackFur, which satisfies the Necessary & Sufficient condition class(Bombay) ≡ hasVisualFeature(SolidBlackFur) [solid black fur] so it is classified as Bombay.
+----------------------------------------
+Query 4: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Bombay</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Bombay) ≡ hasVisualFeature(SolidBlackFur) [solid black fur] (Necessary & Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [Solid black fur covering the entire body]
+4. Logical Explanation (DL):
+The ABox assertion presents hasVisualFeature [Solid black fur covering the entire body], which satisfies the Necessary & Sufficient condition class(Bombay) ≡ hasVisualFeature(SolidBlackFur) [solid black fur] so it is classified as Bombay.
+----------------------------------------
+Query 5: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Bombay</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Bombay) ≡ hasVisualFeature(SolidBlackFur) [color and fur texture] (Necessary & Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature SolidBlackFur [The entity exhibits a solid black fur coat with bright yellow eyes.]
+4. Logical Explanation (DL):
+The ABox assertion presents SolidBlackFur, which satisfies the Necessary & Sufficient condition class(Bombay) ≡ hasVisualFeature(SolidBlackFur) so it is classified as Bombay.
+----------------------------------------
+Query 6: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Bombay</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Bombay) ≡ hasVisualFeature(SolidBlackFur) [color and fur texture] (Necessary & Sufficient condition)
+- class(Bombay) ⊑ hasVisualFeature(CopperEyes) [eye color] (Necessary condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature SolidBlackFur
+- hasVisualFeature CopperEyes
+4. Logical Explanation (DL):
+The ABox assertion presents SolidBlackFur and CopperEyes, which satisfies the Necessary & Sufficient condition class(Bombay) ≡ hasVisualFeature(SolidBlackFur) [color and fur texture] and the Necessary condition class(Bombay) ⊑ hasVisualFeature(CopperEyes) [eye color] so it is classified as Bombay.
+----------------------------------------
+Query 7: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Bombay</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Bombay) ≡ hasVisualFeature(SolidBlackFur) [solid black fur] (Necessary & Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature SolidBlackFur
+4. Logical Explanation (DL):
+The ABox assertion presents SolidBlackFur, which satisfies the Necessary & Sufficient condition class(Bombay) ≡ hasVisualFeature(SolidBlackFur) [solid black fur] so it is classified as Bombay.
+----------------------------------------
+Query 8: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Bombay</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Bombay) ≡ hasVisualFeature(SolidBlackFur) [color and fur texture] (Necessary & Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature SolidBlackFur
+4. Logical Explanation (DL):
+The ABox assertion presents SolidBlackFur, which satisfies the Necessary & Sufficient condition class(Bombay) ≡ hasVisualFeature(SolidBlackFur) so it is classified as Bombay.
+----------------------------------------
+Query 9: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Bombay</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Bombay) ⊑ hasVisualFeature(SolidBlackFur) (Necessary condition)
+- hasVisualFeature(SolidBlackFur) ⊑ class(Bombay) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature SolidBlackFur
+- hasVisualFeature YellowEyes
+4. Logical Explanation (DL):
+The ABox assertion presents SolidBlackFur, which satisfies the Sufficient condition [axiom] hasVisualFeature(SolidBlackFur) ⊑ class(Bombay) so it is classified as Bombay. The presence of YellowEyes is an additional observed feature, but not required for classification based on the provided examples.
+----------------------------------------
+Query 10: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>American Bulldog</response>
+2. TBox (axioms in a Knowledge Base):
+- class(American Bulldog) ⊑ hasVisualFeature(WrinkledFace) (Necessary condition)
+- hasVisualFeature(WrinkledFace) ⊑ class(American Bulldog) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [WrinkledFace]
+4. Logical Explanation (DL):
+The ABox assertion presents WrinkledFace, which satisfies the Sufficient condition axiom hasVisualFeature(WrinkledFace) ⊑ class(American Bulldog) so it is classified as American Bulldog.
+----------------------------------------
+Query 11: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>American Bulldog</response>
+2. TBox (axioms in a Knowledge Base):
+- class(American Bulldog) ⊑ hasVisualFeature(BrindlePattern) [brown and black stripes] (Necessary condition)
+- hasVisualFeature(WhiteFurWithBrownMarkings) [feature] ⊑ class(American Bulldog) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature WhiteFurWithBrownMarkings [white fur with brown markings and black spots]
+4. Logical Explanation (DL):
+The ABox assertion presents WhiteFurWithBrownMarkings, which satisfies the Sufficient condition axiom hasVisualFeature(WhiteFurWithBrownMarkings) ⊑ class(American Bulldog) so it is classified as American Bulldog.
+----------------------------------------
+Query 12: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>American Bulldog</response>
+2. TBox (axioms in a Knowledge Base):
+- class(American Bulldog) ⊑ hasVisualFeature(BroadHead) [broad, wrinkled head] (Necessary condition)
+- class(American Bulldog) ⊑ hasVisualFeature(DroopyJowls) [loose skin around mouth] (Necessary condition)
+- class(American Bulldog) ⊑ hasVisualFeature(LightEyes) [light-colored eyes] (Necessary condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature BroadHead
+- hasVisualFeature DroopyJowls
+- hasVisualFeature LightEyes
+4. Logical Explanation (DL):
+The ABox assertion presents BroadHead, DroopyJowls, and LightEyes, which satisfies the TBox necessary conditions for class(American Bulldog) [BroadHead], [DroopyJowls], and [LightEyes] so it is classified as American Bulldog.
+----------------------------------------
+Query 13: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Bulldog</response>
+2. TBox (axioms in a Knowledge Base):
+- class(American Bulldog) ⊑ hasVisualFeature(WhiteFur) [predominantly white fur] (Necessary condition)
+- class(American Bulldog) ⊑ hasVisualFeature(BrownPatches) [brown patches on fur] (Necessary condition)
+- hasVisualFeature(BrownPatches) [brown patches on fur] ⊑ class(American Bulldog) (Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature WhiteFur
+- hasVisualFeature BrownPatches
+
+4. Logical Explanation (DL):
+The ABox assertion presents WhiteFur and BrownPatches, which satisfies the Necessary condition of having predominantly white fur and brown patches, and the Sufficient condition of having brown patches on fur, according to the TBox axioms, so it is classified as an American Bulldog.
+----------------------------------------
+Query 14: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>American Bulldog</response>
+2. TBox (axioms in a Knowledge Base):
+- class(American Bulldog) ⊑ hasVisualFeature(WhiteFur) [white fur covering most of the body] (Necessary condition)
+- hasVisualFeature(WhiteFur) ⊑ class(American Bulldog) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [Predominantly white fur with a dark muzzle and dark eyes]
+4. Logical Explanation (DL):
+The ABox assertion presents hasVisualFeature [Predominantly white fur with a dark muzzle and dark eyes], which satisfies the Sufficient condition [hasVisualFeature(WhiteFur) ⊑ class(American Bulldog)] so it is classified as American Bulldog.
+----------------------------------------
+Query 15: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>American Bulldog</response>
+2. TBox (axioms in a Knowledge Base):
+- class(American Bulldog) ⊑ hasVisualFeature(WhiteFur) [predominantly white fur] (Necessary condition)
+- class(American Bulldog) ⊑ hasVisualFeature(LargeEars) [large, droopy ears] (Necessary condition)
+- hasVisualFeature(WhiteFur) [predominantly white fur] ⊑ class(American Bulldog) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature WhiteFur
+- hasVisualFeature LargeEars
+4. Logical Explanation (DL):
+The ABox assertion presents WhiteFur and LargeEars, which satisfies the necessary condition of predominantly white fur (C ⊑ P) and the necessary condition of having large ears (C ⊑ P) for class(American Bulldog), so it is classified as an American Bulldog.
+----------------------------------------
+Query 16: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Bulldog</response>
+2. TBox (axioms in a Knowledge Base):
+- class(American Bulldog) ⊑ hasVisualFeature(WrinkledFace) (Necessary condition)
+- hasVisualFeature(WrinkledFace) ⊑ class(American Bulldog) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [WrinkledFace]
+4. Logical Explanation (DL):
+The ABox assertion presents WrinkledFace, which satisfies the Sufficient condition axiom hasVisualFeature(WrinkledFace) ⊑ class(American Bulldog) so it is classified as American Bulldog.
+----------------------------------------
+Query 17: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>American Bulldog</response>
+2. TBox (axioms in a Knowledge Base):
+- class(American Bulldog) ⊑ hasVisualFeature(WhiteFur) [predominantly white fur] (Necessary condition)
+- class(American Bulldog) ⊑ hasVisualFeature(BrindleMarkings) [darker markings on white fur] (Necessary condition)
+- hasVisualFeature(BrindleMarkings) [darker markings on white fur] ⊑ class(American Bulldog) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature WhiteFur
+- hasVisualFeature BrindleMarkings
+4. Logical Explanation (DL):
+The ABox assertion presents WhiteFur and BrindleMarkings, which satisfies the TBox necessary condition class(American Bulldog) ⊑ hasVisualFeature(WhiteFur) [predominantly white fur] and the sufficient condition hasVisualFeature(BrindleMarkings) [darker markings on white fur] ⊑ class(American Bulldog) so it is classified as American Bulldog.
+----------------------------------------
+Query 18: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>American Bulldog</response>
+2. TBox (axioms in a Knowledge Base):
+- class(American Bulldog) ⊑ hasVisualFeature(WrinkledFace) (Necessary condition)
+- hasVisualFeature(WrinkledFace) ⊑ class(American Bulldog) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [WrinkledFace]
+4. Logical Explanation (DL):
+The ABox assertion presents WrinkledFace, which satisfies the Sufficient condition axiom hasVisualFeature(WrinkledFace) ⊑ class(American Bulldog) so it is classified as American Bulldog.
+----------------------------------------
+Query 19: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Japanese Chin</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Japanese Chin) ⊑ hasVisualFeature(FlatFace) [flat facial structure] (Necessary condition)
+- hasVisualFeature(FlatFace) [flat facial structure] ⊑ class(Japanese Chin) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature FlatFace [The dog exhibits a distinctly flat facial structure, characteristic of the breed.]
+4. Logical Explanation (DL):
+The ABox assertion presents a FlatFace, which satisfies the Sufficient condition [axiom] hasVisualFeature(FlatFace) ⊑ class(Japanese Chin) so it is classified as Japanese Chin.
+----------------------------------------
+Query 20: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Japanese Chin</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Japanese Chin) ⊑ hasVisualFeature(long_flowing_hair) [long, flowing hair around the face and ears] (Necessary condition)
+- hasVisualFeature(flat_face) [relatively flat face with large eyes] ⊑ class(Japanese Chin) (Sufficient condition)
+- class(Japanese Chin) ≡ hasVisualFeature(small_size) [small body size] (Necessary & Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature long_flowing_hair
+- hasVisualFeature flat_face
+- hasVisualFeature small_size
+4. Logical Explanation (DL):
+The ABox assertion presents long flowing hair, a flat face, and small size, which satisfies the necessary condition of having long flowing hair, the sufficient condition of having a flat face, and the necessary & sufficient condition of being small, all according to the TBox axioms, so it is classified as a Japanese Chin.
+----------------------------------------
+Query 21: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Japanese Chin</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Japanese Chin) ⊑ hasVisualFeature(LongHair) [long, flowing hair] (Necessary condition)
+- hasVisualFeature(BlackAndWhiteColoration) [distinct black and white markings] ⊑ class(Japanese Chin) (Sufficient condition)
+- class(Japanese Chin) ≡ hasVisualFeature(SmallSize) [small body size] (Necessary & Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature LongHair
+- hasVisualFeature BlackAndWhiteColoration
+- hasVisualFeature SmallSize
+4. Logical Explanation (DL):
+The ABox assertion presents LongHair, BlackAndWhiteColoration, and SmallSize, which satisfies the Sufficient condition axiom hasVisualFeature(BlackAndWhiteColoration) ⊑ class(Japanese Chin) and the Necessary condition axiom class(Japanese Chin) ⊑ hasVisualFeature(LongHair) and the Necessary & Sufficient condition axiom class(Japanese Chin) ≡ hasVisualFeature(SmallSize) so it is classified as Japanese Chin.
+----------------------------------------
+Query 22: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Japanese Chin</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Japanese Chin) ⊑ hasVisualFeature(Black and White Coat) [coat coloration] (Necessary condition)
+- hasVisualFeature(Long Flowing Hair) [hair texture] ⊑ class(Japanese Chin) (Sufficient condition)
+- class(Japanese Chin) ≡ hasVisualFeature(Small Size) [size] (Necessary & Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature Black and White Coat
+- hasVisualFeature Long Flowing Hair
+- hasVisualFeature Small Size
+4. Logical Explanation (DL):
+The ABox assertion presents a Black and White Coat, Long Flowing Hair, and Small Size, which satisfies the Necessary condition of having a Black and White Coat, the Sufficient condition of having Long Flowing Hair, and the Necessary & Sufficient condition of having Small Size, all associated with the class Japanese Chin, so it is classified as a Japanese Chin.
+----------------------------------------
+Query 23: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Japanese Chin</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Japanese Chin) ⊑ hasVisualFeature(LongHair) [long, flowing hair] (Necessary condition)
+- hasVisualFeature(BlackAndWhiteColoration) [distinct black and white markings] ⊑ class(Japanese Chin) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [LongHair]
+- hasVisualFeature [BlackAndWhiteColoration]
+4. Logical Explanation (DL):
+The ABox assertion presents LongHair and BlackAndWhiteColoration, which satisfies the Sufficient condition hasVisualFeature(BlackAndWhiteColoration) ⊑ class(Japanese Chin) and the Necessary condition class(Japanese Chin) ⊑ hasVisualFeature(LongHair) so it is classified as Japanese Chin.
+----------------------------------------
+Query 24: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Japanese Chin</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Japanese Chin) ⊑ hasVisualFeature(Black and White Fur) [coloration and fur pattern] (Necessary condition)
+- class(Japanese Chin) ⊑ hasVisualFeature(Long Facial Hair) [facial hair length] (Necessary condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature Black and White Fur
+- hasVisualFeature Long Facial Hair
+4. Logical Explanation (DL):
+The ABox assertion presents Black and White Fur and Long Facial Hair, which satisfies the Necessary condition axioms class(Japanese Chin) ⊑ hasVisualFeature(Black and White Fur) and class(Japanese Chin) ⊑ hasVisualFeature(Long Facial Hair) so it is classified as Japanese Chin.
+----------------------------------------
+Query 25: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Japanese Chin</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Japanese Chin) ⊑ hasVisualFeature(long_facial_hair) [long, flowing hair around the face] (Necessary condition)
+- hasVisualFeature(flat_face) [relatively flat face shape] ⊑ class(Japanese Chin) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature long_facial_hair
+- hasVisualFeature flat_face
+4. Logical Explanation (DL):
+The ABox assertion presents long_facial_hair and a flat_face, which satisfies the sufficient condition hasVisualFeature(flat_face) ⊑ class(Japanese Chin) and the necessary condition class(Japanese Chin) ⊑ hasVisualFeature(long_facial_hair) so it is classified as Japanese Chin.
+----------------------------------------
+Query 26: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Japanese Chin</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Japanese Chin) ⊑ hasVisualFeature(LongHair) [long, flowing hair] (Necessary condition)
+- class(Japanese Chin) ⊑ hasVisualFeature(BlackAndWhiteColoration) [black and white markings] (Necessary condition)
+- hasVisualFeature(BlackAndWhiteColoration) [black and white markings] ⊑ class(Japanese Chin) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature LongHair
+- hasVisualFeature BlackAndWhiteColoration
+4. Logical Explanation (DL):
+The ABox assertion presents LongHair and BlackAndWhiteColoration, which satisfies the Necessary condition of having LongHair and the Necessary condition of having BlackAndWhiteColoration for class(Japanese Chin), and the Sufficient condition of BlackAndWhiteColoration, so it is classified as Japanese Chin.
+----------------------------------------
+Query 27: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Japanese Chin</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Japanese Chin) ⊑ hasVisualFeature(Long Facial Hair) (Necessary condition)
+- hasVisualFeature(Long Facial Hair) ⊑ class(Japanese Chin) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [Long Facial Hair]
+4. Logical Explanation (DL):
+The ABox assertion presents hasVisualFeature Long Facial Hair, which satisfies the Sufficient condition axiom hasVisualFeature(Long Facial Hair) ⊑ class(Japanese Chin) so it is classified as Japanese Chin.
+----------------------------------------
+Query 28: Expected: [Great Pyrenees] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Great Pyrenees</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Great Pyrenees) ⊑ hasVisualFeature(P) [thick, fluffy, white fur] (Necessary condition)
+- hasVisualFeature(P) [thick, fluffy, white fur] ⊑ class(Great Pyrenees) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [thick, fluffy, white fur]
+4. Logical Explanation (DL):
+The ABox assertion presents hasVisualFeature [thick, fluffy, white fur], which satisfies the Sufficient condition [hasVisualFeature(P) ⊑ class(Great Pyrenees)] so it is classified as Great Pyrenees.
+----------------------------------------
+Query 29: Expected: [Great Pyrenees] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Great Pyrenees</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Great Pyrenees) ⊑ hasVisualFeature(P) [white fur] (Necessary condition)
+- hasVisualFeature(P) [white fur] ⊑ class(Great Pyrenees) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [predominantly white fur, fluffy appearance, large head relative to body]
+4. Logical Explanation (DL):
+The ABox assertion presents predominantly white fur and a fluffy appearance, which satisfies the Sufficient condition [hasVisualFeature(white fur) ⊑ class(Great Pyrenees)] so it is classified as Great Pyrenees.
+----------------------------------------
+Query 30: Expected: [Great Pyrenees] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Great Pyrenees</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Great Pyrenees) ⊑ hasVisualFeature(P) [long, thick, white fur] (Necessary condition)
+- class(Great Pyrenees) ⊑ hasVisualFeature(P) [large size] (Necessary condition)
+- hasVisualFeature(P) [white fur with light tan markings] ⊑ class(Great Pyrenees) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [white fur with light tan markings on the head and tail]
+- hasVisualFeature [large size]
+4. Logical Explanation (DL):
+The ABox assertion presents the properties of white fur with light tan markings and a large size, which satisfies the sufficient condition axiom "hasVisualFeature(white fur with light tan markings) ⊑ class(Great Pyrenees)" and the necessary condition axiom "class(Great Pyrenees) ⊑ hasVisualFeature(long, thick, white fur)" so it is classified as Great Pyrenees.
+----------------------------------------
+Query 31: Expected: [Great Pyrenees] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Great Pyrenees</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Great Pyrenees) ⊑ hasVisualFeature(P) [white fur] (Necessary condition)
+- hasVisualFeature(P) [white fur] ⊑ class(Great Pyrenees) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [white, fluffy fur]
+4. Logical Explanation (DL):
+The ABox assertion presents hasVisualFeature [white, fluffy fur], which satisfies the Sufficient condition [hasVisualFeature(P) [white fur] ⊑ class(Great Pyrenees)] so it is classified as Great Pyrenees.
+----------------------------------------
+Query 32: Expected: [Great Pyrenees] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Great Pyrenees</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Great Pyrenees) ⊑ hasVisualFeature(P) [thick, fluffy, white fur] (Necessary condition)
+- hasVisualFeature(P) [thick, fluffy, white fur] ⊑ class(Great Pyrenees) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [thick, fluffy, white fur]
+4. Logical Explanation (DL):
+The ABox assertion presents hasVisualFeature [thick, fluffy, white fur], which satisfies the Sufficient condition [hasVisualFeature(P) ⊑ class(Great Pyrenees)] so it is classified as Great Pyrenees.
+----------------------------------------
+Query 33: Expected: [Great Pyrenees] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Great Pyrenees</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Great Pyrenees) ⊑ hasVisualFeature(WhiteFur) [white, fluffy fur] (Necessary condition)
+- class(Great Pyrenees) ⊑ hasVisualFeature(LargeSize) [large, imposing size] (Necessary condition)
+- hasVisualFeature(WhiteFur) [white, fluffy fur] ⊑ class(Great Pyrenees) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature WhiteFur [dense, fluffy, white fur covering the entire body]
+- hasVisualFeature LargeSize [dog is significantly larger than a human]
+4. Logical Explanation (DL):
+The ABox assertion presents WhiteFur and LargeSize, which satisfies the necessary conditions of class(Great Pyrenees) ⊑ hasVisualFeature(WhiteFur) and class(Great Pyrenees) ⊑ hasVisualFeature(LargeSize) so it is classified as Great Pyrenees.
+----------------------------------------
+Query 34: Expected: [Great Pyrenees] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Great Pyrenees</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Great Pyrenees) ⊑ hasVisualFeature(P) [long, thick, white fur] (Necessary condition)
+- hasVisualFeature(P) [long, thick, white fur] ⊑ class(Great Pyrenees) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [long, thick, white fur]
+4. Logical Explanation (DL):
+The ABox assertion presents hasVisualFeature [long, thick, white fur], which satisfies the Sufficient condition [hasVisualFeature(P) ⊑ class(Great Pyrenees)] so it is classified as Great Pyrenees.
+----------------------------------------
+Query 35: Expected: [Great Pyrenees] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Great Pyrenees</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Great Pyrenees) ⊑ hasVisualFeature(P) [thick, white fur] (Necessary condition)
+- hasVisualFeature(P) [thick, white fur] ⊑ class(Great Pyrenees) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [thick, white fur]
+4. Logical Explanation (DL):
+The ABox assertion presents hasVisualFeature [thick, white fur], which satisfies the Sufficient condition [axiom] hasVisualFeature(P) [thick, white fur] ⊑ class(Great Pyrenees) so it is classified as Great Pyrenees.
+----------------------------------------
+Query 36: Expected: [Great Pyrenees] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>Great Pyrenees</response>
+2. TBox (axioms in a Knowledge Base):
+- class(Great Pyrenees) ⊑ hasVisualFeature(LongFur) [long, flowing fur] (Necessary condition)
+- class(Great Pyrenees) ⊑ hasVisualFeature(LargeSize) [large body size] (Necessary condition)
+- class(Great Pyrenees) ⊑ hasVisualFeature(LightColoration) [predominantly light colored fur] (Necessary condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature LongFur
+- hasVisualFeature LargeSize
+- hasVisualFeature LightColoration
+4. Logical Explanation (DL):
+The ABox assertion presents LongFur, LargeSize, and LightColoration, which satisfies the TBox necessary conditions for class(Great Pyrenees) [hasVisualFeature(LongFur), hasVisualFeature(LargeSize), and hasVisualFeature(LightColoration)], so it is classified as Great Pyrenees.
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 1.0000

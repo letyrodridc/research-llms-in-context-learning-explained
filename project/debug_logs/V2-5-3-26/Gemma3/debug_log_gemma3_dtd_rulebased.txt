@@ -1,0 +1,536 @@
+=== DEBUG LOG: gemma3 | dtd | Prompt: rulebased ===
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [spiralled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating, curved shapes.
+- The shapes are arranged in a circular pattern, emanating from a central point.
+
+KB:
+- IF the image contains repeating, curved shapes arranged in a circular pattern, emanating from a central point THEN spiralled.
+
+Rule Check:
+The target image exhibits repeating, curved shapes that are arranged in a circular pattern emanating from a central point. This aligns perfectly with the rule derived from the "spiralled" example.
+
+<response>spiralled</response>
+----------------------------------------
+Query 2: Expected: [spiralled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a collection of objects with curved, twisted shapes.
+- The objects are tightly packed together.
+- The overall form resembles a spiral.
+
+KB:
+- IF the image shows a collection of objects with curved, twisted shapes arranged in a circular pattern THEN spiralled.
+
+Rule Check:
+The extracted features match the rule in the KB. The image clearly displays objects with curved, twisted shapes that appear to be arranged in a spiral-like pattern. Therefore, the rule "IF the image shows a collection of objects with curved, twisted shapes arranged in a circular pattern THEN spiralled" is activated.
+
+<response>spiralled</response>
+----------------------------------------
+Query 3: Expected: [spiralled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating, curved pattern.
+- The pattern is arranged in a circular, inward-spiraling form.
+
+KB:
+- IF the image shows a repeating, curved pattern arranged in a circular, inward-spiraling form THEN spiralled.
+
+Rule Check:
+The image exhibits a clear, repeating curved pattern that spirals inward. This aligns directly with the rule: IF the image shows a repeating, curved pattern arranged in a circular, inward-spiraling form THEN spiralled.
+
+<response>spiralled</response>
+----------------------------------------
+Query 4: Expected: [spiralled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating, curved form.
+- The form is arranged in a circular, inward-spiraling pattern.
+
+KB:
+- IF the image contains a repeating, curved form arranged in a circular, inward-spiraling pattern THEN spiralled.
+
+Rule Check:
+The target image clearly exhibits a repeating, curved form arranged in a circular, inward-spiraling pattern. This directly matches the condition in the "spiralled" rule.
+
+<response>spiralled</response>
+----------------------------------------
+Query 5: Expected: [spiralled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image exhibits a curved, repeating pattern that originates from a central point and extends outwards in a circular fashion.
+- The pattern is continuous and forms a spiral shape.
+
+KB:
+- IF the image shows a continuous, repeating curved pattern originating from a central point and extending outwards in a circular fashion THEN spiralled.
+
+Rule Check:
+The extracted features clearly match the rule defined for the "spiralled" class. The image displays a continuous, repeating curved pattern originating from a central point, which aligns perfectly with the condition specified in the rule.
+
+<response>spiralled</response>
+----------------------------------------
+Query 6: Expected: [spiralled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a coiled structure.
+- The structure consists of repeating, curved strands.
+
+KB:
+- IF the image shows a coiled structure consisting of repeating, curved strands THEN spiralled.
+
+Rule Check:
+The image clearly displays a coiled structure with repeating curved strands. This aligns perfectly with the rule: IF the image shows a coiled structure consisting of repeating, curved strands THEN spiralled.
+
+<response>spiralled</response>
+----------------------------------------
+Query 7: Expected: [spiralled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating, curved pattern.
+- The pattern is formed by a series of parallel, slightly raised ridges.
+- The overall shape is a spiral.
+- The color is blue.
+
+KB:
+- IF the image shows a repeating, curved pattern formed by a series of parallel, slightly raised ridges and the overall shape is a spiral THEN spiralled.
+
+Rule Check:
+The target image exhibits a repeating, curved pattern with parallel ridges and a spiral shape. This aligns perfectly with the rule derived from the "spiralled" example.
+
+<response>spiralled</response>
+----------------------------------------
+Query 8: Expected: [spiralled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating, curved pattern.
+- The pattern forms concentric circles, spiraling inwards.
+- The lines are relatively thin and consistent in width.
+
+KB:
+- IF the image shows a repeating, curved pattern forming concentric circles THEN spiralled.
+
+Rule Check:
+The image exhibits a clear, repeating, curved pattern that forms concentric circles. This directly matches the condition in the "IF" statement of the "spiralled" rule. Therefore, the "spiralled" rule is activated.
+
+<response>spiralled</response>
+----------------------------------------
+Query 9: Expected: [spiralled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Numerous small, repeating, curved shapes resembling spirals are present.
+- The background is a light, uniform color.
+
+KB:
+- IF numerous small, repeating, curved shapes resembling spirals are present THEN spiralled.
+
+Rule Check:
+The target image exhibits numerous small, repeating, curved shapes that visually resemble spirals. This aligns directly with the rule: IF numerous small, repeating, curved shapes resembling spirals are present THEN spiralled.
+
+<response>spiralled</response>
+----------------------------------------
+Query 10: Expected: [banded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains parallel lines.
+- The lines are angled diagonally.
+- The lines alternate between a dark blue and a light blue/grey color.
+
+KB:
+- IF the image contains parallel lines THEN banded.
+
+Rule Check:
+The image clearly exhibits parallel lines. The rule states "IF the image contains parallel lines THEN banded." Therefore, the rule matches the observed features.
+
+<response>banded</response>
+----------------------------------------
+Query 11: Expected: [banded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains parallel lines.
+- The lines are at an angle, not perfectly horizontal or vertical.
+- The lines are dark yellow/brown and lighter yellow.
+
+KB:
+- IF the image contains parallel lines that are at an angle THEN banded.
+
+Rule Check:
+The image exhibits parallel lines at an angle. This aligns with the rule: IF the image contains parallel lines that are at an angle THEN banded.
+
+<response>banded</response>
+----------------------------------------
+Query 12: Expected: [banded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains parallel, straight lines.
+- The lines alternate between two colors: a darker blue and a lighter blue.
+
+KB:
+- IF the image contains parallel, straight lines that alternate between two colors THEN banded.
+
+Rule Check:
+The target image exhibits parallel, straight lines that alternate between two colors (darker and lighter blue). This directly matches the condition specified in the "banded" rule.
+
+<response>banded</response>
+----------------------------------------
+Query 13: Expected: [banded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains multiple parallel, straight lines.
+- The lines are of varying colors: pink, yellow, purple, and red.
+
+KB:
+- IF the image contains multiple parallel, straight lines THEN banded.
+
+Rule Check:
+The image exhibits multiple parallel, straight lines. This aligns perfectly with the rule: IF the image contains multiple parallel, straight lines THEN banded. Therefore, the rule for "banded" is activated.
+
+<response>banded</response>
+----------------------------------------
+Query 14: Expected: [banded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains many parallel, straight lines.
+- The lines are of varying shades of red and pink.
+
+KB:
+- IF the image contains many parallel, straight lines THEN banded.
+
+Rule Check:
+The image exhibits many parallel, straight lines. This matches the condition in the "banded" rule. Therefore, the "banded" rule is activated.
+
+<response>banded</response>
+----------------------------------------
+Query 15: Expected: [banded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Multiple vertical lines of varying widths.
+- Lines are predominantly pink and brown.
+- Lines are parallel and closely spaced.
+
+KB:
+- IF multiple vertical lines of varying widths are present and the lines are predominantly pink and white THEN banded.
+- IF the image shows a spiral shape THEN spiralled.
+- IF the image shows a zigzag pattern THEN zigzagged.
+- IF the image shows a grid of squares THEN waffled.
+
+Rule Check:
+The image displays multiple vertical lines. The lines are not spiralled, nor do they form a zigzag pattern or a grid. However, the lines are vertical and closely spaced, and the dominant colors are pink and brown, which aligns with the "banded" rule.
+
+<response>banded</response>
+----------------------------------------
+Query 16: Expected: [banded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains long, parallel lines.
+- The lines are angled diagonally.
+- The lines alternate between red and green colors.
+
+KB:
+- IF the image contains long, parallel lines that alternate in color THEN banded.
+
+Rule Check:
+The target image exhibits long, parallel lines that alternate between red and green. This aligns perfectly with the rule: IF the image contains long, parallel lines that alternate in color THEN banded.
+
+<response>banded</response>
+----------------------------------------
+Query 17: Expected: [banded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains parallel lines.
+- The lines are vertical.
+- The lines alternate between pink and green colors, with white spaces between them.
+
+KB:
+- IF the image contains parallel lines that alternate in color THEN banded.
+
+Rule Check:
+The image clearly exhibits parallel lines that alternate between pink and green, with white spaces in between. This aligns perfectly with the rule: IF the image contains parallel lines that alternate in color THEN banded.
+
+<response>banded</response>
+----------------------------------------
+Query 18: Expected: [banded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains multiple parallel, straight lines.
+- The lines are vertical.
+- The lines alternate in color: green, blue, and a lighter color.
+
+KB:
+- IF the image contains multiple parallel, straight lines THEN banded.
+
+Rule Check:
+The image exhibits multiple parallel, straight lines. This aligns with the rule: IF the image contains multiple parallel, straight lines THEN banded. Therefore, the image is classified as banded.
+
+<response>banded</response>
+----------------------------------------
+Query 19: Expected: [waffled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of small, square indentations.
+- The pattern is regular and consistent across the entire image.
+- The overall shape of the objects is circular.
+
+KB:
+- IF the image shows a repeating pattern of small, square indentations THEN waffled.
+
+Rule Check:
+The extracted features match the rule in the KB. The image clearly displays a repeating pattern of small, square indentations, which aligns with the "waffled" class.
+
+<response>waffled</response>
+----------------------------------------
+Query 20: Expected: [waffled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of square indentations.
+- The indentations are arranged in a grid-like structure.
+- The surface appears to have raised squares connected by lines.
+
+KB:
+- IF the image shows a repeating pattern of square indentations arranged in a grid-like structure THEN waffled.
+
+Rule Check:
+The extracted features match the rule in the KB. The image clearly displays a repeating pattern of square indentations in a grid-like structure. Therefore, the rule "IF the image shows a repeating pattern of square indentations arranged in a grid-like structure THEN waffled" is activated.
+
+<response>waffled</response>
+----------------------------------------
+Query 21: Expected: [waffled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a grid-like pattern of square indentations.
+- The indentations are consistently square and arranged in a repeating pattern.
+- The surface appears to be light brown/golden in color.
+
+KB:
+- IF the image contains a grid-like pattern of square indentations THEN waffled.
+
+Rule Check:
+The target image exhibits a clear grid-like pattern of square indentations. This directly matches the condition specified in the "IF" statement of the "waffled" rule. Therefore, the rule is activated.
+
+<response>waffled</response>
+----------------------------------------
+Query 22: Expected: [waffled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of small, rectangular, raised areas.
+- These raised areas are arranged in a grid-like pattern.
+- The raised areas have a curved top edge.
+
+KB:
+- IF the image contains a repeating pattern of small, rectangular, raised areas arranged in a grid-like pattern with curved top edges THEN waffled.
+
+Rule Check:
+The image exhibits a repeating pattern of small, rectangular, raised areas arranged in a grid-like pattern with curved top edges. This directly matches the rule derived from the "waffled" example.
+
+<response>waffled</response>
+----------------------------------------
+Query 23: Expected: [waffled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of square indentations.
+- The indentations are arranged in a grid-like structure.
+
+KB:
+- IF the image shows a repeating pattern of square indentations arranged in a grid-like structure THEN waffled.
+
+Rule Check:
+The target image exhibits a repeating pattern of square indentations arranged in a grid-like structure. This matches the rule derived from the previous "waffled" example.
+
+<response>waffled</response>
+----------------------------------------
+Query 24: Expected: [waffled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating, curved, tubular shape.
+- The shape is consistently coiled around a central axis.
+- The color is a light brown.
+
+KB:
+- IF the image shows a repeating, curved, tubular shape consistently coiled around a central axis THEN spiralled.
+
+Rule Check:
+The extracted features match the rule in the KB. The image clearly displays a repeating, curved, tubular shape that is consistently coiled around a central axis. Therefore, the rule "IF the image shows a repeating, curved, tubular shape consistently coiled around a central axis THEN spiralled" is activated.
+
+<response>spiralled</response>
+----------------------------------------
+Query 25: Expected: [waffled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of squares.
+- The squares are arranged in a grid-like structure with raised edges.
+- The color is a light brown.
+
+KB:
+- IF the image shows a repeating pattern of squares arranged in a grid-like structure with raised edges THEN waffled.
+
+Rule Check:
+The image exhibits a repeating pattern of squares with raised edges, which directly matches the condition in the "waffled" rule. Therefore, the rule is activated.
+
+<response>waffled</response>
+----------------------------------------
+Query 26: Expected: [waffled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of small, raised squares arranged in a grid.
+- The squares are uniformly sized and spaced.
+- The overall texture is a consistent, regular grid of squares.
+
+KB:
+- IF the image shows a repeating pattern of small, raised squares arranged in a grid THEN waffled.
+
+Rule Check:
+The extracted features match the rule derived from the "waffled" example. The image clearly displays a grid of small, raised squares, which aligns perfectly with the "IF the image shows a repeating pattern of small, raised squares arranged in a grid THEN waffled" rule.
+
+<response>waffled</response>
+----------------------------------------
+Query 27: Expected: [waffled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of square indentations.
+- The indentations are arranged in a grid-like structure.
+- The indentations are connected by thin, raised lines.
+
+KB:
+- IF the image contains a repeating pattern of square indentations arranged in a grid-like structure THEN waffled.
+
+Rule Check:
+The target image exhibits a repeating pattern of square indentations arranged in a grid-like structure, which directly matches the condition specified in the "IF" statement of the "waffled" rule. Therefore, the "waffled" rule is activated.
+
+<response>waffled</response>
+----------------------------------------
+Query 28: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating angled lines.
+- The lines form a V-shape pattern.
+- The lines alternate between a light color and a turquoise color.
+
+KB:
+- IF the image contains repeating angled lines forming a V-shape pattern THEN zigzagged.
+
+Rule Check:
+The target image exhibits repeating angled lines that form a V-shape pattern. This aligns perfectly with the rule derived from the "zigzagged" example.
+
+<response>zigzagged</response>
+----------------------------------------
+Query 29: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Rectangular shapes arranged at an angle to each other.
+- The shapes are elongated and form a repeating pattern.
+- The shapes are predominantly green.
+
+KB:
+- IF shapes are elongated and arranged at an angle to each other THEN zigzagged.
+
+Rule Check:
+The target image exhibits elongated rectangular shapes arranged at an angle to each other, forming a repeating pattern. This aligns perfectly with the rule: IF shapes are elongated and arranged at an angle to each other THEN zigzagged.
+
+<response>zigzagged</response>
+----------------------------------------
+Query 30: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating angled lines.
+- The lines alternate in color: red, white, and gray.
+- The lines form a zig-zag pattern.
+
+KB:
+- IF the image contains repeating angled lines that alternate in color THEN zigzagged.
+
+Rule Check:
+The image clearly exhibits repeating angled lines that alternate in color (red, white, and gray). This aligns perfectly with the rule: IF the image contains repeating angled lines that alternate in color THEN zigzagged.
+
+<response>zigzagged</response>
+----------------------------------------
+Query 31: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating angled lines forming a "V" shape.
+- The lines alternate in color, creating a pattern.
+
+KB:
+- IF the image contains repeating angled lines forming a "V" shape THEN zigzagged.
+
+Rule Check:
+The image clearly exhibits repeating angled lines forming a "V" shape. This aligns perfectly with the rule derived from the previous "zigzagged" example.
+
+<response>zigzagged</response>
+----------------------------------------
+Query 32: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating, angled lines.
+- The lines form a series of sharp, alternating V-shapes.
+- The lines are not curved.
+
+KB:
+- IF the image contains repeating, angled lines forming sharp, alternating V-shapes THEN zigzagged.
+
+Rule Check:
+The target image exhibits repeating, angled lines that form sharp, alternating V-shapes. This directly matches the rule derived from the "zigzagged" example.
+
+<response>zigzagged</response>
+----------------------------------------
+Query 33: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating angled lines forming a "V" shape.
+- The lines alternate in color and pattern.
+
+KB:
+- IF the image contains repeating angled lines forming a "V" shape THEN zigzagged.
+
+Rule Check:
+The image clearly exhibits repeating angled lines forming a "V" shape. This aligns directly with the rule: IF the image contains repeating angled lines forming a "V" shape THEN zigzagged.
+
+<response>zigzagged</response>
+----------------------------------------
+Query 34: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating angled lines.
+- The lines form a V-shape pattern.
+- The lines alternate in color.
+
+KB:
+- IF the image contains repeating angled lines forming a V-shape pattern THEN zigzagged.
+
+Rule Check:
+The image exhibits repeating angled lines that form a V-shape pattern. This aligns perfectly with the rule: IF the image contains repeating angled lines forming a V-shape pattern THEN zigzagged.
+
+<response>zigzagged</response>
+----------------------------------------
+Query 35: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating angled lines.
+- The lines alternate in color: black, grey, and white.
+- The lines form a series of sharp, repeating "V" shapes.
+
+KB:
+- IF the image contains repeating angled lines forming sharp "V" shapes THEN zigzagged.
+
+Rule Check:
+The target image exhibits repeating angled lines that form sharp "V" shapes. This aligns perfectly with the rule derived from the "zigzagged" example. No other rule in the KB matches these features.
+
+<response>zigzagged</response>
+----------------------------------------
+Query 36: Expected: [zigzagged] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating angled lines.
+- The lines form a pattern of alternating diagonal shapes.
+- The shapes are predominantly diamond-like.
+
+KB:
+- IF the image contains repeating angled lines forming a pattern of alternating diagonal shapes THEN zigzagged.
+
+Rule Check:
+The image exhibits repeating angled lines that form a pattern of alternating diagonal shapes. This aligns perfectly with the rule derived from the "zigzagged" example.
+
+<response>zigzagged</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.9722

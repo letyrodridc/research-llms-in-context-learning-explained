@@ -1,0 +1,1160 @@
+=== DEBUG LOG: qwen-vl | pets | Prompt: rulebased ===
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short hair
+- Black and white coloration
+- Pointed ears
+- Yellow eyes
+KB:
+- IF Short hair AND Black and white coloration AND Pointed ears AND Yellow eyes THEN Bombay
+Rule Check:
+- The extracted features match the IF conditions of the Bombay class rule in the Knowledge Base.
+- The short hair, black and white coloration, pointed ears, and yellow eyes are all specific visual features that distinguish the image from the other classes seen.
+- Therefore, the extracted features best match the rule for the Bombay class.
+Classification: <response>Bombay</response>
+----------------------------------------
+Query 2: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short hair
+- Black fur
+- Yellow eyes
+KB:
+- IF Short hair AND Black fur AND Yellow eyes THEN Bombay
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: Short hair, Black fur, and Yellow eyes are specific to the Bombay breed.
+<response>Bombay</response>
+----------------------------------------
+Query 3: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Short tail
+KB:
+- IF Black fur and yellow eyes THEN Bombay
+- IF Pointed ears THEN Bombay
+- IF Short tail THEN Bombay
+Rule Check:
+- The image has black fur and yellow eyes, which matches the IF-THEN rule for Bombay.
+- The image has pointed ears, which matches the IF-THEN rule for Bombay.
+- The image has a short tail, which matches the IF-THEN rule for Bombay.
+Classification: <response>Bombay</response>
+----------------------------------------
+Query 4: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Short tail
+KB:
+- IF Black fur and yellow eyes THEN Bombay
+- IF Pointed ears THEN Bombay
+- IF Short tail THEN Bombay
+Rule Check:
+- The image has black fur and yellow eyes, which matches the IF-THEN rule for Bombay.
+- The image has pointed ears, which matches the IF-THEN rule for Bombay.
+- The image has a short tail, which matches the IF-THEN rule for Bombay.
+Classification: <response>Bombay</response>
+----------------------------------------
+Query 5: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Black nose
+- Black paws
+KB:
+- IF Black fur, Yellow eyes, Pointed ears, Black nose, Black paws THEN Bombay
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base, indicating that the image is of a Bombay cat.
+<response>Bombay</response>
+----------------------------------------
+Query 6: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Short tail
+KB:
+- IF Black fur and yellow eyes THEN Bombay
+- IF Pointed ears THEN Bombay
+- IF Short tail THEN Bombay
+Rule Check:
+- The image has black fur and yellow eyes, which matches the IF-THEN rule for Bombay.
+- The image has pointed ears, which matches the IF-THEN rule for Bombay.
+- The image has a short tail, which matches the IF-THEN rule for Bombay.
+Classification: <response>Bombay</response>
+----------------------------------------
+Query 7: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Green eyes
+- Pointed ears
+- Short tail
+KB:
+- IF Black fur AND Green eyes AND Pointed ears AND Short tail THEN Bombay
+Rule Check:
+- The extracted features match the IF conditions of the Bombay class rule.
+- The extracted features include Black fur, Green eyes, Pointed ears, and Short tail, which are all present in the Bombay class.
+- Therefore, the extracted features match the Bombay class rule best.
+Classification: <response>Bombay</response>
+----------------------------------------
+Query 8: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Short tail
+KB:
+- IF Black fur, Yellow eyes, Pointed ears, Short tail THEN Bombay
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base, indicating that the image is of a Bombay cat.
+<response>Bombay</response>
+----------------------------------------
+Query 9: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Orange background
+KB:
+- IF Black fur and yellow eyes THEN Bombay
+- IF Pointed ears THEN Bombay
+- IF Orange background THEN Bombay
+Rule Check:
+- The image has black fur and yellow eyes, which matches the IF-THEN rule for Bombay.
+- The image has pointed ears, which matches the IF-THEN rule for Bombay.
+- The image has an orange background, which matches the IF-THEN rule for Bombay.
+Classification: <response>Bombay</response>
+----------------------------------------
+Query 10: Expected: [American Bulldog] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Long hair
+- Pointed ears
+- Brown eyes
+- Black nose
+KB:
+- IF Black and white fur AND Long hair AND Pointed ears AND Brown eyes AND Black nose THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the KB.
+- The extracted features include Black and white fur, Long hair, Pointed ears, Brown eyes, and Black nose, which are all present in the image.
+- Therefore, the rule that best matches the visual features is the Japanese Chin rule.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 11: Expected: [American Bulldog] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Yellow eyes
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Yellow eyes THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base.
+- The extracted features include Black and white fur, Pointed ears, Black nose, and Yellow eyes.
+- These features are consistent with the visual characteristics of a Japanese Chin as seen in the provided examples.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 12: Expected: [American Bulldog] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short, thick fur
+- Black and white coloration
+- Pointed ears
+- Large, expressive eyes
+- Small, triangular nose
+KB:
+- IF Short, thick fur AND Black and white coloration AND Pointed ears AND Large, expressive eyes AND Small, triangular nose THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the KB.
+- Short, thick fur matches the short, thick fur condition.
+- Black and white coloration matches the black and white coloration condition.
+- Pointed ears matches the pointed ears condition.
+- Large, expressive eyes matches the large, expressive eyes condition.
+- Small, triangular nose matches the small, triangular nose condition.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 13: Expected: [American Bulldog] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short hair
+- Black and white color
+- Pointed ears
+- Yellow eyes
+KB:
+- IF Short hair AND Black and white color AND Pointed ears AND Yellow eyes THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base.
+- Short hair matches the "Short hair" condition.
+- Black and white color matches the "Black and white color" condition.
+- Pointed ears matches the "Pointed ears" condition.
+- Yellow eyes matches the "Yellow eyes" condition.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 14: Expected: [American Bulldog] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Yellow eyes
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Yellow eyes THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base.
+- The extracted features include Black and white fur, Pointed ears, Black nose, and Yellow eyes, which are all present in the Target Image.
+- Therefore, the extracted features match the rule from the Knowledge Base, indicating that the class of the Target Image is Japanese Chin.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 15: Expected: [American Bulldog] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short hair
+- Black and white color
+- Pointed ears
+- Blue eyes
+KB:
+- IF Short hair AND Black and white color AND Pointed ears AND Blue eyes THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the rule in the Knowledge Base.
+- Short hair matches the IF condition of "Short hair".
+- Black and white color matches the IF condition of "Black and white color".
+- Pointed ears matches the IF condition of "Pointed ears".
+- Blue eyes matches the IF condition of "Blue eyes".
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 16: Expected: [American Bulldog] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- White fur
+- Black nose
+- Black eyes
+- Black ears
+- Black and white fur
+- Black and white face
+- Black and white body
+- Black and white legs
+- Black and white tail
+- Black and white paws
+- Black and white head
+- Black and white neck
+- Black and white collar
+- Black and white dog
+- Black and white puppy
+- Black and white puppy dog
+- Black and white puppy dog face
+- Black and white puppy dog eyes
+- Black and white puppy dog nose
+- Black and white puppy dog ears
+- Black and white puppy dog mouth
+- Black and white puppy dog tongue
+- Black and white puppy dog whiskers
+- Black and white puppy dog fur
+- Black and white puppy dog hair
+- Black and white puppy dog skin
+- Black and white puppy dog bone
+- Black and white puppy dog paw
+- Black and white puppy dog eye
+- Black and white puppy dog nose
+- Black and white puppy dog ear
+- Black and white puppy dog mouth
+- Black and white puppy dog tongue
+- Black and white puppy dog whisker
+- Black and white puppy dog fur
+- Black and white puppy dog hair
+- Black and white puppy dog skin
+- Black and white puppy dog bone
+- Black and white puppy dog paw
+- Black and white puppy dog eye
+- Black and white puppy dog nose
+- Black and white puppy dog ear
+- Black and white puppy dog mouth
+- Black and white puppy dog tongue
+- Black and white puppy dog whisker
+- Black and white puppy dog fur
+- Black and white puppy dog hair
+- Black and white puppy dog skin
+- Black and white puppy dog bone
+- Black and white puppy dog paw
+- Black and white puppy dog eye
+- Black and white puppy dog nose
+- Black and white puppy dog ear
+- Black and white puppy dog mouth
+- Black and white puppy dog tongue
+- Black and white puppy dog whisker
+- Black and white puppy dog fur
+- Black and white puppy dog hair
+- Black and white puppy dog skin
+- Black and white puppy dog bone
+- Black and white puppy dog paw
+- Black and white puppy dog eye
+- Black and white puppy dog nose
+- Black and white puppy dog ear
+- Black and white puppy dog mouth
+- Black and white puppy dog tongue
+- Black and white puppy dog whisker
+- Black and white puppy dog fur
+- Black and white puppy dog hair
+- Black and white puppy dog skin
+- Black and white puppy dog bone
+- Black and white puppy dog paw
+- Black and white puppy dog eye
+- Black and white puppy dog nose
+- Black and white puppy dog ear
+- Black and white puppy dog mouth
+- Black and white puppy dog tongue
+- Black and white puppy dog whisker
+- Black and white puppy dog fur
+- Black and white puppy dog hair
+- Black and white puppy dog skin
+- Black and white puppy dog bone
+- Black and white puppy dog paw
+- Black and white puppy dog eye
+- Black and white puppy dog nose
+- Black and white puppy dog ear
+- Black and white puppy dog mouth
+- Black and white puppy dog tongue
+- Black and white puppy dog whisker
+- Black and white puppy dog fur
+- Black and white puppy dog hair
+- Black and white puppy dog skin
+- Black and white puppy dog bone
+- Black and white puppy dog paw
+- Black and white puppy dog eye
+- Black and white puppy dog nose
+- Black and white puppy dog ear
+- Black and white puppy dog mouth
+- Black and white puppy dog tongue
+- Black and white puppy dog whisker
+- Black and white puppy dog fur
+- Black and white puppy dog hair
+- Black and white puppy dog skin
+- Black and white puppy dog bone
+- Black and white puppy dog paw
+- Black and white puppy dog eye
+- Black and white puppy dog nose
+- Black and white puppy dog ear
+- Black and white puppy dog mouth
+- Black and white puppy dog tongue
+- Black and white puppy dog whisker
+- Black and white puppy dog fur
+- Black and white puppy dog hair
+- Black and white puppy dog skin
+- Black and white puppy dog bone
+- Black and white puppy dog paw
+- Black and white puppy dog eye
+- Black and white puppy dog nose
+- Black and white puppy dog ear
+- Black and white puppy dog mouth
+- Black and white puppy dog tongue
+- Black and white puppy dog whisker
+- Black and white puppy dog fur
+- Black and white puppy dog hair
+- Black and white puppy dog skin
+- Black and white puppy dog bone
+- Black and white puppy dog paw
+- Black and white puppy dog eye
+- Black and white puppy dog nose
+- Black and white puppy dog ear
+- Black and white puppy dog mouth
+- Black
+----------------------------------------
+Query 17: Expected: [American Bulldog] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short hair
+- Black and white color
+- Pointed ears
+- Yellow eyes
+KB:
+- IF Short hair AND Black and white color AND Pointed ears AND Yellow eyes THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base.
+- Short hair matches the "Short hair" condition.
+- Black and white color matches the "Black and white color" condition.
+- Pointed ears matches the "Pointed ears" condition.
+- Yellow eyes matches the "Yellow eyes" condition.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 18: Expected: [American Bulldog] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- White fur
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black nose
+- Black eyes
+- Black ears
+- Black p
+----------------------------------------
+Query 19: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short, black fur
+- Pointed ears
+- Yellow eyes
+- Black nose
+- Black and white face
+- Black bandana with gold and red designs
+KB:
+- IF Short, black fur AND Pointed ears AND Yellow eyes AND Black nose AND Black and white face AND Black bandana with gold and red designs THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the KB.
+- Short, black fur matches the short, black fur condition.
+- Pointed ears match the pointed ears condition.
+- Yellow eyes match the yellow eyes condition.
+- Black nose matches the black nose condition.
+- Black and white face matches the black and white face condition.
+- Black bandana with gold and red designs matches the black bandana with gold and red designs condition.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 20: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short hair
+- Black and white color
+- Pointed ears
+- Yellow eyes
+KB:
+- IF Short hair AND Black and white color AND Pointed ears AND Yellow eyes THEN Bombay
+Rule Check:
+- The extracted features match the IF conditions of the Bombay class rule.
+- The short hair, black and white color, pointed ears, and yellow eyes are all specific visual features that distinguish the image from the other classes.
+- Therefore, the rule that best matches the visual features is the one for the Bombay class.
+Classification: <response>Bombay</response>
+----------------------------------------
+Query 21: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short hair
+- Black and white color
+- Pointed ears
+- Yellow eyes
+KB:
+- IF Short hair AND Black and white color AND Pointed ears AND Yellow eyes THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base.
+- Short hair matches the "Short hair" condition.
+- Black and white color matches the "Black and white color" condition.
+- Pointed ears matches the "Pointed ears" condition.
+- Yellow eyes matches the "Yellow eyes" condition.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 22: Expected: [Japanese Chin] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Pointed ears
+- Yellow eyes
+KB:
+- IF Black fur and pointed ears THEN Bombay
+- IF Black fur and yellow eyes THEN Bombay
+Rule Check:
+- The image has black fur and pointed ears, which matches the IF condition of the Bombay class.
+- The image also has yellow eyes, which matches the IF condition of the Bombay class.
+Classification: <response>Bombay</response>
+----------------------------------------
+Query 23: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Yellow eyes
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Yellow eyes THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base.
+- The extracted features include Black and white fur, Pointed ears, Black nose, and Yellow eyes.
+- These features are consistent with the visual evidence in the examples provided.
+- Therefore, the rule that best matches the visual features is the one for Japanese Chin.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 24: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Brown eyes
+- Black nose
+- White chest
+- Black paws
+KB:
+- IF Black and white fur AND Pointed ears AND Brown eyes AND Black nose AND White chest AND Black paws THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the KB.
+- The extracted features include Black and white fur, Pointed ears, Brown eyes, Black nose, White chest, and Black paws, which are all present in the image.
+- Therefore, the rule that best matches the visual features is the Japanese Chin rule.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 25: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Long hair
+- Pointed ears
+- Brown eyes
+- Black nose
+KB:
+- IF Black and white fur AND Long hair AND Pointed ears AND Brown eyes AND Black nose THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the KB.
+- The extracted features include Black and white fur, Long hair, Pointed ears, Brown eyes, and Black nose, which are all present in the image.
+- Therefore, the rule that best matches the visual features is the Japanese Chin rule.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 26: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black and white face
+- Black and white paws
+- Black and white body
+- Black and white tail
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white face AND Black and white paws AND Black and white body AND Black and white tail THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the KB.
+- The extracted features include Black and white fur, Pointed ears, Black nose, Black eyes, Black and white face, Black and white paws, Black and white body, and Black and white tail.
+- Therefore, the rule that best matches the visual features is the Japanese Chin rule.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 27: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short hair
+- Black and white color
+- Pointed ears
+- Yellow eyes
+KB:
+- IF Short hair AND Black and white color AND Pointed ears AND Yellow eyes THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base.
+- Short hair matches the "Short hair" condition.
+- Black and white color matches the "Black and white color" condition.
+- Pointed ears matches the "Pointed ears" condition.
+- Yellow eyes matches the "Yellow eyes" condition.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 28: Expected: [Great Pyrenees] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long hair
+- Black and white coloration
+- Pointed ears
+- Tongue sticking out
+KB:
+- IF Long hair AND Black and white coloration AND Pointed ears AND Tongue sticking out THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the rule for Japanese Chin.
+- The long hair, black and white coloration, pointed ears, and tongue sticking out are all specific visual features that distinguish the image from the other classes.
+- Therefore, the rule for Japanese Chin is activated based on the extracted features.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 29: Expected: [Great Pyrenees] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>Great Pyrenees</response>
+Features:
+- Fluffy fur
+- Large size
+- White color
+- Round face
+- Big ears
+KB:
+- IF Fluffy fur AND Large size AND White color AND Round face AND Big ears THEN Great Pyrenees
+Rule Check:
+- The image has fluffy fur, which matches the feature "Fluffy fur" in the knowledge base.
+- The image has a large size, which matches the feature "Large size" in the knowledge base.
+- The image has a white color, which matches the feature "White color" in the knowledge base.
+- The image has a round face, which matches the feature "Round face" in the knowledge base.
+- The image has big ears, which matches the feature "Big ears" in the knowledge base.
+- All the extracted features match the rules in the knowledge base, so the rule that best matches the visual features is "IF Fluffy fur AND Large size AND White color AND Round face AND Big ears THEN Great Pyrenees".
+Classification: <response>Great Pyrenees</response>
+----------------------------------------
+Query 30: Expected: [Great Pyrenees] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short hair
+- Black and white color
+- Pointed ears
+- Yellow eyes
+KB:
+- IF Short hair AND Black and white color AND Pointed ears AND Yellow eyes THEN Bombay
+Rule Check:
+- The extracted features match the IF conditions of the Bombay class rule.
+- The extracted features include short hair, black and white color, pointed ears, and yellow eyes.
+- These features are consistent with the visual evidence provided in the examples for the Bombay class.
+Classification: <response>Bombay</response>
+----------------------------------------
+Query 31: Expected: [Great Pyrenees] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Yellow eyes
+- Black nose
+- Long hair
+KB:
+- IF Black and white fur AND Pointed ears AND Yellow eyes AND Black nose AND Long hair THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the KB.
+- The extracted features include Black and white fur, Pointed ears, Yellow eyes, Black nose, and Long hair, which are all present in the image.
+- Therefore, the rule that best matches the visual features is the Japanese Chin rule.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 32: Expected: [Great Pyrenees] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Pointed ears
+- Yellow eyes
+KB:
+- IF Black fur and pointed ears THEN Bombay
+- IF Black fur and yellow eyes THEN Bombay
+Rule Check:
+- The image has black fur and pointed ears, which matches the IF condition of the Bombay class.
+- The image also has yellow eyes, which matches the IF condition of the Bombay class.
+Classification: <response>Bombay</response>
+----------------------------------------
+Query 33: Expected: [Great Pyrenees] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short hair
+- Black and white color
+- Pointed ears
+- Yellow eyes
+KB:
+- IF Short hair AND Black and white color AND Pointed ears AND Yellow eyes THEN Bombay
+Rule Check:
+- The extracted features match the IF conditions of the Bombay class rule.
+- The extracted features include short hair, black and white color, pointed ears, and yellow eyes.
+- These features are consistent with the visual evidence in the image.
+Classification: <response>Bombay</response>
+----------------------------------------
+Query 34: Expected: [Great Pyrenees] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- White fur
+- Black nose
+- Black ears
+- Black eyes
+- Black paws
+- Black tail
+- Black collar
+- Black leash
+- Black leash hook
+- Black leash handle
+- Black leash ring
+- Black leash clip
+- Black leash clip hook
+- Black leash clip ring
+- Black leash clip clip
+- Black leash clip clip hook
+- Black leash clip clip ring
+- Black leash clip clip clip
+- Black leash clip clip clip hook
+- Black leash clip clip clip ring
+- Black leash clip clip clip clip
+- Black leash clip clip clip clip hook
+- Black leash clip clip clip clip ring
+- Black leash clip clip clip clip clip
+- Black leash clip clip clip clip clip hook
+- Black leash clip clip clip clip clip ring
+- Black leash clip clip clip clip clip clip
+- Black leash clip clip clip clip clip clip hook
+- Black leash clip clip clip clip clip clip ring
+- Black leash clip clip clip clip clip clip clip
+- Black leash clip clip clip clip clip clip clip hook
+- Black leash clip clip clip clip clip clip clip ring
+- Black leash clip clip clip clip clip clip clip clip
+- Black leash clip clip clip clip clip clip clip clip hook
+- Black leash clip clip clip clip clip clip clip clip ring
+- Black leash clip clip clip clip clip clip clip clip clip
+- Black leash clip clip clip clip clip clip clip clip clip hook
+- Black leash clip clip clip clip clip clip clip clip clip ring
+- Black leash clip clip clip clip clip clip clip clip clip clip
+- Black leash clip clip clip clip clip clip clip clip clip clip hook
+- Black leash clip clip clip clip clip clip clip clip clip clip ring
+- Black leash clip clip clip clip clip clip clip clip clip clip clip
+- Black leash clip clip clip clip clip clip clip clip clip clip clip hook
+- Black leash clip clip clip clip clip clip clip clip clip clip clip ring
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip hook
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip ring
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip hook
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip ring
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip hook
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip ring
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip hook
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip ring
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip hook
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip ring
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip hook
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip ring
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip hook
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip ring
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip hook
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip ring
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip hook
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip ring
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip
+- Black leash clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip clip hook
+- Black leash clip clip clip clip clip clip clip clip clip clip
+----------------------------------------
+Query 35: Expected: [Great Pyrenees] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- White fur
+- Large size
+- Fluffy
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black leash
+- Black tail
+- Black background
+KB:
+- IF White fur, Large size, Fluffy, Black nose, Black eyes, Black ears, Black paws, Black collar, Black leash, Black tail THEN American Bulldog
+Rule Check:
+- The extracted features match the IF conditions of the American Bulldog rule in the KB.
+- The extracted features include White fur, Large size, Fluffy, Black nose, Black eyes, Black ears, Black paws, Black collar, Black leash, Black tail, and Black background.
+- These features are consistent with the visual evidence in the image.
+- Therefore, the rule that best matches the visual features is the American Bulldog rule.
+Classification: <response>American Bulldog</response>
+----------------------------------------
+Query 36: Expected: [Great Pyrenees] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- White fur
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black tail
+- Black collar
+- Black leash
+- Black and white fur
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+- Black and white paws
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+- Black and white paws
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+- Black and white paws
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+- Black and white paws
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+- Black and white paws
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+- Black and white paws
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+- Black and white paws
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+- Black and white paws
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+- Black and white paws
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+- Black and white paws
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+- Black and white paws
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+- Black and white paws
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+- Black and white paws
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+- Black and white paws
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+- Black and white paws
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+- Black and white paws
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+- Black and white paws
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+- Black and white paws
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+- Black and white paws
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+- Black and white paws
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+- Black and white paws
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+- Black and white paws
+- Black and white collar
+- Black and white leash
+- Black and white tail
+- Black and white ears
+- Black and white nose
+- Black and white eyes
+-
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.4722

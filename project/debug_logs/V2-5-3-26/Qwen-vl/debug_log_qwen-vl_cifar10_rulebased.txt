@@ -1,0 +1,543 @@
+=== DEBUG LOG: qwen-vl | cifar10 | Prompt: rulebased ===
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [ship] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Animal
+- Horse
+- Rider
+- Equestrian
+KB:
+- IF Animal AND Horse AND Rider THEN horse
+- IF Animal AND Horse AND Equestrian THEN horse
+Rule Check:
+- The image features an animal, specifically a horse, with a rider on top. The visual features of the horse and rider align with the rules in the knowledge base, confirming the class as horse.
+- The extracted features of the animal, horse, and rider match the rules in the knowledge base, confirming the class as horse.
+- The extracted features of the animal, horse, and equestrian match the rules in the knowledge base, confirming the class as horse.
+Classification: <response>horse</response>
+----------------------------------------
+Query 2: Expected: [ship] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- A large, dark-colored structure with a pointed roof
+- A person standing in front of the structure
+- The structure appears to be a small building or shelter
+KB:
+- IF A large, dark-colored structure with a pointed roof AND A person standing in front of the structure THEN airplane
+- IF A large, dark-colored structure with a pointed roof AND A person standing in front of the structure THEN truck
+- IF A large, dark-colored structure with a pointed roof AND A person standing in front of the structure THEN ship
+- IF A large, dark-colored structure with a pointed roof AND A person standing in front of the structure THEN horse
+Rule Check:
+- The extracted features match the IF conditions of the KB rules for airplane, truck, ship, and horse.
+- The rule that best matches the visual features is: IF A large, dark-colored structure with a pointed roof AND A person standing in front of the structure THEN airplane.
+Classification: <response>airplane</response>
+----------------------------------------
+Query 3: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>ship</response>
+
+Features:
+- The image shows a large, red vessel with a white stripe.
+- The vessel has a pointed front and a flat back.
+- The vessel is on the water, suggesting it is a boat.
+
+KB:
+- IF The vessel is large, red, and has a pointed front and a flat back THEN It is a ship.
+
+Rule Check:
+- The extracted features match the rule in the KB: The vessel is large, red, and has a pointed front and a flat back, which is characteristic of a ship. Therefore, the rule that best matches the visual features is that the vessel is a ship.
+----------------------------------------
+Query 4: Expected: [ship] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, yellow vehicle with a flatbed.
+- The vehicle is positioned on a road or similar surface.
+- The background includes a clear blue sky and some greenery.
+KB:
+- IF The vehicle is large, yellow, and has a flatbed THEN truck
+- IF The vehicle is positioned on a road or similar surface THEN truck
+- IF The background includes a clear blue sky and some greenery THEN truck
+Rule Check:
+- The extracted features match the IF-THEN rules in the KB, indicating that the vehicle is a truck.
+- The large, yellow, flatbed vehicle on a road with a clear blue sky and greenery background aligns with the rules for the truck class.
+Classification:
+<response>truck</response>
+----------------------------------------
+Query 5: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>ship</response>
+
+Features:
+- The image shows a large, elongated vessel with a flat deck and a hull that is designed for water transportation.
+- The vessel has a distinct shape that is elongated and streamlined, typical of ships.
+- The vessel is on the water, which is a common environment for ships.
+
+KB:
+- IF the image shows a large, elongated vessel with a flat deck and a hull designed for water transportation, THEN it is a ship.
+
+Rule Check:
+- The extracted features match the rule in the KB: the large, elongated vessel with a flat deck and a hull designed for water transportation is a ship.
+----------------------------------------
+Query 6: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>ship</response>
+
+Features:
+- Large size
+- Water surface
+- Ocean
+- Ship structure
+
+KB:
+- IF Large size, Water surface, Ocean THEN ship
+
+Rule Check:
+- The image features a large vessel on the water surface, which matches the visual features of a ship. Therefore, the rule that best matches the visual features is:
+  - IF Large size, Water surface, Ocean THEN ship
+----------------------------------------
+Query 7: Expected: [ship] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large, rectangular structure
+- Yellow and black color scheme
+- Metal and mechanical components
+KB:
+- IF Large, rectangular structure with yellow and black color scheme and metal and mechanical components THEN truck
+Rule Check:
+- The target image features a large, rectangular structure with a yellow and black color scheme and metal and mechanical components, which matches the IF condition of the rule for the truck class.
+- The extracted features of the target image include a large, rectangular structure, which is a critical visual feature that distinguishes it from the other classes.
+- The target image also has a yellow and black color scheme, which is another critical visual feature that distinguishes it from the other classes.
+- The target image has metal and mechanical components, which is a critical visual feature that distinguishes it from the other classes.
+Classification: <response>truck</response>
+----------------------------------------
+Query 8: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>ship</response>
+
+Features:
+- Large size
+- Blue color
+- On the water
+
+KB:
+- IF Large size and blue color THEN ship
+
+Rule Check:
+- The target image has a large size and is blue, which matches the IF condition of the rule derived from the examples. Therefore, the rule activates and the class is determined to be ship.
+----------------------------------------
+Query 9: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>ship</response>
+Features:
+- Large size
+- Blue color
+- White stripe
+- Red stripe
+KB:
+- IF Large size, Blue color, White stripe, Red stripe THEN ship
+Rule Check:
+- The target image has a large size, which matches the visual feature of the ship examples.
+- The target image has a blue color, which matches the visual feature of the ship examples.
+- The target image has a white stripe, which matches the visual feature of the ship examples.
+- The target image has a red stripe, which matches the visual feature of the ship examples.
+- Therefore, the extracted features match the rule "IF Large size, Blue color, White stripe, Red stripe THEN ship" from the Knowledge Base.
+----------------------------------------
+Query 10: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four wheels
+- Metal body
+- Large size
+- Yellow color
+KB:
+- IF Four wheels AND Metal body AND Large size AND Yellow color THEN truck
+Rule Check:
+- The extracted features match the rule in the KB: Four wheels, Metal body, Large size, and Yellow color.
+- These features are specific to the truck class.
+Classification: <response>truck</response>
+----------------------------------------
+Query 11: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- A large, yellow vehicle
+- A pile of dirt or sand
+- A clear blue sky
+- A blurred background of trees and grass
+KB:
+- IF A large, yellow vehicle is present with a pile of dirt or sand, and a clear blue sky in the background THEN truck
+Rule Check:
+- The large, yellow vehicle matches the description of a truck.
+- The pile of dirt or sand is consistent with the examples of trucks.
+- The clear blue sky is a common background feature in the provided examples of trucks.
+- The blurred background of trees and grass is typical for outdoor scenes involving trucks.
+Classification: <response>truck</response>
+----------------------------------------
+Query 12: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- A large, rectangular structure
+- A person standing in front of the structure
+- The structure appears to be a shelter or a small building
+KB:
+- IF A large, rectangular structure with a person standing in front of it THEN airplane
+- IF A large, rectangular structure with a person standing in front of it THEN truck
+- IF A large, rectangular structure with a person standing in front of it THEN horse
+- IF A large, rectangular structure with a person standing in front of it THEN ship
+Rule Check:
+- The large, rectangular structure with a person standing in front of it matches the features of both the airplane and the truck classes.
+- The person standing in front of the structure suggests a human presence, which is more characteristic of a truck or a ship rather than an airplane or a horse.
+- The structure does not appear to be a typical airplane or ship, and the presence of a person in front of it is more indicative of a truck or a ship.
+Classification: <response>truck</response>
+----------------------------------------
+Query 13: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Yellow color
+- Wheels
+- Rectangular shape
+KB:
+- IF Yellow color AND Wheels AND Rectangular shape THEN truck
+Rule Check:
+- The image has a yellow color, wheels, and a rectangular shape, which matches the IF conditions of the truck rule in the KB.
+- The extracted features of the image (yellow color, wheels, and rectangular shape) match the conditions specified in the truck rule.
+Classification: <response>truck</response>
+----------------------------------------
+Query 14: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- Four wheels
+- Metal body
+- Engine
+- Windows
+- Cargo space
+KB:
+- IF Large size, Four wheels, Metal body, Engine, Windows THEN truck
+- IF Large size, Four wheels, Metal body, Engine, Cargo space THEN truck
+Rule Check:
+- The image features a large vehicle with four wheels, a metal body, an engine, windows, and cargo space, which matches the IF conditions of the truck class.
+- The extracted features of large size, four wheels, metal body, engine, windows, and cargo space align with the IF conditions of the truck class.
+Classification: <response>truck</response>
+----------------------------------------
+Query 15: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>truck</response>
+Features:
+- Large size
+- Four wheels
+- Metal body
+- Cargo area
+KB:
+- IF Large size, Four wheels, Metal body, Cargo area THEN truck
+Rule Check:
+- The target image has a large size, four wheels, a metal body, and a cargo area, which matches the IF conditions of the truck rule in the KB. Therefore, the rule is activated and the class is determined to be truck.
+----------------------------------------
+Query 16: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>truck</response>
+
+Features:
+- The image shows a vehicle with wheels.
+- The vehicle has a rectangular shape.
+- The vehicle has a door and windows.
+
+KB:
+- IF the image shows a vehicle with wheels, a rectangular shape, and a door and windows THEN the class is truck.
+
+Rule Check:
+- The extracted features match the rule in the KB, as the image shows a vehicle with wheels, a rectangular shape, and a door and windows. Therefore, the class is truck.
+----------------------------------------
+Query 17: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>truck</response>
+Features:
+- Large size
+- Yellow color
+- Front grill
+- Wheels
+KB:
+- IF Large size, Yellow color, Front grill, Wheels THEN truck
+Rule Check:
+- The image has a large size, yellow color, a front grill, and wheels, which matches the IF conditions of the truck rule in the KB. Therefore, the rule is activated and the image is classified as a truck.
+----------------------------------------
+Query 18: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>truck</response>
+Features:
+- Large size
+- Four wheels
+- Metal body
+- Engine
+KB:
+- IF Large size, Four wheels, Metal body, Engine THEN truck
+Rule Check:
+- The image has a large size, four wheels, a metal body, and an engine, which matches the IF conditions of the truck rule in the KB. Therefore, the rule is activated and the image is classified as a truck.
+----------------------------------------
+Query 19: Expected: [horse] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- A person
+- A horse
+- A jumping motion
+KB:
+- IF A person is jumping over a horse THEN horse
+Rule Check:
+- The person is jumping over the horse, which matches the rule from the KB.
+- The extracted features of a person jumping over a horse align with the rule that if a person is jumping over a horse, then the class is horse.
+- Therefore, the class of this image is horse.
+----------------------------------------
+Query 20: Expected: [horse] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, rectangular structure with a flat top and sloping sides.
+- The structure is elevated above the ground.
+- The structure is made of a material that appears to be wood or a similar material.
+- The structure has a roof that is supported by a frame.
+- The structure is surrounded by a natural environment, such as trees or grass.
+
+KB:
+- IF The image shows a large, rectangular structure with a flat top and sloping sides, elevated above the ground, made of a material that appears to be wood or a similar material, with a roof supported by a frame, surrounded by a natural environment THEN The class is [airplane].
+
+Rule Check:
+- The extracted features match the rule in the KB that states: "IF The image shows a large, rectangular structure with a flat top and sloping sides, elevated above the ground, made of a material that appears to be wood or a similar material, with a roof supported by a frame, surrounded by a natural environment THEN The class is [airplane]."
+
+Classification:
+<response>airplane</response>
+----------------------------------------
+Query 21: Expected: [horse] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large, rectangular structure
+- Yellow and black color scheme
+- Metal or concrete material
+- Wheels or tracks visible
+KB:
+- IF Large, rectangular structure with wheels or tracks THEN truck
+Rule Check:
+- The target image features a large, rectangular structure with visible wheels, which matches the IF condition of the rule derived from the examples.
+- The yellow and black color scheme and the material (metal or concrete) are additional features that support the classification.
+Classification: <response>truck</response>
+----------------------------------------
+Query 22: Expected: [horse] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, rectangular structure with a flat top and sloping sides.
+- The structure is elevated above the ground.
+- The structure appears to be made of metal or a similar material.
+- The structure has a distinct shape that is commonly associated with construction equipment.
+KB:
+- IF the image shows a large, rectangular structure with a flat top and sloping sides, elevated above the ground, and made of metal or a similar material, THEN it is a truck.
+Rule Check:
+- The extracted features match the rule in the KB that describes a truck as having a large, rectangular structure with a flat top and sloping sides, elevated above the ground, and made of metal or a similar material.
+- The extracted features also match the rule in the KB that describes a truck as having a distinct shape that is commonly associated with construction equipment.
+Classification:
+<response>truck</response>
+----------------------------------------
+Query 23: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>horse</response>
+
+Features:
+- Animal
+- Horse
+
+KB:
+- IF Animal THEN horse
+- IF Horse THEN horse
+
+Rule Check:
+- The image contains an animal, which matches the IF Animal THEN horse rule.
+- The animal is specifically identified as a horse, which matches the IF Horse THEN horse rule.
+
+Based on the extracted features and the rules from the knowledge base, the class of this image is horse.
+----------------------------------------
+Query 24: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Person
+- Horse
+- Rider
+KB:
+- IF Person AND Horse THEN horse
+- IF Person AND Rider THEN horse
+Rule Check:
+- The person is riding the horse, which matches the IF-THEN rule derived from the examples.
+- The rider is on the horse, which also matches the IF-THEN rule derived from the examples.
+Classification: <response>horse</response>
+----------------------------------------
+Query 25: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Person
+- Horse
+- Rider
+KB:
+- IF Person AND Horse THEN horse
+- IF Person AND Rider THEN horse
+Rule Check:
+- The person is riding the horse, which matches the IF-THEN rule for the class "horse".
+- The rider is on the horse, which also matches the IF-THEN rule for the class "horse".
+Classification: <response>horse</response>
+----------------------------------------
+Query 26: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>horse</response>
+
+Features:
+- Animal
+- Brown
+- Mane
+- Tail
+
+KB:
+- IF Animal AND Brown AND Mane AND Tail THEN horse
+
+Rule Check:
+- The image contains an animal with brown fur, a mane, and a tail, which matches the IF-THEN rule for the horse class.
+----------------------------------------
+Query 27: Expected: [horse] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- A person is standing
+- The person is wearing a hat
+- The person is holding a surfboard
+KB:
+- IF A person is standing AND wearing a hat AND holding a surfboard THEN the class is "surfboard"
+Rule Check:
+- The person is standing, which matches the first feature.
+- The person is wearing a hat, which matches the second feature.
+- The person is holding a surfboard, which matches the third feature.
+- Therefore, the extracted features match the rule in the KB that states "IF A person is standing AND wearing a hat AND holding a surfboard THEN the class is 'surfboard'."
+
+Classification:
+<response>surfboard</response>
+----------------------------------------
+Query 28: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>airplane</response>
+
+Features:
+- The image shows a silhouette of an airplane.
+- The airplane has a distinct shape with wings and a tail.
+- The silhouette is against a clear sky background.
+
+KB:
+- IF the image shows a silhouette with wings and a tail, THEN it is an airplane.
+
+Rule Check:
+- The extracted features match the rule in the KB: the silhouette with wings and a tail is characteristic of an airplane. Therefore, the class is airplane.
+----------------------------------------
+Query 29: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- A large, dark-colored structure with a pointed roof
+- A person standing in front of the structure
+- The structure appears to be a small building or shelter
+KB:
+- IF A large, dark-colored structure with a pointed roof AND A person standing in front of the structure THEN airplane
+Rule Check:
+- The extracted features match the rule in the KB: A large, dark-colored structure with a pointed roof AND A person standing in front of the structure.
+- This matches the rule for the airplane class.
+Classification: <response>airplane</response>
+----------------------------------------
+Query 30: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>airplane</response>
+Features:
+- The image shows an object in the sky.
+- The object has wings and a tail.
+- The object is flying.
+KB:
+- IF The object is in the sky, has wings, and a tail, THEN It is an airplane.
+Rule Check:
+- The extracted features match the rule in the KB: The object is in the sky, has wings, and a tail, so it is an airplane.
+----------------------------------------
+Query 31: Expected: [airplane] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Animal
+- Horse
+- Rider
+KB:
+- IF Animal AND Horse THEN horse
+- IF Animal AND Rider THEN horse
+Rule Check:
+- The image contains an animal, specifically a horse, and there is a rider on top of the horse. This matches the IF-THEN rule derived from the examples.
+- The extracted features of the animal being a horse and the presence of a rider on top of the horse match the rule that states "IF Animal AND Horse THEN horse."
+Classification: <response>horse</response>
+----------------------------------------
+Query 32: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large wings
+- Tail fin
+- Engine
+- Landing gear
+KB:
+- IF Large wings, tail fin, engine, landing gear THEN airplane
+Rule Check:
+- The image has large wings, a tail fin, an engine, and landing gear, which matches the IF conditions of the airplane rule.
+- The extracted features clearly distinguish the image from the other classes (ship, truck, horse) as they do not possess these specific features.
+Classification: <response>airplane</response>
+----------------------------------------
+Query 33: Expected: [airplane] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large, rectangular structure
+- Yellow and black color scheme
+- Metal or concrete material
+- Wheels or tracks for mobility
+KB:
+- IF Large, rectangular structure with wheels or tracks THEN truck
+Rule Check:
+- The target image features a large, rectangular structure with wheels or tracks, which matches the IF condition of the rule derived from the truck examples.
+- The yellow and black color scheme and metal or concrete material are additional features that support the classification but are not necessary for the rule match.
+Classification: <response>truck</response>
+----------------------------------------
+Query 34: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>airplane</response>
+
+Features:
+- The image shows an airplane.
+- The airplane is in the foreground.
+- The airplane has wings and a tail.
+
+KB:
+- IF The image shows an airplane in the foreground with wings and a tail THEN airplane
+
+Rule Check:
+- The extracted features match the rule in the KB that states "IF The image shows an airplane in the foreground with wings and a tail THEN airplane."
+----------------------------------------
+Query 35: Expected: [airplane] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large, yellow structure
+- Metal, possibly a crane or construction equipment
+- Outdoor setting with visible ground and sky
+KB:
+- IF Large, yellow structure with metal components THEN truck
+- IF Outdoor setting with visible ground and sky THEN truck
+Rule Check:
+- The large, yellow structure with metal components matches the IF condition of the truck class.
+- The outdoor setting with visible ground and sky also matches the IF condition of the truck class.
+Classification: <response>truck</response>
+----------------------------------------
+Query 36: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>airplane</response>
+
+Features:
+- Yellow and black body
+- Wings
+- Tail fins
+- Blue sky in the background
+
+KB:
+- IF Yellow and black body with wings and tail fins THEN airplane
+
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base, indicating that the image is an airplane.
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.6667

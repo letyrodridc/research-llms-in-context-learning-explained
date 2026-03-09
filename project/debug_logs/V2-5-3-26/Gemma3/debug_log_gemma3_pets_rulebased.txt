@@ -1,0 +1,594 @@
+=== DEBUG LOG: gemma3 | pets | Prompt: rulebased ===
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly gray fur.
+- Yellow eyes.
+- Pointed ears.
+
+KB:
+- IF fur is black THEN Bombay
+- IF fur is white THEN Great Pyrenees
+- IF fur is gray THEN Bombay
+- IF fur is white and large THEN American Bulldog
+- IF fur is long and white THEN Great Pyrenees
+- IF fur is black and small THEN Japanese Chin
+
+Rule Check:
+The target image exhibits predominantly gray fur and yellow eyes. The rule "IF fur is gray THEN Bombay" best matches these observed features.
+
+<response>Bombay</response>
+----------------------------------------
+Query 2: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal is entirely black.
+- The animal has yellow eyes.
+- The animal has pointed ears.
+- The animal is a feline.
+
+KB:
+- IF animal is entirely black AND has yellow eyes AND has pointed ears AND is a feline THEN Bombay.
+
+Rule Check:
+The target image exhibits all the features described in the Bombay rule: it is entirely black, has yellow eyes, has pointed ears, and is a feline. Therefore, the Bombay rule is activated.
+
+<response>Bombay</response>
+----------------------------------------
+Query 3: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black fur.
+- Yellow eyes.
+- Short, dense fur texture.
+
+KB:
+- IF predominantly black fur AND yellow eyes THEN Bombay.
+
+Rule Check:
+The target image exhibits predominantly black fur and yellow eyes. This aligns perfectly with the rule derived from the Bombay example.
+
+<response>Bombay</response>
+----------------------------------------
+Query 4: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal is predominantly black in color.
+- The animal has pointed ears.
+- The animal has yellow eyes.
+- The animal has a long, curved tail.
+
+KB:
+- IF the animal is predominantly black in color, has pointed ears, and yellow eyes THEN Bombay.
+
+Rule Check:
+The target image exhibits a predominantly black color, pointed ears, and yellow eyes. These features align perfectly with the rule derived from the Bombay examples.
+
+<response>Bombay</response>
+----------------------------------------
+Query 5: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal is predominantly black in color.
+- The animal has yellow eyes.
+- The animal has pointed ears.
+- The animal has a sleek, short coat.
+
+KB:
+- IF the animal is predominantly black in color AND has yellow eyes AND has pointed ears AND has a sleek, short coat THEN Bombay.
+
+Rule Check:
+The target image exhibits all the features described in the rule for the Bombay class: it is predominantly black, has yellow eyes, has pointed ears, and has a sleek, short coat. Therefore, the rule for Bombay is activated.
+
+<response>Bombay</response>
+----------------------------------------
+Query 6: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat is entirely black.
+- The cat has large, round, yellow eyes.
+- The cat has pointed ears.
+- The cat has a slender, muscular build.
+
+KB:
+- IF the cat is entirely black AND has large, round, yellow eyes THEN Bombay.
+
+Rule Check:
+The target image exhibits the features of being entirely black and having large, round, yellow eyes. This matches the rule derived from the previous Bombay example.
+
+<response>Bombay</response>
+----------------------------------------
+Query 7: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal is entirely black.
+- The animal has green eyes.
+- The animal has pointed ears.
+
+KB:
+- IF the animal is entirely black and has green eyes THEN Bombay.
+
+Rule Check:
+The target image exhibits the features of being entirely black and having green eyes. This matches the rule derived from the Bombay example.
+
+<response>Bombay</response>
+----------------------------------------
+Query 8: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal is entirely black.
+- The animal has pointed ears.
+- The animal has yellow eyes.
+- The animal has a long tail.
+
+KB:
+- IF animal is entirely black AND has pointed ears AND has yellow eyes THEN Bombay.
+
+Rule Check:
+The target image exhibits all the features described in the Bombay rule: it is entirely black, has pointed ears, and has yellow eyes. Therefore, the Bombay rule is activated.
+
+<response>Bombay</response>
+----------------------------------------
+Query 9: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black fur.
+- Yellow/orange eyes.
+- Pointed ears.
+
+KB:
+- IF predominantly black fur AND yellow/orange eyes THEN Bombay.
+
+Rule Check:
+The target image exhibits predominantly black fur and yellow/orange eyes. This aligns perfectly with the rule derived from the Bombay example.
+
+<response>Bombay</response>
+----------------------------------------
+Query 10: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Wrinkled face with a pushed-in nose.
+- Short, sturdy legs.
+- Broad, square head.
+
+KB:
+- IF predominantly white fur AND wrinkled face with a pushed-in nose AND short, sturdy legs THEN American Bulldog.
+- IF predominantly white fur AND broad, square head THEN Great Pyrenees.
+- IF black fur THEN Bombay.
+- IF long, flowing black and white fur THEN Japanese Chin.
+
+Rule Check:
+The target image exhibits predominantly white fur, a wrinkled face with a pushed-in nose, short, sturdy legs, and a broad head. The rule "IF predominantly white fur AND wrinkled face with a pushed-in nose AND short, sturdy legs THEN American Bulldog" best matches these observed features. The rule for Great Pyrenees requires a broad head, which is present, but the wrinkled face and pushed-in nose are more prominent features in this image. The rules for Japanese Chin and Bombay do not align with the observed features.
+
+<response>American Bulldog</response>
+----------------------------------------
+Query 11: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly brown fur with white patches.
+- Short, broad muzzle.
+- Dark nose.
+
+KB:
+- IF predominantly brown fur with white patches AND short, broad muzzle AND dark nose THEN American Bulldog.
+
+Rule Check:
+The target image exhibits predominantly brown fur with white patches, a short, broad muzzle, and a dark nose. These features align directly with the rule established for the "American Bulldog" class.
+
+<response>American Bulldog</response>
+----------------------------------------
+Query 12: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur covering most of the head and body.
+- Large, light-colored eyes (blue or light grey).
+- Wrinkled face with a large, dark nose.
+- Brown patches of fur on the top of the head.
+
+KB:
+- IF predominantly white fur covering most of the head and body AND large, light-colored eyes THEN American Bulldog.
+- IF predominantly black fur THEN Bombay.
+- IF long, flowing black fur and a small face THEN Japanese Chin.
+- IF predominantly white fur with a large head and wrinkled face THEN American Bulldog.
+- IF large, fluffy white fur and a large head THEN Great Pyrenees.
+
+Rule Check:
+The target image exhibits predominantly white fur covering most of the head and body, and it has large, light-colored eyes. This aligns with the rule: IF predominantly white fur covering most of the head and body AND large, light-colored eyes THEN American Bulldog. The wrinkled face and brown patches further support this classification.
+
+<response>American Bulldog</response>
+----------------------------------------
+Query 13: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur covering most of the body.
+- Presence of brown markings on the head.
+- Muscular build.
+
+KB:
+- IF predominantly white fur covering most of the body AND presence of brown markings on the head THEN American Bulldog.
+- IF predominantly white fur covering most of the body THEN Great Pyrenees.
+
+Rule Check:
+The target image exhibits predominantly white fur and brown markings on the head. This aligns with the rule associated with the "American Bulldog" class. The image does not have the specific characteristics of a Great Pyrenees, which would require a different set of features.
+
+<response>American Bulldog</response>
+----------------------------------------
+Query 14: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Broad, square head shape.
+- Wrinkled face with a pushed-in nose.
+- Dark nose and eyes.
+
+KB:
+- IF predominantly white fur AND broad, square head shape AND wrinkled face with a pushed-in nose AND dark nose and eyes THEN American Bulldog.
+
+Rule Check:
+The target image exhibits predominantly white fur, a broad and square head shape, a wrinkled face with a pushed-in nose, and dark nose and eyes. These features align perfectly with the rule derived from the "American Bulldog" example.
+
+<response>American Bulldog</response>
+----------------------------------------
+Query 15: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Large, floppy, pink-tinged ears.
+- Dark nose.
+- Blue eyes.
+
+KB:
+- IF predominantly white fur AND large, floppy, pink-tinged ears THEN American Bulldog.
+- IF black fur THEN Bombay.
+- IF long, flowing white fur THEN Great Pyrenees.
+- IF black and white fur with long flowing hair THEN Japanese Chin.
+
+Rule Check:
+The target image exhibits predominantly white fur and large, floppy, pink-tinged ears. This aligns with the rule established for the "American Bulldog" class. The other rules do not match the observed features.
+
+<response>American Bulldog</response>
+----------------------------------------
+Query 16: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white/cream colored fur.
+- Short, pushed-in muzzle.
+- Wrinkled face.
+- Droopy jowls.
+
+KB:
+- IF predominantly white/cream colored fur AND short, pushed-in muzzle AND wrinkled face AND droopy jowls THEN American Bulldog.
+
+Rule Check:
+The target image exhibits predominantly white/cream colored fur, a short, pushed-in muzzle, a wrinkled face, and droopy jowls. These features align perfectly with the rule established for the American Bulldog class.
+
+<response>American Bulldog</response>
+----------------------------------------
+Query 17: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Wrinkled face with a short muzzle.
+- Black nose.
+- Dark brown/black markings around the eyes.
+
+KB:
+- IF predominantly white fur AND wrinkled face with a short muzzle AND black nose THEN American Bulldog.
+
+Rule Check:
+The target image exhibits predominantly white fur, a wrinkled face with a short muzzle, and a black nose. These features align perfectly with the rule derived from the American Bulldog example.
+
+<response>American Bulldog</response>
+----------------------------------------
+Query 18: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Wrinkled face with a black nose.
+- Short, broad head.
+
+KB:
+- IF predominantly white fur AND wrinkled face with a black nose AND short, broad head THEN American Bulldog.
+
+Rule Check:
+The target image exhibits predominantly white fur, a wrinkled face with a black nose, and a short, broad head. These features align directly with the rule derived from the American Bulldog example.
+
+<response>American Bulldog</response>
+----------------------------------------
+Query 19: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a short, pushed-in nose.
+- The dog has large, round eyes.
+- The dog has a relatively flat face.
+- The dog has a black and white coat pattern.
+
+KB:
+- IF the dog has a short, pushed-in nose, large, round eyes, a relatively flat face, and a black and white coat pattern THEN Japanese Chin.
+
+Rule Check:
+The target image exhibits a short, pushed-in nose, large, round eyes, a relatively flat face, and a black and white coat pattern. This aligns perfectly with the rule derived from the "Japanese Chin" example.
+
+<response>Japanese Chin</response>
+----------------------------------------
+Query 20: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly light brown fur color.
+- Long, flowing fur around the face.
+- Small, dark nose.
+- Blue eyes.
+
+KB:
+- IF light brown fur color AND long, flowing fur around the face AND small, dark nose THEN Japanese Chin.
+- IF black fur color AND pointed ears AND slender body THEN Bombay.
+- IF white fur color AND wrinkled face THEN American Bulldog.
+- IF white fur color AND fluffy fur THEN Great Pyrenees.
+
+Rule Check:
+The target image exhibits light brown fur and long, flowing fur around the face, along with a small, dark nose and blue eyes. This combination of features most closely aligns with the rule established for the Japanese Chin class. The other rules do not match the observed features.
+
+<response>Japanese Chin</response>
+----------------------------------------
+Query 21: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black and white fur pattern.
+- Long, flowing black fur around the face.
+- Small, compact body size.
+
+KB:
+- IF predominantly black and white fur pattern AND long, flowing black fur around the face AND small, compact body size THEN Japanese Chin.
+
+Rule Check:
+The target image exhibits a predominantly black and white fur pattern, with long, flowing black fur around the face, and a small, compact body size. This aligns perfectly with the rule derived from the previous example of a Japanese Chin.
+
+<response>Japanese Chin</response>
+----------------------------------------
+Query 22: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black and white fur pattern.
+- Long, flowing black fur around the face and ears.
+- Relatively small body size.
+- Upright posture.
+
+KB:
+- IF predominantly black and white fur pattern AND long, flowing black fur around the face and ears THEN Japanese Chin.
+
+Rule Check:
+The target image exhibits a predominantly black and white fur pattern and has long, flowing black fur around the face and ears. This aligns perfectly with the rule derived from the previous example of a Japanese Chin.
+
+<response>Japanese Chin</response>
+----------------------------------------
+Query 23: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black and white fur pattern.
+- Long, flowing fur around the face.
+- Small, compact body size.
+- Open mouth with a visible tongue.
+
+KB:
+- IF predominantly black and white fur pattern AND long, flowing fur around the face THEN Japanese Chin.
+
+Rule Check:
+The target image exhibits a predominantly black and white fur pattern and has long, flowing fur around the face. These features align directly with the rule derived from the "Japanese Chin" example. Therefore, the rule "IF predominantly black and white fur pattern AND long, flowing fur around the face THEN Japanese Chin" is activated.
+
+<response>Japanese Chin</response>
+----------------------------------------
+Query 24: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black and white coloration.
+- Long, flowing black hair on the head and face.
+- White fur on the muzzle and chest.
+- Small, dark eyes.
+
+KB:
+- IF predominantly black and white coloration AND long, flowing black hair on the head and face AND white fur on the muzzle THEN Japanese Chin.
+
+Rule Check:
+The target image exhibits predominantly black and white coloration. It also has long, flowing black hair on the head and face, and white fur on the muzzle. These features align perfectly with the rule derived from the previous Japanese Chin example.
+
+<response>Japanese Chin</response>
+----------------------------------------
+Query 25: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Brown patches of fur present.
+- Long, flowing fur around the face.
+- Small, somewhat flattened face.
+
+KB:
+- IF predominantly white fur AND brown patches of fur AND long, flowing fur around the face AND small, somewhat flattened face THEN Japanese Chin.
+
+Rule Check:
+The target image exhibits predominantly white fur, brown patches, long flowing fur around the face, and a small, somewhat flattened face. These features directly match the rule derived from the Japanese Chin example.
+
+<response>Japanese Chin</response>
+----------------------------------------
+Query 26: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black and white fur coloration.
+- Long, flowing black hair on the head.
+- White fur around the muzzle and forehead.
+- Small, dark eyes.
+
+KB:
+- IF predominantly black and white fur coloration AND long, flowing black hair on the head AND white fur around the muzzle and forehead THEN Japanese Chin.
+
+Rule Check:
+The target image exhibits predominantly black and white fur coloration. It also displays long, flowing black hair on the head and white fur around the muzzle and forehead. These features align perfectly with the rule derived from the previous Japanese Chin example.
+
+<response>Japanese Chin</response>
+----------------------------------------
+Query 27: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a long, flowing fringe of hair covering its forehead.
+- The dog has a predominantly white body with patches of tan/brown fur.
+- The dog has a small, flat face.
+
+KB:
+- IF the dog has a long, flowing fringe of hair covering its forehead AND a predominantly white body with patches of tan/brown fur AND a small, flat face THEN Japanese Chin.
+
+Rule Check:
+The target image exhibits a long fringe of hair on its forehead, a white body with tan/brown patches, and a small, flat face. These features directly match the rule formulated for the "Japanese Chin" class.
+
+<response>Japanese Chin</response>
+----------------------------------------
+Query 28: Expected: [Great Pyrenees] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Long, fluffy fur.
+- Dark nose.
+- Open mouth with a visible pink tongue.
+
+KB:
+- IF predominantly white fur AND long, fluffy fur THEN Great Pyrenees.
+
+Rule Check:
+The target image exhibits predominantly white fur and long, fluffy fur. This aligns perfectly with the rule derived from the Great Pyrenees example. No other rule in the KB matches these features.
+
+<response>Great Pyrenees</response>
+----------------------------------------
+Query 29: Expected: [Great Pyrenees] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Long, flowing fur around the face and neck.
+- Dark nose.
+- Light brown eyes.
+
+KB:
+- IF predominantly white fur AND long, flowing fur around the face and neck AND dark nose THEN Great Pyrenees.
+
+Rule Check:
+The target image exhibits predominantly white fur, long flowing fur around the face and neck, and a dark nose. These features align perfectly with the rule derived from the Great Pyrenees example.
+
+<response>Great Pyrenees</response>
+----------------------------------------
+Query 30: Expected: [Great Pyrenees] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur covering the body.
+- Patches of light tan/beige fur on the head and ears.
+- Medium-length, fluffy fur texture.
+- Black nose.
+
+KB:
+- IF predominantly white fur covering the body AND patches of light tan/beige fur on the head and ears THEN Great Pyrenees.
+- IF predominantly black fur THEN Bombay.
+- IF predominantly white fur with a black nose THEN American Bulldog.
+- IF long, flowing black and white fur THEN Japanese Chin.
+
+Rule Check:
+The target image exhibits predominantly white fur covering the body and patches of light tan/beige fur on the head and ears. This aligns directly with the rule formulated for the "Great Pyrenees" class. The other rules do not match the observed visual features.
+
+<response>Great Pyrenees</response>
+----------------------------------------
+Query 31: Expected: [Great Pyrenees] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Long, fluffy fur texture.
+- Dark nose.
+- Brown eyes.
+
+KB:
+- IF predominantly white fur AND long, fluffy fur texture THEN Great Pyrenees.
+- IF predominantly white fur AND dark nose THEN American Bulldog.
+- IF black fur THEN Bombay.
+- IF black and white fur AND long flowing hair THEN Japanese Chin.
+
+Rule Check:
+The target image exhibits predominantly white fur and a long, fluffy fur texture. This aligns with the rule associated with the "Great Pyrenees" class. The presence of a dark nose and brown eyes further supports this classification. The other rules do not match the observed features.
+
+<response>Great Pyrenees</response>
+----------------------------------------
+Query 32: Expected: [Great Pyrenees] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Long, thick, fluffy fur texture.
+- Large size and build.
+- Dark nose and mouth.
+
+KB:
+- IF predominantly white fur AND long, thick, fluffy fur texture AND large size and build THEN Great Pyrenees.
+
+Rule Check:
+The target image exhibits predominantly white fur, a long and thick, fluffy fur texture, and a large size and build. These features align directly with the rule established for the Great Pyrenees class. No other rule in the KB matches these features.
+
+<response>Great Pyrenees</response>
+----------------------------------------
+Query 33: Expected: [Great Pyrenees] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has predominantly white, fluffy fur.
+- The dog has a large, thick mane-like ruff around its neck.
+
+KB:
+- IF predominantly white, fluffy fur AND a large, thick mane-like ruff around the neck THEN Great Pyrenees.
+- IF predominantly black fur THEN Bombay.
+- IF predominantly white fur AND a muscular build THEN American Bulldog.
+- IF long, flowing black and white fur THEN Japanese Chin.
+
+Rule Check:
+The target image exhibits predominantly white, fluffy fur and a large, thick mane-like ruff around the neck. This aligns directly with the rule established for the "Great Pyrenees" class. The other rules do not match the observed visual features.
+
+<response>Great Pyrenees</response>
+----------------------------------------
+Query 34: Expected: [Great Pyrenees] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has predominantly white/cream colored fur.
+- The fur is long and fluffy.
+- The dog has a large, broad head.
+
+KB:
+- IF the dog has predominantly white/cream colored fur and the fur is long and fluffy THEN Great Pyrenees.
+
+Rule Check:
+The target image exhibits predominantly white/cream colored fur and the fur appears long and fluffy. This aligns with the rule derived from the Great Pyrenees example. No other rule matches these features.
+
+<response>Great Pyrenees</response>
+----------------------------------------
+Query 35: Expected: [Great Pyrenees] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Long, thick, fluffy fur.
+- Dark nose.
+
+KB:
+- IF predominantly white fur AND long, thick, fluffy fur THEN Great Pyrenees.
+
+Rule Check:
+The target image exhibits predominantly white fur and long, thick, fluffy fur. This aligns perfectly with the rule derived from the Great Pyrenees example.
+
+<response>Great Pyrenees</response>
+----------------------------------------
+Query 36: Expected: [Great Pyrenees] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has light golden/cream colored fur.
+- The dog has a long, flowing tail.
+- The dog has a broad head and a friendly expression.
+
+KB:
+- IF light golden/cream colored fur AND long, flowing tail AND broad head THEN Great Pyrenees.
+
+Rule Check:
+The target image exhibits light golden/cream colored fur, a long, flowing tail, and a broad head. These features align with the rule derived from the Great Pyrenees example.
+
+<response>Great Pyrenees</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 1.0000

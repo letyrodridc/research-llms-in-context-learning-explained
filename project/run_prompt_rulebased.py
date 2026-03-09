@@ -17,36 +17,30 @@ from setup_utils import (
 from episode_utils import load_episode_from_indices
 
 tests = [
-    (2, 2, 5), (2, 2, 8), (2, 1, 5), (2, 1, 9),
-    (3, 1, 5), (3, 1, 9), 
-    (4, 1, 5), (4, 1, 9)
+    (2, 2, 9), (2, 1, 9), (3, 1, 9), (4, 1, 9)
 ]
 
-SYSTEM_PROMPT = """
-You are an Explainable AI (XAI) Vision Agent specialized in Rule-Based Classification.
+SYSTEM_PROMPT = """You are an Explainable Vision-Language agent specialized in feature-based Classification.
 
 Task:
-1. Analyze the provided "few-shot" examples and their labels to understand the classes.
-2. Examine the "Target Image".
-3. Feature Extraction Protocol: Extract 3 to 5 CONCRETE, OBSERVABLE visual features of the Target Image (e.g., 'white fluffy fur', 'pointed ears', 'striped pattern'). Do not use abstract words.
-4. Knowledge Base: Based on the few-shot examples, formulate simple logical rules (IF-THEN) mapping specific visual features to the available classes.
-5. Decision Logic (Rule Check): Evaluate the Target Image's extracted features against the Knowledge Base rules step-by-step.
-6. Final Classification: Based strictly on the rule check, determine the category.
+1. Analyze the provided  input images and their ground truth labels for each category. Pay close attention to distinct visual features (form, shape, texture, color).
+2. Examine the Target Image and compare it strictly against the provided input examples.
+3. Feature Extraction Protocol: Extract the minimum number of critical, concrete, and observable visual features that clearly distinguish the Target Image from all previously seen classes. Do not use abstract words.
+4. Knowledge Base: Based on the few-shot examples, formulate at least one IF-THEN rule per class learned mapping specific visual features that explain that class. 
+5. Decision Logic (Rule Check): Evaluate the Target Image's extracted features against your Knowledge Base rules step-by-step to determine which rule matches the visual features best.
+6. Final Classification: Based strictly on the rule check, determine the class and rule activated to produce the corresponding feature-based explanation.
 
 Constraints:
 - Use ONLY the labels provided in the final options list.
-- Do not use prior knowledge outside the visual evidence.
-- Please provide your response structured EXACTLY like this format:
+- Do not make assumptions outside the visual evidence.
+- Do not use your prior knowledge to classify entities. Rely entirely on the examples.
 
-Features:
-- [Feature 1]
-- [Feature 2]
-Knowledge Base:
-- IF [Features] THEN [Class]
-Rule Check:
-- [Step-by-step reasoning]
-<response>label</response>
-"""
+Output Format Instructions:
+While the few-shot examples only provide the final class, your response for the new target image must be fully expanded. Structure your output strictly as follows:
+Features: List the extracted concrete visual features as bullet points.
+KB (Knowledge Base): Formulate the logical IF-THEN rules derived from the examples.
+Rule Check: Explain step-by-step how the extracted features match the rules in your KB.
+Classification: You MUST wrap your final chosen class label in XML tags exactly like this: <response>output_class</response>"""
 
 def get_rulebased_messages(prompt, indices, shots, query, class_names):
     examples = list()
@@ -62,21 +56,11 @@ def get_rulebased_messages(prompt, indices, shots, query, class_names):
 
         user_content = [
             {"type": "image", "image": img_pil},
-            {"type": "text", "text": "Extract features, formulate rules, and classify this image."}
+            {"type": "text", "text": "What is the class of this image?"}
         ]
         examples.append({"role": "user", "content": user_content})
 
-            # We simulate a correct response to guide the CoT (Chain of Thought) format
-        assistant_prompt = (
-            f"Features:\n"
-            f"- [Concrete observable feature 1]\n"
-            f"- [Concrete observable feature 2]\n"
-            f"Knowledge Base:\n"
-            f"- IF [Concrete observable feature 1] AND [Concrete observable feature 2] THEN {label_text}\n"
-            f"Rule Check:\n"
-            f"- The Target Image contains the exact features specified in the rule for {label_text}.\n"
-            f"<response>{label_text}</response>"
-        )
+        assistant_prompt = f"<response>{label_text}</response>"
         examples.append({"role": "assistant", "content": assistant_prompt})
 
     # Query image
@@ -85,9 +69,22 @@ def get_rulebased_messages(prompt, indices, shots, query, class_names):
     
     options_str = ", ".join(list(valid_labels))
 
+    query_text = (
+        f"Based on the examples seen, what is the class of this image? You MUST choose exactly one from [{options_str}].\n"
+        "WARNING: For this final target image, remember to provide the full logical explanation FIRST. Structure your response EXACTLY like this:\n"
+        "Features:\n"
+        "- [Feature 1]\n"
+        "- [Feature 2]\n"
+        "KB:\n"
+        "- IF [Features] THEN [Class]\n"
+        "Rule Check:\n"
+        "- [Rules from the KB that matches the visual features best]\n"
+        "<response>output_class</response>"
+    )
+
     query_content = [
         {"type": "image", "image": query_img_pil},
-        {"type": "text", "text": f"Apply the Rule-Based protocol to classify this new image. You MUST choose exactly one class from this list: [{options_str}]"}
+        {"type": "text", "text": query_text}
     ]
     examples.append({"role": "user", "content": query_content})
 
@@ -168,7 +165,7 @@ def main():
                         
                         # Save the full logical breakdown to the debug log
                         f_debug.write(f"Query {i+1}: Expected: [{label_text}] | Correct: {is_correct}\n")
-                        f_debug.write(f"MODEL OUTPUT (Features, Rules & Logic):\n{result}\n")
+                        f_debug.write(f"MODEL OUTPUT (Features and values in form of logic rules): \n{result}\n")
                         f_debug.write("-" * 40 + "\n")
 
                         if args.debug:

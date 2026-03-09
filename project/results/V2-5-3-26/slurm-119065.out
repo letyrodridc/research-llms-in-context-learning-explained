@@ -1,0 +1,664 @@
+=== Paso 1: Generando episodios estáticos ===
+[*] Starting episode generation (run once for all prompts)...
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+
+--- Processing dataset: pets ---
+Episode indices saved to: episodes/pets/episode_N4_K1_Q9.npy
+
+--- Processing dataset: cifar10 ---
+Episode indices saved to: episodes/cifar10/episode_N4_K1_Q9.npy
+
+--- Processing dataset: flowers ---
+Episode indices saved to: episodes/flowers/episode_N4_K1_Q9.npy
+
+--- Processing dataset: dtd ---
+Episode indices saved to: episodes/dtd/episode_N4_K1_Q9.npy
+
+[+] All episodes have been generated and saved in the 'episodes/' folder!
+[+] Now the prompt scripts can read exactly the same images.
+=== Episodios listos ===
+Iniciando run_prompt_classification.py | Modelo: gemma3 | Dataset: flowers | GPU local: 0
+Iniciando run_prompt_classification.py | Modelo: gemma3 | Dataset: pets | GPU local: 1
+Iniciando run_prompt_classification.py | Modelo: gemma3 | Dataset: cifar10 | GPU local: 2
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+[*] Starting experiment: Classification | Model: gemma3 | Dataset: cifar10
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: google/gemma-3-12b-it...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Classification | Model: gemma3 | Dataset: flowers
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: google/gemma-3-12b-it...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Classification | Model: gemma3 | Dataset: pets
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: google/gemma-3-12b-it...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:13<00:53, 13.38s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:13<00:55, 13.82s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:13<00:55, 13.94s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:29<00:44, 14.88s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:29<00:45, 15.05s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:29<00:45, 15.01s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:44<00:30, 15.04s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:45<00:30, 15.25s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:45<00:30, 15.33s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:58<00:14, 14.48s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:59<00:14, 14.85s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:59<00:14, 14.88s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:12<00:00, 14.30s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:12<00:00, 14.47s/it]
+Loading checkpoint shards: 100%|██████████| 5/5 [01:13<00:00, 14.48s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:13<00:00, 14.47s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:13<00:00, 14.63s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:13<00:00, 14.65s/it]
+
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Model google/gemma-3-12b-it loaded successfully.
+GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 35/36 correct (Accuracy: 0.9722)
+Model google/gemma-3-12b-it loaded successfully.
+GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 36/36 correct (Accuracy: 1.0000)
+Model google/gemma-3-12b-it loaded successfully.
+GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 35/36 correct (Accuracy: 0.9722)
+Iniciando run_prompt_classification.py | Modelo: gemma3 | Dataset: dtd | GPU local: 0
+Iniciando run_prompt_classification.py | Modelo: qwen-vl | Dataset: flowers | GPU local: 1
+Iniciando run_prompt_classification.py | Modelo: qwen-vl | Dataset: pets | GPU local: 2
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+[*] Starting experiment: Classification | Model: qwen-vl | Dataset: pets
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: Qwen/Qwen2-VL-7B-Instruct...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Classification | Model: qwen-vl | Dataset: flowers
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: Qwen/Qwen2-VL-7B-Instruct...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Classification | Model: gemma3 | Dataset: dtd
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: google/gemma-3-12b-it...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:11<00:44, 11.12s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:11<00:46, 11.62s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:15<01:01, 15.32s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:27<00:43, 14.36s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:28<00:43, 14.42s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:36<00:57, 19.05s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:44<00:30, 15.25s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:44<00:30, 15.25s/it]Loading checkpoint shards:  60%|██████    | 3/5 [01:00<00:41, 20.91s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:01<00:16, 16.07s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:01<00:16, 16.17s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:03<00:00, 11.16s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:03<00:00, 12.78s/it]
+Loading checkpoint shards: 100%|██████████| 5/5 [01:04<00:00, 11.16s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:04<00:00, 12.80s/it]
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Loading checkpoint shards:  80%|████████  | 4/5 [01:17<00:19, 19.67s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:33<00:00, 18.37s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:33<00:00, 18.79s/it]
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Model Qwen/Qwen2-VL-7B-Instruct loaded successfully.
+GPU 0: Allocated=5.81GB | Reserved=7.39GB | Free=17.84GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 28/36 correct (Accuracy: 0.7778)
+Model Qwen/Qwen2-VL-7B-Instruct loaded successfully.
+GPU 0: Allocated=5.81GB | Reserved=7.39GB | Free=17.84GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 25/36 correct (Accuracy: 0.6944)
+Model google/gemma-3-12b-it loaded successfully.
+GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 35/36 correct (Accuracy: 0.9722)
+Iniciando run_prompt_classification.py | Modelo: qwen-vl | Dataset: cifar10 | GPU local: 0
+Iniciando run_prompt_classification.py | Modelo: qwen-vl | Dataset: dtd | GPU local: 1
+Iniciando run_prompt_features.py | Modelo: gemma3 | Dataset: flowers | GPU local: 2
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+[*] Starting experiment: Classification | Model: qwen-vl | Dataset: cifar10
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: Qwen/Qwen2-VL-7B-Instruct...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Classification | Model: qwen-vl | Dataset: dtd
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: Qwen/Qwen2-VL-7B-Instruct...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Features | Model: gemma3 | Dataset: flowers
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: google/gemma-3-12b-it...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:13<00:53, 13.49s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:13<00:54, 13.52s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:16<01:05, 16.41s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:31<00:47, 15.88s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:31<00:47, 15.90s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:36<00:55, 18.65s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:49<00:33, 16.87s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:49<00:33, 16.95s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:58<00:39, 19.98s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:06<00:17, 17.05s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:06<00:17, 17.09s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:09<00:00, 11.80s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:08<00:00, 11.83s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:09<00:00, 13.80s/it]
+Loading checkpoint shards: 100%|██████████| 5/5 [01:09<00:00, 13.80s/it]
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+Loading checkpoint shards:  80%|████████  | 4/5 [01:15<00:18, 18.98s/it]The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Loading checkpoint shards: 100%|██████████| 5/5 [01:32<00:00, 18.38s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:32<00:00, 18.59s/it]
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Model Qwen/Qwen2-VL-7B-Instruct loaded successfully.
+GPU 0: Allocated=5.81GB | Reserved=7.39GB | Free=17.84GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 36/36 correct (Accuracy: 1.0000)
+Model Qwen/Qwen2-VL-7B-Instruct loaded successfully.
+GPU 0: Allocated=5.81GB | Reserved=7.39GB | Free=17.84GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 28/36 correct (Accuracy: 0.7778)
+Model google/gemma-3-12b-it loaded successfully.
+GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 36/36 correct (Accuracy: 1.0000)
+Iniciando run_prompt_features.py | Modelo: gemma3 | Dataset: pets | GPU local: 0
+Iniciando run_prompt_features.py | Modelo: gemma3 | Dataset: cifar10 | GPU local: 1
+Iniciando run_prompt_features.py | Modelo: gemma3 | Dataset: dtd | GPU local: 2
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+[*] Starting experiment: Features | Model: gemma3 | Dataset: cifar10
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: google/gemma-3-12b-it...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Features | Model: gemma3 | Dataset: pets
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: google/gemma-3-12b-it...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Features | Model: gemma3 | Dataset: dtd
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: google/gemma-3-12b-it...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:14<00:57, 14.46s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:14<00:57, 14.40s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:14<00:57, 14.45s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:32<00:50, 16.73s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:32<00:50, 16.74s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:32<00:50, 16.82s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:51<00:34, 17.47s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:51<00:35, 17.58s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:51<00:35, 17.63s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:07<00:16, 16.91s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:07<00:17, 17.06s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:07<00:17, 17.17s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:19<00:00, 15.30s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:19<00:00, 15.95s/it]
+Loading checkpoint shards: 100%|██████████| 5/5 [01:21<00:00, 15.81s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:21<00:00, 16.23s/it]
+Loading checkpoint shards: 100%|██████████| 5/5 [01:21<00:00, 15.93s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:21<00:00, 16.34s/it]
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Model google/gemma-3-12b-it loaded successfully.
+GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 35/36 correct (Accuracy: 0.9722)
+Model google/gemma-3-12b-it loaded successfully.
+GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 36/36 correct (Accuracy: 1.0000)
+Model google/gemma-3-12b-it loaded successfully.
+GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 34/36 correct (Accuracy: 0.9444)
+Iniciando run_prompt_features.py | Modelo: qwen-vl | Dataset: flowers | GPU local: 0
+Iniciando run_prompt_features.py | Modelo: qwen-vl | Dataset: pets | GPU local: 1
+Iniciando run_prompt_features.py | Modelo: qwen-vl | Dataset: cifar10 | GPU local: 2
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+[*] Starting experiment: Features | Model: qwen-vl | Dataset: cifar10
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: Qwen/Qwen2-VL-7B-Instruct...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Features | Model: qwen-vl | Dataset: pets
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: Qwen/Qwen2-VL-7B-Instruct...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Features | Model: qwen-vl | Dataset: flowers
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: Qwen/Qwen2-VL-7B-Instruct...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:11<00:44, 11.18s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:11<00:44, 11.16s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:11<00:44, 11.24s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:26<00:41, 13.68s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:26<00:41, 13.84s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:26<00:41, 13.76s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:41<00:28, 14.42s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:42<00:29, 14.57s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:42<00:29, 14.53s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:57<00:14, 14.79s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:57<00:14, 14.84s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:57<00:14, 14.88s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:59<00:00, 10.07s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:59<00:00, 11.84s/it]
+Loading checkpoint shards: 100%|██████████| 5/5 [00:59<00:00, 10.05s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:59<00:00, 11.81s/it]
+Loading checkpoint shards: 100%|██████████| 5/5 [00:58<00:00, 10.06s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:58<00:00, 11.80s/it]
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Model Qwen/Qwen2-VL-7B-Instruct loaded successfully.
+GPU 0: Allocated=5.81GB | Reserved=7.39GB | Free=17.84GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 28/36 correct (Accuracy: 0.7778)
+Model Qwen/Qwen2-VL-7B-Instruct loaded successfully.
+GPU 0: Allocated=5.81GB | Reserved=7.39GB | Free=17.84GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 16/36 correct (Accuracy: 0.4444)
+Model Qwen/Qwen2-VL-7B-Instruct loaded successfully.
+GPU 0: Allocated=5.81GB | Reserved=7.39GB | Free=17.84GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 32/36 correct (Accuracy: 0.8889)
+Iniciando run_prompt_features.py | Modelo: qwen-vl | Dataset: dtd | GPU local: 0
+Iniciando run_nle.py | Modelo: gemma3 | Dataset: flowers | GPU local: 1
+Iniciando run_nle.py | Modelo: gemma3 | Dataset: pets | GPU local: 2
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+[*] Starting experiment: Features | Model: qwen-vl | Dataset: dtd
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: Qwen/Qwen2-VL-7B-Instruct...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: NLE | Model: gemma3 | Dataset: flowers
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: google/gemma-3-12b-it...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: NLE | Model: gemma3 | Dataset: pets
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: google/gemma-3-12b-it...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:08<00:32,  8.02s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:14<00:58, 14.69s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:14<00:59, 14.89s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:19<00:30, 10.04s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:30<00:20, 10.31s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:35<00:55, 18.40s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:35<00:55, 18.40s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:41<00:10, 10.67s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:42<00:00,  7.11s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:42<00:00,  8.43s/it]
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Loading checkpoint shards:  60%|██████    | 3/5 [00:54<00:37, 18.74s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:55<00:37, 18.81s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:13<00:18, 18.71s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:13<00:18, 18.76s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:31<00:00, 18.34s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:31<00:00, 18.26s/it]
+Loading checkpoint shards: 100%|██████████| 5/5 [01:31<00:00, 18.42s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:31<00:00, 18.29s/it]
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Model Qwen/Qwen2-VL-7B-Instruct loaded successfully.
+GPU 0: Allocated=5.81GB | Reserved=7.39GB | Free=17.84GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 24/36 correct (Accuracy: 0.6667)
+Model google/gemma-3-12b-it loaded successfully.
+GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 32/36 correct (Accuracy: 0.8889)
+Model google/gemma-3-12b-it loaded successfully.
+GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 36/36 correct (Accuracy: 1.0000)
+Iniciando run_nle.py | Modelo: gemma3 | Dataset: cifar10 | GPU local: 0
+Iniciando run_nle.py | Modelo: gemma3 | Dataset: dtd | GPU local: 1
+Iniciando run_nle.py | Modelo: qwen-vl | Dataset: flowers | GPU local: 2
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+[*] Starting experiment: NLE | Model: qwen-vl | Dataset: flowers
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: Qwen/Qwen2-VL-7B-Instruct...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: NLE | Model: gemma3 | Dataset: cifar10
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: google/gemma-3-12b-it...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: NLE | Model: gemma3 | Dataset: dtd
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: google/gemma-3-12b-it...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:09<00:39,  9.93s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:10<00:40, 10.23s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:15<01:01, 15.29s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:25<00:38, 12.97s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:25<00:39, 13.28s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:35<00:53, 17.94s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:37<00:25, 12.79s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:41<00:28, 14.35s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:52<00:13, 13.57s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:54<00:37, 18.67s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:56<00:14, 14.75s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:05<00:00, 13.19s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:05<00:00, 13.03s/it]
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Loading checkpoint shards: 100%|██████████| 5/5 [01:09<00:00, 14.28s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:09<00:00, 13.97s/it]
+Loading checkpoint shards:  80%|████████  | 4/5 [01:11<00:18, 18.06s/it]Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Loading checkpoint shards: 100%|██████████| 5/5 [01:13<00:00, 12.28s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:13<00:00, 14.76s/it]
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Model Qwen/Qwen2-VL-7B-Instruct loaded successfully.
+GPU 0: Allocated=5.81GB | Reserved=7.39GB | Free=17.84GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 35/36 correct (Accuracy: 0.9722)
+Model google/gemma-3-12b-it loaded successfully.
+GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 35/36 correct (Accuracy: 0.9722)
+Model google/gemma-3-12b-it loaded successfully.
+GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 33/36 correct (Accuracy: 0.9167)
+Iniciando run_nle.py | Modelo: qwen-vl | Dataset: pets | GPU local: 0
+Iniciando run_nle.py | Modelo: qwen-vl | Dataset: cifar10 | GPU local: 1
+Iniciando run_nle.py | Modelo: qwen-vl | Dataset: dtd | GPU local: 2
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+[*] Starting experiment: NLE | Model: qwen-vl | Dataset: pets
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: Qwen/Qwen2-VL-7B-Instruct...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: NLE | Model: qwen-vl | Dataset: cifar10
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: Qwen/Qwen2-VL-7B-Instruct...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: NLE | Model: qwen-vl | Dataset: dtd
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: Qwen/Qwen2-VL-7B-Instruct...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:11<00:45, 11.34s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:11<00:45, 11.47s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:11<00:47, 11.75s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:26<00:40, 13.50s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:26<00:40, 13.59s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:26<00:41, 13.67s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:39<00:26, 13.26s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:39<00:26, 13.40s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:40<00:27, 13.63s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:52<00:13, 13.02s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:52<00:13, 13.14s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:52<00:13, 13.20s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:53<00:00,  8.67s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:53<00:00, 10.61s/it]
+Loading checkpoint shards: 100%|██████████| 5/5 [00:53<00:00,  8.65s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:53<00:00, 10.67s/it]
+Loading checkpoint shards: 100%|██████████| 5/5 [00:53<00:00,  8.64s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:53<00:00, 10.63s/it]
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Model Qwen/Qwen2-VL-7B-Instruct loaded successfully.
+GPU 0: Allocated=5.81GB | Reserved=7.39GB | Free=17.84GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 36/36 correct (Accuracy: 1.0000)
+Model Qwen/Qwen2-VL-7B-Instruct loaded successfully.
+GPU 0: Allocated=5.81GB | Reserved=7.39GB | Free=17.84GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 17/36 correct (Accuracy: 0.4722)
+Model Qwen/Qwen2-VL-7B-Instruct loaded successfully.
+GPU 0: Allocated=5.81GB | Reserved=7.39GB | Free=17.84GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 28/36 correct (Accuracy: 0.7778)
+Iniciando run_prompt_rulebased.py | Modelo: gemma3 | Dataset: flowers | GPU local: 0
+Iniciando run_prompt_rulebased.py | Modelo: gemma3 | Dataset: pets | GPU local: 1
+Iniciando run_prompt_rulebased.py | Modelo: gemma3 | Dataset: cifar10 | GPU local: 2
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+[*] Starting experiment: Rule-Based | Model: gemma3 | Dataset: pets
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: google/gemma-3-12b-it...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Rule-Based | Model: gemma3 | Dataset: flowers
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: google/gemma-3-12b-it...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Rule-Based | Model: gemma3 | Dataset: cifar10
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: google/gemma-3-12b-it...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:11<00:44, 11.14s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:11<00:45, 11.28s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:11<00:45, 11.36s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:29<00:45, 15.08s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:29<00:45, 15.21s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:29<00:45, 15.09s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:47<00:33, 16.80s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:47<00:33, 16.79s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:47<00:33, 16.80s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:06<00:17, 17.62s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:06<00:17, 17.71s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:06<00:17, 17.65s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:24<00:00, 17.70s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:24<00:00, 16.93s/it]
+Loading checkpoint shards: 100%|██████████| 5/5 [01:24<00:00, 17.73s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:24<00:00, 16.95s/it]
+Loading checkpoint shards: 100%|██████████| 5/5 [01:24<00:00, 17.73s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:24<00:00, 16.94s/it]
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Model google/gemma-3-12b-it loaded successfully.
+GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 36/36 correct (Accuracy: 1.0000)
+Model google/gemma-3-12b-it loaded successfully.
+GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 35/36 correct (Accuracy: 0.9722)
+Model google/gemma-3-12b-it loaded successfully.
+GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 36/36 correct (Accuracy: 1.0000)
+Iniciando run_prompt_rulebased.py | Modelo: gemma3 | Dataset: dtd | GPU local: 0
+Iniciando run_prompt_rulebased.py | Modelo: qwen-vl | Dataset: flowers | GPU local: 1
+Iniciando run_prompt_rulebased.py | Modelo: qwen-vl | Dataset: pets | GPU local: 2
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+[*] Starting experiment: Rule-Based | Model: qwen-vl | Dataset: pets
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: Qwen/Qwen2-VL-7B-Instruct...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Rule-Based | Model: qwen-vl | Dataset: flowers
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: Qwen/Qwen2-VL-7B-Instruct...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Rule-Based | Model: gemma3 | Dataset: dtd
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: google/gemma-3-12b-it...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:10<00:42, 10.70s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:13<00:53, 13.30s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:13<00:54, 13.54s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:28<00:45, 15.06s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:30<00:46, 15.51s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:30<00:46, 15.61s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:48<00:33, 16.52s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:48<00:33, 16.55s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:50<00:36, 18.13s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:05<00:16, 16.95s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:05<00:17, 17.01s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:08<00:00, 11.69s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:08<00:00, 13.64s/it]
+Loading checkpoint shards: 100%|██████████| 5/5 [01:08<00:00, 11.74s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:08<00:00, 13.65s/it]
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+Loading checkpoint shards:  80%|████████  | 4/5 [01:11<00:19, 19.28s/it]The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Loading checkpoint shards: 100%|██████████| 5/5 [01:27<00:00, 18.07s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:27<00:00, 17.51s/it]
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Model Qwen/Qwen2-VL-7B-Instruct loaded successfully.
+GPU 0: Allocated=5.81GB | Reserved=7.39GB | Free=17.84GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 26/36 correct (Accuracy: 0.7222)
+Model Qwen/Qwen2-VL-7B-Instruct loaded successfully.
+GPU 0: Allocated=5.81GB | Reserved=7.39GB | Free=17.84GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 17/36 correct (Accuracy: 0.4722)
+Model google/gemma-3-12b-it loaded successfully.
+GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 35/36 correct (Accuracy: 0.9722)
+Iniciando run_prompt_rulebased.py | Modelo: qwen-vl | Dataset: cifar10 | GPU local: 0
+Iniciando run_prompt_rulebased.py | Modelo: qwen-vl | Dataset: dtd | GPU local: 1
+Iniciando run_prompt_axioms.py | Modelo: gemma3 | Dataset: flowers | GPU local: 2
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+[*] Starting experiment: Rule-Based | Model: qwen-vl | Dataset: cifar10
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: Qwen/Qwen2-VL-7B-Instruct...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Rule-Based | Model: qwen-vl | Dataset: dtd
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: Qwen/Qwen2-VL-7B-Instruct...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Ontology Axioms V2 | Model: gemma3 | Dataset: flowers
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: google/gemma-3-12b-it...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:14<00:56, 14.20s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:14<00:58, 14.59s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:16<01:05, 16.43s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:31<00:48, 16.04s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:31<00:48, 16.09s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:37<00:57, 19.31s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:48<00:32, 16.40s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:48<00:32, 16.43s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:56<00:38, 19.04s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:05<00:16, 16.70s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:05<00:16, 16.72s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:07<00:00, 11.53s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:07<00:00, 13.59s/it]
+Loading checkpoint shards: 100%|██████████| 5/5 [01:08<00:00, 11.56s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:08<00:00, 13.62s/it]
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+Loading checkpoint shards:  80%|████████  | 4/5 [01:14<00:18, 18.70s/it]The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Loading checkpoint shards: 100%|██████████| 5/5 [01:32<00:00, 18.51s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:32<00:00, 18.57s/it]
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Model Qwen/Qwen2-VL-7B-Instruct loaded successfully.
+GPU 0: Allocated=5.81GB | Reserved=7.39GB | Free=17.84GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 18/36 correct (Accuracy: 0.5000)
+Model Qwen/Qwen2-VL-7B-Instruct loaded successfully.
+GPU 0: Allocated=5.81GB | Reserved=7.39GB | Free=17.84GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 24/36 correct (Accuracy: 0.6667)
+Model google/gemma-3-12b-it loaded successfully.
+GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 33/36 correct (Accuracy: 0.9167)
+Iniciando run_prompt_axioms.py | Modelo: gemma3 | Dataset: pets | GPU local: 0
+Iniciando run_prompt_axioms.py | Modelo: gemma3 | Dataset: cifar10 | GPU local: 1
+Iniciando run_prompt_axioms.py | Modelo: gemma3 | Dataset: dtd | GPU local: 2
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+[*] Starting experiment: Ontology Axioms V2 | Model: gemma3 | Dataset: cifar10
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: google/gemma-3-12b-it...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Ontology Axioms V2 | Model: gemma3 | Dataset: pets
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: google/gemma-3-12b-it...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Ontology Axioms V2 | Model: gemma3 | Dataset: dtd
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: google/gemma-3-12b-it...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:13<00:52, 13.04s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:13<00:53, 13.50s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:13<00:53, 13.44s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:32<00:49, 16.57s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:32<00:50, 16.68s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:32<00:50, 16.75s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:51<00:35, 17.64s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:51<00:35, 17.69s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:51<00:35, 17.68s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:08<00:17, 17.54s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:08<00:17, 17.56s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:08<00:17, 17.59s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:22<00:00, 16.25s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:22<00:00, 16.52s/it]
+Loading checkpoint shards: 100%|██████████| 5/5 [01:22<00:00, 16.31s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:22<00:00, 16.54s/it]
+Loading checkpoint shards: 100%|██████████| 5/5 [01:22<00:00, 16.38s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:22<00:00, 16.55s/it]
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Model google/gemma-3-12b-it loaded successfully.
+GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 36/36 correct (Accuracy: 1.0000)
+Model google/gemma-3-12b-it loaded successfully.
+GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 36/36 correct (Accuracy: 1.0000)
+Model google/gemma-3-12b-it loaded successfully.
+GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 35/36 correct (Accuracy: 0.9722)
+Iniciando run_prompt_axioms.py | Modelo: qwen-vl | Dataset: flowers | GPU local: 0
+Iniciando run_prompt_axioms.py | Modelo: qwen-vl | Dataset: pets | GPU local: 1
+Iniciando run_prompt_axioms.py | Modelo: qwen-vl | Dataset: cifar10 | GPU local: 2
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+[*] Starting experiment: Ontology Axioms V2 | Model: qwen-vl | Dataset: flowers
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: Qwen/Qwen2-VL-7B-Instruct...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Ontology Axioms V2 | Model: qwen-vl | Dataset: pets
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: Qwen/Qwen2-VL-7B-Instruct...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Ontology Axioms V2 | Model: qwen-vl | Dataset: cifar10
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: Qwen/Qwen2-VL-7B-Instruct...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:11<00:45, 11.49s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:11<00:45, 11.27s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:11<00:44, 11.20s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:26<00:41, 13.69s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:27<00:41, 13.98s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:26<00:41, 13.82s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:41<00:28, 14.31s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:41<00:28, 14.40s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:42<00:29, 14.54s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:56<00:14, 14.60s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:57<00:14, 14.73s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:56<00:14, 14.65s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:59<00:00,  9.99s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:59<00:00, 11.81s/it]
+Loading checkpoint shards: 100%|██████████| 5/5 [00:58<00:00,  9.99s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:58<00:00,  9.96s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:58<00:00, 11.73s/it]
+Loading checkpoint shards: 100%|██████████| 5/5 [00:58<00:00, 11.71s/it]
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Model Qwen/Qwen2-VL-7B-Instruct loaded successfully.
+GPU 0: Allocated=5.81GB | Reserved=7.39GB | Free=17.84GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 29/36 correct (Accuracy: 0.8056)
+Model Qwen/Qwen2-VL-7B-Instruct loaded successfully.
+GPU 0: Allocated=5.81GB | Reserved=7.39GB | Free=17.84GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 13/36 correct (Accuracy: 0.3611)
+Model Qwen/Qwen2-VL-7B-Instruct loaded successfully.
+GPU 0: Allocated=5.81GB | Reserved=7.39GB | Free=17.84GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 12/36 correct (Accuracy: 0.3333)
+Iniciando run_prompt_axioms.py | Modelo: qwen-vl | Dataset: dtd | GPU local: 0
+`torch_dtype` is deprecated! Use `dtype` instead!
+[*] Starting experiment: Ontology Axioms V2 | Model: qwen-vl | Dataset: dtd
+Loading Flower102...
+Loading OxfordPets...
+Loading CIFAR-10...
+Loading DTD...
+All datasets loaded.
+Loading model: Qwen/Qwen2-VL-7B-Instruct...
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:04<00:17,  4.36s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:09<00:15,  5.08s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:15<00:10,  5.30s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:21<00:05,  5.40s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:21<00:00,  3.58s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:21<00:00,  4.28s/it]
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Model Qwen/Qwen2-VL-7B-Instruct loaded successfully.
+GPU 0: Allocated=5.81GB | Reserved=7.39GB | Free=17.84GB / 23.64GB
+[*] Evaluating Config: N=4, K=1, Q=9 ...
+ -> Result: 17/36 correct (Accuracy: 0.4722)
+¡Todos los experimentos de Qwen han finalizado!

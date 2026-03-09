@@ -1,0 +1,456 @@
+=== DEBUG LOG: gemma3 | cifar10 | Prompt: axioms_ontology_v2 ===
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>ship</response>
+2. TBox (axioms in a Knowledge Base):
+- class(ship) ⊑ hasVisualFeature(elongatedHull) (Necessary condition)
+- hasVisualFeature(elongatedHull) ⊑ class(ship) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [elongatedHull]
+4. Logical Explanation (DL):
+The ABox assertion presents an elongated hull, which satisfies the sufficient condition of the TBox axiom "hasVisualFeature(elongatedHull) ⊑ class(ship)" so it is classified as ship.
+----------------------------------------
+Query 2: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>ship</response>
+2. TBox (axioms in a Knowledge Base):
+- class(ship) ⊑ hasVisualFeature(mast) [tall, vertical structure] (Necessary condition)
+- hasVisualFeature(hull) [elongated, floating structure] ⊑ class(ship) (Sufficient condition)
+- class(ship) ≡ hasVisualFeature(hull) [elongated, floating structure] (Necessary & Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [elongated, floating structure]
+- hasVisualFeature [tall, vertical structure]
+4. Logical Explanation (DL):
+The ABox assertion presents a hull and a mast, which satisfies the sufficient condition (hasVisualFeature(hull) ⊑ class(ship)) and the necessary condition (class(ship) ⊑ hasVisualFeature(mast)) axiom, so it is classified as ship.
+----------------------------------------
+Query 3: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>ship</response>
+2. TBox (axioms in a Knowledge Base):
+- class(ship) ⊑ hasVisualFeature(elongatedHull) [elongated hull shape] (Necessary condition)
+- hasVisualFeature(elongatedHull) ⊑ class(ship) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [elongated hull shape with a tall structure on top]
+4. Logical Explanation (DL):
+The ABox assertion presents an elongated hull shape with a tall structure on top, which satisfies the sufficient condition [axiom] hasVisualFeature(elongatedHull) ⊑ class(ship) so it is classified as ship.
+----------------------------------------
+Query 4: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>ship</response>
+2. TBox (axioms in a Knowledge Base):
+- class(ship) ⊑ hasVisualFeature(elongatedHull) (Necessary condition)
+- hasVisualFeature(elongatedHull) ⊑ class(ship) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [elongatedHull]
+4. Logical Explanation (DL):
+The ABox assertion presents an elongated hull, which satisfies the sufficient condition of the TBox axiom "hasVisualFeature(elongatedHull) ⊑ class(ship)" so it is classified as ship.
+----------------------------------------
+Query 5: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>ship</response>
+2. TBox (axioms in a Knowledge Base):
+- class(ship) ≡ hasVisualFeature(elongatedHull) [elongated hull shape] (Necessary & Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [elongated hull shape floating on water]
+
+4. Logical Explanation (DL):
+The ABox assertion presents an elongated hull shape floating on water, which satisfies the Necessary & Sufficient condition of class(ship) ≡ hasVisualFeature(elongatedHull) [elongated hull shape] so it is classified as ship.
+----------------------------------------
+Query 6: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>ship</response>
+2. TBox (axioms in a Knowledge Base):
+- class(ship) ⊑ hasVisualFeature(elongatedHull) [elongated hull shape] (Necessary condition)
+- hasVisualFeature(elongatedHull) ⊑ class(ship) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [elongated hull shape with visible superstructure and waterline]
+4. Logical Explanation (DL):
+The ABox assertion presents an elongated hull shape with a visible superstructure and waterline, which satisfies the Sufficient condition [axiom] hasVisualFeature(elongatedHull) ⊑ class(ship) so it is classified as ship.
+----------------------------------------
+Query 7: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>ship</response>
+2. TBox (axioms in a Knowledge Base):
+- class(ship) ≡ hasVisualFeature(longHull) [elongated hull structure] (Necessary & Sufficient condition)
+- class(ship) ⊑ hasVisualFeature(mast) [vertical pole extending from the hull] (Necessary condition)
+- class(ship) ⊑ hasVisualFeature(waterSurface) [entity floating on water] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature longHull
+- hasVisualFeature mast
+- hasVisualFeature waterSurface
+
+4. Logical Explanation (DL):
+The ABox assertion presents a long hull, a mast, and the entity floating on a water surface, which satisfies the Necessary & Sufficient condition for a ship (class(ship) ≡ hasVisualFeature(longHull) [elongated hull structure]) and the Necessary conditions for a ship (class(ship) ⊑ hasVisualFeature(mast) [vertical pole extending from the hull] and class(ship) ⊑ hasVisualFeature(waterSurface) [entity floating on water]), so it is classified as a ship.
+----------------------------------------
+Query 8: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>ship</response>
+2. TBox (axioms in a Knowledge Base):
+- class(ship) ≡ hasVisualFeature(elongatedHull) [elongated hull shape] (Necessary & Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [elongated hull shape, dark color, presence of water]
+4. Logical Explanation (DL):
+The ABox assertion presents an elongated hull shape and presence of water, which satisfies the Necessary & Sufficient condition of class(ship) ≡ hasVisualFeature(elongatedHull) [elongated hull shape] so it is classified as ship.
+----------------------------------------
+Query 9: Expected: [ship] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>ship</response>
+2. TBox (axioms in a Knowledge Base):
+- class(ship) ⊑ hasVisualFeature(long_rectangular_shape) (Necessary condition)
+- hasVisualFeature(long_rectangular_shape) ⊑ class(ship) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature long_rectangular_shape
+4. Logical Explanation (DL):
+The ABox assertion presents a long rectangular shape, which satisfies the sufficient condition of the TBox axiom "hasVisualFeature(long_rectangular_shape) ⊑ class(ship)" so it is classified as ship.
+----------------------------------------
+Query 10: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>truck</response>
+2. TBox (axioms in a Knowledge Base):
+- class(truck) ⊑ hasVisualFeature(fourWheels) (Necessary condition)
+- hasVisualFeature(fourWheels) ⊑ class(truck) (Sufficient condition)
+- class(truck) ⊑ hasVisualFeature(cab) (Necessary condition)
+- hasVisualFeature(cab) ⊑ class(truck) (Sufficient condition)
+- class(truck) ⊑ hasVisualFeature(cargoBed) (Necessary condition)
+- hasVisualFeature(cargoBed) ⊑ class(truck) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [fourWheels]
+- hasVisualFeature [cab]
+- hasVisualFeature [cargoBed]
+4. Logical Explanation (DL):
+The ABox assertion presents fourWheels, a cab, and a cargoBed, which satisfies the necessary conditions for a truck (class(truck) ⊑ hasVisualFeature(fourWheels), class(truck) ⊑ hasVisualFeature(cab), class(truck) ⊑ hasVisualFeature(cargoBed)) so it is classified as a truck.
+----------------------------------------
+Query 11: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+2. TBox (axioms in a Knowledge Base):
+- class(truck) ⊑ hasVisualFeature(large wheels) (Necessary condition)
+- hasVisualFeature(large wheels) ⊑ class(truck) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [large wheels, cab, trailer]
+4. Logical Explanation (DL):
+The ABox assertion presents large wheels, a cab, and a trailer, which satisfies the sufficient condition hasVisualFeature(large wheels) ⊑ class(truck) so it is classified as truck.
+----------------------------------------
+Query 12: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+2. TBox (axioms in a Knowledge Base):
+- class(truck) ⊑ hasVisualFeature(large_wheeled_vehicle) (Necessary condition)
+- hasVisualFeature(large_wheeled_vehicle) ⊑ class(truck) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [large, red cab with a flatbed trailer]
+4. Logical Explanation (DL):
+The ABox assertion presents a large, red cab with a flatbed trailer, which satisfies the sufficient condition hasVisualFeature(large_wheeled_vehicle) ⊑ class(truck) so it is classified as truck.
+----------------------------------------
+Query 13: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+2. TBox (axioms in a Knowledge Base):
+- class(truck) ⊑ hasVisualFeature(large_wheeled_vehicle) (Necessary condition)
+- hasVisualFeature(large_wheeled_vehicle) ⊑ class(truck) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [large, boxy vehicle with wheels and a cab]
+4. Logical Explanation (DL):
+The ABox assertion presents a large, boxy vehicle with wheels and a cab, which satisfies the sufficient condition hasVisualFeature(large_wheeled_vehicle) ⊑ class(truck) so it is classified as truck.
+----------------------------------------
+Query 14: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+2. TBox (axioms in a Knowledge Base):
+- class(truck) ⊑ hasVisualFeature(large_cab) (Necessary condition)
+- hasVisualFeature(large_cab) ⊑ class(truck) (Sufficient condition)
+- class(truck) ≡ hasVisualFeature(long_cargo_bed) (Necessary & Sufficient condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [large_cab]
+- hasVisualFeature [long_cargo_bed]
+
+4. Logical Explanation (DL):
+The ABox assertion presents a large cab and a long cargo bed, which satisfies the Necessary & Sufficient condition class(truck) ≡ hasVisualFeature(long_cargo_bed) so it is classified as truck.
+----------------------------------------
+Query 15: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>truck</response>
+2. TBox (axioms in a Knowledge Base):
+- class(truck) ⊑ hasVisualFeature(large_wheeled_vehicle) (Necessary condition)
+- hasVisualFeature(large_wheeled_vehicle) ⊑ class(truck) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [large, boxy vehicle with wheels]
+4. Logical Explanation (DL):
+The ABox assertion presents a large, boxy vehicle with wheels, which satisfies the sufficient condition hasVisualFeature(large_wheeled_vehicle) ⊑ class(truck) so it is classified as truck.
+----------------------------------------
+Query 16: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+2. TBox (axioms in a Knowledge Base):
+- class(truck) ⊑ hasVisualFeature(large_wheeled_vehicle) (Necessary condition)
+- hasVisualFeature(large_wheeled_vehicle) ⊑ class(truck) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [large, boxy vehicle with wheels and a cab]
+4. Logical Explanation (DL):
+The ABox assertion presents a large, boxy vehicle with wheels and a cab, which satisfies the sufficient condition hasVisualFeature(large_wheeled_vehicle) ⊑ class(truck) so it is classified as truck.
+----------------------------------------
+Query 17: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+2. TBox (axioms in a Knowledge Base):
+- class(truck) ⊑ hasVisualFeature(large wheels) (Necessary condition)
+- class(truck) ⊑ hasVisualFeature(cab) (Necessary condition)
+- class(truck) ⊑ hasVisualFeature(cargo bed) (Necessary condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [large wheels]
+- hasVisualFeature [cab]
+- hasVisualFeature [cargo bed]
+4. Logical Explanation (DL):
+The ABox assertion presents large wheels, a cab, and a cargo bed, which satisfies the necessary conditions for a truck (class(truck) ⊑ hasVisualFeature(large wheels), class(truck) ⊑ hasVisualFeature(cab), class(truck) ⊑ hasVisualFeature(cargo bed)) so it is classified as a truck.
+----------------------------------------
+Query 18: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+2. TBox (axioms in a Knowledge Base):
+- class(truck) ⊑ hasVisualFeature(wheels) [wheels] (Necessary condition)
+- hasVisualFeature(wheels) ⊑ class(truck) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [large vehicle with wheels, red and white color scheme, elongated body]
+4. Logical Explanation (DL):
+The ABox assertion presents a large vehicle with wheels, a red and white color scheme, and an elongated body, which satisfies the sufficient condition hasVisualFeature(wheels) ⊑ class(truck) axiom, so it is classified as a truck.
+----------------------------------------
+Query 19: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>horse</response>
+2. TBox (axioms in a Knowledge Base):
+- class(horse) ⊑ hasVisualFeature(fourLegs) (Necessary condition)
+- class(horse) ⊑ hasVisualFeature(longNeck) (Necessary condition)
+- hasVisualFeature(fourLegs) ⊑ hasVisualFeature(mammalBody) (Necessary condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [four legs, dark coat, mammal body, long neck]
+4. Logical Explanation (DL):
+The ABox assertion presents four legs, a dark coat, a mammal body, and a long neck, which satisfies the TBox necessary condition of having four legs and a long neck for a horse (class(horse) ⊑ hasVisualFeature(fourLegs) and class(horse) ⊑ hasVisualFeature(longNeck)) so it is classified as a horse.
+----------------------------------------
+Query 20: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>horse</response>
+2. TBox (axioms in a Knowledge Base):
+- class(horse) ⊑ hasVisualFeature(fourLegs) (Necessary condition)
+- class(horse) ⊑ hasVisualFeature(equineBodyShape) (Necessary condition)
+- hasVisualFeature(equineBodyShape) ⊑ class(horse) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [equineBodyShape]
+- hasVisualFeature [fourLegs]
+4. Logical Explanation (DL):
+The ABox assertion presents hasVisualFeature [equineBodyShape] and hasVisualFeature [fourLegs], which satisfies the Sufficient condition [hasVisualFeature(equineBodyShape) ⊑ class(horse)] and the Necessary condition [class(horse) ⊑ hasVisualFeature(fourLegs)] so it is classified as horse.
+----------------------------------------
+Query 21: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>horse</response>
+2. TBox (axioms in a Knowledge Base):
+- class(horse) ⊑ hasVisualFeature(fourLegs) (Necessary condition)
+- class(horse) ⊑ hasVisualFeature(longNeck) (Necessary condition)
+- hasVisualFeature(fourLegs) ⊑ class(horse) (Sufficient condition)
+- hasVisualFeature(longNeck) ⊑ class(horse) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [four legs]
+- hasVisualFeature [long neck]
+- hasVisualFeature [equine body shape]
+4. Logical Explanation (DL):
+The ABox assertion presents four legs, a long neck, and an equine body shape, which satisfies the sufficient conditions of having four legs and a long neck, as defined in the TBox axioms. Therefore, it is classified as a horse.
+----------------------------------------
+Query 22: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>horse</response>
+2. TBox (axioms in a Knowledge Base):
+- class(horse) ⊑ hasVisualFeature(fourLegs) (Necessary condition)
+- class(horse) ⊑ hasVisualFeature(equineBodyShape) (Necessary condition)
+- hasVisualFeature(equineBodyShape) [elongated body with a mane and tail] ⊑ class(horse) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [four legs]
+- hasVisualFeature [equineBodyShape - elongated body with a mane and tail]
+4. Logical Explanation (DL):
+The ABox assertion presents four legs and an equineBodyShape, which satisfies the TBox necessary condition of having four legs and the sufficient condition of having an equineBodyShape, so it is classified as horse.
+----------------------------------------
+Query 23: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+2. TBox (axioms in a Knowledge Base):
+- class(horse) ⊑ hasVisualFeature(fourLegs) [four legs] (Necessary condition)
+- hasVisualFeature(longNeck) [long neck] ⊑ class(horse) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [four legs]
+- hasVisualFeature [long neck]
+4. Logical Explanation (DL):
+The ABox assertion presents four legs and a long neck, which satisfies the sufficient condition hasVisualFeature(longNeck) ⊑ class(horse) and the necessary condition class(horse) ⊑ hasVisualFeature(fourLegs) so it is classified as horse.
+----------------------------------------
+Query 24: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>horse</response>
+2. TBox (axioms in a Knowledge Base):
+- class(horse) ⊑ hasVisualFeature(fourLegs) (Necessary condition)
+- class(horse) ⊑ hasVisualFeature(riderOnBack) (Necessary condition)
+- hasVisualFeature(fourLegs) ⊑ class(horse) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [four legs]
+- hasVisualFeature [rider on back]
+4. Logical Explanation (DL):
+The ABox assertion presents four legs and a rider on the back, which satisfies the necessary conditions for class(horse) as defined by the TBox axioms. Therefore, it is classified as a horse.
+----------------------------------------
+Query 25: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+2. TBox (axioms in a Knowledge Base):
+- class(horse) ⊑ hasVisualFeature(fourLegs) [four legs] (Necessary condition)
+- class(horse) ⊑ hasVisualFeature(rider) [human riding on back] (Necessary condition)
+- class(horse) ⊑ hasVisualFeature(mane) [hair on neck] (Necessary condition)
+
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [four legs]
+- hasVisualFeature [human riding on back]
+- hasVisualFeature [mane]
+
+4. Logical Explanation (DL):
+The ABox assertion presents four legs, a human riding on the back, and a mane, which satisfies the necessary conditions for the TBox axioms class(horse) ⊑ hasVisualFeature(fourLegs), class(horse) ⊑ hasVisualFeature(rider), and class(horse) ⊑ hasVisualFeature(mane) so it is classified as horse.
+----------------------------------------
+Query 26: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+2. TBox (axioms in a Knowledge Base):
+- class(horse) ⊑ hasVisualFeature(fourLegs) (Necessary condition)
+- hasVisualFeature(fourLegs) ⊑ class(horse) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [four legs, equine body structure, brown color]
+4. Logical Explanation (DL):
+The ABox assertion presents four legs, an equine body structure, and a brown color, which satisfies the sufficient condition hasVisualFeature(fourLegs) ⊑ class(horse) so it is classified as horse.
+----------------------------------------
+Query 27: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+2. TBox (axioms in a Knowledge Base):
+- class(horse) ⊑ hasVisualFeature(fourLegs) [four legs] (Necessary condition)
+- class(horse) ⊑ hasVisualFeature(rider) [human riding on back] (Necessary condition)
+- hasVisualFeature(fourLegs) [four legs] ⊑ class(horse) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [four legs]
+- hasVisualFeature [human riding on back]
+4. Logical Explanation (DL):
+The ABox assertion presents four legs and a human riding on its back, which satisfies the TBox necessary condition of having four legs and the necessary condition of having a rider, so it is classified as a horse.
+----------------------------------------
+Query 28: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>airplane</response>
+2. TBox (axioms in a Knowledge Base):
+- class(airplane) ≡ hasVisualFeature(wings) [presence of wings and fuselage] (Necessary & Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [presence of wings and fuselage]
+4. Logical Explanation (DL):
+The ABox assertion presents the presence of wings and a fuselage, which satisfies the Necessary & Sufficient condition of the TBox axiom stating that an airplane is exactly an entity with wings and a fuselage, so it is classified as an airplane.
+----------------------------------------
+Query 29: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>airplane</response>
+2. TBox (axioms in a Knowledge Base):
+- class(airplane) ⊑ hasVisualFeature(elongatedBody) [elongated, streamlined body] (Necessary condition)
+- class(airplane) ⊑ hasVisualFeature(wings) [two prominent wings] (Necessary condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [elongatedBody]
+- hasVisualFeature [wings]
+4. Logical Explanation (DL):
+The ABox assertion presents an elongated body and prominent wings, which satisfies the necessary conditions for an airplane (elongatedBody and wings) according to the TBox axioms, so it is classified as an airplane.
+----------------------------------------
+Query 30: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>airplane</response>
+2. TBox (axioms in a Knowledge Base):
+- class(airplane) ⊑ hasVisualFeature(trail) [white streak in the sky] (Necessary condition)
+- hasVisualFeature(trail) [white streak in the sky] ⊑ class(airplane) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [elongated shape with a white trail behind it]
+4. Logical Explanation (DL):
+The ABox assertion presents an elongated shape with a white trail behind it, which satisfies the Sufficient condition [hasVisualFeature(trail) ⊑ class(airplane)] so it is classified as an airplane.
+----------------------------------------
+Query 31: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>airplane</response>
+2. TBox (axioms in a Knowledge Base):
+- class(airplane) ⊑ hasVisualFeature(wings) [wings] (Necessary condition)
+- hasVisualFeature(wings) ⊑ class(airplane) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [long, slender body with prominent wings and tail]
+4. Logical Explanation (DL):
+The ABox assertion presents a long, slender body with prominent wings and tail, which satisfies the sufficient condition hasVisualFeature(wings) ⊑ class(airplane) so it is classified as airplane.
+----------------------------------------
+Query 32: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>airplane</response>
+2. TBox (axioms in a Knowledge Base):
+- class(airplane) ⊑ hasVisualFeature(wings) [wings] (Necessary condition)
+- hasVisualFeature(wings) ⊑ class(airplane) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [long, slender body with prominent wings and tail]
+4. Logical Explanation (DL):
+The ABox assertion presents hasVisualFeature [long, slender body with prominent wings and tail], which satisfies the Sufficient condition [wings ⊑ airplane] so it is classified as airplane.
+----------------------------------------
+Query 33: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>airplane</response>
+2. TBox (axioms in a Knowledge Base):
+- class(airplane) ⊑ hasVisualFeature(wings) [wings] (Necessary condition)
+- hasVisualFeature(wings) ⊑ class(airplane) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [elongated, dark shape with visible wing-like structures extending outwards]
+4. Logical Explanation (DL):
+The ABox assertion presents an elongated, dark shape with visible wing-like structures extending outwards, which satisfies the sufficient condition hasVisualFeature(wings) ⊑ class(airplane) so it is classified as airplane.
+----------------------------------------
+Query 34: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>airplane</response>
+2. TBox (axioms in a Knowledge Base):
+- class(airplane) ⊑ hasVisualFeature(wings) [wings] (Necessary condition)
+- hasVisualFeature(wings) ⊑ class(airplane) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [large, prominent wings and fuselage]
+4. Logical Explanation (DL):
+The ABox assertion presents hasVisualFeature [large, prominent wings and fuselage], which satisfies the Sufficient condition [wings ⊑ airplane] axiom so it is classified as airplane.
+----------------------------------------
+Query 35: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>airplane</response>
+2. TBox (axioms in a Knowledge Base):
+- class(airplane) ⊑ hasVisualFeature(elongatedShape) (Necessary condition)
+- hasVisualFeature(elongatedShape) ⊑ class(airplane) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [elongated shape with wings]
+4. Logical Explanation (DL):
+The ABox assertion presents an elongated shape with wings, which satisfies the sufficient condition [axiom] hasVisualFeature(elongatedShape) ⊑ class(airplane) so it is classified as airplane.
+----------------------------------------
+Query 36: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>airplane</response>
+2. TBox (axioms in a Knowledge Base):
+- class(airplane) ⊑ hasVisualFeature(wings) (Necessary condition)
+- hasVisualFeature(wings) ⊑ class(airplane) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [elongated, wing-like structures extending from the main body]
+4. Logical Explanation (DL):
+The ABox assertion presents hasVisualFeature [elongated, wing-like structures extending from the main body], which satisfies the Sufficient condition [axiom] hasVisualFeature(wings) ⊑ class(airplane) so it is classified as airplane.
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 1.0000

@@ -20,26 +20,19 @@ tests = [
     (2, 2, 9), (2, 1, 9), (3, 1, 9), (4, 1, 9)
 ]
 
-SYSTEM_PROMPT = """You are a high-precision image classifier and feature extractor agent.
-Task:
-1. Analyze the provided input images and their ground truth labels for each category. Pay close attention to distinct visual features (form, shape, texture, color).
-2. Examine the Target Image and compare it strictly against the provided input examples.
-3. Extract and list the minimum number of critical, concrete, and observable visual features that distinguish the Target Image from previously seen classes.
-- "Features" must refer only to visible physical components or structural elements (e.g., "wheels", "handle", "screen", "wings"), not attributes such as color, size, length, texture, or shape.
-- Use short noun phrases only.
-- Include only features necessary for differentiation.
-- Do NOT use abstract explanations.
-4. Based strictly on those extracted features, determine the category of the Target Image.
-Constraints:
-- Use ONLY the labels provided in the final options list.
-- Do not use prior knowledge outside the visual evidence.
-Output Format Instructions:
-While the few-shot examples only provide the final class, your response for the new target image must be fully expanded.
-Structure your output strictly as follows:
-Features: List the concrete observable features as bullet points.
-Classification: You MUST wrap your final chosen class label in XML tags exactly like this: <response>output_class</response>"""
+SYSTEM_PROMPT = """You are a high-precision Explainable Vision-Language Agent. Your task consists of performing a few-shot classification and explaining your reasoning in natural language.
+Task: 
+1. Analyze the provided input images and their ground truth labels for each category. Pay close attention to distinct visual features (form, shape, texture, color). 
+2. Examine the Target Image and compare it strictly against the provided input examples. 
+3. Reason step-by-step to determine which category the Target Image belongs to. Write a clear, concise explanation in natural language detailing why the visual features of the target image match the selected class.
+Constraints: 
+- Use ONLY the labels provided in the final options list. 
+- Do not make assumptions outside the visual evidence. 
+- Do not use your prior knowledge to classify entities; rely entirely on the visual features of the examples. 
+Output Format:
+Your natural language explanation first, and then the label of this new image in format XML <response>output_class</response>"""
 
-def get_features_messages(prompt, indices, shots, query, class_names):
+def get_nle_messages(prompt, indices, shots, query, class_names):
     examples = list()
     examples.append({"role": "system", "content": prompt})
 
@@ -68,11 +61,7 @@ def get_features_messages(prompt, indices, shots, query, class_names):
 
     query_text = (
         f"Based on the examples seen, what is the class of this image? You MUST choose exactly one from [{options_str}].\n"
-        "WARNING: For this final target image, remember to extract the critical visual features FIRST. Structure your response EXACTLY like this:\n"
-        "Features:\n"
-        "[Concrete observable feature 1]  - e.g., Specific color/texture\n"
-        "[Concrete observable feature 2]  - e.g., Specific shape/part\n"
-        "<response>output_class</response>"
+        "WARNING: For this final target image, remember to provide your step-by-step Natural Language Explanation FIRST, and then wrap your final classification in <response>output_class</response> tags."
     )
 
     query_content = [
@@ -85,19 +74,19 @@ def get_features_messages(prompt, indices, shots, query, class_names):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run In-Context Learning: Features")
+    parser = argparse.ArgumentParser(description="Run In-Context Learning: Natural Language Explanation (NLE)")
     parser.add_argument('--model', type=str, required=True, choices=['gemma3', 'qwen-vl'])
     parser.add_argument('--dataset', type=str, required=True, choices=['flowers', 'pets', 'cifar10', 'dtd'])
     parser.add_argument('--debug', action='store_true', help="Enable debug prints")
     args = parser.parse_args()
 
     set_seed(42)
-    prompt_type = "features"
+    prompt_type = "nle"
     
     csv_filename = f"results_{args.model}_{prompt_type}.csv"
     debug_filename = f"debug_log_{args.model}_{args.dataset}_{prompt_type}.txt"
 
-    print(f"[*] Starting experiment: Features | Model: {args.model} | Dataset: {args.dataset}")
+    print(f"[*] Starting experiment: NLE | Model: {args.model} | Dataset: {args.dataset}")
 
     datasets_dict = load_datasets() 
     dataset = datasets_dict[args.dataset]
@@ -138,7 +127,7 @@ def main():
                         data, i, dataset, all_class_names
                     )
 
-                    messages = get_features_messages(SYSTEM_PROMPT, indices, shots, query, class_names)
+                    messages = get_nle_messages(SYSTEM_PROMPT, indices, shots, query, class_names)
                     
                     result = run_icl_inference(model, processor, args.model, messages, None, max_new_tokens=512)
                     del messages
@@ -158,7 +147,7 @@ def main():
                             correct += 1
                             
                         f_debug.write(f"Query {i+1}: Expected: [{label_text}] | Correct: {is_correct}\n")
-                        f_debug.write(f"MODEL OUTPUT (Classification output label + Explanation in form of: Key features): \n{result}\n")
+                        f_debug.write(f"MODEL OUTPUT (Explanation + Classification label): \n{result}\n")
                         f_debug.write("-" * 40 + "\n")
                         
                         if args.debug:

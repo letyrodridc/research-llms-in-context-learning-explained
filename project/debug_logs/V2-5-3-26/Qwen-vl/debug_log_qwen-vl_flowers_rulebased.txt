@@ -1,0 +1,539 @@
+=== DEBUG LOG: qwen-vl | flowers | Prompt: rulebased ===
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [28] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Yellow petals
+- Petals are arranged in a star-like pattern
+- Petals are thin and delicate
+KB:
+- IF Yellow petals and star-like arrangement THEN 41
+- IF Petals are thin and delicate THEN 41
+Rule Check:
+- The image has yellow petals arranged in a star-like pattern, which matches the visual features described in the KB for class 41.
+- The petals are thin and delicate, which also matches the visual features described in the KB for class 41.
+Classification: <response>41</response>
+----------------------------------------
+Query 2: Expected: [28] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>28</response>
+
+Features:
+- The flower has a purple color.
+- The flower has a round shape.
+- The flower has a single petal.
+
+KB:
+- IF The flower has a purple color AND The flower has a round shape AND The flower has a single petal THEN The flower belongs to Class 28.
+
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: The flower has a purple color, a round shape, and a single petal. Therefore, the flower belongs to Class 28.
+----------------------------------------
+Query 3: Expected: [28] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>28</response>
+
+Features:
+- Purple flower
+- Yellow center
+- Petals
+
+KB:
+- IF Purple flower with yellow center and petals THEN 28
+
+Rule Check:
+- The image has a purple flower with a yellow center and petals, which matches the rule derived from the examples. Therefore, the class is 28.
+----------------------------------------
+Query 4: Expected: [28] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>87</response>
+Features:
+- Pink petals
+- Five petals
+- Yellow center
+KB:
+- IF Pink petals AND Five petals AND Yellow center THEN 87
+Rule Check:
+- The image has pink petals, five petals, and a yellow center, which matches the IF conditions of the rule for class 87. Therefore, the rule is activated and the image is classified as 87.
+----------------------------------------
+Query 5: Expected: [28] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>28</response>
+Features:
+- Purple flower
+- Petals
+- Central part
+KB:
+- IF Purple flower with petals and central part THEN 28
+Rule Check:
+- The image has a purple flower with petals and a central part, which matches the rule for class 28.
+----------------------------------------
+Query 6: Expected: [28] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>28</response>
+
+Features:
+- Purple flower
+- Five petals
+- Green leaves
+
+KB:
+- IF Purple flower with five petals and green leaves THEN 28
+
+Rule Check:
+- The image has a purple flower with five petals and green leaves, which matches the IF condition of the rule for class 28. Therefore, the rule is activated, and the class is determined to be 28.
+----------------------------------------
+Query 7: Expected: [28] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>28</response>
+Features:
+- Yellow petals
+- Petals are arranged in a star-like pattern
+- Petals are thin and delicate
+KB:
+- IF Yellow petals and star-like arrangement THEN 41
+- IF Yellow petals and thin, delicate petals THEN 87
+- IF Yellow petals and star-like arrangement THEN 98
+Rule Check:
+- The image has yellow petals arranged in a star-like pattern, which matches the visual features of class 41.
+- The image has thin, delicate petals, which matches the visual features of class 87.
+- The image has yellow petals arranged in a star-like pattern, which matches the visual features of class 98.
+- The image does not have thin, delicate petals, so it does not match class 87.
+- The image does not have star-like arrangement, so it does not match class 41.
+- The image does not have thin, delicate petals, so it does not match class 98.
+- Therefore, the image matches the visual features of class 28.
+----------------------------------------
+Query 8: Expected: [28] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>87</response>
+
+Features:
+- Small, star-shaped flowers
+- Pink petals
+- Green leaves
+
+KB:
+- IF Small, star-shaped flowers with pink petals and green leaves THEN 87
+
+Rule Check:
+- The target image has small, star-shaped flowers with pink petals and green leaves, which matches the IF condition of the rule for class 87. Therefore, the rule is activated, and the class is determined to be 87.
+----------------------------------------
+Query 9: Expected: [28] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>28</response>
+
+Features:
+- Purple flower
+- Thistle-like appearance
+- Green leaves
+
+KB:
+- IF Purple flower with thistle-like appearance THEN 28
+
+Rule Check:
+- The extracted features match the rule in the KB, as the image features a purple flower with a thistle-like appearance, which corresponds to the class 28.
+----------------------------------------
+Query 10: Expected: [87] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Yellow petals
+- Petals are arranged in a star-like pattern
+- Petals are thin and delicate
+KB:
+- IF Yellow petals and star-like arrangement THEN 41
+- IF Petals are thin and delicate THEN 41
+Rule Check:
+- The image has yellow petals arranged in a star-like pattern, which matches the visual features described in the KB for class 41.
+- The petals are thin and delicate, which also matches the visual features described in the KB for class 41.
+Classification: <response>41</response>
+----------------------------------------
+Query 11: Expected: [87] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Yellow petals
+- Petals are arranged in a star-like pattern
+- Petals are thin and delicate
+KB:
+- IF Yellow petals and star-like arrangement THEN 41
+- IF Petals are thin and delicate THEN 41
+Rule Check:
+- The image has yellow petals arranged in a star-like pattern, which matches the visual features described in the KB for class 41.
+- The petals are thin and delicate, which also matches the visual features described in the KB for class 41.
+Classification: <response>41</response>
+----------------------------------------
+Query 12: Expected: [87] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals
+- Pink color
+- Shape: Star-like
+KB:
+- IF Petals AND Pink color AND Star-like shape THEN 87
+Rule Check:
+- The image has petals, a pink color, and a star-like shape, which matches the IF-THEN rule derived from the examples for class 87.
+<response>87</response>
+----------------------------------------
+Query 13: Expected: [87] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals
+- Yellow color
+- Petal shape
+KB:
+- IF Petals AND Yellow color AND Petal shape THEN 41
+Rule Check:
+- The image has petals, a yellow color, and a petal shape, which matches the IF-THEN rule for class 41.
+<response>41</response>
+----------------------------------------
+Query 14: Expected: [87] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>41</response>
+
+Features:
+- Yellow petals
+- Petals are curved
+- Petals are arranged in a star shape
+- Petals are thin and delicate
+
+KB:
+- IF Yellow petals, curved petals arranged in a star shape, thin and delicate petals THEN 41
+
+Rule Check:
+- The target image has yellow petals, which matches the visual feature of the class 41.
+- The petals are curved and arranged in a star shape, which matches the visual feature of the class 41.
+- The petals are thin and delicate, which matches the visual feature of the class 41.
+
+Based on the extracted features and the rules from the knowledge base, the target image matches the class 41.
+----------------------------------------
+Query 15: Expected: [87] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>87</response>
+
+Features:
+- Purple flower
+- Petals
+- Stem
+
+KB:
+- IF Purple flower with petals and stem THEN 87
+
+Rule Check:
+- The image features a purple flower with petals and a stem, which matches the IF-THEN rule derived from the examples for class 87.
+----------------------------------------
+Query 16: Expected: [87] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>87</response>
+
+Features:
+- Petal shape: Star-shaped
+- Petal color: White with a purple tip
+- Petal arrangement: Petals are arranged in a star-like pattern
+
+KB:
+- IF Petal shape is star-shaped AND Petal color is white with a purple tip AND Petal arrangement is star-like THEN Class is 87
+
+Rule Check:
+- The extracted features of the target image match the IF conditions of the rule derived from the Knowledge Base.
+- The star-shaped petal arrangement, white petals with a purple tip, and the overall star-like appearance of the flower are the critical visual features that distinguish it from the other classes.
+- These features align with the rule that specifies the target image belongs to Class 87.
+----------------------------------------
+Query 17: Expected: [87] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>87</response>
+
+Features:
+- Pink color
+- Petal shape
+- Flower type
+
+KB:
+- IF Pink color AND Petal shape THEN 87
+- IF Flower type THEN 87
+
+Rule Check:
+- The image has pink color and petal shape, which matches the IF conditions of the rule for class 87.
+- The flower type is not explicitly mentioned in the rules, but the pink color and petal shape are sufficient to classify the image as 87.
+----------------------------------------
+Query 18: Expected: [87] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Small, delicate petals
+- Pink color
+- Green leaves
+KB:
+- IF Small, delicate petals AND Pink color AND Green leaves THEN 87
+Rule Check:
+- The target image has small, delicate petals, a pink color, and green leaves, which matches the IF conditions of the rule for class 87.
+- The extracted features of the target image align with the visual features described in the rule for class 87.
+Classification: <response>87</response>
+----------------------------------------
+Query 19: Expected: [41] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>41</response>
+
+Features:
+- Yellow petals
+- Yellow center
+- Petals arranged in a star shape
+
+KB:
+- IF Yellow petals and yellow center THEN 41
+
+Rule Check:
+- The image has yellow petals and a yellow center, which matches the rule derived from the examples. Therefore, the class is 41.
+----------------------------------------
+Query 20: Expected: [41] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>41</response>
+Features:
+- Yellow petals
+- Green stem
+- Yellow center
+KB:
+- IF Yellow petals AND Green stem AND Yellow center THEN 41
+Rule Check:
+- The image has yellow petals, a green stem, and a yellow center, which matches the IF condition of the rule for class 41. Therefore, the rule is activated, and the image is classified as 41.
+----------------------------------------
+Query 21: Expected: [41] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>41</response>
+
+Features:
+- Yellow petals
+- Green stem
+- Yellow center
+
+KB:
+- IF Yellow petals AND Green stem AND Yellow center THEN 41
+
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: Yellow petals, Green stem, and Yellow center. Therefore, the image belongs to class 41.
+----------------------------------------
+Query 22: Expected: [41] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Yellow petals
+- Petals arranged in a star shape
+- Green leaves
+- Petals are thin and delicate
+KB:
+- IF Yellow petals and star-shaped arrangement THEN 41
+- IF Petals are thin and delicate THEN 41
+- IF Green leaves THEN 41
+Rule Check:
+- The image has yellow petals arranged in a star shape, which matches the IF condition of the rule for class 41.
+- The petals are thin and delicate, which also matches the IF condition of the rule for class 41.
+- The presence of green leaves further supports the match with class 41.
+Classification: <response>41</response>
+----------------------------------------
+Query 23: Expected: [41] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>41</response>
+
+Features:
+- Five-petal flower
+- Yellow petals
+- Yellow center
+- Green leaves
+
+KB:
+- IF Five-petal flower AND Yellow petals AND Yellow center AND Green leaves THEN Daffodil
+
+Rule Check:
+- The image has a five-petal flower, yellow petals, a yellow center, and green leaves, which matches the IF conditions of the Daffodil rule in the KB. Therefore, the rule is activated, and the image is classified as a Daffodil.
+----------------------------------------
+Query 24: Expected: [41] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>41</response>
+Features:
+- Yellow petals
+- Petals are curved
+- Petals are arranged in a star shape
+KB:
+- IF Yellow petals AND Petals are curved AND Petals are arranged in a star shape THEN 41
+Rule Check:
+- The image has yellow petals, curved petals, and petals arranged in a star shape, which matches the IF conditions of the rule for class 41. Therefore, the rule is activated and the image is classified as 41.
+----------------------------------------
+Query 25: Expected: [41] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Yellow petals
+- Petals are arranged in a star-like pattern
+- Petals are thin and delicate
+KB:
+- IF Yellow petals and star-like arrangement THEN 41
+- IF Petals are thin and delicate THEN 41
+Rule Check:
+- The image has yellow petals arranged in a star-like pattern, which matches the visual features described in the KB for class 41.
+- The petals are thin and delicate, which also matches the visual features described in the KB for class 41.
+Classification: <response>41</response>
+----------------------------------------
+Query 26: Expected: [41] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>41</response>
+
+Features:
+- Yellow petals
+- Yellow center
+- Petals are curved
+
+KB:
+- IF Yellow petals and yellow center THEN Daffodil
+- IF Petals are curved THEN Daffodil
+
+Rule Check:
+- The image has yellow petals and a yellow center, which matches the IF condition of the Daffodil class.
+- The petals are curved, which also matches the IF condition of the Daffodil class.
+
+Based on the extracted features and the rules from the Knowledge Base, the image is classified as a Daffodil.
+----------------------------------------
+Query 27: Expected: [41] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>41</response>
+
+Features:
+- Yellow petals
+- Petals are curved
+- Petals are arranged in a circular pattern
+- Petals are overlapping
+
+KB:
+- IF Yellow petals, curved petals, circular arrangement, overlapping petals THEN Daffodil
+
+Rule Check:
+- The image has yellow petals, which is a feature of the Daffodil.
+- The petals are curved, another characteristic of the Daffodil.
+- The petals are arranged in a circular pattern, which is a feature of the Daffodil.
+- The petals are overlapping, which is another characteristic of the Daffodil.
+
+Based on the extracted features, the rule that matches the visual features best is:
+- IF Yellow petals, curved petals, circular arrangement, overlapping petals THEN Daffodil
+
+Therefore, the class of the image is Daffodil.
+----------------------------------------
+Query 28: Expected: [98] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>98</response>
+
+Features:
+- The flower has a star-like shape.
+- The petals are orange with a red center.
+- The flower has a green stem and leaves.
+
+KB:
+- IF The flower has a star-like shape THEN It belongs to Class 98.
+- IF The petals are orange with a red center THEN It belongs to Class 98.
+- IF The flower has a green stem and leaves THEN It belongs to Class 98.
+
+Rule Check:
+- The star-like shape of the flower matches the rule for Class 98.
+- The orange petals with a red center also match the rule for Class 98.
+- The green stem and leaves further confirm that this flower belongs to Class 98.
+
+Based on the extracted features and the rules from the Knowledge Base, the final classification for this image is Class 98.
+----------------------------------------
+Query 29: Expected: [98] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>98</response>
+
+Features:
+- Red petals
+- Yellow center
+- Star-shaped flower
+
+KB:
+- IF Red petals AND Yellow center AND Star-shaped flower THEN 98
+
+Rule Check:
+- The image has red petals and a yellow center, which matches the visual features described in the rule for class 98. Additionally, the flower is star-shaped, which is another feature associated with class 98. Therefore, the extracted features match the rule for class 98.
+----------------------------------------
+Query 30: Expected: [98] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Purple flower
+- Petals
+- Stem
+KB:
+- IF Purple flower with petals and stem THEN 28
+Rule Check:
+- The image features a purple flower with petals and a stem, which matches the IF-THEN rule for class 28.
+<response>28</response>
+----------------------------------------
+Query 31: Expected: [98] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>98</response>
+
+Features:
+- Yellow petals
+- Petals are curved
+- Petals are arranged in a star shape
+- Petals are thin and delicate
+
+KB:
+- IF Yellow petals, curved petals arranged in a star shape, thin and delicate petals THEN 98
+
+Rule Check:
+- The target image has yellow petals, which matches the visual feature of the class 98.
+- The petals are curved and arranged in a star shape, which matches the visual feature of the class 98.
+- The petals are thin and delicate, which matches the visual feature of the class 98.
+
+Based on the extracted features and the rules from the knowledge base, the target image matches the class 98.
+----------------------------------------
+Query 32: Expected: [98] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>98</response>
+----------------------------------------
+Query 33: Expected: [98] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Purple flower
+- Petals
+- Yellow center
+KB:
+- IF Purple flower with petals and yellow center THEN 28
+Rule Check:
+- The image features a purple flower with petals and a yellow center, which matches the IF-THEN rule for class 28.
+<response>28</response>
+----------------------------------------
+Query 34: Expected: [98] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>98</response>
+----------------------------------------
+Query 35: Expected: [98] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>98</response>
+
+Features:
+- The flower has a star-shaped form.
+- The petals are orange with a red center.
+- The flower has a yellow center.
+
+KB:
+- IF The flower has a star-shaped form THEN 98
+- IF The petals are orange with a red center THEN 98
+- IF The flower has a yellow center THEN 98
+
+Rule Check:
+- The star-shaped form of the flower matches the rule "IF The flower has a star-shaped form THEN 98".
+- The orange petals with a red center match the rule "IF The petals are orange with a red center THEN 98".
+- The yellow center of the flower matches the rule "IF The flower has a yellow center THEN 98".
+
+Based on the extracted features and the rules from the knowledge base, the final classification is 98.
+----------------------------------------
+Query 36: Expected: [98] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>87</response>
+
+Features:
+- Pink flower
+- Five petals
+- Green leaves
+
+KB:
+- IF Pink flower with five petals and green leaves THEN 87
+
+Rule Check:
+- The image has a pink flower with five petals and green leaves, which matches the IF condition of the rule for class 87. Therefore, the rule is activated, and the image is classified as 87.
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.7222

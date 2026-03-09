@@ -1,0 +1,489 @@
+=== DEBUG LOG: gemma3 | flowers | Prompt: axioms_ontology_v2 ===
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [28] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>28</response>
+2. TBox (axioms in a Knowledge Base):
+- class(28) ⊑ hasVisualFeature(P) [spiny central structure] (Necessary condition)
+- class(28) ⊑ hasVisualFeature(P) [layered outer bracts] (Necessary condition)
+- hasVisualFeature(P) [spiny central structure] ⊑ class(28) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [spiny central structure]
+- hasVisualFeature [layered outer bracts]
+4. Logical Explanation (DL):
+The ABox assertion presents a spiny central structure and layered outer bracts, which satisfies the sufficient condition axiom hasVisualFeature(spiny central structure) ⊑ class(28) and the necessary condition axiom class(28) ⊑ hasVisualFeature(layered outer bracts) so it is classified as 28.
+----------------------------------------
+Query 2: Expected: [28] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>28</response>
+2. TBox (axioms in a Knowledge Base):
+- class(28) ⊑ hasVisualFeature(purple_floral_center) [purple, densely packed floral center] (Necessary condition)
+- hasVisualFeature(purple_floral_center) [purple, densely packed floral center] ⊑ class(28) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [purple, densely packed floral center atop a green, layered base]
+4. Logical Explanation (DL):
+The ABox assertion presents a purple, densely packed floral center atop a green, layered base, which satisfies the sufficient condition hasVisualFeature(purple_floral_center) [purple, densely packed floral center] ⊑ class(28) axiom, so it is classified as 28.
+----------------------------------------
+Query 3: Expected: [28] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>28</response>
+2. TBox (axioms in a Knowledge Base):
+- class(28) ⊑ hasVisualFeature(P) [spiky, central bud, green base] (Necessary condition)
+- hasVisualFeature(P) [spiky, central bud, green base] ⊑ class(28) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [spiky, purple/pink central bud, green base]
+4. Logical Explanation (DL):
+The ABox assertion presents spiky, purple/pink central bud, and a green base, which satisfies the Sufficient condition axiom hasVisualFeature(P) [spiky, central bud, green base] ⊑ class(28) so it is classified as 28.
+----------------------------------------
+Query 4: Expected: [28] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>28</response>
+2. TBox (axioms in a Knowledge Base):
+- class(28) ⊑ hasVisualFeature(P) [spiky, central core] (Necessary condition)
+- hasVisualFeature(P) [spiky, central core] ⊑ class(28) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [spiky, central core]
+4. Logical Explanation (DL):
+The ABox assertion presents a spiky, central core, which satisfies the Sufficient condition [axiom] hasVisualFeature(P) [spiky, central core] ⊑ class(28) so it is classified as 28.
+----------------------------------------
+Query 5: Expected: [28] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>28</response>
+2. TBox (axioms in a Knowledge Base):
+- class(28) ⊑ hasVisualFeature(P) [spiky purple central structure] (Necessary condition)
+- hasVisualFeature(P) [spiky purple central structure] ⊑ class(28) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [spiky purple central structure surrounded by green, scale-like structures]
+4. Logical Explanation (DL):
+The ABox assertion presents a spiky purple central structure surrounded by green, scale-like structures, which satisfies the Sufficient condition [hasVisualFeature(P) ⊑ class(28)] axiom, so it is classified as 28.
+----------------------------------------
+Query 6: Expected: [28] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>28</response>
+2. TBox (axioms in a Knowledge Base):
+- class(28) ⊑ hasVisualFeature(P) [purple, spiky, central flower head] (Necessary condition)
+- hasVisualFeature(P) [purple, spiky, central flower head] ⊑ class(28) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [purple, spiky, central flower head]
+4. Logical Explanation (DL):
+The ABox assertion presents a purple, spiky, central flower head, which satisfies the sufficient condition axiom hasVisualFeature(P) [purple, spiky, central flower head] ⊑ class(28) so it is classified as 28.
+----------------------------------------
+Query 7: Expected: [28] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>28</response>
+2. TBox (axioms in a Knowledge Base):
+- class(28) ≡ hasVisualFeature(spiky_purple_flower) (Necessary & Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [spiky_purple_flower]
+4. Logical Explanation (DL):
+The ABox assertion presents a spiky purple flower, which satisfies the Necessary & Sufficient condition of class(28) ≡ hasVisualFeature(spiky_purple_flower) so it is classified as 28.
+----------------------------------------
+Query 8: Expected: [28] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>28</response>
+2. TBox (axioms in a Knowledge Base):
+- class(28) ⊑ hasVisualFeature(DenseSpikes) [dense, spiky texture] (Necessary condition)
+- hasVisualFeature(DenseSpikes) [dense, spiky texture] ⊑ class(28) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature DenseSpikes [The image shows a central, spherical structure covered in a dense, spiky texture, predominantly purple and pink in color.]
+4. Logical Explanation (DL):
+The ABox assertion presents DenseSpikes, which satisfies the Sufficient condition [hasVisualFeature(DenseSpikes) ⊑ class(28)] so it is classified as 28.
+----------------------------------------
+Query 9: Expected: [28] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>28</response>
+2. TBox (axioms in a Knowledge Base):
+- class(28) ⊑ hasVisualFeature(P) [spiky exterior] (Necessary condition)
+- hasVisualFeature(P) [purple, tightly packed, cone-shaped structure] ⊑ class(28) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [purple, tightly packed, cone-shaped structure with spiky exterior]
+4. Logical Explanation (DL):
+The ABox assertion presents a purple, tightly packed, cone-shaped structure with a spiky exterior, which satisfies the sufficient condition axiom hasVisualFeature(P) [purple, tightly packed, cone-shaped structure] ⊑ class(28) so it is classified as 28.
+----------------------------------------
+Query 10: Expected: [87] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>98</response>
+2. TBox (axioms in a Knowledge Base):
+- class(98) ⊑ hasVisualFeature(petalShape) [broad, rounded petals] (Necessary condition)
+- hasVisualFeature(petalShape) [broad, rounded petals] ⊑ class(98) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [broad, rounded petals, vibrant red-pink color]
+4. Logical Explanation (DL):
+The ABox assertion presents broad, rounded petals and a vibrant red-pink color, which satisfies the Sufficient condition [hasVisualFeature(petalShape) [broad, rounded petals] ⊑ class(98)] so it is classified as 98.
+----------------------------------------
+Query 11: Expected: [87] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>87</response>
+2. TBox (axioms in a Knowledge Base):
+- class(41) ⊑ hasVisualFeature(petalShape) [rounded petals] (Necessary condition)
+- class(87) ⊑ hasVisualFeature(petalShape) [pointed petals] (Necessary condition)
+- class(28) ⊑ hasVisualFeature(spikyCenter) [dense, spiky central structure] (Necessary condition)
+- hasVisualFeature(petalShape) [pointed petals] ⊑ class(87) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [petalShape: pointed petals]
+4. Logical Explanation (DL):
+The ABox assertion presents hasVisualFeature [petalShape: pointed petals], which satisfies the Sufficient condition [hasVisualFeature(petalShape) [pointed petals] ⊑ class(87)] so it is classified as 87.
+----------------------------------------
+Query 12: Expected: [87] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>87</response>
+2. TBox (axioms in a Knowledge Base):
+- class(98) ⊑ hasVisualFeature(petalShape) [elongated, pointed petals] (Necessary condition)
+- class(41) ⊑ hasVisualFeature(color) [yellow] (Necessary condition)
+- class(28) ⊑ hasVisualFeature(texture) [prickly, dense] (Necessary condition)
+- class(87) ⊑ hasVisualFeature(petalColor) [pink] (Necessary condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [petalColor: pink]
+4. Logical Explanation (DL):
+The ABox assertion presents petalColor: pink, which satisfies the TBox necessary condition class(87) ⊑ hasVisualFeature(petalColor) [pink] so it is classified as 87.
+----------------------------------------
+Query 13: Expected: [87] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>87</response>
+2. TBox (axioms in a Knowledge Base):
+- class(87) ⊑ hasVisualFeature(P) [petal shape] (Necessary condition)
+- hasVisualFeature(P) [petal shape] ⊑ class(87) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [distinct, rounded petals with a deep red color and a darker interior]
+4. Logical Explanation (DL):
+The ABox assertion presents distinct, rounded petals with a deep red color and a darker interior, which satisfies the Sufficient condition [hasVisualFeature(P) ⊑ class(87)] so it is classified as 87.
+----------------------------------------
+Query 14: Expected: [87] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>98</response>
+2. TBox (axioms in a Knowledge Base):
+- class(98) ⊑ hasVisualFeature(petalShape) [broad, slightly curved petals] (Necessary condition)
+- hasVisualFeature(petalColor) [white with red base] ⊑ class(98) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature petalShape [broad, slightly curved petals]
+- hasVisualFeature petalColor [white with red base]
+4. Logical Explanation (DL):
+The ABox assertion presents petalShape [broad, slightly curved petals] and petalColor [white with red base], which satisfies the Sufficient condition [hasVisualFeature(petalColor) [white with red base] ⊑ class(98)] so it is classified as 98.
+----------------------------------------
+Query 15: Expected: [87] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>28</response>
+2. TBox (axioms in a Knowledge Base):
+- class(28) ⊑ hasVisualFeature(P) [petal arrangement] (Necessary condition)
+- hasVisualFeature(P) [petal arrangement] ⊑ class(28) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [red petals arranged in a dense, layered, cup-like formation]
+4. Logical Explanation (DL):
+The ABox assertion presents a dense, layered, cup-like arrangement of red petals, which satisfies the Sufficient condition [hasVisualFeature(P) ⊑ class(28)] axiom, so it is classified as 28.
+----------------------------------------
+Query 16: Expected: [87] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>87</response>
+2. TBox (axioms in a Knowledge Base):
+- class(98) ⊑ hasVisualFeature(PetalShape) [elongated, pointed petals] (Necessary condition)
+- class(28) ⊑ hasVisualFeature(SpikyCentralStructure) [dense, spiky central structure] (Necessary condition)
+- class(41) ⊑ hasVisualFeature(TrumpetShape) [distinct trumpet-like central structure] (Necessary condition)
+- class(87) ⊑ hasVisualFeature(DelicatePetals) [small, delicate petals with a distinct color contrast] (Necessary condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature DelicatePetals [small, delicate petals with a distinct color contrast, predominantly white with a purple base]
+4. Logical Explanation (DL):
+The ABox assertion presents DelicatePetals, which satisfies the necessary condition class(87) ⊑ hasVisualFeature(DelicatePetals) so it is classified as 87.
+----------------------------------------
+Query 17: Expected: [87] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>87</response>
+2. TBox (axioms in a Knowledge Base):
+- class(98) ⊑ hasVisualFeature(PinkPetals) [petal color] (Necessary condition)
+- class(41) ⊑ hasVisualFeature(YellowCentralCup) [central cup color and shape] (Necessary condition)
+- class(28) ⊑ hasVisualFeature(SpikyPurpleCenter) [center texture and color] (Necessary condition)
+- class(87) ⊑ hasVisualFeature(CurvedPinkPetals) [petal shape and color] (Necessary condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature CurvedPinkPetals [petal shape and color are pink and curved]
+4. Logical Explanation (DL):
+The ABox assertion presents CurvedPinkPetals, which satisfies the necessary condition class(87) ⊑ hasVisualFeature(CurvedPinkPetals) so it is classified as 87.
+----------------------------------------
+Query 18: Expected: [87] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>87</response>
+2. TBox (axioms in a Knowledge Base):
+- class(98) ≡ hasVisualFeature(spiky_texture) (Necessary & Sufficient condition)
+- class(28) ≡ hasVisualFeature(central_cone_shape) (Necessary & Sufficient condition)
+- class(41) ≡ hasVisualFeature(trumpet_shape) (Necessary & Sufficient condition)
+- class(87) ≡ hasVisualFeature(petal_arrangement_like_star) (Necessary & Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [petal_arrangement_like_star]
+4. Logical Explanation (DL):
+The ABox assertion presents petal_arrangement_like_star, which satisfies the Necessary & Sufficient condition class(87) ≡ hasVisualFeature(petal_arrangement_like_star) so it is classified as 87.
+----------------------------------------
+Query 19: Expected: [41] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>41</response>
+2. TBox (axioms in a Knowledge Base):
+- class(41) ⊑ hasVisualFeature(yellow_trumpet_center) [yellow trumpet-shaped central structure] (Necessary condition)
+- class(41) ⊑ hasVisualFeature(elongated_petals) [six elongated, pale yellow petals] (Necessary condition)
+- hasVisualFeature(elongated_petals) [six elongated, pale yellow petals] ⊑ class(41) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [yellow trumpet-shaped central structure]
+- hasVisualFeature [six elongated, pale yellow petals]
+4. Logical Explanation (DL):
+The ABox assertion presents a yellow trumpet-shaped central structure and six elongated, pale yellow petals, which satisfies the necessary and sufficient condition for class(41) so it is classified as 41.
+----------------------------------------
+Query 20: Expected: [41] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>41</response>
+2. TBox (axioms in a Knowledge Base):
+- class(41) ⊑ hasVisualFeature(trumpet-shaped central structure) [yellow/white trumpet-shaped central structure] (Necessary condition)
+- class(41) ⊑ hasVisualFeature(elongated petals) [white/pale yellow elongated petals] (Necessary condition)
+- hasVisualFeature(elongated petals) [white/pale yellow elongated petals] ⊑ class(41) (Sufficient condition)
+- hasVisualFeature(trumpet-shaped central structure) [yellow/white trumpet-shaped central structure] ⊑ class(41) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [elongated, pale yellow petals]
+- hasVisualFeature [yellow/white trumpet-shaped central structure]
+4. Logical Explanation (DL):
+The ABox assertion presents elongated, pale yellow petals and a yellow/white trumpet-shaped central structure, which satisfies the sufficient conditions of both having elongated petals and a trumpet-shaped central structure, as defined in the TBox axiom, so it is classified as 41.
+----------------------------------------
+Query 21: Expected: [41] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>41</response>
+2. TBox (axioms in a Knowledge Base):
+- class(41) ⊑ hasVisualFeature(trumpet-shaped central corona) [yellow, trumpet-shaped central corona] (Necessary condition)
+- hasVisualFeature(trumpet-shaped central corona) [yellow, trumpet-shaped central corona] ⊑ class(41) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [flower with six petals, some white, some yellow, with a prominent trumpet-shaped central corona]
+4. Logical Explanation (DL):
+The ABox assertion presents a flower with six petals, some white, some yellow, and a prominent trumpet-shaped central corona, which satisfies the Sufficient condition [hasVisualFeature(trumpet-shaped central corona) ⊑ class(41)] so it is classified as 41.
+----------------------------------------
+Query 22: Expected: [41] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>41</response>
+2. TBox (axioms in a Knowledge Base):
+- class(41) ⊑ hasVisualFeature(yellow petals) (Necessary condition)
+- class(41) ⊑ hasVisualFeature(trumpet-shaped center) (Necessary condition)
+- hasVisualFeature(yellow petals) ⊑ class(41) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [yellow petals]
+- hasVisualFeature [trumpet-shaped center]
+4. Logical Explanation (DL):
+The ABox assertion presents yellow petals and a trumpet-shaped center, which satisfies the sufficient condition axiom "hasVisualFeature(yellow petals) ⊑ class(41)" and the necessary condition axiom "class(41) ⊑ hasVisualFeature(yellow petals)" and "class(41) ⊑ hasVisualFeature(trumpet-shaped center)" so it is classified as 41.
+----------------------------------------
+Query 23: Expected: [41] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>41</response>
+2. TBox (axioms in a Knowledge Base):
+- class(98) ⊑ hasVisualFeature(YellowCentralCup) [yellow central cup shape] (Necessary condition)
+- class(41) ⊑ hasVisualFeature(SixPetals) [six petals surrounding a central cup] (Necessary condition)
+- class(41) ⊑ hasVisualFeature(TrumpetShape) [trumpet-like central structure] (Necessary condition)
+- hasVisualFeature(SixPetals) [six petals surrounding a central cup] ⊑ class(41) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature SixPetals [six petals surrounding a central cup]
+- hasVisualFeature YellowCentralCup [yellow central cup shape]
+- hasVisualFeature TrumpetShape [trumpet-like central structure]
+4. Logical Explanation (DL):
+The ABox assertion presents SixPetals, YellowCentralCup, and TrumpetShape, which satisfies the TBox necessary conditions for class(41) so it is classified as 41.
+----------------------------------------
+Query 24: Expected: [41] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>41</response>
+2. TBox (axioms in a Knowledge Base):
+- class(41) ⊑ hasVisualFeature(trumpetShape) [elongated, curved central projection] (Necessary condition)
+- class(41) ⊑ hasVisualFeature(petalArrangement) [six petals, three outer and three inner] (Necessary condition)
+- class(41) ⊑ hasVisualFeature(colorPalette) [combination of white and yellow/green hues] (Necessary condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature trumpetShape [elongated, curved central projection]
+- hasVisualFeature petalArrangement [six petals, three outer and three inner]
+- hasVisualFeature colorPalette [combination of white and yellow/green hues]
+4. Logical Explanation (DL):
+The ABox assertion presents trumpetShape, petalArrangement, and colorPalette, which satisfies the TBox necessary conditions for class 41. Therefore, it is classified as 41.
+----------------------------------------
+Query 25: Expected: [41] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>41</response>
+2. TBox (axioms in a Knowledge Base):
+- class(41) ⊑ hasVisualFeature(yellow petals) (Necessary condition)
+- class(41) ⊑ hasVisualFeature(trumpet-shaped center) (Necessary condition)
+- hasVisualFeature(yellow petals) ⊑ class(41) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [yellow petals]
+- hasVisualFeature [trumpet-shaped center]
+4. Logical Explanation (DL):
+The ABox assertion presents yellow petals and a trumpet-shaped center, which satisfies the sufficient condition axiom hasVisualFeature(yellow petals) ⊑ class(41) and the necessary condition axiom class(41) ⊑ hasVisualFeature(trumpet-shaped center) so it is classified as 41.
+----------------------------------------
+Query 26: Expected: [41] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>41</response>
+2. TBox (axioms in a Knowledge Base):
+- class(41) ⊑ hasVisualFeature(trumpet-shaped central cup) [yellow, ruffled] (Necessary condition)
+- class(41) ⊑ hasVisualFeature(elongated petals) [white/pale yellow] (Necessary condition)
+- class(41) ⊑ hasVisualFeature(green stem) (Necessary condition)
+- hasVisualFeature(elongated petals) [white/pale yellow] ⊑ class(41) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature trumpet-shaped central cup [yellow, ruffled]
+- hasVisualFeature elongated petals [white/pale yellow]
+- hasVisualFeature green stem
+4. Logical Explanation (DL):
+The ABox assertion presents trumpet-shaped central cup [yellow, ruffled], elongated petals [white/pale yellow], and a green stem, which satisfies the necessary conditions for class(41) according to the TBox axioms, so it is classified as 41.
+----------------------------------------
+Query 27: Expected: [41] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>41</response>
+2. TBox (axioms in a Knowledge Base):
+- class(41) ⊑ hasVisualFeature(P) [yellow petals and central trumpet] (Necessary condition)
+- hasVisualFeature(P) [yellow petals and central trumpet] ⊑ class(41) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [yellow petals and central trumpet]
+4. Logical Explanation (DL):
+The ABox assertion presents yellow petals and a central trumpet, which satisfies the sufficient condition axiom hasVisualFeature(P) [yellow petals and central trumpet] ⊑ class(41) so it is classified as 41.
+----------------------------------------
+Query 28: Expected: [98] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>98</response>
+2. TBox (axioms in a Knowledge Base):
+- class(98) ⊑ hasVisualFeature(spiral_leaf_arrangement) [spiral arrangement of leaves] (Necessary condition)
+- hasVisualFeature(reddish-orange_color) [predominantly reddish-orange color] ⊑ class(98) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [spiral_leaf_arrangement]
+- hasVisualFeature [reddish-orange_color]
+4. Logical Explanation (DL):
+The ABox assertion presents a spiral leaf arrangement and a predominantly reddish-orange color, which satisfies the sufficient condition axiom hasVisualFeature(reddish-orange_color) ⊑ class(98) and the necessary condition axiom class(98) ⊑ hasVisualFeature(spiral_leaf_arrangement) so it is classified as 98.
+----------------------------------------
+Query 29: Expected: [98] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>98</response>
+2. TBox (axioms in a Knowledge Base):
+- class(98) ⊑ hasVisualFeature(CentralSpike) [central, spiky structure] (Necessary condition)
+- class(98) ⊑ hasVisualFeature(RedHue) [predominantly red color] (Necessary condition)
+- class(98) ⊑ hasVisualFeature(LeafLikePetals) [elongated, leaf-like structures radiating outwards] (Necessary condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature CentralSpike
+- hasVisualFeature RedHue
+- hasVisualFeature LeafLikePetals
+4. Logical Explanation (DL):
+The ABox assertion presents a central spiky structure, a predominantly red color, and elongated leaf-like structures radiating outwards, which satisfies the necessary conditions for class(98) according to the TBox axioms, so it is classified as 98.
+----------------------------------------
+Query 30: Expected: [98] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>98</response>
+2. TBox (axioms in a Knowledge Base):
+- class(98) ⊑ hasVisualFeature(bright_red_petals) (Necessary condition)
+- hasVisualFeature(bright_red_petals) ⊑ class(98) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [bright red petals with pointed tips and a central cluster of yellow-green structures]
+4. Logical Explanation (DL):
+The ABox assertion presents bright red petals with pointed tips and a central cluster of yellow-green structures, which satisfies the sufficient condition hasVisualFeature(bright_red_petals) ⊑ class(98) so it is classified as 98.
+----------------------------------------
+Query 31: Expected: [98] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>98</response>
+2. TBox (axioms in a Knowledge Base):
+- class(98) ⊑ hasVisualFeature(spiky_central_structure) [central structure with numerous, thin, pointed projections] (Necessary condition)
+- hasVisualFeature(bright_red_petals) [bright red, elongated, pointed petals radiating outwards] ⊑ class(98) (Sufficient condition)
+- class(98) ≡ hasVisualFeature(spiral_arrangement) [petals arranged in a spiral pattern around a central core] (Necessary & Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature bright_red_petals [bright red, elongated, pointed petals radiating outwards]
+- hasVisualFeature spiky_central_structure [central structure with numerous, thin, pointed projections]
+- hasVisualFeature spiral_arrangement [petals arranged in a spiral pattern around a central core]
+4. Logical Explanation (DL):
+The ABox assertion presents bright_red_petals, a spiky central structure, and a spiral arrangement, which satisfies the sufficient condition axiom hasVisualFeature(bright_red_petals) ⊑ class(98) and the necessary and sufficient condition class(98) ≡ hasVisualFeature(spiral_arrangement) so it is classified as 98.
+----------------------------------------
+Query 32: Expected: [98] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>98</response>
+2. TBox (axioms in a Knowledge Base):
+- class(98) ⊑ hasVisualFeature(red_petals) (Necessary condition)
+- class(98) ⊑ hasVisualFeature(central_yellow_structure) (Necessary condition)
+- class(98) ⊑ hasVisualFeature(green_foliage) (Necessary condition)
+- hasVisualFeature(red_petals) ⊑ class(98) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature red_petals
+- hasVisualFeature central_yellow_structure
+- hasVisualFeature green_foliage
+4. Logical Explanation (DL):
+The ABox assertion presents red petals, a central yellow structure, and green foliage, which satisfies the sufficient condition hasVisualFeature(red_petals) ⊑ class(98) so it is classified as 98.
+----------------------------------------
+Query 33: Expected: [98] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>98</response>
+2. TBox (axioms in a Knowledge Base):
+- class(98) ⊑ hasVisualFeature(spiralShape) [spiral arrangement of leaves] (Necessary condition)
+- hasVisualFeature(brightRedAndOrangeColor) [color] ⊑ class(98) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [spiralShape]
+- hasVisualFeature [brightRedAndOrangeColor]
+4. Logical Explanation (DL):
+The ABox assertion presents a spiral shape and bright red and orange color, which satisfies the sufficient condition hasVisualFeature(brightRedAndOrangeColor) ⊑ class(98) and the necessary condition class(98) ⊑ hasVisualFeature(spiralShape) so it is classified as 98.
+----------------------------------------
+Query 34: Expected: [98] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>98</response>
+2. TBox (axioms in a Knowledge Base):
+- class(98) ⊑ hasVisualFeature(spiky_leaf_structure) (Necessary condition)
+- hasVisualFeature(bright_red_and_green_color) ⊑ class(98) (Sufficient condition)
+- class(98) ≡ hasVisualFeature(central_tightly_packed_structure) (Necessary & Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [spiky_leaf_structure]
+- hasVisualFeature [bright_red_and_green_color]
+- hasVisualFeature [central_tightly_packed_structure]
+4. Logical Explanation (DL):
+The ABox assertion presents a spiky leaf structure, bright red and green color, and a central tightly-packed structure, which satisfies the sufficient condition axiom hasVisualFeature(bright_red_and_green_color) ⊑ class(98) and the necessary condition axiom class(98) ⊑ hasVisualFeature(spiky_leaf_structure) and the necessary & sufficient condition axiom class(98) ≡ hasVisualFeature(central_tightly_packed_structure) so it is classified as 98.
+----------------------------------------
+Query 35: Expected: [98] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>98</response>
+2. TBox (axioms in a Knowledge Base):
+- class(41) ≡ hasVisualFeature(yellow_center) (Necessary & Sufficient condition)
+- class(28) ≡ hasVisualFeature(purple_spikes) (Necessary & Sufficient condition)
+- class(87) ≡ hasVisualFeature(pink_petals) (Necessary & Sufficient condition)
+- class(98) ≡ hasVisualFeature(red_leaves) (Necessary & Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature [red_leaves]
+- hasVisualFeature [yellow_center]
+4. Logical Explanation (DL):
+The ABox assertion presents red_leaves and yellow_center, which satisfies the TBox necessary & sufficient condition class(98) ≡ hasVisualFeature(red_leaves) and class(41) ≡ hasVisualFeature(yellow_center) so it is classified as 98.
+----------------------------------------
+Query 36: Expected: [98] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+1. Entity Identification:
+<response>98</response>
+2. TBox (axioms in a Knowledge Base):
+- class(41) ⊑ hasVisualFeature(petalShape) [elongated, pointed petals] (Necessary condition)
+- class(98) ⊑ hasVisualFeature(leafArrangement) [spiral arrangement of leaves] (Necessary condition)
+- class(98) ⊑ hasVisualFeature(centralStructure) [distinct central structure with berries] (Necessary condition)
+- hasVisualFeature(spiral arrangement of leaves) [feature] ⊑ class(98) (Sufficient condition)
+3. ABox (Observed Properties & Assertions):
+- hasVisualFeature spiral arrangement of leaves [leaves are arranged in a spiral pattern]
+- hasVisualFeature centralStructure [a distinct central structure is visible]
+4. Logical Explanation (DL):
+The ABox assertion presents spiral arrangement of leaves and a distinct central structure, which satisfies the Sufficient condition axiom "hasVisualFeature(spiral arrangement of leaves) ⊑ class(98)" so it is classified as 98.
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.9167
