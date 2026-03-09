@@ -13,6 +13,7 @@ from torchvision import transforms as T
 import torchvision.transforms.functional as F
 from torchvision.datasets import Flowers102, OxfordIIITPet, CIFAR10, DTD
 from PIL import Image
+from torch.utils.data import ConcatDataset
 
 from transformers import (
     AutoProcessor, 
@@ -64,8 +65,11 @@ def load_datasets(data_dir='./data'):
         #T.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     ])
 
-    print("Loading Flower102...")
-    datasets['flowers'] = Flowers102(root=data_dir, split='train', download=True, transform=transform)
+    print("Loading Flower102...")  
+    train_set = Flowers102(root=data_dir, split='train', download=True, transform=transform)
+    val_set   = Flowers102(root=data_dir, split='val', download=True, transform=transform)
+    flowers_full = ConcatDataset([train_set, val_set])
+    datasets['flowers'] = flowers_full
 
     print("Loading OxfordPets...")
     datasets['pets'] = OxfordIIITPet(root=data_dir, split='trainval', download=True, transform=transform)
@@ -172,7 +176,7 @@ def select_few_shot_images_with_data_fixed(data, index, dataset, class_names):
     """
     # 1. Extract and explicitly SHUFFLE the support indices
     support_idx = list(data['support_indices'])
-    random.shuffle(support_idx)
+    #random.shuffle(support_idx)
     
     # 2. Build the lists using the shuffled indices
     indices = support_idx + [data['query_indices'][index]]
@@ -221,7 +225,16 @@ def run_icl_inference(model, processor, model_name, messages, content_parts=None
             max_new_tokens=max_new_tokens, 
             do_sample=False
         )
-        
+    
+    if os.environ.get("DEBUG_VERBOSE") == "1":
+        try:
+            full_decoded = processor.batch_decode(generated_ids, skip_special_tokens=False, clean_up_tokenization_spaces=False)
+        except Exception:
+            full_decoded = ["<decoding_failed>"]
+        print("DEBUG text_prompt:", text_prompt)
+        print("DEBUG input_ids lengths:", [len(x) for x in inputs.input_ids])
+        print("DEBUG full_generated:", full_decoded)
+           
     generated_ids_trimmed = [
         out_ids[len(in_ids):] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
     ]
