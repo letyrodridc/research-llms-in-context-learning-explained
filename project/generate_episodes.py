@@ -4,9 +4,7 @@ from setup_utils import load_datasets, build_class_index_map, set_seed
 from episode_utils import create_and_save_episode_indices
 
 tests = [
-    (2, 2, 5), (2, 2, 8), (2, 1, 5), (2, 1, 9),
-    (3, 1, 5), (3, 1, 9), 
-    (4, 1, 5), (4, 1, 9)
+    (2, 2, 9), (2, 1, 9), (3, 1, 9), (4, 1, 9)
 ]
 
 DATASETS_TO_GENERATE = ["pets", "cifar10", "flowers", "dtd"]
