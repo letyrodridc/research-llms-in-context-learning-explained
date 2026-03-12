@@ -1,0 +1,1522 @@
+=== DEBUG LOG: gemma3 | dtd | Prompt: rulebased ===
+
+--- CONFIG: N=2, K=2, Q=9 ---
+Query 1: Expected: [waffled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of squares.
+- The squares are raised and form a grid-like structure.
+- The color is a light beige.
+
+KB:
+- IF the image shows a repeating pattern of squares and the squares are raised and form a grid-like structure THEN waffled.
+
+Rule Check:
+The image exhibits a repeating pattern of squares that are raised and form a grid-like structure. This aligns perfectly with the rule derived from the "waffled" examples. The color is not a distinguishing feature, as the previous examples did not specify a color.
+
+<response>waffled</response>
+----------------------------------------
+Query 2: Expected: [waffled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating grid-like pattern.
+- The pattern consists of small, square cells arranged in a regular grid.
+- The material appears to be a woven or textured surface.
+
+KB:
+- IF the image shows a repeating grid-like pattern consisting of small, square cells THEN waffled.
+- IF the image shows a pattern of raised, metallic elements attached to a surface THEN studded.
+
+Rule Check:
+The image exhibits a repeating grid-like pattern with small, square cells. This aligns directly with the rule derived from the "waffled" examples. The "studded" rule requires raised, metallic elements, which are not present in this image.
+
+<response>waffled</response>
+----------------------------------------
+Query 3: Expected: [waffled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a grid-like pattern of squares.
+- The squares are connected by raised lines forming a repeating pattern.
+- The color is a light brown.
+
+KB:
+- IF the image shows a grid-like pattern of squares connected by raised lines THEN waffled.
+
+Rule Check:
+The image exhibits a grid-like pattern of squares connected by raised lines, which directly matches the rule derived from the previous examples. Therefore, the rule "IF the image shows a grid-like pattern of squares connected by raised lines THEN waffled" is activated.
+
+<response>waffled</response>
+----------------------------------------
+Query 4: Expected: [waffled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a grid-like pattern of squares.
+- The squares are connected by raised lines forming a grid.
+- The dominant color is pink.
+
+KB:
+- IF the image shows a grid-like pattern of squares connected by raised lines THEN waffled.
+
+Rule Check:
+The image exhibits a grid-like pattern of squares connected by raised lines. This matches the rule derived from the previous examples. The color is not relevant to the rule.
+
+<response>waffled</response>
+----------------------------------------
+Query 5: Expected: [waffled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a grid-like pattern of squares.
+- The squares are interconnected by raised lines.
+- The surface appears to be light brown in color.
+
+KB:
+- IF the image shows a grid-like pattern of squares interconnected by raised lines THEN waffled.
+
+Rule Check:
+The image exhibits a clear grid-like pattern of squares with raised lines connecting them. This aligns perfectly with the rule derived from the previous examples, which states that if an image shows a grid-like pattern of squares interconnected by raised lines, it is classified as "waffled."
+
+<response>waffled</response>
+----------------------------------------
+Query 6: Expected: [waffled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating square grid pattern.
+- The color is predominantly white.
+
+KB:
+- IF the image shows a repeating square grid pattern and the color is predominantly white THEN waffled.
+- IF the image shows a repeating pattern of raised dots or rivets THEN studded.
+
+Rule Check:
+The image exhibits a repeating square grid pattern and is predominantly white. This aligns with the rule: IF the image shows a repeating square grid pattern and the color is predominantly white THEN waffled. The "studded" rule does not apply as there are no raised dots or rivets visible.
+
+<response>waffled</response>
+----------------------------------------
+Query 7: Expected: [waffled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a grid-like pattern of squares.
+- The squares are connected by raised lines forming a repeating pattern.
+- The color is a light brown/golden hue.
+
+KB:
+- IF the image shows a grid-like pattern of squares connected by raised lines and a light brown/golden hue THEN waffled.
+
+Rule Check:
+The target image exhibits a grid-like pattern of squares connected by raised lines, and the color is a light brown/golden hue. This aligns perfectly with the rule derived from the "waffled" examples. The "studded" examples do not have this grid-like pattern.
+
+<response>waffled</response>
+----------------------------------------
+Query 8: Expected: [waffled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a grid-like pattern of squares.
+- The squares are connected by raised lines forming a repeating pattern.
+- The color is a light brown/golden color.
+
+KB:
+- IF the image shows a grid-like pattern of squares connected by raised lines and the color is light brown/golden THEN waffled.
+- IF the image shows a pattern of small, raised metallic objects attached to a surface THEN studded.
+
+Rule Check:
+The image exhibits a grid-like pattern of squares connected by raised lines and a light brown/golden color. This aligns with the rule for "waffled". The image does not show any small, raised metallic objects, so the rule for "studded" does not apply.
+
+<response>waffled</response>
+----------------------------------------
+Query 9: Expected: [waffled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of squares.
+- The squares are raised, creating a grid-like texture.
+- The color is a light beige.
+
+KB:
+- IF the image shows a repeating pattern of squares and the squares are raised, creating a grid-like texture THEN waffled.
+
+Rule Check:
+The image exhibits a repeating pattern of squares that are raised, forming a grid-like texture. This aligns perfectly with the rule derived from the "waffled" examples. The color is not a distinguishing feature, as the previous examples did not specify a color.
+
+<response>waffled</response>
+----------------------------------------
+Query 10: Expected: [studded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with vertical, narrow, parallel ridges.
+- Small, circular protrusions are present along the ridges.
+
+KB:
+- IF the image shows a surface with a grid-like pattern of squares and rectangles, and a liquid is present on the surface THEN waffled.
+- IF the image shows a surface with small, circular protrusions attached to it THEN studded.
+
+Rule Check:
+The image does not exhibit a grid-like pattern or liquid. However, it does show small, circular protrusions attached to a surface. Therefore, the rule "IF the image shows a surface with small, circular protrusions attached to it THEN studded" is activated.
+
+<response>studded</response>
+----------------------------------------
+Query 11: Expected: [studded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains numerous small, rounded, metallic objects.
+- The objects are circular in shape.
+- The background appears to be a brown, textured material.
+
+KB:
+- IF there are numerous small, rounded, metallic objects that are circular in shape THEN studded.
+
+Rule Check:
+The image clearly shows numerous small, rounded, metallic objects that are circular. This aligns perfectly with the rule: IF there are numerous small, rounded, metallic objects that are circular in shape THEN studded.
+
+<response>studded</response>
+----------------------------------------
+Query 12: Expected: [studded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The surface has a repeating pattern of circular, raised bumps.
+- The surface is dark brown/reddish-brown in color.
+
+KB:
+- IF the surface has a repeating pattern of circular, raised bumps THEN studded.
+
+Rule Check:
+The image shows a surface with a repeating pattern of circular, raised bumps. This matches the condition in the KB rule. Therefore, the rule "IF the surface has a repeating pattern of circular, raised bumps THEN studded" is activated.
+
+<response>studded</response>
+----------------------------------------
+Query 13: Expected: [studded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The surface is covered in small, raised, circular metallic elements.
+- The metallic elements are gold-colored.
+- The background material is dark, likely black.
+
+KB:
+- IF the surface is covered in small, raised, circular metallic elements THEN studded.
+
+Rule Check:
+The target image exhibits a surface densely populated with small, raised, circular metallic elements that are gold-colored, set against a dark background. This aligns perfectly with the rule: IF the surface is covered in small, raised, circular metallic elements THEN studded.
+
+<response>studded</response>
+----------------------------------------
+Query 14: Expected: [studded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Small, circular, metallic protrusions are visible on a dark background.
+- The protrusions are evenly distributed across the surface.
+- The background appears to be a dark, possibly leather-like material.
+
+KB:
+- IF there are small, circular, metallic protrusions evenly distributed on a dark background THEN studded.
+
+Rule Check:
+The target image exhibits small, circular, metallic protrusions on a dark background. This aligns perfectly with the rule derived from the previous "studded" examples.
+
+<response>studded</response>
+----------------------------------------
+Query 15: Expected: [studded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Small, metallic, raised protrusions are present on a dark-colored surface.
+- The protrusions are conical in shape.
+- The protrusions are arranged in a repeating pattern.
+
+KB:
+- IF small, metallic, raised protrusions are present on a surface THEN studded.
+
+Rule Check:
+The image displays small, metallic, raised protrusions on a dark surface. This aligns perfectly with the rule: IF small, metallic, raised protrusions are present on a surface THEN studded.
+
+<response>studded</response>
+----------------------------------------
+Query 16: Expected: [studded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Small, circular, metallic objects are affixed to a dark background.
+- The objects are evenly distributed across the surface.
+
+KB:
+- IF there are small, circular, metallic objects affixed to a dark background THEN studded.
+
+Rule Check:
+The image displays numerous small, circular, metallic objects attached to a dark background. This aligns perfectly with the rule: IF there are small, circular, metallic objects affixed to a dark background THEN studded.
+
+<response>studded</response>
+----------------------------------------
+Query 17: Expected: [studded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a dark background with numerous small, circular, metallic-gold colored protrusions.
+- The protrusions are evenly distributed across the surface.
+
+KB:
+- IF the image shows a dark background with numerous small, circular, metallic-gold colored protrusions evenly distributed across the surface THEN studded.
+
+Rule Check:
+The image exhibits a dark background and numerous small, circular, metallic-gold colored protrusions evenly distributed across the surface. This aligns perfectly with the rule derived from the "studded" examples.
+
+<response>studded</response>
+----------------------------------------
+Query 18: Expected: [studded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Small, metallic, circular protrusions are present on a dark surface.
+- The protrusions are evenly distributed across the surface.
+
+KB:
+- IF there are small, metallic, circular protrusions evenly distributed across a dark surface THEN studded.
+
+Rule Check:
+The image displays small, metallic, circular protrusions on a dark surface. This aligns perfectly with the rule: IF there are small, metallic, circular protrusions evenly distributed across a dark surface THEN studded.
+
+<response>studded</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9): 1.0000
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of vertical and horizontal lines.
+- The lines intersect at regular intervals, forming a grid-like structure.
+- The color is a shade of yellow.
+
+KB:
+- IF the image displays a repeating pattern of vertical and horizontal lines intersecting at regular intervals THEN woven.
+
+Rule Check:
+The target image clearly exhibits a repeating pattern of vertical and horizontal lines intersecting at regular intervals. This matches the rule derived from the "woven" example.
+
+<response>woven</response>
+----------------------------------------
+Query 2: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of interlaced strands.
+- The strands are thin and appear to be twisted.
+- The overall texture is rough and fibrous.
+
+KB:
+- IF the image shows a repeating pattern of interlaced strands THEN woven.
+
+Rule Check:
+The image exhibits a clear repeating pattern of interlaced strands, which directly aligns with the rule derived from the "woven" example. The thin, twisted strands and rough, fibrous texture further support this classification.
+
+<response>woven</response>
+----------------------------------------
+Query 3: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of horizontal and vertical strands interlaced.
+- The strands are cylindrical and appear to be made of a flexible material.
+- The pattern is regular and consistent across the image.
+
+KB:
+- IF the image shows a repeating pattern of horizontal and vertical strands interlaced THEN woven.
+
+Rule Check:
+The extracted features clearly match the rule in the Knowledge Base. The image displays a repeating pattern of interlaced strands, which directly corresponds to the condition in the "woven" rule.
+
+<response>woven</response>
+----------------------------------------
+Query 4: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Repeating rectangular shapes arranged in a grid pattern.
+- The shapes are brown in color.
+- The pattern exhibits a woven appearance.
+
+KB:
+- IF the image shows repeating rectangular shapes arranged in a grid pattern and the shapes are brown in color THEN woven.
+- IF the image shows sharp, angular, and translucent structures THEN crystalline.
+
+Rule Check:
+The target image displays repeating rectangular shapes in a grid pattern and the shapes are brown. This aligns with the first rule in the Knowledge Base. The image does not exhibit sharp, angular, and translucent structures, so the second rule does not apply.
+
+<response>woven</response>
+----------------------------------------
+Query 5: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Interlocking rectangular shapes
+- Repeating diagonal pattern
+- Dark gray color
+
+KB:
+- IF the image shows interlocking rectangular shapes and a repeating diagonal pattern THEN woven.
+
+Rule Check:
+The image displays interlocking rectangular shapes and a repeating diagonal pattern. This aligns perfectly with the rule derived from the "woven" example. Therefore, the rule "IF the image shows interlocking rectangular shapes and a repeating diagonal pattern THEN woven" is activated.
+
+<response>woven</response>
+----------------------------------------
+Query 6: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of small, vertical and horizontal lines intersecting at regular intervals.
+- The overall texture appears uniform and dense.
+- The color is orange.
+
+KB:
+- IF the image shows a repeating pattern of small, vertical and horizontal lines intersecting at regular intervals THEN woven.
+- IF the image shows a crystalline structure THEN crystalline.
+
+Rule Check:
+The image exhibits a repeating pattern of small, vertical and horizontal lines intersecting at regular intervals. This aligns directly with the rule "IF the image shows a repeating pattern of small, vertical and horizontal lines intersecting at regular intervals THEN woven." The crystalline rule does not apply as there is no evidence of a crystalline structure.
+
+<response>woven</response>
+----------------------------------------
+Query 7: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a uniform, fine, and consistent texture.
+- The color is a light, muted orange.
+
+KB:
+- IF the image displays a uniform, fine, and consistent texture THEN crystalline.
+
+Rule Check:
+The image exhibits a uniform, fine, and consistent texture. This aligns with the rule derived from the "crystalline" example. Therefore, the image is classified as crystalline.
+
+<response>crystalline</response>
+----------------------------------------
+Query 8: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of interlaced strands.
+- The strands are thin and appear to be crossing over and under each other in a regular, geometric pattern.
+- The overall texture appears to be a tight, interwoven structure.
+- The color is a dark brown.
+
+KB:
+- IF the image displays a repeating pattern of interlaced strands, thin strands crossing over and under each other in a regular, geometric pattern, and a tight, interwoven structure THEN woven.
+
+Rule Check:
+The target image exhibits a repeating pattern of interlaced strands, thin strands crossing over and under each other in a regular, geometric pattern, and a tight, interwoven structure. This directly matches the rule in the KB.
+
+<response>woven</response>
+----------------------------------------
+Query 9: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of parallel, rectangular shapes.
+- The shapes are arranged in a grid-like structure.
+- The color scheme is primarily black and white.
+
+KB:
+- IF the image displays a repeating pattern of parallel, rectangular shapes arranged in a grid-like structure THEN woven.
+- IF the image displays a crystalline structure THEN crystalline.
+
+Rule Check:
+The target image exhibits a repeating pattern of parallel, rectangular shapes arranged in a grid-like structure. This aligns directly with the rule "IF the image displays a repeating pattern of parallel, rectangular shapes arranged in a grid-like structure THEN woven." The crystalline rule does not apply as there is no evidence of a crystalline structure.
+
+<response>woven</response>
+----------------------------------------
+Query 10: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Presence of sharp, angular, elongated shapes.
+- Translucent, glassy appearance.
+- Predominantly white and light purple color.
+
+KB:
+- IF image contains sharp, angular, elongated shapes and a translucent, glassy appearance THEN crystalline.
+
+Rule Check:
+The target image exhibits sharp, angular, elongated shapes and a translucent, glassy appearance. This aligns perfectly with the rule derived from the previous "crystalline" example.
+
+<response>crystalline</response>
+----------------------------------------
+Query 11: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows sharp, angular, and repeating geometric shapes.
+- The overall texture appears glassy and translucent.
+
+KB:
+- IF the image shows sharp, angular, and repeating geometric shapes AND the overall texture appears glassy and translucent THEN crystalline.
+
+Rule Check:
+The target image exhibits sharp, angular, and repeating geometric shapes, and a glassy, translucent texture. This aligns perfectly with the rule derived from the previous "crystalline" example.
+
+<response>crystalline</response>
+----------------------------------------
+Query 12: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating, angular pattern.
+- The surface appears to have a reflective, glassy texture.
+
+KB:
+- IF the image shows a repeating, angular pattern and a reflective, glassy texture THEN crystalline.
+
+Rule Check:
+The target image exhibits a repeating, angular pattern and a reflective, glassy texture. This aligns perfectly with the rule derived from the "crystalline" example.
+
+<response>crystalline</response>
+----------------------------------------
+Query 13: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Sharp, elongated, transparent structures are visible.
+- The structures have a repeating, geometric pattern.
+- The overall texture appears glassy and reflective.
+- A pale purple hue is present in some of the structures.
+
+KB:
+- IF sharp, elongated, transparent structures with a repeating geometric pattern are visible THEN crystalline.
+
+Rule Check:
+The target image exhibits sharp, elongated, transparent structures with a repeating geometric pattern. This aligns perfectly with the rule derived from the previous "crystalline" example. The pale purple hue is a secondary observation, but not essential for the classification.
+
+<response>crystalline</response>
+----------------------------------------
+Query 14: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly blue color.
+- Presence of a granular, sparkly texture within a central area.
+- Darker blue swirls or lines surrounding the central area.
+
+KB:
+- IF image contains a granular, sparkly texture and is predominantly blue THEN crystalline.
+
+Rule Check:
+The target image exhibits a granular, sparkly texture and is predominantly blue. This aligns perfectly with the rule: IF image contains a granular, sparkly texture and is predominantly blue THEN crystalline.
+
+<response>crystalline</response>
+----------------------------------------
+Query 15: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating, angular, and sharp geometric pattern.
+- The overall texture appears glassy and translucent.
+
+KB:
+- IF the image shows a repeating, angular, and sharp geometric pattern and a glassy, translucent texture THEN crystalline.
+
+Rule Check:
+The target image exhibits a repeating, angular, and sharp geometric pattern, and a glassy, translucent texture. This aligns perfectly with the rule derived from the previous "crystalline" example.
+
+<response>crystalline</response>
+----------------------------------------
+Query 16: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly orange color.
+- Rough, uneven surface texture.
+- Presence of a bright yellow spot.
+
+KB:
+- IF the image contains a crystalline structure THEN the class is crystalline.
+
+Rule Check:
+The image does not exhibit a crystalline structure. It displays a predominantly orange color with a rough texture and a bright yellow spot. Therefore, none of the rules in the KB apply. However, since the only options are "crystalline" or "woven", and the image does not show any woven patterns, the closest match, albeit a weak one, is "crystalline" due to the presence of a rough, uneven surface texture, which could be loosely interpreted as a form of crystalline structure.
+
+<response>crystalline</response>
+----------------------------------------
+Query 17: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating, small, raised pattern.
+- The image has a predominantly blue-grey color.
+
+KB:
+- IF the image displays a repeating, small, raised pattern THEN crystalline.
+
+Rule Check:
+The image exhibits a repeating, small, raised pattern. This matches the condition in the KB rule. Therefore, the rule "IF the image displays a repeating, small, raised pattern THEN crystalline" is activated.
+
+<response>crystalline</response>
+----------------------------------------
+Query 18: Expected: [crystalline] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Presence of sharp, angular, and translucent structures.
+- Overall texture appears to be composed of repeating, geometric shapes.
+
+KB:
+- IF image contains sharp, angular, and translucent structures THEN crystalline.
+
+Rule Check:
+The target image exhibits sharp, angular, and translucent structures. This aligns directly with the rule derived from the "crystalline" example. Therefore, the rule "IF image contains sharp, angular, and translucent structures THEN crystalline" is activated.
+
+<response>crystalline</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9): 0.9444
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a translucent, light-colored material.
+- The material has a repeating pattern of swirls or curls.
+
+KB:
+- IF the image shows a translucent, light-colored material with a repeating pattern THEN gauzy.
+- IF the image shows a material with small, regularly spaced dots THEN dotted.
+- IF the image shows a material with elongated, irregular shapes THEN fibrous.
+
+Rule Check:
+The image exhibits a translucent, light-colored material with a repeating pattern of swirls. This aligns with the rule: IF the image shows a translucent, light-colored material with a repeating pattern THEN gauzy. The other rules do not match the observed features.
+
+<response>gauzy</response>
+----------------------------------------
+Query 2: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Small, circular shapes are present.
+- The shapes are evenly distributed across a translucent background.
+
+KB:
+- IF small, circular shapes are present and evenly distributed across a translucent background THEN dotted.
+
+Rule Check:
+The target image exhibits small, circular shapes that are evenly distributed across a translucent background. This aligns perfectly with the rule derived from the "dotted" example.
+
+<response>dotted</response>
+----------------------------------------
+Query 3: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a translucent material with vertical, closely spaced lines.
+- The material appears to be thin and light, allowing light to pass through.
+- The material is draped in vertical folds.
+
+KB:
+- IF the material is translucent and has closely spaced vertical lines THEN gauzy.
+
+Rule Check:
+The image exhibits translucency and closely spaced vertical lines. This aligns perfectly with the rule: IF the material is translucent and has closely spaced vertical lines THEN gauzy.
+
+<response>gauzy</response>
+----------------------------------------
+Query 4: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a white, loosely woven fabric.
+- The fabric has visible, thin, horizontal and vertical lines creating a grid-like pattern.
+
+KB:
+- IF the image shows a white, loosely woven fabric with visible, thin, horizontal and vertical lines THEN gauzy.
+
+Rule Check:
+The image exhibits a white, loosely woven fabric with visible, thin, horizontal and vertical lines. This aligns perfectly with the rule derived from the "gauzy" examples.
+
+<response>gauzy</response>
+----------------------------------------
+Query 5: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Vertical lines are present.
+- The lines have a rough, textured appearance.
+- The lines are not perfectly straight.
+
+KB:
+- IF there are rough, textured vertical lines THEN fibrous.
+
+Rule Check:
+The target image exhibits rough, textured vertical lines. This aligns with the rule: IF there are rough, textured vertical lines THEN fibrous. Therefore, the image is classified as fibrous.
+
+<response>fibrous</response>
+----------------------------------------
+Query 6: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a smooth, flowing surface.
+- The color is a light, pale white.
+- The surface has gentle curves and folds.
+
+KB:
+- IF the image shows a smooth, flowing surface and is a light, pale white THEN gauzy.
+- IF the image shows a surface with many small, distinct circular shapes THEN dotted.
+- IF the image shows a surface with elongated, irregular shapes THEN fibrous.
+
+Rule Check:
+The image displays a smooth, flowing surface and is a light, pale white. This aligns with the rule: IF the image shows a smooth, flowing surface and is a light, pale white THEN gauzy. The other rules do not match the observed features.
+
+<response>gauzy</response>
+----------------------------------------
+Query 7: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image exhibits a repeating pattern of thin, parallel, dark lines.
+- The background is blurred and indistinct.
+- The overall texture appears translucent.
+
+KB:
+- IF the image contains thin, parallel, dark lines THEN gauzy.
+
+Rule Check:
+The target image clearly displays thin, parallel, dark lines. This aligns directly with the rule: IF the image contains thin, parallel, dark lines THEN gauzy. Therefore, the rule associated with the "gauzy" class is activated.
+
+<response>gauzy</response>
+----------------------------------------
+Query 8: Expected: [gauzy] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains small, distinct circular shapes.
+- The circular shapes are evenly distributed.
+- The background has a fine, grid-like texture.
+
+KB:
+- IF the image contains small, distinct circular shapes and they are evenly distributed THEN dotted.
+
+Rule Check:
+The extracted features match the rule in the KB. The image clearly shows small, distinct circular shapes that are evenly distributed across the image. Therefore, the rule "IF the image contains small, distinct circular shapes and they are evenly distributed THEN dotted" is activated.
+
+<response>dotted</response>
+----------------------------------------
+Query 9: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The material appears to be thin and translucent.
+- The material has soft, flowing curves and folds.
+- The material is predominantly white.
+
+KB:
+- IF the material is thin and translucent THEN gauzy.
+
+Rule Check:
+The target image exhibits thinness and translucence, which aligns with the features described in the "IF" part of the rule. Therefore, the rule "IF the material is thin and translucent THEN gauzy" is activated.
+
+<response>gauzy</response>
+----------------------------------------
+Query 10: Expected: [dotted] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains numerous circular shapes.
+- The circular shapes are of varying colors (red, green, yellow, blue, pink).
+- The background is black.
+
+KB:
+- IF the image contains numerous circular shapes THEN dotted.
+
+Rule Check:
+The image clearly exhibits numerous circular shapes of different colors against a dark background. This aligns directly with the rule: IF the image contains numerous circular shapes THEN dotted.
+
+<response>dotted</response>
+----------------------------------------
+Query 11: Expected: [dotted] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Circular shapes of varying sizes are present.
+- The shapes are evenly distributed across a pink background.
+
+KB:
+- IF circular shapes of varying sizes are present on a background THEN dotted
+
+Rule Check:
+The target image exhibits circular shapes of varying sizes distributed across a background. This aligns directly with the rule derived from the "dotted" example.
+
+<response>dotted</response>
+----------------------------------------
+Query 12: Expected: [dotted] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains numerous circular shapes.
+- The circular shapes are dark in color against a lighter background.
+
+KB:
+- IF the image contains numerous circular shapes THEN dotted.
+
+Rule Check:
+The image clearly exhibits numerous circular shapes. This aligns directly with the rule: IF the image contains numerous circular shapes THEN dotted. Therefore, the rule is activated.
+
+<response>dotted</response>
+----------------------------------------
+Query 13: Expected: [dotted] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains numerous circular shapes.
+- The circular shapes are evenly distributed across the image.
+- The circular shapes are dark brown against a light background.
+
+KB:
+- IF the image contains numerous circular shapes THEN dotted.
+
+Rule Check:
+The extracted features clearly indicate the presence of numerous circular shapes distributed across the image. This aligns directly with the rule: IF the image contains numerous circular shapes THEN dotted. Therefore, the image is classified as "dotted".
+
+<response>dotted</response>
+----------------------------------------
+Query 14: Expected: [dotted] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Circular shapes are present.
+- The shapes are distinct and isolated.
+- The background is a solid, uniform color.
+
+KB:
+- IF circular shapes are present and distinct THEN dotted
+
+Rule Check:
+The target image exhibits circular shapes that are distinct and isolated against a solid background. This aligns perfectly with the rule: IF circular shapes are present and distinct THEN dotted.
+
+<response>dotted</response>
+----------------------------------------
+Query 15: Expected: [dotted] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains numerous small, circular shapes.
+- The shapes are evenly distributed across the background.
+- The shapes are distinct and clearly defined.
+
+KB:
+- IF the image contains numerous small, circular shapes evenly distributed across the background THEN dotted.
+
+Rule Check:
+The target image exhibits numerous small, circular shapes evenly distributed across the background. This directly matches the rule derived from the "dotted" example.
+
+<response>dotted</response>
+----------------------------------------
+Query 16: Expected: [dotted] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains circular shapes of varying sizes.
+- The circular shapes are blue.
+- The background is white.
+- There are thin, light blue lines running diagonally across the image.
+
+KB:
+- IF the image contains circular shapes THEN dotted.
+
+Rule Check:
+The image clearly contains circular shapes. The rule "IF the image contains circular shapes THEN dotted" is activated.
+
+<response>dotted</response>
+----------------------------------------
+Query 17: Expected: [dotted] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains numerous circular shapes.
+- The shapes are of varying colors (red, blue, green, yellow, black, purple).
+- The background is a light, solid color.
+
+KB:
+- IF the image contains numerous circular shapes THEN dotted.
+
+Rule Check:
+The target image clearly exhibits numerous circular shapes. This aligns directly with the rule derived from the "dotted" example. Therefore, the rule "IF the image contains numerous circular shapes THEN dotted" is activated.
+
+<response>dotted</response>
+----------------------------------------
+Query 18: Expected: [dotted] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains numerous circular shapes.
+- The circular shapes are evenly distributed across the surface.
+- The circular shapes are of varying colors (orange, green, yellow).
+
+KB:
+- IF the image contains numerous circular shapes THEN dotted.
+
+Rule Check:
+The extracted features indicate the presence of numerous circular shapes distributed across the surface. This aligns directly with the rule: IF the image contains numerous circular shapes THEN dotted. Therefore, the image is classified as "dotted".
+
+<response>dotted</response>
+----------------------------------------
+Query 19: Expected: [fibrous] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains many thin, elongated, and irregularly curved strands.
+- The color is predominantly brown.
+- The texture appears rough and tangled.
+
+KB:
+- IF the image contains many thin, elongated, and irregularly curved strands and the color is predominantly brown THEN fibrous.
+
+Rule Check:
+The target image exhibits many thin, elongated, and irregularly curved strands, and the color is predominantly brown. This matches the rule derived from the "fibrous" example.
+
+<response>fibrous</response>
+----------------------------------------
+Query 20: Expected: [fibrous] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains many thin, elongated strands.
+- The strands are tangled and interwoven.
+- The color is a light brown/beige.
+
+KB:
+- IF the image contains many thin, elongated strands that are tangled and interwoven THEN fibrous.
+
+Rule Check:
+The image clearly exhibits many thin, elongated strands that are tangled and interwoven. This aligns perfectly with the rule derived from the "fibrous" example.
+
+<response>fibrous</response>
+----------------------------------------
+Query 21: Expected: [fibrous] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains many thin, elongated, and randomly oriented strands.
+- The strands are predominantly pink in color.
+
+KB:
+- IF the image contains many thin, elongated, and randomly oriented strands THEN fibrous.
+
+Rule Check:
+The image exhibits numerous thin, elongated strands arranged randomly. This aligns directly with the rule stating that if an image contains many thin, elongated, and randomly oriented strands, it is classified as "fibrous."
+
+<response>fibrous</response>
+----------------------------------------
+Query 22: Expected: [fibrous] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains many thin, elongated, and irregularly oriented strands.
+- The strands are tightly packed together.
+- The overall texture appears rough and tangled.
+
+KB:
+- IF the image contains many thin, elongated, and irregularly oriented strands that are tightly packed together THEN fibrous.
+
+Rule Check:
+The target image exhibits numerous thin, elongated strands that are densely packed. This aligns directly with the features described in the "fibrous" rule. Therefore, the rule is activated.
+
+<response>fibrous</response>
+----------------------------------------
+Query 23: Expected: [fibrous] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains small, elongated, irregularly shaped objects.
+- The objects are predominantly brown and tan in color.
+- The objects are densely packed together.
+
+KB:
+- IF the image contains small, elongated, irregularly shaped objects that are predominantly brown and tan in color and densely packed together THEN fibrous.
+
+Rule Check:
+The extracted features match the rule derived from the "fibrous" example. The image clearly shows a collection of small, elongated, irregularly shaped objects that are brown and tan, and they are densely packed. Therefore, the rule "IF the image contains small, elongated, irregularly shaped objects that are predominantly brown and tan in color and densely packed together THEN fibrous" is activated.
+
+<response>fibrous</response>
+----------------------------------------
+Query 24: Expected: [fibrous] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains many thin, elongated, and irregularly shaped elements.
+- The elements are predominantly brown and tan in color.
+- The elements are densely packed and intertwined.
+
+KB:
+- IF the image contains many thin, elongated, and irregularly shaped elements that are predominantly brown and tan in color, and are densely packed and intertwined THEN fibrous.
+
+Rule Check:
+The target image exhibits thin, elongated, irregularly shaped elements that are brown and tan, and densely packed. This aligns perfectly with the rule derived from the "fibrous" example.
+
+<response>fibrous</response>
+----------------------------------------
+Query 25: Expected: [fibrous] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains many thin, elongated, and intertwined structures.
+- The structures are predominantly brown and tan in color.
+- The overall texture appears rough and tangled.
+
+KB:
+- IF the image contains many thin, elongated, and intertwined structures that are predominantly brown and tan in color THEN fibrous.
+
+Rule Check:
+The target image exhibits many thin, elongated, and intertwined structures that are predominantly brown and tan. This aligns perfectly with the rule derived from the "fibrous" example.
+
+<response>fibrous</response>
+----------------------------------------
+Query 26: Expected: [fibrous] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows many thin, elongated, and intertwined strands.
+- The texture appears to be composed of many small, parallel lines.
+
+KB:
+- IF the image shows many thin, elongated, and intertwined strands THEN fibrous.
+
+Rule Check:
+The target image exhibits numerous thin, elongated strands that are intertwined. This aligns directly with the rule stating that if an image shows many thin, elongated, and intertwined strands, it is classified as "fibrous."
+
+<response>fibrous</response>
+----------------------------------------
+Query 27: Expected: [fibrous] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains many thin, elongated, and irregularly shaped elements.
+- The elements are predominantly light brown in color.
+- The overall texture appears rough and tangled.
+
+KB:
+- IF the image contains many thin, elongated, and irregularly shaped elements that are predominantly light brown in color THEN fibrous.
+
+Rule Check:
+The target image exhibits many thin, elongated, and irregularly shaped elements that are light brown. This aligns perfectly with the rule derived from the "fibrous" example. Therefore, the rule "IF the image contains many thin, elongated, and irregularly shaped elements that are predominantly light brown in color THEN fibrous" is activated.
+
+<response>fibrous</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9): 0.8889
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [smeared] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains visible, thick, and layered brushstrokes.
+- The image has a chaotic arrangement of colors, including red, orange, and blue.
+- The image appears to have a textured surface with visible paint ridges.
+
+KB:
+- IF the image has visible, thick, and layered brushstrokes AND a chaotic arrangement of colors THEN smeared.
+- IF the image has a repeating, delicate pattern resembling lace THEN lacelike.
+- IF the image has irregular, large, and colorful patches THEN blotchy.
+- IF the image has distinct, linear fractures THEN cracked.
+
+Rule Check:
+The target image exhibits visible, thick, and layered brushstrokes and a chaotic arrangement of colors. This aligns directly with the rule: IF the image has visible, thick, and layered brushstrokes AND a chaotic arrangement of colors THEN smeared. The other rules do not match the observed features.
+
+<response>smeared</response>
+----------------------------------------
+Query 2: Expected: [smeared] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Presence of broad, overlapping brushstrokes with visible texture.
+- Dominant colors are blue, green, and orange.
+- Presence of a small, rectangular grid-like pattern.
+- Overall appearance is chaotic and layered.
+
+KB:
+- IF image contains broad, overlapping brushstrokes and visible texture THEN smeared.
+- IF image contains a repeating, net-like pattern THEN lacelike.
+- IF image contains irregular, blot-like shapes THEN blotchy.
+- IF image contains distinct, linear fractures THEN cracked.
+
+Rule Check:
+The image exhibits broad, overlapping brushstrokes and visible texture. The other rules do not align with the visual features. The presence of a grid-like pattern does not strongly suggest "lacelike" as the pattern is small and integrated within a larger, chaotic composition. The image does not have any visible fractures, so "cracked" is not applicable. The irregular shapes are not blot-like, so "blotchy" is not applicable. The best match is the presence of broad, overlapping brushstrokes and visible texture.
+
+<response>smeared</response>
+----------------------------------------
+Query 3: Expected: [smeared] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Horizontal lines are present.
+- The dominant colors are brown and gold.
+- The image has a layered appearance.
+
+KB:
+- IF the image has a lacelike pattern THEN the class is lacelike.
+- IF the image appears smeared THEN the class is smeared.
+- IF the image has blotches THEN the class is blotchy.
+- IF the image has cracks THEN the class is cracked.
+
+Rule Check:
+The image does not exhibit a lacelike pattern, smearing, or cracks. While it has lines, they are not the intricate, repeating pattern of lace. The layered appearance and the brown/gold color scheme do not align with any of the other classes. Therefore, none of the rules are a strong match. However, the layered appearance could be loosely interpreted as a form of smearing, where colors are blended together.
+
+<response>smeared</response>
+----------------------------------------
+Query 4: Expected: [smeared] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image exhibits a lack of sharp edges and distinct forms.
+- The image appears blurred and indistinct.
+- The color palette is muted, primarily consisting of dark brown and beige tones.
+
+KB:
+- IF an image is blurred and lacks sharp edges THEN it is smeared.
+
+Rule Check:
+The target image's primary characteristic is its blurriness and lack of defined shapes. This aligns directly with the rule stating that if an image is blurred and lacks sharp edges, it is classified as "smeared."
+
+<response>smeared</response>
+----------------------------------------
+Query 5: Expected: [smeared] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dominant color is dark, almost black.
+- There are irregular, swirling shapes present.
+- The image appears to have a blurred or indistinct texture.
+
+KB:
+- IF image contains irregular, swirling shapes and a blurred texture THEN smeared.
+- IF image contains a delicate, repeating pattern resembling lace THEN lacelike.
+- IF image contains large, irregular blotches of color THEN blotchy.
+- IF image contains distinct, linear fractures THEN cracked.
+
+Rule Check:
+The image exhibits a dark color and irregular, swirling shapes with a blurred texture. This aligns most closely with the rule: IF image contains irregular, swirling shapes and a blurred texture THEN smeared. The other rules do not match the observed features.
+
+<response>smeared</response>
+----------------------------------------
+Query 6: Expected: [smeared] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Visible brushstrokes with a textured appearance.
+- Areas of blended color transitions.
+
+KB:
+- IF the image exhibits visible brushstrokes and blended color transitions THEN smeared.
+
+Rule Check:
+The target image displays visible brushstrokes and areas where colors blend together. This aligns with the features described in the "smeared" rule. Therefore, the rule is activated.
+
+<response>smeared</response>
+----------------------------------------
+Query 7: Expected: [smeared] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark, elongated streaks are present.
+- The image has a blurred, indistinct appearance.
+- Predominantly grayscale tones are visible.
+
+KB:
+- IF the image contains blurred, indistinct areas and dark, elongated streaks THEN smeared.
+
+Rule Check:
+The target image exhibits dark, elongated streaks and a blurred, indistinct appearance. This aligns directly with the rule derived from the "smeared" examples. Therefore, the rule "IF the image contains blurred, indistinct areas and dark, elongated streaks THEN smeared" is activated.
+
+<response>smeared</response>
+----------------------------------------
+Query 8: Expected: [smeared] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains areas of overlapping, irregular shapes.
+- The image has a blurred, indistinct appearance.
+- The colors are mixed and blended together.
+
+KB:
+- IF the image has overlapping, irregular shapes and a blurred appearance THEN smeared.
+
+Rule Check:
+The target image exhibits overlapping, irregular shapes and a blurred appearance. This aligns directly with the rule derived from the "smeared" examples. Therefore, the rule "IF the image has overlapping, irregular shapes and a blurred appearance THEN smeared" is activated.
+
+<response>smeared</response>
+----------------------------------------
+Query 9: Expected: [smeared] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains numerous thin, irregular, white lines across a dark green background.
+- The lines appear to be scratches or streaks.
+
+KB:
+- IF the image contains numerous thin, irregular, white lines across a dark background THEN smeared.
+
+Rule Check:
+The target image exhibits numerous thin, irregular, white lines across a dark green background. This aligns directly with the rule derived from the "smeared" example.
+
+<response>smeared</response>
+----------------------------------------
+Query 10: Expected: [lacelike] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of floral motifs.
+- The image has a fine, net-like structure with open spaces between the floral elements.
+- The image is predominantly white on a dark background.
+
+KB:
+- IF the image has a repeating pattern of floral motifs AND a fine, net-like structure with open spaces between the floral elements THEN lacelike.
+
+Rule Check:
+The target image exhibits both a repeating pattern of floral motifs and a fine, net-like structure. These features directly align with the rule derived from the "lacelike" example. No other rule matches these features.
+
+<response>lacelike</response>
+----------------------------------------
+Query 11: Expected: [lacelike] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of interconnected, delicate, and openwork designs.
+- The image has a fine, net-like structure with intricate details.
+- The image exhibits a pattern resembling a woven fabric.
+
+KB:
+- IF the image has a repeating pattern of interconnected, delicate, and openwork designs AND a fine, net-like structure THEN lacelike.
+
+Rule Check:
+The target image clearly displays a repeating pattern of interconnected, delicate, and openwork designs, and a fine, net-like structure. This aligns perfectly with the rule derived from the "lacelike" examples.
+
+<response>lacelike</response>
+----------------------------------------
+Query 12: Expected: [lacelike] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating floral patterns.
+- The patterns are composed of interconnected, delicate lines and shapes.
+- The overall texture appears open and net-like.
+
+KB:
+- IF the image contains repeating floral patterns and a net-like texture THEN lacelike.
+
+Rule Check:
+The image exhibits repeating floral patterns and a net-like texture. This aligns directly with the rule derived from the "lacelike" example. Therefore, the rule "IF the image contains repeating floral patterns and a net-like texture THEN lacelike" is activated.
+
+<response>lacelike</response>
+----------------------------------------
+Query 13: Expected: [lacelike] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating floral patterns.
+- The patterns are composed of thin, interconnected lines.
+- The overall texture appears delicate and openwork.
+
+KB:
+- IF the image contains repeating floral patterns composed of thin, interconnected lines THEN lacelike.
+
+Rule Check:
+The image exhibits repeating floral patterns and is composed of thin, interconnected lines. This aligns directly with the rule derived from the "lacelike" example.
+
+<response>lacelike</response>
+----------------------------------------
+Query 14: Expected: [lacelike] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of floral-like shapes.
+- The image has a fine, net-like background structure.
+- The dominant color is white against a dark background.
+
+KB:
+- IF the image contains a repeating pattern of floral-like shapes and a fine, net-like background structure THEN lacelike.
+
+Rule Check:
+The target image exhibits a repeating pattern of floral-like shapes and a fine, net-like background structure. This directly matches the rule derived from the "lacelike" example. No other rule applies.
+
+<response>lacelike</response>
+----------------------------------------
+Query 15: Expected: [lacelike] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating floral patterns.
+- The patterns are composed of thin, interconnected lines forming flower-like shapes.
+- The background has a net-like texture.
+- The dominant colors are white and black.
+
+KB:
+- IF the image contains repeating floral patterns and a net-like texture THEN lacelike.
+
+Rule Check:
+The image exhibits repeating floral patterns and a net-like texture. This aligns perfectly with the rule derived from the "lacelike" example. Therefore, the rule "IF the image contains repeating floral patterns and a net-like texture THEN lacelike" is activated.
+
+<response>lacelike</response>
+----------------------------------------
+Query 16: Expected: [lacelike] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating floral patterns.
+- The patterns are composed of thin, delicate lines.
+- The background is a dark, uniform color.
+
+KB:
+- IF the image contains repeating floral patterns composed of thin, delicate lines and a dark background THEN lacelike.
+
+Rule Check:
+The image exhibits repeating floral patterns made of thin, delicate lines against a dark background. This aligns perfectly with the rule derived from the "lacelike" example.
+
+<response>lacelike</response>
+----------------------------------------
+Query 17: Expected: [lacelike] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating, interconnected, floral-like patterns.
+- The patterns are formed by thin, delicate lines creating open spaces.
+- The background has a fine, net-like texture.
+
+KB:
+- IF the image contains repeating, interconnected, floral-like patterns formed by thin, delicate lines creating open spaces AND the background has a fine, net-like texture THEN lacelike.
+
+Rule Check:
+The target image exhibits repeating floral-like patterns made of thin lines with open spaces, and a net-like background. This aligns perfectly with the rule derived from the "lacelike" example.
+
+<response>lacelike</response>
+----------------------------------------
+Query 18: Expected: [lacelike] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of interconnected, openwork shapes.
+- The shapes are floral-like and interconnected with thin lines.
+- The overall texture appears delicate and intricate.
+
+KB:
+- IF the image contains a repeating pattern of interconnected, openwork shapes THEN lacelike.
+
+Rule Check:
+The image exhibits a repeating pattern of interconnected, openwork shapes, which directly aligns with the rule derived from the "lacelike" example. The floral-like shapes and delicate texture further reinforce this classification.
+
+<response>lacelike</response>
+----------------------------------------
+Query 19: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains irregular, dark brown and grey patches.
+- The image has a rough, uneven texture.
+- There are lighter colored (white/grey) spots scattered throughout the image.
+
+KB:
+- IF the image has irregular, dark brown and grey patches AND a rough, uneven texture THEN cracked.
+- IF the image has a lacelike pattern THEN lacelike.
+- IF the image has blurred, indistinct shapes THEN smeared.
+- IF the image has irregular, colorful blotches THEN blotchy.
+
+Rule Check:
+The image exhibits irregular, dark brown and grey patches and a rough, uneven texture. This aligns directly with the rule: IF the image has irregular, dark brown and grey patches AND a rough, uneven texture THEN cracked. The presence of lighter colored spots does not contradict this rule. The other rules do not match the observed features.
+
+<response>cracked</response>
+----------------------------------------
+Query 20: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image exhibits a blurry, indistinct texture.
+- The image has a predominantly brown color with variations in tone.
+- There are no distinct patterns or shapes visible.
+
+KB:
+- IF the image has a blurry, indistinct texture and a predominantly brown color THEN smeared.
+
+Rule Check:
+The target image displays a blurry, indistinct texture and a brown color. This aligns with the rule derived from the "smeared" examples. Therefore, the rule "IF the image has a blurry, indistinct texture and a predominantly brown color THEN smeared" is activated.
+
+<response>smeared</response>
+----------------------------------------
+Query 21: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains overlapping shapes with irregular edges.
+- The image has a blurred appearance, lacking sharp definition.
+- The image exhibits a blending of colors, creating a diffused look.
+
+KB:
+- IF the image has a blurred appearance and overlapping shapes THEN smeared.
+
+Rule Check:
+The target image exhibits a blurred appearance and overlapping shapes. This aligns with the rule derived from the "smeared" examples. Therefore, the rule "IF the image has a blurred appearance and overlapping shapes THEN smeared" is activated.
+
+<response>smeared</response>
+----------------------------------------
+Query 22: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image has a mottled appearance with irregular dark spots.
+- The background color is predominantly gray.
+- There are visible linear patterns running vertically.
+
+KB:
+- IF the image has a mottled appearance with irregular dark spots and a gray background THEN smeared.
+- IF the image has a repeating, openwork pattern with white elements on a dark background THEN lacelike.
+- IF the image has large, irregular blotches of color THEN blotchy.
+- IF the image has distinct, linear cracks THEN cracked.
+
+Rule Check:
+The image exhibits a mottled appearance with dark spots and a gray background. This aligns most closely with the rule: IF the image has a mottled appearance with irregular dark spots and a gray background THEN smeared. The other rules do not match the observed features.
+
+<response>smeared</response>
+----------------------------------------
+Query 23: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows irregular, wavy lines.
+- The image has areas of blue coloration.
+- The image has a crumpled texture.
+
+KB:
+- IF the image has a lacelike pattern THEN the class is lacelike.
+- IF the image has smeared areas THEN the class is smeared.
+- IF the image has blotchy areas THEN the class is blotchy.
+- IF the image has cracked lines THEN the class is cracked.
+
+Rule Check:
+The image does not exhibit a lacelike pattern. It does not have smeared areas. It does not have blotchy areas. It does not have cracked lines. However, the image does have wavy lines and blue coloration, which are not explicitly defined in the rules, but the crumpled texture is most similar to the texture of the "lacelike" example. Therefore, the closest match is "lacelike".
+
+<response>lacelike</response>
+----------------------------------------
+Query 24: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark circular spots are present on a green background.
+- The spots have a ring-like structure around a central lighter area.
+
+KB:
+- IF the image contains dark circular spots with a ring-like structure on a green background THEN lacelike.
+
+Rule Check:
+The target image exhibits dark circular spots with a ring-like structure on a green background. This aligns perfectly with the rule derived from the "lacelike" examples.
+
+<response>lacelike</response>
+----------------------------------------
+Query 25: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image has a rough, uneven texture.
+- The dominant color is orange.
+- There are no distinct patterns or shapes.
+
+KB:
+- IF the image has a rough, uneven texture THEN cracked.
+- IF the image has a lacelike pattern THEN lacelike.
+- IF the image has a smeared appearance THEN smeared.
+- IF the image has blotches THEN blotchy.
+
+Rule Check:
+The image exhibits a rough, uneven texture. This aligns with the rule "IF the image has a rough, uneven texture THEN cracked." The other rules do not apply as there is no lacelike pattern, smeared appearance, or blotches visible.
+
+<response>cracked</response>
+----------------------------------------
+Query 26: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image exhibits irregular, diffuse patches of color.
+- The color distribution is uneven and lacks distinct patterns.
+- The overall appearance is blurred and indistinct.
+
+KB:
+- IF the image has irregular, diffuse patches of color THEN smeared.
+
+Rule Check:
+The target image displays irregular, diffuse patches of color, which aligns with the features described in the "smeared" rule. The color distribution is uneven and blurred, further supporting this classification.
+
+<response>smeared</response>
+----------------------------------------
+Query 27: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image has irregular, dark brown and black patches spread across a pinkish-red background.
+- The patches are amorphous and lack a defined pattern.
+
+KB:
+- IF the image has irregular, dark patches spread across a lighter background THEN smeared.
+- IF the image has a repeating, delicate pattern resembling lace THEN lacelike.
+- IF the image has random, colorful blotches THEN blotchy.
+- IF the image has distinct, angular cracks THEN cracked.
+
+Rule Check:
+The image exhibits irregular, dark brown and black patches spread across a pinkish-red background. This aligns with the "IF the image has irregular, dark patches spread across a lighter background THEN smeared" rule. The other rules do not match the observed visual features. The image does not have a lace-like pattern, random blotches, or cracks.
+
+<response>smeared</response>
+----------------------------------------
+Query 28: Expected: [cracked] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a network of thin, dark lines.
+- The lines form a pattern of interconnected segments.
+- The background color is a light green.
+
+KB:
+- IF the image shows a network of thin, dark lines forming a pattern of interconnected segments THEN cracked.
+
+Rule Check:
+The image exhibits a clear pattern of thin, dark lines forming interconnected segments, which directly aligns with the rule derived from the "cracked" example. The light green background is irrelevant to the classification.
+
+<response>cracked</response>
+----------------------------------------
+Query 29: Expected: [cracked] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark, thin, irregular lines are present throughout the image.
+- The lines are not forming a repeating pattern.
+- The background is a uniform brown color.
+
+KB:
+- IF there are dark, thin, irregular lines throughout the image THEN cracked.
+
+Rule Check:
+The target image exhibits dark, thin, irregular lines throughout the image. This aligns perfectly with the rule derived from the "cracked" example. The lines are not forming a repeating pattern, which distinguishes it from the "lacelike" class. The image does not have a smeared or blotchy appearance.
+
+<response>cracked</response>
+----------------------------------------
+Query 30: Expected: [cracked] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains numerous, irregular, dark brown lines separating irregular shapes.
+- The shapes are polygonal and interconnected.
+- The overall color is a muted brown.
+
+KB:
+- IF the image contains numerous, irregular, dark brown lines separating irregular shapes THEN cracked.
+
+Rule Check:
+The target image exhibits numerous, irregular, dark brown lines separating irregular shapes. This directly matches the condition in the "cracked" rule. Therefore, the "cracked" rule is activated.
+
+<response>cracked</response>
+----------------------------------------
+Query 31: Expected: [cracked] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a rough, uneven surface with many small, irregular protrusions and depressions.
+- The color is predominantly gray with variations in tone.
+- There are no repeating patterns or linear features like cracks.
+
+KB:
+- IF the image shows a rough, uneven surface with many small, irregular protrusions and depressions AND the color is predominantly gray THEN cracked.
+- IF the image shows repeating patterns of interconnected loops and lines THEN lacelike.
+- IF the image shows areas of blurred, indistinct color THEN smeared.
+- IF the image shows irregular, non-uniform patches of color THEN blotchy.
+
+Rule Check:
+The image does not exhibit repeating patterns (ruling out "lacelike"). It does not have blurred, indistinct color (ruling out "smeared"). It does not have irregular, non-uniform patches of color (ruling out "blotchy"). The image does show a rough, uneven surface with many small, irregular protrusions and depressions and is predominantly gray. Therefore, the rule "IF the image shows a rough, uneven surface with many small, irregular protrusions and depressions AND the color is predominantly gray THEN cracked" is the best match.
+
+<response>cracked</response>
+----------------------------------------
+Query 32: Expected: [cracked] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a pattern of irregular, dark grey lines separating irregular polygonal shapes.
+- The shapes are filled with a lighter grey material.
+- The overall texture is rough and fragmented.
+
+KB:
+- IF the image shows a pattern of irregular, dark grey lines separating irregular polygonal shapes and the shapes are filled with a lighter grey material THEN cracked.
+
+Rule Check:
+The target image exhibits a pattern of irregular, dark grey lines separating irregular polygonal shapes, which are filled with a lighter grey material. This directly matches the rule derived from the "cracked" example.
+
+<response>cracked</response>
+----------------------------------------
+Query 33: Expected: [cracked] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Presence of dark, irregular lines extending through the image.
+- The image has a concentric ring-like pattern.
+- The image has a predominantly brown and beige color palette.
+
+KB:
+- IF the image has dark, irregular lines extending through the image AND has a concentric ring-like pattern THEN cracked.
+
+Rule Check:
+The target image exhibits dark, irregular lines and a concentric ring-like pattern. These features align with the rule derived from the "cracked" example. Therefore, the rule "IF the image has dark, irregular lines extending through the image AND has a concentric ring-like pattern THEN cracked" is activated.
+
+<response>cracked</response>
+----------------------------------------
+Query 34: Expected: [cracked] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a pattern of irregular, roughly rectangular shapes.
+- The shapes are closely packed together.
+- The overall texture is rough and uneven.
+- The color is a uniform gray.
+
+KB:
+- IF the image shows a pattern of irregular, roughly rectangular shapes closely packed together THEN cracked.
+
+Rule Check:
+The target image exhibits a pattern of irregular, roughly rectangular shapes that are closely packed together. This aligns directly with the rule derived from the "cracked" example.
+
+<response>cracked</response>
+----------------------------------------
+Query 35: Expected: [cracked] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a pattern of irregular, dark lines separating distinct, angular sections.
+- The sections are roughly polygonal in shape.
+- The overall color is a muted brown/grey.
+
+KB:
+- IF the image shows a pattern of irregular, dark lines separating distinct, angular sections THEN cracked.
+
+Rule Check:
+The target image exhibits a pattern of irregular, dark lines separating distinct, angular sections, which directly aligns with the rule derived from the "cracked" example. No other rule in the KB matches these features.
+
+<response>cracked</response>
+----------------------------------------
+Query 36: Expected: [cracked] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains numerous thin, dark, irregular lines.
+- These lines form distinct, angular separations between irregular polygonal areas.
+- The overall texture is characterized by a network of these lines.
+
+KB:
+- IF the image contains numerous thin, dark, irregular lines forming distinct, angular separations between irregular polygonal areas THEN cracked.
+
+Rule Check:
+The target image exhibits numerous thin, dark, irregular lines that create angular separations between polygonal areas. This directly matches the rule derived from the "cracked" example. No other rule applies as closely.
+
+<response>cracked</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.7500

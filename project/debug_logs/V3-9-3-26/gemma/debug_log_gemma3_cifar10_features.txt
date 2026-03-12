@@ -1,0 +1,846 @@
+=== DEBUG LOG: gemma3 | cifar10 | Prompt: features ===
+
+--- CONFIG: N=2, K=2, Q=9 ---
+Query 1: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Legs
+Head
+Mane
+Tail
+<response>horse</response>
+----------------------------------------
+Query 2: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four legs
+Long neck
+Head
+Tail
+<response>horse</response>
+----------------------------------------
+Query 3: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Legs
+Head
+Tail
+<response>horse</response>
+----------------------------------------
+Query 4: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Head
+Mane
+Ears
+<response>horse</response>
+----------------------------------------
+Query 5: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four legs
+Long neck
+Tail
+Classification: <response>horse</response>
+----------------------------------------
+Query 6: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four legs
+Long neck
+Head
+<response>horse</response>
+----------------------------------------
+Query 7: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Legs
+Head
+Tail
+<response>horse</response>
+----------------------------------------
+Query 8: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Legs
+Head
+Body
+<response>horse</response>
+----------------------------------------
+Query 9: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four legs
+Long neck
+Head
+Tail
+<response>horse</response>
+----------------------------------------
+Query 10: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four wheels
+Windshield
+Grille
+Headlights
+
+<response>automobile</response>
+----------------------------------------
+Query 11: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Wheels
+Windows
+Body
+<response>automobile</response>
+----------------------------------------
+Query 12: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Wheels
+Body
+Windshield
+Classification: <response>automobile</response>
+----------------------------------------
+Query 13: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four wheels
+Rectangular body
+Windshield
+Classification: <response>automobile</response>
+----------------------------------------
+Query 14: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Wheels
+Windshield
+Body panels
+
+<response>automobile</response>
+----------------------------------------
+Query 15: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Wheels
+Windshield
+Body panels
+
+<response>automobile</response>
+----------------------------------------
+Query 16: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Windshield
+Wheels
+Headlights
+Bumper
+Classification: <response>automobile</response>
+----------------------------------------
+Query 17: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Wheels
+Windshield
+Body panels
+
+<response>automobile</response>
+----------------------------------------
+Query 18: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Headlights
+Grille
+Wheels
+<response>automobile</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9): 1.0000
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Four legs
+- Long neck
+- Head
+<response>horse</response>
+----------------------------------------
+Query 2: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Four legs
+- Long neck
+- Head
+<response>horse</response>
+----------------------------------------
+Query 3: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Four legs
+- Long neck
+- Head
+<response>horse</response>
+----------------------------------------
+Query 4: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Four legs
+- Long neck
+- Rider
+<response>horse</response>
+----------------------------------------
+Query 5: Expected: [horse] | Correct: False
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Wheels
+- Cabin
+<response>truck</response>
+----------------------------------------
+Query 6: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Four legs
+- Long neck
+- Head
+<response>horse</response>
+----------------------------------------
+Query 7: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Long neck
+Four legs
+Classification: <response>horse</response>
+----------------------------------------
+Query 8: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Head
+Ears
+Classification: <response>horse</response>
+----------------------------------------
+Query 9: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four legs
+Head
+Tail
+<response>horse</response>
+----------------------------------------
+Query 10: Expected: [truck] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Large wheels
+- Cab
+- Cargo bed
+<response>truck</response>
+----------------------------------------
+Query 11: Expected: [truck] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Large cabin
+- Wheels
+- Ladder
+
+<response>truck</response>
+----------------------------------------
+Query 12: Expected: [truck] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Large box
+- Wheels
+- Cab
+
+<response>truck</response>
+----------------------------------------
+Query 13: Expected: [truck] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Four wheels
+- Enclosed cabin
+<response>truck</response>
+----------------------------------------
+Query 14: Expected: [truck] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Large wheels
+- Cargo bed
+<response>truck</response>
+----------------------------------------
+Query 15: Expected: [truck] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Large cabin
+- Four wheels
+<response>truck</response>
+----------------------------------------
+Query 16: Expected: [truck] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Large wheels
+Cab
+Bed
+
+<response>truck</response>
+----------------------------------------
+Query 17: Expected: [truck] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Cab
+- Cargo bed
+<response>truck</response>
+----------------------------------------
+Query 18: Expected: [truck] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Large cabin
+- Wheels
+- Cargo bed
+
+<response>truck</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9): 0.9444
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Wings
+- Fuselage
+- Tail
+<response>airplane</response>
+----------------------------------------
+Query 2: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Tower structure
+Curved roof
+Coastal location
+
+<response>airplane</response>
+----------------------------------------
+Query 3: Expected: [airplane] | Correct: False
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four legs
+Long neck
+Head
+<response>horse</response>
+----------------------------------------
+Query 4: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Wings
+Fuselage
+Tail
+Engines
+
+<response>airplane</response>
+----------------------------------------
+Query 5: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Wings
+- Fuselage
+- Engine
+<response>airplane</response>
+----------------------------------------
+Query 6: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Wings
+- Propeller
+- Fuselage
+
+<response>airplane</response>
+----------------------------------------
+Query 7: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Wings
+- Engine
+- Tail
+<response>airplane</response>
+----------------------------------------
+Query 8: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Wings
+Fuselage
+Propeller
+
+<response>airplane</response>
+----------------------------------------
+Query 9: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Wings
+- Engine
+- Tail
+<response>airplane</response>
+----------------------------------------
+Query 10: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four legs
+Tail
+Ears
+<response>horse</response>
+----------------------------------------
+Query 11: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Legs
+Hooves
+Tail
+Body
+
+<response>horse</response>
+----------------------------------------
+Query 12: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Legs
+- Head
+- Body
+<response>horse</response>
+----------------------------------------
+Query 13: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Long neck
+- Four legs
+- Tail
+
+<response>horse</response>
+----------------------------------------
+Query 14: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Long neck
+Four legs
+Head
+<response>horse</response>
+----------------------------------------
+Query 15: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Four legs
+- Head
+- Tail
+- Rider
+<response>horse</response>
+----------------------------------------
+Query 16: Expected: [horse] | Correct: False
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four legs
+Tail
+Ears
+<response>cat</response>
+----------------------------------------
+Query 17: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four legs
+Long neck
+Head
+<response>horse</response>
+----------------------------------------
+Query 18: Expected: [horse] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Four legs
+- Tail
+- Head
+<response>horse</response>
+----------------------------------------
+Query 19: Expected: [cat] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Fur
+- Tail
+- Paws
+<response>cat</response>
+----------------------------------------
+Query 20: Expected: [cat] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Fur
+- Head
+- Ears
+
+<response>cat</response>
+----------------------------------------
+Query 21: Expected: [cat] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Ears
+- Whiskers
+- Face
+<response>cat</response>
+----------------------------------------
+Query 22: Expected: [cat] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Fur
+- Tail
+- Four legs
+<response>cat</response>
+----------------------------------------
+Query 23: Expected: [cat] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Fur
+- Tail
+- Paws
+<response>cat</response>
+----------------------------------------
+Query 24: Expected: [cat] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Ears
+- Whiskers
+- Tail
+<response>cat</response>
+----------------------------------------
+Query 25: Expected: [cat] | Correct: False
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four legs
+Tail
+Ears
+<response>horse</response>
+----------------------------------------
+Query 26: Expected: [cat] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+- Fur
+- Tail
+- Paws
+<response>cat</response>
+----------------------------------------
+Query 27: Expected: [cat] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Ears
+Tail
+Body
+
+<response>cat</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9): 0.8889
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [cat] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Head shape
+Ears
+Tail
+
+<response>cat</response>
+----------------------------------------
+Query 2: Expected: [cat] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four legs
+Tail
+Ears
+Classification: <response>cat</response>
+----------------------------------------
+Query 3: Expected: [cat] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Whiskers
+Eyes
+Ears
+Nose
+
+<response>cat</response>
+----------------------------------------
+Query 4: Expected: [cat] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Fur
+Ears
+Tail
+Whiskers
+<response>cat</response>
+----------------------------------------
+Query 5: Expected: [cat] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four legs
+Tail
+Ears
+Classification: <response>cat</response>
+----------------------------------------
+Query 6: Expected: [cat] | Correct: False
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four legs
+Tail
+Snout
+Classification: <response>dog</response>
+----------------------------------------
+Query 7: Expected: [cat] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Fur
+Ears
+Whiskers
+<response>cat</response>
+----------------------------------------
+Query 8: Expected: [cat] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Facial features
+Whiskers
+Ears
+<response>cat</response>
+----------------------------------------
+Query 9: Expected: [cat] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four legs
+Tail
+Ears
+Whiskers
+<response>cat</response>
+----------------------------------------
+Query 10: Expected: [truck] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Cab
+Trailer
+Wheels
+
+<response>truck</response>
+----------------------------------------
+Query 11: Expected: [truck] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Cab
+Trailer
+Wheels
+
+<response>truck</response>
+----------------------------------------
+Query 12: Expected: [truck] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Cab
+Flatbed
+Wheels
+
+<response>truck</response>
+----------------------------------------
+Query 13: Expected: [truck] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Box structure
+Wheels
+Cab
+Classification: <response>truck</response>
+----------------------------------------
+Query 14: Expected: [truck] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Cab
+Trailer
+Wheels
+Classification: <response>truck</response>
+----------------------------------------
+Query 15: Expected: [truck] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Large wheels
+Compactor arm
+Cab
+Classification: <response>truck</response>
+----------------------------------------
+Query 16: Expected: [truck] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Cab
+Grill
+Wheels
+Classification: <response>truck</response>
+----------------------------------------
+Query 17: Expected: [truck] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Building
+Grass
+Trees
+
+<response>truck</response>
+----------------------------------------
+Query 18: Expected: [truck] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Ladder
+Wheels
+Cab
+Classification: <response>truck</response>
+----------------------------------------
+Query 19: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four wheels
+Enclosed cabin
+Rectangular body
+
+<response>automobile</response>
+----------------------------------------
+Query 20: Expected: [automobile] | Correct: False
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four wheels
+Boxy shape
+Large windows
+Classification: <response>truck</response>
+----------------------------------------
+Query 21: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four wheels
+Car body
+Windshield
+Classification: <response>automobile</response>
+----------------------------------------
+Query 22: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four wheels
+Windshield
+Body
+Grille
+
+<response>automobile</response>
+----------------------------------------
+Query 23: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four wheels
+Enclosed cabin
+Rectangular body
+
+<response>automobile</response>
+----------------------------------------
+Query 24: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four wheels
+Rectangular body
+Windshield
+Headlights
+Taillights
+
+<response>automobile</response>
+----------------------------------------
+Query 25: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four wheels
+Car body
+Windshield
+Rear window
+
+<response>automobile</response>
+----------------------------------------
+Query 26: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four wheels
+Body panels
+Windshield
+Classification: <response>automobile</response>
+----------------------------------------
+Query 27: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four wheels
+Streamlined body
+Windshield
+Headlights
+
+<response>automobile</response>
+----------------------------------------
+Query 28: Expected: [dog] | Correct: False
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four legs
+Tail
+Ears
+Classification: <response>cat</response>
+----------------------------------------
+Query 29: Expected: [dog] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four legs
+Tail
+Ears
+Classification: <response>dog</response>
+----------------------------------------
+Query 30: Expected: [dog] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Snout
+Ears
+Tail
+
+<response>dog</response>
+----------------------------------------
+Query 31: Expected: [dog] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Snout
+Ears
+Eyes
+Classification: <response>dog</response>
+----------------------------------------
+Query 32: Expected: [dog] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Head
+Snout
+Ears
+Tail
+
+<response>dog</response>
+----------------------------------------
+Query 33: Expected: [dog] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Snout
+Ears
+Tail
+<response>dog</response>
+----------------------------------------
+Query 34: Expected: [dog] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Ears
+Snout
+Eyes
+Classification:
+<response>dog</response>
+----------------------------------------
+Query 35: Expected: [dog] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four legs
+Tail
+Snout
+Classification: <response>dog</response>
+----------------------------------------
+Query 36: Expected: [dog] | Correct: True
+MODEL OUTPUT (Classification output label + Explanation in form of: Key features): 
+Features:
+Four legs
+Tail
+Ears
+Classification: <response>dog</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.9167

@@ -1,0 +1,4868 @@
+=== DEBUG LOG: qwen-vl | pets | Prompt: rulebased ===
+
+--- CONFIG: N=2, K=2, Q=9 ---
+Query 1: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Tail
+
+KB:
+- IF Black fur AND Yellow eyes AND Pointed ears AND Tail THEN Bombay
+
+Rule Check:
+- The extracted features match the IF-THEN rule in the KB: Black fur, Yellow eyes, Pointed ears, and Tail are all present in the image, which corresponds to the Bombay class.
+
+Classification:
+<response>Bombay</response>
+----------------------------------------
+Query 2: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Tail
+
+KB:
+- IF Black fur AND Yellow eyes AND Pointed ears AND Tail THEN Bombay
+
+Rule Check:
+- The extracted features match the IF-THEN rule in the KB: Black fur, Yellow eyes, Pointed ears, and Tail are all present in the image, which corresponds to the Bombay class.
+
+Classification:
+<response>Bombay</response>
+----------------------------------------
+Query 3: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Rounded face
+- Short tail
+KB:
+- IF Black fur AND Yellow eyes AND Pointed ears AND Rounded face AND Short tail THEN Bombay
+Rule Check:
+- The extracted features match the IF conditions of the Bombay class rule, specifically the black fur, yellow eyes, pointed ears, rounded face, and short tail.
+- Therefore, the rule that best matches the visual features is: IF Black fur AND Yellow eyes AND Pointed ears AND Rounded face AND Short tail THEN Bombay.
+Classification: <response>Bombay</response>
+----------------------------------------
+Query 4: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Rounded face
+- Short whiskers
+KB:
+- IF Black fur AND Yellow eyes AND Pointed ears AND Rounded face AND Short whiskers THEN Bombay
+Rule Check:
+- The extracted features match the IF-THEN rule in the KB, indicating that the image is of a Bombay cat.
+<response>Bombay</response>
+----------------------------------------
+Query 5: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Tail
+
+KB:
+- IF Black fur AND Yellow eyes AND Pointed ears AND Tail THEN Bombay
+
+Rule Check:
+- The extracted features match the IF-THEN rule in the KB: Black fur, Yellow eyes, Pointed ears, and Tail are all present in the image, which corresponds to the Bombay class.
+
+Classification:
+<response>Bombay</response>
+----------------------------------------
+Query 6: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Tail
+
+KB:
+- IF Black fur AND Yellow eyes AND Pointed ears AND Tail THEN Bombay
+
+Rule Check:
+- The extracted features match the IF-THEN rule in the KB: Black fur, Yellow eyes, Pointed ears, and Tail are all present in the image, which corresponds to the Bombay class.
+
+Classification:
+<response>Bombay</response>
+----------------------------------------
+Query 7: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Tail
+
+KB:
+- IF Black fur AND Yellow eyes AND Pointed ears AND Tail THEN Bombay
+
+Rule Check:
+- The extracted features match the IF-THEN rule in the KB: Black fur, Yellow eyes, Pointed ears, and Tail are all present in the image, which corresponds to the Bombay class.
+
+Classification:
+<response>Bombay</response>
+----------------------------------------
+Query 8: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Green background
+KB:
+- IF Black fur AND Yellow eyes AND Pointed ears THEN Bombay
+- IF Black fur AND Yellow eyes AND Pointed ears THEN American Bulldog
+Rule Check:
+- The image has Black fur, Yellow eyes, and Pointed ears, which matches the features of both Bombay and American Bulldog.
+- However, the green background is a distinguishing feature that is not present in the American Bulldog examples.
+- Therefore, the rule that best matches the visual features is: IF Black fur AND Yellow eyes AND Pointed ears THEN Bombay.
+Classification: <response>Bombay</response>
+----------------------------------------
+Query 9: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Tail
+
+KB:
+- IF Black fur AND Yellow eyes AND Pointed ears AND Tail THEN Bombay
+
+Rule Check:
+- The extracted features match the IF-THEN rule in the KB: Black fur, Yellow eyes, Pointed ears, and Tail are all present in the image, which corresponds to the Bombay class.
+
+Classification:
+<response>Bombay</response>
+----------------------------------------
+Query 10: Expected: [American Bulldog] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Tail
+
+KB:
+- IF Black fur AND Yellow eyes AND Pointed ears AND Tail THEN Bombay
+
+Rule Check:
+- The extracted features match the IF-THEN rule in the KB: Black fur, Yellow eyes, Pointed ears, and Tail are all present in the image, which corresponds to the Bombay class.
+
+Classification:
+<response>Bombay</response>
+----------------------------------------
+Query 11: Expected: [American Bulldog] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Tail
+
+KB:
+- IF Black fur AND Yellow eyes AND Pointed ears AND Tail THEN Bombay
+
+Rule Check:
+- The extracted features match the IF-THEN rule in the KB: Black fur, Yellow eyes, Pointed ears, and Tail are all present in the image, which corresponds to the Bombay class.
+
+Classification:
+<response>Bombay</response>
+----------------------------------------
+Query 12: Expected: [American Bulldog] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Tail
+
+KB:
+- IF Black fur AND Yellow eyes AND Pointed ears AND Tail THEN Bombay
+
+Rule Check:
+- The extracted features match the IF-THEN rule in the KB: Black fur, Yellow eyes, Pointed ears, and Tail are all present in the image, which corresponds to the Bombay class.
+
+Classification:
+<response>Bombay</response>
+----------------------------------------
+Query 13: Expected: [American Bulldog] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Tail
+
+KB:
+- IF Black fur AND Yellow eyes AND Pointed ears AND Tail THEN Bombay
+
+Rule Check:
+- The extracted features match the IF-THEN rule in the KB: Black fur, Yellow eyes, Pointed ears, and Tail are all present in the image, which corresponds to the Bombay class.
+
+Classification:
+<response>Bombay</response>
+----------------------------------------
+Query 14: Expected: [American Bulldog] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Tail
+
+KB:
+- IF Black fur AND Yellow eyes AND Pointed ears AND Tail THEN Bombay
+
+Rule Check:
+- The extracted features match the IF-THEN rule in the KB: Black fur, Yellow eyes, Pointed ears, and Tail are all present in the image, which corresponds to the Bombay class.
+
+Classification:
+<response>Bombay</response>
+----------------------------------------
+Query 15: Expected: [American Bulldog] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Tail
+
+KB:
+- IF Black fur AND Yellow eyes AND Pointed ears AND Tail THEN Bombay
+
+Rule Check:
+- The extracted features match the IF-THEN rule in the KB: Black fur, Yellow eyes, Pointed ears, and Tail are all present in the image, which corresponds to the Bombay class.
+
+Classification:
+<response>Bombay</response>
+----------------------------------------
+Query 16: Expected: [American Bulldog] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Tail
+
+KB:
+- IF Black fur AND Yellow eyes AND Pointed ears AND Tail THEN Bombay
+
+Rule Check:
+- The extracted features match the IF-THEN rule in the KB: Black fur, Yellow eyes, Pointed ears, and Tail are all present in the image, which corresponds to the Bombay class.
+
+Classification:
+<response>Bombay</response>
+----------------------------------------
+Query 17: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>American Bulldog</response>
+
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Green background
+
+KB:
+- IF Black fur AND Yellow eyes AND Pointed ears THEN Bombay
+- IF Black fur AND Yellow eyes AND Pointed ears THEN American Bulldog
+
+Rule Check:
+- The image has Black fur, Yellow eyes, and Pointed ears, which matches the features of both Bombay and American Bulldog.
+- However, the green background is not a feature that is present in the examples of Bombay.
+- Therefore, the rule that best matches the visual features is: IF Black fur AND Yellow eyes AND Pointed ears THEN American Bulldog.
+----------------------------------------
+Query 18: Expected: [American Bulldog] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- Yellow eyes
+- Pointed ears
+- Tail
+
+KB:
+- IF Black fur AND Yellow eyes AND Pointed ears AND Tail THEN Bombay
+
+Rule Check:
+- The extracted features match the IF-THEN rule in the KB: Black fur, Yellow eyes, Pointed ears, and Tail are all present in the image, which corresponds to the Bombay class.
+
+Classification:
+<response>Bombay</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9): 0.5556
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>Staffordshire Bull Terrier</response>
+
+Features:
+- Black coat
+- White patch on the chest
+- Pointed ears
+- Muscular build
+- Tail
+
+KB:
+- IF Black coat with white patch on the chest AND Pointed ears AND Muscular build AND Tail THEN Staffordshire Bull Terrier
+
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: Black coat with white patch on the chest, Pointed ears, Muscular build, and Tail. Therefore, the class is Staffordshire Bull Terrier.
+----------------------------------------
+Query 2: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>Staffordshire Bull Terrier</response>
+
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black mouth
+
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black mouth THEN Staffordshire Bull Terrier
+
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: Black and white fur, Pointed ears, Black nose, Black eyes, and Black mouth are all present in the image, which corresponds to the Staffordshire Bull Terrier class.
+----------------------------------------
+Query 3: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>Staffordshire Bull Terrier</response>
+
+Features:
+- Black coat
+- Muscular build
+- Short snout
+- Pointed ears
+- Blue eyes
+
+KB:
+- IF Black coat AND Muscular build AND Short snout AND Pointed ears AND Blue eyes THEN Staffordshire Bull Terrier
+
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base, indicating that the image is of a Staffordshire Bull Terrier.
+----------------------------------------
+Query 4: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>Staffordshire Bull Terrier</response>
+
+Features:
+- Black coat
+- White patch on the chest
+- Pointed ears
+- Tail
+
+KB:
+- IF Black coat with white patch on the chest AND Pointed ears AND Tail THEN Staffordshire Bull Terrier
+
+Rule Check:
+- The image features a black coat with a white patch on the chest, pointed ears, and a tail, which matches the logical rule derived from the examples. Therefore, the class is Staffordshire Bull Terrier.
+----------------------------------------
+Query 5: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>Staffordshire Bull Terrier</response>
+
+Features:
+- Black coat
+- White markings on the face
+- Muscular build
+- Short snout
+- Pointed ears
+
+KB:
+- IF Black coat with white markings on the face AND Muscular build AND Short snout AND Pointed ears THEN Staffordshire Bull Terrier
+
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: Black coat with white markings on the face, Muscular build, Short snout, and Pointed ears. Therefore, the class is Staffordshire Bull Terrier.
+----------------------------------------
+Query 6: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>Staffordshire Bull Terrier</response>
+
+Features:
+- Black coat
+- White markings on the face
+- Muscular build
+- Pointed ears
+- Tail
+
+KB:
+- IF Black coat with white markings on the face AND Muscular build AND Pointed ears AND Tail THEN Staffordshire Bull Terrier
+
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: Black coat with white markings on the face, Muscular build, Pointed ears, and Tail. Therefore, the rule that best matches the visual features is activated, leading to the classification of the image as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 7: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>Staffordshire Bull Terrier</response>
+
+Features:
+- Black coat
+- White markings on the face
+- Muscular build
+- Pointed ears
+- Tail
+
+KB:
+- IF Black coat with white markings on the face AND Muscular build AND Pointed ears AND Tail THEN Staffordshire Bull Terrier
+
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: Black coat with white markings on the face, muscular build, pointed ears, and a tail. Therefore, the rule that best matches the visual features is activated, leading to the classification of the image as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 8: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>Staffordshire Bull Terrier</response>
+
+Features:
+- Black and white fur
+- Pointed ears
+- Dark eyes
+- Dark nose
+- Collar
+
+KB:
+- IF Black and white fur AND Pointed ears AND Dark eyes AND Dark nose AND Collar THEN Staffordshire Bull Terrier
+
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: Black and white fur, pointed ears, dark eyes, dark nose, and collar are all present in the image, which corresponds to the Staffordshire Bull Terrier class.
+----------------------------------------
+Query 9: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>Staffordshire Bull Terrier</response>
+
+Features:
+- Black coat
+- White patch on the chest
+- Pointed ears
+- Blue eyes
+- Short snout
+- Muscular build
+
+KB:
+- IF Black coat with white patch on the chest AND Pointed ears AND Blue eyes AND Short snout AND Muscular build THEN Staffordshire Bull Terrier
+
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: Black coat with white patch on the chest, Pointed ears, Blue eyes, Short snout, and Muscular build.
+----------------------------------------
+Query 10: Expected: [Ragdoll] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>Ragdoll</response>
+
+Features:
+- Short, straight fur
+- Blue eyes
+- Blue nose
+- White paws
+
+KB:
+- IF Short, straight fur AND Blue eyes AND Blue nose AND White paws THEN Ragdoll
+
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: Short, straight fur, Blue eyes, Blue nose, and White paws are all present in the image, confirming that the image is of a Ragdoll.
+----------------------------------------
+Query 11: Expected: [Ragdoll] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- White patch on the chest
+- Pointed ears
+- Blue eyes
+- Tail with a black tip
+KB:
+- IF Black fur with a white patch on the chest AND Pointed ears AND Blue eyes AND Tail with a black tip THEN Ragdoll
+Rule Check:
+- The extracted features match the rule in the KB: Black fur with a white patch on the chest, Pointed ears, Blue eyes, and Tail with a black tip.
+<response>Ragdoll</response>
+----------------------------------------
+Query 12: Expected: [Ragdoll] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>Staffordshire Bull Terrier</response>
+
+Features:
+- Black coat
+- White markings on the face
+- Muscular build
+- Pointed ears
+- Tail
+
+KB:
+- IF Black coat with white markings on the face AND Muscular build AND Pointed ears AND Tail THEN Staffordshire Bull Terrier
+
+Rule Check:
+- The image features a black dog with white markings on the face, a muscular build, pointed ears, and a tail, which matches the IF conditions of the rule for the Staffordshire Bull Terrier class. Therefore, the rule is activated, and the class is determined to be Staffordshire Bull Terrier.
+----------------------------------------
+Query 13: Expected: [Ragdoll] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- White patch on the chest
+- Pointed ears
+- Blue eyes
+- Tail with a black tip
+KB:
+- IF Black fur and white patch on the chest THEN Staffordshire Bull Terrier
+- IF Pointed ears and blue eyes THEN Ragdoll
+Rule Check:
+- The image has black fur and a white patch on the chest, which matches the rule for Staffordshire Bull Terrier.
+- The image has pointed ears and blue eyes, which matches the rule for Ragdoll.
+- Since the image has both features that match the rules for Staffordshire Bull Terrier and Ragdoll, we need to determine which rule is more specific. The rule for Staffordshire Bull Terrier is more specific because it includes the additional feature of black fur, which is not mentioned in the rule for Ragdoll.
+Classification: <response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 14: Expected: [Ragdoll] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>Staffordshire Bull Terrier</response>
+
+Features:
+- Black coat
+- White patch on the chest
+- Pointed ears
+- Muscular build
+- Tail
+
+KB:
+- IF Black coat with white patch on the chest AND Pointed ears AND Muscular build AND Tail THEN Staffordshire Bull Terrier
+
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: Black coat with white patch on the chest, Pointed ears, Muscular build, and Tail. Therefore, the class is Staffordshire Bull Terrier.
+----------------------------------------
+Query 15: Expected: [Ragdoll] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>Ragdoll</response>
+
+Features:
+- Short-haired
+- Black and white coloration
+- Pointed ears
+- Blue eyes
+- Tail with a black tip
+
+KB:
+- IF Short-haired AND Black and white coloration AND Pointed ears AND Blue eyes AND Tail with a black tip THEN Ragdoll
+
+Rule Check:
+- The extracted features match the IF-THEN rule for the Ragdoll class in the Knowledge Base. The short-haired, black and white coloration, pointed ears, blue eyes, and the tail with a black tip are all specific visual features that distinguish the Ragdoll from other classes seen in the examples.
+----------------------------------------
+Query 16: Expected: [Ragdoll] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>Staffordshire Bull Terrier</response>
+
+Features:
+- Black coat
+- Short hair
+- Muscular build
+- Pointed ears
+- Tail
+
+KB:
+- IF Black coat AND Short hair AND Muscular build AND Pointed ears AND Tail THEN Staffordshire Bull Terrier
+
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: Black coat, Short hair, Muscular build, Pointed ears, and Tail. Therefore, the rule that best matches the visual features is activated, leading to the classification of the image as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 17: Expected: [Ragdoll] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>Ragdoll</response>
+
+Features:
+- Short, straight fur
+- Blue eyes
+- White and grey fur pattern
+
+KB:
+- IF Short, straight fur AND Blue eyes AND White and grey fur pattern THEN Ragdoll
+
+Rule Check:
+- The extracted features of short, straight fur, blue eyes, and white and grey fur pattern match the logical rule derived from the examples, confirming the class as Ragdoll.
+----------------------------------------
+Query 18: Expected: [Ragdoll] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black fur
+- White patch on the chest
+- Pointed ears
+- Blue eyes
+KB:
+- IF Black fur and white patch on the chest THEN Staffordshire Bull Terrier
+- IF Pointed ears and blue eyes THEN Ragdoll
+Rule Check:
+- The image has black fur and a white patch on the chest, which matches the rule for Staffordshire Bull Terrier.
+- The image has pointed ears and blue eyes, which matches the rule for Ragdoll.
+- Since the image has both features that match the rules for Staffordshire Bull Terrier and Ragdoll, we need to determine which rule is more specific. The rule for Staffordshire Bull Terrier is more specific because it includes the additional feature of black fur, which is not mentioned in the rule for Ragdoll.
+Classification: <response>Staffordshire Bull Terrier</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9): 0.7222
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [Havanese] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Short, curly hair
+- Black and white coloration
+- Small, round ears
+- Small, dark eyes
+- Small, black nose
+- Black collar with a tag
+- Black and white face
+- Black and white fur
+- Black and white paws
+- Black and white tail
+- Black and white legs
+- Black and white body
+- Black and white head
+- Black and white neck
+- Black and white ears
+- Black and white eyes
+- Black and white nose
+- Black and white mouth
+- Black and white whiskers
+- Black and white fur on the face
+- Black and white fur on the body
+- Black and white fur on the legs
+- Black and white fur on the neck
+- Black and white fur on the ears
+- Black and white fur on the eyes
+- Black and white fur on the nose
+- Black and white fur on the mouth
+- Black and white fur on the whiskers
+- Black and white fur on the face
+- Black and white fur on the body
+- Black and white fur on the legs
+- Black and white fur on the neck
+- Black and white fur on the ears
+- Black and white fur on the eyes
+- Black and white fur on the nose
+- Black and white fur on the mouth
+- Black and white fur on the whiskers
+- Black and white fur on the face
+- Black and white fur on the body
+- Black and white fur on the legs
+- Black and white fur on the neck
+- Black and white fur on the ears
+- Black and white fur on the eyes
+- Black and white fur on the nose
+- Black and white fur on the mouth
+- Black and white fur on the whiskers
+- Black and white fur on the face
+- Black and white fur on the body
+- Black and white fur on the legs
+- Black and white fur on the neck
+- Black and white fur on the ears
+- Black and white fur on the eyes
+- Black and white fur on the nose
+- Black and white fur on the mouth
+- Black and white fur on the whiskers
+- Black and white fur on the face
+- Black and white fur on the body
+- Black and white fur on the legs
+- Black and white fur on the neck
+- Black and white fur on the ears
+- Black and white fur on the eyes
+- Black and white fur on the nose
+- Black and white fur on the mouth
+- Black and white fur on the whiskers
+- Black and white fur on the face
+- Black and white fur on the body
+- Black and white fur on the legs
+- Black and white fur on the neck
+- Black and white fur on the ears
+- Black and white fur on the eyes
+- Black and white fur on the nose
+- Black and white fur on the mouth
+- Black and white fur on the whiskers
+- Black and white fur on the face
+- Black and white fur on the body
+- Black and white fur on the legs
+- Black and white fur on the neck
+- Black and white fur on the ears
+- Black and white fur on the eyes
+- Black and white fur on the nose
+- Black and white fur on the mouth
+- Black and white fur on the whiskers
+- Black and white fur on the face
+- Black and white fur on the body
+- Black and white fur on the legs
+- Black and white fur on the neck
+- Black and white fur on the ears
+- Black and white fur on the eyes
+- Black and white fur on the nose
+- Black and white fur on the mouth
+- Black and white fur on the whiskers
+- Black and white fur on the face
+- Black and white fur on the body
+- Black and white fur on the legs
+- Black and white fur on the neck
+- Black and white fur on the ears
+- Black and white fur on the eyes
+- Black and white fur on the nose
+- Black and white fur on the mouth
+- Black and white fur on the whiskers
+- Black and white fur on the face
+- Black and white fur on the body
+- Black and white fur on the legs
+- Black and white fur on the neck
+- Black and white fur on the ears
+- Black and white fur on the eyes
+- Black and white fur on the nose
+- Black and white fur on the mouth
+- Black and white fur on the whiskers
+- Black and white fur on the face
+- Black and white fur on the body
+- Black and white fur on the legs
+- Black and white fur on the neck
+- Black and white fur on the ears
+- Black and white fur on the eyes
+- Black and white fur on the nose
+- Black and white fur on the mouth
+- Black and white fur on the whiskers
+- Black
+----------------------------------------
+Query 2: Expected: [Havanese] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Short, curly hair
+- Black and white coloration
+- Small, round ears
+- Small, dark eyes
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black collar
+- Small, black tag
+- Small, black leash
+- Small, black and white face
+- Small, black and white body
+- Small, black and white legs
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+----------------------------------------
+Query 3: Expected: [Havanese] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short, curly hair
+- Small, round ears
+- Black and white fur
+- Small, dark eyes
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Black collar
+- Red heart
+- Green grass
+- White fence
+- Green leaves
+- Black floor
+- Brown nose
+- Brown eyes
+- Brown ears
+- Brown fur
+- Black collar
+- Red heart
+- Green grass
+- White fence
+- Green leaves
+- Black floor
+KB:
+- IF Short, curly hair AND Small, round ears AND Black and white fur AND Small, dark eyes AND Small, black nose AND Small, black mouth AND Small, black paws AND Black collar AND Red heart AND Green grass AND White fence AND Green leaves AND Black floor THEN Havanese
+- IF Short, curly hair AND Small, round ears AND Black and white fur AND Small, dark eyes AND Small, black nose AND Small, black mouth AND Small, black paws AND Black collar AND Red heart AND Green grass AND White fence AND Green leaves AND Black floor THEN American Pit Bull Terrier
+- IF Short, curly hair AND Small, round ears AND Black and white fur AND Small, dark eyes AND Small, black nose AND Small, black mouth AND Small, black paws AND Black collar AND Red heart AND Green grass AND White fence AND Green leaves AND Black floor THEN Samoyed
+Rule Check:
+- The image has short, curly hair, small, round ears, black and white fur, small, dark eyes, small, black nose, small, black mouth, small, black paws, a black collar, a red heart, green grass, a white fence, green leaves, and a black floor. These features match the IF conditions of the Havanese rule.
+Classification: <response>Havanese</response>
+----------------------------------------
+Query 4: Expected: [Havanese] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Curly hair
+- Small size
+- Round face
+- Black nose
+- Green collar
+KB:
+- IF Black and white fur AND Curly hair AND Small size AND Round face AND Black nose THEN Havanese
+- IF Green collar THEN Havanese
+Rule Check:
+- The image has Black and white fur, Curly hair, Small size, Round face, and Black nose, which matches the IF condition of the Havanese class.
+- The image also has a Green collar, which matches the additional condition of the Havanese class.
+Classification: <response>Havanese</response>
+----------------------------------------
+Query 5: Expected: [Havanese] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- White fur
+- Red collar
+- Red heart
+- Brown nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black nose
+- Black eyes
+- Black ears
+- Black paws
+- Black collar
+- Black
+----------------------------------------
+Query 6: Expected: [Havanese] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short, curly hair
+- Small, round ears
+- Dark, expressive eyes
+- Black nose
+- White, fluffy fur
+KB:
+- IF Short, curly hair AND Small, round ears AND Dark, expressive eyes AND Black nose AND White, fluffy fur THEN Havanese
+Rule Check:
+- The extracted features match the IF conditions of the Havanese rule in the Knowledge Base.
+- The extracted features include short, curly hair, small, round ears, dark, expressive eyes, black nose, and white, fluffy fur, which are all specific visual features that distinguish the Havanese breed.
+- Therefore, the extracted features match the rule from the Knowledge Base, indicating that the class of this image is Havanese.
+Classification: <response>Havanese</response>
+----------------------------------------
+Query 7: Expected: [Havanese] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Short, curly hair
+- Black and white coloration
+- Small, round ears
+- Small, dark eyes
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Black collar
+- Red heart
+- Green grass
+- White fence
+- Green leaves
+- Green background
+- Brown background
+- White background
+- Black background
+- Red background
+- Yellow background
+- Blue background
+- Orange background
+- Purple background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+- Blue background
+- Purple background
+- Yellow background
+- Orange background
+- Red background
+- Green background
+
+----------------------------------------
+Query 8: Expected: [Havanese] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short, curly fur
+- Black and white coloration
+- Small, round ears
+- Small, dark eyes
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Black collar
+- Red heart
+- Wooden floor
+- Green grass
+- White fence
+- Green leaves
+- Brown background
+KB:
+- IF Short, curly fur AND Black and white coloration AND Small, round ears AND Small, dark eyes AND Small, black nose AND Small, black mouth AND Small, black paws AND Small, black tail AND Black collar AND Red heart AND Wooden floor AND Green grass AND White fence AND Green leaves AND Brown background THEN Havanese
+Rule Check:
+- The extracted features match the IF conditions of the Havanese rule in the KB.
+- The extracted features include Short, curly fur, Black and white coloration, Small, round ears, Small, dark eyes, Small, black nose, Small, black mouth, Small, black paws, Small, black tail, Black collar, Red heart, Wooden floor, Green grass, White fence, Green leaves, and Brown background.
+- Therefore, the extracted features match the Havanese rule in the KB.
+Classification: <response>Havanese</response>
+----------------------------------------
+Query 9: Expected: [Havanese] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Curly hair
+- Small size
+- Round face
+- Black nose
+- Red leash
+
+KB:
+- IF Black and white fur AND Curly hair AND Small size AND Round face AND Black nose THEN Havanese
+- IF Black and white fur AND Curly hair AND Small size AND Round face AND Red leash THEN Havanese
+
+Rule Check:
+- The extracted features match the IF conditions of the Havanese rule in the KB. The black and white fur, curly hair, small size, round face, black nose, and red leash are all features that are present in the Havanese class examples.
+
+Classification:
+<response>Havanese</response>
+----------------------------------------
+Query 10: Expected: [American Pit Bull Terrier] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Short, curly hair
+- Black and white coloration
+- Small, round ears
+- Small, dark eyes
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+----------------------------------------
+Query 11: Expected: [American Pit Bull Terrier] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Short, curly hair
+- Black and white coloration
+- Small, round ears
+- Small, dark eyes
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+----------------------------------------
+Query 12: Expected: [American Pit Bull Terrier] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Short, curly hair
+- Black and white coloration
+- Small, round ears
+- Small, dark eyes
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black collar
+- Small, black leash
+- Small, black tag
+- Small, black bone
+- Small, black ball
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black fris
+----------------------------------------
+Query 13: Expected: [American Pit Bull Terrier] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Short, curly hair
+- Black and white coloration
+- Small, round ears
+- Small, dark eyes
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+----------------------------------------
+Query 14: Expected: [American Pit Bull Terrier] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Short, curly hair
+- Black and white coloration
+- Small, round ears
+- Small, dark eyes
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+----------------------------------------
+Query 15: Expected: [American Pit Bull Terrier] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Short, curly hair
+- Black and white coloration
+- Small, round ears
+- Small, dark eyes
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black collar
+- Small, black leash
+- Small, black tag
+- Small, black bone
+- Small, black ball
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black fris
+----------------------------------------
+Query 16: Expected: [American Pit Bull Terrier] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Short, curly hair
+- Black and white coloration
+- Small, round ears
+- Small, dark eyes
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+----------------------------------------
+Query 17: Expected: [American Pit Bull Terrier] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Short, curly hair
+- Black and white coloration
+- Small, round ears
+- Small, dark eyes
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black collar
+- Small, black leash
+- Small, black and white face
+- Small, black and white body
+- Small, black and white legs
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white collar
+- Small, black and white leash
+- Small, black and white face
+- Small, black and white body
+- Small, black and white legs
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white collar
+- Small, black and white leash
+- Small, black and white face
+- Small, black and white body
+- Small, black and white legs
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white collar
+- Small, black and white leash
+- Small, black and white face
+- Small, black and white body
+- Small, black and white legs
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white collar
+- Small, black and white leash
+- Small, black and white face
+- Small, black and white body
+- Small, black and white legs
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white collar
+- Small, black and white leash
+- Small, black and white face
+- Small, black and white body
+- Small, black and white legs
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white collar
+- Small, black and white leash
+- Small, black and white face
+- Small, black and white body
+- Small, black and white legs
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white collar
+- Small, black and white leash
+- Small, black and white face
+- Small, black and white body
+- Small, black and white legs
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white collar
+- Small, black and white leash
+- Small, black and white face
+- Small, black and white body
+- Small, black and white legs
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white collar
+- Small, black and white leash
+- Small, black and white face
+- Small, black and white body
+- Small, black and white legs
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white collar
+- Small, black and white leash
+- Small, black and white face
+- Small, black and white body
+- Small, black and white legs
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white collar
+- Small, black and white leash
+- Small, black and white face
+- Small, black and white body
+- Small, black and white legs
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white collar
+- Small, black and white leash
+- Small, black and white face
+- Small, black and white body
+- Small, black and white legs
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white collar
+- Small, black and white leash
+- Small, black and white face
+- Small, black and white body
+- Small, black and white legs
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white collar
+- Small, black and white leash
+- Small, black and white face
+- Small, black and white body
+- Small, black and white legs
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white collar
+- Small, black and white leash
+- Small, black and white face
+- Small, black and white body
+- Small, black and white legs
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white collar
+- Small, black and white leash
+- Small, black and white face
+- Small, black and white body
+- Small, black and white legs
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white collar
+----------------------------------------
+Query 18: Expected: [American Pit Bull Terrier] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Short, curly hair
+- Black and white coloration
+- Small, round ears
+- Small, dark eyes
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black collar
+- Small, black leash
+- Small, black tag
+- Small, black bone
+- Small, black ball
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black fris
+----------------------------------------
+Query 19: Expected: [Samoyed] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Short, curly hair
+- Black and white coloration
+- Small, round ears
+- Small, dark eyes
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+----------------------------------------
+Query 20: Expected: [Samoyed] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Short, curly hair
+- Black and white coloration
+- Small, round ears
+- Small, dark eyes
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black collar
+- Small, black leash
+- Small, black and white face
+- Small, black and white body
+- Small, black and white legs
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and
+----------------------------------------
+Query 21: Expected: [Samoyed] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Short, curly hair
+- Black and white coloration
+- Small, round ears
+- Small, dark eyes
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black collar
+- Small, black leash
+- Small, black tag
+- Small, black bone
+- Small, black ball
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black frisbee
+- Small, black fris
+----------------------------------------
+Query 22: Expected: [Samoyed] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Short, curly hair
+- Black and white coloration
+- Small, round ears
+- Small, dark eyes
+- Small, black nose
+- Black collar
+- Red tag
+- Green grass in the background
+KB:
+- IF Short, curly hair AND Black and white coloration AND Small, round ears AND Small, dark eyes AND Small, black nose AND Black collar AND Red tag AND Green grass in the background THEN Havanese
+Rule Check:
+- The extracted features match the IF conditions of the Havanese rule in the KB.
+- The short, curly hair, black and white coloration, small round ears, small dark eyes, small black nose, black collar, red tag, and green grass in the background are all specific visual features that distinguish the Havanese breed.
+- Therefore, the extracted features match the Havanese rule in the KB, and the final classification is Havanese.
+----------------------------------------
+Query 23: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short, curly hair
+- Black and white coloration
+- Small, round ears
+- Small, dark eyes
+- Small, black nose
+- Black collar
+- Red tag
+- Green grass background
+KB:
+- IF Short, curly hair AND Black and white coloration AND Small, round ears AND Small, dark eyes AND Small, black nose THEN Havanese
+- IF Short, curly hair AND Black and white coloration AND Small, round ears AND Small, dark eyes AND Small, black nose AND Black collar AND Red tag THEN Havanese
+- IF Short, curly hair AND Black and white coloration AND Small, round ears AND Small, dark eyes AND Small, black nose AND Green grass background THEN Havanese
+Rule Check:
+- The image has short, curly hair, black and white coloration, small, round ears, small, dark eyes, small, black nose, black collar, and a red tag. These features match the IF conditions of the Havanese class rules.
+Classification: <response>Havanese</response>
+----------------------------------------
+Query 24: Expected: [Samoyed] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short, curly hair
+- Black and white coloration
+- Small, round ears
+- Small, dark eyes
+- Small, black nose
+- Black collar
+- Red tag
+- Green grass in the background
+KB:
+- IF Short, curly hair AND Black and white coloration AND Small, round ears AND Small, dark eyes AND Small, black nose AND Black collar AND Red tag AND Green grass in the background THEN Havanese
+Rule Check:
+- The extracted features match the IF conditions of the Havanese rule in the KB.
+- The short, curly hair, black and white coloration, small round ears, small dark eyes, small black nose, black collar, red tag, and green grass in the background are all specific visual features that distinguish the Havanese breed.
+- Therefore, the extracted features match the Havanese rule in the KB, and the final classification is Havanese.
+<response>Havanese</response>
+----------------------------------------
+Query 25: Expected: [Samoyed] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Short, curly hair
+- Black and white coloration
+- Small, round ears
+- Small, dark eyes
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black collar
+- Small, black leash
+- Small, black and white face
+- Small, black and white body
+- Small, black and white legs
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and white tail
+- Small, black and white ears
+- Small, black and white eyes
+- Small, black and white nose
+- Small, black and white mouth
+- Small, black and white paws
+- Small, black and
+----------------------------------------
+Query 26: Expected: [Samoyed] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Short, curly hair
+- Black and white coloration
+- Small, round ears
+- Small, dark eyes
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+----------------------------------------
+Query 27: Expected: [Samoyed] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Short, curly hair
+- Black and white coloration
+- Small, round ears
+- Small, dark eyes
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+- Small, black mouth
+- Small, black paws
+- Small, black tail
+- Small, black ears
+- Small, black nose
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9): 0.1852
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Small size
+- Short snout
+- Black nose
+- Black eyes
+- Black and white collar
+
+KB:
+- IF Black and white fur AND Pointed ears AND Small size AND Short snout AND Black nose AND Black eyes AND Black and white collar THEN Japanese Chin
+
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base. The black and white fur, pointed ears, small size, short snout, black nose, black eyes, and black and white collar are all specific visual features that distinguish the image from the other classes.
+
+Classification:
+<response>Japanese Chin</response>
+----------------------------------------
+Query 2: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black and white face
+- Black and white body
+- Black and white tail
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white face AND Black and white body AND Black and white tail THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the KB.
+- The extracted features include Black and white fur, Pointed ears, Black nose, Black eyes, Black and white face, Black and white body, and Black and white tail.
+- Therefore, the rule that best matches the visual features is the Japanese Chin rule.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 3: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Small size
+- Round face
+- Black nose
+- White chest
+- Black eyes
+- Black collar with white paw prints
+KB:
+- IF Black and white fur AND Pointed ears AND Small size AND Round face AND Black nose AND White chest AND Black eyes AND Black collar with white paw prints THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the KB.
+- The extracted features include Black and white fur, Pointed ears, Small size, Round face, Black nose, White chest, Black eyes, and a Black collar with white paw prints.
+- Therefore, the rule that best matches the visual features is: IF Black and white fur AND Pointed ears AND Small size AND Round face AND Black nose AND White chest AND Black eyes AND Black collar with white paw prints THEN Japanese Chin.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 4: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Small size
+- Short snout
+- Black nose
+- Black eyes
+- Black paws
+KB:
+- IF Black and white fur AND Pointed ears AND Small size AND Short snout AND Black nose AND Black eyes AND Black paws THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the KB.
+- The extracted features include Black and white fur, Pointed ears, Small size, Short snout, Black nose, Black eyes, and Black paws, which are all present in the image.
+- Therefore, the rule that best matches the visual features is the Japanese Chin rule.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 5: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Small size
+- Short snout
+- Black nose
+- Black eyes
+- Black and white tail
+
+KB:
+- IF Black and white fur AND Pointed ears AND Small size AND Short snout AND Black nose AND Black eyes AND Black and white tail THEN Japanese Chin
+
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base. The black and white fur, pointed ears, small size, short snout, black nose, black eyes, and black and white tail are all specific visual features that distinguish the image from the other classes.
+
+Classification:
+<response>Japanese Chin</response>
+----------------------------------------
+Query 6: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black and white tail
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white tail THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base.
+- The extracted features include Black and white fur, Pointed ears, Black nose, Black eyes, and Black and white tail, which are all present in the Target Image.
+- Therefore, the extracted features match the rule from the Knowledge Base, indicating that the class of the Target Image is Japanese Chin.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 7: Expected: [Japanese Chin] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black and white tail
+- Black and white legs
+- Black and white paws
+- Black and white collar
+- Black and white ears
+- Black and white face
+- Black and white body
+- Black
+----------------------------------------
+Query 8: Expected: [Japanese Chin] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Black and white fur
+- Pointed ears
+- Small size
+- Short snout
+- Black nose
+- Black eyes
+- Black mouth
+- Black paws
+- Black and white tail
+- Black and white legs
+- Black and white collar
+- Black and white fur on the chest
+- Black and white fur on the back
+- Black and white fur on the neck
+- Black and white fur on the head
+- Black and white fur on the ears
+- Black and white fur on the legs
+- Black and white fur on the paws
+- Black and white fur on the chest
+- Black and white fur on the back
+- Black and white fur on the neck
+- Black and white fur on the head
+- Black and white fur on the ears
+- Black and white fur on the legs
+- Black and white fur on the paws
+- Black and white fur on the chest
+- Black and white fur on the back
+- Black and white fur on the neck
+- Black and white fur on the head
+- Black and white fur on the ears
+- Black and white fur on the legs
+- Black and white fur on the paws
+- Black and white fur on the chest
+- Black and white fur on the back
+- Black and white fur on the neck
+- Black and white fur on the head
+- Black and white fur on the ears
+- Black and white fur on the legs
+- Black and white fur on the paws
+- Black and white fur on the chest
+- Black and white fur on the back
+- Black and white fur on the neck
+- Black and white fur on the head
+- Black and white fur on the ears
+- Black and white fur on the legs
+- Black and white fur on the paws
+- Black and white fur on the chest
+- Black and white fur on the back
+- Black and white fur on the neck
+- Black and white fur on the head
+- Black and white fur on the ears
+- Black and white fur on the legs
+- Black and white fur on the paws
+- Black and white fur on the chest
+- Black and white fur on the back
+- Black and white fur on the neck
+- Black and white fur on the head
+- Black and white fur on the ears
+- Black and white fur on the legs
+- Black and white fur on the paws
+- Black and white fur on the chest
+- Black and white fur on the back
+- Black and white fur on the neck
+- Black and white fur on the head
+- Black and white fur on the ears
+- Black and white fur on the legs
+- Black and white fur on the paws
+- Black and white fur on the chest
+- Black and white fur on the back
+- Black and white fur on the neck
+- Black and white fur on the head
+- Black and white fur on the ears
+- Black and white fur on the legs
+- Black and white fur on the paws
+- Black and white fur on the chest
+- Black and white fur on the back
+- Black and white fur on the neck
+- Black and white fur on the head
+- Black and white fur on the ears
+- Black and white fur on the legs
+- Black and white fur on the paws
+- Black and white fur on the chest
+- Black and white fur on the back
+- Black and white fur on the neck
+- Black and white fur on the head
+- Black and white fur on the ears
+- Black and white fur on the legs
+- Black and white fur on the paws
+- Black and white fur on the chest
+- Black and white fur on the back
+- Black and white fur on the neck
+- Black and white fur on the head
+- Black and white fur on the ears
+- Black and white fur on the legs
+- Black and white fur on the paws
+- Black and white fur on the chest
+- Black and white fur on the back
+- Black and white fur on the neck
+- Black and white fur on the head
+- Black and white fur on the ears
+- Black and white fur on the legs
+- Black and white fur on the paws
+- Black and white fur on the chest
+- Black and white fur on the back
+- Black and white fur on the neck
+- Black and white fur on the head
+- Black and white fur on the ears
+- Black and white fur on the legs
+- Black and white fur on the paws
+- Black and white fur on the chest
+- Black and white fur on the back
+- Black and white fur on the neck
+- Black and white fur on the head
+- Black and white fur on the ears
+- Black and white fur on the legs
+- Black and white fur on the paws
+- Black and white fur on the
+----------------------------------------
+Query 9: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Small size
+- Short snout
+- Black nose
+- Black eyes
+- Black and white tail
+
+KB:
+- IF Black and white fur AND Pointed ears AND Small size AND Short snout AND Black nose AND Black eyes AND Black and white tail THEN Japanese Chin
+
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base. The black and white fur, pointed ears, small size, short snout, black nose, black eyes, and black and white tail are all specific visual features that distinguish the image from the other classes.
+
+Classification:
+<response>Japanese Chin</response>
+----------------------------------------
+Query 10: Expected: [Beagle] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black and white tail
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white tail THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF condition of the Japanese Chin rule in the KB.
+- The extracted features include Black and white fur, Pointed ears, Black nose, Black eyes, and Black and white tail, which are all present in the Target Image.
+- Therefore, the extracted features match the rule in the KB, indicating that the class of the Target Image is Japanese Chin.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 11: Expected: [Beagle] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Small size
+- Short snout
+- Black nose
+- Black eyes
+- Black paws
+KB:
+- IF Black and white fur AND Pointed ears AND Small size AND Short snout AND Black nose AND Black eyes AND Black paws THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the KB.
+- The extracted features include Black and white fur, Pointed ears, Small size, Short snout, Black nose, Black eyes, and Black paws, which are all present in the image.
+- Therefore, the rule that best matches the visual features is the Japanese Chin rule.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 12: Expected: [Beagle] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black and white tail
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white tail THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base.
+- The extracted features include Black and white fur, Pointed ears, Black nose, Black eyes, and Black and white tail, which are all present in the Target Image.
+- Therefore, the extracted features match the rule from the Knowledge Base, indicating that the class of the Target Image is Japanese Chin.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 13: Expected: [Beagle] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black and white tail
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white tail THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base.
+- The extracted features include Black and white fur, Pointed ears, Black nose, Black eyes, and Black and white tail, which are all present in the Target Image.
+- Therefore, the extracted features match the rule from the Knowledge Base, indicating that the class of the Target Image is Japanese Chin.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 14: Expected: [Beagle] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black and white collar
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white collar THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base.
+- The extracted features include Black and white fur, Pointed ears, Black nose, Black eyes, and Black and white collar, which are all present in the Target Image.
+- Therefore, the extracted features match the rule from the Knowledge Base that specifies the visual features of a Japanese Chin.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 15: Expected: [Beagle] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black and white tail
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white tail THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base.
+- The extracted features include Black and white fur, Pointed ears, Black nose, Black eyes, and Black and white tail, which are all present in the Target Image.
+- Therefore, the extracted features match the rule from the Knowledge Base, indicating that the class of the Target Image is Japanese Chin.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 16: Expected: [Beagle] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black and white tail
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white tail THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base.
+- The extracted features include Black and white fur, Pointed ears, Black nose, Black eyes, and Black and white tail, which are all present in the Target Image.
+- Therefore, the extracted features match the rule from the Knowledge Base, indicating that the class of the Target Image is Japanese Chin.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 17: Expected: [Beagle] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black collar
+- Red leash
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose THEN Japanese Chin
+- IF Black and white fur AND Pointed ears AND Black nose THEN Beagle
+- IF Black and white fur AND Pointed ears AND Black nose THEN Chihuahua
+- IF Black and white fur AND Pointed ears AND Black nose THEN Staffordshire Bull Terrier
+Rule Check:
+- The image has black and white fur, pointed ears, and a black nose, which matches the features of both Japanese Chin and Beagle.
+- The presence of a red leash and a black collar suggests a domesticated pet, which is more indicative of a dog like a Beagle.
+- The shape of the ears and the overall appearance are more consistent with a Beagle.
+Classification: <response>Beagle</response>
+----------------------------------------
+Query 18: Expected: [Beagle] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black and white tail
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white tail THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base.
+- The extracted features include Black and white fur, Pointed ears, Black nose, Black eyes, and Black and white tail, which are all present in the Target Image.
+- Therefore, the extracted features match the rule from the Knowledge Base, indicating that the class of the Target Image is Japanese Chin.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 19: Expected: [Chihuahua] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Small size
+- Short snout
+- Dark eyes
+- Dark nose
+KB:
+- IF Black and white fur AND Pointed ears AND Small size AND Short snout AND Dark eyes AND Dark nose THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the KB.
+- The extracted features include Black and white fur, Pointed ears, Small size, Short snout, Dark eyes, and Dark nose.
+- Therefore, the rule that best matches the visual features is: IF Black and white fur AND Pointed ears AND Small size AND Short snout AND Dark eyes AND Dark nose THEN Japanese Chin.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 20: Expected: [Chihuahua] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black and white tail
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white tail THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base.
+- The extracted features include Black and white fur, Pointed ears, Black nose, Black eyes, and Black and white tail, which are all present in the Target Image.
+- Therefore, the extracted features match the rule from the Knowledge Base, indicating that the class of the Target Image is Japanese Chin.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 21: Expected: [Chihuahua] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Small size
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Small size THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base.
+- The extracted features include Black and white fur, Pointed ears, Black nose, and Small size, which are all present in the Target Image.
+- Therefore, the extracted features match the rule from the Knowledge Base that specifies the visual features of a Japanese Chin.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 22: Expected: [Chihuahua] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black and white tail
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white tail THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base.
+- The extracted features include Black and white fur, Pointed ears, Black nose, Black eyes, and Black and white tail, which are all present in the Target Image.
+- Therefore, the extracted features match the rule from the Knowledge Base, indicating that the class of the Target Image is Japanese Chin.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 23: Expected: [Chihuahua] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Small size
+- Short snout
+- Dark eyes
+- Dark nose
+KB:
+- IF Black and white fur AND Pointed ears AND Small size AND Short snout AND Dark eyes AND Dark nose THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base.
+- The extracted features include Black and white fur, Pointed ears, Small size, Short snout, Dark eyes, and Dark nose, which are all present in the Target Image.
+- Therefore, the extracted features match the rule from the Knowledge Base, indicating that the class of the Target Image is Japanese Chin.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 24: Expected: [Chihuahua] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black and white face
+- Black and white body
+- Black and white legs
+- Black and white tail
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white face AND Black and white body AND Black and white legs AND Black and white tail THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the KB.
+- The extracted features include Black and white fur, Pointed ears, Black nose, Black eyes, Black and white face, Black and white body, Black and white legs, and Black and white tail.
+- Therefore, the rule that best matches the visual features is the Japanese Chin rule.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 25: Expected: [Chihuahua] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short hair
+- Pointed ears
+- Black and white coloration
+- Small size
+KB:
+- IF Short hair AND Pointed ears AND Black and white coloration AND Small size THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the rule for Japanese Chin.
+- Short hair matches the short hair condition.
+- Pointed ears matches the pointed ears condition.
+- Black and white coloration matches the coloration condition.
+- Small size matches the small size condition.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 26: Expected: [Chihuahua] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Blue eyes
+- Small size
+KB:
+- IF Black and white fur AND Pointed ears AND Blue eyes AND Small size THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base.
+- The extracted features include Black and white fur, Pointed ears, Blue eyes, and Small size, which are all present in the Target Image.
+- Therefore, the extracted features match the rule from the Knowledge Base that specifies the visual features of a Japanese Chin.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 27: Expected: [Chihuahua] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short hair
+- Pointed ears
+- Black and white coloration
+- Small size
+KB:
+- IF Short hair AND Pointed ears AND Black and white coloration AND Small size THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the rule for Japanese Chin, specifically the short hair, pointed ears, black and white coloration, and small size.
+- The extracted features do not match the IF conditions of the rules for Chihuahua, Staffordshire Bull Terrier, or Beagle.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 28: Expected: [Staffordshire Bull Terrier] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black and white tail
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white tail THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base.
+- The extracted features include Black and white fur, Pointed ears, Black nose, Black eyes, and Black and white tail, which are all present in the Target Image.
+- Therefore, the extracted features match the rule from the Knowledge Base, indicating that the class of the Target Image is Japanese Chin.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 29: Expected: [Staffordshire Bull Terrier] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black and white face
+- Black and white body
+- Black and white legs
+- Black and white tail
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white face AND Black and white body AND Black and white legs AND Black and white tail THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the KB.
+- The extracted features include Black and white fur, Pointed ears, Black nose, Black eyes, Black and white face, Black and white body, Black and white legs, and Black and white tail.
+- Therefore, the rule that best matches the visual features is the Japanese Chin rule.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 30: Expected: [Staffordshire Bull Terrier] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black and white collar
+- Black and white ball
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white collar THEN Japanese Chin
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white collar THEN Beagle
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white collar THEN Chihuahua
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white collar THEN Staffordshire Bull Terrier
+Rule Check:
+- The image has Black and white fur, Pointed ears, Black nose, Black eyes, and a Black and white collar. These features match the IF conditions of the Japanese Chin, Beagle, Chihuahua, and Staffordshire Bull Terrier rules.
+- The image does not have the specific features that would match the IF conditions of the Japanese Chin, Beagle, Chihuahua, and Staffordshire Bull Terrier rules.
+- The image does not have the specific features that would match the IF conditions of the Japanese Chin, Beagle, Chihuahua, and Staffordshire Bull Terrier rules.
+- The image does not have the specific features that would match the IF conditions of the Japanese Chin, Beagle, Chihuahua, and Staffordshire Bull Terrier rules.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 31: Expected: [Staffordshire Bull Terrier] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black collar
+- Black and white tail
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black collar AND Black and white tail THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the KB.
+- The extracted features include Black and white fur, Pointed ears, Black nose, Black eyes, Black collar, and Black and white tail.
+- Therefore, the rule that best matches the visual features is: IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black collar AND Black and white tail THEN Japanese Chin.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 32: Expected: [Staffordshire Bull Terrier] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black and white tail
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white tail THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the Knowledge Base.
+- The extracted features include Black and white fur, Pointed ears, Black nose, Black eyes, and Black and white tail, which are all present in the Target Image.
+- Therefore, the extracted features match the rule from the Knowledge Base, indicating that the class of the Target Image is Japanese Chin.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 33: Expected: [Staffordshire Bull Terrier] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black and white face
+- Black and white body
+- Black and white legs
+- Black and white tail
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white face AND Black and white body AND Black and white legs AND Black and white tail THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the KB.
+- The extracted features include Black and white fur, Pointed ears, Black nose, Black eyes, Black and white face, Black and white body, Black and white legs, and Black and white tail.
+- Therefore, the rule that best matches the visual features is the Japanese Chin rule.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 34: Expected: [Staffordshire Bull Terrier] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black mouth
+- Black tongue
+- Black collar
+- Black tail
+- Black paws
+- Black and white face
+- Black and white body
+- Black and white legs
+- Black and white head
+- Black and white neck
+- Black and white eyes
+- Black and white ears
+- Black and white mouth
+- Black and white tongue
+- Black and white collar
+- Black and white tail
+- Black and white paws
+- Black and white face
+- Black and white body
+- Black and white legs
+- Black and white head
+- Black and white neck
+- Black and white eyes
+- Black and white ears
+- Black and white mouth
+- Black and white tongue
+- Black and white collar
+- Black and white tail
+- Black and white paws
+- Black and white face
+- Black and white body
+- Black and white legs
+- Black and white head
+- Black and white neck
+- Black and white eyes
+- Black and white ears
+- Black and white mouth
+- Black and white tongue
+- Black and white collar
+- Black and white tail
+- Black and white paws
+- Black and white face
+- Black and white body
+- Black and white legs
+- Black and white head
+- Black and white neck
+- Black and white eyes
+- Black and white ears
+- Black and white mouth
+- Black and white tongue
+- Black and white collar
+- Black and white tail
+- Black and white paws
+- Black and white face
+- Black and white body
+- Black and white legs
+- Black and white head
+- Black and white neck
+- Black and white eyes
+- Black and white ears
+- Black and white mouth
+- Black and white tongue
+- Black and white collar
+- Black and white tail
+- Black and white paws
+- Black and white face
+- Black and white body
+- Black and white legs
+- Black and white head
+- Black and white neck
+- Black and white eyes
+- Black and white ears
+- Black and white mouth
+- Black and white tongue
+- Black and white collar
+- Black and white tail
+- Black and white paws
+- Black and white face
+- Black and white body
+- Black and white legs
+- Black and white head
+- Black and white neck
+- Black and white eyes
+- Black and white ears
+- Black and white mouth
+- Black and white tongue
+- Black and white collar
+- Black and white tail
+- Black and white paws
+- Black and white face
+- Black and white body
+- Black and white legs
+- Black and white head
+- Black and white neck
+- Black and white eyes
+- Black and white ears
+- Black and white mouth
+- Black and white tongue
+- Black and white collar
+- Black and white tail
+- Black and white paws
+- Black and white face
+- Black and white body
+- Black and white legs
+- Black and white head
+- Black and white neck
+- Black and white eyes
+- Black and white ears
+- Black and white mouth
+- Black and white tongue
+- Black and white collar
+- Black and white tail
+- Black and white paws
+- Black and white face
+- Black and white body
+- Black and white legs
+- Black and white head
+- Black and white neck
+- Black and white eyes
+- Black and white ears
+- Black and white mouth
+- Black and white tongue
+- Black and white collar
+- Black and white tail
+- Black and white paws
+- Black and white face
+- Black and white body
+- Black and white legs
+- Black and white head
+- Black and white neck
+- Black and white eyes
+- Black and white ears
+- Black and white mouth
+- Black and white tongue
+- Black and white collar
+- Black and white tail
+- Black and white paws
+- Black and white face
+- Black and white body
+- Black and white legs
+- Black and white head
+- Black and white neck
+- Black and white eyes
+- Black and white ears
+- Black and white mouth
+- Black and white tongue
+- Black and white collar
+- Black and white tail
+- Black and white paws
+- Black and white face
+- Black and white body
+- Black and white legs
+- Black and white head
+- Black and white neck
+- Black and white eyes
+- Black and white ears
+- Black and white mouth
+- Black and white tongue
+- Black and white collar
+- Black and white tail
+- Black and white paws
+- Black and white face
+- Black and white body
+- Black and white legs
+- Black and white head
+- Black and white neck
+- Black and
+----------------------------------------
+Query 35: Expected: [Staffordshire Bull Terrier] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black and white face
+- Black and white body
+- Black and white legs
+- Black and white tail
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white face AND Black and white body AND Black and white legs AND Black and white tail THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the KB.
+- The extracted features include Black and white fur, Pointed ears, Black nose, Black eyes, Black and white face, Black and white body, Black and white legs, and Black and white tail.
+- Therefore, the rule that best matches the visual features is the Japanese Chin rule.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+Query 36: Expected: [Staffordshire Bull Terrier] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white fur
+- Pointed ears
+- Black nose
+- Black eyes
+- Black and white tail
+- Black and white paws
+KB:
+- IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white tail AND Black and white paws THEN Japanese Chin
+Rule Check:
+- The extracted features match the IF conditions of the Japanese Chin rule in the KB.
+- The extracted features include Black and white fur, Pointed ears, Black nose, Black eyes, Black and white tail, and Black and white paws.
+- Therefore, the rule that best matches the visual features is: IF Black and white fur AND Pointed ears AND Black nose AND Black eyes AND Black and white tail AND Black and white paws THEN Japanese Chin.
+Classification: <response>Japanese Chin</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.2222

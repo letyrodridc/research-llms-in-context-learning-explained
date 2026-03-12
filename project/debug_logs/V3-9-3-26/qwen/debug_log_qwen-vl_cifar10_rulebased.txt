@@ -1,0 +1,1890 @@
+=== DEBUG LOG: qwen-vl | cifar10 | Prompt: rulebased ===
+
+--- CONFIG: N=2, K=2, Q=9 ---
+Query 1: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four legs
+- Mane
+- Tail
+- Ears
+- Eyes
+- Muzzle
+- Body
+- Legs
+- Hooves
+- Mane
+- Tail
+KB:
+- IF Four legs AND Mane AND Tail AND Ears AND Eyes AND Muzzle AND Body AND Legs AND Hooves THEN horse
+- IF Four legs AND Mane AND Tail AND Ears AND Eyes AND Muzzle AND Body AND Legs AND Hooves THEN horse
+Rule Check:
+- The extracted features match the IF-THEN rules for the horse class, as they include all the visual features associated with horses.
+- The extracted features also match the IF-THEN rules for the automobile class, as they include all the visual features associated with automobiles.
+- However, the presence of the horse-specific features (e.g., mane, tail, ears, eyes, muzzle, body, legs, hooves) makes the horse class the most likely match.
+Classification: <response>horse</response>
+----------------------------------------
+Query 2: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Horse
+- Brown and white
+- Standing
+KB:
+- IF Horse THEN horse
+Rule Check:
+- The image features a horse, which matches the visual feature of "horse" extracted from the examples.
+- The horse is brown and white, which is a specific visual feature that distinguishes it from other classes.
+- The horse is standing, which is another specific visual feature that distinguishes it from other classes.
+Classification: <response>horse</response>
+----------------------------------------
+Query 3: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Horse
+- Running
+- Green background
+KB:
+- IF Horse AND Running THEN horse
+- IF Horse AND Green background THEN horse
+Rule Check:
+- The image features a horse that is running, which matches the IF-THEN rule derived from the examples.
+- The green background also matches the IF-THEN rule derived from the examples.
+Classification: <response>horse</response>
+----------------------------------------
+Query 4: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Horse
+- Brown
+- Mane
+- Tail
+KB:
+- IF Horse THEN [Class]
+Rule Check:
+- The image features a horse with a brown coat, a mane, and a tail, which matches the visual features described in the KB rule for the horse class.
+<response>horse</response>
+----------------------------------------
+Query 5: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Horse
+- Running
+- Black
+KB:
+- IF Horse AND Running THEN horse
+- IF Horse AND Black THEN horse
+Rule Check:
+- The image features a horse that is running, which matches the IF Horse AND Running THEN horse rule.
+- The image also features a horse that is black, which matches the IF Horse AND Black THEN horse rule.
+- Both rules are activated, but the IF Horse AND Running THEN horse rule is more specific and directly matches the visual features of the image.
+Classification: <response>horse</response>
+----------------------------------------
+Query 6: Expected: [horse] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Four legs
+- Tail
+- Mane
+- Hooves
+KB:
+- IF Four legs, Tail, Mane, Hooves THEN horse
+Rule Check:
+- The extracted features of the target image match the IF conditions of the horse rule in the Knowledge Base.
+- The target image has four legs, a tail, a mane, and hooves, which are all specific visual features that distinguish it from the automobile class.
+- Therefore, the extracted features of the target image match the horse rule in the Knowledge Base, leading to the classification of the target image as a horse.
+----------------------------------------
+Query 7: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Horse
+- Black
+- Mane
+- Tail
+KB:
+- IF Horse THEN [Class]
+Rule Check:
+- The image features a horse with a black coat, a mane, and a tail, which matches the visual features described in the knowledge base for the horse class.
+<response>horse</response>
+----------------------------------------
+Query 8: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Horse
+- Standing
+- Green background
+KB:
+- IF Horse THEN horse
+Rule Check:
+- The image features a horse standing, which matches the visual feature of a horse in the examples provided.
+- The green background is not a distinguishing feature but is present in the examples.
+Classification:
+<response>horse</response>
+----------------------------------------
+Query 9: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Horse
+- Brown color
+- Mane
+- Tail
+KB:
+- IF Horse THEN [Class]
+Rule Check:
+- The image features a horse with a brown color, mane, and tail, which matches the IF-THEN rule derived from the examples.
+<response>horse</response>
+----------------------------------------
+Query 10: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>automobile</response>
+
+Features:
+- Four wheels
+- Front grille
+- Windows
+- Door handles
+- Hood
+
+KB:
+- IF Four wheels, front grille, windows, door handles, hood THEN automobile
+
+Rule Check:
+- The target image has four wheels, a front grille, windows, door handles, and a hood, which matches the IF conditions of the automobile class rule. Therefore, the rule is activated, and the class is determined to be automobile.
+----------------------------------------
+Query 11: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>automobile</response>
+
+Features:
+- Four wheels
+- Body shape: rectangular
+- Windows
+- Grille
+
+KB:
+- IF Four wheels AND Body shape: rectangular AND Windows THEN automobile
+
+Rule Check:
+- The target image has four wheels, a rectangular body shape, and windows, which matches the IF conditions of the automobile rule. Therefore, the rule is activated, and the class is determined to be automobile.
+----------------------------------------
+Query 12: Expected: [automobile] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four legs
+- Mane
+- Tail
+- Ears
+- Eyes
+- Muzzle
+- Body
+- Legs
+- Hooves
+KB:
+- IF Four legs AND Mane AND Tail AND Ears AND Eyes AND Muzzle AND Body AND Legs AND Hooves THEN horse
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base, indicating that the image is of a horse.
+- The presence of four legs, mane, tail, ears, eyes, muzzle, body, legs, and hooves are all features that are consistent with the class of a horse.
+- Therefore, the extracted features match the rule in the Knowledge Base, confirming that the image is of a horse.
+Classification: <response>horse</response>
+----------------------------------------
+Query 13: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four wheels
+- Roof
+- Windows
+- Grille
+- Headlights
+KB:
+- IF Four wheels AND Roof AND Windows AND Grille AND Headlights THEN automobile
+Rule Check:
+- The extracted features match the rule in the Knowledge Base that describes an automobile, which includes four wheels, a roof, windows, a grille, and headlights.
+<response>automobile</response>
+----------------------------------------
+Query 14: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>automobile</response>
+
+Features:
+- Four wheels
+- Body shape
+- Windows
+- Grille
+
+KB:
+- IF Four wheels AND Body shape AND Windows AND Grille THEN automobile
+
+Rule Check:
+- The target image has four wheels, a body shape, windows, and a grille, which matches the IF conditions of the automobile class rule. Therefore, the rule is activated, and the class is determined to be automobile.
+----------------------------------------
+Query 15: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>automobile</response>
+
+Features:
+- Four wheels
+- Front grille
+- Windows
+- Door handles
+- Headlights
+
+KB:
+- IF Four wheels, front grille, windows, door handles, headlights THEN automobile
+
+Rule Check:
+- The target image has four wheels, a front grille, windows, door handles, and headlights, which matches the IF condition of the rule derived from the examples. Therefore, the rule activates and the image is classified as an automobile.
+----------------------------------------
+Query 16: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four wheels
+- Convertible top
+- Compact size
+- Front grille
+- Red color
+KB:
+- IF Four wheels AND Convertible top AND Compact size AND Front grille AND Red color THEN automobile
+Rule Check:
+- The Target Image has Four wheels, Convertible top, Compact size, Front grille, and is Red in color. These features match the IF conditions of the automobile class rule in the Knowledge Base.
+- The extracted features clearly distinguish the Target Image from the horse class, which does not have a convertible top or compact size.
+Classification: <response>automobile</response>
+----------------------------------------
+Query 17: Expected: [automobile] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Four wheels
+- Four doors
+- Front grille
+- Front bumper
+- Front windshield
+- Front headlights
+- Front fender
+- Front wheel
+- Rear wheel
+- Rear fender
+- Rear bumper
+- Rear windshield
+- Rear headlights
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+- Side wheel
+- Side bumper
+- Side mirror
+- Side door
+- Side window
+- Side fender
+-
+----------------------------------------
+Query 18: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>automobile</response>
+
+Features:
+- Four wheels
+- Front grille
+- Headlights
+- Windshield wipers
+
+KB:
+- IF Four wheels THEN automobile
+- IF Front grille THEN automobile
+- IF Headlights THEN automobile
+- IF Windshield wipers THEN automobile
+
+Rule Check:
+- The image has four wheels, which matches the rule "IF Four wheels THEN automobile."
+- The image has a front grille, which matches the rule "IF Front grille THEN automobile."
+- The image has headlights, which matches the rule "IF Headlights THEN automobile."
+- The image has windshield wipers, which matches the rule "IF Windshield wipers THEN automobile."
+
+Based on the extracted features and the rules from the knowledge base, the image is classified as an automobile.
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9): 0.8333
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four legs
+- Tail
+- Mane
+- Ears
+- Eyes
+- Nose
+- Mouth
+- Hooves
+- Body
+- Tail
+- Mane
+- Ears
+- Eyes
+- Nose
+- Mouth
+- Hooves
+- Body
+KB:
+- IF Four legs, Tail, Mane, Ears, Eyes, Nose, Mouth, Hooves, Body THEN horse
+Rule Check:
+- The extracted features match the IF-THEN rule in the KB, indicating that the image is of a horse.
+<response>horse</response>
+----------------------------------------
+Query 2: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Horse
+- Animal
+- Brown
+- Mane
+- Tail
+KB:
+- IF Horse THEN Animal
+- IF Animal THEN Horse
+- IF Horse THEN Brown
+- IF Horse THEN Mane
+- IF Horse THEN Tail
+Rule Check:
+- The image features a horse, which is an animal. The horse is brown, has a mane, and a tail. These features match the IF-THEN rules derived from the examples seen.
+- The extracted features of the horse (animal, brown, mane, tail) match the rules in the knowledge base, confirming that the class of this image is horse.
+Classification: <response>horse</response>
+----------------------------------------
+Query 3: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Horse
+- Brown
+- Mane
+- Tail
+- Saddle
+KB:
+- IF Horse THEN [Class]
+Rule Check:
+- The image features a horse with a brown coat, a mane, a tail, and a saddle, which matches the IF Horse THEN [Class] rule from the Knowledge Base.
+<response>horse</response>
+----------------------------------------
+Query 4: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Horse
+- Rider
+- Outdoor setting
+KB:
+- IF Horse AND Rider THEN horse
+- IF Horse AND Outdoor THEN horse
+Rule Check:
+- The image features a horse and a rider, which matches the IF-THEN rule derived from the examples.
+- The outdoor setting also aligns with the rule, as horses are often found in outdoor environments.
+Classification: <response>horse</response>
+----------------------------------------
+Query 5: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Horse head
+- Blue halter
+- Green field
+KB:
+- IF Horse head AND Blue halter THEN horse
+- IF Green field THEN not truck
+Rule Check:
+- The image features a horse head with a blue halter, which matches the IF-THEN rule for the class "horse".
+- The green field also supports the classification of the image as not belonging to the "truck" class.
+- Therefore, the extracted features match the rules in the Knowledge Base, leading to the classification of the image as a horse.
+<response>horse</response>
+----------------------------------------
+Query 6: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Horse
+- White
+- Blue
+- Mane
+- Tail
+KB:
+- IF Horse THEN [Class]
+Rule Check:
+- The image features a horse with a white body and blue mane and tail, which matches the visual features described in the KB rule for the horse class.
+<response>horse</response>
+----------------------------------------
+Query 7: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Horse
+- Brown
+- Mane
+- Tail
+- Rider
+KB:
+- IF Horse AND Brown AND Mane AND Tail AND Rider THEN horse
+Rule Check:
+- The image features a horse with a brown coat, a mane, a tail, and a rider, which matches the IF-THEN rule derived from the examples.
+<response>horse</response>
+----------------------------------------
+Query 8: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Animal
+- Four legs
+- Tail
+- Mane
+KB:
+- IF Animal AND Four legs AND Tail AND Mane THEN horse
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base: "IF Animal AND Four legs AND Tail AND Mane THEN horse."
+- The extracted features include an animal with four legs, a tail, and a mane, which are all characteristics of a horse.
+Classification: <response>horse</response>
+----------------------------------------
+Query 9: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Horse
+- Rider
+- Indoor setting
+KB:
+- IF Horse AND Rider THEN horse
+- IF Horse AND Indoor THEN horse
+Rule Check:
+- The image features a horse and a rider, which matches the IF-THEN rule derived from the examples.
+- The indoor setting also aligns with the rule, as horses are often ridden indoors in stables.
+Classification: <response>horse</response>
+----------------------------------------
+Query 10: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Red body
+- Four wheels
+- Windows
+- Emergency lights
+KB:
+- IF Red body AND Four wheels AND Windows AND Emergency lights THEN truck
+Rule Check:
+- The extracted features match the rule in the KB that states "IF Red body AND Four wheels AND Windows AND Emergency lights THEN truck."
+- The image has a red body, four wheels, windows, and emergency lights, which are all features associated with trucks.
+- Therefore, the extracted features best match the rule that defines a truck.
+Classification: <response>truck</response>
+----------------------------------------
+Query 11: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Red color
+- Four wheels
+- Engine compartment
+- Cab
+- Ladder
+KB:
+- IF Red color AND Four wheels AND Engine compartment AND Cab AND Ladder THEN truck
+Rule Check:
+- The extracted features match the rule in the KB that states "IF Red color AND Four wheels AND Engine compartment AND Cab AND Ladder THEN truck."
+- The extracted features include the red color of the vehicle, the presence of four wheels, the engine compartment, the cab, and the ladder, which are all characteristics of a truck.
+Classification: <response>truck</response>
+----------------------------------------
+Query 12: Expected: [truck] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Four wheels
+- Red and white color scheme
+- Large size
+- Box-like shape
+KB:
+- IF Four wheels AND Red and white color scheme AND Large size AND Box-like shape THEN truck
+Rule Check:
+- The extracted features match the rule in the KB: Four wheels, Red and white color scheme, Large size, and Box-like shape.
+- These features are consistent with the visual evidence of a truck.
+- Therefore, the class of this image is truck.
+----------------------------------------
+Query 13: Expected: [truck] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Four wheels
+- Red and white color scheme
+- Large size
+KB:
+- IF Four wheels AND Red and white color scheme AND Large size THEN truck
+Rule Check:
+- The extracted features of the image match the IF conditions of the rule in the KB, specifically the presence of four wheels, the red and white color scheme, and the large size. Therefore, the rule is activated.
+- The extracted features of the image match the IF conditions of the rule in the KB, specifically the presence of four wheels, the red and white color scheme, and the large size. Therefore, the rule is activated.
+- The extracted features of the image match the IF conditions of the rule in the KB, specifically the presence of four wheels, the red and white color scheme, and the large size. Therefore, the rule is activated.
+- The extracted features of the image match the IF conditions of the rule in the KB, specifically the presence of four wheels, the red and white color scheme, and the large size. Therefore, the rule is activated.
+- The extracted features of the image match the IF conditions of the rule in the KB, specifically the presence of four wheels, the red and white color scheme, and the large size. Therefore, the rule is activated.
+- The extracted features of the image match the IF conditions of the rule in the KB, specifically the presence of four wheels, the red and white color scheme, and the large size. Therefore, the rule is activated.
+- The extracted features of the image match the IF conditions of the rule in the KB, specifically the presence of four wheels, the red and white color scheme, and the large size. Therefore, the rule is activated.
+- The extracted features of the image match the IF conditions of the rule in the KB, specifically the presence of four wheels, the red and white color scheme, and the large size. Therefore, the rule is activated.
+- The extracted features of the image match the IF conditions of the rule in the KB, specifically the presence of four wheels, the red and white color scheme, and the large size. Therefore, the rule is activated.
+- The extracted features of the image match the IF conditions of the rule in the KB, specifically the presence of four wheels, the red and white color scheme, and the large size. Therefore, the rule is activated.
+- The extracted features of the image match the IF conditions of the rule in the KB, specifically the presence of four wheels, the red and white color scheme, and the large size. Therefore, the rule is activated.
+- The extracted features of the image match the IF conditions of the rule in the KB, specifically the presence of four wheels, the red and white color scheme, and the large size. Therefore, the rule is activated.
+- The extracted features of the image match the IF conditions of the rule in the KB, specifically the presence of four wheels, the red and white color scheme, and the large size. Therefore, the rule is activated.
+- The extracted features of the image match the IF conditions of the rule in the KB, specifically the presence of four wheels, the red and white color scheme, and the large size. Therefore, the rule is activated.
+- The extracted features of the image match the IF conditions of the rule in the KB, specifically the presence of four wheels, the red and white color scheme, and the large size. Therefore, the rule is activated.
+- The extracted features of the image match the IF conditions of the rule in the KB, specifically the presence of four wheels, the red and white color scheme, and the large size. Therefore, the rule is activated.
+- The extracted features of the image match the IF conditions of the rule in the KB, specifically the presence of four wheels, the red and white color scheme, and the large size. Therefore, the rule is activated.
+- The extracted features of the image match the IF conditions of the rule in the KB, specifically the presence of four wheels, the red and white color scheme, and the large size. Therefore, the rule is activated.
+- The extracted features of the image match the IF conditions of the rule in the KB, specifically the presence of four wheels, the red and white color scheme, and the large size. Therefore, the rule is activated.
+- The extracted features of the image match the IF conditions of the rule in the KB, specifically the presence of four wheels, the red and white color scheme, and the large size. Therefore, the rule is activated.
+- The extracted features of the image match the IF conditions of the rule in the KB, specifically the presence of four wheels, the red and white color scheme, and the large size. Therefore, the rule is activated.
+- The extracted features of the image match the IF conditions of the rule in the KB, specifically the presence of four wheels, the red and white color scheme, and the large size. Therefore, the rule is activated.
+- The extracted features of the image match the IF conditions of the rule in the KB,
+----------------------------------------
+Query 14: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four wheels
+- Box-like structure
+- Red and white stripes
+KB:
+- IF Four wheels AND Box-like structure AND Red and white stripes THEN truck
+Rule Check:
+- The image has four wheels, a box-like structure, and red and white stripes, which matches the IF-THEN rule for the truck class.
+<response>truck</response>
+----------------------------------------
+Query 15: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four wheels
+- Box-like structure
+- Large size
+KB:
+- IF Four wheels AND Box-like structure AND Large size THEN truck
+Rule Check:
+- The extracted features of the image match the IF conditions of the rule in the Knowledge Base: Four wheels, Box-like structure, and Large size. Therefore, the rule is activated.
+- The extracted features of the image do not match the IF conditions of the rule in the Knowledge Base: Four legs, Mane, and Tail. Therefore, the rule is not activated.
+Classification: <response>truck</response>
+----------------------------------------
+Query 16: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four wheels
+- Black color
+- Large size
+- Box shape
+- Windows
+- Red and white stripes
+KB:
+- IF Four wheels AND Black color AND Large size AND Box shape AND Windows AND Red and white stripes THEN truck
+Rule Check:
+- The extracted features match the rule in the KB that states "IF Four wheels AND Black color AND Large size AND Box shape AND Windows AND Red and white stripes THEN truck."
+- The extracted features include four wheels, black color, large size, box shape, windows, and red and white stripes, which are all present in the target image.
+- Therefore, the target image matches the rule in the KB that matches the visual features best.
+Classification: <response>truck</response>
+----------------------------------------
+Query 17: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four wheels
+- Large size
+- Metal body
+- Red and white color
+KB:
+- IF Four wheels AND Large size AND Metal body AND Red and white color THEN truck
+Rule Check:
+- The extracted features match the rule in the KB: Four wheels AND Large size AND Metal body AND Red and white color.
+- These features are consistent with the visual evidence of the image, which shows a large vehicle with four wheels, a metal body, and a red and white color scheme.
+- Therefore, the rule that best matches the visual features is: IF Four wheels AND Large size AND Metal body AND Red and white color THEN truck.
+Classification: <response>truck</response>
+----------------------------------------
+Query 18: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four wheels
+- Red and white stripes
+- Large size
+KB:
+- IF Four wheels AND Red and white stripes AND Large size THEN truck
+Rule Check:
+- The image has four wheels, red and white stripes, and is large in size, which matches the IF-THEN rule for the 'truck' class.
+<response>truck</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9): 0.8889
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Airplane
+- White body
+- Red tail
+- Blue wings
+- Black nose
+KB:
+- IF Airplane THEN White body
+- IF Airplane THEN Red tail
+- IF Airplane THEN Blue wings
+- IF Airplane THEN Black nose
+Rule Check:
+- The extracted features match the IF-THEN rules for the airplane class.
+- The airplane has a white body, red tail, blue wings, and a black nose, which are all specific features that distinguish it from the other classes.
+Classification: <response>airplane</response>
+----------------------------------------
+Query 2: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Airplane
+- Flying
+- Sky
+- Blue
+- White
+- Red
+KB:
+- IF Airplane is flying in the sky with blue and white colors THEN airplane
+- IF Airplane is flying in the sky with blue and red colors THEN airplane
+Rule Check:
+- The airplane is flying in the sky, which matches the IF condition of the KB rules.
+- The airplane has blue and white colors, which matches the IF condition of the KB rules.
+- The airplane has red colors, which matches the IF condition of the KB rules.
+Classification: <response>airplane</response>
+----------------------------------------
+Query 3: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains an object with wings.
+- The object is in the air.
+- The object has a streamlined shape.
+- The object has a tail fin.
+- The object has a propeller.
+KB:
+- IF the object has wings and is in the air THEN airplane
+- IF the object has a streamlined shape and a tail fin THEN airplane
+- IF the object has a propeller THEN airplane
+Rule Check:
+- The object has wings and is in the air, which matches the IF condition of the airplane rule.
+- The object has a streamlined shape and a tail fin, which also matches the IF condition of the airplane rule.
+- The object has a propeller, which matches the IF condition of the airplane rule.
+Classification: <response>airplane</response>
+----------------------------------------
+Query 4: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- White body
+- Red tail
+- Black eyes
+- Red nose
+- White head
+- Black legs
+- White wings
+- Black wings
+- White tail
+- Black tail
+- White body
+- Red tail
+- Black eyes
+- Red nose
+- White head
+- Black legs
+- White wings
+- Black wings
+- White tail
+- Black tail
+KB:
+- IF White body AND Red tail AND Black eyes AND Red nose AND White head AND Black legs AND White wings AND Black wings AND White tail AND Black tail THEN airplane
+Rule Check:
+- The extracted features match the IF-THEN rule in the KB, indicating that the image is an airplane.
+<response>airplane</response>
+----------------------------------------
+Query 5: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Airplane
+- Wings
+- Tail
+- Engine
+- Cockpit
+KB:
+- IF Airplane THEN Airplane
+Rule Check:
+- The image has all the visual features of an airplane, including wings, tail, engine, and cockpit. Therefore, it matches the rule that if an image has these features, it is an airplane.
+<response>airplane</response>
+----------------------------------------
+Query 6: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Red and white airplane
+- Wings
+- Tail
+- Propeller
+KB:
+- IF Red and white airplane THEN airplane
+- IF Wings THEN airplane
+- IF Tail THEN airplane
+- IF Propeller THEN airplane
+Rule Check:
+- The image features a red and white airplane with wings, a tail, and a propeller, which matches the IF-THEN rules for the airplane class.
+- The extracted features of the airplane, such as the red and white color scheme, wings, tail, and propeller, align with the logical rules derived from the examples.
+- Therefore, the extracted features match the rules in the Knowledge Base, confirming that the class of this image is airplane.
+Classification: <response>airplane</response>
+----------------------------------------
+Query 7: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Airplane
+- White body
+- Red tail
+- Blue wings
+- Black wheels
+KB:
+- IF Airplane THEN White body
+- IF Airplane THEN Red tail
+- IF Airplane THEN Blue wings
+- IF Airplane THEN Black wheels
+Rule Check:
+- The extracted features match the IF-THEN rules for the airplane class.
+- The airplane has a white body, red tail, blue wings, and black wheels, which are all specific features that distinguish it from the other classes.
+Classification: <response>airplane</response>
+----------------------------------------
+Query 8: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Airplane
+- Wings
+- Tail
+- Engine
+- Cockpit
+KB:
+- IF Airplane THEN Airplane
+Rule Check:
+- The image contains an airplane with wings, a tail, an engine, and a cockpit, which matches the IF-THEN rule for the class "airplane".
+<response>airplane</response>
+----------------------------------------
+Query 9: Expected: [airplane] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Airplane
+- Jet engine
+- Wings
+- Tail
+- Landing gear
+KB:
+- IF Airplane THEN Jet
+Rule Check:
+- The image contains an airplane with a jet engine, wings, tail, and landing gear, which matches the IF-THEN rule from the Knowledge Base that states "IF an image contains an airplane with a jet engine, wings, tail, and landing gear, THEN it is a Jet."
+Classification: <response>jet</response>
+----------------------------------------
+Query 10: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Animal
+- Horse
+- Brown
+- Mane
+- Tail
+KB:
+- IF Animal AND Horse AND Brown AND Mane AND Tail THEN horse
+Rule Check:
+- The extracted features match the rule in the KB that states "IF Animal AND Horse AND Brown AND Mane AND Tail THEN horse". Therefore, the class of this image is horse.
+<response>horse</response>
+----------------------------------------
+Query 11: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Animal
+- Horse
+- Black
+- Mane
+- Tail
+- Ears
+- Eyes
+- Legs
+- Body
+KB:
+- IF Animal AND Horse THEN horse
+- IF Animal AND Black THEN cat
+- IF Animal AND Horse AND Black THEN horse
+Rule Check:
+- The image features an animal with horse-specific features such as ears, eyes, legs, and body. Additionally, the animal is black, which matches the rule for horse.
+- The extracted features of the animal include horse-specific features and the color black, which aligns with the rule for horse.
+Classification: <response>horse</response>
+----------------------------------------
+Query 12: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Animal
+- Horse
+- Brown
+- Mane
+- Tail
+KB:
+- IF Animal AND Horse AND Brown AND Mane AND Tail THEN horse
+Rule Check:
+- The extracted features match the rule in the KB that states "IF Animal AND Horse AND Brown AND Mane AND Tail THEN horse". Therefore, the class of this image is horse.
+<response>horse</response>
+----------------------------------------
+Query 13: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Animal
+- Four legs
+- Mane
+- Tail
+KB:
+- IF Animal AND Four legs AND Mane AND Tail THEN horse
+Rule Check:
+- The image features an animal with four legs, a mane, and a tail, which matches the IF-THEN rule for the horse class.
+<response>horse</response>
+----------------------------------------
+Query 14: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Animal
+- Horse
+- Mane
+- Tail
+- Ears
+- Eyes
+- Nose
+- Mouth
+- Legs
+- Body
+KB:
+- IF Animal AND Horse THEN horse
+- IF Animal AND Mane AND Tail THEN horse
+- IF Animal AND Ears AND Eyes AND Nose AND Mouth THEN horse
+- IF Animal AND Legs AND Body THEN horse
+Rule Check:
+- The image features an animal with a horse-like appearance, including a mane, tail, ears, eyes, nose, mouth, legs, and body. These features match the IF-THEN rule derived from the examples seen.
+- The extracted features of the animal in the image align with the rule that specifies an animal with a horse-like appearance as a horse.
+Classification: <response>horse</response>
+----------------------------------------
+Query 15: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Animal
+- Horse
+- Rider
+KB:
+- IF Animal AND Horse THEN horse
+- IF Animal AND Rider THEN horse
+Rule Check:
+- The image contains an animal, specifically a horse, and there is a rider on the horse. Therefore, the extracted features match the rules in the Knowledge Base that describe a horse.
+<response>horse</response>
+----------------------------------------
+Query 16: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Animal
+- Standing
+- Brown
+- Fur
+KB:
+- IF Animal AND Standing AND Brown AND Fur THEN horse
+Rule Check:
+- The extracted features match the rule in the KB: "IF Animal AND Standing AND Brown AND Fur THEN horse". The image shows an animal that is standing, has brown fur, and is a horse.
+<response>horse</response>
+----------------------------------------
+Query 17: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Animal
+- Horse
+- Rider
+KB:
+- IF Animal AND Horse THEN horse
+- IF Animal AND Rider THEN horse
+Rule Check:
+- The image features an animal, specifically a horse, with a rider on top. This matches the IF-THEN rule derived from the examples: "IF Animal AND Horse THEN horse" and "IF Animal AND Rider THEN horse". Therefore, the class of this image is horse.
+<response>horse</response>
+----------------------------------------
+Query 18: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Animal
+- Four legs
+- Mane
+- Tail
+KB:
+- IF Animal AND Four legs AND Mane AND Tail THEN horse
+Rule Check:
+- The image features an animal with four legs, a mane, and a tail, which matches the IF-THEN rule for the horse class.
+<response>horse</response>
+----------------------------------------
+Query 19: Expected: [cat] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Small size
+- Fluffy texture
+- White and orange color
+KB:
+- IF Small size AND Fluffy texture AND White and orange color THEN cat
+Rule Check:
+- The extracted features match the rule in the KB: Small size AND Fluffy texture AND White and orange color.
+- Therefore, the class of this image is cat.
+----------------------------------------
+Query 20: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Animal
+- Fur
+- Eyes
+- Ears
+- Tail
+KB:
+- IF Animal AND Fur AND Eyes AND Ears AND Tail THEN cat
+Rule Check:
+- The extracted features match the rule in the KB that states "IF Animal AND Fur AND Eyes AND Ears AND Tail THEN cat". Therefore, the class of this image is cat.
+<response>cat</response>
+----------------------------------------
+Query 21: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Animal
+- Fur
+- Ears
+- Tail
+KB:
+- IF Animal AND Fur AND Ears AND Tail THEN cat
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: "IF Animal AND Fur AND Ears AND Tail THEN cat". Therefore, the class of this image is cat.
+<response>cat</response>
+----------------------------------------
+Query 22: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Animal
+- Fur
+- Tail
+- Ears
+KB:
+- IF Animal AND Fur AND Tail AND Ears THEN cat
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: "IF Animal AND Fur AND Tail AND Ears THEN cat". Therefore, the class of this image is cat.
+<response>cat</response>
+----------------------------------------
+Query 23: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Animal
+- Standing
+- Brown fur
+KB:
+- IF Animal AND Standing AND Brown fur THEN cat
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: "IF Animal AND Standing AND Brown fur THEN cat."
+- The extracted features include the animal being standing and having brown fur, which are specific visual features that distinguish it from the other classes.
+- The extracted features do not match the rules for airplane or horse, as they do not have the specific visual features of being standing and having brown fur.
+Classification: <response>cat</response>
+----------------------------------------
+Query 24: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Small size
+- White fur
+- Black ears
+- Red collar
+KB:
+- IF Small size AND White fur AND Black ears AND Red collar THEN cat
+Rule Check:
+- The extracted features match the rule in the KB: Small size AND White fur AND Black ears AND Red collar.
+- The extracted features are: Small size, White fur, Black ears, and Red collar.
+- Therefore, the rule that best matches the visual features is: IF Small size AND White fur AND Black ears AND Red collar THEN cat.
+Classification: <response>cat</response>
+----------------------------------------
+Query 25: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Small size
+- Black color
+- Fur texture
+- Four legs
+KB:
+- IF Small size AND Black color AND Fur texture AND Four legs THEN cat
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base: Small size AND Black color AND Fur texture AND Four legs.
+- The extracted features do not match the IF-THEN rules for airplane, horse, or any other class.
+Classification: <response>cat</response>
+----------------------------------------
+Query 26: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Animal
+- Fur
+- Tail
+- Ears
+KB:
+- IF Animal AND Fur AND Tail AND Ears THEN cat
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: "IF Animal AND Fur AND Tail AND Ears THEN cat". Therefore, the class of this image is cat.
+<response>cat</response>
+----------------------------------------
+Query 27: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Animal
+- Fur
+- Tail
+KB:
+- IF Animal AND Fur AND Tail THEN cat
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: "IF Animal AND Fur AND Tail THEN cat". Therefore, the class of this image is cat.
+<response>cat</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9): 0.9259
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [cat] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, fluffy animal with a white and brown coat.
+- The animal has a round face, small ears, and a blue collar.
+KB:
+- IF The animal has a small, fluffy coat and a round face THEN It is a dog.
+- IF The animal has a white and brown coat and a blue collar THEN It is a dog.
+Rule Check:
+- The extracted features match the IF-THEN rules from the KB, indicating that the animal is a dog.
+- The small, fluffy coat and round face align with the dog class.
+- The white and brown coat and blue collar also align with the dog class.
+Classification:
+<response>dog</response>
+----------------------------------------
+Query 2: Expected: [cat] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, fluffy animal with a white and black coat.
+- The animal has a round face, small ears, and a short tail.
+- It is wearing a blue collar.
+KB:
+- IF [Small, fluffy, white and black coat, round face, small ears, short tail, blue collar] THEN [dog]
+Rule Check:
+- The extracted features match the IF condition of the "dog" rule in the Knowledge Base.
+- The small, fluffy, white and black coat, round face, small ears, and short tail are specific visual features that distinguish the dog from other classes.
+- The blue collar is an additional feature that further supports the classification of the image as a dog.
+Classification: <response>dog</response>
+----------------------------------------
+Query 3: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a cat.
+- The cat has a distinct face with green eyes and a white nose.
+- The cat is wearing a blue collar.
+- The background is a dark, blurred image of a cat.
+
+KB:
+- IF the image shows a cat with green eyes, a white nose, and a blue collar THEN the class is cat.
+- IF the background is a dark, blurred image of a cat THEN the class is cat.
+
+Rule Check:
+- The extracted features match the IF-THEN rule in the KB: "IF the image shows a cat with green eyes, a white nose, and a blue collar THEN the class is cat."
+- The extracted features also match the IF-THEN rule in the KB: "IF the background is a dark, blurred image of a cat THEN the class is cat."
+
+Classification:
+<response>cat</response>
+----------------------------------------
+Query 4: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Fur
+- Paws
+- Tail
+- Eyes
+- Ears
+- Whiskers
+- Nose
+- Tongue
+- Body
+- Legs
+KB:
+- IF Fur AND Paws AND Tail AND Eyes AND Ears AND Whiskers AND Nose AND Tongue AND Body AND Legs THEN cat
+- IF Fur AND Paws AND Tail AND Eyes AND Ears AND Whiskers AND Nose AND Tongue AND Body AND Legs THEN dog
+- IF Fur AND Paws AND Tail AND Eyes AND Ears AND Whiskers AND Nose AND Tongue AND Body AND Legs THEN truck
+- IF Fur AND Paws AND Tail AND Eyes AND Ears AND Whiskers AND Nose AND Tongue AND Body AND Legs THEN automobile
+Rule Check:
+- The image features fur, paws, a tail, eyes, ears, whiskers, a nose, a tongue, a body, and legs, which match the features of a cat.
+- The image does not have any features that would match the features of a dog, truck, or automobile.
+Classification: <response>cat</response>
+----------------------------------------
+Query 5: Expected: [cat] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Fur
+- Four legs
+- Tail
+- Ears
+- Eyes
+- Nose
+- Paws
+KB:
+- IF Fur AND Four legs AND Tail AND Ears AND Eyes AND Nose AND Paws THEN cat
+- IF Fur AND Four legs AND Tail AND Ears AND Eyes AND Nose AND Paws THEN dog
+- IF Fur AND Four legs AND Tail AND Ears AND Eyes AND Nose AND Paws THEN truck
+- IF Fur AND Four legs AND Tail AND Ears AND Eyes AND Nose AND Paws THEN automobile
+Rule Check:
+- The image has Fur, Four legs, Tail, Ears, Eyes, Nose, and Paws, which matches the IF conditions for both cat and dog.
+- Since the image does not have any specific features that distinguish it as a truck or an automobile, we cannot definitively classify it as either.
+- However, given the presence of Fur, Four legs, Tail, Ears, Eyes, Nose, and Paws, the most appropriate classification based on the examples seen is [cat] or [dog].
+- Since the image does not have any specific features that distinguish it as a truck or an automobile, we cannot definitively classify it as either.
+- Therefore, the final classification is [cat] or [dog].
+- The rule that matches the visual features best is:
+- IF Fur AND Four legs AND Tail AND Ears AND Eyes AND Nose AND Paws THEN cat OR dog
+- Since the image has Fur, Four legs, Tail, Ears, Eyes, Nose, and Paws, it matches the IF conditions for both cat and dog.
+- Therefore, the final classification is [cat] or [dog].
+----------------------------------------
+Query 6: Expected: [cat] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a dog.
+- The dog has a white and brown coat.
+- The dog is wearing a blue collar.
+- The dog is lying down on a blue surface.
+KB:
+- IF the image shows a dog with a white and brown coat and a blue collar, THEN the class is dog.
+Rule Check:
+- The extracted features match the IF condition of the rule in the KB.
+- The dog has a white and brown coat, which is a specific visual feature that distinguishes it from other classes.
+- The dog is wearing a blue collar, which is another specific visual feature that distinguishes it from other classes.
+- The dog is lying down on a blue surface, which is a specific visual feature that distinguishes it from other classes.
+Classification:
+<response>dog</response>
+----------------------------------------
+Query 7: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Fur
+- Eyes
+- Ears
+- Tail
+- Paws
+KB:
+- IF Fur AND Eyes AND Ears AND Tail AND Paws THEN cat
+Rule Check:
+- The image has fur, eyes, ears, a tail, and paws, which matches the IF-THEN rule for the cat class.
+<response>cat</response>
+----------------------------------------
+Query 8: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Fur
+- Eyes
+- Ears
+- Tail
+- Paws
+KB:
+- IF Fur AND Eyes AND Ears AND Tail AND Paws THEN cat
+Rule Check:
+- The image has fur, eyes, ears, a tail, and paws, which matches the IF-THEN rule for the cat class.
+<response>cat</response>
+----------------------------------------
+Query 9: Expected: [cat] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Fur
+- Eyes
+- Ears
+- Tail
+- Paws
+KB:
+- IF Fur AND Eyes AND Ears AND Tail AND Paws THEN cat
+Rule Check:
+- The image has fur, eyes, ears, a tail, and paws, which matches the IF-THEN rule for the cat class.
+<response>cat</response>
+----------------------------------------
+Query 10: Expected: [truck] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four legs
+- Tail
+- Ears
+- Eyes
+- Nose
+- Fur
+- Paws
+KB:
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN cat
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN dog
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN truck
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN automobile
+Rule Check:
+- The image has four legs, a tail, ears, eyes, a nose, fur, and paws. These features match the IF conditions of the cat and dog rules.
+- The cat rule is activated because it has fur, which is a specific feature that differentiates it from the other classes.
+Classification: <response>cat</response>
+----------------------------------------
+Query 11: Expected: [truck] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four legs
+- Tail
+- Ears
+- Eyes
+- Nose
+- Fur
+- Paws
+KB:
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN cat
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN dog
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN truck
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN automobile
+Rule Check:
+- The image has four legs, a tail, ears, eyes, a nose, fur, and paws. These features match the IF conditions of the cat and dog rules.
+- The cat rule is activated because it has fur, which is a specific feature that differentiates it from the other classes.
+Classification: <response>cat</response>
+----------------------------------------
+Query 12: Expected: [truck] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four legs
+- Tail
+- Ears
+- Eyes
+- Nose
+- Fur
+- Paws
+KB:
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN cat
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN dog
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN truck
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN automobile
+Rule Check:
+- The image has four legs, a tail, ears, eyes, a nose, fur, and paws. These features match the IF conditions of the cat and dog rules.
+- The cat rule is activated because it has fur, which is a specific feature that differentiates it from the other classes.
+Classification: <response>cat</response>
+----------------------------------------
+Query 13: Expected: [truck] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four legs
+- Tail
+- Ears
+- Eyes
+- Nose
+- Fur
+- Paws
+KB:
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN cat
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN dog
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN truck
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN automobile
+Rule Check:
+- The image has four legs, a tail, ears, eyes, a nose, fur, and paws. These features match the IF conditions of the cat and dog rules.
+- The cat rule is activated because it has fur, which is a specific feature that differentiates it from the other classes.
+Classification: <response>cat</response>
+----------------------------------------
+Query 14: Expected: [truck] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four legs
+- Tail
+- Ears
+- Eyes
+- Nose
+- Fur
+- Paws
+KB:
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN cat
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN dog
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN truck
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN automobile
+Rule Check:
+- The image has four legs, a tail, ears, eyes, a nose, fur, and paws. These features match the IF conditions of the cat and dog rules.
+- The cat rule is activated because it has fur, which is a specific feature that differentiates it from the other classes.
+Classification: <response>cat</response>
+----------------------------------------
+Query 15: Expected: [truck] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four legs
+- Tail
+- Ears
+- Eyes
+- Nose
+- Fur
+- Paws
+KB:
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN cat
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN dog
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN truck
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN automobile
+Rule Check:
+- The image has four legs, a tail, ears, eyes, a nose, fur, and paws. These features match the IF conditions of the cat and dog rules.
+- The cat rule is activated because it has fur, which is a specific feature that differentiates it from the other classes.
+Classification: <response>cat</response>
+----------------------------------------
+Query 16: Expected: [truck] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four legs
+- Tail
+- Ears
+- Eyes
+- Nose
+- Fur
+- Paws
+KB:
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN cat
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN dog
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN truck
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN automobile
+Rule Check:
+- The image has four legs, a tail, ears, eyes, a nose, fur, and paws. These features match the IF conditions of the cat and dog rules.
+- The cat rule is activated because it has fur, which is a specific feature that differentiates it from the other classes.
+Classification: <response>cat</response>
+----------------------------------------
+Query 17: Expected: [truck] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four legs
+- Tail
+- Ears
+- Eyes
+- Nose
+- Fur
+- Paws
+KB:
+- IF Four legs, tail, ears, eyes, nose, fur, paws THEN cat
+- IF Four legs, tail, ears, eyes, nose, fur, paws THEN dog
+- IF Four legs, tail, ears, eyes, nose, fur, paws THEN truck
+- IF Four legs, tail, ears, eyes, nose, fur, paws THEN automobile
+Rule Check:
+- The image has four legs, a tail, ears, eyes, a nose, fur, and paws, which matches the features of both a cat and a dog.
+- Since the image does not have the specific features of a truck or an automobile, it cannot be classified as either of those.
+- Therefore, the image is most likely a cat or a dog.
+Classification: <response>cat</response>
+----------------------------------------
+Query 18: Expected: [truck] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four legs
+- Tail
+- Ears
+- Eyes
+- Nose
+- Fur
+- Paws
+KB:
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN cat
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN dog
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN truck
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN automobile
+Rule Check:
+- The image has four legs, a tail, ears, eyes, a nose, fur, and paws. These features match the IF conditions of the cat and dog rules.
+- The cat rule is activated because it has fur, which is a specific feature that differentiates it from the other classes.
+Classification: <response>cat</response>
+----------------------------------------
+Query 19: Expected: [automobile] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four legs
+- Tail
+- Ears
+- Eyes
+- Nose
+- Fur
+- Paws
+KB:
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN cat
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN dog
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN truck
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN automobile
+Rule Check:
+- The image has four legs, a tail, ears, eyes, a nose, fur, and paws. These features match the IF conditions of the cat and dog rules.
+- The cat rule has an additional feature of "fur", which is also present in the image.
+- The dog rule has an additional feature of "fur", which is also present in the image.
+- The truck and automobile rules do not match the visual features of the image.
+Classification: <response>cat</response>
+----------------------------------------
+Query 20: Expected: [automobile] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four wheels
+- Body shape: rectangular
+- Large size
+- Color: yellow
+KB:
+- IF Four wheels AND Body shape: rectangular AND Large size AND Color: yellow THEN truck
+Rule Check:
+- The extracted features match the rule in the KB: Four wheels, Body shape: rectangular, Large size, and Color: yellow.
+- These features are consistent with the visual evidence of the target image.
+- Therefore, the rule that best matches the visual features is: IF Four wheels AND Body shape: rectangular AND Large size AND Color: yellow THEN truck.
+Classification: <response>truck</response>
+----------------------------------------
+Query 21: Expected: [automobile] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four legs
+- Tail
+- Ears
+- Eyes
+- Nose
+- Fur
+- Paws
+KB:
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN cat
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN dog
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN truck
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN automobile
+Rule Check:
+- The image has four legs, a tail, ears, eyes, a nose, fur, and paws. These features match the IF conditions of the cat and dog rules.
+- The cat rule has an additional feature of being a feline, which is not present in the image.
+- The dog rule has an additional feature of being a canine, which is not present in the image.
+- The truck rule has an additional feature of being a vehicle, which is not present in the image.
+- The automobile rule has an additional feature of being a vehicle, which is not present in the image.
+Classification: <response>dog</response>
+----------------------------------------
+Query 22: Expected: [automobile] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four legs
+- Tail
+- Ears
+- Eyes
+- Nose
+- Fur
+- Paws
+KB:
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN cat
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN dog
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN truck
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN automobile
+Rule Check:
+- The image has four legs, a tail, ears, eyes, a nose, fur, and paws. These features match the IF conditions of the cat and dog rules.
+- The cat rule has an additional feature of being a feline, which is not present in the image.
+- The dog rule has an additional feature of being a canine, which is not present in the image.
+- The truck rule has an additional feature of being a vehicle, which is not present in the image.
+- The automobile rule has an additional feature of being a vehicle, which is not present in the image.
+Classification: <response>dog</response>
+----------------------------------------
+Query 23: Expected: [automobile] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four legs
+- Tail
+- Ears
+- Eyes
+- Nose
+- Fur
+- Paws
+KB:
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN cat
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN dog
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN truck
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN automobile
+Rule Check:
+- The image has four legs, a tail, ears, eyes, a nose, fur, and paws. These features match the IF conditions of the cat and dog rules.
+- The cat rule has an additional feature of being a feline, which is not present in the image.
+- The dog rule has an additional feature of being a canine, which is not present in the image.
+- The truck rule has an additional feature of being a vehicle, which is not present in the image.
+- The automobile rule has an additional feature of being a vehicle, which is not present in the image.
+Classification: <response>dog</response>
+----------------------------------------
+Query 24: Expected: [automobile] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Four wheels
+- Four doors
+- Windows
+- Front grille
+- Headlights
+- License plate
+KB:
+- IF Four wheels AND Four doors AND Windows AND Front grille AND Headlights AND License plate THEN automobile
+Rule Check:
+- The extracted features match the rule in the KB that states "IF Four wheels AND Four doors AND Windows AND Front grille AND Headlights AND License plate THEN automobile."
+- The target image has four wheels, four doors, windows, a front grille, headlights, and a license plate, which are all features of an automobile.
+- Therefore, the target image is classified as an automobile.
+----------------------------------------
+Query 25: Expected: [automobile] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four legs
+- Tail
+- Ears
+- Eyes
+- Nose
+- Fur
+- Paws
+KB:
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN cat
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN dog
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN truck
+- IF Four legs AND Tail AND Ears AND Eyes AND Nose AND Fur AND Paws THEN automobile
+Rule Check:
+- The image has four legs, a tail, ears, eyes, a nose, fur, and paws. These features match the IF conditions of the cat and dog rules.
+- The cat rule has an additional feature of being a feline, which is not present in the image.
+- The dog rule has an additional feature of being a canine, which is not present in the image.
+- The truck rule has an additional feature of being a vehicle, which is not present in the image.
+- The automobile rule has an additional feature of being a vehicle, which is not present in the image.
+Classification: <response>dog</response>
+----------------------------------------
+Query 26: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four wheels
+- Body shape of a car
+- Color of the car is green
+- Brown wooden panel on the side
+KB:
+- IF Four wheels AND Body shape of a car AND Color of the car is green AND Brown wooden panel on the side THEN automobile
+Rule Check:
+- The extracted features match the rule in the KB: Four wheels, body shape of a car, color of the car is green, and brown wooden panel on the side.
+- These features are specific to the automobile class.
+Classification: <response>automobile</response>
+----------------------------------------
+Query 27: Expected: [automobile] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Four legs
+- Tail
+- Ears
+- Eyes
+- Nose
+- Fur
+- Paws
+KB:
+- IF Four legs, tail, ears, eyes, nose, fur, paws THEN cat
+- IF Four legs, tail, ears, eyes, nose, fur, paws THEN dog
+- IF Four legs, tail, ears, eyes, nose, fur, paws THEN truck
+- IF Four legs, tail, ears, eyes, nose, fur, paws THEN automobile
+Rule Check:
+- The image has four legs, a tail, ears, eyes, a nose, fur, and paws, which matches the features of both a cat and a dog.
+- Since the image does not have the specific features of a truck or an automobile, it cannot be classified as either of those.
+- Therefore, the image is most likely a cat or a dog.
+Classification: <response>cat</response>
+----------------------------------------
+Query 28: Expected: [dog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, furry animal with a round face and a blue collar.
+KB:
+- IF [Small, furry animal with a round face and a blue collar] THEN [dog]
+Rule Check:
+- The extracted features match the IF condition of the rule derived from the dog class, which is "Small, furry animal with a round face and a blue collar."
+- Therefore, the rule check confirms that the visual features best match the dog class.
+Classification:
+<response>dog</response>
+----------------------------------------
+Query 29: Expected: [dog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Fur
+- White color
+- Small size
+KB:
+- IF Fur AND White color AND Small size THEN dog
+Rule Check:
+- The image has fur, which is a characteristic of dogs.
+- The color of the image is white, which is also a characteristic of dogs.
+- The size of the image is small, which is another characteristic of dogs.
+- Therefore, the extracted features match the rule in the Knowledge Base that states "IF Fur AND White color AND Small size THEN dog."
+Classification: <response>dog</response>
+----------------------------------------
+Query 30: Expected: [dog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Fur
+- Eyes
+- Ears
+- Tail
+- Paws
+KB:
+- IF Fur AND Eyes AND Ears AND Tail AND Paws THEN dog
+Rule Check:
+- The image has fur, eyes, ears, a tail, and paws, which matches the IF-THEN rule for the dog class.
+<response>dog</response>
+----------------------------------------
+Query 31: Expected: [dog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a dog.
+- The dog has a brown coat.
+- The dog is wearing a blue collar.
+- The dog is sitting on a white surface.
+KB:
+- IF the image shows a dog with a brown coat and a blue collar, THEN the class is dog.
+Rule Check:
+- The extracted features match the rule in the KB: the dog has a brown coat and a blue collar.
+- The dog is sitting on a white surface, which is not a critical feature for classification.
+Classification:
+<response>dog</response>
+----------------------------------------
+Query 32: Expected: [dog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a dog.
+- The dog has a brown coat.
+- The dog is wearing a blue collar.
+- The dog is lying down on a surface.
+KB:
+- IF the image shows a dog with a brown coat and a blue collar, then the class is dog.
+Rule Check:
+- The extracted features match the rule in the KB: the dog has a brown coat and a blue collar.
+- The dog is lying down, which is a common behavior for dogs.
+Classification:
+<response>dog</response>
+----------------------------------------
+Query 33: Expected: [dog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Fur
+- Small size
+- Four legs
+- Tail
+KB:
+- IF Fur AND Small size AND Four legs AND Tail THEN dog
+Rule Check:
+- The image features fur, small size, four legs, and a tail, which matches the IF-THEN rule for the dog class.
+<response>dog</response>
+----------------------------------------
+Query 34: Expected: [dog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Fur
+- Eyes
+- Ears
+- Nose
+- Tail
+KB:
+- IF Fur AND Eyes AND Ears AND Nose AND Tail THEN dog
+Rule Check:
+- The image features fur, eyes, ears, a nose, and a tail, which matches the IF condition of the dog class rule.
+- Therefore, the extracted features best match the rule that states "IF Fur AND Eyes AND Ears AND Nose AND Tail THEN dog."
+- Hence, the class of this image is <response>dog</response>.
+----------------------------------------
+Query 35: Expected: [dog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a dog.
+- The dog has a collar around its neck.
+- The dog is lying down on a surface.
+- The dog has a yellow object in its mouth.
+KB:
+- IF the image shows a dog with a collar around its neck AND the dog is lying down on a surface AND the dog has a yellow object in its mouth THEN the class is dog.
+Rule Check:
+- The extracted features match the rule in the KB: the dog has a collar around its neck, the dog is lying down on a surface, and the dog has a yellow object in its mouth.
+- Therefore, the class of the image is dog.
+<response>dog</response>
+----------------------------------------
+Query 36: Expected: [dog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a dog.
+- The dog has a white and black coat.
+- The dog is wearing a blue collar.
+- The dog is standing on a grassy area.
+KB:
+- IF the image shows a dog with a white and black coat and a blue collar, THEN the class is dog.
+Rule Check:
+- The extracted features match the IF condition of the rule in the KB.
+- The dog has a white and black coat, which is a specific visual feature that distinguishes it from other classes.
+- The dog is wearing a blue collar, which is another specific visual feature that distinguishes it from other classes.
+- The dog is standing on a grassy area, which is a specific visual feature that distinguishes it from other classes.
+Classification:
+<response>dog</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.4167

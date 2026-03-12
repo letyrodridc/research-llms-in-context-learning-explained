@@ -1,0 +1,1599 @@
+=== DEBUG LOG: qwen-vl | dtd | Prompt: rulebased ===
+
+--- CONFIG: N=2, K=2, Q=9 ---
+Query 1: Expected: [waffled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>studded</response>
+
+Features:
+- Square grid pattern
+- Textured surface
+
+KB:
+- IF Square grid pattern AND Textured surface THEN studded
+
+Rule Check:
+- The target image has a square grid pattern and a textured surface, which matches the IF conditions of the "studded" class rule. Therefore, the rule is activated and the class is determined to be "studded".
+----------------------------------------
+Query 2: Expected: [waffled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square grid pattern
+- Light brown color
+- Textured surface
+KB:
+- IF Square grid pattern AND Light brown color AND Textured surface THEN waffled
+Rule Check:
+- The image has a square grid pattern, which is a characteristic feature of waffles.
+- The light brown color is consistent with the color of waffles.
+- The textured surface is another characteristic feature of waffles.
+- Therefore, the extracted features match the rule that states "IF Square grid pattern AND Light brown color AND Textured surface THEN waffled."
+Classification: <response>waffled</response>
+----------------------------------------
+Query 3: Expected: [waffled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>studded</response>
+
+Features:
+- Square grid pattern
+- Hexagonal shapes
+- Metal studs
+
+KB:
+- IF Square grid pattern with hexagonal shapes and metal studs THEN studded
+
+Rule Check:
+- The target image has a square grid pattern with hexagonal shapes and metal studs, which matches the IF condition of the studded class rule. Therefore, the studded class is activated.
+----------------------------------------
+Query 4: Expected: [waffled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square pattern
+- Pink color
+KB:
+- IF Square pattern THEN waffled
+- IF Pink color THEN waffled
+Rule Check:
+- The image has a square pattern, which matches the rule "IF Square pattern THEN waffled".
+- The image has a pink color, which matches the rule "IF Pink color THEN waffled".
+Classification: <response>waffled</response>
+----------------------------------------
+Query 5: Expected: [waffled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>studded</response>
+
+Features:
+- Square grid pattern
+- Hexagonal shapes
+- Metal studs
+
+KB:
+- IF Square grid pattern with hexagonal shapes and metal studs THEN studded
+
+Rule Check:
+- The target image has a square grid pattern with hexagonal shapes and metal studs, which matches the IF condition of the studded class rule. Therefore, the studded class is activated.
+----------------------------------------
+Query 6: Expected: [waffled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>studded</response>
+
+Features:
+- Textured fabric
+- Patterned design
+- Studded elements
+
+KB:
+- IF Textured fabric with patterned design and studded elements THEN studded
+
+Rule Check:
+- The image features a textured fabric with a patterned design and studded elements, which matches the IF condition of the studded class rule. Therefore, the studded class is activated.
+----------------------------------------
+Query 7: Expected: [waffled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>studded</response>
+
+Features:
+- Square grid pattern
+- Hexagonal shapes
+- Metal studs
+
+KB:
+- IF Square grid pattern with hexagonal shapes and metal studs THEN studded
+
+Rule Check:
+- The target image has a square grid pattern with hexagonal shapes and metal studs, which matches the IF condition of the studded class rule. Therefore, the studded class is activated.
+----------------------------------------
+Query 8: Expected: [waffled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>studded</response>
+
+Features:
+- Square grid pattern
+- Hexagonal shapes
+- Metal studs
+
+KB:
+- IF Square grid pattern with hexagonal shapes and metal studs THEN studded
+
+Rule Check:
+- The target image has a square grid pattern with hexagonal shapes and metal studs, which matches the IF condition of the studded class rule. Therefore, the studded class is activated.
+----------------------------------------
+Query 9: Expected: [waffled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square pattern
+- Textured surface
+- Waffle-like appearance
+KB:
+- IF Square pattern AND Textured surface AND Waffle-like appearance THEN waffled
+Rule Check:
+- The image has a square pattern, a textured surface, and a waffle-like appearance, which matches the IF conditions of the "waffled" class rule.
+- Therefore, the extracted features match the rule that states "IF Square pattern AND Textured surface AND Waffle-like appearance THEN waffled."
+Classification: <response>waffled</response>
+----------------------------------------
+Query 10: Expected: [studded] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square grid pattern
+- Light brown color
+- Textured surface
+KB:
+- IF Square grid pattern AND Light brown color AND Textured surface THEN waffled
+Rule Check:
+- The image has a square grid pattern, which is a characteristic feature of waffles.
+- The light brown color is consistent with the color of waffles.
+- The textured surface is another characteristic feature of waffles.
+- Therefore, the extracted features match the rule that states "IF Square grid pattern AND Light brown color AND Textured surface THEN waffled."
+Classification: <response>waffled</response>
+----------------------------------------
+Query 11: Expected: [studded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>studded</response>
+
+Features:
+- Hexagonal shape
+- Metal studs
+- Black background
+
+KB:
+- IF Hexagonal shape and metal studs THEN studded
+
+Rule Check:
+- The image has a hexagonal shape and is covered with metal studs, which matches the IF-THEN rule derived from the examples seen.
+----------------------------------------
+Query 12: Expected: [studded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>studded</response>
+
+Features:
+- Hexagonal shapes
+- Metal studs
+- Black background
+
+KB:
+- IF Hexagonal shapes and metal studs THEN studded
+
+Rule Check:
+- The image contains hexagonal shapes and metal studs, which match the IF conditions of the studded class rule. Therefore, the studded class is activated.
+----------------------------------------
+Query 13: Expected: [studded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>studded</response>
+
+Features:
+- Hexagonal shapes
+- Metal studs
+- Black background
+
+KB:
+- IF Hexagonal shapes and metal studs THEN studded
+
+Rule Check:
+- The image contains hexagonal shapes and metal studs, which match the IF conditions of the studded class rule. Therefore, the studded class is activated.
+----------------------------------------
+Query 14: Expected: [studded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>studded</response>
+
+Features:
+- Hexagonal shapes
+- Metal studs
+- Black background
+
+KB:
+- IF Hexagonal shapes and metal studs THEN studded
+
+Rule Check:
+- The image contains hexagonal shapes and metal studs, which match the IF conditions of the studded class rule. Therefore, the studded class is activated.
+----------------------------------------
+Query 15: Expected: [studded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>studded</response>
+
+Features:
+- Hexagonal shapes
+- Studs
+
+KB:
+- IF Hexagonal shapes and Studs THEN studded
+
+Rule Check:
+- The image contains hexagonal shapes and is covered with studs, which matches the IF-THEN rule derived from the examples seen.
+----------------------------------------
+Query 16: Expected: [studded] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square grid pattern
+- Light brown color
+- Textured surface
+KB:
+- IF Square grid pattern AND Light brown color AND Textured surface THEN waffled
+Rule Check:
+- The image has a square grid pattern, which matches the visual feature of the waffled class.
+- The light brown color is consistent with the examples provided.
+- The textured surface is also present in the examples.
+- Therefore, the extracted features match the rule from the Knowledge Base that states "IF Square grid pattern AND Light brown color AND Textured surface THEN waffled."
+Classification: <response>waffled</response>
+----------------------------------------
+Query 17: Expected: [studded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>studded</response>
+
+Features:
+- Hexagonal shapes
+- Metal studs
+- Black background
+
+KB:
+- IF Hexagonal shapes and metal studs THEN studded
+
+Rule Check:
+- The image contains hexagonal shapes and metal studs, which match the IF conditions of the studded class rule. Therefore, the studded class is activated.
+----------------------------------------
+Query 18: Expected: [studded] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>studded</response>
+
+Features:
+- Hexagonal shapes
+- Metal studs
+- Black background
+
+KB:
+- IF Hexagonal shapes and metal studs THEN studded
+
+Rule Check:
+- The image contains hexagonal shapes and metal studs, which match the IF conditions of the studded class rule. Therefore, the studded class is activated.
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9): 0.5556
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Yellow color
+- Square pattern
+KB:
+- IF Woven texture AND Yellow color AND Square pattern THEN Woven
+Rule Check:
+- The image has a woven texture, which matches the IF part of the rule.
+- The color is yellow, which matches the color part of the rule.
+- The pattern is square, which matches the pattern part of the rule.
+- Therefore, the extracted features match the rule "IF Woven texture AND Yellow color AND Square pattern THEN Woven".
+Classification: <response>output_class</response>
+----------------------------------------
+Query 2: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Braided texture
+- Purple color
+- Elastic material
+KB:
+- IF Braided texture AND Elastic material THEN woven
+- IF Purple color THEN crystalline
+Rule Check:
+- The image has a braided texture, which matches the "Braided texture" feature in the "woven" class.
+- The image has an elastic material, which matches the "Elastic material" feature in the "woven" class.
+- The image has a purple color, which matches the "Purple color" feature in the "crystalline" class.
+- Since the image has both a braided texture and an elastic material, it matches the "woven" class better than the "crystalline" class.
+Classification: <response>woven</response>
+----------------------------------------
+Query 3: Expected: [woven] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Woven pattern
+- Purple color
+- Braided texture
+KB:
+- IF Woven pattern AND Purple color AND Braided texture THEN woven
+Rule Check:
+- The image has a woven pattern, which matches the IF part of the rule.
+- The color is purple, which is also a feature that matches the rule.
+- The texture is braided, which is another feature that matches the rule.
+- Therefore, the extracted features match the rule from the Knowledge Base.
+- Based on the rule check, the class of this image is woven.
+----------------------------------------
+Query 4: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Purple color
+- Braided pattern
+KB:
+- IF Woven texture AND Purple color AND Braided pattern THEN Woven
+Rule Check:
+- The image has a woven texture, which matches the IF part of the rule.
+- The image has a purple color, which matches the IF part of the rule.
+- The image has a braided pattern, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Woven texture AND Purple color AND Braided pattern THEN Woven".
+Classification: <response>output_class</response>
+----------------------------------------
+Query 5: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Purple color
+- Braided pattern
+KB:
+- IF Woven texture AND Purple color AND Braided pattern THEN Woven
+Rule Check:
+- The image has a woven texture, which matches the IF part of the rule.
+- The image has a purple color, which matches the IF part of the rule.
+- The image has a braided pattern, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Woven texture AND Purple color AND Braided pattern THEN Woven".
+Classification: <response>output_class</response>
+----------------------------------------
+Query 6: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Orange color
+- Braided pattern
+KB:
+- IF Woven texture AND Orange color AND Braided pattern THEN woven
+Rule Check:
+- The image has a woven texture, which is a critical feature for the woven class.
+- The color is orange, which is a specific color associated with the woven class.
+- The braided pattern is a distinct visual feature that matches the woven class.
+- Therefore, the extracted features match the rule: "IF Woven texture AND Orange color AND Braided pattern THEN woven."
+Classification: <response>woven</response>
+----------------------------------------
+Query 7: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Purple color
+- Braided pattern
+KB:
+- IF Woven texture AND Purple color AND Braided pattern THEN Woven
+Rule Check:
+- The image has a woven texture, which matches the IF part of the rule.
+- The color is purple, which matches the color part of the rule.
+- The pattern is braided, which matches the pattern part of the rule.
+- Therefore, the extracted features match the rule for the Woven class.
+Classification: <response>Woven</response>
+----------------------------------------
+Query 8: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Purple color
+- Braided pattern
+KB:
+- IF Woven texture AND Purple color AND Braided pattern THEN Woven
+Rule Check:
+- The image has a woven texture, which matches the IF part of the rule.
+- The image has a purple color, which matches the IF part of the rule.
+- The image has a braided pattern, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Woven texture AND Purple color AND Braided pattern THEN Woven".
+Classification: <response>output_class</response>
+----------------------------------------
+Query 9: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Purple color
+- Braided pattern
+KB:
+- IF Woven texture AND Purple color AND Braided pattern THEN Woven
+Rule Check:
+- The image has a woven texture, which matches the IF part of the rule.
+- The image has a purple color, which matches the IF part of the rule.
+- The image has a braided pattern, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Woven texture AND Purple color AND Braided pattern THEN Woven".
+Classification: <response>output_class</response>
+----------------------------------------
+Query 10: Expected: [crystalline] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Purple color
+- Braided pattern
+KB:
+- IF Woven texture AND Purple color AND Braided pattern THEN woven
+Rule Check:
+- The image has a woven texture, which matches the IF part of the rule.
+- The image has a purple color, which matches the IF part of the rule.
+- The image has a braided pattern, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Woven texture AND Purple color AND Braided pattern THEN woven".
+Classification: <response>woven</response>
+----------------------------------------
+Query 11: Expected: [crystalline] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Purple color
+- Braided pattern
+KB:
+- IF Woven texture AND Purple color AND Braided pattern THEN woven
+Rule Check:
+- The image has a woven texture, which matches the IF part of the rule.
+- The image has a purple color, which matches the IF part of the rule.
+- The image has a braided pattern, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Woven texture AND Purple color AND Braided pattern THEN woven".
+Classification: <response>woven</response>
+----------------------------------------
+Query 12: Expected: [crystalline] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Purple color
+- Braided pattern
+KB:
+- IF Woven texture AND Purple color AND Braided pattern THEN woven
+Rule Check:
+- The image has a woven texture, which matches the IF part of the rule.
+- The image has a purple color, which matches the IF part of the rule.
+- The image has a braided pattern, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Woven texture AND Purple color AND Braided pattern THEN woven".
+Classification: <response>woven</response>
+----------------------------------------
+Query 13: Expected: [crystalline] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Purple color
+- Braided pattern
+KB:
+- IF Woven texture AND Purple color AND Braided pattern THEN woven
+Rule Check:
+- The image has a woven texture, which matches the IF part of the rule.
+- The image has a purple color, which matches the IF part of the rule.
+- The image has a braided pattern, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Woven texture AND Purple color AND Braided pattern THEN woven".
+Classification: <response>woven</response>
+----------------------------------------
+Query 14: Expected: [crystalline] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Purple color
+- Braided pattern
+KB:
+- IF Woven texture AND Purple color AND Braided pattern THEN woven
+Rule Check:
+- The image has a woven texture, which matches the IF part of the rule.
+- The image has a purple color, which matches the IF part of the rule.
+- The image has a braided pattern, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Woven texture AND Purple color AND Braided pattern THEN woven".
+Classification: <response>woven</response>
+----------------------------------------
+Query 15: Expected: [crystalline] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Purple color
+- Braided pattern
+KB:
+- IF Woven texture AND Purple color AND Braided pattern THEN woven
+Rule Check:
+- The image has a woven texture, which matches the IF part of the rule.
+- The image has a purple color, which matches the IF part of the rule.
+- The image has a braided pattern, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Woven texture AND Purple color AND Braided pattern THEN woven".
+Classification: <response>woven</response>
+----------------------------------------
+Query 16: Expected: [crystalline] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Purple color
+- Braided pattern
+KB:
+- IF Woven texture AND Purple color AND Braided pattern THEN woven
+Rule Check:
+- The image has a woven texture, which matches the IF part of the rule.
+- The image has a purple color, which matches the IF part of the rule.
+- The image has a braided pattern, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Woven texture AND Purple color AND Braided pattern THEN woven".
+Classification: <response>woven</response>
+----------------------------------------
+Query 17: Expected: [crystalline] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Purple color
+- Braided pattern
+KB:
+- IF Woven texture AND Purple color AND Braided pattern THEN woven
+Rule Check:
+- The image has a woven texture, which matches the IF part of the rule.
+- The image has a purple color, which matches the IF part of the rule.
+- The image has a braided pattern, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Woven texture AND Purple color AND Braided pattern THEN woven".
+Classification: <response>woven</response>
+----------------------------------------
+Query 18: Expected: [crystalline] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Purple color
+- Braided pattern
+KB:
+- IF Woven texture AND Purple color AND Braided pattern THEN woven
+Rule Check:
+- The image has a woven texture, which matches the IF part of the rule.
+- The image has a purple color, which matches the IF part of the rule.
+- The image has a braided pattern, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Woven texture AND Purple color AND Braided pattern THEN woven".
+Classification: <response>woven</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9): 0.1667
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Light blue color
+- Sheer material
+- Transparent fabric
+- Gauzy texture
+KB:
+- IF Light blue color AND Sheer material AND Transparent fabric AND Gauzy texture THEN gauzy
+Rule Check:
+- The extracted features match the rule in the KB: Light blue color AND Sheer material AND Transparent fabric AND Gauzy texture.
+- Therefore, the class of this image is gauzy.
+<response>gauzy</response>
+----------------------------------------
+Query 2: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Light blue color
+- Sheer material
+- Vertical stripes
+
+KB:
+- IF Light blue color AND Sheer material AND Vertical stripes THEN gauzy
+
+Rule Check:
+- The image has a light blue color, which matches the IF condition of the gauzy class.
+- The material is sheer, which matches the IF condition of the gauzy class.
+- The vertical stripes are present, which matches the IF condition of the gauzy class.
+
+Classification:
+<response>gauzy</response>
+----------------------------------------
+Query 3: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Light blue color
+- Sheer material
+- Vertical stripes
+
+KB:
+- IF Light blue color AND Sheer material AND Vertical stripes THEN gauzy
+
+Rule Check:
+- The extracted features match the IF condition of the rule from the Knowledge Base, which states that if an image has a light blue color, sheer material, and vertical stripes, it belongs to the gauzy class.
+
+Classification:
+<response>gauzy</response>
+----------------------------------------
+Query 4: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Light blue color
+- Sheer fabric
+- Stripes pattern
+
+KB:
+- IF Light blue color AND Sheer fabric THEN gauzy
+- IF Stripes pattern THEN dotted
+
+Rule Check:
+- The image has a light blue color, which matches the condition in the "gauzy" rule.
+- The image has a sheer fabric, which matches the condition in the "gauzy" rule.
+- The image has a stripes pattern, which matches the condition in the "dotted" rule.
+
+Classification:
+<response>gauzy</response>
+----------------------------------------
+Query 5: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Light blue color
+- Sheer fabric
+- Vertical stripes
+
+KB:
+- IF Light blue color AND Sheer fabric AND Vertical stripes THEN gauzy
+
+Rule Check:
+- The image has a light blue color, which matches the IF condition of the gauzy class.
+- The fabric appears sheer, which matches the IF condition of the gauzy class.
+- The vertical stripes on the fabric match the IF condition of the gauzy class.
+
+Classification:
+<response>gauzy</response>
+----------------------------------------
+Query 6: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Light blue color
+- Sheer fabric
+- Stripes pattern
+
+KB:
+- IF Light blue color AND Sheer fabric AND Stripes pattern THEN gauzy
+
+Rule Check:
+- The image has a light blue color, which matches the IF condition of the gauzy class.
+- The fabric appears sheer, which matches the IF condition of the gauzy class.
+- The stripes pattern on the fabric matches the IF condition of the gauzy class.
+
+Classification:
+<response>gauzy</response>
+----------------------------------------
+Query 7: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Light blue color
+- Sheer material
+- Vertical stripes
+
+KB:
+- IF Light blue color AND Sheer material AND Vertical stripes THEN gauzy
+
+Rule Check:
+- The extracted features match the IF condition of the rule from the Knowledge Base, which states that if an image has a light blue color, sheer material, and vertical stripes, it belongs to the gauzy class.
+
+Classification:
+<response>gauzy</response>
+----------------------------------------
+Query 8: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Light blue color
+- Sheer fabric
+- Floral pattern
+- Bird and hearts
+
+KB:
+- IF Light blue color AND Sheer fabric THEN gauzy
+- IF Floral pattern THEN dotted
+- IF Bird AND Hearts THEN dotted
+
+Rule Check:
+- The image has a light blue color and sheer fabric, which matches the IF-THEN rule for the class "gauzy."
+- The image also has a floral pattern, which matches the IF-THEN rule for the class "dotted."
+- The presence of a bird and hearts does not match any of the IF-THEN rules for the classes seen.
+
+Classification:
+<response>gauzy</response>
+----------------------------------------
+Query 9: Expected: [gauzy] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Light blue color
+- Sheer fabric
+- Flowing texture
+KB:
+- IF Light blue color AND Sheer fabric AND Flowing texture THEN gauzy
+Rule Check:
+- The image has a light blue color, which matches the light blue color in the gauzy class.
+- The fabric appears to be sheer, which matches the sheer fabric in the gauzy class.
+- The texture of the fabric is flowing, which matches the flowing texture in the gauzy class.
+Based on the extracted features and the rules from the knowledge base, the image most closely matches the gauzy class. Therefore, the final classification is:
+<response>gauzy</response>
+----------------------------------------
+Query 10: Expected: [dotted] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Small, colorful dots
+- Black background
+KB:
+- IF Small, colorful dots on a black background THEN dotted
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: Small, colorful dots on a black background.
+- The extracted features do not match the rules for gauzy or fibrous.
+Classification:
+<response>dotted</response>
+----------------------------------------
+Query 11: Expected: [dotted] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Light blue color
+- Sheer fabric
+- Vertical stripes
+
+KB:
+- IF Light blue color AND Sheer fabric AND Vertical stripes THEN gauzy
+
+Rule Check:
+- The image has a light blue color, which matches the IF condition of the gauzy class.
+- The fabric appears to be sheer, which matches the IF condition of the gauzy class.
+- The vertical stripes on the fabric also match the IF condition of the gauzy class.
+
+Classification:
+<response>gauzy</response>
+----------------------------------------
+Query 12: Expected: [dotted] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark blue circles of different sizes
+- White background
+KB:
+- IF Dark blue circles of different sizes on a white background THEN dotted
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: Dark blue circles of different sizes on a white background.
+- The extracted features do not match the rules for gauzy or fibrous.
+Classification: <response>dotted</response>
+----------------------------------------
+Query 13: Expected: [dotted] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dotted pattern
+- Dark background
+- White circles
+
+KB:
+- IF Dotted pattern AND Dark background THEN dotted
+
+Rule Check:
+- The image has a dotted pattern and a dark background, which matches the rule from the Knowledge Base.
+
+Classification:
+<response>dotted</response>
+----------------------------------------
+Query 14: Expected: [dotted] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Light blue color
+- Sheer fabric
+- Vertical stripes
+
+KB:
+- IF Light blue color AND Sheer fabric AND Vertical stripes THEN gauzy
+
+Rule Check:
+- The image has a light blue color, which matches the IF condition of the gauzy class.
+- The fabric appears sheer, which matches the IF condition of the gauzy class.
+- The vertical stripes on the fabric match the IF condition of the gauzy class.
+
+Classification:
+<response>gauzy</response>
+----------------------------------------
+Query 15: Expected: [dotted] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Small red and green polka dots
+- Yellow background
+KB:
+- IF Small red and green polka dots AND Yellow background THEN dotted
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: Small red and green polka dots AND Yellow background.
+- The rule states that if an image has small red and green polka dots and a yellow background, it is classified as 'dotted'.
+Classification: <response>dotted</response>
+----------------------------------------
+Query 16: Expected: [dotted] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Light blue color
+- Sheer fabric
+- Stripes pattern
+
+KB:
+- IF Light blue color AND Sheer fabric THEN gauzy
+- IF Stripes pattern THEN dotted
+
+Rule Check:
+- The image has a light blue color, which matches the condition in the "gauzy" rule.
+- The image has a sheer fabric, which matches the condition in the "gauzy" rule.
+- The image has a stripes pattern, which matches the condition in the "dotted" rule.
+
+Classification:
+<response>gauzy</response>
+----------------------------------------
+Query 17: Expected: [dotted] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Small, round, colorful circles
+- Background is a solid color
+- No other objects or patterns present
+
+KB:
+- IF Small, round, colorful circles with a solid background THEN dotted
+
+Rule Check:
+- The extracted features match the rule in the KB: Small, round, colorful circles with a solid background. This matches the dotted class.
+
+Classification:
+<response>dotted</response>
+----------------------------------------
+Query 18: Expected: [dotted] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Small, round, colored dots
+- Background color is light
+- Pattern is repetitive and consistent
+
+KB:
+- IF Small, round, colored dots with a light background and repetitive pattern THEN dotted
+
+Rule Check:
+- The extracted features match the rule in the KB: Small, round, colored dots with a light background and repetitive pattern.
+
+Classification:
+<response>dotted</response>
+----------------------------------------
+Query 19: Expected: [fibrous] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Light blue color
+- Sheer fabric
+- Stripes pattern
+
+KB:
+- IF Light blue color AND Sheer fabric AND Stripes pattern THEN gauzy
+
+Rule Check:
+- The image has a light blue color, which matches the "Light blue color" feature in the KB.
+- The fabric appears sheer, which matches the "Sheer fabric" feature in the KB.
+- The fabric has a striped pattern, which matches the "Stripes pattern" feature in the KB.
+
+Based on the extracted features and the rules in the Knowledge Base, the image matches the "gauzy" class. Therefore, the final classification is:
+
+<response>gauzy</response>
+----------------------------------------
+Query 20: Expected: [fibrous] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Light blue color
+- Sheer fabric
+- Stripes pattern
+
+KB:
+- IF Light blue color AND Sheer fabric AND Stripes pattern THEN gauzy
+
+Rule Check:
+- The image has a light blue color, which matches the IF condition of the gauzy class.
+- The fabric appears sheer, which matches the IF condition of the gauzy class.
+- The stripes pattern is present, which matches the IF condition of the gauzy class.
+
+Classification:
+<response>gauzy</response>
+----------------------------------------
+Query 21: Expected: [fibrous] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Light blue color
+- Sheer fabric
+- Vertical stripes
+
+KB:
+- IF Light blue color AND Sheer fabric AND Vertical stripes THEN gauzy
+
+Rule Check:
+- The extracted features match the IF condition of the rule from the Knowledge Base, which states that if an image has a light blue color, sheer fabric, and vertical stripes, it belongs to the gauzy class.
+
+Classification:
+<response>gauzy</response>
+----------------------------------------
+Query 22: Expected: [fibrous] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Fine, long, and thin fibers
+- Dark brown color
+- Scattered and uneven texture
+
+KB:
+- IF Fine, long, and thin fibers AND Dark brown color AND Scattered and uneven texture THEN fibrous
+
+Rule Check:
+- The extracted features match the IF conditions of the fibrous class rule in the Knowledge Base. The fine, long, and thin fibers, dark brown color, and scattered and uneven texture are all specific visual features that distinguish the image from the other classes.
+
+Classification:
+<response>fibrous</response>
+----------------------------------------
+Query 23: Expected: [fibrous] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Yellow ribbon
+- Green dots
+- Yellow and green ribbon
+- Yellow and green dots
+- Yellow and green pattern
+KB:
+- IF Yellow ribbon AND Green dots THEN dotted
+- IF Yellow and green ribbon AND Yellow and green dots THEN dotted
+- IF Yellow and green ribbon AND Yellow and green pattern THEN dotted
+Rule Check:
+- The image has a yellow ribbon with green dots, which matches the IF condition of the dotted class.
+- The image also has a yellow and green ribbon with yellow and green dots, which matches the IF condition of the dotted class.
+- The image has a yellow and green ribbon with a yellow and green pattern, which matches the IF condition of the dotted class.
+Classification: <response>dotted</response>
+----------------------------------------
+Query 24: Expected: [fibrous] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Light blue color
+- Sheer fabric
+- Stripes pattern
+
+KB:
+- IF Light blue color AND Sheer fabric AND Stripes pattern THEN gauzy
+
+Rule Check:
+- The image has a light blue color, which matches the IF condition of the gauzy class.
+- The fabric appears sheer, which matches the IF condition of the gauzy class.
+- The stripes pattern is present, which matches the IF condition of the gauzy class.
+
+Classification:
+<response>gauzy</response>
+----------------------------------------
+Query 25: Expected: [fibrous] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Light blue color
+- Sheer fabric
+- Stripes pattern
+
+KB:
+- IF Light blue color AND Sheer fabric AND Stripes pattern THEN gauzy
+
+Rule Check:
+- The image has a light blue color, which matches the IF condition of the gauzy class.
+- The fabric appears sheer, which matches the IF condition of the gauzy class.
+- The stripes pattern is present, which matches the IF condition of the gauzy class.
+
+Classification:
+<response>gauzy</response>
+----------------------------------------
+Query 26: Expected: [fibrous] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Fine, wispy texture
+- Light, airy appearance
+- Soft, delicate fibers
+KB:
+- IF Fine, wispy texture AND Light, airy appearance AND Soft, delicate fibers THEN gauzy
+Rule Check:
+- The extracted features of fine, wispy texture, light, airy appearance, and soft, delicate fibers match the IF conditions of the gauzy class rule.
+- Therefore, the rule is activated: IF Fine, wispy texture AND Light, airy appearance AND Soft, delicate fibers THEN gauzy.
+Classification: <response>gauzy</response>
+----------------------------------------
+Query 27: Expected: [fibrous] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Light blue color
+- Sheer fabric
+- Stripes pattern
+
+KB:
+- IF Light blue color AND Sheer fabric AND Stripes pattern THEN gauzy
+
+Rule Check:
+- The image has a light blue color, which matches the IF condition of the gauzy class.
+- The fabric appears sheer, which matches the IF condition of the gauzy class.
+- The stripes pattern is present, which matches the IF condition of the gauzy class.
+
+Classification:
+<response>gauzy</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9): 0.5926
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [smeared] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Abstract, chaotic color patterns
+- High contrast between colors
+- No discernible shapes or forms
+
+KB:
+- IF Abstract, chaotic color patterns with high contrast THEN smeared
+- IF Abstract, chaotic color patterns with high contrast THEN lacelike
+- IF Abstract, chaotic color patterns with high contrast THEN cracked
+- IF Abstract, chaotic color patterns with high contrast THEN blotchy
+
+Rule Check:
+- The image has abstract, chaotic color patterns with high contrast, which matches the features of smeared, lacelike, cracked, and blotchy classes.
+- However, smeared and lacelike classes have specific visual features that distinguish them from the other classes. The smeared class has a smeared texture, and the lacelike class has a lace-like pattern. The image does not have these specific features.
+- The cracked class has a cracked texture, and the blotchy class has a blotchy texture. The image does not have these specific features either.
+
+Classification:
+<response>output_class</response>
+----------------------------------------
+Query 2: Expected: [smeared] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Abstract painting
+- Blue and green colors
+- Textured surface
+KB:
+- IF Abstract painting with blue and green colors AND Textured surface THEN smeared
+Rule Check:
+- The image has an abstract painting with blue and green colors and a textured surface, which matches the IF condition of the smeared class rule.
+Classification: <response>smeared</response>
+----------------------------------------
+Query 3: Expected: [smeared] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Smudged texture
+- Blurred edges
+- Mixture of colors
+
+KB:
+- IF Smudged texture AND Blurred edges AND Mixture of colors THEN smeared
+
+Rule Check:
+- The image has a smudged texture, which is a critical feature for the smeared class.
+- The edges are blurred, another key feature for the smeared class.
+- The image contains a mixture of colors, which is also a feature of the smeared class.
+
+Based on the extracted features, the rule that matches the visual features best is:
+- IF Smudged texture AND Blurred edges AND Mixture of colors THEN smeared
+
+Classification:
+<response>smeared</response>
+----------------------------------------
+Query 4: Expected: [smeared] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Blurred edges
+- Abstract shapes
+- Colorful strokes
+KB:
+- IF Blurred edges AND Abstract shapes AND Colorful strokes THEN smeared
+Rule Check:
+- The image has blurred edges, abstract shapes, and colorful strokes, which match the features described in the "smeared" class.
+Classification: <response>smeared</response>
+----------------------------------------
+Query 5: Expected: [smeared] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Smudged texture
+- Blurred edges
+- Mixture of colors
+
+KB:
+- IF Smudged texture AND Blurred edges THEN smeared
+- IF Mixture of colors THEN lacelike
+- IF Cracked pattern THEN cracked
+
+Rule Check:
+- The image has a smudged texture and blurred edges, which matches the "smeared" class.
+- The image also has a mixture of colors, which matches the "lacelike" class.
+- The image does not have a cracked pattern, so the "cracked" class is not activated.
+
+Classification:
+<smeared>
+----------------------------------------
+Query 6: Expected: [smeared] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Smudged texture
+- Blurred edges
+- Abstract shapes
+KB:
+- IF Smudged texture AND Blurred edges AND Abstract shapes THEN smeared
+Rule Check:
+- The image has a smudged texture, blurred edges, and abstract shapes, which match the features described in the "smeared" class.
+- The extracted features of the image align with the logical IF-THEN rule derived from the examples, confirming that the image belongs to the "smeared" class.
+Classification: <response>smeared</response>
+----------------------------------------
+Query 7: Expected: [smeared] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Smudged texture
+- Blurred edges
+- Abstract shapes
+
+KB:
+- IF Smudged texture AND Blurred edges AND Abstract shapes THEN smeared
+
+Rule Check:
+- The image has a smudged texture, which is a critical feature for the smeared class.
+- The edges are blurred, another key feature for the smeared class.
+- The shapes are abstract, which is also a feature that matches the smeared class.
+
+Classification:
+<response>smeared</response>
+----------------------------------------
+Query 8: Expected: [smeared] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Abstract, chaotic pattern
+- Dripping, fluid texture
+- Blurred, smeared appearance
+- No distinct shapes or forms
+
+KB:
+- IF Abstract, chaotic pattern AND Dripping, fluid texture AND Blurred, smeared appearance THEN smeared
+
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: "IF Abstract, chaotic pattern AND Dripping, fluid texture AND Blurred, smeared appearance THEN smeared."
+
+Classification:
+<response>smeared</response>
+----------------------------------------
+Query 9: Expected: [smeared] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Scratches
+- Dark green color
+- Rough texture
+KB:
+- IF Scratches AND Dark green color AND Rough texture THEN cracked
+Rule Check:
+- The image has scratches, a dark green color, and a rough texture, which matches the IF-THEN rule for the 'cracked' class.
+<response>cracked</response>
+----------------------------------------
+Query 10: Expected: [lacelike] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Smudged texture
+- Blurred edges
+- Mixture of colors
+
+KB:
+- IF Smudged texture AND Blurred edges THEN smeared
+- IF Mixture of colors THEN lacelike
+- IF Cracked pattern THEN cracked
+
+Rule Check:
+- The image has a smudged texture and blurred edges, which matches the "smeared" class.
+- The image also has a mixture of colors, which matches the "lacelike" class.
+- The image does not have a cracked pattern, so the "cracked" class is not activated.
+
+Classification:
+<smeared>
+----------------------------------------
+Query 11: Expected: [lacelike] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Smudged texture
+- Blurred edges
+- Mixture of colors
+
+KB:
+- IF Smudged texture AND Blurred edges AND Mixture of colors THEN smeared
+
+Rule Check:
+- The image has a smudged texture, which is a critical feature for the smeared class.
+- The edges are blurred, another key feature for the smeared class.
+- The mixture of colors is also a feature that aligns with the smeared class.
+
+Classification:
+<response>smeared</response>
+----------------------------------------
+Query 12: Expected: [lacelike] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Smudged texture
+- Blurred edges
+- Mixture of colors
+
+KB:
+- IF Smudged texture AND Blurred edges THEN smeared
+- IF Mixture of colors THEN lacelike
+
+Rule Check:
+- The image has a smudged texture and blurred edges, which matches the "smeared" class.
+- The image also has a mixture of colors, which matches the "lacelike" class.
+
+Classification:
+<smeared>
+----------------------------------------
+Query 13: Expected: [lacelike] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Smudged texture
+- Blurred edges
+- Lack of distinct shapes
+KB:
+- IF Smudged texture AND Blurred edges THEN smeared
+- IF Lack of distinct shapes THEN smeared
+Rule Check:
+- The image has a smudged texture and blurred edges, which matches the rule for the smeared class.
+- The lack of distinct shapes also matches the rule for the smeared class.
+Classification: <response>smeared</response>
+----------------------------------------
+Query 14: Expected: [lacelike] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- White and gray color scheme
+- Abstract, blurred appearance
+- No distinct shapes or forms
+KB:
+- IF White and gray color scheme AND Abstract, blurred appearance THEN smeared
+- IF No distinct shapes or forms THEN smeared
+Rule Check:
+- The image has a white and gray color scheme, which matches the smeared class.
+- The image appears abstract and blurred, which also matches the smeared class.
+- There are no distinct shapes or forms, which further supports the smeared class.
+Classification: <response>smeared</response>
+----------------------------------------
+Query 15: Expected: [lacelike] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Smudged texture
+- Blurred edges
+- Mixture of colors
+
+KB:
+- IF Smudged texture AND Blurred edges THEN smeared
+- IF Mixture of colors THEN lacelike
+- IF Cracked pattern THEN cracked
+
+Rule Check:
+- The image has a smudged texture and blurred edges, which matches the "smeared" class.
+- The image also has a mixture of colors, which matches the "lacelike" class.
+- The image does not have a cracked pattern, so the "cracked" class is not activated.
+
+Classification:
+<response>smeared</response>
+----------------------------------------
+Query 16: Expected: [lacelike] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Smudged texture
+- Blurred edges
+- Mixture of colors
+
+KB:
+- IF Smudged texture AND Blurred edges THEN smeared
+- IF Mixture of colors THEN lacelike
+- IF Cracked texture THEN cracked
+
+Rule Check:
+- The image has a smudged texture and blurred edges, which matches the "smeared" class.
+- The image also has a mixture of colors, which matches the "lacelike" class.
+- There is no evidence of a cracked texture, which rules out the "cracked" class.
+
+Classification:
+<smeared>
+----------------------------------------
+Query 17: Expected: [lacelike] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Smudged texture
+- Blurred edges
+- Mixture of colors
+
+KB:
+- IF Smudged texture AND Blurred edges THEN smeared
+- IF Mixture of colors THEN lacelike
+- IF Cracked texture THEN cracked
+
+Rule Check:
+- The image has a smudged texture and blurred edges, which matches the "smeared" class.
+- The image also has a mixture of colors, which matches the "lacelike" class.
+- There is no evidence of a cracked texture, which rules out the "cracked" class.
+
+Classification:
+<smeared>
+----------------------------------------
+Query 18: Expected: [lacelike] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Smudged texture
+- Blurred edges
+- Mixture of colors
+
+KB:
+- IF Smudged texture AND Blurred edges THEN smeared
+- IF Mixture of colors THEN lacelike
+
+Rule Check:
+- The image has a smudged texture and blurred edges, which matches the "smeared" class.
+- The image also has a mixture of colors, which matches the "lacelike" class.
+
+Classification:
+<smeared>
+----------------------------------------
+Query 19: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Cracks in the surface
+- Rough texture
+- Dark and light colors
+
+KB:
+- IF Cracks in the surface AND Rough texture AND Dark and light colors THEN cracked
+
+Rule Check:
+- The image has cracks in the surface, which matches the "cracked" class.
+- The surface has a rough texture, which matches the "cracked" class.
+- The colors are dark and light, which matches the "cracked" class.
+
+Classification:
+<response>cracked</response>
+----------------------------------------
+Query 20: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Smudged texture
+- Blurred edges
+- Mixture of colors
+
+KB:
+- IF Smudged texture AND Blurred edges AND Mixture of colors THEN smeared
+
+Rule Check:
+- The image has a smudged texture, which is a critical feature for the smeared class.
+- The edges are blurred, which is another critical feature for the smeared class.
+- The image contains a mixture of colors, which is a critical feature for the smeared class.
+
+Based on the extracted features, the rule that matches the visual features best is:
+- IF Smudged texture AND Blurred edges AND Mixture of colors THEN smeared
+
+Classification:
+<response>smeared</response>
+----------------------------------------
+Query 21: Expected: [blotchy] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Smudged texture
+- Blurred edges
+- Mixture of colors
+
+KB:
+- IF Smudged texture AND Blurred edges THEN smeared
+- IF Mixture of colors THEN lacelike
+- IF Cracked texture THEN cracked
+
+Rule Check:
+- The image has a smudged texture and blurred edges, which matches the "smeared" class.
+- The image also has a mixture of colors, which matches the "lacelike" class.
+- There is no evidence of a cracked texture, which rules out the "cracked" class.
+
+Classification:
+<smeared>
+----------------------------------------
+Query 22: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Smudged texture
+- Blurred edges
+- Mottled coloration
+KB:
+- IF Smudged texture AND Blurred edges AND Mottled coloration THEN smeared
+Rule Check:
+- The extracted features of the target image match the IF conditions of the smeared class rule: Smudged texture, Blurred edges, and Mottled coloration.
+- Therefore, the rule check confirms that the target image belongs to the smeared class.
+Classification: <response>smeared</response>
+----------------------------------------
+Query 23: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Cracks in the surface
+- Dry and brittle texture
+- Light brown and beige colors
+
+KB:
+- IF Cracks in the surface AND Dry and brittle texture AND Light brown and beige colors THEN cracked
+
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: Cracks in the surface, Dry and brittle texture, and Light brown and beige colors are all present in the image, indicating that the image belongs to the "cracked" class.
+
+Classification:
+<response>cracked</response>
+----------------------------------------
+Query 24: Expected: [blotchy] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Smudged texture
+- Blurred edges
+- Mixture of colors
+
+KB:
+- IF Smudged texture AND Blurred edges THEN smeared
+- IF Mixture of colors THEN lacelike
+- IF Cracked texture THEN cracked
+
+Rule Check:
+- The image has a smudged texture and blurred edges, which matches the "smeared" class.
+- The image also has a mixture of colors, which matches the "lacelike" class.
+- There is no evidence of a cracked texture, which rules out the "cracked" class.
+
+Classification:
+<smeared>
+----------------------------------------
+Query 25: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Smudged texture
+- Blurred edges
+- Mixture of colors
+
+KB:
+- IF Smudged texture AND Blurred edges THEN smeared
+- IF Mixture of colors THEN lacelike
+- IF Cracked pattern THEN cracked
+
+Rule Check:
+- The image has a smudged texture and blurred edges, which matches the "smeared" class.
+- The image also has a mixture of colors, which matches the "lacelike" class.
+- The image does not have a cracked pattern, so the "cracked" class is not activated.
+
+Classification:
+<response>smeared</response>
+----------------------------------------
+Query 26: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Smudged texture
+- Blurred edges
+- Mixture of colors
+
+KB:
+- IF Smudged texture AND Blurred edges AND Mixture of colors THEN smeared
+
+Rule Check:
+- The image has a smudged texture, which is a critical feature for the smeared class.
+- The edges are blurred, another key feature for the smeared class.
+- The mixture of colors is also a feature that aligns with the smeared class.
+
+Classification:
+<response>smeared</response>
+----------------------------------------
+Query 27: Expected: [blotchy] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Cracked texture
+- Rough surface
+- Distinct color patches
+KB:
+- IF Cracked texture AND Rough surface AND Distinct color patches THEN cracked
+Rule Check:
+- The image has a cracked texture, a rough surface, and distinct color patches, which match the IF conditions of the "cracked" rule in the knowledge base.
+Classification: <response>cracked</response>
+----------------------------------------
+Query 28: Expected: [cracked] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Cracks in the surface
+- Rough texture
+- Green color
+
+KB:
+- IF Cracks in the surface AND Rough texture AND Green color THEN cracked
+
+Rule Check:
+- The image has cracks in the surface, which matches the first rule.
+- The texture is rough, which matches the second rule.
+- The color is green, which matches the third rule.
+
+Classification:
+<response>cracked</response>
+----------------------------------------
+Query 29: Expected: [cracked] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Cracks in the surface
+- Rough texture
+- Dark color
+
+KB:
+- IF Cracks in the surface AND Rough texture AND Dark color THEN cracked
+
+Rule Check:
+- The extracted features match the rule in the KB: Cracks in the surface AND Rough texture AND Dark color.
+
+Classification:
+<response>cracked</response>
+----------------------------------------
+Query 30: Expected: [cracked] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Cracked texture
+- Dry, earthy colors
+- Rough, uneven surface
+KB:
+- IF Cracked texture AND Dry, earthy colors AND Rough, uneven surface THEN cracked
+Rule Check:
+- The image has a cracked texture, dry, earthy colors, and a rough, uneven surface, which matches the IF conditions of the "cracked" rule in the knowledge base.
+Classification: <response>cracked</response>
+----------------------------------------
+Query 31: Expected: [cracked] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Cracked texture
+- Rough surface
+- Dark, earthy colors
+
+KB:
+- IF Cracked texture AND Rough surface AND Dark, earthy colors THEN cracked
+
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: Cracked texture AND Rough surface AND Dark, earthy colors match the rule IF Cracked texture AND Rough surface AND Dark, earthy colors THEN cracked.
+
+Classification:
+<response>cracked</response>
+----------------------------------------
+Query 32: Expected: [cracked] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Cracked texture
+- Dry, earthy colors
+- Rough, uneven surface
+KB:
+- IF Cracked texture AND Dry, earthy colors AND Rough, uneven surface THEN cracked
+Rule Check:
+- The extracted features match the rule in the KB: Cracked texture AND Dry, earthy colors AND Rough, uneven surface.
+- The extracted features are consistent with the visual evidence provided in the examples.
+- The rule check confirms that the extracted features match the rule in the KB.
+Classification: <response>cracked</response>
+----------------------------------------
+Query 33: Expected: [cracked] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Cracks in the surface
+- Rough texture
+- Light brown color
+
+KB:
+- IF Cracks in the surface AND Rough texture AND Light brown color THEN cracked
+
+Rule Check:
+- The extracted features match the rule in the KB: Cracks in the surface AND Rough texture AND Light brown color.
+
+Classification:
+<response>cracked</response>
+----------------------------------------
+Query 34: Expected: [cracked] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Cracked texture
+- Rough surface
+- Distinct cracks
+
+KB:
+- IF Cracked texture AND Rough surface AND Distinct cracks THEN cracked
+
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: Cracked texture AND Rough surface AND Distinct cracks.
+
+Classification:
+<response>cracked</response>
+----------------------------------------
+Query 35: Expected: [cracked] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Cracked texture
+- Dry, earthy colors
+- Rough, uneven surface
+KB:
+- IF Cracked texture AND Dry, earthy colors AND Rough, uneven surface THEN cracked
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: Cracked texture AND Dry, earthy colors AND Rough, uneven surface.
+- The extracted features are consistent with the visual evidence provided in the examples.
+- The rule check confirms that the extracted features best match the rule for the "cracked" class.
+Classification: <response>cracked</response>
+----------------------------------------
+Query 36: Expected: [cracked] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Cracked texture
+- Dark, earthy colors
+- Rough, uneven surface
+KB:
+- IF Cracked texture AND Dark, earthy colors AND Rough, uneven surface THEN cracked
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: Cracked texture AND Dark, earthy colors AND Rough, uneven surface.
+- The extracted features do not match the rules for smeared, lacelike, or blotchy textures.
+Classification: <response>cracked</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.4167

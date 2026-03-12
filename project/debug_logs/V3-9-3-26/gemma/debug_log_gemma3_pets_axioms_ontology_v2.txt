@@ -1,0 +1,1617 @@
+=== DEBUG LOG: gemma3 | pets | Prompt: axioms_ontology_v2 ===
+
+--- CONFIG: N=2, K=2, Q=9 ---
+Query 1: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Bombay</response>
+
+TBox (axioms in a Knowledge Base):
+- Bombay ⊑ hasVisualFeature BlackFur		 (Necessary condition)
+- Bombay ⊑ hasVisualFeature YellowEyes		 (Necessary condition)
+- Bombay ⊑ hasBodyShape Sleek		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BlackFur
+hasVisualFeature YellowEyes
+hasBodyShape Sleek
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BlackFur, YellowEyes, and SleekBodyShape, which satisfies the necessary conditions of the TBox to classify it as a Bombay. Specifically, a Bombay must have BlackFur, YellowEyes, and a SleekBodyShape. The observed properties align with these necessary conditions, thus justifying the classification.
+----------------------------------------
+Query 2: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Bombay</response>
+
+TBox (axioms in a Knowledge Base):
+- Bombay ⊑ hasVisualFeature BlackFur		 (Necessary condition)
+- hasVisualFeature BlackFur ⊑ Bombay		 (Sufficient condition)
+- Bombay ⊑ hasEyeColor Yellow		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BlackFur
+hasVisualFeature SlenderBody
+hasEyeColor Yellow
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BlackFur and Yellow eye color, which satisfies the Sufficient condition (hasVisualFeature BlackFur ⊑ Bombay) and the Necessary condition (Bombay ⊑ hasEyeColor Yellow) axiom to classify it as a Bombay.
+----------------------------------------
+Query 3: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Bombay</response>
+
+TBox (axioms in a Knowledge Base):
+- Bombay ⊑ hasVisualFeature DarkFurColor		 (Necessary condition)
+- hasVisualFeature YellowEyes ⊑ Bombay		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature DarkFurColor
+hasVisualFeature YellowEyes
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents DarkFurColor and YellowEyes, which satisfies the Sufficient condition (hasVisualFeature YellowEyes ⊑ Bombay) and the Necessary condition (Bombay ⊑ hasVisualFeature DarkFurColor) to classify it as Bombay.
+----------------------------------------
+Query 4: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Bombay</response>
+
+TBox (axioms in a Knowledge Base):
+- Bombay ⊑ hasVisualFeature BlackFur		 (Necessary condition)
+- Bombay ⊑ hasVisualFeature YellowEyes		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BlackFur
+hasVisualFeature YellowEyes
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BlackFur and YellowEyes, which satisfies the necessary condition of having BlackFur and YellowEyes to classify it as Bombay.
+----------------------------------------
+Query 5: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Bombay</response>
+
+TBox (axioms in a Knowledge Base):
+- Bombay ⊑ hasVisualFeature BlackFur		 (Necessary condition)
+- Bombay ⊑ hasVisualFeature YellowEyes		 (Necessary condition)
+- Bombay ⊑ hasVisualFeature SlenderBuild		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BlackFur
+hasVisualFeature YellowEyes
+hasVisualFeature SlenderBuild
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BlackFur, YellowEyes, and SlenderBuild, which satisfies the necessary conditions for the Bombay class [Bombay ⊑ hasVisualFeature BlackFur, Bombay ⊑ hasVisualFeature YellowEyes, Bombay ⊑ hasVisualFeature SlenderBuild] to classify it as a Bombay.
+----------------------------------------
+Query 6: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Bombay</response>
+
+TBox (axioms in a Knowledge Base):
+- Bombay ⊑ hasVisualFeature BlackFur		 (Necessary condition)
+- Bombay ⊑ hasVisualFeature YellowEyes		 (Necessary condition)
+- Bombay ⊑ hasBodyShape Sleek		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BlackFur
+hasVisualFeature YellowEyes
+hasBodyShape Sleek
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BlackFur, YellowEyes, and SleekBodyShape, which satisfies the necessary conditions of the TBox to classify it as a Bombay. Specifically, a Bombay must have BlackFur (C ⊑ P), YellowEyes (C ⊑ P), and a SleekBodyShape (C ⊑ P).
+----------------------------------------
+Query 7: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Bombay</response>
+
+TBox (axioms in a Knowledge Base):
+- Bombay ⊑ hasVisualFeature BlackFur		 (Necessary condition)
+- Bombay ⊑ hasVisualFeature YellowEyes		 (Necessary condition)
+- Bombay ⊑ hasVisualFeature SleekBuild		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BlackFur
+hasVisualFeature YellowEyes
+hasVisualFeature SleekBuild
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BlackFur, YellowEyes, and SleekBuild, which satisfies the necessary conditions for the Bombay class [Bombay ⊑ hasVisualFeature BlackFur, Bombay ⊑ hasVisualFeature YellowEyes, Bombay ⊑ hasVisualFeature SleekBuild] to classify it as a Bombay.
+----------------------------------------
+Query 8: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Bombay</response>
+
+TBox (axioms in a Knowledge Base):
+- Bombay ⊑ hasVisualFeature BlackFur		 (Necessary condition)
+- Bombay ⊑ hasVisualFeature GreenEyes		 (Necessary condition)
+- Bombay ⊑ hasBodyShape Sleek		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BlackFur
+hasVisualFeature GreenEyes
+hasBodyShape Sleek
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BlackFur, GreenEyes, and SleekBodyShape, which satisfies the necessary conditions for the Bombay class [Bombay ⊑ hasVisualFeature BlackFur, Bombay ⊑ hasVisualFeature GreenEyes, Bombay ⊑ hasBodyShape Sleek] to classify it as a Bombay.
+----------------------------------------
+Query 9: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Bombay</response>
+
+TBox (axioms in a Knowledge Base):
+- Bombay ⊑ hasVisualFeature BlackFur		 (Necessary condition)
+- hasVisualFeature YellowEyes ⊑ Bombay		 (Sufficient condition)
+- Bombay ≡ hasVisualFeature BlackFur ∧ hasVisualFeature YellowEyes 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BlackFur
+hasVisualFeature YellowEyes
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BlackFur and YellowEyes, which satisfies the Necessary & Sufficient condition (Bombay ≡ hasVisualFeature BlackFur ∧ hasVisualFeature YellowEyes) axiom to classify it as Bombay.
+----------------------------------------
+Query 10: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Bulldog</response>
+
+TBox (axioms in a Knowledge Base):
+- AmericanBulldog ⊑ hasVisualFeature MuscularBuild		 (Necessary condition)
+- hasVisualFeature MuscularBuild ⊑ AmericanBulldog		 (Sufficient condition)
+- AmericanBulldog ⊑ hasVisualFeature BroadHead		 (Necessary condition)
+- hasVisualFeature BroadHead ⊑ AmericanBulldog		 (Sufficient condition)
+- AmericanBulldog ⊑ hasVisualFeature WhiteFurColor		 (Necessary condition)
+- hasVisualFeature WhiteFurColor ⊑ AmericanBulldog		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature MuscularBuild
+hasVisualFeature BroadHead
+hasVisualFeature WhiteFurColor
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents MuscularBuild, BroadHead, and WhiteFurColor, which satisfies the necessary conditions (MuscularBuild ⊑ AmericanBulldog, BroadHead ⊑ AmericanBulldog, WhiteFurColor ⊑ AmericanBulldog) and the sufficient condition (hasVisualFeature MuscularBuild ⊑ AmericanBulldog, hasVisualFeature BroadHead ⊑ AmericanBulldog, hasVisualFeature WhiteFurColor ⊑ AmericanBulldog) to classify it as an American Bulldog.
+----------------------------------------
+Query 11: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Bulldog</response>
+TBox (axioms in a Knowledge Base):
+- AmericanBulldog ⊑ hasVisualFeature WhiteCoat		 (Necessary condition)
+- hasVisualFeature WhiteCoat ⊑ AmericanBulldog		 (Sufficient condition)
+- AmericanBulldog ⊑ hasVisualFeature BroadHead		 (Necessary condition)
+- hasVisualFeature BroadHead ⊑ AmericanBulldog		 (Sufficient condition)
+- AmericanBulldog ⊑ hasVisualFeature DroopyJowls		 (Necessary condition)
+- hasVisualFeature DroopyJowls ⊑ AmericanBulldog		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhiteCoat
+hasVisualFeature BroadHead
+hasVisualFeature DroopyJowls
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhiteCoat, BroadHead, and DroopyJowls, which satisfies the necessary conditions for the AmericanBulldog class (AmericanBulldog ⊑ hasVisualFeature WhiteCoat, AmericanBulldog ⊑ hasVisualFeature BroadHead, AmericanBulldog ⊑ hasVisualFeature DroopyJowls) to classify it as an American Bulldog.
+----------------------------------------
+Query 12: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Bulldog</response>
+
+TBox (axioms in a Knowledge Base):
+- AmericanBulldog ⊑ hasVisualFeature BroadHead		 (Necessary condition)
+- hasVisualFeature BroadHead ⊑ AmericanBulldog		 (Sufficient condition)
+- AmericanBulldog ⊑ hasVisualFeature WhiteCoat		 (Necessary condition)
+- hasVisualFeature WhiteCoat ⊑ AmericanBulldog		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BroadHead
+hasVisualFeature WhiteCoat
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BroadHead and WhiteCoat, which satisfies the Sufficient condition (hasVisualFeature BroadHead ⊑ AmericanBulldog) and the Sufficient condition (hasVisualFeature WhiteCoat ⊑ AmericanBulldog) axiom to classify it as American Bulldog.
+----------------------------------------
+Query 13: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Bulldog</response>
+
+TBox (axioms in a Knowledge Base):
+- AmericanBulldog ⊑ hasVisualFeature MuscularBuild		 (Necessary condition)
+- hasVisualFeature WhiteCoat ⊑ AmericanBulldog		 (Sufficient condition)
+- hasVisualFeature BroadHead ⊑ AmericanBulldog		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature MuscularBuild
+hasVisualFeature WhiteCoat
+hasVisualFeature BroadHead
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents MuscularBuild, WhiteCoat, and BroadHead, which satisfies the necessary condition of MuscularBuild (C ⊑ P), the sufficient condition of WhiteCoat (P ⊑ C), and the necessary condition of BroadHead (C ⊑ P) to classify it as an American Bulldog.
+----------------------------------------
+Query 14: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Bulldog</response>
+
+TBox (axioms in a Knowledge Base):
+- AmericanBulldog ⊑ hasVisualFeature WhiteFur		 (Necessary condition)
+- hasVisualFeature WhiteFur ⊑ AmericanBulldog		 (Sufficient condition)
+- AmericanBulldog ≡ hasVisualFeature MuscularBuild 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhiteFur
+hasVisualFeature MuscularBuild
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhiteFur and MuscularBuild, which satisfies the Sufficient condition (hasVisualFeature WhiteFur ⊑ AmericanBulldog) and the Necessary & Sufficient condition (AmericanBulldog ≡ hasVisualFeature MuscularBuild) to classify it as American Bulldog.
+----------------------------------------
+Query 15: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Bulldog</response>
+
+TBox (axioms in a Knowledge Base):
+- AmericanBulldog ⊑ hasVisualFeature WhiteFur		 (Necessary condition)
+- AmericanBulldog ⊑ hasVisualFeature BrownPatches		 (Necessary condition)
+- AmericanBulldog ⊑ hasVisualFeature MuscularBuild		 (Necessary condition)
+- hasVisualFeature [BrownPatches] ⊑ AmericanBulldog		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhiteFur
+hasVisualFeature BrownPatches
+hasVisualFeature MuscularBuild
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhiteFur, BrownPatches, and MuscularBuild, which satisfies the necessary conditions for the AmericanBulldog class. Specifically, the presence of BrownPatches is sufficient to classify it as an AmericanBulldog.
+----------------------------------------
+Query 16: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Bulldog</response>
+
+TBox (axioms in a Knowledge Base):
+- AmericanBulldog ⊑ hasVisualFeature WhiteFur		 (Necessary condition)
+- hasVisualFeature WhiteFur ⊑ AmericanBulldog		 (Sufficient condition)
+- AmericanBulldog ⊑ hasVisualFeature BroadHead		 (Necessary condition)
+- hasVisualFeature BroadHead ⊑ AmericanBulldog		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhiteFur
+hasVisualFeature BroadHead
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhiteFur and BroadHead, which satisfies the Sufficient condition (hasVisualFeature WhiteFur ⊑ AmericanBulldog) and the Sufficient condition (hasVisualFeature BroadHead ⊑ AmericanBulldog) axioms to classify it as American Bulldog.
+----------------------------------------
+Query 17: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Bulldog</response>
+
+TBox (axioms in a Knowledge Base):
+- AmericanBulldog ⊑ hasVisualFeature WhiteFur		 (Necessary condition)
+- hasVisualFeature WhiteFur ⊑ AmericanBulldog		 (Sufficient condition)
+- AmericanBulldog ⊑ hasVisualFeature BroadHead		 (Necessary condition)
+- hasVisualFeature BroadHead ⊑ AmericanBulldog		 (Sufficient condition)
+- AmericanBulldog ⊑ hasVisualFeature DroopyJowls		 (Necessary condition)
+- hasVisualFeature DroopyJowls ⊑ AmericanBulldog		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhiteFur
+hasVisualFeature BroadHead
+hasVisualFeature DroopyJowls
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhiteFur, BroadHead, and DroopyJowls, which satisfies the necessary conditions (AmericanBulldog ⊑ hasVisualFeature WhiteFur, AmericanBulldog ⊑ hasVisualFeature BroadHead, AmericanBulldog ⊑ hasVisualFeature DroopyJowls) to classify it as an American Bulldog.
+----------------------------------------
+Query 18: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Bulldog</response>
+TBox (axioms in a Knowledge Base):
+- AmericanBulldog ⊑ hasVisualFeature WhiteFur		 (Necessary condition)
+- hasVisualFeature WhiteFur ⊑ AmericanBulldog		 (Sufficient condition)
+- AmericanBulldog ≡ hasVisualFeature MuscularBuild		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhiteFur
+hasVisualFeature MuscularBuild
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhiteFur and MuscularBuild, which satisfies the Sufficient condition (hasVisualFeature WhiteFur ⊑ AmericanBulldog) and the Necessary & Sufficient condition (AmericanBulldog ≡ hasVisualFeature MuscularBuild) to classify it as an American Bulldog.
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9): 1.0000
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+
+TBox (axioms in a Knowledge Base):
+- StaffordshireBullTerrier ⊑ hasVisualFeature BrindleCoat		 (Necessary condition)
+- hasVisualFeature BrindleCoat ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BrindleCoat
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature BrindleCoat, which satisfies the Sufficient condition [axiom] hasVisualFeature BrindleCoat ⊑ StaffordshireBullTerrier to classify it as StaffordshireBullTerrier.
+----------------------------------------
+Query 2: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+
+TBox (axioms in a Knowledge Base):
+- StaffordshireBullTerrier ⊑ hasVisualFeature [blackAndWhiteCoat]		 (Necessary condition)
+- hasVisualFeature [blackAndWhiteCoat] ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature [blackAndWhiteCoat]
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature [blackAndWhiteCoat], which satisfies the Sufficient condition [hasVisualFeature [blackAndWhiteCoat] ⊑ StaffordshireBullTerrier] axiom to classify it as StaffordshireBullTerrier.
+----------------------------------------
+Query 3: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+TBox (axioms in a Knowledge Base):
+- StaffordshireBullTerrier ⊑ hasVisualFeature MuscularBuild		 (Necessary condition)
+- StaffordshireBullTerrier ⊑ hasVisualFeature ShortMuzzle		 (Necessary condition)
+- StaffordshireBullTerrier ⊑ hasVisualFeature DarkCoat		 (Necessary condition)
+- hasVisualFeature MuscularBuild ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+- hasVisualFeature ShortMuzzle ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+- hasVisualFeature DarkCoat ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature MuscularBuild
+hasVisualFeature ShortMuzzle
+hasVisualFeature DarkCoat
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents MuscularBuild, ShortMuzzle, and DarkCoat, which satisfies the Sufficient conditions (hasVisualFeature MuscularBuild ⊑ StaffordshireBullTerrier, hasVisualFeature ShortMuzzle ⊑ StaffordshireBullTerrier, hasVisualFeature DarkCoat ⊑ StaffordshireBullTerrier) to classify it as StaffordshireBullTerrier.
+----------------------------------------
+Query 4: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+TBox (axioms in a Knowledge Base):
+- StaffordshireBullTerrier ⊑ hasVisualFeature DarkCoat		 (Necessary condition)
+- hasVisualFeature DarkCoat ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature DarkCoat
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature DarkCoat, which satisfies the Sufficient condition [hasVisualFeature DarkCoat ⊑ StaffordshireBullTerrier] axiom to classify it as StaffordshireBullTerrier.
+----------------------------------------
+Query 5: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+TBox (axioms in a Knowledge Base):
+- StaffordshireBullTerrier ⊑ hasVisualFeature [muscularBuild]		 (Necessary condition)
+- hasVisualFeature [muscularBuild] ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature [muscularBuild]
+The ABox assertion presents hasVisualFeature [muscularBuild], which satisfies the Sufficient condition [hasVisualFeature [muscularBuild] ⊑ StaffordshireBullTerrier] axiom to classify it as Staffordshire Bull Terrier.
+----------------------------------------
+Query 6: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+TBox (axioms in a Knowledge Base):
+- StaffordshireBullTerrier ⊑ hasVisualFeature MuscularBuild		 (Necessary condition)
+- hasVisualFeature MuscularBuild ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature MuscularBuild
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature MuscularBuild, which satisfies the Sufficient condition (hasVisualFeature MuscularBuild ⊑ StaffordshireBullTerrier) axiom to classify it as StaffordshireBullTerrier.
+----------------------------------------
+Query 7: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+TBox (axioms in a Knowledge Base):
+- StaffordshireBullTerrier ⊑ hasVisualFeature DarkCoat		 (Necessary condition)
+- hasVisualFeature WhiteMarkings ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+- StaffordshireBullTerrier ≡ hasVisualFeature MuscularBuild 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature DarkCoat
+hasVisualFeature WhiteMarkings
+hasVisualFeature MuscularBuild
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents DarkCoat, WhiteMarkings, and MuscularBuild, which satisfies the TBox necessary condition (DarkCoat), sufficient condition (WhiteMarkings), and necessary & sufficient condition (MuscularBuild) axioms to classify it as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 8: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+TBox (axioms in a Knowledge Base):
+- StaffordshireBullTerrier ⊑ hasVisualFeature [blackAndWhiteCoat]		 (Necessary condition)
+- hasVisualFeature [blackAndWhiteCoat] ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature [blackAndWhiteCoat]
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature [blackAndWhiteCoat], which satisfies the Sufficient condition [hasVisualFeature [blackAndWhiteCoat] ⊑ StaffordshireBullTerrier] axiom to classify it as StaffordshireBullTerrier.
+----------------------------------------
+Query 9: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+
+TBox (axioms in a Knowledge Base):
+- StaffordshireBullTerrier ⊑ hasVisualFeature BrindleCoat		 (Necessary condition)
+- hasVisualFeature MuscularBuild ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+- hasVisualFeature ShortMuzzle ⊑ StaffordshireBullTerrier		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BrindleCoat
+hasVisualFeature MuscularBuild
+hasVisualFeature ShortMuzzle
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BrindleCoat, MuscularBuild, and ShortMuzzle, which satisfies the TBox necessary conditions (BrindleCoat ⊑ StaffordshireBullTerrier, ShortMuzzle ⊑ StaffordshireBullTerrier) and the sufficient condition (MuscularBuild ⊑ StaffordshireBullTerrier) to classify it as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 10: Expected: [Ragdoll] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Ragdoll</response>
+
+TBox (axioms in a Knowledge Base):
+- Ragdoll ⊑ hasVisualFeature LongFur		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature BlueEyes		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature Semi-longTail		 (Necessary condition)
+- hasVisualFeature [LongFur, BlueEyes, Semi-longTail] ⊑ Ragdoll		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature LongFur
+hasVisualFeature BlueEyes
+hasVisualFeature Semi-longTail
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents LongFur, BlueEyes, and Semi-longTail, which satisfies the Sufficient condition (hasVisualFeature [LongFur, BlueEyes, Semi-longTail] ⊑ Ragdoll) axiom to classify it as a Ragdoll.
+----------------------------------------
+Query 11: Expected: [Ragdoll] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Ragdoll</response>
+
+TBox (axioms in a Knowledge Base):
+- Ragdoll ⊑ hasVisualFeature BlueEyes		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature LongFur		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature PointedMuzzle		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature Semi-longTail		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BlueEyes
+hasVisualFeature LongFur
+hasVisualFeature PointedMuzzle
+hasVisualFeature Semi-longTail
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BlueEyes, LongFur, PointedMuzzle, and Semi-longTail, which satisfies the necessary conditions for the Ragdoll class (Ragdoll ⊑ hasVisualFeature BlueEyes, Ragdoll ⊑ hasVisualFeature LongFur, Ragdoll ⊑ hasVisualFeature PointedMuzzle, Ragdoll ⊑ hasVisualFeature Semi-longTail) to classify it as a Ragdoll.
+----------------------------------------
+Query 12: Expected: [Ragdoll] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Ragdoll</response>
+
+TBox (axioms in a Knowledge Base):
+- Ragdoll ⊑ hasVisualFeature BlueEyes		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature LongFur		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature MittedPattern		 (Necessary condition)
+- hasVisualFeature MittedPattern ⊑ Ragdoll		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BlueEyes
+hasVisualFeature LongFur
+hasVisualFeature MittedPattern
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BlueEyes, LongFur, and MittedPattern, which satisfies the TBox necessary conditions (Ragdoll ⊑ hasVisualFeature BlueEyes, Ragdoll ⊑ hasVisualFeature LongFur, Ragdoll ⊑ hasVisualFeature MittedPattern) and the sufficient condition (hasVisualFeature MittedPattern ⊑ Ragdoll) to classify it as a Ragdoll.
+----------------------------------------
+Query 13: Expected: [Ragdoll] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Ragdoll</response>
+
+TBox (axioms in a Knowledge Base):
+- Ragdoll ⊑ hasVisualFeature BlueEyes		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature MittedPattern		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature SemiLongHair		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BlueEyes
+hasVisualFeature MittedPattern
+hasVisualFeature SemiLongHair
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BlueEyes, MittedPattern, and SemiLongHair, which satisfies the necessary conditions for the Ragdoll class (Ragdoll ⊑ hasVisualFeature BlueEyes, Ragdoll ⊑ hasVisualFeature MittedPattern, Ragdoll ⊑ hasVisualFeature SemiLongHair) to classify it as a Ragdoll.
+----------------------------------------
+Query 14: Expected: [Ragdoll] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Ragdoll</response>
+
+TBox (axioms in a Knowledge Base):
+- Ragdoll ⊑ hasVisualFeature BlueEyes		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature LongFur		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature PointedMuzzle		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature Semi-longTail		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BlueEyes
+hasVisualFeature LongFur
+hasVisualFeature PointedMuzzle
+hasVisualFeature Semi-longTail
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BlueEyes, LongFur, PointedMuzzle, and Semi-longTail, which satisfies the necessary conditions for the Ragdoll class (Ragdoll ⊑ hasVisualFeature BlueEyes, Ragdoll ⊑ hasVisualFeature LongFur, Ragdoll ⊑ hasVisualFeature PointedMuzzle, Ragdoll ⊑ hasVisualFeature Semi-longTail) to classify it as a Ragdoll.
+----------------------------------------
+Query 15: Expected: [Ragdoll] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Ragdoll</response>
+
+TBox (axioms in a Knowledge Base):
+- Ragdoll ⊑ hasVisualFeature LongFur		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature BlueEyes		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature PointedMuzzle		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature LongTail		 (Necessary condition)
+- hasVisualFeature LongFur ⊑ Ragdoll		 (Sufficient condition)
+- hasVisualFeature BlueEyes ⊑ Ragdoll		 (Sufficient condition)
+- hasVisualFeature PointedMuzzle ⊑ Ragdoll		 (Sufficient condition)
+- hasVisualFeature LongTail ⊑ Ragdoll		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature LongFur
+hasVisualFeature BlueEyes
+hasVisualFeature PointedMuzzle
+hasVisualFeature LongTail
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents LongFur, BlueEyes, PointedMuzzle, and LongTail, which satisfies the sufficient conditions (hasVisualFeature LongFur ⊑ Ragdoll, hasVisualFeature BlueEyes ⊑ Ragdoll, hasVisualFeature PointedMuzzle ⊑ Ragdoll, hasVisualFeature LongTail ⊑ Ragdoll) to classify it as a Ragdoll.
+----------------------------------------
+Query 16: Expected: [Ragdoll] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Ragdoll</response>
+
+TBox (axioms in a Knowledge Base):
+- Ragdoll ⊑ hasVisualFeature LongFur		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature BlueEyes		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature PointedEars		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature ColorPointedPattern		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature LongFur
+hasVisualFeature BlueEyes
+hasVisualFeature PointedEars
+hasVisualFeature ColorPointedPattern
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents LongFur, BlueEyes, PointedEars, and ColorPointedPattern, which satisfies the necessary conditions (Ragdoll ⊑ hasVisualFeature LongFur, Ragdoll ⊑ hasVisualFeature BlueEyes, Ragdoll ⊑ hasVisualFeature PointedEars, Ragdoll ⊑ hasVisualFeature ColorPointedPattern) to classify it as a Ragdoll.
+----------------------------------------
+Query 17: Expected: [Ragdoll] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Ragdoll</response>
+
+TBox (axioms in a Knowledge Base):
+- Ragdoll ⊑ hasVisualFeature LongFur		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature BlueEyes		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature PointedMuzzle		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature ColorpointPattern		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature LongFur
+hasVisualFeature BlueEyes
+hasVisualFeature PointedMuzzle
+hasVisualFeature ColorpointPattern
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents LongFur, BlueEyes, PointedMuzzle, and ColorpointPattern, which satisfies the necessary conditions (Ragdoll ⊑ hasVisualFeature LongFur, Ragdoll ⊑ hasVisualFeature BlueEyes, Ragdoll ⊑ hasVisualFeature PointedMuzzle, Ragdoll ⊑ hasVisualFeature ColorpointPattern) to classify it as a Ragdoll.
+----------------------------------------
+Query 18: Expected: [Ragdoll] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Ragdoll</response>
+
+TBox (axioms in a Knowledge Base):
+- Ragdoll ⊑ hasVisualFeature BlueEyes		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature LongFur		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature PointedMuzzle		 (Necessary condition)
+- Ragdoll ⊑ hasVisualFeature ColorPointedCoat		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BlueEyes
+hasVisualFeature LongFur
+hasVisualFeature PointedMuzzle
+hasVisualFeature ColorPointedCoat
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BlueEyes, LongFur, PointedMuzzle, and ColorPointedCoat, which satisfies the necessary conditions for the Ragdoll class (Ragdoll ⊑ hasVisualFeature BlueEyes, Ragdoll ⊑ hasVisualFeature LongFur, Ragdoll ⊑ hasVisualFeature PointedMuzzle, Ragdoll ⊑ hasVisualFeature ColorPointedCoat) to classify it as a Ragdoll.
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9): 1.0000
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [Havanese] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Havanese</response>
+TBox (axioms in a Knowledge Base):
+- Havanese ⊑ hasVisualFeature WhiteFur		 (Necessary condition)
+- Havanese ⊑ hasVisualFeature CurlyHair		 (Necessary condition)
+- Havanese ⊑ hasVisualFeature SmallSize		 (Necessary condition)
+- hasVisualFeature [WhiteFur] ⊑ hasVisualFeature [CurlyHair] 	 (Necessary condition)
+- hasVisualFeature [WhiteFur] ⊑ hasVisualFeature [SmallSize] 	 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhiteFur
+hasVisualFeature CurlyHair
+hasVisualFeature SmallSize
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhiteFur, CurlyHair, and SmallSize, which satisfies the TBox necessary conditions for Havanese (WhiteFur, CurlyHair, and SmallSize) to classify it as Havanese.
+----------------------------------------
+Query 2: Expected: [Havanese] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Havanese</response>
+TBox (axioms in a Knowledge Base):
+- Havanese ⊑ hasVisualFeature long_white_fur		 (Necessary condition)
+- hasVisualFeature long_white_fur ⊑ Havanese		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature long_white_fur
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature long_white_fur, which satisfies the Sufficient condition [hasVisualFeature long_white_fur ⊑ Havanese] axiom to classify it as Havanese.
+----------------------------------------
+Query 3: Expected: [Havanese] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Havanese</response>
+TBox (axioms in a Knowledge Base):
+- Havanese ⊑ hasVisualFeature longWhiteFur		 (Necessary condition)
+- hasVisualFeature longWhiteFur ⊑ Havanese		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature longWhiteFur
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature longWhiteFur, which satisfies the Sufficient condition [hasVisualFeature longWhiteFur ⊑ Havanese] axiom to classify it as Havanese.
+----------------------------------------
+Query 4: Expected: [Havanese] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Havanese</response>
+TBox (axioms in a Knowledge Base):
+- Havanese ⊑ hasVisualFeature curlyHair		 (Necessary condition)
+- Havanese ⊑ hasVisualFeature whiteFur		 (Necessary condition)
+- Havanese ⊑ hasVisualFeature blackFur		 (Necessary condition)
+- hasVisualFeature curlyHair ⊑ Havanese		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature curlyHair
+hasVisualFeature whiteFur
+hasVisualFeature blackFur
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents curlyHair, whiteFur, and blackFur, which satisfies the TBox necessary conditions for the Havanese class. Specifically, the presence of curlyHair, whiteFur, and blackFur fulfills the necessary conditions (Havanese ⊑ hasVisualFeature curlyHair, Havanese ⊑ hasVisualFeature whiteFur, Havanese ⊑ hasVisualFeature blackFur) to classify it as a Havanese.
+----------------------------------------
+Query 5: Expected: [Havanese] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Havanese</response>
+TBox (axioms in a Knowledge Base):
+- Havanese ⊑ hasVisualFeature FluffyCoat		 (Necessary condition)
+- hasVisualFeature FluffyCoat ⊑ Havanese		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FluffyCoat
+The ABox assertion presents hasVisualFeature FluffyCoat, which satisfies the Sufficient condition [hasVisualFeature FluffyCoat ⊑ Havanese] axiom to classify it as Havanese.
+----------------------------------------
+Query 6: Expected: [Havanese] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Havanese</response>
+TBox (axioms in a Knowledge Base):
+- Havanese ⊑ hasVisualFeature [long, flowing fur]		 (Necessary condition)
+- hasVisualFeature [long, flowing fur] ⊑ Havanese		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature [long, flowing fur]
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature [long, flowing fur], which satisfies the Sufficient condition [hasVisualFeature [long, flowing fur] ⊑ Havanese] axiom to classify it as Havanese.
+----------------------------------------
+Query 7: Expected: [Havanese] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Havanese</response>
+TBox (axioms in a Knowledge Base):
+- Havanese ⊑ hasVisualFeature curlyHair		 (Necessary condition)
+- hasVisualFeature curlyHair ⊑ Havanese		 (Sufficient condition)
+- Havanese ⊑ hasVisualFeature darkBrownFur		 (Necessary condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature curlyHair
+hasVisualFeature darkBrownFur
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents curlyHair and darkBrownFur, which satisfies the sufficient condition (hasVisualFeature curlyHair ⊑ Havanese) and the necessary condition (Havanese ⊑ hasVisualFeature darkBrownFur) to classify it as Havanese.
+----------------------------------------
+Query 8: Expected: [Havanese] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Havanese</response>
+TBox (axioms in a Knowledge Base):
+- Havanese ⊑ hasVisualFeature CurlyHair		 (Necessary condition)
+- hasVisualFeature CurlyHair ⊑ Havanese		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature CurlyHair
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature CurlyHair, which satisfies the Sufficient condition [hasVisualFeature CurlyHair ⊑ Havanese] axiom to classify it as Havanese.
+----------------------------------------
+Query 9: Expected: [Havanese] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Havanese</response>
+TBox (axioms in a Knowledge Base):
+- Havanese ⊑ hasVisualFeature CurlyHair		 (Necessary condition)
+- Havanese ⊑ hasVisualFeature WhiteAndBlackColoring		 (Necessary condition)
+- Havanese ⊑ hasVisualFeature SmallSize		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature CurlyHair
+hasVisualFeature WhiteAndBlackColoring
+hasVisualFeature SmallSize
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents CurlyHair, WhiteAndBlackColoring, and SmallSize, which satisfies the necessary conditions for the Havanese class [Havanese ⊑ hasVisualFeature CurlyHair, Havanese ⊑ hasVisualFeature WhiteAndBlackColoring, Havanese ⊑ hasVisualFeature SmallSize] to classify it as a Havanese.
+----------------------------------------
+Query 10: Expected: [American Pit Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Pit Bull Terrier</response>
+TBox (axioms in a Knowledge Base):
+- AmericanPitBullTerrier ⊑ hasVisualFeature MuscularBuild		 (Necessary condition)
+- hasVisualFeature MuscularBuild ⊑ AmericanPitBullTerrier		 (Sufficient condition)
+- AmericanPitBullTerrier ⊑ hasVisualFeature ShortCoat		 (Necessary condition)
+- hasVisualFeature ShortCoat ⊑ AmericanPitBullTerrier		 (Sufficient condition)
+- AmericanPitBullTerrier ⊑ hasVisualFeature BroadHead		 (Necessary condition)
+- hasVisualFeature BroadHead ⊑ AmericanPitBullTerrier		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature MuscularBuild
+hasVisualFeature ShortCoat
+hasVisualFeature BroadHead
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents MuscularBuild, ShortCoat, and BroadHead, which satisfies the Necessary conditions for the AmericanPitBullTerrier class [MuscularBuild ⊑ AmericanPitBullTerrier, ShortCoat ⊑ AmericanPitBullTerrier, BroadHead ⊑ AmericanPitBullTerrier] to classify it as an American Pit Bull Terrier.
+----------------------------------------
+Query 11: Expected: [American Pit Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Pit Bull Terrier</response>
+TBox (axioms in a Knowledge Base):
+- AmericanPitBullTerrier ⊑ hasVisualFeature MuscularBuild		 (Necessary condition)
+- hasVisualFeature MuscularBuild ⊑ AmericanPitBullTerrier		 (Sufficient condition)
+- AmericanPitBullTerrier ⊑ hasVisualFeature ShortCoat		 (Necessary condition)
+- hasVisualFeature ShortCoat ⊑ AmericanPitBullTerrier		 (Sufficient condition)
+- AmericanPitBullTerrier ⊑ hasVisualFeature BroadHead		 (Necessary condition)
+- hasVisualFeature BroadHead ⊑ AmericanPitBullTerrier		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature MuscularBuild
+hasVisualFeature ShortCoat
+hasVisualFeature BroadHead
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents MuscularBuild, ShortCoat, and BroadHead, which satisfies the necessary conditions for the AmericanPitBullTerrier class [MuscularBuild ⊑ AmericanPitBullTerrier, ShortCoat ⊑ AmericanPitBullTerrier, BroadHead ⊑ AmericanPitBullTerrier] to classify it as an American Pit Bull Terrier.
+----------------------------------------
+Query 12: Expected: [American Pit Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Pit Bull Terrier</response>
+TBox (axioms in a Knowledge Base):
+- American Pit Bull Terrier ⊑ hasVisualFeature MuscularBuild		 (Necessary condition)
+- hasVisualFeature MuscularBuild ⊑ American Pit Bull Terrier		 (Sufficient condition)
+- American Pit Bull Terrier ⊑ hasVisualFeature ShortCoat		 (Necessary condition)
+- hasVisualFeature ShortCoat ⊑ American Pit Bull Terrier		 (Sufficient condition)
+- American Pit Bull Terrier ⊑ hasVisualFeature BroadHead		 (Necessary condition)
+- hasVisualFeature BroadHead ⊑ American Pit Bull Terrier		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature MuscularBuild
+hasVisualFeature ShortCoat
+hasVisualFeature BroadHead
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents MuscularBuild, ShortCoat, and BroadHead, which satisfies the necessary conditions for the American Pit Bull Terrier class [MuscularBuild ⊑ American Pit Bull Terrier, ShortCoat ⊑ American Pit Bull Terrier, BroadHead ⊑ American Pit Bull Terrier] to classify it as an American Pit Bull Terrier.
+----------------------------------------
+Query 13: Expected: [American Pit Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Pit Bull Terrier</response>
+TBox (axioms in a Knowledge Base):
+- American Pit Bull Terrier ⊑ hasVisualFeature MuscularBuild		 (Necessary condition)
+- hasVisualFeature MuscularBuild ⊑ American Pit Bull Terrier		 (Sufficient condition)
+- American Pit Bull Terrier ⊑ hasVisualFeature BroadHead		 (Necessary condition)
+- hasVisualFeature BroadHead ⊑ American Pit Bull Terrier		 (Sufficient condition)
+- American Pit Bull Terrier ⊑ hasVisualFeature ShortMuzzle		 (Necessary condition)
+- hasVisualFeature ShortMuzzle ⊑ American Pit Bull Terrier		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature MuscularBuild
+hasVisualFeature BroadHead
+hasVisualFeature ShortMuzzle
+hasColor Brown
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents MuscularBuild, BroadHead, and ShortMuzzle, which satisfies the Sufficient condition (hasVisualFeature MuscularBuild ⊑ American Pit Bull Terrier), Sufficient condition (hasVisualFeature BroadHead ⊑ American Pit Bull Terrier), and Sufficient condition (hasVisualFeature ShortMuzzle ⊑ American Pit Bull Terrier) axioms to classify it as an American Pit Bull Terrier. The observed brown color is a characteristic but not a defining feature for classification.
+----------------------------------------
+Query 14: Expected: [American Pit Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Pit Bull Terrier</response>
+TBox (axioms in a Knowledge Base):
+- AmericanPitBullTerrier ⊑ hasVisualFeature MuscularBuild		 (Necessary condition)
+- hasVisualFeature MuscularBuild ⊑ AmericanPitBullTerrier		 (Sufficient condition)
+- AmericanPitBullTerrier ⊑ hasVisualFeature ShortCoat		 (Necessary condition)
+- hasVisualFeature ShortCoat ⊑ AmericanPitBullTerrier		 (Sufficient condition)
+- AmericanPitBullTerrier ⊑ hasVisualFeature BroadHead		 (Necessary condition)
+- hasVisualFeature BroadHead ⊑ AmericanPitBullTerrier		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature MuscularBuild
+hasVisualFeature ShortCoat
+hasVisualFeature BroadHead
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents MuscularBuild, ShortCoat, and BroadHead, which satisfies the necessary conditions for the AmericanPitBullTerrier class [MuscularBuild ⊑ AmericanPitBullTerrier, ShortCoat ⊑ AmericanPitBullTerrier, BroadHead ⊑ AmericanPitBullTerrier] to classify it as an American Pit Bull Terrier.
+----------------------------------------
+Query 15: Expected: [American Pit Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Pit Bull Terrier</response>
+TBox (axioms in a Knowledge Base):
+- American Pit Bull Terrier ⊑ hasVisualFeature MuscularBuild		 (Necessary condition)
+- hasVisualFeature MuscularBuild ⊑ American Pit Bull Terrier		 (Sufficient condition)
+- American Pit Bull Terrier ⊑ hasVisualFeature ShortFur		 (Necessary condition)
+- hasVisualFeature ShortFur ⊑ American Pit Bull Terrier		 (Sufficient condition)
+- American Pit Bull Terrier ⊑ hasVisualFeature BroadHead		 (Necessary condition)
+- hasVisualFeature BroadHead ⊑ American Pit Bull Terrier		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature MuscularBuild
+hasVisualFeature ShortFur
+hasVisualFeature BroadHead
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents MuscularBuild, ShortFur, and BroadHead, which satisfies the Sufficient condition (hasVisualFeature MuscularBuild ⊑ American Pit Bull Terrier), Sufficient condition (hasVisualFeature ShortFur ⊑ American Pit Bull Terrier), and Sufficient condition (hasVisualFeature BroadHead ⊑ American Pit Bull Terrier) axioms to classify it as an American Pit Bull Terrier.
+----------------------------------------
+Query 16: Expected: [American Pit Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Pit Bull Terrier</response>
+TBox (axioms in a Knowledge Base):
+- AmericanPitBullTerrier ⊑ hasVisualFeature MuscularBuild		 (Necessary condition)
+- hasVisualFeature ShortNose ⊑ AmericanPitBullTerrier		 (Sufficient condition)
+- AmericanPitBullTerrier ≡ hasVisualFeature BroadHead 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature MuscularBuild
+hasVisualFeature ShortNose
+hasVisualFeature BroadHead
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents MuscularBuild, ShortNose, and BroadHead, which satisfies the Necessary condition of MuscularBuild, the Sufficient condition of ShortNose, and the Necessary & Sufficient condition of BroadHead, all of which are associated with the AmericanPitBullTerrier class, thus classifying it as an American Pit Bull Terrier.
+----------------------------------------
+Query 17: Expected: [American Pit Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Pit Bull Terrier</response>
+TBox (axioms in a Knowledge Base):
+- AmericanPitBullTerrier ⊑ hasVisualFeature MuscularBuild		 (Necessary condition)
+- hasVisualFeature BroadHead ⊑ AmericanPitBullTerrier		 (Sufficient condition)
+- AmericanPitBullTerrier ≡ hasVisualFeature LargeEars 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature MuscularBuild
+hasVisualFeature BroadHead
+hasVisualFeature LargeEars
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents MuscularBuild, BroadHead, and LargeEars, which satisfies the Necessary condition of having a MuscularBuild, the Sufficient condition of having a BroadHead, and the Necessary & Sufficient condition of having LargeEars, all of which are associated with the AmericanPitBullTerrier class. Therefore, it is classified as an American Pit Bull Terrier.
+----------------------------------------
+Query 18: Expected: [American Pit Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>American Pit Bull Terrier</response>
+TBox (axioms in a Knowledge Base):
+- AmericanPitBullTerrier ⊑ hasVisualFeature MuscularBuild		 (Necessary condition)
+- hasVisualFeature ShortCoat ⊑ AmericanPitBullTerrier		 (Sufficient condition)
+- AmericanPitBullTerrier ≡ hasVisualFeature BroadHead 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature MuscularBuild
+hasVisualFeature ShortCoat
+hasVisualFeature BroadHead
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents MuscularBuild, ShortCoat, and BroadHead, which satisfies the Necessary condition of MuscularBuild, the Sufficient condition of ShortCoat, and the Necessary & Sufficient condition of BroadHead, all relating to the AmericanPitBullTerrier class. Therefore, it is classified as an American Pit Bull Terrier.
+----------------------------------------
+Query 19: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Samoyed</response>
+TBox (axioms in a Knowledge Base):
+- Samoyed ⊑ hasVisualFeature WhiteFur		 (Necessary condition)
+- hasVisualFeature WhiteFur ⊑ Samoyed		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhiteFur
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature WhiteFur, which satisfies the Sufficient condition (hasVisualFeature WhiteFur ⊑ Samoyed) axiom to classify it as Samoyed.
+----------------------------------------
+Query 20: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Samoyed</response>
+TBox (axioms in a Knowledge Base):
+- Samoyed ⊑ hasVisualFeature WhiteFur		 (Necessary condition)
+- hasVisualFeature WhiteFur ⊑ Samoyed		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhiteFur
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature WhiteFur, which satisfies the Sufficient condition (hasVisualFeature WhiteFur ⊑ Samoyed) axiom to classify it as Samoyed.
+----------------------------------------
+Query 21: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Samoyed</response>
+TBox (axioms in a Knowledge Base):
+- Samoyed ⊑ hasVisualFeature WhiteFur		 (Necessary condition)
+- hasVisualFeature WhiteFur ⊑ Samoyed		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhiteFur
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature WhiteFur, which satisfies the Sufficient condition (hasVisualFeature WhiteFur ⊑ Samoyed) axiom to classify it as Samoyed.
+----------------------------------------
+Query 22: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Samoyed</response>
+TBox (axioms in a Knowledge Base):
+- Samoyed ⊑ hasVisualFeature WhiteFur		 (Necessary condition)
+- hasVisualFeature WhiteFur ⊑ Samoyed		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhiteFur
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature WhiteFur, which satisfies the Sufficient condition (hasVisualFeature WhiteFur ⊑ Samoyed) axiom to classify it as Samoyed.
+----------------------------------------
+Query 23: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Samoyed</response>
+TBox (axioms in a Knowledge Base):
+- Samoyed ⊑ hasVisualFeature WhiteFur		 (Necessary condition)
+- hasVisualFeature WhiteFur ⊑ Samoyed		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhiteFur
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature WhiteFur, which satisfies the Sufficient condition (hasVisualFeature WhiteFur ⊑ Samoyed) axiom to classify it as Samoyed.
+----------------------------------------
+Query 24: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Samoyed</response>
+TBox (axioms in a Knowledge Base):
+- Samoyed ⊑ hasVisualFeature WhiteFur		 (Necessary condition)
+- hasVisualFeature WhiteFur ⊑ Samoyed		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhiteFur
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature WhiteFur, which satisfies the Sufficient condition (hasVisualFeature WhiteFur ⊑ Samoyed) axiom to classify it as Samoyed.
+----------------------------------------
+Query 25: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Samoyed</response>
+TBox (axioms in a Knowledge Base):
+- Samoyed ⊑ hasVisualFeature WhiteFur		 (Necessary condition)
+- hasVisualFeature WhiteFur ⊑ Samoyed		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhiteFur
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature WhiteFur, which satisfies the Sufficient condition [hasVisualFeature WhiteFur ⊑ Samoyed] axiom to classify it as Samoyed.
+----------------------------------------
+Query 26: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Samoyed</response>
+TBox (axioms in a Knowledge Base):
+- Samoyed ⊑ hasVisualFeature WhiteFur		 (Necessary condition)
+- hasVisualFeature WhiteFur ⊑ Samoyed		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhiteFur
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature WhiteFur, which satisfies the Sufficient condition (hasVisualFeature WhiteFur ⊑ Samoyed) axiom to classify it as Samoyed.
+----------------------------------------
+Query 27: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Samoyed</response>
+TBox (axioms in a Knowledge Base):
+- Samoyed ⊑ hasVisualFeature WhiteFur		 (Necessary condition)
+- hasVisualFeature WhiteFur ⊑ Samoyed		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhiteFur
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature WhiteFur, which satisfies the Sufficient condition (hasVisualFeature WhiteFur ⊑ Samoyed) axiom to classify it as Samoyed.
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9): 1.0000
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+TBox (axioms in a Knowledge Base):
+- JapaneseChin ⊑ hasVisualFeature DarkFacialMask		 (Necessary condition)
+- hasVisualFeature DarkFacialMask ⊑ JapaneseChin		 (Sufficient condition)
+- JapaneseChin ⊑ hasVisualFeature LargeEars		 (Necessary condition)
+- hasVisualFeature LargeEars ⊑ JapaneseChin		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature DarkFacialMask
+hasVisualFeature LargeEars
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature DarkFacialMask and hasVisualFeature LargeEars, which satisfies the Sufficient condition (hasVisualFeature DarkFacialMask ⊑ JapaneseChin) and the Sufficient condition (hasVisualFeature LargeEars ⊑ JapaneseChin) axiom to classify it as JapaneseChin.
+----------------------------------------
+Query 2: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+TBox (axioms in a Knowledge Base):
+- JapaneseChin ⊑ hasVisualFeature BlackAndWhiteColoring		 (Necessary condition)
+- hasVisualFeature BlackAndWhiteColoring ⊑ JapaneseChin		 (Sufficient condition)
+- JapaneseChin ≡ hasVisualFeature LargeEyes		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BlackAndWhiteColoring
+hasVisualFeature LargeEyes
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BlackAndWhiteColoring and LargeEyes, which satisfies the Sufficient condition (hasVisualFeature BlackAndWhiteColoring ⊑ JapaneseChin) and the Necessary & Sufficient condition (JapaneseChin ≡ hasVisualFeature LargeEyes) to classify it as Japanese Chin.
+----------------------------------------
+Query 3: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+TBox (axioms in a Knowledge Base):
+- JapaneseChin ⊑ hasVisualFeature LargeEars		 (Necessary condition)
+- hasVisualFeature LargeEars ⊑ JapaneseChin		 (Sufficient condition)
+- JapaneseChin ≡ hasVisualFeature BlackAndWhiteCoat		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature LargeEars
+hasVisualFeature BlackAndWhiteCoat
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents LargeEars and BlackAndWhiteCoat, which satisfies the Sufficient condition (hasVisualFeature LargeEars ⊑ JapaneseChin) and the Necessary & Sufficient condition (JapaneseChin ≡ hasVisualFeature BlackAndWhiteCoat) to classify it as Japanese Chin.
+----------------------------------------
+Query 4: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+TBox (axioms in a Knowledge Base):
+- JapaneseChin ⊑ hasVisualFeature LongFlowingHair		 (Necessary condition)
+- hasVisualFeature LongFlowingHair ⊑ JapaneseChin		 (Sufficient condition)
+- JapaneseChin ≡ hasVisualFeature LargeEyes 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature LongFlowingHair
+hasVisualFeature LargeEyes
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents LongFlowingHair and LargeEyes, which satisfies the Sufficient condition (hasVisualFeature LongFlowingHair ⊑ JapaneseChin) and the Necessary & Sufficient condition (JapaneseChin ≡ hasVisualFeature LargeEyes) to classify it as Japanese Chin.
+----------------------------------------
+Query 5: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+TBox (axioms in a Knowledge Base):
+- JapaneseChin ⊑ hasVisualFeature BlackAndWhiteCoat		 (Necessary condition)
+- hasVisualFeature BlackAndWhiteCoat ⊑ JapaneseChin		 (Sufficient condition)
+- JapaneseChin ≡ hasVisualFeature LargeEyes		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BlackAndWhiteCoat
+hasVisualFeature LargeEyes
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature BlackAndWhiteCoat and hasVisualFeature LargeEyes, which satisfies the Sufficient condition (hasVisualFeature BlackAndWhiteCoat ⊑ JapaneseChin) and the Necessary & Sufficient condition (JapaneseChin ≡ hasVisualFeature LargeEyes) axiom to classify it as JapaneseChin.
+----------------------------------------
+Query 6: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+TBox (axioms in a Knowledge Base):
+- JapaneseChin ⊑ hasVisualFeature BlackAndWhiteCoat		 (Necessary condition)
+- hasVisualFeature BlackAndWhiteCoat ⊑ JapaneseChin		 (Sufficient condition)
+- hasVisualFeature LargeEars ⊑ JapaneseChin		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BlackAndWhiteCoat
+hasVisualFeature LargeEars
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature BlackAndWhiteCoat and hasVisualFeature LargeEars, which satisfies the Sufficient condition (hasVisualFeature BlackAndWhiteCoat ⊑ JapaneseChin) and the Necessary condition (hasVisualFeature LargeEars ⊑ JapaneseChin) axiom to classify it as Japanese Chin.
+----------------------------------------
+Query 7: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+TBox (axioms in a Knowledge Base):
+- JapaneseChin ⊑ hasVisualFeature BlackAndWhiteCoat		 (Necessary condition)
+- hasVisualFeature BlackAndWhiteCoat ⊑ JapaneseChin		 (Sufficient condition)
+- hasVisualFeature LargeEars ⊑ JapaneseChin		 (Necessary condition)
+- hasVisualFeature SmallFace ⊑ JapaneseChin		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BlackAndWhiteCoat
+hasVisualFeature LargeEars
+hasVisualFeature SmallFace
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature BlackAndWhiteCoat, hasVisualFeature LargeEars, and hasVisualFeature SmallFace, which satisfies the Sufficient condition (hasVisualFeature BlackAndWhiteCoat ⊑ JapaneseChin) and the Necessary conditions (hasVisualFeature LargeEars ⊑ JapaneseChin and hasVisualFeature SmallFace ⊑ JapaneseChin) to classify it as Japanese Chin.
+----------------------------------------
+Query 8: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+TBox (axioms in a Knowledge Base):
+- JapaneseChin ⊑ hasVisualFeature LongFlowingHair		 (Necessary condition)
+- hasVisualFeature LongFlowingHair ⊑ JapaneseChin		 (Sufficient condition)
+- JapaneseChin ≡ hasVisualFeature LargeEyes		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature LongFlowingHair
+hasVisualFeature LargeEyes
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents LongFlowingHair and LargeEyes, which satisfies the Sufficient condition (hasVisualFeature LongFlowingHair ⊑ JapaneseChin) and the Necessary & Sufficient condition (JapaneseChin ≡ hasVisualFeature LargeEyes) to classify it as JapaneseChin.
+----------------------------------------
+Query 9: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Japanese Chin</response>
+TBox (axioms in a Knowledge Base):
+- JapaneseChin ⊑ hasVisualFeature LongFacialHair		 (Necessary condition)
+- hasVisualFeature LongFacialHair ⊑ JapaneseChin		 (Sufficient condition)
+- hasVisualFeature BlackAndWhiteCoat ⊑ JapaneseChin		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature LongFacialHair
+hasVisualFeature BlackAndWhiteCoat
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents LongFacialHair and BlackAndWhiteCoat, which satisfies the sufficient condition (hasVisualFeature LongFacialHair ⊑ JapaneseChin) and the necessary condition (hasVisualFeature BlackAndWhiteCoat ⊑ JapaneseChin) axiom to classify it as Japanese Chin.
+----------------------------------------
+Query 10: Expected: [Beagle] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Beagle</response>
+
+TBox (axioms in a Knowledge Base):
+- Beagle ⊑ hasVisualFeature [Tri-color coat]		 (Necessary condition)
+- hasVisualFeature [Tri-color coat] ⊑ Beagle		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature [Tri-color coat]
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature [Tri-color coat], which satisfies the Sufficient condition [hasVisualFeature [Tri-color coat] ⊑ Beagle] axiom to classify it as Beagle.
+----------------------------------------
+Query 11: Expected: [Beagle] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Beagle</response>
+TBox (axioms in a Knowledge Base):
+- Beagle ⊑ hasVisualFeature [Tri-color coat]		 (Necessary condition)
+- hasVisualFeature [Tri-color coat] ⊑ Beagle		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature [Tri-color coat]
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature [Tri-color coat], which satisfies the Sufficient condition [hasVisualFeature [Tri-color coat] ⊑ Beagle] axiom to classify it as Beagle.
+----------------------------------------
+Query 12: Expected: [Beagle] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Beagle</response>
+TBox (axioms in a Knowledge Base):
+- Beagle ⊑ hasVisualFeature [Tri-color coat]		 (Necessary condition)
+- hasVisualFeature [Tri-color coat] ⊑ Beagle		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature [Tri-color coat]
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature [Tri-color coat], which satisfies the Sufficient condition [hasVisualFeature [Tri-color coat] ⊑ Beagle] axiom to classify it as Beagle.
+----------------------------------------
+Query 13: Expected: [Beagle] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Beagle</response>
+
+TBox (axioms in a Knowledge Base):
+- Beagle ⊑ hasVisualFeature [tri-color coat]		 (Necessary condition)
+- hasVisualFeature [tri-color coat] ⊑ Beagle		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature [tri-color coat]
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature [tri-color coat], which satisfies the Sufficient condition [hasVisualFeature [tri-color coat] ⊑ Beagle] axiom to classify it as Beagle.
+----------------------------------------
+Query 14: Expected: [Beagle] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Beagle</response>
+TBox (axioms in a Knowledge Base):
+- Beagle ⊑ hasVisualFeature LargeDroopingEars (Necessary condition)
+- Beagle ⊑ hasVisualFeature TricolorCoat (Necessary condition)
+- hasVisualFeature [TricolorCoat] ⊑ Beagle (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature LargeDroopingEars
+hasVisualFeature TricolorCoat
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents LargeDroopingEars and TricolorCoat, which satisfies the necessary condition of having LargeDroopingEars and the necessary condition of having a TricolorCoat, and the sufficient condition of having a TricolorCoat, to classify it as a Beagle.
+----------------------------------------
+Query 15: Expected: [Beagle] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Beagle</response>
+TBox (axioms in a Knowledge Base):
+- Beagle ⊑ hasVisualFeature floppyEars		 (Necessary condition)
+- Beagle ⊑ hasVisualFeature tricolorCoat		 (Necessary condition)
+- Beagle ⊑ hasVisualFeature longNose		 (Necessary condition)
+- hasVisualFeature floppyEars ⊑ Beagle		 (Sufficient condition)
+- hasVisualFeature tricolorCoat ⊑ Beagle		 (Sufficient condition)
+- hasVisualFeature longNose ⊑ Beagle		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature floppyEars
+hasVisualFeature tricolorCoat
+hasVisualFeature longNose
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents floppyEars, tricolorCoat, and longNose, which satisfies the sufficient conditions (floppyEars ⊑ Beagle, tricolorCoat ⊑ Beagle, and longNose ⊑ Beagle) to classify it as Beagle.
+----------------------------------------
+Query 16: Expected: [Beagle] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Beagle</response>
+TBox (axioms in a Knowledge Base):
+- Beagle ⊑ hasVisualFeature floppyEars		 (Necessary condition)
+- Beagle ⊑ hasVisualFeature tricolorCoat		 (Necessary condition)
+- Beagle ⊑ hasVisualFeature mediumSize		 (Necessary condition)
+- hasVisualFeature floppyEars ⊑ Beagle		 (Sufficient condition)
+- hasVisualFeature tricolorCoat ⊑ Beagle		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature floppyEars
+hasVisualFeature tricolorCoat
+hasVisualFeature mediumSize
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents floppyEars, tricolorCoat, and mediumSize, which satisfies the necessary conditions for the Beagle class (Beagle ⊑ hasVisualFeature floppyEars, Beagle ⊑ hasVisualFeature tricolorCoat, and Beagle ⊑ hasVisualFeature mediumSize) to classify it as a Beagle.
+----------------------------------------
+Query 17: Expected: [Beagle] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Beagle</response>
+
+TBox (axioms in a Knowledge Base):
+- Beagle ⊑ hasVisualFeature longEars		 (Necessary condition)
+- Beagle ⊑ hasVisualFeature tricolorCoat		 (Necessary condition)
+- Beagle ⊑ hasVisualFeature floppyEars		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature longEars
+hasVisualFeature tricolorCoat
+hasVisualFeature floppyEars
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents longEars, tricolorCoat, and floppyEars, which satisfies the necessary conditions for the Beagle class [Beagle ⊑ hasVisualFeature longEars, Beagle ⊑ hasVisualFeature tricolorCoat, Beagle ⊑ hasVisualFeature floppyEars] to classify it as a Beagle.
+----------------------------------------
+Query 18: Expected: [Beagle] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Beagle</response>
+
+TBox (axioms in a Knowledge Base):
+- Beagle ⊑ hasVisualFeature [brownFur]		 (Necessary condition)
+- Beagle ⊑ hasVisualFeature [whiteMarkings] (Necessary condition)
+- Beagle ⊑ hasVisualFeature [floppyEars] (Necessary condition)
+- hasVisualFeature [floppyEars] ⊑ Beagle		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature [brownFur]
+hasVisualFeature [whiteMarkings]
+hasVisualFeature [floppyEars]
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents [brownFur, whiteMarkings, and floppyEars], which satisfies the TBox necessary conditions [Beagle ⊑ hasVisualFeature [brownFur], Beagle ⊑ hasVisualFeature [whiteMarkings], and Beagle ⊑ hasVisualFeature [floppyEars]] to classify it as a Beagle.
+----------------------------------------
+Query 19: Expected: [Chihuahua] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Chihuahua</response>
+
+TBox (axioms in a Knowledge Base):
+- Chihuahua ⊑ hasVisualFeature LargeEars		 (Necessary condition)
+- Chihuahua ⊑ hasVisualFeature SmallBody		 (Necessary condition)
+- Chihuahua ⊑ hasVisualFeature ShortSnout		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature LargeEars
+hasVisualFeature SmallBody
+hasVisualFeature ShortSnout
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents LargeEars, SmallBody, and ShortSnout, which satisfies the necessary conditions for the Chihuahua class [Chihuahua ⊑ hasVisualFeature LargeEars, Chihuahua ⊑ hasVisualFeature SmallBody, Chihuahua ⊑ hasVisualFeature ShortSnout] to classify it as a Chihuahua.
+----------------------------------------
+Query 20: Expected: [Chihuahua] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Chihuahua</response>
+
+TBox (axioms in a Knowledge Base):
+- Chihuahua ⊑ hasVisualFeature LargeEars		 (Necessary condition)
+- Chihuahua ⊑ hasVisualFeature SmallBody		 (Necessary condition)
+- Chihuahua ⊑ hasVisualFeature ShortHair		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature LargeEars
+hasVisualFeature SmallBody
+hasVisualFeature ShortHair
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents LargeEars, SmallBody, and ShortHair, which satisfies the necessary conditions for the Chihuahua class [Chihuahua ⊑ hasVisualFeature LargeEars, Chihuahua ⊑ hasVisualFeature SmallBody, Chihuahua ⊑ hasVisualFeature ShortHair] to classify it as a Chihuahua.
+----------------------------------------
+Query 21: Expected: [Chihuahua] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Chihuahua</response>
+
+TBox (axioms in a Knowledge Base):
+- Chihuahua ⊑ hasVisualFeature LargeEars		 (Necessary condition)
+- Chihuahua ⊑ hasVisualFeature SmallBody		 (Necessary condition)
+- Chihuahua ⊑ hasVisualFeature ShortSnout		 (Necessary condition)
+- Chihuahua ≡ hasVisualFeature LargeEars ⊼ hasVisualFeature SmallBody ⊼ hasVisualFeature ShortSnout (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature LargeEars
+hasVisualFeature SmallBody
+hasVisualFeature ShortSnout
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents LargeEars, SmallBody, and ShortSnout, which satisfies the Necessary & Sufficient condition (Chihuahua ≡ hasVisualFeature LargeEars ⊼ hasVisualFeature SmallBody ⊼ hasVisualFeature ShortSnout) to classify it as a Chihuahua.
+----------------------------------------
+Query 22: Expected: [Chihuahua] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Chihuahua</response>
+
+TBox (axioms in a Knowledge Base):
+- Chihuahua ⊑ hasVisualFeature LargeEars		 (Necessary condition)
+- Chihuahua ⊑ hasVisualFeature SmallBody		 (Necessary condition)
+- Chihuahua ⊑ hasVisualFeature ShortSnout		 (Necessary condition)
+- Chihuahua ≡ hasVisualFeature SmallBody AND hasVisualFeature LargeEars AND hasVisualFeature ShortSnout (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature LargeEars
+hasVisualFeature SmallBody
+hasVisualFeature ShortSnout
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents LargeEars, SmallBody, and ShortSnout, which satisfies the Necessary & Sufficient condition (Chihuahua ≡ hasVisualFeature SmallBody AND hasVisualFeature LargeEars AND hasVisualFeature ShortSnout) axiom to classify it as a Chihuahua.
+----------------------------------------
+Query 23: Expected: [Chihuahua] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Chihuahua</response>
+
+TBox (axioms in a Knowledge Base):
+- Chihuahua ⊑ hasVisualFeature LargeEars		 (Necessary condition)
+- Chihuahua ⊑ hasVisualFeature SmallBody		 (Necessary condition)
+- Chihuahua ⊑ hasVisualFeature ShortSnout		 (Necessary condition)
+- Chihuahua ⊑ hasVisualFeature LargeEyes		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature LargeEars
+hasVisualFeature SmallBody
+hasVisualFeature ShortSnout
+hasVisualFeature LargeEyes
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents LargeEars, SmallBody, ShortSnout, and LargeEyes, which satisfies the necessary conditions for the Chihuahua class (Chihuahua ⊑ hasVisualFeature LargeEars, Chihuahua ⊑ hasVisualFeature SmallBody, Chihuahua ⊑ hasVisualFeature ShortSnout, Chihuahua ⊑ hasVisualFeature LargeEyes) to classify it as a Chihuahua.
+----------------------------------------
+Query 24: Expected: [Chihuahua] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Chihuahua</response>
+
+TBox (axioms in a Knowledge Base):
+- Chihuahua ⊑ hasVisualFeature LargeEars		 (Necessary condition)
+- Chihuahua ⊑ hasVisualFeature SmallBody		 (Necessary condition)
+- Chihuahua ⊑ hasVisualFeature ShortSnout		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature LargeEars
+hasVisualFeature SmallBody
+hasVisualFeature ShortSnout
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents LargeEars, SmallBody, and ShortSnout, which satisfies the necessary conditions for the Chihuahua class [Chihuahua ⊑ hasVisualFeature LargeEars, Chihuahua ⊑ hasVisualFeature SmallBody, Chihuahua ⊑ hasVisualFeature ShortSnout] to classify it as a Chihuahua.
+----------------------------------------
+Query 25: Expected: [Chihuahua] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Chihuahua</response>
+
+TBox (axioms in a Knowledge Base):
+- Chihuahua ⊑ hasVisualFeature LargeEars		 (Necessary condition)
+- Chihuahua ⊑ hasVisualFeature SmallBody		 (Necessary condition)
+- Chihuahua ⊑ hasVisualFeature ShortSnout		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature LargeEars
+hasVisualFeature SmallBody
+hasVisualFeature ShortSnout
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents LargeEars, SmallBody, and ShortSnout, which satisfies the necessary conditions for the Chihuahua class [Chihuahua ⊑ hasVisualFeature LargeEars, Chihuahua ⊑ hasVisualFeature SmallBody, Chihuahua ⊑ hasVisualFeature ShortSnout] to classify it as a Chihuahua.
+----------------------------------------
+Query 26: Expected: [Chihuahua] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Chihuahua</response>
+
+TBox (axioms in a Knowledge Base):
+- Chihuahua ⊑ hasVisualFeature LargeEars		 (Necessary condition)
+- Chihuahua ⊑ hasVisualFeature SmallBody		 (Necessary condition)
+- Chihuahua ⊑ hasVisualFeature ShortSnout		 (Necessary condition)
+- Chihuahua ≡ hasVisualFeature LargeEars AND hasVisualFeature SmallBody AND hasVisualFeature ShortSnout (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature LargeEars
+hasVisualFeature SmallBody
+hasVisualFeature ShortSnout
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents LargeEars, SmallBody, and ShortSnout, which satisfies the Necessary & Sufficient condition (Chihuahua ≡ hasVisualFeature LargeEars AND hasVisualFeature SmallBody AND hasVisualFeature ShortSnout) to classify it as a Chihuahua.
+----------------------------------------
+Query 27: Expected: [Chihuahua] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Chihuahua</response>
+
+TBox (axioms in a Knowledge Base):
+- Chihuahua ⊑ hasVisualFeature LargeEars		 (Necessary condition)
+- Chihuahua ⊑ hasVisualFeature SmallBody		 (Necessary condition)
+- Chihuahua ⊑ hasVisualFeature ShortSnout		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature LargeEars
+hasVisualFeature SmallBody
+hasVisualFeature ShortSnout
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents LargeEars, SmallBody, and ShortSnout, which satisfies the necessary conditions for the Chihuahua class [Chihuahua ⊑ hasVisualFeature LargeEars, Chihuahua ⊑ hasVisualFeature SmallBody, Chihuahua ⊑ hasVisualFeature ShortSnout] to classify it as a Chihuahua.
+----------------------------------------
+Query 28: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+
+TBox (axioms in a Knowledge Base):
+- StaffordshireBullTerrier ⊑ hasVisualFeature BlackFur		 (Necessary condition)
+- hasVisualFeature BlackFur ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+- StaffordshireBullTerrier ⊑ hasVisualFeature MuscularBuild		 (Necessary condition)
+- hasVisualFeature MuscularBuild ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BlackFur
+hasVisualFeature MuscularBuild
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature BlackFur and hasVisualFeature MuscularBuild, which satisfies the Sufficient condition (hasVisualFeature BlackFur ⊑ StaffordshireBullTerrier) and the Sufficient condition (hasVisualFeature MuscularBuild ⊑ StaffordshireBullTerrier) axioms to classify it as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 29: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+TBox (axioms in a Knowledge Base):
+- StaffordshireBullTerrier ⊑ hasVisualFeature BlackAndWhiteCoat		 (Necessary condition)
+- hasVisualFeature BlackAndWhiteCoat ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BlackAndWhiteCoat
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature BlackAndWhiteCoat, which satisfies the Sufficient condition [hasVisualFeature BlackAndWhiteCoat ⊑ StaffordshireBullTerrier] axiom to classify it as Staffordshire Bull Terrier.
+----------------------------------------
+Query 30: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+
+TBox (axioms in a Knowledge Base):
+- StaffordshireBullTerrier ⊑ hasVisualFeature MuscularBuild		 (Necessary condition)
+- StaffordshireBullTerrier ⊑ hasVisualFeature ShortMuzzle		 (Necessary condition)
+- StaffordshireBullTerrier ⊑ hasVisualFeature BroadHead		 (Necessary condition)
+- hasVisualFeature [BlackFurColor] ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature MuscularBuild
+hasVisualFeature ShortMuzzle
+hasVisualFeature BroadHead
+hasVisualFeature BlackFurColor
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents MuscularBuild, ShortMuzzle, BroadHead, and BlackFurColor, which satisfies the necessary conditions for StaffordshireBullTerrier and the sufficient condition of BlackFurColor, thus classifying it as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 31: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+TBox (axioms in a Knowledge Base):
+- StaffordshireBullTerrier ⊑ hasVisualFeature [muscularBuild] (Necessary condition)
+- StaffordshireBullTerrier ⊑ hasVisualFeature [shortMuzzle] (Necessary condition)
+- StaffordshireBullTerrier ⊑ hasVisualFeature [largeHead] (Necessary condition)
+- hasVisualFeature [darkCoatColor] ⊑ StaffordshireBullTerrier (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature [muscularBuild]
+hasVisualFeature [shortMuzzle]
+hasVisualFeature [largeHead]
+hasVisualFeature [darkCoatColor]
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents [muscularBuild, shortMuzzle, largeHead, darkCoatColor], which satisfies the TBox necessary conditions [hasVisualFeature [muscularBuild], hasVisualFeature [shortMuzzle], hasVisualFeature [largeHead]] and the sufficient condition [hasVisualFeature [darkCoatColor]] to classify it as StaffordshireBullTerrier.
+----------------------------------------
+Query 32: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+
+TBox (axioms in a Knowledge Base):
+- StaffordshireBullTerrier ⊑ hasVisualFeature BrindleCoat		 (Necessary condition)
+- hasVisualFeature BrindleCoat ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BrindleCoat
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature BrindleCoat, which satisfies the Sufficient condition [hasVisualFeature BrindleCoat ⊑ StaffordshireBullTerrier] axiom to classify it as StaffordshireBullTerrier.
+----------------------------------------
+Query 33: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+TBox (axioms in a Knowledge Base):
+- StaffordshireBullTerrier ⊑ hasVisualFeature BroadHead		 (Necessary condition)
+- hasVisualFeature BroadHead ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+- StaffordshireBullTerrier ⊑ hasVisualFeature MuscularBuild		 (Necessary condition)
+- hasVisualFeature MuscularBuild ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+- StaffordshireBullTerrier ⊑ hasVisualFeature WhiteMarkings		 (Necessary condition)
+- hasVisualFeature WhiteMarkings ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BroadHead
+hasVisualFeature MuscularBuild
+hasVisualFeature WhiteMarkings
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BroadHead, MuscularBuild, and WhiteMarkings, which satisfies the necessary conditions for the StaffordshireBullTerrier class (StaffordshireBullTerrier ⊑ hasVisualFeature BroadHead, StaffordshireBullTerrier ⊑ hasVisualFeature MuscularBuild, StaffordshireBullTerrier ⊑ hasVisualFeature WhiteMarkings) to classify it as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 34: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+
+TBox (axioms in a Knowledge Base):
+- StaffordshireBullTerrier ⊑ hasVisualFeature [MuscularBuild] (Necessary condition)
+- hasVisualFeature [MuscularBuild] ⊑ StaffordshireBullTerrier (Sufficient condition)
+- StaffordshireBullTerrier ≡ hasVisualFeature [ShortMuzzle] (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature [MuscularBuild]
+hasVisualFeature [ShortMuzzle]
+hasVisualFeature [BrownCoatColor]
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents MuscularBuild and ShortMuzzle, which satisfies the Necessary & Sufficient condition (StaffordshireBullTerrier ≡ hasVisualFeature [ShortMuzzle]) and the Necessary condition (StaffordshireBullTerrier ⊑ hasVisualFeature [MuscularBuild]) to classify it as a Staffordshire Bull Terrier.
+----------------------------------------
+Query 35: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+TBox (axioms in a Knowledge Base):
+- StaffordshireBullTerrier ⊑ hasVisualFeature BlackAndWhiteCoat		 (Necessary condition)
+- hasVisualFeature BlackAndWhiteCoat ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BlackAndWhiteCoat
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature BlackAndWhiteCoat, which satisfies the Sufficient condition [hasVisualFeature BlackAndWhiteCoat ⊑ StaffordshireBullTerrier] axiom to classify it as Staffordshire Bull Terrier.
+----------------------------------------
+Query 36: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>Staffordshire Bull Terrier</response>
+
+TBox (axioms in a Knowledge Base):
+- StaffordshireBullTerrier ⊑ hasVisualFeature MuscularBuild		 (Necessary condition)
+- hasVisualFeature MuscularBuild ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+- StaffordshireBullTerrier ⊑ hasVisualFeature ShortMuzzle		 (Necessary condition)
+- hasVisualFeature ShortMuzzle ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+- StaffordshireBullTerrier ⊑ hasVisualFeature BroadHead		 (Necessary condition)
+- hasVisualFeature BroadHead ⊑ StaffordshireBullTerrier		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature MuscularBuild
+hasVisualFeature ShortMuzzle
+hasVisualFeature BroadHead
+hasVisualFeature BlackFurColor
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents MuscularBuild, ShortMuzzle, and BroadHead, which satisfies the Sufficient condition (hasVisualFeature MuscularBuild ⊑ StaffordshireBullTerrier), (hasVisualFeature ShortMuzzle ⊑ StaffordshireBullTerrier), and (hasVisualFeature BroadHead ⊑ StaffordshireBullTerrier) axioms to classify it as a Staffordshire Bull Terrier. The observed BlackFurColor is an additional characteristic, but not essential for classification.
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 1.0000

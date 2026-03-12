@@ -1,0 +1,1490 @@
+=== DEBUG LOG: gemma3 | flowers | Prompt: axioms_ontology_v2 ===
+
+--- CONFIG: N=2, K=2, Q=9 ---
+Query 1: Expected: [51] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>51</response>
+TBox (axioms in a Knowledge Base):
+- 51 ⊑ hasVisualFeature PurplePetals (Necessary condition)
+- 51 ⊑ hasVisualFeature WhitePetals (Necessary condition)
+- 51 ⊑ hasVisualFeature YellowCenter (Necessary condition)
+- hasVisualFeature YellowCenter ⊑ 51 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PurplePetals
+hasVisualFeature WhitePetals
+hasVisualFeature YellowCenter
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents PurplePetals, WhitePetals, and YellowCenter, which satisfies the TBox necessary conditions to classify it as 51.
+----------------------------------------
+Query 2: Expected: [51] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>51</response>
+TBox (axioms in a Knowledge Base):
+- 51 ⊑ hasVisualFeature PurplePetals (Necessary condition)
+- 51 ⊑ hasVisualFeature YellowCenter (Necessary condition)
+- 51 ⊑ hasVisualFeature WhitePetals (Necessary condition)
+- hasVisualFeature YellowCenter ⊑ 51 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PurplePetals
+hasVisualFeature YellowCenter
+hasVisualFeature WhitePetals
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents PurplePetals, YellowCenter, and WhitePetals, which satisfies the TBox necessary conditions to classify it as 51.
+----------------------------------------
+Query 3: Expected: [51] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>51</response>
+TBox (axioms in a Knowledge Base):
+- 51 ⊑ hasVisualFeature PurplePetals (Necessary condition)
+- 51 ⊑ hasVisualFeature YellowBase (Necessary condition)
+- hasVisualFeature PurplePetals ⊑ 51 (Sufficient condition)
+- hasVisualFeature YellowBase ⊑ 51 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PurplePetals
+hasVisualFeature YellowBase
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents PurplePetals and YellowBase, which satisfies the Sufficient condition [axiom] to classify it as 51.
+----------------------------------------
+Query 4: Expected: [51] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>51</response>
+TBox (axioms in a Knowledge Base):
+- 51 ⊑ hasVisualFeature PurplePetals (Necessary condition)
+- hasVisualFeature YellowBase ⊑ 51 (Sufficient condition)
+- 51 ≡ hasVisualFeature WhitePetals (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PurplePetals
+hasVisualFeature YellowBase
+hasVisualFeature WhitePetals
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents PurplePetals, YellowBase, and WhitePetals, which satisfies the necessary condition of having PurplePetals, the sufficient condition of having YellowBase, and the necessary and sufficient condition of having WhitePetals, all according to the TBox axioms, to classify it as 51.
+----------------------------------------
+Query 5: Expected: [51] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>51</response>
+TBox (axioms in a Knowledge Base):
+- 51 ⊑ hasVisualFeature PurplePetals (Necessary condition)
+- 51 ⊑ hasVisualFeature WhitePetals (Necessary condition)
+- 51 ⊑ hasVisualFeature YellowCenter (Necessary condition)
+- hasVisualFeature YellowCenter ⊑ 51 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PurplePetals
+hasVisualFeature WhitePetals
+hasVisualFeature YellowCenter
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents PurplePetals, WhitePetals, and YellowCenter, which satisfies the TBox necessary conditions to classify it as 51.
+----------------------------------------
+Query 6: Expected: [51] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>51</response>
+TBox (axioms in a Knowledge Base):
+- 51 ⊑ hasVisualFeature purplePetals (Necessary condition)
+- hasVisualFeature yellowCenter ⊑ 51 (Sufficient condition)
+- 51 ≡ hasVisualFeature fivePetals (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature purplePetals
+hasVisualFeature yellowCenter
+hasVisualFeature fivePetals
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents purplePetals, yellowCenter, and fivePetals, which satisfies the necessary condition of having purple petals, the sufficient condition of having a yellow center, and the necessary & sufficient condition of having five petals, all according to the TBox axioms, to classify it as 51.
+----------------------------------------
+Query 7: Expected: [51] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>51</response>
+TBox (axioms in a Knowledge Base):
+- 51 ⊑ hasVisualFeature purplePetals (Necessary condition)
+- hasVisualFeature yellowCenter ⊑ 51 (Sufficient condition)
+- 51 ≡ hasVisualFeature fivePetals (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature purplePetals
+hasVisualFeature yellowCenter
+hasVisualFeature fivePetals
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents purplePetals, a yellowCenter, and fivePetals, which satisfies the necessary condition of having purple petals, the sufficient condition of having a yellow center, and the necessary & sufficient condition of having five petals, to classify it as 51.
+----------------------------------------
+Query 8: Expected: [51] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>51</response>
+TBox (axioms in a Knowledge Base):
+- 51 ⊑ hasVisualFeature purplePetals		 (Necessary condition)
+- hasVisualFeature purplePetals ⊑ 51		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature purplePetals
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature purplePetals, which satisfies the sufficient condition axiom (hasVisualFeature purplePetals ⊑ 51) to classify it as 51.
+----------------------------------------
+Query 9: Expected: [51] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>51</response>
+TBox (axioms in a Knowledge Base):
+- 51 ⊑ hasVisualFeature PurplePetals (Necessary condition)
+- 51 ⊑ hasVisualFeature YellowBase (Necessary condition)
+- hasVisualFeature PurplePetals ⊑ 51 (Sufficient condition)
+- hasVisualFeature YellowBase ⊑ 51 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PurplePetals
+hasVisualFeature YellowBase
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents PurplePetals and YellowBase, which satisfies the sufficient condition axiom hasVisualFeature PurplePetals ⊑ 51 and hasVisualFeature YellowBase ⊑ 51 to classify it as 51.
+----------------------------------------
+Query 10: Expected: [93] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>93</response>
+TBox (axioms in a Knowledge Base):
+- 93 ⊑ hasVisualFeature BellShapedFlowers		 (Necessary condition)
+- hasVisualFeature BellShapedFlowers ⊑ 93		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BellShapedFlowers
+The ABox assertion presents BellShapedFlowers, which satisfies the Sufficient condition [hasVisualFeature BellShapedFlowers ⊑ 93] axiom to classify it as 93.
+----------------------------------------
+Query 11: Expected: [93] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>93</response>
+
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature bellshapedFlowers		 (Necessary condition)
+- hasVisualFeature bellshapedFlowers ⊑ class		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature bellshapedFlowers
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature bellshapedFlowers, which satisfies the Sufficient condition [hasVisualFeature bellshapedFlowers ⊑ class] axiom to classify it as 93.
+----------------------------------------
+Query 12: Expected: [93] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>93</response>
+
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature bellShapedFlowers		 (Necessary condition)
+- hasVisualFeature bellShapedFlowers ⊑ class		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature bellShapedFlowers
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature bellShapedFlowers, which satisfies the Sufficient condition [hasVisualFeature bellShapedFlowers ⊑ class] axiom to classify it as 93.
+----------------------------------------
+Query 13: Expected: [93] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>93</response>
+
+TBox (axioms in a Knowledge Base):
+- 93 ⊑ hasVisualFeature BellShapedFlowers		 (Necessary condition)
+- hasVisualFeature BellShapedFlowers ⊑ 93		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BellShapedFlowers
+The ABox assertion presents BellShapedFlowers, which satisfies the Sufficient condition [hasVisualFeature BellShapedFlowers ⊑ 93] axiom to classify it as 93.
+----------------------------------------
+Query 14: Expected: [93] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>93</response>
+TBox (axioms in a Knowledge Base):
+- 93 ⊑ hasVisualFeature BellShapedFlower		 (Necessary condition)
+- hasVisualFeature BellShapedFlower ⊑ 93		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BellShapedFlower
+The ABox assertion presents hasVisualFeature BellShapedFlower, which satisfies the Sufficient condition [hasVisualFeature BellShapedFlower ⊑ 93] axiom to classify it as 93.
+----------------------------------------
+Query 15: Expected: [93] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>93</response>
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature tubularShape		 (Necessary condition)
+- hasVisualFeature tubularShape ⊑ class		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature tubularShape
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature tubularShape, which satisfies the Sufficient condition [hasVisualFeature tubularShape ⊑ class] axiom to classify it as 93.
+----------------------------------------
+Query 16: Expected: [93] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>93</response>
+TBox (axioms in a Knowledge Base):
+- 93 ⊑ hasVisualFeature TubularFlowerShape		 (Necessary condition)
+- hasVisualFeature TubularFlowerShape ⊑ 93		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature TubularFlowerShape
+The ABox assertion presents TubularFlowerShape, which satisfies the Sufficient condition [hasVisualFeature TubularFlowerShape ⊑ 93] axiom to classify it as 93.
+----------------------------------------
+Query 17: Expected: [93] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>93</response>
+
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature BellShapedFlowers		 (Necessary condition)
+- hasVisualFeature BellShapedFlowers ⊑ class		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BellShapedFlowers
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature BellShapedFlowers, which satisfies the Sufficient condition [hasVisualFeature BellShapedFlowers ⊑ class] axiom to classify it as 93.
+----------------------------------------
+Query 18: Expected: [93] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>93</response>
+
+TBox (axioms in a Knowledge Base):
+- 93 ⊑ hasVisualFeature BellShapedFlowers		 (Necessary condition)
+- hasVisualFeature BellShapedFlowers ⊑ 93		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BellShapedFlowers
+The ABox assertion presents BellShapedFlowers, which satisfies the sufficient condition (hasVisualFeature BellShapedFlowers ⊑ 93) axiom to classify it as 93.
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9): 1.0000
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [52] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>52</response>
+TBox (axioms in a Knowledge Base):
+- 52 ⊑ hasVisualFeature YellowPetals (Necessary condition)
+- 52 ⊑ hasVisualFeature CentralOrangeDetails (Necessary condition)
+- 52 ⊑ hasVisualFeature GreenLeaves (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature YellowPetals
+hasVisualFeature CentralOrangeDetails
+hasVisualFeature GreenLeaves
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents YellowPetals, CentralOrangeDetails, and GreenLeaves, which satisfies the necessary conditions for class 52. Specifically, the presence of YellowPetals, CentralOrangeDetails, and GreenLeaves aligns with the TBox axioms, allowing us to classify the entity as 52.
+----------------------------------------
+Query 2: Expected: [52] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>52</response>
+TBox (axioms in a Knowledge Base):
+- 52 ⊑ hasVisualFeature WhitePetals (Necessary condition)
+- 52 ⊑ hasVisualFeature YellowCenter (Necessary condition)
+- 52 ⊑ hasVisualFeature MultipleFlowers (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhitePetals
+hasVisualFeature YellowCenter
+hasVisualFeature MultipleFlowers
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhitePetals, YellowCenter, and MultipleFlowers, which satisfies the necessary conditions for class 52. Therefore, it is classified as 52.
+----------------------------------------
+Query 3: Expected: [52] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>52</response>
+TBox (axioms in a Knowledge Base):
+- 52 ⊑ hasVisualFeature YellowPetals (Necessary condition)
+- 52 ⊑ hasVisualFeature GreenLeaves (Necessary condition)
+- 52 ⊑ hasVisualFeature CentralOrangeStamens (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature YellowPetals
+hasVisualFeature GreenLeaves
+hasVisualFeature CentralOrangeStamens
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents YellowPetals, GreenLeaves, and CentralOrangeStamens, which satisfies the necessary conditions for class 52. The observed properties align with the TBox axioms, allowing us to classify the entity as 52.
+----------------------------------------
+Query 4: Expected: [52] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>52</response>
+TBox (axioms in a Knowledge Base):
+- 52 ⊑ hasVisualFeature WhitePetals (Necessary condition)
+- 52 ⊑ hasVisualFeature YellowCenter (Necessary condition)
+- 52 ⊑ hasVisualFeature GreenLeaves (Necessary condition)
+- hasVisualFeature YellowCenter ⊑ 52 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhitePetals
+hasVisualFeature YellowCenter
+hasVisualFeature GreenLeaves
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhitePetals, YellowCenter, and GreenLeaves, which satisfies the necessary conditions for class 52. Observing these features validates the classification as 52.
+----------------------------------------
+Query 5: Expected: [52] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>52</response>
+TBox (axioms in a Knowledge Base):
+- 52 ⊑ hasVisualFeature purplePetals		 (Necessary condition)
+- 52 ⊑ hasVisualFeature yellowCenter		 (Necessary condition)
+- 52 ⊑ hasVisualFeature greenLeaves		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature purplePetals
+hasVisualFeature yellowCenter
+hasVisualFeature greenLeaves
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents purplePetals, a yellowCenter, and greenLeaves, which satisfies the necessary conditions for class 52. Specifically, the presence of purple petals, a yellow center, and green leaves are all necessary conditions for an entity to be classified as 52.
+----------------------------------------
+Query 6: Expected: [52] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>52</response>
+TBox (axioms in a Knowledge Base):
+- 52 ⊑ hasVisualFeature WhitePetals (Necessary condition)
+- 52 ⊑ hasVisualFeature YellowCenter (Necessary condition)
+- 52 ⊑ hasVisualFeature MultiplePetals (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhitePetals
+hasVisualFeature YellowCenter
+hasVisualFeature MultiplePetals
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhitePetals, YellowCenter, and MultiplePetals, which satisfies the necessary conditions for class 52. Therefore, it is classified as 52.
+----------------------------------------
+Query 7: Expected: [52] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>52</response>
+TBox (axioms in a Knowledge Base):
+- 52 ⊑ hasVisualFeature RedPetals		 (Necessary condition)
+- 52 ⊑ hasVisualFeature YellowCenter		 (Necessary condition)
+- 52 ⊑ hasVisualFeature GreenLeaves		 (Necessary condition)
+- hasVisualFeature YellowCenter ⊑ 52		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature RedPetals
+hasVisualFeature YellowCenter
+hasVisualFeature GreenLeaves
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents RedPetals, YellowCenter, and GreenLeaves, which satisfies the TBox necessary conditions for class 52. Therefore, it is classified as 52.
+----------------------------------------
+Query 8: Expected: [52] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>52</response>
+TBox (axioms in a Knowledge Base):
+- 52 ⊑ hasVisualFeature WhitePetals (Necessary condition)
+- 52 ⊑ hasVisualFeature YellowCenter (Necessary condition)
+- 52 ⊑ hasVisualFeature GreenLeaves (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhitePetals
+hasVisualFeature YellowCenter
+hasVisualFeature GreenLeaves
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhitePetals, YellowCenter, and GreenLeaves, which satisfies the necessary conditions for class 52. Specifically, the presence of WhitePetals, YellowCenter, and GreenLeaves aligns with the TBox axioms, confirming that the entity is classified as 52.
+----------------------------------------
+Query 9: Expected: [52] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>52</response>
+TBox (axioms in a Knowledge Base):
+- 52 ⊑ hasVisualFeature PurplePetals		 (Necessary condition)
+- 52 ⊑ hasVisualFeature YellowCenter		 (Necessary condition)
+- hasVisualFeature PurplePetals ⊑ 52		 (Sufficient condition)
+- hasVisualFeature YellowCenter ⊑ 52		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PurplePetals
+hasVisualFeature YellowCenter
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents PurplePetals and YellowCenter, which satisfies the Sufficient condition (hasVisualFeature PurplePetals ⊑ 52) and the Sufficient condition (hasVisualFeature YellowCenter ⊑ 52) axiom to classify it as 52.
+----------------------------------------
+Query 10: Expected: [62] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>62</response>
+
+TBox (axioms in a Knowledge Base):
+- 62 ⊑ hasVisualFeature DarkCentralDisc		 (Necessary condition)
+- hasVisualFeature DarkCentralDisc ⊑ 62		 (Sufficient condition)
+- 62 ⊑ hasVisualFeature YellowPetals		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature DarkCentralDisc
+hasVisualFeature YellowPetals
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents DarkCentralDisc and YellowPetals, which satisfies the sufficient condition (hasVisualFeature DarkCentralDisc ⊑ 62) and the necessary condition (62 ⊑ hasVisualFeature YellowPetals) to classify it as 62.
+----------------------------------------
+Query 11: Expected: [62] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>62</response>
+
+TBox (axioms in a Knowledge Base):
+- 62 ⊑ hasVisualFeature DarkCentralDisk		 (Necessary condition)
+- hasVisualFeature DarkCentralDisk ⊑ 62		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature YellowPetals
+hasVisualFeature DarkCentralDisk
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents YellowPetals and DarkCentralDisk, which satisfies the sufficient condition (hasVisualFeature DarkCentralDisk ⊑ 62) to classify it as 62.
+----------------------------------------
+Query 12: Expected: [62] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>62</response>
+
+TBox (axioms in a Knowledge Base):
+- 62 ⊑ hasVisualFeature DarkCentralDisk		 (Necessary condition)
+- hasVisualFeature DarkCentralDisk ⊑ 62		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature YellowPetals
+hasVisualFeature DarkCentralDisk
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents YellowPetals and DarkCentralDisk, which satisfies the sufficient condition (hasVisualFeature DarkCentralDisk ⊑ 62) to classify it as 62. The presence of a dark central disk is sufficient to classify the entity as 62.
+----------------------------------------
+Query 13: Expected: [62] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>62</response>
+
+TBox (axioms in a Knowledge Base):
+- 62 ⊑ hasVisualFeature DarkCentralDisc		 (Necessary condition)
+- hasVisualFeature DarkCentralDisc ⊑ 62		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature YellowPetals
+hasVisualFeature DarkCentralDisc
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents YellowPetals and DarkCentralDisc, which satisfies the sufficient condition (hasVisualFeature DarkCentralDisc ⊑ 62) to classify it as 62.
+----------------------------------------
+Query 14: Expected: [62] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>62</response>
+
+TBox (axioms in a Knowledge Base):
+- 62 ⊑ hasVisualFeature DarkCentralDisc		 (Necessary condition)
+- hasVisualFeature DarkCentralDisc ⊑ 62		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature YellowPetals
+hasVisualFeature DarkCentralDisc
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents YellowPetals and DarkCentralDisc, which satisfies the sufficient condition (hasVisualFeature DarkCentralDisc ⊑ 62) to classify it as 62.
+----------------------------------------
+Query 15: Expected: [62] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>62</response>
+
+TBox (axioms in a Knowledge Base):
+- 62 ⊑ hasVisualFeature DarkCentralDisc		 (Necessary condition)
+- hasVisualFeature DarkCentralDisc ⊑ 62		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature YellowPetals
+hasVisualFeature DarkCentralDisc
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents YellowPetals and DarkCentralDisc, which satisfies the sufficient condition (hasVisualFeature DarkCentralDisc ⊑ 62) to classify it as 62.
+----------------------------------------
+Query 16: Expected: [62] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>62</response>
+
+TBox (axioms in a Knowledge Base):
+- 62 ⊑ hasVisualFeature DarkCentralDisc		 (Necessary condition)
+- hasVisualFeature DarkCentralDisc ⊑ 62		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature YellowPetals
+hasVisualFeature DarkCentralDisc
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents YellowPetals and DarkCentralDisc, which satisfies the sufficient condition (hasVisualFeature DarkCentralDisc ⊑ 62) to classify it as 62. The presence of a dark central disc is sufficient to classify the entity as 62.
+----------------------------------------
+Query 17: Expected: [62] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>62</response>
+
+TBox (axioms in a Knowledge Base):
+- 62 ⊑ hasVisualFeature DarkCentralDisc		 (Necessary condition)
+- hasVisualFeature DarkCentralDisc ⊑ 62		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature YellowPetals
+hasVisualFeature DarkCentralDisc
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents YellowPetals and DarkCentralDisc, which satisfies the Sufficient condition [hasVisualFeature DarkCentralDisc ⊑ 62] axiom to classify it as 62.
+----------------------------------------
+Query 18: Expected: [62] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>62</response>
+
+TBox (axioms in a Knowledge Base):
+- 62 ⊑ hasVisualFeature DarkCentralDisc		 (Necessary condition)
+- hasVisualFeature DarkCentralDisc ⊑ 62		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature YellowPetals
+hasVisualFeature DarkCentralDisc
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents YellowPetals and DarkCentralDisc, which satisfies the sufficient condition (hasVisualFeature DarkCentralDisc ⊑ 62) to classify it as 62.
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9): 1.0000
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [94] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>94</response>
+TBox (axioms in a Knowledge Base):
+- 94 ⊑ hasVisualFeature WhitePetals (Necessary condition)
+- hasVisualFeature WhitePetals ⊑ 94 (Sufficient condition)
+- 94 ≡ hasVisualFeature SmallCentralFlowers (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhitePetals
+hasVisualFeature SmallCentralFlowers
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhitePetals and SmallCentralFlowers, which satisfies the sufficient condition axiom (hasVisualFeature WhitePetals ⊑ 94) and the necessary & sufficient condition axiom (94 ≡ hasVisualFeature SmallCentralFlowers) to classify it as 94.
+----------------------------------------
+Query 2: Expected: [94] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>94</response>
+TBox (axioms in a Knowledge Base):
+- 94 ⊑ hasVisualFeature PinkPetals		 (Necessary condition)
+- hasVisualFeature PinkPetals ⊑ 94		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PinkPetals
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature PinkPetals, which satisfies the Sufficient condition [hasVisualFeature PinkPetals ⊑ 94] axiom to classify it as 94.
+----------------------------------------
+Query 3: Expected: [94] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>94</response>
+TBox (axioms in a Knowledge Base):
+- 94 ⊑ hasVisualFeature PinkPetals		 (Necessary condition)
+- hasVisualFeature PinkPetals ⊑ 94		 (Sufficient condition)
+- 94 ≡ hasVisualFeature SmallWhiteFlowers (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PinkPetals
+hasVisualFeature SmallWhiteFlowers
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents PinkPetals and SmallWhiteFlowers, which satisfies the sufficient condition axiom (hasVisualFeature PinkPetals ⊑ 94) and the necessary and sufficient condition axiom (94 ≡ hasVisualFeature SmallWhiteFlowers) to classify it as 94.
+----------------------------------------
+Query 4: Expected: [94] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>94</response>
+TBox (axioms in a Knowledge Base):
+- 94 ⊑ hasVisualFeature WhitePetals (Necessary condition)
+- hasVisualFeature WhitePetals ⊑ 94 (Sufficient condition)
+- 94 ≡ hasVisualFeature BrightGreenLeaves (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhitePetals
+hasVisualFeature BrightGreenLeaves
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhitePetals and BrightGreenLeaves, which satisfies the Sufficient condition (hasVisualFeature WhitePetals ⊑ 94) and the Necessary & Sufficient condition (94 ≡ hasVisualFeature BrightGreenLeaves) to classify it as 94.
+----------------------------------------
+Query 5: Expected: [94] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>94</response>
+TBox (axioms in a Knowledge Base):
+- 94 ⊑ hasVisualFeature PinkPetals		 (Necessary condition)
+- hasVisualFeature PinkPetals ⊑ 94		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PinkPetals
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature PinkPetals, which satisfies the Sufficient condition [hasVisualFeature PinkPetals ⊑ 94] axiom to classify it as 94.
+----------------------------------------
+Query 6: Expected: [94] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>94</response>
+TBox (axioms in a Knowledge Base):
+- 94 ⊑ hasVisualFeature PurpleLeaves		 (Necessary condition)
+- hasVisualFeature PurpleLeaves ⊑ 94		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PurpleLeaves
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature PurpleLeaves, which satisfies the Sufficient condition [hasVisualFeature PurpleLeaves ⊑ 94] axiom to classify it as 94.
+----------------------------------------
+Query 7: Expected: [94] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>94</response>
+TBox (axioms in a Knowledge Base):
+- 94 ⊑ hasVisualFeature PurplePetals (Necessary condition)
+- hasVisualFeature PurplePetals ⊑ 94 (Sufficient condition)
+- 94 ≡ hasVisualFeature SmallWhiteFlowers (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PurplePetals
+hasVisualFeature SmallWhiteFlowers
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents PurplePetals and SmallWhiteFlowers, which satisfies the sufficient condition axiom (hasVisualFeature PurplePetals ⊑ 94) and the necessary & sufficient condition axiom (94 ≡ hasVisualFeature SmallWhiteFlowers) to classify it as 94.
+----------------------------------------
+Query 8: Expected: [94] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>94</response>
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature OrangeColor		 (Necessary condition)
+- class ⊑ hasVisualFeature PaperyTexture		 (Necessary condition)
+- class ⊑ hasVisualFeature LeafLikeStructure		 (Necessary condition)
+- hasVisualFeature OrangeColor ⊑ class		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature OrangeColor
+hasVisualFeature PaperyTexture
+hasVisualFeature LeafLikeStructure
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents OrangeColor, PaperyTexture, and LeafLikeStructure, which satisfies the necessary conditions to classify it as 94.
+----------------------------------------
+Query 9: Expected: [94] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>94</response>
+TBox (axioms in a Knowledge Base):
+- 94 ⊑ hasVisualFeature PinkPetals		 (Necessary condition)
+- hasVisualFeature PinkPetals ⊑ 94		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PinkPetals
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature PinkPetals, which satisfies the Sufficient condition [hasVisualFeature PinkPetals ⊑ 94] axiom to classify it as 94.
+----------------------------------------
+Query 10: Expected: [69] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+**Entity Identification:**
+<response>69</response>
+
+**TBox (axioms in a Knowledge Base):**
+- class ⊑ hasVisualFeature WhitePetals (Necessary condition)
+- hasVisualFeature YellowCenter ⊑ class (Sufficient condition)
+
+**ABox (Observed Properties & Assertions):**
+hasVisualFeature WhitePetals
+hasVisualFeature YellowCenter
+
+**Description Logics’ Ontological Axioms:**
+The ABox assertion presents WhitePetals and YellowCenter, which satisfies the Sufficient condition (hasVisualFeature YellowCenter ⊑ class) axiom to classify it as 69. The presence of WhitePetals is a necessary condition, but the YellowCenter is the defining characteristic that allows us to confidently classify the entity as 69.
+----------------------------------------
+Query 11: Expected: [69] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>69</response>
+TBox (axioms in a Knowledge Base):
+- 69 ⊑ hasVisualFeature WhitePetals		 (Necessary condition)
+- 69 ⊑ hasVisualFeature YellowCenter		 (Necessary condition)
+- hasVisualFeature WhitePetals ⊑ 69		 (Sufficient condition)
+- hasVisualFeature YellowCenter ⊑ 69		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhitePetals
+hasVisualFeature YellowCenter
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhitePetals and YellowCenter, which satisfies the sufficient condition axiom (hasVisualFeature WhitePetals ⊑ 69) and (hasVisualFeature YellowCenter ⊑ 69) to classify it as 69.
+----------------------------------------
+Query 12: Expected: [69] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>69</response>
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature WhitePetals (Necessary condition)
+- hasVisualFeature YellowCenter ⊑ class (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhitePetals
+hasVisualFeature YellowCenter
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhitePetals and YellowCenter, which satisfies the Sufficient condition [hasVisualFeature YellowCenter ⊑ class] axiom to classify it as 69. The presence of WhitePetals is a necessary condition for the class, but not sufficient on its own.
+----------------------------------------
+Query 13: Expected: [69] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>69</response>
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature WhitePetals (Necessary condition)
+- hasVisualFeature YellowCenter ⊑ class (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhitePetals
+hasVisualFeature YellowCenter
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhitePetals and YellowCenter, which satisfies the Sufficient condition [hasVisualFeature YellowCenter ⊑ class] axiom to classify it as 69.
+----------------------------------------
+Query 14: Expected: [69] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>69</response>
+TBox (axioms in a Knowledge Base):
+- 69 ⊑ hasVisualFeature WhitePetals (Necessary condition)
+- 69 ⊑ hasVisualFeature YellowCenter (Necessary condition)
+- hasVisualFeature WhitePetals ⊑ 69 (Sufficient condition)
+- hasVisualFeature YellowCenter ⊑ 69 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhitePetals
+hasVisualFeature YellowCenter
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhitePetals and YellowCenter, which satisfies the Sufficient condition axiom (hasVisualFeature WhitePetals ⊑ 69) and the Sufficient condition axiom (hasVisualFeature YellowCenter ⊑ 69) to classify it as 69.
+----------------------------------------
+Query 15: Expected: [69] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>69</response>
+TBox (axioms in a Knowledge Base):
+- 69 ⊑ hasVisualFeature WhitePetals (Necessary condition)
+- 69 ⊑ hasVisualFeature YellowCenter (Necessary condition)
+- hasVisualFeature WhitePetals ⊑ 69 (Sufficient condition)
+- hasVisualFeature YellowCenter ⊑ 69 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhitePetals
+hasVisualFeature YellowCenter
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhitePetals and YellowCenter, which satisfies the Sufficient condition axiom (hasVisualFeature WhitePetals ⊑ 69) and the Sufficient condition axiom (hasVisualFeature YellowCenter ⊑ 69) to classify it as 69.
+----------------------------------------
+Query 16: Expected: [69] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>69</response>
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature WhitePetals (Necessary condition)
+- hasVisualFeature YellowCenter ⊑ class (Sufficient condition)
+- class ≡ hasVisualFeature LargePetalSize (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhitePetals
+hasVisualFeature YellowCenter
+hasVisualFeature LargePetalSize
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhitePetals, YellowCenter, and LargePetalSize, which satisfies the Necessary condition of having WhitePetals, the Sufficient condition of having a YellowCenter, and the Necessary & Sufficient condition of having LargePetalSize, to classify it as 69.
+----------------------------------------
+Query 17: Expected: [69] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>69</response>
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature WhitePetals (Necessary condition)
+- hasVisualFeature YellowCenter ⊑ class (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhitePetals
+hasVisualFeature YellowCenter
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhitePetals and YellowCenter, which satisfies the Sufficient condition [hasVisualFeature YellowCenter ⊑ class] axiom to classify it as 69. The presence of WhitePetals is a necessary condition for the class, but not sufficient on its own.
+----------------------------------------
+Query 18: Expected: [69] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>69</response>
+TBox (axioms in a Knowledge Base):
+- 69 ⊑ hasVisualFeature WhitePetals (Necessary condition)
+- 69 ⊑ hasVisualFeature YellowCenter (Necessary condition)
+- hasVisualFeature WhitePetals ⊑ 69 (Sufficient condition)
+- hasVisualFeature YellowCenter ⊑ 69 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhitePetals
+hasVisualFeature YellowCenter
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhitePetals and YellowCenter, which satisfies the Sufficient condition axiom (hasVisualFeature WhitePetals ⊑ 69) and the Sufficient condition axiom (hasVisualFeature YellowCenter ⊑ 69) to classify it as 69.
+----------------------------------------
+Query 19: Expected: [7] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>7</response>
+TBox (axioms in a Knowledge Base):
+- BirdOfParadise ⊑ hasVisualFeature BrightOrangePetals (Necessary condition)
+- BirdOfParadise ⊑ hasVisualFeature LongBlueSpur (Necessary condition)
+- BirdOfParadise ⊑ hasVisualFeature GreenLeaves (Necessary condition)
+- hasVisualFeature BrightOrangePetals ⊑ BirdOfParadise (Sufficient condition)
+- hasVisualFeature LongBlueSpur ⊑ BirdOfParadise (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BrightOrangePetals
+hasVisualFeature LongBlueSpur
+hasVisualFeature GreenLeaves
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BrightOrangePetals, LongBlueSpur, and GreenLeaves, which satisfies the Sufficient conditions (hasVisualFeature BrightOrangePetals ⊑ BirdOfParadise, hasVisualFeature LongBlueSpur ⊑ BirdOfParadise, hasVisualFeature GreenLeaves ⊑ BirdOfParadise) to classify it as BirdOfParadise.
+----------------------------------------
+Query 20: Expected: [7] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>7</response>
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature BrightOrangePetals (Necessary condition)
+- class ⊑ hasVisualFeature LongSpur (Necessary condition)
+- class ⊑ hasVisualFeature BlueBeak (Necessary condition)
+- class ≡ hasVisualFeature BirdLikeShape (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BrightOrangePetals
+hasVisualFeature LongSpur
+hasVisualFeature BlueBeak
+hasVisualFeature BirdLikeShape
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BrightOrangePetals, LongSpur, BlueBeak, and BirdLikeShape, which satisfies the necessary conditions of having BrightOrangePetals, LongSpur, BlueBeak, and the necessary and sufficient condition of BirdLikeShape, to classify it as class 7.
+----------------------------------------
+Query 21: Expected: [7] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>7</response>
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature BrightOrangePetals (Necessary condition)
+- class ⊑ hasVisualFeature BlueSpur (Necessary condition)
+- class ⊑ hasVisualFeature ElongatedSpur (Necessary condition)
+- class ⊑ hasVisualFeature GreenLeaves (Necessary condition)
+- hasVisualFeature BrightOrangePetals ⊑ class (Sufficient condition)
+- hasVisualFeature BlueSpur ⊑ class (Sufficient condition)
+- hasVisualFeature ElongatedSpur ⊑ class (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BrightOrangePetals
+hasVisualFeature BlueSpur
+hasVisualFeature ElongatedSpur
+hasVisualFeature GreenLeaves
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BrightOrangePetals, BlueSpur, ElongatedSpur, and GreenLeaves, which satisfies the Sufficient conditions (hasVisualFeature BrightOrangePetals ⊑ class, hasVisualFeature BlueSpur ⊑ class, hasVisualFeature ElongatedSpur ⊑ class, hasVisualFeature GreenLeaves ⊑ class) to classify it as 7.
+----------------------------------------
+Query 22: Expected: [7] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>7</response>
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature BrightOrangePetals (Necessary condition)
+- class ⊑ hasVisualFeature LongSpur (Necessary condition)
+- class ⊑ hasVisualFeature BlueBeak (Necessary condition)
+- class ≡ hasVisualFeature BirdLikeShape (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BrightOrangePetals
+hasVisualFeature LongSpur
+hasVisualFeature BlueBeak
+hasVisualFeature BirdLikeShape
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BrightOrangePetals, LongSpur, BlueBeak, and BirdLikeShape, which satisfies the TBox necessary conditions and the necessary & sufficient condition BirdLikeShape axiom to classify it as 7.
+----------------------------------------
+Query 23: Expected: [7] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>7</response>
+TBox (axioms in a Knowledge Base):
+- Strelitzia ⊑ hasVisualFeature BrightOrangeSpur		 (Necessary condition)
+- hasVisualFeature BrightOrangeSpur ⊑ Strelitzia		 (Sufficient condition)
+- Strelitzia ≡ hasVisualFeature BrightOrangeSpur AND hasVisualFeature PurpleBeak		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BrightOrangeSpur
+hasVisualFeature PurpleBeak
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BrightOrangeSpur and PurpleBeak, which satisfies the sufficient condition (hasVisualFeature BrightOrangeSpur ⊑ Strelitzia) and the necessary & sufficient condition (Strelitzia ≡ hasVisualFeature BrightOrangeSpur AND hasVisualFeature PurpleBeak) to classify it as Strelitzia.
+----------------------------------------
+Query 24: Expected: [7] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>7</response>
+TBox (axioms in a Knowledge Base):
+- BirdOfParadise ⊑ hasVisualFeature BrightOrangePetals (Necessary condition)
+- BirdOfParadise ⊑ hasVisualFeature BlueSpur (Necessary condition)
+- BirdOfParadise ⊑ hasVisualFeature ElongatedSepals (Necessary condition)
+- BirdOfParadise ≡ hasVisualFeature BrightOrangePetals AND hasVisualFeature BlueSpur AND hasVisualFeature ElongatedSepals (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BrightOrangePetals
+hasVisualFeature BlueSpur
+hasVisualFeature ElongatedSepals
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BrightOrangePetals, BlueSpur, and ElongatedSepals, which satisfies the Necessary & Sufficient condition (BirdOfParadise ≡ hasVisualFeature BrightOrangePetals AND hasVisualFeature BlueSpur AND hasVisualFeature ElongatedSepals) to classify it as BirdOfParadise.
+----------------------------------------
+Query 25: Expected: [7] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>7</response>
+TBox (axioms in a Knowledge Base):
+- BirdOfParadise ⊑ hasVisualFeature BrightOrangePetals (Necessary condition)
+- BirdOfParadise ⊑ hasVisualFeature BlueSpur (Necessary condition)
+- BirdOfParadise ⊑ hasVisualFeature ElongatedStructure (Necessary condition)
+- BirdOfParadise ≡ hasVisualFeature BrightOrangePetals AND hasVisualFeature BlueSpur AND hasVisualFeature ElongatedStructure (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BrightOrangePetals
+hasVisualFeature BlueSpur
+hasVisualFeature ElongatedStructure
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BrightOrangePetals, BlueSpur, and ElongatedStructure, which satisfies the Necessary & Sufficient condition (BirdOfParadise ≡ hasVisualFeature BrightOrangePetals AND hasVisualFeature BlueSpur AND hasVisualFeature ElongatedStructure) to classify it as BirdOfParadise.
+----------------------------------------
+Query 26: Expected: [7] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>7</response>
+TBox (axioms in a Knowledge Base):
+- BirdOfParadise ⊑ hasVisualFeature BrightOrangePetals (Necessary condition)
+- BirdOfParadise ⊑ hasVisualFeature BlueSpur (Necessary condition)
+- BirdOfParadise ⊑ hasVisualFeature ElongatedStructure (Necessary condition)
+- BirdOfParadise ≡ hasVisualFeature BrightOrangePetals AND hasVisualFeature BlueSpur AND hasVisualFeature ElongatedStructure (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BrightOrangePetals
+hasVisualFeature BlueSpur
+hasVisualFeature ElongatedStructure
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BrightOrangePetals, BlueSpur, and ElongatedStructure, which satisfies the Necessary & Sufficient condition (BirdOfParadise ≡ hasVisualFeature BrightOrangePetals AND hasVisualFeature BlueSpur AND hasVisualFeature ElongatedStructure) to classify it as BirdOfParadise.
+----------------------------------------
+Query 27: Expected: [7] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>7</response>
+TBox (axioms in a Knowledge Base):
+- BirdOfParadise ⊑ hasVisualFeature BrightOrangePetals (Necessary condition)
+- BirdOfParadise ⊑ hasVisualFeature BlueSpur (Necessary condition)
+- BirdOfParadise ⊑ hasVisualFeature ElongatedSpathe (Necessary condition)
+- hasVisualFeature BrightOrangePetals ⊑ BirdOfParadise (Sufficient condition)
+- hasVisualFeature BlueSpur ⊑ BirdOfParadise (Sufficient condition)
+- hasVisualFeature ElongatedSpathe ⊑ BirdOfParadise (Sufficient condition)
+- BirdOfParadise ≡ hasVisualFeature BrightOrangePetals AND hasVisualFeature BlueSpur AND hasVisualFeature ElongatedSpathe (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature BrightOrangePetals
+hasVisualFeature BlueSpur
+hasVisualFeature ElongatedSpathe
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents BrightOrangePetals, BlueSpur, and ElongatedSpathe, which satisfies the Necessary & Sufficient condition (BirdOfParadise ≡ hasVisualFeature BrightOrangePetals AND hasVisualFeature BlueSpur AND hasVisualFeature ElongatedSpathe) to classify it as BirdOfParadise.
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9): 1.0000
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [30] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>20</response>
+TBox (axioms in a Knowledge Base):
+- Class20 ⊑ hasVisualFeature RedPetals		 (Necessary condition)
+- Class20 ⊑ hasVisualFeature LayeredPetals		 (Necessary condition)
+- Class20 ≡ hasVisualFeature DensePetalStructure 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature RedPetals
+hasVisualFeature LayeredPetals
+hasVisualFeature DensePetalStructure
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents RedPetals, LayeredPetals, and DensePetalStructure, which satisfies the Necessary & Sufficient condition Class20 ≡ hasVisualFeature DensePetalStructure to classify it as Class20. The presence of all three features (RedPetals, LayeredPetals, and DensePetalStructure) collectively defines the entity as Class20.
+----------------------------------------
+Query 2: Expected: [30] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>20</response>
+TBox (axioms in a Knowledge Base):
+- 20 ⊑ hasVisualFeature ruffledPetals		 (Necessary condition)
+- hasVisualFeature ruffledPetals ⊑ 20		 (Sufficient condition)
+- 20 ≡ hasVisualFeature densePetalStructure 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature ruffledPetals
+hasVisualFeature densePetalStructure
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents ruffledPetals and densePetalStructure, which satisfies the sufficient condition (hasVisualFeature ruffledPetals ⊑ 20) and the necessary and sufficient condition (20 ≡ hasVisualFeature densePetalStructure) axiom to classify it as 20.
+----------------------------------------
+Query 3: Expected: [30] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>30</response>
+TBox (axioms in a Knowledge Base):
+- 30 ⊑ hasVisualFeature ruffledPetals		 (Necessary condition)
+- hasVisualFeature ruffledPetals ⊑ 30		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature ruffledPetals
+Description Logics’ Ontological Axioms
+The ABox assertion presents ruffledPetals, which satisfies the sufficient condition [hasVisualFeature ruffledPetals ⊑ 30] axiom to classify it as 30.
+----------------------------------------
+Query 4: Expected: [30] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>20</response>
+TBox (axioms in a Knowledge Base):
+- 20 ⊑ hasVisualFeature RedColor		 (Necessary condition)
+- hasVisualFeature RedColor ⊑ 20		 (Sufficient condition)
+- 20 ≡ hasVisualFeature LayeredPetals 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature RedColor
+hasVisualFeature LayeredPetals
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents RedColor and LayeredPetals, which satisfies the Sufficient condition (hasVisualFeature RedColor ⊑ 20) and the Necessary & Sufficient condition (20 ≡ hasVisualFeature LayeredPetals) to classify it as 20.
+----------------------------------------
+Query 5: Expected: [30] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>30</response>
+TBox (axioms in a Knowledge Base):
+- 30 ⊑ hasVisualFeature multiPetalShape		 (Necessary condition)
+- hasVisualFeature multiPetalShape ⊑ 30		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature multiPetalShape
+The ABox assertion presents hasVisualFeature multiPetalShape, which satisfies the Sufficient condition [axiom] to classify it as 30.
+----------------------------------------
+Query 6: Expected: [30] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>20</response>
+TBox (axioms in a Knowledge Base):
+- Class20 ⊑ hasVisualFeature RedColor		 (Necessary condition)
+- Class20 ⊑ hasVisualFeature DensePetals		 (Necessary condition)
+- Class20 ≡ hasVisualFeature FrilledShape		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature RedColor
+hasVisualFeature DensePetals
+hasVisualFeature FrilledShape
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents RedColor, DensePetals, and FrilledShape, which satisfies the necessary conditions Class20 ⊑ hasVisualFeature RedColor and Class20 ⊑ hasVisualFeature DensePetals, and the necessary & sufficient condition Class20 ≡ hasVisualFeature FrilledShape to classify it as Class20.
+----------------------------------------
+Query 7: Expected: [30] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>30</response>
+TBox (axioms in a Knowledge Base):
+- 30 ⊑ hasVisualFeature LightGreenPetals (Necessary condition)
+- hasVisualFeature LightGreenPetals ⊑ 30 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature LightGreenPetals
+The ABox assertion presents hasVisualFeature LightGreenPetals, which satisfies the Sufficient condition [hasVisualFeature LightGreenPetals ⊑ 30] axiom to classify it as 30.
+----------------------------------------
+Query 8: Expected: [30] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>30</response>
+TBox (axioms in a Knowledge Base):
+- 30 ⊑ hasVisualFeature PinkPetals		 (Necessary condition)
+- hasVisualFeature PinkPetals ⊑ 30		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature PinkPetals
+The ABox assertion presents PinkPetals, which satisfies the Sufficient condition [hasVisualFeature PinkPetals ⊑ 30] axiom to classify it as 30.
+----------------------------------------
+Query 9: Expected: [30] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>30</response>
+TBox (axioms in a Knowledge Base):
+- 30 ⊑ hasVisualFeature ruffledPetals		 (Necessary condition)
+- hasVisualFeature ruffledPetals ⊑ 30		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature ruffledPetals
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature ruffledPetals, which satisfies the sufficient condition (hasVisualFeature ruffledPetals ⊑ 30) axiom to classify it as 30.
+----------------------------------------
+Query 10: Expected: [33] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>33</response>
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature PetalShapeRayed		 (Necessary condition)
+- hasVisualFeature PetalShapeRayed ⊑ class		 (Sufficient condition)
+- class ≡ hasVisualFeature CentralDiskColorYellow 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PetalShapeRayed
+hasVisualFeature CentralDiskColorYellow
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents PetalShapeRayed and CentralDiskColorYellow, which satisfies the Sufficient condition (hasVisualFeature PetalShapeRayed ⊑ class) and the Necessary & Sufficient condition (class ≡ hasVisualFeature CentralDiskColorYellow) to classify it as 33.
+----------------------------------------
+Query 11: Expected: [33] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>33</response>
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature PetalShapeRounded		 (Necessary condition)
+- class ⊑ hasVisualFeature CentralDiskYellow		 (Necessary condition)
+- hasVisualFeature CentralDiskYellow ⊑ class		 (Sufficient condition)
+- hasVisualFeature PetalShapeRounded ⊑ class		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PetalShapeRounded
+hasVisualFeature CentralDiskYellow
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents PetalShapeRounded and CentralDiskYellow, which satisfies the Sufficient condition [axiom] to classify it as 33.
+----------------------------------------
+Query 12: Expected: [33] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>33</response>
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature PetalShapeRounded		 (Necessary condition)
+- class ⊑ hasVisualFeature CentralDiskYellow		 (Necessary condition)
+- hasVisualFeature CentralDiskYellow ⊑ class		 (Sufficient condition)
+- hasVisualFeature PetalShapeRounded ⊑ class		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PetalShapeRounded
+hasVisualFeature CentralDiskYellow
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents PetalShapeRounded and CentralDiskYellow, which satisfies the Sufficient condition (hasVisualFeature CentralDiskYellow ⊑ class) and the Sufficient condition (hasVisualFeature PetalShapeRounded ⊑ class) axiom to classify it as 33.
+----------------------------------------
+Query 13: Expected: [33] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>33</response>
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature PetalShapeRadiating		 (Necessary condition)
+- hasVisualFeature PetalShapeRadiating ⊑ class		 (Sufficient condition)
+- class ≡ hasVisualFeature CentralDiskYellow		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PetalShapeRadiating
+hasVisualFeature CentralDiskYellow
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents PetalShapeRadiating and CentralDiskYellow, which satisfies the Sufficient condition [hasVisualFeature PetalShapeRadiating ⊑ class] and the Necessary & Sufficient condition [class ≡ hasVisualFeature CentralDiskYellow] to classify it as 33.
+----------------------------------------
+Query 14: Expected: [33] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>33</response>
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature PetalShapeRounded		 (Necessary condition)
+- class ⊑ hasVisualFeature CentralDiscYellow		 (Necessary condition)
+- hasVisualFeature CentralDiscYellow ⊑ class		 (Sufficient condition)
+- hasVisualFeature PetalShapeRounded ⊑ class		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PetalShapeRounded
+hasVisualFeature CentralDiscYellow
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents PetalShapeRounded and CentralDiscYellow, which satisfies the sufficient condition (hasVisualFeature CentralDiscYellow ⊑ class) and the sufficient condition (hasVisualFeature PetalShapeRounded ⊑ class) axiom to classify it as 33.
+----------------------------------------
+Query 15: Expected: [33] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>33</response>
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature PetalShapeRounded		 (Necessary condition)
+- class ⊑ hasVisualFeature CentralDiscYellow		 (Necessary condition)
+- hasVisualFeature CentralDiscYellow ⊑ class		 (Sufficient condition)
+- hasVisualFeature PetalShapeRounded ⊑ class		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PetalShapeRounded
+hasVisualFeature CentralDiscYellow
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents PetalShapeRounded and CentralDiscYellow, which satisfies the Sufficient condition [axiom] to classify it as 33.
+----------------------------------------
+Query 16: Expected: [33] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>33</response>
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature PetalShapeRounded		 (Necessary condition)
+- class ⊑ hasVisualFeature CentralDiskYellow		 (Necessary condition)
+- class ⊑ hasVisualFeature PetalColorPink		 (Necessary condition)
+- hasVisualFeature CentralDiskYellow ⊑ class		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PetalShapeRounded
+hasVisualFeature CentralDiskYellow
+hasVisualFeature PetalColorPink
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents PetalShapeRounded, CentralDiskYellow, and PetalColorPink, which satisfies the necessary conditions for class 33. The presence of a CentralDiskYellow is also a sufficient condition to classify it as class 33.
+----------------------------------------
+Query 17: Expected: [33] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>33</response>
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature PetalShapeLinear		 (Necessary condition)
+- class ⊑ hasVisualFeature CentralDiskYellow		 (Necessary condition)
+- hasVisualFeature CentralDiskYellow ⊑ class		 (Sufficient condition)
+- hasVisualFeature PetalShapeLinear ⊑ class		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PetalShapeLinear
+hasVisualFeature CentralDiskYellow
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents PetalShapeLinear and CentralDiskYellow, which satisfies the sufficient condition (hasVisualFeature CentralDiskYellow ⊑ class) and the sufficient condition (hasVisualFeature PetalShapeLinear ⊑ class) axiom to classify it as 33.
+----------------------------------------
+Query 18: Expected: [33] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>33</response>
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature PetalShapeRounded		 (Necessary condition)
+- hasVisualFeature PetalShapeRounded ⊑ class		 (Sufficient condition)
+- class ≡ hasVisualFeature CentralDiskColorYellow 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PetalColorPink
+hasVisualFeature PetalShapeRounded
+hasVisualFeature CentralDiskColorYellow
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents PetalColorPink, PetalShapeRounded, and CentralDiskColorYellow, which satisfies the Sufficient condition (hasVisualFeature PetalShapeRounded ⊑ class) and the Necessary & Sufficient condition (class ≡ hasVisualFeature CentralDiskColorYellow) to classify it as 33.
+----------------------------------------
+Query 19: Expected: [50] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>50</response>
+TBox (axioms in a Knowledge Base):
+- Flower ⊑ hasVisualFeature PetalShape		 (Necessary condition)
+- hasVisualFeature PetalShape ⊑ Flower		 (Sufficient condition)
+- Flower ≡ hasVisualFeature Color		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhiteColor
+hasVisualFeature PetalShape
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhiteColor and PetalShape, which satisfies the Sufficient condition (hasVisualFeature PetalShape ⊑ Flower) and the Necessary & Sufficient condition (Flower ≡ hasVisualFeature Color) to classify it as Flower (50).
+----------------------------------------
+Query 20: Expected: [50] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>50</response>
+TBox (axioms in a Knowledge Base):
+- Flower ⊑ hasVisualFeature PetalShape		 (Necessary condition)
+- hasVisualFeature PetalShape ⊑ Flower		 (Sufficient condition)
+- Flower ≡ hasVisualFeature Color		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PinkPetals
+hasVisualFeature PurplePetals
+hasVisualFeature RoundedPetalShape
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents PinkPetals, PurplePetals, and RoundedPetalShape, which satisfies the Sufficient condition (hasVisualFeature PetalShape ⊑ Flower) and the Necessary & Sufficient condition (Flower ≡ hasVisualFeature Color) axiom to classify it as Flower. Given the visual characteristics observed, and aligning with the provided examples, the entity is classified as Flower (50).
+----------------------------------------
+Query 21: Expected: [50] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>50</response>
+TBox (axioms in a Knowledge Base):
+- Flower ⊑ hasVisualFeature WhitePetals (Necessary condition)
+- hasVisualFeature WhitePetals ⊑ Flower (Sufficient condition)
+- Flower ⊑ hasVisualFeature FivePetals (Necessary condition)
+- hasVisualFeature FivePetals ⊑ Flower (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhitePetals
+hasVisualFeature FivePetals
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents WhitePetals and FivePetals, which satisfies the sufficient condition Flower ≡ hasVisualFeature WhitePetals and the sufficient condition Flower ≡ hasVisualFeature FivePetals to classify it as Flower (50).
+----------------------------------------
+Query 22: Expected: [50] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>50</response>
+TBox (axioms in a Knowledge Base):
+- Flower ⊑ hasVisualFeature PetalShape		 (Necessary condition)
+- hasVisualFeature PetalShape ⊑ Flower		 (Sufficient condition)
+- Flower ⊑ hasVisualFeature Color		 (Necessary condition)
+- hasVisualFeature Color some Purple ⊑ Flower		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PetalShape Rounded
+hasVisualFeature Color some Purple
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents Rounded PetalShape and Purple Color, which satisfies the Sufficient condition (hasVisualFeature Color some Purple ⊑ Flower) and the Necessary condition (Flower ⊑ hasVisualFeature PetalShape) axiom to classify it as Flower (50).
+----------------------------------------
+Query 23: Expected: [50] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>50</response>
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature PetuniaShape		 (Necessary condition)
+- hasVisualFeature PetuniaShape ⊑ class		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature PetuniaShape
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature PetuniaShape, which satisfies the Sufficient condition [hasVisualFeature PetuniaShape ⊑ class] axiom to classify it as 50.
+----------------------------------------
+Query 24: Expected: [50] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>50</response>
+TBox (axioms in a Knowledge Base):
+- Flower ⊑ hasVisualFeature PetalShape		 (Necessary condition)
+- hasVisualFeature PetalShape ⊑ Flower		 (Sufficient condition)
+- Flower ≡ hasVisualFeature Color		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature PurpleColor
+Description Logics’ Ontological Axioms
+The ABox assertion presents PurpleColor, which satisfies the Sufficient condition [hasVisualFeature PetalShape ⊑ Flower] axiom to classify it as Flower.
+----------------------------------------
+Query 25: Expected: [50] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>50</response>
+TBox (axioms in a Knowledge Base):
+- class ⊑ hasVisualFeature WhitePetal		 (Necessary condition)
+- hasVisualFeature WhitePetal ⊑ class		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhitePetal
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature WhitePetal, which satisfies the Sufficient condition [hasVisualFeature WhitePetal ⊑ class] axiom to classify it as 50.
+----------------------------------------
+Query 26: Expected: [50] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>30</response>
+TBox (axioms in a Knowledge Base):
+- 30 ⊑ hasVisualFeature WhitePetals		 (Necessary condition)
+- hasVisualFeature WhitePetals ⊑ 30		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhitePetals
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature WhitePetals, which satisfies the Sufficient condition [hasVisualFeature WhitePetals ⊑ 30] axiom to classify it as 30.
+----------------------------------------
+Query 27: Expected: [50] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>30</response>
+TBox (axioms in a Knowledge Base):
+- 30 ⊑ hasVisualFeature WhitePetals		 (Necessary condition)
+- hasVisualFeature WhitePetals ⊑ 30		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhitePetals
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature WhitePetals, which satisfies the Sufficient condition [hasVisualFeature WhitePetals ⊑ 30] axiom to classify it as 30.
+----------------------------------------
+Query 28: Expected: [20] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>20</response>
+TBox (axioms in a Knowledge Base):
+- Class20 ⊑ hasVisualFeature FlameLikeShape (Necessary condition)
+- hasVisualFeature FlameLikeShape ⊑ Class20 (Sufficient condition)
+- Class20 ≡ hasVisualFeature RedAndYellowColor (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FlameLikeShape
+hasVisualFeature RedAndYellowColor
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FlameLikeShape and RedAndYellowColor, which satisfies the Sufficient condition (hasVisualFeature FlameLikeShape ⊑ Class20) and the Necessary & Sufficient condition (Class20 ≡ hasVisualFeature RedAndYellowColor) to classify it as Class20.
+----------------------------------------
+Query 29: Expected: [20] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>20</response>
+TBox (axioms in a Knowledge Base):
+- Class20 ⊑ hasVisualFeature FlameLikePetals (Necessary condition)
+- hasVisualFeature FlameLikePetals ⊑ Class20 (Sufficient condition)
+- Class20 ≡ hasVisualFeature BrightRedColor (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FlameLikePetals
+hasVisualFeature BrightRedColor
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FlameLikePetals and BrightRedColor, which satisfies the Sufficient condition (hasVisualFeature FlameLikePetals ⊑ Class20) and the Necessary & Sufficient condition (Class20 ≡ hasVisualFeature BrightRedColor) to classify it as Class20.
+----------------------------------------
+Query 30: Expected: [20] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>20</response>
+TBox (axioms in a Knowledge Base):
+- Class20 ⊑ hasVisualFeature FlameLikePetals (Necessary condition)
+- hasVisualFeature FlameLikePetals ⊑ Class20 (Sufficient condition)
+- Class20 ≡ hasVisualFeature BrightRedColor (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FlameLikePetals
+hasVisualFeature BrightRedColor
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FlameLikePetals and BrightRedColor, which satisfies the Sufficient condition (hasVisualFeature FlameLikePetals ⊑ Class20) and the Necessary & Sufficient condition (Class20 ≡ hasVisualFeature BrightRedColor) to classify it as Class20.
+----------------------------------------
+Query 31: Expected: [20] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>20</response>
+TBox (axioms in a Knowledge Base):
+- Class20 ⊑ hasVisualFeature RedAndYellowColoring		 (Necessary condition)
+- Class20 ⊑ hasVisualFeature SpikedPetals		 (Necessary condition)
+- Class20 ⊑ hasVisualFeature CurvedStamens		 (Necessary condition)
+- hasVisualFeature SpikedPetals ⊑ Class20		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature RedAndYellowColoring
+hasVisualFeature SpikedPetals
+hasVisualFeature CurvedStamens
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents RedAndYellowColoring, SpikedPetals, and CurvedStamens, which satisfies the necessary conditions (Class20 ⊑ hasVisualFeature RedAndYellowColoring, Class20 ⊑ hasVisualFeature SpikedPetals, Class20 ⊑ hasVisualFeature CurvedStamens) to classify it as Class20. The presence of SpikedPetals also satisfies the sufficient condition (hasVisualFeature SpikedPetals ⊑ Class20) further confirming the classification.
+----------------------------------------
+Query 32: Expected: [20] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>20</response>
+TBox (axioms in a Knowledge Base):
+- Class20 ⊑ hasVisualFeature FlameLikePetals (Necessary condition)
+- hasVisualFeature FlameLikePetals ⊑ Class20 (Sufficient condition)
+- Class20 ≡ hasVisualFeature BrightRedColor (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FlameLikePetals
+hasVisualFeature BrightRedColor
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FlameLikePetals and BrightRedColor, which satisfies the Sufficient condition (hasVisualFeature FlameLikePetals ⊑ Class20) and the Necessary & Sufficient condition (Class20 ≡ hasVisualFeature BrightRedColor) to classify it as Class20.
+----------------------------------------
+Query 33: Expected: [20] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>20</response>
+TBox (axioms in a Knowledge Base):
+- Class20 ⊑ hasVisualFeature FlameLikePetals (Necessary condition)
+- hasVisualFeature FlameLikePetals ⊑ Class20 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature FlameLikePetals
+The ABox assertion presents FlameLikePetals, which satisfies the Sufficient condition [hasVisualFeature FlameLikePetals ⊑ Class20] axiom to classify it as Class20.
+----------------------------------------
+Query 34: Expected: [20] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>20</response>
+TBox (axioms in a Knowledge Base):
+- Class20 ⊑ hasVisualFeature FlameLikePetals (Necessary condition)
+- hasVisualFeature FlameLikePetals ⊑ Class20 (Sufficient condition)
+- Class20 ≡ hasVisualFeature YellowCentralStamens (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FlameLikePetals
+hasVisualFeature YellowCentralStamens
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FlameLikePetals and YellowCentralStamens, which satisfies the Sufficient condition (hasVisualFeature FlameLikePetals ⊑ Class20) and the Necessary & Sufficient condition (Class20 ≡ hasVisualFeature YellowCentralStamens) to classify it as Class20.
+----------------------------------------
+Query 35: Expected: [20] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>20</response>
+TBox (axioms in a Knowledge Base):
+- Class20 ⊑ hasVisualFeature FlameLikePetals (Necessary condition)
+- hasVisualFeature FlameLikePetals ⊑ Class20 (Sufficient condition)
+- Class20 ≡ hasVisualFeature BrightRedAndYellowColor (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FlameLikePetals
+hasVisualFeature BrightRedAndYellowColor
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FlameLikePetals and BrightRedAndYellowColor, which satisfies the Sufficient condition (hasVisualFeature FlameLikePetals ⊑ Class20) and the Necessary & Sufficient condition (Class20 ≡ hasVisualFeature BrightRedAndYellowColor) to classify it as Class20.
+----------------------------------------
+Query 36: Expected: [20] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>20</response>
+TBox (axioms in a Knowledge Base):
+- Class20 ⊑ hasVisualFeature FlameLikePetals (Necessary condition)
+- hasVisualFeature FlameLikePetals ⊑ Class20 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature FlameLikePetals
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature FlameLikePetals, which satisfies the Sufficient condition [hasVisualFeature FlameLikePetals ⊑ Class20] axiom to classify it as Class20.
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.8333

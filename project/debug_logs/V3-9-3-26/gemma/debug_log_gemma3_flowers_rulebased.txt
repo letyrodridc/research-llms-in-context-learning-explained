@@ -1,0 +1,1577 @@
+=== DEBUG LOG: gemma3 | flowers | Prompt: rulebased ===
+
+--- CONFIG: N=2, K=2, Q=9 ---
+Query 1: Expected: [51] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower has five petals.
+- Two petals are purple.
+- Two petals are white.
+- One petal is yellow.
+- The center of the flower has yellow lines.
+
+KB:
+- IF the flower has five petals, two purple petals, two white petals, one yellow petal, and yellow lines in the center THEN the class is 51.
+
+Rule Check:
+The target image exhibits five petals, two of which are purple, two are white, and one is yellow. It also has yellow lines in the center. This matches the rule derived from the examples of class 51.
+
+<response>51</response>
+----------------------------------------
+Query 2: Expected: [51] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower has five petals.
+- Three petals are purple.
+- Two petals are white.
+- The center of the flower has yellow and black lines.
+
+KB:
+- IF flower has five petals AND three petals are purple AND two petals are white AND the center of the flower has yellow and black lines THEN 51.
+- IF flower has elongated, tube-like petals AND petals are pink/purple THEN 93.
+
+Rule Check:
+The target image exhibits five petals, three of which are purple, two are white, and the center displays yellow and black lines. This aligns perfectly with the rule derived from the examples labeled as 51. The features do not match the elongated, tube-like petals and pink/purple color associated with class 93.
+
+<response>51</response>
+----------------------------------------
+Query 3: Expected: [51] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower petals are predominantly purple and white.
+- The center of the flower has a yellow color with dark lines radiating outwards.
+- The flower shape is relatively flat and broad.
+
+KB:
+- IF flower petals are predominantly purple and white AND the center of the flower is yellow with dark lines radiating outwards AND the flower shape is relatively flat and broad THEN 51.
+- IF flower shape is tubular AND color is pink/purple THEN 93.
+
+Rule Check:
+The target image exhibits purple and white petals, a yellow center with radiating dark lines, and a flat, broad flower shape. These features align with the rule derived from the examples labeled as 51. The features do not match the tubular shape and pink/purple color associated with class 93.
+
+<response>51</response>
+----------------------------------------
+Query 4: Expected: [51] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower has five petals.
+- Two petals are dark purple at the top.
+- Two petals are white.
+- One petal is yellow at the base.
+- The flower has dark lines radiating from the center of the yellow petal.
+
+KB:
+- IF flower has five petals AND two petals are purple at the top AND two petals are white AND one petal is yellow at the base AND flower has dark lines radiating from the center of the yellow petal THEN 51.
+- IF flower has elongated, tube-like petals AND petals are pink/purple AND flower has spots on the inside of the petals THEN 93.
+
+Rule Check:
+The target image exhibits five petals, two of which are purple at the top, two are white, and one is yellow at the base. It also has dark lines radiating from the center of the yellow petal. These features align perfectly with the rule derived from the examples labeled as 51. The features do not match the elongated, tube-like petals and spots on the inside of the petals associated with class 93.
+
+<response>51</response>
+----------------------------------------
+Query 5: Expected: [51] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower has five petals.
+- The petals are predominantly white with purple and yellow coloration.
+- The lower petals are yellow.
+- There are dark lines radiating from the center of the flower.
+
+KB:
+- IF the flower has five petals AND the petals are predominantly white with purple and yellow coloration AND the lower petals are yellow AND there are dark lines radiating from the center of the flower THEN 51.
+
+Rule Check:
+The target image exhibits five petals, a white base color with purple and yellow accents, yellow lower petals, and dark lines radiating from the center. These features directly match the rule derived from the previous examples labeled as 51.
+
+<response>51</response>
+----------------------------------------
+Query 6: Expected: [51] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower has two petals that are purple.
+- The flower has two petals that are white.
+- The flower has a central area that is yellow.
+- The flower has dark lines radiating from the center.
+
+KB:
+- IF the flower has two purple petals, two white petals, a yellow central area, and dark lines radiating from the center THEN the class is 51.
+
+Rule Check:
+The target image exhibits all the features described in the rule: two purple petals, two white petals, a yellow central area, and dark lines radiating from the center. Therefore, the rule associated with class 51 is activated.
+
+<response>51</response>
+----------------------------------------
+Query 7: Expected: [51] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower petals are predominantly purple.
+- The flower has a central yellow area.
+- The flower has five petals.
+
+KB:
+- IF the flower petals are predominantly purple and the flower has a central yellow area THEN 51.
+
+Rule Check:
+The target image exhibits purple petals and a central yellow area. This aligns perfectly with the rule derived from the examples labeled as 51.
+
+<response>51</response>
+----------------------------------------
+Query 8: Expected: [51] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower petals are predominantly purple.
+- The flower has a central yellow area.
+- The flower has five petals.
+
+KB:
+- IF the flower petals are purple and the flower has a central yellow area and five petals THEN 51.
+- IF the flower has elongated, tubular petals and a speckled interior THEN 93.
+
+Rule Check:
+The target image exhibits purple petals, a central yellow area, and five petals. This aligns with the rule derived from the examples labeled as 51. The image does not have elongated, tubular petals or a speckled interior, which are characteristics of class 93. Therefore, the rule for class 51 is the best match.
+
+<response>51</response>
+----------------------------------------
+Query 9: Expected: [51] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower has petals with a purple upper section.
+- The flower has petals with a light blue middle section.
+- The flower has petals with a yellow lower section.
+- The flower has dark lines radiating from the center of the petals.
+
+KB:
+- IF the flower has purple upper petals, light blue middle petals, and yellow lower petals THEN the class is 51.
+
+Rule Check:
+The target image exhibits purple upper petals, light blue middle petals, and yellow lower petals. This matches the rule derived from the previous examples of class 51.
+
+<response>51</response>
+----------------------------------------
+Query 10: Expected: [93] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Flowers are elongated and tubular in shape.
+- Flowers are pink and white with dark spots inside.
+- Flowers are clustered on a tall stem.
+
+KB:
+- IF flowers are elongated and tubular in shape, pink and white with dark spots inside, and clustered on a tall stem THEN 93.
+
+Rule Check:
+The target image exhibits elongated, tubular flowers that are pink and white with dark spots inside, and they are clustered on a stem. This aligns perfectly with the rule derived from the previous examples of class 93.
+
+<response>93</response>
+----------------------------------------
+Query 11: Expected: [93] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flowers are elongated and tubular in shape.
+- The flowers are pink in color.
+- The flowers have speckled patterns inside.
+
+KB:
+- IF flowers are elongated and tubular in shape, pink in color, and have speckled patterns inside THEN class is 93.
+
+Rule Check:
+The target image exhibits elongated, tubular-shaped flowers that are pink and have speckled patterns inside. This aligns perfectly with the rule derived from the previous examples of class 93.
+
+<response>93</response>
+----------------------------------------
+Query 12: Expected: [93] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flowers are elongated and tubular in shape.
+- The flowers are predominantly purple.
+- The inside of the flower has a speckled pattern of white and pink.
+
+KB:
+- IF flowers are elongated and tubular in shape AND predominantly purple AND have a speckled pattern of white and pink inside THEN Class is 93.
+
+Rule Check:
+The target image exhibits elongated, tubular-shaped flowers that are predominantly purple with a speckled pattern of white and pink inside. This aligns perfectly with the rule derived from the previous examples of class 93.
+
+<response>93</response>
+----------------------------------------
+Query 13: Expected: [93] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flowers are elongated and tubular in shape.
+- The flowers are predominantly pink.
+- The inner part of the flower has a lighter color (white/cream) with dark spots.
+
+KB:
+- IF flowers are elongated and tubular AND predominantly pink AND have lighter colored inner parts with dark spots THEN Class is 93.
+
+Rule Check:
+The target image exhibits elongated, tubular flowers that are predominantly pink. The inner part of the flowers also displays a lighter color with dark spots. This aligns perfectly with the rule derived from the previous examples of class 93.
+
+<response>93</response>
+----------------------------------------
+Query 14: Expected: [93] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flowers are elongated and tubular in shape.
+- The flowers are predominantly pink.
+- The flowers have speckled patterns on the inside.
+
+KB:
+- IF flowers are elongated and tubular in shape AND flowers are predominantly pink AND flowers have speckled patterns on the inside THEN 93
+
+Rule Check:
+The target image exhibits elongated, tubular-shaped flowers that are predominantly pink and have speckled patterns on the inside. This aligns perfectly with the rule derived from the previous examples of class 93.
+
+<response>93</response>
+----------------------------------------
+Query 15: Expected: [93] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flowers are elongated and tubular in shape.
+- The flowers are pink and yellow.
+- The flowers are arranged along a tall stem.
+
+KB:
+- IF flowers are elongated and tubular, and flowers are pink and yellow, and flowers are arranged along a tall stem THEN 93
+
+Rule Check:
+The target image exhibits elongated, tubular flowers that are both pink and yellow, and they are arranged along a tall stem. This aligns perfectly with the rule derived from the previous examples of class 93.
+
+<response>93</response>
+----------------------------------------
+Query 16: Expected: [93] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flowers are elongated and tubular in shape.
+- The flowers are light pink with darker pink spots inside.
+- The flowers are arranged along a tall stem.
+
+KB:
+- IF flowers are elongated and tubular, and have spots inside, and are arranged along a tall stem THEN 93.
+
+Rule Check:
+The target image exhibits elongated, tubular flowers with spots inside, and they are arranged along a tall stem. This aligns perfectly with the rule derived from the previous examples of class 93.
+
+<response>93</response>
+----------------------------------------
+Query 17: Expected: [93] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flowers are elongated and tubular in shape.
+- The flowers are predominantly pink.
+- The flowers have speckled patterns on the inside.
+- The flowers are arranged along a tall stem.
+
+KB:
+- IF flowers are elongated and tubular, speckled inside, and predominantly pink THEN Class is 93.
+
+Rule Check:
+The target image exhibits elongated, tubular flowers that are predominantly pink and have speckled patterns on the inside. These features align perfectly with the rule derived from the previous examples of class 93.
+
+<response>93</response>
+----------------------------------------
+Query 18: Expected: [93] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flowers are elongated and tubular in shape.
+- The flowers are white.
+- The inside of the flowers have small, dark spots.
+
+KB:
+- IF flowers are elongated and tubular in shape AND flowers are pink/purple AND inside of the flowers have small, dark spots THEN Class is 93.
+- IF flowers are elongated and tubular in shape AND flowers are white AND inside of the flowers have small, dark spots THEN Class is 93.
+
+Rule Check:
+The target image displays elongated, tubular-shaped flowers that are white and have small, dark spots inside. This matches the second rule in the KB.
+
+<response>93</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9): 1.0000
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [52] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are predominantly yellow.
+- The center of the flower has orange markings.
+- The petals have a slightly ruffled edge.
+
+KB:
+- IF petals are predominantly yellow and the center of the flower has orange markings THEN 52.
+
+Rule Check:
+The target image exhibits petals that are predominantly yellow and an orange center. This aligns perfectly with the rule derived from the examples labeled as 52.
+
+<response>52</response>
+----------------------------------------
+Query 2: Expected: [52] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are white.
+- Central disc is yellow.
+- Flower shape is five-petaled.
+
+KB:
+- IF petals are white AND central disc is yellow AND flower shape is five-petaled THEN 52
+
+Rule Check:
+The target image exhibits white petals, a yellow central disc, and a five-petaled flower shape. This aligns perfectly with the rule derived from the example labeled as 52.
+
+<response>52</response>
+----------------------------------------
+Query 3: Expected: [52] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Flowers are predominantly yellow.
+- Flowers have a central darker yellow/orange area.
+- Flowers have a rounded petal shape.
+- Green leaves are visible.
+
+KB:
+- IF Flowers are predominantly yellow AND Flowers have a central darker yellow/orange area AND Flowers have a rounded petal shape THEN 52
+
+Rule Check:
+The target image exhibits flowers that are predominantly yellow. The central area of the flowers is a darker yellow/orange. The petals are rounded. These features align perfectly with the rule derived from the example labeled as 52.
+
+<response>52</response>
+----------------------------------------
+Query 4: Expected: [52] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are predominantly white.
+- Central part of the flower is yellow.
+- Leaves are green and textured.
+
+KB:
+- IF petals are predominantly white and central part of the flower is yellow THEN 52.
+
+Rule Check:
+The target image exhibits petals that are predominantly white and a central part of the flower that is yellow. This matches the rule derived from the example labeled as 52.
+
+<response>52</response>
+----------------------------------------
+Query 5: Expected: [52] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Flowers are light purple.
+- Flowers have a yellow center.
+- Leaves are green and broad.
+
+KB:
+- IF flowers are light purple AND flowers have a yellow center AND leaves are green and broad THEN 52
+
+Rule Check:
+The target image exhibits light purple flowers with a yellow center and broad green leaves. This matches the rule derived from the example labeled as 52.
+
+<response>52</response>
+----------------------------------------
+Query 6: Expected: [52] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are predominantly white.
+- Central stamen are yellow.
+- Flower shape is rounded.
+
+KB:
+- IF petals are predominantly white AND central stamen are yellow THEN 52.
+
+Rule Check:
+The target image exhibits petals that are predominantly white and a central stamen that is yellow. This matches the rule derived from the examples, which states that if petals are predominantly white and central stamen are yellow, then the class is 52.
+
+<response>52</response>
+----------------------------------------
+Query 7: Expected: [52] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are predominantly red.
+- Central flower parts are yellow.
+- Flowers are clustered together.
+
+KB:
+- IF petals are red AND central flower parts are yellow AND flowers are clustered THEN 52
+
+Rule Check:
+The target image exhibits petals that are predominantly red, central flower parts that are yellow, and flowers clustered together. This matches the rule derived from the example labeled as 52.
+
+<response>52</response>
+----------------------------------------
+Query 8: Expected: [52] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are white.
+- Central part of the flower is yellow.
+- Leaves are green and textured.
+
+KB:
+- IF petals are white AND central part of the flower is yellow THEN 52.
+
+Rule Check:
+The target image exhibits white petals and a yellow central part of the flower. This matches the rule derived from the example labeled as 52.
+
+<response>52</response>
+----------------------------------------
+Query 9: Expected: [52] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are predominantly purple.
+- Central part of the flower is yellow.
+- Flower shape is rounded with multiple petals.
+
+KB:
+- IF petals are purple AND central part is yellow AND flower shape is rounded THEN 52
+
+Rule Check:
+The target image exhibits purple petals and a yellow central part. The flower shape is also rounded. This aligns perfectly with the rule derived from the examples labeled as 52.
+
+<response>52</response>
+----------------------------------------
+Query 10: Expected: [62] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The central disc is dark brown/black.
+- The petals are elongated and yellow.
+- The petals are pointed at the tips.
+
+KB:
+- IF the central disc is dark brown/black AND the petals are elongated and yellow AND the petals are pointed at the tips THEN 62
+
+Rule Check:
+The target image exhibits a dark brown/black central disc, elongated yellow petals, and pointed petal tips. This matches the rule derived from the example labeled as 62.
+
+<response>62</response>
+----------------------------------------
+Query 11: Expected: [62] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The central disc is dark brown/black.
+- The petals are long, thin, and bright yellow.
+- The flower has a radial symmetry.
+
+KB:
+- IF the central disc is dark brown/black AND the petals are long, thin, and bright yellow AND the flower has a radial symmetry THEN 62
+
+Rule Check:
+The target image exhibits a dark brown/black central disc, long and thin bright yellow petals, and radial symmetry. This matches the rule derived from the previous example labeled as 62.
+
+<response>62</response>
+----------------------------------------
+Query 12: Expected: [62] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The central disc is dark brown/black.
+- The petals are elongated and yellow.
+- The petals are numerous and radiate outwards.
+
+KB:
+- IF the central disc is dark brown/black AND the petals are elongated and yellow AND the petals are numerous and radiate outwards THEN 62
+
+Rule Check:
+The target image exhibits a dark brown/black central disc, elongated yellow petals, and numerous petals radiating outwards. This perfectly matches the rule derived from the previous example labeled as 62.
+
+<response>62</response>
+----------------------------------------
+Query 13: Expected: [62] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Central disc is dark brown/black.
+- Petals are long, thin, and bright yellow.
+- Flower shape is roughly circular.
+
+KB:
+- IF central disc is dark brown/black AND petals are long, thin, and bright yellow THEN 62
+
+Rule Check:
+The target image exhibits a dark brown/black central disc and long, thin, bright yellow petals. This matches the rule derived from the examples associated with class 62.
+
+<response>62</response>
+----------------------------------------
+Query 14: Expected: [62] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are long and thin, radiating outwards.
+- Petals are yellow.
+- Central disc is dark brown/black.
+
+KB:
+- IF petals are long and thin, petals are yellow, and central disc is dark brown/black THEN 62
+
+Rule Check:
+The target image exhibits long, thin, yellow petals radiating outwards, and a dark brown/black central disc. This aligns perfectly with the rule derived from the previous example labeled as 62.
+
+<response>62</response>
+----------------------------------------
+Query 15: Expected: [62] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The central disc is dark brown/black.
+- The petals are long, thin, and bright yellow.
+- The flower has a radial symmetry.
+
+KB:
+- IF the central disc is dark brown/black AND the petals are long, thin, and bright yellow AND the flower has a radial symmetry THEN 62.
+
+Rule Check:
+The target image exhibits a dark brown/black central disc, long and thin bright yellow petals, and radial symmetry. This matches the rule derived from the previous example labeled as 62.
+
+<response>62</response>
+----------------------------------------
+Query 16: Expected: [62] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Central disc is dark brown/black.
+- Petals are bright yellow.
+- Flower shape is roughly circular.
+
+KB:
+- IF Central disc is dark brown/black AND Petals are bright yellow THEN 62.
+
+Rule Check:
+The target image exhibits a dark brown/black central disc and bright yellow petals. This matches the rule derived from the previous example labeled as 62.
+
+<response>62</response>
+----------------------------------------
+Query 17: Expected: [62] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are long and pointed, radiating outwards.
+- Central disc is dark brown/black.
+- Petals are bright yellow.
+
+KB:
+- IF petals are long and pointed, radiating outwards, and the central disc is dark brown/black, THEN class is 62.
+
+Rule Check:
+The target image exhibits petals that are long and pointed, radiating outwards, and a dark brown/black central disc. This matches the rule derived from the previous example labeled as 62.
+
+<response>62</response>
+----------------------------------------
+Query 18: Expected: [62] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are long and thin, radiating outwards.
+- The central disc is dark brown/black and textured.
+- Petals are yellow.
+
+KB:
+- IF petals are long and thin, radiating outwards, and the central disc is dark brown/black and textured, THEN 62.
+
+Rule Check:
+The target image exhibits petals that are long and thin, radiating outwards, and a dark brown/black textured central disc. This aligns perfectly with the rule derived from the examples labeled as 62.
+
+<response>62</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9): 1.0000
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [94] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains large, white, papery bracts.
+- There are small, central, white flowers visible within the bracts.
+
+KB:
+- IF the image contains large, papery bracts and small, central, white flowers THEN Class 94.
+- IF the image contains long, pointed, orange and yellow petals and a dark blue/purple structure THEN Class 7.
+- IF the image contains large, white petals surrounding a central, bright yellow disc THEN Class 69.
+
+Rule Check:
+The image exhibits large, papery bracts and small, central, white flowers. This matches the features described in the rule for Class 94. The other rules do not align with the observed visual features.
+
+<response>94</response>
+----------------------------------------
+Query 2: Expected: [94] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly pink/magenta colored bracts.
+- Small, central white flower visible within the bracts.
+- Presence of green leaves surrounding the flower.
+
+KB:
+- IF predominantly pink/magenta colored bracts AND small, central white flower visible within the bracts THEN 94.
+
+Rule Check:
+The target image exhibits predominantly pink/magenta colored bracts and a small, central white flower visible within the bracts. This matches the rule derived from the example labeled as 94.
+
+<response>94</response>
+----------------------------------------
+Query 3: Expected: [94] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large, pointed, pink bracts surrounding small, clustered, yellow flowers.
+- Green leaves visible in the background.
+
+KB:
+- IF the image contains large, pointed, pink bracts surrounding small, clustered, yellow flowers THEN the class is 94.
+
+Rule Check:
+The target image exhibits large, pointed, pink bracts surrounding small, clustered, yellow flowers. This matches the rule derived from the example labeled as 94.
+
+<response>94</response>
+----------------------------------------
+Query 4: Expected: [94] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains large, white, papery bracts.
+- Small, central white flowers are visible within the bracts.
+- The overall color is predominantly white.
+
+KB:
+- IF the image contains large, papery bracts and small, central white flowers, and the overall color is predominantly white THEN Class 94.
+
+Rule Check:
+The target image exhibits large, white, papery bracts and small, central white flowers. The overall color is white. This aligns perfectly with the rule derived from the example labeled as Class 94.
+
+<response>94</response>
+----------------------------------------
+Query 5: Expected: [94] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains structures that are predominantly pink.
+- The structures are broad and flat, resembling petals.
+- There are thin, brown, elongated structures visible within the pink structures.
+
+KB:
+- IF the image contains predominantly pink structures that are broad and flat, resembling petals, AND there are thin, brown, elongated structures visible within the pink structures THEN Class is 94.
+- IF the image contains a central, bright yellow disc surrounded by white, elongated petals THEN Class is 69.
+- IF the image contains bright orange, elongated, beak-like structures and a dark blue/purple curved structure THEN Class is 7.
+
+Rule Check:
+The image exhibits predominantly pink, broad, flat structures resembling petals, and thin, brown, elongated structures within them. This aligns perfectly with the rule associated with class 94. The other rules do not match the observed features.
+
+<response>94</response>
+----------------------------------------
+Query 6: Expected: [94] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains multiple leaves with a distinct purple color.
+- The leaves have a papery texture.
+- There are small, tubular flowers visible amongst the leaves.
+
+KB:
+- IF the image contains multiple leaves with a distinct purple color AND the leaves have a papery texture AND there are small, tubular flowers visible amongst the leaves THEN 94.
+- IF the image contains a large, white, petal-like structure with a central yellow disc THEN 69.
+- IF the image contains elongated, beak-like structures with orange and blue coloration THEN 7.
+
+Rule Check:
+The image exhibits multiple purple leaves with a papery texture and small, tubular flowers. This aligns directly with the rule formulated for class 94. The other rules do not match the observed visual features.
+
+<response>94</response>
+----------------------------------------
+Query 7: Expected: [94] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly purple/magenta colored petal-like structures.
+- Small, central white flowers are visible within the purple structures.
+- Green leaves are visible in the background.
+
+KB:
+- IF the image contains predominantly purple/magenta petal-like structures AND small, central white flowers are visible THEN Class 94.
+- IF the image contains tall, orange/yellow spiky structures AND a dark blue/purple beak-like structure THEN Class 7.
+- IF the image contains large, white, layered petals surrounding a central yellow disc THEN Class 69.
+
+Rule Check:
+The target image exhibits predominantly purple/magenta petal-like structures and small, central white flowers. This aligns directly with the rule associated with Class 94. The other rules do not match the observed visual features.
+
+<response>94</response>
+----------------------------------------
+Query 8: Expected: [94] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower petals are orange.
+- The flower petals have a papery texture.
+- The flower has a clustered arrangement of petals.
+
+KB:
+- IF flower petals are purple THEN Class is 94.
+- IF flower petals are white and a central yellow disc is present THEN Class is 69.
+- IF flower petals are orange and have a distinct, elongated, beak-like shape THEN Class is 7.
+
+Rule Check:
+The target image exhibits orange petals and a papery texture. This does not match the rule for class 94 (purple petals) or class 69 (white petals and a yellow disc). The orange petals and elongated shape align with the rule for class 7.
+
+<response>7</response>
+----------------------------------------
+Query 9: Expected: [94] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The petals are predominantly pink.
+- The petals have a papery texture.
+- There are small, central yellow flowers visible.
+
+KB:
+- IF petals are predominantly pink AND petals have a papery texture AND there are small, central yellow flowers visible THEN 94.
+- IF the flower has long, pointed, orange and yellow structures THEN 7.
+- IF the petals are white AND the central structure is yellow THEN 69.
+
+Rule Check:
+The target image exhibits pink petals with a papery texture and small, central yellow flowers. This aligns perfectly with the rule associated with class 94. The other rules do not match the observed features.
+
+<response>94</response>
+----------------------------------------
+Query 10: Expected: [69] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are white and numerous.
+- Central stamen is a dense cluster of yellow.
+
+KB:
+- IF petals are white and numerous AND central stamen is a dense cluster of yellow THEN 69.
+
+Rule Check:
+The target image exhibits white petals and a dense cluster of yellow in the center. This matches the rule derived from the example labeled as 69.
+
+<response>69</response>
+----------------------------------------
+Query 11: Expected: [69] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are predominantly white.
+- Central stamen is bright yellow.
+- Petal edges are ruffled.
+
+KB:
+- IF petals are predominantly white AND central stamen is bright yellow THEN 69.
+- IF petals are pink/purple AND petal shape is elongated/leaf-like THEN 94.
+- IF flower has a beak-like structure AND petals are orange/yellow THEN 7.
+
+Rule Check:
+The target image exhibits predominantly white petals and a bright yellow central stamen. This aligns perfectly with the rule: IF petals are predominantly white AND central stamen is bright yellow THEN 69. The other rules do not match the observed features.
+
+<response>69</response>
+----------------------------------------
+Query 12: Expected: [69] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are predominantly white.
+- The central part of the flower is bright yellow.
+- The petals have a ruffled or crinkled texture.
+
+KB:
+- IF petals are predominantly white AND the central part of the flower is bright yellow THEN 69.
+
+Rule Check:
+The target image exhibits petals that are predominantly white and a bright yellow central part. This matches the rule derived from the example labeled as 69.
+
+<response>69</response>
+----------------------------------------
+Query 13: Expected: [69] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are predominantly white.
+- Central stamen is bright yellow.
+- Flower shape is large and somewhat cupped.
+
+KB:
+- IF petals are predominantly white AND central stamen is bright yellow THEN 69.
+- IF petals are pink/purple AND flower shape is complex THEN 94.
+- IF flower has long, pointed, orange/yellow structures extending upwards THEN 7.
+
+Rule Check:
+The target image exhibits predominantly white petals and a bright yellow central stamen. This aligns directly with the rule: IF petals are predominantly white AND central stamen is bright yellow THEN 69. The other rules do not match the observed features.
+
+<response>69</response>
+----------------------------------------
+Query 14: Expected: [69] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower has predominantly white petals.
+- The center of the flower is bright yellow.
+- The petals are ruffled and layered.
+
+KB:
+- IF the flower has predominantly white petals AND the center of the flower is bright yellow THEN 69.
+- IF the flower has vibrant purple/pink petals AND the flower has pointed, upright orange/yellow structures THEN 7.
+- IF the flower has vibrant purple/pink petals AND the flower has a central, small, yellow flower THEN 94.
+
+Rule Check:
+The target image exhibits predominantly white petals and a bright yellow center. This aligns perfectly with the rule: "IF the flower has predominantly white petals AND the center of the flower is bright yellow THEN 69." The other rules do not match the observed features.
+
+<response>69</response>
+----------------------------------------
+Query 15: Expected: [69] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are predominantly white.
+- Central stamen is bright orange.
+- Petal edges are ruffled and irregular.
+
+KB:
+- IF petals are predominantly white AND central stamen is bright orange THEN 69.
+
+Rule Check:
+The target image exhibits petals that are predominantly white and a central stamen that is bright orange. This matches the rule derived from the example labeled as 69.
+
+<response>69</response>
+----------------------------------------
+Query 16: Expected: [69] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are predominantly white.
+- Central stamen is bright yellow.
+- Petal edges are ruffled and wavy.
+
+KB:
+- IF petals are predominantly white AND central stamen is bright yellow THEN 69.
+
+Rule Check:
+The target image exhibits petals that are predominantly white and a central stamen that is bright yellow. This matches the rule derived from example 69.
+
+<response>69</response>
+----------------------------------------
+Query 17: Expected: [69] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are predominantly white.
+- The central part of the flower is orange.
+- The petals have a ruffled or wavy edge.
+
+KB:
+- IF petals are predominantly white AND the central part of the flower is orange THEN 69.
+
+Rule Check:
+The target image exhibits petals that are predominantly white and a central part that is orange. This matches the rule derived from the example labeled as 69.
+
+<response>69</response>
+----------------------------------------
+Query 18: Expected: [69] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are predominantly white.
+- Central stamen is bright yellow.
+- Flower shape is large and rounded.
+
+KB:
+- IF petals are predominantly white AND central stamen is bright yellow THEN 69.
+
+Rule Check:
+The target image exhibits petals that are predominantly white and a bright yellow central stamen. This matches the rule derived from the example labeled as 69.
+
+<response>69</response>
+----------------------------------------
+Query 19: Expected: [7] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower has long, pointed, orange and yellow petals.
+- The flower has a beak-like structure with purple and blue accents.
+- The flower is surrounded by large, green leaves.
+
+KB:
+- IF the flower has long, pointed, orange and yellow petals AND a beak-like structure with purple and blue accents THEN Class 7.
+
+Rule Check:
+The target image exhibits long, pointed, orange and yellow petals and a beak-like structure with purple and blue accents. This matches the rule derived from the previous example of Class 7.
+
+<response>7</response>
+----------------------------------------
+Query 20: Expected: [7] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains elongated, pointed structures of bright orange color.
+- The image contains a long, curved, beak-like structure.
+- The image contains a blue/purple accent near the base of the orange structures.
+- The image has green leaves surrounding the flower.
+
+KB:
+- IF the image contains elongated, pointed structures of bright orange color AND a long, curved, beak-like structure AND a blue/purple accent near the base of the orange structures THEN Class 7.
+
+Rule Check:
+The target image exhibits all the features described in the rule associated with Class 7. The presence of bright orange, elongated, pointed structures, a beak-like structure, and a blue/purple accent strongly aligns with the rule.
+
+<response>7</response>
+----------------------------------------
+Query 21: Expected: [7] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains elongated, pointed, orange and yellow petals.
+- The image contains a prominent beak-like structure with a blue/purple tip.
+- The image has green leaves in the background.
+
+KB:
+- IF the image contains elongated, pointed, orange and yellow petals AND a prominent beak-like structure with a blue/purple tip THEN Class 7.
+
+Rule Check:
+The target image exhibits elongated, pointed, orange and yellow petals and a prominent beak-like structure with a blue/purple tip. This matches the rule derived from the previous example of Class 7.
+
+<response>7</response>
+----------------------------------------
+Query 22: Expected: [7] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains elongated, pointed structures of orange color.
+- The image contains a curved, beak-like structure with a bluish-purple tip.
+- The image has a predominantly green background with thin, vertical green elements.
+
+KB:
+- IF elongated, pointed structures of orange color AND a curved, beak-like structure with a bluish-purple tip THEN 7
+- IF petals are white and a central disc is yellow THEN 69
+- IF petals are pink/purple and have a layered, ruffled appearance THEN 94
+
+Rule Check:
+The target image exhibits elongated, pointed orange structures and a beak-like structure with a bluish-purple tip. This aligns directly with the rule: IF elongated, pointed structures of orange color AND a curved, beak-like structure with a bluish-purple tip THEN 7. The other rules do not match the observed features.
+
+<response>7</response>
+----------------------------------------
+Query 23: Expected: [7] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays elongated, pointed orange structures extending upwards.
+- The image contains a long, curved, pinkish-green beak-like structure.
+- The image has dark purple/blue filaments extending from the base of the orange structures.
+
+KB:
+- IF the image contains elongated, pointed orange structures extending upwards AND a long, curved, pinkish-green beak-like structure AND dark purple/blue filaments extending from the base of the orange structures THEN Class 7.
+
+Rule Check:
+The target image exhibits all the features described in the rule associated with Class 7. The presence of the elongated orange structures, the pinkish-green beak-like structure, and the dark purple/blue filaments all align with the rule.
+
+<response>7</response>
+----------------------------------------
+Query 24: Expected: [7] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains elongated, pointed structures of bright orange color.
+- The image contains curved, beak-like structures of blue and pink color.
+- The image has green leaves in the background.
+
+KB:
+- IF the image contains elongated, pointed structures of bright orange color AND curved, beak-like structures of blue and pink color THEN Class 7.
+
+Rule Check:
+The target image exhibits elongated, pointed orange structures and curved blue/pink beak-like structures. This directly matches the rule derived from the previous example of Class 7.
+
+<response>7</response>
+----------------------------------------
+Query 25: Expected: [7] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Bright orange, elongated petals arranged in a vertical, spiky fashion.
+- Presence of blue/purple beak-like structures.
+- Green leaves in the background.
+
+KB:
+- IF bright orange, elongated petals are present in a vertical, spiky fashion AND blue/purple beak-like structures are visible THEN 7.
+
+Rule Check:
+The target image exhibits bright orange, elongated petals arranged in a vertical, spiky fashion, and it also displays blue/purple beak-like structures. This aligns perfectly with the rule derived from the previous example labeled as 7.
+
+<response>7</response>
+----------------------------------------
+Query 26: Expected: [7] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains elongated, pointed structures of orange color.
+- The image contains curved, beak-like structures of dark blue/purple color.
+- The image contains long, green leaves.
+
+KB:
+- IF the image contains elongated, pointed structures of orange color AND contains curved, beak-like structures of dark blue/purple color AND contains long, green leaves THEN Class is 7.
+
+Rule Check:
+The target image exhibits elongated orange structures, curved dark blue/purple beak-like structures, and long green leaves. These features directly match the rule derived from the previous example labeled as class 7.
+
+<response>7</response>
+----------------------------------------
+Query 27: Expected: [7] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains elongated, pointed structures of bright orange color.
+- The image contains curved, beak-like structures of blue color.
+- The image contains long, green, spear-like structures.
+- The background is filled with green foliage.
+
+KB:
+- IF the image contains elongated, pointed structures of bright orange color AND curved, beak-like structures of blue color AND long, green, spear-like structures THEN Class 7.
+- IF the image contains petals of white color AND a central disc of yellow color THEN Class 69.
+- IF the image contains petals of pink/purple color and a central structure THEN Class 94.
+
+Rule Check:
+The target image exhibits elongated, pointed orange structures, curved blue beak-like structures, and long green spear-like structures. These features directly match the rule associated with Class 7. The other rules do not align with the observed visual features.
+
+<response>7</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9): 0.9630
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [30] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower is predominantly red.
+- The flower has many tightly packed, ruffled petals.
+
+KB:
+- IF flower is predominantly red AND has many tightly packed, ruffled petals THEN Class 50.
+
+Rule Check:
+The target image exhibits a predominantly red color and a high density of tightly packed, ruffled petals. This aligns perfectly with the rule derived from the examples associated with Class 50.
+
+<response>50</response>
+----------------------------------------
+Query 2: Expected: [30] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower petals are densely ruffled and fringed.
+- The flower color is pink.
+
+KB:
+- IF flower petals are densely ruffled and fringed AND flower color is pink THEN Class 30.
+
+Rule Check:
+The target image exhibits densely ruffled and fringed petals and a pink color. This matches the rule derived from the example labeled as class 30.
+
+<response>30</response>
+----------------------------------------
+Query 3: Expected: [30] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower has a ruffled, layered petal structure.
+- The flower is predominantly pink in color.
+- The flower has a dense, compact form.
+
+KB:
+- IF the flower has a ruffled, layered petal structure AND is predominantly pink in color AND has a dense, compact form THEN 30.
+
+Rule Check:
+The target image exhibits a ruffled, layered petal structure, a pink color, and a dense, compact form. These features align perfectly with the rule derived from the example labeled as 30.
+
+<response>30</response>
+----------------------------------------
+Query 4: Expected: [30] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower is predominantly red.
+- The flower has multiple layers of petals, creating a ruffled or folded appearance.
+
+KB:
+- IF the flower is red and has multiple layers of petals THEN Class 50.
+- IF the flower is white and has a tightly curled, layered form THEN Class 30.
+- IF the flower is pink and has long, thin petals radiating outwards THEN Class 33.
+- IF the flower is red and has a spiky, clustered form THEN Class 20.
+
+Rule Check:
+The target image exhibits a red color and a ruffled, layered petal structure. This aligns with the rule: IF the flower is red and has multiple layers of petals THEN Class 50. No other rule matches these features as closely.
+
+<response>50</response>
+----------------------------------------
+Query 5: Expected: [30] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Flower petals are ruffled and layered.
+- Flower color is a mix of yellow and pink.
+- Flower has a distinct edge or border of pink around the petals.
+
+KB:
+- IF Flower petals are ruffled and layered AND Flower color is a mix of yellow and pink AND Flower has a distinct edge or border of pink around the petals THEN 30
+
+Rule Check:
+The target image exhibits ruffled and layered petals, a mix of yellow and pink coloration, and a pink border along the petal edges. This aligns perfectly with the rule derived from the example labeled as 30.
+
+<response>30</response>
+----------------------------------------
+Query 6: Expected: [30] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower is predominantly red.
+- The flower has a ruffled, densely packed petal texture.
+- The flower is round and compact in shape.
+
+KB:
+- IF the flower is red and has a ruffled petal texture THEN Class 50.
+- IF the flower is white and has a layered, folded petal structure THEN Class 30.
+- IF the flower is pink and has long, thin petals radiating outwards THEN Class 33.
+- IF the flower is red and has a complex, spiky, and layered structure THEN Class 20.
+
+Rule Check:
+The target image exhibits a predominantly red color and a ruffled petal texture. This aligns with the rule: IF the flower is red and has a ruffled petal texture THEN Class 50. The other rules do not match the observed features.
+
+<response>50</response>
+----------------------------------------
+Query 7: Expected: [30] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower is predominantly light yellow/green in color.
+- The flower has a ruffled, layered petal structure.
+- The flower is round and compact in shape.
+
+KB:
+- IF flower is white/light and has ruffled petals THEN Class is 30.
+- IF flower is red and has broad petals THEN Class is 50.
+- IF flower is pink and has long, thin petals THEN Class is 33.
+- IF flower is red and has spiky, clustered petals THEN Class is 20.
+
+Rule Check:
+The target image exhibits a light yellow/green color and a ruffled petal structure. This aligns with the rule: IF flower is white/light and has ruffled petals THEN Class is 30. The other rules do not match the observed features.
+
+<response>30</response>
+----------------------------------------
+Query 8: Expected: [30] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Flower petals are light pink.
+- Flower has a ruffled, layered petal structure.
+
+KB:
+- IF Flower petals are light pink AND Flower has a ruffled, layered petal structure THEN Class 30
+
+Rule Check:
+The target image exhibits light pink petals and a ruffled, layered petal structure. This aligns perfectly with the rule derived from the example labeled as class 30.
+
+<response>30</response>
+----------------------------------------
+Query 9: Expected: [30] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower is predominantly purple.
+- The flower has a densely packed, ruffled petal structure.
+
+KB:
+- IF flower is predominantly purple AND has a densely packed, ruffled petal structure THEN Class 30.
+
+Rule Check:
+The target image exhibits a predominantly purple color and a densely packed, ruffled petal structure. This aligns perfectly with the rule derived from the examples associated with class 30.
+
+<response>30</response>
+----------------------------------------
+Query 10: Expected: [33] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are long and thin.
+- Petals are pink.
+- Central disc is yellow.
+
+KB:
+- IF petals are long and thin AND petals are pink AND central disc is yellow THEN 33
+
+Rule Check:
+The target image exhibits long, thin pink petals and a yellow central disc. This matches the rule derived from the example labeled as 33.
+
+<response>33</response>
+----------------------------------------
+Query 11: Expected: [33] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower petals are white.
+- The flower has a central disc that is yellow.
+- The flower has many long, thin petals radiating outwards.
+
+KB:
+- IF flower petals are white AND flower has a central disc that is yellow AND flower has many long, thin petals radiating outwards THEN 33.
+
+Rule Check:
+The target image exhibits white petals, a yellow central disc, and many long, thin petals radiating outwards. This matches the rule derived from the example labeled as 33.
+
+<response>33</response>
+----------------------------------------
+Query 12: Expected: [33] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are pink.
+- Central disc is yellow.
+- Petals are elongated and slightly curved.
+
+KB:
+- IF petals are pink AND central disc is yellow AND petals are elongated THEN 33.
+
+Rule Check:
+The target image exhibits pink petals, a yellow central disc, and elongated, slightly curved petals. This aligns perfectly with the rule derived from the examples labeled as 33.
+
+<response>33</response>
+----------------------------------------
+Query 13: Expected: [33] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are long and thin.
+- Petals are bright pink.
+- Central disc is yellow with a textured surface.
+
+KB:
+- IF petals are long and thin, petals are pink, and central disc is yellow THEN 33.
+
+Rule Check:
+The target image exhibits long, thin, bright pink petals and a yellow, textured central disc. This matches the rule derived from the example labeled as 33.
+
+<response>33</response>
+----------------------------------------
+Query 14: Expected: [33] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are light purple.
+- Central disc is yellow.
+- Flower has a star-like shape with many petals.
+
+KB:
+- IF petals are pink and the central disc is yellow and the flower has a star-like shape THEN 33.
+
+Rule Check:
+The target image exhibits light purple petals, a yellow central disc, and a star-like shape. This aligns perfectly with the rule derived from the example labeled as 33.
+
+<response>33</response>
+----------------------------------------
+Query 15: Expected: [33] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are long and thin.
+- Petals are pink.
+- Central disc is yellow with dark brown/black spots.
+
+KB:
+- IF petals are long and thin, petals are pink, and central disc is yellow with dark brown/black spots THEN 33.
+
+Rule Check:
+The target image exhibits long, thin pink petals and a yellow central disc with dark brown/black spots. This matches the rule derived from the example labeled as 33.
+
+<response>33</response>
+----------------------------------------
+Query 16: Expected: [33] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are pink.
+- Central disc is yellow.
+- Petals have visible veins.
+- Flower has a radial symmetry.
+
+KB:
+- IF petals are pink AND central disc is yellow THEN 33
+- IF flower is white and has ruffled edges THEN 30
+- IF flower is red and has broad petals THEN 50
+- IF flower is red and has spiky petals THEN 20
+
+Rule Check:
+The target image exhibits pink petals and a yellow central disc. This matches the rule: IF petals are pink AND central disc is yellow THEN 33. No other rule matches the observed features.
+
+<response>33</response>
+----------------------------------------
+Query 17: Expected: [33] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are long and thin.
+- Petals are pink.
+- Central disc is yellow.
+
+KB:
+- IF petals are long and thin, petals are pink, and central disc is yellow THEN 33
+
+Rule Check:
+The target image exhibits long, thin pink petals and a yellow central disc. This matches the rule derived from the example labeled as 33.
+
+<response>33</response>
+----------------------------------------
+Query 18: Expected: [33] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are pink.
+- Central disc is yellow.
+- Petals are elongated and slightly curved.
+
+KB:
+- IF petals are pink and central disc is yellow THEN 33.
+
+Rule Check:
+The target image exhibits pink petals and a yellow central disc. This matches the rule derived from the example labeled as 33.
+
+<response>33</response>
+----------------------------------------
+Query 19: Expected: [50] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower petals are predominantly white.
+- The flower shape is trumpet-like, with broad, slightly ruffled petals.
+
+KB:
+- IF flower petals are predominantly white AND flower shape is trumpet-like, with broad, slightly ruffled petals THEN 50
+
+Rule Check:
+The target image exhibits predominantly white petals and a trumpet-like shape with slightly ruffled petals. This aligns perfectly with the rule derived from the examples associated with class 50.
+
+<response>50</response>
+----------------------------------------
+Query 20: Expected: [50] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower petals are broad and have a slightly wavy edge.
+- The flower color is a mix of pink and purple.
+- The flowers are clustered together.
+
+KB:
+- IF flower petals are broad and have a slightly wavy edge AND flower color is a mix of pink and purple THEN 50.
+
+Rule Check:
+The target image exhibits broad, wavy-edged petals and a mix of pink and purple coloration. This aligns perfectly with the rule derived from the examples labeled as 50.
+
+<response>50</response>
+----------------------------------------
+Query 21: Expected: [50] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Petals are white.
+- Flower shape is trumpet-like.
+- Central structure is light green.
+
+KB:
+- IF petals are white AND flower shape is trumpet-like AND central structure is light green THEN 50.
+- IF petals are white AND flower shape is rounded THEN 30.
+- IF petals are pink AND flower shape is star-like THEN 33.
+- IF flower is red AND petals are spiky THEN 20.
+
+Rule Check:
+The target image has white petals and a trumpet-like shape with a light green central structure. This matches the rule: IF petals are white AND flower shape is trumpet-like AND central structure is light green THEN 50.
+
+<response>50</response>
+----------------------------------------
+Query 22: Expected: [50] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flowers are predominantly purple.
+- The flowers have a rounded, somewhat ruffled petal shape.
+- The central structure of the flower is yellow.
+
+KB:
+- IF flowers are predominantly red THEN Class is 50.
+- IF flowers are predominantly pink THEN Class is 33.
+- IF flowers are white and have a tightly curled, layered form THEN Class is 30.
+- IF flowers are red and have a complex, spiky, and layered structure THEN Class is 20.
+
+Rule Check:
+The target image displays purple flowers with a rounded, ruffled petal shape and a yellow central structure. None of the rules directly match this combination. However, the closest match is to the rule associated with class 50 (red flowers), but the color is purple instead of red. The next closest is class 33 (pink flowers), which is a similar color to purple. Therefore, based on the color and petal shape, the image is most similar to the examples of class 33.
+
+<response>33</response>
+----------------------------------------
+Query 23: Expected: [50] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower has a large, rounded shape.
+- The flower is light purple in color.
+- The center of the flower is a light green color.
+
+KB:
+- IF flower is light purple and has a rounded shape THEN Class is 50.
+
+Rule Check:
+The target image exhibits a light purple color and a rounded shape. This matches the rule derived from the example labeled as 50.
+
+<response>50</response>
+----------------------------------------
+Query 24: Expected: [50] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower petals are a vibrant purple color.
+- The flower shape is broad and slightly rounded with five distinct petals.
+
+KB:
+- IF flower petals are red THEN Class is 50.
+- IF flower petals are pink THEN Class is 33.
+- IF flower petals are white THEN Class is 30.
+- IF flower petals are red and spiky THEN Class is 20.
+
+Rule Check:
+The target image displays flowers with purple petals. None of the rules directly address purple petals. However, the shape of the flower is broad and slightly rounded, similar to the shape of the flowers in class 50 (red petunias). Since no other rules match, and the shape is a shared characteristic, the closest match is class 50.
+
+<response>50</response>
+----------------------------------------
+Query 25: Expected: [50] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Flower petals are predominantly white.
+- Flower shape is broad and slightly ruffled.
+- Flower has a downward curving shape.
+
+KB:
+- IF Flower petals are predominantly white AND Flower shape is broad and slightly ruffled AND Flower has a downward curving shape THEN 50
+
+Rule Check:
+The target image exhibits predominantly white petals, a broad and slightly ruffled shape, and a downward curving form. These features align perfectly with the rule derived from the examples labeled as 50.
+
+<response>50</response>
+----------------------------------------
+Query 26: Expected: [50] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Flower petals are white.
+- Flower has a long, slender, yellow-green tube-like structure extending from the base of the petals.
+- Flower is surrounded by green foliage.
+
+KB:
+- IF Flower petals are white AND Flower has a long, slender, yellow-green tube-like structure extending from the base of the petals THEN 50
+- IF Flower petals are pink AND Flower has many thin, elongated petals THEN 33
+- IF Flower petals are white AND Flower has a ruffled, layered appearance THEN 30
+- IF Flower is red AND Flower has a broad, rounded petal shape THEN 50
+- IF Flower is red AND Flower has a spiky, complex structure THEN 20
+
+Rule Check:
+The target image exhibits white petals and a long, slender, yellow-green tube-like structure extending from the base of the petals. This aligns directly with the rule: "IF Flower petals are white AND Flower has a long, slender, yellow-green tube-like structure extending from the base of the petals THEN 50".
+
+<response>50</response>
+----------------------------------------
+Query 27: Expected: [50] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Flower petals are white.
+- Flower shape is trumpet-like.
+- Flower has a green stem.
+
+KB:
+- IF Flower petals are red AND Flower shape is trumpet-like AND Flower has a green stem THEN 50
+- IF Flower petals are white THEN 30
+- IF Flower petals are pink AND Flower has many petals THEN 33
+- IF Flower is spiky and red THEN 20
+
+Rule Check:
+The target image has white petals and a trumpet-like shape. This aligns with the rule "IF Flower petals are white THEN 30". The other rules do not match the observed features.
+
+<response>30</response>
+----------------------------------------
+Query 28: Expected: [20] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower has red petals.
+- The flower has yellow inner structures.
+- The flower has elongated, curved appendages extending outwards.
+
+KB:
+- IF the flower has red petals AND has yellow inner structures AND has elongated, curved appendages THEN Class 20.
+- IF the flower is predominantly white THEN Class 30.
+- IF the flower has pink petals AND multiple thin petals THEN Class 33.
+- IF the flower is predominantly red THEN Class 50.
+
+Rule Check:
+The target image exhibits red petals and yellow inner structures, along with elongated, curved appendages. This aligns perfectly with the rule associated with Class 20. The other rules do not match the observed features.
+
+<response>20</response>
+----------------------------------------
+Query 29: Expected: [20] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower has three petals.
+- The petals are red with yellow edges.
+- The flower has long, thin, yellow stamens extending outwards.
+
+KB:
+- IF the flower has three petals, is red with yellow edges, and has long, thin, yellow stamens extending outwards THEN 20.
+- IF the flower is white and has a ruffled, layered appearance THEN 30.
+- IF the flower has many thin, pink petals and a yellow center THEN 33.
+- IF the flower is red and has broad, rounded petals THEN 50.
+
+Rule Check:
+The target image exhibits three petals, a red color with yellow edges, and long, thin, yellow stamens extending outwards. This aligns perfectly with the rule: IF the flower has three petals, is red with yellow edges, and has long, thin, yellow stamens extending outwards THEN 20.
+
+<response>20</response>
+----------------------------------------
+Query 30: Expected: [20] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower has curved, flame-like petals.
+- The petals are predominantly red and orange.
+- There are long, thin, yellow-green filaments extending outwards.
+
+KB:
+- IF the flower has curved, flame-like petals AND the petals are predominantly red and orange AND there are long, thin, yellow-green filaments extending outwards THEN 20.
+- IF the flower is white and has ruffled petals THEN 30.
+- IF the flower has long, thin petals and a central yellow disc THEN 33.
+- IF the flower is red and has broad, rounded petals THEN 50.
+
+Rule Check:
+The target image exhibits curved, flame-like petals that are predominantly red and orange, and it also has long, thin, yellow-green filaments extending outwards. This aligns perfectly with the rule associated with class 20. The other rules do not match the observed features.
+
+<response>20</response>
+----------------------------------------
+Query 31: Expected: [20] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower has a predominantly yellow base color.
+- The flower has red tips on its petals.
+- The flower has long, thin, yellow tendrils extending outwards.
+
+KB:
+- IF the flower is predominantly yellow with red tips and has long, thin, yellow tendrils THEN Class 20.
+
+Rule Check:
+The target image exhibits a predominantly yellow base color, red tips on the petals, and long, thin, yellow tendrils. This aligns perfectly with the rule derived from the example labeled as Class 20.
+
+<response>20</response>
+----------------------------------------
+Query 32: Expected: [20] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower has curved, flame-like petals.
+- The petals are predominantly red with yellow edges.
+- There are long, thin, green tendrils extending outwards.
+
+KB:
+- IF the flower has curved, flame-like petals and is predominantly red with yellow edges and has long, thin, green tendrils THEN Class 20.
+- IF the flower is white and has ruffled petals THEN Class 30.
+- IF the flower has long, thin petals and a central yellow disc THEN Class 33.
+- IF the flower is red and has broad, rounded petals THEN Class 50.
+
+Rule Check:
+The target image exhibits curved, flame-like petals, a predominantly red color with yellow edges, and long, thin, green tendrils. This aligns perfectly with the rule: IF the flower has curved, flame-like petals and is predominantly red with yellow edges and has long, thin, green tendrils THEN Class 20.
+
+<response>20</response>
+----------------------------------------
+Query 33: Expected: [20] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower petals are elongated and curved.
+- The flower has a vibrant red and pink color combination.
+- The flower has a central white/cream colored area.
+
+KB:
+- IF the flower has elongated, curved petals AND a vibrant red and pink color combination AND a central white/cream colored area THEN Class 20.
+- IF the flower is predominantly red AND has broad, rounded petals THEN Class 50.
+- IF the flower is white AND has many tightly packed petals THEN Class 30.
+- IF the flower is pink AND has long, thin petals THEN Class 33.
+
+Rule Check:
+The target image exhibits elongated, curved petals, a red and pink color combination, and a central white/cream colored area. This aligns perfectly with the rule associated with Class 20. The other rules do not match the observed features.
+
+<response>20</response>
+----------------------------------------
+Query 34: Expected: [20] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower petals are curved and elongated.
+- The flower has a vibrant orange-red color with yellow accents.
+- Long, thin, green stems extend outwards from the flower.
+
+KB:
+- IF the flower has curved, elongated petals AND a vibrant orange-red color with yellow accents AND long, thin, green stems extending outwards THEN Class 20.
+- IF the flower is predominantly red AND has broad, rounded petals THEN Class 50.
+- IF the flower is pink AND has multiple, thin petals radiating outwards THEN Class 33.
+- IF the flower is white AND has tightly curled, layered petals THEN Class 30.
+
+Rule Check:
+The target image exhibits curved, elongated petals, a vibrant orange-red color with yellow accents, and long, thin, green stems. This aligns perfectly with the rule associated with Class 20. The other rules do not match the observed features.
+
+<response>20</response>
+----------------------------------------
+Query 35: Expected: [20] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower has elongated, curved petals.
+- The petals are primarily orange and red in color with yellow tips.
+- There are long, thin, green tendrils extending outwards.
+
+KB:
+- IF flower has elongated, curved petals AND petals are primarily orange and red in color with yellow tips AND there are long, thin, green tendrils extending outwards THEN Class 20.
+- IF flower is red AND has broad, rounded petals THEN Class 50.
+- IF flower is white AND has ruffled petals THEN Class 30.
+- IF flower is pink AND has thin, pointed petals THEN Class 33.
+
+Rule Check:
+The target image exhibits elongated, curved orange and red petals with yellow tips and long, thin, green tendrils. This directly matches the rule associated with Class 20. The other rules do not align with these observed features.
+
+<response>20</response>
+----------------------------------------
+Query 36: Expected: [20] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The flower has elongated, curved petals.
+- The petals are predominantly red with yellow/orange tips.
+- There are long, thin, yellow/green tendrils extending outwards from the flower's base.
+
+KB:
+- IF the flower has elongated, curved petals that are predominantly red with yellow/orange tips AND there are long, thin, yellow/green tendrils extending outwards from the flower's base THEN 20.
+
+Rule Check:
+The target image exhibits elongated, curved red petals with yellow/orange tips and long, thin, yellow/green tendrils. This perfectly matches the rule derived from the example labeled as 20.
+
+<response>20</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.8611

@@ -1,0 +1,1633 @@
+=== DEBUG LOG: gemma3 | pets | Prompt: rulebased ===
+
+--- CONFIG: N=2, K=2, Q=9 ---
+Query 1: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black fur.
+- Yellow eyes.
+- Pointed ears.
+
+KB:
+- IF predominantly black fur AND yellow eyes AND pointed ears THEN Bombay
+
+Rule Check:
+The target image exhibits predominantly black fur, yellow eyes, and pointed ears. This matches the rule derived from the Bombay examples.
+
+<response>Bombay</response>
+----------------------------------------
+Query 2: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black fur.
+- Yellow eyes.
+- Slender body shape.
+- Pointed ears.
+
+KB:
+- IF predominantly black fur AND yellow eyes THEN Bombay.
+
+Rule Check:
+The image exhibits predominantly black fur and yellow eyes. This matches the rule derived from the previous examples, which states that if an animal has predominantly black fur and yellow eyes, it is a Bombay.
+
+<response>Bombay</response>
+----------------------------------------
+Query 3: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly gray fur.
+- Yellow eyes.
+- Slender head shape.
+
+KB:
+- IF fur is black THEN Bombay.
+- IF fur is white THEN American Bulldog.
+
+Rule Check:
+The image shows a cat with gray fur and yellow eyes. The provided examples only have rules for black and white fur. Since the fur is gray, and not black or white, neither rule directly applies. However, the gray fur is closer in color to black than white. Therefore, I will select the closest matching rule.
+
+<response>Bombay</response>
+----------------------------------------
+Query 4: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black fur.
+- Yellow eyes.
+
+KB:
+- IF predominantly black fur AND yellow eyes THEN Bombay.
+
+Rule Check:
+The target image exhibits predominantly black fur and yellow eyes. This matches the rule derived from the previous examples, which states that if an animal has predominantly black fur and yellow eyes, it is a Bombay.
+
+<response>Bombay</response>
+----------------------------------------
+Query 5: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black fur.
+- Yellow eyes.
+- Slender body shape.
+- Long, curved tail.
+
+KB:
+- IF predominantly black fur AND yellow eyes THEN Bombay.
+
+Rule Check:
+The target image exhibits predominantly black fur and yellow eyes. This matches the rule derived from the previous examples, which states that if an animal has predominantly black fur and yellow eyes, it is a Bombay.
+
+<response>Bombay</response>
+----------------------------------------
+Query 6: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black fur.
+- Yellow eyes.
+- Pointed ears.
+
+KB:
+- IF predominantly black fur AND yellow eyes AND pointed ears THEN Bombay
+
+Rule Check:
+The target image exhibits predominantly black fur, yellow eyes, and pointed ears. This matches the rule derived from the previous Bombay examples.
+
+<response>Bombay</response>
+----------------------------------------
+Query 7: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black fur.
+- Yellow eyes.
+- Slender body shape.
+- Pointed ears.
+
+KB:
+- IF predominantly black fur AND yellow eyes THEN Bombay.
+
+Rule Check:
+The target image exhibits predominantly black fur and yellow eyes. This matches the rule derived from the previous examples, which states that if an animal has predominantly black fur and yellow eyes, it is a Bombay.
+
+<response>Bombay</response>
+----------------------------------------
+Query 8: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black fur.
+- Green eyes.
+- Slender body shape.
+- Pointed ears.
+
+KB:
+- IF predominantly black fur AND green eyes THEN Bombay.
+
+Rule Check:
+The target image exhibits predominantly black fur and green eyes. This matches the rule derived from the previous examples, which states that if an animal has predominantly black fur and green eyes, it is a Bombay.
+
+<response>Bombay</response>
+----------------------------------------
+Query 9: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal is predominantly black in color.
+- The animal has yellow eyes.
+- The animal has pointed ears.
+
+KB:
+- IF the animal is predominantly black in color AND has yellow eyes AND has pointed ears THEN Bombay.
+
+Rule Check:
+The target image exhibits a predominantly black color, yellow eyes, and pointed ears. This aligns perfectly with the rule derived from the previous Bombay examples.
+
+<response>Bombay</response>
+----------------------------------------
+Query 10: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Broad, square head.
+- Wrinkled face.
+- Short muzzle.
+
+KB:
+- IF predominantly white fur AND broad, square head AND wrinkled face AND short muzzle THEN American Bulldog.
+
+Rule Check:
+The target image exhibits predominantly white fur, a broad and square head, a wrinkled face, and a short muzzle. These features align perfectly with the rule derived from the previous American Bulldog examples.
+
+<response>American Bulldog</response>
+----------------------------------------
+Query 11: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Large, floppy ears.
+- Broad, square head.
+- Dark nose.
+
+KB:
+- IF predominantly white fur AND large, floppy ears AND broad, square head THEN American Bulldog.
+- IF black fur THEN Bombay.
+
+Rule Check:
+The target image exhibits predominantly white fur, large floppy ears, and a broad, square head. These features align with the rule formulated for "American Bulldog". The image does not exhibit black fur, so the rule for "Bombay" is not activated.
+
+<response>American Bulldog</response>
+----------------------------------------
+Query 12: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Broad, square head.
+- Drooping lips.
+- Large, floppy ears.
+
+KB:
+- IF predominantly white fur AND broad, square head AND drooping lips AND large, floppy ears THEN American Bulldog.
+
+Rule Check:
+The target image exhibits predominantly white fur, a broad and square head, drooping lips, and large, floppy ears. These features align perfectly with the rule derived from the previous American Bulldog examples.
+
+<response>American Bulldog</response>
+----------------------------------------
+Query 13: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Muscular build.
+- Broad head.
+- Short muzzle.
+
+KB:
+- IF predominantly white fur AND muscular build AND broad head AND short muzzle THEN American Bulldog.
+
+Rule Check:
+The target image exhibits predominantly white fur, a muscular build, a broad head, and a short muzzle. These features align perfectly with the rule derived from the previous American Bulldog examples.
+
+<response>American Bulldog</response>
+----------------------------------------
+Query 14: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Broad, square head.
+- Short muzzle.
+- Drooping lips.
+
+KB:
+- IF predominantly white fur AND broad, square head AND short muzzle AND drooping lips THEN American Bulldog.
+
+Rule Check:
+The target image exhibits predominantly white fur, a broad and square head, a short muzzle, and drooping lips. These features align perfectly with the rule derived from the previous American Bulldog examples.
+
+<response>American Bulldog</response>
+----------------------------------------
+Query 15: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur covering most of the body.
+- Presence of brown patches on the head.
+- Muscular build.
+
+KB:
+- IF predominantly white fur covering most of the body AND presence of brown patches on the head THEN American Bulldog.
+
+Rule Check:
+The target image exhibits predominantly white fur and brown patches on the head. This aligns perfectly with the rule derived from the previous American Bulldog examples. The Bombay examples were characterized by entirely black fur, which is not present in the target image.
+
+<response>American Bulldog</response>
+----------------------------------------
+Query 16: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Brown markings on the head and ears.
+- Short, broad muzzle.
+- Large, floppy ears.
+
+KB:
+- IF predominantly white fur AND brown markings on the head and ears AND short, broad muzzle AND large, floppy ears THEN American Bulldog.
+
+Rule Check:
+The target image exhibits predominantly white fur, brown markings on the head and ears, a short, broad muzzle, and large, floppy ears. These features directly match the rule formulated for the "American Bulldog" class.
+
+<response>American Bulldog</response>
+----------------------------------------
+Query 17: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Brown markings on the head.
+- Muscular build.
+- Short muzzle.
+
+KB:
+- IF predominantly white fur AND brown markings on the head AND muscular build AND short muzzle THEN American Bulldog.
+- IF black fur AND yellow eyes THEN Bombay.
+
+Rule Check:
+The target image exhibits predominantly white fur, brown markings on the head, a muscular build, and a short muzzle. These features align with the rule formulated for "American Bulldog". The features do not match the "Bombay" rule, which requires black fur and yellow eyes.
+
+<response>American Bulldog</response>
+----------------------------------------
+Query 18: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Broad, square head.
+- Short muzzle.
+- Large, floppy ears.
+
+KB:
+- IF predominantly white fur AND broad, square head AND short muzzle THEN American Bulldog.
+
+Rule Check:
+The target image exhibits predominantly white fur, a broad, square head, and a short muzzle. These features align perfectly with the rule derived from the previous American Bulldog examples. The Bombay examples are characterized by black fur, which is not present in the target image.
+
+<response>American Bulldog</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9): 1.0000
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly brown and black mottled fur pattern.
+- White chest marking.
+- Medium-sized, muscular build.
+
+KB:
+- IF predominantly brown and black mottled fur pattern AND white chest marking AND medium-sized, muscular build THEN Staffordshire Bull Terrier.
+
+Rule Check:
+The target image exhibits a predominantly brown and black mottled fur pattern, a white chest marking, and a medium-sized, muscular build. These features directly match the rule derived from the Staffordshire Bull Terrier example.
+
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 2: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black fur with white patches on the chest and face.
+- Short, dense fur texture.
+- Broad, square head shape.
+
+KB:
+- IF predominantly black fur with white patches on the chest and face AND short, dense fur texture AND broad, square head shape THEN Staffordshire Bull Terrier.
+
+Rule Check:
+The target image exhibits predominantly black fur with white patches on the chest and face. It also has a short, dense fur texture and a broad, square head shape. These features directly match the rule derived from the previous example of a Staffordshire Bull Terrier.
+
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 3: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black fur
+- Short, dense fur texture
+- Broad head shape
+- Visible pink tongue
+
+KB:
+- IF predominantly black fur AND short, dense fur texture AND broad head shape THEN Staffordshire Bull Terrier
+
+Rule Check:
+The target image exhibits predominantly black fur, a short and dense fur texture, and a broad head shape. These features align perfectly with the rule derived from the previous example of a Staffordshire Bull Terrier.
+
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 4: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark brown fur covering the entire body.
+- Erect, pointed ears.
+- Muscular build.
+- Four legs visible.
+
+KB:
+- IF dark brown fur covering the entire body AND erect, pointed ears AND muscular build AND four legs visible THEN Staffordshire Bull Terrier
+
+Rule Check:
+The target image exhibits dark brown fur, erect pointed ears, a muscular build, and four legs visible. These features directly match the rule derived from the previous example of a Staffordshire Bull Terrier.
+
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 5: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly brown fur
+- White patches on the face and legs
+- Short, smooth fur texture
+- Muscular build
+
+KB:
+- IF predominantly brown fur AND white patches on the face AND legs AND short, smooth fur texture AND muscular build THEN Staffordshire Bull Terrier
+
+Rule Check:
+The target image exhibits predominantly brown fur, white patches on the face and legs, short, smooth fur texture, and a muscular build. These features align perfectly with the rule derived from the Staffordshire Bull Terrier example.
+
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 6: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly dark brown and black brindle markings.
+- White chest and underbelly.
+- Muscular build.
+- Short, smooth coat.
+- Large head with a wide muzzle.
+
+KB:
+- IF predominantly dark brown and black brindle markings AND white chest and underbelly AND muscular build AND short, smooth coat THEN Staffordshire Bull Terrier.
+
+Rule Check:
+The target image exhibits predominantly dark brown and black brindle markings, a white chest and underbelly, a muscular build, and a short, smooth coat. These features directly match the rule derived from the previous Staffordshire Bull Terrier example.
+
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 7: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly dark brown fur
+- Large white patch on the forehead
+- Large, triangular, erect ears
+- Short, stubby tail
+
+KB:
+- IF predominantly dark brown fur AND large white patch on the forehead AND large, triangular, erect ears THEN Staffordshire Bull Terrier
+
+Rule Check:
+The target image exhibits predominantly dark brown fur, a large white patch on the forehead, and large, triangular, erect ears. These features directly match the rule derived from the previous example of a Staffordshire Bull Terrier.
+
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 8: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black fur with large white patches on the face and chest.
+- Large, erect ears.
+- Short, dense fur texture.
+
+KB:
+- IF predominantly black fur with large white patches on the face and chest AND large, erect ears AND short, dense fur texture THEN Staffordshire Bull Terrier.
+
+Rule Check:
+The target image exhibits predominantly black fur with large white patches on the face and chest. It also has large, erect ears and a short, dense fur texture. These features directly match the rule derived from the previous Staffordshire Bull Terrier example.
+
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 9: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly dark brown fur with lighter brown patches.
+- Short, dense fur texture.
+- Broad, flat head shape.
+- Medium-sized, floppy ears.
+
+KB:
+- IF predominantly dark brown fur with lighter brown patches AND short, dense fur texture AND broad, flat head shape AND medium-sized, floppy ears THEN Staffordshire Bull Terrier.
+
+Rule Check:
+The target image exhibits predominantly dark brown fur with lighter brown patches, a short, dense fur texture, a broad, flat head shape, and medium-sized, floppy ears. These features directly match the rule derived from the Staffordshire Bull Terrier example.
+
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 10: Expected: [Ragdoll] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly light-colored fur (white/cream)
+- Long, fluffy fur
+- Blue eyes
+- Pointed markings (darker fur on face, tail, and legs)
+
+KB:
+- IF light-colored fur AND long, fluffy fur AND blue eyes AND pointed markings THEN Ragdoll
+
+Rule Check:
+The target image exhibits light-colored fur, long fluffy fur, blue eyes, and pointed markings. These features directly match the conditions specified in the "IF" part of the Ragdoll rule. Therefore, the rule is activated.
+
+<response>Ragdoll</response>
+----------------------------------------
+Query 11: Expected: [Ragdoll] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur with brown markings.
+- Long, fluffy fur.
+- Blue eyes.
+
+KB:
+- IF predominantly white fur with brown markings AND long, fluffy fur AND blue eyes THEN Ragdoll.
+
+Rule Check:
+The target image exhibits predominantly white fur with brown markings, long, fluffy fur, and blue eyes. This matches the rule derived from the Ragdoll example.
+
+<response>Ragdoll</response>
+----------------------------------------
+Query 12: Expected: [Ragdoll] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur
+- Patches of dark brown/black fur on the face and ears
+- Long, fluffy fur texture
+- Blue eyes
+
+KB:
+- IF predominantly white fur AND patches of dark brown/black fur on the face and ears AND long, fluffy fur texture AND blue eyes THEN Ragdoll
+
+Rule Check:
+The target image exhibits predominantly white fur, patches of dark brown/black fur on the face and ears, a long, fluffy fur texture, and blue eyes. These features directly match the rule derived from the Ragdoll example.
+
+<response>Ragdoll</response>
+----------------------------------------
+Query 13: Expected: [Ragdoll] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur
+- Blue eyes
+- Brown markings on the face
+- Long, fluffy fur
+
+KB:
+- IF predominantly white fur AND blue eyes AND brown markings on the face AND long, fluffy fur THEN Ragdoll
+
+Rule Check:
+The target image exhibits predominantly white fur, blue eyes, brown markings on the face, and long, fluffy fur. This aligns perfectly with the rule derived from the Ragdoll example.
+
+<response>Ragdoll</response>
+----------------------------------------
+Query 14: Expected: [Ragdoll] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly light grey fur
+- Blue eyes
+- Long, fluffy fur
+- White fur on the chest
+
+KB:
+- IF light grey fur AND blue eyes AND long, fluffy fur AND white fur on the chest THEN Ragdoll
+
+Rule Check:
+The target image exhibits light grey fur, blue eyes, long fluffy fur, and white fur on the chest. This matches the features described in the "Ragdoll" rule.
+
+<response>Ragdoll</response>
+----------------------------------------
+Query 15: Expected: [Ragdoll] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur
+- Gray tipped tail
+- Blue eyes
+- Fluffy fur texture
+
+KB:
+- IF predominantly white fur AND gray tipped tail AND blue eyes THEN Ragdoll
+
+Rule Check:
+The target image exhibits predominantly white fur, a gray tipped tail, and blue eyes. This matches the rule derived from the Ragdoll example.
+
+<response>Ragdoll</response>
+----------------------------------------
+Query 16: Expected: [Ragdoll] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur
+- Long, fluffy fur
+- Blue eyes
+- Pink nose
+
+KB:
+- IF predominantly white fur AND long, fluffy fur AND blue eyes THEN Ragdoll
+
+Rule Check:
+The target image exhibits predominantly white fur, long fluffy fur, and blue eyes. This matches the rule derived from the previous Ragdoll example.
+
+<response>Ragdoll</response>
+----------------------------------------
+Query 17: Expected: [Ragdoll] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur
+- Long, fluffy fur
+- Blue eyes
+- Gray markings on the head
+
+KB:
+- IF predominantly white fur AND long, fluffy fur AND blue eyes THEN Ragdoll
+
+Rule Check:
+The target image exhibits predominantly white fur, long fluffy fur, and blue eyes. This matches the rule derived from the previous Ragdoll example.
+
+<response>Ragdoll</response>
+----------------------------------------
+Query 18: Expected: [Ragdoll] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur
+- Blue eyes
+- Long, fluffy fur
+
+KB:
+- IF predominantly white fur AND blue eyes AND long, fluffy fur THEN Ragdoll
+
+Rule Check:
+The target image exhibits predominantly white fur, blue eyes, and long, fluffy fur. This matches the rule derived from the Ragdoll example.
+
+<response>Ragdoll</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9): 1.0000
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [Havanese] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Curly, fluffy fur texture.
+- Facial hair present around the muzzle.
+
+KB:
+- IF predominantly white fur AND curly, fluffy fur texture AND facial hair present around the muzzle THEN Havanese.
+- IF predominantly white fur AND fluffy fur texture THEN Samoyed.
+- IF short, smooth fur AND predominantly brown/tan color THEN American Pit Bull Terrier.
+
+Rule Check:
+The target image exhibits predominantly white fur and a curly, fluffy fur texture, along with facial hair around the muzzle. This aligns with the rule associated with the Havanese class. The features do not match the American Pit Bull Terrier (short, smooth fur) or the Samoyed (fluffy fur, but not the curly texture and facial hair).
+
+<response>Havanese</response>
+----------------------------------------
+Query 2: Expected: [Havanese] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Fluffy, thick fur texture.
+- Small, dark nose.
+- Dark eyes.
+
+KB:
+- IF predominantly white fur AND fluffy, thick fur texture AND small, dark nose AND dark eyes THEN Samoyed.
+- IF black and white fur AND curly fur texture THEN Havanese.
+- Short, smooth, brown fur AND muscular build THEN American Pit Bull Terrier.
+
+Rule Check:
+The target image exhibits predominantly white fur, a fluffy, thick fur texture, a small, dark nose, and dark eyes. These features align with the rule established for the "Samoyed" class. The features do not match the rules for "Havanese" (black and white fur, curly fur) or "American Pit Bull Terrier" (short, smooth, brown fur, muscular build).
+
+<response>Samoyed</response>
+----------------------------------------
+Query 3: Expected: [Havanese] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly light brown fur color.
+- Long, flowing fur texture.
+- Visible pink tongue.
+
+KB:
+- IF predominantly light brown fur color AND long, flowing fur texture THEN Havanese.
+- IF predominantly white fur color AND fluffy fur texture THEN Samoyed.
+- IF short, smooth fur texture AND predominantly brown/tan fur color THEN American Pit Bull Terrier.
+
+Rule Check:
+The target image exhibits a predominantly light brown fur color and a long, flowing fur texture. This aligns with the rule associated with the Havanese class. The other rules do not match the observed features.
+
+<response>Havanese</response>
+----------------------------------------
+Query 4: Expected: [Havanese] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur with black patches.
+- Curly, dense fur texture.
+- Rounded head shape.
+
+KB:
+- IF predominantly white fur with black patches AND curly, dense fur texture THEN Havanese.
+- IF predominantly white fur THEN Samoyed.
+- IF short, smooth fur and muscular build THEN American Pit Bull Terrier.
+
+Rule Check:
+The target image exhibits predominantly white fur with black patches and a curly, dense fur texture. This aligns directly with the rule derived from the Havanese example. The Samoyed rule requires *only* predominantly white fur, which is not sufficient. The American Pit Bull Terrier rule focuses on short, smooth fur and a muscular build, which are not present in the target image.
+
+<response>Havanese</response>
+----------------------------------------
+Query 5: Expected: [Havanese] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has long, flowing, light beige/cream colored fur.
+- The fur appears curly or wavy.
+- The dog has floppy ears.
+
+KB:
+- IF the dog has long, flowing, light beige/cream colored fur AND the fur appears curly or wavy AND the dog has floppy ears THEN Havanese.
+- IF the dog has thick, fluffy, white fur THEN Samoyed.
+- IF the dog has short, smooth, brown/tan fur THEN American Pit Bull Terrier.
+
+Rule Check:
+The target image exhibits long, flowing, light beige/cream colored fur, which appears curly or wavy, and the dog has floppy ears. This aligns perfectly with the rule formulated for the "Havanese" class. The features do not match the rules for "Samoyed" (white fur) or "American Pit Bull Terrier" (short, smooth, brown/tan fur).
+
+<response>Havanese</response>
+----------------------------------------
+Query 6: Expected: [Havanese] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly light grey/white fur.
+- Long, shaggy fur texture.
+- Dark nose.
+
+KB:
+- IF predominantly white fur AND long, shaggy fur texture THEN Samoyed.
+- IF black fur with white patches AND curly fur THEN Havanese.
+- IF short, smooth fur AND brown/tan color THEN American Pit Bull Terrier.
+
+Rule Check:
+The target image exhibits predominantly light grey/white fur and a long, shaggy fur texture. This aligns with the rule associated with the "Samoyed" class. The image does not have black fur with white patches (characteristic of Havanese) nor does it have short, smooth fur (characteristic of American Pit Bull Terrier).
+
+<response>Samoyed</response>
+----------------------------------------
+Query 7: Expected: [Havanese] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly brown fur color.
+- Curly, dense fur texture.
+- White patch visible on the chest.
+
+KB:
+- IF predominantly brown fur color AND curly, dense fur texture THEN Shih Tzu.
+- IF white fur color AND fluffy fur texture THEN Samoyed.
+- IF predominantly brown fur color AND short, smooth fur texture THEN American Pit Bull Terrier.
+- IF black and white fur color AND curly fur texture THEN Havanese.
+
+Rule Check:
+The target image exhibits predominantly brown fur and a curly, dense fur texture. This aligns with the rule: IF predominantly brown fur color AND curly, dense fur texture THEN Shih Tzu. None of the other rules match these features.
+
+<response>Shih Tzu</response>
+----------------------------------------
+Query 8: Expected: [Havanese] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has curly, dense fur.
+- The dog has a black and white color pattern.
+
+KB:
+- IF the dog has curly, dense fur AND a black and white color pattern THEN Havanese.
+- IF the dog has thick, fluffy white fur THEN Samoyed.
+- IF the dog has a short, smooth coat and a solid brown color THEN American Pit Bull Terrier.
+
+Rule Check:
+The target image exhibits curly, dense fur and a black and white color pattern. This aligns with the rule associated with the "Havanese" class. The other rules do not match the observed features.
+
+<response>Havanese</response>
+----------------------------------------
+Query 9: Expected: [Havanese] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Black fur patches on the head and upper body.
+- Curly, fluffy fur texture.
+
+KB:
+- IF predominantly white fur AND black fur patches on the head and upper body AND curly, fluffy fur texture THEN Havanese.
+- IF predominantly white fur AND fluffy fur texture THEN Samoyed.
+- IF predominantly brown fur AND short, smooth fur texture THEN American Pit Bull Terrier.
+
+Rule Check:
+The target image exhibits predominantly white fur, black fur patches on the head and upper body, and a curly, fluffy fur texture. This combination of features best matches the rule associated with the "Havanese" class. The "Samoyed" rule requires only white fur and fluffy texture, which is not fully met by the presence of black patches. The "American Pit Bull Terrier" rule does not match the fur color or texture.
+
+<response>Havanese</response>
+----------------------------------------
+Query 10: Expected: [American Pit Bull Terrier] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Black markings on the head.
+- Short, dense fur texture.
+
+KB:
+- IF predominantly white fur AND black markings on the head THEN Samoyed.
+- IF predominantly white fur THEN Havanese.
+- IF short, dense fur texture AND brown fur THEN American Pit Bull Terrier.
+
+Rule Check:
+The target image exhibits predominantly white fur and black markings on the head. This aligns with the rule "IF predominantly white fur AND black markings on the head THEN Samoyed." While it also has white fur, which could align with the "IF predominantly white fur THEN Havanese" rule, the presence of black markings strongly favors the Samoyed rule. The fur texture does not match the American Pit Bull Terrier rule.
+
+<response>Samoyed</response>
+----------------------------------------
+Query 11: Expected: [American Pit Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly brown fur color.
+- White chest and facial markings.
+- Muscular build.
+- Triangular shaped ears.
+
+KB:
+- IF predominantly brown fur color AND white chest and facial markings AND muscular build AND triangular shaped ears THEN American Pit Bull Terrier.
+
+Rule Check:
+The target image exhibits predominantly brown fur, white chest and facial markings, a muscular build, and triangular shaped ears. These features directly match the rule derived from the previous "American Pit Bull Terrier" example.
+
+<response>American Pit Bull Terrier</response>
+----------------------------------------
+Query 12: Expected: [American Pit Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly tan/light brown fur color.
+- Medium-length, floppy ears.
+- Relatively short, dense fur texture.
+
+KB:
+- IF fur color is tan/light brown AND ears are floppy THEN American Pit Bull Terrier.
+- IF fur is white and fluffy THEN Samoyed.
+- IF fur is curly and white/black THEN Havanese.
+
+Rule Check:
+The target image exhibits a tan/light brown fur color and floppy ears. This aligns with the rule: IF fur color is tan/light brown AND ears are floppy THEN American Pit Bull Terrier. The other rules do not match the observed features.
+
+<response>American Pit Bull Terrier</response>
+----------------------------------------
+Query 13: Expected: [American Pit Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly brown fur color.
+- Broad, somewhat squared head shape.
+- Large, triangular ears.
+
+KB:
+- IF fur color is brown AND head shape is broad AND ears are triangular THEN American Pit Bull Terrier.
+- IF fur is white AND fluffy THEN Samoyed.
+- IF fur is curly and color is varied (black, white, brown) THEN Havanese.
+
+Rule Check:
+The target image exhibits brown fur, a broad head shape, and triangular ears. These features align with the rule: "IF fur color is brown AND head shape is broad AND ears are triangular THEN American Pit Bull Terrier." The other rules do not match the observed features.
+
+<response>American Pit Bull Terrier</response>
+----------------------------------------
+Query 14: Expected: [American Pit Bull Terrier] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Presence of brown spots/patches.
+- Drooping ears.
+
+KB:
+- IF predominantly white fur AND presence of brown spots/patches THEN Samoyed.
+- IF predominantly white fur THEN Samoyed.
+- IF brown fur THEN American Pit Bull Terrier.
+
+Rule Check:
+The target image exhibits predominantly white fur with brown spots/patches. This aligns with the rule "IF predominantly white fur AND presence of brown spots/patches THEN Samoyed." While it also has drooping ears, the combination of white fur and brown spots is the dominant visual characteristic.
+
+<response>Samoyed</response>
+----------------------------------------
+Query 15: Expected: [American Pit Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Short, smooth fur texture.
+- Muscular build.
+- Triangular shaped ears.
+
+KB:
+- IF predominantly white fur AND short, smooth fur texture AND muscular build THEN American Pit Bull Terrier.
+- IF fluffy white fur THEN Samoyed.
+- IF curly, long fur with varied colors THEN Havanese.
+
+Rule Check:
+The target image exhibits predominantly white fur, a short, smooth fur texture, and a muscular build. This combination of features best aligns with the rule: IF predominantly white fur AND short, smooth fur texture AND muscular build THEN American Pit Bull Terrier. The other rules do not match the observed features.
+
+<response>American Pit Bull Terrier</response>
+----------------------------------------
+Query 16: Expected: [American Pit Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly brown fur color.
+- Muscular build.
+- Relatively short, thin tail.
+- Presence of a blue collar.
+
+KB:
+- IF predominantly brown fur color AND muscular build THEN American Pit Bull Terrier.
+
+Rule Check:
+The target image exhibits predominantly brown fur and a muscular build. This aligns with the rule derived from the "American Pit Bull Terrier" example. The presence of a blue collar is an incidental detail not used in the rule.
+
+<response>American Pit Bull Terrier</response>
+----------------------------------------
+Query 17: Expected: [American Pit Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Large, floppy, triangular ears.
+- Tan/brown patches of fur.
+- Muscular build.
+
+KB:
+- IF predominantly white fur AND large, floppy, triangular ears AND tan/brown patches of fur AND muscular build THEN American Pit Bull Terrier.
+- IF curly, long, and fluffy fur AND small, triangular ears THEN Havanese.
+- IF thick, fluffy, white fur THEN Samoyed.
+
+Rule Check:
+The target image exhibits predominantly white fur, large, floppy, triangular ears, tan/brown patches of fur, and a muscular build. This combination of features best aligns with the rule formulated for the "American Pit Bull Terrier" class. The other rules do not match the observed features.
+
+<response>American Pit Bull Terrier</response>
+----------------------------------------
+Query 18: Expected: [American Pit Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly light brown fur color.
+- Muscular build.
+- Large, prominent head.
+- Visible tongue.
+
+KB:
+- IF predominantly light brown fur color AND muscular build AND large, prominent head THEN American Pit Bull Terrier.
+
+Rule Check:
+The target image exhibits predominantly light brown fur, a muscular build, and a large, prominent head. These features align with the rule derived from the previous examples. Therefore, the rule "IF predominantly light brown fur color AND muscular build AND large, prominent head THEN American Pit Bull Terrier" is activated.
+
+<response>American Pit Bull Terrier</response>
+----------------------------------------
+Query 19: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Fluffy, thick fur texture.
+- Dark nose.
+- Upright, triangular ears.
+
+KB:
+- IF predominantly white fur AND fluffy, thick fur texture THEN Samoyed.
+- IF predominantly white fur AND dark nose THEN Samoyed.
+
+Rule Check:
+The target image exhibits predominantly white fur and a fluffy, thick fur texture. This aligns with the rule derived from the Samoyed example. The dark nose is also consistent with the Samoyed example. Therefore, the rule "IF predominantly white fur AND fluffy, thick fur texture THEN Samoyed" is activated.
+
+<response>Samoyed</response>
+----------------------------------------
+Query 20: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Thick, fluffy fur texture.
+
+KB:
+- IF predominantly white fur AND thick, fluffy fur texture THEN Samoyed.
+- IF curly, long fur AND black and white coloration THEN Havanese.
+- IF short, smooth fur AND brown/tan coloration THEN American Pit Bull Terrier.
+
+Rule Check:
+The target image exhibits predominantly white fur and a thick, fluffy fur texture. This aligns directly with the rule established for the "Samoyed" class. The other rules do not match the observed features.
+
+<response>Samoyed</response>
+----------------------------------------
+Query 21: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Long, fluffy fur texture.
+- Visible pink tongue.
+
+KB:
+- IF predominantly white fur AND long, fluffy fur texture THEN Samoyed.
+- IF black and white fur AND curly fur THEN Havanese.
+- IF short, smooth fur AND brown/tan color THEN American Pit Bull Terrier.
+
+Rule Check:
+The target image exhibits predominantly white fur and a long, fluffy fur texture. This aligns directly with the rule established for the "Samoyed" class. The other rules do not match the observed features.
+
+<response>Samoyed</response>
+----------------------------------------
+Query 22: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Thick, fluffy fur texture.
+- Dark nose.
+
+KB:
+- IF predominantly white fur AND thick, fluffy fur texture AND dark nose THEN Samoyed.
+
+Rule Check:
+The target image exhibits predominantly white fur, a thick, fluffy fur texture, and a dark nose. This aligns perfectly with the rule derived from the Samoyed examples.
+
+<response>Samoyed</response>
+----------------------------------------
+Query 23: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Fluffy, thick fur texture.
+- Pink tongue visible.
+
+KB:
+- IF predominantly white fur AND fluffy, thick fur texture THEN Samoyed.
+- IF black and white fur with curly hair THEN Havanese.
+- IF short, smooth, brown fur THEN American Pit Bull Terrier.
+
+Rule Check:
+The target image exhibits predominantly white fur and a fluffy, thick fur texture. This aligns directly with the rule established for the "Samoyed" class. The other rules do not match the observed features.
+
+<response>Samoyed</response>
+----------------------------------------
+Query 24: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Thick, fluffy fur texture.
+- Dark nose.
+- Erect, pointed ears.
+
+KB:
+- IF predominantly white fur AND thick, fluffy fur texture AND dark nose THEN Samoyed.
+- IF curly, long fur AND black and white coloration THEN Havanese.
+- IF short, smooth fur AND brown/tan coloration THEN American Pit Bull Terrier.
+
+Rule Check:
+The target image exhibits predominantly white fur and a thick, fluffy fur texture, and a dark nose. This aligns perfectly with the rule established for the "Samoyed" class. The other rules do not match the observed features.
+
+<response>Samoyed</response>
+----------------------------------------
+Query 25: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Thick, fluffy fur texture.
+- Dog is in motion.
+
+KB:
+- IF predominantly white fur AND thick, fluffy fur texture THEN Samoyed.
+
+Rule Check:
+The target image exhibits predominantly white fur and a thick, fluffy fur texture. This aligns perfectly with the rule derived from the Samoyed example. Therefore, the rule "IF predominantly white fur AND thick, fluffy fur texture THEN Samoyed" is activated.
+
+<response>Samoyed</response>
+----------------------------------------
+Query 26: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Fluffy, thick fur texture.
+- Small, dark eyes.
+
+KB:
+- IF predominantly white fur AND fluffy, thick fur texture THEN Samoyed.
+- IF curly, long fur AND black and white coloration THEN Havanese.
+- IF short, smooth fur AND brown/tan coloration THEN American Pit Bull Terrier.
+
+Rule Check:
+The target image exhibits predominantly white fur and a fluffy, thick fur texture. This aligns directly with the rule established for the "Samoyed" class. The other rules do not match the observed features.
+
+<response>Samoyed</response>
+----------------------------------------
+Query 27: Expected: [Samoyed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Fluffy, thick fur texture.
+- A red bandanna is visible around the neck.
+
+KB:
+- IF predominantly white fur AND fluffy, thick fur texture THEN Samoyed.
+- IF predominantly white fur AND a red bandanna is visible around the neck THEN Samoyed.
+- IF brown/tan fur AND muscular build THEN American Pit Bull Terrier.
+- IF curly, long fur AND a variety of colors THEN Havanese.
+
+Rule Check:
+The target image exhibits predominantly white fur and a fluffy, thick fur texture. This aligns with the rule: IF predominantly white fur AND fluffy, thick fur texture THEN Samoyed. The presence of a red bandanna further reinforces this classification, as it is also a feature associated with the Samoyed examples. The other rules do not match the observed features.
+
+<response>Samoyed</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9): 0.8148
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly brown fur on the top of the head and ears.
+- White fur on the forehead and muzzle.
+- Small, compact body shape.
+
+KB:
+- IF brown fur on the top of the head and ears AND white fur on the forehead and muzzle AND small, compact body shape THEN Japanese Chin.
+
+Rule Check:
+The target image exhibits brown fur on the top of the head and ears, white fur on the forehead and muzzle, and a small, compact body shape. This aligns perfectly with the rule derived from the Japanese Chin example.
+
+<response>Japanese Chin</response>
+----------------------------------------
+Query 2: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black and white coloration.
+- Long, flowing black hair on the head and face.
+- Small, compact body shape.
+
+KB:
+- IF predominantly black and white coloration AND long, flowing black hair on the head and face AND small, compact body shape THEN Japanese Chin.
+
+Rule Check:
+The target image exhibits predominantly black and white coloration. It also displays long, flowing black hair on the head and face. The body appears small and compact. These features align with the rule derived from the example of a Japanese Chin.
+
+<response>Japanese Chin</response>
+----------------------------------------
+Query 3: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black and white coloration.
+- Long, flowing black hair on the head.
+- White fur on the chest and legs.
+- Relatively small head size.
+
+KB:
+- IF predominantly black and white coloration AND long, flowing black hair on the head AND white fur on the chest and legs THEN Japanese Chin.
+
+Rule Check:
+The target image exhibits predominantly black and white coloration. It also has long, flowing black hair on the head and white fur on the chest and legs. These features align perfectly with the rule derived from the Japanese Chin example.
+
+<response>Japanese Chin</response>
+----------------------------------------
+Query 4: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dog has long, flowing, light-colored (beige/cream) hair.
+- Dog has large, floppy ears.
+- Dog has a small, somewhat flattened face.
+
+KB:
+- IF dog has long, flowing, light-colored hair AND large, floppy ears AND a small, somewhat flattened face THEN Japanese Chin.
+
+Rule Check:
+The target image exhibits long, flowing, light-colored hair, large, floppy ears, and a small, somewhat flattened face. These features align perfectly with the rule derived from the Japanese Chin example.
+
+<response>Japanese Chin</response>
+----------------------------------------
+Query 5: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black and white coloration.
+- Long, flowing, white tail.
+- Black hair covering the top of the head and around the eyes.
+- Small, somewhat flattened face.
+
+KB:
+- IF predominantly black and white coloration AND long, flowing, white tail AND black hair covering the top of the head AND small, somewhat flattened face THEN Japanese Chin.
+
+Rule Check:
+The target image exhibits predominantly black and white coloration. It also has a long, flowing, white tail. The top of the head is covered with black hair, and the face is small and somewhat flattened. All of these features align with the rule derived from the previous Japanese Chin example.
+
+<response>Japanese Chin</response>
+----------------------------------------
+Query 6: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur with black patches on the head and ears.
+- Small, dark eyes.
+- Fluffy, long fur around the head.
+- Running motion.
+
+KB:
+- IF predominantly white fur with black patches on the head and ears AND small, dark eyes AND fluffy, long fur around the head THEN Japanese Chin.
+
+Rule Check:
+The target image exhibits predominantly white fur with black patches on the head and ears. It also has small, dark eyes and fluffy, long fur around the head. These features align perfectly with the rule derived from the previous example of a Japanese Chin.
+
+<response>Japanese Chin</response>
+----------------------------------------
+Query 7: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Black fur patches around the eyes and ears.
+- Long, flowing black fur on the head.
+- Small, dark eyes.
+
+KB:
+- IF predominantly white fur AND black fur patches around the eyes and ears AND long, flowing black fur on the head THEN Japanese Chin.
+
+Rule Check:
+The target image exhibits predominantly white fur, black fur patches around the eyes and ears, and long, flowing black fur on the head. These features directly match the rule derived from the example of a Japanese Chin.
+
+<response>Japanese Chin</response>
+----------------------------------------
+Query 8: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur with patches of reddish-brown fur.
+- Long, flowing fur around the face and ears.
+- Small, compact body shape.
+
+KB:
+- IF predominantly white fur with patches of reddish-brown fur AND long, flowing fur around the face and ears AND small, compact body shape THEN Japanese Chin.
+- IF predominantly black fur AND large, erect ears THEN Chihuahua.
+- IF black and white fur pattern AND muscular build THEN Staffordshire Bull Terrier.
+- IF tri-color fur (brown, black, and white) THEN Beagle.
+
+Rule Check:
+The target image exhibits predominantly white fur with reddish-brown patches, long fur around the face and ears, and a small, compact body shape. This aligns perfectly with the rule established for the "Japanese Chin" class. The other rules do not match the observed features.
+
+<response>Japanese Chin</response>
+----------------------------------------
+Query 9: Expected: [Japanese Chin] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur covering the body.
+- Long, flowing reddish-brown fur on the head and ears.
+- Small, dark eyes.
+- Relatively short muzzle.
+
+KB:
+- IF predominantly white fur covering the body AND long, flowing reddish-brown fur on the head and ears AND small, dark eyes AND relatively short muzzle THEN Japanese Chin.
+
+Rule Check:
+The target image exhibits predominantly white fur, long reddish-brown fur on the head and ears, small dark eyes, and a short muzzle. These features align perfectly with the rule derived from the example of a Japanese Chin.
+
+<response>Japanese Chin</response>
+----------------------------------------
+Query 10: Expected: [Beagle] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly brown fur
+- White fur on chest and legs
+- Long, floppy ears
+- Black nose
+
+KB:
+- IF predominantly brown fur AND white fur on chest and legs AND long, floppy ears THEN Beagle
+
+Rule Check:
+The target image exhibits predominantly brown fur, white fur on the chest and legs, and long, floppy ears. This aligns perfectly with the rule derived from the previous Beagle example.
+
+<response>Beagle</response>
+----------------------------------------
+Query 11: Expected: [Beagle] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly brown and white fur coloration.
+- Large, floppy, brown ears.
+- Short muzzle.
+- Black nose.
+
+KB:
+- IF predominantly brown and white fur coloration AND large, floppy, brown ears AND short muzzle AND black nose THEN Beagle.
+
+Rule Check:
+The target image exhibits predominantly brown and white fur coloration. It also has large, floppy, brown ears, a short muzzle, and a black nose. These features align perfectly with the rule derived from the Beagle example.
+
+<response>Beagle</response>
+----------------------------------------
+Query 12: Expected: [Beagle] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly brown and white coloration.
+- Presence of black patches on the back.
+- Drooping ears.
+
+KB:
+- IF predominantly brown and white coloration AND presence of black patches on the back AND drooping ears THEN Beagle.
+
+Rule Check:
+The target image exhibits predominantly brown and white coloration, with black patches visible on the back, and the ears appear to be drooping. This aligns perfectly with the rule derived from the previous Beagle example.
+
+<response>Beagle</response>
+----------------------------------------
+Query 13: Expected: [Beagle] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly brown and white fur coloration.
+- Long, floppy ears.
+- A relatively long snout.
+- Body shape consistent with previous Beagle examples.
+
+KB:
+- IF predominantly brown and white fur coloration AND long, floppy ears AND a relatively long snout THEN Beagle.
+
+Rule Check:
+The target image exhibits predominantly brown and white fur coloration, long, floppy ears, and a relatively long snout. These features align with the rule derived from the previous Beagle example. Therefore, the rule "IF predominantly brown and white fur coloration AND long, floppy ears AND a relatively long snout THEN Beagle" is activated.
+
+<response>Beagle</response>
+----------------------------------------
+Query 14: Expected: [Beagle] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur with black and brown markings.
+- Large, floppy, dark brown ears.
+- Short, white fur on the chest.
+
+KB:
+- IF predominantly white fur with black and brown markings AND large, floppy, dark brown ears THEN Beagle.
+
+Rule Check:
+The target image exhibits predominantly white fur with black and brown markings and large, floppy, dark brown ears. This matches the rule derived from the Beagle example.
+
+<response>Beagle</response>
+----------------------------------------
+Query 15: Expected: [Beagle] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur with brown patches.
+- Long, floppy ears.
+- Medium-sized body.
+
+KB:
+- IF predominantly white fur with brown patches AND long, floppy ears THEN Beagle.
+
+Rule Check:
+The target image exhibits predominantly white fur with brown patches and long, floppy ears. This aligns perfectly with the rule derived from the Beagle example.
+
+<response>Beagle</response>
+----------------------------------------
+Query 16: Expected: [Beagle] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur on the face and chest.
+- Brown fur on the ears and back.
+- Long, floppy ears.
+
+KB:
+- IF predominantly white fur on the face and chest AND brown fur on the ears and back AND long, floppy ears THEN Beagle.
+
+Rule Check:
+The target image exhibits predominantly white fur on the face and chest, brown fur on the ears and back, and long, floppy ears. This aligns perfectly with the rule derived from the previous Beagle example.
+
+<response>Beagle</response>
+----------------------------------------
+Query 17: Expected: [Beagle] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly brown fur
+- White fur on the paws
+- Long, floppy ears
+- Black nose
+
+KB:
+- IF predominantly brown fur AND white fur on the paws AND long, floppy ears THEN Beagle
+
+Rule Check:
+The target image exhibits predominantly brown fur, white fur on the paws, and long, floppy ears. This aligns perfectly with the rule derived from the Beagle example.
+
+<response>Beagle</response>
+----------------------------------------
+Query 18: Expected: [Beagle] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly light brown fur color.
+- Body shape appears rounded and somewhat elongated when lying down.
+- Presence of a colorful, patterned bed underneath the dog.
+
+KB:
+- IF fur color is light brown THEN Beagle.
+
+Rule Check:
+The target image exhibits a predominantly light brown fur color. This feature directly aligns with the rule derived from the Beagle example: IF fur color is light brown THEN Beagle. Therefore, the rule associated with the Beagle class is activated.
+
+<response>Beagle</response>
+----------------------------------------
+Query 19: Expected: [Chihuahua] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur.
+- Large, erect ears.
+- Small head relative to body size.
+
+KB:
+- IF predominantly white fur AND large, erect ears AND small head relative to body size THEN Chihuahua.
+
+Rule Check:
+The target image exhibits predominantly white fur, large erect ears, and a small head relative to its body. This aligns perfectly with the rule derived from the Chihuahua example.
+
+<response>Chihuahua</response>
+----------------------------------------
+Query 20: Expected: [Chihuahua] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large, erect, pointed ears
+- Tan/beige fur color
+- Small body size
+
+KB:
+- IF large, erect, pointed ears AND tan/beige fur color AND small body size THEN Chihuahua
+
+Rule Check:
+The target image exhibits large, erect, pointed ears, a tan/beige fur color, and a small body size. These features directly match the rule derived from the Chihuahua example.
+
+<response>Chihuahua</response>
+----------------------------------------
+Query 21: Expected: [Chihuahua] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Small body size
+- Large, erect ears
+- Tan/brown fur color
+- Wrinkled face
+
+KB:
+- IF small body size AND large, erect ears AND tan/brown fur color THEN Chihuahua
+- IF black and white fur pattern AND muscular build THEN Staffordshire Bull Terrier
+- IF tri-color fur pattern AND long ears THEN Beagle
+- IF black and white fur pattern AND short snout THEN Japanese Chin
+
+Rule Check:
+The target image exhibits a small body size, large erect ears, and a tan/brown fur color. These features closely align with the rule associated with the Chihuahua class. The other rules do not match the observed features.
+
+<response>Chihuahua</response>
+----------------------------------------
+Query 22: Expected: [Chihuahua] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Small body size
+- Large, erect ears
+- Brown fur color
+- Relatively short snout
+
+KB:
+- IF small body size AND large, erect ears AND brown fur color THEN Chihuahua
+- IF black and white fur pattern AND short snout THEN Staffordshire Bull Terrier
+- IF brown fur color AND long ears THEN Beagle
+- IF black and white fur pattern AND flat face THEN Japanese Chin
+
+Rule Check:
+The target image exhibits a small body size, large erect ears, and brown fur. The Chihuahua rule best matches these features. The Beagle rule also mentions brown fur, but lacks the key feature of large, erect ears. The Staffordshire Bull Terrier rule requires a black and white fur pattern, which is not present. The Japanese Chin rule requires a flat face, which is not present.
+
+<response>Chihuahua</response>
+----------------------------------------
+Query 23: Expected: [Chihuahua] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Small head
+- Large, erect ears
+- Dark brown fur on top of the head
+- Tan/beige fur on the chest
+
+KB:
+- IF small head AND large, erect ears AND dark brown fur on top of the head THEN Chihuahua
+- IF black and white markings AND muscular build THEN Staffordshire Bull Terrier
+- IF tri-color fur (brown, black, white) AND long floppy ears THEN Beagle
+- IF black and white fur AND flat face THEN Japanese Chin
+
+Rule Check:
+The target image exhibits a small head and large, erect ears, with dark brown fur on top and tan/beige fur on the chest. This combination of features most closely aligns with the rule established for the Chihuahua class. The other rules do not match the observed features.
+
+<response>Chihuahua</response>
+----------------------------------------
+Query 24: Expected: [Chihuahua] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Small body size
+- Large, erect ears
+- Tan fur color
+- White facial markings
+
+KB:
+- IF small body size AND large, erect ears AND tan fur color AND white facial markings THEN Chihuahua
+
+Rule Check:
+The target image exhibits a small body size, large erect ears, a tan fur color, and white facial markings. These features align perfectly with the rule derived from the Chihuahua example.
+
+<response>Chihuahua</response>
+----------------------------------------
+Query 25: Expected: [Chihuahua] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly light brown fur color.
+- Large, erect ears.
+- Small body size.
+
+KB:
+- IF light brown fur color AND large, erect ears AND small body size THEN Chihuahua.
+
+Rule Check:
+The target image exhibits a predominantly light brown fur color, large erect ears, and a small body size. These features align with the rule derived from the Chihuahua example.
+
+<response>Chihuahua</response>
+----------------------------------------
+Query 26: Expected: [Chihuahua] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large, erect, pointed ears
+- Small body size
+- Light beige/cream colored fur
+- Dark blue eyes
+
+KB:
+- IF large, erect, pointed ears AND small body size THEN Chihuahua
+- IF black and white fur pattern AND muscular build THEN Staffordshire Bull Terrier
+- IF tri-color fur pattern AND long ears THEN Beagle
+- IF black and white fur pattern AND small, compact body THEN Japanese Chin
+
+Rule Check:
+The target image exhibits large, erect, pointed ears and a small body size. These features directly align with the rule established for the Chihuahua class. The other rules do not match the observed visual characteristics.
+
+<response>Chihuahua</response>
+----------------------------------------
+Query 27: Expected: [Chihuahua] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has large, erect ears.
+- The dog has a small, compact body.
+- The dog has a tan/brown coat color.
+
+KB:
+- IF the dog has large, erect ears AND a small, compact body THEN Chihuahua.
+
+Rule Check:
+The target image exhibits large, erect ears and a small, compact body. This aligns perfectly with the rule derived from the Chihuahua example.
+
+<response>Chihuahua</response>
+----------------------------------------
+Query 28: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog is predominantly black.
+- The dog has a short, smooth coat.
+- The dog has a wide head.
+- The dog has a visible tongue.
+
+KB:
+- IF the dog is predominantly black AND has a short, smooth coat AND has a wide head THEN Staffordshire Bull Terrier.
+- IF the dog has large, erect ears AND a small body THEN Chihuahua.
+- IF the dog has a tri-color pattern (black, white, and brown) THEN Beagle.
+- IF the dog has a long, flowing coat and a small face THEN Japanese Chin.
+
+Rule Check:
+The target image shows a dog that is predominantly black and has a short, smooth coat. It also has a wide head. These features align with the rule established for the Staffordshire Bull Terrier. The other rules do not match the observed features. The Chihuahua rule requires large, erect ears, which are not present. The Beagle rule requires a tri-color pattern, which is not present. The Japanese Chin rule requires a long, flowing coat, which is not present.
+
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 29: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black fur with large white patches on the face and neck.
+- Large, floppy, triangular ears.
+- Short, broad muzzle.
+
+KB:
+- IF predominantly black fur with large white patches on the face and neck AND large, floppy, triangular ears AND short, broad muzzle THEN Staffordshire Bull Terrier.
+
+Rule Check:
+The target image exhibits predominantly black fur with large white patches on the face and neck. It also has large, floppy, triangular ears and a short, broad muzzle. These features align perfectly with the rule derived from the Staffordshire Bull Terrier example.
+
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 30: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black fur.
+- Muscular build.
+- Short, cropped tail.
+- Relatively short muzzle.
+
+KB:
+- IF predominantly black fur AND muscular build AND short, cropped tail THEN Staffordshire Bull Terrier.
+
+Rule Check:
+The target image exhibits predominantly black fur, a muscular build, and a short, cropped tail. These features align with the rule derived from the Staffordshire Bull Terrier example.
+
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 31: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly dark brown fur color.
+- White patch on the chest.
+- Short, smooth fur texture.
+- Broad head shape.
+
+KB:
+- IF predominantly dark brown fur color AND white patch on the chest AND short, smooth fur texture THEN Staffordshire Bull Terrier.
+- IF black and white fur pattern AND large, erect ears THEN Japanese Chin.
+- IF tri-color fur pattern (brown, black, white) AND small size THEN Chihuahua.
+- IF brown fur color AND long ears THEN Beagle.
+
+Rule Check:
+The target image exhibits predominantly dark brown fur and a white patch on the chest, and has short, smooth fur. This aligns with the rule established for the Staffordshire Bull Terrier. The other rules do not match the observed features. The image does not have a black and white pattern or large, erect ears (Japanese Chin), it is not tri-color (Chihuahua), and it does not have long ears (Beagle).
+
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 32: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly brown fur with darker brown stripes.
+- White chest and throat area.
+- Medium-sized, triangular ears.
+
+KB:
+- IF predominantly brown fur with darker brown stripes AND white chest and throat area THEN Staffordshire Bull Terrier.
+- IF large, erect ears AND mostly black fur with white markings THEN Staffordshire Bull Terrier.
+- IF predominantly brown fur THEN Beagle.
+- IF small size AND large, erect ears AND mostly black fur THEN Chihuahua.
+- IF black and white fur with a fluffy face THEN Japanese Chin.
+
+Rule Check:
+The target image exhibits predominantly brown fur with darker brown stripes and a white chest and throat area. This aligns most closely with the rule: IF predominantly brown fur with darker brown stripes AND white chest and throat area THEN Staffordshire Bull Terrier. While it shares some features with the Beagle rule (predominantly brown fur), the presence of the stripes and white chest/throat area strongly favors the Staffordshire Bull Terrier rule.
+
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 33: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly brown fur color.
+- Large, floppy ears.
+- White markings on the face and forehead.
+- Short, broad muzzle.
+
+KB:
+- IF predominantly brown fur color AND large, floppy ears AND white markings on the face THEN Staffordshire Bull Terrier.
+- IF black and white fur color AND large, floppy ears THEN Staffordshire Bull Terrier.
+- IF predominantly brown fur color AND short, broad muzzle THEN Staffordshire Bull Terrier.
+- IF black fur color AND large ears THEN Chihuahua.
+- IF white and black fur color AND long, silky fur THEN Japanese Chin.
+- IF brown and white fur color AND long ears THEN Beagle.
+
+Rule Check:
+The target image exhibits predominantly brown fur color, large floppy ears, white markings on the face, and a short, broad muzzle. These features align most closely with the rule: IF predominantly brown fur color AND large, floppy ears AND white markings on the face THEN Staffordshire Bull Terrier.
+
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 34: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly brown fur color.
+- Visible pink tongue.
+- Short, smooth fur texture.
+- Broad, square-shaped head.
+
+KB:
+- IF fur color is brown AND tongue is visible AND fur texture is smooth THEN Staffordshire Bull Terrier.
+- IF fur color is black and white AND head shape is broad THEN Staffordshire Bull Terrier.
+- IF fur color is tan/brown AND head shape is broad THEN Staffordshire Bull Terrier.
+- IF fur color is black AND ears are large THEN Chihuahua.
+- IF fur color is black and white AND face is flat THEN Japanese Chin.
+- IF fur color is brown AND nose is long THEN Beagle.
+
+Rule Check:
+The target image exhibits a predominantly brown fur color, a visible pink tongue, and smooth fur texture. The head shape appears broad. The rule "IF fur color is brown AND tongue is visible AND fur texture is smooth THEN Staffordshire Bull Terrier" best matches these observed features.
+
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 35: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black fur with large white patches on the face and chest.
+- Short, smooth fur texture.
+- Broad, square head shape.
+- Medium-sized, muscular build.
+
+KB:
+- IF predominantly black fur with large white patches on the face and chest AND short, smooth fur texture AND broad, square head shape THEN Staffordshire Bull Terrier.
+
+Rule Check:
+The target image exhibits predominantly black fur with large white patches on the face and chest. It also has a short, smooth fur texture and a broad, square head shape. These features align perfectly with the rule derived from the Staffordshire Bull Terrier example.
+
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+Query 36: Expected: [Staffordshire Bull Terrier] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog is predominantly black in color.
+- The dog has a broad, muscular build.
+- The dog has a wide mouth and a visible tongue.
+- The dog is standing on a green grassy surface.
+
+KB:
+- IF the dog is predominantly black and has a broad, muscular build THEN Staffordshire Bull Terrier.
+
+Rule Check:
+The target image exhibits a predominantly black color and a broad, muscular build. This aligns with the rule derived from the Staffordshire Bull Terrier example. No other rules from the learned knowledge base match these features.
+
+<response>Staffordshire Bull Terrier</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 1.0000

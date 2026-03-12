@@ -1,0 +1,112 @@
+=== DEBUG LOG: qwen-vl | cifar10 | Prompt: classification ===
+
+--- CONFIG: N=2, K=2, Q=9 ---
+Query 1: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 2: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 3: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 4: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 5: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 6: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 7: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 8: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 9: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 10: Expected: [automobile] | Extracted: [automobile] -> Correct: True
+Query 11: Expected: [automobile] | Extracted: [automobile] -> Correct: True
+Query 12: Expected: [automobile] | Extracted: [automobile] -> Correct: True
+Query 13: Expected: [automobile] | Extracted: [automobile] -> Correct: True
+Query 14: Expected: [automobile] | Extracted: [automobile] -> Correct: True
+Query 15: Expected: [automobile] | Extracted: [automobile] -> Correct: True
+Query 16: Expected: [automobile] | Extracted: [automobile] -> Correct: True
+Query 17: Expected: [automobile] | Extracted: [automobile] -> Correct: True
+Query 18: Expected: [automobile] | Extracted: [automobile] -> Correct: True
+-> FINAL ACCURACY for (2,2,9): 1.0000
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 2: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 3: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 4: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 5: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 6: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 7: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 8: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 9: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 10: Expected: [truck] | Extracted: [truck] -> Correct: True
+Query 11: Expected: [truck] | Extracted: [truck] -> Correct: True
+Query 12: Expected: [truck] | Extracted: [truck] -> Correct: True
+Query 13: Expected: [truck] | Extracted: [truck] -> Correct: True
+Query 14: Expected: [truck] | Extracted: [truck] -> Correct: True
+Query 15: Expected: [truck] | Extracted: [truck] -> Correct: True
+Query 16: Expected: [truck] | Extracted: [truck] -> Correct: True
+Query 17: Expected: [truck] | Extracted: [truck] -> Correct: True
+Query 18: Expected: [truck] | Extracted: [truck] -> Correct: True
+-> FINAL ACCURACY for (2,1,9): 1.0000
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [airplane] | Extracted: [airplane] -> Correct: True
+Query 2: Expected: [airplane] | Extracted: [airplane] -> Correct: True
+Query 3: Expected: [airplane] | Extracted: [airplane] -> Correct: True
+Query 4: Expected: [airplane] | Extracted: [airplane] -> Correct: True
+Query 5: Expected: [airplane] | Extracted: [airplane] -> Correct: True
+Query 6: Expected: [airplane] | Extracted: [airplane] -> Correct: True
+Query 7: Expected: [airplane] | Extracted: [airplane] -> Correct: True
+Query 8: Expected: [airplane] | Extracted: [airplane] -> Correct: True
+Query 9: Expected: [airplane] | Extracted: [airplane] -> Correct: True
+Query 10: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 11: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 12: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 13: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 14: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 15: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 16: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 17: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 18: Expected: [horse] | Extracted: [horse] -> Correct: True
+Query 19: Expected: [cat] | Extracted: [cat] -> Correct: True
+Query 20: Expected: [cat] | Extracted: [cat] -> Correct: True
+Query 21: Expected: [cat] | Extracted: [cat] -> Correct: True
+Query 22: Expected: [cat] | Extracted: [cat] -> Correct: True
+Query 23: Expected: [cat] | Extracted: [horse] -> Correct: False
+Query 24: Expected: [cat] | Extracted: [cat] -> Correct: True
+Query 25: Expected: [cat] | Extracted: [cat] -> Correct: True
+Query 26: Expected: [cat] | Extracted: [cat] -> Correct: True
+Query 27: Expected: [cat] | Extracted: [cat] -> Correct: True
+-> FINAL ACCURACY for (3,1,9): 0.9630
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [cat] | Extracted: [dog] -> Correct: False
+Query 2: Expected: [cat] | Extracted: [cat] -> Correct: True
+Query 3: Expected: [cat] | Extracted: [cat] -> Correct: True
+Query 4: Expected: [cat] | Extracted: [cat] -> Correct: True
+Query 5: Expected: [cat] | Extracted: [dog] -> Correct: False
+Query 6: Expected: [cat] | Extracted: [dog] -> Correct: False
+Query 7: Expected: [cat] | Extracted: [cat] -> Correct: True
+Query 8: Expected: [cat] | Extracted: [cat] -> Correct: True
+Query 9: Expected: [cat] | Extracted: [cat] -> Correct: True
+Query 10: Expected: [truck] | Extracted: [truck] -> Correct: True
+Query 11: Expected: [truck] | Extracted: [truck] -> Correct: True
+Query 12: Expected: [truck] | Extracted: [truck] -> Correct: True
+Query 13: Expected: [truck] | Extracted: [truck] -> Correct: True
+Query 14: Expected: [truck] | Extracted: [truck] -> Correct: True
+Query 15: Expected: [truck] | Extracted: [truck] -> Correct: True
+Query 16: Expected: [truck] | Extracted: [truck] -> Correct: True
+Query 17: Expected: [truck] | Extracted: [truck] -> Correct: True
+Query 18: Expected: [truck] | Extracted: [truck] -> Correct: True
+Query 19: Expected: [automobile] | Extracted: [automobile] -> Correct: True
+Query 20: Expected: [automobile] | Extracted: [automobile] -> Correct: True
+Query 21: Expected: [automobile] | Extracted: [automobile] -> Correct: True
+Query 22: Expected: [automobile] | Extracted: [automobile] -> Correct: True
+Query 23: Expected: [automobile] | Extracted: [automobile] -> Correct: True
+Query 24: Expected: [automobile] | Extracted: [automobile] -> Correct: True
+Query 25: Expected: [automobile] | Extracted: [automobile] -> Correct: True
+Query 26: Expected: [automobile] | Extracted: [automobile] -> Correct: True
+Query 27: Expected: [automobile] | Extracted: [automobile] -> Correct: True
+Query 28: Expected: [dog] | Extracted: [cat] -> Correct: False
+Query 29: Expected: [dog] | Extracted: [dog] -> Correct: True
+Query 30: Expected: [dog] | Extracted: [dog] -> Correct: True
+Query 31: Expected: [dog] | Extracted: [dog] -> Correct: True
+Query 32: Expected: [dog] | Extracted: [dog] -> Correct: True
+Query 33: Expected: [dog] | Extracted: [dog] -> Correct: True
+Query 34: Expected: [dog] | Extracted: [dog] -> Correct: True
+Query 35: Expected: [dog] | Extracted: [dog] -> Correct: True
+Query 36: Expected: [dog] | Extracted: [dog] -> Correct: True
+-> FINAL ACCURACY for (4,1,9): 0.8889

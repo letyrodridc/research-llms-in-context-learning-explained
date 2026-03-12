@@ -1,0 +1,1559 @@
+=== DEBUG LOG: gemma3 | cifar10 | Prompt: axioms_ontology_v2 ===
+
+--- CONFIG: N=2, K=2, Q=9 ---
+Query 1: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature fourLegs		 (Necessary condition)
+- horse ⊑ hasVisualFeature longNeck		 (Necessary condition)
+- horse ⊑ hasVisualFeature mane		 (Necessary condition)
+- horse ⊑ hasVisualFeature tail		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature fourLegs
+hasVisualFeature longNeck
+hasVisualFeature mane
+hasVisualFeature tail
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents fourLegs, a longNeck, a mane, and a tail, which satisfies the necessary conditions for the horse class [horse ⊑ hasVisualFeature fourLegs, horse ⊑ hasVisualFeature longNeck, horse ⊑ hasVisualFeature mane, horse ⊑ hasVisualFeature tail] to classify it as a horse.
+----------------------------------------
+Query 2: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature fourLegs		 (Necessary condition)
+- horse ⊑ hasVisualFeature mane		 (Necessary condition)
+- horse ⊑ hasVisualFeature tail		 (Necessary condition)
+- horse ⊑ hasVisualFeature hooves		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature fourLegs
+hasVisualFeature mane
+hasVisualFeature tail
+hasVisualFeature hooves
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents fourLegs, mane, tail, and hooves, which satisfies the necessary conditions for the horse class [horse ⊑ hasVisualFeature fourLegs, horse ⊑ hasVisualFeature mane, horse ⊑ hasVisualFeature tail, horse ⊑ hasVisualFeature hooves] to classify it as a horse.
+----------------------------------------
+Query 3: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature FourLegs		 (Necessary condition)
+- hasVisualFeature FourLegs ⊑ horse		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FourLegs
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature FourLegs, which satisfies the Sufficient condition [hasVisualFeature FourLegs ⊑ horse] axiom to classify it as horse.
+----------------------------------------
+Query 4: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature EquineHead		 (Necessary condition)
+- hasVisualFeature EquineHead ⊑ horse		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature EquineHead
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature EquineHead, which satisfies the Sufficient condition [hasVisualFeature EquineHead ⊑ horse] axiom to classify it as horse.
+----------------------------------------
+Query 5: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature fourLegs		 (Necessary condition)
+- hasVisualFeature longNeck ⊑ horse		 (Sufficient condition)
+- horse ≡ hasVisualFeature equineBodyShape 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature equineBodyShape
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature equineBodyShape, which satisfies the Necessary & Sufficient condition (horse ≡ hasVisualFeature equineBodyShape) [axiom] to classify it as horse.
+----------------------------------------
+Query 6: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature fourLegs		 (Necessary condition)
+- hasVisualFeature longNeck ⊑ horse		 (Sufficient condition)
+- horse ≡ hasVisualFeature equineBodyShape 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature equineBodyShape
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature equineBodyShape, which satisfies the Necessary & Sufficient condition (horse ≡ hasVisualFeature equineBodyShape) [axiom] to classify it as horse.
+----------------------------------------
+Query 7: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature fourLegs		 (Necessary condition)
+- hasVisualFeature longNeck ⊑ horse		 (Sufficient condition)
+- horse ≡ hasVisualFeature mane		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature fourLegs
+hasVisualFeature longNeck
+hasVisualFeature mane
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents fourLegs, longNeck, and mane, which satisfies the TBox necessary condition (horse ⊑ hasVisualFeature fourLegs), the sufficient condition (hasVisualFeature longNeck ⊑ horse), and the necessary & sufficient condition (horse ≡ hasVisualFeature mane) to classify it as a horse.
+----------------------------------------
+Query 8: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature FourLegs		 (Necessary condition)
+- hasVisualFeature FourLegs ⊑ horse		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FourLegs
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature FourLegs, which satisfies the Sufficient condition [hasVisualFeature FourLegs ⊑ horse] axiom to classify it as horse.
+----------------------------------------
+Query 9: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature fourLegs		 (Necessary condition)
+- hasVisualFeature longNeck ⊑ horse		 (Sufficient condition)
+- horse ≡ hasVisualFeature equineBodyShape 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature equineBodyShape
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature equineBodyShape, which satisfies the Necessary & Sufficient condition (horse ≡ hasVisualFeature equineBodyShape) [axiom] to classify it as horse.
+----------------------------------------
+Query 10: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>automobile</response>
+
+TBox (axioms in a Knowledge Base):
+- automobile ⊑ hasVisualFeature FourWheels		 (Necessary condition)
+- automobile ⊑ hasVisualFeature RectangularBody		 (Necessary condition)
+- hasVisualFeature RectangularBody ⊑ automobile		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FourWheels
+hasVisualFeature RectangularBody
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FourWheels and RectangularBody, which satisfies the necessary condition of having FourWheels and the necessary condition of having a RectangularBody, to classify it as an automobile.
+----------------------------------------
+Query 11: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>automobile</response>
+
+TBox (axioms in a Knowledge Base):
+- automobile ⊑ hasVisualFeature FourWheels		 (Necessary condition)
+- automobile ⊑ hasVisualFeature RectangularBody		 (Necessary condition)
+- hasVisualFeature RectangularBody ⊑ automobile		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FourWheels
+hasVisualFeature RectangularBody
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FourWheels and RectangularBody, which satisfies the necessary condition of having FourWheels and the necessary condition of having a RectangularBody, to classify it as an automobile.
+----------------------------------------
+Query 12: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>automobile</response>
+
+TBox (axioms in a Knowledge Base):
+- automobile ⊑ hasVisualFeature wheels		 (Necessary condition)
+- automobile ⊑ hasVisualFeature fourWheels		 (Necessary condition)
+- automobile ⊑ hasVisualFeature metallicBody		 (Necessary condition)
+- hasVisualFeature metallicBody ⊑ automobile		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature wheels
+hasVisualFeature fourWheels
+hasVisualFeature metallicBody
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents wheels, fourWheels, and metallicBody, which satisfies the necessary conditions (automobile ⊑ hasVisualFeature wheels, automobile ⊑ hasVisualFeature fourWheels, automobile ⊑ hasVisualFeature metallicBody) and the sufficient condition (hasVisualFeature metallicBody ⊑ automobile) to classify it as an automobile.
+----------------------------------------
+Query 13: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>automobile</response>
+TBox (axioms in a Knowledge Base):
+- automobile ⊑ hasVisualFeature FourWheels		 (Necessary condition)
+- hasVisualFeature MetallicSurface ⊑ automobile		 (Sufficient condition)
+- automobile ≡ hasVisualFeature RectangularBody 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FourWheels
+hasVisualFeature MetallicSurface
+hasVisualFeature RectangularBody
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FourWheels, MetallicSurface, and RectangularBody, which satisfies the Sufficient condition (hasVisualFeature MetallicSurface ⊑ automobile) and the Necessary & Sufficient condition (automobile ≡ hasVisualFeature RectangularBody) and the Necessary condition (automobile ⊑ hasVisualFeature FourWheels) axiom to classify it as automobile.
+----------------------------------------
+Query 14: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>automobile</response>
+
+TBox (axioms in a Knowledge Base):
+- automobile ⊑ hasVisualFeature FourWheels		 (Necessary condition)
+- hasVisualFeature MetallicSurface ⊑ automobile		 (Sufficient condition)
+- automobile ≡ hasVisualFeature RectangularBodyShape 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FourWheels
+hasVisualFeature MetallicSurface
+hasVisualFeature RectangularBodyShape
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FourWheels, MetallicSurface, and RectangularBodyShape, which satisfies the Sufficient condition (hasVisualFeature MetallicSurface ⊑ automobile) and the Necessary & Sufficient condition (automobile ≡ hasVisualFeature RectangularBodyShape) and the Necessary condition (automobile ⊑ hasVisualFeature FourWheels) to classify it as automobile.
+----------------------------------------
+Query 15: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>automobile</response>
+
+TBox (axioms in a Knowledge Base):
+- automobile ⊑ hasVisualFeature FourWheels		 (Necessary condition)
+- hasVisualFeature MetallicSurface ⊑ automobile		 (Sufficient condition)
+- automobile ≡ hasVisualFeature RectangularBodyShape 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FourWheels
+hasVisualFeature MetallicSurface
+hasVisualFeature RectangularBodyShape
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FourWheels, MetallicSurface, and RectangularBodyShape, which satisfies the Sufficient condition (hasVisualFeature MetallicSurface ⊑ automobile) and the Necessary & Sufficient condition (automobile ≡ hasVisualFeature RectangularBodyShape) and the Necessary condition (automobile ⊑ hasVisualFeature FourWheels) to classify it as automobile.
+----------------------------------------
+Query 16: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>automobile</response>
+
+TBox (axioms in a Knowledge Base):
+- automobile ⊑ hasVisualFeature FourWheels		 (Necessary condition)
+- automobile ⊑ hasVisualFeature Windshield		 (Necessary condition)
+- automobile ⊑ hasVisualFeature Headlights		 (Necessary condition)
+- hasVisualFeature Headlights ⊑ automobile		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FourWheels
+hasVisualFeature Windshield
+hasVisualFeature Headlights
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FourWheels, Windshield, and Headlights, which satisfies the necessary conditions (automobile ⊑ hasVisualFeature FourWheels, automobile ⊑ hasVisualFeature Windshield, automobile ⊑ hasVisualFeature Headlights) and the sufficient condition (hasVisualFeature Headlights ⊑ automobile) to classify it as an automobile.
+----------------------------------------
+Query 17: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>automobile</response>
+
+TBox (axioms in a Knowledge Base):
+- automobile ⊑ hasVisualFeature FourWheels		 (Necessary condition)
+- hasVisualFeature MetallicSurface ⊑ automobile		 (Sufficient condition)
+- automobile ≡ hasVisualFeature RectangularBody 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FourWheels
+hasVisualFeature MetallicSurface
+hasVisualFeature RectangularBody
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FourWheels, MetallicSurface, and RectangularBody, which satisfies the Sufficient condition (hasVisualFeature MetallicSurface ⊑ automobile) and the Necessary & Sufficient condition (automobile ≡ hasVisualFeature RectangularBody) and the Necessary condition (automobile ⊑ hasVisualFeature FourWheels) to classify it as automobile.
+----------------------------------------
+Query 18: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>automobile</response>
+
+TBox (axioms in a Knowledge Base):
+- automobile ⊑ hasVisualFeature FourWheels		 (Necessary condition)
+- automobile ⊑ hasVisualFeature RectangularBody		 (Necessary condition)
+- hasVisualFeature RectangularBody ⊑ automobile		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FourWheels
+hasVisualFeature RectangularBody
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FourWheels and RectangularBody, which satisfies the necessary condition of having FourWheels and the necessary condition of having a RectangularBody, to classify it as an automobile.
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9): 1.0000
+
+--- CONFIG: N=2, K=1, Q=9 ---
+Query 1: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature fourLegs		 (Necessary condition)
+- hasVisualFeature longNeck ⊑ horse		 (Sufficient condition)
+- horse ≡ hasVisualFeature equineBodyShape 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature equineBodyShape
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature equineBodyShape, which satisfies the Necessary & Sufficient condition horse ≡ hasVisualFeature equineBodyShape [axiom] to classify it as horse.
+----------------------------------------
+Query 2: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature FourLegs		 (Necessary condition)
+- hasVisualFeature FourLegs ⊑ horse		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FourLegs
+The ABox assertion presents hasVisualFeature FourLegs, which satisfies the Sufficient condition [hasVisualFeature FourLegs ⊑ horse] axiom to classify it as horse.
+----------------------------------------
+Query 3: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature EquineBodyShape		 (Necessary condition)
+- hasVisualFeature EquineBodyShape ⊑ horse		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature EquineBodyShape
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature EquineBodyShape, which satisfies the Sufficient condition [hasVisualFeature EquineBodyShape ⊑ horse] axiom to classify it as horse.
+----------------------------------------
+Query 4: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature EquineBodyShape		 (Necessary condition)
+- hasVisualFeature EquineBodyShape ⊑ horse		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature EquineBodyShape
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature EquineBodyShape, which satisfies the Sufficient condition [hasVisualFeature EquineBodyShape ⊑ horse] axiom to classify it as horse.
+----------------------------------------
+Query 5: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature EquineBodyShape		 (Necessary condition)
+- hasVisualFeature EquineBodyShape ⊑ horse		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature EquineBodyShape
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature EquineBodyShape, which satisfies the Sufficient condition [hasVisualFeature EquineBodyShape ⊑ horse] axiom to classify it as horse.
+----------------------------------------
+Query 6: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature EquineBodyShape		 (Necessary condition)
+- hasVisualFeature EquineBodyShape ⊑ horse		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature EquineBodyShape
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature EquineBodyShape, which satisfies the Sufficient condition [hasVisualFeature EquineBodyShape ⊑ horse] axiom to classify it as horse.
+----------------------------------------
+Query 7: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature fourLegs		 (Necessary condition)
+- hasVisualFeature longNeck ⊑ horse		 (Sufficient condition)
+- horse ≡ hasVisualFeature mane		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature fourLegs
+hasVisualFeature longNeck
+hasVisualFeature mane
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents fourLegs, longNeck, and mane, which satisfies the TBox necessary condition (horse ⊑ hasVisualFeature fourLegs), the sufficient condition (hasVisualFeature longNeck ⊑ horse), and the necessary & sufficient condition (horse ≡ hasVisualFeature mane) to classify it as a horse.
+----------------------------------------
+Query 8: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature longLegs		 (Necessary condition)
+- hasVisualFeature longLegs ⊑ horse		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature longLegs
+The ABox assertion presents hasVisualFeature longLegs, which satisfies the Sufficient condition [hasVisualFeature longLegs ⊑ horse] axiom to classify it as horse.
+----------------------------------------
+Query 9: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature WhiteColor		 (Necessary condition)
+- hasVisualFeature WhiteColor ⊑ horse		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature WhiteColor
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature WhiteColor, which satisfies the Sufficient condition [hasVisualFeature WhiteColor ⊑ horse] axiom to classify it as horse.
+----------------------------------------
+Query 10: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+TBox (axioms in a Knowledge Base):
+- truck ⊑ hasVisualFeature redColor		 (Necessary condition)
+- truck ⊑ hasVisualFeature wheels		 (Necessary condition)
+- truck ⊑ hasVisualFeature largeSize		 (Necessary condition)
+- truck ≡ hasVisualFeature ladder	 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature redColor
+hasVisualFeature wheels
+hasVisualFeature largeSize
+hasVisualFeature ladder
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents redColor, wheels, largeSize and ladder, which satisfies the TBox necessary conditions (redColor, wheels, largeSize) and the necessary & sufficient condition (ladder) to classify it as a truck.
+----------------------------------------
+Query 11: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+TBox (axioms in a Knowledge Base):
+- truck ⊑ hasVisualFeature redColor		 (Necessary condition)
+- truck ⊑ hasVisualFeature ladder		 (Necessary condition)
+- truck ⊑ hasVisualFeature wheels		 (Necessary condition)
+- truck ⊑ hasVisualFeature rectangularBody		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature redColor
+hasVisualFeature ladder
+hasVisualFeature wheels
+hasVisualFeature rectangularBody
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents redColor, ladder, wheels, and rectangularBody, which satisfies the necessary conditions for the truck class (truck ⊑ hasVisualFeature redColor, truck ⊑ hasVisualFeature ladder, truck ⊑ hasVisualFeature wheels, truck ⊑ hasVisualFeature rectangularBody) to classify it as a truck.
+----------------------------------------
+Query 12: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+TBox (axioms in a Knowledge Base):
+- truck ⊑ hasVisualFeature rectangularBody (Necessary condition)
+- hasVisualFeature rectangularBody ⊑ truck (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature rectangularBody
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature rectangularBody, which satisfies the Sufficient condition [hasVisualFeature rectangularBody ⊑ truck] axiom to classify it as truck.
+----------------------------------------
+Query 13: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+TBox (axioms in a Knowledge Base):
+- truck ⊑ hasVisualFeature FourWheels		 (Necessary condition)
+- truck ⊑ hasVisualFeature LargeSize		 (Necessary condition)
+- truck ⊑ hasVisualFeature CargoArea		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FourWheels
+hasVisualFeature LargeSize
+hasVisualFeature CargoArea
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FourWheels, LargeSize, and CargoArea, which satisfies the necessary conditions for the truck class according to the TBox axioms. Specifically, a truck must have FourWheels, LargeSize, and a CargoArea. The observed properties fulfill these necessary conditions, thus classifying the entity as a truck.
+----------------------------------------
+Query 14: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+TBox (axioms in a Knowledge Base):
+- truck ⊑ hasVisualFeature largeWheels		 (Necessary condition)
+- truck ⊑ hasVisualFeature rectangularBody		 (Necessary condition)
+- truck ⊑ hasVisualFeature cargoArea		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature largeWheels
+hasVisualFeature rectangularBody
+hasVisualFeature cargoArea
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents largeWheels, a rectangularBody, and a cargoArea, which satisfies the necessary conditions for the truck class according to the TBox axioms. Specifically, a truck must have largeWheels, a rectangularBody, and a cargoArea. The observed properties fulfill these necessary conditions, therefore classifying the entity as a truck.
+----------------------------------------
+Query 15: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+TBox (axioms in a Knowledge Base):
+- truck ⊑ hasVisualFeature largeWheels		 (Necessary condition)
+- truck ⊑ hasVisualFeature rectangularBody		 (Necessary condition)
+- truck ⊑ hasVisualFeature metallicSurface		 (Necessary condition)
+- hasVisualFeature rectangularBody ⊑ truck		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature largeWheels
+hasVisualFeature rectangularBody
+hasVisualFeature metallicSurface
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents largeWheels, rectangularBody, and metallicSurface, which satisfies the necessary conditions of the TBox to classify it as a truck. Specifically, the presence of largeWheels, a rectangularBody, and a metallicSurface are necessary conditions for an entity to be classified as a truck.
+----------------------------------------
+Query 16: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+TBox (axioms in a Knowledge Base):
+- truck ⊑ hasVisualFeature largeWheels		 (Necessary condition)
+- truck ⊑ hasVisualFeature rectangularBody		 (Necessary condition)
+- truck ⊑ hasVisualFeature metallicSurface		 (Necessary condition)
+- hasVisualFeature rectangularBody ⊑ truck		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature largeWheels
+hasVisualFeature rectangularBody
+hasVisualFeature metallicSurface
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents largeWheels, rectangularBody, and metallicSurface, which satisfies the necessary conditions of the TBox to classify it as a truck. Specifically, the presence of largeWheels, a rectangularBody, and a metallicSurface are necessary for an entity to be considered a truck.
+----------------------------------------
+Query 17: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+TBox (axioms in a Knowledge Base):
+- truck ⊑ hasVisualFeature [Wheels]		 (Necessary condition)
+- truck ⊑ hasVisualFeature [Cab]		 (Necessary condition)
+- truck ⊑ hasVisualFeature [CargoBed]		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature [Wheels]
+hasVisualFeature [Cab]
+hasVisualFeature [CargoBed]
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents Wheels, a Cab, and a CargoBed, which satisfies the necessary condition for the truck class (truck ⊑ hasVisualFeature [Wheels], truck ⊑ hasVisualFeature [Cab], truck ⊑ hasVisualFeature [CargoBed]) to classify it as a truck.
+----------------------------------------
+Query 18: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+TBox (axioms in a Knowledge Base):
+- truck ⊑ hasVisualFeature largeSize		 (Necessary condition)
+- truck ⊑ hasVisualFeature wheels		 (Necessary condition)
+- truck ⊑ hasVisualFeature rectangularBody		 (Necessary condition)
+- truck ⊑ hasVisualFeature cargoCompartment		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature largeSize
+hasVisualFeature wheels
+hasVisualFeature rectangularBody
+hasVisualFeature cargoCompartment
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents largeSize, wheels, rectangularBody, and cargoCompartment, which satisfies the necessary conditions for the truck class (truck ⊑ hasVisualFeature largeSize, truck ⊑ hasVisualFeature wheels, truck ⊑ hasVisualFeature rectangularBody, truck ⊑ hasVisualFeature cargoCompartment) to classify it as a truck.
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9): 1.0000
+
+--- CONFIG: N=3, K=1, Q=9 ---
+Query 1: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>airplane</response>
+TBox (axioms in a Knowledge Base):
+- airplane ⊑ hasVisualFeature longFuselage (Necessary condition)
+- airplane ⊑ hasVisualFeature wings (Necessary condition)
+- airplane ⊑ hasVisualFeature tailFin (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature longFuselage
+hasVisualFeature wings
+hasVisualFeature tailFin
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents longFuselage, wings, and tailFin, which satisfies the necessary conditions of the TBox axioms to classify it as an airplane.
+----------------------------------------
+Query 2: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>airplane</response>
+TBox (axioms in a Knowledge Base):
+- Airplane ⊑ hasVisualFeature LongBody		 (Necessary condition)
+- Airplane ⊑ hasVisualFeature Wings		 (Necessary condition)
+- Airplane ⊑ hasVisualFeature TailFin		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature LongBody
+hasVisualFeature Wings
+hasVisualFeature TailFin
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents LongBody, Wings, and TailFin, which satisfies the necessary conditions for the Airplane class [Airplane ⊑ hasVisualFeature LongBody, Airplane ⊑ hasVisualFeature Wings, Airplane ⊑ hasVisualFeature TailFin] to classify it as an airplane.
+----------------------------------------
+Query 3: Expected: [airplane] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature fourLegs		 (Necessary condition)
+- hasVisualFeature longNeck ⊑ horse		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature fourLegs
+hasVisualFeature longNeck
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents fourLegs and longNeck, which satisfies the necessary condition (horse ⊑ hasVisualFeature fourLegs) and the sufficient condition (hasVisualFeature longNeck ⊑ horse) to classify it as horse.
+----------------------------------------
+Query 4: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>airplane</response>
+TBox (axioms in a Knowledge Base):
+- airplane ⊑ hasVisualFeature Wings		 (Necessary condition)
+- airplane ⊑ hasVisualFeature Fuselage		 (Necessary condition)
+- airplane ⊑ hasVisualFeature TailFin		 (Necessary condition)
+- airplane ≡ hasVisualFeature Wings AND hasVisualFeature Fuselage AND hasVisualFeature TailFin (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature Wings
+hasVisualFeature Fuselage
+hasVisualFeature TailFin
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents Wings, Fuselage, and TailFin, which satisfies the Necessary & Sufficient condition (airplane ≡ hasVisualFeature Wings AND hasVisualFeature Fuselage AND hasVisualFeature TailFin) to classify it as airplane.
+----------------------------------------
+Query 5: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>airplane</response>
+TBox (axioms in a Knowledge Base):
+- Airplane ⊑ hasVisualFeature Wings		 (Necessary condition)
+- Airplane ⊑ hasVisualFeature Engine		 (Necessary condition)
+- Airplane ≡ hasVisualFeature Fuselage	 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature Wings
+hasVisualFeature Engine
+hasVisualFeature Fuselage
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents Wings, Engine, and Fuselage, which satisfies the necessary conditions (Wings and Engine) and the necessary & sufficient condition (Fuselage) to classify it as an Airplane.
+----------------------------------------
+Query 6: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>airplane</response>
+
+TBox (axioms in a Knowledge Base):
+- airplane ⊑ hasVisualFeature Wings		 (Necessary condition)
+- airplane ⊑ hasVisualFeature Propeller		 (Necessary condition)
+- airplane ≡ hasVisualFeature Wings AND hasVisualFeature Propeller (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature Wings
+hasVisualFeature Propeller
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents Wings and Propeller, which satisfies the Necessary & Sufficient condition (airplane ≡ hasVisualFeature Wings AND hasVisualFeature Propeller) to classify it as airplane.
+----------------------------------------
+Query 7: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>airplane</response>
+TBox (axioms in a Knowledge Base):
+- airplane ⊑ hasVisualFeature Wings		 (Necessary condition)
+- airplane ⊑ hasVisualFeature Fuselage		 (Necessary condition)
+- airplane ⊑ hasVisualFeature Engine		 (Necessary condition)
+- airplane ≡ hasVisualFeature Wings AND hasVisualFeature Fuselage AND hasVisualFeature Engine (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature Wings
+hasVisualFeature Fuselage
+hasVisualFeature Engine
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents Wings, Fuselage, and Engine, which satisfies the Necessary & Sufficient condition (airplane ≡ hasVisualFeature Wings AND hasVisualFeature Fuselage AND hasVisualFeature Engine) to classify it as airplane.
+----------------------------------------
+Query 8: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>airplane</response>
+TBox (axioms in a Knowledge Base):
+- Airplane ⊑ hasVisualFeature Wings		 (Necessary condition)
+- Airplane ⊑ hasVisualFeature Propellers		 (Necessary condition)
+- Airplane ≡ hasVisualFeature Fuselage		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature Wings
+hasVisualFeature Propellers
+hasVisualFeature Fuselage
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents Wings, Propellers, and Fuselage, which satisfies the necessary conditions (Airplane ⊑ hasVisualFeature Wings, Airplane ⊑ hasVisualFeature Propellers) and the necessary & sufficient condition (Airplane ≡ hasVisualFeature Fuselage) to classify it as an Airplane.
+----------------------------------------
+Query 9: Expected: [airplane] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>airplane</response>
+TBox (axioms in a Knowledge Base):
+- airplane ⊑ hasVisualFeature Wings		 (Necessary condition)
+- airplane ⊑ hasVisualFeature Engine		 (Necessary condition)
+- airplane ≡ hasVisualFeature MetallicSurface	 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature Wings
+hasVisualFeature Engine
+hasVisualFeature MetallicSurface
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents Wings, Engine, and MetallicSurface, which satisfies the necessary conditions (Wings and Engine) and the necessary & sufficient condition (MetallicSurface) to classify it as an airplane.
+----------------------------------------
+Query 10: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature EquineBodyShape		 (Necessary condition)
+- hasVisualFeature EquineBodyShape ⊑ horse		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature EquineBodyShape
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature EquineBodyShape, which satisfies the Sufficient condition [hasVisualFeature EquineBodyShape ⊑ horse] axiom to classify it as horse.
+----------------------------------------
+Query 11: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature fourLegs		 (Necessary condition)
+- hasVisualFeature longNeck ⊑ horse		 (Sufficient condition)
+- horse ≡ hasVisualFeature equineBodyShape 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature equineBodyShape
+Description Logics’ Ontological Axioms
+The ABox assertion presents equineBodyShape, which satisfies the Necessary & Sufficient condition (horse ≡ hasVisualFeature equineBodyShape) to classify it as horse.
+----------------------------------------
+Query 12: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature EquineBodyShape		 (Necessary condition)
+- hasVisualFeature EquineBodyShape ⊑ horse		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature EquineBodyShape
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature EquineBodyShape, which satisfies the Sufficient condition [hasVisualFeature EquineBodyShape ⊑ horse] axiom to classify it as horse.
+----------------------------------------
+Query 13: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature longLegs		 (Necessary condition)
+- hasVisualFeature longLegs ⊑ horse		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature longLegs
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature longLegs, which satisfies the sufficient condition (hasVisualFeature longLegs ⊑ horse) axiom to classify it as horse.
+----------------------------------------
+Query 14: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature EquineBodyShape		 (Necessary condition)
+- hasVisualFeature EquineBodyShape ⊑ horse		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature EquineBodyShape
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature EquineBodyShape, which satisfies the Sufficient condition [hasVisualFeature EquineBodyShape ⊑ horse] axiom to classify it as horse.
+----------------------------------------
+Query 15: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature EquineBodyShape		 (Necessary condition)
+- hasVisualFeature EquineBodyShape ⊑ horse		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature EquineBodyShape
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature EquineBodyShape, which satisfies the Sufficient condition [hasVisualFeature EquineBodyShape ⊑ horse] axiom to classify it as horse.
+----------------------------------------
+Query 16: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature fourLegs		 (Necessary condition)
+- hasVisualFeature longNeck ⊑ horse		 (Sufficient condition)
+- horse ≡ hasVisualFeature equineBodyShape 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature equineBodyShape
+Description Logics’ Ontological Axioms
+The ABox assertion presents equineBodyShape, which satisfies the Necessary & Sufficient condition (horse ≡ hasVisualFeature equineBodyShape) to classify it as horse.
+----------------------------------------
+Query 17: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature EquineBodyShape		 (Necessary condition)
+- hasVisualFeature EquineBodyShape ⊑ horse		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature EquineBodyShape
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature EquineBodyShape, which satisfies the Sufficient condition [hasVisualFeature EquineBodyShape ⊑ horse] axiom to classify it as horse.
+----------------------------------------
+Query 18: Expected: [horse] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature fourLegs		 (Necessary condition)
+- hasVisualFeature longNeck ⊑ horse		 (Sufficient condition)
+- horse ≡ hasVisualFeature equineBodyShape 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature fourLegs
+hasVisualFeature equineBodyShape
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents fourLegs and equineBodyShape, which satisfies the necessary and sufficient condition (horse ≡ hasVisualFeature equineBodyShape) and the necessary condition (horse ⊑ hasVisualFeature fourLegs) to classify it as horse.
+----------------------------------------
+Query 19: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+TBox (axioms in a Knowledge Base):
+- Cat ⊑ hasVisualFeature Fur		 (Necessary condition)
+- hasVisualFeature Fur ⊑ Cat		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature Fur
+The ABox assertion presents Fur, which satisfies the Sufficient condition [hasVisualFeature Fur ⊑ Cat] axiom to classify it as Cat.
+----------------------------------------
+Query 20: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+TBox (axioms in a Knowledge Base):
+- Cat ⊑ hasVisualFeature Fur		 (Necessary condition)
+- hasVisualFeature Whiskers ⊑ Cat		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature Fur
+hasVisualFeature Whiskers
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents Fur and Whiskers, which satisfies the sufficient condition (hasVisualFeature Whiskers ⊑ Cat) axiom to classify it as a Cat. The presence of Fur is a necessary condition for a Cat, but not sufficient on its own. The presence of Whiskers, however, is sufficient to classify the entity as a Cat.
+----------------------------------------
+Query 21: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+TBox (axioms in a Knowledge Base):
+- Cat ⊑ hasVisualFeature Fur		 (Necessary condition)
+- hasVisualFeature Whiskers ⊑ Cat		 (Sufficient condition)
+- Cat ≡ hasVisualFeature PointedEars 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature Fur
+hasVisualFeature PointedEars
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents Fur and PointedEars, which satisfies the Sufficient condition (hasVisualFeature Whiskers ⊑ Cat) and the Necessary & Sufficient condition (Cat ≡ hasVisualFeature PointedEars) to classify it as Cat.
+----------------------------------------
+Query 22: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+TBox (axioms in a Knowledge Base):
+- Cat ⊑ hasVisualFeature FurTexture		 (Necessary condition)
+- hasVisualFeature FurTexture ⊑ Cat		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FurTexture
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature FurTexture, which satisfies the Sufficient condition [hasVisualFeature FurTexture ⊑ Cat] axiom to classify it as Cat.
+----------------------------------------
+Query 23: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+TBox (axioms in a Knowledge Base):
+- Cat ⊑ hasVisualFeature FurryBody		 (Necessary condition)
+- hasVisualFeature FurryBody ⊑ Cat		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FurryBody
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature FurryBody, which satisfies the Sufficient condition [hasVisualFeature FurryBody ⊑ Cat] axiom to classify it as Cat.
+----------------------------------------
+Query 24: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+TBox (axioms in a Knowledge Base):
+- Cat ⊑ hasVisualFeature Whiskers		 (Necessary condition)
+- hasVisualFeature Whiskers ⊑ Cat		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature Whiskers
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature Whiskers, which satisfies the Sufficient condition [hasVisualFeature Whiskers ⊑ Cat] axiom to classify it as Cat.
+----------------------------------------
+Query 25: Expected: [cat] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>horse</response>
+TBox (axioms in a Knowledge Base):
+- horse ⊑ hasVisualFeature fourLegs		 (Necessary condition)
+- hasVisualFeature longNeck ⊑ horse		 (Sufficient condition)
+- horse ≡ hasVisualFeature equineBodyShape 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature equineBodyShape
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature equineBodyShape, which satisfies the Necessary & Sufficient condition horse ≡ hasVisualFeature equineBodyShape [axiom] to classify it as horse.
+----------------------------------------
+Query 26: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+TBox (axioms in a Knowledge Base):
+- Cat ⊑ hasVisualFeature Fur		 (Necessary condition)
+- hasVisualFeature Whiskers ⊑ Cat		 (Sufficient condition)
+- Cat ≡ hasVisualFeature Tail	 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature Fur
+hasVisualFeature Whiskers
+hasVisualFeature Tail
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents Fur, Whiskers, and Tail, which satisfies the Sufficient condition (hasVisualFeature Whiskers ⊑ Cat) and the Necessary & Sufficient condition (Cat ≡ hasVisualFeature Tail) to classify it as Cat. The presence of Fur is a necessary condition for a Cat, but not sufficient on its own.
+----------------------------------------
+Query 27: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+TBox (axioms in a Knowledge Base):
+- Cat ⊑ hasVisualFeature Fur		 (Necessary condition)
+- hasVisualFeature Fur ⊑ Cat		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature Fur
+The ABox assertion presents Fur, which satisfies the Sufficient condition [hasVisualFeature Fur ⊑ Cat] axiom to classify it as Cat.
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9): 0.9259
+
+--- CONFIG: N=4, K=1, Q=9 ---
+Query 1: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+
+TBox (axioms in a Knowledge Base):
+- cat ⊑ hasVisualFeature fur		 (Necessary condition)
+- hasVisualFeature pointedEars ⊑ cat		 (Sufficient condition)
+- hasVisualFeature whiskers ⊑ cat		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature fur
+hasVisualFeature whiskers
+hasVisualFeature pointedEars
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents fur, whiskers, and pointedEars, which satisfies the necessary condition of having fur, the sufficient condition of having pointed ears, and the necessary condition of having whiskers. These properties collectively satisfy the TBox axioms to classify it as a cat.
+----------------------------------------
+Query 2: Expected: [cat] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>dog</response>
+
+TBox (axioms in a Knowledge Base):
+- dog ⊑ hasVisualFeature FurryTexture		 (Necessary condition)
+- dog ⊑ hasVisualFeature FourLegs		 (Necessary condition)
+- dog ⊑ hasVisualFeature Tail		 (Necessary condition)
+- hasVisualFeature FourLegs ⊑ dog		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FurryTexture
+hasVisualFeature FourLegs
+hasVisualFeature Tail
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FurryTexture, FourLegs, and Tail, which satisfies the necessary conditions (dog ⊑ hasVisualFeature FurryTexture, dog ⊑ hasVisualFeature FourLegs, dog ⊑ hasVisualFeature Tail) and the sufficient condition (hasVisualFeature FourLegs ⊑ dog) to classify it as a dog.
+----------------------------------------
+Query 3: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+TBox (axioms in a Knowledge Base):
+- cat ⊑ hasVisualFeature Whiskers		 (Necessary condition)
+- hasVisualFeature Whiskers ⊑ cat		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature Whiskers
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature Whiskers, which satisfies the Sufficient condition [hasVisualFeature Whiskers ⊑ cat] axiom to classify it as cat.
+----------------------------------------
+Query 4: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+TBox (axioms in a Knowledge Base):
+- cat ⊑ hasVisualFeature Fur		 (Necessary condition)
+- hasVisualFeature Fur ⊑ cat		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature OrangeFur
+Description Logics’ Ontological Axioms
+The ABox assertion presents OrangeFur, which satisfies the Sufficient condition [hasVisualFeature Fur ⊑ cat] axiom to classify it as cat.
+----------------------------------------
+Query 5: Expected: [cat] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>dog</response>
+
+TBox (axioms in a Knowledge Base):
+- dog ⊑ hasVisualFeature FurryTexture		 (Necessary condition)
+- dog ⊑ hasVisualFeature FourLegs		 (Necessary condition)
+- dog ⊑ hasVisualFeature Tail		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FurryTexture
+hasVisualFeature FourLegs
+hasVisualFeature Tail
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FurryTexture, FourLegs, and Tail, which satisfies the necessary conditions for the dog class [dog ⊑ hasVisualFeature FurryTexture, dog ⊑ hasVisualFeature FourLegs, dog ⊑ hasVisualFeature Tail] to classify it as a dog.
+----------------------------------------
+Query 6: Expected: [cat] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>dog</response>
+
+TBox (axioms in a Knowledge Base):
+- dog ⊑ hasVisualFeature FurryTexture		 (Necessary condition)
+- dog ⊑ hasVisualFeature FourLegs		 (Necessary condition)
+- dog ⊑ hasVisualFeature Tail		 (Necessary condition)
+- hasVisualFeature FourLegs ⊑ dog		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FurryTexture
+hasVisualFeature FourLegs
+hasVisualFeature Tail
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FurryTexture, FourLegs, and Tail, which satisfies the necessary conditions (dog ⊑ hasVisualFeature FurryTexture, dog ⊑ hasVisualFeature FourLegs, dog ⊑ hasVisualFeature Tail) and the sufficient condition (hasVisualFeature FourLegs ⊑ dog) to classify it as a dog.
+----------------------------------------
+Query 7: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+TBox (axioms in a Knowledge Base):
+- cat ⊑ hasVisualFeature Fur		 (Necessary condition)
+- hasVisualFeature Whiskers ⊑ cat		 (Sufficient condition)
+- cat ≡ hasVisualFeature Eyes		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature Fur
+hasVisualFeature Eyes
+hasVisualFeature Whiskers
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents Fur, Eyes, and Whiskers, which satisfies the necessary condition of having Fur (cat ⊑ hasVisualFeature Fur), the sufficient condition of having Whiskers (hasVisualFeature Whiskers ⊑ cat), and the necessary & sufficient condition of having Eyes (cat ≡ hasVisualFeature Eyes) to classify it as a cat.
+----------------------------------------
+Query 8: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+TBox (axioms in a Knowledge Base):
+- cat ⊑ hasVisualFeature fur		 (Necessary condition)
+- hasVisualFeature pointedEars ⊑ cat		 (Sufficient condition)
+- hasVisualFeature whiskers ⊑ cat		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature fur
+hasVisualFeature whiskers
+hasVisualFeature pointedEars
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents fur, whiskers, and pointedEars, which satisfies the necessary condition of having fur, the sufficient condition of having pointed ears, and the necessary condition of having whiskers, all according to the TBox axioms, to classify it as a cat.
+----------------------------------------
+Query 9: Expected: [cat] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>cat</response>
+TBox (axioms in a Knowledge Base):
+- cat ⊑ hasVisualFeature FurryBody		 (Necessary condition)
+- hasVisualFeature Whiskers ⊑ cat		 (Sufficient condition)
+- cat ≡ hasVisualFeature PointedEars 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FurryBody
+hasVisualFeature PointedEars
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FurryBody and PointedEars, which satisfies the Sufficient condition (hasVisualFeature Whiskers ⊑ cat) and the Necessary & Sufficient condition (cat ≡ hasVisualFeature PointedEars) to classify it as cat.
+----------------------------------------
+Query 10: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+TBox (axioms in a Knowledge Base):
+- truck ⊑ hasVisualFeature largeSize		 (Necessary condition)
+- truck ⊑ hasVisualFeature multipleAxles		 (Necessary condition)
+- truck ⊑ hasVisualFeature cabAndTrailer		 (Necessary condition)
+- hasVisualFeature [cabAndTrailer] ⊑ truck		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature [largeSize]
+hasVisualFeature [multipleAxles]
+hasVisualFeature [cabAndTrailer]
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents [largeSize, multipleAxles, cabAndTrailer], which satisfies the TBox [necessary] condition [truck ⊑ hasVisualFeature largeSize], [necessary] condition [truck ⊑ hasVisualFeature multipleAxles], and [sufficient] condition [hasVisualFeature [cabAndTrailer] ⊑ truck] to classify it as [truck].
+----------------------------------------
+Query 11: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+TBox (axioms in a Knowledge Base):
+- truck ⊑ hasVisualFeature Cab 		 (Necessary condition)
+- truck ⊑ hasVisualFeature Trailer 		 (Necessary condition)
+- truck ⊑ hasVisualFeature Wheels 		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature Cab
+hasVisualFeature Trailer
+hasVisualFeature Wheels
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents Cab, Trailer, and Wheels, which satisfies the necessary conditions for the truck class [truck ⊑ hasVisualFeature Cab, truck ⊑ hasVisualFeature Trailer, truck ⊑ hasVisualFeature Wheels] to classify it as a truck.
+----------------------------------------
+Query 12: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+TBox (axioms in a Knowledge Base):
+- truck ⊑ hasVisualFeature largeWheels		 (Necessary condition)
+- truck ⊑ hasVisualFeature cabOverEngine		 (Necessary condition)
+- truck ⊑ hasVisualFeature rectangularBed		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature largeWheels
+hasVisualFeature cabOverEngine
+hasVisualFeature rectangularBed
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents largeWheels, cabOverEngine, and rectangularBed, which satisfies the necessary conditions for the truck class [truck ⊑ hasVisualFeature largeWheels, truck ⊑ hasVisualFeature cabOverEngine, truck ⊑ hasVisualFeature rectangularBed] to classify it as a truck.
+----------------------------------------
+Query 13: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+TBox (axioms in a Knowledge Base):
+- truck ⊑ hasVisualFeature largeWheels (Necessary condition)
+- truck ⊑ hasVisualFeature boxyShape (Necessary condition)
+- truck ⊑ hasVisualFeature multipleAxles (Necessary condition)
+- truck ⊑ hasVisualFeature cab (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature largeWheels
+hasVisualFeature boxyShape
+hasVisualFeature multipleAxles
+hasVisualFeature cab
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature largeWheels, hasVisualFeature boxyShape, hasVisualFeature multipleAxles, and hasVisualFeature cab, which satisfies the necessary conditions for the truck class (truck ⊑ hasVisualFeature largeWheels, truck ⊑ hasVisualFeature boxyShape, truck ⊑ hasVisualFeature multipleAxles, truck ⊑ hasVisualFeature cab) to classify it as a truck.
+----------------------------------------
+Query 14: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+TBox (axioms in a Knowledge Base):
+- truck ⊑ hasVisualFeature Cab 		 (Necessary condition)
+- truck ⊑ hasVisualFeature Trailer 		 (Necessary condition)
+- truck ⊑ hasVisualFeature Wheels 		 (Necessary condition)
+- truck ≡ hasVisualFeature Cab AND hasVisualFeature Trailer AND hasVisualFeature Wheels 		 (Necessary & Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature Cab
+hasVisualFeature Trailer
+hasVisualFeature Wheels
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents Cab, Trailer, and Wheels, which satisfies the Necessary & Sufficient condition (truck ≡ hasVisualFeature Cab AND hasVisualFeature Trailer AND hasVisualFeature Wheels) to classify it as truck.
+----------------------------------------
+Query 15: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+TBox (axioms in a Knowledge Base):
+- truck ⊑ hasVisualFeature largeWheels (Necessary condition)
+- truck ⊑ hasVisualFeature boxyShape (Necessary condition)
+- truck ⊑ hasVisualFeature cab (Necessary condition)
+- truck ⊑ hasVisualFeature largeSize (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature largeWheels
+hasVisualFeature boxyShape
+hasVisualFeature cab
+hasVisualFeature largeSize
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents largeWheels, boxyShape, cab, and largeSize, which satisfies the necessary conditions for the truck class [truck ⊑ hasVisualFeature largeWheels, truck ⊑ hasVisualFeature boxyShape, truck ⊑ hasVisualFeature cab, truck ⊑ hasVisualFeature largeSize] to classify it as a truck.
+----------------------------------------
+Query 16: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+TBox (axioms in a Knowledge Base):
+- truck ⊑ hasVisualFeature largeCab		 (Necessary condition)
+- truck ⊑ hasVisualFeature multipleAxles		 (Necessary condition)
+- truck ⊑ hasVisualFeature longTrailer		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature largeCab
+hasVisualFeature multipleAxles
+hasVisualFeature longTrailer
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature largeCab, hasVisualFeature multipleAxles, and hasVisualFeature longTrailer, which satisfies the necessary conditions for the truck class [truck ⊑ hasVisualFeature largeCab, truck ⊑ hasVisualFeature multipleAxles, truck ⊑ hasVisualFeature longTrailer] to classify it as a truck.
+----------------------------------------
+Query 17: Expected: [truck] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>automobile</response>
+
+TBox (axioms in a Knowledge Base):
+- automobile ⊑ hasVisualFeature wheels		 (Necessary condition)
+- automobile ⊑ hasVisualFeature windows		 (Necessary condition)
+- automobile ⊑ hasVisualFeature rectangularBody		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature wheels
+hasVisualFeature windows
+hasVisualFeature rectangularBody
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents wheels, windows, and a rectangularBody, which satisfies the necessary conditions for the automobile class [axiom] to classify it as an automobile.
+----------------------------------------
+Query 18: Expected: [truck] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>truck</response>
+
+TBox (axioms in a Knowledge Base):
+- truck ⊑ hasVisualFeature redColor		 (Necessary condition)
+- truck ⊑ hasVisualFeature ladder		 (Necessary condition)
+- truck ⊑ hasVisualFeature wheels		 (Necessary condition)
+- truck ⊑ hasVisualFeature largeSize		 (Necessary condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature redColor
+hasVisualFeature ladder
+hasVisualFeature wheels
+hasVisualFeature largeSize
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents redColor, ladder, wheels, and largeSize, which satisfies the necessary conditions of the TBox to classify it as a truck. Specifically, the presence of redColor, ladder, wheels, and largeSize are necessary conditions for an entity to be classified as a truck.
+----------------------------------------
+Query 19: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>automobile</response>
+
+TBox (axioms in a Knowledge Base):
+- automobile ⊑ hasVisualFeature fourWheels		 (Necessary condition)
+- automobile ⊑ hasVisualFeature rectangularBody		 (Necessary condition)
+- hasVisualFeature rectangularBody ⊑ automobile		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature fourWheels
+hasVisualFeature rectangularBody
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents fourWheels and rectangularBody, which satisfies the necessary condition (automobile ⊑ hasVisualFeature fourWheels) and the sufficient condition (hasVisualFeature rectangularBody ⊑ automobile) to classify it as automobile.
+----------------------------------------
+Query 20: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>automobile</response>
+
+TBox (axioms in a Knowledge Base):
+- automobile ⊑ hasVisualFeature FourWheels		 (Necessary condition)
+- automobile ⊑ hasVisualFeature RectangularBody		 (Necessary condition)
+- hasVisualFeature RectangularBody ⊑ automobile		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FourWheels
+hasVisualFeature RectangularBody
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FourWheels and RectangularBody, which satisfies the necessary condition of having FourWheels and the necessary condition of having a RectangularBody, according to the TBox axioms, to classify it as an automobile.
+----------------------------------------
+Query 21: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>automobile</response>
+
+TBox (axioms in a Knowledge Base):
+- automobile ⊑ hasVisualFeature wheels		 (Necessary condition)
+- automobile ⊑ hasVisualFeature fourWheels		 (Necessary condition)
+- automobile ⊑ hasVisualFeature windows		 (Necessary condition)
+- automobile ⊑ hasVisualFeature body		 (Necessary condition)
+- hasVisualFeature red ⊑ automobile		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature wheels
+hasVisualFeature fourWheels
+hasVisualFeature windows
+hasVisualFeature body
+hasVisualFeature red
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents wheels, fourWheels, windows, body, and red, which satisfies the necessary conditions for automobile (wheels, fourWheels, windows, body) and the sufficient condition (red) to classify it as an automobile.
+----------------------------------------
+Query 22: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>automobile</response>
+
+TBox (axioms in a Knowledge Base):
+- automobile ⊑ hasVisualFeature fourWheels		 (Necessary condition)
+- automobile ⊑ hasVisualFeature rectangularBody		 (Necessary condition)
+- hasVisualFeature rectangularBody ⊑ automobile		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature fourWheels
+hasVisualFeature rectangularBody
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents fourWheels and rectangularBody, which satisfies the necessary condition of having fourWheels and the necessary condition of having a rectangularBody, according to the TBox axioms, to classify it as an automobile.
+----------------------------------------
+Query 23: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>automobile</response>
+
+TBox (axioms in a Knowledge Base):
+- automobile ⊑ hasVisualFeature fourWheels (Necessary condition)
+- automobile ⊑ hasVisualFeature rectangularBody (Necessary condition)
+- hasVisualFeature rectangularBody ⊑ automobile (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature fourWheels
+hasVisualFeature rectangularBody
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents fourWheels and rectangularBody, which satisfies the necessary condition of having fourWheels and the necessary condition of having a rectangularBody, according to the TBox axioms, to classify it as an automobile.
+----------------------------------------
+Query 24: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>automobile</response>
+
+TBox (axioms in a Knowledge Base):
+- automobile ⊑ hasVisualFeature fourWheels		 (Necessary condition)
+- automobile ⊑ hasVisualFeature rectangularBody		 (Necessary condition)
+- hasVisualFeature rectangularBody ⊑ automobile		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature fourWheels
+hasVisualFeature rectangularBody
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents fourWheels and rectangularBody, which satisfies the necessary condition of having fourWheels and the necessary condition of having a rectangularBody, according to the TBox axioms, to classify it as an automobile.
+----------------------------------------
+Query 25: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>automobile</response>
+
+TBox (axioms in a Knowledge Base):
+- automobile ⊑ hasVisualFeature wheels		 (Necessary condition)
+- automobile ⊑ hasVisualFeature windows		 (Necessary condition)
+- automobile ⊑ hasVisualFeature rectangularBody		 (Necessary condition)
+- hasVisualFeature rectangularBody ⊑ automobile		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature wheels
+hasVisualFeature windows
+hasVisualFeature rectangularBody
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents wheels, windows, and a rectangularBody, which satisfies the necessary conditions (automobile ⊑ hasVisualFeature wheels, automobile ⊑ hasVisualFeature windows, automobile ⊑ hasVisualFeature rectangularBody) to classify it as an automobile.
+----------------------------------------
+Query 26: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>automobile</response>
+
+TBox (axioms in a Knowledge Base):
+- automobile ⊑ hasVisualFeature fourWheels		 (Necessary condition)
+- automobile ⊑ hasVisualFeature rectangularBody		 (Necessary condition)
+- hasVisualFeature rectangularBody ⊑ automobile		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature fourWheels
+hasVisualFeature rectangularBody
+The ABox assertion presents fourWheels and rectangularBody, which satisfies the sufficient condition (hasVisualFeature rectangularBody ⊑ automobile) and the necessary condition (automobile ⊑ hasVisualFeature fourWheels) axiom to classify it as automobile.
+----------------------------------------
+Query 27: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>automobile</response>
+
+TBox (axioms in a Knowledge Base):
+- automobile ⊑ hasVisualFeature fourWheels		 (Necessary condition)
+- automobile ⊑ hasVisualFeature metallicBody		 (Necessary condition)
+- hasVisualFeature metallicBody ⊑ automobile		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature metallicBody
+hasVisualFeature fourWheels
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents metallicBody and fourWheels, which satisfies the sufficient condition (hasVisualFeature metallicBody ⊑ automobile) and the necessary condition (automobile ⊑ hasVisualFeature fourWheels) to classify it as automobile.
+----------------------------------------
+Query 28: Expected: [dog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>dog</response>
+
+TBox (axioms in a Knowledge Base):
+- dog ⊑ hasVisualFeature FurryAppearance		 (Necessary condition)
+- dog ⊑ hasVisualFeature FourLegs		 (Necessary condition)
+- dog ⊑ hasVisualFeature Tail		 (Necessary condition)
+- hasVisualFeature FourLegs ⊑ dog		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FurryAppearance
+hasVisualFeature FourLegs
+hasVisualFeature Tail
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FurryAppearance, FourLegs, and Tail, which satisfies the necessary conditions (dog ⊑ hasVisualFeature FurryAppearance, dog ⊑ hasVisualFeature FourLegs, dog ⊑ hasVisualFeature Tail) and the sufficient condition (hasVisualFeature FourLegs ⊑ dog) to classify it as a dog.
+----------------------------------------
+Query 29: Expected: [dog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>dog</response>
+
+TBox (axioms in a Knowledge Base):
+- dog ⊑ hasVisualFeature FurryTexture		 (Necessary condition)
+- dog ⊑ hasVisualFeature FourLegs		 (Necessary condition)
+- dog ⊑ hasVisualFeature Tail		 (Necessary condition)
+- hasVisualFeature FourLegs ⊑ dog		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FurryTexture
+hasVisualFeature FourLegs
+hasVisualFeature Tail
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FurryTexture, FourLegs, and Tail, which satisfies the necessary conditions (dog ⊑ hasVisualFeature FurryTexture, dog ⊑ hasVisualFeature FourLegs, dog ⊑ hasVisualFeature Tail) and the sufficient condition (hasVisualFeature FourLegs ⊑ dog) to classify it as a dog.
+----------------------------------------
+Query 30: Expected: [dog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>dog</response>
+
+TBox (axioms in a Knowledge Base):
+- dog ⊑ hasVisualFeature Fur		 (Necessary condition)
+- hasVisualFeature Fur ⊑ dog		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature Fur
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents hasVisualFeature Fur, which satisfies the Sufficient condition [hasVisualFeature Fur ⊑ dog] axiom to classify it as dog.
+----------------------------------------
+Query 31: Expected: [dog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>dog</response>
+
+TBox (axioms in a Knowledge Base):
+- dog ⊑ hasVisualFeature FurryCoat		 (Necessary condition)
+- dog ⊑ hasVisualFeature FourLegs		 (Necessary condition)
+- dog ⊑ hasVisualFeature Snout		 (Necessary condition)
+- hasVisualFeature Snout ⊑ dog		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FurryCoat
+hasVisualFeature FourLegs
+hasVisualFeature Snout
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FurryCoat, FourLegs, and Snout, which satisfies the necessary conditions of the TBox to classify it as a dog. The presence of a Snout is also a sufficient condition to classify it as a dog.
+----------------------------------------
+Query 32: Expected: [dog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>dog</response>
+
+TBox (axioms in a Knowledge Base):
+- dog ⊑ hasVisualFeature FurryCoat		 (Necessary condition)
+- dog ⊑ hasVisualFeature FourLegs		 (Necessary condition)
+- dog ⊑ hasVisualFeature Snout		 (Necessary condition)
+- hasVisualFeature Snout ⊑ dog		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FurryCoat
+hasVisualFeature FourLegs
+hasVisualFeature Snout
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FurryCoat, FourLegs, and Snout, which satisfies the TBox necessary conditions for the dog class. The presence of a Snout also satisfies the sufficient condition, confirming the classification as a dog.
+----------------------------------------
+Query 33: Expected: [dog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>dog</response>
+
+TBox (axioms in a Knowledge Base):
+- dog ⊑ hasVisualFeature FurryTexture		 (Necessary condition)
+- dog ⊑ hasVisualFeature FourLegs		 (Necessary condition)
+- dog ⊑ hasVisualFeature Snout		 (Necessary condition)
+- hasVisualFeature Snout ⊑ dog		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FurryTexture
+hasVisualFeature FourLegs
+hasVisualFeature Snout
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FurryTexture, FourLegs, and Snout, which satisfies the TBox necessary conditions for the dog class. The presence of a Snout also satisfies the sufficient condition, confirming the classification as a dog.
+----------------------------------------
+Query 34: Expected: [dog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>dog</response>
+
+TBox (axioms in a Knowledge Base):
+- dog ⊑ hasVisualFeature FurryAppearance		 (Necessary condition)
+- dog ⊑ hasVisualFeature FourLegs		 (Necessary condition)
+- dog ⊑ hasVisualFeature Tail		 (Necessary condition)
+- hasVisualFeature FourLegs ⊑ dog		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FurryAppearance
+hasVisualFeature FourLegs
+hasVisualFeature Tail
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FurryAppearance, FourLegs, and Tail, which satisfies the necessary conditions (dog ⊑ hasVisualFeature FurryAppearance, dog ⊑ hasVisualFeature FourLegs, dog ⊑ hasVisualFeature Tail) and the sufficient condition (hasVisualFeature FourLegs ⊑ dog) to classify it as a dog.
+----------------------------------------
+Query 35: Expected: [dog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>dog</response>
+
+TBox (axioms in a Knowledge Base):
+- dog ⊑ hasVisualFeature FurryAppearance		 (Necessary condition)
+- dog ⊑ hasVisualFeature FourLegs		 (Necessary condition)
+- dog ⊑ hasVisualFeature Tail		 (Necessary condition)
+- hasVisualFeature FourLegs ⊑ dog		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature FurryAppearance
+hasVisualFeature FourLegs
+hasVisualFeature Tail
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents FurryAppearance, FourLegs, and Tail, which satisfies the necessary conditions (dog ⊑ hasVisualFeature FurryAppearance, dog ⊑ hasVisualFeature FourLegs, dog ⊑ hasVisualFeature Tail) and the sufficient condition (hasVisualFeature FourLegs ⊑ dog) to classify it as a dog.
+----------------------------------------
+Query 36: Expected: [dog] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>dog</response>
+
+TBox (axioms in a Knowledge Base):
+- dog ⊑ hasVisualFeature fourLegs		 (Necessary condition)
+- dog ⊑ hasVisualFeature tail		 (Necessary condition)
+- dog ⊑ hasVisualFeature fur		 (Necessary condition)
+- hasVisualFeature [fur] ⊑ dog		 (Sufficient condition)
+
+ABox (Observed Properties & Assertions):
+hasVisualFeature [fourLegs]
+hasVisualFeature [tail]
+hasVisualFeature [fur]
+
+Description Logics’ Ontological Axioms
+The ABox assertion presents [fourLegs, tail, fur], which satisfies the TBox [necessary] condition [dog ⊑ hasVisualFeature fourLegs], [necessary] condition [dog ⊑ hasVisualFeature tail], and [necessary] condition [dog ⊑ hasVisualFeature fur] to classify it as [dog].
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9): 0.8889
