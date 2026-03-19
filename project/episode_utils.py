@@ -20,15 +20,18 @@ def select_w_images_from_class(class_indices_map, class_id, w_count, exclude_ind
     selected_indices = random.sample(candidates, w_count)
     return selected_indices
 
-def create_and_save_episode_indices(class_indices_map, num_classes, num_shots, num_queries, save_dir='episodes'):
+def create_and_save_episode_indices(class_indices_map, num_classes, num_shots, num_queries, save_dir='episodes', fixed_classes=None, run_id=0):
     """
     Selects indices for an N-way K-shot episode and saves them to a .npy file.
     """
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
 
-    available_classes = list(class_indices_map.keys())
-    selected_class_ids = random.sample(available_classes, num_classes)
+    if fixed_classes is not None:
+        selected_class_ids = fixed_classes
+    else:
+        available_classes = list(class_indices_map.keys())
+        selected_class_ids = random.sample(available_classes, num_classes)
     
     support_indices = []
     query_indices = []
@@ -60,7 +63,7 @@ def create_and_save_episode_indices(class_indices_map, num_classes, num_shots, n
         "selected_class_ids": np.array(selected_class_ids)
     }
 
-    filename = f"episode_N{num_classes}_K{num_shots}_Q{num_queries}.npy"
+    filename = f"episode_N{num_classes}_K{num_shots}_Q{num_queries}_run{run_id}.npy"
     save_path = os.path.join(save_dir, filename)
     
     np.save(save_path, episode_data)

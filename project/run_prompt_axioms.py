@@ -156,82 +156,86 @@ def main():
     
     model, processor = load_model_globally(args.model)
 
+    runs = 3
+
     results_row = {
         'Dataset': args.dataset,
         'Prompt_Type': prompt_type
     }
 
     for (n, k, q) in tests:
-        results_row[f"({n},{k},{q})"] = "ERROR"
+        for run_id in range(runs):
+            results_row[f"({n},{k},{q})_run{run_id}"] = "ERROR"
 
     with open(debug_filename, "w", encoding="utf-8") as f_debug:
         f_debug.write(f"=== DEBUG LOG: {args.model} | {args.dataset} | Prompt: {prompt_type} ===\n")
 
         for (way, shot, query_count) in tests:
-            filepath = f"episodes/{args.dataset}/episode_N{way}_K{shot}_Q{query_count}.npy"
-            
-            if not os.path.exists(filepath):
-                print(f"[!] File not found: {filepath}")
-                continue
-                
-            print(f"[*] Evaluating Config: N={way}, K={shot}, Q={query_count} ...")
-            f_debug.write(f"\n--- CONFIG: N={way}, K={shot}, Q={query_count} ---\n")
+            print(f"[*] Evaluating Config: N={way}, K={shot}, Q={query_count} over {runs} runs...")
+            f_debug.write(f"\n--- CONFIG: N={way}, K={shot}, Q={query_count} ({runs} RUNS) ---\n")
             
             try:
-                data = load_episode_from_indices(filepath, dataset, all_class_names)
-                total = 0
-                correct = 0
-                num_queries_total = query_count * way 
-
-                for i in range(num_queries_total):
-                    indices, shots, query, class_names = select_few_shot_images_with_data_fixed(
-                        data, i, dataset, all_class_names
-                    )
-
-                    messages = get_axioms_messages(SYSTEM_PROMPT, indices, shots, query, class_names)
-
-                    # We use 1500 tokens so the model can elaborate on ontological reasoning
-                    result = run_icl_inference(model, processor, args.model, messages, None, max_new_tokens=1500)
-                    del messages
+                for run_id in range(runs):
+                    filepath = f"episodes/{args.dataset}/episode_N{way}_K{shot}_Q{query_count}_run{run_id}.npy"
                     
-                    match = re.search(r'<response>(.*?)</response>', result, flags=re.IGNORECASE | re.DOTALL)
-                    
-                    label_id = query[1]
-                    label_text = class_names[label_id] if class_names else str(label_id)
-
-                    if match:
-                        label = match.group(1).strip()
+                    if not os.path.exists(filepath):
+                        print(f"[!] File not found: {filepath}. Skipping run {run_id}...")
+                        continue
                         
-                        is_correct = (isinstance(label, int) and int(label) == int(label_text)) or \
-                                     (isinstance(label, str) and label.lower() == label_text.lower())
+                    data = load_episode_from_indices(filepath, dataset, all_class_names)
+                    total = 0
+                    correct = 0
+                    num_queries_total = query_count * way 
+
+                    for i in range(num_queries_total):
+                        indices, shots, query, class_names = select_few_shot_images_with_data_fixed(
+                            data, i, dataset, all_class_names
+                        )
+
+                        messages = get_axioms_messages(SYSTEM_PROMPT, indices, shots, query, class_names)
+
+                        # We use 1500 tokens so the model can elaborate on ontological reasoning
+                        result = run_icl_inference(model, processor, args.model, messages, None, max_new_tokens=1500)
+                        del messages
                         
-                        if is_correct:
-                            correct += 1
+                        match = re.search(r'<response>(.*?)</response>', result, flags=re.IGNORECASE | re.DOTALL)
                         
-                        # Detailed log in the .txt file
-                        f_debug.write(f"Query {i+1}: Expected: [{label_text}] | Correct: {is_correct}\n")
-                        f_debug.write(f"MODEL OUTPUT (Ontology Reasoning):\n{result}\n")
-                        f_debug.write("-" * 40 + "\n")
+                        label_id = query[1]
+                        label_text = class_names[label_id] if class_names else str(label_id)
 
-                        if args.debug:
-                            print(f"Extracted class: {label} | Expected: {label_text} | Correct: {is_correct}")
-                    else:
-                        f_debug.write(f"Query {i+1}: Expected: [{label_text}] | Extracted: NO_MATCH\n")
-                        f_debug.write(f"MODEL RAW OUTPUT:\n{result}\n")
-                        f_debug.write("-" * 40 + "\n")
-                        if args.debug:
-                            print(f"No class found in response. Output:\n{result}")
+                        if match:
+                            label = match.group(1).strip()
+                            
+                            is_correct = (isinstance(label, int) and int(label) == int(label_text)) or \
+                                         (isinstance(label, str) and label.lower() == label_text.lower())
+                            
+                            if is_correct:
+                                correct += 1
+                            
+                            # Detailed log in the .txt file
+                            f_debug.write(f"Run {run_id} | Query {i+1}: Expected: [{label_text}] | Correct: {is_correct}\n")
+                            f_debug.write(f"MODEL OUTPUT (Ontology Reasoning):\n{result}\n")
+                            f_debug.write("-" * 40 + "\n")
 
-                    total += 1
+                            if args.debug:
+                                print(f"Run {run_id} - Extracted class: {label} | Expected: {label_text} | Correct: {is_correct}")
+                        else:
+                            f_debug.write(f"Run {run_id} | Query {i+1}: Expected: [{label_text}] | Extracted: NO_MATCH\n")
+                            f_debug.write(f"MODEL RAW OUTPUT:\n{result}\n")
+                            f_debug.write("-" * 40 + "\n")
+                            if args.debug:
+                                print(f"Run {run_id} - No class found in response. Output:\n{result}")
 
-                accuracy = correct / total if total > 0 else 0
-                results_row[f"({way},{shot},{query_count})"] = f"{accuracy:.4f}"
+                        total += 1
 
-                print(f" -> Result: {correct}/{total} correct (Accuracy: {accuracy:.4f})")
-                f_debug.write(f"-> FINAL ACCURACY for ({way},{shot},{query_count}): {accuracy:.4f}\n")
+                    accuracy = correct / total if total > 0 else 0
+                    results_row[f"({way},{shot},{query_count})_run{run_id}"] = f"{accuracy:.4f}"
 
-                del data
-                gc.collect()
+                    print(f"   -> Run {run_id} Result: {correct}/{total} correct (Accuracy: {accuracy:.4f})")
+                    f_debug.write(f"-> FINAL ACCURACY for ({way},{shot},{query_count}) Run {run_id}: {accuracy:.4f}\n")
+
+                    del data
+                    gc.collect()
 
             except Exception as e:
                 print(f"[ERROR] Configuration failed N={way}, K={shot}, Q={query_count}: {str(e)}")
@@ -239,13 +243,16 @@ def main():
                 traceback.print_exc()
 
     file_exists = os.path.isfile(csv_filename)
-    headers = ['Dataset', 'Prompt_Type'] + [f"({n},{k},{q})" for n, k, q in tests]
+    # Define the column order
+    headers = ['Dataset', 'Prompt_Type']
+    for n, k, q in tests:
+        for run_id in range(runs):
+            headers.append(f"({n},{k},{q})_run{run_id}")
     
     with open(csv_filename, mode='a', newline='') as f_csv:
         writer = csv.DictWriter(f_csv, fieldnames=headers)
         if not file_exists:
             writer.writeheader()
         writer.writerow(results_row)
-
 if __name__ == '__main__':
     main()

@@ -1,5 +1,6 @@
 import os
 import traceback
+import random
 from setup_utils import load_datasets, build_class_index_map, set_seed
 from episode_utils import create_and_save_episode_indices
 
@@ -18,6 +19,8 @@ def main():
     # Load references to the datasets
     datasets_dict = load_datasets()
     
+    runs = 3
+    
     for dataset_name in DATASETS_TO_GENERATE:
         print(f"\n--- Processing dataset: {dataset_name} ---")
         dataset = datasets_dict[dataset_name]
@@ -31,13 +34,19 @@ def main():
         
         for (pway, pshot, pquery) in tests:
             try:
-                episode_filepath = create_and_save_episode_indices(
-                    class_indices_map=index_map,
-                    num_classes=pway,
-                    num_shots=pshot,
-                    num_queries=pquery,
-                    save_dir=save_dir
-                )
+                available_classes = list(index_map.keys())
+                fixed_classes = random.sample(available_classes, pway)
+                
+                for run_id in range(runs):
+                    episode_filepath = create_and_save_episode_indices(
+                        class_indices_map=index_map,
+                        num_classes=pway,
+                        num_shots=pshot,
+                        num_queries=pquery,
+                        save_dir=save_dir,
+                        fixed_classes=fixed_classes, 
+                        run_id=run_id             
+                    )
             except Exception as e:
                 print(f"[!] Error generating N={pway}, K={pshot}, Q={pquery} for {dataset_name}:")
                 traceback.print_exc()

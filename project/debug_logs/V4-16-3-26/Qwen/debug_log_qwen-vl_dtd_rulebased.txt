@@ -1,0 +1,4695 @@
+=== DEBUG LOG: qwen-vl | dtd | Prompt: rulebased ===
+
+--- CONFIG: N=2, K=2, Q=9 (3 RUNS) ---
+Run 0 | Query 1: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Pothole
+- Damaged asphalt
+
+KB:
+- IF Pothole THEN potholed
+- IF Damaged asphalt THEN potholed
+
+Rule Check:
+- The image contains a pothole, which is a depression in the surface of a paved road or other paved surface.
+- The asphalt appears damaged, indicating that the pothole is likely the cause of the damage.
+- Therefore, the extracted features match the rules in the KB, confirming that the class is potholed.
+----------------------------------------
+Run 0 | Query 2: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Pothole
+- Damaged asphalt
+
+KB:
+- IF Pothole THEN potholed
+- IF Damaged asphalt THEN potholed
+
+Rule Check:
+- The image contains a pothole, which is a depression in the surface of a paved road or other paved surface.
+- The asphalt appears damaged, indicating that the pothole is likely the cause of the damage.
+- Therefore, the extracted features match the rules in the KB, confirming that the class of this image is potholed.
+----------------------------------------
+Run 0 | Query 3: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Pothole
+- Damaged asphalt
+
+KB:
+- IF Pothole THEN potholed
+- IF Damaged asphalt THEN potholed
+
+Rule Check:
+- The image contains a pothole, which is a depression in the surface of a paved road or other paved surface.
+- The asphalt appears damaged, indicating that the pothole is likely the cause of the damage.
+- Therefore, the extracted features match the rules in the KB, confirming that the class of this image is potholed.
+----------------------------------------
+Run 0 | Query 4: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Potholes
+- Cracks
+- Damaged surface
+
+KB:
+- IF Potholes THEN potholed
+- IF Cracks THEN potholed
+- IF Damaged surface THEN potholed
+
+Rule Check:
+- The image contains potholes, which matches the IF condition of the potholed class.
+- The image also has cracks, which matches the IF condition of the potholed class.
+- The surface appears damaged, which matches the IF condition of the potholed class.
+
+Therefore, the extracted features match the rules in the Knowledge Base, and the final classification is potholed.
+----------------------------------------
+Run 0 | Query 5: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Pothole
+- Damaged asphalt
+
+KB:
+- IF Pothole THEN potholed
+- IF Damaged asphalt THEN potholed
+
+Rule Check:
+- The image contains a pothole, which is a depression in the surface of a paved road or other paved surface.
+- The asphalt is damaged, indicating that the pothole is likely the cause of the damage.
+- Therefore, the extracted features match the rules in the KB, confirming that the class is potholed.
+----------------------------------------
+Run 0 | Query 6: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Potholes
+- Damaged asphalt
+
+KB:
+- IF Potholes THEN potholed
+- IF Damaged asphalt THEN potholed
+
+Rule Check:
+- The image contains potholes, which is a clear indicator of the potholed class.
+- The asphalt appears damaged, which is another feature associated with the potholed class.
+
+Therefore, the extracted features match the rules in the Knowledge Base, confirming that the image belongs to the potholed class.
+----------------------------------------
+Run 0 | Query 7: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Potholes
+- Cracks
+- Damaged surface
+
+KB:
+- IF Potholes THEN potholed
+- IF Cracks THEN potholed
+- IF Damaged surface THEN potholed
+
+Rule Check:
+- The image contains potholes, which matches the IF-THEN rule for the potholed class.
+- The image also has cracks, which matches the IF-THEN rule for the potholed class.
+- The surface appears damaged, which matches the IF-THEN rule for the potholed class.
+
+Therefore, the extracted features match the rules in the Knowledge Base, and the final classification is potholed.
+----------------------------------------
+Run 0 | Query 8: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Potholes
+- Cracks
+- Damaged surface
+
+KB:
+- IF Potholes THEN potholed
+- IF Cracks THEN potholed
+- IF Damaged surface THEN potholed
+
+Rule Check:
+- The image contains potholes, which matches the IF condition of the potholed class.
+- The image also has cracks, which matches the IF condition of the potholed class.
+- The surface appears damaged, which matches the IF condition of the potholed class.
+
+Therefore, the extracted features match the rules in the Knowledge Base, and the final classification is potholed.
+----------------------------------------
+Run 0 | Query 9: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Potholes
+- Cracked asphalt
+- Dark patches
+
+KB:
+- IF Potholes THEN potholed
+- IF Cracked asphalt THEN potholed
+- IF Dark patches THEN potholed
+
+Rule Check:
+- The image contains potholes, which matches the IF condition of the rule.
+- The asphalt is cracked, which also matches the IF condition of the rule.
+- There are dark patches, which further supports the IF condition of the rule.
+
+Therefore, the extracted features match the rules in the Knowledge Base, and the final classification is potholed.
+----------------------------------------
+Run 0 | Query 10: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Creases
+- Wrinkles
+- Textured surface
+
+KB:
+- IF Creases and wrinkles THEN wrinkled
+
+Rule Check:
+- The image contains creases and wrinkles, which match the logical rule derived from the examples. Therefore, the class is wrinkled.
+----------------------------------------
+Run 0 | Query 11: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Creases
+- Wrinkles
+
+KB:
+- IF Creases THEN wrinkled
+- IF Wrinkles THEN wrinkled
+
+Rule Check:
+- The image has visible creases and wrinkles, which match the features described in the KB rules for the wrinkled class. Therefore, the rule that best matches the visual features is:
+  - IF Creases THEN wrinkled
+  - IF Wrinkles THEN wrinkled
+
+Since both rules match the visual features, the final classification is:
+<response>wrinkled</response>
+----------------------------------------
+Run 0 | Query 12: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Creases
+- Wrinkles
+
+KB:
+- IF Creases THEN wrinkled
+- IF Wrinkles THEN wrinkled
+
+Rule Check:
+- The image has visible creases and wrinkles, which match the features described in the KB rules for the wrinkled class. Therefore, the rule that best matches the visual features is:
+  - IF Creases THEN wrinkled
+  - IF Wrinkles THEN wrinkled
+
+Since both rules match the visual features, the final classification is:
+<response>wrinkled</response>
+----------------------------------------
+Run 0 | Query 13: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Creases
+- Wrinkles
+
+KB:
+- IF Creases THEN wrinkled
+- IF Wrinkles THEN wrinkled
+
+Rule Check:
+- The image contains creases and wrinkles, which match the visual features described in the KB rules for the wrinkled class. Therefore, the rule that best matches the visual features is:
+  - IF Creases THEN wrinkled
+  - IF Wrinkles THEN wrinkled
+
+Classification:
+- The final chosen class label is wrinkled.
+----------------------------------------
+Run 0 | Query 14: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Creases
+- Wrinkles
+
+KB:
+- IF Creases THEN wrinkled
+- IF Wrinkles THEN wrinkled
+
+Rule Check:
+- The image shows creases and wrinkles, which match the visual features described in the KB rules for the wrinkled class. Therefore, the rule that best matches the visual features is:
+  - IF Creases THEN wrinkled
+  - IF Wrinkles THEN wrinkled
+
+Since both rules match the visual features, the final classification is:
+<response>wrinkled</response>
+----------------------------------------
+Run 0 | Query 15: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Creases
+- Wrinkles
+
+KB:
+- IF Creases THEN wrinkled
+- IF Wrinkles THEN wrinkled
+
+Rule Check:
+- The image contains creases and wrinkles, which match the visual features described in the KB rules for the wrinkled class. Therefore, the rule that best matches the visual features is:
+  - IF Creases THEN wrinkled
+  - IF Wrinkles THEN wrinkled
+
+Since both rules match the visual features, the final classification is:
+<response>wrinkled</response>
+----------------------------------------
+Run 0 | Query 16: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Creases
+- Wrinkles
+- Folded texture
+
+KB:
+- IF Creases THEN wrinkled
+- IF Wrinkles THEN wrinkled
+- IF Folded texture THEN wrinkled
+
+Rule Check:
+- The image has creases, which matches the rule "IF Creases THEN wrinkled."
+- The image has wrinkles, which matches the rule "IF Wrinkles THEN wrinkled."
+- The image has a folded texture, which matches the rule "IF Folded texture THEN wrinkled."
+
+Based on the extracted features and the rules from the knowledge base, the image is classified as wrinkled.
+----------------------------------------
+Run 0 | Query 17: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Creases
+- Wrinkles
+
+KB:
+- IF Creases THEN wrinkled
+- IF Wrinkles THEN wrinkled
+
+Rule Check:
+- The image has visible creases and wrinkles, which match the features described in the KB rules for the wrinkled class. Therefore, the rule that best matches the visual features is:
+  - IF Creases THEN wrinkled
+  - IF Wrinkles THEN wrinkled
+
+Since both rules match the visual features, the final classification is:
+<response>wrinkled</response>
+----------------------------------------
+Run 0 | Query 18: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Texture: Crumpled
+- Shape: Irregular folds
+- Color: Uniform, neutral tones
+
+KB:
+- IF Texture: Crumpled AND Shape: Irregular folds AND Color: Uniform, neutral tones THEN Class: wrinkled
+
+Rule Check:
+- The extracted features match the IF conditions of the rule from the Knowledge Base:
+  - Texture: Crumpled (present)
+  - Shape: Irregular folds (present)
+  - Color: Uniform, neutral tones (present)
+
+Therefore, the rule is activated, and the final classification is:
+<response>wrinkled</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9) Run 0: 1.0000
+Run 1 | Query 1: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Potholes
+- Water
+- Pavement
+
+KB:
+- IF Potholes THEN potholed
+- IF Water THEN potholed
+- IF Pavement THEN potholed
+
+Rule Check:
+- The image contains potholes, which matches the IF condition of the potholed class.
+- The image also contains water, which matches the IF condition of the potholed class.
+- The image is taken on a pavement, which matches the IF condition of the potholed class.
+
+Therefore, the extracted features match the rules in the Knowledge Base, and the final classification is potholed.
+----------------------------------------
+Run 1 | Query 2: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Puddle of water
+- Cracked asphalt
+- Uneven surface
+
+KB:
+- IF Puddle of water AND Cracked asphalt THEN potholed
+- IF Uneven surface THEN potholed
+
+Rule Check:
+- The image contains a puddle of water and cracked asphalt, which matches the IF conditions of the "potholed" class.
+- The uneven surface also matches the IF condition of the "potholed" class.
+
+Therefore, the extracted features match the rules in the Knowledge Base, and the final classification is "potholed".
+----------------------------------------
+Run 1 | Query 3: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Pothole
+- Water
+
+KB:
+- IF Pothole THEN potholed
+- IF Water THEN potholed
+
+Rule Check:
+- The image contains a pothole, which matches the IF condition of the rule.
+- The pothole has water in it, which also matches the IF condition of the rule.
+
+Therefore, the extracted features match the rules in the Knowledge Base, and the final classification is potholed.
+----------------------------------------
+Run 1 | Query 4: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Pothole
+- Water
+
+KB:
+- IF Pothole THEN potholed
+- IF Water THEN potholed
+
+Rule Check:
+- The image contains a pothole, which matches the IF condition of the rule.
+- The pothole has water in it, which also matches the IF condition of the rule.
+
+Therefore, the extracted features match the rules in the Knowledge Base, and the final classification is potholed.
+----------------------------------------
+Run 1 | Query 5: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Pothole
+- Cracked asphalt
+- Water
+
+KB:
+- IF Pothole THEN potholed
+- IF Cracked asphalt THEN potholed
+- IF Water THEN potholed
+
+Rule Check:
+- The image contains a pothole, which is a distinct feature that matches the IF-THEN rule for the potholed class.
+- The pothole is surrounded by cracked asphalt, which is another feature that matches the IF-THEN rule for the potholed class.
+- There is water in the pothole, which is a feature that matches the IF-THEN rule for the potholed class.
+
+Based on the extracted features and the rules from the knowledge base, the image is classified as potholed.
+----------------------------------------
+Run 1 | Query 6: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Cracks
+- Water
+- Pavement
+
+KB:
+- IF Cracks AND Water THEN Potholed
+- IF Pavement THEN Potholed
+
+Rule Check:
+- The image contains cracks and water, which matches the IF-THEN rule for potholed.
+- The pavement is also present, which further supports the classification as potholed.
+
+Based on the extracted features and the rules from the knowledge base, the image is classified as potholed.
+----------------------------------------
+Run 1 | Query 7: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Potholes
+- Water
+- Pavement
+
+KB:
+- IF Potholes THEN potholed
+- IF Water THEN potholed
+- IF Pavement THEN potholed
+
+Rule Check:
+- The image contains potholes, which matches the IF condition of the potholed class.
+- The potholes are filled with water, which also matches the IF condition of the potholed class.
+- The surface appears to be pavement, which further supports the potholed class.
+
+Based on the extracted features and the rules from the knowledge base, the image is classified as potholed.
+----------------------------------------
+Run 1 | Query 8: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Pothole
+- Water
+
+KB:
+- IF Pothole THEN potholed
+- IF Water THEN potholed
+
+Rule Check:
+- The image contains a pothole, which matches the IF condition of the rule.
+- The pothole has water in it, which also matches the IF condition of the rule.
+
+Therefore, the extracted features match the rules in the Knowledge Base, and the final classification is potholed.
+----------------------------------------
+Run 1 | Query 9: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Pothole
+- Cracked asphalt
+- Water
+
+KB:
+- IF Pothole THEN potholed
+- IF Cracked asphalt THEN potholed
+- IF Water THEN potholed
+
+Rule Check:
+- The image contains a pothole, which matches the IF condition of the rule.
+- The pothole is in a cracked asphalt surface, which also matches the IF condition of the rule.
+- There is water in the pothole, which matches the IF condition of the rule.
+
+Therefore, the extracted features match the rules in the Knowledge Base, and the final classification is potholed.
+----------------------------------------
+Run 1 | Query 10: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Creases
+- Wrinkles
+- Folded texture
+
+KB:
+- IF Creases and wrinkles THEN wrinkled
+
+Rule Check:
+- The image has creases and wrinkles, which match the IF condition of the rule for the wrinkled class. Therefore, the rule is activated, and the image is classified as wrinkled.
+----------------------------------------
+Run 1 | Query 11: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Creases
+- Folded texture
+- Wrinkled surface
+
+KB:
+- IF Creases AND Folded texture AND Wrinkled surface THEN wrinkled
+
+Rule Check:
+- The image has creases, a folded texture, and a wrinkled surface, which matches the IF conditions of the wrinkled class rule. Therefore, the rule is activated and the image is classified as wrinkled.
+----------------------------------------
+Run 1 | Query 12: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Crumpled texture
+- Wrinkles on the surface
+- Distorted folds
+
+KB:
+- IF Crumpled texture AND Wrinkles on the surface AND Distorted folds THEN wrinkled
+
+Rule Check:
+- The target image has a crumpled texture, wrinkles on the surface, and distorted folds, which match the IF conditions of the "wrinkled" class rule. Therefore, the rule that best matches the visual features is the one for the "wrinkled" class.
+----------------------------------------
+Run 1 | Query 13: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Creases
+- Wrinkles
+- Folded texture
+
+KB:
+- IF Creases and wrinkles THEN wrinkled
+
+Rule Check:
+- The image has creases and wrinkles, which match the IF condition of the rule for the wrinkled class. Therefore, the rule is activated, and the image is classified as wrinkled.
+----------------------------------------
+Run 1 | Query 14: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Crumpled texture
+- Wrinkles on the surface
+- Light purple color
+
+KB:
+- IF Crumpled texture AND Wrinkles on the surface AND Light purple color THEN wrinkled
+
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base, which states that if an image has a crumpled texture, wrinkles on the surface, and a light purple color, then it is classified as wrinkled.
+----------------------------------------
+Run 1 | Query 15: Expected: [wrinkled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Pothole
+- Water
+
+KB:
+- IF Pothole THEN potholed
+- IF Water THEN potholed
+
+Rule Check:
+- The image contains a pothole, which matches the IF condition of the rule.
+- The pothole has water in it, which also matches the IF condition of the rule.
+
+Therefore, the extracted features match the rules in the Knowledge Base, and the final classification is potholed.
+----------------------------------------
+Run 1 | Query 16: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Creases
+- Wrinkles
+- Folded texture
+
+KB:
+- IF Creases and wrinkles THEN wrinkled
+
+Rule Check:
+- The image has creases and wrinkles, which match the IF condition of the rule for the wrinkled class. Therefore, the rule is activated, and the image is classified as wrinkled.
+----------------------------------------
+Run 1 | Query 17: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Crumpled texture
+- Wrinkles on the surface
+- Light color
+
+KB:
+- IF Crumpled texture AND Wrinkles on the surface AND Light color THEN wrinkled
+
+Rule Check:
+- The image has a crumpled texture, which is a specific visual feature.
+- It also has wrinkles on the surface, which is another specific visual feature.
+- The color of the image is light, which is a specific visual feature.
+
+All the extracted features match the rules in the Knowledge Base, so the class of the image is wrinkled.
+----------------------------------------
+Run 1 | Query 18: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Creases
+- Wrinkles
+
+KB:
+- IF Creases THEN wrinkled
+- IF Wrinkles THEN wrinkled
+
+Rule Check:
+- The image has creases and wrinkles, which match the IF-THEN rules in the Knowledge Base for the class "wrinkled".
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9) Run 1: 0.9444
+Run 2 | Query 1: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Pothole
+- Cracked asphalt
+- Dark, wet surface
+
+KB:
+- IF Pothole THEN potholed
+- IF Cracked asphalt THEN potholed
+- IF Dark, wet surface THEN potholed
+
+Rule Check:
+- The image contains a pothole, which matches the IF condition of the rule.
+- The pothole is in cracked asphalt, which also matches the IF condition of the rule.
+- The surface is dark and wet, which matches the IF condition of the rule.
+
+Therefore, the extracted features match the rules in the Knowledge Base, and the final classification is potholed.
+----------------------------------------
+Run 2 | Query 2: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Pothole
+- Damaged surface
+- Cracked asphalt
+
+KB:
+- IF Pothole THEN potholed
+- IF Damaged surface THEN potholed
+- IF Cracked asphalt THEN potholed
+
+Rule Check:
+- The image contains a pothole, which is a distinct feature of the potholed class.
+- The surface appears damaged and cracked, which are also features associated with the potholed class.
+- The asphalt is cracked, which is another feature that matches the potholed class.
+
+Based on the extracted features and the rules from the knowledge base, the image matches the potholed class.
+----------------------------------------
+Run 2 | Query 3: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Pothole
+- Uneven surface
+- Cracked asphalt
+
+KB:
+- IF Pothole THEN potholed
+- IF Uneven surface THEN potholed
+- IF Cracked asphalt THEN potholed
+
+Rule Check:
+- The image contains a pothole, which is a depression in the surface of a paved area caused by wear and tear.
+- The surface appears uneven, indicating a possible pothole.
+- The asphalt is cracked, which is a common characteristic of potholes.
+
+Based on the extracted features and the rules in the knowledge base, the image matches the rule for potholed. Therefore, the class of this image is potholed.
+----------------------------------------
+Run 2 | Query 4: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Pothole
+- Damaged asphalt
+- Cracks in the pavement
+
+KB:
+- IF Pothole THEN potholed
+- IF Damaged asphalt THEN potholed
+- IF Cracks in the pavement THEN potholed
+
+Rule Check:
+- The image contains a pothole, which is a depression in the surface of a road or other paved surface.
+- The asphalt appears damaged, with visible cracks and uneven surfaces.
+- The presence of these features matches the IF-THEN rules from the knowledge base, indicating that the image belongs to the "potholed" class.
+
+Based on the extracted features and the rule check, the final classification is "potholed".
+----------------------------------------
+Run 2 | Query 5: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Pothole
+- Water
+- Pavement
+
+KB:
+- IF Pothole THEN potholed
+- IF Water THEN potholed
+- IF Pavement THEN potholed
+
+Rule Check:
+- The image contains a pothole, which matches the IF condition of the rule.
+- The pothole is filled with water, which also matches the IF condition of the rule.
+- The pothole is on a pavement, which matches the IF condition of the rule.
+
+Therefore, the extracted features match the rules in the Knowledge Base, and the final classification is potholed.
+----------------------------------------
+Run 2 | Query 6: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Pothole
+- Cracked asphalt
+- Dark, wet surface
+
+KB:
+- IF Pothole THEN potholed
+- IF Cracked asphalt THEN potholed
+- IF Dark, wet surface THEN potholed
+
+Rule Check:
+- The image contains a pothole, which matches the IF condition of the rule.
+- The pothole is in cracked asphalt, which also matches the IF condition of the rule.
+- The surface is dark and wet, which matches the IF condition of the rule.
+
+Therefore, the extracted features match the rules in the Knowledge Base, and the final classification is <response>potholed</response>.
+----------------------------------------
+Run 2 | Query 7: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Pothole
+- Damaged asphalt
+- Cracked surface
+
+KB:
+- IF Pothole THEN potholed
+- IF Damaged asphalt THEN potholed
+- IF Cracked surface THEN potholed
+
+Rule Check:
+- The image contains a pothole, which is a depression in the surface of a paved area caused by wear and tear.
+- The asphalt appears damaged and cracked, which is a common characteristic of potholes.
+- The surface of the pothole is cracked, which is another characteristic of potholes.
+
+Based on the extracted features and the rules in the knowledge base, the image matches the rule for potholed. Therefore, the class of this image is potholed.
+----------------------------------------
+Run 2 | Query 8: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Pothole
+- Damaged asphalt
+- Water in the pothole
+
+KB:
+- IF Pothole THEN potholed
+- IF Damaged asphalt THEN potholed
+- IF Water in the pothole THEN potholed
+
+Rule Check:
+- The image contains a pothole, which is a clear visual feature that matches the rule "IF Pothole THEN potholed."
+- The pothole is in the damaged asphalt, which matches the rule "IF Damaged asphalt THEN potholed."
+- There is water in the pothole, which matches the rule "IF Water in the pothole THEN potholed."
+
+All the extracted features match the rules in the Knowledge Base, so the final classification is "potholed."
+----------------------------------------
+Run 2 | Query 9: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>potholed</response>
+
+Features:
+- Pothole
+- Damaged surface
+- Cracks in the pavement
+
+KB:
+- IF Pothole THEN potholed
+- IF Damaged surface THEN potholed
+- IF Cracks in the pavement THEN potholed
+
+Rule Check:
+- The image contains a pothole, which is a distinct feature of the potholed class.
+- The surface appears damaged, which is another feature associated with the potholed class.
+- There are visible cracks in the pavement, which is yet another feature that matches the potholed class.
+
+Based on the extracted features and the rules from the knowledge base, the image most closely matches the potholed class.
+----------------------------------------
+Run 2 | Query 10: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Creases
+- Folded texture
+- Wrinkled surface
+
+KB:
+- IF Creases AND Folded texture AND Wrinkled surface THEN wrinkled
+
+Rule Check:
+- The image has creases, a folded texture, and a wrinkled surface, which matches the IF conditions of the wrinkled class rule in the knowledge base. Therefore, the rule is activated, and the image is classified as wrinkled.
+----------------------------------------
+Run 2 | Query 11: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Creases
+- Folded texture
+- Wrinkled surface
+
+KB:
+- IF Creases AND Folded texture AND Wrinkled surface THEN wrinkled
+
+Rule Check:
+- The image has creases, a folded texture, and a wrinkled surface, which matches the IF conditions of the wrinkled class rule in the knowledge base. Therefore, the rule is activated, and the image is classified as wrinkled.
+----------------------------------------
+Run 2 | Query 12: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Creases on the fabric
+- Wrinkled texture
+
+KB:
+- IF Creases on the fabric THEN wrinkled
+- IF Wrinkled texture THEN wrinkled
+
+Rule Check:
+- The image shows creases on the fabric, which matches the IF condition of the rule.
+- The texture of the fabric is wrinkled, which also matches the IF condition of the rule.
+
+Based on the extracted features and the rules in the knowledge base, the image is classified as wrinkled.
+----------------------------------------
+Run 2 | Query 13: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Creases in the fabric
+- Wrinkled texture
+
+KB:
+- IF Creases in the fabric AND Wrinkled texture THEN wrinkled
+
+Rule Check:
+- The image shows creases in the fabric and a wrinkled texture, which matches the IF condition of the rule derived from the examples.
+- Therefore, the rule that matches the visual features best is: IF Creases in the fabric AND Wrinkled texture THEN wrinkled.
+----------------------------------------
+Run 2 | Query 14: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Creases
+- Wrinkles
+- Folded texture
+
+KB:
+- IF Creases THEN wrinkled
+- IF Wrinkles THEN wrinkled
+- IF Folded texture THEN wrinkled
+
+Rule Check:
+- The image contains creases, which matches the rule "IF Creases THEN wrinkled."
+- The image also contains wrinkles, which matches the rule "IF Wrinkles THEN wrinkled."
+- The image has a folded texture, which matches the rule "IF Folded texture THEN wrinkled."
+
+Since all the extracted features match the rules in the Knowledge Base, the final classification is wrinkled.
+----------------------------------------
+Run 2 | Query 15: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Creases
+- Folded texture
+- Wrinkled surface
+
+KB:
+- IF Creases AND Folded texture AND Wrinkled surface THEN wrinkled
+
+Rule Check:
+- The image has creases, a folded texture, and a wrinkled surface, which matches the IF conditions of the wrinkled class rule in the knowledge base. Therefore, the rule is activated, and the image is classified as wrinkled.
+----------------------------------------
+Run 2 | Query 16: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Creases
+- Folded texture
+- Wrinkled surface
+
+KB:
+- IF Creases AND Folded texture AND Wrinkled surface THEN wrinkled
+
+Rule Check:
+- The image has creases, a folded texture, and a wrinkled surface, which matches the IF conditions of the wrinkled class rule in the knowledge base. Therefore, the rule is activated, and the image is classified as wrinkled.
+----------------------------------------
+Run 2 | Query 17: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Crinkled texture
+- Wrinkles on the surface
+
+KB:
+- IF Crinkled texture THEN wrinkled
+- IF Wrinkles on the surface THEN wrinkled
+
+Rule Check:
+- The image shows a surface with crinkled texture and wrinkles on the surface, which matches the visual features described in the KB rules for the "wrinkled" class.
+
+Based on the extracted features and the rules from the knowledge base, the final classification for this image is "wrinkled".
+----------------------------------------
+Run 2 | Query 18: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>wrinkled</response>
+
+Features:
+- Creases in the fabric
+- Wrinkled texture
+
+KB:
+- IF Creases in the fabric AND Wrinkled texture THEN wrinkled
+
+Rule Check:
+- The image shows a piece of fabric with visible creases and a wrinkled texture, which matches the IF-THEN rule derived from the examples seen. Therefore, the class of this image is wrinkled.
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9) Run 2: 1.0000
+
+--- CONFIG: N=2, K=1, Q=9 (3 RUNS) ---
+Run 0 | Query 1: Expected: [meshed] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Black and orange swirls
+- Black and orange color scheme
+- Swirl pattern
+
+KB:
+- IF Black and orange swirls THEN swirly
+- IF Black and orange color scheme THEN swirly
+- IF Swirl pattern THEN swirly
+
+Rule Check:
+- The image has a black and orange swirl pattern, which matches the IF condition of the "swirly" class.
+- The image also has a black and orange color scheme, which matches the IF condition of the "swirly" class.
+- The image has a swirl pattern, which matches the IF condition of the "swirly" class.
+
+Since all the extracted features match the IF conditions of the "swirly" class, the rule check confirms that the image belongs to the "swirly" class.
+----------------------------------------
+Run 0 | Query 2: Expected: [meshed] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Dark brown color
+- Textured surface
+- Geometric pattern
+
+KB:
+- IF Dark brown color AND Textured surface AND Geometric pattern THEN swirly
+
+Rule Check:
+- The image has a dark brown color, which matches the IF condition of the "swirly" class.
+- The textured surface also matches the IF condition of the "swirly" class.
+- The geometric pattern matches the IF condition of the "swirly" class.
+
+Since all the extracted features match the IF conditions of the "swirly" class, the rule check confirms that the image belongs to the "swirly" class.
+----------------------------------------
+Run 0 | Query 3: Expected: [meshed] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Diamond-shaped holes
+- Metal material
+- Dark color
+
+KB:
+- IF Diamond-shaped holes and metal material THEN meshed
+- IF Swirl patterns and dark color THEN swirly
+
+Rule Check:
+- The image has diamond-shaped holes, which matches the "IF Diamond-shaped holes and metal material THEN meshed" rule from the KB.
+- The image also has a dark color, which matches the "IF Swirl patterns and dark color THEN swirly" rule from the KB.
+
+Since the image matches both rules, the final classification is "swirly".
+----------------------------------------
+Run 0 | Query 4: Expected: [meshed] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Diamond-shaped pattern
+- Metal material
+- Dark color
+
+KB:
+- IF Diamond-shaped pattern AND Metal material AND Dark color THEN swirly
+
+Rule Check:
+- The image has a diamond-shaped pattern, which matches the IF part of the rule.
+- The material is metal, which matches the IF part of the rule.
+- The color is dark, which matches the IF part of the rule.
+
+Since all the features extracted from the image match the IF part of the rule, the rule is activated, and the image is classified as swirly.
+----------------------------------------
+Run 0 | Query 5: Expected: [meshed] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- The image contains a pattern of spirals and swirls.
+- The spirals are black and orange in color.
+- The background is a solid orange color.
+
+KB:
+- IF the image contains a pattern of spirals and swirls with a black and orange color scheme and an orange background THEN the class is "swirly".
+
+Rule Check:
+- The extracted features match the IF condition of the "swirly" class rule, which states that the image should contain a pattern of spirals and swirls with a black and orange color scheme and an orange background. Therefore, the rule is activated and the class is determined to be "swirly".
+----------------------------------------
+Run 0 | Query 6: Expected: [meshed] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Diamond-shaped pattern
+- Metal material
+- Dark color
+
+KB:
+- IF Diamond-shaped pattern AND Metal material AND Dark color THEN swirly
+
+Rule Check:
+- The image has a diamond-shaped pattern, which matches the IF part of the rule.
+- The material is metal, which matches the IF part of the rule.
+- The color is dark, which matches the IF part of the rule.
+
+Since all the features extracted from the image match the IF part of the rule, the rule is activated, and the image is classified as swirly.
+----------------------------------------
+Run 0 | Query 7: Expected: [meshed] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- The image contains a pattern of spirals.
+- The spirals are in a dark orange color.
+- The background is a dark orange color.
+
+KB:
+- IF the image contains a pattern of spirals and the spirals are in a dark orange color THEN the class is "swirly".
+- IF the background is a dark orange color THEN the class is "swirly".
+
+Rule Check:
+- The image contains a pattern of spirals, which matches the IF condition of the "swirly" class.
+- The spirals are in a dark orange color, which matches the IF condition of the "swirly" class.
+- The background is a dark orange color, which matches the IF condition of the "swirly" class.
+
+Therefore, the extracted features match the rules in the Knowledge Base, and the final classification is "swirly".
+----------------------------------------
+Run 0 | Query 8: Expected: [meshed] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Square pattern
+- Metal texture
+- Dark color
+
+KB:
+- IF Square pattern AND Metal texture AND Dark color THEN swirly
+
+Rule Check:
+- The image has a square pattern, which matches the IF part of the rule.
+- The texture is metallic, which matches the IF part of the rule.
+- The color is dark, which matches the IF part of the rule.
+
+Since all the features extracted from the image match the IF part of the rule, the rule is activated, and the image is classified as swirly.
+----------------------------------------
+Run 0 | Query 9: Expected: [meshed] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- The image contains a pattern of spirals and swirls.
+- The background is a gradient of orange and black colors.
+
+KB:
+- IF the image contains a pattern of spirals and swirls AND the background is a gradient of orange and black colors THEN the class is "swirly".
+
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: the image contains a pattern of spirals and swirls, and the background is a gradient of orange and black colors. Therefore, the class is "swirly".
+----------------------------------------
+Run 0 | Query 10: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Orange and black swirls
+- Black and orange background
+
+KB:
+- IF Orange and black swirls THEN swirly
+- IF Black and orange background THEN swirly
+
+Rule Check:
+- The image has orange and black swirls, which matches the IF condition of the "swirly" class.
+- The image also has a black and orange background, which matches the IF condition of the "swirly" class.
+
+Since both conditions are met, the extracted features match the rules in the Knowledge Base, leading to the classification of the image as "swirly".
+----------------------------------------
+Run 0 | Query 11: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Orange and black swirls
+- Black and orange background
+
+KB:
+- IF Orange and black swirls THEN swirly
+- IF Black and orange background THEN swirly
+
+Rule Check:
+- The image has orange and black swirls, which matches the IF condition of the "swirly" class.
+- The image also has a black and orange background, which matches the IF condition of the "swirly" class.
+
+Since both conditions are met, the extracted features match the rules in the Knowledge Base, leading to the classification of the image as "swirly".
+----------------------------------------
+Run 0 | Query 12: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Orange and black color scheme
+- Swirl patterns
+
+KB:
+- IF Orange and black color scheme AND Swirl patterns THEN swirly
+
+Rule Check:
+- The image has an orange and black color scheme, which matches the IF condition of the "swirly" class rule.
+- The image also has swirl patterns, which matches the THEN condition of the "swirly" class rule.
+
+Based on the extracted features and the rule check, the image belongs to the "swirly" class.
+----------------------------------------
+Run 0 | Query 13: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Swirl pattern
+- Orange and black color scheme
+
+KB:
+- IF Swirl pattern THEN swirly
+- IF Orange and black color scheme THEN swirly
+
+Rule Check:
+- The image has a swirl pattern, which matches the IF condition of the "swirly" class.
+- The image also has an orange and black color scheme, which matches the IF condition of the "swirly" class.
+
+Since both conditions are met, the extracted features match the rules in the Knowledge Base, leading to the classification of the image as "swirly".
+----------------------------------------
+Run 0 | Query 14: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Orange and black swirls
+- Black and orange background
+
+KB:
+- IF Orange and black swirls THEN swirly
+- IF Black and orange background THEN swirly
+
+Rule Check:
+- The image has orange and black swirls, which matches the IF condition of the "swirly" class.
+- The image also has a black and orange background, which matches the IF condition of the "swirly" class.
+
+Since both conditions are met, the extracted features match the rules in the Knowledge Base, leading to the classification of the image as "swirly".
+----------------------------------------
+Run 0 | Query 15: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Swirl pattern
+- Orange and black color scheme
+- Abstract design
+
+KB:
+- IF Swirl pattern THEN swirly
+- IF Orange and black color scheme THEN swirly
+- IF Abstract design THEN swirly
+
+Rule Check:
+- The image has a swirl pattern, which matches the IF condition of the "swirly" class.
+- The image has an orange and black color scheme, which matches the IF condition of the "swirly" class.
+- The image has an abstract design, which matches the IF condition of the "swirly" class.
+
+Since all the extracted features match the IF conditions of the "swirly" class, the rule check confirms that the image belongs to the "swirly" class.
+----------------------------------------
+Run 0 | Query 16: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Black and white triangles
+- Black and white color scheme
+- Geometric pattern
+
+KB:
+- IF Black and white triangles THEN swirly
+- IF Geometric pattern THEN swirly
+
+Rule Check:
+- The image contains black and white triangles, which matches the IF condition of the "swirly" class.
+- The image also has a geometric pattern, which matches the IF condition of the "swirly" class.
+
+Since both rules from the KB match the visual features of the image, the final classification is "swirly".
+----------------------------------------
+Run 0 | Query 17: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Orange and black swirls
+- Black and orange background
+
+KB:
+- IF Orange and black swirls THEN swirly
+- IF Black and orange background THEN swirly
+
+Rule Check:
+- The image has orange and black swirls, which matches the IF condition of the "swirly" class.
+- The image also has a black and orange background, which matches the IF condition of the "swirly" class.
+
+Since both conditions are met, the extracted features match the rules in the Knowledge Base, leading to the classification of the image as "swirly".
+----------------------------------------
+Run 0 | Query 18: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Orange and black swirls
+- Black background
+
+KB:
+- IF Orange and black swirls THEN swirly
+- IF Black background THEN swirly
+
+Rule Check:
+- The image has orange and black swirls, which matches the IF condition of the "swirly" class.
+- The image has a black background, which also matches the IF condition of the "swirly" class.
+
+Since both conditions are met, the extracted features match the rules in the Knowledge Base, leading to the classification of the image as "swirly".
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9) Run 0: 0.5000
+Run 1 | Query 1: Expected: [meshed] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Interlocking loops
+- Curved lines
+- Black and white pattern
+
+KB:
+- IF Interlocking loops AND Curved lines AND Black and white pattern THEN swirly
+
+Rule Check:
+- The image has interlocking loops, curved lines, and a black and white pattern, which matches the IF conditions of the "swirly" class rule. Therefore, the rule is activated and the image is classified as "swirly".
+----------------------------------------
+Run 1 | Query 2: Expected: [meshed] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Irregular, interconnected loops
+- Black and white contrast
+- Curved lines and shapes
+
+KB:
+- IF Irregular, interconnected loops THEN swirly
+- IF Black and white contrast THEN swirly
+- IF Curved lines and shapes THEN swirly
+
+Rule Check:
+- The image has irregular, interconnected loops which matches the IF condition of the "swirly" class.
+- The image has a black and white contrast which matches the IF condition of the "swirly" class.
+- The image has curved lines and shapes which matches the IF condition of the "swirly" class.
+
+Based on the extracted features and the rules from the knowledge base, the image is best classified as "swirly".
+----------------------------------------
+Run 1 | Query 3: Expected: [meshed] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Irregular, interconnected lines
+- Curved and twisted shapes
+- Black and white contrast
+
+KB:
+- IF Irregular, interconnected lines AND Curved and twisted shapes AND Black and white contrast THEN swirly
+
+Rule Check:
+- The extracted features of the image include irregular, interconnected lines, curved and twisted shapes, and a black and white contrast. These features match the logical IF-THEN rule derived from the examples seen, which states that if an image has irregular, interconnected lines, curved and twisted shapes, and a black and white contrast, then it belongs to the "swirly" class. Therefore, the image is classified as "swirly".
+----------------------------------------
+Run 1 | Query 4: Expected: [meshed] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Interlocking loops
+- Curved lines
+- Black and white pattern
+
+KB:
+- IF Interlocking loops AND Curved lines AND Black and white pattern THEN swirly
+
+Rule Check:
+- The image has interlocking loops, curved lines, and a black and white pattern, which matches the IF conditions of the "swirly" class rule. Therefore, the rule is activated and the image is classified as "swirly".
+----------------------------------------
+Run 1 | Query 5: Expected: [meshed] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Irregular, interconnected lines
+- Black and white contrast
+- No uniform pattern
+
+KB:
+- IF Irregular, interconnected lines AND Black and white contrast AND No uniform pattern THEN swirly
+
+Rule Check:
+- The extracted features of the target image include irregular, interconnected lines, a black and white contrast, and a lack of a uniform pattern. These features match the IF condition of the "swirly" class rule in the knowledge base, which states that the class is characterized by irregular, interconnected lines with a black and white contrast and no uniform pattern. Therefore, the rule that best matches the visual features of the target image is the "swirly" class rule.
+----------------------------------------
+Run 1 | Query 6: Expected: [meshed] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Irregular, interconnected lines
+- Black and white color scheme
+- Complex, non-repetitive pattern
+
+KB:
+- IF Irregular, interconnected lines AND Black and white color scheme AND Complex, non-repetitive pattern THEN swirly
+
+Rule Check:
+- The extracted features of the target image include irregular, interconnected lines, a black and white color scheme, and a complex, non-repetitive pattern. These features match the IF conditions of the "swirly" class rule in the knowledge base, which states that the class is characterized by these specific visual features. Therefore, the rule check confirms that the target image belongs to the "swirly" class.
+----------------------------------------
+Run 1 | Query 7: Expected: [meshed] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Interlocking loops
+- Curved lines
+- Black and white pattern
+
+KB:
+- IF Interlocking loops THEN meshed
+- IF Curved lines THEN swirly
+
+Rule Check:
+- The image has interlocking loops, which matches the "IF Interlocking loops THEN meshed" rule from the KB.
+- The image also has curved lines, which matches the "IF Curved lines THEN swirly" rule from the KB.
+
+Since the image has both interlocking loops and curved lines, it matches both rules from the KB. However, the final classification is based on the rule that is more specific to the image. In this case, the interlocking loops are more specific to the "meshed" class, so the final classification is "meshed".
+----------------------------------------
+Run 1 | Query 8: Expected: [meshed] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Irregular, interconnected lines
+- Black and white color scheme
+- No distinct shapes or forms
+
+KB:
+- IF Irregular, interconnected lines AND Black and white color scheme THEN swirly
+
+Rule Check:
+- The extracted features of the image include irregular, interconnected lines and a black and white color scheme, which match the IF conditions of the "swirly" class rule in the knowledge base. Therefore, the rule that best matches the visual features is:
+  - IF Irregular, interconnected lines AND Black and white color scheme THEN swirly
+
+Classification:
+- Based on the rule check, the final chosen class label is <response>swirly</response>.
+----------------------------------------
+Run 1 | Query 9: Expected: [meshed] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Interlocking loops
+- Curved lines
+- Black and white pattern
+
+KB:
+- IF Interlocking loops AND Curved lines AND Black and white pattern THEN swirly
+
+Rule Check:
+- The image has interlocking loops, curved lines, and a black and white pattern, which matches the IF conditions of the "swirly" class rule. Therefore, the rule is activated and the image is classified as "swirly".
+----------------------------------------
+Run 1 | Query 10: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Curved lines
+- Black and white pattern
+- Swirl shapes
+
+KB:
+- IF Curved lines and black and white pattern THEN swirly
+- IF Swirl shapes THEN swirly
+
+Rule Check:
+- The image has curved lines and a black and white pattern, which matches the IF condition of the "swirly" class.
+- The image also has swirl shapes, which further supports the match with the "swirly" class.
+
+Based on the extracted features and the rules from the knowledge base, the image is best classified as "swirly".
+----------------------------------------
+Run 1 | Query 11: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Irregular, interconnected lines
+- Curved and twisting patterns
+- Black and white color scheme
+
+KB:
+- IF Irregular, interconnected lines AND Curved and twisting patterns AND Black and white color scheme THEN swirly
+
+Rule Check:
+- The extracted features of the image include irregular, interconnected lines, curved and twisting patterns, and a black and white color scheme. These features match the logical IF-THEN rule derived from the examples seen, which states that if an image has irregular, interconnected lines, curved and twisting patterns, and a black and white color scheme, then it belongs to the "swirly" class. Therefore, the image is classified as "swirly."
+----------------------------------------
+Run 1 | Query 12: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Curved lines
+- Black and white pattern
+- Complex, interconnected design
+
+KB:
+- IF Curved lines and black and white pattern THEN swirly
+- IF Complex, interconnected design THEN swirly
+
+Rule Check:
+- The image has curved lines and a black and white pattern, which matches the IF condition of the "swirly" class.
+- The image also has a complex, interconnected design, which matches the IF condition of the "swirly" class.
+
+Since both rules from the KB match the visual features of the image, the final classification is "swirly".
+----------------------------------------
+Run 1 | Query 13: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Swirls
+- Floral patterns
+- Green color
+KB:
+- IF Swirls AND Floral patterns AND Green color THEN swirly
+- IF Swirls AND Floral patterns AND Not Green color THEN meshed
+Rule Check:
+- The image has swirls and floral patterns, which matches the IF conditions of both rules.
+- The image has a green color, which matches the THEN condition of the "swirly" rule.
+- The image does not have a green color, which does not match the THEN condition of the "meshed" rule.
+Classification: <response>swirly</response>
+----------------------------------------
+Run 1 | Query 14: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Circular patterns
+- Swirls
+- Concentric circles
+
+KB:
+- IF Circular patterns and swirls THEN swirly
+
+Rule Check:
+- The image contains circular patterns and swirls, which match the IF condition of the "swirly" class rule. Therefore, the rule that matches the visual features best is:
+  - IF Circular patterns and swirls THEN swirly
+----------------------------------------
+Run 1 | Query 15: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Curved lines
+- Black and white pattern
+- Complex, interconnected design
+
+KB:
+- IF Curved lines and black and white pattern THEN swirly
+- IF Complex, interconnected design THEN swirly
+
+Rule Check:
+- The image has curved lines and a black and white pattern, which matches the IF condition of the "swirly" class.
+- The image also has a complex, interconnected design, which matches the IF condition of the "swirly" class.
+
+Since both rules from the KB match the visual features of the image, the final classification is "swirly".
+----------------------------------------
+Run 1 | Query 16: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Irregular shapes
+- Curved lines
+- Black and white color scheme
+KB:
+- IF Irregular shapes AND Curved lines AND Black and white color scheme THEN swirly
+Rule Check:
+- The image has irregular shapes and curved lines, which are characteristics of the swirly class. Additionally, the black and white color scheme is also a feature of the swirly class. Therefore, the extracted features match the rule from the KB that states "IF Irregular shapes AND Curved lines AND Black and white color scheme THEN swirly."
+Classification: <response>swirly</response>
+----------------------------------------
+Run 1 | Query 17: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Curved lines
+- Black and white pattern
+- Complex, interconnected design
+
+KB:
+- IF Curved lines and black and white pattern THEN swirly
+- IF Complex, interconnected design THEN swirly
+
+Rule Check:
+- The image has curved lines and a black and white pattern, which matches the IF condition of the "swirly" class.
+- The image also has a complex, interconnected design, which matches the IF condition of the "swirly" class.
+
+Since both rules from the KB match the visual features of the image, the final classification is "swirly".
+----------------------------------------
+Run 1 | Query 18: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Irregular, interconnected lines
+- Black and white contrast
+- No repeating pattern
+
+KB:
+- IF Irregular, interconnected lines AND Black and white contrast AND No repeating pattern THEN swirly
+
+Rule Check:
+- The extracted features of the image include irregular, interconnected lines, a black and white contrast, and the absence of a repeating pattern. These features match the IF conditions of the "swirly" class rule in the knowledge base, which states that the class is characterized by irregular, interconnected lines with a black and white contrast and no repeating pattern. Therefore, the rule that best matches the visual features of the image is the "swirly" class rule.
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9) Run 1: 0.5000
+Run 2 | Query 1: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Meshed pattern
+- Metal material
+- Square holes
+KB:
+- IF Meshed pattern AND Metal material AND Square holes THEN Meshed
+Rule Check:
+- The image has a meshed pattern, which is a critical feature for the Meshed class.
+- The material is metal, which is another critical feature for the Meshed class.
+- The holes are square, which is a critical feature for the Meshed class.
+- All the extracted features match the rules in the Knowledge Base for the Meshed class.
+Classification: <response>Meshed</response>
+----------------------------------------
+Run 2 | Query 2: Expected: [meshed] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>swirly</response>
+
+Features:
+- Circular patterns
+- Orange and yellow color scheme
+- Swirl-like shapes
+
+KB:
+- IF Circular patterns and orange/yellow color scheme THEN swirly
+- IF Swirl-like shapes THEN swirly
+
+Rule Check:
+- The image contains circular patterns and an orange/yellow color scheme, which matches the IF condition of the "swirly" class.
+- The image also has swirl-like shapes, which further supports the match with the "swirly" class.
+
+Based on the extracted features and the rules from the knowledge base, the image is best classified as "swirly".
+----------------------------------------
+Run 2 | Query 3: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square pattern
+- Metal texture
+- Gray color
+KB:
+- IF Square pattern AND Metal texture AND Gray color THEN meshed
+Rule Check:
+- The extracted features match the rule in the KB: Square pattern AND Metal texture AND Gray color.
+- These features clearly distinguish the image from the swirly class.
+Classification: <response>meshed</response>
+----------------------------------------
+Run 2 | Query 4: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Meshed pattern
+- Square-shaped holes
+- Gray color
+KB:
+- IF Meshed pattern with square-shaped holes and gray color THEN meshed
+Rule Check:
+- The image has a meshed pattern with square-shaped holes and a gray color, which matches the IF condition of the "meshed" class rule.
+- The extracted features of the meshed pattern, square-shaped holes, and gray color align with the conditions specified in the "meshed" class rule.
+Classification: <response>meshed</response>
+----------------------------------------
+Run 2 | Query 5: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square holes
+- Yellow color
+- Metal texture
+KB:
+- IF Square holes and metal texture THEN meshed
+- IF Yellow color THEN swirly
+Rule Check:
+- The image has square holes and a metal texture, which matches the IF condition of the "meshed" class.
+- The image does not have the yellow color that matches the IF condition of the "swirly" class.
+Classification: <response>meshed</response>
+----------------------------------------
+Run 2 | Query 6: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square pattern
+- Metal texture
+KB:
+- IF Square pattern THEN meshed
+- IF Metal texture THEN meshed
+Rule Check:
+- The image has a square pattern, which matches the IF condition of the "meshed" class.
+- The image also has a metal texture, which matches the IF condition of the "meshed" class.
+- Therefore, the extracted features match the rules in the Knowledge Base, indicating that the class of this image is "meshed".
+<response>meshed</response>
+----------------------------------------
+Run 2 | Query 7: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Small, regular holes
+- Black and white color pattern
+KB:
+- IF Small, regular holes THEN meshed
+- IF Black and white color pattern THEN meshed
+Rule Check:
+- The small, regular holes in the image match the visual feature of the meshed class.
+- The black and white color pattern also matches the visual feature of the meshed class.
+- Therefore, the extracted features match the rules in the Knowledge Base that describe the meshed class.
+Classification: <response>meshed</response>
+----------------------------------------
+Run 2 | Query 8: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Red and white grid pattern
+- Square-shaped grid
+- Red and white color scheme
+KB:
+- IF Red and white grid pattern AND Square-shaped grid THEN meshed
+Rule Check:
+- The extracted features match the rule in the KB: Red and white grid pattern AND Square-shaped grid.
+- The visual features of the image are consistent with the meshed class.
+- Therefore, the image belongs to the meshed class.
+
+Classification: <response>meshed</response>
+----------------------------------------
+Run 2 | Query 9: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square pattern
+- Metal material
+- Gray color
+KB:
+- IF Square pattern THEN meshed
+- IF Metal material THEN meshed
+- IF Gray color THEN meshed
+Rule Check:
+- The image has a square pattern, which matches the rule "IF Square pattern THEN meshed".
+- The material is metal, which also matches the rule "IF Metal material THEN meshed".
+- The color is gray, which matches the rule "IF Gray color THEN meshed".
+Classification: <response>meshed</response>
+----------------------------------------
+Run 2 | Query 10: Expected: [swirly] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Black and white pattern
+- Geometric shapes
+- Symmetrical design
+KB:
+- IF Black and white pattern AND Geometric shapes AND Symmetrical design THEN meshed
+Rule Check:
+- The extracted features match the rule in the KB: Black and white pattern AND Geometric shapes AND Symmetrical design.
+- These features are consistent with the visual characteristics of the meshed class.
+Classification: <response>meshed</response>
+----------------------------------------
+Run 2 | Query 11: Expected: [swirly] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark, textured surface
+- Geometric pattern
+- Square shape
+KB:
+- IF Dark, textured surface AND Geometric pattern AND Square shape THEN meshed
+Rule Check:
+- The image has a dark, textured surface, a geometric pattern, and a square shape, which matches the IF conditions of the "meshed" class rule.
+Classification: <response>meshed</response>
+----------------------------------------
+Run 2 | Query 12: Expected: [swirly] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark color
+- Textured surface
+- Geometric pattern
+
+KB:
+- IF Dark color AND Textured surface AND Geometric pattern THEN meshed
+
+Rule Check:
+- The image has a dark color, a textured surface, and a geometric pattern, which matches the IF conditions of the "meshed" rule in the knowledge base.
+
+Classification:
+<response>meshed</response>
+----------------------------------------
+Run 2 | Query 13: Expected: [swirly] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark color
+- Textured surface
+- Geometric pattern
+KB:
+- IF Dark color AND Textured surface AND Geometric pattern THEN meshed
+Rule Check:
+- The image has a dark color, a textured surface, and a geometric pattern, which matches the IF-THEN rule for the "meshed" class.
+<response>meshed</response>
+----------------------------------------
+Run 2 | Query 14: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark green color
+- Abstract pattern
+- Circular shapes
+- Swirls
+KB:
+- IF Dark green color AND Abstract pattern AND Circular shapes AND Swirls THEN swirly
+Rule Check:
+- The image has a dark green color, which is a feature of the swirly class.
+- The image has an abstract pattern, which is a feature of the swirly class.
+- The image has circular shapes, which is a feature of the swirly class.
+- The image has swirls, which is a feature of the swirly class.
+- Therefore, the extracted features match the rule "IF Dark green color AND Abstract pattern AND Circular shapes AND Swirls THEN swirly" from the Knowledge Base.
+Classification: <response>swirly</response>
+----------------------------------------
+Run 2 | Query 15: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark blue and white swirls
+- Smooth texture
+- Abstract pattern
+KB:
+- IF Dark blue and white swirls AND Smooth texture AND Abstract pattern THEN swirly
+Rule Check:
+- The extracted features match the IF condition of the "swirly" class rule, which states that the image should have dark blue and white swirls, a smooth texture, and an abstract pattern.
+Classification: <response>swirly</response>
+----------------------------------------
+Run 2 | Query 16: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Colorful
+- Abstract
+- Circular patterns
+KB:
+- IF Colorful AND Abstract THEN swirly
+- IF Colorful AND Abstract THEN meshed
+Rule Check:
+- The image has a colorful and abstract appearance with circular patterns, which matches both the "swirly" and "meshed" classes. However, the circular patterns are more prominent in this image compared to the other examples, making it more likely to be classified as "swirly."
+- The colorful and abstract features are consistent with both classes, but the circular patterns are more specific to the "swirly" class.
+Classification: <response>swirly</response>
+----------------------------------------
+Run 2 | Query 17: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Swirl pattern
+- Bright colors
+- Abstract design
+KB:
+- IF Swirl pattern AND Bright colors THEN swirly
+- IF Abstract design THEN abstract
+Rule Check:
+- The image has a swirl pattern and bright colors, which matches the rule "IF Swirl pattern AND Bright colors THEN swirly."
+- The image also has an abstract design, which matches the rule "IF Abstract design THEN abstract."
+Classification: <response>swirly</response>
+----------------------------------------
+Run 2 | Query 18: Expected: [swirly] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark background
+- White floral pattern
+KB:
+- IF Dark background AND White floral pattern THEN meshed
+Rule Check:
+- The extracted features of the image include a dark background and a white floral pattern, which matches the IF condition of the "meshed" class rule.
+- Therefore, the extracted features best match the rule that states "IF Dark background AND White floral pattern THEN meshed."
+Classification: <response>meshed</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9) Run 2: 0.6667
+
+--- CONFIG: N=3, K=1, Q=9 (3 RUNS) ---
+Run 0 | Query 1: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Small circular holes
+- Uniform spacing
+- Metal texture
+KB:
+- IF Small circular holes and uniform spacing THEN perforated
+- IF Metal texture THEN perforated
+Rule Check:
+- The image has small circular holes and uniform spacing, which matches the rule for perforated.
+- The metal texture also matches the rule for perforated.
+Classification: <response>perforated</response>
+----------------------------------------
+Run 0 | Query 2: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square holes
+- Uniform size
+- Regular pattern
+KB:
+- IF Square holes, uniform size, regular pattern THEN perforated
+Rule Check:
+- The extracted features match the rule in the KB: Square holes, uniform size, and regular pattern are characteristic of the perforated class.
+<response>perforated</response>
+----------------------------------------
+Run 0 | Query 3: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Hexagonal pattern
+- Dark background
+- Light-colored hexagons
+KB:
+- IF Hexagonal pattern THEN perforated
+- IF Dark background THEN woven
+- IF Light-colored hexagons THEN grid
+Rule Check:
+- The image has a hexagonal pattern, which matches the "perforated" rule in the KB.
+- The dark background does not match any of the rules in the KB.
+- The light-colored hexagons do not match any of the rules in the KB.
+Classification: <response>perforated</response>
+----------------------------------------
+Run 0 | Query 4: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Hexagonal pattern
+- Red and black circles
+- Metal texture
+KB:
+- IF Hexagonal pattern THEN perforated
+- IF Red and black circles THEN perforated
+- IF Metal texture THEN perforated
+Rule Check:
+- The hexagonal pattern matches the rule "IF Hexagonal pattern THEN perforated".
+- The red and black circles also match the rule "IF Red and black circles THEN perforated".
+- The metal texture matches the rule "IF Metal texture THEN perforated".
+Classification: <response>perforated</response>
+----------------------------------------
+Run 0 | Query 5: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square holes
+- Metal material
+- Regular pattern
+KB:
+- IF Square holes and metal material THEN perforated
+- IF Regular pattern THEN grid
+Rule Check:
+- The image has square holes, which matches the feature of perforated.
+- The image has a metal material, which matches the feature of perforated.
+- The image has a regular pattern, which matches the feature of grid.
+- The image does not have a woven pattern, so it does not match the feature of woven.
+Classification: <response>perforated</response>
+----------------------------------------
+Run 0 | Query 6: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Circular holes
+- Metal texture
+- Uniform pattern
+KB:
+- IF Circular holes AND Metal texture AND Uniform pattern THEN perforated
+Rule Check:
+- The image has circular holes, which matches the visual feature of the perforated class.
+- The metal texture is present, which is a characteristic of the perforated class.
+- The uniform pattern is observed, which is another characteristic of the perforated class.
+- Therefore, the extracted features match the rule IF Circular holes AND Metal texture AND Uniform pattern THEN perforated, indicating that the class of this image is perforated.
+<response>perforated</response>
+----------------------------------------
+Run 0 | Query 7: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square holes
+- Metal material
+- Grid pattern
+
+KB:
+- IF Square holes and metal material THEN perforated
+- IF Square holes and grid pattern THEN grid
+- IF Square holes and woven texture THEN woven
+
+Rule Check:
+- The image has square holes, which matches the feature of perforated.
+- The material appears to be metal, which also matches the perforated class.
+- The grid pattern is not a feature that matches any of the classes provided.
+
+Classification:
+<response>perforated</response>
+----------------------------------------
+Run 0 | Query 8: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Small circular holes
+- Uniform spacing
+- Metal texture
+KB:
+- IF Small circular holes with uniform spacing THEN perforated
+- IF Metal texture THEN perforated
+Rule Check:
+- The image has small circular holes with uniform spacing, which matches the rule for perforated.
+- The metal texture also matches the rule for perforated.
+Classification: <response>perforated</response>
+----------------------------------------
+Run 0 | Query 9: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Hexagonal pattern
+- Dark background
+- Light hexagons
+KB:
+- IF Hexagonal pattern THEN perforated
+- IF Dark background THEN woven
+- IF Light hexagons THEN grid
+Rule Check:
+- The image has a hexagonal pattern, which matches the "perforated" rule in the KB.
+- The dark background does not match any of the rules in the KB.
+- The light hexagons do not match any of the rules in the KB.
+Classification: <response>perforated</response>
+----------------------------------------
+Run 0 | Query 10: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square pattern
+- Pink color
+- Woven texture
+KB:
+- IF Square pattern AND Pink color AND Woven texture THEN woven
+Rule Check:
+- The image has a square pattern, which matches the "Square pattern" feature in the KB.
+- The image has a pink color, which matches the "Pink color" feature in the KB.
+- The image has a woven texture, which matches the "Woven texture" feature in the KB.
+- Therefore, the extracted features match the rule "IF Square pattern AND Pink color AND Woven texture THEN woven" in the KB.
+Classification: <response>woven</response>
+----------------------------------------
+Run 0 | Query 11: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square grid pattern
+- Uniformly spaced squares
+- Black and white color scheme
+
+KB:
+- IF Square grid pattern with uniformly spaced squares THEN grid
+- IF Uniformly spaced squares with a black and white color scheme THEN grid
+
+Rule Check:
+- The image has a square grid pattern with uniformly spaced squares, which matches the IF condition of the "grid" class.
+- The image also has a black and white color scheme, which is another feature that matches the "grid" class.
+
+Classification:
+<response>grid</response>
+----------------------------------------
+Run 0 | Query 12: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square pattern
+- Uniform color
+- Regular spacing
+KB:
+- IF Square pattern AND Uniform color AND Regular spacing THEN grid
+Rule Check:
+- The image has a square pattern, uniform color, and regular spacing, which matches the rule for the 'grid' class.
+<response>grid</response>
+----------------------------------------
+Run 0 | Query 13: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square grid pattern
+- Uniformly spaced lines
+- Consistent line thickness
+KB:
+- IF Square grid pattern with uniformly spaced lines and consistent line thickness THEN grid
+Rule Check:
+- The extracted features match the rule in the KB that describes a grid with a square grid pattern, uniformly spaced lines, and consistent line thickness.
+- The extracted features do not match the rules for woven or perforated textures.
+Classification: <response>grid</response>
+----------------------------------------
+Run 0 | Query 14: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square holes
+- Uniform pattern
+- Metal texture
+KB:
+- IF Square holes and uniform pattern THEN perforated
+- IF Square holes and metal texture THEN perforated
+Rule Check:
+- The image has square holes and a uniform pattern, which matches the rule for perforated.
+- The image also has a metal texture, which further supports the rule for perforated.
+Classification: <response>perforated</response>
+----------------------------------------
+Run 0 | Query 15: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square pattern
+- Uniform spacing
+- Consistent color
+KB:
+- IF Square pattern with uniform spacing and consistent color THEN grid
+Rule Check:
+- The extracted features match the rule in the KB that describes a grid as having a square pattern with uniform spacing and consistent color.
+<response>grid</response>
+----------------------------------------
+Run 0 | Query 16: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square grid pattern
+- Uniformly spaced lines
+- Dark and light contrast
+
+KB:
+- IF Square grid pattern with uniformly spaced lines THEN grid
+- IF Dark and light contrast THEN grid
+
+Rule Check:
+- The image has a square grid pattern with uniformly spaced lines, which matches the IF condition of the "grid" class.
+- The dark and light contrast is also a feature that matches the IF condition of the "grid" class.
+
+Classification:
+<response>grid</response>
+----------------------------------------
+Run 0 | Query 17: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square grid pattern
+- Uniformly spaced squares
+- Consistent color and texture
+
+KB:
+- IF Square grid pattern with uniformly spaced squares THEN grid
+- IF Consistent color and texture THEN grid
+
+Rule Check:
+- The image has a square grid pattern with uniformly spaced squares, which matches the IF condition of the "grid" class.
+- The consistent color and texture also support the "grid" class.
+
+Classification:
+<response>grid</response>
+----------------------------------------
+Run 0 | Query 18: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square holes
+- Uniform spacing
+- Metal texture
+KB:
+- IF Square holes with uniform spacing THEN perforated
+- IF Square holes with uniform spacing THEN grid
+Rule Check:
+- The image has square holes with uniform spacing, which matches the rules for both perforated and grid classes.
+- However, the metal texture is a distinguishing feature that aligns with the perforated class.
+Classification:
+<response>perforated</response>
+----------------------------------------
+Run 0 | Query 19: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square grid pattern
+- Uniformly spaced lines
+- Consistent line thickness
+KB:
+- IF Square grid pattern with uniformly spaced lines and consistent line thickness THEN grid
+Rule Check:
+- The extracted features match the rule in the KB: "Square grid pattern with uniformly spaced lines and consistent line thickness" corresponds to the "grid" class.
+<response>grid</response>
+----------------------------------------
+Run 0 | Query 20: Expected: [grid] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Square shapes
+- Blue and white colors
+- Random arrangement
+
+KB:
+- IF Square shapes and blue and white colors THEN grid
+- IF Square shapes and random arrangement THEN grid
+
+Rule Check:
+- The image contains square shapes, which matches the rule for the grid class.
+- The colors are blue and white, which also matches the rule for the grid class.
+- The arrangement is random, which matches the rule for the grid class.
+
+Based on the extracted features and the rules from the knowledge base, the class of this image is grid.
+----------------------------------------
+Run 0 | Query 21: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square grid pattern
+- Uniformly spaced lines
+- Consistent spacing between lines
+- No perforations or woven texture
+
+KB:
+- IF Square grid pattern with uniformly spaced lines and consistent spacing between lines THEN grid
+
+Rule Check:
+- The extracted features of the target image include a square grid pattern, uniformly spaced lines, and consistent spacing between lines.
+- These features match the IF condition of the rule derived from the KB, which states that if the image has a square grid pattern with uniformly spaced lines and consistent spacing between lines, then it belongs to the grid class.
+
+Classification:
+<response>grid</response>
+----------------------------------------
+Run 0 | Query 22: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>grid</response>
+
+Features:
+- Square grid pattern
+- Uniformly spaced lines
+
+KB:
+- IF Square grid pattern with uniformly spaced lines THEN grid
+
+Rule Check:
+- The extracted features of the target image include a square grid pattern with uniformly spaced lines, which matches the IF condition of the rule derived from the examples.
+- Therefore, the rule that best matches the visual features is: "IF Square grid pattern with uniformly spaced lines THEN grid."
+----------------------------------------
+Run 0 | Query 23: Expected: [grid] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square holes
+- Uniform spacing
+- Metal texture
+KB:
+- IF Square holes with uniform spacing THEN perforated
+- IF Square holes with uniform spacing THEN grid
+Rule Check:
+- The image has square holes with uniform spacing, which matches the rules for both perforated and grid.
+- However, the metal texture is a distinguishing feature that aligns with the perforated class.
+Classification:
+<response>perforated</response>
+----------------------------------------
+Run 0 | Query 24: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>grid</response>
+
+Features:
+- Square grid pattern
+- Consistent spacing between squares
+- Uniform color and texture
+
+KB:
+- IF Square grid pattern with consistent spacing and uniform color/texture THEN grid
+
+Rule Check:
+- The extracted features of the target image include a square grid pattern with consistent spacing and uniform color/texture.
+- These features match the IF condition of the rule derived from the KB.
+- Therefore, the rule is activated, and the corresponding class is determined to be grid.
+----------------------------------------
+Run 0 | Query 25: Expected: [grid] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square holes
+- Metal texture
+- Dark color
+KB:
+- IF Square holes THEN perforated
+- IF Metal texture THEN perforated
+- IF Dark color THEN perforated
+Rule Check:
+- The image has square holes, which matches the rule "IF Square holes THEN perforated".
+- The image has a metal texture, which matches the rule "IF Metal texture THEN perforated".
+- The image has a dark color, which matches the rule "IF Dark color THEN perforated".
+Classification: <response>perforated</response>
+----------------------------------------
+Run 0 | Query 26: Expected: [grid] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square holes
+- Regular pattern
+- Metal texture
+KB:
+- IF Square holes and regular pattern THEN perforated
+- IF Metal texture THEN perforated
+Rule Check:
+- The image has square holes and a regular pattern, which matches the rule for perforated.
+- The metal texture also matches the rule for perforated.
+Classification: <response>perforated</response>
+----------------------------------------
+Run 0 | Query 27: Expected: [grid] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square grid pattern
+- Uniformly spaced squares
+- Metal material
+KB:
+- IF Square grid pattern with uniformly spaced squares THEN grid
+- IF Metal material THEN perforated
+Rule Check:
+- The image has a square grid pattern with uniformly spaced squares, which matches the rule for the "grid" class.
+- The material appears to be metal, which matches the rule for the "perforated" class.
+- Since the image has both a square grid pattern and a metal material, it best matches the "perforated" class.
+Classification: <response>perforated</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9) Run 0: 0.5185
+Run 1 | Query 1: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Square holes
+- Regular pattern
+- Metal texture
+
+KB:
+- IF Square holes, regular pattern, metal texture THEN perforated
+
+Rule Check:
+- The image has square holes arranged in a regular pattern, which matches the visual features of the perforated class. Additionally, the metal texture is consistent with the examples seen. Therefore, the rule that best matches the visual features is:
+  - IF Square holes, regular pattern, metal texture THEN perforated
+----------------------------------------
+Run 1 | Query 2: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Circular holes
+- Uniform spacing
+- Metal texture
+
+KB:
+- IF Circular holes with uniform spacing and metal texture THEN perforated
+
+Rule Check:
+- The target image has circular holes with uniform spacing and a metal texture, which matches the IF condition of the "perforated" rule. Therefore, the rule is activated, and the class is determined to be "perforated."
+----------------------------------------
+Run 1 | Query 3: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Square holes
+- Regular pattern
+- Metal texture
+
+KB:
+- IF Square holes, regular pattern, metal texture THEN perforated
+
+Rule Check:
+- The image has square holes arranged in a regular pattern, which matches the visual features of the perforated class. Additionally, the metal texture is consistent with the examples seen. Therefore, the rule that best matches the visual features is:
+  - IF Square holes, regular pattern, metal texture THEN perforated
+----------------------------------------
+Run 1 | Query 4: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Circular holes
+- Uniform spacing
+- Metal texture
+
+KB:
+- IF Circular holes with uniform spacing and metal texture THEN perforated
+
+Rule Check:
+- The target image has circular holes with uniform spacing and a metal texture, which matches the IF condition of the "perforated" rule. Therefore, the rule is activated, and the class is determined to be "perforated."
+----------------------------------------
+Run 1 | Query 5: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Small circular holes
+- Uniform spacing between holes
+- Metal texture
+
+KB:
+- IF Small circular holes with uniform spacing and metal texture THEN perforated
+
+Rule Check:
+- The target image has small circular holes with uniform spacing and a metal texture, which matches the IF condition of the "perforated" rule. Therefore, the rule is activated, and the class is determined to be "perforated."
+----------------------------------------
+Run 1 | Query 6: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Small circular holes
+- Uniform spacing
+- Metal texture
+
+KB:
+- IF Small circular holes with uniform spacing THEN perforated
+- IF Metal texture THEN perforated
+
+Rule Check:
+- The image has small circular holes with uniform spacing, which matches the IF condition of the perforated class.
+- The metal texture also matches the IF condition of the perforated class.
+
+Therefore, the extracted features match the rules in the Knowledge Base, and the final classification is perforated.
+----------------------------------------
+Run 1 | Query 7: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Small circular holes
+- Uniform spacing between holes
+- Metal texture
+
+KB:
+- IF Small circular holes with uniform spacing THEN perforated
+- IF Metal texture THEN perforated
+
+Rule Check:
+- The image has small circular holes with uniform spacing, which matches the IF condition of the perforated class.
+- The metal texture also matches the IF condition of the perforated class.
+
+Therefore, the extracted features match the rules in the Knowledge Base, and the final classification is <response>perforated</response>.
+----------------------------------------
+Run 1 | Query 8: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Circular holes
+- Uniform spacing
+- Metal texture
+
+KB:
+- IF Circular holes with uniform spacing and metal texture THEN perforated
+
+Rule Check:
+- The target image has circular holes with uniform spacing and a metal texture, which matches the IF condition of the "perforated" rule. Therefore, the rule is activated, and the class is determined to be "perforated."
+----------------------------------------
+Run 1 | Query 9: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Small circular holes
+- Uniform spacing between holes
+- Metal texture
+
+KB:
+- IF Small circular holes with uniform spacing and metal texture THEN perforated
+
+Rule Check:
+- The target image has small circular holes with uniform spacing and a metal texture, which matches the IF condition of the "perforated" rule. Therefore, the rule is activated, and the class is determined to be "perforated."
+----------------------------------------
+Run 1 | Query 10: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Square holes
+- Regular pattern
+- Metal texture
+
+KB:
+- IF Square holes and regular pattern THEN perforated
+- IF Metal texture THEN perforated
+
+Rule Check:
+- The image has square holes arranged in a regular pattern, which matches the IF condition of the perforated class.
+- The metal texture also matches the condition for the perforated class.
+
+Therefore, the extracted features match the rules in the Knowledge Base, leading to the classification of the image as perforated.
+----------------------------------------
+Run 1 | Query 11: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Square holes
+- Uniform spacing
+- Dark background
+
+KB:
+- IF Square holes with uniform spacing and dark background THEN perforated
+
+Rule Check:
+- The extracted features match the rule in the KB, as the image has square holes with uniform spacing and a dark background, which are characteristic of the perforated class.
+----------------------------------------
+Run 1 | Query 12: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Small circular holes
+- Uniform spacing between holes
+- Metal texture
+
+KB:
+- IF Small circular holes with uniform spacing and metal texture THEN perforated
+
+Rule Check:
+- The target image has small circular holes with uniform spacing, which matches the visual features of the perforated class.
+- The metal texture is also a characteristic of the perforated class.
+- Therefore, the extracted features match the rule from the KB that states "IF Small circular holes with uniform spacing and metal texture THEN perforated."
+
+Based on the rule check, the final classification is <response>perforated</response>.
+----------------------------------------
+Run 1 | Query 13: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Square holes
+- Uniform spacing
+- Dark background
+
+KB:
+- IF Square holes with uniform spacing and dark background THEN perforated
+
+Rule Check:
+- The extracted features match the rule in the KB, as the image has square holes with uniform spacing and a dark background, which are characteristic of the perforated class.
+----------------------------------------
+Run 1 | Query 14: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Small circular holes
+- Uniform spacing between holes
+- Metal texture
+
+KB:
+- IF Small circular holes with uniform spacing and metal texture THEN perforated
+
+Rule Check:
+- The target image has small circular holes with uniform spacing, which matches the visual features of the perforated class.
+- The metal texture is also a characteristic of the perforated class.
+- Therefore, the extracted features match the rule from the KB that states "IF Small circular holes with uniform spacing and metal texture THEN perforated."
+
+Based on the rule check, the final classification is <response>perforated</response>.
+----------------------------------------
+Run 1 | Query 15: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Square holes
+- Uniform spacing
+- Metal material
+
+KB:
+- IF Square holes with uniform spacing and metal material THEN perforated
+
+Rule Check:
+- The target image has square holes with uniform spacing and is made of metal, which matches the IF conditions of the "perforated" rule in the knowledge base. Therefore, the rule is activated and the image is classified as "perforated".
+----------------------------------------
+Run 1 | Query 16: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Square holes
+- Regular pattern
+
+KB:
+- IF Square holes and regular pattern THEN perforated
+
+Rule Check:
+- The image has square holes and a regular pattern, which matches the IF condition of the "perforated" rule. Therefore, the rule is activated and the image is classified as "perforated".
+----------------------------------------
+Run 1 | Query 17: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Small circular holes
+- Uniform spacing between holes
+- Metal texture
+
+KB:
+- IF Small circular holes with uniform spacing and metal texture THEN perforated
+
+Rule Check:
+- The target image has small circular holes with uniform spacing, which matches the visual features described in the KB rule for the perforated class. Additionally, the metal texture is consistent with the examples seen. Therefore, the extracted features match the rule for the perforated class best.
+----------------------------------------
+Run 1 | Query 18: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Square holes
+- Regular pattern
+
+KB:
+- IF Square holes and regular pattern THEN perforated
+
+Rule Check:
+- The image has square holes and a regular pattern, which matches the IF condition of the "perforated" rule. Therefore, the rule is activated and the image is classified as "perforated".
+----------------------------------------
+Run 1 | Query 19: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>grid</response>
+
+Features:
+- Square shapes
+- Uniform spacing
+- Dark background
+
+KB:
+- IF Square shapes with uniform spacing and a dark background THEN grid
+
+Rule Check:
+- The extracted features match the rule in the KB, as the image contains square shapes with uniform spacing and a dark background, which are characteristic of a grid.
+----------------------------------------
+Run 1 | Query 20: Expected: [grid] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Square holes
+- Regular pattern
+- Metal texture
+
+KB:
+- IF Square holes, regular pattern, metal texture THEN perforated
+
+Rule Check:
+- The image has square holes arranged in a regular pattern, which matches the visual features of the perforated class. Additionally, the metal texture is consistent with the examples seen. Therefore, the rule that best matches the visual features is:
+  - IF Square holes, regular pattern, metal texture THEN perforated
+----------------------------------------
+Run 1 | Query 21: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>grid</response>
+
+Features:
+- Square shapes
+- Uniform spacing
+- Dark background
+
+KB:
+- IF Square shapes with uniform spacing and a dark background THEN grid
+
+Rule Check:
+- The extracted features match the rule in the KB, as the image contains square shapes with uniform spacing and a dark background, which are characteristic of a grid.
+----------------------------------------
+Run 1 | Query 22: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>grid</response>
+
+Features:
+- Square pattern
+- Uniform spacing
+- Consistent size of squares
+
+KB:
+- IF Square pattern with uniform spacing and consistent size of squares THEN grid
+
+Rule Check:
+- The extracted features of the target image include a square pattern with uniform spacing and consistent size of squares.
+- These features match the rule in the Knowledge Base that describes the grid class.
+- Therefore, the target image is classified as a grid.
+----------------------------------------
+Run 1 | Query 23: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>grid</response>
+
+Features:
+- Square pattern
+- Uniform spacing
+- Dark background
+
+KB:
+- IF Square pattern with uniform spacing THEN grid
+- IF Dark background THEN grid
+
+Rule Check:
+- The image has a square pattern with uniform spacing, which matches the IF condition of the grid class.
+- The dark background also matches the IF condition of the grid class.
+
+Therefore, the extracted features match the rules in the Knowledge Base, and the final classification is grid.
+----------------------------------------
+Run 1 | Query 24: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>grid</response>
+
+Features:
+- Square shapes
+- Uniform spacing
+- Dark background
+
+KB:
+- IF Square shapes with uniform spacing and a dark background THEN grid
+
+Rule Check:
+- The extracted features match the rule in the KB, as the image contains square shapes with uniform spacing and a dark background, which are characteristic of a grid.
+----------------------------------------
+Run 1 | Query 25: Expected: [grid] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Square holes
+- Regular pattern
+- Metal texture
+
+KB:
+- IF Square holes and regular pattern THEN perforated
+- IF Metal texture THEN perforated
+
+Rule Check:
+- The image has square holes arranged in a regular pattern, which matches the IF condition of the perforated class.
+- The metal texture also matches the condition for the perforated class.
+
+Therefore, the extracted features match the rules in the Knowledge Base, leading to the classification of the image as perforated.
+----------------------------------------
+Run 1 | Query 26: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>grid</response>
+
+Features:
+- Square shapes
+- Uniform spacing
+- Dark background
+
+KB:
+- IF Square shapes with uniform spacing and a dark background THEN grid
+
+Rule Check:
+- The extracted features match the rule in the KB, as the image contains square shapes with uniform spacing and a dark background, which are characteristic of a grid.
+----------------------------------------
+Run 1 | Query 27: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>grid</response>
+
+Features:
+- Square pattern
+- Uniform spacing
+- Dark background
+
+KB:
+- IF Square pattern with uniform spacing THEN grid
+- IF Dark background THEN grid
+
+Rule Check:
+- The image has a square pattern with uniform spacing, which matches the IF condition of the grid class.
+- The dark background also matches the IF condition of the grid class.
+
+Therefore, the extracted features match the rules in the Knowledge Base, and the final classification is grid.
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9) Run 1: 0.5926
+Run 2 | Query 1: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Circular holes
+- Metal texture
+- Reflective surface
+KB:
+- IF Circular holes and metal texture THEN perforated
+- IF Reflective surface THEN perforated
+Rule Check:
+- The image has circular holes, which matches the IF condition of the perforated class.
+- The metal texture also matches the IF condition of the perforated class.
+- The reflective surface further supports the match with the perforated class.
+- Therefore, the extracted features best match the rule that states "IF Circular holes and metal texture THEN perforated" and "IF Reflective surface THEN perforated."
+Classification: <response>perforated</response>
+----------------------------------------
+Run 2 | Query 2: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark color
+- Small perforations
+- Uniform pattern
+KB:
+- IF Dark color AND Small perforations AND Uniform pattern THEN perforated
+Rule Check:
+- The extracted features match the rule in the KB: Dark color AND Small perforations AND Uniform pattern.
+- The extracted features do not match the rules for woven or grid.
+Classification: <response>perforated</response>
+----------------------------------------
+Run 2 | Query 3: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Irregular holes
+- Metal texture
+- Reflective surface
+
+KB:
+- IF Irregular holes and metal texture THEN perforated
+- IF Reflective surface THEN perforated
+
+Rule Check:
+- The image has irregular holes, which matches the IF condition of the perforated class.
+- The metal texture and reflective surface also match the conditions for the perforated class.
+
+Therefore, the extracted features match the rules in the Knowledge Base, leading to the classification of the image as perforated.
+----------------------------------------
+Run 2 | Query 4: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Small perforations
+- Irregular shapes
+- Metallic texture
+KB:
+- IF Small perforations AND Irregular shapes AND Metallic texture THEN perforated
+Rule Check:
+- The extracted features match the rule in the KB: Small perforations AND Irregular shapes AND Metallic texture.
+- The rule specifies that these features are indicative of the "perforated" class.
+Classification: <response>perforated</response>
+----------------------------------------
+Run 2 | Query 5: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Hexagonal holes
+- Uniform size and shape
+- Metallic color
+
+KB:
+- IF Hexagonal holes, uniform size and shape, metallic color THEN perforated
+
+Rule Check:
+- The extracted features match the rule in the KB: Hexagonal holes, uniform size and shape, metallic color. Therefore, the image is classified as perforated.
+----------------------------------------
+Run 2 | Query 6: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Circular patterns
+- Uniform spacing
+- Red and black colors
+KB:
+- IF Circular patterns with uniform spacing and red and black colors THEN perforated
+Rule Check:
+- The extracted features match the IF condition of the rule in the KB, indicating that the image belongs to the perforated class.
+<response>perforated</response>
+----------------------------------------
+Run 2 | Query 7: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Irregular holes
+- Metal texture
+- Reflective surface
+
+KB:
+- IF Irregular holes and metal texture THEN perforated
+- IF Reflective surface THEN perforated
+
+Rule Check:
+- The image has irregular holes, which matches the IF condition of the perforated class.
+- The metal texture and reflective surface also match the conditions for the perforated class.
+
+Therefore, the extracted features match the rules in the Knowledge Base, leading to the classification of the image as perforated.
+----------------------------------------
+Run 2 | Query 8: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Circular holes
+- Metal texture
+- Uniform pattern
+
+KB:
+- IF Circular holes and metal texture THEN perforated
+- IF Uniform pattern THEN grid
+
+Rule Check:
+- The image has circular holes, which matches the feature of the perforated class.
+- The metal texture also aligns with the perforated class.
+- The uniform pattern does not match the grid class, so it is not considered.
+
+Therefore, the extracted features match the rule for the perforated class.
+----------------------------------------
+Run 2 | Query 9: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Circular holes
+- Metal material
+- Patterned surface
+KB:
+- IF Circular holes and metal material THEN perforated
+- IF Patterned surface THEN grid
+Rule Check:
+- The image has circular holes, which matches the feature of perforated.
+- The material appears to be metal, which also matches the perforated class.
+- The patterned surface does not match the grid class.
+Classification: <response>perforated</response>
+----------------------------------------
+Run 2 | Query 10: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Irregular perforations
+- Metallic texture
+- Reflective surface
+KB:
+- IF Irregular perforations AND Metallic texture AND Reflective surface THEN perforated
+Rule Check:
+- The image has irregular perforations, a metallic texture, and a reflective surface, which matches the IF conditions of the "perforated" rule in the KB.
+<response>perforated</response>
+----------------------------------------
+Run 2 | Query 11: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Irregular holes
+- Metallic texture
+- Reflective surface
+
+KB:
+- IF Irregular holes AND Metallic texture AND Reflective surface THEN perforated
+
+Rule Check:
+- The image has irregular holes, which matches the "Irregular holes" feature in the KB.
+- The image has a metallic texture, which matches the "Metallic texture" feature in the KB.
+- The image has a reflective surface, which matches the "Reflective surface" feature in the KB.
+
+Based on the extracted features and the rules in the KB, the image matches the "perforated" class.
+----------------------------------------
+Run 2 | Query 12: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Irregular holes
+- Metallic texture
+- Reflective surface
+KB:
+- IF Irregular holes AND Metallic texture AND Reflective surface THEN perforated
+Rule Check:
+- The image has irregular holes, which matches the "perforated" class.
+- The metallic texture and reflective surface are also consistent with the "perforated" class.
+- Therefore, the extracted features match the rule in the Knowledge Base that states "IF Irregular holes AND Metallic texture AND Reflective surface THEN perforated."
+Classification: <response>perforated</response>
+----------------------------------------
+Run 2 | Query 13: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Irregular holes
+- Metallic texture
+- Reflective surface
+
+KB:
+- IF Irregular holes and metallic texture THEN perforated
+- IF Reflective surface THEN perforated
+
+Rule Check:
+- The image has irregular holes, which matches the IF condition of the perforated class.
+- The metallic texture and reflective surface also match the IF conditions of the perforated class.
+
+Therefore, the extracted features match the rules in the Knowledge Base, and the final classification is perforated.
+----------------------------------------
+Run 2 | Query 14: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Irregular holes
+- Metallic texture
+- Reflective surface
+
+KB:
+- IF Irregular holes AND Metallic texture AND Reflective surface THEN perforated
+
+Rule Check:
+- The image has irregular holes, which matches the "Irregular holes" feature in the KB.
+- The image has a metallic texture, which matches the "Metallic texture" feature in the KB.
+- The image has a reflective surface, which matches the "Reflective surface" feature in the KB.
+
+Based on the extracted features and the rules in the KB, the image matches the "perforated" class.
+----------------------------------------
+Run 2 | Query 15: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Irregular holes
+- Metallic texture
+- Reflective surface
+KB:
+- IF Irregular holes AND Metallic texture AND Reflective surface THEN perforated
+Rule Check:
+- The image has irregular holes, which matches the "perforated" class.
+- The metallic texture and reflective surface are also consistent with the "perforated" class.
+- Therefore, the extracted features match the rules in the Knowledge Base, confirming that the class of this image is "perforated".
+<response>perforated</response>
+----------------------------------------
+Run 2 | Query 16: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Irregular holes
+- Metal texture
+- Reflective surface
+
+KB:
+- IF Irregular holes and metal texture THEN perforated
+- IF Reflective surface THEN perforated
+
+Rule Check:
+- The image has irregular holes, which matches the IF condition of the perforated class.
+- The metal texture and reflective surface also match the conditions for the perforated class.
+
+Therefore, the extracted features match the rules in the Knowledge Base, leading to the classification of the image as perforated.
+----------------------------------------
+Run 2 | Query 17: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Irregular holes
+- Metallic texture
+- Reflective surface
+
+KB:
+- IF Irregular holes AND Metallic texture AND Reflective surface THEN perforated
+
+Rule Check:
+- The image has irregular holes, which matches the "Irregular holes" feature in the KB.
+- The image has a metallic texture, which matches the "Metallic texture" feature in the KB.
+- The image has a reflective surface, which matches the "Reflective surface" feature in the KB.
+
+Based on the extracted features and the rules in the KB, the image matches the "perforated" class.
+----------------------------------------
+Run 2 | Query 18: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Irregular holes
+- Metallic texture
+- Reflective surface
+KB:
+- IF Irregular holes AND Metallic texture AND Reflective surface THEN perforated
+Rule Check:
+- The image has irregular holes, which matches the "perforated" class.
+- The metallic texture and reflective surface are also consistent with the "perforated" class.
+- Therefore, the extracted features match the rule in the Knowledge Base that states "IF Irregular holes AND Metallic texture AND Reflective surface THEN perforated."
+Classification: <response>perforated</response>
+----------------------------------------
+Run 2 | Query 19: Expected: [grid] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Irregular holes
+- Metallic texture
+- Reflective surface
+KB:
+- IF Irregular holes AND Metallic texture AND Reflective surface THEN perforated
+Rule Check:
+- The image has irregular holes, which matches the "perforated" class.
+- The metallic texture and reflective surface are also consistent with the "perforated" class.
+- Therefore, the extracted features match the rule in the Knowledge Base that states "IF Irregular holes AND Metallic texture AND Reflective surface THEN perforated."
+Classification: <response>perforated</response>
+----------------------------------------
+Run 2 | Query 20: Expected: [grid] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Irregular holes
+- Metallic texture
+- Reflective surface
+KB:
+- IF Irregular holes AND Metallic texture AND Reflective surface THEN perforated
+Rule Check:
+- The image has irregular holes, a metallic texture, and a reflective surface, which matches the IF conditions of the perforated class rule.
+<response>perforated</response>
+----------------------------------------
+Run 2 | Query 21: Expected: [grid] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>perforated</response>
+
+Features:
+- Irregular holes
+- Metallic texture
+- Reflective surface
+
+KB:
+- IF Irregular holes AND Metallic texture AND Reflective surface THEN perforated
+
+Rule Check:
+- The image has irregular holes, which matches the "Irregular holes" feature in the KB.
+- The image has a metallic texture, which matches the "Metallic texture" feature in the KB.
+- The image has a reflective surface, which matches the "Reflective surface" feature in the KB.
+
+Based on the extracted features and the rules in the KB, the image matches the "perforated" class.
+----------------------------------------
+Run 2 | Query 22: Expected: [grid] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Irregular perforations
+- Metallic texture
+- Reflective surface
+KB:
+- IF Irregular perforations AND Metallic texture AND Reflective surface THEN perforated
+Rule Check:
+- The image has irregular perforations, a metallic texture, and a reflective surface, which matches the IF conditions of the "perforated" rule in the KB.
+- Therefore, the extracted features best match the "perforated" rule.
+<response>perforated</response>
+----------------------------------------
+Run 2 | Query 23: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>grid</response>
+
+Features:
+- Square patterns
+- Uniform grid lines
+- Consistent spacing
+
+KB:
+- IF Square patterns with uniform grid lines THEN grid
+
+Rule Check:
+- The extracted features of the target image include square patterns and uniform grid lines, which match the IF condition of the grid rule in the knowledge base.
+- Therefore, the rule that best matches the visual features is: "IF Square patterns with uniform grid lines THEN grid."
+
+Based on the rule check, the final classification of the target image is grid.
+----------------------------------------
+Run 2 | Query 24: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>grid</response>
+
+Features:
+- Square grid pattern
+- Consistent spacing between squares
+- Uniform color and texture
+
+KB:
+- IF Square grid pattern with consistent spacing and uniform color and texture THEN grid
+
+Rule Check:
+- The extracted features of the target image include a square grid pattern with consistent spacing and uniform color and texture, which matches the IF condition of the grid class rule in the knowledge base. Therefore, the rule is activated, and the class is determined to be grid.
+----------------------------------------
+Run 2 | Query 25: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Square grid pattern
+- Uniform spacing
+- Black background
+KB:
+- IF Square grid pattern with uniform spacing THEN grid
+Rule Check:
+- The extracted features match the rule in the KB: "Square grid pattern with uniform spacing" corresponds to the "grid" class.
+<response>grid</response>
+----------------------------------------
+Run 2 | Query 26: Expected: [grid] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Irregular holes
+- Metallic texture
+- Reflective surface
+KB:
+- IF Irregular holes AND Metallic texture AND Reflective surface THEN perforated
+Rule Check:
+- The image has irregular holes, which matches the "perforated" class.
+- The metallic texture and reflective surface are also consistent with the "perforated" class.
+Classification: <response>perforated</response>
+----------------------------------------
+Run 2 | Query 27: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>grid</response>
+
+Features:
+- Square patterns
+- Uniform spacing
+- Consistent size of squares
+
+KB:
+- IF Square patterns with uniform spacing and consistent size of squares THEN grid
+
+Rule Check:
+- The extracted features of the target image include square patterns with uniform spacing and consistent size of squares, which match the IF condition of the grid rule in the KB. Therefore, the rule is activated, and the corresponding feature-based explanation is grid.
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9) Run 2: 0.4815
+
+--- CONFIG: N=4, K=1, Q=9 (3 RUNS) ---
+Run 0 | Query 1: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Gold color
+- Smooth surface
+KB:
+- IF Pleated texture AND Gold color AND Smooth surface THEN Pleated
+Rule Check:
+- The image has a pleated texture, which matches the IF part of the rule.
+- The color is gold, which matches the IF part of the rule.
+- The surface is smooth, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Pleated texture AND Gold color AND Smooth surface THEN Pleated".
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 2: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Light brown color
+- Smooth surface
+KB:
+- IF Pleated texture AND Light brown color AND Smooth surface THEN Pleated
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base: Pleated texture AND Light brown color AND Smooth surface.
+- The extracted features do not match the IF-THEN rules for marbled, veined, or woven textures.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 3: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Gold color
+- Smooth surface
+KB:
+- IF Pleated texture AND Gold color AND Smooth surface THEN Pleated
+Rule Check:
+- The image has a pleated texture, which matches the IF part of the rule.
+- The color is gold, which matches the IF part of the rule.
+- The surface is smooth, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Pleated texture AND Gold color AND Smooth surface THEN Pleated".
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 4: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Light brown color
+- Smooth surface
+KB:
+- IF Pleated texture AND Light brown color AND Smooth surface THEN Pleated
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base: Pleated texture AND Light brown color AND Smooth surface.
+- The extracted features do not match the IF-THEN rules for marbled, veined, or woven textures.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 5: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>pleated</response>
+
+Features:
+- Pleated texture
+- Light brown color
+
+KB:
+- IF Pleated texture THEN Pleated
+- IF Light brown color THEN Pleated
+
+Rule Check:
+- The image has a pleated texture, which matches the IF condition of the Pleated class.
+- The light brown color also matches the IF condition of the Pleated class.
+
+Therefore, the extracted features match the rules in the Knowledge Base, and the final classification is Pleated.
+----------------------------------------
+Run 0 | Query 6: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Light brown color
+- Smooth surface
+KB:
+- IF Pleated texture AND Light brown color AND Smooth surface THEN Pleated
+Rule Check:
+- The image has a pleated texture, which matches the IF part of the rule.
+- The color is light brown, which is consistent with the examples.
+- The surface is smooth, which aligns with the examples.
+- Therefore, the extracted features match the rule for the Pleated class.
+<response>pleated</response>
+----------------------------------------
+Run 0 | Query 7: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Gold color
+- Smooth surface
+KB:
+- IF Pleated texture AND Gold color AND Smooth surface THEN Pleated
+Rule Check:
+- The image has a pleated texture, which matches the IF part of the rule.
+- The color is gold, which matches the IF part of the rule.
+- The surface is smooth, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Pleated texture AND Gold color AND Smooth surface THEN Pleated".
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 8: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Light beige color
+- Smooth surface
+KB:
+- IF Pleated texture AND Light beige color AND Smooth surface THEN Pleated
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base: Pleated texture AND Light beige color AND Smooth surface.
+- The extracted features do not match the IF-THEN rules for marbled, veined, or woven textures.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 9: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Light brown color
+- Smooth surface
+KB:
+- IF Pleated texture AND Light brown color AND Smooth surface THEN Pleated
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base: Pleated texture AND Light brown color AND Smooth surface.
+- The extracted features do not match the IF-THEN rules for marbled, veined, or woven textures.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 10: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Gold color
+- Smooth surface
+KB:
+- IF Pleated texture AND Gold color AND Smooth surface THEN Pleated
+Rule Check:
+- The image has a pleated texture, which matches the IF part of the rule.
+- The color is gold, which matches the IF part of the rule.
+- The surface is smooth, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Pleated texture AND Gold color AND Smooth surface THEN Pleated".
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 11: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Light brown color
+- Smooth surface
+KB:
+- IF Pleated texture AND Light brown color AND Smooth surface THEN pleated
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base: Pleated texture AND Light brown color AND Smooth surface.
+- The extracted features do not match the IF-THEN rules for marbled, veined, or woven textures.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 12: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Gold color
+- Smooth surface
+KB:
+- IF Pleated texture AND Gold color AND Smooth surface THEN Pleated
+Rule Check:
+- The image has a pleated texture, which matches the IF part of the rule.
+- The color is gold, which matches the IF part of the rule.
+- The surface is smooth, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Pleated texture AND Gold color AND Smooth surface THEN Pleated".
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 13: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Light brown color
+- Smooth surface
+KB:
+- IF Pleated texture AND Light brown color AND Smooth surface THEN Pleated
+Rule Check:
+- The image has a pleated texture, which matches the IF part of the rule.
+- The color is light brown, which is consistent with the examples.
+- The surface is smooth, which aligns with the examples.
+- Therefore, the extracted features match the rule for the Pleated class.
+<response>pleated</response>
+----------------------------------------
+Run 0 | Query 14: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Light brown color
+- Smooth surface
+KB:
+- IF Pleated texture AND Light brown color AND Smooth surface THEN pleated
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base: Pleated texture AND Light brown color AND Smooth surface.
+- The extracted features do not match the IF-THEN rules for marbled, veined, or woven textures.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 15: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Gold color
+- Smooth surface
+KB:
+- IF Pleated texture AND Gold color AND Smooth surface THEN Pleated
+Rule Check:
+- The image has a pleated texture, which matches the IF part of the rule.
+- The color is gold, which matches the IF part of the rule.
+- The surface is smooth, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Pleated texture AND Gold color AND Smooth surface THEN Pleated".
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 16: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Light brown color
+- Smooth surface
+KB:
+- IF Pleated texture AND Light brown color AND Smooth surface THEN pleated
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base: Pleated texture AND Light brown color AND Smooth surface.
+- The extracted features do not match the IF-THEN rules for marbled, veined, or woven textures.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 17: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Gold color
+- Smooth surface
+KB:
+- IF Pleated texture AND Gold color AND Smooth surface THEN Pleated
+Rule Check:
+- The image has a pleated texture, which matches the IF part of the rule.
+- The color is gold, which matches the IF part of the rule.
+- The surface is smooth, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Pleated texture AND Gold color AND Smooth surface THEN Pleated".
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 18: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>marbled</response>
+
+Features:
+- The image shows a surface with a pattern that resembles marble.
+- The surface has a mix of colors, including shades of gray, white, and brown.
+- The pattern appears to be a combination of swirls and veins.
+
+KB:
+- IF The surface has a pattern resembling marble with a mix of colors and swirls/veins THEN The class is marbled.
+
+Rule Check:
+- The extracted features include a pattern resembling marble, a mix of colors, and swirls/veins.
+- These features match the IF condition of the rule derived from the Knowledge Base.
+- Therefore, the rule that best matches the visual features is: IF The surface has a pattern resembling marble with a mix of colors and swirls/veins THEN The class is marbled.
+----------------------------------------
+Run 0 | Query 19: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Smooth surface
+- Uniform folds
+KB:
+- IF Pleated texture AND Smooth surface AND Uniform folds THEN Pleated
+Rule Check:
+- The image has a pleated texture, a smooth surface, and uniform folds, which match the IF-THEN rule for the Pleated class.
+<response>pleated</response>
+----------------------------------------
+Run 0 | Query 20: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Light brown color
+- Smooth surface
+KB:
+- IF Pleated texture AND Light brown color AND Smooth surface THEN pleated
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base: Pleated texture AND Light brown color AND Smooth surface.
+- The extracted features do not match the IF-THEN rules for marbled, veined, or woven textures.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 21: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Gold color
+- Smooth surface
+KB:
+- IF Pleated texture AND Gold color AND Smooth surface THEN pleated
+Rule Check:
+- The image has a pleated texture, which matches the IF part of the rule.
+- The color is gold, which matches the IF part of the rule.
+- The surface is smooth, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Pleated texture AND Gold color AND Smooth surface THEN pleated."
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 22: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Textured surface
+- Patterned design
+KB:
+- IF Textured surface AND Patterned design THEN woven
+Rule Check:
+- The image has a textured surface and a patterned design, which matches the IF condition of the "woven" class rule.
+- Therefore, the extracted features match the rule that states "IF Textured surface AND Patterned design THEN woven."
+Classification: <response>woven</response>
+----------------------------------------
+Run 0 | Query 23: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Light brown color
+- Smooth surface
+KB:
+- IF Pleated texture AND Light brown color AND Smooth surface THEN pleated
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base: Pleated texture AND Light brown color AND Smooth surface.
+- The extracted features do not match the IF-THEN rules for marbled, veined, or woven textures.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 24: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Smooth surface
+- Symmetrical folds
+KB:
+- IF Pleated texture AND Smooth surface AND Symmetrical folds THEN Pleated
+Rule Check:
+- The image has a pleated texture, a smooth surface, and symmetrical folds, which match the IF-THEN rule for the Pleated class.
+<response>pleated</response>
+----------------------------------------
+Run 0 | Query 25: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Light brown color
+- Smooth surface
+KB:
+- IF Pleated texture AND Light brown color AND Smooth surface THEN pleated
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base: Pleated texture AND Light brown color AND Smooth surface.
+- The extracted features do not match the IF-THEN rules for marbled, veined, or woven textures.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 26: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Smooth surface
+- Symmetrical folds
+KB:
+- IF Pleated texture AND Smooth surface AND Symmetrical folds THEN Pleated
+Rule Check:
+- The image has a pleated texture, a smooth surface, and symmetrical folds, which match the IF-THEN rule for the Pleated class.
+<response>pleated</response>
+----------------------------------------
+Run 0 | Query 27: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Smooth surface
+- Symmetrical folds
+KB:
+- IF Pleated texture AND Smooth surface AND Symmetrical folds THEN pleated
+Rule Check:
+- The image has a pleated texture, a smooth surface, and symmetrical folds, which match the IF-THEN rule for the pleated class.
+<response>pleated</response>
+----------------------------------------
+Run 0 | Query 28: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Light brown color
+- Smooth surface
+KB:
+- IF Pleated texture AND Light brown color AND Smooth surface THEN Pleated
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base: Pleated texture AND Light brown color AND Smooth surface.
+- The extracted features do not match the IF-THEN rules for marbled, veined, or woven textures.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 29: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Light brown color
+- Smooth surface
+KB:
+- IF Pleated texture AND Light brown color AND Smooth surface THEN Pleated
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base: Pleated texture AND Light brown color AND Smooth surface.
+- The extracted features do not match the IF-THEN rules for marbled, veined, or woven textures.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 30: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Diagonal lines
+- Dark and light brown colors
+KB:
+- IF Diagonal lines AND Dark and light brown colors THEN woven
+Rule Check:
+- The image has diagonal lines, which matches the visual feature of the "woven" class.
+- The image has dark and light brown colors, which matches the visual feature of the "woven" class.
+- Therefore, the extracted features match the rules in the Knowledge Base, indicating that the class of this image is "woven".
+<response>woven</response>
+----------------------------------------
+Run 0 | Query 31: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Light brown color
+- Smooth surface
+KB:
+- IF Pleated texture AND Light brown color AND Smooth surface THEN Pleated
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base: Pleated texture AND Light brown color AND Smooth surface.
+- The extracted features do not match the IF-THEN rules for marbled, veined, or woven textures.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 32: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Gold color
+- Smooth surface
+KB:
+- IF Pleated texture AND Gold color AND Smooth surface THEN Pleated
+Rule Check:
+- The image has a pleated texture, which matches the IF part of the rule.
+- The color is gold, which matches the IF part of the rule.
+- The surface is smooth, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Pleated texture AND Gold color AND Smooth surface THEN Pleated".
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 33: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Zigzag pattern
+- Black and white colors
+- Woven texture
+KB:
+- IF Zigzag pattern AND Black and white colors AND Woven texture THEN Woven
+Rule Check:
+- The extracted features match the rule in the Knowledge Base: "IF Zigzag pattern AND Black and white colors AND Woven texture THEN Woven."
+- The extracted features of the target image include a zigzag pattern, black and white colors, and a woven texture, which align with the conditions specified in the rule.
+Classification: <response>output_class</response>
+----------------------------------------
+Run 0 | Query 34: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Light brown color
+- Smooth surface
+KB:
+- IF Pleated texture AND Light brown color AND Smooth surface THEN pleated
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base: Pleated texture AND Light brown color AND Smooth surface.
+- The extracted features do not match the IF-THEN rules for marbled, veined, or woven textures.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 35: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Light brown color
+- Smooth surface
+KB:
+- IF Pleated texture AND Light brown color AND Smooth surface THEN Pleated
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base: Pleated texture AND Light brown color AND Smooth surface.
+- The extracted features do not match the IF-THEN rules for marbled, veined, or woven textures.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 0 | Query 36: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Light brown color
+- Smooth surface
+KB:
+- IF Pleated texture AND Light brown color AND Smooth surface THEN pleated
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base: Pleated texture AND Light brown color AND Smooth surface.
+- The extracted features do not match the IF-THEN rules for marbled, veined, or woven textures.
+Classification: <response>pleated</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9) Run 0: 0.3056
+Run 1 | Query 1: Expected: [pleated] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Dark and light brown stripes
+KB:
+- IF Woven texture THEN woven
+- IF Dark and light brown stripes THEN marbled
+Rule Check:
+- The image has a woven texture, which matches the rule "IF Woven texture THEN woven".
+- The image also has dark and light brown stripes, which matches the rule "IF Dark and light brown stripes THEN marbled". However, since the image has a woven texture, which is a more specific feature, the rule "IF Woven texture THEN woven" is activated.
+Classification: <response>woven</response>
+----------------------------------------
+Run 1 | Query 2: Expected: [pleated] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wavy texture
+- Light brown color
+- Smooth surface
+KB:
+- IF Wavy texture AND Light brown color AND Smooth surface THEN woven
+Rule Check:
+- The extracted features of the target image match the IF conditions of the "woven" class rule in the Knowledge Base.
+- The wavy texture, light brown color, and smooth surface of the target image align with the specific visual features that define the "woven" class.
+- Therefore, the extracted features of the target image best match the rule for the "woven" class.
+Classification: <response>woven</response>
+----------------------------------------
+Run 1 | Query 3: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Dark color
+- Smooth surface
+KB:
+- IF Pleated texture AND Dark color AND Smooth surface THEN pleated
+Rule Check:
+- The image has a pleated texture, which matches the IF part of the rule. Additionally, the dark color and smooth surface also align with the features described in the rule. Therefore, the extracted features match the rule from the Knowledge Base.
+<response>pleated</response>
+----------------------------------------
+Run 1 | Query 4: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Light reflection on the surface
+- Vertical lines
+
+KB:
+- IF Pleated texture AND Light reflection on the surface AND Vertical lines THEN pleated
+
+Rule Check:
+- The image has a pleated texture, which is a characteristic of the pleated class.
+- There is light reflection on the surface, which is a characteristic of the pleated class.
+- The image has vertical lines, which is a characteristic of the pleated class.
+
+Based on the extracted features, the rule that matches the visual features best is:
+- IF Pleated texture AND Light reflection on the surface AND Vertical lines THEN pleated
+
+Classification:
+<response>pleated</response>
+----------------------------------------
+Run 1 | Query 5: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Dark color
+- Smooth surface
+KB:
+- IF Pleated texture AND Dark color AND Smooth surface THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class. Additionally, the dark color and smooth surface are also present, which further supports the pleated class. Therefore, the extracted features match the rule from the KB that states "IF Pleated texture AND Dark color AND Smooth surface THEN pleated."
+<response>pleated</response>
+----------------------------------------
+Run 1 | Query 6: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Light beige color
+- Vertical folds
+KB:
+- IF Pleated texture AND Light beige color AND Vertical folds THEN Pleated
+Rule Check:
+- The image has a pleated texture, which matches the IF condition of the Pleated class.
+- The light beige color and vertical folds also match the visual features described in the examples for the Pleated class.
+- Therefore, the extracted features match the rule for the Pleated class.
+<response>pleated</response>
+----------------------------------------
+Run 1 | Query 7: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Dark color
+- Vertical stripes
+KB:
+- IF Pleated texture AND Dark color AND Vertical stripes THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The dark color and vertical stripes are also present, which are additional features that support the pleated class.
+- Therefore, the extracted features match the rule in the Knowledge Base that states "IF Pleated texture AND Dark color AND Vertical stripes THEN pleated."
+Classification: <response>pleated</response>
+----------------------------------------
+Run 1 | Query 8: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Dark purple color
+- Smooth surface
+KB:
+- IF Pleated texture AND Dark purple color AND Smooth surface THEN pleated
+Rule Check:
+- The extracted features match the IF-THEN rule in the Knowledge Base: Pleated texture AND Dark purple color AND Smooth surface.
+- The extracted features do not match the IF-THEN rules for marbled, veined, or woven textures.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 1 | Query 9: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Dark color
+- Smooth surface
+KB:
+- IF Pleated texture AND Dark color AND Smooth surface THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The dark color and smooth surface are also present, which are additional features that support the pleated class.
+- Therefore, the extracted features match the rule in the Knowledge Base that states "IF Pleated texture AND Dark color AND Smooth surface THEN pleated."
+Classification: <response>pleated</response>
+----------------------------------------
+Run 1 | Query 10: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark color
+- Woven texture
+KB:
+- IF Dark color AND Woven texture THEN woven
+Rule Check:
+- The image has a dark color and a woven texture, which matches the IF-THEN rule for the "woven" class.
+- The extracted features of dark color and woven texture align with the rule for the "woven" class.
+- Therefore, the extracted features match the rule for the "woven" class.
+Classification: <response>woven</response>
+----------------------------------------
+Run 1 | Query 11: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark color
+- Textured surface
+- Woven pattern
+
+KB:
+- IF Dark color AND Textured surface AND Woven pattern THEN woven
+
+Rule Check:
+- The extracted features match the IF conditions of the "woven" rule in the Knowledge Base. The dark color, textured surface, and woven pattern are all present in the target image, making it a perfect match for the "woven" class.
+
+Classification:
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 12: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark green color
+- Smooth texture
+- No visible veins or patterns
+KB:
+- IF Dark green color AND Smooth texture THEN pleated
+- IF Dark green color AND No visible veins or patterns THEN pleated
+Rule Check:
+- The image has a dark green color, which matches the IF condition of the pleated class.
+- The texture is smooth, which also matches the IF condition of the pleated class.
+- There are no visible veins or patterns, which further supports the pleated class.
+- Therefore, the extracted features match the rules in the KB, and the class of this image is pleated.
+<response>pleated</response>
+----------------------------------------
+Run 1 | Query 13: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark color
+- Woven texture
+KB:
+- IF Dark color AND Woven texture THEN woven
+Rule Check:
+- The image has a dark color and a woven texture, which matches the IF-THEN rule for the 'woven' class.
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 14: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark, textured surface
+- Woven pattern
+KB:
+- IF Dark, textured surface AND Woven pattern THEN woven
+Rule Check:
+- The image has a dark, textured surface and a woven pattern, which matches the IF condition of the "woven" class rule.
+- Therefore, the extracted features match the rule that states "IF Dark, textured surface AND Woven pattern THEN woven."
+Classification: <response>woven</response>
+----------------------------------------
+Run 1 | Query 15: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark color
+- Woven texture
+KB:
+- IF Dark color AND Woven texture THEN woven
+Rule Check:
+- The image has a dark color and a woven texture, which matches the IF-THEN rule for the "woven" class.
+- The extracted features of dark color and woven texture align with the rule for the "woven" class.
+- Therefore, the extracted features match the rule for the "woven" class.
+Classification: <response>woven</response>
+----------------------------------------
+Run 1 | Query 16: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark color
+- Textured surface
+- Woven pattern
+
+KB:
+- IF Dark color AND Textured surface AND Woven pattern THEN woven
+
+Rule Check:
+- The extracted features match the IF conditions of the rule from the KB: Dark color, Textured surface, and Woven pattern. Therefore, the rule is activated.
+
+Classification:
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 17: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Dark color
+- Patterned surface
+KB:
+- IF Woven texture AND Dark color AND Patterned surface THEN woven
+Rule Check:
+- The image has a woven texture, a dark color, and a patterned surface, which matches the IF-THEN rule for the "woven" class.
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 18: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Dark color
+- Geometric pattern
+KB:
+- IF Woven texture AND Dark color AND Geometric pattern THEN woven
+Rule Check:
+- The image has a woven texture, which matches the IF part of the rule.
+- The image has a dark color, which matches the IF part of the rule.
+- The image has a geometric pattern, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule for the "woven" class.
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 19: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Dark color
+- Regular pattern
+KB:
+- IF Woven texture AND Dark color AND Regular pattern THEN Woven
+Rule Check:
+- The image has a woven texture, which matches the IF part of the rule.
+- The color is dark, which also matches the IF part of the rule.
+- The pattern is regular, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule for the Woven class.
+<response>Woven</response>
+----------------------------------------
+Run 1 | Query 20: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark, textured surface
+- Woven pattern
+KB:
+- IF Dark, textured surface AND Woven pattern THEN woven
+Rule Check:
+- The image has a dark, textured surface and a woven pattern, which matches the IF condition of the "woven" class rule.
+- Therefore, the extracted features match the rule that states "IF Dark, textured surface AND Woven pattern THEN woven."
+Classification: <response>woven</response>
+----------------------------------------
+Run 1 | Query 21: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Red and orange color
+- Red and orange lines
+- Red and orange pattern
+KB:
+- IF Red and orange color THEN marbled
+- IF Red and orange lines THEN marbled
+- IF Red and orange pattern THEN marbled
+Rule Check:
+- The image has red and orange color, which matches the IF condition of the marbled class.
+- The image has red and orange lines, which matches the IF condition of the marbled class.
+- The image has a red and orange pattern, which matches the IF condition of the marbled class.
+Classification: <response>marbled</response>
+----------------------------------------
+Run 1 | Query 22: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark, textured surface
+- Woven pattern
+KB:
+- IF Dark, textured surface AND Woven pattern THEN woven
+Rule Check:
+- The extracted features of the dark, textured surface and the woven pattern match the IF condition of the "woven" class rule in the Knowledge Base.
+- Therefore, the rule that best matches the visual features is: "IF Dark, textured surface AND Woven pattern THEN woven".
+- Based on the rule check, the final chosen class label is: <response>woven</response>.
+----------------------------------------
+Run 1 | Query 23: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark, textured surface
+- Woven pattern
+KB:
+- IF Dark, textured surface AND Woven pattern THEN woven
+Rule Check:
+- The extracted features of the dark, textured surface and the woven pattern match the IF condition of the "woven" class rule in the Knowledge Base.
+- Therefore, the rule that best matches the visual features is: "IF Dark, textured surface AND Woven pattern THEN woven".
+- Based on the rule check, the final chosen class label is: <response>woven</response>.
+----------------------------------------
+Run 1 | Query 24: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Veins
+- Red and green colors
+- Leaf shape
+KB:
+- IF Veins THEN Veined
+- IF Red and green colors THEN Marbled
+- IF Leaf shape THEN Leaf
+Rule Check:
+- The image has veins, which matches the rule "IF Veins THEN Veined".
+- The image has red and green colors, which matches the rule "IF Red and green colors THEN Marbled".
+- The image has a leaf shape, which matches the rule "IF Leaf shape THEN Leaf".
+- Since the image matches the rules for both "Veined" and "Marbled", and there is no rule that explicitly matches the combination of features, the classification is based on the most specific feature that is present in the image.
+- The image has a leaf shape, which matches the rule "IF Leaf shape THEN Leaf".
+Classification: <response>leaf</response>
+----------------------------------------
+Run 1 | Query 25: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark, textured surface
+- Woven pattern
+KB:
+- IF Dark, textured surface AND Woven pattern THEN woven
+Rule Check:
+- The image has a dark, textured surface and a woven pattern, which matches the IF condition of the "woven" class rule.
+- Therefore, the extracted features match the rule that states "IF Dark, textured surface AND Woven pattern THEN woven."
+Classification: <response>woven</response>
+----------------------------------------
+Run 1 | Query 26: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark color
+- Woven texture
+KB:
+- IF Dark color AND Woven texture THEN woven
+Rule Check:
+- The image has a dark color and a woven texture, which matches the IF-THEN rule for the "woven" class.
+- The extracted features of dark color and woven texture align with the rule for the "woven" class.
+Classification: <response>woven</response>
+----------------------------------------
+Run 1 | Query 27: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark, textured surface
+- Woven pattern
+KB:
+- IF Dark, textured surface AND Woven pattern THEN woven
+Rule Check:
+- The image has a dark, textured surface and a woven pattern, which matches the IF condition of the "woven" class rule.
+- Therefore, the extracted features match the rule that states "IF Dark, textured surface AND Woven pattern THEN woven."
+- Based on the rule check, the class of this image is <response>woven</response>.
+----------------------------------------
+Run 1 | Query 28: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Interwoven pattern
+- Consistent weave
+KB:
+- IF Woven texture THEN Woven
+- IF Interwoven pattern THEN Woven
+- IF Consistent weave THEN Woven
+Rule Check:
+- The image has a woven texture, which matches the IF condition of the Woven class.
+- The interwoven pattern is a specific feature of the woven texture, supporting the match with the Woven class.
+- The consistent weave is another specific feature of the woven texture, further supporting the match with the Woven class.
+Classification: <response>output_class</response>
+----------------------------------------
+Run 1 | Query 29: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Diagonal lines
+- Dark color
+- Textured surface
+KB:
+- IF Diagonal lines AND Dark color AND Textured surface THEN woven
+Rule Check:
+- The image has diagonal lines, a dark color, and a textured surface, which matches the IF conditions of the "woven" rule in the knowledge base.
+- Therefore, the extracted features best match the "woven" rule.
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 30: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Dark color
+- Patterned surface
+KB:
+- IF Woven texture AND Dark color AND Patterned surface THEN woven
+Rule Check:
+- The image has a woven texture, a dark color, and a patterned surface, which matches the IF conditions of the "woven" rule in the knowledge base.
+Classification: <response>woven</response>
+----------------------------------------
+Run 1 | Query 31: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Purple color
+- Braided pattern
+KB:
+- IF Woven texture AND Purple color AND Braided pattern THEN Woven
+Rule Check:
+- The image has a woven texture, which matches the IF part of the rule.
+- The image has a purple color, which matches the IF part of the rule.
+- The image has a braided pattern, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule "IF Woven texture AND Purple color AND Braided pattern THEN Woven".
+Classification: <response>output_class</response>
+----------------------------------------
+Run 1 | Query 32: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Dark brown color
+- Zigzag pattern
+KB:
+- IF Woven texture AND Dark brown color AND Zigzag pattern THEN woven
+Rule Check:
+- The extracted features match the IF condition of the rule in the Knowledge Base, which states that if an image has a woven texture, dark brown color, and a zigzag pattern, it belongs to the woven class.
+Classification: <response>woven</response>
+----------------------------------------
+Run 1 | Query 33: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Dark color
+- Regular pattern
+KB:
+- IF Woven texture AND Dark color AND Regular pattern THEN Woven
+Rule Check:
+- The image has a woven texture, which matches the IF part of the rule.
+- The color is dark, which also matches the IF part of the rule.
+- The pattern is regular, which matches the IF part of the rule.
+- Therefore, the extracted features match the rule for the Woven class.
+<response>Woven</response>
+----------------------------------------
+Run 1 | Query 34: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Dark grey color
+- Square pattern
+KB:
+- IF Woven texture AND Dark grey color AND Square pattern THEN woven
+Rule Check:
+- The image has a woven texture, which matches the IF condition of the rule.
+- The dark grey color matches the IF condition of the rule.
+- The square pattern matches the IF condition of the rule.
+- Therefore, the extracted features match the rule for the "woven" class.
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 35: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark, textured surface
+- Woven pattern
+KB:
+- IF Dark, textured surface AND Woven pattern THEN woven
+Rule Check:
+- The extracted features of the dark, textured surface and the woven pattern match the IF condition of the "woven" class rule in the Knowledge Base.
+- Therefore, the rule that best matches the visual features is: "IF Dark, textured surface AND Woven pattern THEN woven".
+- Based on the rule check, the final chosen class label is: <response>woven</response>.
+----------------------------------------
+Run 1 | Query 36: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Woven texture
+- Interwoven fibers
+- Uniform pattern
+KB:
+- IF Woven texture THEN Woven
+- IF Interwoven fibers THEN Woven
+- IF Uniform pattern THEN Woven
+Rule Check:
+- The image has a woven texture, which is characterized by interwoven fibers arranged in a uniform pattern. This matches the IF-THEN rules in the Knowledge Base that define the Woven class.
+Classification: <response>Woven</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9) Run 1: 0.3889
+Run 2 | Query 1: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White color
+- Angular shapes
+KB:
+- IF Pleated texture AND White color AND Angular shapes THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The image is predominantly white, which is another important feature for the pleated class.
+- The image has angular shapes, which is a distinctive feature for the pleated class.
+- Therefore, the extracted features match the rule: IF Pleated texture AND White color AND Angular shapes THEN pleated.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 2: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White color
+- Curved shape
+KB:
+- IF Pleated texture AND White color AND Curved shape THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The color of the image is white, which is another critical feature for the pleated class.
+- The shape of the image is curved, which is a critical feature for the pleated class.
+- Therefore, the extracted features match the rule: IF Pleated texture AND White color AND Curved shape THEN pleated.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 3: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White color
+- Angular folds
+KB:
+- IF Pleated texture AND White color AND Angular folds THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The color is white, which is a common color for pleated materials.
+- The angular folds are present, which is another key feature for the pleated class.
+- Therefore, the extracted features match the rule: IF Pleated texture AND White color AND Angular folds THEN pleated.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 4: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White color
+- Angular folds
+KB:
+- IF Pleated texture AND White color AND Angular folds THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The color is white, which is a common color for pleated materials.
+- The angular folds are present, which is another key feature for the pleated class.
+- Therefore, the extracted features match the rule: IF Pleated texture AND White color AND Angular folds THEN pleated.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 5: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White color
+- Angular folds
+KB:
+- IF Pleated texture AND White color AND Angular folds THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The color is white, which is a common color for pleated materials.
+- The folds are angular, which is a distinctive feature of pleated materials.
+- Therefore, the extracted features match the rule for the pleated class.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 6: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White color
+- Angular folds
+KB:
+- IF Pleated texture AND White color AND Angular folds THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The color is white, which is a common color for pleated materials.
+- The folds are angular, which is a distinctive feature of pleated materials.
+- Therefore, the extracted features match the rule: IF Pleated texture AND White color AND Angular folds THEN pleated.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 7: Expected: [pleated] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wavy texture
+- Light brown color
+- Smooth surface
+KB:
+- IF Wavy texture AND Light brown color AND Smooth surface THEN woven
+Rule Check:
+- The extracted features of the target image match the IF conditions of the "woven" rule in the Knowledge Base.
+- The extracted features include a wavy texture, a light brown color, and a smooth surface, which are all present in the target image.
+- Therefore, the rule that best matches the visual features of the target image is the "woven" rule.
+Classification: <response>woven</response>
+----------------------------------------
+Run 2 | Query 8: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+<response>pleated</response>
+
+Features:
+- Pleated texture
+- White color
+- Angular folds
+
+KB:
+- IF Pleated texture THEN Pleated
+- IF White color THEN Pleated
+- IF Angular folds THEN Pleated
+
+Rule Check:
+- The image has a pleated texture, which matches the IF-THEN rule "IF Pleated texture THEN Pleated".
+- The image has a white color, which matches the IF-THEN rule "IF White color THEN Pleated".
+- The image has angular folds, which matches the IF-THEN rule "IF Angular folds THEN Pleated".
+
+Based on the extracted features and the matching rules in the Knowledge Base, the final classification is "pleated".
+----------------------------------------
+Run 2 | Query 9: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White color
+- Angular folds
+KB:
+- IF Pleated texture AND White color AND Angular folds THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The color is white, which is a common color for pleated materials.
+- The folds are angular, which is a distinctive feature of pleated materials.
+- Therefore, the extracted features match the rule for the pleated class.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 10: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White and gray color
+- Angular, geometric shape
+KB:
+- IF Pleated texture AND White and gray color AND Angular, geometric shape THEN pleated
+Rule Check:
+- The extracted features of the target image match the IF conditions of the pleated class rule: Pleated texture, White and gray color, and Angular, geometric shape. Therefore, the rule is activated.
+- The extracted features do not match the IF conditions of the other classes (marbled, woven, veined) as they do not have the pleated texture, white and gray color, and angular, geometric shape.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 11: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White color
+- Angular shapes
+KB:
+- IF Pleated texture AND White color AND Angular shapes THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The image is predominantly white, which is another important feature for the pleated class.
+- The image has angular shapes, which is a distinctive feature for the pleated class.
+- Therefore, the extracted features match the rule: IF Pleated texture AND White color AND Angular shapes THEN pleated.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 12: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- Dark green color
+- Curved lines
+KB:
+- IF Pleated texture AND Dark green color AND Curved lines THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The dark green color is a distinctive feature that helps distinguish the pleated class from others.
+- The curved lines are another important feature that aligns with the pleated class.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 13: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White and gray color
+- Angular and geometric shape
+KB:
+- IF Pleated texture AND White and gray color AND Angular and geometric shape THEN pleated
+Rule Check:
+- The extracted features of the target image match the IF conditions of the pleated class rule: Pleated texture, White and gray color, and Angular and geometric shape.
+- Therefore, the rule that best matches the visual features of the target image is the pleated class rule.
+- The final classification is: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 14: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White and gray color
+- Angular and geometric shape
+KB:
+- IF Pleated texture AND White and gray color AND Angular and geometric shape THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The color is white and gray, which is another important feature for the pleated class.
+- The shape is angular and geometric, which is a distinctive feature for the pleated class.
+- All these features match the IF-THEN rule for the pleated class.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 15: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White and gray color
+- Angular and geometric shape
+KB:
+- IF Pleated texture AND White and gray color AND Angular and geometric shape THEN pleated
+Rule Check:
+- The extracted features of the target image match the IF conditions of the pleated class rule: Pleated texture, White and gray color, and Angular and geometric shape.
+- Therefore, the rule that best matches the visual features of the target image is the pleated class rule.
+- The final classification is: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 16: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White and gray color
+- Angular and geometric shape
+KB:
+- IF Pleated texture AND White and gray color AND Angular and geometric shape THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The color is white and gray, which is another important feature for the pleated class.
+- The shape is angular and geometric, which is a distinctive feature for the pleated class.
+- All these features match the IF-THEN rule for the pleated class.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 17: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White and gray color
+- Angular and geometric shape
+KB:
+- IF Pleated texture AND White and gray color AND Angular and geometric shape THEN pleated
+Rule Check:
+- The extracted features of the target image match the IF conditions of the pleated class rule: Pleated texture, White and gray color, and Angular and geometric shape.
+- Therefore, the rule that best matches the visual features of the target image is the pleated class rule.
+- The final classification is: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 18: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White color
+- Angular shapes
+KB:
+- IF Pleated texture AND White color AND Angular shapes THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The image is predominantly white, which is another important feature for the pleated class.
+- The image contains angular shapes, which is a distinctive feature for the pleated class.
+- All these features match the IF-THEN rule derived from the examples seen, confirming that the image belongs to the pleated class.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 19: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Red and orange fibers
+- Red and orange color pattern
+- Red and orange texture
+KB:
+- IF Red and orange fibers THEN woven
+- IF Red and orange color pattern THEN marbled
+- IF Red and orange texture THEN pleated
+Rule Check:
+- The image has red and orange fibers, which matches the IF condition of the woven class.
+- The image has a red and orange color pattern, which matches the IF condition of the marbled class.
+- The image has a red and orange texture, which matches the IF condition of the pleated class.
+- Since the image has features that match the IF conditions of both the woven and marbled classes, and also the pleated class, the rule check cannot definitively determine the class based on the provided features. However, if we consider the visual evidence, the image appears to have a more uniform and consistent texture, which is more characteristic of a woven material. Therefore, the most likely class for this image is woven.
+Classification: <response>woven</response>
+----------------------------------------
+Run 2 | Query 20: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White color
+- Angular shapes
+KB:
+- IF Pleated texture AND White color AND Angular shapes THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The image is predominantly white, which is another important feature for the pleated class.
+- The image has angular shapes, which is a distinctive feature for the pleated class.
+- Therefore, the extracted features match the rule: IF Pleated texture AND White color AND Angular shapes THEN pleated.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 21: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White and gray color
+- Angular and geometric shape
+KB:
+- IF Pleated texture AND White and gray color AND Angular and geometric shape THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The color is white and gray, which is another important feature for the pleated class.
+- The shape is angular and geometric, which is a distinctive feature for the pleated class.
+- All these features match the IF-THEN rule for the pleated class.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 22: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White color
+- Angular shapes
+KB:
+- IF Pleated texture AND White color AND Angular shapes THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The image is predominantly white, which is another important feature for the pleated class.
+- The shapes in the image are angular, which is a distinctive feature for the pleated class.
+- All these features match the IF-THEN rule derived from the examples seen, which states that if an image has a pleated texture, white color, and angular shapes, then it belongs to the pleated class.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 23: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White and gray color
+- Angular and geometric shape
+KB:
+- IF Pleated texture AND White and gray color AND Angular and geometric shape THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The color is white and gray, which is another important feature for the pleated class.
+- The shape is angular and geometric, which is a distinctive feature for the pleated class.
+- All these features match the IF-THEN rule for the pleated class.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 24: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White color
+- Angular shapes
+KB:
+- IF Pleated texture AND White color AND Angular shapes THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The image is predominantly white, which is another important feature for the pleated class.
+- The image has angular shapes, which is a distinctive feature for the pleated class.
+- Therefore, the extracted features match the rule: IF Pleated texture AND White color AND Angular shapes THEN pleated.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 25: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White and gray color
+- Angular and geometric shape
+KB:
+- IF Pleated texture AND White and gray color AND Angular and geometric shape THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The color is white and gray, which is another important feature for the pleated class.
+- The shape is angular and geometric, which is a distinctive feature for the pleated class.
+- All these features match the IF-THEN rule for the pleated class.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 26: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White and gray color
+- Angular and geometric shape
+KB:
+- IF Pleated texture AND White and gray color AND Angular and geometric shape THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The color is white and gray, which is another important feature for the pleated class.
+- The shape is angular and geometric, which is a distinctive feature for the pleated class.
+- All these features match the IF-THEN rule for the pleated class.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 27: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White color
+- Angular shapes
+KB:
+- IF Pleated texture AND White color AND Angular shapes THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The image is predominantly white, which is another important feature for the pleated class.
+- The image has angular shapes, which is a distinctive feature for the pleated class.
+- Therefore, the extracted features match the rule: IF Pleated texture AND White color AND Angular shapes THEN pleated.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 28: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White color
+- Angular shapes
+KB:
+- IF Pleated texture AND White color AND Angular shapes THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The image is predominantly white, which is another important feature for the pleated class.
+- The image has angular shapes, which is a distinctive feature for the pleated class.
+- Therefore, the extracted features match the rule: IF Pleated texture AND White color AND Angular shapes THEN pleated.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 29: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White and gray color
+- Angular and geometric shape
+KB:
+- IF Pleated texture AND White and gray color AND Angular and geometric shape THEN pleated
+Rule Check:
+- The extracted features of the target image match the IF conditions of the pleated class rule: Pleated texture, White and gray color, and Angular and geometric shape.
+- Therefore, the rule that best matches the visual features of the target image is the pleated class rule.
+- The final classification is: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 30: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White color
+- Angular shapes
+KB:
+- IF Pleated texture AND White color AND Angular shapes THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The image is predominantly white, which is another important feature for the pleated class.
+- The image has angular shapes, which is a distinctive feature for the pleated class.
+- Therefore, the extracted features match the rule: IF Pleated texture AND White color AND Angular shapes THEN pleated.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 31: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White and gray color
+- Angular and geometric shape
+KB:
+- IF Pleated texture AND White and gray color AND Angular and geometric shape THEN pleated
+Rule Check:
+- The extracted features of the target image match the IF conditions of the pleated class rule: Pleated texture, White and gray color, and Angular and geometric shape.
+- Therefore, the rule that best matches the visual features of the target image is the pleated class rule.
+- The final classification is: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 32: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White color
+- Angular folds
+KB:
+- IF Pleated texture AND White color AND Angular folds THEN pleated
+Rule Check:
+- The image has a pleated texture, which is a critical feature for the pleated class.
+- The color is white, which is a common color for pleated materials.
+- The angular folds are present, which is another key feature for the pleated class.
+- Therefore, the extracted features match the rule: IF Pleated texture AND White color AND Angular folds THEN pleated.
+Classification: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 33: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White and gray color
+- Angular and geometric shape
+KB:
+- IF Pleated texture AND White and gray color AND Angular and geometric shape THEN pleated
+Rule Check:
+- The extracted features of the target image match the IF conditions of the pleated class rule: Pleated texture, White and gray color, and Angular and geometric shape.
+- Therefore, the rule that best matches the visual features of the target image is the pleated class rule.
+- The final classification is: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 34: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Zigzag pattern
+- Black and white stripes
+KB:
+- IF Zigzag pattern THEN woven
+- IF Black and white stripes THEN woven
+Rule Check:
+- The image has a zigzag pattern, which matches the rule "IF Zigzag pattern THEN woven."
+- The image also has black and white stripes, which matches the rule "IF Black and white stripes THEN woven."
+Classification: <response>woven</response>
+----------------------------------------
+Run 2 | Query 35: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Pleated texture
+- White and gray color
+- Angular and geometric shape
+KB:
+- IF Pleated texture AND White and gray color AND Angular and geometric shape THEN pleated
+Rule Check:
+- The extracted features of the target image match the IF conditions of the pleated class rule: Pleated texture, White and gray color, and Angular and geometric shape.
+- Therefore, the rule that best matches the visual features of the target image is the pleated class rule.
+- The final classification is: <response>pleated</response>
+----------------------------------------
+Run 2 | Query 36: Expected: [woven] | Extracted: NO_MATCH
+MODEL RAW OUTPUT:
+Features:
+- Diagonal lines
+- Carbon fiber texture
+KB:
+- IF Diagonal lines AND Carbon fiber texture THEN woven
+Rule Check:
+- The image has diagonal lines, which is a critical feature for the woven class.
+- The image also has a carbon fiber texture, which is another critical feature for the woven class.
+- Both features match the rules in the Knowledge Base, indicating that the image belongs to the woven class.
+- Therefore, the extracted features match the rules in the Knowledge Base, and the final classification is woven.
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9) Run 2: 0.2500

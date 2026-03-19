@@ -97,77 +97,73 @@ def main():
         'Prompt_Type': prompt_type
     }
 
+    runs = 3
+    
     # Pre-fill with "ERROR" in case one fails, so the cell is not empty in Excel
     for (n, k, q) in tests:
-        results_row[f"({n},{k},{q})"] = "ERROR"
+        for run_id in range(runs):
+            results_row[f"({n},{k},{q})_run{run_id}"] = "ERROR"
 
     # Open the debug file
     with open(debug_filename, "w", encoding="utf-8") as f_debug:
         f_debug.write(f"=== DEBUG LOG: {args.model} | {args.dataset} | Prompt: {prompt_type} ===\n")
 
         for (way, shot, query_count) in tests:
-            filepath = f"episodes/{args.dataset}/episode_N{way}_K{shot}_Q{query_count}.npy"
-            
-            if not os.path.exists(filepath):
-                print(f"[!] Episode file not found: {filepath}. Skipping...")
-                continue
-                
-            print(f"[*] Evaluating Config: N={way}, K={shot}, Q={query_count} ...")
-            f_debug.write(f"\n--- CONFIG: N={way}, K={shot}, Q={query_count} ---\n")
+            print(f"[*] Evaluating Config: N={way}, K={shot}, Q={query_count} over 3 runs...")
+            f_debug.write(f"\n--- CONFIG: N={way}, K={shot}, Q={query_count} (3 RUNS) ---\n")
             
             try:
-                data = load_episode_from_indices(filepath, dataset, all_class_names)
-
-                total = 0
-                correct = 0
-                num_queries_total = query_count * way 
-
-                for i in range(num_queries_total):
-                    indices, shots, query, class_names = select_few_shot_images_with_data_fixed(
-                        data, i, dataset, all_class_names
-                    )
-
-                    messages = get_classification_messages3(SYSTEM_PROMPT, indices, shots, query, class_names)
+                for run_id in range(runs):
+                    filepath = f"episodes/{args.dataset}/episode_N{way}_K{shot}_Q{query_count}_run{run_id}.npy"
                     
-                    result = run_icl_inference(model, processor, args.model, messages, None)
-                    del messages
+                    if not os.path.exists(filepath):
+                        print(f"[!] Episode file not found: {filepath}. Skipping run {run_id}...")
+                        continue
+                        
+                    data = load_episode_from_indices(filepath, dataset, all_class_names)
                     
-                    match = re.search(r'<response>(.*?)</response>', result, flags=re.IGNORECASE | re.DOTALL)
+                    total = 0
+                    correct = 0
+                    num_queries_total = query_count * way 
+
+                    for i in range(num_queries_total):
+                        indices, shots, query, class_names = select_few_shot_images_with_data_fixed(
+                            data, i, dataset, all_class_names
+                        )
+
+                        messages = get_classification_messages3(SYSTEM_PROMPT, indices, shots, query, class_names)
+                        
+                        result = run_icl_inference(model, processor, args.model, messages, None)
+                        del messages
+                        
+                        match = re.search(r'<response>(.*?)</response>', result, flags=re.IGNORECASE | re.DOTALL)
+                        
+                        label_id = query[1]
+                        label_text = class_names[label_id] if class_names else str(label_id)
+
+                        if match:
+                            label = match.group(1).strip()
+                            is_correct = (isinstance(label, int) and int(label) == int(label_text)) or \
+                                         (isinstance(label, str) and label.lower() == label_text.lower())
+
+                            if is_correct:
+                                correct += 1
+
+                            f_debug.write(f"Run {run_id} | Query {i+1}: Expected: [{label_text}] | Extracted: [{label}] -> Correct: {is_correct}\n")
+                        else:
+                            f_debug.write(f"Run {run_id} | Query {i+1}: Expected: [{label_text}] | Extracted: NO_MATCH\n")
+
+                        total += 1
+
+                    accuracy = correct / total if total > 0 else 0
                     
-                    label_id = query[1]
-                    label_text = class_names[label_id] if class_names else str(label_id)
+                    results_row[f"({way},{shot},{query_count})_run{run_id}"] = f"{accuracy:.4f}"
 
-                    if match:
-                        label = match.group(1).strip()
-
-                        # Check if it's correct
-                        is_correct = (isinstance(label, int) and int(label) == int(label_text)) or \
-                                     (isinstance(label, str) and label.lower() == label_text.lower())
-
-                        if is_correct:
-                            correct += 1
-
-                        # Save log to the .txt file
-                        f_debug.write(f"Query {i+1}: Expected: [{label_text}] | Extracted: [{label}] -> Correct: {is_correct}\n")
-
-                        if args.debug:
-                            print(f"Extracted: {label} | Expected: {label_text} | Correct: {is_correct}")
-                    else:
-                        f_debug.write(f"Query {i+1}: Expected: [{label_text}] | Extracted: NO_MATCH | RAW_OUTPUT:\n{result}\n")
-                        if args.debug:
-                            print(f"No class found in response: {result}")
-
-                    total += 1
-
-                accuracy = correct / total if total > 0 else 0
-
-                results_row[f"({way},{shot},{query_count})"] = f"{accuracy:.4f}"
-
-                print(f" -> Result: {correct}/{total} correct (Accuracy: {accuracy:.4f})")
-                f_debug.write(f"-> FINAL ACCURACY for ({way},{shot},{query_count}): {accuracy:.4f}\n")
-                
-                del data
-                gc.collect()
+                    print(f"   -> Run {run_id} Result: {correct}/{total} correct (Accuracy: {accuracy:.4f})")
+                    f_debug.write(f"-> FINAL ACCURACY for ({way},{shot},{query_count}) Run {run_id}: {accuracy:.4f}\n")
+                    
+                    del data
+                    gc.collect()
 
             except Exception as e:
                 print(f"[ERROR] Configuration failed N={way}, K={shot}, Q={query_count}: {str(e)}")
@@ -176,7 +172,10 @@ def main():
 
     file_exists = os.path.isfile(csv_filename)
     # Define the column order
-    headers = ['Dataset', 'Prompt_Type'] + [f"({n},{k},{q})" for n, k, q in tests]
+    headers = ['Dataset', 'Prompt_Type']
+    for n, k, q in tests:
+        for run_id in range(3):
+            headers.append(f"({n},{k},{q})_run{run_id}")
 
     with open(csv_filename, mode='a', newline='') as f_csv:
         writer = csv.DictWriter(f_csv, fieldnames=headers)
