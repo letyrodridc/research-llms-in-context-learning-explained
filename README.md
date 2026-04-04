@@ -45,7 +45,8 @@ This repository now includes a separate OpenRouter-based execution mode that doe
 2. Set:
    - `OPENROUTER_API_KEY`
    - `OPENROUTER_MODEL`
-   - optionally `OPENROUTER_SITE_URL`, `OPENROUTER_APP_NAME`, `OPENROUTER_TIMEOUT_SECONDS`, `OPENROUTER_MAX_RETRIES`
+   - `OPENROUTER_JUDGE_MODEL` for the independent judge pipeline
+   - optionally `OPENROUTER_SITE_URL`, `OPENROUTER_APP_NAME`, `OPENROUTER_JUDGE_APP_NAME`, `OPENROUTER_TIMEOUT_SECONDS`, `OPENROUTER_MAX_RETRIES`
 
 ### Run
 
@@ -61,6 +62,8 @@ Run a single dataset and prompt type:
 python project/run_openrouter_experiment.py --dataset pets --prompt-type classification
 ```
 
+The OpenRouter experiment prompts are sourced from [`new_prompts.txt`](./new_prompts.txt). Each run also saves a `prompt_library_snapshot.json` file so the exact prompt text used by that run is preserved with the outputs.
+
 ### Outputs
 
 Each execution creates a timestamped directory under `project/openrouter_runs/` containing:
@@ -74,6 +77,39 @@ Each execution creates a timestamped directory under `project/openrouter_runs/` 
 - `debug_logs/`: human-readable logs per dataset and prompt type
 - `analysis/`: generated tables, plots, and statistical test outputs
 
+## OpenRouter Judge Pipeline
+
+The repository also includes an independent LLM-as-a-judge runner. It consumes one or more existing experiment run directories, reconstructs the exact classifier context from the stored trial metadata plus the episode files, and asks a judge model to score the explanation quality.
+
+### Judge prompt source
+
+- Judge prompts and condition descriptions are sourced from [`jugde_prompts.txt`](./jugde_prompts.txt).
+- The judge pipeline currently supports the explanation-style prompt types: `nle`, `features`, `rulebased`, and `axioms_ontology_v2`.
+
+### Judge run
+
+Run the judge on one experiment directory and all judgeable prompt types:
+
+```bash
+python project/run_openrouter_judge.py --run-dir project/openrouter_runs/<run_dir_name> --prompt-type all
+```
+
+Run the judge on a subset:
+
+```bash
+python project/run_openrouter_judge.py --run-dir project/openrouter_runs/<run_dir_name> --dataset pets --prompt-type rulebased
+```
+
+### Judge outputs
+
+Each judge execution creates a timestamped directory under `project/judge_runs/` containing:
+
+- `config.json`: judge configuration snapshot and selected source run directories
+- `judge_prompt_library_snapshot.json`: exact judge prompt definitions used
+- `judge_results.csv`: one row per judged trial with all five judge dimensions and the aggregate score
+- `judge_logs.jsonl`: raw per-trial judge logs, including request previews and OpenRouter payload metadata
+- `analysis/`: generated judge tables, plots, and statistical test outputs
+
 ### Notes
 
 - The OpenRouter runner reuses the same episode protocol as the local mode.
@@ -83,3 +119,4 @@ Each execution creates a timestamped directory under `project/openrouter_runs/` 
 - If a provider rejects the `system` or developer-style instruction, the runner can retry by folding that instruction into the first user message, and it records a visible warning in console output, logs, and CSV results.
 - If several trial requests fail consecutively, the runner aborts early instead of silently burning through the full experiment budget.
 - Statistical outputs currently include descriptive accuracy tables, confidence intervals, pairwise McNemar tests at trial level, pairwise Wilcoxon tests at run level, and a Friedman test when enough prompt types are present.
+- The judge pipeline is intentionally decoupled from the experiment runner, so you can rerun judging with different judge prompts or judge models without rerunning the classifier experiments.

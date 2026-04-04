@@ -1,0 +1,103 @@
+SHARED_SYSTEM_PROMPT = """
+# TASK
+1. Analyze the provided labeled examples to identify the observable visual features that distinguish each class.
+2. Examine the Target Image and compare it strictly against the provided examples.
+3. Determine which label from the provided options best matches the Target Image.
+
+# INSTRUCTIONS
+- Base your decision only on observable visual evidence in the examples and the Target Image.
+- Use the examples to infer discriminative visual patterns for each class.
+- Do not use external world knowledge, hidden assumptions, or speculative attributes.
+- Use only labels from the provided final options list.
+- Choose exactly one final label.
+- Output only the requested XML tags.
+- Do not output any text outside the XML tags.
+
+{CONDITION_INSTRUCTION}
+
+<response>final_class</response>
+
+The content of <response> must be exactly one label copied verbatim from the provided options list.
+
+"""
+
+---
+
+Y dentro de `CONDITION_INSTRUCTION`, ponemos lo que cambia dependiendo de la condición:
+
+BASELINE_CONDITION_INSTRUCTION = """Provide only the final class label inside the response tag."""
+
+NLE_CONDITION_INSTRUCTION = """Write a concise natural language explanation grounded only in observable visual evidence.
+
+<explanation>
+Brief explanation of why the visual evidence supports the selected class and not the alternatives.
+</explanation>"""
+
+FEATURES_CONDITION_INSTRUCTION = """Extract only the smallest sufficient set of critical, concrete, observable visual features needed to support the classification.
+- Use short noun phrases only.
+- Do not use abstract interpretations, causal explanations, or full sentences inside the features tag.
+- Use bullet points.
+
+<features>
+- short observable feature
+- short observable feature
+- short observable feature
+</features>"""
+
+LOGIC_RULES_CONDITION_INSTRUCTION = """First list the critical observable features present in the Target Image.
+Then formulate a small set of IF-THEN rules grounded only in recurring observable patterns from the labeled examples, for all classes.
+Rules must refer only to visible features.
+Then check which rule or rules are best satisfied by the Target Image.
+
+<features>
+- observable feature
+- observable feature
+- observable feature
+</features>
+<kb>
+- IF [observable visual features] THEN [class]
+- IF [observable visual features] THEN [class]
+</kb>
+<rule_check>
+- State which rule(s) are best matched by the Target Image and why.
+</rule_check>"""
+
+DL_AXIOMS_CONDITION_INSTRUCTION = """Represent the classification evidence using simple Description Logic statements.
+
+# DEFINITIONS
+- The TBox contains general class descriptions derived from the labeled examples.
+- The ABox contains facts observed in the Target Image.
+- Use the TBox to describe which visual features are associated with a class.
+- Use the ABox to record which visual features are actually present in the Target Image.
+
+# WHAT TO WRITE
+- In <tbox>, write class-feature statements derived from the examples.
+- In <abox>, write only observed features of the Target Image.
+- In <dl_explanation>, explain how the observed Target Image features match the class descriptions in the TBox.
+
+# HOW TO INTERPRET THE STATEMENTS
+- [Class] ⊑ hasVisualFeature([Feature]) means: images of this class tend to have this visual feature in the provided examples.
+- hasVisualFeature([Feature]) ⊑ [Class] means: this visual feature supports classification as this class in the provided examples.
+- [Class] ≡ hasVisualFeature([Feature1]) ⊓ hasVisualFeature([Feature2]) means: this combination of features characterizes this class in the provided examples.
+
+# RULES
+- Use only observable visual features.
+- Do not use hidden properties, external knowledge, or speculation.
+- Treat all statements as grounded in the provided examples only, not as universal truths.
+- Use only the classes and features needed for the final decision.
+- Keep the output concise.
+
+<tbox>
+- [Class] ⊑ hasVisualFeature([Feature])
+- hasVisualFeature([Feature]) ⊑ [Class]
+- [Class] ≡ hasVisualFeature([Feature1]) ⊓ hasVisualFeature([Feature2])
+</tbox>
+<abox>
+- hasVisualFeature(target, [FeatureObserved])
+- hasVisualFeature(target, [FeatureObserved])
+</abox>
+<dl_explanation>
+- The Target Image has the features listed in the ABox.
+- These features match the TBox description of [Class].
+- Therefore, [Class] is the best-supported label.
+</dl_explanation>"""

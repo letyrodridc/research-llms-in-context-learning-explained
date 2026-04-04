@@ -17,7 +17,9 @@ if str(PROJECT_ROOT) not in sys.path:
 from openrouter_mode.analysis import analyze_run_directory
 from openrouter_mode.client import OpenRouterClient, extract_message_text, model_supports_images
 from openrouter_mode.config import OpenRouterSettings
-from openrouter_mode.prompts import pil_image_to_data_url
+from openrouter_mode.judge_analysis import analyze_judge_run_directory
+from openrouter_mode.judge_prompts import JUDGE_PROMPT_SPECS
+from openrouter_mode.prompts import PROMPT_SPECS, pil_image_to_data_url
 
 
 class FakeResponse:
@@ -97,6 +99,14 @@ class OpenRouterModeTests(unittest.TestCase):
         data_url = pil_image_to_data_url(image)
         self.assertTrue(data_url.startswith("data:image/jpeg;base64,"))
         self.assertGreater(len(data_url), 32)
+
+    def test_prompt_specs_are_loaded_from_asset_files(self):
+        self.assertIn(
+            "Provide only the final class label inside the response tag.",
+            PROMPT_SPECS["classification"].system_prompt,
+        )
+        self.assertIn("<explanation>", PROMPT_SPECS["nle"].system_prompt)
+        self.assertIn("Visual Grounding", JUDGE_PROMPT_SPECS["nle"].system_prompt)
 
     def test_openrouter_client_parses_openai_compatible_response(self):
         session = FakeSession()
@@ -316,6 +326,172 @@ class OpenRouterModeTests(unittest.TestCase):
             self.assertTrue((run_dir / "analysis" / "tables" / "overall_accuracy_by_prompt.csv").exists())
             self.assertTrue((run_dir / "analysis" / "plots" / "overall_accuracy_by_prompt.png").exists())
             self.assertTrue((run_dir / "analysis" / "stats" / "pairwise_mcnemar.csv").exists())
+            self.assertTrue(outputs["report_path"].exists())
+
+    def test_analyze_judge_run_directory_generates_outputs(self):
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            run_dir = Path(tmp_dir)
+            judge_rows = [
+                {
+                    "judge_timestamp": "2026-04-04T10:00:00",
+                    "source_run_dir": "source-a",
+                    "source_run_name": "source-a",
+                    "source_model": "classifier/model",
+                    "judge_model": "judge/model",
+                    "dataset": "pets",
+                    "prompt_type": "nle",
+                    "config_n": "2",
+                    "config_k": "1",
+                    "config_q": "9",
+                    "run_id": "0",
+                    "query_index_within_episode": "0",
+                    "predicted_label": "Bombay",
+                    "class_options": "[\"Bombay\",\"American Bulldog\"]",
+                    "classifier_raw_response_text": "<explanation>Black short fur.</explanation><response>Bombay</response>",
+                    "visual_grounding": "5",
+                    "discriminative_support": "4",
+                    "inferential_coherence": "4",
+                    "clarity": "5",
+                    "format_compliance": "5",
+                    "overall_score": "4.6000",
+                    "judge_parse_error": "",
+                    "warning": "",
+                    "trial_wall_seconds": "0.9",
+                    "latency_seconds": "0.4",
+                    "response_id": "jr1",
+                    "finish_reason": "stop",
+                    "usage_prompt_tokens": "20",
+                    "usage_completion_tokens": "10",
+                    "usage_total_tokens": "30",
+                    "provider": "{}",
+                    "source_prompt_hash": "abc",
+                    "judge_prompt_hash": "def",
+                    "judge_message_preview": "[]",
+                    "judge_raw_response_text": "<evaluation></evaluation>",
+                },
+                {
+                    "judge_timestamp": "2026-04-04T10:00:01",
+                    "source_run_dir": "source-a",
+                    "source_run_name": "source-a",
+                    "source_model": "classifier/model",
+                    "judge_model": "judge/model",
+                    "dataset": "pets",
+                    "prompt_type": "features",
+                    "config_n": "2",
+                    "config_k": "1",
+                    "config_q": "9",
+                    "run_id": "0",
+                    "query_index_within_episode": "0",
+                    "predicted_label": "Bombay",
+                    "class_options": "[\"Bombay\",\"American Bulldog\"]",
+                    "classifier_raw_response_text": "<features>- black fur</features><response>Bombay</response>",
+                    "visual_grounding": "4",
+                    "discriminative_support": "3",
+                    "inferential_coherence": "4",
+                    "clarity": "4",
+                    "format_compliance": "5",
+                    "overall_score": "4.0000",
+                    "judge_parse_error": "",
+                    "warning": "",
+                    "trial_wall_seconds": "0.8",
+                    "latency_seconds": "0.4",
+                    "response_id": "jr2",
+                    "finish_reason": "stop",
+                    "usage_prompt_tokens": "20",
+                    "usage_completion_tokens": "10",
+                    "usage_total_tokens": "30",
+                    "provider": "{}",
+                    "source_prompt_hash": "ghi",
+                    "judge_prompt_hash": "jkl",
+                    "judge_message_preview": "[]",
+                    "judge_raw_response_text": "<evaluation></evaluation>",
+                },
+                {
+                    "judge_timestamp": "2026-04-04T10:00:02",
+                    "source_run_dir": "source-a",
+                    "source_run_name": "source-a",
+                    "source_model": "classifier/model",
+                    "judge_model": "judge/model",
+                    "dataset": "pets",
+                    "prompt_type": "nle",
+                    "config_n": "2",
+                    "config_k": "1",
+                    "config_q": "9",
+                    "run_id": "1",
+                    "query_index_within_episode": "0",
+                    "predicted_label": "Bombay",
+                    "class_options": "[\"Bombay\",\"American Bulldog\"]",
+                    "classifier_raw_response_text": "<explanation>Dark cat.</explanation><response>Bombay</response>",
+                    "visual_grounding": "5",
+                    "discriminative_support": "5",
+                    "inferential_coherence": "5",
+                    "clarity": "4",
+                    "format_compliance": "5",
+                    "overall_score": "4.8000",
+                    "judge_parse_error": "",
+                    "warning": "",
+                    "trial_wall_seconds": "0.8",
+                    "latency_seconds": "0.4",
+                    "response_id": "jr3",
+                    "finish_reason": "stop",
+                    "usage_prompt_tokens": "20",
+                    "usage_completion_tokens": "10",
+                    "usage_total_tokens": "30",
+                    "provider": "{}",
+                    "source_prompt_hash": "mno",
+                    "judge_prompt_hash": "pqr",
+                    "judge_message_preview": "[]",
+                    "judge_raw_response_text": "<evaluation></evaluation>",
+                },
+                {
+                    "judge_timestamp": "2026-04-04T10:00:03",
+                    "source_run_dir": "source-a",
+                    "source_run_name": "source-a",
+                    "source_model": "classifier/model",
+                    "judge_model": "judge/model",
+                    "dataset": "pets",
+                    "prompt_type": "features",
+                    "config_n": "2",
+                    "config_k": "1",
+                    "config_q": "9",
+                    "run_id": "1",
+                    "query_index_within_episode": "0",
+                    "predicted_label": "Bombay",
+                    "class_options": "[\"Bombay\",\"American Bulldog\"]",
+                    "classifier_raw_response_text": "<features>- dark fur</features><response>Bombay</response>",
+                    "visual_grounding": "3",
+                    "discriminative_support": "3",
+                    "inferential_coherence": "3",
+                    "clarity": "4",
+                    "format_compliance": "4",
+                    "overall_score": "3.4000",
+                    "judge_parse_error": "",
+                    "warning": "",
+                    "trial_wall_seconds": "0.8",
+                    "latency_seconds": "0.4",
+                    "response_id": "jr4",
+                    "finish_reason": "stop",
+                    "usage_prompt_tokens": "20",
+                    "usage_completion_tokens": "10",
+                    "usage_total_tokens": "30",
+                    "provider": "{}",
+                    "source_prompt_hash": "stu",
+                    "judge_prompt_hash": "vwx",
+                    "judge_message_preview": "[]",
+                    "judge_raw_response_text": "<evaluation></evaluation>",
+                },
+            ]
+
+            with (run_dir / "judge_results.csv").open("w", encoding="utf-8", newline="") as handle:
+                writer = csv.DictWriter(handle, fieldnames=list(judge_rows[0].keys()))
+                writer.writeheader()
+                writer.writerows(judge_rows)
+
+            outputs = analyze_judge_run_directory(run_dir)
+
+            self.assertTrue((run_dir / "analysis" / "tables" / "overall_mean_scores_by_prompt.csv").exists())
+            self.assertTrue((run_dir / "analysis" / "plots" / "overall_score_by_prompt.png").exists())
+            self.assertTrue((run_dir / "analysis" / "stats" / "pairwise_wilcoxon_trial_overall_score.csv").exists())
             self.assertTrue(outputs["report_path"].exists())
 
 

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, Optional
+from typing import Dict, Iterable, Optional
 import os
 
 
@@ -16,6 +16,12 @@ TESTS = [
 DATASET_CHOICES = ("flowers", "pets", "cifar10", "dtd")
 PROMPT_TYPES = (
     "classification",
+    "nle",
+    "features",
+    "rulebased",
+    "axioms_ontology_v2",
+)
+JUDGEABLE_PROMPT_TYPES = (
     "nle",
     "features",
     "rulebased",
@@ -52,11 +58,28 @@ def load_dotenv_file(env_path: Path) -> Dict[str, str]:
     return values
 
 
-def build_openrouter_settings(env_path: Path, cli_model: Optional[str] = None) -> OpenRouterSettings:
+def _first_non_empty_env(keys: Iterable[str], default: str = "") -> str:
+    for key in keys:
+        value = os.getenv(key, "").strip()
+        if value:
+            return value
+    return default
+
+
+def build_openrouter_settings(
+    env_path: Path,
+    cli_model: Optional[str] = None,
+    *,
+    env_model_key: str = "OPENROUTER_MODEL",
+    app_name_keys: Iterable[str] = ("OPENROUTER_APP_NAME",),
+    default_app_name: str = "research-llms-icl-openrouter",
+    timeout_keys: Iterable[str] = ("OPENROUTER_TIMEOUT_SECONDS",),
+    retry_keys: Iterable[str] = ("OPENROUTER_MAX_RETRIES",),
+) -> OpenRouterSettings:
     load_dotenv_file(env_path)
 
     api_key = os.getenv("OPENROUTER_API_KEY", "").strip()
-    model = (cli_model or os.getenv("OPENROUTER_MODEL", "")).strip()
+    model = (cli_model or os.getenv(env_model_key, "")).strip()
 
     if not api_key:
         raise ValueError(
@@ -64,13 +87,13 @@ def build_openrouter_settings(env_path: Path, cli_model: Optional[str] = None) -
         )
     if not model:
         raise ValueError(
-            f"OPENROUTER_MODEL is missing. Set it in {env_path} or pass --model."
+            f"{env_model_key} is missing. Set it in {env_path} or pass --model."
         )
 
     site_url = os.getenv("OPENROUTER_SITE_URL", "").strip() or None
-    app_name = os.getenv("OPENROUTER_APP_NAME", "research-llms-icl-openrouter").strip()
-    timeout_seconds = int(os.getenv("OPENROUTER_TIMEOUT_SECONDS", "180"))
-    max_retries = int(os.getenv("OPENROUTER_MAX_RETRIES", "4"))
+    app_name = _first_non_empty_env(app_name_keys, default_app_name)
+    timeout_seconds = int(_first_non_empty_env(timeout_keys, "180"))
+    max_retries = int(_first_non_empty_env(retry_keys, "4"))
 
     return OpenRouterSettings(
         api_key=api_key,

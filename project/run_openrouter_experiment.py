@@ -13,18 +13,14 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Tuple
 
-from episode_utils import create_and_save_episode_indices, load_episode_from_indices
-from setup_utils import (
-    build_class_index_map,
-    load_datasets,
-    select_few_shot_images_with_data_fixed,
-    set_seed,
-)
-
 from openrouter_mode.analysis import analyze_run_directory
 from openrouter_mode.client import OpenRouterClient, model_supports_images
 from openrouter_mode.config import DATASET_CHOICES, PROMPT_TYPES, TESTS, build_openrouter_settings
-from openrouter_mode.prompts import PROMPT_SPECS, build_openrouter_messages
+from openrouter_mode.prompts import (
+    PROMPT_SPECS,
+    build_openrouter_messages,
+    export_prompt_library_snapshot,
+)
 
 
 def parse_args() -> argparse.Namespace:
@@ -148,6 +144,9 @@ def stable_prompt_hash(messages: List[Dict[str, Any]]) -> str:
 
 
 def ensure_episodes_exist(repo_root: Path, datasets_dict: Dict[str, Any]) -> None:
+    from episode_utils import create_and_save_episode_indices
+    from setup_utils import build_class_index_map, set_seed
+
     episodes_root = repo_root / "episodes"
     expected_paths = []
     for dataset_name in DATASET_CHOICES:
@@ -230,6 +229,9 @@ def initialize_csv_writer(path: Path, fieldnames: List[str]) -> Tuple[Any, csv.D
 
 def main() -> None:
     args = parse_args()
+    from episode_utils import load_episode_from_indices
+    from setup_utils import load_datasets, select_few_shot_images_with_data_fixed, set_seed
+
     script_dir = Path(__file__).resolve().parent
     repo_root = script_dir.parent
     env_path = Path(args.env_file).resolve() if args.env_file else repo_root / ".env"
@@ -281,6 +283,10 @@ def main() -> None:
         "planned_total_trials": total_trial_budget,
     }
     (run_dir / "config.json").write_text(json_dumps(config_snapshot) + "\n", encoding="utf-8")
+    (run_dir / "prompt_library_snapshot.json").write_text(
+        json_dumps(export_prompt_library_snapshot()) + "\n",
+        encoding="utf-8",
+    )
 
     trial_fieldnames = [
         "trial_timestamp",
