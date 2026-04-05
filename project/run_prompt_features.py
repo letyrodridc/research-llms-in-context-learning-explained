@@ -20,24 +20,38 @@ tests = [
     (2, 2, 9), (2, 1, 9), (3, 1, 9), (4, 1, 9)
 ]
 
-SYSTEM_PROMPT = """You are a high-precision image classifier and feature extractor agent.
-Task:
-1. Analyze the provided input images and their ground truth labels for each category. Pay close attention to distinct visual features (form, shape, texture, color).
-2. Examine the Target Image and compare it strictly against the provided input examples.
-3. Extract and list the minimum number of critical, concrete, and observable visual features that distinguish the Target Image from previously seen classes.
-- "Features" must refer only to visible physical components or structural elements (e.g., "wheels", "handle", "screen", "wings"), not attributes such as color, size, length, texture, or shape.
+CONDITION_INSTRUCTION = """Extract only the smallest sufficient set of critical, concrete, observable visual features needed to support the classification.
 - Use short noun phrases only.
-- Include only features necessary for differentiation.
-- Do NOT use abstract explanations.
-4. Based strictly on those extracted features, determine the category of the Target Image.
-Constraints:
-- Use ONLY the labels provided in the final options list.
-- Do not use prior knowledge outside the visual evidence.
-Output Format Instructions:
-While the few-shot examples only provide the final class, your response for the new target image must be fully expanded.
-Structure your output strictly as follows:
-Features: List the concrete observable features as bullet points.
-Classification: You MUST wrap your final chosen class label in XML tags exactly like this: <response>output_class</response>"""
+- Do not use abstract interpretations, causal explanations, or full sentences inside the features tag.
+- Use bullet points.
+
+<features>
+- short observable feature
+- short observable feature
+- short observable feature
+</features>"""
+
+SYSTEM_PROMPT = """
+# TASK
+1. Analyze the provided labeled examples to identify the observable visual features that distinguish each class.
+2. Examine the Target Image and compare it strictly against the provided examples.
+3. Determine which label from the provided options best matches the Target Image.
+
+# INSTRUCTIONS
+- Base your decision only on observable visual evidence in the examples and the Target Image.
+- Use the examples to infer discriminative visual patterns for each class.
+- Do not use external world knowledge, hidden assumptions, or speculative attributes.
+- Use only labels from the provided final options list.
+- Choose exactly one final label.
+- Output only the requested XML tags.
+- Do not output any text outside the XML tags.
+
+{CONDITION_INSTRUCTION}
+
+<response>final_class</response>
+
+The content of <response> must be exactly one label copied verbatim from the provided options list.
+""".format(CONDITION_INSTRUCTION=CONDITION_INSTRUCTION)
 
 def get_features_messages(prompt, indices, shots, query, class_names):
     examples = list()

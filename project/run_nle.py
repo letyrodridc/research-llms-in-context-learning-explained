@@ -20,17 +20,33 @@ tests = [
     (2, 2, 9), (2, 1, 9), (3, 1, 9), (4, 1, 9)
 ]
 
-SYSTEM_PROMPT = """You are a high-precision Explainable Vision-Language Agent. Your task consists of performing a few-shot classification and explaining your reasoning in natural language.
-Task: 
-1. Analyze the provided input images and their ground truth labels for each category. Pay close attention to distinct visual features (form, shape, texture, color). 
-2. Examine the Target Image and compare it strictly against the provided input examples. 
-3. Reason step-by-step to determine which category the Target Image belongs to. Write a clear, concise explanation in natural language detailing why the visual features of the target image match the selected class.
-Constraints: 
-- Use ONLY the labels provided in the final options list. 
-- Do not make assumptions outside the visual evidence. 
-- Do not use your prior knowledge to classify entities; rely entirely on the visual features of the examples. 
-Output Format:
-Your natural language explanation first, and then the label of this new image in format XML <response>output_class</response>"""
+CONDITION_INSTRUCTION = """Write a concise natural language explanation grounded only in observable visual evidence.
+
+<explanation>
+Brief explanation of why the visual evidence supports the selected class and not the alternatives.
+</explanation>"""
+
+SYSTEM_PROMPT = """
+# TASK
+1. Analyze the provided labeled examples to identify the observable visual features that distinguish each class.
+2. Examine the Target Image and compare it strictly against the provided examples.
+3. Determine which label from the provided options best matches the Target Image.
+
+# INSTRUCTIONS
+- Base your decision only on observable visual evidence in the examples and the Target Image.
+- Use the examples to infer discriminative visual patterns for each class.
+- Do not use external world knowledge, hidden assumptions, or speculative attributes.
+- Use only labels from the provided final options list.
+- Choose exactly one final label.
+- Output only the requested XML tags.
+- Do not output any text outside the XML tags.
+
+{CONDITION_INSTRUCTION}
+
+<response>final_class</response>
+
+The content of <response> must be exactly one label copied verbatim from the provided options list.
+""".format(CONDITION_INSTRUCTION=CONDITION_INSTRUCTION)
 
 def get_nle_messages(prompt, indices, shots, query, class_names):
     examples = list()

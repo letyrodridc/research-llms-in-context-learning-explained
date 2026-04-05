@@ -20,27 +20,45 @@ tests = [
     (2, 2, 9), (2, 1, 9), (3, 1, 9), (4, 1, 9)
 ]
 
-SYSTEM_PROMPT = """You are an Explainable Vision-Language agent specialized in feature-based Classification.
+CONDITION_INSTRUCTION = """First list the critical observable features present in the Target Image.
+Then formulate a small set of IF-THEN rules grounded only in recurring observable patterns from the labeled examples, for all classes.
+Rules must refer only to visible features.
+Then check which rule or rules are best satisfied by the Target Image.
 
-Task:
-1. Analyze the provided  input images and their ground truth labels for each category. Pay close attention to distinct visual features (form, shape, texture, color).
-2. Examine the Target Image and compare it strictly against the provided input examples.
-3. Feature Extraction Protocol: Extract the minimum number of critical, concrete, and observable visual features that clearly distinguish the Target Image from all previously seen classes. Do not use abstract words.
-4. Knowledge Base: Based on the few-shot examples, formulate at least one IF-THEN rule per class learned mapping specific visual features that explain that class. 
-5. Decision Logic (Rule Check): Evaluate the Target Image's extracted features against your Knowledge Base rules step-by-step to determine which rule matches the visual features best.
-6. Final Classification: Based strictly on the rule check, determine the class and rule activated to produce the corresponding feature-based explanation.
+<features>
+- observable feature
+- observable feature
+- observable feature
+</features>
+<kb>
+- IF [observable visual features] THEN [class]
+- IF [observable visual features] THEN [class]
+</kb>
+<rule_check>
+- State which rule(s) are best matched by the Target Image and why.
+</rule_check>"""
 
-Constraints:
-- Use ONLY the labels provided in the final options list.
-- Do not make assumptions outside the visual evidence.
-- Do not use your prior knowledge to classify entities. Rely entirely on the examples.
+SYSTEM_PROMPT = """
+# TASK
+1. Analyze the provided labeled examples to identify the observable visual features that distinguish each class.
+2. Examine the Target Image and compare it strictly against the provided examples.
+3. Determine which label from the provided options best matches the Target Image.
 
-Output Format Instructions:
-While the few-shot examples only provide the final class, your response for the new target image must be fully expanded. Structure your output strictly as follows:
-Features: List the extracted concrete visual features as bullet points.
-KB (Knowledge Base): Formulate the logical IF-THEN rules derived from the examples.
-Rule Check: Explain step-by-step how the extracted features match the rules in your KB.
-Classification: You MUST wrap your final chosen class label in XML tags exactly like this: <response>output_class</response>"""
+# INSTRUCTIONS
+- Base your decision only on observable visual evidence in the examples and the Target Image.
+- Use the examples to infer discriminative visual patterns for each class.
+- Do not use external world knowledge, hidden assumptions, or speculative attributes.
+- Use only labels from the provided final options list.
+- Choose exactly one final label.
+- Output only the requested XML tags.
+- Do not output any text outside the XML tags.
+
+{CONDITION_INSTRUCTION}
+
+<response>final_class</response>
+
+The content of <response> must be exactly one label copied verbatim from the provided options list.
+""".format(CONDITION_INSTRUCTION=CONDITION_INSTRUCTION)
 
 def get_rulebased_messages(prompt, indices, shots, query, class_names):
     examples = list()
