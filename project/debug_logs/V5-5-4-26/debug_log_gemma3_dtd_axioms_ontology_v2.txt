@@ -1,0 +1,3430 @@
+=== DEBUG LOG: gemma3 | dtd | Prompt: axioms_ontology_v2 ===
+
+--- CONFIG: N=2, K=2, Q=9 (3 RUNS) ---
+Run 0 | Query 1: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[depressed area]
+- potholed ⊑ hasVisualFeature[irregular shape]
+- potholed ⊑ hasVisualFeature[dark color]
+- hasVisualFeature[depressed area] ⊑ potholed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [depressed area])
+hasVisualFeature(target, [irregular shape])
+hasVisualFeature(target, [dark color])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a depressed area, an irregular shape, and a dark color, which satisfies the necessary conditions defined in the TBox to classify it as potholed.
+----------------------------------------
+Run 0 | Query 2: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[depressed surface]
+- potholed ⊑ hasVisualFeature[irregular shape]
+- potholed ⊑ hasVisualFeature[presence of water]
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [depressed surface])
+hasVisualFeature(target, [irregular shape])
+hasVisualFeature(target, [presence of water])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a depressed surface, an irregular shape, and the presence of water, which satisfies the necessary conditions defined in the TBox to classify it as potholed.
+----------------------------------------
+Run 0 | Query 3: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[depressed area]
+- potholed ⊑ hasVisualFeature[water accumulation]
+- potholed ≡ hasVisualFeature[depressed area] ⊓ hasVisualFeature[water accumulation]
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [depressed area])
+hasVisualFeature(target, [water accumulation])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a depressed area and water accumulation, which satisfies the necessary and sufficient condition [potholed ≡ hasVisualFeature[depressed area] ⊓ hasVisualFeature[water accumulation]] to classify it as potholed.
+----------------------------------------
+Run 0 | Query 4: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[depressions]
+- potholed ⊑ hasVisualFeature[water_accumulation]
+- hasVisualFeature[depressions] ⊑ potholed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [depressions])
+hasVisualFeature(target, [water_accumulation])
+Description Logics’ Ontological Axioms
+The ABox assertion presents depressions and water accumulation, which satisfies the necessary conditions of the TBox to classify it as potholed.
+----------------------------------------
+Run 0 | Query 5: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[depressed surface]
+- potholed ⊑ hasVisualFeature[irregular shape]
+- potholed ⊑ hasVisualFeature[filled with debris]
+ABox (Observed Properties & Assertions):
+hasVisualFeature [depressed surface]
+hasVisualFeature [irregular shape]
+hasVisualFeature [filled with debris]
+Description Logics’ Ontological Axioms
+The ABox assertion presents a depressed surface, an irregular shape, and debris, which satisfies the necessary conditions of the TBox to classify it as potholed.
+----------------------------------------
+Run 0 | Query 6: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[depressions]
+- hasVisualFeature[depressions] ⊑ potholed
+ABox (Observed Properties & Assertions):
+hasVisualFeature [multiple depressions in the surface]
+Description Logics’ Ontological Axioms
+The ABox assertion presents multiple depressions in the surface, which satisfies the necessary and sufficient condition [potholed ≡ hasVisualFeature[depressions]] to classify it as potholed.
+----------------------------------------
+Run 0 | Query 7: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[depressions]
+- hasVisualFeature[depressions] ⊑ potholed
+ABox (Observed Properties & Assertions):
+hasVisualFeature [multiple depressions in a surface]
+Description Logics’ Ontological Axioms
+The ABox assertion presents multiple depressions in a surface, which satisfies the necessary and sufficient condition [potholed ≡ hasVisualFeature[depressions]] to classify it as potholed.
+----------------------------------------
+Run 0 | Query 8: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[depressions]
+- potholed ⊑ hasVisualFeature[irregular shapes]
+- potholed ⊑ hasVisualFeature[water accumulation]
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [depressions])
+hasVisualFeature(target, [irregular shapes])
+hasVisualFeature(target, [water accumulation])
+Description Logics’ Ontological Axioms
+The ABox assertion presents depressions, irregular shapes, and water accumulation, which satisfies the necessary conditions defined in the TBox to classify it as potholed.
+----------------------------------------
+Run 0 | Query 9: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[large, irregular depression]
+- hasVisualFeature[large, irregular depression] ⊑ potholed
+ABox (Observed Properties & Assertions):
+hasVisualFeature [large, irregular depression]
+Description Logics’ Ontological Axioms
+The ABox assertion presents a large, irregular depression, which satisfies the sufficient condition [potholed ≡ hasVisualFeature[large, irregular depression]] to classify it as potholed.
+----------------------------------------
+Run 0 | Query 10: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[irregular folds]
+- hasVisualFeature[irregular folds] ⊑ wrinkled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [multiple irregular folds and creases]
+Description Logics’ Ontological Axioms
+The ABox assertion presents multiple irregular folds and creases, which satisfies the necessary and sufficient condition [axiom] to classify it as wrinkled.
+----------------------------------------
+Run 0 | Query 11: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[irregular folds]
+- hasVisualFeature[irregular folds] ⊑ wrinkled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [irregular folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents irregular folds, which satisfies the necessary condition [axiom] to classify it as wrinkled.
+----------------------------------------
+Run 0 | Query 12: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[irregular folds]
+- hasVisualFeature[irregular folds] ⊑ wrinkled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [irregular folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents irregular folds, which satisfies the necessary and sufficient condition [axiom] to classify it as wrinkled.
+----------------------------------------
+Run 0 | Query 13: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[creased texture]
+- hasVisualFeature[creased texture] ⊑ wrinkled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [creased texture]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [creased texture], which satisfies the necessary condition [axiom] to classify it as wrinkled.
+----------------------------------------
+Run 0 | Query 14: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[folds]
+- hasVisualFeature[folds] ⊑ wrinkled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [numerous, deep, and irregular folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents numerous, deep, and irregular folds, which satisfies the necessary and sufficient condition [wrinkled ≡ hasVisualFeature[folds]] to classify it as wrinkled.
+----------------------------------------
+Run 0 | Query 15: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[irregular folds]
+- hasVisualFeature[irregular folds] ⊑ wrinkled
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [irregular folds])
+Description Logics’ Ontological Axioms
+The ABox assertion presents irregular folds, which satisfies the necessary and sufficient condition [axiom] to classify it as wrinkled.
+----------------------------------------
+Run 0 | Query 16: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[irregular surface texture]
+- hasVisualFeature[irregular surface texture] ⊑ wrinkled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [irregular surface texture]
+Description Logics’ Ontological Axioms
+The ABox assertion presents an irregular surface texture, which satisfies the sufficient condition [axiom] to classify it as wrinkled.
+----------------------------------------
+Run 0 | Query 17: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[creased texture]
+- hasVisualFeature[creased texture] ⊑ wrinkled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [extensive, irregular, light-colored creases]
+Description Logics’ Ontological Axioms
+The ABox assertion presents extensive, irregular, light-colored creases, which satisfies the necessary and sufficient condition [wrinkled ≡ hasVisualFeature[creased texture]] to classify it as wrinkled.
+----------------------------------------
+Run 0 | Query 18: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[complex, irregular folds]
+- hasVisualFeature[complex, irregular folds] ⊑ wrinkled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, complex, irregular folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents complex, irregular folds, which satisfies the necessary and sufficient condition [axiom] to classify it as wrinkled.
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9) Run 0: 1.0000
+Run 1 | Query 1: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[depressions]
+- potholed ⊑ hasVisualFeature[water_accumulation]
+- potholed ⊑ hasVisualFeature[irregular_shape]
+ABox (Observed Properties & Assertions):
+hasVisualFeature [multiple depressions]
+hasVisualFeature [water_accumulation]
+hasVisualFeature [irregular_shape]
+Description Logics’ Ontological Axioms
+The ABox assertion presents multiple depressions, water accumulation, and irregular shapes, which satisfies the necessary conditions of the TBox to classify it as potholed.
+----------------------------------------
+Run 1 | Query 2: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[irregular shape]
+- potholed ⊑ hasVisualFeature[dark color]
+- potholed ⊑ hasVisualFeature[rough texture]
+- hasVisualFeature[irregular shape] ⊑ potholed
+- hasVisualFeature[dark color] ⊑ potholed
+- hasVisualFeature[rough texture] ⊑ potholed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [irregular shape])
+hasVisualFeature(target, [dark color])
+hasVisualFeature(target, [rough texture])
+Description Logics’ Ontological Axioms
+The ABox assertion presents irregular shape, dark color, and rough texture, which satisfies the necessary conditions of the TBox axioms to classify it as potholed.
+----------------------------------------
+Run 1 | Query 3: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[irregular shape]
+- potholed ⊑ hasVisualFeature[dark area within shape]
+- potholed ⊑ hasVisualFeature[surrounding material]
+ABox (Observed Properties & Assertions):
+hasVisualFeature [irregular shape]
+hasVisualFeature [dark area within shape]
+hasVisualFeature [surrounding material]
+Description Logics’ Ontological Axioms
+The ABox assertion presents an irregular shape with a dark area within it, surrounded by a different material, which satisfies the necessary conditions defined in the TBox to classify it as potholed.
+----------------------------------------
+Run 1 | Query 4: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[depressions]
+- potholed ⊑ hasVisualFeature[water_accumulation]
+- hasVisualFeature[depressions] ⊑ potholed
+ABox (Observed Properties & Assertions):
+hasVisualFeature [depressions]
+hasVisualFeature [water_accumulation]
+Description Logics’ Ontological Axioms
+The ABox assertion presents depressions and water accumulation, which satisfies the necessary conditions potholed ⊑ hasVisualFeature[depressions] and potholed ⊑ hasVisualFeature[water_accumulation] to classify it as potholed.
+----------------------------------------
+Run 1 | Query 5: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[irregular shape]
+- potholed ⊑ hasVisualFeature[dark interior]
+- potholed ⊑ hasVisualFeature[rough edges]
+ABox (Observed Properties & Assertions):
+hasVisualFeature [irregular shape]
+hasVisualFeature [dark interior]
+hasVisualFeature [rough edges]
+Description Logics’ Ontological Axioms
+The ABox assertion presents irregular shape, a dark interior, and rough edges, which satisfies the necessary conditions of the TBox to classify it as potholed.
+----------------------------------------
+Run 1 | Query 6: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[irregular depressions]
+- hasVisualFeature[irregular depressions] ⊑ potholed
+ABox (Observed Properties & Assertions):
+hasVisualFeature [irregular depressions]
+Description Logics’ Ontological Axioms
+The ABox assertion presents irregular depressions, which satisfies the sufficient condition [potholed ⊑ hasVisualFeature[irregular depressions]] to classify it as potholed.
+----------------------------------------
+Run 1 | Query 7: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[depressions]
+- potholed ⊑ hasVisualFeature[irregular shape]
+- potholed ⊑ hasVisualFeature[water accumulation]
+ABox (Observed Properties & Assertions):
+hasVisualFeature [multiple depressions]
+hasVisualFeature [irregular shapes]
+hasVisualFeature [water accumulation in depressions]
+Description Logics’ Ontological Axioms
+The ABox assertion presents multiple depressions, irregular shapes, and water accumulation within those depressions, which satisfies the necessary conditions of having depressions, irregular shapes, and water accumulation, as defined in the TBox axiom to classify it as potholed.
+----------------------------------------
+Run 1 | Query 8: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[irregular depression]
+- potholed ⊑ hasVisualFeature[rough edges]
+- potholed ⊑ hasVisualFeature[dark color]
+- hasVisualFeature[irregular depression] ⊑ potholed
+ABox (Observed Properties & Assertions):
+hasVisualFeature [irregular depression]
+hasVisualFeature [rough edges]
+hasVisualFeature [dark color]
+Description Logics’ Ontological Axioms
+The ABox assertion presents irregular depressions, rough edges, and a dark color, which satisfies the necessary conditions defined in the TBox to classify it as potholed.
+----------------------------------------
+Run 1 | Query 9: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[depressions]
+- potholed ⊑ hasVisualFeature[irregular surface]
+- hasVisualFeature[depressions] ⊑ potholed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [depressions])
+hasVisualFeature(target, [irregular surface])
+Description Logics’ Ontological Axioms
+The ABox assertion presents depressions and an irregular surface, which satisfies the necessary conditions of the TBox to classify it as potholed.
+----------------------------------------
+Run 1 | Query 10: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[creases]		 (Necessary condition)
+- hasVisualFeature[creases] ⊑ wrinkled		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [creases]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [creases], which satisfies the TBox sufficient condition [axiom] to classify it as [wrinkled].
+----------------------------------------
+Run 1 | Query 11: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[creased texture]		 (Necessary condition)
+- hasVisualFeature[creased texture] ⊑ wrinkled		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [creased texture]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [creased texture], which satisfies the TBox sufficient condition [axiom] to classify it as [wrinkled].
+----------------------------------------
+Run 1 | Query 12: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[creased texture]
+- hasVisualFeature[creased texture] ⊑ wrinkled
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [creased texture])
+Description Logics’ Ontological Axioms
+The ABox assertion presents [creased texture], which satisfies the necessary and sufficient condition [axiom] to classify it as [wrinkled].
+----------------------------------------
+Run 1 | Query 13: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[curved]		 (Necessary condition)
+- hasVisualFeature[curved] ⊑ wrinkled		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [curved]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [curved surfaces], which satisfies the TBox [necessary and sufficient] condition [axiom] to classify it as [wrinkled].
+----------------------------------------
+Run 1 | Query 14: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[creased texture]		 (Necessary condition)
+- hasVisualFeature[creased texture] ⊑ wrinkled		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [creased texture]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [creased texture], which satisfies the TBox sufficient condition [axiom] to classify it as [wrinkled].
+----------------------------------------
+Run 1 | Query 15: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[many irregular folds]
+- hasVisualFeature[many irregular folds] ⊑ wrinkled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [many irregular folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents many irregular folds, which satisfies the sufficient condition [axiom] to classify it as wrinkled.
+----------------------------------------
+Run 1 | Query 16: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[curved]		 (Necessary condition)
+- hasVisualFeature[curved] ⊑ wrinkled		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [curved]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [curved features], which satisfies the TBox [necessary and sufficient] condition [axiom] to classify it as [wrinkled].
+----------------------------------------
+Run 1 | Query 17: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[creased texture]
+- hasVisualFeature[creased texture] ⊑ wrinkled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [extensive, irregular, light-colored creases]
+Description Logics’ Ontological Axioms
+The ABox assertion presents extensive, irregular, light-colored creases, which satisfies the necessary and sufficient condition [wrinkled ≡ hasVisualFeature[creased texture]] to classify it as wrinkled.
+----------------------------------------
+Run 1 | Query 18: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[many folds]		 (Necessary condition)
+- hasVisualFeature[many folds] ⊑ wrinkled		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [many folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents many folds, which satisfies the sufficient condition [axiom] to classify it as wrinkled.
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9) Run 1: 1.0000
+Run 2 | Query 1: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature [depressions]		 (Necessary condition)
+- hasVisualFeature [depressions] ⊑ potholed		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [multiple, irregular depressions in a surface]
+Description Logics’ Ontological Axioms
+The ABox assertion presents multiple, irregular depressions in a surface, which satisfies the sufficient condition [axiom] to classify it as potholed.
+----------------------------------------
+Run 2 | Query 2: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[depressions] (Necessary condition)
+- hasVisualFeature[depressions] ⊑ potholed (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [multiple depressions in a road surface]
+Description Logics’ Ontological Axioms
+The ABox assertion presents multiple depressions in a road surface, which satisfies the sufficient condition [axiom] to classify it as potholed.
+----------------------------------------
+Run 2 | Query 3: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[depressed area] (Necessary condition)
+- hasVisualFeature[depressed area] ⊑ potholed (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [depressed area with water]
+Description Logics’ Ontological Axioms
+The ABox assertion presents a depressed area containing water, which satisfies the sufficient condition [axiom] to classify it as potholed.
+----------------------------------------
+Run 2 | Query 4: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[depressions] (Necessary condition)
+- hasVisualFeature[depressions] ⊑ potholed (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [multiple depressions in the road surface]
+Description Logics’ Ontological Axioms
+The ABox assertion presents multiple depressions in the road surface, which satisfies the sufficient condition [axiom] to classify it as potholed.
+----------------------------------------
+Run 2 | Query 5: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[depressed surface] (Necessary condition)
+- hasVisualFeature[depressed surface] ⊑ potholed (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [depressed surface with water accumulation]
+Description Logics’ Ontological Axioms
+The ABox assertion presents a depressed surface with water accumulation, which satisfies the sufficient condition [axiom] to classify it as potholed.
+----------------------------------------
+Run 2 | Query 6: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[depressed_surface]
+- hasVisualFeature[depressed_surface] ⊑ potholed
+ABox (Observed Properties & Assertions):
+hasVisualFeature [depressed_surface]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [a depressed surface], which satisfies the [necessary and sufficient] condition [potholed ≡ hasVisualFeature[depressed_surface]] to classify it as [potholed].
+----------------------------------------
+Run 2 | Query 7: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[depressed surface] (Necessary condition)
+- hasVisualFeature[depressed surface] ⊑ potholed (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, depressed surface]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [a depressed surface], which satisfies the TBox [necessary and sufficient] condition [potholed ≡ hasVisualFeature[depressed surface]] to classify it as [potholed].
+----------------------------------------
+Run 2 | Query 8: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[depressed surface]
+- hasVisualFeature[depressed surface] ⊑ potholed
+ABox (Observed Properties & Assertions):
+hasVisualFeature [depressed surface with water]
+Description Logics’ Ontological Axioms
+The ABox assertion presents a depressed surface with water, which satisfies the necessary condition potholed ⊑ hasVisualFeature[depressed surface] to classify it as potholed.
+----------------------------------------
+Run 2 | Query 9: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>potholed</response>
+TBox (axioms in a Knowledge Base):
+- potholed ⊑ hasVisualFeature[depressions]
+- hasVisualFeature[depressions] ⊑ potholed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [depressions])
+Description Logics’ Ontological Axioms
+The ABox assertion presents depressions, which satisfies the sufficient condition [potholed ⊑ hasVisualFeature[depressions]] to classify it as potholed.
+----------------------------------------
+Run 2 | Query 10: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[many sharp creases] (Necessary condition)
+- hasVisualFeature[many sharp creases] ⊑ wrinkled (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [many sharp creases]
+Description Logics’ Ontological Axioms
+The ABox assertion presents many sharp creases, which satisfies the sufficient condition [axiom] to classify it as wrinkled.
+----------------------------------------
+Run 2 | Query 11: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[irregular folds]
+- hasVisualFeature[irregular folds] ⊑ wrinkled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [irregular folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents irregular folds, which satisfies the sufficient condition [axiom] to classify it as wrinkled.
+----------------------------------------
+Run 2 | Query 12: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[many folds]		 (Necessary condition)
+- hasVisualFeature[many folds] ⊑ wrinkled		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [many folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents many folds, which satisfies the sufficient condition [axiom] to classify it as wrinkled.
+----------------------------------------
+Run 2 | Query 13: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[folds]
+- hasVisualFeature[folds] ⊑ wrinkled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [multiple, irregular folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents multiple, irregular folds, which satisfies the necessary and sufficient condition [wrinkled ≡ hasVisualFeature[folds]] to classify it as wrinkled.
+----------------------------------------
+Run 2 | Query 14: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[curved ridges]
+- hasVisualFeature[curved ridges] ⊑ wrinkled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [prominent, closely spaced, undulating ridges]
+Description Logics’ Ontological Axioms
+The ABox assertion presents prominent, closely spaced, undulating ridges, which satisfies the necessary and sufficient condition [wrinkled ≡ hasVisualFeature[curved ridges]] to classify it as wrinkled.
+----------------------------------------
+Run 2 | Query 15: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[complex folds]
+- hasVisualFeature[complex folds] ⊑ wrinkled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [image exhibits numerous, tightly packed, irregular folds and creases]
+Description Logics’ Ontological Axioms
+The ABox assertion presents numerous, tightly packed, irregular folds and creases, which satisfies the sufficient condition [axiom] to classify it as wrinkled.
+----------------------------------------
+Run 2 | Query 16: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[irregular folds]
+- hasVisualFeature[irregular folds] ⊑ wrinkled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [irregular folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents irregular folds, which satisfies the sufficient condition [axiom] to classify it as wrinkled.
+----------------------------------------
+Run 2 | Query 17: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[complex_texture]
+- hasVisualFeature[complex_texture] ⊑ wrinkled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, complex_texture]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [complex_texture], which satisfies the sufficient condition [axiom] to classify it as [wrinkled].
+----------------------------------------
+Run 2 | Query 18: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>wrinkled</response>
+TBox (axioms in a Knowledge Base):
+- wrinkled ⊑ hasVisualFeature[curved]
+- hasVisualFeature[curved] ⊑ wrinkled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [curved]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [curved], which satisfies the sufficient condition [axiom] to classify it as [wrinkled].
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9) Run 2: 1.0000
+
+--- CONFIG: N=2, K=1, Q=9 (3 RUNS) ---
+Run 0 | Query 1: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[regular grid pattern]
+- hasVisualFeature[regular grid pattern] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular grid pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular grid pattern, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 0 | Query 2: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[regular grid pattern]
+- hasVisualFeature[regular grid pattern] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular grid pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular grid pattern, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 0 | Query 3: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[regular grid pattern]
+- hasVisualFeature[regular grid pattern] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular grid pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular grid pattern, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 0 | Query 4: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[interconnected loops]
+- hasVisualFeature[interconnected loops] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [interconnected loops])
+Description Logics’ Ontological Axioms
+The ABox assertion presents interconnected loops, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 0 | Query 5: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[grid_pattern]
+- hasVisualFeature[grid_pattern] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [grid_pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a grid pattern, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 0 | Query 6: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[interwoven grid]
+- hasVisualFeature[interwoven grid] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [interwoven grid])
+Description Logics’ Ontological Axioms
+The ABox assertion presents [interwoven grid], which satisfies the sufficient condition [axiom] to classify it as [meshed].
+----------------------------------------
+Run 0 | Query 7: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[hexagonal_grid]
+- hasVisualFeature[hexagonal_grid] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [hexagonal_grid])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a hexagonal grid, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 0 | Query 8: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[regular grid pattern]
+- hasVisualFeature[regular grid pattern] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular grid pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular grid pattern, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 0 | Query 9: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[interconnected_nodes]
+- hasVisualFeature[interconnected_nodes] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [interconnected_nodes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents interconnected_nodes, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 0 | Query 10: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curved lines]		 (Necessary condition)
+- hasVisualFeature[curved lines] ⊑ swirly		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature[numerous curved lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents numerous curved lines, which satisfies the sufficient condition [axiom] to classify it as swirly.
+----------------------------------------
+Run 0 | Query 11: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curved shapes]
+- hasVisualFeature[curved shapes] ⊑ swirly
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [curved shapes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents [curved shapes], which satisfies the TBox sufficient condition [axiom] to classify it as [swirly].
+----------------------------------------
+Run 0 | Query 12: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curved lines]		 (Necessary condition)
+- hasVisualFeature[curved lines] ⊑ swirly		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature[numerous interconnected, loosely defined curved lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents numerous interconnected, loosely defined curved lines, which satisfies the sufficient condition [axiom] to classify it as swirly.
+----------------------------------------
+Run 0 | Query 13: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curving lines]		 (Necessary condition)
+- hasVisualFeature[curving lines] ⊑ swirly		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature[continuous, flowing, curving lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents continuous, flowing, curving lines, which satisfies the sufficient condition [axiom] to classify it as swirly.
+----------------------------------------
+Run 0 | Query 14: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curved lines]
+- hasVisualFeature[curved lines] ⊑ swirly
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [numerous curved lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents numerous curved lines, which satisfies the sufficient condition [axiom] to classify it as swirly.
+----------------------------------------
+Run 0 | Query 15: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curved lines]
+- hasVisualFeature[curved lines] ⊑ swirly
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [curved lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents curved lines, which satisfies the sufficient condition [axiom] to classify it as swirly.
+----------------------------------------
+Run 0 | Query 16: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[spiral shapes]
+- hasVisualFeature[spiral shapes] ⊑ swirly
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [spiral shapes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents spiral shapes, which satisfies the sufficient condition [axiom] to classify it as swirly.
+----------------------------------------
+Run 0 | Query 17: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curved shapes]
+- hasVisualFeature[curved shapes] ⊑ swirly
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [curved shapes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents curved shapes, which satisfies the sufficient condition [axiom] to classify it as swirly.
+----------------------------------------
+Run 0 | Query 18: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curved lines]		 (Necessary condition)
+- hasVisualFeature[curved lines] ⊑ swirly		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature[multiple curved lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents multiple curved lines, which satisfies the sufficient condition [axiom] to classify it as swirly.
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9) Run 0: 1.0000
+Run 1 | Query 1: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[diamond_pattern]
+- hasVisualFeature[diamond_pattern] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [diamond_pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a diamond pattern, which satisfies the sufficient condition [axiom] meshed ⊑ hasVisualFeature[diamond_pattern] to classify it as meshed.
+----------------------------------------
+Run 1 | Query 2: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[regular grid pattern]
+- hasVisualFeature[regular grid pattern] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular grid pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular grid pattern, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 1 | Query 3: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[regular_grid]
+- hasVisualFeature[regular_grid] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular_grid])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular grid pattern, which satisfies the sufficient condition [axiom] meshed ⊑ hasVisualFeature[regular_grid] to classify it as meshed.
+----------------------------------------
+Run 1 | Query 4: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[regular grid pattern]
+- hasVisualFeature[regular grid pattern] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular grid pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular grid pattern, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 1 | Query 5: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[regular grid pattern]
+- hasVisualFeature[regular grid pattern] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular grid pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular grid pattern, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 1 | Query 6: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[grid-like pattern]
+- hasVisualFeature[grid-like pattern] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature[grid-like pattern]
+Description Logics’ Ontological Axioms
+The ABox assertion presents a grid-like pattern, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 1 | Query 7: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[regular grid pattern]
+- hasVisualFeature[regular grid pattern] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular grid pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular grid pattern, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 1 | Query 8: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[regular_circular_holes]
+- hasVisualFeature[regular_circular_holes] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular_circular_holes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular circular holes, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 1 | Query 9: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[regular grid pattern]
+- hasVisualFeature[regular grid pattern] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular grid pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular grid pattern, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 1 | Query 10: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[spiral_shapes]
+- hasVisualFeature[spiral_shapes] ⊑ swirly
+ABox (Observed Properties & Assertions):
+hasVisualFeature[spiral_shapes]
+Description Logics’ Ontological Axioms
+The ABox assertion presents spiral_shapes, which satisfies the sufficient condition [axiom] to classify it as swirly.
+----------------------------------------
+Run 1 | Query 11: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curved lines]
+- hasVisualFeature[curved lines] ⊑ swirly
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [numerous curved lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents numerous curved lines, which satisfies the necessary condition [axiom] to classify it as swirly.
+----------------------------------------
+Run 1 | Query 12: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curved lines]
+- hasVisualFeature[curved lines] ⊑ swirly
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [curved lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents curved lines, which satisfies the sufficient condition [axiom] to classify it as swirly.
+----------------------------------------
+Run 1 | Query 13: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curved lines]
+- hasVisualFeature[curved lines] ⊑ swirly
+ABox (Observed Properties & Assertions):
+hasVisualFeature[numerous curved lines and floral motifs]
+Description Logics’ Ontological Axioms
+The ABox assertion presents numerous curved lines and floral motifs, which satisfies the necessary and sufficient condition [axiom] to classify it as swirly.
+----------------------------------------
+Run 1 | Query 14: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[spiral_shape]
+- hasVisualFeature[spiral_shape] ⊑ swirly
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [spiral_shape])
+Description Logics’ Ontological Axioms
+The ABox assertion presents [spiral_shape], which satisfies the sufficient condition [axiom] to classify it as [swirly].
+----------------------------------------
+Run 1 | Query 15: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curved lines]
+- hasVisualFeature[curved lines] ⊑ swirly
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [numerous small, tightly packed, curved lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents numerous small, tightly packed, curved lines, which satisfies the necessary and sufficient condition [axiom] to classify it as swirly.
+----------------------------------------
+Run 1 | Query 16: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curved lines]
+- hasVisualFeature[curved lines] ⊑ swirly
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [numerous curved lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents numerous curved lines, which satisfies the necessary condition [axiom] to classify it as swirly.
+----------------------------------------
+Run 1 | Query 17: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curved lines]
+- hasVisualFeature[curved lines] ⊑ swirly
+ABox (Observed Properties & Assertions):
+hasVisualFeature[repeated, interconnected, curved lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents repeated, interconnected, curved lines, which satisfies the necessary condition of having curved lines (axiom: swirly ⊑ hasVisualFeature[curved lines]) to classify it as swirly.
+----------------------------------------
+Run 1 | Query 18: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curved lines]
+- hasVisualFeature[curved lines] ⊑ swirly
+ABox (Observed Properties & Assertions):
+hasVisualFeature[complex, intertwined, curved lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents complex, intertwined, curved lines, which satisfies the necessary and sufficient condition [axiom] to classify it as swirly.
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9) Run 1: 1.0000
+Run 2 | Query 1: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[interconnected grid]
+- hasVisualFeature[interconnected grid] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [interconnected grid])
+Description Logics’ Ontological Axioms
+The ABox assertion presents an interconnected grid, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 2 | Query 2: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[regular circular openings]
+- hasVisualFeature[regular circular openings] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular circular openings])
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular circular openings, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 2 | Query 3: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[grid_pattern]
+- hasVisualFeature[grid_pattern] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [grid_pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a grid pattern, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 2 | Query 4: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[regular grid pattern]
+- hasVisualFeature[regular grid pattern] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular grid pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular grid pattern, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 2 | Query 5: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[regular grid pattern]
+- hasVisualFeature[regular grid pattern] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular grid pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular grid pattern, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 2 | Query 6: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[regular grid pattern]
+- hasVisualFeature[regular grid pattern] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular grid pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular grid pattern, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 2 | Query 7: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[regular grid pattern]
+- hasVisualFeature[regular grid pattern] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular grid pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular grid pattern, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 2 | Query 8: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[grid_pattern]
+- hasVisualFeature[grid_pattern] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [grid_pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a grid pattern, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 2 | Query 9: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>meshed</response>
+TBox (axioms in a Knowledge Base):
+- meshed ⊑ hasVisualFeature[interconnected loops]
+- hasVisualFeature[interconnected loops] ⊑ meshed
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [interconnected loops])
+Description Logics’ Ontological Axioms
+The ABox assertion presents interconnected loops, which satisfies the sufficient condition [axiom] to classify it as meshed.
+----------------------------------------
+Run 2 | Query 10: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[spiral shapes]
+- hasVisualFeature[spiral shapes] ⊑ swirly
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [spiral shapes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents spiral shapes, which satisfies the sufficient condition [axiom] to classify it as swirly.
+----------------------------------------
+Run 2 | Query 11: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curved lines]
+- hasVisualFeature[curved lines] ⊑ swirly
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [curved lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents curved lines, which satisfies the sufficient condition [axiom] to classify it as swirly.
+----------------------------------------
+Run 2 | Query 12: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curved lines]
+- hasVisualFeature[curved lines] ⊑ swirly
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [curved lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents curved lines, which satisfies the sufficient condition [axiom] to classify it as swirly.
+----------------------------------------
+Run 2 | Query 13: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curved lines]
+- hasVisualFeature[curved lines] ⊑ swirly
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [curved lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents curved lines, which satisfies the sufficient condition [axiom] to classify it as swirly.
+----------------------------------------
+Run 2 | Query 14: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curved lines]
+- hasVisualFeature[curved lines] ⊑ swirly
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [numerous curved lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents numerous curved lines, which satisfies the sufficient condition [axiom] to classify it as swirly.
+----------------------------------------
+Run 2 | Query 15: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curving lines]		 (Necessary condition)
+- hasVisualFeature[curving lines] ⊑ swirly		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature[complex, interconnected, curving lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents complex, interconnected, curving lines, which satisfies the sufficient condition [axiom] to classify it as swirly.
+----------------------------------------
+Run 2 | Query 16: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curved lines]
+- hasVisualFeature[curved lines] ⊑ swirly
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [curved lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents curved lines, which satisfies the sufficient condition [axiom] to classify it as swirly.
+----------------------------------------
+Run 2 | Query 17: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curved lines]
+- hasVisualFeature[curved lines] ⊑ swirly
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [curved lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents curved lines, which satisfies the sufficient condition [axiom] to classify it as swirly.
+----------------------------------------
+Run 2 | Query 18: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>swirly</response>
+TBox (axioms in a Knowledge Base):
+- swirly ⊑ hasVisualFeature[curved lines]
+- hasVisualFeature[curved lines] ⊑ swirly
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [curved lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents curved lines, which satisfies the sufficient condition [axiom] to classify it as swirly.
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9) Run 2: 1.0000
+
+--- CONFIG: N=3, K=1, Q=9 (3 RUNS) ---
+Run 0 | Query 1: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[small, regularly spaced holes]
+- hasVisualFeature[small, regularly spaced holes] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [small, regularly spaced holes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents small, regularly spaced holes, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 0 | Query 2: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[regularly spaced holes]
+- hasVisualFeature[regularly spaced holes] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regularly spaced triangular holes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents regularly spaced triangular holes, which satisfies the necessary and sufficient condition [perforated ≡ hasVisualFeature[regularly spaced holes]] to classify it as perforated.
+----------------------------------------
+Run 0 | Query 3: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[regularly spaced holes]
+- hasVisualFeature[regularly spaced holes] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regularly spaced holes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents regularly spaced holes, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 0 | Query 4: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[regular circular openings]
+- hasVisualFeature[regular circular openings] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular circular openings])
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular circular openings, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 0 | Query 5: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[diamond-shaped holes]
+- hasVisualFeature[diamond-shaped holes] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [diamond-shaped holes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents diamond-shaped holes, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 0 | Query 6: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[circular_holes]
+- hasVisualFeature[circular_holes] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [circular_holes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents circular holes, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 0 | Query 7: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[regularly spaced openings]
+- hasVisualFeature[regularly spaced openings] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regularly spaced openings])
+Description Logics’ Ontological Axioms
+The ABox assertion presents regularly spaced openings, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 0 | Query 8: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[regular circular openings]
+- hasVisualFeature[regular circular openings] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular circular openings])
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular circular openings, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 0 | Query 9: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[regularly spaced holes]
+- hasVisualFeature[regularly spaced holes] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regularly spaced holes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents regularly spaced holes, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 0 | Query 10: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlacing strands]
+- hasVisualFeature[interlacing strands] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [interlacing strands])
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlacing strands, which satisfies the sufficient condition axiom [woven ≡ hasVisualFeature[interlacing strands]] to classify it as woven.
+----------------------------------------
+Run 0 | Query 11: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlacing strands]
+- hasVisualFeature[interlacing strands] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [interlacing strands])
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlacing strands, which satisfies the sufficient condition axiom [hasVisualFeature[interlacing strands] ⊑ woven] to classify it as woven.
+----------------------------------------
+Run 0 | Query 12: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlacing strands]
+- hasVisualFeature[interlacing strands] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [interlacing strands])
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlacing strands, which satisfies the sufficient condition axiom woven ≡ hasVisualFeature[interlacing strands] to classify it as woven.
+----------------------------------------
+Run 0 | Query 13: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlacing lines]
+- hasVisualFeature[interlacing lines] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [interlacing lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlacing lines, which satisfies the sufficient condition axiom [woven ≡ hasVisualFeature[interlacing lines]] to classify it as woven.
+----------------------------------------
+Run 0 | Query 14: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[intersecting_threads]
+- hasVisualFeature[intersecting_threads] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [intersecting_threads])
+Description Logics’ Ontological Axioms
+The ABox assertion presents intersecting threads, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 0 | Query 15: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlacing strands]
+- hasVisualFeature[interlacing strands] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature[interlacing strands]
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlacing strands, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 0 | Query 16: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[intersecting_lines]
+- hasVisualFeature[intersecting_lines] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [intersecting_lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents intersecting lines, which satisfies the sufficient condition axiom [hasVisualFeature[intersecting_lines] ⊑ woven] to classify it as woven.
+----------------------------------------
+Run 0 | Query 17: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlacing threads]
+- hasVisualFeature[interlacing threads] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [interlacing threads])
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlacing threads, which satisfies the sufficient condition axiom [hasVisualFeature[interlacing threads] ⊑ woven] to classify it as woven.
+----------------------------------------
+Run 0 | Query 18: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlacing strands]
+- hasVisualFeature[interlacing strands] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [interlacing strands])
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlacing strands, which satisfies the sufficient condition axiom [woven ≡ hasVisualFeature[interlacing strands]] to classify it as woven.
+----------------------------------------
+Run 0 | Query 19: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[regular_pattern]
+- hasVisualFeature[regular_pattern] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular_pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular pattern, which satisfies the sufficient condition [axiom] to classify it as grid.
+----------------------------------------
+Run 0 | Query 20: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[regular, repeating square pattern]
+- hasVisualFeature[regular, repeating square pattern] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular, repeating square pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular, repeating square pattern, which satisfies the sufficient condition axiom (hasVisualFeature[regular, repeating square pattern] ⊑ grid) to classify it as grid.
+----------------------------------------
+Run 0 | Query 21: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[regular lines]
+- hasVisualFeature[regular lines] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular lines, which satisfies the sufficient condition [axiom] to classify it as grid.
+----------------------------------------
+Run 0 | Query 22: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[regular square pattern]
+- hasVisualFeature[regular square pattern] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular square pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular square pattern, which satisfies the sufficient condition [axiom] to classify it as grid.
+----------------------------------------
+Run 0 | Query 23: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[intersecting_lines]
+- hasVisualFeature[intersecting_lines] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [intersecting_lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents intersecting lines, which satisfies the sufficient condition [axiom] to classify it as grid.
+----------------------------------------
+Run 0 | Query 24: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[intersecting_lines]
+- hasVisualFeature[intersecting_lines] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [intersecting_lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents intersecting lines, which satisfies the sufficient condition [axiom] to classify it as grid.
+----------------------------------------
+Run 0 | Query 25: Expected: [grid] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlaced strands]
+- hasVisualFeature[interlaced strands] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [interlaced strands])
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlaced strands, which satisfies the sufficient condition axiom [woven ≡ hasVisualFeature[interlaced strands]] to classify it as woven.
+----------------------------------------
+Run 0 | Query 26: Expected: [grid] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[regularly spaced holes]
+- hasVisualFeature[regularly spaced holes] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regularly spaced holes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents regularly spaced holes, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 0 | Query 27: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[regular rectangular pattern]
+- hasVisualFeature[regular rectangular pattern] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular rectangular pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular rectangular pattern, which satisfies the sufficient condition [axiom] to classify it as grid.
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9) Run 0: 0.9259
+Run 1 | Query 1: Expected: [perforated] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[rectangular_pattern]
+- hasVisualFeature[rectangular_pattern] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [rectangular_pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a rectangular pattern, which satisfies the sufficient condition [axiom] to classify it as grid.
+----------------------------------------
+Run 1 | Query 2: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[circular_holes]
+- hasVisualFeature[circular_holes] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [circular_holes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents circular holes, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 1 | Query 3: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[rectangular_holes]
+- hasVisualFeature[rectangular_holes] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [rectangular_holes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents rectangular holes, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 1 | Query 4: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[regularly spaced holes]
+- hasVisualFeature[regularly spaced holes] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regularly spaced holes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents regularly spaced holes, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 1 | Query 5: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[small, regularly spaced holes]
+- hasVisualFeature[small, regularly spaced holes] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [small, regularly spaced holes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents small, regularly spaced holes, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 1 | Query 6: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[small, regularly spaced holes]
+- hasVisualFeature[small, regularly spaced holes] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [small, regularly spaced holes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents small, regularly spaced holes, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 1 | Query 7: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[small, regularly spaced holes]
+- hasVisualFeature[small, regularly spaced holes] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [small, regularly spaced holes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents small, regularly spaced holes, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 1 | Query 8: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[small, regularly spaced holes]
+- hasVisualFeature[small, regularly spaced holes] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [small, regularly spaced holes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents small, regularly spaced holes, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 1 | Query 9: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[regularly spaced circular holes]
+- hasVisualFeature[regularly spaced circular holes] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regularly spaced circular holes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents regularly spaced circular holes, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 1 | Query 10: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[intersecting_lines]
+- hasVisualFeature[intersecting_lines] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [intersecting_lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents intersecting lines, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 1 | Query 11: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlacing]
+- hasVisualFeature[interlacing] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [interlacing])
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlacing, which satisfies the sufficient condition axiom [hasVisualFeature[interlacing] ⊑ woven] to classify it as woven.
+----------------------------------------
+Run 1 | Query 12: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlaced threads]
+- hasVisualFeature[interlaced threads] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [interlaced threads])
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlaced threads, which satisfies the sufficient condition axiom [hasVisualFeature[interlaced threads] ⊑ woven] to classify it as woven.
+----------------------------------------
+Run 1 | Query 13: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlacing strands]
+- hasVisualFeature[interlacing strands] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [interlacing strands])
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlacing strands, which satisfies the sufficient condition axiom [hasVisualFeature[interlacing strands] ⊑ woven] to classify it as woven.
+----------------------------------------
+Run 1 | Query 14: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[intersecting_threads]
+- hasVisualFeature[intersecting_threads] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [intersecting_threads])
+Description Logics’ Ontological Axioms
+The ABox assertion presents intersecting threads, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 1 | Query 15: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlacing strands]
+- hasVisualFeature[interlacing strands] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [interlacing strands])
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlacing strands, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 1 | Query 16: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlacing threads]
+- hasVisualFeature[interlacing threads] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [interlacing threads])
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlacing threads, which satisfies the sufficient condition axiom [hasVisualFeature[interlacing threads] ⊑ woven] to classify it as woven.
+----------------------------------------
+Run 1 | Query 17: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[vertical_lines]
+- woven ⊑ hasVisualFeature[horizontal_lines]
+- woven ≡ hasVisualFeature[interlacing_lines]
+ABox (Observed Properties & Assertions):
+hasVisualFeature[interlacing_lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlacing lines, which satisfies the necessary and sufficient condition [woven ≡ hasVisualFeature[interlacing_lines]] to classify it as woven.
+----------------------------------------
+Run 1 | Query 18: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[intersecting_threads]
+- hasVisualFeature[intersecting_threads] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [intersecting_threads])
+Description Logics’ Ontological Axioms
+The ABox assertion presents intersecting_threads, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 1 | Query 19: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[regular_lines]
+- hasVisualFeature[regular_lines] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular_lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular lines, which satisfies the sufficient condition [axiom] to classify it as grid.
+----------------------------------------
+Run 1 | Query 20: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[diamond_pattern]
+- hasVisualFeature[diamond_pattern] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [diamond_pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a diamond pattern, which satisfies the sufficient condition [axiom] to classify it as grid.
+----------------------------------------
+Run 1 | Query 21: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[intersecting_lines]
+- hasVisualFeature[intersecting_lines] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [intersecting_lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents intersecting lines, which satisfies the sufficient condition [axiom] to classify it as grid.
+----------------------------------------
+Run 1 | Query 22: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[regular square pattern]
+- hasVisualFeature[regular square pattern] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular square pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular square pattern, which satisfies the sufficient condition [axiom] to classify it as grid.
+----------------------------------------
+Run 1 | Query 23: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[regular_square_pattern]
+- hasVisualFeature[regular_square_pattern] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular_square_pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular square pattern, which satisfies the sufficient condition [axiom] to classify it as grid.
+----------------------------------------
+Run 1 | Query 24: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[intersecting_lines]
+- hasVisualFeature[intersecting_lines] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [intersecting_lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents intersecting lines, which satisfies the sufficient condition [axiom] to classify it as grid.
+----------------------------------------
+Run 1 | Query 25: Expected: [grid] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[intersecting_lines]
+- hasVisualFeature[intersecting_lines] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [intersecting_lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents intersecting lines, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 1 | Query 26: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[regularly spaced squares]
+- hasVisualFeature[regularly spaced squares] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regularly spaced squares])
+Description Logics’ Ontological Axioms
+The ABox assertion presents regularly spaced squares, which satisfies the sufficient condition [axiom] to classify it as grid.
+----------------------------------------
+Run 1 | Query 27: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[regular square pattern]
+- hasVisualFeature[regular square pattern] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular square pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular square pattern, which satisfies the sufficient condition [axiom] to classify it as grid.
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9) Run 1: 0.9259
+Run 2 | Query 1: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[small, regularly spaced holes]
+- hasVisualFeature[small, regularly spaced holes] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature target [small, regularly spaced holes]
+Description Logics’ Ontological Axioms
+The ABox assertion presents small, regularly spaced holes, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 2 | Query 2: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[small, regularly spaced holes]
+- hasVisualFeature[small, regularly spaced holes] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [small, regularly spaced holes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents small, regularly spaced holes, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 2 | Query 3: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[regular openings]
+- hasVisualFeature[regular openings] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature [regular, repeating, cross-shaped openings]
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular, repeating, cross-shaped openings, which satisfies the necessary condition hasVisualFeature[regular openings] axiom to classify it as perforated.
+----------------------------------------
+Run 2 | Query 4: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[small, regularly spaced holes]
+- hasVisualFeature[small, regularly spaced holes] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [small, regularly spaced holes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents small, regularly spaced holes, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 2 | Query 5: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[regularly spaced holes]
+- hasVisualFeature[regularly spaced holes] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regularly spaced holes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents regularly spaced holes, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 2 | Query 6: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[regular circular holes]
+- hasVisualFeature[regular circular holes] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular circular holes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular circular holes, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 2 | Query 7: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[regular triangular openings]
+- hasVisualFeature[regular triangular openings] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular triangular openings])
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular triangular openings, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 2 | Query 8: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[regularly spaced holes]
+- hasVisualFeature[regularly spaced holes] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regularly spaced holes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents regularly spaced holes, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 2 | Query 9: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>perforated</response>
+TBox (axioms in a Knowledge Base):
+- perforated ⊑ hasVisualFeature[regular circular holes]
+- hasVisualFeature[regular circular holes] ⊑ perforated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular circular holes])
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular circular holes, which satisfies the sufficient condition [axiom] to classify it as perforated.
+----------------------------------------
+Run 2 | Query 10: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlaced strands]
+- hasVisualFeature[interlaced strands] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [interlaced strands])
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlaced strands, which satisfies the sufficient condition axiom [hasVisualFeature[interlaced strands] ⊑ woven] to classify it as woven.
+----------------------------------------
+Run 2 | Query 11: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlaced strands]
+- hasVisualFeature[interlaced strands] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [interlaced strands]
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlaced strands, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 2 | Query 12: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[intersecting_lines]
+- hasVisualFeature[intersecting_lines] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [intersecting_lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents intersecting lines, which satisfies the sufficient condition axiom [woven ≡ hasVisualFeature[intersecting_lines]] to classify it as woven.
+----------------------------------------
+Run 2 | Query 13: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[linear_texture]
+- hasVisualFeature[linear_texture] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [linear_texture])
+Description Logics’ Ontological Axioms
+The ABox assertion presents [linear_texture], which satisfies the sufficient condition [axiom] to classify it as [woven].
+----------------------------------------
+Run 2 | Query 14: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlaced_threads]
+- hasVisualFeature[interlaced_threads] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [interlaced_threads]
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlaced_threads, which satisfies the sufficient condition axiom [woven ⊑ hasVisualFeature[interlaced_threads]] to classify it as woven.
+----------------------------------------
+Run 2 | Query 15: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlaced strands]
+- hasVisualFeature[interlaced strands] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [interlaced strands]
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlaced strands, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 2 | Query 16: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlaced strands]
+- hasVisualFeature[interlaced strands] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [interlaced strands])
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlaced strands, which satisfies the sufficient condition axiom [hasVisualFeature[interlaced strands] ⊑ woven] to classify it as woven.
+----------------------------------------
+Run 2 | Query 17: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlacing strands]
+- hasVisualFeature[interlacing strands] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [interlacing strands])
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlacing strands, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 2 | Query 18: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlacing strands]
+- hasVisualFeature[interlacing strands] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [interlacing strands]
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlacing strands, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 2 | Query 19: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[intersecting_lines]
+- hasVisualFeature[intersecting_lines] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [intersecting_lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents intersecting lines, which satisfies the sufficient condition [axiom] to classify it as grid.
+----------------------------------------
+Run 2 | Query 20: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[intersecting_lines]
+- hasVisualFeature[intersecting_lines] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [intersecting_lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents intersecting lines, which satisfies the sufficient condition axiom to classify it as grid.
+----------------------------------------
+Run 2 | Query 21: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[regular intersecting lines]
+- hasVisualFeature[regular intersecting lines] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular intersecting lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular intersecting lines, which satisfies the necessary and sufficient condition [grid ≡ hasVisualFeature[regular intersecting lines]] to classify it as grid.
+----------------------------------------
+Run 2 | Query 22: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[intersecting_lines]
+- hasVisualFeature[intersecting_lines] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature[intersecting_lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents intersecting lines, which satisfies the sufficient condition [axiom] to classify it as grid.
+----------------------------------------
+Run 2 | Query 23: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[regular_square_pattern]
+- hasVisualFeature[regular_square_pattern] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular_square_pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular square pattern, which satisfies the sufficient condition [axiom] to classify it as grid.
+----------------------------------------
+Run 2 | Query 24: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[regular_square_pattern]
+- hasVisualFeature[regular_square_pattern] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular_square_pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular square pattern, which satisfies the sufficient condition [axiom] to classify it as grid.
+----------------------------------------
+Run 2 | Query 25: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[regular_lines]
+- hasVisualFeature[regular_lines] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular_lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular lines, which satisfies the sufficient condition axiom to classify it as grid.
+----------------------------------------
+Run 2 | Query 26: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[intersecting_lines]
+- hasVisualFeature[intersecting_lines] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [intersecting_lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents intersecting lines, which satisfies the sufficient condition [axiom] to classify it as grid.
+----------------------------------------
+Run 2 | Query 27: Expected: [grid] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>grid</response>
+TBox (axioms in a Knowledge Base):
+- grid ⊑ hasVisualFeature[regular square pattern]
+- hasVisualFeature[regular square pattern] ⊑ grid
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [regular square pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular square pattern, which satisfies the sufficient condition [axiom] to classify it as grid.
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9) Run 2: 1.0000
+
+--- CONFIG: N=4, K=1, Q=9 (3 RUNS) ---
+Run 0 | Query 1: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[regular, repeating folds]
+- hasVisualFeature[regular, repeating folds] ⊑ pleated
+ABox (Observed Properties & Assertions):
+hasVisualFeature [regular, repeating folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular, repeating folds, which satisfies the sufficient condition [pleated ⊑ hasVisualFeature[regular, repeating folds]] to classify it as pleated.
+----------------------------------------
+Run 0 | Query 2: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[regular folds]		 (Necessary condition)
+- hasVisualFeature[regular folds] ⊑ pleated		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [regular folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular folds, which satisfies the sufficient condition [axiom] to classify it as pleated.
+----------------------------------------
+Run 0 | Query 3: Expected: [pleated] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirls]		 (Necessary condition)
+- hasVisualFeature[swirls] ⊑ marbled		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, swirls]
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirls, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 0 | Query 4: Expected: [pleated] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[recurring pattern]
+- hasVisualFeature[recurring pattern] ⊑ veined
+ABox (Observed Properties & Assertions):
+hasVisualFeature [recurring pattern of swirls and leaf-like shapes]
+Description Logics’ Ontological Axioms
+The ABox assertion presents recurring pattern of swirls and leaf-like shapes, which satisfies the necessary condition [axiom] to classify it as veined.
+----------------------------------------
+Run 0 | Query 5: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[horizontal_lines]		 (Necessary condition)
+- hasVisualFeature[horizontal_lines] ⊑ pleated		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [horizontal_lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [horizontal_lines], which satisfies the sufficient condition [axiom] to classify it as [pleated].
+----------------------------------------
+Run 0 | Query 6: Expected: [pleated] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[vertical_lines]		 (Necessary condition)
+- hasVisualFeature[vertical_lines] ⊑ woven		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [vertical_lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents vertical lines, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 0 | Query 7: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[regular folds]
+- hasVisualFeature[regular folds] ⊑ pleated
+ABox (Observed Properties & Assertions):
+hasVisualFeature [regular folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular folds, which satisfies the sufficient condition [pleated ≡ hasVisualFeature[regular folds]] to classify it as pleated.
+----------------------------------------
+Run 0 | Query 8: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[parallel ridges]
+- hasVisualFeature[parallel ridges] ⊑ pleated
+ABox (Observed Properties & Assertions):
+hasVisualFeature[parallel ridges]
+Description Logics’ Ontological Axioms
+The ABox assertion presents parallel ridges, which satisfies the sufficient condition [axiom] to classify it as pleated.
+----------------------------------------
+Run 0 | Query 9: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[parallel_folds]
+- hasVisualFeature[parallel_folds] ⊑ pleated
+ABox (Observed Properties & Assertions):
+hasVisualFeature [parallel_folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents parallel folds, which satisfies the sufficient condition [axiom] to classify it as pleated.
+----------------------------------------
+Run 0 | Query 10: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[irregular patterns] (Necessary condition)
+- hasVisualFeature[irregular patterns] ⊑ marbled (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [irregular patterns])
+Description Logics’ Ontological Axioms
+The ABox assertion presents irregular patterns, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 0 | Query 11: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns] (Necessary condition)
+- hasVisualFeature[swirling patterns] ⊑ marbled (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, swirling patterns]
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 0 | Query 12: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns]		 (Necessary condition)
+- hasVisualFeature[swirling patterns] ⊑ marbled		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, swirling patterns]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [swirling patterns], which satisfies the TBox sufficient condition [axiom] to classify it as [marbled].
+----------------------------------------
+Run 0 | Query 13: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[complex pattern] (Necessary condition)
+- hasVisualFeature[complex pattern] ⊑ marbled (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, complex pattern]
+Description Logics’ Ontological Axioms
+The ABox assertion presents a complex pattern, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 0 | Query 14: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns]
+- hasVisualFeature[swirling patterns] ⊑ marbled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, swirling patterns]
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 0 | Query 15: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns]
+- hasVisualFeature[swirling patterns] ⊑ marbled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [dark, irregular, swirling patterns]
+Description Logics’ Ontological Axioms
+The ABox assertion presents dark, irregular, swirling patterns, which satisfies the necessary condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 0 | Query 16: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[irregular pattern]
+- hasVisualFeature[irregular pattern] ⊑ marbled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [irregular pattern]
+Description Logics’ Ontological Axioms
+The ABox assertion presents an irregular pattern, which satisfies the necessary and sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 0 | Query 17: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns] (Necessary condition)
+- hasVisualFeature[swirling patterns] ⊑ marbled (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, swirling patterns]
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 0 | Query 18: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns]
+- hasVisualFeature[swirling patterns] ⊑ marbled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, swirling patterns]
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 0 | Query 19: Expected: [veined] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[irregular_pattern]
+- hasVisualFeature[irregular_pattern] ⊑ marbled
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [irregular_pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents an irregular pattern, which satisfies the necessary and sufficient condition [marbled ≡ hasVisualFeature[irregular_pattern]] to classify it as marbled.
+----------------------------------------
+Run 0 | Query 20: Expected: [veined] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns]
+- hasVisualFeature[swirling patterns] ⊑ marbled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, swirling patterns]
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 0 | Query 21: Expected: [veined] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[distinct lines]		 (Necessary condition)
+- hasVisualFeature[distinct lines] ⊑ veined		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [distinct lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [distinct lines], which satisfies the sufficient condition [axiom] to classify it as [veined].
+----------------------------------------
+Run 0 | Query 22: Expected: [veined] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[branching lines]		 (Necessary condition)
+- hasVisualFeature[branching lines] ⊑ veined		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [distinct branching lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [distinct branching lines], which satisfies the TBox sufficient condition [axiom] to classify it as [veined].
+----------------------------------------
+Run 0 | Query 23: Expected: [veined] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[distinct lines]		 (Necessary condition)
+- hasVisualFeature[distinct lines] ⊑ veined		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [distinct lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [distinct lines], which satisfies the sufficient condition [axiom] to classify it as [veined].
+----------------------------------------
+Run 0 | Query 24: Expected: [veined] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[parallel lines]		 (Necessary condition)
+- hasVisualFeature[parallel lines] ⊑ veined		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [parallel lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [parallel lines], which satisfies the TBox sufficient condition [axiom] to classify it as [veined].
+----------------------------------------
+Run 0 | Query 25: Expected: [veined] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[distinct, branching lines]
+- hasVisualFeature[distinct, branching lines] ⊑ veined
+ABox (Observed Properties & Assertions):
+hasVisualFeature [distinct, branching lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents distinct, branching lines, which satisfies the sufficient condition [axiom] to classify it as veined.
+----------------------------------------
+Run 0 | Query 26: Expected: [veined] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[dark lines]		 (Necessary condition)
+- hasVisualFeature[dark lines] ⊑ veined		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [dark, branching lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [dark, branching lines], which satisfies the sufficient condition [axiom] to classify it as [veined].
+----------------------------------------
+Run 0 | Query 27: Expected: [veined] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns]		 (Necessary condition)
+- hasVisualFeature[swirling patterns] ⊑ marbled		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, swirling patterns]
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 0 | Query 28: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlaced threads]
+- hasVisualFeature[interlaced threads] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [interlaced threads]
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlaced threads, which satisfies the sufficient condition axiom [woven ≡ hasVisualFeature[interlaced threads]] to classify it as woven.
+----------------------------------------
+Run 0 | Query 29: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[regular_grid_pattern]
+- hasVisualFeature[regular_grid_pattern] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [regular_grid_pattern]
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular grid pattern, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 0 | Query 30: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[intersecting_lines]
+- hasVisualFeature[intersecting_lines] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature[regular_intersecting_lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular intersecting lines, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 0 | Query 31: Expected: [woven] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns]		 (Necessary condition)
+- hasVisualFeature[swirling patterns] ⊑ marbled		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [swirling patterns]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [swirling patterns], which satisfies the TBox sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 0 | Query 32: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlaced strands]
+- hasVisualFeature[interlaced strands] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [interlaced strands]
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlaced strands, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 0 | Query 33: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlaced strands]
+- hasVisualFeature[interlaced strands] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [interlaced black and white strands]
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlaced black and white strands, which satisfies the necessary condition [woven ⊑ hasVisualFeature[interlaced strands]] to classify it as woven.
+----------------------------------------
+Run 0 | Query 34: Expected: [woven] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[regular, repeating folds]
+- hasVisualFeature[regular, repeating folds] ⊑ pleated
+ABox (Observed Properties & Assertions):
+hasVisualFeature [regular, repeating folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular, repeating folds, which satisfies the sufficient condition [pleated ⊑ hasVisualFeature[regular, repeating folds]] to classify it as pleated.
+----------------------------------------
+Run 0 | Query 35: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[regular grid pattern]
+- hasVisualFeature[regular grid pattern] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [regular grid pattern]
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular grid pattern, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 0 | Query 36: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlaced strands]
+- hasVisualFeature[interlaced strands] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [interlaced strands]
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlaced strands, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9) Run 0: 0.7778
+Run 1 | Query 1: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[parallel ridges]		 (Necessary condition)
+- hasVisualFeature[parallel ridges] ⊑ pleated		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [parallel ridges]
+Description Logics’ Ontological Axioms
+The ABox assertion presents parallel ridges, which satisfies the sufficient condition [axiom] to classify it as pleated.
+----------------------------------------
+Run 1 | Query 2: Expected: [pleated] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[parallel lines]		 (Necessary condition)
+- hasVisualFeature[parallel lines] ⊑ veined		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [parallel lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [parallel lines], which satisfies the TBox sufficient condition [axiom] to classify it as [veined].
+----------------------------------------
+Run 1 | Query 3: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[vertical folds]		 (Necessary condition)
+- hasVisualFeature[vertical folds] ⊑ pleated		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [vertical folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [vertical folds], which satisfies the sufficient condition [axiom] to classify it as [pleated].
+----------------------------------------
+Run 1 | Query 4: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[parallel_lines]		 (Necessary condition)
+- hasVisualFeature[parallel_lines] ⊑ pleated		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [parallel_lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents parallel lines, which satisfies the sufficient condition [axiom] to classify it as pleated.
+----------------------------------------
+Run 1 | Query 5: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[regular vertical folds]		 (Necessary condition)
+- hasVisualFeature[regular vertical folds] ⊑ pleated		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [regular vertical folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular vertical folds, which satisfies the sufficient condition [axiom] to classify it as pleated.
+----------------------------------------
+Run 1 | Query 6: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[vertical folds]		 (Necessary condition)
+- hasVisualFeature[vertical folds] ⊑ pleated		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, vertical folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [vertical folds], which satisfies the sufficient condition [axiom] to classify it as [pleated].
+----------------------------------------
+Run 1 | Query 7: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[vertical_ridges]		 (Necessary condition)
+- hasVisualFeature[vertical_ridges] ⊑ pleated		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, vertical_ridges]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [vertical ridges], which satisfies the sufficient condition [axiom] to classify it as [pleated].
+----------------------------------------
+Run 1 | Query 8: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[regular, parallel folds]		 (Necessary condition)
+- hasVisualFeature[regular, parallel folds] ⊑ pleated		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [regular, parallel folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [regular, parallel folds], which satisfies the sufficient condition [axiom] to classify it as [pleated].
+----------------------------------------
+Run 1 | Query 9: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[radiating folds]		 (Necessary condition)
+- hasVisualFeature[radiating folds] ⊑ pleated		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [radiating folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents radiating folds, which satisfies the sufficient condition [axiom] to classify it as pleated.
+----------------------------------------
+Run 1 | Query 10: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns] (Necessary condition)
+- hasVisualFeature[swirling patterns] ⊑ marbled (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, swirling patterns]
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 1 | Query 11: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns] (Necessary condition)
+- hasVisualFeature[swirling patterns] ⊑ marbled (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, swirling patterns]
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 1 | Query 12: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns] (Necessary condition)
+- hasVisualFeature[swirling patterns] ⊑ marbled (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, swirling patterns]
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 1 | Query 13: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns]
+- hasVisualFeature[swirling patterns] ⊑ marbled
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [swirling patterns])
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 1 | Query 14: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns]
+- hasVisualFeature[swirling patterns] ⊑ marbled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, swirling patterns]
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 1 | Query 15: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns]
+- hasVisualFeature[swirling patterns] ⊑ marbled
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [swirling patterns])
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, which satisfies the necessary and sufficient condition [marbled ≡ hasVisualFeature[swirling patterns]] to classify it as marbled.
+----------------------------------------
+Run 1 | Query 16: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[irregular pattern]
+- hasVisualFeature[irregular pattern] ⊑ marbled
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [irregular pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents an irregular pattern, which satisfies the necessary and sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 1 | Query 17: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns]
+- hasVisualFeature[swirling patterns] ⊑ marbled
+- marbled ≡ hasVisualFeature[irregular shapes] ⊓ hasVisualFeature[varied coloration]
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [swirling patterns])
+hasVisualFeature(target, [irregular shapes])
+hasVisualFeature(target, [varied coloration])
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, irregular shapes, and varied coloration, which satisfies the necessary and sufficient condition (marbled ≡ hasVisualFeature[irregular shapes] ⊓ hasVisualFeature[varied coloration]) to classify it as marbled.
+----------------------------------------
+Run 1 | Query 18: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns]		 (Necessary condition)
+- hasVisualFeature[swirling patterns] ⊑ marbled		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, swirling patterns]
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 1 | Query 19: Expected: [veined] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns]		 (Necessary condition)
+- hasVisualFeature[swirling patterns] ⊑ marbled		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, swirling patterns]
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 1 | Query 20: Expected: [veined] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[fine lines]		 (Necessary condition)
+- hasVisualFeature[fine lines] ⊑ veined		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [numerous thin, branching lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [numerous thin, branching lines], which satisfies the TBox sufficient condition [axiom] to classify it as [veined].
+----------------------------------------
+Run 1 | Query 21: Expected: [veined] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[branching lines]		 (Necessary condition)
+- hasVisualFeature[branching lines] ⊑ veined		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [complex branching lines and patterns]
+Description Logics’ Ontological Axioms
+The ABox assertion presents complex branching lines and patterns, which satisfies the sufficient condition [axiom] to classify it as veined.
+----------------------------------------
+Run 1 | Query 22: Expected: [veined] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[branching lines]		 (Necessary condition)
+- hasVisualFeature[branching lines] ⊑ veined		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [distinct branching lines and a network of smaller lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [distinct branching lines and a network of smaller lines], which satisfies the TBox sufficient condition [axiom] to classify it as [veined].
+----------------------------------------
+Run 1 | Query 23: Expected: [veined] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[branching lines] (Necessary condition)
+- hasVisualFeature[branching lines] ⊑ veined (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [distinct branching lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [distinct branching lines], which satisfies the sufficient condition [axiom] to classify it as [veined].
+----------------------------------------
+Run 1 | Query 24: Expected: [veined] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[branching lines]		 (Necessary condition)
+- hasVisualFeature[branching lines] ⊑ veined		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [branching lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [branching lines], which satisfies the sufficient condition [axiom] to classify it as [veined].
+----------------------------------------
+Run 1 | Query 25: Expected: [veined] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[branching lines]		 (Necessary condition)
+- hasVisualFeature[branching lines] ⊑ veined		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [prominent branching lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [prominent branching lines], which satisfies the sufficient condition [axiom] to classify it as [veined].
+----------------------------------------
+Run 1 | Query 26: Expected: [veined] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns]		 (Necessary condition)
+- hasVisualFeature[swirling patterns] ⊑ marbled		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, swirling patterns]
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 1 | Query 27: Expected: [veined] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[branching lines]		 (Necessary condition)
+- hasVisualFeature[branching lines] ⊑ veined		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [branching lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [branching lines], which satisfies the sufficient condition [axiom] to classify it as [veined].
+----------------------------------------
+Run 1 | Query 28: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature [interlacing strands]
+- hasVisualFeature [interlacing strands] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [interlacing strands]
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlacing strands, which satisfies the sufficient condition axiom to classify it as woven.
+----------------------------------------
+Run 1 | Query 29: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[intersecting_lines]
+- hasVisualFeature[intersecting_lines] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [intersecting_lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents intersecting lines, which satisfies the sufficient condition axiom [woven ≡ hasVisualFeature[intersecting_lines]] to classify it as woven.
+----------------------------------------
+Run 1 | Query 30: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlaced lines] (Necessary condition)
+- hasVisualFeature[interlaced lines] ⊑ woven (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, interlaced lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlaced lines, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 1 | Query 31: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlacing threads]
+- hasVisualFeature[interlacing threads] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [interlacing threads]
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlacing threads, which satisfies the sufficient condition axiom [woven ≡ hasVisualFeature[interlacing threads]] to classify it as woven.
+----------------------------------------
+Run 1 | Query 32: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature [interlocking pattern]
+- hasVisualFeature [interlocking pattern] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [tightly interlaced, repeating zig-zag pattern]
+Description Logics’ Ontological Axioms
+The ABox assertion presents a tightly interlaced, repeating zig-zag pattern, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 1 | Query 33: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlacing threads]
+- hasVisualFeature[interlacing threads] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [interlacing threads]
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlacing threads, which satisfies the sufficient condition axiom [woven ≡ hasVisualFeature[interlacing threads]] to classify it as woven.
+----------------------------------------
+Run 1 | Query 34: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlacing threads]
+- hasVisualFeature[interlacing threads] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [interlacing threads]
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlacing threads, which satisfies the sufficient condition axiom [woven ≡ hasVisualFeature[interlacing threads]] to classify it as woven.
+----------------------------------------
+Run 1 | Query 35: Expected: [woven] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[irregular pattern]
+- hasVisualFeature[irregular pattern] ⊑ marbled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, irregular pattern]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [irregular pattern], which satisfies the necessary condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 1 | Query 36: Expected: [woven] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[regular, repeating folds]
+- hasVisualFeature[regular, repeating folds] ⊑ pleated
+ABox (Observed Properties & Assertions):
+hasVisualFeature [regular, repeating folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular, repeating folds, which satisfies the sufficient condition [pleated ≡ hasVisualFeature[regular, repeating folds]] to classify it as pleated.
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9) Run 1: 0.8611
+Run 2 | Query 1: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[regular, repeating folds]
+- hasVisualFeature[regular, repeating folds] ⊑ pleated
+ABox (Observed Properties & Assertions):
+hasVisualFeature [regular, repeating folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular, repeating folds, which satisfies the sufficient condition [pleated ⊑ hasVisualFeature[regular, repeating folds]] to classify it as pleated.
+----------------------------------------
+Run 2 | Query 2: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[regular folds]		 (Necessary condition)
+- hasVisualFeature[regular folds] ⊑ pleated		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [regular folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [regular folds], which satisfies the sufficient condition [axiom] to classify it as [pleated].
+----------------------------------------
+Run 2 | Query 3: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[regular, repeating folds]
+- hasVisualFeature[regular, repeating folds] ⊑ pleated
+ABox (Observed Properties & Assertions):
+hasVisualFeature [regular, repeating folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular, repeating folds, which satisfies the sufficient condition [pleated ⊑ hasVisualFeature[regular, repeating folds]] to classify it as pleated.
+----------------------------------------
+Run 2 | Query 4: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[regular folds]
+- hasVisualFeature[regular folds] ⊑ pleated
+ABox (Observed Properties & Assertions):
+hasVisualFeature [regular, repeating folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular, repeating folds, which satisfies the sufficient condition [pleated ≡ hasVisualFeature[regular folds]] to classify it as pleated.
+----------------------------------------
+Run 2 | Query 5: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[parallel_folds]
+- hasVisualFeature[parallel_folds] ⊑ pleated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [parallel_folds])
+Description Logics’ Ontological Axioms
+The ABox assertion presents parallel folds, which satisfies the sufficient condition [pleated ≡ hasVisualFeature[parallel_folds]] to classify it as pleated.
+----------------------------------------
+Run 2 | Query 6: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[regular, parallel folds]
+- hasVisualFeature[regular, parallel folds] ⊑ pleated
+ABox (Observed Properties & Assertions):
+hasVisualFeature [regular, parallel folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular, parallel folds, which satisfies the sufficient condition [pleated ⊑ hasVisualFeature[regular, parallel folds]] to classify it as pleated.
+----------------------------------------
+Run 2 | Query 7: Expected: [pleated] | Correct: False
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[parallel lines]		 (Necessary condition)
+- hasVisualFeature[parallel lines] ⊑ veined		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [closely spaced, parallel, slightly curved lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents closely spaced, parallel, slightly curved lines, which satisfies the sufficient condition [axiom] to classify it as veined.
+----------------------------------------
+Run 2 | Query 8: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[parallel_lines]
+- hasVisualFeature[parallel_lines] ⊑ pleated
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [parallel_lines])
+Description Logics’ Ontological Axioms
+The ABox assertion presents parallel lines, which satisfies the sufficient condition [pleated ⊑ hasVisualFeature[parallel_lines]] to classify it as pleated.
+----------------------------------------
+Run 2 | Query 9: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>pleated</response>
+TBox (axioms in a Knowledge Base):
+- pleated ⊑ hasVisualFeature[regular folds]
+- hasVisualFeature[regular folds] ⊑ pleated
+ABox (Observed Properties & Assertions):
+hasVisualFeature [regular folds]
+Description Logics’ Ontological Axioms
+The ABox assertion presents regular folds, which satisfies the sufficient condition [pleated ⊑ hasVisualFeature[regular folds]] to classify it as pleated.
+----------------------------------------
+Run 2 | Query 10: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[irregular patterns]
+- hasVisualFeature[irregular patterns] ⊑ marbled
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [irregular patterns])
+Description Logics’ Ontological Axioms
+The ABox assertion presents irregular patterns, which satisfies the necessary condition [marbled ⊑ hasVisualFeature[irregular patterns]] to classify it as marbled.
+----------------------------------------
+Run 2 | Query 11: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns]
+- hasVisualFeature[swirling patterns] ⊑ marbled
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [swirling patterns])
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 2 | Query 12: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns]
+- hasVisualFeature[swirling patterns] ⊑ marbled
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [swirling patterns])
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 2 | Query 13: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns]
+- hasVisualFeature[swirling patterns] ⊑ marbled
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, swirling patterns]
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 2 | Query 14: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns]
+- hasVisualFeature[swirling patterns] ⊑ marbled
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [swirling patterns])
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 2 | Query 15: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns]
+- hasVisualFeature[swirling patterns] ⊑ marbled
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [swirling patterns])
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 2 | Query 16: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns]
+- hasVisualFeature[swirling patterns] ⊑ marbled
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [swirling patterns])
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 2 | Query 17: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[swirling patterns] (Necessary condition)
+- hasVisualFeature[swirling patterns] ⊑ marbled (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [swirling patterns])
+Description Logics’ Ontological Axioms
+The ABox assertion presents swirling patterns, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 2 | Query 18: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>marbled</response>
+TBox (axioms in a Knowledge Base):
+- marbled ⊑ hasVisualFeature[irregular pattern] (Necessary condition)
+- hasVisualFeature[irregular pattern] ⊑ marbled (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature(target, [irregular pattern])
+Description Logics’ Ontological Axioms
+The ABox assertion presents an irregular pattern, which satisfies the sufficient condition [axiom] to classify it as marbled.
+----------------------------------------
+Run 2 | Query 19: Expected: [veined] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[irregular lines]
+- hasVisualFeature[irregular lines] ⊑ veined
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, irregular lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents irregular lines, which satisfies the sufficient condition [axiom] to classify it as veined.
+----------------------------------------
+Run 2 | Query 20: Expected: [veined] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[thin lines]		 (Necessary condition)
+- hasVisualFeature[thin lines] ⊑ veined		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [thin lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [thin lines], which satisfies the sufficient condition [axiom] to classify it as [veined].
+----------------------------------------
+Run 2 | Query 21: Expected: [veined] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[dark lines]
+- hasVisualFeature[dark lines] ⊑ veined
+ABox (Observed Properties & Assertions):
+hasVisualFeature[dark lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents dark lines, which satisfies the sufficient condition [axiom] to classify it as veined.
+----------------------------------------
+Run 2 | Query 22: Expected: [veined] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[lines]		 (Necessary condition)
+- hasVisualFeature[lines] ⊑ veined		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [lines], which satisfies the TBox sufficient condition [axiom] to classify it as [veined].
+----------------------------------------
+Run 2 | Query 23: Expected: [veined] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[branching lines]		 (Necessary condition)
+- hasVisualFeature[branching lines] ⊑ veined		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [branching lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [branching lines], which satisfies the sufficient condition [axiom] to classify it as [veined].
+----------------------------------------
+Run 2 | Query 24: Expected: [veined] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[network of lines]		 (Necessary condition)
+- hasVisualFeature[network of lines] ⊑ veined		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [dense network of fine, branching lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents a dense network of fine, branching lines, which satisfies the sufficient condition [axiom] to classify it as veined.
+----------------------------------------
+Run 2 | Query 25: Expected: [veined] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[linear markings]		 (Necessary condition)
+- hasVisualFeature[linear markings] ⊑ veined		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, linear markings]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [linear markings], which satisfies the sufficient condition [axiom] to classify it as [veined].
+----------------------------------------
+Run 2 | Query 26: Expected: [veined] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[parallel lines]		 (Necessary condition)
+- hasVisualFeature[parallel lines] ⊑ veined		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [closely spaced, parallel lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents closely spaced, parallel lines, which satisfies the sufficient condition [axiom] to classify it as veined.
+----------------------------------------
+Run 2 | Query 27: Expected: [veined] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>veined</response>
+TBox (axioms in a Knowledge Base):
+- veined ⊑ hasVisualFeature[fine lines]		 (Necessary condition)
+- hasVisualFeature[fine lines] ⊑ veined		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [target, fine lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents [fine lines], which satisfies the sufficient condition [axiom] to classify it as [veined].
+----------------------------------------
+Run 2 | Query 28: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[regular grid pattern]
+- hasVisualFeature[regular grid pattern] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [regular grid pattern]
+Description Logics’ Ontological Axioms
+The ABox assertion presents a regular grid pattern, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 2 | Query 29: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlaced strands]
+- hasVisualFeature[interlaced strands] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [interlaced strands]
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlaced strands, which satisfies the sufficient condition axiom [woven ≡ hasVisualFeature[interlaced strands]] to classify it as woven.
+----------------------------------------
+Run 2 | Query 30: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlaced strands]
+- hasVisualFeature[interlaced strands] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [interlaced strands]
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlaced strands, which satisfies the sufficient condition axiom [woven ≡ hasVisualFeature[interlaced strands]] to classify it as woven.
+----------------------------------------
+Run 2 | Query 31: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[parallel lines]
+- hasVisualFeature[parallel lines] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [parallel lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents parallel lines, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 2 | Query 32: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlacing strands]
+- hasVisualFeature[interlacing strands] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [interlacing strands]
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlacing strands, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 2 | Query 33: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlaced strands] (Necessary condition)
+- hasVisualFeature[interlaced strands] ⊑ woven (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [distinct, regularly spaced, interlaced strands forming a repeating pattern]
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlaced strands forming a repeating pattern, which satisfies the sufficient condition axiom [hasVisualFeature[interlaced strands] ⊑ woven] to classify it as woven.
+----------------------------------------
+Run 2 | Query 34: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlaced threads]
+- hasVisualFeature[interlaced threads] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [interlaced black and white threads]
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlaced black and white threads, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 2 | Query 35: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[interlaced strands]
+- hasVisualFeature[interlaced strands] ⊑ woven
+ABox (Observed Properties & Assertions):
+hasVisualFeature [interlaced strands]
+Description Logics’ Ontological Axioms
+The ABox assertion presents interlaced strands, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+Run 2 | Query 36: Expected: [woven] | Correct: True
+MODEL OUTPUT (Ontology Reasoning):
+Entity Identification:
+<response>woven</response>
+TBox (axioms in a Knowledge Base):
+- woven ⊑ hasVisualFeature[parallel lines]		 (Necessary condition)
+- hasVisualFeature[parallel lines] ⊑ woven		 (Sufficient condition)
+ABox (Observed Properties & Assertions):
+hasVisualFeature [closely spaced, diagonally oriented parallel lines]
+Description Logics’ Ontological Axioms
+The ABox assertion presents closely spaced, diagonally oriented parallel lines, which satisfies the sufficient condition [axiom] to classify it as woven.
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9) Run 2: 0.9722

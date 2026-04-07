@@ -1,0 +1,4343 @@
+=== DEBUG LOG: gemma3 | dtd | Prompt: rulebased ===
+
+--- CONFIG: N=2, K=2, Q=9 (3 RUNS) ---
+Run 0 | Query 1: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- There is a large, irregular depression in a grey surface.
+- The depression contains water.
+- The edges of the depression are rough and uneven.
+
+KB:
+- IF a surface has a large, irregular depression and contains water THEN potholed
+
+Rule Check:
+The image clearly shows a large, irregular depression in a grey surface containing water. This aligns perfectly with the "IF" condition of the potholed rule.
+
+<response>potholed</response>
+----------------------------------------
+Run 0 | Query 2: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a depression in a dark grey surface.
+- The depression contains a pool of water.
+- The edges of the depression are rough and uneven.
+
+KB:
+- IF a dark grey surface has a depression containing water and rough, uneven edges THEN potholed
+
+Rule Check:
+- The image clearly exhibits a depression with water and rough edges on a dark grey surface. This aligns perfectly with the "IF" condition of the potholed rule.
+
+<response>potholed</response>
+----------------------------------------
+Run 0 | Query 3: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a depression in a dark grey surface.
+- The depression contains a body of water.
+- The edges of the depression are irregular and broken.
+
+KB:
+- IF a dark grey surface has a large, irregular depression containing water THEN potholed
+
+Rule Check:
+The image clearly exhibits a large, irregular depression filled with water on a dark grey surface. This aligns perfectly with the "IF" condition of the potholed rule.
+
+<response>potholed</response>
+----------------------------------------
+Run 0 | Query 4: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with several depressions or holes.
+- These depressions contain water.
+- The surface appears to be a road or paved area.
+
+KB:
+- IF the image shows depressions or holes in a surface, and these depressions contain water THEN potholed.
+
+Rule Check:
+- The image clearly exhibits depressions filled with water, aligning perfectly with the "IF" condition of the potholed rule.
+
+<response>potholed</response>
+----------------------------------------
+Run 0 | Query 5: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- There is a large depression in a grey surface.
+- The depression is filled with rectangular, light-grey objects arranged in a grid-like pattern.
+
+KB:
+- IF a large depression exists in a grey surface AND the depression is filled with rectangular, light-grey objects arranged in a grid-like pattern THEN potholed.
+- IF a surface exhibits numerous folds and creases THEN wrinkled.
+
+Rule Check:
+The image clearly shows a depression in a grey surface filled with a grid of rectangular objects. This aligns directly with the "potholed" rule. The image does not exhibit folds or creases.
+
+<response>potholed</response>
+----------------------------------------
+Run 0 | Query 6: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with several depressions or holes.
+- The surface appears to be a road or paved area.
+- The depressions are irregular in shape and size.
+
+KB:
+- IF the image shows a surface with several depressions or holes THEN potholed
+
+Rule Check:
+- The image clearly exhibits multiple depressions or holes in a paved surface, which aligns perfectly with the "IF" condition of the potholed rule.
+
+<response>potholed</response>
+----------------------------------------
+Run 0 | Query 7: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with numerous depressions or holes.
+- The surface appears to be a light brown or tan color.
+
+KB:
+- IF the image shows a surface with numerous depressions or holes THEN potholed.
+- IF the image shows a surface with irregular folds and creases THEN wrinkled.
+
+Rule Check:
+The image clearly displays a surface with multiple depressions, resembling potholes. The presence of these holes aligns directly with the "IF" condition of the potholed rule. The image does not exhibit irregular folds or creases characteristic of wrinkled surfaces. Therefore, the potholed rule is best matched.
+
+<response>potholed</response>
+----------------------------------------
+Run 0 | Query 8: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with depressions and indentations.
+- The surface appears to be a dark grey/black material with lighter areas within the depressions.
+
+KB:
+- IF surface has depressions and indentations THEN potholed
+
+Rule Check:
+- The image clearly exhibits depressions and indentations, aligning with the visual features described in the "IF" statement of the rule. Therefore, the image is best classified as potholed.
+
+<response>potholed</response>
+----------------------------------------
+Run 0 | Query 9: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large, dark, roughly circular depression in the ground.
+- Rough, rocky edges surrounding the depression.
+- Vegetation visible within the depression.
+
+KB:
+- IF large, dark, roughly circular depression in the ground AND rough, rocky edges surrounding the depression THEN potholed
+
+Rule Check:
+The image clearly shows a large, dark, roughly circular depression in the ground with rough, rocky edges. This aligns perfectly with the "potholed" class.
+
+<response>potholed</response>
+----------------------------------------
+Run 0 | Query 10: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a fabric with irregular, non-smooth surface.
+- The fabric has folds and creases.
+
+KB:
+- IF the image shows a fabric with irregular, non-smooth surface and folds/creases THEN wrinkled
+
+Rule Check:
+- The image clearly exhibits a wrinkled texture. The fabric has numerous folds and creases, aligning perfectly with the "IF" condition of the rule.
+
+<response>wrinkled</response>
+----------------------------------------
+Run 0 | Query 11: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with numerous folds and creases.
+- The surface appears to be a single, continuous material exhibiting deformation.
+
+KB:
+- IF a surface exhibits numerous folds and creases THEN wrinkled.
+
+Rule Check:
+- The image clearly displays a surface with numerous folds and creases, which directly aligns with the rule stating that a surface with such features is "wrinkled."
+
+<response>wrinkled</response>
+----------------------------------------
+Run 0 | Query 12: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with numerous irregular folds and creases.
+- The surface appears to be a light brown color.
+
+KB:
+- IF a surface exhibits numerous irregular folds and creases THEN wrinkled.
+
+Rule Check:
+- The image clearly displays a surface with numerous irregular folds and creases. This aligns perfectly with the rule stating that a surface exhibiting such features is "wrinkled."
+
+<response>wrinkled</response>
+----------------------------------------
+Run 0 | Query 13: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with numerous, closely spaced, and undulating lines.
+- The surface appears to be a light brown/tan color.
+
+KB:
+- IF a surface exhibits numerous, closely spaced, and undulating lines THEN wrinkled.
+
+Rule Check:
+- The image clearly exhibits numerous, closely spaced, and undulating lines. This aligns perfectly with the rule stating that a surface with such features is "wrinkled."
+
+<response>wrinkled</response>
+----------------------------------------
+Run 0 | Query 14: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with numerous folds and creases.
+- The surface is not flat and has a textured appearance due to the folds.
+
+KB:
+- IF a surface exhibits numerous folds and creases THEN wrinkled.
+
+Rule Check:
+- The image clearly displays a surface with many folds and creases. This aligns perfectly with the rule stating that a surface with numerous folds and creases is classified as "wrinkled."
+
+<response>wrinkled</response>
+----------------------------------------
+Run 0 | Query 15: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with numerous folds and creases.
+- The surface appears to be textured and uneven.
+
+KB:
+- IF a surface exhibits numerous folds and creases THEN wrinkled.
+
+Rule Check:
+- The image clearly displays a surface with many folds and creases, which aligns perfectly with the rule stating that a surface with such features is "wrinkled".
+
+<response>wrinkled</response>
+----------------------------------------
+Run 0 | Query 16: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with numerous folds and creases.
+- The surface appears to be made of a material that can be deformed and retain its shape.
+- The surface has a non-uniform texture due to the folds.
+
+KB:
+- IF a surface exhibits numerous folds and creases THEN wrinkled.
+
+Rule Check:
+- The image clearly exhibits numerous folds and creases. Therefore, the rule "IF a surface exhibits numerous folds and creases THEN wrinkled" is best matched by the Target Image.
+
+<response>wrinkled</response>
+----------------------------------------
+Run 0 | Query 17: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with numerous folds and creases.
+- The surface appears to be a light color, likely white or off-white.
+
+KB:
+- IF a surface exhibits numerous folds and creases THEN wrinkled.
+
+Rule Check:
+- The image clearly exhibits numerous folds and creases, which aligns perfectly with the rule stating that a surface with such features is "wrinkled."
+
+<response>wrinkled</response>
+----------------------------------------
+Run 0 | Query 18: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with numerous, irregular folds and creases.
+- The surface appears to be metallic and reflective.
+
+KB:
+- IF a surface exhibits numerous, irregular folds and creases THEN wrinkled.
+
+Rule Check:
+- The image clearly displays a surface with numerous, irregular folds and creases. This aligns directly with the rule stating that a surface exhibiting such features is "wrinkled."
+
+<response>wrinkled</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9) Run 0: 1.0000
+Run 1 | Query 1: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a road surface with numerous circular depressions filled with water.
+- The depressions are irregular in shape and size.
+- The surface appears damaged and uneven.
+
+KB:
+- IF the image shows a road surface with numerous irregular depressions filled with water THEN potholed
+
+Rule Check:
+- The image clearly exhibits the defining characteristic of "potholed" - a road surface with depressions filled with water. The depressions are irregular, matching the visual pattern observed in the provided examples.
+
+<response>potholed</response>
+----------------------------------------
+Run 1 | Query 2: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- A large, irregular depression in a dark grey surface.
+- The depression contains a pool of water.
+- The edges of the depression are rough and broken.
+
+KB:
+- IF a dark grey surface has a large, irregular depression containing water and rough, broken edges THEN potholed
+
+Rule Check:
+The image clearly shows a large, irregular depression in a dark grey surface containing water and exhibiting rough, broken edges. This aligns perfectly with the "IF" condition of the potholed rule.
+
+<response>potholed</response>
+----------------------------------------
+Run 1 | Query 3: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a depression in a surface, filled with a reflective liquid.
+- The edges of the depression are irregular and broken.
+
+KB:
+- IF a depression in a surface is filled with a reflective liquid and has irregular, broken edges THEN potholed
+
+Rule Check:
+- The image clearly exhibits a depression filled with liquid and irregular edges, aligning perfectly with the "potholed" rule.
+
+<response>potholed</response>
+----------------------------------------
+Run 1 | Query 4: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with depressions filled with water.
+- The surface appears to be a road or paved area.
+- The depressions are irregular in shape.
+
+KB:
+- IF the image shows depressions filled with water on a paved surface THEN potholed
+
+Rule Check:
+- The image clearly exhibits depressions filled with water on a paved surface. This aligns perfectly with the "IF" condition of the potholed rule.
+
+<response>potholed</response>
+----------------------------------------
+Run 1 | Query 5: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a depression or hole in a surface.
+- The edges of the depression are irregular and broken.
+- The surface surrounding the depression appears to be a paved road or similar hard surface.
+
+KB:
+- IF a depression or hole is present in a surface with irregular and broken edges THEN potholed
+
+Rule Check:
+- The image clearly exhibits a depression with irregular edges in a paved surface. This aligns perfectly with the "IF" condition of the potholed rule.
+
+<response>potholed</response>
+----------------------------------------
+Run 1 | Query 6: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with irregular depressions and cavities.
+- The surface appears to be a dark grey or black material.
+- There are visible cracks and breaks in the surface.
+
+KB:
+- IF the image shows irregular depressions and cavities in a dark grey or black surface THEN potholed.
+
+Rule Check:
+- The image clearly exhibits irregular depressions and cavities in a dark surface, aligning with the "IF" condition of the potholed rule. The presence of cracks further supports this classification.
+
+<response>potholed</response>
+----------------------------------------
+Run 1 | Query 7: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a road surface with multiple depressions filled with water.
+- The depressions are irregular in shape and size.
+- The surface is grey and appears to be asphalt or a similar road material.
+
+KB:
+- IF the image shows a road surface with multiple depressions filled with water THEN potholed
+
+Rule Check:
+- The image clearly exhibits multiple depressions filled with water on a road surface. This aligns perfectly with the "IF" condition of the potholed rule.
+
+<response>potholed</response>
+----------------------------------------
+Run 1 | Query 8: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a section of asphalt with a large, irregular depression.
+- The depression contains water.
+- The edges of the depression are rough and uneven.
+
+KB:
+- IF a surface has a large, irregular depression containing water and rough, uneven edges THEN potholed
+
+Rule Check:
+- The image clearly exhibits a large, irregular depression filled with water and has rough, uneven edges. This aligns perfectly with the "IF" condition of the potholed rule.
+
+<response>potholed</response>
+----------------------------------------
+Run 1 | Query 9: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with visible depressions and irregularities.
+- The surface appears to be asphalt or a similar road material.
+- There are areas of darker material within the depressions.
+
+KB:
+- IF the surface has visible depressions and irregularities THEN potholed
+
+Rule Check:
+- The image clearly exhibits depressions and irregularities in the surface, aligning with the "IF" condition of the potholed rule.
+
+<response>potholed</response>
+----------------------------------------
+Run 1 | Query 10: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with numerous folds and creases.
+- The surface appears to be flexible and draping.
+
+KB:
+- IF the image shows a surface with numerous folds and creases THEN wrinkled
+
+Rule Check:
+- The image clearly exhibits numerous folds and creases, aligning perfectly with the "IF" condition of the rule. Therefore, the best matching class is wrinkled.
+
+<response>wrinkled</response>
+----------------------------------------
+Run 1 | Query 11: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with numerous folds and creases.
+- The surface appears to be a dark color, likely black.
+
+KB:
+- IF a surface exhibits numerous folds and creases THEN wrinkled
+
+Rule Check:
+- The image clearly displays a surface with many folds and creases. This aligns perfectly with the "IF...THEN" rule stating that a surface with numerous folds and creases is "wrinkled".
+
+<response>wrinkled</response>
+----------------------------------------
+Run 1 | Query 12: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with numerous folds and creases.
+- The surface is uniformly colored in a green hue.
+
+KB:
+- IF a surface exhibits numerous folds and creases THEN wrinkled
+
+Rule Check:
+- The image clearly displays a surface with numerous folds and creases. This aligns perfectly with the "IF" condition of the "wrinkled" rule.
+
+<response>wrinkled</response>
+----------------------------------------
+Run 1 | Query 13: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a fabric with flowing, curved folds.
+- The surface is smooth and reflective.
+- There are visible creases and bends in the material.
+
+KB:
+- IF the image shows a fabric with flowing, curved folds and visible creases THEN wrinkled
+
+Rule Check:
+- The image clearly exhibits flowing, curved folds and visible creases, aligning well with the "wrinkled" class.
+
+<response>wrinkled</response>
+----------------------------------------
+Run 1 | Query 14: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with numerous folds and creases.
+- The surface is a light purple color.
+
+KB:
+- IF the image shows a surface with numerous folds and creases THEN wrinkled.
+
+Rule Check:
+- The image clearly exhibits numerous folds and creases, which aligns perfectly with the "IF" condition of the rule. The color is irrelevant to the classification.
+
+<response>wrinkled</response>
+----------------------------------------
+Run 1 | Query 15: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with numerous folds and creases.
+- The surface appears to be a light color, likely white or gray.
+
+KB:
+- IF a surface exhibits numerous folds and creases THEN wrinkled.
+
+Rule Check:
+- The image clearly displays a surface with many folds and creases. This aligns perfectly with the "IF...THEN" rule for the "wrinkled" class.
+
+<response>wrinkled</response>
+----------------------------------------
+Run 1 | Query 16: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a fabric with flowing, curved lines.
+- The surface is not sharply folded or creased, but rather gently draped.
+
+KB:
+- IF the image shows a surface with gentle curves and flowing lines THEN wrinkled
+
+Rule Check:
+- The image aligns with the "wrinkled" class because it displays a surface with flowing, curved lines, which are characteristic of a wrinkled appearance, even if the wrinkles are soft and not sharp.
+
+<response>wrinkled</response>
+----------------------------------------
+Run 1 | Query 17: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with numerous folds and creases.
+- The surface appears to be a light color, likely white or beige.
+
+KB:
+- IF the image shows a surface with numerous folds and creases THEN wrinkled.
+
+Rule Check:
+- The image clearly exhibits numerous folds and creases, which aligns perfectly with the "IF" condition of the rule. Therefore, the image is best classified as "wrinkled".
+
+<response>wrinkled</response>
+----------------------------------------
+Run 1 | Query 18: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays numerous folds and creases on a surface.
+- The surface is not flat and has a textured appearance due to the folds.
+
+KB:
+- IF numerous folds and creases are present THEN wrinkled
+
+Rule Check:
+- The image clearly exhibits numerous folds and creases. This aligns perfectly with the rule stating that if numerous folds and creases are present, the image is classified as "wrinkled".
+
+<response>wrinkled</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9) Run 1: 1.0000
+Run 2 | Query 1: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with numerous depressions or cavities.
+- The depressions are irregular in shape and size.
+- The surface appears to be a solid material.
+
+KB:
+- IF a surface has numerous, irregular depressions THEN potholed
+
+Rule Check:
+- The image clearly exhibits numerous, irregular depressions across the surface. This aligns directly with the "IF" condition of the potholed rule.
+
+<response>potholed</response>
+----------------------------------------
+Run 2 | Query 2: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a road surface with several depressions or holes.
+- The depressions are irregular in shape and appear to be caused by damage to the road.
+
+KB:
+- IF the image shows a road surface with depressions or holes THEN potholed
+
+Rule Check:
+- The image clearly exhibits multiple depressions in the road surface, aligning with the defining characteristic of "potholed".
+
+<response>potholed</response>
+----------------------------------------
+Run 2 | Query 3: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a dark, irregular depression in a surface.
+- The depression contains a lighter colored substance, likely water or a similar liquid.
+- The surrounding surface appears damaged and rough.
+
+KB:
+- IF a dark, irregular depression is present in a surface, and it contains a lighter colored substance THEN potholed.
+
+Rule Check:
+- The image clearly exhibits a dark, irregular depression containing a lighter substance. This aligns perfectly with the "IF" condition of the potholed rule.
+
+<response>potholed</response>
+----------------------------------------
+Run 2 | Query 4: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a paved surface with several depressions and irregularities.
+- The surface appears damaged and uneven, with areas of missing material.
+
+KB:
+- IF a paved surface exhibits significant depressions and irregularities THEN potholed
+
+Rule Check:
+- The image clearly shows a paved surface with noticeable depressions and irregularities, aligning with the "potholed" class.
+
+<response>potholed</response>
+----------------------------------------
+Run 2 | Query 5: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a depression in a dark, asphalt-like surface.
+- The depression is filled with water, creating a reflective surface.
+- The edges of the depression are irregular and broken.
+
+KB:
+- IF a dark, asphalt-like surface has a depression filled with water and irregular, broken edges THEN potholed
+
+Rule Check:
+- The image clearly exhibits a depression in a dark surface filled with water and has irregular edges. This aligns perfectly with the "potholed" class.
+
+<response>potholed</response>
+----------------------------------------
+Run 2 | Query 6: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a dark, irregular depression in a grey surface.
+- The surface appears to be damaged and has a rough texture around the depression.
+- There is water present within the depression.
+
+KB:
+- IF a dark, irregular depression is present in a grey surface with a rough texture and water present THEN potholed
+
+Rule Check:
+- The image clearly exhibits a dark, irregular depression in a grey surface, with a rough texture and water present. This aligns perfectly with the "potholed" class.
+
+<response>potholed</response>
+----------------------------------------
+Run 2 | Query 7: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- A large, irregular depression in a surface.
+- The edges of the depression are rough and uneven.
+- The surface within the depression appears to be a different material (grid-like pattern).
+
+KB:
+- IF a large, irregular depression with rough edges and a different material within is present THEN potholed
+
+Rule Check:
+The image clearly shows a large, irregular depression with rough edges and a distinct grid-like pattern within the depression. This aligns perfectly with the "IF" condition of the potholed rule.
+
+<response>potholed</response>
+----------------------------------------
+Run 2 | Query 8: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- There is a visible depression in the road surface.
+- The depression contains water.
+
+KB:
+- IF there is a visible depression in the road surface and the depression contains water THEN potholed
+
+Rule Check:
+- The image clearly shows a depression in the road surface filled with water. This aligns perfectly with the "IF" condition of the potholed rule.
+
+<response>potholed</response>
+----------------------------------------
+Run 2 | Query 9: Expected: [potholed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with depressions filled with water.
+- The surface appears to be asphalt or a similar road material.
+- There are multiple distinct depressions visible.
+
+KB:
+- IF the image shows depressions in a road surface filled with water THEN potholed.
+
+Rule Check:
+- The image clearly exhibits multiple depressions in a road surface filled with water, which directly aligns with the "IF" condition of the potholed rule.
+
+<response>potholed</response>
+----------------------------------------
+Run 2 | Query 10: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with numerous irregular folds and creases.
+- The surface appears to be made of a flexible material.
+
+KB:
+- IF a surface exhibits numerous irregular folds and creases THEN wrinkled
+
+Rule Check:
+- The image clearly displays a surface with many folds and creases, which aligns perfectly with the "IF" condition of the "wrinkled" rule.
+
+<response>wrinkled</response>
+----------------------------------------
+Run 2 | Query 11: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with numerous folds and creases.
+- The surface appears to be made of a flexible material.
+- The surface is uniformly colored in a light purple hue.
+
+KB:
+- IF a surface exhibits numerous folds and creases THEN wrinkled.
+
+Rule Check:
+- The image clearly exhibits numerous folds and creases, which aligns perfectly with the rule stating that a surface with such features is "wrinkled".
+
+<response>wrinkled</response>
+----------------------------------------
+Run 2 | Query 12: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a face with numerous folds and creases on the skin.
+- The surface is not flat, exhibiting a significant degree of deformation.
+
+KB:
+- IF the image shows a face with numerous folds and creases on the skin THEN wrinkled.
+
+Rule Check:
+- The image clearly exhibits numerous folds and creases on the skin, aligning perfectly with the rule stating that if an image shows a face with numerous folds and creases on the skin, it is classified as "wrinkled."
+
+<response>wrinkled</response>
+----------------------------------------
+Run 2 | Query 13: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a fabric with visible folds and curves.
+- The surface is not smooth and has a rippled texture.
+
+KB:
+- IF the image shows a fabric with visible folds and curves THEN wrinkled.
+
+Rule Check:
+- The image clearly exhibits the visual features described in the rule: a fabric with folds and curves. Therefore, the rule "IF the image shows a fabric with visible folds and curves THEN wrinkled" is best matched.
+
+<response>wrinkled</response>
+----------------------------------------
+Run 2 | Query 14: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with numerous, repeating, undulating curves or folds.
+- The surface appears to be deformed or creased.
+
+KB:
+- IF a surface exhibits numerous, repeating, undulating curves or folds THEN wrinkled.
+
+Rule Check:
+- The image strongly satisfies the rule "IF a surface exhibits numerous, repeating, undulating curves or folds THEN wrinkled." The prominent visual feature is the presence of these folds.
+
+<response>wrinkled</response>
+----------------------------------------
+Run 2 | Query 15: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with numerous, sharp, irregular folds and creases.
+- The surface appears to be metallic and highly reflective, with bright highlights and dark shadows emphasizing the folds.
+
+KB:
+- IF a surface exhibits numerous, sharp, irregular folds and creases THEN wrinkled.
+
+Rule Check:
+- The image strongly satisfies the rule "IF a surface exhibits numerous, sharp, irregular folds and creases THEN wrinkled." The prominent and numerous folds and creases are the dominant visual feature.
+
+<response>wrinkled</response>
+----------------------------------------
+Run 2 | Query 16: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with numerous irregular folds and creases.
+- The surface appears to be made of a flexible material.
+
+KB:
+- IF a surface exhibits numerous irregular folds and creases THEN wrinkled
+
+Rule Check:
+- The image clearly displays a surface with numerous irregular folds and creases. This aligns perfectly with the "IF" condition of the rule, indicating the "wrinkled" class.
+
+<response>wrinkled</response>
+----------------------------------------
+Run 2 | Query 17: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a surface with deep, irregular folds and creases.
+- The surface appears to be textured and not smooth.
+
+KB:
+- IF a surface exhibits deep, irregular folds and creases THEN wrinkled
+
+Rule Check:
+- The image clearly displays a surface with deep, irregular folds and creases, which aligns perfectly with the "IF" condition of the rule.
+
+<response>wrinkled</response>
+----------------------------------------
+Run 2 | Query 18: Expected: [wrinkled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a smooth, flowing fabric with gentle curves and folds.
+- The surface appears to be relatively uniform in color and texture.
+
+KB:
+- IF smooth, flowing fabric with gentle curves and folds THEN wrinkled
+
+Rule Check:
+- The image clearly exhibits the visual features of a wrinkled surface, characterized by smooth, flowing fabric with gentle curves and folds. Therefore, the rule "IF smooth, flowing fabric with gentle curves and folds THEN wrinkled" is best satisfied.
+
+<response>wrinkled</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9) Run 2: 1.0000
+
+--- CONFIG: N=2, K=1, Q=9 (3 RUNS) ---
+Run 0 | Query 1: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of interconnected shapes.
+- The shapes are elongated and roughly oval.
+- The pattern is a grid-like structure.
+
+KB:
+- IF the image contains a repeating pattern of interconnected shapes THEN meshed.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of interconnected shapes, aligning with the "IF" condition of the rule. Therefore, the image is best classified as "meshed".
+
+<response>meshed</response>
+----------------------------------------
+Run 0 | Query 2: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a grid-like pattern.
+- The grid is composed of small, regularly spaced elements.
+
+KB:
+- IF the image contains a grid-like pattern composed of small, regularly spaced elements THEN meshed
+
+Rule Check:
+- The image clearly exhibits a grid-like pattern with small, regularly spaced elements. Therefore, the "meshed" rule is best satisfied.
+
+<response>meshed</response>
+----------------------------------------
+Run 0 | Query 3: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of interconnected, regularly spaced openings.
+- The pattern is composed of a network of lines forming diamond-like or oval-like shapes.
+
+KB:
+- IF the image displays a repeating pattern of interconnected, regularly spaced openings THEN meshed.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of interconnected, regularly spaced openings, which aligns perfectly with the "IF" condition of the "meshed" rule.
+
+<response>meshed</response>
+----------------------------------------
+Run 0 | Query 4: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating diamond-like pattern formed by interconnected elements.
+- The elements are curved and appear to be linked together.
+
+KB:
+- IF the image contains a repeating diamond-like pattern formed by interconnected elements THEN meshed
+
+Rule Check:
+- The image clearly exhibits a repeating diamond-like pattern formed by interconnected elements. Therefore, the "meshed" rule is best satisfied.
+
+<response>meshed</response>
+----------------------------------------
+Run 0 | Query 5: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a grid-like structure composed of intersecting lines.
+- The lines are mostly straight and form a regular pattern of squares or rectangles.
+
+KB:
+- IF the image contains a grid-like structure composed of intersecting lines THEN meshed
+
+Rule Check:
+- The image clearly exhibits a grid-like structure with intersecting lines, which aligns perfectly with the "IF" condition of the "meshed" rule.
+
+<response>meshed</response>
+----------------------------------------
+Run 0 | Query 6: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating diamond-shaped pattern formed by interconnected lines.
+- The pattern is consistent throughout the image.
+
+KB:
+- IF the image contains a repeating diamond-shaped pattern formed by interconnected lines THEN meshed
+
+Rule Check:
+- The image clearly exhibits a repeating diamond-shaped pattern formed by interconnected lines. Therefore, the rule "IF the image contains a repeating diamond-shaped pattern formed by interconnected lines THEN meshed" is best satisfied.
+
+<response>meshed</response>
+----------------------------------------
+Run 0 | Query 7: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of interconnected, elongated diamond shapes.
+- The pattern is regular and fills the entire image.
+
+KB:
+- IF the image contains a repeating pattern of interconnected shapes THEN meshed
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of interconnected, elongated diamond shapes, which aligns perfectly with the "IF" condition of the "meshed" rule.
+
+<response>meshed</response>
+----------------------------------------
+Run 0 | Query 8: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a regular grid-like pattern of intersecting lines.
+- The lines form a network of small, repeating squares or diamonds.
+
+KB:
+- IF the image contains a regular grid-like pattern of intersecting lines forming a network of small, repeating squares or diamonds THEN meshed
+
+Rule Check:
+- The image clearly exhibits a regular grid-like pattern of intersecting lines forming a network of small, repeating squares or diamonds. Therefore, the "meshed" rule is best satisfied.
+
+<response>meshed</response>
+----------------------------------------
+Run 0 | Query 9: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating diamond-like pattern formed by interconnected lines.
+- The pattern covers a significant portion of the image.
+
+KB:
+- IF the image contains a repeating diamond-like pattern formed by interconnected lines THEN meshed
+
+Rule Check:
+- The image clearly exhibits a repeating diamond-like pattern formed by interconnected lines. Therefore, the rule "IF the image contains a repeating diamond-like pattern formed by interconnected lines THEN meshed" is best satisfied.
+
+<response>meshed</response>
+----------------------------------------
+Run 0 | Query 10: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains curved, flowing lines resembling swirls.
+- The image contains floral-like shapes.
+
+KB:
+- IF the image contains curved, flowing lines resembling swirls THEN swirly.
+
+Rule Check:
+- The image clearly exhibits swirling patterns. Therefore, the rule "IF the image contains curved, flowing lines resembling swirls THEN swirly" is best matched.
+
+<response>swirly</response>
+----------------------------------------
+Run 0 | Query 11: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains flowing, organic shapes.
+- The shapes are interconnected and form a continuous pattern.
+- The shapes are not spirals.
+
+KB:
+- IF the image contains flowing, organic shapes that are interconnected and not spirals THEN swirly.
+
+Rule Check:
+- The image clearly exhibits flowing, organic shapes that are interconnected and are not spirals. Therefore, the "swirly" rule is best matched.
+
+<response>swirly</response>
+----------------------------------------
+Run 0 | Query 12: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains numerous curved lines and loops.
+- The overall pattern is complex and non-grid-like.
+
+KB:
+- IF the image contains numerous curved lines and loops THEN swirly.
+- IF the image has a grid-like structure THEN meshed.
+
+Rule Check:
+- The image clearly exhibits numerous curved lines and loops, aligning with the "swirly" class. It does not have a grid-like structure.
+
+<response>swirly</response>
+----------------------------------------
+Run 0 | Query 13: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains flowing, curved lines.
+- The lines are not straight or grid-like.
+- The lines create a swirling or wavy pattern.
+
+KB:
+- IF the image contains flowing, curved lines and a swirling or wavy pattern THEN swirly
+
+Rule Check:
+- The image clearly exhibits flowing, curved lines and a swirling pattern. Therefore, the "swirly" rule is best matched.
+
+<response>swirly</response>
+----------------------------------------
+Run 0 | Query 14: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains swirling patterns.
+- The image is predominantly green.
+
+KB:
+- IF swirling patterns are present THEN swirly
+
+Rule Check:
+- The image clearly exhibits swirling patterns. Therefore, the rule "IF swirling patterns are present THEN swirly" is best matched.
+
+<response>swirly</response>
+----------------------------------------
+Run 0 | Query 15: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating curved shapes resembling swirls.
+- The shapes are connected and form a continuous pattern.
+
+KB:
+- IF the image contains repeating curved shapes resembling swirls THEN swirly
+
+Rule Check:
+- The image clearly exhibits the defining characteristic of the "swirly" class: the presence of repeating, swirling shapes. Therefore, the rule "IF the image contains repeating curved shapes resembling swirls THEN swirly" is best matched.
+
+<response>swirly</response>
+----------------------------------------
+Run 0 | Query 16: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating, stylized shapes resembling swirls or spirals.
+- The shapes are enclosed within a defined boundary, creating a pattern.
+
+KB:
+- IF the image contains repeating, stylized shapes resembling swirls or spirals THEN swirly
+
+Rule Check:
+- The image clearly exhibits repeating swirls and spirals. Therefore, the "swirly" rule is best matched.
+
+<response>swirly</response>
+----------------------------------------
+Run 0 | Query 17: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating, curved, and ornate patterns.
+- The patterns resemble stylized floral or foliage designs.
+- There are no visible mesh-like structures.
+
+KB:
+- IF repeating, curved, ornate patterns resembling stylized floral or foliage designs THEN swirly
+
+Rule Check:
+- The image strongly matches the "IF" condition of the "swirly" rule due to the presence of repeating, curved, ornate patterns that resemble stylized floral or foliage designs. The image does not contain any mesh-like structures, so it does not match the "meshed" rule.
+
+<response>swirly</response>
+----------------------------------------
+Run 0 | Query 18: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains curved, flowing lines.
+- The lines are brightly colored and appear to be luminous.
+
+KB:
+- IF the image contains curved, flowing lines THEN swirly
+
+Rule Check:
+- The image clearly exhibits curved, flowing lines. Therefore, the "IF" condition of the "swirly" rule is met.
+
+<response>swirly</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9) Run 0: 1.0000
+Run 1 | Query 1: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of interconnected diamond shapes.
+- The lines forming the shapes are consistently straight and create a grid-like structure.
+
+KB:
+- IF the image contains a repeating pattern of interconnected diamond shapes THEN meshed.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of interconnected diamond shapes, which directly aligns with the rule stating that if such a pattern is present, the class is "meshed."
+
+<response>meshed</response>
+----------------------------------------
+Run 1 | Query 2: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of interconnected loops and openings.
+- The pattern is regular and grid-like, with consistent spacing between elements.
+
+KB:
+- IF the image displays a repeating pattern of interconnected loops and openings THEN meshed.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of interconnected loops and openings, aligning perfectly with the "IF" condition of the "meshed" rule.
+
+<response>meshed</response>
+----------------------------------------
+Run 1 | Query 3: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a regular, repeating pattern of small, circular holes.
+- The holes are evenly spaced and arranged in a grid-like structure.
+
+KB:
+- IF the image contains a regular, repeating pattern of small, circular holes arranged in a grid-like structure THEN meshed.
+
+Rule Check:
+- The image clearly exhibits a regular, repeating pattern of small, circular holes arranged in a grid-like structure. This aligns perfectly with the "meshed" rule.
+
+<response>meshed</response>
+----------------------------------------
+Run 1 | Query 4: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a regular, repeating grid-like pattern.
+- The grid consists of straight, parallel lines intersecting at right angles.
+
+KB:
+- IF the image displays a regular, repeating grid-like pattern consisting of straight, parallel lines intersecting at right angles THEN meshed.
+
+Rule Check:
+- The image clearly exhibits a regular, repeating grid-like pattern with straight, parallel lines intersecting at right angles. This aligns perfectly with the "meshed" rule.
+
+<response>meshed</response>
+----------------------------------------
+Run 1 | Query 5: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of interconnected lines forming a grid-like structure.
+- The grid is composed of roughly square or rectangular openings.
+- The lines appear to be consistently spaced and interconnected.
+
+KB:
+- IF the image shows a repeating pattern of interconnected lines forming a grid-like structure with roughly square or rectangular openings THEN meshed.
+
+Rule Check:
+- The image clearly exhibits a repeating grid-like structure with square openings, which aligns perfectly with the "meshed" rule.
+
+<response>meshed</response>
+----------------------------------------
+Run 1 | Query 6: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a regular, repeating grid-like pattern.
+- The pattern consists of intersecting lines forming a network of squares.
+
+KB:
+- IF the image displays a regular, repeating grid-like pattern consisting of intersecting lines forming a network of squares THEN meshed.
+
+Rule Check:
+- The image clearly exhibits a regular, repeating grid-like pattern with intersecting lines forming a network of squares. This aligns perfectly with the rule for the "meshed" class.
+
+<response>meshed</response>
+----------------------------------------
+Run 1 | Query 7: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a regular grid-like pattern.
+- The grid consists of intersecting lines forming squares.
+- The lines are consistently spaced and create a uniform mesh.
+
+KB:
+- IF the image displays a regular grid-like pattern with intersecting lines forming squares THEN meshed.
+
+Rule Check:
+- The image clearly exhibits a regular grid-like pattern with intersecting lines forming squares. Therefore, the rule "IF the image displays a regular grid-like pattern with intersecting lines forming squares THEN meshed" is best satisfied.
+
+<response>meshed</response>
+----------------------------------------
+Run 1 | Query 8: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of circular holes.
+- The holes are evenly spaced and arranged in a grid-like structure.
+
+KB:
+- IF the image contains a repeating pattern of circular holes THEN meshed.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of circular holes, which directly aligns with the rule stating that if an image contains this feature, it is classified as "meshed".
+
+<response>meshed</response>
+----------------------------------------
+Run 1 | Query 9: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of straight, parallel lines intersecting with other straight, parallel lines at an angle.
+- The lines are relatively thin and create a grid-like appearance.
+
+KB:
+- IF the image shows a repeating pattern of straight, parallel lines intersecting at an angle THEN meshed.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of straight, parallel lines intersecting at an angle, which aligns perfectly with the "meshed" rule.
+
+<response>meshed</response>
+----------------------------------------
+Run 1 | Query 10: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating spiral or swirl-like shapes.
+- The shapes are interconnected and form a pattern.
+
+KB:
+- IF the image contains repeating spiral or swirl-like shapes THEN swirly.
+
+Rule Check:
+- The image clearly exhibits repeating spiral/swirl shapes. Therefore, the "IF" condition of the rule is met, and the image is best classified as "swirly".
+
+<response>swirly</response>
+----------------------------------------
+Run 1 | Query 11: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains numerous curved, looping shapes.
+- These shapes are arranged in a dense, interconnected pattern.
+
+KB:
+- IF the image contains numerous curved, looping shapes arranged in a dense, interconnected pattern THEN swirly.
+
+Rule Check:
+- The image strongly satisfies the rule "IF the image contains numerous curved, looping shapes arranged in a dense, interconnected pattern THEN swirly." The prominent visual feature is the presence of many swirls.
+
+<response>swirly</response>
+----------------------------------------
+Run 1 | Query 12: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains curved, spiral-like shapes.
+- These shapes are repeated and interconnected, creating a flowing pattern.
+
+KB:
+- IF the image contains numerous, interconnected, swirling shapes THEN swirly.
+
+Rule Check:
+- The image clearly exhibits numerous, interconnected, swirling shapes. Therefore, the rule "IF the image contains numerous, interconnected, swirling shapes THEN swirly" is best satisfied.
+
+<response>swirly</response>
+----------------------------------------
+Run 1 | Query 13: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains curved, flowing lines resembling swirls.
+- There are floral elements present.
+
+KB:
+- IF swirly THEN swirly
+
+Rule Check:
+- The image prominently features swirling patterns. The "swirly" rule is best matched by the visual features of the image.
+
+<response>swirly</response>
+----------------------------------------
+Run 1 | Query 14: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating circular shapes.
+- These shapes are spiral-like, with lines curving inwards towards a central point.
+
+KB:
+- IF the image contains repeating spiral-like circular shapes THEN swirly
+
+Rule Check:
+- The image clearly exhibits repeating spiral-like circular shapes. Therefore, the "IF" condition of the rule is met, and the image is best classified as "swirly".
+
+<response>swirly</response>
+----------------------------------------
+Run 1 | Query 15: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains numerous curved, looping shapes.
+- These shapes resemble swirls or spirals.
+- The image has a repeating pattern of these swirls.
+
+KB:
+- IF the image contains numerous curved, looping shapes resembling swirls THEN swirly
+
+Rule Check:
+- The image clearly exhibits numerous curved, looping shapes that resemble swirls. Therefore, the "swirly" rule is best matched.
+
+<response>swirly</response>
+----------------------------------------
+Run 1 | Query 16: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image is predominantly green.
+- There are swirling patterns present.
+
+KB:
+- IF swirling patterns are present THEN swirly
+
+Rule Check:
+- The image clearly exhibits swirling patterns. Therefore, the rule "IF swirling patterns are present THEN swirly" is best matched.
+
+<response>swirly</response>
+----------------------------------------
+Run 1 | Query 17: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating curved shapes.
+- The shapes are interconnected and form a flowing pattern.
+
+KB:
+- IF the image contains repeating curved shapes and a flowing pattern THEN swirly
+
+Rule Check:
+- The image clearly exhibits repeating curved shapes and a flowing pattern. Therefore, the rule "IF the image contains repeating curved shapes and a flowing pattern THEN swirly" is best matched.
+
+<response>swirly</response>
+----------------------------------------
+Run 1 | Query 18: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating floral-like patterns.
+- The patterns are composed of curved lines and swirls.
+
+KB:
+- IF the image contains repeating floral-like patterns composed of curved lines and swirls THEN swirly
+
+Rule Check:
+- The image clearly exhibits repeating floral-like patterns composed of curved lines and swirls. Therefore, the "swirly" rule is best matched.
+
+<response>swirly</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9) Run 1: 1.0000
+Run 2 | Query 1: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating diamond-shaped pattern formed by interconnected lines.
+- The lines are consistently arranged in a grid-like structure.
+
+KB:
+- IF the image contains a repeating diamond-shaped pattern formed by interconnected lines THEN meshed
+
+Rule Check:
+- The image clearly exhibits a repeating diamond-shaped pattern formed by interconnected lines, which directly aligns with the "IF" condition of the "meshed" rule.
+
+<response>meshed</response>
+----------------------------------------
+Run 2 | Query 2: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of circular holes.
+- The holes are evenly spaced and arranged in a grid-like structure.
+
+KB:
+- IF the image contains a repeating pattern of circular holes THEN meshed.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of circular holes, which directly aligns with the rule stating that if such a pattern is present, the class is "meshed".
+
+<response>meshed</response>
+----------------------------------------
+Run 2 | Query 3: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a regular, repeating grid-like pattern.
+- The pattern consists of intersecting lines forming squares.
+
+KB:
+- IF the image displays a regular, repeating grid-like pattern consisting of intersecting lines forming squares THEN meshed.
+
+Rule Check:
+- The image clearly exhibits a regular, repeating grid-like pattern with intersecting lines forming squares. This aligns perfectly with the "meshed" rule.
+
+<response>meshed</response>
+----------------------------------------
+Run 2 | Query 4: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating, grid-like pattern of interconnected lines.
+- The lines form a net-like structure.
+
+KB:
+- IF the image contains a repeating, grid-like pattern of interconnected lines THEN meshed.
+
+Rule Check:
+- The image clearly exhibits a repeating, grid-like pattern of interconnected lines, which directly aligns with the rule stating that if such a pattern is present, the class is "meshed".
+
+<response>meshed</response>
+----------------------------------------
+Run 2 | Query 5: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of interconnected diamond shapes.
+- The pattern is regular and consistent across the image.
+
+KB:
+- IF the image contains a repeating pattern of interconnected diamond shapes THEN meshed.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of interconnected diamond shapes. Therefore, the rule "IF the image contains a repeating pattern of interconnected diamond shapes THEN meshed" is best satisfied.
+
+<response>meshed</response>
+----------------------------------------
+Run 2 | Query 6: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating, diamond-shaped grid pattern.
+- The pattern is regular and consistent across the entire image.
+
+KB:
+- IF the image displays a repeating, diamond-shaped grid pattern THEN meshed
+
+Rule Check:
+- The image clearly exhibits a repeating, diamond-shaped grid pattern. Therefore, the rule "IF the image displays a repeating, diamond-shaped grid pattern THEN meshed" is best satisfied.
+
+<response>meshed</response>
+----------------------------------------
+Run 2 | Query 7: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of interconnected lines forming a grid-like structure.
+- The pattern consists of regularly spaced, elongated shapes with rounded ends.
+
+KB:
+- IF the image displays a repeating pattern of interconnected lines forming a grid-like structure THEN meshed.
+
+Rule Check:
+- The image clearly exhibits a repeating grid-like structure with elongated shapes, which aligns perfectly with the "IF" condition of the "meshed" rule.
+
+<response>meshed</response>
+----------------------------------------
+Run 2 | Query 8: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a grid-like pattern formed by intersecting lines.
+- The lines are straight and create rectangular shapes.
+
+KB:
+- IF the image contains a grid-like pattern formed by intersecting straight lines THEN meshed
+
+Rule Check:
+- The image clearly exhibits a grid-like pattern with straight intersecting lines. This aligns perfectly with the "IF" condition of the "meshed" rule.
+
+<response>meshed</response>
+----------------------------------------
+Run 2 | Query 9: Expected: [meshed] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of interconnected, curved lines forming a grid-like structure.
+- The lines are consistently curved and interlocked.
+
+KB:
+- IF the image shows a repeating pattern of interconnected, curved lines forming a grid-like structure THEN meshed.
+
+Rule Check:
+- The image clearly exhibits the visual features described in the "IF" condition of the "meshed" rule. The repeating pattern of interconnected, curved lines is readily apparent.
+
+<response>meshed</response>
+----------------------------------------
+Run 2 | Query 10: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating shapes that resemble stylized swirls or spirals.
+- The shapes are enclosed within a defined boundary, creating a pattern of interconnected elements.
+
+KB:
+- IF the image contains repeating shapes resembling stylized swirls or spirals THEN swirly
+
+Rule Check:
+- The image clearly exhibits repeating shapes that are visually identifiable as swirls or spirals. Therefore, the "IF" condition of the "swirly" rule is satisfied.
+
+<response>swirly</response>
+----------------------------------------
+Run 2 | Query 11: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains curved, flowing lines resembling swirls.
+- There are also star-like shapes and butterfly shapes.
+
+KB:
+- IF the image contains prominent swirling patterns THEN swirly.
+
+Rule Check:
+- The image clearly exhibits swirling patterns. Therefore, the rule "IF the image contains prominent swirling patterns THEN swirly" is best satisfied.
+
+<response>swirly</response>
+----------------------------------------
+Run 2 | Query 12: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating curved shapes.
+- The shapes are spiral or swirl-like.
+
+KB:
+- IF the image contains repeating curved shapes that are spiral or swirl-like THEN swirly.
+
+Rule Check:
+- The image clearly exhibits repeating curved shapes that resemble spirals or swirls. Therefore, the rule "IF the image contains repeating curved shapes that are spiral or swirl-like THEN swirly" is best matched.
+
+<response>swirly</response>
+----------------------------------------
+Run 2 | Query 13: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating, curved, and ornate patterns.
+- The patterns resemble stylized floral or foliage designs.
+- There is a gradient of color across the image.
+
+KB:
+- IF repeating, curved, ornate patterns are present THEN swirly
+
+Rule Check:
+- The image clearly exhibits repeating, curved patterns. The patterns are not strictly spirals, but they are curved and ornate, aligning with the "swirly" class.
+
+<response>swirly</response>
+----------------------------------------
+Run 2 | Query 14: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains numerous curved, looping lines.
+- These lines form circular or spiral shapes.
+- The overall pattern is dynamic and flowing.
+
+KB:
+- IF the image contains numerous curved, looping lines forming circular or spiral shapes THEN swirly.
+
+Rule Check:
+- The image strongly satisfies the rule "IF the image contains numerous curved, looping lines forming circular or spiral shapes THEN swirly." The dominant visual feature is the presence of these swirling lines.
+
+<response>swirly</response>
+----------------------------------------
+Run 2 | Query 15: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains flowing, curved lines.
+- The lines are not straight or grid-like.
+- The lines form swirling shapes.
+
+KB:
+- IF the image contains flowing, curved lines and swirling shapes THEN swirly
+
+Rule Check:
+- The image clearly exhibits flowing, curved lines and swirling shapes. Therefore, the "swirly" rule is best matched.
+
+<response>swirly</response>
+----------------------------------------
+Run 2 | Query 16: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Presence of curved, flowing lines.
+- Circular central element with radiating lines.
+
+KB:
+- IF presence of curved, flowing lines and circular elements THEN swirly
+
+Rule Check:
+The image clearly exhibits curved, flowing lines and a central circular element with radiating lines. This aligns perfectly with the "swirly" class.
+
+<response>swirly</response>
+----------------------------------------
+Run 2 | Query 17: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains flowing, curved lines.
+- The lines are not straight and have a continuous, looping form.
+- The lines are arranged in a pattern, creating a swirling effect.
+
+KB:
+- IF the image contains flowing, curved lines and a swirling effect THEN swirly
+
+Rule Check:
+- The image clearly exhibits flowing, curved lines and a swirling effect. Therefore, the "swirly" rule is best matched.
+
+<response>swirly</response>
+----------------------------------------
+Run 2 | Query 18: Expected: [swirly] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains repeating floral and paisley-like patterns.
+- The patterns are curvilinear and swirling.
+
+KB:
+- IF the image contains repeating curvilinear and swirling patterns THEN swirly
+
+Rule Check:
+- The image clearly exhibits repeating curvilinear and swirling patterns. Therefore, the "swirly" rule is best matched.
+
+<response>swirly</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9) Run 2: 1.0000
+
+--- CONFIG: N=3, K=1, Q=9 (3 RUNS) ---
+Run 0 | Query 1: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a regular pattern of small, circular holes.
+- The background material appears to be a dark, uniform color.
+
+KB:
+- IF the image contains a regular pattern of small, circular holes THEN perforated.
+
+Rule Check:
+- The image clearly exhibits a regular pattern of small, circular holes. Therefore, the rule "IF the image contains a regular pattern of small, circular holes THEN perforated" is best satisfied.
+
+<response>perforated</response>
+----------------------------------------
+Run 0 | Query 2: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of small, triangular openings.
+- The background material is visible through the openings.
+
+KB:
+- IF the image contains a repeating pattern of small, triangular openings and a visible background THEN perforated.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of triangular openings with a visible background, which directly aligns with the "perforated" rule.
+
+<response>perforated</response>
+----------------------------------------
+Run 0 | Query 3: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image consists of a regular, repeating pattern of small, circular holes.
+- The background material appears to be a metallic grey.
+- The holes are evenly spaced and of uniform size.
+
+KB:
+- IF the image contains a regular pattern of small, circular holes THEN perforated.
+
+Rule Check:
+- The image clearly exhibits a regular pattern of small, circular holes. Therefore, the rule "IF the image contains a regular pattern of small, circular holes THEN perforated" is best satisfied.
+
+<response>perforated</response>
+----------------------------------------
+Run 0 | Query 4: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of circular holes.
+- The background material is visible through the holes.
+
+KB:
+- IF the image contains a repeating pattern of circular holes and a visible background THEN perforated.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of circular holes with a visible background. Therefore, the rule "IF the image contains a repeating pattern of circular holes and a visible background THEN perforated" is best satisfied.
+
+<response>perforated</response>
+----------------------------------------
+Run 0 | Query 5: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains regularly spaced openings.
+- The openings are not circular, but are elongated and angled.
+- The background material is visible between the openings.
+
+KB:
+- IF the image contains regularly spaced openings that are not circular THEN perforated.
+
+Rule Check:
+- The image clearly exhibits regularly spaced, non-circular openings. Therefore, the rule "IF the image contains regularly spaced openings that are not circular THEN perforated" is best satisfied.
+
+<response>perforated</response>
+----------------------------------------
+Run 0 | Query 6: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of circular holes.
+- The background appears to be a metallic surface with a brushed texture.
+
+KB:
+- IF the image contains a repeating pattern of circular holes THEN perforated.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of circular holes, which directly aligns with the rule stating that if an image contains such a pattern, it is classified as "perforated."
+
+<response>perforated</response>
+----------------------------------------
+Run 0 | Query 7: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of rectangular openings.
+- The pattern is formed by a series of vertical and horizontal bars creating rectangular spaces.
+- The overall appearance suggests a structured, repeating arrangement of openings.
+
+KB:
+- IF the image contains a repeating pattern of rectangular openings THEN perforated.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of rectangular openings. Therefore, the rule "IF the image contains a repeating pattern of rectangular openings THEN perforated" is best satisfied.
+
+<response>perforated</response>
+----------------------------------------
+Run 0 | Query 8: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a regular pattern of circular holes.
+- The holes are evenly spaced.
+- The background material appears to be a solid, dark color.
+
+KB:
+- IF the image contains a regular pattern of circular holes and evenly spaced holes THEN perforated.
+
+Rule Check:
+- The image clearly exhibits a regular pattern of circular holes that are evenly spaced. This aligns perfectly with the rule stating that if an image contains this pattern, it is classified as "perforated".
+
+<response>perforated</response>
+----------------------------------------
+Run 0 | Query 9: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a regular, repeating pattern of circular holes.
+- The background material appears to be a solid, metallic-looking surface.
+- The holes are evenly spaced and of uniform size.
+
+KB:
+- IF the image contains a regular, repeating pattern of circular holes THEN perforated.
+
+Rule Check:
+- The image clearly exhibits a regular, repeating pattern of circular holes. This aligns perfectly with the "IF" condition of the "perforated" rule.
+
+<response>perforated</response>
+----------------------------------------
+Run 0 | Query 10: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of interlaced, parallel strands.
+- The strands are arranged in a diagonal, criss-cross fashion.
+
+KB:
+- IF interlaced, parallel strands are arranged in a diagonal, criss-cross fashion THEN woven
+
+Rule Check:
+- The image clearly exhibits the visual features described in the "IF" statement of the "woven" rule. The interlacing and diagonal arrangement of strands are readily apparent.
+
+<response>woven</response>
+----------------------------------------
+Run 0 | Query 11: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of interlaced, parallel lines forming a diagonal, zig-zagging structure.
+- The pattern is consistent and covers the entire image.
+
+KB:
+- IF interlaced, parallel lines forming a diagonal, zig-zagging structure THEN woven
+
+Rule Check:
+- The image clearly exhibits the visual features described in the "IF" statement of the "woven" rule. The repeating pattern of interlaced lines and the diagonal zig-zagging structure are directly observable.
+
+<response>woven</response>
+----------------------------------------
+Run 0 | Query 12: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of interlaced elements.
+- The elements are arranged in a regular, criss-cross fashion.
+- The pattern is consistent and extends across the entire image.
+
+KB:
+- IF the image displays a repeating pattern of interlaced elements arranged in a regular, criss-cross fashion THEN woven.
+
+Rule Check:
+- The image strongly satisfies the rule stating that if an image displays a repeating pattern of interlaced elements arranged in a regular, criss-cross fashion, it is classified as "woven".
+
+<response>woven</response>
+----------------------------------------
+Run 0 | Query 13: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image consists of a uniform, green texture.
+- The texture appears to have a linear, repeating pattern, resembling parallel lines or stripes.
+
+KB:
+- IF the image has a uniform texture with a linear, repeating pattern THEN woven.
+
+Rule Check:
+- The image's texture and linear pattern best aligns with the "woven" class.
+
+<response>woven</response>
+----------------------------------------
+Run 0 | Query 14: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of intersecting lines forming a network.
+- The lines are not perfectly straight and appear somewhat irregular.
+- The color is a natural, earthy tone.
+
+KB:
+- IF the image displays a repeating pattern of intersecting lines THEN woven.
+
+Rule Check:
+- The image clearly displays a repeating pattern of intersecting lines, which aligns with the "IF" condition of the "woven" rule.
+
+<response>woven</response>
+----------------------------------------
+Run 0 | Query 15: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of interlaced, curved elements.
+- The elements are arranged in a diagonal, criss-cross fashion.
+- The overall texture appears to be created by a weaving process.
+
+KB:
+- IF interlaced, curved elements are arranged in a diagonal, criss-cross fashion THEN woven
+
+Rule Check:
+- The image strongly satisfies the rule "IF interlaced, curved elements are arranged in a diagonal, criss-cross fashion THEN woven". The visible pattern clearly demonstrates a woven structure.
+
+<response>woven</response>
+----------------------------------------
+Run 0 | Query 16: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of parallel, thin, dark lines intersecting with shorter, lighter lines at an angle.
+- The pattern is regular and extends across the entire image.
+
+KB:
+- IF the image shows a repeating pattern of parallel, thin, dark lines intersecting with shorter, lighter lines at an angle THEN woven.
+
+Rule Check:
+- The image clearly exhibits the visual features described in the "woven" rule: a repeating pattern of intersecting lines at an angle. Therefore, the "woven" rule best matches the visual features of the target image.
+
+<response>woven</response>
+----------------------------------------
+Run 0 | Query 17: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of interlacing lines, forming a regular, consistent structure.
+- The lines are arranged in a criss-cross pattern.
+
+KB:
+- IF the image displays a repeating pattern of interlacing lines, forming a regular, consistent structure AND the lines are arranged in a criss-cross pattern THEN woven.
+
+Rule Check:
+- The image clearly exhibits the features described in the "IF" condition of the "woven" rule. The interlacing lines and criss-cross pattern are readily visible.
+
+<response>woven</response>
+----------------------------------------
+Run 0 | Query 18: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of interlaced, irregular lines.
+- The lines are generally parallel but intersect at various angles.
+- The overall texture appears to be constructed from intertwined elements.
+
+KB:
+- IF the image shows a repeating pattern of interlaced, irregular lines THEN woven.
+
+Rule Check:
+- The image strongly matches the "IF the image shows a repeating pattern of interlaced, irregular lines THEN woven" rule. The visible pattern of interwoven elements is characteristic of a woven texture.
+
+<response>woven</response>
+----------------------------------------
+Run 0 | Query 19: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a regular, repeating pattern of intersecting lines forming squares.
+- The lines are of varying colors (gray and red).
+- The overall structure is a network of squares.
+
+KB:
+- IF the image contains a regular, repeating pattern of intersecting lines forming squares THEN grid
+
+Rule Check:
+- The image clearly exhibits a regular, repeating pattern of intersecting lines forming squares. Therefore, the rule "IF the image contains a regular, repeating pattern of intersecting lines forming squares THEN grid" is best satisfied.
+
+<response>grid</response>
+----------------------------------------
+Run 0 | Query 20: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of geometric shapes.
+- The shapes are predominantly squares or rectangles, arranged in a non-uniform, seemingly random fashion.
+- The image has a distinct grid-like appearance, although the grid is irregular and not perfectly aligned.
+
+KB:
+- IF the image contains a repeating pattern of squares or rectangles arranged in a grid-like fashion THEN grid.
+
+Rule Check:
+- The image clearly exhibits a grid-like appearance with a repeating pattern of squares/rectangles, albeit an irregular one. Therefore, the rule "IF the image contains a repeating pattern of squares or rectangles arranged in a grid-like fashion THEN grid" is best satisfied.
+
+<response>grid</response>
+----------------------------------------
+Run 0 | Query 21: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a regular pattern of intersecting lines forming squares.
+- The lines are arranged in a grid-like structure.
+
+KB:
+- IF the image contains a regular pattern of intersecting lines forming squares THEN grid
+
+Rule Check:
+- The image clearly exhibits a grid-like structure with intersecting lines forming squares. Therefore, the rule "IF the image contains a regular pattern of intersecting lines forming squares THEN grid" is best satisfied.
+
+<response>grid</response>
+----------------------------------------
+Run 0 | Query 22: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a regular, repeating pattern of intersecting lines forming squares.
+- The lines are thin and evenly spaced.
+- The background is white.
+
+KB:
+- IF the image contains a regular, repeating pattern of intersecting lines forming squares THEN grid
+
+Rule Check:
+- The image clearly exhibits a regular, repeating pattern of intersecting lines forming squares. Therefore, the rule "IF the image contains a regular, repeating pattern of intersecting lines forming squares THEN grid" is best satisfied.
+
+<response>grid</response>
+----------------------------------------
+Run 0 | Query 23: Expected: [grid] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of diagonal lines intersecting each other.
+- The lines are arranged in a criss-cross fashion.
+
+KB:
+- IF the image contains a repeating pattern of diagonal lines intersecting each other in a criss-cross fashion THEN woven.
+
+Rule Check:
+- The image clearly exhibits a criss-cross pattern of diagonal lines, which aligns perfectly with the "woven" rule.
+
+<response>woven</response>
+----------------------------------------
+Run 0 | Query 24: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image consists of a repeating pattern of lines forming triangles.
+- The lines are arranged in a regular, grid-like fashion, but with a diagonal orientation.
+
+KB:
+- IF the image consists of a repeating pattern of lines forming triangles and arranged in a regular, grid-like fashion THEN grid
+
+Rule Check:
+- The image clearly exhibits a grid-like structure with diagonal lines forming triangles. This aligns perfectly with the rule stating that a repeating pattern of lines forming triangles in a regular grid-like fashion indicates a "grid" pattern.
+
+<response>grid</response>
+----------------------------------------
+Run 0 | Query 25: Expected: [grid] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of interconnected, rounded shapes.
+- The pattern is dense, with many openings and a consistent structure.
+
+KB:
+- IF the image contains a repeating pattern of interconnected, rounded shapes and is dense with openings THEN perforated.
+
+Rule Check:
+- The image strongly matches the "IF" condition of the "perforated" rule due to the presence of a repeating pattern of interconnected, rounded shapes and a dense, open structure.
+
+<response>perforated</response>
+----------------------------------------
+Run 0 | Query 26: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of vertical rectangular shapes separated by gaps.
+- The shapes are arranged in a regular, grid-like fashion.
+
+KB:
+- IF the image contains a repeating pattern of regularly spaced holes THEN perforated
+- IF the image contains a repeating pattern of interlaced strands THEN woven
+- IF the image contains a repeating pattern of a grid of squares THEN grid
+
+Rule Check:
+The image exhibits a repeating pattern of regularly spaced vertical rectangles, which most closely aligns with the definition of a grid. While it has holes, the dominant visual feature is the grid-like arrangement of the rectangles.
+
+<response>grid</response>
+----------------------------------------
+Run 0 | Query 27: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of intersecting lines forming a network of squares.
+- The lines are straight and regularly spaced.
+- The overall structure resembles a grid.
+
+KB:
+- IF the image displays a repeating pattern of intersecting lines forming a network of squares and the lines are straight and regularly spaced THEN grid.
+
+Rule Check:
+- The image clearly exhibits the visual features described in the rule: a repeating pattern of intersecting lines forming a network of squares with straight, regularly spaced lines. Therefore, the rule best matches the image.
+
+<response>grid</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9) Run 0: 0.9259
+Run 1 | Query 1: Expected: [perforated] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of rectangular shapes arranged in a regular, grid-like structure.
+- The rectangles are elongated and aligned vertically.
+- There are gaps between the rectangles.
+
+KB:
+- IF the image contains a repeating pattern of rectangular shapes arranged in a regular, grid-like structure THEN grid.
+
+Rule Check:
+- The image clearly exhibits a grid-like structure with a repeating pattern of rectangular shapes. Therefore, the rule "IF the image contains a repeating pattern of rectangular shapes arranged in a regular, grid-like structure THEN grid" is best satisfied.
+
+<response>grid</response>
+----------------------------------------
+Run 1 | Query 2: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of circular holes.
+- The background material is visible between the holes.
+
+KB:
+- IF the image contains a repeating pattern of circular holes THEN perforated.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of circular holes, which directly aligns with the "IF" condition of the "perforated" rule.
+
+<response>perforated</response>
+----------------------------------------
+Run 1 | Query 3: Expected: [perforated] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of rectangular openings.
+- The openings are elongated and arranged in a regular, linear fashion.
+- The background material is visible through the openings.
+
+KB:
+- IF the image contains a repeating pattern of small, circular holes THEN perforated.
+- IF the image contains a repeating pattern of rectangular openings THEN grid.
+- IF the image contains a repeating pattern of interlaced threads THEN woven.
+
+Rule Check:
+- The image best matches the rule "IF the image contains a repeating pattern of rectangular openings THEN grid." The pattern of elongated rectangular openings is clearly visible and dominant in the image.
+
+<response>grid</response>
+----------------------------------------
+Run 1 | Query 4: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a regular, repeating pattern of small, circular holes.
+- The background material is visible through the holes.
+
+KB:
+- IF the image contains a regular, repeating pattern of small, circular holes and a visible background THEN perforated.
+
+Rule Check:
+- The image strongly satisfies the rule "IF the image contains a regular, repeating pattern of small, circular holes and a visible background THEN perforated."
+
+<response>perforated</response>
+----------------------------------------
+Run 1 | Query 5: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of circular holes.
+- The background material is visible through the holes.
+- The holes are relatively small and evenly spaced.
+
+KB:
+- IF the image contains a repeating pattern of circular holes and a visible background material THEN perforated.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of circular holes with a visible background material. This aligns perfectly with the "perforated" rule.
+
+<response>perforated</response>
+----------------------------------------
+Run 1 | Query 6: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of small, evenly spaced holes.
+- The background material is visible between the holes.
+
+KB:
+- IF the image shows a repeating pattern of small, evenly spaced holes THEN perforated.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of small, evenly spaced holes, which directly aligns with the "perforated" rule.
+
+<response>perforated</response>
+----------------------------------------
+Run 1 | Query 7: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a regular pattern of small, circular holes.
+- The holes are evenly spaced across the surface.
+- The background material is visible between the holes.
+
+KB:
+- IF the image contains a regular pattern of small, circular holes evenly spaced across the surface THEN perforated.
+
+Rule Check:
+- The image strongly satisfies the rule: "IF the image contains a regular pattern of small, circular holes evenly spaced across the surface THEN perforated." The presence of the distinct, regularly spaced holes is the defining characteristic of the "perforated" class.
+
+<response>perforated</response>
+----------------------------------------
+Run 1 | Query 8: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of small, raised circular elements.
+- The elements are evenly distributed across the surface.
+- The surface appears to have a slightly curved or wavy texture.
+
+KB:
+- IF the image shows a repeating pattern of small, raised circular elements THEN perforated.
+
+Rule Check:
+- The image strongly matches the "IF" condition of the "perforated" rule due to the presence of numerous, evenly distributed, raised circular elements.
+
+<response>perforated</response>
+----------------------------------------
+Run 1 | Query 9: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a regular pattern of small, circular holes.
+- The holes are evenly spaced and arranged in a grid-like structure.
+
+KB:
+- IF the image contains a regular pattern of small, circular holes THEN perforated.
+
+Rule Check:
+- The image clearly exhibits a regular pattern of small, circular holes. Therefore, the rule "IF the image contains a regular pattern of small, circular holes THEN perforated" is best satisfied.
+
+<response>perforated</response>
+----------------------------------------
+Run 1 | Query 10: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of parallel, thin, rectangular elements.
+- These elements are arranged diagonally, creating a diagonal texture.
+- The elements are of varying shades of gray.
+
+KB:
+- IF the image contains a repeating pattern of parallel, thin, rectangular elements arranged diagonally THEN woven
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of parallel, thin, rectangular elements arranged diagonally. This aligns perfectly with the "woven" rule.
+
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 11: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of interlaced, diagonal lines forming a zig-zag or herringbone shape.
+- The pattern is composed of distinct, elongated elements that appear to be interwoven.
+
+KB:
+- IF interlaced, diagonal lines forming a zig-zag or herringbone shape THEN woven
+- IF a repeating pattern of distinct, elongated elements that appear to be interwoven THEN woven
+
+Rule Check:
+- The image clearly exhibits interlaced, diagonal lines forming a zig-zag shape and a pattern of interwoven elements. Therefore, the rule "IF interlaced, diagonal lines forming a zig-zag or herringbone shape THEN woven" and "IF a repeating pattern of distinct, elongated elements that appear to be interwoven THEN woven" are best satisfied.
+
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 12: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of interlaced threads.
+- The threads are arranged in a regular, criss-cross manner.
+
+KB:
+- IF the image shows a repeating pattern of interlaced threads arranged in a regular, criss-cross manner THEN woven
+
+Rule Check:
+- The image clearly exhibits the visual features described in the "IF" condition of the "woven" rule. The interlaced threads and the regular criss-cross pattern are readily observable.
+
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 13: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of interlacing strands.
+- The strands are arranged in a diagonal, interwoven manner.
+
+KB:
+- IF interlacing strands are arranged in a diagonal, interwoven manner THEN woven
+
+Rule Check:
+- The image clearly exhibits interlacing strands in a diagonal, interwoven pattern. This aligns perfectly with the "IF" condition of the "woven" rule.
+
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 14: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a regular, repeating pattern of intersecting lines forming a mesh-like structure.
+- The lines are arranged in a grid-like fashion, with horizontal and vertical elements.
+
+KB:
+- IF the image shows a regular, repeating pattern of intersecting lines forming a mesh-like structure THEN woven.
+- IF the image shows a regular, repeating pattern of squares THEN grid.
+- IF the image shows small holes regularly spaced THEN perforated.
+
+Rule Check:
+- The image best matches the "woven" rule because it clearly shows a regular, repeating pattern of intersecting lines forming a mesh-like structure. It is not a grid of squares, nor does it have holes.
+
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 15: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of horizontal and vertical lines intersecting.
+- The lines are not perfectly straight and appear to be intertwined.
+- The overall texture is dense and fibrous.
+
+KB:
+- IF the image shows a repeating pattern of horizontal and vertical lines intersecting, and the lines are intertwined THEN woven.
+
+Rule Check:
+- The image clearly exhibits a woven pattern with intertwined lines. Therefore, the rule "IF the image shows a repeating pattern of horizontal and vertical lines intersecting, and the lines are intertwined THEN woven" is best matched by the Target Image.
+
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 16: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of interlaced threads.
+- The threads are visible and create a textured surface.
+- The pattern appears to be a regular, interwoven structure.
+
+KB:
+- IF interlaced threads and a textured surface THEN woven
+
+Rule Check:
+- The image clearly exhibits interlaced threads and a textured surface, aligning perfectly with the "IF" condition of the "woven" rule.
+
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 17: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating, linear pattern.
+- The pattern consists of closely spaced, parallel lines.
+- The image has a uniform color.
+
+KB:
+- IF the image displays a repeating, linear pattern consisting of closely spaced, parallel lines THEN woven
+
+Rule Check:
+- The image strongly satisfies the rule "IF the image displays a repeating, linear pattern consisting of closely spaced, parallel lines THEN woven". The visible pattern aligns with the description of a woven texture.
+
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 18: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of intersecting lines forming a network.
+- The lines are relatively thin and closely spaced.
+- The overall texture appears rough and fibrous.
+
+KB:
+- IF the image displays a repeating pattern of intersecting lines forming a network, and the lines are relatively thin and closely spaced THEN woven.
+
+Rule Check:
+- The image strongly satisfies the rule stating that if an image displays a repeating pattern of intersecting lines forming a network, and the lines are relatively thin and closely spaced, then it is classified as "woven".
+
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 19: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a regular pattern of intersecting lines forming rectangular cells.
+- The lines are thin and evenly spaced.
+- The background is dark.
+
+KB:
+- IF the image contains a regular pattern of intersecting lines forming rectangular cells THEN grid.
+
+Rule Check:
+- The image clearly exhibits a regular pattern of intersecting lines forming rectangular cells. Therefore, the rule "IF the image contains a regular pattern of intersecting lines forming rectangular cells THEN grid" is best satisfied.
+
+<response>grid</response>
+----------------------------------------
+Run 1 | Query 20: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of diamond-shaped openings.
+- The pattern is arranged in a regular, grid-like fashion.
+
+KB:
+- IF the image contains a repeating pattern of diamond-shaped openings arranged in a regular, grid-like fashion THEN grid
+
+Rule Check:
+- The image clearly exhibits a grid-like pattern with diamond-shaped openings. This aligns perfectly with the rule stating that a repeating pattern of diamond-shaped openings in a grid-like fashion indicates a "grid" class.
+
+<response>grid</response>
+----------------------------------------
+Run 1 | Query 21: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of angled lines forming a network.
+- The pattern is composed of interconnected elements, resembling a geometric structure.
+
+KB:
+- IF the image shows a repeating pattern of angled lines forming a network THEN grid.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of angled lines, which aligns with the "grid" class.
+
+<response>grid</response>
+----------------------------------------
+Run 1 | Query 22: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a regular, repeating pattern of lines forming squares.
+- The lines are evenly spaced and create a uniform grid.
+
+KB:
+- IF the image contains a regular, repeating pattern of lines forming squares THEN grid
+
+Rule Check:
+- The image clearly exhibits a regular, repeating pattern of lines forming squares, which directly aligns with the rule stating that if an image contains such a pattern, it is classified as a "grid".
+
+<response>grid</response>
+----------------------------------------
+Run 1 | Query 23: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a regular, repeating pattern of intersecting lines forming squares.
+- The lines are evenly spaced and create a uniform grid.
+
+KB:
+- IF the image contains a regular, repeating pattern of intersecting lines forming squares THEN grid
+
+Rule Check:
+- The image clearly exhibits a regular, repeating pattern of intersecting lines forming squares. Therefore, the rule "IF the image contains a regular, repeating pattern of intersecting lines forming squares THEN grid" is best satisfied.
+
+<response>grid</response>
+----------------------------------------
+Run 1 | Query 24: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of straight, parallel lines intersecting at regular intervals.
+- The lines are of uniform width and thickness.
+- The overall structure resembles a network of interconnected lines forming a regular pattern.
+
+KB:
+- IF the image shows a repeating pattern of straight, parallel lines intersecting at regular intervals THEN grid.
+
+Rule Check:
+- The image clearly exhibits a grid-like structure with intersecting lines. The rule stating "IF the image shows a repeating pattern of straight, parallel lines intersecting at regular intervals THEN grid" is best satisfied by the visual features of the target image.
+
+<response>grid</response>
+----------------------------------------
+Run 1 | Query 25: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of diagonal lines forming squares.
+- The lines intersect at angles, creating a grid-like structure.
+
+KB:
+- IF the image shows a repeating pattern of intersecting lines forming squares THEN grid.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of intersecting lines forming squares, which aligns perfectly with the rule stating that if an image shows such a pattern, it is classified as a "grid".
+
+<response>grid</response>
+----------------------------------------
+Run 1 | Query 26: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains numerous small, regularly spaced, and interconnected shapes.
+- These shapes are predominantly diamond or rhombus-like in appearance.
+- The shapes are arranged in a repeating pattern across the image.
+
+KB:
+- IF the image contains numerous small, regularly spaced, and interconnected shapes that are diamond or rhombus-like THEN grid
+
+Rule Check:
+- The image strongly satisfies the rule stating that if an image contains numerous small, regularly spaced, and interconnected shapes that are diamond or rhombus-like, then it is a grid.
+
+<response>grid</response>
+----------------------------------------
+Run 1 | Query 27: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image consists of a regular, repeating pattern of squares.
+- The squares are formed by black lines.
+- The lines create a uniform grid-like structure.
+
+KB:
+- IF the image consists of a regular, repeating pattern of squares formed by black lines THEN grid
+
+Rule Check:
+- The image clearly matches the "IF" condition of the "grid" rule. The image displays a regular, repeating pattern of squares formed by black lines.
+
+<response>grid</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9) Run 1: 0.9259
+Run 2 | Query 1: Expected: [perforated] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of small, raised circular elements.
+- These elements are arranged in a regular, grid-like fashion.
+
+KB:
+- IF the image shows a repeating pattern of small, raised circular elements arranged in a regular, grid-like fashion THEN grid
+
+Rule Check:
+- The image clearly exhibits a grid-like pattern with small, raised circular elements. This aligns perfectly with the rule stating that a repeating pattern of small, raised circular elements in a grid-like fashion indicates a "grid" class.
+
+<response>grid</response>
+----------------------------------------
+Run 2 | Query 2: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a regular, repeating pattern of small, circular holes.
+- The holes are evenly spaced and arranged in a grid-like fashion.
+- The background is a solid color, and the holes are clearly visible against it.
+
+KB:
+- IF the image contains a regular, repeating pattern of small, circular holes THEN perforated.
+
+Rule Check:
+- The image strongly satisfies the rule "IF the image contains a regular, repeating pattern of small, circular holes THEN perforated." The presence of numerous, evenly spaced holes clearly aligns with the definition of "perforated" as observed in the provided examples.
+
+<response>perforated</response>
+----------------------------------------
+Run 2 | Query 3: Expected: [perforated] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of interconnected shapes.
+- The shapes are arranged in a regular, grid-like fashion.
+- There are visible gaps or openings within the pattern.
+
+KB:
+- IF the image shows a repeating pattern of interconnected shapes arranged in a regular fashion with visible gaps THEN grid.
+- IF the image shows a woven texture THEN woven.
+- IF the image shows holes or openings in a material THEN perforated.
+
+Rule Check:
+- The image best matches the rule stating "IF the image shows a repeating pattern of interconnected shapes arranged in a regular fashion with visible gaps THEN grid." The repeating pattern and visible gaps are clearly present.
+
+<response>grid</response>
+----------------------------------------
+Run 2 | Query 4: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a regular pattern of small, evenly spaced holes.
+- The background material is visible through the holes.
+
+KB:
+- IF the image contains a regular pattern of small, evenly spaced holes THEN perforated.
+
+Rule Check:
+- The image clearly exhibits a regular pattern of small, evenly spaced holes. Therefore, the rule "IF the image contains a regular pattern of small, evenly spaced holes THEN perforated" is best satisfied.
+
+<response>perforated</response>
+----------------------------------------
+Run 2 | Query 5: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image consists of a regular, repeating pattern of small, evenly spaced holes.
+- The background material is visible through the holes.
+
+KB:
+- IF the image contains a regular, repeating pattern of small, evenly spaced holes THEN perforated.
+
+Rule Check:
+- The image clearly exhibits a regular, repeating pattern of small, evenly spaced holes. Therefore, the rule "IF the image contains a regular, repeating pattern of small, evenly spaced holes THEN perforated" is best satisfied.
+
+<response>perforated</response>
+----------------------------------------
+Run 2 | Query 6: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a regular, repeating pattern of circular holes.
+- The holes are evenly spaced and arranged in a grid-like structure.
+- The background material is visible through the holes.
+
+KB:
+- IF the image contains a regular, repeating pattern of circular holes THEN perforated.
+
+Rule Check:
+- The image strongly satisfies the rule "IF the image contains a regular, repeating pattern of circular holes THEN perforated." The presence of numerous, evenly spaced circular holes is the defining characteristic of the "perforated" class as demonstrated in the provided examples.
+
+<response>perforated</response>
+----------------------------------------
+Run 2 | Query 7: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of triangular openings.
+- The openings are regularly spaced and arranged in a grid-like fashion.
+- The background material is visible through the openings.
+
+KB:
+- IF the image contains a repeating pattern of holes or openings THEN perforated.
+- IF the image contains a regular grid pattern THEN grid.
+
+Rule Check:
+- The image best matches the "perforated" rule because it clearly shows a repeating pattern of holes or openings. While it also has a grid-like structure, the defining characteristic is the presence of the perforations.
+
+<response>perforated</response>
+----------------------------------------
+Run 2 | Query 8: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a regular, repeating pattern of circular holes.
+- The background material is visible through the holes.
+
+KB:
+- IF the image contains a regular, repeating pattern of circular holes THEN perforated.
+
+Rule Check:
+- The image clearly exhibits a regular, repeating pattern of circular holes, which directly aligns with the "IF" condition of the "perforated" rule.
+
+<response>perforated</response>
+----------------------------------------
+Run 2 | Query 9: Expected: [perforated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of circular holes.
+- The holes are evenly spaced and arranged in a regular grid.
+- The background is dark, contrasting with the lighter material surrounding the holes.
+
+KB:
+- IF the image contains a repeating pattern of circular holes THEN perforated.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of circular holes, which directly aligns with the "IF" condition of the "perforated" rule.
+
+<response>perforated</response>
+----------------------------------------
+Run 2 | Query 10: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of interlaced strands.
+- The strands are arranged in a criss-cross pattern, creating a textured surface.
+- The pattern is consistent and regular.
+
+KB:
+- IF interlaced strands are present in a repeating, criss-cross pattern THEN woven
+
+Rule Check:
+- The image clearly exhibits interlaced strands in a repeating, criss-cross pattern. This aligns perfectly with the "woven" class.
+
+<response>woven</response>
+----------------------------------------
+Run 2 | Query 11: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of diagonal lines forming a zigzag shape.
+- The pattern is composed of closely spaced, thin, and parallel elements.
+- The overall texture appears interlaced or intertwined.
+
+KB:
+- IF the image displays a repeating pattern of diagonal lines forming a zigzag shape AND the pattern is composed of closely spaced, thin, and parallel elements AND the overall texture appears interlaced THEN woven.
+
+Rule Check:
+- The image strongly satisfies the rule described above. The zigzag pattern, thin parallel elements, and interlaced texture are all clearly visible and align with the characteristics of a woven texture.
+
+<response>woven</response>
+----------------------------------------
+Run 2 | Query 12: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of parallel lines at an angle.
+- The lines are relatively thin and evenly spaced.
+- The pattern is consistent and fills the entire image.
+
+KB:
+- IF parallel lines at an angle and evenly spaced THEN grid
+
+Rule Check:
+- The image clearly exhibits a grid-like pattern with parallel lines at an angle. This aligns perfectly with the rule stating that parallel lines at an angle and evenly spaced indicate a grid.
+
+<response>grid</response>
+----------------------------------------
+Run 2 | Query 13: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image exhibits a uniform texture with subtle, parallel lines running horizontally.
+- The overall pattern is consistent and lacks distinct repeating elements like holes or intersections.
+
+KB:
+- IF the image shows a uniform texture with subtle, parallel lines THEN grid
+
+Rule Check:
+- The image best matches the "grid" rule because the subtle, parallel lines suggest a grid-like structure, even if it's not a perfectly defined grid. The other classes (woven, perforated) have more distinct and specific visual features that are not present in this image.
+
+<response>grid</response>
+----------------------------------------
+Run 2 | Query 14: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of interlaced threads.
+- The threads are relatively thick and create a textured surface.
+- There are visible intersections where the threads cross.
+
+KB:
+- IF interlaced threads and visible intersections THEN woven
+
+Rule Check:
+- The image clearly exhibits interlaced threads and visible intersections, strongly aligning with the "woven" class.
+
+<response>woven</response>
+----------------------------------------
+Run 2 | Query 15: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of interlaced strands.
+- The strands are arranged diagonally, creating a textured, interwoven appearance.
+
+KB:
+- IF interlaced strands are arranged diagonally THEN woven
+
+Rule Check:
+- The image clearly exhibits interlaced strands arranged diagonally. This aligns perfectly with the "IF interlaced strands are arranged diagonally THEN woven" rule.
+
+<response>woven</response>
+----------------------------------------
+Run 2 | Query 16: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of interlaced, rectangular elements.
+- The elements are arranged in a diagonal, interwoven fashion.
+
+KB:
+- IF the image shows a repeating pattern of interlaced, rectangular elements arranged in a diagonal, interwoven fashion THEN woven
+
+Rule Check:
+- The image strongly matches the "IF" condition of the "woven" rule. The visible pattern is clearly a woven texture.
+
+<response>woven</response>
+----------------------------------------
+Run 2 | Query 17: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a pattern of interlacing elements.
+- The elements are long and thin, crossing each other at various angles.
+- The overall structure appears to be a complex arrangement of interwoven materials.
+
+KB:
+- IF interlacing elements are present and the elements are long and thin THEN woven
+
+Rule Check:
+- The image clearly exhibits interlacing elements that are long and thin. This aligns perfectly with the "IF" condition of the "woven" rule.
+
+<response>woven</response>
+----------------------------------------
+Run 2 | Query 18: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of interlaced strands.
+- The strands are arranged in a criss-cross pattern.
+- The pattern is clearly visible and consistent throughout the image.
+
+KB:
+- IF interlaced strands are arranged in a criss-cross pattern THEN woven
+
+Rule Check:
+- The image clearly exhibits interlaced strands in a criss-cross pattern, which directly aligns with the "IF" condition of the "woven" rule.
+
+<response>woven</response>
+----------------------------------------
+Run 2 | Query 19: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of diagonal lines forming a lattice-like structure.
+- The lines intersect to create a grid-like appearance.
+
+KB:
+- IF the image contains a repeating pattern of diagonal lines intersecting to form a grid-like structure THEN grid.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of diagonal lines intersecting, which directly aligns with the rule stating that if such a structure is present, the class is "grid".
+
+<response>grid</response>
+----------------------------------------
+Run 2 | Query 20: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a repeating pattern of squares arranged in a grid-like structure.
+- The squares are not aligned horizontally or vertically, creating a diagonal grid.
+
+KB:
+- IF the image contains a repeating pattern of squares arranged in a grid-like structure THEN grid.
+
+Rule Check:
+- The image clearly exhibits a grid-like structure with squares, aligning perfectly with the rule.
+
+<response>grid</response>
+----------------------------------------
+Run 2 | Query 21: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a regular, repeating pattern of intersecting lines forming squares.
+- The lines are evenly spaced and create a consistent grid-like structure.
+
+KB:
+- IF the image displays a regular, repeating pattern of intersecting lines forming squares THEN grid.
+
+Rule Check:
+- The image clearly exhibits a grid pattern with evenly spaced lines forming squares. Therefore, the rule "IF the image displays a regular, repeating pattern of intersecting lines forming squares THEN grid" is best satisfied.
+
+<response>grid</response>
+----------------------------------------
+Run 2 | Query 22: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of straight, parallel lines intersecting at regular intervals.
+- The lines form a network of squares and rectangles.
+- The overall structure is a regular, repeating arrangement.
+
+KB:
+- IF the image shows a repeating pattern of straight, parallel lines intersecting at regular intervals forming a network of squares and rectangles THEN grid.
+
+Rule Check:
+- The image clearly exhibits the defining characteristics of a grid: a regular, repeating pattern of intersecting straight lines forming a network of squares and rectangles. Therefore, the rule "IF the image shows a repeating pattern of straight, parallel lines intersecting at regular intervals forming a network of squares and rectangles THEN grid" is best satisfied.
+
+<response>grid</response>
+----------------------------------------
+Run 2 | Query 23: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image consists of a regular arrangement of intersecting lines forming a pattern of squares.
+- The lines are straight and create a uniform grid structure.
+
+KB:
+- IF the image consists of a regular arrangement of intersecting lines forming a pattern of squares THEN grid
+
+Rule Check:
+- The image clearly exhibits the defining characteristics of a grid: a regular arrangement of intersecting lines forming a pattern of squares. Therefore, the "grid" rule is best matched.
+
+<response>grid</response>
+----------------------------------------
+Run 2 | Query 24: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image consists of a regular, repeating pattern of evenly spaced, thin, light-colored lines forming a network of squares.
+- The lines are arranged in a rectangular grid.
+
+KB:
+- IF the image consists of a regular, repeating pattern of evenly spaced, thin, light-colored lines forming a network of squares THEN grid
+
+Rule Check:
+- The image clearly matches the description in the "IF" statement of the rule. The image is a grid of evenly spaced lines forming squares.
+
+<response>grid</response>
+----------------------------------------
+Run 2 | Query 25: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a regular, repeating pattern of intersecting lines forming squares.
+- The lines are evenly spaced and create a uniform grid structure.
+
+KB:
+- IF the image contains a regular, repeating pattern of intersecting lines forming squares THEN grid
+
+Rule Check:
+- The image clearly exhibits a regular, repeating pattern of intersecting lines forming squares, which directly aligns with the rule stating that if an image contains this pattern, it is classified as "grid".
+
+<response>grid</response>
+----------------------------------------
+Run 2 | Query 26: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a regular, repeating pattern of intersecting lines forming squares.
+- The lines are arranged in a rectangular grid.
+
+KB:
+- IF the image contains a regular, repeating pattern of intersecting lines forming squares THEN grid
+
+Rule Check:
+- The image clearly exhibits a grid-like structure with intersecting lines forming squares. Therefore, the rule "IF the image contains a regular, repeating pattern of intersecting lines forming squares THEN grid" is best satisfied.
+
+<response>grid</response>
+----------------------------------------
+Run 2 | Query 27: Expected: [grid] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image consists of a regular, repeating pattern of small, uniform squares.
+- The squares are arranged in a rectangular grid.
+
+KB:
+- IF the image consists of a regular, repeating pattern of small, uniform squares arranged in a rectangular grid THEN grid
+
+Rule Check:
+- The image clearly matches the "IF" condition of the "grid" rule. The image is composed of a regular grid of squares.
+
+<response>grid</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9) Run 2: 0.8519
+
+--- CONFIG: N=4, K=1, Q=9 (3 RUNS) ---
+Run 0 | Query 1: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of vertical folds or creases.
+- The folds are regularly spaced and create a layered appearance.
+- The material appears to be a fabric or similar flexible material.
+
+KB:
+- IF repeating vertical folds or creases are present THEN pleated
+
+Rule Check:
+- The image clearly exhibits repeating vertical folds, aligning perfectly with the "pleated" class.
+
+<response>pleated</response>
+----------------------------------------
+Run 0 | Query 2: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a fabric with distinct, regularly spaced folds or creases running vertically.
+- The folds are consistent and create a repeating pattern.
+
+KB:
+- IF the image shows a fabric with distinct, regularly spaced folds or creases running vertically THEN pleated
+
+Rule Check:
+- The image clearly exhibits the defining characteristic of "pleated" - the presence of regular, vertical folds. Therefore, the rule "IF the image shows a fabric with distinct, regularly spaced folds or creases running vertically THEN pleated" is best matched.
+
+<response>pleated</response>
+----------------------------------------
+Run 0 | Query 3: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a radial pattern of folded paper.
+- The paper is folded in a repeating, fan-like structure.
+- The folds create distinct, parallel lines.
+
+KB:
+- IF a repeating, fan-like structure of folded paper is present THEN pleated.
+
+Rule Check:
+- The image clearly exhibits a repeating, fan-like structure of folded paper. This aligns perfectly with the "IF" condition of the rule, indicating a "pleated" class.
+
+<response>pleated</response>
+----------------------------------------
+Run 0 | Query 4: Expected: [pleated] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of curved lines resembling vines or leaves.
+- The pattern is distributed across a fabric-like surface.
+
+KB:
+- IF the image contains a repeating pattern of curved lines resembling vines or leaves THEN veined.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of curved lines that resemble vines or leaves. Therefore, the "veined" rule is best satisfied.
+
+<response>veined</response>
+----------------------------------------
+Run 0 | Query 5: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Horizontal lines are present.
+- The lines are evenly spaced and parallel.
+- There is a vertical string or chain-like feature running along the side.
+
+KB:
+- IF horizontal lines are present and evenly spaced THEN pleated
+
+Rule Check:
+- The image exhibits a clear pattern of horizontal lines that are evenly spaced. This aligns with the "pleated" class.
+
+<response>pleated</response>
+----------------------------------------
+Run 0 | Query 6: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a fabric hanging vertically.
+- The fabric has distinct, parallel vertical folds or pleats.
+- There is a rod at the top with rings holding the fabric.
+
+KB:
+- IF the fabric has distinct, parallel vertical folds THEN pleated
+
+Rule Check:
+- The image clearly exhibits the defining characteristic of the "pleated" class: distinct, parallel vertical folds. The presence of a rod and rings is irrelevant to the classification.
+
+<response>pleated</response>
+----------------------------------------
+Run 0 | Query 7: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a fabric with vertical folds or gathers.
+- The folds are regular and create a repeating pattern.
+- The fabric appears to be draped or gathered.
+
+KB:
+- IF the image shows a fabric with regular, repeating vertical folds THEN pleated.
+
+Rule Check:
+- The image clearly exhibits the visual feature of regular, repeating vertical folds. Therefore, the rule "IF the image shows a fabric with regular, repeating vertical folds THEN pleated" is best satisfied.
+
+<response>pleated</response>
+----------------------------------------
+Run 0 | Query 8: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a series of parallel, horizontal lines.
+- The lines are evenly spaced and have a consistent width.
+
+KB:
+- IF parallel, horizontal lines are present THEN pleated
+
+Rule Check:
+- The image clearly exhibits parallel, horizontal lines, which aligns with the defining characteristic of the "pleated" class.
+
+<response>pleated</response>
+----------------------------------------
+Run 0 | Query 9: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Parallel, closely spaced lines or bands.
+- The lines are slightly curved and follow a consistent direction.
+- Visible stitching is present between the lines.
+
+KB:
+- IF parallel, closely spaced lines THEN pleated
+
+Rule Check:
+- The image exhibits a clear pattern of parallel, closely spaced lines, which aligns with the "pleated" class. The slight curvature of the lines and the presence of stitching further reinforce this classification.
+
+<response>pleated</response>
+----------------------------------------
+Run 0 | Query 10: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a pattern of distinct, rectangular blocks arranged in a grid.
+- Each block exhibits a swirling, irregular pattern within its boundaries.
+- The overall color scheme is a muted beige/tan.
+
+KB:
+- IF the image shows a pattern of distinct blocks with swirling, irregular patterns within each block THEN marbled.
+
+Rule Check:
+- The image clearly exhibits the defining visual features of the "marbled" class: distinct blocks with swirling, irregular patterns. Therefore, the "marbled" rule is best satisfied.
+
+<response>marbled</response>
+----------------------------------------
+Run 0 | Query 11: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of swirling lines and streaks.
+- The texture appears to be smooth and continuous, with variations in tone.
+
+KB:
+- IF swirling lines and streaks are present THEN marbled
+
+Rule Check:
+- The image clearly exhibits swirling lines and streaks, which aligns with the defining characteristic of the "marbled" class.
+
+<response>marbled</response>
+----------------------------------------
+Run 0 | Query 12: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of irregular, branching lines.
+- These lines are lighter in color than the background and appear to intersect and curve.
+
+KB:
+- IF the image contains irregular, branching lines THEN veined
+
+Rule Check:
+- The image clearly exhibits the visual feature of irregular, branching lines. Therefore, the "veined" rule is best satisfied.
+
+<response>veined</response>
+----------------------------------------
+Run 0 | Query 13: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a complex, irregular pattern of swirling lines and shapes.
+- The pattern is not linear or directional like veins.
+- The pattern is not regular or grid-like like woven material.
+- The pattern is not folded or creased like pleated fabric.
+- The pattern resembles the swirling, irregular patterns seen in marbled materials.
+
+KB:
+- IF image displays a complex, irregular pattern of swirling lines and shapes THEN marbled
+
+Rule Check:
+- The image strongly satisfies the rule "IF image displays a complex, irregular pattern of swirling lines and shapes THEN marbled". The swirling patterns are the dominant visual feature.
+
+<response>marbled</response>
+----------------------------------------
+Run 0 | Query 14: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays swirling, layered patterns.
+- The patterns are irregular and organic in appearance.
+- The color palette is predominantly brown and beige with lighter streaks.
+
+KB:
+- IF swirling, layered patterns are present THEN marbled
+
+Rule Check:
+- The image strongly exhibits swirling, layered patterns, which aligns directly with the "marbled" class. The organic and irregular nature of the patterns further supports this classification.
+
+<response>marbled</response>
+----------------------------------------
+Run 0 | Query 15: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of swirling lines and variations in color.
+- There are distinct, irregular lines running through the image.
+- The overall texture appears to be layered and flowing.
+
+KB:
+- IF swirling lines and irregular lines are present THEN marbled
+
+Rule Check:
+- The image strongly exhibits swirling lines and irregular lines, which aligns with the "marbled" class.
+
+<response>marbled</response>
+----------------------------------------
+Run 0 | Query 16: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of irregular, swirling shapes and textures.
+- The pattern is distributed across the entire image, creating a mottled appearance.
+- The color is a consistent, earthy tone.
+
+KB:
+- IF the image displays a pattern of irregular, swirling shapes and textures THEN marbled.
+
+Rule Check:
+- The image strongly matches the "IF" condition of the "marbled" rule due to the presence of irregular, swirling shapes and textures.
+
+<response>marbled</response>
+----------------------------------------
+Run 0 | Query 17: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of irregular, branching lines.
+- The lines are darker than the surrounding background.
+- The overall texture appears to be continuous and flowing.
+
+KB:
+- IF the image contains branching, irregular lines THEN veined
+
+Rule Check:
+- The image clearly exhibits branching, irregular lines, which aligns perfectly with the "veined" class.
+
+<response>veined</response>
+----------------------------------------
+Run 0 | Query 18: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays swirling patterns and irregular shapes.
+- There are areas of lighter and darker tones intermixed.
+- The overall appearance suggests a flowing, organic texture.
+
+KB:
+- IF swirling patterns and irregular shapes are present THEN marbled
+
+Rule Check:
+- The image strongly exhibits swirling patterns and irregular shapes, aligning perfectly with the "marbled" class.
+
+<response>marbled</response>
+----------------------------------------
+Run 0 | Query 19: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a complex, irregular pattern of curves and folds.
+- The texture appears to be organic and flowing, with no distinct linear or grid-like structure.
+- The overall appearance resembles swirling patterns.
+
+KB:
+- IF complex, irregular patterns of curves and folds are present THEN marbled
+
+Rule Check:
+- The image strongly aligns with the "marbled" class due to the presence of complex, irregular patterns of curves and folds. The swirling patterns are characteristic of marble textures.
+
+<response>marbled</response>
+----------------------------------------
+Run 0 | Query 20: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of swirling lines and irregular shapes.
+- The lines are not consistently parallel like veins.
+- The overall appearance suggests a layered or textured surface with varied coloration.
+
+KB:
+- IF the image shows swirling lines and irregular shapes THEN marbled.
+
+Rule Check:
+- The image strongly matches the "IF the image shows swirling lines and irregular shapes THEN marbled" rule. The visible patterns are consistent with the appearance of marble.
+
+<response>marbled</response>
+----------------------------------------
+Run 0 | Query 21: Expected: [veined] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a leaf with prominent, branching lines.
+- These lines are visible throughout the leaf structure.
+- The lines are not uniform but appear organic and irregular.
+
+KB:
+- IF the image displays branching lines throughout a leaf structure THEN veined
+
+Rule Check:
+- The image clearly exhibits branching lines throughout a leaf structure. Therefore, the "veined" rule is best matched.
+
+<response>veined</response>
+----------------------------------------
+Run 0 | Query 22: Expected: [veined] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Prominent, branching lines extending from a central vein.
+- The lines are irregular and create a network-like pattern.
+- The surface has a textured appearance.
+
+KB:
+- IF prominent, branching lines extending from a central vein THEN veined
+
+Rule Check:
+- The image exhibits a clear network of branching lines originating from a central vein, which directly aligns with the "veined" class.
+
+<response>veined</response>
+----------------------------------------
+Run 0 | Query 23: Expected: [veined] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a distinct pattern of branching lines.
+- These lines are not uniform and appear organic, resembling veins.
+- The image has a complex, irregular structure.
+
+KB:
+- IF branching lines are present and appear organic THEN veined
+
+Rule Check:
+- The image clearly exhibits branching lines that resemble veins. Therefore, the "veined" rule is best satisfied.
+
+<response>veined</response>
+----------------------------------------
+Run 0 | Query 24: Expected: [veined] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of parallel lines running along the length of the leaves.
+- These lines are not random but appear as a consistent, repeating structure.
+
+KB:
+- IF parallel lines are visible on a leaf-like structure THEN veined
+
+Rule Check:
+- The image clearly exhibits parallel lines on a leaf-like structure. This aligns perfectly with the "IF parallel lines are visible on a leaf-like structure THEN veined" rule.
+
+<response>veined</response>
+----------------------------------------
+Run 0 | Query 25: Expected: [veined] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of curved, interconnected segments.
+- The segments are defined by distinct edges and have a somewhat organic, branching appearance.
+
+KB:
+- IF the image displays a repeating pattern of curved, interconnected segments THEN veined.
+
+Rule Check:
+- The image strongly matches the "IF the image displays a repeating pattern of curved, interconnected segments THEN veined" rule due to the prominent, branching, vein-like structures visible throughout the image.
+
+<response>veined</response>
+----------------------------------------
+Run 0 | Query 26: Expected: [veined] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Prominent, branching lines are visible.
+- The lines form a network-like pattern.
+- The pattern is organic and irregular.
+
+KB:
+- IF prominent, branching lines form a network-like pattern THEN veined
+
+Rule Check:
+- The image exhibits a clear network of branching lines, which aligns perfectly with the "veined" class.
+
+<response>veined</response>
+----------------------------------------
+Run 0 | Query 27: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of curved, parallel lines.
+- The lines are not uniform and have a flowing, organic appearance.
+
+KB:
+- IF the image displays a pattern of curved, parallel lines and a flowing, organic appearance THEN marbled.
+
+Rule Check:
+- The image strongly matches the "IF" condition of the "marbled" rule due to the presence of curved, parallel lines and a flowing appearance.
+
+<response>marbled</response>
+----------------------------------------
+Run 0 | Query 28: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating, interlocking pattern of small, uniform elements.
+- The pattern is regular and consistent across the entire image.
+
+KB:
+- IF repeating, interlocking pattern of small, uniform elements THEN woven
+
+Rule Check:
+- The image strongly matches the "woven" rule due to the clear presence of a repeating, interlocking pattern.
+
+<response>woven</response>
+----------------------------------------
+Run 0 | Query 29: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of horizontal and vertical lines.
+- The lines are relatively uniform in thickness and spacing.
+- The overall texture appears to be a tightly interlaced structure.
+
+KB:
+- IF repeating horizontal and vertical lines with uniform thickness and spacing THEN woven
+
+Rule Check:
+- The image strongly satisfies the rule "IF repeating horizontal and vertical lines with uniform thickness and spacing THEN woven". The visible pattern is consistent with a woven texture.
+
+<response>woven</response>
+----------------------------------------
+Run 0 | Query 30: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of parallel lines intersecting at regular intervals.
+- The lines are predominantly dark brown with lighter brown accents.
+- The overall pattern is diagonal and grid-like.
+
+KB:
+- IF the image shows a repeating pattern of parallel lines intersecting at regular intervals THEN woven.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of parallel lines intersecting at regular intervals, aligning with the "woven" rule.
+
+<response>woven</response>
+----------------------------------------
+Run 0 | Query 31: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a uniform, textured surface with a consistent color and subtle linear markings.
+- There are no distinct patterns like weaving, veining, pleating, or marbling.
+
+KB:
+- IF the image shows a uniform, textured surface with a consistent color and subtle linear markings THEN marled.
+
+Rule Check:
+- The image best matches the "marbled" rule due to the uniform texture and subtle linear markings, which are consistent with the appearance of marble.
+
+<response>marbled</response>
+----------------------------------------
+Run 0 | Query 32: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of interlaced strands.
+- The strands are arranged in a grid-like structure with a distinct diagonal orientation.
+- The overall texture appears to be created by interlacing or braiding.
+
+KB:
+- IF interlaced strands are visible in a grid-like structure THEN woven
+
+Rule Check:
+- The image clearly exhibits interlaced strands arranged in a grid-like pattern, strongly satisfying the rule "IF interlaced strands are visible in a grid-like structure THEN woven".
+
+<response>woven</response>
+----------------------------------------
+Run 0 | Query 33: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of interlaced strands.
+- The strands are arranged in a diagonal, zig-zagging pattern.
+- The pattern is clearly constructed from interwoven elements.
+
+KB:
+- IF interlaced strands are present in a repeating pattern THEN woven
+
+Rule Check:
+- The image clearly exhibits interlaced strands in a repeating pattern, which aligns perfectly with the "IF" condition of the "woven" rule.
+
+<response>woven</response>
+----------------------------------------
+Run 0 | Query 34: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of folded or layered elements.
+- The elements are arranged in a dense, overlapping manner, creating a textured surface.
+- The overall appearance suggests a series of folds or pleats.
+
+KB:
+- IF repeating pattern of folded or layered elements THEN pleated
+
+Rule Check:
+- The image strongly aligns with the "IF repeating pattern of folded or layered elements THEN pleated" rule. The visible features clearly indicate a pleated structure.
+
+<response>pleated</response>
+----------------------------------------
+Run 0 | Query 35: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a regular, repeating grid-like pattern of intersecting lines.
+- The lines are consistently spaced and form a mesh-like structure.
+
+KB:
+- IF a regular, repeating grid-like pattern of intersecting lines is observed THEN woven
+
+Rule Check:
+- The image strongly matches the "IF a regular, repeating grid-like pattern of intersecting lines is observed THEN woven" rule. The image clearly shows a woven-like structure.
+
+<response>woven</response>
+----------------------------------------
+Run 0 | Query 36: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of interlaced, parallel strands.
+- The strands are relatively uniform in width and thickness.
+- The overall texture appears to be a consistent, regular weave.
+
+KB:
+- IF interlaced, parallel strands are present THEN woven
+
+Rule Check:
+- The image clearly exhibits interlaced, parallel strands, which aligns perfectly with the "woven" class.
+
+<response>woven</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9) Run 0: 0.7778
+Run 1 | Query 1: Expected: [pleated] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of curved, layered lines.
+- The lines are predominantly brown and reddish-brown in color.
+- The overall texture appears to be flowing and organic.
+
+KB:
+- IF the image displays a pattern of curved, layered lines and a marbled appearance THEN marbled.
+- IF the image displays a pattern of interwoven strands THEN woven.
+- IF the image displays a network of veins THEN veined.
+- IF the image displays a series of folds or pleats THEN pleated.
+
+Rule Check:
+The image exhibits a flowing, layered pattern with a color palette reminiscent of marble. While it doesn't have the distinct, chaotic texture of a typical marbled image, the layered lines and color suggest a resemblance to the swirling patterns found in marble. The other classes (woven, veined, pleated) do not align with the observed visual features.
+
+<response>marbled</response>
+----------------------------------------
+Run 1 | Query 2: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of vertical, slightly curved lines.
+- The lines are relatively uniform in width and spacing.
+
+KB:
+- IF the image displays a repeating pattern of vertical, slightly curved lines THEN pleated.
+
+Rule Check:
+- The image strongly matches the "IF the image displays a repeating pattern of vertical, slightly curved lines THEN pleated" rule. The visible pattern aligns with the description of "pleated" from the provided examples.
+
+<response>pleated</response>
+----------------------------------------
+Run 1 | Query 3: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows vertical folds or gathers in fabric.
+- The folds are arranged in a regular, repeating pattern.
+- There are visible ties or fasteners associated with the folds.
+
+KB:
+- IF vertical folds or gathers in fabric are present AND the folds are arranged in a regular, repeating pattern THEN pleated.
+
+Rule Check:
+- The image clearly exhibits vertical folds and a repeating pattern, aligning perfectly with the "pleated" rule.
+
+<response>pleated</response>
+----------------------------------------
+Run 1 | Query 4: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Horizontal lines are present and regularly spaced.
+- The lines are parallel and create a layered appearance.
+
+KB:
+- IF horizontal lines are regularly spaced and parallel THEN pleated
+
+Rule Check:
+- The image clearly exhibits regularly spaced, parallel horizontal lines, which aligns perfectly with the "pleated" class.
+
+<response>pleated</response>
+----------------------------------------
+Run 1 | Query 5: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a series of regularly spaced, vertical folds or creases in a fabric.
+- These folds create a repeating pattern of parallel lines and depressions.
+
+KB:
+- IF the image shows a repeating pattern of parallel folds or creases THEN pleated.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of parallel folds, directly matching the condition specified in the "IF" statement. Therefore, the "pleated" class is the best match.
+
+<response>pleated</response>
+----------------------------------------
+Run 1 | Query 6: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a fabric with vertical folds or creases.
+- The folds are regularly spaced and create a distinct pattern.
+
+KB:
+- IF the image shows a fabric with regularly spaced vertical folds or creases THEN pleated.
+
+Rule Check:
+- The image clearly exhibits regularly spaced vertical folds, which aligns perfectly with the "pleated" class.
+
+<response>pleated</response>
+----------------------------------------
+Run 1 | Query 7: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating, vertical, linear pattern.
+- The pattern is formed by closely spaced, parallel ridges or folds.
+
+KB:
+- IF the image displays a repeating, vertical, linear pattern formed by closely spaced, parallel ridges or folds THEN pleated.
+
+Rule Check:
+- The image clearly exhibits a repeating, vertical, linear pattern formed by closely spaced, parallel ridges or folds. This aligns perfectly with the "pleated" rule.
+
+<response>pleated</response>
+----------------------------------------
+Run 1 | Query 8: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of vertical folds or creases.
+- The folds are evenly spaced and create a regular, linear texture.
+
+KB:
+- IF the image displays a repeating pattern of vertical folds or creases THEN pleated.
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of vertical folds, directly matching the condition specified in the "IF" statement. Therefore, the "pleated" class is the best match.
+
+<response>pleated</response>
+----------------------------------------
+Run 1 | Query 9: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a radial pattern of evenly spaced, parallel folds emanating from a central point.
+- The surface is relatively smooth and uniform in color.
+
+KB:
+- IF the image shows a repeating, fan-like pattern of parallel folds THEN pleated.
+
+Rule Check:
+- The image clearly exhibits a repeating, fan-like pattern of parallel folds radiating from a central point. This aligns perfectly with the "IF" condition of the rule, indicating the "pleated" class.
+
+<response>pleated</response>
+----------------------------------------
+Run 1 | Query 10: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Prominent, irregular, dark lines traversing the image.
+- A mottled, granular texture with a predominantly green color.
+
+KB:
+- IF prominent, irregular, dark lines and mottled texture THEN marbled
+
+Rule Check:
+- The image exhibits prominent, irregular dark lines and a mottled texture, aligning with the "marbled" class.
+
+<response>marbled</response>
+----------------------------------------
+Run 1 | Query 11: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of swirling lines and irregular shapes.
+- The texture appears smooth and continuous, with subtle variations in tone.
+
+KB:
+- IF swirling lines and irregular shapes are present THEN marbled
+
+Rule Check:
+- The image strongly exhibits the characteristic swirling lines and irregular shapes associated with the "marbled" class.
+
+<response>marbled</response>
+----------------------------------------
+Run 1 | Query 12: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image exhibits a swirling, irregular pattern.
+- The image has a consistent color tone throughout, with variations in shade.
+- The pattern appears to be formed by interconnected lines and shapes.
+
+KB:
+- IF swirling, irregular pattern and consistent color tone THEN marbled
+
+Rule Check:
+- The image strongly satisfies the rule "IF swirling, irregular pattern and consistent color tone THEN marbled". The visible features align with the characteristics of a marbled texture.
+
+<response>marbled</response>
+----------------------------------------
+Run 1 | Query 13: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of swirling, irregular lines and shapes.
+- The texture appears to be composed of varying shades of grey, brown, and blue.
+
+KB:
+- IF the image displays swirling, irregular lines and shapes with varying shades of grey, brown, and blue THEN marbled.
+
+Rule Check:
+- The image strongly matches the "IF" condition of the "marbled" rule due to the presence of swirling, irregular lines and shapes with varying shades of grey, brown, and blue.
+
+<response>marbled</response>
+----------------------------------------
+Run 1 | Query 14: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a swirling, irregular pattern with variations in color and tone.
+- The pattern appears to be composed of interconnected, flowing lines and shapes.
+- The overall texture is complex and organic.
+
+KB:
+- IF swirling, irregular patterns with interconnected lines and shapes THEN marbled
+
+Rule Check:
+- The image strongly aligns with the "swirling, irregular patterns with interconnected lines and shapes" characteristic of the "marbled" class.
+
+<response>marbled</response>
+----------------------------------------
+Run 1 | Query 15: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a network of branching, irregular lines.
+- The lines are lighter in color than the background and create a pattern of interconnected curves and loops.
+
+KB:
+- IF the image contains a network of branching, irregular lines THEN veined
+
+Rule Check:
+- The image clearly exhibits a network of branching, irregular lines, which aligns perfectly with the "veined" class.
+
+<response>veined</response>
+----------------------------------------
+Run 1 | Query 16: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image exhibits a pattern of irregular, swirling shapes and textures.
+- The overall appearance is mottled and non-uniform.
+
+KB:
+- IF the image shows irregular, swirling shapes and textures THEN marbled.
+
+Rule Check:
+- The image strongly matches the "IF the image shows irregular, swirling shapes and textures THEN marbled" rule. The visible patterns are consistent with the examples labeled as "marbled."
+
+<response>marbled</response>
+----------------------------------------
+Run 1 | Query 17: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image exhibits swirling patterns and irregular shapes.
+- There are areas of lighter and darker tones intermixed.
+- The overall appearance suggests a flowing, organic texture.
+
+KB:
+- IF swirling patterns and irregular shapes are present THEN marbled
+
+Rule Check:
+- The image strongly aligns with the "swirling patterns and irregular shapes" characteristic of the "marbled" class.
+
+<response>marbled</response>
+----------------------------------------
+Run 1 | Query 18: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a network of thin, branching lines across a surface.
+- These lines are not regularly spaced or woven, but rather appear organic and irregular.
+- The overall texture is characterized by these lines and the areas they delineate.
+
+KB:
+- IF the image contains a network of thin, branching lines across a surface THEN veined.
+
+Rule Check:
+- The image clearly exhibits a network of thin, branching lines, aligning perfectly with the "veined" rule.
+
+<response>veined</response>
+----------------------------------------
+Run 1 | Query 19: Expected: [veined] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of parallel, slightly curved lines.
+- These lines are not uniform and have varying thicknesses and spacing.
+- The overall texture appears to be layered or striated.
+
+KB:
+- IF the image shows a network of lines, often irregular and branching, THEN veined.
+
+Rule Check:
+- The image clearly exhibits a network of lines, albeit not as intricate as some of the "veined" examples, but the parallel, layered appearance aligns best with the "veined" class based on the observable features.
+
+<response>veined</response>
+----------------------------------------
+Run 1 | Query 20: Expected: [veined] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a complex, branching pattern.
+- The pattern is composed of thin, interconnected lines.
+- The overall appearance resembles a network of veins.
+
+KB:
+- IF the image displays a complex, branching pattern composed of thin, interconnected lines THEN veined
+
+Rule Check:
+- The image strongly satisfies the rule "IF the image displays a complex, branching pattern composed of thin, interconnected lines THEN veined". The visible features align perfectly with the characteristics of a veined pattern.
+
+<response>veined</response>
+----------------------------------------
+Run 1 | Query 21: Expected: [veined] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of irregular, branching lines.
+- The lines are not straight but appear curved and interconnected.
+- The overall appearance suggests a network-like structure.
+
+KB:
+- IF the image contains a network of branching, irregular lines THEN veined.
+
+Rule Check:
+- The image strongly satisfies the rule "IF the image contains a network of branching, irregular lines THEN veined." The branching lines and their irregular nature are clearly visible.
+
+<response>veined</response>
+----------------------------------------
+Run 1 | Query 22: Expected: [veined] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Prominent, branching lines extending from a central vein.
+- A network of smaller, interconnected lines branching off the main veins.
+- The overall texture is organic and appears to be derived from a plant structure.
+
+KB:
+- IF prominent branching lines and a network of interconnected lines THEN veined
+
+Rule Check:
+- The image clearly exhibits prominent branching lines and a network of interconnected lines, strongly satisfying the "veined" rule.
+
+<response>veined</response>
+----------------------------------------
+Run 1 | Query 23: Expected: [veined] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Prominent, branching lines are visible.
+- The lines form a network-like pattern.
+- The overall color is green.
+
+KB:
+- IF prominent branching lines form a network-like pattern THEN veined
+
+Rule Check:
+- The image clearly exhibits a network of branching lines, which aligns perfectly with the "veined" class.
+
+<response>veined</response>
+----------------------------------------
+Run 1 | Query 24: Expected: [veined] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a network of lines branching out from a central point.
+- The lines are connected by smaller, interconnected structures.
+- The image exhibits a distinct pattern of branching and interconnectedness.
+
+KB:
+- IF the image displays a network of lines branching out from a central point and interconnected structures THEN veined
+
+Rule Check:
+- The image clearly exhibits the visual features described in the "veined" rule. The branching lines and interconnected structures are prominent and define the image's appearance.
+
+<response>veined</response>
+----------------------------------------
+Run 1 | Query 25: Expected: [veined] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large, broad leaves with prominent veins.
+- The leaves have a glossy, smooth surface.
+- The overall texture is organic and flowing.
+
+KB:
+- IF the image contains large, broad leaves with prominent veins THEN veined.
+
+Rule Check:
+- The image clearly displays large, broad leaves with prominent veins. Therefore, the "veined" rule is best satisfied.
+
+<response>veined</response>
+----------------------------------------
+Run 1 | Query 26: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of swirling lines and irregular shapes.
+- The overall texture appears to be composed of interconnected, branching lines.
+- The color palette is dominated by shades of green and brown.
+
+KB:
+- IF the image contains branching, irregular lines and a textured appearance THEN marbled.
+- IF the image contains a repeating, interlaced pattern THEN woven.
+- IF the image contains a network of thin, parallel lines THEN veined.
+- IF the image contains vertical folds or creases THEN pleated.
+
+Rule Check:
+- The image best matches the "IF the image contains branching, irregular lines and a textured appearance THEN marbled" rule. The swirling lines and irregular shapes are characteristic of marble patterns. The other rules do not adequately describe the observed visual features.
+
+<response>marbled</response>
+----------------------------------------
+Run 1 | Query 27: Expected: [veined] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a network of thin, branching lines.
+- The lines are a lighter color than the background and form a distinct pattern.
+- The background is a uniform green color.
+
+KB:
+- IF the image contains a network of thin, branching lines and a uniform background THEN veined.
+
+Rule Check:
+- The image clearly exhibits a network of thin, branching lines against a green background. This aligns perfectly with the "veined" rule.
+
+<response>veined</response>
+----------------------------------------
+Run 1 | Query 28: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of interlaced strands.
+- The strands are relatively uniform in thickness and appear to be arranged in a regular, crossing pattern.
+- The overall texture is consistent and suggests a deliberate interlacing process.
+
+KB:
+- IF interlaced strands are visible in a regular, crossing pattern THEN woven
+
+Rule Check:
+- The image strongly satisfies the rule "IF interlaced strands are visible in a regular, crossing pattern THEN woven". The visible pattern clearly demonstrates interlacing.
+
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 29: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of parallel lines intersecting at regular intervals.
+- The lines are arranged diagonally, creating a grid-like appearance.
+
+KB:
+- IF a pattern consists of regularly spaced, intersecting lines arranged diagonally THEN woven
+
+Rule Check:
+- The image clearly exhibits a pattern of regularly spaced, intersecting lines arranged diagonally. This aligns perfectly with the "IF...THEN" rule for the "woven" class.
+
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 30: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a uniform, slightly textured surface.
+- There are subtle, parallel lines running horizontally across the image.
+- The texture is consistent and does not exhibit any distinct patterns like marbling, veining, or weaving.
+
+KB:
+- IF the image displays a uniform, slightly textured surface with subtle, parallel lines THEN woven.
+- IF the image displays a complex, swirling pattern THEN marbled.
+- IF the image displays a branching, vein-like pattern THEN veined.
+- IF the image displays a series of folds or pleats THEN pleated.
+
+Rule Check:
+The image best aligns with the "woven" rule due to the presence of a uniform, slightly textured surface with subtle, parallel lines. While it could be argued that any textured surface could be considered woven, the parallel lines are a key indicator. The other rules do not apply as there is no marbling, veining, or pleating visible.
+
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 31: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating, interlaced pattern.
+- The pattern is composed of distinct, parallel strands that cross each other at regular intervals.
+
+KB:
+- IF a repeating, interlaced pattern composed of distinct, parallel strands is present THEN woven
+
+Rule Check:
+- The image clearly exhibits a repeating, interlaced pattern with distinct strands. This aligns perfectly with the "woven" class.
+
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 32: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating, interlaced pattern.
+- The pattern consists of regularly spaced, parallel lines that intersect at angles.
+- The overall texture appears to be constructed from a series of interwoven elements.
+
+KB:
+- IF the image displays a repeating, interlaced pattern consisting of regularly spaced, parallel lines that intersect at angles THEN woven.
+
+Rule Check:
+- The image strongly satisfies the rule stating that if an image displays a repeating, interlaced pattern with regularly spaced, parallel lines intersecting at angles, it is classified as "woven."
+
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 33: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating, grid-like pattern of interlaced threads.
+- The threads are relatively uniform in thickness and create a distinct, regular texture.
+
+KB:
+- IF a repeating, grid-like pattern of interlaced threads is observed THEN woven
+
+Rule Check:
+- The image clearly exhibits a repeating, grid-like pattern of interlaced threads, which aligns perfectly with the "woven" class.
+
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 34: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a uniform, textured surface with a visible, regular grid-like pattern.
+- The texture appears to be created by interlacing threads or fibers.
+
+KB:
+- IF a surface displays a uniform, textured surface with a visible, regular grid-like pattern created by interlacing threads or fibers THEN woven
+
+Rule Check:
+- The image strongly satisfies the rule stating that a surface with a uniform, textured surface and a visible, regular grid-like pattern created by interlacing threads or fibers is classified as "woven".
+
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 35: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a uniform green color.
+- There are subtle, parallel lines running horizontally across the image.
+
+KB:
+- IF the image displays a uniform color and subtle parallel lines THEN woven.
+
+Rule Check:
+- The image best matches the rule stating that a uniform color with subtle parallel lines indicates a "woven" texture.
+
+<response>woven</response>
+----------------------------------------
+Run 1 | Query 36: Expected: [woven] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of closely spaced, angled, and overlapping elements.
+- The elements are consistently arranged in a regular, layered fashion.
+
+KB:
+- IF repeating pattern of closely spaced, angled, and overlapping elements THEN pleated
+
+Rule Check:
+- The image strongly aligns with the "pleated" rule due to the prominent and regular arrangement of angled, overlapping elements.
+
+<response>pleated</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9) Run 1: 0.8611
+Run 2 | Query 1: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating, folded pattern.
+- The pattern consists of regularly spaced, parallel folds.
+- The overall appearance suggests a layered, fan-like structure.
+
+KB:
+- IF repeating, folded pattern with regularly spaced, parallel folds THEN pleated
+
+Rule Check:
+- The image strongly satisfies the rule "IF repeating, folded pattern with regularly spaced, parallel folds THEN pleated". The visible features directly align with the characteristics described in the rule.
+
+<response>pleated</response>
+----------------------------------------
+Run 2 | Query 2: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows fabric with distinct, regularly spaced folds or creases.
+- The fabric is arranged in a manner that creates a series of parallel, repeating pleats.
+
+KB:
+- IF the image shows fabric with regularly spaced folds or creases THEN pleated
+
+Rule Check:
+- The image clearly exhibits a pattern of pleats, aligning directly with the "IF" condition of the rule. Therefore, the best matching class is "pleated".
+
+<response>pleated</response>
+----------------------------------------
+Run 2 | Query 3: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating, folded pattern.
+- The pattern consists of regularly spaced, parallel folds creating a series of ridges and valleys.
+
+KB:
+- IF the image shows a repeating, folded pattern of parallel ridges and valleys THEN pleated.
+
+Rule Check:
+- The image clearly exhibits a repeating, folded pattern with parallel ridges and valleys. This aligns perfectly with the rule stating that such a pattern indicates "pleated".
+
+<response>pleated</response>
+----------------------------------------
+Run 2 | Query 4: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of folds or creases.
+- These folds are arranged in a regular, geometric pattern.
+
+KB:
+- IF the image shows a repeating pattern of folds or creases THEN pleated
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of folds, aligning perfectly with the "pleated" class.
+
+<response>pleated</response>
+----------------------------------------
+Run 2 | Query 5: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a series of vertical, regularly spaced folds or creases.
+- These folds create a repeating, layered pattern.
+
+KB:
+- IF the image displays a series of vertical, regularly spaced folds or creases THEN pleated.
+
+Rule Check:
+- The image clearly exhibits the defining characteristic of the "pleated" class: a pattern of vertical, regularly spaced folds or creases. Therefore, the rule "IF the image displays a series of vertical, regularly spaced folds or creases THEN pleated" is best satisfied.
+
+<response>pleated</response>
+----------------------------------------
+Run 2 | Query 6: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating, folded pattern.
+- The folds are parallel and regularly spaced.
+
+KB:
+- IF repeating, regularly spaced, parallel folds THEN pleated
+
+Rule Check:
+- The image clearly exhibits repeating, regularly spaced, parallel folds. This aligns perfectly with the "IF...THEN" rule established for the "pleated" class.
+
+<response>pleated</response>
+----------------------------------------
+Run 2 | Query 7: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating, undulating pattern of parallel lines.
+- The lines are not perfectly straight, exhibiting a slight curve or wave-like appearance.
+- The overall texture is reminiscent of folds or creases.
+
+KB:
+- IF the image displays a repeating, undulating pattern of parallel lines THEN pleated.
+
+Rule Check:
+- The image strongly satisfies the rule "IF the image displays a repeating, undulating pattern of parallel lines THEN pleated." The visible pattern aligns directly with the description of "pleated" observed in the provided examples.
+
+<response>pleated</response>
+----------------------------------------
+Run 2 | Query 8: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of horizontal lines.
+- The lines are parallel and evenly spaced.
+- There is a vertical element running through the image.
+
+KB:
+- IF repeating horizontal lines are present THEN pleated
+
+Rule Check:
+- The image clearly exhibits a repeating pattern of horizontal lines, which aligns with the "pleated" class.
+
+<response>pleated</response>
+----------------------------------------
+Run 2 | Query 9: Expected: [pleated] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a series of vertical folds or creases.
+- These folds are regularly spaced and create a repeating pattern.
+
+KB:
+- IF the image shows a series of regularly spaced vertical folds or creases THEN pleated.
+
+Rule Check:
+- The image clearly exhibits a pattern of regular, vertical folds, which directly aligns with the "pleated" rule.
+
+<response>pleated</response>
+----------------------------------------
+Run 2 | Query 10: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of irregular, swirling shapes and textures.
+- The overall appearance is characterized by a mix of dark and lighter tones, creating a mottled effect.
+
+KB:
+- IF the image displays a pattern of irregular, swirling shapes and textures, and a mix of dark and lighter tones THEN marbled.
+
+Rule Check:
+- The image strongly aligns with the "IF" condition of the "marbled" rule due to the presence of irregular, swirling shapes and a mottled appearance.
+
+<response>marbled</response>
+----------------------------------------
+Run 2 | Query 11: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of undulating, irregular lines and curves.
+- The pattern is consistent across the entire image.
+- The color is a consistent, muted tone.
+
+KB:
+- IF undulating, irregular lines and curves are present THEN marbled
+
+Rule Check:
+- The image strongly exhibits the visual features of undulating, irregular lines and curves, which aligns with the "marbled" class.
+
+<response>marbled</response>
+----------------------------------------
+Run 2 | Query 12: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of swirling, irregular lines and shapes.
+- The overall texture appears to be continuous and flowing, with variations in tone and shading.
+
+KB:
+- IF swirling, irregular lines and shapes are present THEN marbled
+
+Rule Check:
+- The image strongly exhibits the characteristic swirling and irregular patterns associated with the "marbled" class. The lines are not linear like "woven" or "pleated", nor do they resemble the distinct veins of "veined" patterns.
+
+<response>marbled</response>
+----------------------------------------
+Run 2 | Query 13: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Presence of linear, irregular patterns.
+- The patterns are not uniform and appear to be natural formations.
+- The surface has a mottled appearance.
+
+KB:
+- IF [Presence of linear, irregular patterns and a mottled appearance] THEN [marbled]
+
+Rule Check:
+The image exhibits linear, irregular patterns and a mottled appearance, strongly aligning with the characteristics of "marbled" as defined by the provided examples.
+
+<response>marbled</response>
+----------------------------------------
+Run 2 | Query 14: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of branching, irregular lines.
+- These lines are not consistently parallel like in a woven texture.
+- The lines are more akin to the patterns observed in the "marbled" examples.
+
+KB:
+- IF branching, irregular lines are present THEN marbled
+
+Rule Check:
+- The image strongly satisfies the rule "IF branching, irregular lines are present THEN marbled". The visible pattern closely resembles the examples labeled as "marbled".
+
+<response>marbled</response>
+----------------------------------------
+Run 2 | Query 15: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a complex, swirling pattern of light and dark brown tones.
+- The pattern is irregular and organic, lacking a clear repeating structure like a weave or pleat.
+- The overall appearance suggests a natural, flowing texture.
+
+KB:
+- IF the image displays a complex, swirling pattern of light and dark tones THEN marbled.
+
+Rule Check:
+- The image strongly satisfies the rule stating that a complex, swirling pattern of light and dark tones indicates a "marbled" texture.
+
+<response>marbled</response>
+----------------------------------------
+Run 2 | Query 16: Expected: [marbled] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of irregular, branching lines and curves.
+- The lines are darker than the surrounding material and appear to be embedded within a lighter, textured background.
+
+KB:
+- IF the image contains dark, branching lines embedded within a lighter, textured background THEN veined.
+
+Rule Check:
+- The image strongly satisfies the rule "IF the image contains dark, branching lines embedded within a lighter, textured background THEN veined." The visible lines resemble veins, and the background has a textured appearance.
+
+<response>veined</response>
+----------------------------------------
+Run 2 | Query 17: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of irregular, flowing lines and curves.
+- The texture appears to be composed of interconnected, branching structures.
+- The overall appearance is reminiscent of swirling patterns.
+
+KB:
+- IF the image displays a pattern of irregular, flowing lines and curves THEN marbled.
+
+Rule Check:
+- The image strongly satisfies the rule stating that if an image displays a pattern of irregular, flowing lines and curves, it is classified as "marbled." The visible lines and curves are consistent with the examples of "marbled" textures.
+
+<response>marbled</response>
+----------------------------------------
+Run 2 | Query 18: Expected: [marbled] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of irregular, swirling shapes and textures.
+- The pattern is distributed across the entire image, creating a mottled appearance.
+- There is a clear lack of linear or directional features like those seen in "pleated" or "veined" images.
+- The texture is not clearly defined as a regular weave like in "woven" images.
+
+KB:
+- IF [Irregular, swirling shapes and textures are distributed across the entire image] THEN [marbled]
+
+Rule Check:
+- The image strongly satisfies the rule stating that if there are irregular, swirling shapes and textures distributed across the entire image, then it is "marbled".
+
+<response>marbled</response>
+----------------------------------------
+Run 2 | Query 19: Expected: [veined] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a network of irregular, branching lines.
+- The lines are not parallel and do not follow a consistent direction.
+- The background is a lighter color, with the lines appearing as darker, irregular patterns.
+
+KB:
+- IF the image shows a network of irregular, branching lines THEN veined.
+
+Rule Check:
+- The image strongly matches the "IF the image shows a network of irregular, branching lines THEN veined" rule. The visible pattern resembles a network of veins.
+
+<response>veined</response>
+----------------------------------------
+Run 2 | Query 20: Expected: [veined] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Prominent, thin, linear structures running across the surface.
+- The surface has a generally organic, irregular texture.
+- The overall color is green.
+
+KB:
+- IF prominent, thin, linear structures running across the surface AND an organic, irregular texture THEN veined
+
+Rule Check:
+- The image clearly exhibits prominent, thin, linear structures and an organic texture. This aligns perfectly with the "veined" class.
+
+<response>veined</response>
+----------------------------------------
+Run 2 | Query 21: Expected: [veined] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows leaves with distinct dark lines running across their surface.
+- The lines are branching and interconnected, resembling a network.
+- The background is a blurry green, suggesting foliage.
+
+KB:
+- IF the image shows leaves with distinct dark lines running across their surface, resembling a network THEN veined
+
+Rule Check:
+- The image clearly exhibits the defining characteristic of the "veined" class: the presence of branching, interconnected dark lines on the leaves.
+
+<response>veined</response>
+----------------------------------------
+Run 2 | Query 22: Expected: [veined] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a pattern of lines running through a surface.
+- The lines are not uniform and appear organic, branching and curving.
+- The overall texture is somewhat irregular.
+
+KB:
+- IF lines are present and appear organic, branching, and curving THEN veined
+
+Rule Check:
+- The image clearly exhibits lines that are not uniform and appear organic, branching, and curving. This aligns perfectly with the "veined" class.
+
+<response>veined</response>
+----------------------------------------
+Run 2 | Query 23: Expected: [veined] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a network of lines radiating from a central point.
+- These lines are irregular and branching, creating a pattern of interconnected veins.
+- The lines are visible within a larger surface.
+
+KB:
+- IF the image displays a network of lines radiating from a central point and branching THEN veined
+
+Rule Check:
+- The image clearly exhibits a network of branching lines, strongly matching the "veined" class.
+
+<response>veined</response>
+----------------------------------------
+Run 2 | Query 24: Expected: [veined] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- A network of fine, branching lines is visible.
+- The lines form a complex, interconnected pattern.
+- The overall texture is organic and irregular.
+
+KB:
+- IF a network of fine, branching lines forms a complex, interconnected pattern THEN veined
+
+Rule Check:
+- The image clearly exhibits a network of fine, branching lines forming a complex, interconnected pattern. This aligns perfectly with the "veined" class.
+
+<response>veined</response>
+----------------------------------------
+Run 2 | Query 25: Expected: [veined] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of irregular, flowing lines.
+- These lines are not uniform and appear to be organic in nature.
+- The overall texture suggests a layered or veined appearance.
+
+KB:
+- IF the image displays irregular, flowing lines and a layered or veined appearance THEN veined
+
+Rule Check:
+- The image strongly satisfies the rule stating that if an image displays irregular, flowing lines and a layered or veined appearance, it is classified as "veined".
+
+<response>veined</response>
+----------------------------------------
+Run 2 | Query 26: Expected: [veined] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a pattern of parallel, curving lines.
+- The lines are not uniform; they vary in thickness and spacing.
+- The overall appearance suggests a layered or folded structure.
+
+KB:
+- IF the image shows a pattern of closely spaced, parallel, and curving lines THEN pleated.
+
+Rule Check:
+- The image strongly matches the "IF the image shows a pattern of closely spaced, parallel, and curving lines THEN pleated" rule. The visible lines are parallel and curving, and the overall impression is of a folded or layered structure.
+
+<response>pleated</response>
+----------------------------------------
+Run 2 | Query 27: Expected: [veined] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a network of lines and curves across a surface.
+- The lines are not straight but rather follow a branching, organic pattern.
+- The surface is a single color (green).
+
+KB:
+- IF the image shows a network of lines and curves across a surface THEN veined.
+
+Rule Check:
+- The image clearly exhibits a network of branching lines and curves, which aligns perfectly with the "veined" class.
+
+<response>veined</response>
+----------------------------------------
+Run 2 | Query 28: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a regular, repeating pattern of intersecting lines forming a grid-like structure.
+- The lines are consistently arranged in a perpendicular manner, creating a distinct woven appearance.
+
+KB:
+- IF a regular, repeating pattern of intersecting lines forming a grid-like structure and perpendicular lines are visible THEN woven
+
+Rule Check:
+- The image strongly satisfies the rule stating that a regular, repeating pattern of intersecting lines forming a grid-like structure with perpendicular lines indicates a "woven" texture.
+
+<response>woven</response>
+----------------------------------------
+Run 2 | Query 29: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating, interlaced pattern of thin, parallel elements.
+- The elements are arranged in a regular, geometric fashion, crossing over and under each other.
+- The overall texture appears to be created by interlacing.
+
+KB:
+- IF the image displays a repeating, interlaced pattern of thin, parallel elements arranged in a regular, geometric fashion THEN woven.
+
+Rule Check:
+- The image strongly satisfies the rule stating that if an image displays a repeating, interlaced pattern of thin, parallel elements arranged in a regular, geometric fashion, it is classified as "woven".
+
+<response>woven</response>
+----------------------------------------
+Run 2 | Query 30: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating, interlaced pattern of rectangular elements.
+- The elements are arranged in a regular, grid-like fashion with a distinct crossing pattern.
+
+KB:
+- IF the image shows a regular, grid-like pattern of interlaced rectangular elements THEN woven.
+
+Rule Check:
+- The image strongly satisfies the rule stating that a regular, grid-like pattern of interlaced rectangular elements indicates a "woven" texture.
+
+<response>woven</response>
+----------------------------------------
+Run 2 | Query 31: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating, linear pattern of closely spaced, parallel lines.
+- The texture appears to be constructed from interlacing threads.
+
+KB:
+- IF the image displays a repeating, linear pattern of closely spaced, parallel lines and appears to be constructed from interlacing threads THEN woven.
+
+Rule Check:
+- The image strongly satisfies the rule stating that if an image displays a repeating, linear pattern of closely spaced, parallel lines and appears to be constructed from interlacing threads, it is classified as "woven".
+
+<response>woven</response>
+----------------------------------------
+Run 2 | Query 32: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating, angular pattern.
+- The pattern consists of closely spaced, parallel lines that interweave.
+- The overall texture appears to be constructed from interlaced elements.
+
+KB:
+- IF the image displays a repeating, angular pattern consisting of closely spaced, parallel lines that interweave THEN woven.
+
+Rule Check:
+- The image strongly satisfies the rule stating that if an image displays a repeating, angular pattern consisting of closely spaced, parallel lines that interweave, it is classified as "woven".
+
+<response>woven</response>
+----------------------------------------
+Run 2 | Query 33: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating, interlaced pattern of dark, rectangular elements.
+- The elements are arranged in a consistent, diagonal, and overlapping manner.
+
+KB:
+- IF a repeating, interlaced pattern of dark, rectangular elements is observed, arranged in a consistent, diagonal, and overlapping manner THEN woven.
+
+Rule Check:
+- The image strongly satisfies the rule stating that a repeating, interlaced pattern of dark, rectangular elements arranged diagonally and overlapping indicates a "woven" texture.
+
+<response>woven</response>
+----------------------------------------
+Run 2 | Query 34: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a repeating pattern of interlaced strands.
+- The strands are arranged in a regular, geometric pattern.
+- The pattern appears to be created by crossing and intertwining threads.
+
+KB:
+- IF interlaced strands are arranged in a regular, geometric pattern THEN woven
+
+Rule Check:
+- The image clearly exhibits interlaced strands arranged in a regular, geometric pattern. This aligns perfectly with the "IF" condition of the "woven" rule.
+
+<response>woven</response>
+----------------------------------------
+Run 2 | Query 35: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating, interlaced pattern of thin, cylindrical elements.
+- The elements are arranged in a grid-like structure with horizontal and vertical components.
+- The overall texture appears to be created by interlacing or braiding.
+
+KB:
+- IF the image displays a repeating, interlaced pattern of thin, cylindrical elements arranged in a grid-like structure THEN woven.
+
+Rule Check:
+- The image strongly satisfies the rule stating that if an image displays a repeating, interlaced pattern of thin, cylindrical elements arranged in a grid-like structure, it is classified as "woven."
+
+<response>woven</response>
+----------------------------------------
+Run 2 | Query 36: Expected: [woven] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image displays a repeating pattern of parallel, rectangular elements arranged in a grid-like structure.
+- The elements are oriented diagonally.
+- The pattern is consistent and regular.
+
+KB:
+- IF a repeating pattern of parallel, rectangular elements arranged in a grid-like structure, oriented diagonally THEN woven
+
+Rule Check:
+- The image strongly satisfies the rule "IF a repeating pattern of parallel, rectangular elements arranged in a grid-like structure, oriented diagonally THEN woven". The visible features align perfectly with the description of a woven texture.
+
+<response>woven</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9) Run 2: 0.9444

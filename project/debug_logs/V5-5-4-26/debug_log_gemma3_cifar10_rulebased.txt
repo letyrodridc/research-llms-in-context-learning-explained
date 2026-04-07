@@ -1,0 +1,4406 @@
+=== DEBUG LOG: gemma3 | cifar10 | Prompt: rulebased ===
+
+--- CONFIG: N=2, K=2, Q=9 (3 RUNS) ---
+Run 0 | Query 1: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- It has a visible front grill and headlights.
+- The overall form resembles a car.
+
+KB:
+- IF four wheels, distinct body shape, front grill, and headlights are visible THEN automobile
+
+Rule Check:
+- The image clearly exhibits the features described in the rule for "automobile." The presence of four wheels, a defined body shape, a front grill, and headlights strongly suggests it is an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 0 | Query 2: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle.
+- The vehicle has a distinct front end with headlights and a grill.
+- The vehicle appears to be a sedan or similar car-like form.
+
+KB:
+- IF four-wheeled vehicle with a distinct front end THEN automobile
+
+Rule Check:
+- The image clearly depicts a four-wheeled vehicle with a distinct front end, aligning perfectly with the rule established for the "automobile" class.
+
+<response>automobile</response>
+----------------------------------------
+Run 0 | Query 3: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- It has wheels and a visible front end.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape and visible wheels THEN automobile
+
+Rule Check:
+- The image clearly exhibits the features described in the rule for "automobile". The presence of four wheels and a car-like body shape strongly suggests it is an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 0 | Query 4: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- It has visible wheels and a defined front end.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape and visible wheels THEN automobile
+
+Rule Check:
+- The image clearly exhibits the features described in the rule for "automobile". The presence of four wheels and a car-like body shape strongly suggests it is an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 0 | Query 5: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- It has wheels and a roof structure.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape and wheels and a roof structure THEN automobile
+
+Rule Check:
+- The image clearly exhibits the features described in the rule for "automobile". Therefore, the image best matches the "automobile" class.
+
+<response>automobile</response>
+----------------------------------------
+Run 0 | Query 6: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle.
+- The vehicle is predominantly yellow.
+- The vehicle has a distinct roof light.
+
+KB:
+- IF four-wheeled vehicle THEN automobile
+- IF predominantly yellow vehicle THEN automobile
+
+Rule Check:
+The image clearly depicts a four-wheeled vehicle that is predominantly yellow. This aligns with the rules stating that a four-wheeled vehicle is an automobile and a predominantly yellow vehicle is an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 0 | Query 7: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- It has a front grill and headlights.
+- It appears to be on a road or ground surface.
+
+KB:
+- IF four wheels, distinct body shape, front grill, and headlights THEN automobile
+
+Rule Check:
+- The image clearly exhibits the features described in the rule for "automobile". The presence of four wheels, a body shape characteristic of vehicles, a front grill, and headlights strongly suggests it is an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 0 | Query 8: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle.
+- The vehicle is predominantly red.
+
+KB:
+- IF four-wheeled vehicle THEN automobile
+
+Rule Check:
+- The image clearly depicts a four-wheeled vehicle, which aligns with the rule stating that a four-wheeled vehicle is an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 0 | Query 9: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- It has visible wheels and a rear end with taillights.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape and visible wheels THEN automobile
+
+Rule Check:
+- The image clearly exhibits the features described in the rule for "automobile." The presence of four wheels, a body shape characteristic of a car, and visible wheels strongly suggests it is an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 0 | Query 10: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, dark-colored structure with a prominent white superstructure.
+- The structure appears to be floating on water.
+
+KB:
+- IF a large, dark-colored structure with a prominent white superstructure is visible and appears to be floating on water THEN ship.
+- IF four wheels are visible and the object is a vehicle THEN automobile.
+
+Rule Check:
+The image clearly depicts a large structure on water with a distinct superstructure. This aligns with the observable features described in the "IF" statement for the "ship" class. The image does not show wheels or any other features characteristic of an automobile.
+
+<response>ship</response>
+----------------------------------------
+Run 0 | Query 11: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, elongated structure with a distinct hull and superstructure.
+- The structure is floating on water.
+
+KB:
+- IF a large, elongated structure with a hull and superstructure is observed floating on water THEN ship.
+
+Rule Check:
+- The image clearly exhibits the features described in the rule: a large, elongated structure with a hull and superstructure floating on water. Therefore, the rule "IF a large, elongated structure with a hull and superstructure is observed floating on water THEN ship" is best matched.
+
+<response>ship</response>
+----------------------------------------
+Run 0 | Query 12: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long, streamlined object floating on water.
+- The object has a distinct hull and a raised structure at the front.
+
+KB:
+- IF a long, streamlined object is floating on water and has a distinct hull and a raised structure at the front THEN ship.
+
+Rule Check:
+- The image strongly matches the rule stating that a long, streamlined object floating on water with a hull and raised front structure indicates a ship.
+
+<response>ship</response>
+----------------------------------------
+Run 0 | Query 13: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long, streamlined object with a distinct hull and a prominent cabin area.
+- The object is white and appears to be floating on water.
+
+KB:
+- IF a long, streamlined object with a hull and cabin area is visible and appears to be floating on water THEN ship.
+- IF a four-wheeled vehicle is visible THEN automobile.
+
+Rule Check:
+The image clearly depicts a long, streamlined object with a hull and cabin area floating on water. This aligns with the observable features associated with a ship. The features do not match the characteristics of an automobile.
+
+<response>ship</response>
+----------------------------------------
+Run 0 | Query 14: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, white structure with a tall mast and a large sail.
+- The structure is on water.
+
+KB:
+- IF a large, white structure with a tall mast and a large sail is on water THEN ship
+
+Rule Check:
+- The image clearly exhibits the features of a ship: a large, white structure with a tall mast and a large sail situated on water. Therefore, the rule "IF a large, white structure with a tall mast and a large sail is on water THEN ship" is best matched.
+
+<response>ship</response>
+----------------------------------------
+Run 0 | Query 15: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, dark object on water.
+- The object has a distinct hull and a tall structure on top.
+
+KB:
+- IF a large, dark object is on water and has a distinct hull and a tall structure on top THEN ship.
+
+Rule Check:
+- The image strongly matches the rule stating that a large, dark object on water with a hull and tall structure indicates a ship.
+
+<response>ship</response>
+----------------------------------------
+Run 0 | Query 16: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, elongated structure with a distinct hull and multiple vertical structures (likely masts or chimneys).
+- The structure is floating on a body of water.
+
+KB:
+- IF a large, elongated structure with a hull and multiple vertical structures is observed floating on water THEN ship.
+
+Rule Check:
+- The image strongly satisfies the rule: "IF a large, elongated structure with a hull and multiple vertical structures is observed floating on water THEN ship." The visible features align perfectly with the characteristics of a ship.
+
+<response>ship</response>
+----------------------------------------
+Run 0 | Query 17: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a vessel with a hull and a superstructure.
+- The vessel appears to be floating on water.
+
+KB:
+- IF a vessel with a hull and superstructure is observed THEN ship.
+- IF a four-wheeled vehicle is observed THEN automobile.
+
+Rule Check:
+The image clearly depicts a vessel with a hull and superstructure, aligning with the characteristics of a ship. It does not resemble a four-wheeled vehicle. Therefore, the rule "IF a vessel with a hull and superstructure is observed THEN ship" is best matched.
+
+<response>ship</response>
+----------------------------------------
+Run 0 | Query 18: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, elongated structure with a prominent upper section and a hull-like base.
+- The structure appears to be floating on water.
+
+KB:
+- IF a large, elongated structure with a prominent upper section and a hull-like base is observed floating on water THEN ship.
+
+Rule Check:
+- The image strongly matches the rule stating that a large, elongated structure with a prominent upper section and a hull-like base floating on water indicates a ship.
+
+<response>ship</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9) Run 0: 1.0000
+Run 1 | Query 1: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- The vehicle has wheels and a visible windshield.
+- The vehicle is predominantly red.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape, wheels, and a visible windshield THEN automobile
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-wheeled vehicle with a distinct body shape, wheels, and a visible windshield indicates an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 1 | Query 2: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- It has wheels and a windshield.
+- The overall form resembles a car.
+
+KB:
+- IF four wheels, distinct body shape, windshield THEN automobile
+
+Rule Check:
+- The image clearly exhibits the features described in the rule: four wheels, a distinct body shape, and a windshield. Therefore, the rule strongly suggests the class is automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 1 | Query 3: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- The vehicle has wheels and a visible roof.
+- The vehicle is predominantly red/orange in color.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape, wheels, and a visible roof THEN automobile
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-wheeled vehicle with a distinct body shape, wheels, and a visible roof indicates an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 1 | Query 4: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct cabin and wheels.
+- The vehicle is predominantly red.
+
+KB:
+- IF four-wheeled vehicle with a distinct cabin and wheels THEN automobile
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-wheeled vehicle with a distinct cabin and wheels is an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 1 | Query 5: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- The vehicle appears to be on a paved surface.
+- The vehicle has wheels and a visible windshield.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape, on a paved surface, and visible wheels and windshield THEN automobile
+
+Rule Check:
+- The observable features of the target image strongly align with the rule established for the "automobile" class. The image clearly depicts a four-wheeled vehicle with a body shape characteristic of automobiles, situated on a paved surface, and exhibiting visible wheels and a windshield.
+
+<response>automobile</response>
+----------------------------------------
+Run 1 | Query 6: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle.
+- The vehicle has a distinct body shape characteristic of cars.
+- The vehicle is on a road.
+
+KB:
+- IF four-wheeled vehicle with a car-like body shape on a road THEN automobile
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-wheeled vehicle with a car-like body shape on a road is an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 1 | Query 7: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- It has a clear front and rear, with visible wheels and a roof structure.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape, front, rear, wheels, and roof THEN automobile
+
+Rule Check:
+- The observable features of the target image strongly align with the rule defining "automobile". The presence of four wheels, a defined body shape, and a roof structure are all visible and consistent with the examples labeled as "automobile".
+
+<response>automobile</response>
+----------------------------------------
+Run 1 | Query 8: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- It has wheels and a clear chassis.
+- The overall form resembles a car.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape and wheels THEN automobile
+
+Rule Check:
+- The image clearly exhibits the features described in the rule: a four-wheeled vehicle with a distinct body shape and wheels. Therefore, it best matches the "automobile" class.
+
+<response>automobile</response>
+----------------------------------------
+Run 1 | Query 9: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- The vehicle has wheels and a roof.
+- The vehicle appears to be a car.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape, wheels, and a roof THEN automobile
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-wheeled vehicle with a distinct body shape, wheels, and a roof indicates an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 1 | Query 10: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Tall, vertical white structure resembling a sail.
+- A small boat-like structure is visible below the sail.
+- The background appears to be water.
+
+KB:
+- IF a tall, vertical white structure resembling a sail is present AND a boat-like structure is visible below it AND the background appears to be water THEN ship.
+
+Rule Check:
+The image clearly shows a tall sail and a boat-like structure on water. This strongly aligns with the rule established for "ship."
+
+<response>ship</response>
+----------------------------------------
+Run 1 | Query 11: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, elongated structure with a prominent superstructure.
+- The structure is floating on water.
+- There are visible masts and other nautical features.
+
+KB:
+- IF a large, elongated structure is floating on water and has a prominent superstructure with masts THEN ship.
+
+Rule Check:
+- The image strongly matches the rule stating that a large, elongated structure floating on water with a superstructure and masts indicates a ship.
+
+<response>ship</response>
+----------------------------------------
+Run 1 | Query 12: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, elongated structure floating on water.
+- It has a prominent mast and a distinct hull shape.
+
+KB:
+- IF a large, elongated structure is floating on water with a mast and hull THEN ship.
+
+Rule Check:
+- The image clearly exhibits the features described in the rule: a large, elongated structure on water with a mast and hull. Therefore, the rule best matches the visual features of the target image.
+
+<response>ship</response>
+----------------------------------------
+Run 1 | Query 13: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long, flat, yellow and blue object on water.
+- There are figures sitting on the object.
+
+KB:
+- IF a long, flat, yellow and blue object is on water with figures sitting on it THEN ship
+
+Rule Check:
+- The image clearly depicts a vessel on water with figures, aligning with the observable features described in the rule for "ship".
+
+<response>ship</response>
+----------------------------------------
+Run 1 | Query 14: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large vessel with a tall mast and rigging.
+- The vessel is floating on water.
+
+KB:
+- IF a large vessel with a tall mast and rigging is visible on water THEN ship.
+
+Rule Check:
+- The image clearly exhibits the visual features of a ship: a large vessel with a tall mast and rigging on water. Therefore, the rule "IF a large vessel with a tall mast and rigging is visible on water THEN ship" is best matched.
+
+<response>ship</response>
+----------------------------------------
+Run 1 | Query 15: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long, horizontal structure floating on water.
+- The structure has a distinct upper deck and a lower hull.
+- The overall shape is elongated and consistent with a vessel.
+
+KB:
+- IF a long, horizontal structure is floating on water with a distinct upper deck and lower hull THEN ship
+
+Rule Check:
+- The observed features strongly align with the rule stating that a long, horizontal structure floating on water with a distinct upper deck and lower hull indicates a ship.
+
+<response>ship</response>
+----------------------------------------
+Run 1 | Query 16: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long, white structure with a distinct hull and a raised section at the front.
+- There is a dark, possibly blue, element on top of the structure.
+
+KB:
+- IF a long, white structure with a hull and a raised front section is visible THEN ship.
+
+Rule Check:
+- The image strongly matches the "IF" condition of the rule, exhibiting a long, white structure with a hull and a raised front section. Therefore, the best matching class is ship.
+
+<response>ship</response>
+----------------------------------------
+Run 1 | Query 17: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long, horizontal structure with a distinct hull.
+- There is a visible cabin-like structure on top.
+- The overall shape suggests a watercraft.
+
+KB:
+- IF a long, horizontal structure with a hull and a cabin-like structure THEN ship
+
+Rule Check:
+- The image strongly aligns with the "IF a long, horizontal structure with a hull and a cabin-like structure THEN ship" rule. The visible hull and cabin-like structure are key features consistent with the ship class.
+
+<response>ship</response>
+----------------------------------------
+Run 1 | Query 18: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large, elongated dark structure with a tall vertical element extending upwards.
+- Presence of a body of water in the background.
+
+KB:
+- IF a large, elongated dark structure with a tall vertical element extending upwards is present in conjunction with a body of water THEN ship.
+
+Rule Check:
+The image clearly shows a large, elongated structure with a tall vertical element (mast) and is situated on a body of water. This aligns perfectly with the rule established for "ship."
+
+<response>ship</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9) Run 1: 1.0000
+Run 2 | Query 1: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a four-wheeled vehicle with a distinct body shape.
+- The vehicle appears to be stationary on a surface.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape THEN automobile
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-wheeled vehicle with a distinct body shape indicates an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 2 | Query 2: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- The vehicle has wheels and a defined chassis.
+- The overall form suggests a car-like structure.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape and wheels THEN automobile
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-wheeled vehicle with a distinct body shape and wheels indicates an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 2 | Query 3: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Presence of a wheel with a tire and a metallic rim.
+- Visible portion of a blue body panel.
+
+KB:
+- IF presence of a wheel with a tire and a metallic rim AND visible portion of a body panel THEN automobile
+
+Rule Check:
+The image clearly shows a wheel with a tire and a metallic rim, and a portion of a blue body panel. This aligns perfectly with the rule established for the "automobile" class.
+
+<response>automobile</response>
+----------------------------------------
+Run 2 | Query 4: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- It has visible wheels and a front grill.
+- The overall form resembles a car.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape, visible wheels, and a front grill THEN automobile
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-wheeled vehicle with a distinct body shape, visible wheels, and a front grill indicates an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 2 | Query 5: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- It has visible wheels and a defined front end.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape and visible wheels THEN automobile
+
+Rule Check:
+- The image clearly exhibits the features described in the rule for "automobile". The presence of four wheels and a recognizable vehicle body strongly suggests it is an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 2 | Query 6: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- It has visible wheels and a defined front and rear.
+- The overall form suggests a car-like structure.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape, visible wheels, and a defined front and rear THEN automobile
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-wheeled vehicle with a distinct body shape, visible wheels, and a defined front and rear indicates an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 2 | Query 7: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- The vehicle has wheels and a defined front grill.
+- The overall form suggests a car-like structure.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape, wheels, and a front grill THEN automobile
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-wheeled vehicle with a distinct body shape, wheels, and a front grill indicates an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 2 | Query 8: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a vehicle with a distinct rear end.
+- The vehicle has a large, open compartment at the rear.
+- The overall shape suggests a four-wheeled vehicle.
+
+KB:
+- IF the image shows a vehicle with a distinct rear end and a large, open compartment at the rear THEN automobile.
+
+Rule Check:
+The image clearly depicts a vehicle with a rear end and an open compartment, aligning with the rule for "automobile".
+
+<response>automobile</response>
+----------------------------------------
+Run 2 | Query 9: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long, rectangular shape.
+- The image is predominantly red.
+- There are visible wheels.
+
+KB:
+- IF the image is a long, rectangular shape with wheels THEN automobile.
+- IF the image is a long, rectangular shape and is predominantly red and has a hull THEN ship.
+
+Rule Check:
+The image exhibits a long, rectangular shape and wheels. The color is a secondary feature. Therefore, the rule "IF the image is a long, rectangular shape with wheels THEN automobile" is best matched.
+
+<response>automobile</response>
+----------------------------------------
+Run 2 | Query 10: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, elongated structure with a distinct hull and a prominent superstructure.
+- The overall color scheme is dark, with reddish-brown tones dominating the visible portion.
+- The image appears to be taken on water.
+
+KB:
+- IF a large, elongated structure with a hull and superstructure is visible, and the image appears to be on water THEN ship.
+
+Rule Check:
+- The observed features strongly align with the rule stating that a large, elongated structure with a hull and superstructure on water indicates a ship.
+
+<response>ship</response>
+----------------------------------------
+Run 2 | Query 11: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long, white structure floating on water.
+- There are visible protrusions and structures above the main body.
+
+KB:
+- IF a long, white structure is floating on water with visible protrusions THEN ship.
+- IF the image contains wheels and a defined body THEN automobile.
+
+Rule Check:
+The image clearly depicts a long structure on water with visible protrusions, aligning with the characteristics of a ship. It does not exhibit any features associated with an automobile, such as wheels or a defined body.
+
+<response>ship</response>
+----------------------------------------
+Run 2 | Query 12: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, elongated structure with a prominent vertical tower.
+- The structure appears to be floating on water.
+- The overall shape and features suggest a vessel.
+
+KB:
+- IF a large, elongated structure with a prominent vertical tower is observed floating on water THEN ship
+
+Rule Check:
+- The observed features strongly align with the rule stating that a large, elongated structure with a prominent vertical tower floating on water indicates a ship.
+
+<response>ship</response>
+----------------------------------------
+Run 2 | Query 13: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long, horizontal object floating on water.
+- The object has a distinct hull and a flat, wide top surface.
+- There are visible structures on the top surface, suggesting a platform or deck.
+
+KB:
+- IF the image shows a long, horizontal object floating on water with a hull and a flat top surface THEN ship.
+
+Rule Check:
+- The image strongly satisfies the rule "IF the image shows a long, horizontal object floating on water with a hull and a flat top surface THEN ship." The visible features align with the characteristics of a ship.
+
+<response>ship</response>
+----------------------------------------
+Run 2 | Query 14: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, predominantly red structure with a prominent white superstructure and a tall vertical element.
+- The structure appears to be floating on water.
+
+KB:
+- IF a large, predominantly red structure with a white superstructure and a tall vertical element is observed floating on water THEN ship.
+
+Rule Check:
+- The observed features strongly align with the rule stating that a large, predominantly red structure with a white superstructure and a tall vertical element floating on water indicates a ship.
+
+<response>ship</response>
+----------------------------------------
+Run 2 | Query 15: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long, horizontal structure with a distinct hull.
+- The structure has a prominent, raised section above the hull.
+- The overall shape suggests a vessel designed to float on water.
+
+KB:
+- IF the image shows a long, horizontal structure with a distinct hull and a raised section above the hull THEN ship.
+
+Rule Check:
+- The image strongly satisfies the rule "IF the image shows a long, horizontal structure with a distinct hull and a raised section above the hull THEN ship." The visible features align with the characteristics of a ship.
+
+<response>ship</response>
+----------------------------------------
+Run 2 | Query 16: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, elongated structure with a prominent mast.
+- The structure appears to be floating on water.
+- The overall shape is consistent with a vessel.
+
+KB:
+- IF a large, elongated structure with a mast is visible on water THEN ship
+
+Rule Check:
+- The observed features strongly align with the rule stating that a large, elongated structure with a mast on water indicates a ship.
+
+<response>ship</response>
+----------------------------------------
+Run 2 | Query 17: Expected: [ship] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a vehicle with wheels.
+- The vehicle has a distinct body shape characteristic of cars.
+
+KB:
+- IF the image shows a vehicle with wheels and a car-like body THEN automobile.
+
+Rule Check:
+- The image clearly exhibits a vehicle with wheels and a car-like body. Therefore, the rule "IF the image shows a vehicle with wheels and a car-like body THEN automobile" is best satisfied.
+
+<response>automobile</response>
+----------------------------------------
+Run 2 | Query 18: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, dark, elongated object on water.
+- The object has a distinct hull shape characteristic of ships.
+
+KB:
+- IF a large, dark, elongated object is present on water with a hull shape THEN ship
+
+Rule Check:
+- The image clearly exhibits the features described in the rule: a large, dark, elongated object on water with a hull shape. Therefore, the rule strongly suggests the class is ship.
+
+<response>ship</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9) Run 2: 0.9444
+
+--- CONFIG: N=2, K=1, Q=9 (3 RUNS) ---
+Run 0 | Query 1: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Presence of a long, pointed beak.
+- Dark, feathery head.
+
+KB:
+- IF presence of a long, pointed beak AND dark, feathery head THEN bird
+
+Rule Check:
+- The target image exhibits a long, pointed beak and a dark, feathery head. This aligns perfectly with the rule established for the "bird" class.
+
+<response>bird</response>
+----------------------------------------
+Run 0 | Query 2: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long, slender body.
+- The image has a predominantly brown color.
+
+KB:
+- IF long, slender body and brown color THEN bird
+
+Rule Check:
+- The image exhibits a long, slender body and a brown color, which aligns with the rule for "bird".
+
+<response>bird</response>
+----------------------------------------
+Run 0 | Query 3: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark, feathery appearance
+- Long, pointed beak-like structure
+
+KB:
+- IF dark, feathery appearance and long, pointed beak-like structure THEN bird
+
+Rule Check:
+- The target image exhibits a dark, feathery appearance and a prominent beak-like structure. This aligns strongly with the rule associating these features with the "bird" class.
+
+<response>bird</response>
+----------------------------------------
+Run 0 | Query 4: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a long, thin, pointed structure extending upwards.
+- The overall shape is elongated and somewhat rounded.
+- The color palette is primarily brown and white.
+
+KB:
+- IF elongated shape with a pointed structure extending upwards THEN bird
+
+Rule Check:
+- The image clearly exhibits an elongated shape with a pointed structure extending upwards, which aligns with the rule for "bird".
+
+<response>bird</response>
+----------------------------------------
+Run 0 | Query 5: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, curved neck
+- Predominantly pink/red coloration
+- Presence of a head and neck
+
+KB:
+- IF long, curved neck and pink/red coloration THEN bird
+
+Rule Check:
+The target image exhibits a long, curved neck and a pink/red coloration. This aligns perfectly with the rule stating that if an image has a long, curved neck and pink/red coloration, it is a bird.
+
+<response>bird</response>
+----------------------------------------
+Run 0 | Query 6: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a creature with a beak-like structure.
+- The creature has wings and a long tail.
+- The creature is perched on a surface.
+
+KB:
+- IF a creature has a beak-like structure, wings, and a long tail THEN bird.
+
+Rule Check:
+- The image clearly exhibits the features described in the rule: a beak-like structure, wings, and a long tail. Therefore, the rule best matches the visual features of the image.
+
+<response>bird</response>
+----------------------------------------
+Run 0 | Query 7: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long neck
+- Dark plumage
+- Slender legs
+
+KB:
+- IF long neck and dark plumage THEN bird
+
+Rule Check:
+The image exhibits a long neck and dark plumage, which strongly aligns with the rule stating that if an image has a long neck and dark plumage, it is a bird.
+
+<response>bird</response>
+----------------------------------------
+Run 0 | Query 8: Expected: [bird] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a creature with a wide mouth.
+- The creature has a somewhat flattened body shape.
+- The color is predominantly brown/tan.
+
+KB:
+- IF wide mouth and flattened body THEN frog
+
+Rule Check:
+- The image clearly exhibits a wide mouth and a flattened body shape. This aligns perfectly with the rule associating these features with the "frog" class.
+
+<response>frog</response>
+----------------------------------------
+Run 0 | Query 9: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a creature with a long neck and a beak-like structure.
+- The creature has feathers visible.
+
+KB:
+- IF a creature has a long neck and a beak-like structure AND visible feathers THEN bird.
+
+Rule Check:
+- The image strongly satisfies the rule: it exhibits a long neck and a beak-like structure, and feathers are visible. Therefore, it is best classified as a bird.
+
+<response>bird</response>
+----------------------------------------
+Run 0 | Query 10: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a blurry, brownish-orange creature.
+- There is a visible head and body shape.
+- The background appears to be a mix of light and dark tones.
+
+KB:
+- IF blurry, brownish-orange creature with a visible head and body THEN frog
+
+Rule Check:
+- The image strongly aligns with the "blurry, brownish-orange creature with a visible head and body" description, which corresponds to the "frog" class.
+
+<response>frog</response>
+----------------------------------------
+Run 0 | Query 11: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a rounded, compact body.
+- The image shows large, prominent eyes.
+- The image has a smooth, moist-looking skin texture.
+
+KB:
+- IF rounded body, large eyes, and moist skin THEN frog
+
+Rule Check:
+- The target image strongly matches the features associated with the "frog" class. The rounded body, large eyes, and smooth skin texture are all visible and align with the characteristics observed in the frog examples.
+
+<response>frog</response>
+----------------------------------------
+Run 0 | Query 12: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, compact, brown-colored creature.
+- The creature has a wide, flat body and short limbs.
+
+KB:
+- IF the creature is small, compact, brown-colored, and has a wide, flat body with short limbs THEN frog.
+
+Rule Check:
+- The observable features of the target image strongly align with the rule established for "frog." The creature's size, color, and body shape are consistent with the examples of frogs.
+
+<response>frog</response>
+----------------------------------------
+Run 0 | Query 13: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a predominantly brown and green coloration.
+- The image appears to have a rounded, somewhat amorphous shape.
+
+KB:
+- IF predominantly brown and green coloration and amorphous shape THEN frog
+
+Rule Check:
+- The image's coloration and shape closely align with the characteristics described in the "IF" statement for the "frog" class.
+
+<response>frog</response>
+----------------------------------------
+Run 0 | Query 14: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a mostly brown, rounded form.
+- The image has a blurry, indistinct texture.
+- The background appears to be water.
+
+KB:
+- IF rounded form, brown color, blurry texture, and water background THEN frog
+
+Rule Check:
+The image exhibits a rounded form, a brown color, a blurry texture, and a water background. This aligns closely with the rule established for the "frog" class.
+
+<response>frog</response>
+----------------------------------------
+Run 0 | Query 15: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a predominantly brown/reddish-brown color.
+- The image has a somewhat elongated shape.
+
+KB:
+- IF predominantly brown/reddish-brown color and elongated shape THEN frog
+
+Rule Check:
+- The target image aligns with the "predominantly brown/reddish-brown color and elongated shape" features, which corresponds to the "frog" class.
+
+<response>frog</response>
+----------------------------------------
+Run 0 | Query 16: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, dark-colored creature.
+- The creature has a rounded shape.
+- The creature is being held in a hand.
+
+KB:
+- IF small, dark-colored, rounded creature being held in a hand THEN frog
+
+Rule Check:
+The image clearly depicts a small, dark-colored, rounded creature being held in a hand. This aligns perfectly with the rule established for frogs.
+
+<response>frog</response>
+----------------------------------------
+Run 0 | Query 17: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, brown, and somewhat rounded shape.
+- The shape appears to be sitting on a dark surface.
+
+KB:
+- IF the image shows a small, brown, and somewhat rounded shape sitting on a dark surface THEN frog.
+
+Rule Check:
+- The image strongly matches the "IF" condition of the rule, as it exhibits the described visual features. Therefore, the best matching class is frog.
+
+<response>frog</response>
+----------------------------------------
+Run 0 | Query 18: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, mottled brown and green creature.
+- The creature has a relatively flat, wide body.
+- There are no visible long appendages like wings or legs suitable for hopping.
+
+KB:
+- IF the image shows a small, mottled brown and green creature with a relatively flat, wide body THEN frog.
+- IF the image shows a creature with visible wings and a long neck THEN bird.
+
+Rule Check:
+The image best matches the rule stating that a small, mottled brown and green creature with a relatively flat, wide body is a frog. The absence of wings or a long neck further supports this classification.
+
+<response>frog</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9) Run 0: 0.9444
+Run 1 | Query 1: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Small, dark, indistinct shape
+- Positioned against a light blue sky
+- A thin, horizontal line is visible below the shape
+
+KB:
+- IF small, dark, indistinct shape against a light blue sky THEN bird
+
+Rule Check:
+- The target image exhibits a small, dark, indistinct shape against a light blue sky. This aligns with the rule established for "bird".
+
+<response>bird</response>
+----------------------------------------
+Run 1 | Query 2: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a small, elongated shape with a beak-like projection.
+- The overall color palette is muted browns and yellows.
+- The shape is perched on a thin branch.
+
+KB:
+- IF elongated shape with a beak-like projection AND muted browns/yellows THEN bird
+
+Rule Check:
+- The image strongly satisfies the rule "IF elongated shape with a beak-like projection AND muted browns/yellows THEN bird". The shape clearly resembles a bird, and the color scheme aligns with typical bird plumage.
+
+<response>bird</response>
+----------------------------------------
+Run 1 | Query 3: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, dark-colored creature with a long beak-like structure.
+- The creature is perched on a thin, light-colored branch.
+
+KB:
+- IF small, dark-colored creature with a long beak-like structure AND perched on a thin, light-colored branch THEN bird
+
+Rule Check:
+- The image strongly matches the rule described above. The visible features align with the characteristics associated with the "bird" class.
+
+<response>bird</response>
+----------------------------------------
+Run 1 | Query 4: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, blurry creature with a predominantly brown and tan coloration.
+- The shape is elongated and somewhat slender.
+
+KB:
+- IF predominantly brown and tan coloration, slender shape THEN bird
+
+Rule Check:
+- The image's coloration and shape align with the "bird" rule.
+
+<response>bird</response>
+----------------------------------------
+Run 1 | Query 5: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark, elongated shape
+- Presence of a beak-like structure
+
+KB:
+- IF dark, elongated shape and beak-like structure THEN bird
+
+Rule Check:
+- The target image exhibits a dark, elongated shape and a visible beak-like structure. This aligns with the rule associating these features with the "bird" class.
+
+<response>bird</response>
+----------------------------------------
+Run 1 | Query 6: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark, almost black coloration.
+- Visible open mouth with a pinkish-red interior.
+
+KB:
+- IF dark coloration and visible open mouth with pinkish-red interior THEN bird
+
+Rule Check:
+- The target image exhibits dark coloration and a visible open mouth with a pinkish-red interior. This aligns with the rule derived from the examples, suggesting it is a bird.
+
+<response>bird</response>
+----------------------------------------
+Run 1 | Query 7: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white color
+- Dark, rounded central mass
+
+KB:
+- IF predominantly white color and dark, rounded central mass THEN bird
+
+Rule Check:
+- The target image exhibits a predominantly white color and a dark, rounded central mass, which aligns with the rule associating these features with the "bird" class.
+
+<response>bird</response>
+----------------------------------------
+Run 1 | Query 8: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a small, feathered creature.
+- The creature has a distinct head and body shape consistent with birds.
+- The creature is predominantly yellow with some darker brown/black markings.
+
+KB:
+- IF a small, feathered creature with a distinct head and body shape is present THEN bird.
+
+Rule Check:
+- The image clearly exhibits the features described in the rule. The presence of a small, feathered creature with a distinct head and body shape strongly suggests the class is bird.
+
+<response>bird</response>
+----------------------------------------
+Run 1 | Query 9: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a long neck.
+- The image contains a long, slender body.
+- The image has a predominantly grey/brown coloration.
+
+KB:
+- IF long neck and slender body THEN bird
+
+Rule Check:
+- The target image exhibits a long neck and a slender body, which aligns with the rule associating these features with the "bird" class.
+
+<response>bird</response>
+----------------------------------------
+Run 1 | Query 10: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a blurry, brownish-green color palette.
+- The image appears to have a somewhat elongated shape.
+
+KB:
+- IF blurry, brownish-green color palette and elongated shape THEN frog
+
+Rule Check:
+- The target image aligns with the features described in the "IF" statement of the rule. The blurry, brownish-green color palette and elongated shape are visible in the image.
+
+<response>frog</response>
+----------------------------------------
+Run 1 | Query 11: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, elongated creature with a smooth, dark-colored body.
+- The creature has visible limbs and appears to be positioned on a green surface.
+
+KB:
+- IF elongated, smooth, dark-colored body with visible limbs THEN frog
+
+Rule Check:
+- The observed features closely match the rule associated with the "frog" class. The creature's shape and coloration align with the described characteristics.
+
+<response>frog</response>
+----------------------------------------
+Run 1 | Query 12: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, brownish-grey creature.
+- The creature has a somewhat elongated shape.
+- There are visible legs.
+
+KB:
+- IF the image shows a small, brownish-grey creature with visible legs THEN frog
+
+Rule Check:
+- The image aligns with the features described in the "IF" statement of the rule. The creature is small, brownish-grey, and legs are visible. Therefore, the rule best matches the image.
+
+<response>frog</response>
+----------------------------------------
+Run 1 | Query 13: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a creature with a wide mouth and bulging eyes.
+- The skin appears smooth and somewhat warty.
+- The overall color is a mottled brown and tan.
+
+KB:
+- IF [wide mouth, bulging eyes, smooth/warty skin, mottled brown/tan color] THEN [frog]
+
+Rule Check:
+The image strongly matches the features associated with the "frog" class. The wide mouth, bulging eyes, and skin texture are all consistent with the frog examples.
+
+<response>frog</response>
+----------------------------------------
+Run 1 | Query 14: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image is predominantly dark brown/black in color.
+- The shape is somewhat amorphous and rounded.
+
+KB:
+- IF predominantly dark brown/black and amorphous shape THEN frog
+
+Rule Check:
+- The image's color and shape closely align with the characteristics associated with the "frog" class in the provided knowledge base.
+
+<response>frog</response>
+----------------------------------------
+Run 1 | Query 15: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, mottled brown and tan creature.
+- The creature has a wide mouth and large eyes.
+- The creature is sitting on green vegetation.
+
+KB:
+- IF mottled brown and tan creature with a wide mouth and large eyes THEN frog
+
+Rule Check:
+- The Target Image strongly matches the description of a frog based on the observable features of mottled brown and tan coloration, a wide mouth, and large eyes.
+
+<response>frog</response>
+----------------------------------------
+Run 1 | Query 16: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, green-yellow creature.
+- The creature has a rounded body shape.
+
+KB:
+- IF the image shows a small, green-yellow creature with a rounded body shape THEN frog.
+
+Rule Check:
+- The Target Image matches the rule stating that a small, green-yellow creature with a rounded body shape is a frog.
+
+<response>frog</response>
+----------------------------------------
+Run 1 | Query 17: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a predominantly green, amorphous shape.
+- There are darker areas within the shape, suggesting some internal structure or shading.
+
+KB:
+- IF predominantly green amorphous shape THEN frog
+
+Rule Check:
+- The image strongly matches the "predominantly green amorphous shape" characteristic observed in the frog examples.
+
+<response>frog</response>
+----------------------------------------
+Run 1 | Query 18: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, green creature.
+- The creature has a rounded body shape.
+
+KB:
+- IF the image shows a small, green creature with a rounded body shape THEN frog.
+
+Rule Check:
+- The Target Image matches the rule stating that a small, green creature with a rounded body shape indicates a frog.
+
+<response>frog</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9) Run 1: 1.0000
+Run 2 | Query 1: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a creature with a beak-like structure.
+- The creature has feathers and a streamlined body shape.
+- The creature is perched on a branch.
+
+KB:
+- IF the image shows a creature with a beak-like structure, feathers, and a streamlined body THEN bird.
+
+Rule Check:
+- The image clearly exhibits the features described in the rule: a beak-like structure, feathers, and a streamlined body. Therefore, the rule best matches the image.
+
+<response>bird</response>
+----------------------------------------
+Run 2 | Query 2: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, slender neck
+- Small head relative to the body
+- Predominantly light-colored body
+
+KB:
+- IF long, slender neck and small head THEN bird
+
+Rule Check:
+- The target image exhibits a long, slender neck and a small head relative to the body. This aligns with the rule stating that if an image has a long, slender neck and a small head, it is a bird.
+
+<response>bird</response>
+----------------------------------------
+Run 2 | Query 3: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long neck
+- Body shape resembling a bird
+- Presence of legs
+- Overall shape and posture consistent with a bird
+
+KB:
+- IF long neck and body shape resembling a bird THEN bird
+
+Rule Check:
+The target image exhibits a long neck and a body shape consistent with a bird. This aligns perfectly with the rule stating that if an image has a long neck and a bird-like body shape, it is a bird.
+
+<response>bird</response>
+----------------------------------------
+Run 2 | Query 4: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long neck
+- Two legs
+- Feathers (implied by dark, dense plumage)
+
+KB:
+- IF long neck and two legs and dark plumage THEN bird
+
+Rule Check:
+- The image exhibits a long neck, two legs, and appears to have dark plumage. This aligns with the rule stating that if an image has a long neck, two legs, and dark plumage, it is a bird.
+
+<response>bird</response>
+----------------------------------------
+Run 2 | Query 5: Expected: [bird] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, green-ish creature.
+- The creature has a rounded head and large eyes.
+
+KB:
+- IF the image shows a small, green-ish creature with a rounded head and large eyes THEN frog
+
+Rule Check:
+- The image strongly matches the "IF" condition of the frog rule. The visible features align with the characteristics observed in the frog examples.
+
+<response>frog</response>
+----------------------------------------
+Run 2 | Query 6: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark, elongated shape
+- Presence of a long neck-like structure
+- Relatively small head compared to body
+
+KB:
+- IF elongated shape and long neck-like structure THEN bird
+
+Rule Check:
+- The target image exhibits an elongated shape and a visible, albeit blurry, neck-like structure. This aligns strongly with the rule associating these features with the "bird" class.
+
+<response>bird</response>
+----------------------------------------
+Run 2 | Query 7: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark, rounded body shape
+- Long, thin neck extending upwards
+- Small head visible at the top
+
+KB:
+- IF dark, rounded body shape and long, thin neck extending upwards THEN bird
+
+Rule Check:
+The target image exhibits a dark, rounded body shape and a long, thin neck extending upwards. This aligns with the rule established in the KB, indicating a bird.
+
+<response>bird</response>
+----------------------------------------
+Run 2 | Query 8: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, slender neck
+- Beak-like structure
+- Predominantly grey/white coloration
+
+KB:
+- IF long, slender neck and beak-like structure THEN bird
+
+Rule Check:
+- The target image exhibits a long, slender neck and a beak-like structure. This aligns perfectly with the rule stating that if an image has a long, slender neck and a beak-like structure, it is a bird.
+
+<response>bird</response>
+----------------------------------------
+Run 2 | Query 9: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long, slender body.
+- The image shows a beak-like structure.
+- The image has feathers visible.
+
+KB:
+- IF the image shows a long, slender body, a beak-like structure, and feathers THEN bird.
+
+Rule Check:
+- The image clearly exhibits a long, slender body, a beak-like structure, and visible feathers. Therefore, the rule "IF the image shows a long, slender body, a beak-like structure, and feathers THEN bird" is best matched.
+
+<response>bird</response>
+----------------------------------------
+Run 2 | Query 10: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, rounded shape with a dark central area.
+- The overall color is a muted brown/green.
+
+KB:
+- IF the image shows a small, rounded shape with a dark central area and muted brown/green color THEN frog.
+
+Rule Check:
+- The Target Image strongly matches the rule described above. The shape and color are consistent with the frog examples.
+
+<response>frog</response>
+----------------------------------------
+Run 2 | Query 11: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, rounded body.
+- The image has a large, prominent eye.
+- The image has a generally amphibian appearance.
+
+KB:
+- IF the image shows a small, rounded body and a large, prominent eye THEN frog.
+
+Rule Check:
+- The Target Image strongly matches the rule stating that a small, rounded body and a large, prominent eye indicates a frog.
+
+<response>frog</response>
+----------------------------------------
+Run 2 | Query 12: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a predominantly brown and yellow coloration.
+- The shape is elongated and somewhat flattened.
+
+KB:
+- IF elongated shape and brown/yellow coloration THEN frog
+
+Rule Check:
+- The image's elongated shape and coloration closely match the features associated with the "frog" class in the provided examples.
+
+<response>frog</response>
+----------------------------------------
+Run 2 | Query 13: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, brownish-orange creature.
+- The creature has a rounded head and appears to be clinging to a surface.
+
+KB:
+- IF the image shows a small, brownish-orange creature with a rounded head clinging to a surface THEN frog
+
+Rule Check:
+- The image strongly matches the "IF" condition of the frog rule. The creature's color, shape, and posture are consistent with the frog examples.
+
+<response>frog</response>
+----------------------------------------
+Run 2 | Query 14: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, dark-colored creature.
+- The creature has a rounded body shape.
+- The background is green and leafy.
+
+KB:
+- IF the image shows a small, dark-colored creature with a rounded body shape and a green, leafy background THEN frog.
+
+Rule Check:
+- The image strongly matches the rule stating that a small, dark-colored creature with a rounded body shape and a green, leafy background indicates a frog.
+
+<response>frog</response>
+----------------------------------------
+Run 2 | Query 15: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly brown and dark colors
+- Presence of green patches
+- Lack of distinct features like beak or eyes characteristic of birds.
+
+KB:
+- IF predominantly brown and dark colors with green patches THEN frog
+
+Rule Check:
+- The target image exhibits predominantly brown and dark colors with green patches. This aligns with the rule established for the "frog" class.
+
+<response>frog</response>
+----------------------------------------
+Run 2 | Query 16: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, elongated body.
+- The image has a greenish-brown coloration.
+- The image appears to be on a surface with a textured appearance.
+
+KB:
+- IF elongated body and greenish-brown coloration THEN frog
+
+Rule Check:
+- The target image strongly matches the "elongated body and greenish-brown coloration" features, which aligns with the frog class.
+
+<response>frog</response>
+----------------------------------------
+Run 2 | Query 17: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, green and brown creature.
+- The creature has a relatively large eye.
+- The creature appears to be sitting on a surface.
+
+KB:
+- IF the image shows a small, green and brown creature with a large eye THEN frog.
+
+Rule Check:
+- The image strongly matches the rule "IF the image shows a small, green and brown creature with a large eye THEN frog." The visible features align with the characteristics observed in the frog examples.
+
+<response>frog</response>
+----------------------------------------
+Run 2 | Query 18: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, elongated creature with a visible head and limbs.
+- The creature has a distinct, somewhat flattened body shape.
+- The color is predominantly orange/yellow.
+
+KB:
+- IF elongated body shape, small size, and orange/yellow color THEN frog
+
+Rule Check:
+- The target image strongly aligns with the "elongated body shape, small size, and orange/yellow color" features. Therefore, the rule "IF elongated body shape, small size, and orange/yellow color THEN frog" is best satisfied.
+
+<response>frog</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9) Run 2: 0.9444
+
+--- CONFIG: N=3, K=1, Q=9 (3 RUNS) ---
+Run 0 | Query 1: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a large vehicle with a prominent ladder extending upwards.
+- The vehicle is predominantly red.
+
+KB:
+- IF a large vehicle with a ladder extending upwards and predominantly red THEN truck
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a large vehicle with a ladder extending upwards and predominantly red is a truck.
+
+<response>truck</response>
+----------------------------------------
+Run 0 | Query 2: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a rectangular shape with wheels.
+- The image has a box-like structure.
+- The image has a distinct cab-like feature.
+
+KB:
+- IF rectangular shape with wheels and a box-like structure THEN truck
+
+Rule Check:
+- The image strongly aligns with the "rectangular shape with wheels and a box-like structure" feature, which is associated with the "truck" class.
+
+<response>truck</response>
+----------------------------------------
+Run 0 | Query 3: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, boxy vehicle with wheels.
+- The vehicle appears to be white or light-colored.
+- The overall shape suggests a cargo-carrying vehicle.
+
+KB:
+- IF a large, boxy vehicle with wheels and a light color is present THEN truck
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a large, boxy vehicle with wheels and a light color indicates a truck.
+
+<response>truck</response>
+----------------------------------------
+Run 0 | Query 4: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large vehicle with a cab and trailer
+- Presence of wheels
+- Rectangular shape
+
+KB:
+- IF [Large vehicle with a cab and trailer, presence of wheels, rectangular shape] THEN [truck]
+
+Rule Check:
+The target image exhibits a large vehicle with a cab and trailer, wheels, and a rectangular shape. This aligns perfectly with the rule established for the "truck" class.
+
+<response>truck</response>
+----------------------------------------
+Run 0 | Query 5: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large vehicle with a prominent grill.
+- The vehicle is predominantly red.
+- The vehicle has wheels and a cab.
+
+KB:
+- IF a large vehicle with a prominent grill and wheels is predominantly red THEN truck
+
+Rule Check:
+- The image clearly exhibits the features of a large vehicle with a prominent grill, wheels, and a predominantly red color. This aligns perfectly with the rule stating that if a vehicle has these features and is red, it is a truck.
+
+<response>truck</response>
+----------------------------------------
+Run 0 | Query 6: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a large vehicle with a prominent ladder on top.
+- The vehicle is predominantly red and white.
+
+KB:
+- IF a large vehicle with a ladder on top and predominantly red and white coloring THEN truck
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a large vehicle with a ladder and red/white coloring indicates a truck.
+
+<response>truck</response>
+----------------------------------------
+Run 0 | Query 7: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large rectangular body
+- Presence of a cab
+- Multiple wheels visible
+- Appears to be on a road
+
+KB:
+- IF [Large rectangular body, presence of a cab, multiple wheels visible] THEN [truck]
+
+Rule Check:
+The target image exhibits a large rectangular body, a visible cab, and multiple wheels, all of which align with the features associated with the "truck" class in the provided knowledge base.
+
+<response>truck</response>
+----------------------------------------
+Run 0 | Query 8: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large vehicle with wheels.
+- The vehicle has a cab and a cargo bed.
+- The vehicle is light-colored.
+
+KB:
+- IF large vehicle with wheels, cab, and cargo bed THEN truck
+
+Rule Check:
+- The Target Image exhibits the observable features of a large vehicle with wheels, a cab, and a cargo bed. Therefore, it best matches the rule stating that if a vehicle has these features, it is a truck.
+
+<response>truck</response>
+----------------------------------------
+Run 0 | Query 9: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large, boxy shape with wheels.
+- Predominantly white with red accents.
+- Appears to be a vehicle.
+
+KB:
+- IF [Large, boxy shape with wheels and predominantly white with red accents] THEN [truck]
+
+Rule Check:
+The target image exhibits a large, boxy shape with wheels and a color scheme of white with red accents. This aligns directly with the rule established for the "truck" class.
+
+<response>truck</response>
+----------------------------------------
+Run 0 | Query 10: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, feathered creature.
+- The creature has a beak-like structure.
+- The creature is relatively small in size.
+
+KB:
+- IF the image shows a small, feathered creature with a beak-like structure THEN bird.
+
+Rule Check:
+- The image clearly exhibits the features of a small, feathered creature with a beak-like structure, which aligns perfectly with the rule stating that if such features are present, the class is "bird".
+
+<response>bird</response>
+----------------------------------------
+Run 0 | Query 11: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a creature with feathers.
+- The creature has a beak.
+- The creature has legs and feet.
+
+KB:
+- IF feathers AND beak AND legs/feet THEN bird
+
+Rule Check:
+- The Target Image exhibits feathers, a beak, and legs/feet. This aligns perfectly with the rule established for "bird".
+
+<response>bird</response>
+----------------------------------------
+Run 0 | Query 12: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a long-necked creature with a prominent beak.
+- The creature is predominantly red.
+- The background contains foliage.
+
+KB:
+- IF a creature has a long neck and a beak THEN bird
+- IF a creature is predominantly red THEN bird
+
+Rule Check:
+The image clearly shows a creature with a long neck and a beak, and it is predominantly red. Both rules from the KB are satisfied, strongly indicating the image depicts a bird.
+
+<response>bird</response>
+----------------------------------------
+Run 0 | Query 13: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a creature with a beak-like structure.
+- The creature has two legs and appears to be standing.
+- The overall shape resembles a bird.
+
+KB:
+- IF the image shows a creature with a beak-like structure and two legs THEN bird.
+
+Rule Check:
+- The image clearly exhibits a beak-like structure and two legs, strongly aligning with the rule that indicates a bird.
+
+<response>bird</response>
+----------------------------------------
+Run 0 | Query 14: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long, slender shape.
+- The shape appears to be elevated and has a distinct, angled form.
+
+KB:
+- IF elongated shape and angled form THEN bird
+
+Rule Check:
+- The image's elongated shape and angled form best align with the "bird" rule.
+
+<response>bird</response>
+----------------------------------------
+Run 0 | Query 15: Expected: [bird] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and a dark brown/grey coloration.
+- The animal has a relatively large body and appears to be standing on all fours.
+
+KB:
+- IF the image shows a four-legged animal with a long neck and dark brown/grey coloration THEN horse.
+- IF the image shows a bird THEN bird.
+- IF the image shows a truck THEN truck.
+
+Rule Check:
+- The image best matches the "IF the image shows a four-legged animal with a long neck and dark brown/grey coloration THEN horse" rule. The visible features align with the characteristics of a horse.
+
+<response>horse</response>
+----------------------------------------
+Run 0 | Query 16: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a blurry, elongated shape with a discernible head and beak-like structure.
+- The overall color palette is predominantly brown and tan, consistent with feathered creatures.
+- The background is a blurred green, suggesting an outdoor environment.
+
+KB:
+- IF elongated shape with a discernible head and beak-like structure AND predominantly brown/tan coloration THEN bird
+
+Rule Check:
+- The Target Image strongly aligns with the "IF" condition of the rule. The shape and coloration are consistent with a bird.
+
+<response>bird</response>
+----------------------------------------
+Run 0 | Query 17: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a distinct elongated shape.
+- The image exhibits a predominantly blue color.
+
+KB:
+- IF elongated shape and predominantly blue color THEN bird
+
+Rule Check:
+- The image clearly displays an elongated shape and a dominant blue color, which aligns with the "bird" class as defined by the provided knowledge base.
+
+<response>bird</response>
+----------------------------------------
+Run 0 | Query 18: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long-legged creature with a large body and a head obscured by feathers.
+- The overall shape suggests a large, upright animal.
+
+KB:
+- IF long legs and a large, feathery head THEN bird
+- IF four legs and a horse-like body THEN horse
+- IF rectangular shape and wheels THEN truck
+
+Rule Check:
+The image most closely matches the "IF long legs and a large, feathery head THEN bird" rule. The visible features align with the characteristics of a bird, specifically the long legs and the suggestion of a feathery head. It does not resemble a horse or a truck based on the observable features.
+
+<response>bird</response>
+----------------------------------------
+Run 0 | Query 19: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and head.
+- The animal has a brown/tan coat with a white mane and face.
+
+KB:
+- IF four-legged animal with a long neck and head, brown/tan coat with a white mane and face THEN horse
+
+Rule Check:
+- The observable features of the target image strongly align with the rule established for "horse". The presence of a four-legged animal with a long neck and head, combined with the brown/tan coat and white mane/face, directly corresponds to the visual characteristics associated with horses in the provided examples.
+
+<response>horse</response>
+----------------------------------------
+Run 0 | Query 20: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a blurry, four-legged animal.
+- The animal appears to be standing.
+- There is a human figure present.
+
+KB:
+- IF blurry, four-legged animal is present THEN horse
+- IF bird is present THEN bird
+- IF truck is present THEN truck
+
+Rule Check:
+The image clearly shows a blurry, four-legged animal, which aligns with the observable features associated with the "horse" class. The presence of a human figure doesn't exclude the possibility of it being a horse. The other classes (bird and truck) do not match the visible features.
+
+<response>horse</response>
+----------------------------------------
+Run 0 | Query 21: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and a brown color.
+- The overall shape resembles a horse.
+
+KB:
+- IF four-legged animal with a long neck and brown color THEN horse
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-legged animal with a long neck and brown color is a horse.
+
+<response>horse</response>
+----------------------------------------
+Run 0 | Query 22: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long neck and head.
+- The color is brown.
+
+KB:
+- IF long neck and head, brown color THEN horse
+
+Rule Check:
+- The image clearly exhibits a long neck and head, and the color is brown. This aligns perfectly with the rule established for "horse".
+
+<response>horse</response>
+----------------------------------------
+Run 0 | Query 23: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and a brown/reddish coat.
+- The animal is grazing in a grassy area.
+
+KB:
+- IF four-legged animal with a long neck and a brown/reddish coat THEN horse
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-legged animal with a long neck and a brown/reddish coat is a horse.
+
+<response>horse</response>
+----------------------------------------
+Run 0 | Query 24: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a four-legged animal with a long neck and legs.
+- The animal appears to be brown.
+- A human figure is visible on top of the animal.
+
+KB:
+- IF a four-legged animal with a long neck and legs is present THEN horse.
+
+Rule Check:
+- The image clearly shows a four-legged animal with a long neck and legs, which aligns with the rule for "horse".
+
+<response>horse</response>
+----------------------------------------
+Run 0 | Query 25: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and head.
+- The animal has a brown/tan coloration.
+
+KB:
+- IF four-legged animal with a long neck and head, brown/tan coloration THEN horse
+
+Rule Check:
+- The observable features of the target image strongly align with the rule established for "horse." The presence of a four-legged animal with a long neck and head, combined with the brown/tan coloration, directly corresponds to the visual characteristics associated with horses in the provided examples.
+
+<response>horse</response>
+----------------------------------------
+Run 0 | Query 26: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and a horse-like body shape.
+- The animal is brown in color.
+
+KB:
+- IF four-legged animal with a long neck and a horse-like body shape AND brown color THEN horse
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-legged animal with a long neck and a horse-like body shape and brown color indicates a horse.
+
+<response>horse</response>
+----------------------------------------
+Run 0 | Query 27: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and head.
+- The animal is brown in color.
+- The background contains grass.
+
+KB:
+- IF the image shows a four-legged animal with a long neck and head, and is brown in color THEN horse.
+- IF the image shows a bird THEN bird.
+- IF the image shows a truck THEN truck.
+
+Rule Check:
+- The image best matches the rule "IF the image shows a four-legged animal with a long neck and head, and is brown in color THEN horse." because the visible features align with a horse.
+
+<response>horse</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9) Run 0: 0.9630
+Run 1 | Query 1: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a large vehicle with wheels.
+- The vehicle appears to be red and black.
+- There is a building in the background.
+
+KB:
+- IF a large vehicle with wheels is present THEN truck
+
+Rule Check:
+- The image clearly shows a large vehicle with wheels, aligning with the rule that if a large vehicle with wheels is present, it is a truck.
+
+<response>truck</response>
+----------------------------------------
+Run 1 | Query 2: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large, boxy structure with a prominent cab.
+- Distinctive rear end with a raised, angled section.
+- Presence of wheels and a chassis.
+
+KB:
+- IF [Large, boxy structure with a prominent cab and a raised, angled rear end] THEN [truck]
+
+Rule Check:
+The target image exhibits a large, boxy structure with a prominent cab and a raised, angled rear end, which strongly aligns with the rule established for the "truck" class.
+
+<response>truck</response>
+----------------------------------------
+Run 1 | Query 3: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large, boxy vehicle with a long trailer.
+- Dark color scheme.
+- Visible wheels and a cab.
+
+KB:
+- IF [Large, boxy vehicle with a long trailer and dark color scheme] THEN [truck]
+
+Rule Check:
+- The target image exhibits the observable features of a large, boxy vehicle with a long trailer and a dark color scheme. This aligns directly with the rule stating that if a vehicle has these features, it is a truck.
+
+<response>truck</response>
+----------------------------------------
+Run 1 | Query 4: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large vehicle with multiple wheels
+- Box-like structure on the back
+- Blue and white color scheme
+
+KB:
+- IF [Large vehicle with multiple wheels and a box-like structure on the back] THEN [truck]
+
+Rule Check:
+- The target image clearly exhibits a large vehicle with multiple wheels and a box-like structure on the back. This aligns perfectly with the rule established for the "truck" class.
+
+<response>truck</response>
+----------------------------------------
+Run 1 | Query 5: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large rectangular body
+- Four wheels
+- Cab attached to the body
+- Presence of a windshield
+- Distinctive front grill
+
+KB:
+- IF [Large rectangular body, four wheels, cab attached to the body, presence of a windshield, distinctive front grill] THEN [truck]
+
+Rule Check:
+The target image exhibits all the features associated with the "truck" class as defined in the knowledge base. The large rectangular body, four wheels, attached cab, windshield, and front grill are all clearly visible.
+
+<response>truck</response>
+----------------------------------------
+Run 1 | Query 6: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large, yellow vehicle with large tires.
+- Appears to be a large, boxy vehicle with a tilted bed.
+
+KB:
+- IF large, yellow vehicle with large tires and a tilted bed THEN truck
+
+Rule Check:
+- The target image exhibits the observable features of a large, yellow vehicle with large tires and a tilted bed. This aligns perfectly with the rule stating that such features indicate a "truck".
+
+<response>truck</response>
+----------------------------------------
+Run 1 | Query 7: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large vehicle with wheels.
+- The vehicle is predominantly red.
+- The vehicle has a long body and a cab.
+
+KB:
+- IF a vehicle with wheels is predominantly red and has a long body and a cab THEN truck
+
+Rule Check:
+- The image clearly depicts a vehicle with wheels, a predominantly red color, and a long body with a cab. This aligns perfectly with the rule established for the "truck" class.
+
+<response>truck</response>
+----------------------------------------
+Run 1 | Query 8: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large rectangular structure with a flat bed.
+- Presence of wheels and a chassis.
+- Appears to be a vehicle designed for hauling.
+
+KB:
+- IF [Large rectangular structure with a flat bed, presence of wheels and a chassis] THEN [truck]
+
+Rule Check:
+- The target image exhibits a large, flat bed structure supported by wheels, strongly aligning with the features associated with the "truck" class.
+
+<response>truck</response>
+----------------------------------------
+Run 1 | Query 9: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large rectangular body
+- Multiple wheels
+- Boxy shape
+- Appears to be a vehicle
+
+KB:
+- IF [Large rectangular body, multiple wheels, boxy shape] THEN [truck]
+
+Rule Check:
+The target image exhibits a large rectangular body, multiple wheels, and a boxy shape. This aligns perfectly with the rule stating that if an image has these features, it is a truck.
+
+<response>truck</response>
+----------------------------------------
+Run 1 | Query 10: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a long, slender form with a beak-like structure.
+- The form is dark in color.
+- The background appears to be grassy.
+
+KB:
+- IF a long, slender form with a beak-like structure and dark color is present THEN bird
+
+Rule Check:
+- The image strongly matches the "IF a long, slender form with a beak-like structure and dark color is present THEN bird" rule.
+
+<response>bird</response>
+----------------------------------------
+Run 1 | Query 11: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a small, feathered creature with a beak.
+- The creature is perched on a grassy surface.
+
+KB:
+- IF a small, feathered creature with a beak is present THEN bird
+
+Rule Check:
+- The image clearly shows a small, feathered creature with a beak, which aligns perfectly with the rule stating that if such a creature is present, it is a bird.
+
+<response>bird</response>
+----------------------------------------
+Run 1 | Query 12: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a dark, feathered creature.
+- The creature has a beak.
+- The creature is relatively small and appears to be standing on a surface.
+
+KB:
+- IF a dark, feathered creature with a beak is present THEN bird
+
+Rule Check:
+- The image clearly shows a dark, feathered creature with a beak. This aligns perfectly with the rule stating that if a dark, feathered creature with a beak is present, then it is a bird.
+
+<response>bird</response>
+----------------------------------------
+Run 1 | Query 13: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a creature with feathers.
+- The creature has a long, pointed beak.
+
+KB:
+- IF feathers AND long, pointed beak THEN bird
+
+Rule Check:
+- The image clearly exhibits feathers and a long, pointed beak. This aligns perfectly with the rule stating that if an image shows feathers and a long, pointed beak, it is a bird.
+
+<response>bird</response>
+----------------------------------------
+Run 1 | Query 14: Expected: [bird] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a single, dark, rounded shape with a thin, vertical extension.
+- The background is a blurry expanse of light brown/yellow.
+
+KB:
+- IF a single, dark, rounded shape with a thin, vertical extension is present THEN truck.
+- IF a blurry expanse of light brown/yellow is present THEN truck.
+
+Rule Check:
+The image strongly resembles the visual features associated with the "truck" class, specifically the dark rounded shape and the blurry background.
+
+<response>truck</response>
+----------------------------------------
+Run 1 | Query 15: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a furry, four-legged animal.
+- The animal has a long snout.
+- The animal is being held by a human hand.
+
+KB:
+- IF furry, four-legged animal with a long snout THEN bird
+- IF four-legged animal THEN horse
+- IF large, wheeled vehicle THEN truck
+
+Rule Check:
+The image most closely matches the "furry, four-legged animal with a long snout" description, which aligns with the "bird" class. Although it shares the "four-legged animal" characteristic with the "horse" class, the presence of a long snout is more indicative of a bird in the context of the provided examples.
+
+<response>bird</response>
+----------------------------------------
+Run 1 | Query 16: Expected: [bird] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a four-wheeled vehicle with a cargo bed.
+- The vehicle appears to be large and boxy.
+
+KB:
+- IF a four-wheeled vehicle with a cargo bed is present THEN truck
+
+Rule Check:
+- The image clearly shows a four-wheeled vehicle with a cargo bed. This aligns perfectly with the rule stating that if a four-wheeled vehicle with a cargo bed is present, then it is a truck.
+
+<response>truck</response>
+----------------------------------------
+Run 1 | Query 17: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a creature with feathers.
+- The creature has a beak-like structure.
+- The creature is small in size.
+
+KB:
+- IF the image contains a creature with feathers and a beak-like structure THEN bird.
+
+Rule Check:
+- The image clearly exhibits features consistent with a bird, specifically the presence of feathers and a beak-like structure. Therefore, the rule "IF the image contains a creature with feathers and a beak-like structure THEN bird" is best satisfied.
+
+<response>bird</response>
+----------------------------------------
+Run 1 | Query 18: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a creature with feathers.
+- The creature has a beak-like structure.
+- The creature has legs and feet.
+
+KB:
+- IF the image contains a creature with feathers, a beak-like structure, and legs/feet THEN bird.
+
+Rule Check:
+- The image clearly exhibits the features associated with the "bird" class as defined in the KB.
+
+<response>bird</response>
+----------------------------------------
+Run 1 | Query 19: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a four-legged animal with a long neck and a body shape consistent with a horse.
+- The animal is brown in color.
+
+KB:
+- IF four-legged animal with a long neck and a body shape consistent with a horse THEN horse
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-legged animal with a long neck and a body shape consistent with a horse indicates a horse.
+
+<response>horse</response>
+----------------------------------------
+Run 1 | Query 20: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- A large quadruped with a long neck and legs.
+- A human figure riding on top of the quadruped.
+- The quadruped is predominantly white.
+
+KB:
+- IF a large quadruped with a long neck and legs is present, and a human figure is riding on top of it THEN horse.
+
+Rule Check:
+- The image clearly shows a large quadruped with a long neck and legs, and a human figure is riding on top of it. This aligns perfectly with the rule established for "horse".
+
+<response>horse</response>
+----------------------------------------
+Run 1 | Query 21: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and a relatively long body.
+- The animal has a dark coat and appears to be standing on a grassy surface.
+
+KB:
+- IF four-legged animal with a long neck and a relatively long body THEN horse
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-legged animal with a long neck and a relatively long body is a horse.
+
+<response>horse</response>
+----------------------------------------
+Run 1 | Query 22: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and a mane.
+- The animal is predominantly brown in color.
+
+KB:
+- IF four-legged animal with a long neck and a mane THEN horse
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-legged animal with a long neck and a mane is a horse.
+
+<response>horse</response>
+----------------------------------------
+Run 1 | Query 23: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and a mane.
+- The animal is light-colored, likely white or a pale beige.
+- The animal is standing on a grassy surface.
+
+KB:
+- IF four-legged animal with a long neck and a mane THEN horse
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-legged animal with a long neck and a mane is a horse.
+
+<response>horse</response>
+----------------------------------------
+Run 1 | Query 24: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- A four-legged animal with a long neck and mane is visible.
+- A human figure is riding on the animal's back.
+
+KB:
+- IF a four-legged animal with a long neck and mane is visible and a human figure is riding on its back THEN horse
+
+Rule Check:
+- The image clearly shows a four-legged animal with a long neck and mane, and a human figure is riding on its back. This aligns perfectly with the rule established for "horse".
+
+<response>horse</response>
+----------------------------------------
+Run 1 | Query 25: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and a horse-like body shape.
+- The animal is predominantly light-colored, appearing white or pale beige.
+
+KB:
+- IF four-legged animal with a long neck and horse-like body shape THEN horse
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-legged animal with a long neck and horse-like body shape is a horse.
+
+<response>horse</response>
+----------------------------------------
+Run 1 | Query 26: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long snout.
+- The animal has a fluffy, greyish-white coat.
+- The animal is standing on a white surface.
+
+KB:
+- IF four-legged animal with a long snout and fluffy, greyish-white coat THEN horse
+
+Rule Check:
+- The image strongly matches the features described in the rule for "horse". The visible features align with the description of a horse.
+
+<response>horse</response>
+----------------------------------------
+Run 1 | Query 27: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and a tail.
+- There is a person riding on the animal's back.
+
+KB:
+- IF four-legged animal with a long neck and a tail, and a person riding on its back THEN horse
+
+Rule Check:
+- The image clearly depicts a four-legged animal with a long neck and a tail, and a person is riding on its back. This aligns perfectly with the rule established for "horse."
+
+<response>horse</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9) Run 1: 0.9259
+Run 2 | Query 1: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, red vehicle with wheels.
+- The vehicle has a distinct cab and a long, box-like structure behind it.
+
+KB:
+- IF large, red vehicle with wheels and a cab and a long box-like structure THEN truck
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a large, red vehicle with wheels, a cab, and a long box-like structure indicates a truck.
+
+<response>truck</response>
+----------------------------------------
+Run 2 | Query 2: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large rectangular object with a prominent screen displaying an image.
+- The object has a boxy shape with a dark base and a lighter frame around the screen.
+
+KB:
+- IF a large rectangular object with a prominent screen displaying an image is visible THEN truck
+
+Rule Check:
+- The image clearly depicts a large rectangular object with a screen, aligning with the visual features described in the rule for "truck".
+
+<response>truck</response>
+----------------------------------------
+Run 2 | Query 3: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large rectangular shape
+- Presence of wheels
+- Cab-like structure at the front
+- Long, box-like structure attached to the cab
+
+KB:
+- IF [Large rectangular shape, presence of wheels, cab-like structure at the front, long box-like structure attached to the cab] THEN [truck]
+
+Rule Check:
+- The target image exhibits all the features associated with the "truck" class in the provided knowledge base. The large rectangular shape, wheels, cab, and attached box-like structure are all clearly visible.
+
+<response>truck</response>
+----------------------------------------
+Run 2 | Query 4: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, boxy vehicle with wheels.
+- The vehicle is predominantly blue.
+- There are visible lights and a license plate.
+
+KB:
+- IF a large, boxy vehicle with wheels and predominantly blue color THEN truck
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a large, boxy vehicle with wheels and a blue color indicates a truck.
+
+<response>truck</response>
+----------------------------------------
+Run 2 | Query 5: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large vehicle with a cab and a cargo bed.
+- The vehicle has wheels and a distinct chassis.
+- The vehicle is predominantly white and red.
+
+KB:
+- IF [large vehicle with a cab and a cargo bed, wheels, and a distinct chassis] THEN [truck]
+
+Rule Check:
+- The Target Image strongly matches the rule stating that a large vehicle with a cab and a cargo bed, wheels, and a distinct chassis is a truck.
+
+<response>truck</response>
+----------------------------------------
+Run 2 | Query 6: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a large, red vehicle with a ladder extending upwards.
+- The vehicle has a distinct boxy shape and wheels.
+
+KB:
+- IF a large, red vehicle with a ladder extending upwards and a boxy shape THEN truck
+
+Rule Check:
+- The image strongly matches the rule stating that a large, red vehicle with a ladder extending upwards and a boxy shape is a truck.
+
+<response>truck</response>
+----------------------------------------
+Run 2 | Query 7: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large rectangular shape
+- Presence of a cab and trailer
+- Visible wheels
+
+KB:
+- IF [Large rectangular shape, presence of a cab and trailer, visible wheels] THEN [truck]
+
+Rule Check:
+The target image exhibits a large rectangular shape with a cab and trailer, and visible wheels. This aligns perfectly with the rule established for the "truck" class.
+
+<response>truck</response>
+----------------------------------------
+Run 2 | Query 8: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large vehicle with a prominent cab and a long, rectangular body.
+- The vehicle is predominantly blue and white.
+- The vehicle appears to be on a paved surface.
+
+KB:
+- IF a large vehicle with a prominent cab and a long, rectangular body, predominantly blue and white, is present THEN truck
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a large vehicle with a prominent cab and a long, rectangular body, predominantly blue and white, indicates a truck.
+
+<response>truck</response>
+----------------------------------------
+Run 2 | Query 9: Expected: [truck] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large, boxy structure with wheels.
+- Presence of a cab and a trailer.
+- Dark color scheme.
+
+KB:
+- IF [Large, boxy structure with wheels, presence of a cab and a trailer] THEN [truck]
+
+Rule Check:
+- The target image exhibits a large, boxy structure with wheels and a visible cab and trailer, strongly aligning with the rule associated with the "truck" class.
+
+<response>truck</response>
+----------------------------------------
+Run 2 | Query 10: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long neck.
+- The image shows a white body.
+
+KB:
+- IF long neck and white body THEN bird
+
+Rule Check:
+- The image clearly exhibits a long neck and a predominantly white body, which aligns with the "bird" class based on the provided examples.
+
+<response>bird</response>
+----------------------------------------
+Run 2 | Query 11: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long neck and head.
+- The image contains a predominantly brown color.
+
+KB:
+- IF the image shows a long neck and head THEN bird
+- IF the image shows a predominantly brown color THEN horse
+
+Rule Check:
+The image clearly shows a long neck and head, which strongly aligns with the "bird" rule. While it also has a brown color, the prominent feature is the long neck and head, making "bird" the more appropriate classification.
+
+<response>bird</response>
+----------------------------------------
+Run 2 | Query 12: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long neck.
+- The image shows a body with feathers.
+
+KB:
+- IF the image shows a long neck and a body with feathers THEN bird
+
+Rule Check:
+- The image clearly exhibits a long neck and a body that appears to have feathers. This aligns perfectly with the rule established for the "bird" class.
+
+<response>bird</response>
+----------------------------------------
+Run 2 | Query 13: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long neck.
+- The image shows a head with a beak-like structure.
+
+KB:
+- IF long neck and beak-like structure THEN bird
+
+Rule Check:
+- The Target Image exhibits a long neck and a beak-like structure, which aligns with the rule for "bird".
+
+<response>bird</response>
+----------------------------------------
+Run 2 | Query 14: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long neck.
+- The image shows a dark brown/black color.
+
+KB:
+- IF long neck THEN bird
+- IF brown/black color AND long neck THEN bird
+- IF four legs AND horse-like body THEN horse
+
+Rule Check:
+The image exhibits a long neck, which is a recurring feature of birds in the provided examples. While the color is present in some horse examples, the prominent long neck strongly suggests a bird.
+
+<response>bird</response>
+----------------------------------------
+Run 2 | Query 15: Expected: [bird] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, rectangular shape with a prominent cab and a long, box-like structure extending from the back.
+- The image has a distinct front end with a large grill and headlights.
+- The overall form suggests a vehicle designed for transportation.
+
+KB:
+- IF large rectangular shape with a cab and a long box-like structure THEN truck
+- IF distinct front end with a large grill and headlights THEN truck
+
+Rule Check:
+The image strongly satisfies the rules associated with the "truck" class. The presence of a large rectangular shape, a cab, a long box-like structure, a distinct front end, a grill, and headlights are all characteristic of trucks as seen in the provided examples.
+
+<response>truck</response>
+----------------------------------------
+Run 2 | Query 16: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a dark, elongated shape with outstretched wings.
+- The background appears to be a light blue color, suggesting sky.
+
+KB:
+- IF elongated shape with outstretched wings and a light blue background THEN bird
+
+Rule Check:
+- The image strongly matches the rule stating that an elongated shape with outstretched wings and a light blue background indicates a bird.
+
+<response>bird</response>
+----------------------------------------
+Run 2 | Query 17: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, thin neck
+- Small head relative to body size
+- Presence of feathers
+KB:
+- IF [Long, thin neck and presence of feathers] THEN [bird]
+Rule Check:
+- The target image exhibits a long, thin neck and appears to have feathers. This aligns with the rule associating these features with the "bird" class.
+
+<response>bird</response>
+----------------------------------------
+Run 2 | Query 18: Expected: [bird] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Elongated body shape
+- Presence of wings
+- Small head relative to body size
+
+KB:
+- IF Elongated body shape AND Presence of wings THEN bird
+
+Rule Check:
+- The target image exhibits an elongated body shape and appears to have wings. This aligns with the rule stating that an elongated body shape and presence of wings indicates a bird.
+
+<response>bird</response>
+----------------------------------------
+Run 2 | Query 19: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark brown/black color
+- Long neck
+- Head shape resembling a horse head
+
+KB:
+- IF [Dark brown/black color AND Long neck AND Head shape resembling a horse head] THEN [horse]
+
+Rule Check:
+The target image exhibits a dark brown/black color, a long neck, and a head shape consistent with a horse. Therefore, the rule "IF [Dark brown/black color AND Long neck AND Head shape resembling a horse head] THEN [horse]" is best satisfied.
+
+<response>horse</response>
+----------------------------------------
+Run 2 | Query 20: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a four-legged animal.
+- The animal is relatively large.
+- The animal is in a grassy area.
+- There is a structure beneath the animal, appearing to be a platform or jump.
+
+KB:
+- IF four-legged animal, relatively large, grassy area THEN horse
+
+Rule Check:
+- The image clearly depicts a four-legged animal of considerable size within a grassy environment. The presence of a platform or jump further suggests an equestrian context. Therefore, the rule "IF four-legged animal, relatively large, grassy area THEN horse" is best satisfied.
+
+<response>horse</response>
+----------------------------------------
+Run 2 | Query 21: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a four-legged animal with a long neck and legs.
+- The animal is dark in color, appearing mostly black or dark brown.
+- The animal is standing in a grassy area.
+
+KB:
+- IF a four-legged animal with a long neck and legs is present THEN horse
+
+Rule Check:
+- The image clearly depicts a four-legged animal with a long neck and legs, aligning with the characteristics associated with the "horse" class.
+
+<response>horse</response>
+----------------------------------------
+Run 2 | Query 22: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long tail.
+- The animal has a light-colored coat.
+
+KB:
+- IF four-legged animal with a long tail THEN horse
+- IF long neck and head THEN bird
+- IF large vehicle with wheels THEN truck
+
+Rule Check:
+The image clearly depicts a four-legged animal with a long tail, which aligns with the observable features associated with the "horse" class. The other classes do not match these features.
+
+<response>horse</response>
+----------------------------------------
+Run 2 | Query 23: Expected: [horse] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long, slender form with a distinct head.
+- The form is upright and elongated.
+
+KB:
+- IF a long, slender form with a distinct head and upright posture THEN bird
+
+Rule Check:
+- The image strongly aligns with the "IF a long, slender form with a distinct head and upright posture THEN bird" rule. The visible features match the description of a bird's neck and head.
+
+<response>bird</response>
+----------------------------------------
+Run 2 | Query 24: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and legs.
+- The animal has a distinct body shape characteristic of horses.
+
+KB:
+- IF four-legged animal with a long neck and legs THEN horse
+
+Rule Check:
+- The image clearly exhibits the visual features of a four-legged animal with a long neck and legs, which aligns perfectly with the rule associating these features with the "horse" class.
+
+<response>horse</response>
+----------------------------------------
+Run 2 | Query 25: Expected: [horse] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck.
+- The animal is predominantly white or light-colored.
+
+KB:
+- IF the image shows a four-legged animal with a long neck THEN horse.
+- IF the image shows a long neck and a small head THEN bird.
+- IF the image shows a large rectangular shape with wheels THEN truck.
+
+Rule Check:
+The image clearly depicts a four-legged animal with a long neck, which aligns with the characteristics of a horse. The white/light color further supports this classification. The other rules do not apply.
+
+<response>horse</response>
+----------------------------------------
+Run 2 | Query 26: Expected: [horse] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long, slender neck.
+- The image shows a head with a beak-like structure.
+
+KB:
+- IF the image shows a long, slender neck and a head with a beak-like structure THEN bird
+
+Rule Check:
+- The image strongly matches the rule for "bird" due to the presence of a long neck and a beak-like head.
+
+<response>bird</response>
+----------------------------------------
+Run 2 | Query 27: Expected: [horse] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long neck
+- Head visible
+- Dark color
+
+KB:
+- IF [Long neck and head visible] THEN [bird]
+
+Rule Check:
+- The image clearly exhibits a long neck and a visible head. This aligns with the rule associating these features with the "bird" class.
+
+<response>bird</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9) Run 2: 0.8519
+
+--- CONFIG: N=4, K=1, Q=9 (3 RUNS) ---
+Run 0 | Query 1: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- The vehicle has wheels and a windshield.
+- The vehicle is predominantly red.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape, wheels, and windshield THEN automobile
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-wheeled vehicle with a distinct body shape, wheels, and windshield indicates an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 0 | Query 2: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long, dark, rectangular object with wheels.
+- The object has a distinct shape resembling a vehicle.
+
+KB:
+- IF the image shows a long, dark, rectangular object with wheels THEN automobile.
+
+Rule Check:
+- The image strongly matches the rule stating that a long, dark, rectangular object with wheels is an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 0 | Query 3: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with wheels.
+- The vehicle has a distinct body shape characteristic of automobiles.
+- The vehicle appears to be a car.
+
+KB:
+- IF four wheels and a car-like body THEN automobile
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-wheeled vehicle with a car-like body is an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 0 | Query 4: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct front grill and wheels.
+- The overall shape suggests a car-like structure.
+
+KB:
+- IF four-wheeled vehicle with a distinct front grill and wheels THEN automobile
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-wheeled vehicle with a distinct front grill and wheels indicates an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 0 | Query 5: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a vehicle with large wheels.
+- The vehicle has a cab with a windshield.
+- The vehicle is predominantly yellow and orange.
+
+KB:
+- IF large wheels and a cab with a windshield THEN automobile
+
+Rule Check:
+- The image clearly exhibits large wheels and a cab with a windshield, aligning with the rule for "automobile".
+
+<response>automobile</response>
+----------------------------------------
+Run 0 | Query 6: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- The vehicle has wheels and a windshield.
+- The vehicle is predominantly red.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape, wheels, and windshield THEN automobile
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-wheeled vehicle with a distinct body shape, wheels, and windshield indicates an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 0 | Query 7: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- It has visible wheels and a windshield.
+- The overall form resembles a car.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape, visible wheels, and a windshield THEN automobile
+
+Rule Check:
+- The image strongly matches the features described in the rule for "automobile". The visible wheels, windshield, and overall vehicle shape are consistent with the examples of automobiles.
+
+<response>automobile</response>
+----------------------------------------
+Run 0 | Query 8: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a predominantly white, rectangular structure with a door and window.
+- There are visible vertical supports or pillars.
+- The overall shape suggests a vehicle-like structure.
+
+KB:
+- IF rectangular structure with a door and window THEN automobile
+
+Rule Check:
+- The image strongly aligns with the "rectangular structure with a door and window" feature, which is associated with the "automobile" class.
+
+<response>automobile</response>
+----------------------------------------
+Run 0 | Query 9: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- The vehicle is predominantly red.
+- The vehicle is situated on a grassy area.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape THEN automobile
+
+Rule Check:
+- The image clearly exhibits the visual features of a four-wheeled vehicle with a distinct body shape. Therefore, the rule "IF four-wheeled vehicle with a distinct body shape THEN automobile" is best satisfied.
+
+<response>automobile</response>
+----------------------------------------
+Run 0 | Query 10: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and a brownish-tan coloration.
+- The animal is situated in a grassy environment.
+
+KB:
+- IF a four-legged animal with a long neck and brownish-tan coloration is present in a grassy environment THEN deer.
+
+Rule Check:
+- The observed features strongly align with the rule stating that a four-legged animal with a long neck and brownish-tan coloration in a grassy environment indicates a deer.
+
+<response>deer</response>
+----------------------------------------
+Run 0 | Query 11: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and slender legs.
+- The animal is brown/tan in color.
+- The animal is in a grassy environment.
+
+KB:
+- IF four-legged animal with a long neck and slender legs, brown/tan color, in a grassy environment THEN deer
+
+Rule Check:
+- The observed features strongly align with the rule stating that a four-legged animal with a long neck and slender legs, brown/tan color, in a grassy environment is a deer.
+
+<response>deer</response>
+----------------------------------------
+Run 0 | Query 12: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large animal with prominent, branching antlers.
+- The animal has a dark body and appears to be standing on a grassy surface.
+
+KB:
+- IF large animal with prominent, branching antlers THEN deer
+
+Rule Check:
+- The image clearly exhibits the visual features of a deer, specifically the large antlers. Therefore, the rule "IF large animal with prominent, branching antlers THEN deer" is best matched by the Target Image.
+
+<response>deer</response>
+----------------------------------------
+Run 0 | Query 13: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with antlers.
+- The animal has a brown/tan coloration.
+
+KB:
+- IF the image shows a four-legged animal with antlers THEN deer.
+
+Rule Check:
+- The image clearly exhibits the visual features of a four-legged animal with antlers, which aligns perfectly with the rule for "deer."
+
+<response>deer</response>
+----------------------------------------
+Run 0 | Query 14: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a dark brown, four-legged animal.
+- The animal has a long neck and a relatively small head.
+- The background appears to be foliage.
+
+KB:
+- IF dark brown, four-legged animal with a long neck and small head THEN deer
+
+Rule Check:
+- The observed features strongly align with the "IF dark brown, four-legged animal with a long neck and small head THEN deer" rule.
+
+<response>deer</response>
+----------------------------------------
+Run 0 | Query 15: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and slender legs.
+- The animal is brown in color.
+- The background appears to be a grassy area.
+
+KB:
+- IF four-legged animal with a long neck and slender legs THEN deer
+
+Rule Check:
+- The observed features strongly align with the "IF four-legged animal with a long neck and slender legs THEN deer" rule. The image clearly depicts an animal with these characteristics.
+
+<response>deer</response>
+----------------------------------------
+Run 0 | Query 16: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a brown/tan colored animal with prominent ears.
+- The animal has a long snout.
+
+KB:
+- IF brown/tan colored animal with prominent ears and a long snout THEN deer
+
+Rule Check:
+- The image strongly matches the features described in the rule for "deer". The color and ear shape are clearly visible, and the snout is also apparent.
+
+<response>deer</response>
+----------------------------------------
+Run 0 | Query 17: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a quadruped with a long neck and large ears.
+- The coloration is primarily brown and tan.
+
+KB:
+- IF [quadruped with a long neck and large ears, coloration primarily brown and tan] THEN [deer]
+
+Rule Check:
+- The image strongly matches the features described in the rule, indicating a deer.
+
+<response>deer</response>
+----------------------------------------
+Run 0 | Query 18: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and antlers.
+- The animal has a reddish-brown coloration.
+
+KB:
+- IF four-legged animal with a long neck and antlers THEN deer
+
+Rule Check:
+- The observed features of the target image strongly align with the rule stating that a four-legged animal with a long neck and antlers is a deer.
+
+<response>deer</response>
+----------------------------------------
+Run 0 | Query 19: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, brownish creature with a long body and limbs.
+- The creature appears to be on the ground amidst foliage.
+
+KB:
+- IF small, brownish creature with a long body and limbs on the ground amidst foliage THEN frog
+
+Rule Check:
+- The image strongly aligns with the features described in the rule for "frog". The creature's size, color, and environment are consistent with the examples of frogs seen previously.
+
+<response>frog</response>
+----------------------------------------
+Run 0 | Query 20: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a large, amorphous green mass.
+- The image appears to be set in a natural environment, with a blurred background suggesting foliage.
+
+KB:
+- IF large amorphous green mass THEN frog
+- IF large amorphous green mass THEN deer
+
+Rule Check:
+The image most closely resembles the amorphous shape of a frog, although it could also be a deer. Given the limited information and the examples, the amorphous green mass is more characteristic of a frog.
+
+<response>frog</response>
+----------------------------------------
+Run 0 | Query 21: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a predominantly green color palette.
+- The image appears to have a rounded, somewhat amorphous shape.
+
+KB:
+- IF predominantly green and rounded shape THEN frog
+
+Rule Check:
+- The image strongly aligns with the "predominantly green and rounded shape" rule associated with the "frog" class.
+
+<response>frog</response>
+----------------------------------------
+Run 0 | Query 22: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a mostly yellow/orange colored object.
+- The object has a rounded shape.
+- The background is blue.
+
+KB:
+- IF yellow/orange colored, rounded shape THEN frog
+
+Rule Check:
+- The image's color and shape strongly resemble the visual features associated with the "frog" class in the provided examples.
+
+<response>frog</response>
+----------------------------------------
+Run 0 | Query 23: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a blurry, brownish-orange object with a lighter, possibly white, base.
+- The object appears to have a somewhat irregular, organic shape.
+
+KB:
+- IF blurry, brownish-orange object with a lighter base and irregular shape THEN frog
+
+Rule Check:
+- The image strongly resembles the visual characteristics of the frog examples, exhibiting a blurry, brownish-orange color with a lighter base and an irregular shape.
+
+<response>frog</response>
+----------------------------------------
+Run 0 | Query 24: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, squat, and somewhat rounded shape.
+- The color is predominantly a muted brown/green.
+
+KB:
+- IF a small, squat, rounded shape with muted brown/green color THEN frog
+
+Rule Check:
+- The image strongly aligns with the features described in the "IF" statement for the "frog" class. The shape and color are consistent with the examples of frogs seen previously.
+
+<response>frog</response>
+----------------------------------------
+Run 0 | Query 25: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, brown, and somewhat elongated shape.
+- The shape is situated on a green background.
+
+KB:
+- IF small, brown, elongated shape on a green background THEN frog
+
+Rule Check:
+- The image strongly aligns with the "IF small, brown, elongated shape on a green background THEN frog" rule. The shape's characteristics and the background color match the frog examples.
+
+<response>frog</response>
+----------------------------------------
+Run 0 | Query 26: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, squat creature with a rounded body.
+- The creature has short legs and a wide base.
+- The overall color is a muted green/brown.
+
+KB:
+- IF a small, squat creature with a rounded body, short legs, and a wide base is present THEN frog
+
+Rule Check:
+- The observed features strongly align with the "frog" rule. The image depicts a small, squat creature with a rounded body, short legs, and a wide base, all characteristics associated with frogs in the provided examples.
+
+<response>frog</response>
+----------------------------------------
+Run 0 | Query 27: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Small, compact body
+- Four legs visible
+- Greenish-yellow coloration
+
+KB:
+- IF small, compact body and four legs visible THEN frog
+- IF elongated body and antlers THEN deer
+- IF four wheels and a rectangular shape THEN automobile
+- IF large, elongated hull and sails THEN ship
+
+Rule Check:
+The image exhibits a small, compact body and four visible legs, aligning most closely with the characteristics of a frog.
+
+<response>frog</response>
+----------------------------------------
+Run 0 | Query 28: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, horizontal shape
+- Presence of a tall structure (mast)
+- White hull
+- Dark upper structure
+
+KB:
+- IF [Long, horizontal shape, presence of a tall structure, white hull, dark upper structure] THEN [ship]
+
+Rule Check:
+The target image exhibits a long horizontal shape, a tall structure resembling a mast, a white hull, and a dark upper structure. These features strongly align with the rule established for "ship."
+
+<response>ship</response>
+----------------------------------------
+Run 0 | Query 29: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, elongated structure floating on water.
+- The structure has a distinct hull and superstructure.
+- There are visible details suggesting a complex arrangement of parts.
+
+KB:
+- IF a large, elongated structure is floating on water with a distinct hull and superstructure THEN ship
+
+Rule Check:
+- The image clearly exhibits the features described in the rule: a large structure on water with a hull and superstructure. Therefore, the rule "IF a large, elongated structure is floating on water with a distinct hull and superstructure THEN ship" is best matched.
+
+<response>ship</response>
+----------------------------------------
+Run 0 | Query 30: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- A tall, triangular shape extending upwards.
+- A body of water is visible below.
+- A mast-like structure is present.
+
+KB:
+- IF a tall, triangular shape extending upwards and a body of water is visible THEN ship
+
+Rule Check:
+The image clearly shows a tall, triangular shape (a sail) and is situated on a body of water. This aligns perfectly with the rule established for "ship".
+
+<response>ship</response>
+----------------------------------------
+Run 0 | Query 31: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, dark horizontal shape
+- White structure at the front
+- Presence of water below
+
+KB:
+- IF [Long, dark horizontal shape and white structure at the front and presence of water below] THEN [ship]
+
+Rule Check:
+The image clearly exhibits a long, dark horizontal shape with a white structure at the front, and it is situated on water. This aligns perfectly with the rule established for "ship".
+
+<response>ship</response>
+----------------------------------------
+Run 0 | Query 32: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large, elongated orange structure with a distinct hull and a tall structure at the rear.
+- Presence of water in the background.
+
+KB:
+- IF [Large, elongated structure with a hull and a tall structure at the rear, and water in the background] THEN [ship]
+
+Rule Check:
+- The target image clearly exhibits a large, elongated structure with a hull and a tall structure at the rear, and is situated in water. This aligns perfectly with the rule established for "ship".
+
+<response>ship</response>
+----------------------------------------
+Run 0 | Query 33: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, elongated structure floating on water.
+- It has a prominent tower-like structure on top.
+- The overall shape suggests a vessel.
+
+KB:
+- IF a large, elongated structure is floating on water and has a tower-like structure THEN ship.
+
+Rule Check:
+- The image strongly matches the rule: a large, elongated structure is visible on water, and a tower-like structure is present. Therefore, the image is best classified as a ship.
+
+<response>ship</response>
+----------------------------------------
+Run 0 | Query 34: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long, white vessel on water.
+- The vessel has a tall structure extending upwards from its center.
+- The vessel is predominantly white with some darker details.
+
+KB:
+- IF a long, white vessel is present on water with a tall structure extending upwards THEN ship
+
+Rule Check:
+- The image clearly depicts a long, white vessel on water with a tall structure. This aligns perfectly with the rule established for "ship".
+
+<response>ship</response>
+----------------------------------------
+Run 0 | Query 35: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, multi-level structure with a white exterior.
+- There are visible structures extending upwards, resembling masts or towers.
+- The background is a blue expanse, suggesting water.
+
+KB:
+- IF large, multi-level white structure with upward extensions and a blue background THEN ship
+
+Rule Check:
+- The image strongly aligns with the rule stating that a large, multi-level white structure with upward extensions and a blue background indicates a ship.
+
+<response>ship</response>
+----------------------------------------
+Run 0 | Query 36: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long, horizontal object with a distinct hull.
+- The object is floating on water.
+- There is a structure at the front of the object resembling a ship's bow.
+
+KB:
+- IF a long, horizontal object with a hull is floating on water THEN ship
+
+Rule Check:
+- The image clearly exhibits the features described in the rule: a long, horizontal object with a hull floating on water. Therefore, the rule "IF a long, horizontal object with a hull is floating on water THEN ship" is best matched.
+
+<response>ship</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9) Run 0: 1.0000
+Run 1 | Query 1: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a four-wheeled vehicle with a distinct body shape.
+- The vehicle has a defined hood, windows, and wheels.
+- The vehicle is predominantly blue in color.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape, hood, windows, and wheels THEN automobile
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-wheeled vehicle with a distinct body shape, hood, windows, and wheels indicates an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 1 | Query 2: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with wheels.
+- The vehicle has a distinct body shape characteristic of automobiles.
+
+KB:
+- IF four-wheeled vehicle with wheels and a distinct body shape THEN automobile
+
+Rule Check:
+- The image clearly exhibits the features of a four-wheeled vehicle with wheels and a distinct body shape, which aligns perfectly with the rule for "automobile."
+
+<response>automobile</response>
+----------------------------------------
+Run 1 | Query 3: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- It has a front grill and headlights.
+- It appears to be on a road.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape, front grill and headlights THEN automobile
+
+Rule Check:
+- The image clearly exhibits the features of a four-wheeled vehicle with a distinct body shape, a front grill, and headlights. Therefore, the rule stating that such features indicate an automobile is best matched.
+
+<response>automobile</response>
+----------------------------------------
+Run 1 | Query 4: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- It has wheels and a visible front grill.
+- The overall form resembles a car.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape and visible front grill THEN automobile
+
+Rule Check:
+- The image strongly matches the features described in the rule for "automobile". The visible wheels, body shape, and front grill are consistent with the characteristics of an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 1 | Query 5: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- The vehicle has headlights and a windshield.
+- The vehicle is predominantly red.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape, headlights, and windshield THEN automobile
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-wheeled vehicle with a distinct body shape, headlights, and windshield indicates an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 1 | Query 6: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- It has windows and a roof.
+- The overall form resembles a car.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape, windows, and a roof THEN automobile
+
+Rule Check:
+- The image clearly exhibits the features described in the rule: a four-wheeled vehicle with a distinct body shape, windows, and a roof. Therefore, it best matches the "automobile" class.
+
+<response>automobile</response>
+----------------------------------------
+Run 1 | Query 7: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- The vehicle has wheels and a visible front end with headlights.
+- The overall form resembles a car.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape, wheels, and headlights THEN automobile
+
+Rule Check:
+- The image strongly matches the features described in the rule for "automobile". The visible features align with the characteristics of a car.
+
+<response>automobile</response>
+----------------------------------------
+Run 1 | Query 8: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- It has wheels and a visible rear end with taillights.
+- The overall form resembles a car.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape and wheels THEN automobile
+
+Rule Check:
+- The image clearly exhibits the features described in the rule: a four-wheeled vehicle with a distinct body shape and wheels. Therefore, it best matches the "automobile" class.
+
+<response>automobile</response>
+----------------------------------------
+Run 1 | Query 9: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- It has visible wheels and a cabin-like structure.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape and visible wheels THEN automobile
+
+Rule Check:
+- The image strongly aligns with the "IF" condition of the "automobile" rule. The visible features clearly indicate a four-wheeled vehicle with a body shape characteristic of automobiles.
+
+<response>automobile</response>
+----------------------------------------
+Run 1 | Query 10: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a brown, four-legged animal with a long neck.
+- The animal is standing on a green surface.
+
+KB:
+- IF brown, four-legged animal with a long neck, standing on a green surface THEN deer
+
+Rule Check:
+- The image strongly matches the features described in the rule for "deer".
+
+<response>deer</response>
+----------------------------------------
+Run 1 | Query 11: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long, slender form with a distinct head and tail.
+- The form is positioned on a green surface.
+
+KB:
+- IF a long, slender form with a distinct head and tail is present on a green surface THEN deer.
+
+Rule Check:
+- The image strongly matches the "IF a long, slender form with a distinct head and tail is present on a green surface THEN deer" rule. The visible features align with the characteristics observed in the deer examples.
+
+<response>deer</response>
+----------------------------------------
+Run 1 | Query 12: Expected: [deer] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a dark, elongated shape with a rounded top.
+- There are visible wheels.
+- The overall form suggests a vehicle.
+
+KB:
+- IF elongated shape with rounded top and visible wheels THEN automobile
+
+Rule Check:
+- The image best matches the rule stating that an elongated shape with a rounded top and visible wheels indicates an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 1 | Query 13: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large animal with prominent antlers.
+- The animal has a brown/tan coloration.
+- The background is green, suggesting a natural environment.
+
+KB:
+- IF large animal with prominent antlers THEN deer
+
+Rule Check:
+- The image clearly exhibits the visual features of a large animal with antlers, which aligns perfectly with the "IF...THEN" rule for "deer".
+
+<response>deer</response>
+----------------------------------------
+Run 1 | Query 14: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and legs.
+- The animal has a slender body and a small head.
+
+KB:
+- IF four-legged animal with a long neck and legs THEN deer
+
+Rule Check:
+- The image strongly matches the description of a deer due to the visible four legs and long neck.
+
+<response>deer</response>
+----------------------------------------
+Run 1 | Query 15: Expected: [deer] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a dark, elongated shape with a distinct "T" shape at the top.
+- The background appears to be a light-colored surface.
+
+KB:
+- IF elongated dark shape with a "T" shape at the top THEN frog
+
+Rule Check:
+- The image strongly resembles the shape and characteristics observed in the frog examples. The dark elongated shape and the distinct "T" shape at the top are consistent with the visual patterns associated with frogs in the provided examples.
+
+<response>frog</response>
+----------------------------------------
+Run 1 | Query 16: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and antlers.
+- The animal is brown in color.
+- The background appears to be grassy.
+
+KB:
+- IF four-legged animal with a long neck and antlers THEN deer
+
+Rule Check:
+- The image strongly matches the "IF four-legged animal with a long neck and antlers THEN deer" rule. The visible features align with the characteristics of a deer.
+
+<response>deer</response>
+----------------------------------------
+Run 1 | Query 17: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and legs.
+- The animal has a brown/tan coloration.
+- The background is green.
+
+KB:
+- IF four-legged animal with a long neck and legs AND brown/tan coloration THEN deer
+
+Rule Check:
+- The image strongly matches the features described in the rule for "deer". The visible features align with the characteristics observed in the deer examples.
+
+<response>deer</response>
+----------------------------------------
+Run 1 | Query 18: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a four-legged creature with a long neck.
+- The creature is standing on a grassy area.
+
+KB:
+- IF a four-legged creature with a long neck is present THEN deer.
+
+Rule Check:
+- The image clearly depicts a four-legged creature with a long neck, which aligns perfectly with the rule associating such features with the "deer" class.
+
+<response>deer</response>
+----------------------------------------
+Run 1 | Query 19: Expected: [frog] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a dark brown/black coloration.
+- The animal appears to be relatively small and low to the ground.
+- The background is green, suggesting a grassy area.
+
+KB:
+- IF four-legged animal with dark coloration and low to the ground THEN deer
+- IF small, four-legged animal with dark coloration THEN frog
+
+Rule Check:
+The image most closely aligns with the "four-legged animal with dark coloration and low to the ground" features associated with the deer class. While it could potentially be a frog, the overall size and posture are more consistent with a deer.
+
+<response>deer</response>
+----------------------------------------
+Run 1 | Query 20: Expected: [frog] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a quadrupedal animal with a long tail.
+- The animal has a distinct head and body shape.
+- The overall form suggests a mammal.
+
+KB:
+- IF quadrupedal animal with a long tail THEN deer
+- IF quadrupedal animal with a distinct head and body shape THEN deer
+
+Rule Check:
+The image clearly depicts a quadrupedal animal with a long tail and a distinct head and body shape. Both rules from the KB are satisfied, and the "deer" class is the most appropriate match.
+
+<response>deer</response>
+----------------------------------------
+Run 1 | Query 21: Expected: [frog] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a dark, boxy shape with wheels.
+- The shape is low to the ground.
+
+KB:
+- IF a dark, boxy shape with wheels and low to the ground THEN automobile
+
+Rule Check:
+- The image strongly matches the "IF" condition of the "automobile" rule. The dark, boxy shape with wheels and its low profile are consistent with the visual features observed in the examples labeled as "automobile."
+
+<response>automobile</response>
+----------------------------------------
+Run 1 | Query 22: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a blurry, organic shape with a predominantly green color.
+- There are some darker, irregular shapes within the green area.
+- The background is a pinkish-red color.
+
+KB:
+- IF blurry, organic shape with predominantly green color and darker irregular shapes THEN frog
+- IF elongated shape with a mast and hull THEN ship
+- IF four legs and antlers THEN deer
+- IF wheels and a body THEN automobile
+
+Rule Check:
+The image best matches the "blurry, organic shape with predominantly green color and darker irregular shapes" characteristic of a frog. The other rules do not align with the observed visual features.
+
+<response>frog</response>
+----------------------------------------
+Run 1 | Query 23: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a small, green-colored creature.
+- The creature has a distinct head and limbs.
+- The creature is positioned on a green surface.
+
+KB:
+- IF a small, green-colored creature with a distinct head and limbs is present on a green surface THEN frog.
+
+Rule Check:
+- The image strongly matches the rule stating that a small, green-colored creature with a distinct head and limbs on a green surface indicates a frog.
+
+<response>frog</response>
+----------------------------------------
+Run 1 | Query 24: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, brownish-green creature with a wide mouth and large eyes.
+- The creature appears to be sitting or resting on a surface.
+
+KB:
+- IF a small, brownish-green creature with a wide mouth and large eyes is visible THEN frog.
+- IF a large, elongated shape with a mast and hull is visible THEN ship.
+- IF a four-legged animal with antlers is visible THEN deer.
+- IF a four-wheeled vehicle is visible THEN automobile.
+
+Rule Check:
+The image best matches the description of a frog: a small, brownish-green creature with a wide mouth and large eyes. The other rules do not apply to the visible features.
+
+<response>frog</response>
+----------------------------------------
+Run 1 | Query 25: Expected: [frog] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a blurry, elongated shape with a distinct head and tail.
+- The overall form suggests a quadrupedal animal.
+
+KB:
+- IF elongated shape with a distinct head and tail THEN deer
+- IF quadrupedal form THEN deer
+
+Rule Check:
+The image exhibits both an elongated shape with a distinct head and tail, and a quadrupedal form. The combination of these features strongly aligns with the "deer" class.
+
+<response>deer</response>
+----------------------------------------
+Run 1 | Query 26: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, brown, somewhat rounded shape.
+- The shape appears to have a textured surface.
+- The background is a blurry blue.
+
+KB:
+- IF a small, brown, rounded shape with a textured surface is present THEN frog
+- IF a large, elongated structure with a mast is present THEN ship
+- IF a four-legged animal with antlers is present THEN deer
+- IF a four-wheeled vehicle is present THEN automobile
+
+Rule Check:
+The image best matches the description of a frog: a small, brown, rounded shape with a textured surface. The blurry blue background doesn't influence the classification.
+
+<response>frog</response>
+----------------------------------------
+Run 1 | Query 27: Expected: [frog] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged creature with a long neck and legs.
+- The creature appears to be standing or walking.
+
+KB:
+- IF four-legged creature with a long neck and legs THEN deer
+
+Rule Check:
+- The observable features of the target image strongly align with the "IF" condition of the deer rule. The image clearly depicts a four-legged creature with a long neck and legs, which is characteristic of deer.
+
+<response>deer</response>
+----------------------------------------
+Run 1 | Query 28: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large, elongated structure with multiple vertical elements (masts/poles)
+- Presence of a distinct horizontal line along the bottom (likely the waterline)
+- Appears to be floating on water
+
+KB:
+- IF large, elongated structure with multiple vertical elements and a distinct horizontal line THEN ship
+
+Rule Check:
+The target image strongly exhibits the features of a large, elongated structure with multiple vertical elements and a distinct horizontal line, aligning perfectly with the rule for "ship".
+
+<response>ship</response>
+----------------------------------------
+Run 1 | Query 29: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, elongated structure with a tall mast or tower-like feature.
+- The structure appears to be floating on water.
+
+KB:
+- IF [large, elongated structure with a tall mast or tower-like feature floating on water] THEN [ship]
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a large, elongated structure with a tall mast or tower-like feature floating on water indicates a ship.
+
+<response>ship</response>
+----------------------------------------
+Run 1 | Query 30: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, flat-bottomed vessel floating on water.
+- It has a structure above the deck, resembling a roof or canopy.
+- The vessel appears to be designed for multiple people.
+
+KB:
+- IF a large, flat-bottomed vessel is floating on water with a roof-like structure above the deck THEN ship
+
+Rule Check:
+- The image strongly aligns with the "IF" condition of the "ship" rule. The vessel's size, shape, and the presence of a roof-like structure are consistent with the visual characteristics of a ship.
+
+<response>ship</response>
+----------------------------------------
+Run 1 | Query 31: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, elongated structure floating on water.
+- It has a distinct hull and a raised structure above the hull.
+- There are visible elements suggesting a mode of transportation on water.
+
+KB:
+- IF elongated structure floating on water with a hull and raised structure THEN ship
+
+Rule Check:
+- The image strongly aligns with the "IF elongated structure floating on water with a hull and raised structure THEN ship" rule. The visible features clearly indicate a ship-like structure.
+
+<response>ship</response>
+----------------------------------------
+Run 1 | Query 32: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long, horizontal structure with a distinct upper section and a lower, wider base.
+- There is a tall, vertical structure extending upwards from the upper section.
+- The overall color scheme is predominantly yellow and white.
+
+KB:
+- IF a long, horizontal structure with a distinct upper section and a lower, wider base, and a tall, vertical structure extending upwards THEN ship
+
+Rule Check:
+- The image strongly aligns with the rule stating that a long, horizontal structure with a distinct upper section and a lower, wider base, and a tall, vertical structure extending upwards indicates a ship.
+
+<response>ship</response>
+----------------------------------------
+Run 1 | Query 33: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, multi-level structure with masts and rigging.
+- The structure is floating on water.
+
+KB:
+- IF a large structure with masts and rigging is floating on water THEN ship
+
+Rule Check:
+- The image clearly exhibits the features of a ship: a large structure with masts and rigging floating on water. Therefore, the rule "IF a large structure with masts and rigging is floating on water THEN ship" is best matched.
+
+<response>ship</response>
+----------------------------------------
+Run 1 | Query 34: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a large, rectangular structure.
+- The structure has a roof and appears to be stationary.
+- There is a visible background suggesting a landscape.
+
+KB:
+- IF a large, rectangular structure with a roof and a landscape background THEN ship.
+- IF a small, often green, amphibian THEN frog.
+- IF a four-legged animal with antlers THEN deer.
+- IF a four-wheeled vehicle THEN automobile.
+
+Rule Check:
+The image best matches the description of a ship due to the presence of a large, rectangular structure with a roof and a landscape background. While it could potentially be a building, the examples provided for "ship" are the closest visual match.
+
+<response>ship</response>
+----------------------------------------
+Run 1 | Query 35: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, elongated shape
+- Presence of a hull
+- Visible mast or tower-like structure
+- Appears to be floating on water
+
+KB:
+- IF elongated shape, hull, and mast/tower are visible THEN ship
+
+Rule Check:
+The target image exhibits a long, elongated shape, a visible hull, and a mast-like structure. These features strongly align with the "ship" class as defined in the knowledge base.
+
+<response>ship</response>
+----------------------------------------
+Run 1 | Query 36: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, elongated structure with multiple tall vertical elements (likely masts or towers).
+- The structure appears to be floating on water.
+
+KB:
+- IF a large, elongated structure with multiple tall vertical elements is observed floating on water THEN ship
+
+Rule Check:
+- The observed features strongly align with the rule stating that a large, elongated structure with multiple tall vertical elements floating on water indicates a ship.
+
+<response>ship</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9) Run 1: 0.8056
+Run 2 | Query 1: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct front grill and headlights.
+- The vehicle has a boxy shape and large tires.
+
+KB:
+- IF a four-wheeled vehicle with a distinct front grill and headlights is present THEN automobile.
+
+Rule Check:
+- The image clearly depicts a four-wheeled vehicle with a distinct front grill and headlights, aligning with the rule for "automobile."
+
+<response>automobile</response>
+----------------------------------------
+Run 2 | Query 2: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- It has visible wheels and a roof structure.
+- The overall form resembles a car.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape and visible wheels THEN automobile
+
+Rule Check:
+- The image clearly exhibits the features described in the rule: a four-wheeled vehicle with a distinct body shape and visible wheels. Therefore, it best matches the "automobile" class.
+
+<response>automobile</response>
+----------------------------------------
+Run 2 | Query 3: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- It has a windshield and appears to be stationary.
+- The vehicle is predominantly red/purple in color.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape, windshield, and stationary THEN automobile
+
+Rule Check:
+- The image clearly exhibits the features of a four-wheeled vehicle with a distinct body shape and a windshield. It appears to be stationary. Therefore, the rule "IF four-wheeled vehicle with a distinct body shape, windshield, and stationary THEN automobile" is best matched.
+
+<response>automobile</response>
+----------------------------------------
+Run 2 | Query 4: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- The vehicle has wheels and a windshield.
+- The vehicle appears to be on a road.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape, wheels, and windshield THEN automobile
+
+Rule Check:
+- The image clearly exhibits the features of a four-wheeled vehicle with a distinct body shape, wheels, and a windshield. Therefore, the rule stating "IF four-wheeled vehicle with a distinct body shape, wheels, and windshield THEN automobile" is best matched.
+
+<response>automobile</response>
+----------------------------------------
+Run 2 | Query 5: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- The vehicle has a roof and windows.
+- The overall form resembles a car.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape and a roof THEN automobile
+
+Rule Check:
+- The image clearly exhibits the features of a four-wheeled vehicle with a distinct body shape and a roof. Therefore, the rule "IF four-wheeled vehicle with a distinct body shape and a roof THEN automobile" is best matched.
+
+<response>automobile</response>
+----------------------------------------
+Run 2 | Query 6: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a cab and a cargo bed.
+- The vehicle has wheels and a distinct body shape characteristic of automobiles.
+
+KB:
+- IF four-wheeled vehicle with a cab and a cargo bed THEN automobile
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-wheeled vehicle with a cab and a cargo bed is an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 2 | Query 7: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- It has a clear front grill and visible wheels.
+- The overall form resembles a car or van.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape, front grill, and visible wheels THEN automobile
+
+Rule Check:
+- The image strongly matches the features described in the rule for "automobile". The visible wheels, body shape, and front grill are all consistent with the examples of automobiles.
+
+<response>automobile</response>
+----------------------------------------
+Run 2 | Query 8: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a distinct body shape.
+- The vehicle has an open hood, revealing an engine compartment.
+- The vehicle is predominantly red.
+
+KB:
+- IF four-wheeled vehicle with a distinct body shape THEN automobile
+
+Rule Check:
+- The image clearly depicts a four-wheeled vehicle with a distinct body shape, matching the criteria for the "automobile" class.
+
+<response>automobile</response>
+----------------------------------------
+Run 2 | Query 9: Expected: [automobile] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-wheeled vehicle with a cab and a bed.
+- The vehicle has a boxy shape and a prominent front grill.
+
+KB:
+- IF four-wheeled vehicle with a cab and a bed THEN automobile
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a four-wheeled vehicle with a cab and a bed is an automobile.
+
+<response>automobile</response>
+----------------------------------------
+Run 2 | Query 10: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and antlers.
+- The animal is standing in a natural environment.
+
+KB:
+- IF the image shows a four-legged animal with a long neck and antlers THEN deer.
+
+Rule Check:
+- The image clearly exhibits the visual features of a deer, specifically the presence of antlers and a long neck. Therefore, the rule "IF the image shows a four-legged animal with a long neck and antlers THEN deer" is best matched.
+
+<response>deer</response>
+----------------------------------------
+Run 2 | Query 11: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and brown fur.
+- The animal has antlers.
+- The background contains foliage.
+
+KB:
+- IF the image shows a four-legged animal with a long neck and antlers THEN deer.
+
+Rule Check:
+- The image clearly matches the description of a deer, as it depicts a four-legged animal with a long neck and antlers in a natural setting.
+
+<response>deer</response>
+----------------------------------------
+Run 2 | Query 12: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a brown/tan coloration.
+- The animal has a distinct head and body shape.
+- The background is blurry and green.
+
+KB:
+- IF four-legged animal with brown/tan coloration THEN deer
+
+Rule Check:
+- The image strongly matches the "four-legged animal with brown/tan coloration" feature, which aligns with the deer class.
+
+<response>deer</response>
+----------------------------------------
+Run 2 | Query 13: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck.
+- The animal has a brown body and a white patch on its chest.
+- The background appears to be grassy.
+
+KB:
+- IF the image shows a four-legged animal with a long neck THEN deer.
+
+Rule Check:
+- The image strongly matches the rule "IF the image shows a four-legged animal with a long neck THEN deer." The visible features align with the characteristics of a deer.
+
+<response>deer</response>
+----------------------------------------
+Run 2 | Query 14: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a four-legged animal with a long neck and antlers.
+- The animal has a brown/tan coloration.
+- The background appears to be a natural, outdoor environment.
+
+KB:
+- IF the image shows a four-legged animal with antlers THEN deer.
+
+Rule Check:
+- The image clearly depicts a four-legged animal with antlers, aligning perfectly with the rule for "deer."
+
+<response>deer</response>
+----------------------------------------
+Run 2 | Query 15: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, four-legged animal with a rounded back.
+- The animal has a brown/grey coloration.
+- The background appears to be foliage.
+
+KB:
+- IF large, four-legged animal with a rounded back and brown/grey coloration THEN deer
+
+Rule Check:
+- The image strongly matches the description of a deer. The visible features align with the "IF" condition of the rule.
+
+<response>deer</response>
+----------------------------------------
+Run 2 | Query 16: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a four-legged animal with a brown coat.
+- There is a human figure visible near the animal.
+
+KB:
+- IF a four-legged animal with a brown coat is present THEN deer
+- IF a vehicle with wheels is present THEN automobile
+
+Rule Check:
+The image clearly shows a four-legged animal with a brown coat. This aligns with the "IF a four-legged animal with a brown coat is present THEN deer" rule. While there's a human figure, it doesn't negate the presence of the animal.
+
+<response>deer</response>
+----------------------------------------
+Run 2 | Query 17: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a four-legged animal with antlers.
+- The animal has a brown/dark brown coloration.
+- The background appears to be a natural environment with foliage.
+
+KB:
+- IF the image contains a four-legged animal with antlers THEN deer.
+
+Rule Check:
+- The image clearly depicts a four-legged animal with antlers, aligning perfectly with the rule established for the "deer" class.
+
+<response>deer</response>
+----------------------------------------
+Run 2 | Query 18: Expected: [deer] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a quadruped with a long snout.
+- The quadruped has a reddish-brown fur color.
+- The background appears to be a building.
+
+KB:
+- IF quadruped with a long snout and reddish-brown fur THEN deer
+
+Rule Check:
+- The image strongly matches the "IF quadruped with a long snout and reddish-brown fur THEN deer" rule. The visible features align with the characteristics of a deer.
+
+<response>deer</response>
+----------------------------------------
+Run 2 | Query 19: Expected: [frog] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, brown animal with a bushy tail.
+- The animal is positioned low to the ground.
+
+KB:
+- IF small, brown animal with a bushy tail THEN deer
+- IF small, brown animal THEN frog
+
+Rule Check:
+The image most closely matches the description of a deer due to the presence of a bushy tail. While it could be a frog, the tail is a more defining feature aligning with the deer examples.
+
+<response>deer</response>
+----------------------------------------
+Run 2 | Query 20: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, somewhat elongated shape with a mottled brown and green coloration.
+- The shape appears to be resting on a surface.
+
+KB:
+- IF mottled brown and green coloration, elongated shape THEN frog
+- IF elongated shape, resting on a surface THEN ship
+
+Rule Check:
+The image most closely matches the features associated with a frog. The mottled coloration and elongated shape are consistent with frog examples. While it could potentially be a ship, the coloration is more characteristic of a frog.
+
+<response>frog</response>
+----------------------------------------
+Run 2 | Query 21: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, rounded shape with a predominantly green color.
+- The shape appears to be resting on a surface with a reddish-brown hue.
+
+KB:
+- IF the image shows a small, rounded shape with a predominantly green color THEN frog.
+
+Rule Check:
+- The image strongly matches the "IF the image shows a small, rounded shape with a predominantly green color THEN frog" rule.
+
+<response>frog</response>
+----------------------------------------
+Run 2 | Query 22: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, lizard-like creature.
+- It has a long tail and four legs.
+- The texture appears scaly.
+
+KB:
+- IF the image shows a small, lizard-like creature with a long tail and four legs THEN lizard.
+- IF the image shows a small, amphibian with a wide mouth and webbed feet THEN frog.
+- IF the image shows a four-legged animal with antlers THEN deer.
+- IF the image shows a vehicle with wheels THEN automobile.
+- IF the image shows a large vessel on water THEN ship.
+
+Rule Check:
+The image best matches the description of a lizard. While it shares some characteristics with a frog (small creature), the presence of four legs and a long tail are more indicative of a lizard. None of the other classes are a good match.
+
+<response>frog</response>
+----------------------------------------
+Run 2 | Query 23: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image contains a predominantly brown and green color palette.
+- There is a discernible elongated shape.
+- The texture appears somewhat smooth and organic.
+
+KB:
+- IF predominantly brown and green color palette AND elongated shape AND smooth, organic texture THEN frog
+
+Rule Check:
+- The target image strongly aligns with the features described in the "IF" statement for the "frog" class. The color palette, shape, and texture are consistent with the examples provided for frogs.
+
+<response>frog</response>
+----------------------------------------
+Run 2 | Query 24: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, squat creature with a wide mouth.
+- The creature has a predominantly green/yellow coloration.
+
+KB:
+- IF the image shows a small, squat creature with a wide mouth and predominantly green/yellow coloration THEN frog.
+
+Rule Check:
+- The image strongly matches the features described in the rule for "frog".
+
+<response>frog</response>
+----------------------------------------
+Run 2 | Query 25: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, brownish-green creature.
+- The creature has a rounded body shape.
+- The background is green and grassy.
+
+KB:
+- IF a small, brownish-green creature with a rounded body shape is present in a green and grassy background THEN frog.
+
+Rule Check:
+- The image strongly matches the "IF" condition of the frog rule. The creature's appearance and the background align with the characteristics observed in the frog examples.
+
+<response>frog</response>
+----------------------------------------
+Run 2 | Query 26: Expected: [frog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, lizard-like creature.
+- It has a relatively flat body and a long tail.
+- The coloration is primarily brown and yellow.
+
+KB:
+- IF small, lizard-like creature with a flat body and long tail THEN frog
+- IF elongated body and coloration is primarily brown and yellow THEN frog
+
+Rule Check:
+The image best matches the description of a frog, specifically due to the lizard-like appearance and the brown/yellow coloration. While it doesn't perfectly align with all frog examples, it's the closest match among the provided options.
+
+<response>frog</response>
+----------------------------------------
+Run 2 | Query 27: Expected: [frog] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a small, quadrupedal animal with a fluffy tail.
+- The animal has a light-colored face and ears.
+- The animal is situated in a grassy environment.
+
+KB:
+- IF a small, quadrupedal animal with a fluffy tail and light-colored face and ears is present in a grassy environment THEN deer.
+
+Rule Check:
+- The observed features strongly align with the rule stating that a small, quadrupedal animal with a fluffy tail and light-colored face and ears in a grassy environment indicates a deer.
+
+<response>deer</response>
+----------------------------------------
+Run 2 | Query 28: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, dark structure with tall vertical elements (likely masts) extending upwards.
+- The structure is floating on water.
+
+KB:
+- IF [large, dark structure with tall vertical elements extending upwards, floating on water] THEN [ship]
+
+Rule Check:
+- The observable features of the target image strongly align with the rule stating that a large, dark structure with tall vertical elements extending upwards, floating on water, indicates a ship.
+
+<response>ship</response>
+----------------------------------------
+Run 2 | Query 29: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, elongated structure floating on water.
+- The structure has a distinct hull and a raised superstructure with visible equipment.
+- The overall shape is consistent with a vessel designed for navigation.
+
+KB:
+- IF a large, elongated structure is floating on water with a hull and superstructure THEN ship
+
+Rule Check:
+- The image strongly aligns with the "IF" condition of the "ship" rule. The visible features clearly indicate a ship-like structure on water.
+
+<response>ship</response>
+----------------------------------------
+Run 2 | Query 30: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, elongated structure with a hull.
+- It has a prominent chimney or smokestack.
+- It appears to be floating on water.
+
+KB:
+- IF elongated structure with a hull and a chimney THEN ship
+
+Rule Check:
+- The image clearly exhibits the features of an elongated structure with a hull and a chimney, aligning perfectly with the rule for "ship".
+
+<response>ship</response>
+----------------------------------------
+Run 2 | Query 31: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, white structure with multiple levels and a prominent, tall, vertical element (likely a mast or chimney).
+- The structure appears to be floating on water.
+
+KB:
+- IF large, white structure with multiple levels and a tall, vertical element floating on water THEN ship
+
+Rule Check:
+- The image strongly matches the description in the rule: a large, white structure with multiple levels and a tall, vertical element is clearly visible, and it is situated on water.
+
+<response>ship</response>
+----------------------------------------
+Run 2 | Query 32: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large, elongated structure with a tall mast and multiple levels.
+- Appears to be on water.
+
+KB:
+- IF large, elongated structure with a tall mast and multiple levels on water THEN ship
+
+Rule Check:
+- The image clearly shows a large, elongated structure with a tall mast and appears to be on water. This aligns perfectly with the rule for "ship".
+
+<response>ship</response>
+----------------------------------------
+Run 2 | Query 33: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a large, elongated object with a hull.
+- The object is predominantly white with orange accents.
+- The object appears to be floating on water.
+
+KB:
+- IF elongated object with a hull and floating on water THEN ship
+
+Rule Check:
+- The image strongly matches the "IF elongated object with a hull and floating on water THEN ship" rule. The visible features align with the characteristics of a ship.
+
+<response>ship</response>
+----------------------------------------
+Run 2 | Query 34: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large, elongated structure with a prominent deck and multiple vertical structures (likely masts or chimneys).
+- Predominantly white and red coloration.
+- Appears to be floating on a body of water.
+
+KB:
+- IF [Large, elongated structure with a prominent deck and multiple vertical structures, predominantly white and red coloration, floating on water] THEN [ship]
+
+Rule Check:
+- The target image strongly aligns with the features described in the rule. The large, elongated structure, the visible deck, the vertical structures, the color scheme, and the presence of water all point towards a ship.
+
+<response>ship</response>
+----------------------------------------
+Run 2 | Query 35: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long, white object with a red detail at the front.
+- The object is elongated and appears to be resting on a surface.
+
+KB:
+- IF elongated, white object with a red detail at the front THEN ship
+
+Rule Check:
+- The image strongly aligns with the "IF elongated, white object with a red detail at the front THEN ship" rule. The visible features match the description of a ship.
+
+<response>ship</response>
+----------------------------------------
+Run 2 | Query 36: Expected: [ship] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The image shows a long, yellow object with a distinct hull shape.
+- The object is floating on water.
+
+KB:
+- IF a long, yellow object with a distinct hull shape is floating on water THEN ship
+
+Rule Check:
+- The image strongly matches the rule: a long, yellow object with a distinct hull shape is floating on water, which directly corresponds to the definition of a ship.
+
+<response>ship</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9) Run 2: 0.9444

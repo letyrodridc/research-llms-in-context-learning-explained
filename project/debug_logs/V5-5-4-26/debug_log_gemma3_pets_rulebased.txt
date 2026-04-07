@@ -1,0 +1,4693 @@
+=== DEBUG LOG: gemma3 | pets | Prompt: rulebased ===
+
+--- CONFIG: N=2, K=2, Q=9 (3 RUNS) ---
+Run 0 | Query 1: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal is black.
+- The animal has yellow eyes.
+- The animal has pointed ears.
+- The animal has a sleek, slender body.
+
+KB:
+- IF animal is black with yellow eyes and has pointed ears THEN Bombay.
+
+Rule Check:
+The target image exhibits all the features associated with the Bombay class in the provided knowledge base. The animal is black, has yellow eyes, and has pointed ears. Therefore, the rule "IF animal is black with yellow eyes and has pointed ears THEN Bombay" is best satisfied by the target image.
+
+<response>Bombay</response>
+----------------------------------------
+Run 0 | Query 2: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal is black.
+- The animal has yellow eyes.
+- The animal has a sleek, short coat.
+- The animal has a slender build.
+
+KB:
+- IF animal is black with yellow eyes and has a sleek, short coat THEN Bombay.
+
+Rule Check:
+The target image exhibits all the features associated with the Bombay class in the provided knowledge base. The animal is black, has yellow eyes, and a short, sleek coat. Therefore, the rule "IF animal is black with yellow eyes and has a sleek, short coat THEN Bombay" is best matched by the target image.
+
+<response>Bombay</response>
+----------------------------------------
+Run 0 | Query 3: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat has a solid grey/blue-grey coat.
+- The cat has yellow eyes.
+
+KB:
+- IF solid grey/blue-grey coat AND yellow eyes THEN Bombay
+
+Rule Check:
+- The target image exhibits a solid grey/blue-grey coat and yellow eyes, which aligns perfectly with the rule established for the Bombay class.
+
+<response>Bombay</response>
+----------------------------------------
+Run 0 | Query 4: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal is black.
+- The animal has yellow eyes.
+- The animal has a relatively short snout.
+- The animal has pointed ears.
+
+KB:
+- IF animal is black and has yellow eyes THEN Bombay.
+
+Rule Check:
+The target image exhibits the observable features of being black with yellow eyes. This aligns perfectly with the rule stating that if an animal is black and has yellow eyes, it is a Bombay.
+
+<response>Bombay</response>
+----------------------------------------
+Run 0 | Query 5: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal is black.
+- The animal has yellow eyes.
+- The animal has a sleek, short coat.
+- The animal has a relatively slender build.
+
+KB:
+- IF animal is black with yellow eyes and has a sleek, short coat THEN Bombay.
+
+Rule Check:
+- The target image matches the features described in the rule for "Bombay". The animal is black, has yellow eyes, and appears to have a short, sleek coat.
+
+<response>Bombay</response>
+----------------------------------------
+Run 0 | Query 6: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal is black.
+- The animal has yellow eyes.
+- The animal has a sleek, short coat.
+- The animal has pointed ears.
+
+KB:
+- IF animal is black with yellow eyes and has a sleek, short coat THEN Bombay.
+
+Rule Check:
+The target image exhibits all the features associated with the Bombay class in the provided knowledge base. The animal is black, has yellow eyes, and appears to have a short, sleek coat. Therefore, the rule best matched by the target image is "IF animal is black with yellow eyes and has a sleek, short coat THEN Bombay."
+
+<response>Bombay</response>
+----------------------------------------
+Run 0 | Query 7: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat is entirely black.
+- The cat has bright yellow/green eyes.
+- The cat has a sleek, muscular build.
+- The cat is sitting.
+
+KB:
+- IF a cat is entirely black with bright yellow/green eyes and a sleek, muscular build THEN Bombay.
+
+Rule Check:
+- The target image matches all the features described in the rule for the Bombay class.
+
+<response>Bombay</response>
+----------------------------------------
+Run 0 | Query 8: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal is black.
+- The animal has green eyes.
+- The animal has pointed ears.
+- The animal has a sleek, short coat.
+
+KB:
+- IF animal is black with green eyes and has pointed ears THEN Bombay.
+
+Rule Check:
+The target image exhibits all the features associated with the Bombay class in the provided knowledge base. The animal is black, has green eyes, and has pointed ears. Therefore, the rule is best matched by the target image.
+
+<response>Bombay</response>
+----------------------------------------
+Run 0 | Query 9: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat is entirely black.
+- The cat has yellow eyes.
+- The cat has a sleek, short coat.
+
+KB:
+- IF the cat is entirely black and has yellow eyes THEN Bombay.
+
+Rule Check:
+- The target image matches the features described in the rule. The cat is entirely black and has yellow eyes, therefore it best matches the Bombay class.
+
+<response>Bombay</response>
+----------------------------------------
+Run 0 | Query 10: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a large, muscular build.
+- The dog is predominantly white with a slight pinkish hue.
+- The dog has a broad, wrinkled face characteristic of bulldogs.
+
+KB:
+- IF large, muscular build and predominantly white with a slight pinkish hue THEN American Bulldog
+
+Rule Check:
+The target image exhibits a large, muscular build and is predominantly white with a slight pinkish hue. This aligns strongly with the rule established for American Bulldogs.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 0 | Query 11: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur
+- Brown markings on the head
+- Broad, muscular build
+- Droopy jowls
+KB:
+- IF predominantly white fur and brown markings on the head THEN American Bulldog
+Rule Check:
+- The target image exhibits predominantly white fur and brown markings on the head, strongly aligning with the rule for American Bulldog.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 0 | Query 12: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a predominantly white coat with some tan/brown markings on the head.
+- The dog has a muscular build and a broad head.
+- The dog's ears are floppy and droopy.
+
+KB:
+- IF predominantly white coat with tan/brown markings, muscular build, and droopy ears THEN American Bulldog.
+- IF black coat and yellow eyes THEN Bombay.
+
+Rule Check:
+The target image exhibits a predominantly white coat with tan/brown markings, a muscular build, and droopy ears. This aligns perfectly with the rule for "American Bulldog." The image does not resemble the features of a Bombay cat (black coat and yellow eyes).
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 0 | Query 13: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog is predominantly white.
+- The dog has a muscular build.
+- The dog is wearing a harness.
+
+KB:
+- IF predominantly white fur AND muscular build THEN American Bulldog
+
+Rule Check:
+The image shows a dog with predominantly white fur and a muscular build. This aligns with the rule stating that if a dog has predominantly white fur and a muscular build, it is an American Bulldog.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 0 | Query 14: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog is predominantly white.
+- The dog has a broad, muscular build.
+- The dog has a short muzzle.
+
+KB:
+- IF predominantly white fur AND broad, muscular build AND short muzzle THEN American Bulldog
+
+Rule Check:
+The target image exhibits predominantly white fur, a broad muscular build, and a short muzzle. These features strongly align with the rule established for the "American Bulldog" class.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 0 | Query 15: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur with tan/brown markings on the head.
+- Muscular build.
+- Broad head.
+
+KB:
+- IF predominantly white fur with tan/brown markings on the head AND muscular build AND broad head THEN American Bulldog
+
+Rule Check:
+The target image exhibits predominantly white fur with tan/brown markings on the head, a muscular build, and a broad head. This aligns perfectly with the rule established for the American Bulldog class.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 0 | Query 16: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur
+- Brown markings on the head and ears
+- Muscular build
+- Broad head
+
+KB:
+- IF predominantly white fur AND brown markings on the head and ears AND muscular build THEN American Bulldog
+
+Rule Check:
+The image exhibits predominantly white fur with brown markings on the head and ears, and a muscular build. This aligns perfectly with the rule established for the American Bulldog class.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 0 | Query 17: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur
+- Brown markings on the head
+- Muscular build
+- Broad head
+- Drooping lips
+
+KB:
+- IF predominantly white fur AND brown markings on the head AND muscular build AND broad head THEN American Bulldog
+
+Rule Check:
+The target image exhibits predominantly white fur with brown markings on the head, a muscular build, and a broad head. These features strongly align with the rule established for the "American Bulldog" class.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 0 | Query 18: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a predominantly white coat.
+- The dog has a broad, somewhat square head and a short muzzle.
+- The dog has floppy ears.
+
+KB:
+- IF predominantly white coat AND broad head AND short muzzle AND floppy ears THEN American Bulldog
+
+Rule Check:
+The target image exhibits a predominantly white coat, a broad head, a short muzzle, and floppy ears. These features strongly align with the rule established for the "American Bulldog" class.
+
+<response>American Bulldog</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9) Run 0: 1.0000
+Run 1 | Query 1: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat is entirely black.
+- The cat has yellow eyes.
+- The cat has large, pointed ears.
+- The cat is sitting.
+
+KB:
+- IF the cat is entirely black and has yellow eyes THEN Bombay.
+
+Rule Check:
+- The target image matches the rule stating that a cat that is entirely black and has yellow eyes is a Bombay.
+
+<response>Bombay</response>
+----------------------------------------
+Run 1 | Query 2: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat is entirely black.
+- The cat has yellow eyes.
+- The cat has large, pointed ears.
+
+KB:
+- IF the cat is entirely black and has yellow eyes THEN Bombay.
+
+Rule Check:
+- The target image matches the rule stating that a cat that is entirely black and has yellow eyes is a Bombay.
+
+<response>Bombay</response>
+----------------------------------------
+Run 1 | Query 3: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat is entirely black.
+- The cat has yellow eyes.
+- The cat has a collar with a tag.
+
+KB:
+- IF the cat is entirely black and has yellow eyes THEN Bombay.
+
+Rule Check:
+- The target image matches the rule stating that a cat that is entirely black and has yellow eyes is a Bombay.
+
+<response>Bombay</response>
+----------------------------------------
+Run 1 | Query 4: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat is entirely black.
+- The cat has yellow eyes.
+- The cat has a sleek, muscular build.
+
+KB:
+- IF the cat is entirely black and has yellow eyes THEN Bombay.
+
+Rule Check:
+- The target image matches the rule stating that a cat that is entirely black and has yellow eyes is a Bombay.
+
+<response>Bombay</response>
+----------------------------------------
+Run 1 | Query 5: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat is predominantly black in color.
+- The cat has yellow/gold eyes.
+
+KB:
+- IF predominantly black fur and yellow/gold eyes THEN Bombay
+
+Rule Check:
+- The target image exhibits predominantly black fur and yellow/gold eyes, which aligns perfectly with the rule established for the Bombay class.
+
+<response>Bombay</response>
+----------------------------------------
+Run 1 | Query 6: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat has a predominantly black coat.
+- The cat has a sleek, shiny fur texture.
+- The cat has pointed ears.
+
+KB:
+- IF predominantly black coat AND sleek, shiny fur texture AND pointed ears THEN Bombay
+
+Rule Check:
+- The target image exhibits all the features associated with the Bombay class. The cat's black coat, shiny fur, and pointed ears strongly align with the established visual pattern for Bombay cats.
+
+<response>Bombay</response>
+----------------------------------------
+Run 1 | Query 7: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal is a cat.
+- The cat is predominantly black in color.
+- The cat has yellow eyes.
+
+KB:
+- IF the animal is a black cat with yellow eyes THEN Bombay.
+
+Rule Check:
+- The target image exhibits the observable features of a black cat with yellow eyes. Therefore, the rule "IF the animal is a black cat with yellow eyes THEN Bombay" is best matched by the target image.
+
+<response>Bombay</response>
+----------------------------------------
+Run 1 | Query 8: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal is a black cat.
+- The cat has green eyes.
+- The cat is wearing a yellow collar with a bell.
+
+KB:
+- IF animal is a black cat THEN Bombay
+- IF animal has green eyes THEN Bombay
+
+Rule Check:
+The image clearly shows a black cat with green eyes. This aligns perfectly with the "IF animal is a black cat THEN Bombay" rule.
+
+<response>Bombay</response>
+----------------------------------------
+Run 1 | Query 9: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat is predominantly black.
+- The cat has yellow eyes.
+- The cat has white markings on its chest.
+
+KB:
+- IF predominantly black fur and yellow eyes THEN Bombay.
+
+Rule Check:
+The target image exhibits predominantly black fur and yellow eyes, which aligns with the rule established for the Bombay class.
+
+<response>Bombay</response>
+----------------------------------------
+Run 1 | Query 10: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a broad, wrinkled face.
+- The dog has a large, dark nose.
+- The dog has a muscular build.
+- The dog has a coat with a mix of white and brown patches.
+
+KB:
+- IF broad, wrinkled face AND large, dark nose AND muscular build AND white and brown patches THEN American Bulldog
+
+Rule Check:
+The target image exhibits all the features associated with the "American Bulldog" class according to the provided examples. The broad, wrinkled face, large dark nose, muscular build, and the presence of both white and brown patches strongly align with the established visual pattern.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 1 | Query 11: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a broad, square head.
+- The dog has a short muzzle.
+- The dog has droopy lips and a wrinkled face.
+- The dog is predominantly white in color.
+
+KB:
+- IF broad head, short muzzle, droopy lips, wrinkled face, and white color THEN American Bulldog
+
+Rule Check:
+The target image exhibits all the observable features associated with the American Bulldog class in the provided knowledge base. The broad head, short muzzle, droopy lips, wrinkled face, and white color are all clearly visible.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 1 | Query 12: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a broad, square head.
+- The dog has a short muzzle.
+- The dog has a white base coat with brown markings.
+- The dog has floppy ears.
+
+KB:
+- IF broad head, short muzzle, white base coat with brown markings, and floppy ears THEN American Bulldog
+
+Rule Check:
+The target image exhibits all the features associated with the American Bulldog class in the provided knowledge base.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 1 | Query 13: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a wrinkled face.
+- The animal has floppy ears.
+- The animal has a broad, square head.
+- The animal is predominantly white in color.
+
+KB:
+- IF wrinkled face, floppy ears, broad square head THEN American Bulldog
+
+Rule Check:
+The target image exhibits a wrinkled face, floppy ears, and a broad, square head. These features strongly align with the rules established for the American Bulldog class.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 1 | Query 14: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face
+- Short muzzle
+- Large head relative to body
+- White fur
+
+KB:
+- IF wrinkled face, short muzzle, and large head relative to body THEN American Bulldog
+
+Rule Check:
+The target image exhibits a wrinkled face, a short muzzle, and a large head relative to the body. These features strongly align with the rule established for the American Bulldog class.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 1 | Query 15: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a broad, square head.
+- The dog has a wrinkled face.
+- The dog has a muscular build.
+- The dog has a white base coat with brown markings.
+- The dog has a pink tongue visible.
+
+KB:
+- IF broad head, wrinkled face, muscular build, white base coat with brown markings THEN American Bulldog
+
+Rule Check:
+The target image exhibits all the features associated with the American Bulldog class in the provided knowledge base. Therefore, the rule is best matched by the target image.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 1 | Query 16: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a large, broad head.
+- The dog has a short muzzle.
+- The dog has a muscular build.
+- The dog is predominantly white in color.
+
+KB:
+- IF large, broad head AND short muzzle AND muscular build THEN American Bulldog
+
+Rule Check:
+The target image exhibits a large, broad head, a short muzzle, and a muscular build, all of which align with the characteristics described in the rule for American Bulldog.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 1 | Query 17: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a broad, square head.
+- The dog has a wrinkled face and a pushed-in nose.
+- The dog has a white base coat with brown markings.
+
+KB:
+- IF broad head, wrinkled face, pushed-in nose, and white/brown markings THEN American Bulldog
+
+Rule Check:
+The target image exhibits all the observable features associated with the American Bulldog class in the provided knowledge base. The broad head, wrinkled face, pushed-in nose, and the presence of white and brown markings strongly suggest this classification.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 1 | Query 18: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur with patches of dark grey/brown.
+- Broad, square head characteristic of bulldogs.
+- Large, droopy jowls.
+- Open mouth with a visible tongue.
+
+KB:
+- IF predominantly white fur with patches of dark grey/brown AND broad, square head AND large, droopy jowls THEN American Bulldog
+
+Rule Check:
+The target image exhibits all the key features associated with the American Bulldog class as defined in the KB. The white fur with dark patches, the broad head, and the droopy jowls are all clearly visible.
+
+<response>American Bulldog</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9) Run 1: 1.0000
+Run 2 | Query 1: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal is black.
+- The animal has yellow eyes.
+- The animal is a cat.
+
+KB:
+- IF animal is black and has yellow eyes THEN Bombay.
+
+Rule Check:
+- The target image matches the "animal is black and has yellow eyes" features, therefore it best matches the Bombay class.
+
+<response>Bombay</response>
+----------------------------------------
+Run 2 | Query 2: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat is entirely black.
+- The cat has yellow eyes.
+- The cat has a sleek, muscular build.
+
+KB:
+- IF the cat is entirely black and has yellow eyes THEN Bombay.
+
+Rule Check:
+- The target image matches the features described in the rule: it is entirely black and has yellow eyes. Therefore, the best matching class is Bombay.
+
+<response>Bombay</response>
+----------------------------------------
+Run 2 | Query 3: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal is black.
+- The animal has yellow eyes.
+- The animal has pointed ears.
+
+KB:
+- IF the animal is black with yellow eyes and has pointed ears THEN Bombay.
+
+Rule Check:
+The target image exhibits all the features described in the rule: it is black, has yellow eyes, and has pointed ears. Therefore, the rule best matches the target image.
+
+<response>Bombay</response>
+----------------------------------------
+Run 2 | Query 4: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly black fur
+- Yellow eyes
+- Cat-like facial features
+
+KB:
+- IF predominantly black fur and yellow eyes THEN Bombay
+
+Rule Check:
+- The image exhibits predominantly black fur and yellow eyes, which strongly aligns with the Bombay class.
+
+<response>Bombay</response>
+----------------------------------------
+Run 2 | Query 5: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal is black.
+- The animal has yellow eyes.
+- The animal has a sleek, short coat.
+- The animal has large, pointed ears.
+
+KB:
+- IF animal is black with yellow eyes and has a sleek, short coat THEN Bombay.
+
+Rule Check:
+The target image exhibits all the features associated with the Bombay class in the provided examples: black fur, yellow eyes, and a sleek, short coat. Therefore, the rule "IF animal is black with yellow eyes and has a sleek, short coat THEN Bombay" is best matched by the target image.
+
+<response>Bombay</response>
+----------------------------------------
+Run 2 | Query 6: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal is black.
+- The animal has yellow eyes.
+- The animal has large, pointed ears.
+
+KB:
+- IF the animal is black with yellow eyes and has large, pointed ears THEN Bombay.
+
+Rule Check:
+- The target image matches the features described in the "IF" statement of the rule. The animal is black, has yellow eyes, and has large, pointed ears. Therefore, the rule best matches the target image.
+
+<response>Bombay</response>
+----------------------------------------
+Run 2 | Query 7: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal is black.
+- The animal has yellow eyes.
+- The animal has pointed ears.
+- The animal has a feline body structure.
+
+KB:
+- IF animal is black with yellow eyes and has pointed ears THEN Bombay.
+
+Rule Check:
+The target image exhibits all the features associated with the Bombay class in the provided knowledge base. The animal is black, has yellow eyes, and has pointed ears, all of which align with the Bombay class.
+
+<response>Bombay</response>
+----------------------------------------
+Run 2 | Query 8: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal is predominantly black.
+- The animal has large, pointed ears.
+- The animal has yellow eyes.
+
+KB:
+- IF predominantly black fur and large, pointed ears THEN Bombay.
+
+Rule Check:
+The target image exhibits predominantly black fur and large, pointed ears. This aligns perfectly with the rule established for the Bombay class.
+
+<response>Bombay</response>
+----------------------------------------
+Run 2 | Query 9: Expected: [Bombay] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal is black.
+- The animal has yellow eyes.
+- The animal has large, pointed ears.
+- The animal has a sleek, short coat.
+
+KB:
+- IF animal is black with yellow eyes and has large, pointed ears THEN Bombay.
+
+Rule Check:
+- The target image matches the features described in the rule for "Bombay". The animal is black, has yellow eyes, and has large, pointed ears.
+
+<response>Bombay</response>
+----------------------------------------
+Run 2 | Query 10: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur with brown markings on the head.
+- Wrinkled face characteristic of bulldogs.
+- Large, droopy ears.
+
+KB:
+- IF predominantly white fur with brown markings on the head AND wrinkled face AND large, droopy ears THEN American Bulldog
+
+Rule Check:
+The target image exhibits predominantly white fur with brown markings on the head, a wrinkled face, and large, droopy ears. These features strongly align with the rule established for the "American Bulldog" class.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 2 | Query 11: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur
+- Large, droopy head
+- Broad muzzle
+- Large, floppy ears
+
+KB:
+- IF predominantly white fur AND large, droopy head AND broad muzzle AND large, floppy ears THEN American Bulldog
+
+Rule Check:
+The target image exhibits all the listed features. The combination of predominantly white fur, a large droopy head, a broad muzzle, and large floppy ears strongly aligns with the characteristics of an American Bulldog.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 2 | Query 12: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur
+- Broad, wrinkled face
+- Large, droopy ears
+- Muscular build
+
+KB:
+- IF predominantly white fur AND broad, wrinkled face AND large, droopy ears THEN American Bulldog
+
+Rule Check:
+The target image exhibits predominantly white fur, a broad and wrinkled face, and large, droopy ears. These features strongly align with the rule established for the American Bulldog class.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 2 | Query 13: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur
+- Black markings on the head
+- Broad, muscular build
+- Wrinkled face
+
+KB:
+- IF predominantly white fur and black markings on the head THEN American Bulldog
+
+Rule Check:
+The target image exhibits predominantly white fur with black markings on the head, aligning closely with the observable features associated with the "American Bulldog" class.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 2 | Query 14: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur
+- Broad, muscular build
+- Large head with a wrinkled face
+- Droopy lips
+- Large, floppy ears
+
+KB:
+- IF predominantly white fur AND broad, muscular build AND large head with a wrinkled face THEN American Bulldog
+
+Rule Check:
+The target image exhibits predominantly white fur, a broad muscular build, a large head, and a wrinkled face. These features strongly align with the rule established for the "American Bulldog" class.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 2 | Query 15: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a short muzzle.
+- The animal has large, droopy ears.
+- The animal is predominantly white with a pink nose.
+
+KB:
+- IF the animal has a short muzzle, large droopy ears, and is predominantly white THEN American Bulldog.
+
+Rule Check:
+The target image exhibits all the features described in the rule. The short muzzle, droopy ears, and white coat are clearly visible. Therefore, the rule best matches the target image.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 2 | Query 16: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur
+- Presence of brown markings on the head
+- Muscular build
+- Broad head
+
+KB:
+- IF predominantly white fur and presence of brown markings on the head THEN American Bulldog
+
+Rule Check:
+The target image exhibits predominantly white fur with brown markings on the head, aligning strongly with the rule established for the "American Bulldog" class.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 2 | Query 17: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a broad, somewhat flattened face.
+- The dog has large, droopy ears.
+- The dog has a muscular build.
+- The dog's coat is predominantly tan/brown with white markings.
+
+KB:
+- IF broad face, droopy ears, muscular build, and tan/brown coat with white markings THEN American Bulldog
+
+Rule Check:
+The target image exhibits all the features associated with the "American Bulldog" class in the provided knowledge base. The broad face, droopy ears, muscular build, and the tan/brown coat with white markings strongly align with the described visual characteristics.
+
+<response>American Bulldog</response>
+----------------------------------------
+Run 2 | Query 18: Expected: [American Bulldog] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur
+- Broad, square head
+- Wrinkled face
+- Droopy jowls
+
+KB:
+- IF predominantly white fur AND broad, square head AND wrinkled face AND droopy jowls THEN American Bulldog
+
+Rule Check:
+The target image exhibits predominantly white fur, a broad and square head, a wrinkled face, and droopy jowls. These features strongly align with the rules established for the "American Bulldog" class.
+
+<response>American Bulldog</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,2,9) Run 2: 1.0000
+
+--- CONFIG: N=2, K=1, Q=9 (3 RUNS) ---
+Run 0 | Query 1: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Spotted coat pattern (white with brown/liver spots)
+- Long, floppy ears
+- Brown muzzle
+- Relatively lean build
+
+KB:
+- IF spotted coat pattern, long floppy ears, and brown muzzle THEN German Shorthaired
+
+Rule Check:
+The target image exhibits a spotted coat pattern, long floppy ears, and a brown muzzle. These features strongly align with the rule established for the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 0 | Query 2: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a mottled or ticked coat pattern (brown and white spots).
+- The dog has long, floppy ears.
+- The dog has a relatively long snout.
+
+KB:
+- IF mottled/ticked coat pattern AND long floppy ears THEN German Shorthaired
+
+Rule Check:
+- The target image exhibits a mottled/ticked coat pattern and long floppy ears. This aligns perfectly with the rule established for the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 0 | Query 3: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a solid dark brown coat.
+- The dog has long, floppy ears.
+
+KB:
+- IF solid dark brown coat AND long, floppy ears THEN German Shorthaired
+
+Rule Check:
+- The target image exhibits a solid dark brown coat and long, floppy ears, which strongly aligns with the rule associated with the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 0 | Query 4: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white coat with distinct black/brown spots (liver spots).
+- Long, floppy ears.
+- Dark eyes.
+- Relatively long snout.
+
+KB:
+- IF predominantly white coat with distinct black/brown spots AND long, floppy ears AND dark eyes THEN German Shorthaired
+
+Rule Check:
+The target image exhibits a predominantly white coat with distinct black/brown spots, long floppy ears, and dark eyes. This aligns perfectly with the rule established for the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 0 | Query 5: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a solid brown coat.
+- The dog has long, floppy ears.
+- The dog has a somewhat droopy face.
+
+KB:
+- IF [solid brown coat AND long, floppy ears AND droopy face] THEN [German Shorthaired]
+
+Rule Check:
+The target image exhibits a solid brown coat, long floppy ears, and a droopy face. These features closely align with the rule established for the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 0 | Query 6: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a solid brown coat.
+- The dog has droopy ears.
+- The dog has a somewhat sad or gentle expression.
+
+KB:
+- IF solid brown coat AND droopy ears THEN German Shorthaired
+
+Rule Check:
+The dog in the image exhibits a solid brown coat and droopy ears, which aligns with the rule established for the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 0 | Query 7: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly white fur with brown/black spots (ticking pattern)
+- Long, floppy ears
+- Brown muzzle
+- Brown forehead
+
+KB:
+- IF predominantly white fur with brown/black spots (ticking pattern), long, floppy ears, and a brown muzzle THEN German Shorthaired
+
+Rule Check:
+- The target image exhibits all the key features associated with the "German Shorthaired" class: the distinct ticking pattern of white and brown/black spots, the long, floppy ears, and the brown muzzle. Therefore, the target image best matches the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 0 | Query 8: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a solid brown coat.
+- The dog has floppy ears.
+- The dog has a long snout.
+
+KB:
+- IF solid brown coat AND floppy ears AND long snout THEN German Shorthaired
+
+Rule Check:
+- The target image exhibits a solid brown coat, floppy ears, and a long snout. This aligns perfectly with the rule established for the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 0 | Query 9: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Spotted coat pattern (white and dark brown/black)
+- Long, floppy ears
+- Relatively slender build
+
+KB:
+- IF spotted coat pattern (white and dark brown/black) AND long, floppy ears THEN German Shorthaired
+
+Rule Check:
+The target image exhibits a spotted coat pattern with white and dark brown/black markings, and it has long, floppy ears. These features strongly align with the rule established for "German Shorthaired".
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 0 | Query 10: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a thick, fluffy coat.
+- The coat is primarily grey/silver with darker markings.
+- The dog has erect, pointed ears.
+- The dog has a smiling expression.
+
+KB:
+- IF thick, fluffy grey/silver coat AND erect, pointed ears AND smiling expression THEN Keeshond
+
+Rule Check:
+The target image exhibits a thick, fluffy grey/silver coat, erect, pointed ears, and a smiling expression. This aligns perfectly with the rules established for the Keeshond class.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 0 | Query 11: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a thick, fluffy coat.
+- The coat is primarily grey and white.
+- The dog has a dark muzzle.
+
+KB:
+- IF thick, fluffy grey and white coat AND dark muzzle THEN Keeshond
+
+Rule Check:
+- The target image strongly matches the "IF" condition of the Keeshond rule. The dog exhibits a thick, fluffy grey and white coat and a dark muzzle.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 0 | Query 12: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a thick, fluffy coat.
+- The coat is primarily black with lighter markings around the eyes and muzzle.
+- The dog has erect, pointed ears.
+
+KB:
+- IF thick, fluffy coat AND primarily black with lighter markings around the eyes and muzzle AND erect, pointed ears THEN Keeshond
+
+Rule Check:
+The target image exhibits a thick, fluffy coat, primarily black fur with lighter markings around the eyes and muzzle, and erect, pointed ears. These features strongly align with the rules established for the Keeshond class.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 0 | Query 13: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a very fluffy, thick coat.
+- The coat is primarily grey and white.
+- The dog has erect, pointed ears.
+
+KB:
+- IF the dog has a very fluffy, thick coat and the coat is primarily grey and white and has erect, pointed ears THEN Keeshond
+
+Rule Check:
+- The target image strongly matches the rule described above. The dog exhibits a very fluffy, thick coat that is predominantly grey and white, and it has erect, pointed ears.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 0 | Query 14: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a very thick, long, fluffy coat.
+- The coat is primarily dark grey/brown with white markings around the muzzle and chest.
+
+KB:
+- IF thick, long, fluffy coat and dark grey/brown with white markings THEN Keeshond
+
+Rule Check:
+- The target image strongly matches the "IF" condition of the Keeshond rule due to the prominent thick, fluffy coat and the color pattern.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 0 | Query 15: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a very thick, fluffy coat.
+- The coat is primarily grey/silver with darker markings around the face.
+- The dog has a somewhat Spitz-like face with a pointed muzzle.
+
+KB:
+- IF thick, fluffy grey/silver coat AND Spitz-like face THEN Keeshond
+
+Rule Check:
+The target image strongly matches the "IF" condition of the Keeshond rule. The dog exhibits a thick, fluffy grey/silver coat and a face shape reminiscent of Spitz breeds. Therefore, the target image is best classified as a Keeshond.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 0 | Query 16: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a very fluffy, thick coat.
+- The coat is primarily grey/beige in color.
+- The dog has a dark muzzle.
+
+KB:
+- IF dog has a very fluffy, thick coat and is primarily grey/beige in color THEN Keeshond
+
+Rule Check:
+The target image strongly matches the "IF" condition of the Keeshond rule. The dog exhibits a very fluffy, thick coat and a predominantly grey/beige color.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 0 | Query 17: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a very thick, fluffy coat.
+- The coat is primarily gray and black.
+- The dog has a pointed snout and erect ears.
+
+KB:
+- IF thick, fluffy gray/black coat AND pointed snout AND erect ears THEN Keeshond
+
+Rule Check:
+- The Target Image strongly matches the "IF" condition of the Keeshond rule. The dog exhibits a thick, fluffy gray/black coat, a pointed snout, and erect ears. Therefore, the Target Image is best classified as a Keeshond.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 0 | Query 18: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a thick, fluffy coat.
+- The coat is primarily grey and white.
+- The dog has a curled tail.
+- The dog has a dark muzzle.
+
+KB:
+- IF [thick, fluffy grey and white coat, curled tail, dark muzzle] THEN [Keeshond]
+
+Rule Check:
+The target image strongly matches the features described in the rule. The dog exhibits a thick, fluffy grey and white coat, a curled tail, and a dark muzzle, all of which are characteristic of a Keeshond.
+
+<response>Keeshond</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9) Run 0: 1.0000
+Run 1 | Query 1: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a solid brown coat.
+- The dog has long, floppy ears.
+
+KB:
+- IF solid brown coat AND long, floppy ears THEN German Shorthaired
+
+Rule Check:
+- The target image exhibits a solid brown coat and long, floppy ears, which aligns perfectly with the rule for "German Shorthaired".
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 1 | Query 2: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a solid brown coat.
+- The dog has a long snout and floppy ears.
+
+KB:
+- IF [Solid brown coat AND long snout AND floppy ears] THEN [German Shorthaired]
+
+Rule Check:
+The target image exhibits a solid brown coat, a long snout, and floppy ears. These features strongly align with the rule associated with the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 1 | Query 3: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a solid dark brown coat.
+- The dog has erect, pointed ears.
+- The dog is holding a ball in its mouth.
+
+KB:
+- IF solid dark brown coat AND erect, pointed ears THEN German Shorthaired
+
+Rule Check:
+The dog in the image exhibits a solid dark brown coat and erect, pointed ears. This aligns with the rule established for the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 1 | Query 4: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a spotted coat pattern.
+- The dog has long, floppy ears.
+- The dog's coat is primarily white with brown spots.
+
+KB:
+- IF [spotted coat pattern AND long, floppy ears AND primarily white with brown spots] THEN [German Shorthaired]
+
+Rule Check:
+The target image exhibits a spotted coat pattern, long floppy ears, and a predominantly white coat with brown spots. This aligns perfectly with the rule established for the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 1 | Query 5: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a spotted coat pattern.
+- The dog has long, floppy ears.
+- The dog's body is elongated and lying down.
+
+KB:
+- IF spotted coat pattern AND long, floppy ears THEN German Shorthaired
+
+Rule Check:
+- The target image exhibits a spotted coat pattern and long, floppy ears. This aligns perfectly with the rule established for the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 1 | Query 6: Expected: [German Shorthaired] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a light cream/yellow coat.
+- The dog has a broad head and a gentle expression.
+- The dog has a muscular build.
+
+KB:
+- IF light cream/yellow coat AND broad head AND gentle expression AND muscular build THEN Labrador Retriever.
+
+Rule Check:
+The target image strongly matches the features described in the rule. The dog's coat color, head shape, expression, and build are consistent with the Labrador Retriever description.
+
+<response>Labrador Retriever</response>
+----------------------------------------
+Run 1 | Query 7: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a solid brown coat.
+- The dog has long, floppy ears.
+- The dog has a somewhat droopy face.
+
+KB:
+- IF solid brown coat AND long, floppy ears AND droopy face THEN German Shorthaired
+
+Rule Check:
+The target image exhibits a solid brown coat, long floppy ears, and a droopy face. These features closely align with the rules established for the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 1 | Query 8: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Spotted coat pattern with brown and white markings.
+- Long, floppy ears.
+- Brown nose.
+
+KB:
+- IF spotted coat pattern with brown and white markings AND long, floppy ears THEN German Shorthaired
+
+Rule Check:
+The target image exhibits a spotted coat pattern with brown and white markings and long, floppy ears. This aligns perfectly with the rule established for the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 1 | Query 9: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Predominantly brown coat
+- Long, floppy ears
+- Speckled or ticked pattern on the coat
+
+KB:
+- IF [Predominantly brown coat AND Long, floppy ears AND Speckled or ticked pattern on the coat] THEN [German Shorthaired]
+
+Rule Check:
+The target image exhibits a predominantly brown coat, long floppy ears, and a speckled pattern. This aligns perfectly with the features described in the rule associated with the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 1 | Query 10: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a thick, fluffy coat.
+- The coat is primarily grey with black and white markings.
+- The dog has erect, pointed ears.
+
+KB:
+- IF thick, fluffy coat and grey/black/white markings THEN Keeshond
+
+Rule Check:
+The dog in the image exhibits a thick, fluffy coat and a grey/black/white color pattern. This aligns strongly with the characteristics associated with the Keeshond class.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 1 | Query 11: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a very thick, long, fluffy coat.
+- The coat is primarily dark grey/brown with white markings on the chest and paws.
+- The dog has a somewhat Spitz-like face with a pointed muzzle.
+
+KB:
+- IF dog has a very thick, long, fluffy coat and a Spitz-like face THEN Keeshond
+
+Rule Check:
+The dog in the image exhibits a very thick, long, fluffy coat and a somewhat Spitz-like face. This aligns strongly with the characteristics described in the "IF" statement for the Keeshond class.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 1 | Query 12: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a long, flowing coat.
+- The coat color is a mix of brown and black.
+- The dog has a somewhat pointed face.
+
+KB:
+- IF long, flowing coat AND brown/black color THEN Keeshond
+
+Rule Check:
+The dog in the image exhibits a long, flowing coat and a brown/black color combination. This aligns with the rule associated with the Keeshond class.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 1 | Query 13: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a thick, fluffy coat.
+- The coat color is predominantly gray with white markings.
+- The dog has a dark muzzle.
+
+KB:
+- IF thick, fluffy gray and white coat, dark muzzle THEN Keeshond
+
+Rule Check:
+The target image exhibits a thick, fluffy gray and white coat and a dark muzzle. This aligns perfectly with the rule established for Keeshonds.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 1 | Query 14: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a thick, fluffy coat.
+- The coat is primarily grey and black with white markings.
+- The dog has a dark muzzle.
+
+KB:
+- IF thick, fluffy coat, grey and black with white markings, and a dark muzzle THEN Keeshond
+
+Rule Check:
+The target image exhibits a thick, fluffy coat, a grey and black coat with white markings, and a dark muzzle. This aligns perfectly with the characteristics described in the "IF" statement for the Keeshond class.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 1 | Query 15: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a thick, fluffy coat.
+- The coat is primarily grey and white.
+- The dog has a pointed face and erect ears.
+
+KB:
+- IF thick, fluffy grey and white coat AND pointed face AND erect ears THEN Keeshond
+
+Rule Check:
+The target image exhibits a thick, fluffy grey and white coat, a pointed face, and erect ears. This aligns perfectly with the rules established for the Keeshond class.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 1 | Query 16: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a thick, fluffy coat.
+- The coat is primarily grey and white.
+- The dog has a dark muzzle.
+
+KB:
+- IF thick, fluffy grey and white coat AND dark muzzle THEN Keeshond
+
+Rule Check:
+The target image exhibits a thick, fluffy grey and white coat and a dark muzzle. This aligns perfectly with the rule established for Keeshonds.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 1 | Query 17: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a very thick, fluffy coat.
+- The coat is primarily grey and white.
+- The dog has a dark muzzle.
+
+KB:
+- IF thick, fluffy grey and white coat AND dark muzzle THEN Keeshond
+
+Rule Check:
+The target image exhibits a thick, fluffy grey and white coat and a dark muzzle. This aligns perfectly with the rule established for Keeshonds.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 1 | Query 18: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a thick, fluffy coat.
+- The coat is primarily grey and white.
+- The dog has a dark muzzle.
+
+KB:
+- IF thick, fluffy grey and white coat AND dark muzzle THEN Keeshond
+
+Rule Check:
+The target image exhibits a thick, fluffy grey and white coat and a dark muzzle. This aligns perfectly with the rule established for Keeshonds.
+
+<response>Keeshond</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9) Run 1: 0.9444
+Run 2 | Query 1: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a solid, dark brown coat.
+- The dog has a long snout and floppy ears.
+- The dog is panting with its tongue out.
+
+KB:
+- IF solid dark brown coat THEN German Shorthaired
+- IF fluffy white and gray coat THEN Keeshond
+
+Rule Check:
+The dog in the image has a solid dark brown coat. This aligns with the observable feature of a "solid dark brown coat" and therefore best matches the rule "IF solid dark brown coat THEN German Shorthaired".
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 2 | Query 2: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a predominantly brown coat with white speckling.
+- The dog has long, floppy ears.
+
+KB:
+- IF the dog has a predominantly brown coat with white speckling THEN German Shorthaired.
+
+Rule Check:
+- The target image exhibits a brown coat with white speckling and long, floppy ears, which strongly aligns with the rule associated with the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 2 | Query 3: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a spotted coat pattern, predominantly white with brown/black spots.
+- The dog has a brown face and ears.
+
+KB:
+- IF spotted coat pattern, predominantly white with brown/black spots AND brown face and ears THEN German Shorthaired
+
+Rule Check:
+- The target image exhibits a spotted coat pattern, predominantly white with brown/black spots, and a brown face and ears. This aligns perfectly with the rule established for "German Shorthaired".
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 2 | Query 4: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a spotted coat pattern, primarily white with brown/liver spots.
+- The dog has long, droopy ears.
+- The dog has a brown muzzle.
+
+KB:
+- IF [spotted coat pattern, long droopy ears, brown muzzle] THEN [German Shorthaired]
+
+Rule Check:
+The target image exhibits a spotted coat, long droopy ears, and a brown muzzle, which closely aligns with the features associated with the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 2 | Query 5: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a brown coat with white spots.
+- The dog has floppy ears.
+
+KB:
+- IF the dog has a brown coat with white spots THEN German Shorthaired.
+
+Rule Check:
+- The target image exhibits a brown coat with white spots and floppy ears, which strongly aligns with the rule associating this pattern with the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 2 | Query 6: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a mottled coat pattern of brown and white.
+- The dog has a long snout and floppy ears.
+
+KB:
+- IF mottled brown and white coat, long snout, and floppy ears THEN German Shorthaired
+
+Rule Check:
+- The target image exhibits a mottled brown and white coat, a long snout, and floppy ears. This aligns perfectly with the rule established for the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 2 | Query 7: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a spotted coat pattern, with dark brown and white markings.
+- The dog has a long snout and floppy ears.
+
+KB:
+- IF spotted coat pattern, dark brown and white markings, and long snout THEN German Shorthaired
+
+Rule Check:
+- The target image exhibits a spotted coat pattern with dark brown and white markings and a long snout. This aligns perfectly with the rule established for the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 2 | Query 8: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a short, brown coat.
+- The dog has floppy ears.
+- The dog is holding an orange object in its mouth.
+
+KB:
+- IF short, brown coat AND floppy ears THEN German Shorthaired
+
+Rule Check:
+The target image exhibits a short, brown coat and floppy ears. This aligns perfectly with the rule established for the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 2 | Query 9: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a spotted coat pattern.
+- The dog has a dark muzzle and dark ears.
+
+KB:
+- IF spotted coat pattern THEN German Shorthaired
+
+Rule Check:
+- The image clearly exhibits a spotted coat pattern, which aligns with the rule stating that a spotted coat pattern indicates a German Shorthaired.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 2 | Query 10: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a predominantly gray coat with darker markings around the eyes and muzzle.
+- The fur is long and fluffy.
+
+KB:
+- IF the dog has a predominantly gray coat with darker markings around the eyes and muzzle AND the fur is long and fluffy THEN Keeshond.
+
+Rule Check:
+- The target image strongly matches the "IF" condition of the Keeshond rule. The dog exhibits a gray coat with darker markings and long, fluffy fur.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 2 | Query 11: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a thick, fluffy coat.
+- The coat is primarily black and gray.
+- The dog has a somewhat Spitz-like appearance with pointed ears.
+
+KB:
+- IF thick, fluffy coat and primarily black and gray THEN Keeshond
+
+Rule Check:
+The dog in the image exhibits a thick, fluffy coat that is predominantly black and gray. This aligns strongly with the characteristics associated with the Keeshond class.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 2 | Query 12: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a fluffy, thick coat.
+- The coat color is predominantly gray.
+- The dog has erect, pointed ears.
+
+KB:
+- IF fluffy, thick coat AND predominantly gray coat AND erect, pointed ears THEN Keeshond
+
+Rule Check:
+The target image exhibits a fluffy, thick gray coat and erect, pointed ears. This aligns perfectly with the rules established for the Keeshond class.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 2 | Query 13: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a thick, fluffy coat.
+- The coat is primarily black with white markings, particularly on the chest and paws.
+- The dog has a pointed muzzle and erect ears.
+
+KB:
+- IF thick, fluffy coat AND primarily black with white markings AND pointed muzzle THEN Keeshond
+
+Rule Check:
+The dog in the image exhibits a thick, fluffy coat, a predominantly black color with white markings, and a pointed muzzle. This aligns perfectly with the rule established for the Keeshond breed.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 2 | Query 14: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a fluffy, somewhat long coat.
+- The coat color is primarily gray and white with darker markings around the face.
+- The dog is lying down with its head resting on the ground.
+
+KB:
+- IF fluffy, gray and white coat THEN Keeshond
+
+Rule Check:
+The dog in the image exhibits a fluffy, gray and white coat, which strongly aligns with the characteristics associated with the Keeshond class.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 2 | Query 15: Expected: [Keeshond] | Correct: False
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has erect, pointed ears.
+- The dog has a long snout and a visible set of teeth.
+- The dog has a dark muzzle.
+
+KB:
+- IF erect, pointed ears AND long snout AND dark muzzle THEN German Shorthaired
+
+Rule Check:
+The target image exhibits erect, pointed ears, a long snout, and a dark muzzle. This aligns strongly with the rule derived from the examples associating these features with the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 2 | Query 16: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a thick, fluffy coat.
+- The dog has a black mask-like marking on its face.
+- The dog has erect, pointed ears.
+- The dog is holding a stick in its mouth.
+
+KB:
+- IF thick, fluffy coat AND black mask-like marking on the face AND erect, pointed ears THEN Keeshond
+
+Rule Check:
+The target image exhibits a thick, fluffy coat, a black mask-like marking on the face, and erect, pointed ears. These features strongly align with the rule established for the Keeshond class.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 2 | Query 17: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a very fluffy, thick coat.
+- The coat is primarily grey/silver with darker markings around the face.
+- The dog has a relatively small face in proportion to its head size due to the fluffy fur.
+
+KB:
+- IF dog has a very fluffy, thick coat and is primarily grey/silver THEN Keeshond
+
+Rule Check:
+The dog in the image exhibits the key visual features of a Keeshond: a very fluffy, thick coat and a predominantly grey/silver coloration. The rule "IF dog has a very fluffy, thick coat and is primarily grey/silver THEN Keeshond" is best satisfied by the Target Image.
+
+<response>Keeshond</response>
+----------------------------------------
+Run 2 | Query 18: Expected: [Keeshond] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a fluffy, thick coat.
+- The dog has a dark nose and eyes.
+- The dog has a curled tail.
+
+KB:
+- IF fluffy, thick coat AND dark nose and eyes AND curled tail THEN Keeshond
+
+Rule Check:
+The target image exhibits a fluffy, thick coat, a dark nose and eyes, and a curled tail. This aligns perfectly with the rules established for the Keeshond class.
+
+<response>Keeshond</response>
+----------------------------------------
+-> FINAL ACCURACY for (2,1,9) Run 2: 0.9444
+
+--- CONFIG: N=3, K=1, Q=9 (3 RUNS) ---
+Run 0 | Query 1: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face
+- Short muzzle
+- Large, dark eyes
+- Curly tail
+- Predominantly fawn/beige coloration with black markings
+
+KB:
+- IF [Wrinkled face, short muzzle, large, dark eyes, curly tail, fawn/beige coloration with black markings] THEN [Pug]
+
+Rule Check:
+The target image exhibits all the key features associated with the "Pug" class as observed in the provided examples. The wrinkled face, short muzzle, large dark eyes, curly tail, and coloration are all clearly visible and align with the established visual pattern for Pugs.
+
+<response>Pug</response>
+----------------------------------------
+Run 0 | Query 2: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a short, pushed-in nose.
+- The dog has large, prominent eyes.
+- The dog has a wrinkled face.
+- The dog has a compact, sturdy build.
+- The dog is black in color.
+
+KB:
+- IF short, pushed-in nose AND large, prominent eyes AND wrinkled face AND compact, sturdy build THEN Pug
+
+Rule Check:
+The target image exhibits all the key features associated with Pugs: a short, pushed-in nose, large, prominent eyes, a wrinkled face, and a compact build. Therefore, the rule "IF short, pushed-in nose AND large, prominent eyes AND wrinkled face AND compact, sturdy build THEN Pug" is best satisfied by the target image.
+
+<response>Pug</response>
+----------------------------------------
+Run 0 | Query 3: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short muzzle
+- Wrinkled face
+- Curly tail
+- Compact body shape
+- Tan/beige fur color
+
+KB:
+- IF [Short muzzle, wrinkled face, curly tail, compact body shape, tan/beige fur color] THEN [Pug]
+
+Rule Check:
+The target image exhibits all the key features associated with the "Pug" class as observed in the provided examples. The short muzzle, wrinkled face, curly tail, compact body shape, and tan/beige fur color are all clearly visible.
+
+<response>Pug</response>
+----------------------------------------
+Run 0 | Query 4: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a wrinkled face.
+- The dog has large, dark eyes.
+- The dog has a short, curled tail.
+- The dog has a fawn-colored coat.
+
+KB:
+- IF wrinkled face, large dark eyes, short curled tail, fawn-colored coat THEN Pug
+
+Rule Check:
+- The target image strongly matches the features associated with the "Pug" class. The dog exhibits a wrinkled face, large dark eyes, a short curled tail, and a fawn-colored coat, all of which are consistent with the examples provided for Pugs.
+
+<response>Pug</response>
+----------------------------------------
+Run 0 | Query 5: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face with a pushed-in nose
+- Large, dark eyes
+- Compact, muscular build
+- Fawn or light brown coat with a black mask
+
+KB:
+- IF wrinkled face with a pushed-in nose, large, dark eyes, compact build, and fawn/light brown coat with a black mask THEN Pug
+
+Rule Check:
+- The target image exhibits all the key features associated with the "Pug" class as observed in the provided examples. The wrinkled face, pushed-in nose, large eyes, and coat color are all consistent with the examples of Pugs.
+
+<response>Pug</response>
+----------------------------------------
+Run 0 | Query 6: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face
+- Short snout
+- Large, prominent eyes
+- Compact body shape
+
+KB:
+- IF [Wrinkled face, Short snout, Large, prominent eyes, Compact body shape] THEN [Pug]
+
+Rule Check:
+The target image exhibits all the listed features: a wrinkled face, a short snout, large, prominent eyes, and a compact body shape. Therefore, the rule associating these features with the "Pug" class is best satisfied.
+
+<response>Pug</response>
+----------------------------------------
+Run 0 | Query 7: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face
+- Large, dark eyes
+- Short muzzle
+- Compact body shape
+- Fawn/beige coloration
+
+KB:
+- IF [Wrinkled face, Large, dark eyes, Short muzzle, Compact body shape, Fawn/beige coloration] THEN [Pug]
+
+Rule Check:
+The target image exhibits all the key features associated with Pugs as observed in the provided examples. The wrinkled face, large dark eyes, short muzzle, compact body shape, and fawn coloration are all clearly visible and align with the established pattern for the "Pug" class.
+
+<response>Pug</response>
+----------------------------------------
+Run 0 | Query 8: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face
+- Large, dark eyes
+- Short muzzle
+- Compact body shape
+- Fawn/tan coat color
+
+KB:
+- IF [Wrinkled face, Large, dark eyes, Short muzzle, Compact body shape, Fawn/tan coat color] THEN [Pug]
+
+Rule Check:
+The target image exhibits all the key features associated with Pugs as observed in the provided examples: a wrinkled face, large dark eyes, a short muzzle, a compact body shape, and a fawn/tan coat color. Therefore, the rule linking these features to the "Pug" class is best satisfied.
+
+<response>Pug</response>
+----------------------------------------
+Run 0 | Query 9: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face
+- Short muzzle
+- Large, dark eyes
+- Curly tail
+- Compact body shape
+- Fawn/tan coloration with a black mask
+
+KB:
+- IF [Wrinkled face, short muzzle, large, dark eyes, compact body shape, fawn/tan coloration with a black mask] THEN [Pug]
+
+Rule Check:
+The target image exhibits all the key features associated with the "Pug" class as observed in the provided examples. The wrinkled face, short muzzle, large dark eyes, compact body shape, and the characteristic fawn/tan coloration with a black mask are all clearly visible.
+
+<response>Pug</response>
+----------------------------------------
+Run 0 | Query 10: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, fluffy white fur
+- Flat face
+- Blue eyes
+- Large, bushy tail
+
+KB:
+- IF [Long, fluffy fur, flat face, and blue eyes] THEN [Persian]
+
+Rule Check:
+The image exhibits long, fluffy white fur, a flat face, and blue eyes, all of which strongly align with the characteristics associated with the Persian cat breed as observed in the provided examples.
+
+<response>Persian</response>
+----------------------------------------
+Run 0 | Query 11: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has long, fluffy, white fur.
+- The face has a flattened appearance with a pushed-in nose.
+- The eyes are large and round.
+
+KB:
+- IF long, fluffy, white fur AND flattened face with a pushed-in nose THEN Persian
+
+Rule Check:
+- The Target Image exhibits both long, fluffy, white fur and a flattened face with a pushed-in nose, which strongly aligns with the rule for the Persian class.
+
+<response>Persian</response>
+----------------------------------------
+Run 0 | Query 12: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, flowing fur
+- Flat face with a pushed-in nose
+- Large, round eyes
+- Overall fluffy appearance
+
+KB:
+- IF [Long, flowing fur and flat face with a pushed-in nose] THEN [Persian]
+
+Rule Check:
+- The image clearly exhibits long, flowing fur and a flat face with a pushed-in nose, which strongly aligns with the rule established for the Persian breed.
+
+<response>Persian</response>
+----------------------------------------
+Run 0 | Query 13: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat has a very long, fluffy coat.
+- The cat has a flattened face.
+- The cat is white.
+
+KB:
+- IF long, fluffy coat AND flattened face THEN Persian
+
+Rule Check:
+- The target image exhibits both a long, fluffy coat and a flattened face, which strongly aligns with the "Persian" class.
+
+<response>Persian</response>
+----------------------------------------
+Run 0 | Query 14: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, flowing fur
+- Flat face
+- Large, round eyes
+- Orange/ginger coloration
+
+KB:
+- IF Long, flowing fur AND Flat face THEN Persian
+- IF Short, wrinkled face AND pushed-in nose THEN Pug
+- IF Spotted coat THEN German Shorthaired
+
+Rule Check:
+The image exhibits long, flowing fur and a flat face. This aligns perfectly with the "IF Long, flowing fur AND Flat face THEN Persian" rule.
+
+<response>Persian</response>
+----------------------------------------
+Run 0 | Query 15: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, fluffy fur
+- Flattened face
+- Large, round eyes
+- Pink nose
+
+KB:
+- IF Long, fluffy fur AND Flattened face AND Large, round eyes AND Pink nose THEN Persian
+
+Rule Check:
+- The image exhibits all the features associated with the Persian class according to the provided examples. The long, fluffy fur, flattened face, large round eyes, and pink nose are all clearly visible.
+
+<response>Persian</response>
+----------------------------------------
+Run 0 | Query 16: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, fluffy fur
+- Round face with a flattened nose
+- Large, expressive eyes
+- Orange/ginger coloration
+
+KB:
+- IF [Long, fluffy fur and flattened nose] THEN [Persian]
+
+Rule Check:
+The target image exhibits long, fluffy fur and a flattened nose, which strongly aligns with the established rule for the Persian breed.
+
+<response>Persian</response>
+----------------------------------------
+Run 0 | Query 17: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Abundant, long, fluffy white fur.
+- Flattened face with a pushed-in nose.
+- Large, round eyes.
+
+KB:
+- IF abundant, long, fluffy fur AND flattened face THEN Persian.
+
+Rule Check:
+The target image exhibits abundant, long, fluffy white fur and a flattened face. This strongly aligns with the rule established for the "Persian" class.
+
+<response>Persian</response>
+----------------------------------------
+Run 0 | Query 18: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has long, flowing fur.
+- The animal has a flattened face.
+- The animal has large, round eyes.
+
+KB:
+- IF long, flowing fur AND flattened face THEN Persian
+- IF short, smooth fur AND wrinkled face THEN Pug
+- IF short, wiry fur AND spotted coat THEN German Shorthaired
+
+Rule Check:
+The target image exhibits long, flowing fur and a flattened face. This aligns perfectly with the rule stating "IF long, flowing fur AND flattened face THEN Persian".
+
+<response>Persian</response>
+----------------------------------------
+Run 0 | Query 19: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Spotted/speckled coat pattern with brown and white markings.
+- Medium-sized dog with a pointed muzzle.
+- Visible tongue.
+
+KB:
+- IF spotted/speckled coat pattern with brown and white markings THEN German Shorthaired
+- IF short, wrinkled face THEN Pug
+- IF long, fluffy fur and flattened face THEN Persian
+
+Rule Check:
+The image clearly exhibits a spotted/speckled coat pattern with brown and white markings. This aligns directly with the rule stating that if a dog has this coat pattern, it is a German Shorthaired.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 0 | Query 20: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Spotted/speckled coat pattern
+- Long, droopy ears
+- Relatively long snout
+
+KB:
+- IF spotted/speckled coat pattern AND long, droopy ears THEN German Shorthaired
+
+Rule Check:
+The image exhibits a spotted/speckled coat pattern and long, droopy ears. These features strongly align with the rule established for "German Shorthaired".
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 0 | Query 21: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Spotted coat pattern with brown and white markings.
+- Long, floppy ears.
+- Brown nose.
+- Relatively large head compared to body size.
+
+KB:
+- IF spotted coat pattern with brown and white markings AND long, floppy ears THEN German Shorthaired.
+
+Rule Check:
+The target image exhibits a spotted coat pattern with brown and white markings and long, floppy ears. This aligns perfectly with the rule established for the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 0 | Query 22: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a solid, dark brown coat.
+- The dog has long, floppy ears.
+- The dog's head is tilted upwards.
+
+KB:
+- IF solid dark brown coat AND long, floppy ears THEN German Shorthaired
+
+Rule Check:
+- The target image exhibits a solid dark brown coat and long, floppy ears, which strongly aligns with the characteristics associated with the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 0 | Query 23: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Spotted/speckled coat pattern with dark spots on a lighter background.
+- Long floppy ears.
+- Relatively long snout.
+
+KB:
+- IF spotted/speckled coat pattern with dark spots on a lighter background AND long floppy ears THEN German Shorthaired.
+
+Rule Check:
+The target image exhibits a spotted/speckled coat pattern with dark spots on a lighter background and long floppy ears. This strongly aligns with the rule established for the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 0 | Query 24: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Spotted/speckled coat pattern
+- Brown nose and ears
+- Medium-sized dog
+- Blue cast on the leg
+
+KB:
+- IF spotted/speckled coat pattern AND brown nose and ears THEN German Shorthaired
+
+Rule Check:
+The image clearly exhibits a spotted/speckled coat pattern and a brown nose and ears, aligning perfectly with the established rule for "German Shorthaired".
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 0 | Query 25: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Spotted/speckled coat pattern
+- Dark nose
+- Floppy ears
+- Medium-sized dog
+
+KB:
+- IF spotted/speckled coat pattern THEN German Shorthaired
+- IF short face, wrinkled face, and curled tail THEN Pug
+- IF long fur, flat face, and large eyes THEN Persian
+
+Rule Check:
+The image exhibits a spotted/speckled coat pattern. This aligns most closely with the rule stating "IF spotted/speckled coat pattern THEN German Shorthaired".
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 0 | Query 26: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a short, smooth coat.
+- The dog has a dark brown color.
+- The dog's mouth is open, revealing teeth.
+
+KB:
+- IF short, smooth coat AND dark brown color THEN German Shorthaired
+
+Rule Check:
+- The image clearly shows a dog with a short, smooth coat and a dark brown color. This aligns perfectly with the characteristics associated with the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 0 | Query 27: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a solid, dark brown coat.
+- The dog has a long, droopy face.
+- The dog has floppy ears.
+
+KB:
+- IF [solid dark brown coat AND floppy ears] THEN [German Shorthaired]
+
+Rule Check:
+The target image exhibits a solid dark brown coat and floppy ears, which strongly aligns with the rule established for the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9) Run 0: 1.0000
+Run 1 | Query 1: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face
+- Large, dark eyes
+- Short muzzle
+- Compact body shape
+- Fawn/beige coloration
+
+KB:
+- IF [Wrinkled face, Large, dark eyes, Short muzzle, Compact body shape, Fawn/beige coloration] THEN [Pug]
+
+Rule Check:
+The target image exhibits all the key features associated with the "Pug" class as observed in the provided examples. The wrinkled face, large dark eyes, short muzzle, compact body shape, and fawn/beige coloration are all clearly visible.
+
+<response>Pug</response>
+----------------------------------------
+Run 1 | Query 2: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short, wrinkled muzzle
+- Large, prominent eyes
+- Curly tail
+- Compact, muscular build
+- Fawn-colored coat with a black mask
+
+KB:
+- IF [Short, wrinkled muzzle AND large, prominent eyes AND curly tail AND fawn-colored coat with a black mask] THEN [Pug]
+
+Rule Check:
+The target image exhibits all the key features associated with Pugs as observed in the provided examples: a short, wrinkled muzzle, large, prominent eyes, a curly tail, and a fawn-colored coat with a black mask. Therefore, the rule "IF [Short, wrinkled muzzle AND large, prominent eyes AND curly tail AND fawn-colored coat with a black mask] THEN [Pug]" is best satisfied.
+
+<response>Pug</response>
+----------------------------------------
+Run 1 | Query 3: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face
+- Short muzzle
+- Large, dark eyes
+- Curly tail
+- Compact body shape
+- Tan/fawn coloration
+
+KB:
+- IF [Wrinkled face, short muzzle, large, dark eyes, compact body shape, tan/fawn coloration] THEN [Pug]
+
+Rule Check:
+The target image exhibits all the key features associated with the "Pug" class as observed in the provided examples. The wrinkled face, short muzzle, large dark eyes, compact body shape, and tan/fawn coloration are all clearly visible.
+
+<response>Pug</response>
+----------------------------------------
+Run 1 | Query 4: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short, wrinkled muzzle
+- Large, dark eyes
+- Compact, muscular build
+- Fawn-colored coat
+
+KB:
+- IF [Short, wrinkled muzzle AND Large, dark eyes AND Compact, muscular build AND Fawn-colored coat] THEN [Pug]
+
+Rule Check:
+- The target image exhibits all the key features associated with Pugs: a short, wrinkled muzzle, large dark eyes, a compact build, and a fawn-colored coat. Therefore, the rule linking these features to the "Pug" class is best satisfied.
+
+<response>Pug</response>
+----------------------------------------
+Run 1 | Query 5: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short, wrinkled muzzle
+- Large, prominent eyes
+- Compact, sturdy build
+- Curly tail
+
+KB:
+- IF short, wrinkled muzzle AND large, prominent eyes AND compact, sturdy build AND curly tail THEN Pug
+
+Rule Check:
+The target image exhibits all the key features associated with Pugs: a short, wrinkled muzzle, large, prominent eyes, a compact and sturdy build, and a curly tail. Therefore, the rule "IF short, wrinkled muzzle AND large, prominent eyes AND compact, sturdy build AND curly tail THEN Pug" is best satisfied.
+
+<response>Pug</response>
+----------------------------------------
+Run 1 | Query 6: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face
+- Short snout
+- Large, dark eyes
+- Compact body shape
+- Fawn/tan coloration
+
+KB:
+- IF wrinkled face, short snout, large, dark eyes, and compact body shape THEN Pug
+
+Rule Check:
+- The target image exhibits all the key features associated with the "Pug" class as observed in the provided examples. The wrinkled face, short snout, large eyes, and compact build are all clearly visible.
+
+<response>Pug</response>
+----------------------------------------
+Run 1 | Query 7: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face
+- Large, prominent eyes
+- Short muzzle
+- Compact body shape
+- Fawn/tan coloration with a black mask
+
+KB:
+- IF [Wrinkled face, Large, prominent eyes, Short muzzle, Compact body shape, Fawn/tan coloration with a black mask] THEN [Pug]
+
+Rule Check:
+The target image exhibits all the key features associated with Pugs as observed in the provided examples. The wrinkled face, large eyes, short muzzle, compact build, and coloration strongly align with the "Pug" class.
+
+<response>Pug</response>
+----------------------------------------
+Run 1 | Query 8: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face
+- Large, prominent eyes
+- Short snout
+- Compact body shape
+- Fawn/tan coloration
+
+KB:
+- IF [Wrinkled face, Large, prominent eyes, Short snout, Compact body shape, Fawn/tan coloration] THEN [Pug]
+
+Rule Check:
+The target image exhibits all the key features associated with the "Pug" class as observed in the provided examples. The wrinkled face, large eyes, short snout, compact build, and fawn coloration are all clearly visible.
+
+<response>Pug</response>
+----------------------------------------
+Run 1 | Query 9: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a short, pushed-in nose.
+- The dog has large, dark eyes.
+- The dog has a wrinkled face.
+- The dog has a curled tail.
+- The dog has a fawn-colored coat.
+
+KB:
+- IF [short, pushed-in nose, large, dark eyes, wrinkled face, curled tail, fawn-colored coat] THEN [Pug]
+
+Rule Check:
+- The Target Image exhibits all the features associated with the "Pug" class as defined in the KB. Therefore, the Target Image best matches the "Pug" class.
+
+<response>Pug</response>
+----------------------------------------
+Run 1 | Query 10: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, flowing fur
+- Flat face with a pushed-in nose
+- Large, round eyes
+- Coloration is orange and white
+
+KB:
+- IF Long, flowing fur AND Flat face with a pushed-in nose THEN Persian
+- IF Short, wrinkled face AND large eyes THEN Pug
+- IF Spotted coat AND long legs THEN German Shorthaired
+
+Rule Check:
+The image exhibits long, flowing fur and a flat face with a pushed-in nose. This aligns perfectly with the rule stating that if an animal has long, flowing fur and a flat face, it is a Persian.
+
+<response>Persian</response>
+----------------------------------------
+Run 1 | Query 11: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, fluffy fur
+- Flattened face
+- Large, round eyes
+- Silver/grey fur color
+
+KB:
+- IF [Long, fluffy fur AND Flattened face] THEN [Persian]
+
+Rule Check:
+The target image exhibits both long, fluffy fur and a flattened face, strongly aligning with the characteristics defined in the "IF" statement for the Persian class.
+
+<response>Persian</response>
+----------------------------------------
+Run 1 | Query 12: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, fluffy, white fur
+- Flat face characteristic of Persian cats
+- Large, round eyes
+
+KB:
+- IF long, fluffy fur and a flat face THEN Persian
+
+Rule Check:
+- The image exhibits both long, fluffy fur and a flat face, strongly aligning with the "IF long, fluffy fur and a flat face THEN Persian" rule.
+
+<response>Persian</response>
+----------------------------------------
+Run 1 | Query 13: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, fluffy fur
+- Flat face with a pushed-in nose
+- Large, round eyes
+- Relatively small ears
+
+KB:
+- IF [Long, fluffy fur AND Flat face with a pushed-in nose] THEN [Persian]
+
+Rule Check:
+The target image exhibits both long, fluffy fur and a flat face with a pushed-in nose, strongly aligning with the characteristics defined in the "IF" statement for the Persian class.
+
+<response>Persian</response>
+----------------------------------------
+Run 1 | Query 14: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, flowing fur
+- Flattened face
+- Large, round eyes
+- Prominent nose
+KB:
+- IF [Long, flowing fur AND Flattened face AND Large, round eyes AND Prominent nose] THEN [Persian]
+Rule Check:
+- The target image exhibits all the key features observed in the Persian examples: long, flowing fur, a flattened face, large round eyes, and a prominent nose. Therefore, the rule best matched by the target image is the one associating these features with the "Persian" class.
+
+<response>Persian</response>
+----------------------------------------
+Run 1 | Query 15: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, flowing fur
+- Flat face
+- Large, round eyes
+- Fluffy mane-like fur around the neck
+
+KB:
+- IF Long, flowing fur AND Flat face AND Large, round eyes THEN Persian
+
+Rule Check:
+The target image exhibits all the key features associated with the Persian class: long, flowing fur, a flat face, and large, round eyes. Therefore, the rule "IF Long, flowing fur AND Flat face AND Large, round eyes THEN Persian" is best satisfied.
+
+<response>Persian</response>
+----------------------------------------
+Run 1 | Query 16: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a very long, fluffy coat.
+- The face has a flattened appearance with a short nose.
+- The eyes are somewhat squinted.
+
+KB:
+- IF long, fluffy coat AND flattened face with short nose THEN Persian.
+
+Rule Check:
+- The Target Image exhibits a long, fluffy coat and a flattened face with a short nose, which strongly aligns with the rule established for the "Persian" class.
+
+<response>Persian</response>
+----------------------------------------
+Run 1 | Query 17: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, flowing white fur
+- Flat face characteristic of the breed
+- Small ears partially obscured by fur
+KB:
+- IF long, flowing fur and a flat face THEN Persian
+Rule Check:
+- The image exhibits both long, flowing white fur and a characteristic flat face. This strongly aligns with the "IF long, flowing fur and a flat face THEN Persian" rule.
+
+<response>Persian</response>
+----------------------------------------
+Run 1 | Query 18: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, flowing fur
+- Flattened face
+- Large, round eyes
+- Distinctive nose shape
+
+KB:
+- IF [Long, flowing fur AND Flattened face] THEN [Persian]
+
+Rule Check:
+The image exhibits both long, flowing fur and a flattened face, which strongly aligns with the established rule for identifying a Persian cat.
+
+<response>Persian</response>
+----------------------------------------
+Run 1 | Query 19: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark brown coat
+- Large, erect ears
+- Muscular build
+- Long legs
+- Holding a ball in mouth
+
+KB:
+- IF [Dark brown coat, large erect ears, muscular build, long legs] THEN [German Shorthaired]
+
+Rule Check:
+The target image exhibits a dark brown coat, large erect ears, a muscular build, and long legs, all of which align with the features associated with the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 1 | Query 20: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark brown/black coat
+- Long, floppy ears
+- Prominent muzzle
+- Amber-colored eyes
+
+KB:
+- IF [Dark brown/black coat AND long, floppy ears AND prominent muzzle] THEN [German Shorthaired]
+
+Rule Check:
+The target image exhibits a dark brown/black coat, long, floppy ears, and a prominent muzzle. These features strongly align with the rule established for the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 1 | Query 21: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a short, dense coat with a mottled or ticked pattern (brown and black).
+- The dog has a long, lean body and a relatively long head.
+- The dog is holding a stick in its mouth.
+
+KB:
+- IF short, dense, mottled/ticked coat AND long, lean body THEN German Shorthaired
+
+Rule Check:
+The target image exhibits a short, dense, mottled/ticked coat and a long, lean body. This aligns perfectly with the rule established for "German Shorthaired."
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 1 | Query 22: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a brown coat with speckling/ticking.
+- The animal has long, floppy ears.
+- The animal is running on grass.
+
+KB:
+- IF [brown coat with speckling/ticking AND long, floppy ears] THEN [German Shorthaired]
+
+Rule Check:
+The target image exhibits a brown coat with speckling and long, floppy ears, which strongly aligns with the rule established for "German Shorthaired."
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 1 | Query 23: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Spotted/ticked coat pattern
+- Long floppy ears
+- Muscular build
+- Relatively long snout
+
+KB:
+- IF [Spotted/ticked coat pattern, long floppy ears, muscular build, relatively long snout] THEN [German Shorthaired]
+
+Rule Check:
+The target image exhibits a spotted/ticked coat pattern, long floppy ears, a muscular build, and a relatively long snout. These features strongly align with the rule established for the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 1 | Query 24: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Spotted/ticked coat pattern
+- Long, droopy ears
+- Muscular build
+- Brown and white coloration
+
+KB:
+- IF [Spotted/ticked coat pattern AND long, droopy ears AND muscular build AND brown and white coloration] THEN [German Shorthaired]
+
+Rule Check:
+- The target image exhibits all the features associated with the "German Shorthaired" class. The spotted/ticked coat, long droopy ears, muscular build, and brown/white coloration are all clearly visible.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 1 | Query 25: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Spotted/speckled coat pattern
+- Brown coloration
+- Medium-sized dog with a somewhat droopy appearance
+
+KB:
+- IF spotted/speckled coat pattern AND brown coloration AND medium-sized dog THEN German Shorthaired
+
+Rule Check:
+- The target image exhibits a spotted/speckled coat pattern and brown coloration, and appears to be a medium-sized dog. This aligns perfectly with the rule established for "German Shorthaired."
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 1 | Query 26: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Spotted/ticked coat pattern
+- Long, floppy ears
+- Muscular build
+- Visible tongue
+
+KB:
+- IF [Spotted/ticked coat pattern AND long, floppy ears AND muscular build] THEN [German Shorthaired]
+
+Rule Check:
+The target image exhibits a spotted/ticked coat pattern, long floppy ears, and a muscular build. These features strongly align with the rule established for "German Shorthaired."
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 1 | Query 27: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Spotted/ticked coat pattern
+- Brown color
+- Drooping ears
+- Relatively large head and muzzle
+
+KB:
+- IF [Spotted/ticked coat pattern AND Brown color AND Drooping ears] THEN [German Shorthaired]
+
+Rule Check:
+The target image exhibits a spotted/ticked coat pattern, a brown color, and drooping ears. These features strongly align with the rule established for "German Shorthaired."
+
+<response>German Shorthaired</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9) Run 1: 1.0000
+Run 2 | Query 1: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a short, wrinkled muzzle.
+- The dog has large, dark eyes.
+- The dog has a curled tail.
+- The dog's coat is a fawn color.
+
+KB:
+- IF [short, wrinkled muzzle AND large, dark eyes AND curled tail AND fawn coat] THEN [Pug]
+
+Rule Check:
+The target image exhibits all the key features associated with Pugs: a short, wrinkled muzzle, large, dark eyes, a curled tail, and a fawn-colored coat. Therefore, the rule "IF [short, wrinkled muzzle AND large, dark eyes AND curled tail AND fawn coat] THEN [Pug]" is best satisfied.
+
+<response>Pug</response>
+----------------------------------------
+Run 2 | Query 2: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a short, wrinkled muzzle.
+- The dog has large, dark eyes.
+- The dog has a curly tail.
+- The dog's coat is fawn/tan with a black mask.
+
+KB:
+- IF the dog has a short, wrinkled muzzle, large, dark eyes, a curly tail, and a fawn/tan coat with a black mask THEN Pug.
+
+Rule Check:
+- The target image strongly matches the features described in the "IF" statement for the "Pug" class. The dog exhibits all the key visual characteristics associated with Pugs in the provided examples.
+
+<response>Pug</response>
+----------------------------------------
+Run 2 | Query 3: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face
+- Short snout
+- Large, dark eyes
+- Fawn and black coloration
+- Compact body shape
+
+KB:
+- IF wrinkled face, short snout, large dark eyes, fawn and black coloration, and compact body shape THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class in the provided knowledge base. The wrinkled face, short snout, large dark eyes, fawn and black coloration, and compact body shape are all clearly visible.
+
+<response>Pug</response>
+----------------------------------------
+Run 2 | Query 4: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Short, wrinkled muzzle
+- Large, prominent eyes
+- Compact, sturdy build
+- Fawn or light brown coat
+
+KB:
+- IF short, wrinkled muzzle AND large, prominent eyes AND compact, sturdy build AND fawn or light brown coat THEN Pug
+
+Rule Check:
+The target image exhibits all the key features associated with the "Pug" class as observed in the provided examples. The short, wrinkled muzzle, large eyes, compact build, and coat color all strongly align with the characteristics of a Pug.
+
+<response>Pug</response>
+----------------------------------------
+Run 2 | Query 5: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a short, wrinkled muzzle.
+- The dog has large, prominent eyes.
+- The dog has a compact, muscular build.
+- The dog's coat is fawn-colored.
+
+KB:
+- IF short, wrinkled muzzle AND large, prominent eyes AND compact, muscular build AND fawn-colored coat THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class. The short, wrinkled muzzle, large eyes, compact build, and fawn color are all clearly visible.
+
+<response>Pug</response>
+----------------------------------------
+Run 2 | Query 6: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face
+- Short snout
+- Large, dark eyes
+- Compact body
+- Fawn/tan coloration with black markings
+
+KB:
+- IF wrinkled face AND short snout AND large, dark eyes AND compact body AND fawn/tan coloration with black markings THEN Pug
+
+Rule Check:
+- The target image exhibits all the key features associated with the "Pug" class as observed in the provided examples. The wrinkled face, short snout, large eyes, compact body, and coloration are all clearly visible.
+
+<response>Pug</response>
+----------------------------------------
+Run 2 | Query 7: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face
+- Short snout
+- Large, dark eyes
+- Fawn/tan coloration
+- Large, droopy ears
+
+KB:
+- IF wrinkled face, short snout, large, dark eyes, fawn/tan coloration, and large, droopy ears THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class in the provided knowledge base.
+
+<response>Pug</response>
+----------------------------------------
+Run 2 | Query 8: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face
+- Short snout
+- Large, dark eyes
+- Fawn/tan coloration with a black mask
+- Compact body shape
+
+KB:
+- IF [Wrinkled face, short snout, large, dark eyes, fawn/tan coloration with a black mask, compact body shape] THEN [Pug]
+
+Rule Check:
+The target image exhibits all the key features associated with Pugs as observed in the provided examples. The wrinkled face, short snout, large dark eyes, fawn/tan coloration with a black mask, and compact body shape are all clearly visible. Therefore, the rule linking these features to the "Pug" class is best satisfied.
+
+<response>Pug</response>
+----------------------------------------
+Run 2 | Query 9: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face
+- Short snout
+- Large, prominent eyes
+- Fawn/tan coloration with darker markings
+- Compact body shape
+
+KB:
+- IF [Wrinkled face, short snout, large eyes, fawn/tan coloration] THEN [Pug]
+
+Rule Check:
+The target image exhibits all the key features associated with Pugs as observed in the provided examples: a wrinkled face, a short snout, large eyes, and a fawn/tan coloration with darker markings. Therefore, the rule "IF [Wrinkled face, short snout, large eyes, fawn/tan coloration] THEN [Pug]" is best satisfied.
+
+<response>Pug</response>
+----------------------------------------
+Run 2 | Query 10: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, flowing fur
+- Flattened face
+- Orange/reddish fur color
+
+KB:
+- IF [Long, flowing fur AND flattened face] THEN [Persian]
+
+Rule Check:
+The image exhibits long, flowing fur and a somewhat flattened face, aligning strongly with the characteristics associated with the Persian cat breed.
+
+<response>Persian</response>
+----------------------------------------
+Run 2 | Query 11: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, fluffy fur
+- Round face
+- Short nose
+- Large, round eyes
+- Orange/reddish fur color
+
+KB:
+- IF [Long, fluffy fur AND round face AND short nose AND large, round eyes] THEN [Persian]
+
+Rule Check:
+The target image exhibits all the key features associated with the Persian class as observed in the provided examples: long, fluffy fur, a round face, a short nose, and large, round eyes. The fur color also aligns with examples of Persian cats.
+
+<response>Persian</response>
+----------------------------------------
+Run 2 | Query 12: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, fluffy fur
+- Flat face
+- Large, round eyes
+- Prominent nose
+
+KB:
+- IF Long, fluffy fur AND Flat face AND Large, round eyes AND Prominent nose THEN Persian
+
+Rule Check:
+- The target image exhibits all the features associated with the Persian class: long, fluffy fur, a flat face, large, round eyes, and a prominent nose. Therefore, the rule "IF Long, fluffy fur AND Flat face AND Large, round eyes AND Prominent nose THEN Persian" is best matched.
+
+<response>Persian</response>
+----------------------------------------
+Run 2 | Query 13: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, flowing fur
+- Flat face
+- Large, round eyes
+- Silver/gray coloration
+
+KB:
+- IF [Long, flowing fur AND Flat face AND Large, round eyes] THEN [Persian]
+
+Rule Check:
+- The target image exhibits all the key features associated with the Persian class: long, flowing fur, a relatively flat face, and large, round eyes. Therefore, the rule "IF [Long, flowing fur AND Flat face AND Large, round eyes] THEN [Persian]" is best satisfied.
+
+<response>Persian</response>
+----------------------------------------
+Run 2 | Query 14: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a very fluffy, long coat.
+- The coat is predominantly white with some grey/silver markings.
+- The face has a somewhat flattened appearance.
+- The eyes are large and round.
+
+KB:
+- IF fluffy, long white/silver coat AND somewhat flattened face THEN Persian
+- IF short, spotted coat THEN German Shorthaired
+- IF short, wrinkled face THEN Pug
+
+Rule Check:
+The target image exhibits a fluffy, long white/silver coat and a somewhat flattened face. This aligns best with the rule stating "IF fluffy, long white/silver coat AND somewhat flattened face THEN Persian".
+
+<response>Persian</response>
+----------------------------------------
+Run 2 | Query 15: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, fluffy fur
+- Flat face
+- Large, round eyes
+- Orange/reddish fur color
+
+KB:
+- IF [Long, fluffy fur AND flat face AND large, round eyes] THEN [Persian]
+
+Rule Check:
+The target image exhibits all the key features associated with the Persian class: long, fluffy fur, a relatively flat face, and large, round eyes. The reddish fur color is also consistent with examples of Persian cats. Therefore, the rule "IF [Long, fluffy fur AND flat face AND large, round eyes] THEN [Persian]" is best satisfied.
+
+<response>Persian</response>
+----------------------------------------
+Run 2 | Query 16: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat has very long, fluffy fur.
+- The fur is a light brown/beige color.
+- The face is somewhat flattened, with a short nose.
+
+KB:
+- IF long, fluffy fur AND flattened face THEN Persian
+
+Rule Check:
+- The target image strongly satisfies the rule "IF long, fluffy fur AND flattened face THEN Persian". The cat exhibits both of these features prominently.
+
+<response>Persian</response>
+----------------------------------------
+Run 2 | Query 17: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, fluffy fur
+- Flattened face
+- Large, round eyes
+- Light brown/beige coloration
+
+KB:
+- IF [Long, fluffy fur AND Flattened face AND Large, round eyes] THEN [Persian]
+
+Rule Check:
+The target image exhibits all the key features associated with the Persian class: long, fluffy fur, a flattened face, and large, round eyes. Therefore, the rule "IF [Long, fluffy fur AND Flattened face AND Large, round eyes] THEN [Persian]" is best satisfied.
+
+<response>Persian</response>
+----------------------------------------
+Run 2 | Query 18: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, fluffy fur
+- Flat face
+- Large, round eyes
+- Prominent nose
+- Whiskers
+
+KB:
+- IF [Long, fluffy fur AND Flat face AND Large, round eyes AND Prominent nose AND Whiskers] THEN [Persian]
+
+Rule Check:
+The target image exhibits all the key features associated with the Persian class as observed in the provided examples: long, fluffy fur, a flat face, large round eyes, a prominent nose, and visible whiskers. Therefore, the rule "IF [Long, fluffy fur AND Flat face AND Large, round eyes AND Prominent nose AND Whiskers] THEN [Persian]" is best satisfied.
+
+<response>Persian</response>
+----------------------------------------
+Run 2 | Query 19: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a mottled brown and white coat pattern.
+- The dog has a long, droopy face and ears.
+- The dog is standing in a grassy field.
+
+KB:
+- IF mottled brown and white coat pattern AND long, droopy face and ears THEN German Shorthaired
+
+Rule Check:
+- The target image exhibits a mottled brown and white coat pattern and has long, droopy features, which strongly aligns with the characteristics defined in the "IF" statement for the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 2 | Query 20: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a solid dark brown coat.
+- The dog has a muscular build.
+- The dog has a long snout and floppy ears.
+- The dog has a blue collar.
+
+KB:
+- IF solid dark brown coat AND muscular build AND long snout THEN German Shorthaired
+- IF short, wrinkled face AND brachycephalic snout THEN Pug
+- IF long, fluffy fur AND flat face THEN Persian
+
+Rule Check:
+The dog in the image exhibits a solid dark brown coat, a muscular build, and a long snout. These features best align with the rule for "German Shorthaired".
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 2 | Query 21: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Dark, solid coat color (appears black or dark brown)
+- Long, floppy ears
+- Prominent muzzle
+- Amber-colored eyes
+
+KB:
+- IF [Dark, solid coat color, long floppy ears, prominent muzzle] THEN [German Shorthaired]
+
+Rule Check:
+The target image exhibits a dark, solid coat, long floppy ears, and a prominent muzzle. These features strongly align with the rule established for the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 2 | Query 22: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Spotted/speckled coat pattern
+- Predominantly white and black coloration
+- Long floppy ears
+- Medium-sized dog
+
+KB:
+- IF spotted/speckled coat pattern AND predominantly white and black coloration AND long floppy ears THEN German Shorthaired
+
+Rule Check:
+The target image exhibits a spotted/speckled coat pattern, predominantly white and black coloration, and long floppy ears. These features strongly align with the rule established for "German Shorthaired."
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 2 | Query 23: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a mottled brown and white coat pattern.
+- The animal has long, floppy ears.
+- The animal has a long snout.
+
+KB:
+- IF mottled brown and white coat pattern AND long, floppy ears AND long snout THEN German Shorthaired
+
+Rule Check:
+- The target image exhibits all the key features associated with the "German Shorthaired" class: a mottled brown and white coat, long floppy ears, and a long snout. Therefore, the rule "IF mottled brown and white coat pattern AND long, floppy ears AND long snout THEN German Shorthaired" is best satisfied.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 2 | Query 24: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Spotted/ticked coat pattern (brown and white)
+- Long, floppy ears
+- Brown nose
+- Relatively lean build
+
+KB:
+- IF spotted/ticked coat pattern, long floppy ears, brown nose, and relatively lean build THEN German Shorthaired
+
+Rule Check:
+The target image exhibits all the key features associated with the "German Shorthaired" class as observed in the provided examples. The spotted coat, floppy ears, brown nose, and lean build are all clearly visible.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 2 | Query 25: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a solid, dark brown coat.
+- The dog has a lean, athletic build.
+- The dog has floppy ears.
+
+KB:
+- IF [solid dark brown coat AND lean, athletic build AND floppy ears] THEN [German Shorthaired]
+
+Rule Check:
+The target image strongly matches the features associated with the "German Shorthaired" class. The dog's coat color, body shape, and ear type align with the described visual patterns.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 2 | Query 26: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Spotted/ticked coat pattern
+- Medium to large size
+- Drooping ears
+- Brown coloration
+
+KB:
+- IF spotted/ticked coat pattern AND medium to large size AND drooping ears AND brown coloration THEN German Shorthaired
+
+Rule Check:
+The target image exhibits a spotted/ticked coat pattern, is of a medium to large size, has drooping ears, and is brown. These features strongly align with the rules established for the "German Shorthaired" class.
+
+<response>German Shorthaired</response>
+----------------------------------------
+Run 2 | Query 27: Expected: [German Shorthaired] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Spotted/ticked coat pattern
+- Long floppy ears
+- Dark muzzle
+- Medium-sized dog
+
+KB:
+- IF spotted/ticked coat pattern AND long floppy ears THEN German Shorthaired
+- IF short, wrinkled face AND flat nose THEN Pug
+- IF long, fluffy fur AND flat face THEN Persian
+
+Rule Check:
+The image exhibits a spotted/ticked coat pattern and long floppy ears. This aligns strongly with the rule stating "IF spotted/ticked coat pattern AND long floppy ears THEN German Shorthaired".
+
+<response>German Shorthaired</response>
+----------------------------------------
+-> FINAL ACCURACY for (3,1,9) Run 2: 1.0000
+
+--- CONFIG: N=4, K=1, Q=9 (3 RUNS) ---
+Run 0 | Query 1: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a short, wrinkled muzzle.
+- The animal has large, prominent eyes.
+- The animal has large, floppy ears.
+- The animal has a compact, muscular build.
+- The animal's coat is fawn/tan with a black mask.
+
+KB:
+- IF short, wrinkled muzzle AND large, prominent eyes AND large, floppy ears AND compact, muscular build AND fawn/tan coat with black mask THEN Pug
+
+Rule Check:
+- The target image strongly matches the features described in the "IF" statement for the "Pug" class. The visible features align closely with the characteristics observed in the provided Pug examples.
+
+<response>Pug</response>
+----------------------------------------
+Run 0 | Query 2: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a short, wrinkled muzzle.
+- The dog has large, dark eyes.
+- The dog has a curly tail.
+- The dog has a compact, muscular build.
+- The dog has a fawn-colored coat.
+
+KB:
+- IF short, wrinkled muzzle AND large, dark eyes AND curly tail AND compact, muscular build AND fawn-colored coat THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class in the knowledge base. Therefore, the target image best matches the "Pug" class.
+
+<response>Pug</response>
+----------------------------------------
+Run 0 | Query 3: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a wrinkled face.
+- The dog has large, dark eyes.
+- The dog has a short, curled tail.
+- The dog has a distinctive black mask around its face.
+- The dog has a fawn-colored coat.
+
+KB:
+- IF wrinkled face, large dark eyes, short curled tail, black mask, and fawn-colored coat THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class in the provided knowledge base.
+
+<response>Pug</response>
+----------------------------------------
+Run 0 | Query 4: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a wrinkled face.
+- The dog has large, dark eyes.
+- The dog has curled ears.
+- The dog has a short, compact body.
+
+KB:
+- IF wrinkled face, large dark eyes, curled ears, and short compact body THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class in the provided knowledge base.
+
+<response>Pug</response>
+----------------------------------------
+Run 0 | Query 5: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a short, smooth coat.
+- The animal has a wrinkled face and a curled tail.
+- The animal has a distinctive, pushed-in nose.
+
+KB:
+- IF short, smooth coat AND wrinkled face AND curled tail AND pushed-in nose THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class according to the provided examples.
+
+<response>Pug</response>
+----------------------------------------
+Run 0 | Query 6: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a wrinkled face.
+- The dog has large, dark eyes.
+- The dog has a curled tail.
+- The dog has a fawn-colored coat with a black mask.
+
+KB:
+- IF wrinkled face, large dark eyes, curled tail, and fawn-colored coat with a black mask THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class in the provided knowledge base.
+
+<response>Pug</response>
+----------------------------------------
+Run 0 | Query 7: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a wrinkled face.
+- The animal has large, dark eyes.
+- The animal has a short snout.
+- The animal has a curled tail.
+- The animal has a fawn-colored coat.
+
+KB:
+- IF wrinkled face, large dark eyes, short snout, curled tail, fawn-colored coat THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class in the provided knowledge base.
+
+<response>Pug</response>
+----------------------------------------
+Run 0 | Query 8: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a wrinkled face.
+- The dog has large, dark eyes.
+- The dog has a short, curled tail.
+- The dog has a fawn-colored coat with a black mask.
+
+KB:
+- IF wrinkled face, large dark eyes, short curled tail, and fawn-colored coat with a black mask THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class in the provided knowledge base.
+
+<response>Pug</response>
+----------------------------------------
+Run 0 | Query 9: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a wrinkled face.
+- The dog has large, dark eyes.
+- The dog has a short, curled tail.
+- The dog has a fawn-colored coat with a black mask.
+
+KB:
+- IF wrinkled face, large dark eyes, short curled tail, and fawn-colored coat with a black mask THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class in the provided knowledge base.
+
+<response>Pug</response>
+----------------------------------------
+Run 0 | Query 10: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a long, fluffy coat.
+- The face has a somewhat flattened appearance.
+- The ears are relatively large compared to the face.
+
+KB:
+- IF long, fluffy coat AND flattened face THEN Persian
+
+Rule Check:
+- The target image exhibits a long, fluffy coat and a flattened face, which strongly aligns with the rule established for the "Persian" class.
+
+<response>Persian</response>
+----------------------------------------
+Run 0 | Query 11: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has long, flowing fur.
+- The fur is predominantly orange and white.
+- The face has a flattened appearance.
+
+KB:
+- IF long, flowing fur AND predominantly orange and white fur AND flattened face THEN Persian
+
+Rule Check:
+- The target image strongly matches the features associated with the "Persian" class. The long, flowing fur, the orange and white coloration, and the flattened facial features are all consistent with the examples of Persian cats.
+
+<response>Persian</response>
+----------------------------------------
+Run 0 | Query 12: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a long, fluffy coat.
+- The animal has large, pointed ears.
+- The animal has a relatively small face compared to its body size.
+- The animal has large, round eyes.
+
+KB:
+- IF long, fluffy coat AND large, pointed ears AND relatively small face THEN Persian
+- IF lack of fur AND large ears THEN Sphynx
+- IF large size AND droopy ears AND wrinkled face THEN Saint Bernard
+- IF short, wrinkled face AND flat nose THEN Pug
+
+Rule Check:
+The target image exhibits a long, fluffy coat, large pointed ears, and a relatively small face. This aligns most closely with the rule stating "IF long, fluffy coat AND large, pointed ears AND relatively small face THEN Persian".
+
+<response>Persian</response>
+----------------------------------------
+Run 0 | Query 13: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has long, fluffy fur.
+- The animal has a flattened face.
+- The animal has large, round eyes.
+
+KB:
+- IF long, fluffy fur AND flattened face AND large, round eyes THEN Persian
+
+Rule Check:
+- The target image exhibits all the features associated with the "Persian" class according to the provided knowledge base.
+
+<response>Persian</response>
+----------------------------------------
+Run 0 | Query 14: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a very long, fluffy coat.
+- The coat is predominantly white.
+- The face has a somewhat flattened appearance.
+
+KB:
+- IF the animal has a very long, fluffy coat and the coat is predominantly white THEN Persian.
+
+Rule Check:
+- The target image strongly satisfies the rule: "IF the animal has a very long, fluffy coat and the coat is predominantly white THEN Persian." The animal clearly exhibits a long, fluffy white coat, aligning with the characteristics of a Persian cat.
+
+<response>Persian</response>
+----------------------------------------
+Run 0 | Query 15: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a very long, fluffy coat.
+- The face has a flattened appearance with large, round eyes.
+- The ears are relatively small and set wide apart.
+
+KB:
+- IF the animal has a very long, fluffy coat and a flattened face with large, round eyes THEN Persian.
+
+Rule Check:
+- The target image strongly matches the "IF" condition of the Persian rule due to the presence of a very long, fluffy coat and a flattened facial structure with large, round eyes.
+
+<response>Persian</response>
+----------------------------------------
+Run 0 | Query 16: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has long, flowing fur.
+- The animal has a flattened face.
+- The animal has large, round eyes.
+
+KB:
+- IF the animal has long, flowing fur and a flattened face THEN Persian.
+
+Rule Check:
+- The target image exhibits both long, flowing fur and a flattened face, strongly aligning with the rule established for the "Persian" class.
+
+<response>Persian</response>
+----------------------------------------
+Run 0 | Query 17: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a very long, fluffy coat.
+- The face has a somewhat flattened appearance.
+- The eyes are large and round.
+
+KB:
+- IF the animal has a very long, fluffy coat and a flattened face THEN Persian.
+
+Rule Check:
+- The image strongly matches the "IF the animal has a very long, fluffy coat and a flattened face THEN Persian" rule. The animal clearly exhibits a long, fluffy coat and a somewhat flattened facial structure.
+
+<response>Persian</response>
+----------------------------------------
+Run 0 | Query 18: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a long, fluffy coat.
+- The face has a flattened appearance with a pushed-in nose.
+- The ears are relatively small and rounded.
+
+KB:
+- IF the animal has a long, fluffy coat and a flattened face with a pushed-in nose THEN Persian.
+
+Rule Check:
+- The target image strongly matches the "IF" condition of the Persian rule due to the presence of a long, fluffy coat and a flattened facial structure.
+
+<response>Persian</response>
+----------------------------------------
+Run 0 | Query 19: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- Brown and white fur coloration
+- Broad head
+- Droopy face
+
+KB:
+- IF [Large size, Brown and white fur coloration, Broad head, Droopy face] THEN [Saint Bernard]
+
+Rule Check:
+The image exhibits all the key features associated with Saint Bernards: large size, brown and white fur, a broad head, and a droopy face. Therefore, the rule best matched by the target image is the one associating these features with the "Saint Bernard" class.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 0 | Query 20: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- Brown and white fur coloration
+- Droopy face
+- Large paws
+- Visible tongue
+
+KB:
+- IF [Large size, Brown and white fur coloration, Droopy face, Large paws, Visible tongue] THEN [Saint Bernard]
+
+Rule Check:
+The image exhibits all the key features associated with the Saint Bernard class as observed in the provided examples. The size, coloration, facial features, and visible tongue strongly align with the Saint Bernard characteristics.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 0 | Query 21: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- Brown and white coloration
+- Drooping jowls
+- Large paws
+- Long tongue visible
+
+KB:
+- IF [Large size, brown and white coloration, drooping jowls, large paws, long tongue visible] THEN [Saint Bernard]
+
+Rule Check:
+The image exhibits all the key features associated with the Saint Bernard class as defined by the provided examples. The large size, brown and white coloration, drooping jowls, large paws, and visible long tongue strongly align with the characteristics of a Saint Bernard.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 0 | Query 22: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- Brown and white coloration
+- Broad head
+- Droopy face
+- Large paws
+
+KB:
+- IF [Large size, Brown and white coloration, Broad head, Droopy face, Large paws] THEN [Saint Bernard]
+
+Rule Check:
+The target image exhibits all the key features associated with Saint Bernards as observed in the provided examples: large size, brown and white coloration, a broad head, a droopy face, and large paws. Therefore, the rule linking these features to the "Saint Bernard" class is best satisfied.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 0 | Query 23: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- Brown and white fur coloration
+- Broad head
+- Droopy face
+- Large paws
+
+KB:
+- IF [Large size, Brown and white fur coloration, Broad head, Droopy face, Large paws] THEN [Saint Bernard]
+
+Rule Check:
+The image exhibits all the key features associated with the Saint Bernard class as observed in the provided examples. The size, coloration, head shape, facial features, and paws all align with the characteristics of a Saint Bernard.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 0 | Query 24: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- Brown and white fur coloration
+- Broad face with a black nose
+- Droopy eyes
+- Large, floppy ears
+
+KB:
+- IF [Large size, Brown and white fur coloration, Broad face with a black nose, Droopy eyes, Large, floppy ears] THEN [Saint Bernard]
+
+Rule Check:
+The target image exhibits all the observable features associated with the Saint Bernard class in the provided knowledge base. The size, coloration, facial features, and ear shape strongly align with the examples of Saint Bernards.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 0 | Query 25: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- Predominantly white fur with brown markings
+- Drooping jowls
+- Large paws
+- Long tail
+
+KB:
+- IF [Large size, predominantly white fur with brown markings, drooping jowls, large paws, long tail] THEN [Saint Bernard]
+
+Rule Check:
+The target image exhibits all the key features observed in the Saint Bernard examples: large size, predominantly white fur with brown markings, drooping jowls, large paws, and a long tail. Therefore, the rule best matched by the target image is the one associating these features with the Saint Bernard class.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 0 | Query 26: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- Brown and white fur coloration
+- Broad head
+- Droopy face
+- Large paws
+
+KB:
+- IF [Large size, Brown and white fur coloration, Broad head, Droopy face, Large paws] THEN [Saint Bernard]
+
+Rule Check:
+The target image exhibits all the observable features associated with the Saint Bernard class in the provided knowledge base. The size, coloration, head shape, facial features, and paws are all consistent with the examples of Saint Bernards.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 0 | Query 27: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- Droopy eyes
+- Fluffy fur
+- Brown and white coloration
+
+KB:
+- IF [Large size, Droopy eyes, Fluffy fur, Brown and white coloration] THEN [Saint Bernard]
+
+Rule Check:
+The image exhibits large size, droopy eyes, fluffy fur, and a brown and white coloration. These features strongly align with the characteristics associated with the Saint Bernard class.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 0 | Query 28: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a largely hairless body.
+- The animal has large, prominent ears.
+- The animal has a wrinkled face.
+
+KB:
+- IF the animal has a largely hairless body, large ears, and a wrinkled face THEN Sphynx.
+
+Rule Check:
+- The target image exhibits all the features associated with the Sphynx class. Therefore, the rule "IF the animal has a largely hairless body, large ears, and a wrinkled face THEN Sphynx" is best matched by the target image.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 0 | Query 29: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a largely hairless body.
+- The animal has large, pointed ears.
+- The animal has a distinctly feline face.
+
+KB:
+- IF the animal has a largely hairless body, large, pointed ears, and a distinctly feline face THEN Sphynx.
+
+Rule Check:
+- The target image strongly matches the rule described above. The animal exhibits the key visual features of a Sphynx cat: a lack of fur, prominent ears, and a cat-like face.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 0 | Query 30: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a largely hairless body.
+- Large, prominent ears are visible.
+- The animal has a distinctly feline head shape.
+
+KB:
+- IF the animal has a largely hairless body and large, prominent ears THEN Sphynx.
+
+Rule Check:
+- The target image strongly matches the rule stating that a largely hairless body and large, prominent ears indicate a Sphynx.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 0 | Query 31: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a largely hairless body.
+- The animal has large, pointed ears.
+- The animal has a distinctly feline body shape.
+
+KB:
+- IF animal has a largely hairless body AND has large, pointed ears AND has a distinctly feline body shape THEN Sphynx
+
+Rule Check:
+- The target image strongly matches the "Sphynx" rule due to the prominent lack of fur, large ears, and feline body structure.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 0 | Query 32: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a largely hairless body.
+- Large, prominent ears are visible.
+- The body shape is feline.
+
+KB:
+- IF largely hairless body AND large, prominent ears AND feline body shape THEN Sphynx
+
+Rule Check:
+- The target image exhibits a largely hairless body, large ears, and a feline body shape. This aligns perfectly with the rule established for the Sphynx class.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 0 | Query 33: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a largely hairless body.
+- It has large, pointed ears.
+- It has a feline face and paws.
+
+KB:
+- IF the animal has a largely hairless body, large pointed ears, and a feline face and paws THEN Sphynx.
+
+Rule Check:
+- The target image strongly matches the "IF" condition of the rule, exhibiting a largely hairless body, large pointed ears, and a feline face and paws. Therefore, it is best classified as a Sphynx.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 0 | Query 34: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has large, prominent ears.
+- The animal has a lack of fur, exhibiting a wrinkled, pinkish-beige skin tone.
+- The animal has a distinctly feline facial structure.
+
+KB:
+- IF large ears, lack of fur, and feline facial structure THEN Sphynx
+
+Rule Check:
+The target image exhibits all the key features associated with the Sphynx class: large ears, lack of fur, and a feline face. Therefore, the rule "IF large ears, lack of fur, and feline facial structure THEN Sphynx" is best satisfied.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 0 | Query 35: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has very little fur, appearing mostly hairless.
+- Large, prominent ears are visible.
+- The skin appears wrinkled and pinkish.
+
+KB:
+- IF animal has very little fur, large ears, and wrinkled pinkish skin THEN Sphynx
+
+Rule Check:
+- The target image strongly matches the "IF" condition of the "Sphynx" rule due to the lack of fur, large ears, and the visible skin texture.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 0 | Query 36: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a largely hairless body.
+- The animal has large, prominent ears.
+- The animal has a feline face and body structure.
+
+KB:
+- IF largely hairless body AND large, prominent ears AND feline face and body structure THEN Sphynx
+
+Rule Check:
+- The target image exhibits all the features associated with the Sphynx class. The animal is largely hairless, has large ears, and possesses a distinctly feline appearance. Therefore, the rule "IF largely hairless body AND large, prominent ears AND feline face and body structure THEN Sphynx" is best satisfied.
+
+<response>Sphynx</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9) Run 0: 1.0000
+Run 1 | Query 1: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a wrinkled face.
+- The dog has large, dark eyes.
+- The dog has a short, curled tail.
+- The dog has a fawn-colored coat with a black mask.
+
+KB:
+- IF wrinkled face, large dark eyes, short curled tail, and fawn-colored coat with a black mask THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class. Therefore, the rule "IF wrinkled face, large dark eyes, short curled tail, and fawn-colored coat with a black mask THEN Pug" is best matched by the target image.
+
+<response>Pug</response>
+----------------------------------------
+Run 1 | Query 2: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face with a short, pushed-in nose.
+- Large, dark eyes.
+- Compact body shape.
+- Fawn-colored fur.
+
+KB:
+- IF wrinkled face with a short, pushed-in nose, large, dark eyes, compact body shape, and fawn-colored fur THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class. The wrinkled face, short nose, large eyes, and fawn fur are clearly visible.
+
+<response>Pug</response>
+----------------------------------------
+Run 1 | Query 3: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a wrinkled face.
+- The dog has large, dark eyes.
+- The dog has a curled tail.
+- The dog is predominantly black in color.
+
+KB:
+- IF wrinkled face, large dark eyes, and curled tail THEN Pug
+
+Rule Check:
+- The target image exhibits all the key features associated with the "Pug" class as defined in the knowledge base. The wrinkled face, large dark eyes, and curled tail are clearly visible.
+
+<response>Pug</response>
+----------------------------------------
+Run 1 | Query 4: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a wrinkled face.
+- The dog has large, dark eyes.
+- The dog has a short, curled tail.
+- The dog has a fawn-colored coat with a black mask.
+
+KB:
+- IF wrinkled face, large dark eyes, short curled tail, and fawn-colored coat with a black mask THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class in the provided knowledge base.
+
+<response>Pug</response>
+----------------------------------------
+Run 1 | Query 5: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face
+- Large, dark eyes
+- Black mask around the muzzle
+- Large, erect ears
+- Fawn/tan colored fur
+
+KB:
+- IF wrinkled face, large dark eyes, black mask around the muzzle, and large erect ears THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class according to the provided examples.
+
+<response>Pug</response>
+----------------------------------------
+Run 1 | Query 6: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a wrinkled face.
+- The dog has large, dark eyes.
+- The dog has a curled tail.
+- The dog has a compact, muscular build.
+- The dog's coat is short and smooth.
+
+KB:
+- IF wrinkled face, large dark eyes, curled tail, compact build, and short smooth coat THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class. Therefore, the rule "IF wrinkled face, large dark eyes, curled tail, compact build, and short smooth coat THEN Pug" is best matched by the target image.
+
+<response>Pug</response>
+----------------------------------------
+Run 1 | Query 7: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a wrinkled face.
+- The dog has large, dark eyes.
+- The dog has a curled tail.
+- The dog has a fawn-colored coat.
+
+KB:
+- IF wrinkled face, large dark eyes, curled tail, and fawn-colored coat THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class according to the provided knowledge base.
+
+<response>Pug</response>
+----------------------------------------
+Run 1 | Query 8: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a wrinkled face.
+- The dog has large, dark eyes.
+- The dog has a short, curled tail.
+- The dog has a fawn-colored coat.
+- The dog has large, erect ears.
+
+KB:
+- IF wrinkled face, large dark eyes, short curled tail, fawn-colored coat, and large erect ears THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class in the provided knowledge base.
+
+<response>Pug</response>
+----------------------------------------
+Run 1 | Query 9: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face
+- Short snout
+- Large, dark eyes
+- Curly tail
+- Compact body shape
+
+KB:
+- IF wrinkled face AND short snout AND large, dark eyes AND curly tail AND compact body shape THEN Pug
+
+Rule Check:
+- The target image exhibits all the key features associated with Pugs as observed in the provided examples. The wrinkled face, short snout, large eyes, curly tail, and compact body shape are all clearly visible.
+
+<response>Pug</response>
+----------------------------------------
+Run 1 | Query 10: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat has very long, thick fur.
+- The cat has a somewhat flattened face.
+- The cat has a fluffy mane around its face.
+
+KB:
+- IF long, thick fur AND flattened face AND fluffy mane THEN Persian
+
+Rule Check:
+- The target image exhibits all the features associated with the Persian class: long, thick fur, a flattened face, and a fluffy mane. Therefore, the rule "IF long, thick fur AND flattened face AND fluffy mane THEN Persian" is best satisfied.
+
+<response>Persian</response>
+----------------------------------------
+Run 1 | Query 11: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat has very long, fluffy, white fur.
+- The cat has a flattened face.
+- The cat has large, round, yellow eyes.
+
+KB:
+- IF long, fluffy, white fur AND flattened face THEN Persian
+- IF lack of fur AND large ears THEN Sphynx
+- IF short muzzle, wrinkled face, and curled tail THEN Pug
+- IF large size, thick fur, and droopy jowls THEN Saint Bernard
+
+Rule Check:
+The image exhibits long, fluffy, white fur and a flattened face. This strongly aligns with the rule stating "IF long, fluffy, white fur AND flattened face THEN Persian".
+
+<response>Persian</response>
+----------------------------------------
+Run 1 | Query 12: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat has very long, fluffy fur.
+- The cat has large, round eyes.
+- The cat has a somewhat flattened face.
+
+KB:
+- IF long, fluffy fur AND large, round eyes AND flattened face THEN Persian
+
+Rule Check:
+- The target image exhibits all the features associated with the Persian class: long, fluffy fur, large, round eyes, and a flattened face. Therefore, the rule "IF long, fluffy fur AND large, round eyes AND flattened face THEN Persian" is best satisfied.
+
+<response>Persian</response>
+----------------------------------------
+Run 1 | Query 13: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat has a very fluffy, long coat.
+- The cat has a flattened face with prominent cheekbones.
+- The cat has a grumpy expression.
+
+KB:
+- IF fluffy, long coat AND flattened face THEN Persian
+
+Rule Check:
+- The image clearly exhibits a fluffy, long coat and a flattened face, aligning perfectly with the "IF fluffy, long coat AND flattened face THEN Persian" rule.
+
+<response>Persian</response>
+----------------------------------------
+Run 1 | Query 14: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, fluffy fur
+- Flat face
+- Large, round eyes
+- Pink nose
+
+KB:
+- IF Long, fluffy fur AND flat face AND large, round eyes AND pink nose THEN Persian
+
+Rule Check:
+- The image exhibits long, fluffy fur, a flat face, large, round eyes, and a pink nose. These features strongly align with the rule established for the "Persian" class.
+
+<response>Persian</response>
+----------------------------------------
+Run 1 | Query 15: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat has very long, fluffy fur.
+- The fur is primarily white/light colored.
+- The cat has a somewhat flattened face.
+
+KB:
+- IF long, fluffy, white/light colored fur AND flattened face THEN Persian
+
+Rule Check:
+- The target image strongly matches the "IF" condition of the Persian rule. The cat exhibits long, fluffy, light-colored fur and a flattened face.
+
+<response>Persian</response>
+----------------------------------------
+Run 1 | Query 16: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat has very long, fluffy fur.
+- The fur is a grey color.
+- The cat has a flattened face.
+
+KB:
+- IF long, fluffy fur and flattened face THEN Persian
+
+Rule Check:
+- The image clearly exhibits long, fluffy fur and a flattened face, which aligns perfectly with the "IF...THEN" rule for Persian.
+
+<response>Persian</response>
+----------------------------------------
+Run 1 | Query 17: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat has long, fluffy fur.
+- The fur is orange/ginger in color.
+- The cat has a flattened face.
+
+KB:
+- IF long, fluffy fur and flattened face THEN Persian
+
+Rule Check:
+- The image clearly exhibits long, fluffy, orange fur and a flattened face, which strongly aligns with the "IF long, fluffy fur and flattened face THEN Persian" rule.
+
+<response>Persian</response>
+----------------------------------------
+Run 1 | Query 18: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat has a very long, fluffy coat.
+- The face has a somewhat flattened appearance.
+- The cat has large, round eyes.
+
+KB:
+- IF long, fluffy coat AND flattened face THEN Persian
+
+Rule Check:
+- The image clearly exhibits a long, fluffy coat and a somewhat flattened face, aligning perfectly with the "Persian" rule.
+
+<response>Persian</response>
+----------------------------------------
+Run 1 | Query 19: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- White and brown coloration
+- Droopy eyes
+- Large, floppy ears
+
+KB:
+- IF [Large size, white and brown coloration, droopy eyes, large, floppy ears] THEN [Saint Bernard]
+
+Rule Check:
+The image exhibits all the key features associated with Saint Bernards: large size, a combination of white and brown fur, droopy eyes, and large, floppy ears. Therefore, the rule linking these features to the "Saint Bernard" class is best satisfied.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 1 | Query 20: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- White and brown coloration
+- Broad head
+- Droopy face
+
+KB:
+- IF [Large size, White and brown coloration, Broad head, Droopy face] THEN [Saint Bernard]
+
+Rule Check:
+The image clearly exhibits the observable features of a large dog with white and brown coloration, a broad head, and a droopy face. These features strongly align with the established rule for identifying a Saint Bernard.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 1 | Query 21: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- Thick, fluffy fur
+- Brown and white coloration
+- Broad face
+
+KB:
+- IF [Large size, Thick, fluffy fur, Brown and white coloration] THEN [Saint Bernard]
+
+Rule Check:
+The image exhibits the observable features of large size, thick fluffy fur, and a brown and white coloration. These features strongly align with the rule established for the Saint Bernard class.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 1 | Query 22: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- Brown and white fur coloration
+- Long, drooping ears
+- Broad head
+
+KB:
+- IF [Large size, Brown and white fur coloration, Long, drooping ears, Broad head] THEN [Saint Bernard]
+
+Rule Check:
+The image exhibits all the key features associated with Saint Bernards: large size, brown and white fur, long drooping ears, and a broad head. Therefore, the rule best matched by the Target Image is the one associating these features with a Saint Bernard.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 1 | Query 23: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- White and brown fur coloration
+- Droopy face
+- Large head
+
+KB:
+- IF [Large size, white and brown fur coloration, droopy face, large head] THEN [Saint Bernard]
+
+Rule Check:
+The target image exhibits all the key features associated with Saint Bernards: large size, white and brown fur, a droopy face, and a large head. Therefore, the rule linking these features to the "Saint Bernard" class is best satisfied.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 1 | Query 24: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- White and brown coloration
+- Broad head
+- Droopy face
+
+KB:
+- IF Large size, white and brown coloration, broad head, droopy face THEN Saint Bernard
+
+Rule Check:
+The image exhibits all the key features associated with the Saint Bernard class: large size, white and brown coloration, a broad head, and a droopy face. Therefore, the rule "IF Large size, white and brown coloration, broad head, droopy face THEN Saint Bernard" is best matched.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 1 | Query 25: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- Brown and white fur coloration
+- Broad head
+- Droopy face
+- Presence of a white stripe on the face
+
+KB:
+- IF [Large size, Brown and white fur coloration, Broad head, Droopy face, Presence of a white stripe on the face] THEN [Saint Bernard]
+
+Rule Check:
+The target image exhibits all the key features associated with Saint Bernards as observed in the provided examples: large size, brown and white fur, a broad head, a droopy face, and a distinctive white stripe on the face. Therefore, the rule linking these features to the "Saint Bernard" class is best satisfied.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 1 | Query 26: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- Brown and white coloration
+- Droopy face
+- Large paws
+
+KB:
+- IF [Large size, Brown and white coloration, Droopy face, Large paws] THEN [Saint Bernard]
+
+Rule Check:
+The target image exhibits all the key features associated with Saint Bernards as observed in the provided examples: large size, brown and white coloration, a droopy face, and large paws. Therefore, the rule linking these features to the "Saint Bernard" class is best satisfied.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 1 | Query 27: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- White markings on the face
+- Brown and white fur
+- Droopy face
+
+KB:
+- IF Large size AND White markings on the face AND Brown and white fur THEN Saint Bernard
+
+Rule Check:
+The image exhibits a large size, white markings on the face, and brown and white fur. These features strongly align with the rule established for the Saint Bernard class.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 1 | Query 28: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a largely hairless body.
+- Large, prominent ears are visible.
+- The skin appears wrinkled and somewhat loose.
+
+KB:
+- IF largely hairless body AND large, prominent ears THEN Sphynx
+
+Rule Check:
+- The target image strongly matches the "Sphynx" rule due to the prominent lack of fur and the large ears.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 1 | Query 29: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Lack of fur covering most of the body.
+- Large, prominent ears.
+- Wrinkled skin.
+- Distinctive facial features with a somewhat elongated muzzle.
+
+KB:
+- IF lack of fur covering most of the body AND large, prominent ears THEN Sphynx
+- IF large, prominent ears AND wrinkled skin THEN Sphynx
+
+Rule Check:
+The target image exhibits a clear lack of fur and large, prominent ears, aligning strongly with the rules associated with the Sphynx class. The wrinkled skin further reinforces this classification.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 1 | Query 30: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Lack of fur covering the body.
+- Large, prominent ears.
+- Wrinkled skin.
+- Blue eyes.
+
+KB:
+- IF lack of fur covering the body, large prominent ears, and wrinkled skin THEN Sphynx.
+
+Rule Check:
+The target image exhibits all the key visual features associated with the Sphynx breed: a complete lack of fur, large ears, and wrinkled skin. The blue eyes are also a characteristic feature. Therefore, the rule "IF lack of fur covering the body, large prominent ears, and wrinkled skin THEN Sphynx" is best satisfied by the target image.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 1 | Query 31: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has very little fur, appearing mostly hairless.
+- The animal has large, prominent ears.
+- The animal has a wrinkled skin texture.
+
+KB:
+- IF animal has very little fur, large ears, and wrinkled skin THEN Sphynx
+
+Rule Check:
+- The target image strongly matches the observable features associated with the Sphynx class. The lack of fur, large ears, and wrinkled skin are all clearly visible.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 1 | Query 32: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has very little fur, appearing mostly hairless.
+- Large, prominent ears are visible.
+- The animal has a distinctive, wrinkled skin texture.
+
+KB:
+- IF animal has very little fur, large ears, and wrinkled skin THEN Sphynx
+
+Rule Check:
+- The target image strongly matches the "IF" condition of the "Sphynx" rule due to the lack of fur, large ears, and wrinkled skin.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 1 | Query 33: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has very little fur, appearing mostly hairless.
+- Large, prominent ears are visible.
+- The skin appears wrinkled and somewhat loose.
+
+KB:
+- IF animal has very little fur, large ears, and wrinkled skin THEN Sphynx
+
+Rule Check:
+- The observable features of the target image strongly align with the "Sphynx" rule. The animal is largely hairless, has large ears, and the skin appears wrinkled.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 1 | Query 34: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has large, prominent ears.
+- The animal has a lack of fur, exhibiting pinkish skin.
+- The animal has a distinctly feline facial structure.
+
+KB:
+- IF large, prominent ears AND lack of fur AND feline facial structure THEN Sphynx
+
+Rule Check:
+- The target image exhibits all the features associated with the Sphynx class. The large ears, lack of fur, and feline facial structure are clearly visible.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 1 | Query 35: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal is hairless.
+- The animal has large, pointed ears.
+- The animal has a wrinkled skin texture.
+
+KB:
+- IF hairless and large, pointed ears THEN Sphynx
+
+Rule Check:
+- The target image exhibits the observable features of hairlessness and large, pointed ears, which strongly aligns with the rule established for the Sphynx class.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 1 | Query 36: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Lack of fur covering the body.
+- Large, prominent ears.
+- Wrinkled skin.
+
+KB:
+- IF lack of fur covering the body AND large, prominent ears THEN Sphynx
+
+Rule Check:
+- The target image exhibits a complete absence of fur and possesses large, prominent ears. This aligns perfectly with the rule established for the Sphynx class.
+
+<response>Sphynx</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9) Run 1: 1.0000
+Run 2 | Query 1: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face
+- Short snout
+- Large, dark eyes
+- Curly tail
+- Tan/beige fur with black markings
+
+KB:
+- IF wrinkled face AND short snout AND large, dark eyes AND curly tail AND tan/beige fur with black markings THEN Pug
+
+Rule Check:
+- The image exhibits all the key features associated with the Pug class as defined in the KB. The wrinkled face, short snout, large dark eyes, curly tail, and fur color all strongly align with the visual characteristics of a Pug.
+
+<response>Pug</response>
+----------------------------------------
+Run 2 | Query 2: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face
+- Large, prominent eyes
+- Short snout
+- Fawn/beige fur with a black mask
+
+KB:
+- IF Wrinkled face, large eyes, short snout, and fawn/beige fur with a black mask THEN Pug
+
+Rule Check:
+- The image exhibits all the key features associated with the Pug class as defined in the KB. The wrinkled face, large eyes, short snout, and the characteristic fawn/beige fur with a black mask are all clearly visible.
+
+<response>Pug</response>
+----------------------------------------
+Run 2 | Query 3: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a short, smooth coat.
+- The dog has a wrinkled face and a pushed-in nose.
+- The dog has large, dark eyes.
+- The dog has distinctive curled tail.
+
+KB:
+- IF short, smooth coat AND wrinkled face AND pushed-in nose AND large, dark eyes AND curled tail THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class according to the provided examples.
+
+<response>Pug</response>
+----------------------------------------
+Run 2 | Query 4: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a wrinkled face.
+- The dog has large, droopy eyes.
+- The dog has large, prominent ears.
+- The dog has a short, compact body.
+- The dog has a fawn/tan coat with a black mask.
+
+KB:
+- IF wrinkled face, large droopy eyes, large prominent ears, short compact body, fawn/tan coat with black mask THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class in the provided knowledge base.
+
+<response>Pug</response>
+----------------------------------------
+Run 2 | Query 5: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a wrinkled face.
+- The dog has a black mask.
+- The dog has large, dark eyes.
+- The dog has curled tail.
+- The dog has a compact, muscular build.
+
+KB:
+- IF wrinkled face AND black mask AND large, dark eyes THEN Pug
+- IF long, fluffy fur THEN Persian
+- IF large size AND thick fur THEN Saint Bernard
+- IF lack of fur THEN Sphynx
+
+Rule Check:
+The image exhibits a wrinkled face, a black mask, large dark eyes, a curled tail, and a compact build. These features strongly align with the "IF wrinkled face AND black mask AND large, dark eyes THEN Pug" rule.
+
+<response>Pug</response>
+----------------------------------------
+Run 2 | Query 6: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a short, wrinkled muzzle.
+- The dog has large, dark eyes.
+- The dog has large, floppy ears.
+- The dog has a compact, muscular build.
+- The dog's coat is fawn/tan with a black mask.
+
+KB:
+- IF short, wrinkled muzzle AND large, dark eyes AND large, floppy ears AND compact, muscular build AND fawn/tan coat with black mask THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class in the provided knowledge base.
+
+<response>Pug</response>
+----------------------------------------
+Run 2 | Query 7: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a short, smooth coat.
+- The dog has a wrinkled face and a pushed-in nose.
+- The dog has large, dark eyes.
+- The dog has a curled tail.
+
+KB:
+- IF short, smooth coat AND wrinkled face AND pushed-in nose AND large, dark eyes AND curled tail THEN Pug
+
+Rule Check:
+- The observable features of the target image strongly align with the characteristics described in the "IF" statement for the "Pug" class. The dog exhibits a short, smooth coat, a wrinkled face, a pushed-in nose, large dark eyes, and a curled tail.
+
+<response>Pug</response>
+----------------------------------------
+Run 2 | Query 8: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The dog has a short, smooth coat.
+- The dog has a wrinkled face and a pushed-in nose.
+- The dog has large, dark eyes.
+- The dog has curled tail.
+
+KB:
+- IF short, smooth coat AND wrinkled face AND pushed-in nose AND large, dark eyes AND curled tail THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class according to the provided examples.
+
+<response>Pug</response>
+----------------------------------------
+Run 2 | Query 9: Expected: [Pug] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Wrinkled face
+- Large, dark eyes
+- Short snout
+- Fawn/tan coat with a black mask
+- Large, droopy ears
+
+KB:
+- IF wrinkled face, large dark eyes, short snout, fawn/tan coat with a black mask, and large droopy ears THEN Pug
+
+Rule Check:
+- The target image exhibits all the features associated with the "Pug" class in the provided knowledge base.
+
+<response>Pug</response>
+----------------------------------------
+Run 2 | Query 10: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a very long, fluffy coat.
+- The animal has a flat face with a pushed-in nose.
+- The animal has large, round eyes.
+
+KB:
+- IF long, fluffy coat AND flat face with a pushed-in nose AND large, round eyes THEN Persian
+
+Rule Check:
+- The target image strongly matches the features associated with the Persian class. The long, fluffy coat, flat face, and large eyes are all clearly visible and align with the established visual patterns for Persian cats.
+
+<response>Persian</response>
+----------------------------------------
+Run 2 | Query 11: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat has very long, flowing fur.
+- The cat has a flattened face.
+- The cat has large, round eyes.
+
+KB:
+- IF long, flowing fur AND flattened face THEN Persian
+
+Rule Check:
+- The image clearly exhibits long, flowing fur and a flattened face, which aligns perfectly with the rule established for the Persian breed.
+
+<response>Persian</response>
+----------------------------------------
+Run 2 | Query 12: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has long, fluffy fur.
+- The animal has a flattened face.
+- The animal has large, round eyes.
+
+KB:
+- IF long, fluffy fur AND flattened face AND large, round eyes THEN Persian
+
+Rule Check:
+- The image clearly exhibits long, fluffy fur, a flattened face, and large, round eyes. These features strongly align with the "Persian" class as defined by the provided knowledge base.
+
+<response>Persian</response>
+----------------------------------------
+Run 2 | Query 13: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, fluffy fur
+- Round face
+- Large, round eyes
+- Relatively short nose
+
+KB:
+- IF Long, fluffy fur AND Round face AND Large, round eyes THEN Persian
+
+Rule Check:
+The image exhibits long, fluffy fur, a round face, and large, round eyes. These features strongly align with the rule established for the "Persian" class.
+
+<response>Persian</response>
+----------------------------------------
+Run 2 | Query 14: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a very long, thick, fluffy coat.
+- The face has a somewhat flattened appearance with large, round eyes.
+- The ears are relatively small and set wide apart.
+
+KB:
+- IF long, thick, fluffy coat AND flattened face AND large, round eyes THEN Persian
+
+Rule Check:
+- The image strongly matches the "IF" condition of the Persian rule due to the prominent long, fluffy coat and the characteristic facial features.
+
+<response>Persian</response>
+----------------------------------------
+Run 2 | Query 15: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, fluffy fur
+- Flat face
+- Large, round eyes
+- Orange coloration
+
+KB:
+- IF Long, fluffy fur AND flat face AND large, round eyes THEN Persian
+
+Rule Check:
+- The image exhibits long, fluffy fur, a flat face, and large, round eyes, all characteristic of a Persian cat.
+
+<response>Persian</response>
+----------------------------------------
+Run 2 | Query 16: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, fluffy fur
+- Flat face
+- Large, round eyes
+- Orange/golden fur color
+
+KB:
+- IF Long, fluffy fur AND flat face THEN Persian
+
+Rule Check:
+- The image exhibits long, fluffy fur and a flat face, which strongly aligns with the "IF Long, fluffy fur AND flat face THEN Persian" rule.
+
+<response>Persian</response>
+----------------------------------------
+Run 2 | Query 17: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The cat has a very long, fluffy, white coat.
+- The face has a somewhat flattened appearance.
+- The ears are relatively small and pointed.
+
+KB:
+- IF long, fluffy, white coat AND somewhat flattened face THEN Persian
+
+Rule Check:
+- The image clearly exhibits a long, fluffy, white coat and a somewhat flattened face, which strongly aligns with the "Persian" class.
+
+<response>Persian</response>
+----------------------------------------
+Run 2 | Query 18: Expected: [Persian] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Long, fluffy fur
+- Flat face
+- Large, round eyes
+- Light colored fur
+
+KB:
+- IF Long, fluffy fur AND flat face THEN Persian
+
+Rule Check:
+- The image exhibits long, fluffy fur and a flat face, which strongly aligns with the "IF Long, fluffy fur AND flat face THEN Persian" rule.
+
+<response>Persian</response>
+----------------------------------------
+Run 2 | Query 19: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- Predominantly white fur with brown markings
+- Droopy face
+- Large paws
+
+KB:
+- IF [Large size, predominantly white fur with brown markings, droopy face, large paws] THEN [Saint Bernard]
+
+Rule Check:
+The image exhibits all the key features associated with Saint Bernards: large size, predominantly white fur with brown markings, a droopy face, and large paws. Therefore, the rule best matched by the target image is the one associating these features with the Saint Bernard class.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 2 | Query 20: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- White markings on the face
+- Brown and white fur
+- Droopy face
+
+KB:
+- IF [Large size, white markings on the face, brown and white fur, droopy face] THEN [Saint Bernard]
+
+Rule Check:
+The image exhibits all the key features associated with Saint Bernards: large size, distinctive white markings on the face, a combination of brown and white fur, and a characteristic droopy face. Therefore, the rule best matched by the target image is the one associating these features with the Saint Bernard class.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 2 | Query 21: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- Predominantly white fur with brown markings
+- Broad head and face
+- Droopy jowls
+
+KB:
+- IF [Large size, predominantly white fur with brown markings, broad head and face, droopy jowls] THEN [Saint Bernard]
+
+Rule Check:
+The image exhibits all the key features associated with Saint Bernards: large size, predominantly white fur with brown markings, a broad head, and droopy jowls. Therefore, the rule linking these features to the "Saint Bernard" class is best satisfied.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 2 | Query 22: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- White and brown coloration
+- Broad head
+- Droopy face
+- Large paws
+
+KB:
+- IF [Large size, white and brown coloration, broad head, droopy face, large paws] THEN [Saint Bernard]
+
+Rule Check:
+The image exhibits all the key features associated with Saint Bernards: large size, a distinctive white and brown coloration, a broad head, a droopy face, and large paws. Therefore, the rule linking these features to the "Saint Bernard" class is best satisfied.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 2 | Query 23: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- Predominantly white fur with brown markings
+- Broad head
+- Droopy face
+
+KB:
+- IF [Large size, predominantly white fur with brown markings, broad head, droopy face] THEN [Saint Bernard]
+
+Rule Check:
+The image exhibits all the key features associated with Saint Bernards: large size, a predominantly white coat with brown markings, a broad head, and a droopy face. Therefore, the rule best matched by the target image is the one associating these features with the Saint Bernard class.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 2 | Query 24: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- Brown and white fur coloration
+- Broad head
+- Droopy tongue
+- Large paws
+
+KB:
+- IF [Large size, Brown and white fur coloration, Broad head, Droopy tongue, Large paws] THEN [Saint Bernard]
+
+Rule Check:
+The image exhibits all the key features associated with Saint Bernards: large size, brown and white fur, a broad head, a droopy tongue, and large paws. Therefore, the rule linking these features to the "Saint Bernard" class is best satisfied.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 2 | Query 25: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- Predominantly white fur with brown markings
+- Droopy face
+- Large paws
+
+KB:
+- IF [Large size, predominantly white fur with brown markings, droopy face, large paws] THEN [Saint Bernard]
+
+Rule Check:
+The image exhibits all the key features associated with Saint Bernards: large size, predominantly white fur with brown markings, a droopy face, and large paws. Therefore, the rule best matched by the Target Image is the one associating these features with a Saint Bernard.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 2 | Query 26: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- White and brown fur coloration
+- Large head with a droopy face
+- Fluffy fur
+
+KB:
+- IF [Large size, white and brown fur coloration, large head with a droopy face, fluffy fur] THEN [Saint Bernard]
+
+Rule Check:
+The image clearly exhibits the characteristics of a large dog with white and brown fur, a large head, a droopy face, and fluffy fur. These features strongly align with the established rule for identifying a Saint Bernard.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 2 | Query 27: Expected: [Saint Bernard] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Large size
+- White and brown coloration
+- Droopy jowls
+- Large, floppy ears
+
+KB:
+- IF [Large size, white and brown coloration, droopy jowls, large, floppy ears] THEN [Saint Bernard]
+
+Rule Check:
+The image clearly shows a large dog with white and brown fur, droopy jowls, and large, floppy ears. These features strongly align with the established rule for Saint Bernard.
+
+<response>Saint Bernard</response>
+----------------------------------------
+Run 2 | Query 28: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a largely hairless body.
+- Large, prominent ears are visible.
+- The animal has a distinct facial structure with a pointed nose.
+
+KB:
+- IF largely hairless body AND large, prominent ears THEN Sphynx
+
+Rule Check:
+- The observable features of the target image strongly align with the "Sphynx" rule. The animal is predominantly hairless and possesses large, noticeable ears.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 2 | Query 29: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a largely hairless body.
+- Large, prominent ears are visible.
+- The skin appears wrinkled and somewhat loose.
+
+KB:
+- IF largely hairless body AND large, prominent ears THEN Sphynx
+
+Rule Check:
+- The image clearly exhibits a largely hairless body and large, prominent ears, which strongly aligns with the "Sphynx" class.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 2 | Query 30: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has very little fur, appearing mostly hairless.
+- The animal has large, pointed ears.
+- The animal has a distinctly feline face with a short snout.
+
+KB:
+- IF [animal has very little fur, large pointed ears, and a feline face] THEN [Sphynx]
+
+Rule Check:
+- The observable features of the target image strongly align with the rule established for the Sphynx class. The lack of fur, prominent ears, and feline facial features are all present.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 2 | Query 31: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a largely hairless body.
+- Large, prominent ears are visible.
+- The animal has a feline face structure.
+
+KB:
+- IF largely hairless body AND large, prominent ears AND feline face structure THEN Sphynx
+
+Rule Check:
+- The target image exhibits all the features associated with the Sphynx class. Therefore, the rule "IF largely hairless body AND large, prominent ears AND feline face structure THEN Sphynx" is best matched.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 2 | Query 32: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a largely hairless body.
+- The animal has large, pointed ears.
+- The animal has a long neck.
+- The animal has a wrinkled skin texture.
+
+KB:
+- IF largely hairless body, large pointed ears, long neck, and wrinkled skin THEN Sphynx
+
+Rule Check:
+- The target image strongly matches the features associated with the Sphynx class. The animal is predominantly hairless, has prominent ears, a long neck, and visible skin wrinkles.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 2 | Query 33: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a largely hairless body.
+- Large, prominent ears are visible.
+- The animal has a feline face.
+
+KB:
+- IF largely hairless body AND large, prominent ears AND feline face THEN Sphynx
+
+Rule Check:
+- The target image exhibits all the features associated with the Sphynx class. Therefore, the rule "IF largely hairless body AND large, prominent ears AND feline face THEN Sphynx" is best matched.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 2 | Query 34: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a largely hairless body.
+- The animal has large, prominent ears.
+- The animal has a distinct feline face with a pointed nose.
+
+KB:
+- IF largely hairless body AND large, prominent ears AND feline face THEN Sphynx
+
+Rule Check:
+- The target image exhibits all the features associated with the Sphynx class. The lack of fur, large ears, and feline facial structure strongly indicate this breed.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 2 | Query 35: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- Lack of fur covering most of the body.
+- Large, prominent ears.
+- Wrinkled skin.
+- Blue eyes.
+
+KB:
+- IF lack of fur covering most of the body AND large, prominent ears THEN Sphynx.
+
+Rule Check:
+The target image exhibits a complete lack of fur and has large, prominent ears. This aligns perfectly with the rule established for the Sphynx breed.
+
+<response>Sphynx</response>
+----------------------------------------
+Run 2 | Query 36: Expected: [Sphynx] | Correct: True
+MODEL OUTPUT (Features and values in form of logic rules): 
+Features:
+- The animal has a largely hairless body.
+- Large, prominent ears are visible.
+- The animal has a distinctly feline appearance.
+
+KB:
+- IF largely hairless body AND large, prominent ears AND feline appearance THEN Sphynx
+
+Rule Check:
+- The target image exhibits all the key features associated with the Sphynx class: a largely hairless body, large ears, and a feline appearance. Therefore, the rule "IF largely hairless body AND large, prominent ears AND feline appearance THEN Sphynx" is best satisfied.
+
+<response>Sphynx</response>
+----------------------------------------
+-> FINAL ACCURACY for (4,1,9) Run 2: 1.0000
