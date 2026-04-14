@@ -1,0 +1,37 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemini-2.5-flash-lite | N=2 K=2 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- The flower has multiple petals, typically six or more.
+- The petals are broad and somewhat rounded at the tips.
+- The center of the flower has numerous stamens.
+- The color of the petals is a shade of purple or pink.
+- The flower appears to be growing on a vine or climbing plant, with green leaves visible.
+</features>
+<kb>
+- IF the flower has multiple broad, rounded petals, a prominent central stamen cluster, and is purple or pink, THEN the class is 81.
+- IF the flower has three large outer petals and three smaller inner petals, a distinct central structure with a pointed tip, and is yellow, THEN the class is 14.
+</kb>
+<rule_check>
+- The Target Image shows a flower with multiple broad, rounded petals that are purple and pink. It has a prominent central stamen cluster. This matches the description for class 81. The flower in the Target Image does not resemble the yellow flower with three large outer petals and three smaller inner petals characteristic of class 14. Therefore, rule 1 is best satisfied by the Target Image.
+</rule_check>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- The flower has six petals.
+- The petals are yellow.
+- The flower has a distinct central structure with stamens.
+- The petals are broad and somewhat rounded at the tips.
+- The flower has a somewhat irregular shape.
+- The background is green and out of focus.
+</features>
+<kb>
+- IF the flower has six petals, is yellow, and has a distinct central structure, THEN the class is 14.
+- IF the flower has six petals, is purple/pink, and has a distinct central structure, THEN the class is 81.
+</kb>
+<rule_check>
+- The Target Image shows a flower with six petals that are yellow and has a distinct central structure. This matches the description for class 14.
+</rule_check>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.8616 | avg_trial_wall_seconds=1.9093 | avg_trial_api_seconds=1.8667 | system_fallback_count=0

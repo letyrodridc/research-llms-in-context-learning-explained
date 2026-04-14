@@ -1,0 +1,53 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash-lite | N=3 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<tbox>
+- [Class_45] equiv hasVisualFeature(orange_petals) and hasVisualFeature(green_leaves)
+- [Class_44] equiv hasVisualFeature(purple_petals) and hasVisualFeature(green_leaves)
+- [Class_77] equiv hasVisualFeature(pink_petals) and hasVisualFeature(green_leaves)
+</tbox>
+<abox>
+- hasVisualFeature(Target, orange_petals)
+- hasVisualFeature(Target, green_leaves)
+</abox>
+<dl_explanation>
+- The Target Image has orange petals and green leaves.
+- The TBox defines Class_45 as having orange petals and green leaves.
+- Therefore, the Target Image is classified as Class_45.
+</dl_explanation>
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<tbox>
+- Class_45 equiv hasVisualFeature(orange_petals) and hasVisualFeature(green_leaves)
+- Class_44 equiv hasVisualFeature(purple_petals) and hasVisualFeature(yellow_center)
+- Class_77 equiv hasVisualFeature(pink_petals) and hasVisualFeature(green_leaves)
+</tbox>
+<abox>
+- hasVisualFeature(Target, purple_petals)
+- hasVisualFeature(Target, yellow_center)
+</abox>
+<dl_explanation>
+- The Target Image exhibits purple petals and a yellow center.
+- The TBox defines Class_44 as equivalent to having purple petals and a yellow center.
+- Therefore, the Target Image satisfies the conditions for Class_44.
+</dl_explanation>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<tbox>
+- Class_45 equiv hasVisualFeature(orange_petals) and hasVisualFeature(green_leaves)
+- Class_44 equiv hasVisualFeature(purple_petals) and hasVisualFeature(green_leaves)
+- Class_77 equiv hasVisualFeature(pink_petals) and hasVisualFeature(green_leaves)
+</tbox>
+<abox>
+- hasVisualFeature(Target, pink_petals)
+- hasVisualFeature(Target, green_leaves)
+</abox>
+<dl_explanation>
+- The Target Image exhibits pink petals and green leaves.
+- The TBox defines Class_77 as having both pink petals and green leaves.
+- Therefore, the Target Image is classified as Class_77.
+</dl_explanation>
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=5.2772 | avg_trial_wall_seconds=1.7436 | avg_trial_api_seconds=1.6813 | system_fallback_count=0

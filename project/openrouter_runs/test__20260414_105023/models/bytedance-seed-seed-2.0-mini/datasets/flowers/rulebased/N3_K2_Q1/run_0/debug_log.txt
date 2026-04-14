@@ -1,0 +1,54 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=bytedance-seed/seed-2.0-mini | N=3 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- Clusters of bright orange to deep red-orange four-petaled flowers
+- Visible green elongated foliage in the background
+- Earthy, brown soil-like background
+- Individual flowers have a tiny light-colored central petal spot
+</features>
+<kb>
+- IF image contains clustered bright orange/reddish-orange four-petaled blooms with green foliage THEN class 45
+- IF image contains purple bell-shaped clustered flowers THEN class 44
+- IF image contains large pink/white layered lotus-style blooms with broad green leaves THEN class 77
+</kb>
+<rule_check>
+The target image matches the first IF-THEN rule for class 45: it has clustered bright orange-to-red-orange four-petaled flowers paired with green foliage, exactly matching the visual pattern of the previously shown 45 class examples.
+</rule_check>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- The flower has solid purple/lavender cup-shaped petals
+- A central cluster of yellow reproductive stamens is visible at the flower's center
+- Green foliage surrounds the blooms
+</features>
+<kb>
+- IF flower features purple cup-shaped petals with a central yellow stamen cluster THEN class 44
+- IF flower has clustered bright orange/yellow blooms THEN class 45
+- IF flower has large layered pink/white lotus-style petals THEN class77
+</kb>
+<rule_check>
+The target image matches the rule for class 44: it has purple cup-shaped flowers with visible central yellow stamens, identical to the previously provided 44 labeled examples of this flower type.
+</rule_check>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<features>
+- Symmetrical, layered broad pink flower petals
+- Classic lotus bloom shape with radiating, tiered petals
+- Green surrounding foliage/plant life
+</features>
+<kb>
+- IF [symmetrical layered pink lotus-style flower with broad petals] THEN [77]
+- IF [purple bell-shaped clustered flowers] THEN [44]
+- IF [small orange/yellow clustered snapdragon-like blooms] THEN [45]
+</kb>
+<rule_check>
+The target image matches the first rule: it has a symmetrical, layered pink lotus flower with the characteristic tiered, broad petals seen in the prior 77-class labeled examples, matching the visual patterns of that class perfectly.
+</rule_check>
+
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=49.2826 | avg_trial_wall_seconds=16.3996 | avg_trial_api_seconds=16.3294 | system_fallback_count=0

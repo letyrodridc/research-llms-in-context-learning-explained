@@ -1,0 +1,59 @@
+=== DEBUG LOG | dataset=flowers | prompt=classification | model=mistralai/ministral-8b-2512 | N=2 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+```xml
+<condition>
+    <features>
+        <class_81>
+            <color>deep purple/magenta</color>
+            <shape>five rounded petals with a central star-like pattern</shape>
+            <stigma>prominent, slightly raised center with multiple stamens</stigma>
+        </class_81>
+        <class_14>
+            <color>bright yellow</color>
+            <shape>petals elongated, slightly curved with a trumpet-like structure</shape>
+            <stigma>central cluster of stamens, less pronounced petal edges</stigma>
+        </class_14>
+    </features>
+</condition>
+<target_analysis>
+    <color>deep magenta/pink</color>
+    <shape>five rounded petals with a central star-like pattern</shape>
+    <stigma>prominent, slightly raised center with multiple stamens</stigma>
+</target_analysis>
+<response>81</response>
+```
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+```xml
+<condition>
+    <examples>
+        <example class="81">
+            <features>
+                <feature>Dark maroon/purple petals</feature>
+                <feature>White or yellow stamens</feature>
+                <feature>Large, rounded petals with a slightly ruffled edge</feature>
+                <feature>Central prominent stamens</feature>
+            </features>
+        </example>
+        <example class="14">
+            <features>
+                <feature>Bright yellow petals</feature>
+                <feature>Long, narrow, and slightly curved petals</feature>
+                <feature>Thick, textured texture with a slightly fuzzy appearance</feature>
+                <feature>Prominent stamens with a yellowish hue</feature>
+            </features>
+        </example>
+    </examples>
+</condition>
+<target_image_analysis>
+    <features>
+        <feature>Bright yellow petals</feature>
+        <feature>Long, narrow, and slightly curved petals</feature>
+        <feature>Thick, textured texture with a fuzzy appearance</feature>
+        <feature>Prominent stamens</feature>
+    </features>
+</target_image_analysis>
+<response>14</response>
+```
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.3934 | avg_trial_wall_seconds=2.1737 | avg_trial_api_seconds=2.1352 | system_fallback_count=0

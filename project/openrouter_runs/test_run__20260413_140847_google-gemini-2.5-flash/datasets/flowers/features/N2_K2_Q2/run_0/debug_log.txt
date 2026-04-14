@@ -1,0 +1,39 @@
+=== DEBUG LOG | dataset=flowers | prompt=features | model=google/gemini-2.5-flash | N=2 K=2 Q=2 | run=0 ===
+Run 0 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- five petals
+- petals are broad and flat
+- petals are arranged radially around a central stamen cluster
+- stamen cluster is prominent and light-colored
+</features>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- five to six broad petals
+- petals are purple with darker red/purple stripes
+- prominent central stamen structure
+</features>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- yellow petals
+- petals with dark lines radiating from the center
+- three large, drooping lower petals
+- three smaller, upright upper petals
+</features>
+<response>14</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- yellow petals
+- petals with dark brown/reddish lines
+- petals with a central yellow/orange patch
+- three large, drooping lower petals
+- three smaller, upright upper petals
+- green, blade-like leaves in the background
+</features>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=7.0001 | avg_trial_wall_seconds=1.7434 | avg_trial_api_seconds=1.6858 | system_fallback_count=0

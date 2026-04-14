@@ -1,0 +1,53 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=bytedance-seed/seed-2.0-mini | N=3 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- Clustered small individual flowers each with four petals
+- Petals are primarily bright yellow with orange-red tinted sections on some blooms
+- Visible central stamen structures on the open flowers
+- Green foliage in the blurred background
+</features>
+<kb>
+- IF [image contains clustered four-petaled yellow-orange flowers with visible central stamens] THEN [class 45]
+- IF [image contains deep purple or pale pink bowl-shaped single flowers] THEN [class 44]
+- IF [image contains large layered water lily-style flowers with broad petals and yellow central receptacle] THEN [class 77]
+</kb>
+<rule_check>
+The target image matches the first IF-THEN rule: it shows clustered small four-petaled flowers with yellow-orange petals and visible central stamens, exactly matching the visual patterns of the class 45 examples provided in prior tasks.
+</rule_check>
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- Deep purple/lavender cup-shaped flower petals
+- Prominent central floral structure with orange/yellow stamens and dark maroon basal center
+- Smooth, soft-textured rounded petal edges
+</features>
+<kb>
+- IF [flower has purple/lavender cup-shaped petals with orange central stamens and rounded soft petal edges] THEN [class 44]
+- IF [flower has bright orange-yellow clustered blooms with red/orange petal accents] THEN [class 45]
+- IF [flower has large lotus-style petals with a yellow central receptacle] THEN [class 77]
+</kb>
+<rule_check>
+The target image matches the first IF-THEN rule for class 44: it has purple cup-shaped petals, with the same orange/yellow stamen central structure seen in the previously labeled 44 class flowers (the purple and pink lisianthus blooms). It does not match the orange clustered blooms of class 45 or the lotus-style petals of class 77.
+</rule_check>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<features>
+- Layered broad pink flower petals
+- Prominent bright yellow central floral receptacle
+- Background foliage of large green lily-pad style leaves
+</features>
+<kb>
+- IF [clustered orange-red layered small flowers] THEN class 45
+- IF [cup-shaped purple/pink flowers with dark central markings] THEN class 44
+- IF [large layered broad petals with a prominent yellow central receptacle, green lily pad background foliage] THEN class 77
+</kb>
+<rule_check>
+The target image matches the third rule: it has layered pink petals, a bright yellow central receptacle, and lily pad-style background foliage, exactly matching the visual patterns of the class 77 lotus flower examples provided earlier.
+</rule_check>
+
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=52.5306 | avg_trial_wall_seconds=17.4948 | avg_trial_api_seconds=17.4070 | system_fallback_count=0

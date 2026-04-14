@@ -1,0 +1,150 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=mistralai/ministral-8b-2512 | N=4 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[34] | Predicted=[34] | Correct=True
+```xml
+<tbox>
+    <!-- Class 34 (Thistle-like flowers) -->
+    [Class_34] sqsubseteq hasVisualFeature([spiky_petal_structure]) and
+                      hasVisualFeature([purple_blue_flower_color]) and
+                      hasVisualFeature([central_spiky_cone]) and
+                      hasVisualFeature([green_leafy_background]).
+
+    <!-- Class 81 (Clematis) -->
+    [Class_81] sqsubseteq hasVisualFeature([large_floral_blossoms]) and
+                      hasVisualFeature([pink_or_purple_petals]) and
+                      hasVisualFeature([delicate_petal_layers]) and
+                      hasVisualFeature([green_vegetation_background]).
+
+    <!-- Class 88 (Nasturtium) -->
+    [Class_88] sqsubseteq hasVisualFeature([bright_orange_petals]) and
+                      hasVisualFeature([prominent_yellow_center]) and
+                      hasVisualFeature([rounded_petal_shape]) and
+                      hasVisualFeature([green_leafy_background]).
+
+    <!-- Class 71 (Azalea/Rhododendron) -->
+    [Class_71] sqsubseteq hasVisualFeature([pink_or_red_petals]) and
+                      hasVisualFeature([smooth_petal_surface]) and
+                      hasVisualFeature([prominent_stamen]) and
+                      hasVisualFeature([green_leafy_background]).
+</tbox>
+
+<abox>
+    <!-- Target Image Observations -->
+    hasVisualFeature(Target, [spiky_petal_structure]).
+    hasVisualFeature(Target, [purple_blue_flower_color]).
+    hasVisualFeature(Target, [central_spiky_cone]).
+    hasVisualFeature(Target, [green_leafy_background]).
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits the following visual features:
+    - Spiky petal structure
+    - Purple-blue flower color
+    - Central spiky cone
+    - Green leafy background
+
+    These features directly match the necessary and sufficient conditions for [Class_34] as defined in the TBox. The presence of spiky petals and a central spiky cone, along with the purple-blue coloration, aligns with the discriminative visual patterns observed in the labeled examples for Class 34.
+
+    No other class (81, 88, or 71) matches this combination of features, as those classes have distinct petal shapes, colors, and structural characteristics.
+</dl_explanation>
+
+<response>34</response>
+```
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+```xml
+<tbox>
+    <!-- Class 34 (e.g., thistle-like flowers) -->
+    [Class34] sqsubseteq hasVisualFeature([spiky_center]) and hasVisualFeature([purple_floral_cluster]) and hasVisualFeature([green_leafy_background]).
+
+    <!-- Class 81 (e.g., clematis-like flowers) -->
+    [Class81] sqsubseteq hasVisualFeature([large_petals]) and hasVisualFeature([multiple_flower_heads]) and hasVisualFeature([green_vines_or_leaves]).
+
+    <!-- Class 88 (e.g., nasturtium-like flowers) -->
+    [Class88] equiv hasVisualFeature([bright_orange_petals]) and hasVisualFeature([prominent_yellow_center]) and hasVisualFeature([rounded_petals]).
+
+    <!-- Class 71 (e.g., azalea-like flowers) -->
+    [Class71] equiv hasVisualFeature([pink_or_purple_petals]) and hasVisualFeature([smooth_textured_petals]) and hasVisualFeature([green_leaves_in_background]).
+</tbox>
+
+<abox>
+    hasVisualFeature(Target, [large_petals]).
+    hasVisualFeature(Target, [green_vines_or_leaves]).
+    hasVisualFeature(Target, [purple_floral_color]).
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits large petals and green vines/leaves, which aligns with the visual features of Class 81 (clematis-like flowers). The petals are large and clustered, and the background includes green foliage, matching the sufficient conditions for Class 81.
+
+    The Target Image does not have the spiky center or bright orange coloration associated with Classes 34 and 88, nor does it have the smooth pink/purple petals of Class 71. Therefore, the Target Image satisfies the necessary and sufficient conditions for Class 81.
+</dl_explanation>
+
+<response>81</response>
+```
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[88] | Predicted=[88] | Correct=True
+```xml
+<tbox>
+    <!-- Class 34 (e.g., thistle-like flowers) -->
+    [Class_34] sqsubseteq hasVisualFeature([dark_centered_floral_spikes]) and
+                      hasVisualFeature([purple_floral_petals]) and
+                      hasVisualFeature([spiky_outer_segments]).
+
+    <!-- Class 81 (e.g., clematis-like flowers) -->
+    [Class_81] sqsubseteq hasVisualFeature([large_floral_petals]) and
+                      hasVisualFeature([delicate_stamen_structure]) and
+                      hasVisualFeature([pink_or_white_petals]).
+
+    <!-- Class 88 (e.g., nasturtium-like flowers) -->
+    [Class_88] equiv hasVisualFeature([bright_orange_petals]) and
+                  hasVisualFeature([prominent_vein_pattern]) and
+                  hasVisualFeature([rounded_petal_shape]).
+
+    <!-- Class 71 (e.g., azalea-like flowers) -->
+    [Class_71] equiv hasVisualFeature([pink_or_red_petals]) and
+                  hasVisualFeature([smooth_petal_edges]) and
+                  hasVisualFeature([dense_stamen_center]).
+</tbox>
+
+<abox>
+    hasVisualFeature(Target, [bright_orange_petals]).
+    hasVisualFeature(Target, [prominent_vein_pattern]).
+    hasVisualFeature(Target, [rounded_petal_shape]).
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits three key visual features: bright orange petals, a prominent vein pattern, and rounded petal shapes. These features directly match the necessary and sufficient conditions for [Class_88] as defined in the TBox. The combination of these attributes (bright_orange_petals, prominent_vein_pattern, rounded_petal_shape) uniquely aligns with the visual characteristics of the labeled examples for Class 88 (e.g., nasturtium-like flowers). No other class in the provided examples shares this exact combination of features.
+</dl_explanation>
+
+<response>88</response>
+```
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[71] | Predicted=[71] | Correct=True
+```xml
+<tbox>
+    <!-- Class 34 (e.g., thistle-like flowers) -->
+    [Class34] sqsubseteq hasVisualFeature([spiky_center]) and hasVisualFeature([purple_floral_cluster]) and hasVisualFeature([green_leafy_background])
+
+    <!-- Class 81 (e.g., clematis-like flowers) -->
+    [Class81] sqsubseteq hasVisualFeature([large_petal_cluster]) and hasVisualFeature([white_or_pastel_petals]) and hasVisualFeature([prominent_stamen_center])
+
+    <!-- Class 88 (e.g., nasturtium-like flowers) -->
+    [Class88] equiv hasVisualFeature([bright_orange_petals]) and hasVisualFeature([yellow_center]) and hasVisualFeature([rounded_petals])
+
+    <!-- Class 71 (e.g., azalea-like flowers) -->
+    [Class71] equiv hasVisualFeature([deep_pink_or_purple_petals]) and hasVisualFeature([smooth_petals]) and hasVisualFeature([green_leafy_background])
+</tbox>
+
+<abox>
+    hasVisualFeature(Target, [deep_pink_or_purple_petals])
+    hasVisualFeature(Target, [smooth_petals])
+    hasVisualFeature(Target, [green_leafy_background])
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits three key visual features: deep pink/purple petals, smooth petals, and a green leafy background. These features directly match the necessary and sufficient conditions for [Class71] as defined in the TBox. The combination of these attributes aligns with the visual patterns observed in the labeled examples for azalea-like flowers.
+</dl_explanation>
+
+<response>71</response>
+```
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=30.1838 | avg_trial_wall_seconds=7.5242 | avg_trial_api_seconds=7.4506 | system_fallback_count=0

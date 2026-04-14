@@ -1,0 +1,47 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=mistralai/ministral-8b-2512 | N=2 K=2 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Petals are large, overlapping, and shaped like a bell or teardrop with a ruffled or slightly wavy edge
+- Color is a deep, solid magenta/pink with a slight gradient from darker center to lighter edges
+- Central stamens are prominent, clustered, and slightly protruding from the flower
+- Flower has a slightly fuzzy or velvety texture on petals
+- Green foliage in the background is broad-leaved and serrated
+</features>
+
+<kb>
+- IF [petals are bright yellow/orange, smooth, and shaped like a funnel with a flat center] THEN [class 14]
+- IF [petals are deep magenta/pink, ruffled, bell-shaped with a fuzzy texture, and have prominent clustered stamens] THEN [class 81]
+</kb>
+
+<rule_check>
+- The Target Image matches the second rule (class 81) because:
+  - Petals are deep magenta/pink, not yellow/orange.
+  - Petals have a ruffled, bell-shaped form with a fuzzy texture.
+  - The central stamens are prominent and clustered.
+  - The foliage in the background is consistent with broad-leaved, serrated green leaves.
+  - The texture and shape of the petals align with the visual patterns of class 81, not class 14.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- Bright yellow petals with a slightly textured, velvety appearance
+- Three prominent, slightly curved petals forming a trumpet-like shape
+- Central yellow stamens with darker yellow-orange anthers
+- Greenish stem and leaves in the background
+- Petals have a smooth gradient from bright yellow at the edges to slightly lighter yellow near the center
+</features>
+
+<kb>
+- IF [petals are deep maroon/purple with a velvety texture, five or more petals, and a central cluster of stamens with contrasting colors] THEN [class 81]
+- IF [petals are bright yellow with a trumpet-like shape formed by three prominent petals, smooth gradient on petals, and greenish stem/leaves] THEN [class 14]
+</kb>
+
+<rule_check>
+- The Target Image matches the second rule (class 14) because it exhibits bright yellow petals with a smooth gradient, a trumpet-like shape formed by three prominent petals, and a greenish stem/leaves background. These features align with the observable patterns of class 14 in the provided examples.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=5.2117 | avg_trial_wall_seconds=2.5652 | avg_trial_api_seconds=2.5218 | system_fallback_count=0

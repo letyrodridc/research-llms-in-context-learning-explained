@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=flowers | prompt=features | model=mistralai/ministral-8b-2512 | N=3 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- bright orange petals with dark red/orange veining
+- five elongated, slightly curved petals
+- small, clustered stamens with yellow tips
+- green foliage background with serrated edges
+</features>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- deep purple petals with smooth texture
+- five prominent rounded petals
+- yellow-green central stamens with visible anthers
+- no visible orange or red markings
+- petals slightly ruffled at edges
+</features>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<features>
+- large, fully open petals with smooth, rounded edges
+- bright pink hue with slight gradient from center to petal tips
+- prominent yellow-green stamens in the center
+- broad, green, floating leaves beneath the flower
+- symmetrical, layered petal structure
+</features>
+
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=3.9246 | avg_trial_wall_seconds=1.2811 | avg_trial_api_seconds=1.2250 | system_fallback_count=0

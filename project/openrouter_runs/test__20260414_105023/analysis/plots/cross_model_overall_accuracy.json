@@ -1,0 +1,64 @@
+{
+  "title": "Overall Accuracy by Model",
+  "alpha": 0.05,
+  "x_field": "model",
+  "series_field": null,
+  "filters": {},
+  "rows": [
+    {
+      "x": "bytedance-seed/seed-2.0-mini",
+      "series": "accuracy",
+      "correct": 180,
+      "total": 180,
+      "accuracy": 1.0,
+      "standard_error": 0.0,
+      "ci95_low": 0.9791,
+      "ci95_high": 1.0
+    },
+    {
+      "x": "mistralai/ministral-8b-2512",
+      "series": "accuracy",
+      "correct": 174,
+      "total": 180,
+      "accuracy": 0.9667,
+      "standard_error": 0.01338,
+      "ci95_low": 0.9292,
+      "ci95_high": 0.9846
+    }
+  ],
+  "statistics": {
+    "alpha": 0.05,
+    "group_field": "model",
+    "groups": [
+      "bytedance-seed/seed-2.0-mini",
+      "mistralai/ministral-8b-2512"
+    ],
+    "matched": true,
+    "omnibus": {
+      "group_a": "bytedance-seed/seed-2.0-mini",
+      "group_b": "mistralai/ministral-8b-2512",
+      "matched_units": 180,
+      "a_correct_b_wrong": 6,
+      "b_correct_a_wrong": 0,
+      "both_correct": 174,
+      "both_wrong": 0,
+      "p_value": 0.03125,
+      "test": "exact_mcnemar",
+      "significant": true
+    },
+    "pairwise": [
+      {
+        "group_a": "bytedance-seed/seed-2.0-mini",
+        "group_b": "mistralai/ministral-8b-2512",
+        "matched_units": 180,
+        "a_correct_b_wrong": 6,
+        "b_correct_a_wrong": 0,
+        "both_correct": 174,
+        "both_wrong": 0,
+        "p_value": 0.03125,
+        "p_value_holm": 0.03125,
+        "significant_holm": true
+      }
+    ]
+  }
+}

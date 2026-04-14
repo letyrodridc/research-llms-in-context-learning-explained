@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=2 K=2 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- 81 sqsubseteq hasVisualFeature(pink_petals) and hasVisualFeature(multiple_petals_per_flower)
+- 14 sqsubseteq hasVisualFeature(yellow_petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, pink_petals)
+- hasVisualFeature(Target, multiple_petals_per_flower)
+</abox>
+<dl_explanation>
+- The Target Image displays flowers with pink petals and multiple petals per flower.
+- These features match the visual patterns associated with class 81 in the provided examples.
+- Therefore, the Target Image is classified as 81.
+</dl_explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- 81 sqsubseteq hasVisualFeature(purple_petals) and hasVisualFeature(large_petals)
+- 14 sqsubseteq hasVisualFeature(yellow_petals) and hasVisualFeature(distinct_petal_shape)
+</tbox>
+<abox>
+- hasVisualFeature(Target, yellow_petals)
+- hasVisualFeature(Target, distinct_petal_shape)
+</abox>
+<dl_explanation>
+- The Target Image contains yellow petals and a distinct petal shape characteristic of the iris-like flowers seen in the examples for class 14.
+- These features satisfy the conditions for class 14.
+- Therefore, the Target Image is classified as 14.
+</dl_explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=6.6306 | avg_trial_wall_seconds=3.3125 | avg_trial_api_seconds=3.2722 | system_fallback_count=0

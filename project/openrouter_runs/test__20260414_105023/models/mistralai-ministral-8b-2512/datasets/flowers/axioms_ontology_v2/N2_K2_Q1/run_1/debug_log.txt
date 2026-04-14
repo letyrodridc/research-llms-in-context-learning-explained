@@ -1,0 +1,75 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=mistralai/ministral-8b-2512 | N=2 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+```xml
+<tbox>
+    <!-- Class 81 (Clematis) -->
+    [Class_81] sqsubseteq hasVisualFeature([large_petal_cluster]) and
+                       hasVisualFeature([multiple_petals]) and
+                       hasVisualFeature([central_stamens]) and
+                       hasVisualFeature([light_to_dark_purple_or_pink_tints]).
+
+    <!-- Class 14 (Iris) -->
+    [Class_14] sqsubseteq hasVisualFeature([distinct_vertical_petals]) and
+                       hasVisualFeature([yellow_or_white_petals]) and
+                       hasVisualFeature([narrow_fall_petals]) and
+                       hasVisualFeature([central_stamen_column]).
+</tbox>
+
+<abox>
+    hasVisualFeature(Target, [large_petal_cluster]).
+    hasVisualFeature(Target, [multiple_petals]).
+    hasVisualFeature(Target, [central_stamens]).
+    hasVisualFeature(Target, [light_purple_or_pink_tints]).
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits a large cluster of petals, multiple overlapping petals, central stamens, and light purple/pink tints. These features directly match the necessary and sufficient conditions for [Class_81] as defined in the TBox.
+
+    The vertical petal structure, narrow fall petals, and yellow/white coloration are absent, ruling out [Class_14]. The Target Image’s visual features align exclusively with the discriminative patterns of Class 81 (Clematis).
+</dl_explanation>
+
+<response>81</response>
+```
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+```xml
+<tbox>
+    <!-- Class 14 (yellow iris-like flowers) -->
+    [Class14] sqsubseteq hasVisualFeature([bright_yellow_petals]) and
+                      hasVisualFeature([long_narrow_petals]) and
+                      hasVisualFeature([white_center_stamens]) and
+                      hasVisualFeature([vertical_orientation]);
+
+    <!-- Class 81 (purple/pink clematis) -->
+    [Class81] sqsubseteq hasVisualFeature([petals_with_pink_or_purple_hues]) and
+                      hasVisualFeature([multiple_petals_arranged_in_star_shape]) and
+                      hasVisualFeature([central_yellow_or_white_stamens]) and
+                      hasVisualFeature([green_leaves]);
+</tbox>
+
+<abox>
+    <!-- Target Image Observations -->
+    hasVisualFeature(Target, [bright_yellow_petals]);
+    hasVisualFeature(Target, [long_narrow_petals]);
+    hasVisualFeature(Target, [white_center_stamens]);
+    hasVisualFeature(Target, [vertical_orientation]);
+    hasVisualFeature(Target, [green_leaves]);
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits all the necessary and sufficient visual features for [Class14]:
+    - It has **bright yellow petals** (sufficient for Class14).
+    - It has **long, narrow petals** (sufficient for Class14).
+    - It has **white stamens in the center** (sufficient for Class14).
+    - It has a **vertical orientation** (sufficient for Class14).
+    The presence of **green leaves** is also observed, but this feature is not exclusive to Class14 and does not contradict the classification.
+
+    The Target Image does **not** match the features of Class81, which requires **pink/purple petals** and a **star-shaped arrangement**, neither of which are present.
+
+    Therefore, the Target Image satisfies the necessary and sufficient conditions for **Class14**.
+</dl_explanation>
+
+<response>14</response>
+```
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=8.1595 | avg_trial_wall_seconds=4.0577 | avg_trial_api_seconds=4.0179 | system_fallback_count=0

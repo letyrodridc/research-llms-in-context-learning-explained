@@ -16,17 +16,22 @@ class FewShotConfig:
     n: int
     k: int
     q: int
+    runs: int
 
 
 @dataclass(frozen=True)
 class ExperimentModelConfig:
-    name: str
+    names: List[str]
     validate_image_input: bool
     site_url: Optional[str]
     app_name: Optional[str]
     timeout_seconds: Optional[int]
     max_retries: Optional[int]
     generation: Dict[str, Any]
+
+    @property
+    def name(self) -> str:
+        return self.names[0]
 
 
 @dataclass(frozen=True)
@@ -52,7 +57,6 @@ class LoadedExperimentConfig:
     datasets: List[str]
     prompt_types: List[str]
     few_shot_configs: List[FewShotConfig]
-    runs_per_config: int
     seed: int
     model: ExperimentModelConfig
     analysis: ExperimentAnalysisConfig
@@ -105,6 +109,16 @@ def _optional_string(raw: Mapping[str, Any], key: str) -> Optional[str]:
     return value or None
 
 
+def _require_positive_int(value: Any, field_name: str) -> int:
+    try:
+        parsed = int(value)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"Experiment config field `{field_name}` must be a positive integer.") from exc
+    if parsed <= 0:
+        raise ValueError(f"Experiment config field `{field_name}` must be a positive integer.")
+    return parsed
+
+
 def _require_list_of_strings(raw: Mapping[str, Any], key: str, valid_choices: List[str]) -> List[str]:
     value = raw.get(key)
     if not isinstance(value, list) or not value:
@@ -120,21 +134,39 @@ def _require_list_of_strings(raw: Mapping[str, Any], key: str, valid_choices: Li
     if invalid:
         raise ValueError(
             f"Experiment config field `{key}` contains unsupported values: {', '.join(invalid)}"
-        )
+    )
     return normalized
 
 
-def _load_few_shot_configs(raw: Mapping[str, Any]) -> List[FewShotConfig]:
+def _load_model_names(model_name_value: Any) -> List[str]:
+    if isinstance(model_name_value, str):
+        names = [model_name_value.strip()]
+    elif isinstance(model_name_value, list):
+        names = []
+        for item in model_name_value:
+            if not isinstance(item, str) or not item.strip():
+                raise ValueError("Experiment config field `model.model_name` must contain only non-empty strings.")
+            names.append(item.strip())
+    else:
+        raise ValueError("Experiment config field `model.model_name` must be a string or a non-empty list of strings.")
+
+    names = [name for name in names if name]
+    if not names:
+        raise ValueError("Experiment config field `model.model_name` must include at least one model.")
+    return names
+
+
+def _load_few_shot_configs(raw: Mapping[str, Any], *, default_runs: int) -> List[FewShotConfig]:
     values = raw.get("few_shot_configs")
     if values is None:
-        return [FewShotConfig(n=n, k=k, q=q) for n, k, q in TESTS]
+        return [FewShotConfig(n=n, k=k, q=q, runs=default_runs) for n, k, q in TESTS]
     if not isinstance(values, list) or not values:
         raise ValueError("Experiment config field `few_shot_configs` must be a non-empty list.")
 
     configs: List[FewShotConfig] = []
-    for item in values:
+    for idx, item in enumerate(values):
         if not isinstance(item, dict):
-            raise ValueError("Each `few_shot_configs` entry must be an object with n, k, q.")
+            raise ValueError("Each `few_shot_configs` entry must be an object with n, k, q, and optional runs.")
         try:
             n = int(item["n"])
             k = int(item["k"])
@@ -145,7 +177,10 @@ def _load_few_shot_configs(raw: Mapping[str, Any]) -> List[FewShotConfig]:
             ) from exc
         if n <= 0 or k <= 0 or q <= 0:
             raise ValueError("Each `few_shot_configs` entry must use positive integers.")
-        configs.append(FewShotConfig(n=n, k=k, q=q))
+
+        runs_value = item.get("runs", default_runs)
+        runs = _require_positive_int(runs_value, f"few_shot_configs[{idx}].runs")
+        configs.append(FewShotConfig(n=n, k=k, q=q, runs=runs))
     return configs
 
 
@@ -154,22 +189,35 @@ def _load_model_config(raw: Mapping[str, Any]) -> ExperimentModelConfig:
     if not isinstance(model_raw, dict):
         raise ValueError("Experiment config field `model` must be an object.")
 
-    generation = model_raw.get("generation") or {}
-    if not isinstance(generation, dict):
-        raise ValueError("Experiment config field `model.generation` must be an object.")
+    legacy_name = model_raw.get("name")
+    model_name_value = model_raw.get("model_name", legacy_name)
+    if model_name_value is None:
+        raise ValueError(
+            "Experiment config field `model` must define `model_name` "
+            "(or legacy `name`)."
+        )
 
-    timeout_seconds = model_raw.get("timeout_seconds")
+    params_raw = model_raw.get("model_params")
+    if params_raw is not None and not isinstance(params_raw, dict):
+        raise ValueError("Experiment config field `model.model_params` must be an object.")
+    resolved_params = params_raw if params_raw is not None else model_raw
+
+    generation = resolved_params.get("generation") or {}
+    if not isinstance(generation, dict):
+        raise ValueError("Experiment config field `model.model_params.generation` must be an object.")
+
+    timeout_seconds = resolved_params.get("timeout_seconds")
     if timeout_seconds is not None:
         timeout_seconds = int(timeout_seconds)
-    max_retries = model_raw.get("max_retries")
+    max_retries = resolved_params.get("max_retries")
     if max_retries is not None:
         max_retries = int(max_retries)
 
     return ExperimentModelConfig(
-        name=_require_string(model_raw, "name"),
-        validate_image_input=bool(model_raw.get("validate_image_input", True)),
-        site_url=_optional_string(model_raw, "site_url"),
-        app_name=_optional_string(model_raw, "app_name"),
+        names=_load_model_names(model_name_value),
+        validate_image_input=bool(resolved_params.get("validate_image_input", True)),
+        site_url=_optional_string(resolved_params, "site_url"),
+        app_name=_optional_string(resolved_params, "app_name"),
         timeout_seconds=timeout_seconds,
         max_retries=max_retries,
         generation=dict(generation),
@@ -213,9 +261,9 @@ def load_experiment_config(path: Path) -> LoadedExperimentConfig:
     config_path = path.resolve()
     raw_config = _read_json_file(config_path)
     schema_version = raw_config.get("schema_version")
-    if schema_version != "openrouter_experiment_v1":
+    if schema_version not in {"openrouter_experiment_v1", "openrouter_experiment_v2"}:
         raise ValueError(
-            "Experiment config `schema_version` must be `openrouter_experiment_v1`."
+            "Experiment config `schema_version` must be `openrouter_experiment_v1` or `openrouter_experiment_v2`."
         )
 
     env_file = _resolve_path(
@@ -232,10 +280,8 @@ def load_experiment_config(path: Path) -> LoadedExperimentConfig:
     prompt_library = _load_prompt_library_for_config(config_path, raw_config)
     datasets = _require_list_of_strings(raw_config, "datasets", list(DATASET_CHOICES))
     prompt_types = _require_list_of_strings(raw_config, "prompt_types", list(PROMPT_TYPES))
-    few_shot_configs = _load_few_shot_configs(raw_config)
-    runs_per_config = int(raw_config.get("runs_per_config", 3))
-    if runs_per_config <= 0:
-        raise ValueError("Experiment config field `runs_per_config` must be a positive integer.")
+    default_runs = _require_positive_int(raw_config.get("runs_per_config", 3), "runs_per_config")
+    few_shot_configs = _load_few_shot_configs(raw_config, default_runs=default_runs)
     seed = int(raw_config.get("seed", 42))
 
     return LoadedExperimentConfig(
@@ -248,7 +294,6 @@ def load_experiment_config(path: Path) -> LoadedExperimentConfig:
         datasets=datasets,
         prompt_types=prompt_types,
         few_shot_configs=few_shot_configs,
-        runs_per_config=runs_per_config,
         seed=seed,
         model=_load_model_config(raw_config),
         analysis=_load_analysis_config(raw_config),
@@ -274,18 +319,20 @@ def export_experiment_config_snapshot(config: LoadedExperimentConfig) -> Dict[st
             "datasets": config.datasets,
             "prompt_types": config.prompt_types,
             "few_shot_configs": [
-                {"n": item.n, "k": item.k, "q": item.q} for item in config.few_shot_configs
+                {"n": item.n, "k": item.k, "q": item.q, "runs": item.runs}
+                for item in config.few_shot_configs
             ],
-            "runs_per_config": config.runs_per_config,
             "seed": config.seed,
             "model": {
-                "name": config.model.name,
-                "validate_image_input": config.model.validate_image_input,
-                "site_url": config.model.site_url,
-                "app_name": config.model.app_name,
-                "timeout_seconds": config.model.timeout_seconds,
-                "max_retries": config.model.max_retries,
-                "generation": config.model.generation,
+                "model_name": config.model.names,
+                "model_params": {
+                    "validate_image_input": config.model.validate_image_input,
+                    "site_url": config.model.site_url,
+                    "app_name": config.model.app_name,
+                    "timeout_seconds": config.model.timeout_seconds,
+                    "max_retries": config.model.max_retries,
+                    "generation": config.model.generation,
+                },
             },
             "analysis": {
                 "enabled": config.analysis.enabled,

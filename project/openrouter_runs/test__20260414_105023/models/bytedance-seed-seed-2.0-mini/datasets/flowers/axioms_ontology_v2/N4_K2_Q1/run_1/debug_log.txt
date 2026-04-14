@@ -1,0 +1,57 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=bytedance-seed/seed-2.0-mini | N=4 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[34] | Predicted=[34] | Correct=True
+<tbox>
+- Class34 sqsubseteq hasVisualFeature(spiky silvery-blue spiny bracts)
+- Class34 sqsubseteq hasVisualFeature(rounded bumpy central flower head)
+- Class34 equiv hasVisualFeature(spiky silvery-blue spiny bracts) and hasVisualFeature(rounded bumpy central flower head)
+</tbox>
+<abox>
+- hasVisualFeature(Target, spiky silvery-blue spiny bracts)
+- hasVisualFeature(Target, rounded bumpy central flower head)
+</abox>
+<dl_explanation>
+The Target Image contains the visual features asserted in the ABox: spiky silvery-blue spiny bracts surrounding a rounded bumpy central flower head. These features perfectly match the necessary and sufficient class conditions defined in the TBox for Class34, so the Target Image is correctly classified as Class34.
+</dl_explanation>
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- Class81 sqsubseteq hasVisualFeature(large 6-pointed petal flower with pink-white gradient and central stamen)
+- hasVisualFeature(large 6-pointed petal flower with pink-white gradient and central stamen) sqsubseteq Class81
+</tbox>
+<abox>
+- hasVisualFeature(Target, large 6-pointed petal flower with pink-white gradient and central stamen)
+</abox>
+<dl_explanation>
+The Target Image displays a flower with six broad pointed petals with pink and white striping, paired with a visible central stamen, exactly matching the defining visual features of Class81 from the provided example images. These observed visual features satisfy the necessary and sufficient conditions for Class81, so this image belongs to Class81.
+</dl_explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[88] | Predicted=[88] | Correct=True
+<tbox>
+- Class88 equiv hasVisualFeature([bright red flower with yellow central center]) and hasVisualFeature([round variegated green leaves])
+</tbox>
+<abox>
+- hasVisualFeature(Target, [bright red flower with yellow inner center])
+- hasVisualFeature(Target, [round green variegated leaves surrounding the bloom])
+</abox>
+<dl_explanation>
+The Target Image has both necessary and sufficient visual features defined in the TBox for Class88: it shows a vivid red flower with a prominent yellow central section, paired with round, variegated green foliage around the flower. These match the exact features seen in the previously labeled 88 class examples, so the target image correctly belongs to Class88.
+</dl_explanation>
+<response>88</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[71] | Predicted=[71] | Correct=True
+<tbox>
+- Class71 equiv hasVisualFeature([clustered broad petal blooms]) and hasVisualFeature([dark floral center])
+</tbox>
+<abox>
+- hasVisualFeature(Target, [clustered broad petal blooms])
+- hasVisualFeature(Target, [dark floral center])
+- hasVisualFeature(Target, [green background foliage])
+</abox>
+<dl_explanation>
+The Target Image has clustered broad petal blooms, a dark floral center, and green background foliage, which satisfies the necessary and sufficient visual features defined for Class71 from the provided example images. This logically confirms the target image belongs to Class71.
+</dl_explanation>
+<response>71</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=154.6834 | avg_trial_wall_seconds=38.6530 | avg_trial_api_seconds=38.5846 | system_fallback_count=0

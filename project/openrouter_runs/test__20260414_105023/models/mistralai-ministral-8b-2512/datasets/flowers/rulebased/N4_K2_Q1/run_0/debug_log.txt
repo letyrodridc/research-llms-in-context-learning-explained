@@ -1,0 +1,102 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=mistralai/ministral-8b-2512 | N=4 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[34] | Predicted=[34] | Correct=True
+<features>
+- Spiky, elongated petal-like bracts radiating outward from a central cone
+- Central cone densely packed with small, dark, spiky structures
+- Petal-like bracts are a uniform bluish-purple color
+- No visible stamens or prominent inner floral structures
+- Leafy green background with serrated edges
+</features>
+
+<kb>
+- IF [flower has large, elongated, spiky bracts radiating from a central cone, bracts are bluish-purple, and no visible inner floral details] THEN [34]
+- IF [flower has large, layered petals with visible stamens, petals are pink or purple with red veins] THEN [71]
+- IF [flower has bright orange petals with a yellow center, petals are smooth and rounded] THEN [88]
+- IF [flower has multiple layered petals in shades of purple or lavender, with a prominent central core] THEN [81]
+</kb>
+
+<rule_check>
+The Target Image best matches the rule for class **34** because it exhibits the following observable features:
+- The flower has elongated, spiky bracts radiating outward from a central cone.
+- The bracts are uniformly bluish-purple.
+- There are no visible stamens or inner floral structures, only a densely packed spiky central cone.
+These features align exclusively with the pattern observed in the labeled examples for class 34.
+</rule_check>
+
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Petals are broad, overlapping, and arranged in a symmetrical, star-like shape
+- Petals are deep purple/blue in color with a smooth texture
+- Central stamen cluster is small, compact, and yellowish-green
+- Flower has a slightly ruffled or wavy petal edge
+- Green, heart-shaped leaves with visible veins are present
+</features>
+
+<kb>
+- IF [petals are purple-blue, broad, overlapping, star-shaped with ruffled edges, and central stamen cluster is small and yellowish-green] THEN [81]
+- IF [petals are white to light pink with red veins, ruffled edges, and central stamen cluster is prominent] THEN [71]
+- IF [petals are bright orange with a dark center, tubular shape, and no ruffled edges] THEN [88]
+- IF [petals are purple-blue, spiky, thistle-like with a dense central cluster, and no ruffled edges] THEN [34]
+</kb>
+
+<rule_check>
+The Target Image best matches the rule for class [81] because:
+- The petals are broad, overlapping, and arranged in a symmetrical star-like shape, matching the visual pattern of class 81.
+- The petals are deep purple/blue, consistent with the labeled examples of class 81.
+- The central stamen cluster is small and compact, similar to the examples of class 81.
+- The ruffled or wavy petal edges are also present, reinforcing the match to class 81.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[88] | Predicted=[88] | Correct=True
+<features>
+- Bright orange petals with a slightly ruffled edge
+- Five prominent petals with a central yellowish-green staminal column
+- Green, broad, heart-shaped leaves with visible veins
+- Petals have a smooth texture with a gradient from deep orange at the base to lighter orange at the edges
+- Flower appears to have a slightly flattened, open shape
+</features>
+
+<kb>
+- IF [petals are purple/lavender with spiky, thistle-like centers and elongated bracts] THEN [34]
+- IF [petals are large, white to pinkish-purple with a star-like shape and prominent stamens] THEN [81]
+- IF [petals are bright orange with a ruffled edge, five distinct petals, and a central yellowish-green staminal column] THEN [88]
+- IF [petals are pink with a darker pink or red center, slightly ruffled edges, and a rounded shape] THEN [71]
+</kb>
+
+<rule_check>
+- The Target Image matches the rule for class **88** because it exhibits bright orange petals with a ruffled edge, five prominent petals, and a central yellowish-green staminal column. These features align closely with the observable patterns in the labeled examples for class 88.
+</rule_check>
+
+<response>88</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[71] | Predicted=[71] | Correct=True
+<features>
+- Petals are broad, trumpet-shaped, and arranged in overlapping layers
+- Color is predominantly bright pink with a slight gradient from darker pink at the center to lighter pink at the edges
+- Visible stamens with yellowish anthers at the center of the flower
+- Smooth, glossy petal texture
+- Green, broad, and slightly serrated leaves visible at the base
+</features>
+
+<kb>
+- IF [petals are narrow, spiky, and arranged radially with a dense central cluster of small florets; color is purple-blue; leaves are elongated and thin] THEN [34]
+- IF [petals are large, rounded, and layered with a prominent central stamen cluster; color is purple-blue or white; leaves are heart-shaped and broad] THEN [81]
+- IF [petals are broad, trumpet-shaped, and overlapping; color is bright orange with a yellow center; leaves are heart-shaped with serrated edges] THEN [88]
+- IF [petals are broad, trumpet-shaped, and overlapping; color is bright pink with darker pink central gradient; leaves are broad and slightly serrated] THEN [71]
+</kb>
+
+<rule_check>
+The Target Image best matches the rule for class **71** because:
+- The petals are broad, trumpet-shaped, and overlapping, similar to the examples in class 71.
+- The color gradient from darker pink at the center to lighter pink at the edges aligns with the visual features of class 71.
+- The visible stamens with yellowish anthers and the glossy, smooth petal texture are consistent with the labeled examples of class 71.
+- The leaves are broad and slightly serrated, matching the leaf structure seen in class 71 examples.
+</rule_check>
+
+<response>71</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=19.1916 | avg_trial_wall_seconds=4.7771 | avg_trial_api_seconds=4.7020 | system_fallback_count=0

@@ -1,0 +1,38 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemini-2.5-flash-lite | N=2 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- The flower has six petals.
+- The petals are a deep pink/magenta color.
+- The center of the flower has white stamens with purple tips.
+- There are multiple flowers visible, with one in sharp focus and another slightly out of focus.
+- The background consists of green leaves and a blurred brown/grey object.
+</features>
+<kb>
+- IF a flower has six petals and is deep pink/magenta with white and purple stamens, THEN the class is 81.
+- IF a flower has five petals and is purple with a green center, THEN the class is 81.
+- IF a flower has yellow petals and is an iris-like shape, THEN the class is 14.
+</kb>
+<rule_check>
+- The Target Image shows a flower with six petals that are deep pink/magenta. The center has white stamens with purple tips. This matches the description for class 81. The presence of multiple flowers and the color of the petals are consistent with the examples of class 81. The flower shape and petal count are also consistent with class 81.
+</rule_check>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- The flower has six petals.
+- The petals are yellow.
+- The flower has a distinct central structure with stamens.
+- The petals have darker yellow or brownish striations.
+- The flower has a somewhat drooping or outward-facing orientation.
+- The background consists of dark foliage and some lighter green leaves.
+</features>
+<kb>
+- IF a flower has six petals, is purple, and has a star-like shape with pointed petals, THEN the class is 81.
+- IF a flower has six petals, is yellow, and has a distinct central structure with stamens, THEN the class is 14.
+</kb>
+<rule_check>
+- The Target Image shows a flower with six yellow petals and a distinct central structure. The petals have darker yellow striations, and the flower has a somewhat drooping orientation. This matches the description for class 14.
+</rule_check>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.2465 | avg_trial_wall_seconds=1.6009 | avg_trial_api_seconds=1.5626 | system_fallback_count=0

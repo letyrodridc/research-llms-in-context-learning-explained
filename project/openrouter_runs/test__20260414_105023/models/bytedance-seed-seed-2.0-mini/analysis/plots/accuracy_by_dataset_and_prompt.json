@@ -1,0 +1,206 @@
+{
+  "title": "Accuracy by Dataset and Prompt Type",
+  "alpha": 0.05,
+  "x_field": "dataset",
+  "series_field": "prompt_type",
+  "filters": {},
+  "rows": [
+    {
+      "x": "flowers",
+      "series": "axioms_ontology_v2",
+      "correct": 36,
+      "total": 36,
+      "accuracy": 1.0,
+      "standard_error": 0.0,
+      "ci95_low": 0.9036,
+      "ci95_high": 1.0
+    },
+    {
+      "x": "flowers",
+      "series": "classification",
+      "correct": 36,
+      "total": 36,
+      "accuracy": 1.0,
+      "standard_error": 0.0,
+      "ci95_low": 0.9036,
+      "ci95_high": 1.0
+    },
+    {
+      "x": "flowers",
+      "series": "features",
+      "correct": 36,
+      "total": 36,
+      "accuracy": 1.0,
+      "standard_error": 0.0,
+      "ci95_low": 0.9036,
+      "ci95_high": 1.0
+    },
+    {
+      "x": "flowers",
+      "series": "nle",
+      "correct": 36,
+      "total": 36,
+      "accuracy": 1.0,
+      "standard_error": 0.0,
+      "ci95_low": 0.9036,
+      "ci95_high": 1.0
+    },
+    {
+      "x": "flowers",
+      "series": "rulebased",
+      "correct": 36,
+      "total": 36,
+      "accuracy": 1.0,
+      "standard_error": 0.0,
+      "ci95_low": 0.9036,
+      "ci95_high": 1.0
+    }
+  ],
+  "statistics": {
+    "per_dataset": [
+      {
+        "dataset": "flowers",
+        "alpha": 0.05,
+        "group_field": "prompt_type",
+        "groups": [
+          "axioms_ontology_v2",
+          "classification",
+          "features",
+          "nle",
+          "rulebased"
+        ],
+        "matched": true,
+        "omnibus": {
+          "test": "cochrans_q",
+          "matched_units": 36,
+          "statistic": null,
+          "p_value": null,
+          "significant": false,
+          "note": "Degenerate Cochran's Q denominator."
+        },
+        "pairwise": [
+          {
+            "group_a": "axioms_ontology_v2",
+            "group_b": "classification",
+            "matched_units": 36,
+            "a_correct_b_wrong": 0,
+            "b_correct_a_wrong": 0,
+            "both_correct": 36,
+            "both_wrong": 0,
+            "p_value": 1.0,
+            "p_value_holm": 1.0,
+            "significant_holm": false
+          },
+          {
+            "group_a": "axioms_ontology_v2",
+            "group_b": "features",
+            "matched_units": 36,
+            "a_correct_b_wrong": 0,
+            "b_correct_a_wrong": 0,
+            "both_correct": 36,
+            "both_wrong": 0,
+            "p_value": 1.0,
+            "p_value_holm": 1.0,
+            "significant_holm": false
+          },
+          {
+            "group_a": "axioms_ontology_v2",
+            "group_b": "nle",
+            "matched_units": 36,
+            "a_correct_b_wrong": 0,
+            "b_correct_a_wrong": 0,
+            "both_correct": 36,
+            "both_wrong": 0,
+            "p_value": 1.0,
+            "p_value_holm": 1.0,
+            "significant_holm": false
+          },
+          {
+            "group_a": "axioms_ontology_v2",
+            "group_b": "rulebased",
+            "matched_units": 36,
+            "a_correct_b_wrong": 0,
+            "b_correct_a_wrong": 0,
+            "both_correct": 36,
+            "both_wrong": 0,
+            "p_value": 1.0,
+            "p_value_holm": 1.0,
+            "significant_holm": false
+          },
+          {
+            "group_a": "classification",
+            "group_b": "features",
+            "matched_units": 36,
+            "a_correct_b_wrong": 0,
+            "b_correct_a_wrong": 0,
+            "both_correct": 36,
+            "both_wrong": 0,
+            "p_value": 1.0,
+            "p_value_holm": 1.0,
+            "significant_holm": false
+          },
+          {
+            "group_a": "classification",
+            "group_b": "nle",
+            "matched_units": 36,
+            "a_correct_b_wrong": 0,
+            "b_correct_a_wrong": 0,
+            "both_correct": 36,
+            "both_wrong": 0,
+            "p_value": 1.0,
+            "p_value_holm": 1.0,
+            "significant_holm": false
+          },
+          {
+            "group_a": "classification",
+            "group_b": "rulebased",
+            "matched_units": 36,
+            "a_correct_b_wrong": 0,
+            "b_correct_a_wrong": 0,
+            "both_correct": 36,
+            "both_wrong": 0,
+            "p_value": 1.0,
+            "p_value_holm": 1.0,
+            "significant_holm": false
+          },
+          {
+            "group_a": "features",
+            "group_b": "nle",
+            "matched_units": 36,
+            "a_correct_b_wrong": 0,
+            "b_correct_a_wrong": 0,
+            "both_correct": 36,
+            "both_wrong": 0,
+            "p_value": 1.0,
+            "p_value_holm": 1.0,
+            "significant_holm": false
+          },
+          {
+            "group_a": "features",
+            "group_b": "rulebased",
+            "matched_units": 36,
+            "a_correct_b_wrong": 0,
+            "b_correct_a_wrong": 0,
+            "both_correct": 36,
+            "both_wrong": 0,
+            "p_value": 1.0,
+            "p_value_holm": 1.0,
+            "significant_holm": false
+          },
+          {
+            "group_a": "nle",
+            "group_b": "rulebased",
+            "matched_units": 36,
+            "a_correct_b_wrong": 0,
+            "b_correct_a_wrong": 0,
+            "both_correct": 36,
+            "both_wrong": 0,
+            "p_value": 1.0,
+            "p_value_holm": 1.0,
+            "significant_holm": false
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=mistralai/ministral-8b-2512 | N=2 K=2 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+    <!-- Class 81 (Clematis) -->
+    [Class_81] sqsubseteq hasVisualFeature([deep_pink_purple_petals]) and
+                      hasVisualFeature([prominent_central_stamen]) and
+                      hasVisualFeature([floral_shape_with_multiple_overlapping_petals]) and
+                      hasVisualFeature([green_vegetation_background])
+
+    <!-- Class 14 (Iris) -->
+    [Class_14] sqsubseteq hasVisualFeature([bright_yellow_petals]) and
+                      hasVisualFeature([distinctive_fall_and_stand_segments]) and
+                      hasVisualFeature([thin_petals_with_veined_textures]) and
+                      hasVisualFeature([dark_background_or_contrast])
+
+    <!-- Necessary and Sufficient Conditions -->
+    hasVisualFeature([deep_pink_purple_petals]) and
+    hasVisualFeature([prominent_central_stamen]) and
+    hasVisualFeature([floral_shape_with_multiple_overlapping_petals]) equiv [Class_81]
+
+    hasVisualFeature([bright_yellow_petals]) and
+    hasVisualFeature([distinctive_fall_and_stand_segments]) and
+    hasVisualFeature([thin_petals_with_veined_textures]) equiv [Class_14]
+</tbox>
+
+<abox>
+    hasVisualFeature(Target, [deep_pink_purple_petals])
+    hasVisualFeature(Target, [prominent_central_stamen])
+    hasVisualFeature(Target, [floral_shape_with_multiple_overlapping_petals])
+    hasVisualFeature(Target, [green_vegetation_background])
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits deep pink/purple petals, a prominent central stamen, and a floral shape with multiple overlapping petals. These features directly match the necessary and sufficient conditions for [Class_81] (Clematis) as defined in the TBox. The green vegetation background further supports the classification by aligning with the typical context of Clematis flowers in the examples. The Target Image does not exhibit the bright yellow petals, distinctive fall-and-stand segments, or veined textures characteristic of [Class_14] (Iris).
+</dl_explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+```xml
+<tbox>
+    <!-- Class 81 (Clematis) -->
+    [Class_81] sqsubseteq hasVisualFeature([deep_purple_color]) and hasVisualFeature([petals_with_white_or_yellow_centers]) and hasVisualFeature([multiple_petals_with_floral_spikes]) and hasVisualFeature([delicate_petal_edges]);
+
+    <!-- Class 14 (Iris) -->
+    [Class_14] sqsubseteq hasVisualFeature([bright_yellow_color]) and hasVisualFeature([three_prominent_petals_with_flared_edges]) and hasVisualFeature([distinctive_veined_petals]) and hasVisualFeature([thick_textured_stamens_in_center]);
+</tbox>
+
+<abox>
+    hasVisualFeature(Target, [bright_yellow_color]);
+    hasVisualFeature(Target, [three_prominent_petals_with_flared_edges]);
+    hasVisualFeature(Target, [distinctive_veined_petals]);
+    hasVisualFeature(Target, [thick_textured_stamens_in_center]);
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits bright yellow petals, three prominent petals with flared edges, distinctive veining, and thick textured stamens in the center. These features directly satisfy the sufficient conditions for [Class_14] (Iris) as defined in the TBox. The absence of deep purple color, white/yellow centers, or floral spikes rules out [Class_81] (Clematis). Thus, the Target Image logically matches the necessary and sufficient conditions for the Iris class.
+</dl_explanation>
+
+<response>14</response>
+```
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=6.3342 | avg_trial_wall_seconds=3.1446 | avg_trial_api_seconds=3.0993 | system_fallback_count=0

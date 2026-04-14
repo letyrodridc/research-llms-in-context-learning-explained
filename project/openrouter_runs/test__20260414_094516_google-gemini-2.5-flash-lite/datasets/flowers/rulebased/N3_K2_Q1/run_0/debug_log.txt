@@ -1,0 +1,54 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemini-2.5-flash-lite | N=3 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- The flower has orange petals.
+- The flower has multiple petals that are somewhat rounded and slightly irregular in shape.
+- There is a central cluster of darker, reddish-brown buds or developing parts of the flower.
+- The background consists of green foliage and some darker soil.
+</features>
+<kb>
+- IF the flower has orange petals and a cluster of reddish-brown buds in the center THEN the class is 45.
+- IF the flower has purple petals with yellow centers THEN the class is 44.
+- IF the flower has large, pale pink or white petals with a prominent yellow center THEN the class is 77.
+</kb>
+<rule_check>
+- The Target Image shows a flower with orange petals and a central cluster of reddish-brown buds. This matches the description for class 45.
+</rule_check>
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- The flower has multiple petals that are a deep purple color.
+- The petals are somewhat ruffled and have a velvety appearance.
+- The center of the flower contains yellow stamens.
+- The flower has a trumpet-like shape.
+- The leaves are green and somewhat elongated.
+</features>
+<kb>
+- IF the flower has orange and red petals, and a cluster of small buds in the center, THEN the class is 45.
+- IF the flower has purple petals with yellow centers, and a trumpet-like shape, THEN the class is 44.
+- IF the flower has large, pale pink or white petals, and a prominent yellow center with many small seed-like structures, THEN the class is 77.
+</kb>
+<rule_check>
+- The Target Image shows a flower with deep purple petals and yellow stamens in the center, which matches the description for class 44. The petals are trumpet-shaped, consistent with the visual characteristics of class 44 examples.
+</rule_check>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<features>
+- The flower has many layers of pink petals.
+- The petals are rounded and overlap each other.
+- The center of the flower is not clearly visible but appears to be a cluster of stamens.
+- The flower is surrounded by green leaves and grass.
+</features>
+<kb>
+- IF a flower has many layers of pink, rounded, overlapping petals and is surrounded by green leaves, THEN it is class 77.
+- IF a flower has purple, trumpet-shaped petals with yellow centers and is surrounded by green leaves, THEN it is class 44.
+- IF a flower has orange and red petals with a central cluster of green buds, THEN it is class 45.
+</kb>
+<rule_check>
+- The Target Image shows a flower with many layers of pink, rounded, overlapping petals, consistent with the description for class 77. The surrounding green leaves also match. The flower does not have purple petals or orange/red petals, so classes 44 and 45 are not applicable.
+</rule_check>
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=18.8021 | avg_trial_wall_seconds=6.2648 | avg_trial_api_seconds=6.1734 | system_fallback_count=0

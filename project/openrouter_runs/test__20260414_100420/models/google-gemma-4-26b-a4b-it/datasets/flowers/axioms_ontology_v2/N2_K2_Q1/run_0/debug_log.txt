@@ -1,0 +1,37 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=2 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- Class_81 sqsubseteq hasVisualFeature(purple_or_magenta_petals) and hasVisualFeature(star_shaped_center)
+- Class_14 sqsubseteq hasVisualFeature(yellow_petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, magenta_petals)
+- hasVisualFeature(Target, star_shaped_center)
+</abox>
+<dl_explanation>
+- The Target Image features magenta-colored petals and a distinct star-shaped center.
+- These features match the visual patterns observed in the examples for Class 81 (purple/magenta flowers with star centers).
+- Therefore, the image is classified as Class 81.
+</dl_explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- Class_14 sqsubseteq hasVisualFeature(yellow_petals)
+- Class_14 sqsubseteq hasVisualFeature(iris_structure)
+- Class_81 sqsubseteq hasVisualFeature(purple_petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, yellow_petals)
+- hasVisualFeature(Target, iris_structure)
+</abox>
+<dl_explanation>
+- The Target Image displays large, prominent yellow petals and a structure characteristic of an iris.
+- These features match the visual properties associated with Class 14 in the provided examples.
+- Therefore, the Target Image is classified as Class 14.
+</dl_explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=8.9002 | avg_trial_wall_seconds=4.4268 | avg_trial_api_seconds=4.3869 | system_fallback_count=0

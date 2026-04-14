@@ -1,0 +1,34 @@
+{
+  "title": "Accuracy by Dataset and Prompt Type",
+  "alpha": 0.05,
+  "x_field": "dataset",
+  "series_field": "prompt_type",
+  "filters": {},
+  "rows": [
+    {
+      "x": "flowers",
+      "series": "classification",
+      "correct": 14,
+      "total": 21,
+      "accuracy": 0.6667,
+      "standard_error": 0.102869,
+      "ci95_low": 0.4537,
+      "ci95_high": 0.8281
+    }
+  ],
+  "statistics": {
+    "per_dataset": [
+      {
+        "dataset": "flowers",
+        "alpha": 0.05,
+        "group_field": "prompt_type",
+        "groups": [
+          "classification"
+        ],
+        "matched": true,
+        "omnibus": null,
+        "pairwise": []
+      }
+    ]
+  }
+}

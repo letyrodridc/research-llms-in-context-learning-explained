@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemini-2.5-flash-lite | N=2 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- The flower has six petals.
+- The petals are light pink with darker pink veins.
+- The center of the flower has many thin stamens.
+- The flower is surrounded by green leaves and a dark brown background.
+</features>
+<kb>
+- IF a flower has six petals that are light pink with darker pink veins and a center with many thin stamens, THEN the class is 81.
+- IF a flower has yellow petals and a green stem, THEN the class is 14.
+</kb>
+<rule_check>
+- The Target Image shows a flower with six petals that are light pink with darker pink veins and a center with many thin stamens. This matches the description for class 81. The flower is not yellow, so it does not match class 14.
+</rule_check>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- The flower has six petals.
+- The petals are yellow.
+- The flower has a distinct central structure with darker markings.
+- The leaves are long and green.
+</features>
+<kb>
+- IF the flower has six petals, is predominantly purple and white, and has a central yellow stamen, THEN the class is 81.
+- IF the flower has six petals, is predominantly yellow, and has a distinct central structure with darker markings, THEN the class is 14.
+</kb>
+<rule_check>
+- The Target Image shows a flower with six petals that are predominantly yellow. It also has a distinct central structure with darker markings, similar to the examples for class 14. Therefore, the rule for class 14 is best satisfied.
+</rule_check>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.6030 | avg_trial_wall_seconds=1.7603 | avg_trial_api_seconds=1.7213 | system_fallback_count=0

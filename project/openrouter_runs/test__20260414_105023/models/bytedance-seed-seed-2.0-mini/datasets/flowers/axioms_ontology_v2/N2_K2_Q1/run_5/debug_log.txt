@@ -1,0 +1,32 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=bytedance-seed/seed-2.0-mini | N=2 K=2 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- Class81 sqsubseteq hasVisualFeature(broad pink/white multi-petaled flower, prominent central stamen)
+- hasVisualFeature(broad pink/white multi-petaled flower, prominent central stamen) sqsubseteq Class81
+- Class14 sqsubseteq hasVisualFeature(bright yellow iris-shaped flower, narrow pointed petals)
+- hasVisualFeature(bright yellow iris-shaped flower, narrow pointed petals) sqsubseteq Class14
+</tbox>
+<abox>
+- hasVisualFeature(Target, broad pale pink/white multi-petaled flower)
+- hasVisualFeature(Target, prominent central yellow-green stamen)
+</abox>
+<dl_explanation>
+The Target Image has broad, multi-petaled pale pink/white flowers with a prominent central yellow-green stamen, which exactly matches the necessary and sufficient visual features defined for Class81. These features do not align with the bright yellow, narrow-petaled iris shape associated with Class14, so Class81 is the correct label.
+</dl_explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- [14] equiv hasVisualFeature(yellow iris flower) and hasVisualFeature(iris-specific petal structure)
+- [81] equiv hasVisualFeature(pink-white striped broad flower petals) and hasVisualFeature(dark pink central petal stripe)
+</tbox>
+<abox>
+- hasVisualFeature(Target, yellow iris flower)
+- hasVisualFeature(Target, iris-specific petal structure)
+</abox>
+<dl_explanation>
+The Target Image exhibits the visual features specified in the ABox: it is a bright yellow flower with the characteristic petal layout of an iris. These assertions match the necessary and sufficient conditions for Class 14 from the TBox, and do not align with the pink/white striped petals defined for Class 81. Thus Class 14 is the correct classification.
+</dl_explanation>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=57.9126 | avg_trial_wall_seconds=28.9233 | avg_trial_api_seconds=28.8821 | system_fallback_count=0

@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=qwen/qwen3.5-9b | N=2 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[81] | Predicted=[] | Correct=False
+WARNING: unclosed_response_tag
+<features>
+- Flower color is bright pink/magenta.
+- Flower has 8 petals: 4 large outer petals and 4 smaller inner petals.
+- Center has a cluster of white/yellowish stamens.
+- Petals are broad and somewhat pointed.
+</features>
+<kb>
+- IF the flower is pink/magenta with 8 petals (4 large, 4 small) and a central stamen cluster THEN class is 81.
+- IF the flower is yellow with distinct upright and drooping petals typical of an Iris THEN class is 14.
+</kb>
+<rule_check>
+- The target image shows a pink/magenta flower with 8 petals and a central stamen cluster. This matches the visual pattern of the examples labeled '81' (Clematis). It does not match the yellow Iris pattern labeled '14'.
+</rule_check>
+
+<response>81
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- The flower is yellow.
+- The flower has large, drooping outer petals (falls) and upright inner petals (standards).
+- The flower has a distinct central structure typical of an Iris.
+</features>
+<kb>
+- IF the flower is purple with a central stamen cluster and broad petals THEN class is 81.
+- IF the flower is yellow with distinct drooping and upright petals (Iris structure) THEN class is 14.
+</kb>
+<rule_check>
+- The target image shows a yellow flower with the distinct petal structure of an Iris (falls and standards). This matches the visual features of the examples labeled 14. It does not match the purple Clematis-like flowers labeled 81.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=1 | total=2 | errors=0 | accuracy=0.5000 | duration_seconds=12.0713 | avg_trial_wall_seconds=6.0125 | avg_trial_api_seconds=5.9735 | system_fallback_count=0

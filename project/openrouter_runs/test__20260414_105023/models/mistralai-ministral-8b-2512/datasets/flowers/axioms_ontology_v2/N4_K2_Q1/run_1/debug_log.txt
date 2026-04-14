@@ -1,0 +1,153 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=mistralai/ministral-8b-2512 | N=4 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[34] | Predicted=[34] | Correct=True
+```xml
+<tbox>
+    <!-- Class 34 (Spiny blue thistle-like flower) -->
+    [Class_34] sqsubseteq hasVisualFeature([spiky_blue_petals]) and
+                      hasVisualFeature([central_spiky_cone]) and
+                      hasVisualFeature([dark_center]) and
+                      hasVisualFeature([green_stem_with_spines]).
+
+    <!-- Class 81 (Clematis) -->
+    [Class_81] sqsubseteq hasVisualFeature([large_petals]) and
+                      hasVisualFeature([prominent_stamen]) and
+                      hasVisualFeature([pink_or_purple_color]) and
+                      hasVisualFeature([delicate_flower_structure]).
+
+    <!-- Class 88 (Nasturtium) -->
+    [Class_88] sqsubseteq hasVisualFeature([bright_orange_or_red_petals]) and
+                      hasVisualFeature([yellow_center]) and
+                      hasVisualFeature([rounded_petals]) and
+                      hasVisualFeature([slightly_textured_surface]).
+
+    <!-- Class 71 (Azalea/Rhododendron) -->
+    [Class_71] sqsubseteq hasVisualFeature([soft_pink_or_purple_petals]) and
+                      hasVisualFeature([smooth_petals]) and
+                      hasVisualFeature([clustered_flowers]) and
+                      hasVisualFeature([green_leaves_in_background]).
+</tbox>
+
+<abox>
+    <!-- Target Image Observations -->
+    hasVisualFeature(Target, [spiky_blue_petals]).
+    hasVisualFeature(Target, [central_spiky_cone]).
+    hasVisualFeature(Target, [dark_center]).
+    hasVisualFeature(Target, [green_stem_with_spines]).
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits the following visual features:
+    - Spiky blue petals
+    - A central spiky cone
+    - A dark center
+    - A green stem with spines
+
+    These features directly match the necessary and sufficient conditions for [Class_34] as defined in the TBox. The presence of spiky blue petals and a central spiky cone, along with the dark center and spiny stem, aligns with the discriminative visual patterns observed in the labeled examples for Class 34. No other class matches all these features simultaneously.
+</dl_explanation>
+
+<response>34</response>
+```
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+```xml
+<tbox>
+    <!-- Class 34 (e.g., thistle-like flower) -->
+    [Class34] sqsubseteq hasVisualFeature([spiky_central_disk]) and hasVisualFeature([thorny_or_rough_petals]) and hasVisualFeature([blue_or_white_coloration])
+
+    <!-- Class 81 (e.g., light pink clematis) -->
+    [Class81] sqsubseteq hasVisualFeature([large_petals]) and hasVisualFeature([pink_or_white_coloration]) and hasVisualFeature([prominent_stamen_in_center])
+
+    <!-- Class 88 (e.g., orange/nasturtium) -->
+    [Class88] equiv hasVisualFeature([bright_orange_coloration]) and hasVisualFeature([yellow_center]) and hasVisualFeature([rounded_petals])
+
+    <!-- Class 71 (e.g., pink azalea-like flower) -->
+    [Class71] equiv hasVisualFeature([soft_pink_coloration]) and hasVisualFeature([multiple_overlapping_petals]) and hasVisualFeature([smooth_petals])
+</tbox>
+
+<abox>
+    hasVisualFeature(Target, [large_petals])
+    hasVisualFeature(Target, [pink_or_white_coloration])
+    hasVisualFeature(Target, [prominent_stamen_in_center])
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits large petals, pink or white coloration, and a prominent stamen in the center. These features directly match the sufficient conditions for [Class81] as defined in the TBox:
+    - The Target Image has large petals, satisfying hasVisualFeature([large_petals]).
+    - The Target Image has a pink coloration, satisfying hasVisualFeature([pink_or_white_coloration]).
+    - The Target Image has a prominent stamen in the center, satisfying hasVisualFeature([prominent_stamen_in_center]).
+
+    These assertions align with the sufficient conditions for [Class81] and do not match the necessary and sufficient conditions for the other classes (e.g., orange coloration for Class88, spiky petals for Class34, or smooth overlapping petals for Class71).
+</dl_explanation>
+
+<response>81</response>
+```
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[88] | Predicted=[88] | Correct=True
+```xml
+<tbox>
+    <!-- Class 34 (e.g., thistle-like flowers) -->
+    [Class34] sqsubseteq hasVisualFeature([spiky_central_disk]) and hasVisualFeature([thorny_or_rough_petals]) and hasVisualFeature([blue_or_white_coloration])
+
+    <!-- Class 81 (e.g., clematis-like flowers) -->
+    [Class81] sqsubseteq hasVisualFeature([large_petals]) and hasVisualFeature([prominent_stamen]) and hasVisualFeature([pink_or_purple_coloration])
+
+    <!-- Class 88 (e.g., nasturtium-like flowers) -->
+    [Class88] equiv hasVisualFeature([bright_orange_or_red_petals]) and hasVisualFeature([yellow_center]) and hasVisualFeature([rounded_petals])
+
+    <!-- Class 71 (e.g., azalea-like flowers) -->
+    [Class71] equiv hasVisualFeature([pink_or_light_purple_petals]) and hasVisualFeature([delicate_petals]) and hasVisualFeature([multiple_flowers_in_cluster])
+</tbox>
+
+<abox>
+    hasVisualFeature(Target, [bright_red_petals])
+    hasVisualFeature(Target, [yellow_center])
+    hasVisualFeature(Target, [rounded_petals])
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits bright red petals, a yellow center, and rounded petal shapes. These features directly match the necessary and sufficient conditions for [Class88] as defined in the TBox:
+    - The Target Image has bright red petals, which aligns with the "bright_orange_or_red_petals" feature.
+    - The Target Image has a yellow center, matching the "yellow_center" feature.
+    - The Target Image has rounded petals, satisfying the "rounded_petals" feature.
+
+    Since the Target Image satisfies all three features defining [Class88], it logically follows that the Target Image belongs to this class.
+</dl_explanation>
+
+<response>88</response>
+```
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[71] | Predicted=[81] | Correct=False
+```xml
+<tbox>
+    <!-- Class 34 (e.g., thistle-like flowers) -->
+    [Class34] sqsubseteq hasVisualFeature([spiky_central_disk]) and hasVisualFeature([thorny_or_rough_petals]) and hasVisualFeature([blue_or_white_coloration])
+
+    <!-- Class 81 (e.g., clematis-like flowers) -->
+    [Class81] sqsubseteq hasVisualFeature([large_petals]) and hasVisualFeature([prominent_stamen]) and hasVisualFeature([pink_or_purple_coloration])
+
+    <!-- Class 88 (e.g., nasturtium-like flowers) -->
+    [Class88] equiv hasVisualFeature([bright_orange_or_red_petals]) and hasVisualFeature([prominent_yellow_center]) and hasVisualFeature([rounded_petals])
+
+    <!-- Class 71 (e.g., azalea-like flowers) -->
+    [Class71] equiv hasVisualFeature([soft_pink_or_red_petals]) and hasVisualFeature([delicate_textured_petals]) and hasVisualFeature([clustered_flowers])
+</tbox>
+
+<abox>
+    hasVisualFeature(Target, [bright_red_coloration])
+    hasVisualFeature(Target, [prominent_stamen])
+    hasVisualFeature(Target, [large_petals])
+    hasVisualFeature(Target, [elongated_or_tubular_shape])
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits bright red coloration and large petals with a prominent stamen, matching the visual features of Class 81 (clematis-like flowers) in the provided examples. However, the elongated/tubular shape and bright red coloration are not fully aligned with the typical pink/purple coloration of Class 81.
+
+    The Target Image does not match Class 34 (spiky central disk, blue/white coloration), Class 88 (bright orange/red with yellow center and rounded petals), or Class 71 (soft pink/red, delicate textured petals, clustered flowers).
+
+    The closest match based on the provided examples and observable features is Class 81, as the prominent stamen and large petals are visually similar, despite the color difference. The elongated petal shape is a distinctive feature of this flower type.
+</dl_explanation>
+
+<response>81</response>
+```
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=30.7491 | avg_trial_wall_seconds=7.6847 | avg_trial_api_seconds=7.6175 | system_fallback_count=0

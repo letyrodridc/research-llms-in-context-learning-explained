@@ -1,0 +1,10 @@
+=== DEBUG LOG | dataset=flowers | prompt=nle | model=bytedance-seed/seed-2.0-mini | N=2 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<explanation>The target image has a star-shaped flower with multiple pink/purple petals surrounding a fuzzy central stamen cluster, which matches the visual structure of the clematis flowers labeled 81 in the provided examples. It does not match the yellow iris flower shape associated with label 14.</explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<explanation>This target image displays bright yellow iris-style flowers, which match the visual features of the examples labeled 14. Label 81 corresponds to dark red/purple 6-petaled clematis flowers, which do not match this image.</explanation>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=20.6233 | avg_trial_wall_seconds=10.2520 | avg_trial_api_seconds=10.2118 | system_fallback_count=0

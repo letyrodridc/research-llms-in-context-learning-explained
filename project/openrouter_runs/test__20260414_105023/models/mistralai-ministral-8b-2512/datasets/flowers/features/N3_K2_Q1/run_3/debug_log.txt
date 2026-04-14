@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=flowers | prompt=features | model=mistralai/ministral-8b-2512 | N=3 K=2 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- bright yellow petals
+- clustered tubular flowers
+- small white tips on petals
+- green foliage background
+</features>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- deep purple petals with white inner edges
+- dark maroon central stamens
+- single prominent yellow anther cluster
+- slightly ruffled petal edges
+- green leafy stems visible
+</features>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<features>
+- petals broad, layered, and slightly ruffled at edges
+- central yellow-green stigma cluster with prominent raised texture
+- petals predominantly deep pink with gradient fading to lighter pink at tips
+- green floating leaves beneath the flower
+- large flower diameter relative to surrounding leaves
+</features>
+
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=4.8157 | avg_trial_wall_seconds=1.5905 | avg_trial_api_seconds=1.5345 | system_fallback_count=0

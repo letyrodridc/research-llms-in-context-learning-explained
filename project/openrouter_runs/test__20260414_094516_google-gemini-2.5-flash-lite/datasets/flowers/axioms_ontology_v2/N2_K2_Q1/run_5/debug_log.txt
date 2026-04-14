@@ -1,0 +1,51 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash-lite | N=2 K=2 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- hasVisualFeature(pink_petals) sqsubseteq 81
+- hasVisualFeature(white_petals) sqsubseteq 81
+- hasVisualFeature(pink_and_white_petals) equiv 81
+- hasVisualFeature(yellow_petals) sqsubseteq 14
+- hasVisualFeature(six_petals) sqsubseteq 81
+- hasVisualFeature(five_petals) sqsubseteq 81
+- hasVisualFeature(six_or_five_petals) equiv 81
+- hasVisualFeature(distinct_veins_on_petals) sqsubseteq 81
+- hasVisualFeature(yellow_center) sqsubseteq 81
+- hasVisualFeature(green_center) sqsubseteq 81
+- hasVisualFeature(distinct_stamens) sqsubseteq 81
+- hasVisualFeature(iris_shape) equiv 14
+- hasVisualFeature(yellow_color) equiv 14
+</tbox>
+<abox>
+- hasVisualFeature(Target, pink_and_white_petals)
+- hasVisualFeature(Target, six_or_five_petals)
+- hasVisualFeature(Target, yellow_center)
+- hasVisualFeature(Target, distinct_stamens)
+</abox>
+<dl_explanation>
+- The Target Image has pink and white petals, which is a sufficient condition for class 81.
+- The Target Image has six or five petals, which is a sufficient condition for class 81.
+- The Target Image has a yellow center and distinct stamens, which are also characteristic of class 81.
+- Therefore, based on the visual features present in the Target Image and the defined axioms, the image is classified as 81.
+</dl_explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- hasVisualFeature(yellow_flower) sqsubseteq 14
+- hasVisualFeature(purple_flower) sqsubseteq 81
+- hasVisualFeature(six_petals) sqsubseteq 81
+- hasVisualFeature(six_petals) and hasVisualFeature(purple_flower) equiv 81
+- hasVisualFeature(six_petals) and hasVisualFeature(yellow_flower) equiv 14
+</tbox>
+<abox>
+- hasVisualFeature(Target, yellow_flower)
+- hasVisualFeature(Target, six_petals)
+</abox>
+<dl_explanation>
+- The Target Image has a yellow flower and six petals.
+- The TBox states that images with a yellow flower and six petals are classified as 14.
+- Therefore, the Target Image is classified as 14.
+</dl_explanation>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.4864 | avg_trial_wall_seconds=1.7398 | avg_trial_api_seconds=1.7011 | system_fallback_count=0

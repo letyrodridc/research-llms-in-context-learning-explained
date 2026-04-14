@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=2 K=2 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- Class_81 sqsubseteq hasVisualFeature(purple_or_magenta_petals) and hasVisualFeature(multiple_pointed_petals)
+- Class_14 sqsubseteq hasVisualFeature(yellow_petals) and hasVisualFeature(large_drooping_petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, purple_or_magenta_petals)
+- hasVisualFeature(Target, multiple_pointed_petals)
+</abox>
+<dl_explanation>
+- The Target Image displays a flower with multiple pointed, purple/magenta petals.
+- These features match the visual patterns identified for Class 81 in the provided examples.
+- Therefore, the Target Image is classified as Class 81.
+</dl_explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- Class 81 sqsubseteq hasVisualFeature(purple_or_pink_petals) and hasVisualFeature(star_shaped_center)
+- Class 14 sqsubseteq hasVisualFeature(yellow_petals) and hasVisualFeature(drooping_petal_structure)
+</tbox>
+<abox>
+- hasVisualFeature(Target, yellow_petals)
+- hasVisualFeature(Target, drooping_petal_structure)
+</abox>
+<dl_explanation>
+- The Target Image contains yellow petals and a drooping petal structure.
+- These features match the characteristics observed in the examples for Class 14.
+- Therefore, the Target Image is classified as Class 14.
+</dl_explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=10.2033 | avg_trial_wall_seconds=5.0790 | avg_trial_api_seconds=5.0358 | system_fallback_count=0

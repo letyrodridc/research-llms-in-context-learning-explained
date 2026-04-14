@@ -1,0 +1,14 @@
+=== DEBUG LOG | dataset=flowers | prompt=nle | model=bytedance-seed/seed-2.0-mini | N=3 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<explanation>This target image features clusters of small, bright yellow-orange blooms with visible flower centers, matching the visual characteristics of the examples labeled 45. It does not match the large single purple/pink cup-shaped flowers of class 44 or the single large lotus-style flower of class 77.</explanation>
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<explanation>The target image features deep purple, cup-shaped flowers with a distinct central stamen arrangement that matches the visual pattern of the class 44 examples (the pale pink and purple lisianthus flowers shown in prior labeled examples). This differs from the orange/yellow clustered flowers of class 45 and the large pink/white lotus-style flowers of class 77.</explanation>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<explanation>This image features a pink lotus flower with layered, soft pink petals and a yellow central floral disc, matching the visual characteristics of the previously shown lotus examples labeled 77. It does not match the clustered orange/red flowers of class 45 or the smaller, cup-shaped purple/pink flowers of class 44.</explanation>
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=33.9881 | avg_trial_wall_seconds=11.3014 | avg_trial_api_seconds=11.2436 | system_fallback_count=0

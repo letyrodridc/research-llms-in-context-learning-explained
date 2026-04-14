@@ -1,0 +1,76 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=4 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[34] | Predicted=[34] | Correct=True
+<tbox>
+- Class 34 equiv hasVisualFeature(spiky_blue_petals) and hasVisualFeature(conical_center)
+</tbox>
+<abox>
+- hasVisualFeature(Target, spiky_blue_petals)
+- hasVisualFeature(Target, conical_center)
+</abox>
+<dl_explanation>
+- The Target Image exhibits spiky, blue-toned petals and a distinct conical center.
+- These features match the necessary and sufficient conditions defined for Class 34 in the provided examples.
+- Therefore, the Target Image is classified as Class 34.
+</dl_explanation>
+
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- 34 sqsubseteq hasVisualFeature(spiky_blue_center) and hasVisualFeature(spiky_bracts)
+- 81 sqsubseteq hasVisualFeature(large_petals) and hasVisualFeature(prominent_center_stamens)
+- 88 sqsubseteq hasVisualFeature(orange_petals) and hasVisualFeature(round_leaves)
+- 71 sqsubseteq hasVisualFeature(pink_or_magenta_petals) and hasVisualFeature(speckled_center)
+</tbox>
+<abox>
+- hasVisualFeature(Target, large_petals)
+- hasVisualFeature(Target, prominent_center_stamens)
+- hasVisualFeature(Target, purple_petals)
+</abox>
+<dl_explanation>
+- The Target Image features a flower with large, broad petals and a very prominent, central cluster of stamens.
+- These visual characteristics match the patterns observed in the examples for class 81 (large petals and prominent center).
+- Therefore, the Target Image is classified as 81.
+</dl_explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[88] | Predicted=[88] | Correct=True
+<tbox>
+- class 34 sqsubseteq hasVisualFeature(spiky_blue_center) and hasVisualFeature(purple_spiky_petals)
+- class 81 sqsubseteq hasVisualFeature(large_purple_petals) and hasVisualFeature(yellow_center)
+- class 88 sqsubseteq hasVisualFeature(orange_petals) and hasVisualFeature(round_green_leaves)
+- class 71 sqsubseteq hasVisualFeature(pink_petals) and hasVisualFeature(spotted_center)
+</tbox>
+<abox>
+- hasVisualFeature(Target, orange_petals)
+- hasVisualFeature(Target, round_green_leaves)
+</abox>
+<dl_explanation>
+- The Target Image contains orange petals and round green leaves.
+- These features match the sufficient conditions defined for class 88 in the TBox.
+- Therefore, the Target Image is classified as 88.
+</dl_explanation>
+
+<response>88</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[71] | Predicted=[71] | Correct=True
+<tbox>
+- 34 sqsubseteq hasVisualFeature(spiky_blue_center)
+- 81 sqsubseteq hasVisualFeature(large_purple_petals) and hasVisualFeature(yellow_center)
+- 88 sqsubseteq hasVisualFeature(orange_petals)
+- 71 sqsubseteq hasVisualFeature(pink_petals) and hasVisualFeature(speckled_center)
+</tbox>
+<abox>
+- hasVisualFeature(Target, pink_petals)
+- hasVisualFeature(Target, speckled_center)
+</abox>
+<dl_explanation>
+- The Target Image contains pink petals and a speckled center.
+- According to the TBox, the combination of pink petals and a speckled center is characteristic of class 71.
+- Therefore, the Target Image is classified as 71.
+</dl_explanation>
+
+<response>71</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=20.1405 | avg_trial_wall_seconds=5.0232 | avg_trial_api_seconds=4.9426 | system_fallback_count=0

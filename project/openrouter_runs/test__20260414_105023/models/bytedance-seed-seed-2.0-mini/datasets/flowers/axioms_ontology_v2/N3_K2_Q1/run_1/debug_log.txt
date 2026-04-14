@@ -1,0 +1,49 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=bytedance-seed/seed-2.0-mini | N=3 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<tbox>
+- 45 ≡ hasVisualFeature(clustered small yellow-orange blossoms with subtle red petal accents) and hasVisualFeature(visible central stamen structures on individual flowers)
+</tbox>
+<abox>
+- hasVisualFeature(Target, clustered small yellow-orange blossoms with subtle red petal accents)
+- hasVisualFeature(Target, visible central stamen structures on individual flowers)
+</abox>
+<dl_explanation>
+The Target Image contains both visual features specified in the TBox axiom for class 45: it shows a cluster of small yellow-orange flowers with faint red markings on some petals, and each individual bloom has a visible central stamen cluster. These features satisfy the necessary and sufficient conditions for class 45 as defined by the training examples.
+</dl_explanation>
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<tbox>
+- Class44 equiv hasVisualFeature(cup-shaped violet/purple flowers) and hasVisualFeature(colorful central stamen cluster) and hasVisualFeature(green stems/foliage)
+- Class45 sqsubseteq hasVisualFeature(clustered orange-red/yellow flowers with small red buds)
+- Class77 sqsubseteq hasVisualFeature(layered lotiform petals with yellow central receptacle)
+</tbox>
+<abox>
+- hasVisualFeature(Target, cup-shaped violet/purple flowers)
+- hasVisualFeature(Target, colorful central stamen cluster)
+- hasVisualFeature(Target, green stems/foliage)
+</abox>
+<dl_explanation>
+The Target Image contains all the visual features defined in the necessary and sufficient conditions for Class44. Its cup-shaped purple blooms, distinct central stamen cluster, and accompanying green foliage/stems perfectly match the defining traits of Class44 from the provided labeled examples, confirming the correct classification.
+</dl_explanation>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<tbox>
+- 77 ⊑ hasVisualFeature(layered broad pointed petals)
+- 77 ⊑ hasVisualFeature(yellow central floral reproductive structure)
+- 77 ⊑ hasVisualFeature(aquatic lily background foliage)
+- hasVisualFeature(layered broad pointed petals) ∧ hasVisualFeature(yellow central floral reproductive structure) ∧ hasVisualFeature(aquatic lily background foliage) ⊑ 77
+- 77 ≡ hasVisualFeature(layered broad pointed petals) ∧ hasVisualFeature(yellow central floral reproductive structure) ∧ hasVisualFeature(aquatic lily background foliage)
+</tbox>
+<abox>
+- hasVisualFeature(Target, layered broad pointed pink petals)
+- hasVisualFeature(Target, yellow central floral reproductive structure)
+- hasVisualFeature(Target, aquatic lily background foliage)
+</abox>
+<dl_explanation>
+The Target Image's observed visual properties exactly match the necessary and sufficient class conditions for label 77 established by the training examples. The target displays layered broad pink petals, a prominent yellow central floral head, and aquatic lily-style foliage in the background, which fully satisfies the defining features of class 77.
+</dl_explanation>
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=100.6566 | avg_trial_wall_seconds=33.5496 | avg_trial_api_seconds=33.4936 | system_fallback_count=0

@@ -1,0 +1,57 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=mistralai/ministral-8b-2512 | N=2 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+```xml
+<tbox>
+    <!-- Class 81 (Clematis) -->
+    [Class_81] sqsubseteq hasVisualFeature([deep_purple_or_magenta_petal]) and hasVisualFeature([white_or_yellow_center]) and hasVisualFeature([multiple_petals_with_rounded_edges]) and hasVisualFeature([delicate_stem_with_leaves])
+
+    <!-- Class 14 (Iris) -->
+    [Class_14] sqsubseteq hasVisualFeature([bright_yellow_petal]) and hasVisualFeature([distinctive_fall_and_standards]) and hasVisualFeature([thin_elongated_petals]) and hasVisualFeature([prominent_stigma_in_center])
+</tbox>
+
+<abox>
+    <!-- Observed features in Target Image -->
+    hasVisualFeature(Target, [deep_purple_or_magenta_petal])
+    hasVisualFeature(Target, [white_center])
+    hasVisualFeature(Target, [multiple_petals_with_rounded_edges])
+    hasVisualFeature(Target, [delicate_stem_with_leaves])
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits deep magenta/purple petals, a white/yellow center, multiple rounded petals, and a delicate stem with leaves. These features directly match the necessary and sufficient conditions for [Class_81] (Clematis) as defined in the TBox. The bright yellow petals and distinctive fall/standards of Class 14 are absent, confirming the classification.
+</dl_explanation>
+
+<response>81</response>
+```
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+```xml
+<tbox>
+    <!-- Class 14 (Yellow Iris) -->
+    [Class14] sqsubseteq hasVisualFeature([bright_yellow_petals]) and
+                      hasVisualFeature([long_narrow_petals]) and
+                      hasVisualFeature([yellow_center_stamens]) and
+                      hasVisualFeature([green_leafy_stems]);
+
+    <!-- Class 81 (Clematis) -->
+    [Class81] sqsubseteq hasVisualFeature([purple_or_pink_petals]) and
+                      hasVisualFeature([delicate_curved_petals]) and
+                      hasVisualFeature([central_stamens_with_white_or_yellow_tips]) and
+                      hasVisualFeature([green_leaves_in_background]);
+</tbox>
+
+<abox>
+    hasVisualFeature(Target, [bright_yellow_petals]);
+    hasVisualFeature(Target, [long_narrow_petals]);
+    hasVisualFeature(Target, [yellow_center_stamens]);
+    hasVisualFeature(Target, [green_leafy_stems]);
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits bright yellow petals, long narrow petals, yellow stamens in the center, and green leafy stems. These features directly match the necessary and sufficient conditions for [Class14] (Yellow Iris) as defined in the TBox. The absence of purple/pink petals or delicate curved petals rules out [Class81] (Clematis). Thus, the Target Image satisfies the axioms for [Class14].
+</dl_explanation>
+
+<response>14</response>
+```
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=5.0844 | avg_trial_wall_seconds=2.5014 | avg_trial_api_seconds=2.4587 | system_fallback_count=0

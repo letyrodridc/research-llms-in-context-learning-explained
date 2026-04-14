@@ -1,0 +1,61 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=bytedance-seed/seed-2.0-mini | N=4 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[34] | Predicted=[34] | Correct=True
+<tbox>
+- SeaHollyClass (34) sqsubseteq hasVisualFeature(spiky purple feathery petals) and hasVisualFeature(dark textured spherical central flower head)
+- hasVisualFeature(spiky purple feathery petals) and hasVisualFeature(dark textured spherical central flower head) sqsubseteq SeaHollyClass (34)
+</tbox>
+<abox>
+- hasVisualFeature(Target, spiky purple feathery petals)
+- hasVisualFeature(Target, dark textured spherical central flower head)
+</abox>
+<dl_explanation>
+- The Target Image displays spiky, feathery purple petals surrounding a dark, spherical, textured central flower head, matching the defining visual features of Class 34 from the provided examples. These features satisfy the necessary and sufficient conditions for Class 34, so the correct label is 34.
+</dl_explanation>
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- Class81 ⊑ hasVisualFeature(star-shaped flower with 5-6 broad petals, prominent central stamen cluster, green leafy background)
+- hasVisualFeature(star-shaped flower with 5-6 broad petals, prominent central stamen cluster, green leafy background) ⊑ Class81
+</tbox>
+<abox>
+- hasVisualFeature(Target, star-shaped deep purple flower with 6 broad petals)
+- hasVisualFeature(Target, prominent central light-colored spiky stamen cluster)
+- hasVisualFeature(Target, green foliage background)
+</abox>
+<dl_explanation>
+The Target Image displays all the visual features defined in the TBox axioms for Class81, which matches the clematis flowers seen in the previously provided labeled examples for Class81. These combined features satisfy both the necessary and sufficient conditions to classify the target image as Class81.
+</dl_explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[88] | Predicted=[88] | Correct=True
+<tbox>
+- Class88 sqsubseteq hasVisualFeature([orange-red flowers, rounded shield-like green leaves])
+- hasVisualFeature([orange-red flowers, rounded shield-like green leaves]) sqsubseteq Class88
+- Class34 equiv hasVisualFeature([spiky purple-blue bracts, dark textured central flower head])
+- Class81 equiv hasVisualFeature([large broad petals, prominent central stamen cluster, ovate green leaves])
+- Class71 equiv hasVisualFeature([funnel-shaped pink/purple petals, small pointed green foliage])
+</tbox>
+<abox>
+- hasVisualFeature(Target, [orange-red veined petals])
+- hasVisualFeature(Target, [round shield-shaped green leaves])
+</abox>
+<dl_explanation>
+The target image displays the observed visual features of orange-red veined petals and round shield-shaped green leaves, which align exactly with the necessary and sufficient visual features defined for Class88 from the provided training examples. These matching features confirm the target image belongs to Class88.
+</dl_explanation>
+<response>88</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[71] | Predicted=[71] | Correct=True
+<tbox>
+- Class71 equiv hasVisualFeature(magenta-pink multi-petaled blooms) and hasVisualFeature(dark green elliptical foliage)
+</tbox>
+<abox>
+- hasVisualFeature(Target, [magenta-pink multi-petaled blooms])
+- hasVisualFeature(Target, [dark green elliptical foliage])
+</abox>
+<dl_explanation>
+The Target Image contains the visual features of magenta-pink multi-petaled blooms and dark green elliptical foliage as asserted in the ABox. These features satisfy the necessary and sufficient conditions defined in the TBox for Class71, matching the prior labeled examples of this class.
+</dl_explanation>
+<response>71</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=114.7395 | avg_trial_wall_seconds=28.6729 | avg_trial_api_seconds=28.6022 | system_fallback_count=0

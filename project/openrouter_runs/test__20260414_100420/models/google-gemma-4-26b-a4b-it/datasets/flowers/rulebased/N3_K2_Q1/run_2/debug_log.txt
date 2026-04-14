@@ -1,0 +1,53 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=3 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- Small, bright orange/yellow flowers
+- Flowers have four distinct petals
+- Flowers are clustered on a stem
+</features>
+<kb>
+- IF flowers are small, orange/yellow, and have four petals THEN class 45
+- IF flowers are purple with a dark center THEN class 44
+- IF flowers are large, pink or white, with many petals and a prominent central seed pod THEN class 77
+</kb>
+<rule_check>
+- The Target Image shows small orange flowers with four petals clustered together, which matches the pattern for class 45.
+</rule_check>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- purple flower petals
+- dark center with visible stamens/pistil
+- green stem and surrounding foliage
+</features>
+<kb>
+- IF [flower is orange/yellow] THEN [45]
+- IF [flower is purple with a dark center] THEN [44]
+- IF [flower is pink or white with large petals and a prominent central seed pod/structure] THEN [77]
+</kb>
+<rule_check>
+- The Target Image shows a purple flower with a dark center, which matches the pattern seen in the examples for class 44.
+</rule_check>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<features>
+- Large white petals with pinkish tips
+- Prominent yellow, flat-topped, porous center (seed pod)
+- Large green leaves in the background
+</features>
+<kb>
+- IF [small orange/yellow flowers with multiple petals] THEN [45]
+- IF [purple flowers with dark centers] THEN [44]
+- IF [large white/pink petals with a prominent yellow porous center] THEN [77]
+</kb>
+<rule_check>
+- The Target Image features large white petals with pink edges and a very distinct, flat, yellow, porous center. This matches the visual pattern of the examples labeled 77.
+</rule_check>
+
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=32.8621 | avg_trial_wall_seconds=10.9265 | avg_trial_api_seconds=10.8749 | system_fallback_count=0

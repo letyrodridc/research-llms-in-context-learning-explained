@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=2 K=2 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Large flower with multiple wide, overlapping petals
+- Petals are white/light with a distinct pink stripe running down the center
+- Central cluster of dark/purplish stamens/pistils
+</features>
+<kb>
+- IF [flower has multiple wide petals with a central pink stripe and dark center] THEN [81]
+- IF [flower is yellow with drooping petals and a green stem] THEN [14]
+</kb>
+<rule_check>
+- The Target Image matches the pattern of class 81, as it features large, wide petals with a prominent pink stripe down the middle and a dark central cluster.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- yellow flower petals
+- large, broad petals with some dark veining/streaks near the center
+- long, thin, blade-like green leaves in the background
+</features>
+<kb>
+- IF [flower has purple/pink petals with white edges and a dark center] THEN [81]
+- IF [flower has yellow petals and long, thin, blade-like green leaves] THEN [14]
+</kb>
+<rule_check>
+- The Target Image features a yellow flower with broad petals and long, thin, blade-like green leaves, which matches the pattern seen in the examples for class 14.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=6.9305 | avg_trial_wall_seconds=3.4244 | avg_trial_api_seconds=3.3839 | system_fallback_count=0

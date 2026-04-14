@@ -1,0 +1,56 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemini-2.5-flash-lite | N=3 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- The flower has multiple petals.
+- The petals are orange and yellow in color.
+- The flower has a central stamen structure.
+- The flower is part of a cluster of flowers on a stem.
+- The background is green and out of focus, suggesting foliage.
+</features>
+<kb>
+- IF the flower has multiple petals, is orange and yellow, and is part of a cluster on a stem, THEN the class is 45.
+- IF the flower has multiple petals, is purple, and has a distinct dark center with yellow stamens, THEN the class is 44.
+- IF the flower has many petals, is pink or white, and has a prominent yellow center with seed-like structures, THEN the class is 77.
+</kb>
+<rule_check>
+- The Target Image shows a flower with multiple petals that are predominantly orange with some yellow hues. It is part of a cluster of flowers on a stem, and the background is green foliage. This matches the description for class 45.
+</rule_check>
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- The flower has five petals.
+- The petals are a light purple color with white streaks radiating from the center.
+- The center of the flower is dark brown with yellow stamens.
+- The flower has a bell-like shape.
+- There are green buds visible.
+- The background is blurred green and yellow grass.
+</features>
+<kb>
+- IF a flower has five petals, is purple with white streaks, and has a dark center with yellow stamens, THEN it is class 44.
+- IF a flower has multiple petals, is yellow or orange, and has a cluster of small flowers, THEN it is class 45.
+- IF a flower has many broad petals, is pink or white, and has a prominent yellow center with many small seed pockets, THEN it is class 77.
+</kb>
+<rule_check>
+- The Target Image shows a flower with five petals, which are purple with white streaks. The center is dark brown with yellow stamens. This matches the description for class 44.
+</rule_check>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<features>
+- The flower has multiple petals.
+- The petals are predominantly white with pinkish edges.
+- The center of the flower has a prominent yellow receptacle with visible seed pores.
+- The flower is shown in a natural setting with green foliage in the background.
+</features>
+<kb>
+- IF a flower has multiple petals that are predominantly pink and orange, with a less prominent center, THEN the class is 45.
+- IF a flower has multiple petals that are predominantly purple, with a distinct dark purple center and yellow stamens, THEN the class is 44.
+- IF a flower has multiple petals that are predominantly white with pinkish edges, and a prominent yellow receptacle with seed pores in the center, THEN the class is 77.
+</kb>
+<rule_check>
+- The Target Image shows a flower with predominantly white petals with pinkish edges and a prominent yellow receptacle with seed pores in the center. This matches the description for class 77.
+</rule_check>
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=5.5760 | avg_trial_wall_seconds=1.8565 | avg_trial_api_seconds=1.7974 | system_fallback_count=0

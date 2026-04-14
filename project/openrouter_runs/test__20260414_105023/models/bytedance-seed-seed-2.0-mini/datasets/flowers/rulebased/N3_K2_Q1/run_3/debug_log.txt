@@ -1,0 +1,55 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=bytedance-seed/seed-2.0-mini | N=3 K=2 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- Cluster of small, rounded four-petaled yellow flowers
+- Green leafy foliage in the surrounding background
+- Layered flower cluster growth habit
+- Subtle pale/white toned flower elements within the cluster
+</features>
+<kb>
+- IF image shows clustered four-petaled yellow/orange flowers with green foliage background THEN class 45
+- IF image shows large purple bell-shaped flowers with dark centers and yellow stamens THEN class 44
+- IF image shows large pink layered lotus flowers with a yellow central receptacle THEN class 77
+</kb>
+<rule_check>
+The target image matches the rule for class 45: it has clustered four-petaled yellow flowers with green foliage in the background, matching the visual pattern of the 45-labeled example flowers shown previously.
+</rule_check>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- Deep purple funnel-shaped flower petals with a pale white transition zone near the dark flower center
+- Dark purplish-black central ring surrounding yellow stamens and a green central pistil
+- Pointed, elongated purple flower buds alongside the bloom
+- Simple oval green leaves surrounding the flower stem
+</features>
+<kb>
+- IF [purple/lavender funnel-form flowers with dark, detailed central stamen clusters and matching pointed buds] THEN [class 44]
+- IF [bicolor orange/yellow clustered blooms with reddish stems] THEN [class 45]
+- IF [large layered pink lotus petals with yellow central receptacle] THEN [class 77]
+</kb>
+<rule_check>
+The target image matches the rule for class 44 exactly: it has the classic purple tulip-style flower shape, the distinctive dark central stamen structure with yellow stamens and green center, pointed purple flower buds, and matching green oval foliage seen in the previously labeled 44 examples. It does not match the orange clustered blooms of 45 or the pink lotus petals of 77.
+</rule_check>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<features>
+- Pink layered lotus flower petals
+- Prominent bright yellow circular central floral structure
+- Large rounded green lily pad leaves in the background
+- Outdoor pond/garden setting
+</features>
+<kb>
+- IF [flower has pink layered petals with a bright yellow central disk, paired with large green round lily pad foliage] THEN class 77
+- IF [flower has clustered yellow-orange four-petaled blooms] THEN class 45
+- IF [flower has purple bell-shaped blooms with dark central centers] THEN class 44
+</kb>
+<rule_check>
+The target image matches the first IF-THEN rule: it has pink layered lotus petals, a distinct yellow central floral disk, and is surrounded by large green rounded lily pad leaves, so it best fits class 77.
+</rule_check>
+
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=62.4197 | avg_trial_wall_seconds=20.8035 | avg_trial_api_seconds=20.7461 | system_fallback_count=0

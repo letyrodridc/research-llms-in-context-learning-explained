@@ -1,0 +1,38 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=qwen/qwen3.5-9b | N=2 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- [81] sqsubseteq hasVisualFeature(pink flower)
+- hasVisualFeature(pink flower) sqsubseteq [81]
+- [14] sqsubseteq hasVisualFeature(yellow flower)
+</tbox>
+<abox>
+- hasVisualFeature(Target, pink flower)
+- hasVisualFeature(Target, distinct petals)
+</abox>
+<dl_explanation>
+- The Target Image contains a pink flower with distinct petals and a central cluster, which matches the visual features observed in the examples labeled 81.
+- The Target Image does not contain the yellow flower features observed in the examples labeled 14.
+- Therefore, the Target Image satisfies the axioms for class 81.
+</dl_explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- [81] sqsubseteq hasVisualFeature(PurpleFlower)
+- [14] sqsubseteq hasVisualFeature(YellowFlower)
+- hasVisualFeature(YellowFlower) sqsubseteq [14]
+</tbox>
+<abox>
+- hasVisualFeature(Target, YellowFlower)
+</abox>
+<dl_explanation>
+- The Target Image displays a yellow flower with the distinct petal structure of an Iris.
+- This visual evidence matches the features associated with the examples labeled [14].
+- The Target Image does not exhibit the purple coloration or flower structure associated with label [81].
+- Therefore, the Target Image satisfies the condition for class [14].
+</dl_explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=13.2278 | avg_trial_wall_seconds=6.5724 | avg_trial_api_seconds=6.5352 | system_fallback_count=0

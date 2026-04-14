@@ -1,0 +1,39 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=qwen/qwen3.5-9b | N=2 K=2 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- [81] sqsubseteq hasVisualFeature(purple/magenta petals)
+- hasVisualFeature(purple/magenta petals) sqsubseteq [81]
+- [14] sqsubseteq hasVisualFeature(yellow petals)
+- hasVisualFeature(yellow petals) sqsubseteq [14]
+</tbox>
+<abox>
+- hasVisualFeature(Target, purple/magenta petals)
+- hasVisualFeature(Target, white/yellow center)
+</abox>
+<dl_explanation>
+- The Target Image contains purple/magenta petals and a white/yellow center.
+- According to the TBox, the class [81] is associated with images having purple/magenta petals.
+- The class [14] is associated with images having yellow petals.
+- Since the Target Image has purple/magenta petals and not yellow petals, it satisfies the condition for class [81].
+</dl_explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- [81] sqsubseteq hasVisualFeature(deep pink/magenta petals)
+- hasVisualFeature(yellow petals) sqsubseteq [14]
+</tbox>
+<abox>
+- hasVisualFeature(Target, yellow petals)
+</abox>
+<dl_explanation>
+- The Target Image contains the property "hasVisualFeature(yellow petals)".
+- The TBox axiom "hasVisualFeature(yellow petals) sqsubseteq [14]" states that observing yellow petals is sufficient to classify the image as Class 14.
+- The Target Image does not match the features of Class 81 (deep pink/magenta petals).
+- Therefore, the Target Image is logically classified as Class 14.
+</dl_explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=14.1376 | avg_trial_wall_seconds=7.0282 | avg_trial_api_seconds=6.9839 | system_fallback_count=0

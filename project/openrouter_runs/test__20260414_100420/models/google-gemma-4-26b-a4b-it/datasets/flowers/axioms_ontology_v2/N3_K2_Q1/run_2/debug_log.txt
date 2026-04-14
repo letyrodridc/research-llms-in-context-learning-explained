@@ -1,0 +1,59 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=3 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<tbox>
+- Class_45 sqsubseteq hasVisualFeature(orange_petals)
+- Class_45 sqsubseteq hasVisualFeature(small_flowers)
+- Class_44 sqsubseteq hasVisualFeature(purple_petals)
+- Class_77 sqsubseteq hasVisualFeature(large_pink_or_white_petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, orange_petals)
+- hasVisualFeature(Target, small_flowers)
+</abox>
+<dl_explanation>
+- The Target Image contains small orange flowers.
+- According to the examples, Class 45 is characterized by orange petals and small flower structures.
+- Therefore, the Target Image is classified as 45.
+</dl_explanation>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<tbox>
+- Class_44 sqsubseteq hasVisualFeature(purple_petals)
+- Class_44 sqsubseteq hasVisualFeature(dark_center)
+- Class_45 sqsubseteq hasVisualFeature(orange_petals)
+- Class_77 sqsubseteq hasVisualFeature(large_petals)
+- Class_77 sqsubseteq hasVisualFeature(pink_or_white_petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, purple_petals)
+- hasVisualFeature(Target, dark_center)
+</abox>
+<dl_explanation>
+- The Target Image contains purple petals and a dark center.
+- These features match the visual patterns observed in the examples labeled as Class 44.
+- Therefore, the Target Image is classified as Class 44.
+</dl_explanation>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<tbox>
+- Class_45 sqsubseteq hasVisualFeature(orange_petals)
+- Class_44 sqsubseteq hasVisualFeature(purple_petals)
+- Class_77 sqsubseteq hasVisualFeature(large_white_or_pink_petals) and hasVisualFeature(prominent_yellow_center)
+</tbox>
+<abox>
+- hasVisualFeature(Target, large_white_or_pink_petals)
+- hasVisualFeature(Target, prominent_yellow_center)
+</abox>
+<dl_explanation>
+- The Target Image contains large white/pink petals and a prominent yellow center.
+- These features match the necessary and sufficient conditions defined for Class 77 in the examples.
+- Therefore, the Target Image is classified as Class 77.
+</dl_explanation>
+
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=12.8505 | avg_trial_wall_seconds=4.2552 | avg_trial_api_seconds=4.1908 | system_fallback_count=0

@@ -1,0 +1,56 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=2 K=2 Q=2 | run=0 ===
+Run 0 | Query 1 | Expected=[81] | Predicted=[] | Correct=False
+<tbox>
+Class81 sqsubseteq hasVisualFeature(PetalsAreBroadAndFlat) and hasVisualFeature(PetalsAreArrangedRadiallyAroundACenter) and hasVisualFeature(CenterHasProminentStamens)
+Class14 sqsubseteq hasVisualFeature(PetalsAreIrregularlyShaped) and hasVisualFeature(PetalsAreArrangedInLayers) and hasVisualFeature(PetalsAreYellow)
+</tbox>
+<abox>
+hasVisualFeature(Target, PetalsAreBroadAndFlat)
+hasVisualFeature(Target, PetalsAreArrangedRadiallyAroundACenter)
+hasVisualFeature(Target, CenterHasProminentStamens)
+</abox>
+<dl_explanation>
+The Target Image exhibits petals that are broad and flat, arranged radially around a center, and a center with prominent stamens. These features are consistent with the necessary conditions for Class 81 as defined in the TBox. The Target Image does not exhibit irregularly shaped petals, petals arranged in layers, or yellow petals, which are characteristic of Class 14. Therefore, based on the observable visual features, the Target Image is classified as Class 81.
+</dl_explanation>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[81] | Predicted=[] | Correct=False
+<tbox>
+81 sqsubseteq hasVisualFeature(purplePetals) and hasVisualFeature(prominentStamens)
+14 sqsubseteq hasVisualFeature(yellowPetals) and hasVisualFeature(distinctiveDroopingPetals)
+</tbox>
+<abox>
+hasVisualFeature(Target, purplePetals)
+hasVisualFeature(Target, prominentStamens)
+</abox>
+<dl_explanation>
+The Target Image exhibits purple petals and prominent stamens, which are the defining visual features for class 81 as established in the TBox. These features are not consistent with class 14, which is characterized by yellow and drooping petals. Therefore, based on the observed visual evidence, the Target Image is classified as 81.
+</dl_explanation>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[14] | Predicted=[] | Correct=False
+<tbox>
+14 sqsubseteq hasVisualFeature(yellowPetals) and hasVisualFeature(petalShape_droopingAndUpright)
+81 sqsubseteq hasVisualFeature(purplePetals) and hasVisualFeature(petalShape_flatAndSpread)
+</tbox>
+<abox>
+hasVisualFeature(Target, yellowPetals)
+hasVisualFeature(Target, petalShape_droopingAndUpright)
+</abox>
+<dl_explanation>
+The Target Image has yellow petals and a petal shape that includes both drooping and upright elements, as asserted in the ABox. These features satisfy the necessary conditions for class 14, which is defined by having yellow petals and a petal shape that is both drooping and upright. Therefore, the Target Image is classified as 14.
+</dl_explanation>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[14] | Predicted=[] | Correct=False
+<tbox>
+14 sqsubseteq hasVisualFeature(yellowPetals) and hasVisualFeature(threeLargeDroopingPetals) and hasVisualFeature(threeSmallerUprightPetals)
+81 sqsubseteq hasVisualFeature(purplePetals) and hasVisualFeature(fiveToSixPetals) and hasVisualFeature(prominentStamenCluster)
+</tbox>
+<abox>
+hasVisualFeature(Target, yellowPetals)
+hasVisualFeature(Target, threeLargeDroopingPetals)
+hasVisualFeature(Target, threeSmallerUprightPetals)
+</abox>
+<dl_explanation>
+The Target Image contains yellow petals, three large drooping petals, and three smaller upright petals. These features are consistent with the necessary conditions for class 14 as defined in the TBox. The Target Image does not exhibit purple petals, five to six petals, or a prominent stamen cluster, which are characteristic of class 81. Therefore, based on the visual evidence, the Target Image is classified as 14.
+</dl_explanation>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=0 | total=4 | errors=0 | accuracy=0.0000 | duration_seconds=9.0202 | avg_trial_wall_seconds=2.2393 | avg_trial_api_seconds=2.1890 | system_fallback_count=0

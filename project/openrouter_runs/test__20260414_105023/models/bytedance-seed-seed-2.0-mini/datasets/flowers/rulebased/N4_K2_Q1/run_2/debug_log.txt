@@ -1,0 +1,71 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=bytedance-seed/seed-2.0-mini | N=4 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[34] | Predicted=[34] | Correct=True
+<features>
+- Spiky feathery bracts surrounding a central bumpy, cone-shaped flower core
+- Pale silvery-white to light bluish-purple spiky bracts
+- Multiple clustered flower heads
+- Green grassy foliage background
+</features>
+<kb>
+- IF flower has spiky feathery bracts around a central bumpy cone core, with pale light purple/white spiky bracts and clustered flower heads THEN class 34
+- IF flower has large smooth layered purple/red petals with a prominent central stamen cluster THEN class 81
+- IF flower has five distinct rounded red or yellow petals with a bright yellow inner center THEN class 88
+- IF flower has soft pink trumpet-shaped petals with darker pink spotting THEN class71
+</kb>
+<rule_check>
+The target image matches the rule for class 34: it features the spiky feathery bracts around a central bumpy cone-shaped core, has pale silvery-light purple spiky bracts, and multiple clustered flower heads with a green grassy background, exactly matching the visual patterns of the earlier labeled 34 examples.
+</rule_check>
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Large, broad pointed flower petals with pink and white striped coloration
+- Dense central stamen cluster with dark pink/brown center
+- Star-like bloom shape with 8 distinct petals
+</features>
+<kb>
+- IF [flower has broad 6-8 pointed petals, dense central stamen cluster, two-toned striped petals] THEN 81
+</kb>
+<rule_check>
+The target image matches the rule for class 81 exactly. It has the characteristic star-shaped clematis flower structure, striped bi-color petals, and distinct central stamen cluster seen in the previously labeled 81 examples of clematis blooms.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[88] | Predicted=[88] | Correct=True
+<features>
+- Bright reddish-orange flower with rounded, distinct petal segments
+- Yellow reproductive structures at the flower's center
+- Rounded green foliage in the background of the image
+</features>
+<kb>
+- IF flower has rounded petals, reddish/orange or yellow bloom color, yellow central flower parts, and rounded green surrounding foliage THEN class 88
+- IF flower has spiky thistle-like blue/purple blooms with a textured central seed head THEN class 34
+- IF flower has large smooth purple/red petals with a prominent central stamen cluster THEN class 81
+- IF flower has pale pink/magenta delicate petals with visible thin stamens THEN class71
+</kb>
+<rule_check>
+The target image most closely matches the first rule for class 88: it has rounded reddish-orange petals, yellow central reproductive parts, and rounded green background foliage, which exactly matches the previously shown nasturtium flowers labeled as 88 in the examples.
+</rule_check>
+
+<response>88</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[71] | Predicted=[71] | Correct=True
+<features>
+- Pink, multi-petaled flowers with visible central stamens
+- Gradient coloration with darker pink at the flower center transitioning to lighter pink at petal edges
+- Surrounding oval green foliage
+</features>
+<kb>
+- IF image contains pink trumpet-shaped flowers with prominent central stamens and oval green foliage THEN class 71
+- IF image contains spiky purple thistle-style blooms THEN class 34
+- IF image contains large single purple/red clematis-style flowers THEN class 81
+- IF image contains red/yellow nasturtium flowers with rounded shield-like leaves THEN class 88
+</kb>
+<rule_check>
+The target image matches the rule for class 71: it has the characteristic pink azalea flowers with visible central stamens, paired with green oval foliage, matching the visual patterns of the previously provided 71 labeled examples.
+</rule_check>
+
+<response>71</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=75.3217 | avg_trial_wall_seconds=18.8088 | avg_trial_api_seconds=18.7364 | system_fallback_count=0

@@ -1,0 +1,42 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=qwen/qwen3.5-9b | N=2 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- [81] sqsubseteq hasVisualFeature(pink/magenta petals)
+- [81] sqsubseteq hasVisualFeature(central stamen cluster)
+- hasVisualFeature(pink/magenta petals) and hasVisualFeature(central stamen cluster) sqsubseteq [81]
+- [14] sqsubseteq hasVisualFeature(yellow petals)
+- hasVisualFeature(yellow petals) sqsubseteq [14]
+</tbox>
+<abox>
+- hasVisualFeature(Target, pink/magenta petals)
+- hasVisualFeature(Target, central stamen cluster)
+</abox>
+<dl_explanation>
+- The Target Image contains pink/magenta petals and a central stamen cluster.
+- According to the TBox, class [81] is a subclass of images having pink/magenta petals and a central stamen cluster.
+- Conversely, the combination of pink/magenta petals and a central stamen cluster is sufficient to classify an image as [81].
+- The Target Image does not have yellow petals, so it does not match class [14].
+- Therefore, the Target Image belongs to class [81].
+</dl_explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- [81] sqsubseteq hasVisualFeature(PurpleFlower)
+- [14] sqsubseteq hasVisualFeature(YellowFlower)
+- hasVisualFeature(YellowFlower) sqsubseteq [14]
+</tbox>
+<abox>
+- hasVisualFeature(Target, YellowFlower)
+</abox>
+<dl_explanation>
+- The target image displays a yellow flower with the morphological characteristics of an Iris.
+- This matches the visual features observed in the examples labeled `14`.
+- It does not match the purple flower features associated with label `81`.
+- Therefore, the class is `14`.
+</dl_explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=13.1883 | avg_trial_wall_seconds=6.5712 | avg_trial_api_seconds=6.5328 | system_fallback_count=0

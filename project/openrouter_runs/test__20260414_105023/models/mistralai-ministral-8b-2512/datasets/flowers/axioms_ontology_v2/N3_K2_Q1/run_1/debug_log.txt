@@ -1,0 +1,110 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=mistralai/ministral-8b-2512 | N=3 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+```xml
+<tbox>
+    <!-- Class 45 (Orange-yellow flowers with small central spots) -->
+    [Class_45] sqsubseteq hasVisualFeature([bright_orange_yellow_color]) and
+                      hasVisualFeature([small_central_spots_or_stamens]) and
+                      hasVisualFeature([clustered_flowers_on_stem]) and
+                      hasVisualFeature([petals_with_slightly_curved_shape]).
+
+    <!-- Class 44 (Purple flowers with dark centers and green stems) -->
+    [Class_44] sqsubseteq hasVisualFeature([deep_purple_color]) and
+                      hasVisualFeature([dark_central_stamens]) and
+                      hasVisualFeature([petals_with_rounded_edges]) and
+                      hasVisualFeature([green_stems_leafy_background]).
+
+    <!-- Class 77 (Large, single pink/red lotus-like flowers with prominent yellow centers) -->
+    [Class_77] equiv hasVisualFeature([large_single_flower]) and
+                       hasVisualFeature([pink_or_red_petals]) and
+                       hasVisualFeature([prominent_yellow_center]) and
+                       hasVisualFeature([delicate_petal_layers]).
+</tbox>
+
+<abox>
+    <!-- Observed features in Target Image -->
+    hasVisualFeature(Target, [bright_orange_yellow_color]).
+    hasVisualFeature(Target, [small_central_spots_or_stamens]).
+    hasVisualFeature(Target, [clustered_flowers_on_stem]).
+    hasVisualFeature(Target, [petals_with_slightly_curved_shape]).
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits bright orange-yellow petals, small central spots/stamens, clustered flowers on a stem, and petals with a slightly curved shape. These features directly match the necessary and sufficient conditions for [Class_45] as defined in the TBox. The absence of purple tones, dark centers, or large single lotus-like flowers rules out [Class_44] and [Class_77]. Therefore, the Target Image satisfies all axioms for [Class_45].
+</dl_explanation>
+
+<response>45</response>
+```
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+```xml
+<tbox>
+    <!-- Class 44 (Purple Tulip-like flowers) -->
+    [Class44] sqsubseteq hasVisualFeature([deep_purple_petals]) and
+                      hasVisualFeature([dark_center_stamen]) and
+                      hasVisualFeature([petals_with_rugged_edges]) and
+                      hasVisualFeature([green_stem_visibility]);
+
+    <!-- Class 77 (Pink Lotus-like flowers) -->
+    [Class77] sqsubseteq hasVisualFeature([pale_pink_petals]) and
+                      hasVisualFeature([yellow_center_stamen]) and
+                      hasVisualFeature([broad_petals_with_smooth_edges]) and
+                      hasVisualFeature([water_or_leafy_background]);
+
+    <!-- Class 45 (Orange/Yellow flowers with dark centers) -->
+    [Class45] sqsubseteq hasVisualFeature([bright_orange_or_yellow_petals]) and
+                      hasVisualFeature([dark_red_or_brown_center]) and
+                      hasVisualFeature([smaller_petals_with_rugged_edges]) and
+                      hasVisualFeature([green_leaves_background]);
+</tbox>
+
+<abox>
+    hasVisualFeature(Target, [deep_purple_petals])
+    hasVisualFeature(Target, [dark_center_stamen])
+    hasVisualFeature(Target, [petals_with_rugged_edges])
+    hasVisualFeature(Target, [green_stem_visibility])
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits deep purple petals, a dark center stamen, rugged petal edges, and a visible green stem, matching the necessary and sufficient conditions for [Class44].
+    These features align with the observed visual patterns in the labeled examples for Class 44 (purple tulip-like flowers), distinguishing it from Class 45 (orange/yellow flowers) and Class 77 (pink lotus-like flowers).
+</dl_explanation>
+
+<response>44</response>
+```
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+```xml
+<tbox>
+    <!-- Class 45 (Orange flowers with small yellow centers and red buds) -->
+    [Class_45] sqsubseteq hasVisualFeature([bright_orange_petals]) and
+                      hasVisualFeature([small_yellow_center]) and
+                      hasVisualFeature([small_red_buds]).
+
+    <!-- Class 44 (Purple flowers with dark centers and green stems) -->
+    [Class_44] sqsubseteq hasVisualFeature([deep_purple_petals]) and
+                      hasVisualFeature([dark_purple_center]) and
+                      hasVisualFeature([green_stem]).
+
+    <!-- Class 77 (Pink lotus flowers with large petals and yellow centers) -->
+    [Class_77] equiv hasVisualFeature([large_pink_petals]) and
+                     hasVisualFeature([yellow_center]) and
+                     hasVisualFeature([water_lily_or_lotus_shape]) and
+                     hasVisualFeature([green_leaf_background]).
+</tbox>
+
+<abox>
+    hasVisualFeature(Target, [large_pink_petals]).
+    hasVisualFeature(Target, [yellow_center]).
+    hasVisualFeature(Target, [water_lily_or_lotus_shape]).
+    hasVisualFeature(Target, [green_leaf_background]).
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits large pink petals, a yellow center, a water-lily/lotus shape, and green leaves in the background. These features directly match the necessary and sufficient conditions for [Class_77] as defined in the TBox. The combination of these visual features (large pink petals, yellow center, lotus shape, and green leaf background) is unique to Class 77 in the provided examples.
+</dl_explanation>
+
+<response>77</response>
+```
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=10.9869 | avg_trial_wall_seconds=3.6434 | avg_trial_api_seconds=3.5876 | system_fallback_count=0

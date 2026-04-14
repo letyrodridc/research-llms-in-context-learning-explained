@@ -1,0 +1,43 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=qwen/qwen3.5-9b | N=2 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- Class 81 sqsubseteq hasVisualFeature(purple petals)
+- Class 81 sqsubseteq hasVisualFeature(broad petals)
+- Class 14 sqsubseteq hasVisualFeature(yellow petals)
+- Class 14 sqsubseteq hasVisualFeature(distinct petal structure)
+</tbox>
+<abox>
+- hasVisualFeature(Target, purple petals)
+- hasVisualFeature(Target, broad petals)
+- hasVisualFeature(Target, central stamens)
+</abox>
+<dl_explanation>
+- The target image displays a flower with deep purple/magenta petals and a central cluster of stamens.
+- This visual evidence aligns with the characteristics of Class 81, which includes examples of pink and purple flowers with broad petals (Examples 1, 2, 5).
+- The target image does not exhibit the yellow color or specific petal structure associated with Class 14 (Examples 3, 4).
+- Therefore, the target image belongs to Class 81.
+</dl_explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- [81] sqsubseteq hasVisualFeature(pink_and_white_petals)
+- hasVisualFeature(pink_and_white_petals) sqsubseteq [81]
+- [14] sqsubseteq hasVisualFeature(yellow_petals)
+- hasVisualFeature(yellow_petals) sqsubseteq [14]
+</tbox>
+<abox>
+- hasVisualFeature(Target, yellow_petals)
+- hasVisualFeature(Target, dark_central_markings)
+</abox>
+<dl_explanation>
+- The Target Image displays a flower with bright yellow petals and dark markings in the center.
+- The labeled examples show that class 14 corresponds to yellow flowers (Examples 3, 4, 5), while class 81 corresponds to pink and white flowers (Examples 1, 2).
+- The visual features of the Target Image (yellow petals) satisfy the necessary condition for class 14 defined in the TBox.
+- Therefore, the Target Image belongs to class 14.
+</dl_explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=13.6322 | avg_trial_wall_seconds=6.7940 | avg_trial_api_seconds=6.7570 | system_fallback_count=0

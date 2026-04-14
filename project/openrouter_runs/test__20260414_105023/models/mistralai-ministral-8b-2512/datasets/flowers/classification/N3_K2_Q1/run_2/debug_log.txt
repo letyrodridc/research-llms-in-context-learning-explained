@@ -1,0 +1,83 @@
+=== DEBUG LOG | dataset=flowers | prompt=classification | model=mistralai/ministral-8b-2512 | N=3 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+```xml
+<observations>
+    <class_44>
+        <features>
+            <petal_color>deep purple/violet</petal_color>
+            <petal_shape>five rounded petals with central dark markings</petal_shape>
+            <stamen>prominent yellow stamens</stamen>
+            <leaf_texture>green, slightly rough edges</leaf_texture>
+        </features>
+    </class_44>
+    <class_77>
+        <features>
+            <petal_color>white or light pink</petal_color>
+            <petal_shape>large, layered petals with a smooth, rounded appearance</petal_shape>
+            <stamen>central yellow stamen</stamen>
+            <leaf_texture>broad, smooth green leaves</leaf_texture>
+        </features>
+    </class_77>
+    <class_45>
+        <features>
+            <petal_color>bright orange or yellow-orange</petal_color>
+            <petal_shape>smaller, clustered petals with a tubular form</petal_shape>
+            <stamen>small, less prominent stamens</stamen>
+            <leaf_texture>green, narrow leaves</leaf_texture>
+        </features>
+    </class_45>
+</observations>
+
+<target_image_analysis>
+    <features>
+        <petal_color>deep purple/violet</petal_color>
+        <petal_shape>five rounded petals with central dark markings</petal_shape>
+        <stamen>prominent yellow stamens</stamen>
+        <leaf_texture>green, slightly rough edges</leaf_texture>
+    </features>
+</target_image_analysis>
+
+<response>44</response>
+```
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+```xml
+<condition>
+    <examples>
+        <class_45>
+            <description>
+                <visual_features>
+                    <feature>Bright yellow-orange petals</feature>
+                    <feature>Clustered flower arrangement</feature>
+                    <feature>Small, tubular shape with visible stamens</feature>
+                </visual_features>
+            </description>
+        </class_45>
+        <class_44>
+            <description>
+                <visual_features>
+                    <feature>Purple petals with white veining</feature>
+                    <feature>Dark maroon center</feature>
+                    <feature>Five distinct petals radiating from center</feature>
+                </visual_features>
+            </description>
+        </class_44>
+        <class_77>
+            <description>
+                <visual_features>
+                    <feature>Large, white petals</feature>
+                    <feature>Prominent yellow center</feature>
+                    <feature>Delicate, layered petals with slight pinkish tint</feature>
+                    <feature>Lotus-like appearance</feature>
+                </visual_features>
+            </description>
+        </class_77>
+    </examples>
+</condition>
+<response>77</response>
+```
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=6.5262 | avg_trial_wall_seconds=2.1353 | avg_trial_api_seconds=2.0786 | system_fallback_count=0

@@ -1,0 +1,10 @@
+=== DEBUG LOG | dataset=flowers | prompt=nle | model=bytedance-seed/seed-2.0-mini | N=2 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<explanation>This target flower has the characteristic clematis structure: broad, pointed petal-like sepals and a dense central stamen cluster, matching the visual pattern of the class 81 examples (the prior clematis flowers). It lacks the distinct narrow, petal shape and yellow coloration of the class 14 iris flowers, so it fits class 81.</explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<explanation>The target image features a bright yellow iris flower with the distinct petal structure and coloration matching the examples labeled 14, rather than the pink-and-white striped clematis flowers associated with label 81.</explanation>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=27.6509 | avg_trial_wall_seconds=13.7851 | avg_trial_api_seconds=13.7480 | system_fallback_count=0

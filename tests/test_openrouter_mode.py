@@ -137,20 +137,21 @@ class OpenRouterModeTests(unittest.TestCase):
             config_path.write_text(
                 f"""
 {{
-  "schema_version": "openrouter_experiment_v1",
+  "schema_version": "openrouter_experiment_v2",
   "experiment_name": "tmp-run",
   "env_file": ".env",
   "output_root": "outputs",
   "prompt_library_path": "{prompt_library_path.name}",
   "model": {{
-    "name": "test/model",
-    "validate_image_input": true,
-    "generation": {{"temperature": 0.0}}
+    "model_name": ["test/model", "backup/model"],
+    "model_params": {{
+      "validate_image_input": true,
+      "generation": {{"temperature": 0.0}}
+    }}
   }},
   "datasets": ["pets"],
   "prompt_types": ["classification", "nle"],
-  "few_shot_configs": [{{"n": 2, "k": 1, "q": 3}}],
-  "runs_per_config": 1,
+  "few_shot_configs": [{{"n": 2, "k": 1, "q": 3, "runs": 1}}],
   "seed": 7
 }}
                 """.strip(),
@@ -161,9 +162,11 @@ class OpenRouterModeTests(unittest.TestCase):
 
             self.assertEqual(loaded.experiment_name, "tmp-run")
             self.assertEqual(loaded.model.name, "test/model")
+            self.assertEqual(loaded.model.names, ["test/model", "backup/model"])
             self.assertEqual(loaded.datasets, ["pets"])
             self.assertEqual(loaded.prompt_types, ["classification", "nle"])
             self.assertEqual(loaded.few_shot_configs[0].n, 2)
+            self.assertEqual(loaded.few_shot_configs[0].runs, 1)
             self.assertEqual(loaded.output_root, (tmp_path / "outputs").resolve())
             self.assertIn("Return only the label.", loaded.prompt_library.prompt_specs["classification"].system_prompt)
 
@@ -503,7 +506,7 @@ class OpenRouterModeTests(unittest.TestCase):
 
             self.assertTrue((run_dir / "analysis" / "tables" / "overall_accuracy_by_prompt.csv").exists())
             self.assertTrue((run_dir / "analysis" / "plots" / "overall_accuracy_by_prompt.png").exists())
-            self.assertTrue((run_dir / "analysis" / "stats" / "pairwise_mcnemar.csv").exists())
+            self.assertTrue((run_dir / "analysis" / "plots" / "overall_accuracy_by_prompt.json").exists())
             self.assertTrue(outputs["report_path"].exists())
 
     def test_analyze_judge_run_directory_generates_outputs(self):

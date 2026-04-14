@@ -1,0 +1,82 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=mistralai/ministral-8b-2512 | N=3 K=2 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- Petals are bright yellow with a slightly clustered, rounded shape
+- Flower has a dense, compact center with small, tightly packed stamens
+- Petals appear smooth and slightly ruffled at the edges
+- No prominent dark veins or spots on petals
+- Flower is small to medium-sized, clustered in a group
+- Background shows green foliage, but the flower is the primary focus
+</features>
+
+<kb>
+- IF [petals are bright orange-yellow with red-orange edges and elongated, tubular shape] THEN [45]
+- IF [petals are deep purple/blue with white centers and prominent dark veins radiating from the center] THEN [44]
+- IF [petals are pink to white with a large, flat, layered structure and a prominent yellow center] THEN [77]
+</kb>
+
+<rule_check>
+- The Target Image does **not** match class 45 because the petals are not orange-yellow with red-orange edges or elongated tubular shapes.
+- The Target Image does **not** match class 44 because the petals are not deep purple/blue with white centers and dark veins.
+- The Target Image **best matches class 45** based on the following reasoning:
+  - The petals are bright yellow, similar to the yellowish tones seen in class 45 examples.
+  - The flower has a dense, compact center with tightly packed stamens, resembling the clustered appearance of class 45 flowers.
+  - The flower is small to medium-sized and grouped, which aligns with the visual pattern of class 45 examples.
+  - The absence of purple/blue hues and dark veins rules out class 44.
+  - The flower does not have the large, layered, pink/white structure with a prominent yellow center typical of class 77.
+</rule_check>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- Petals are deep purple with a gradient toward white at the edges
+- Central stamen cluster is dark brown to black with a yellowish-green base
+- Petals are slightly ruffled and overlapping
+- Flower has a tubular base with a partially visible bud
+- Green foliage with serrated edges visible at the base
+</features>
+
+<kb>
+- IF [flower petals are bright orange/yellow with red-orange streaks and tubular base] THEN [45]
+- IF [flower petals are purple with a gradient toward white, central stamen cluster is dark brown/black with yellowish-green base, ruffled edges, and tubular base with bud] THEN [44]
+- IF [flower petals are pink/light purple with a prominent yellow central stamen cluster, large and flat petals, and broad green leaves] THEN [77]
+</kb>
+
+<rule_check>
+The Target Image best matches the rule for class [44] because:
+- The petals are deep purple with a gradient toward white at the edges, matching the description for class 44.
+- The central stamen cluster is dark brown/black with a yellowish-green base, consistent with class 44.
+- The flower has a tubular base with a partially visible bud, which aligns with the visual pattern of class 44.
+- The ruffled and overlapping petals further confirm the match with class 44.
+</rule_check>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<features>
+- Petals are broad, layered, and slightly ruffled with a soft, velvety texture
+- Color is predominantly deep pink to magenta with a gradient fading toward the edges
+- Central yellow stamens forming a dense, rounded cluster
+- Petals are arranged in a symmetrical, circular pattern with overlapping layers
+- Large flower (diameter significantly larger than the examples of classes 44 and 45)
+- Flower appears to be floating on water with green leaf-like structures beneath it
+</features>
+
+<kb>
+- IF [petals are bright yellow-orange, small to medium size, irregular shape with red-brown spots, clustered in a loose arrangement] THEN [45]
+- IF [petals are bright blue-purple, medium size, smooth texture, symmetrical with a dark central spot and yellow stamens, growing on land] THEN [44]
+- IF [petals are broad, layered, deep pink to magenta with a gradient, symmetrical circular arrangement, large size, floating on water with green leaf-like structures, central dense yellow stamens] THEN [77]
+</kb>
+
+<rule_check>
+- The Target Image matches the rule for class 77 because:
+  - The petals are broad, layered, and deep pink to magenta with a gradient, matching the visual description of class 77.
+  - The flower is large, with a symmetrical, circular arrangement of petals.
+  - The central stamens are densely clustered and yellow, consistent with class 77.
+  - The presence of green leaf-like structures beneath the flower suggests it is floating on water, which aligns with the observable pattern for class 77.
+</rule_check>
+
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=9.5809 | avg_trial_wall_seconds=3.1783 | avg_trial_api_seconds=3.1239 | system_fallback_count=0

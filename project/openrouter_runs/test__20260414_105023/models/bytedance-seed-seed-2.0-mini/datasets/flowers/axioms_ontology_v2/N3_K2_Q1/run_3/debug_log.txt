@@ -1,0 +1,49 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=bytedance-seed/seed-2.0-mini | N=3 K=2 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<tbox>
+- Class45 ≡ hasVisualFeature(clustered four-petaled flower clusters) and hasVisualFeature(warm-toned flower color) and hasVisualFeature(reddish stem/bud structures)
+- Class44 ≡ hasVisualFeature(large cup-shaped purple flowers) and hasVisualFeature(dark central flower throats with yellow stamens)
+- Class77 ≡ hasVisualFeature(large layered pink lotus flower) and hasVisualFeature(yellow central receptacle)
+</tbox>
+<abox>
+- hasVisualFeature(Target, clustered four-petaled pale yellow flower clusters)
+- hasVisualFeature(Target, warm pale yellow flower color)
+- hasVisualFeature(Target, surrounding green foliage)
+</abox>
+<dl_explanation>
+The Target Image shows clustered four-petaled yellow flower blooms, which matches the morphological and color feature set defined for Class45. The visual features align with the necessary and sufficient conditions for Class45 as established in the training examples, confirming the classification.
+</dl_explanation>
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<tbox>
+- Class44 equiv hasVisualFeature(purple funnel-shaped flower petals) and hasVisualFeature(dark central reproductive structure with yellow stamens)
+- Class45 equiv hasVisualFeature(orange/yellow clustered small flowers)
+- Class77 equiv hasVisualFeature(pink layered lotus flower petals with yellow central receptacle)
+</tbox>
+<abox>
+- hasVisualFeature(Target, purple funnel-shaped flower petals)
+- hasVisualFeature(Target, dark central reproductive structure with yellow stamens)
+</abox>
+<dl_explanation>
+The Target Image exhibits the exact visual features specified as the necessary and sufficient class conditions for Class44: it has purple funnel-shaped flower petals and a dark central reproductive cluster with yellow stamens, matching the previously shown Class44 examples.
+</dl_explanation>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<tbox>
+- Class77 ⊑ hasVisualFeature(pink layered flower petals, yellow central floral disc, large green rounded lily leaves)
+- hasVisualFeature(pink layered petals, yellow central disc) ⊑ Class77
+- Class77 ≡ hasVisualFeature(pink layered flower petals) ∧ hasVisualFeature(yellow circular central center)
+</tbox>
+<abox>
+- hasVisualFeature(Target, pink layered flower petals)
+- hasVisualFeature(Target, yellow circular central floral disc)
+- hasVisualFeature(Target, large green rounded lily leaves in background)
+</abox>
+<dl_explanation>
+The Target Image exhibits all the visual features in the ABox, which align with the necessary and sufficient conditions for Class77 from the TBox, matching the previously labeled lotus flower examples for class 77.
+</dl_explanation>
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=105.2642 | avg_trial_wall_seconds=35.0603 | avg_trial_api_seconds=35.0048 | system_fallback_count=0

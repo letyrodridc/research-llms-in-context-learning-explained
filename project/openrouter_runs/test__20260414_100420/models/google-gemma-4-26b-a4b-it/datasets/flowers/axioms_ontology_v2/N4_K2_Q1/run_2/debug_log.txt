@@ -1,0 +1,72 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=4 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[34] | Predicted=[34] | Correct=True
+<tbox>
+- 34 sqsubseteq hasVisualFeature(spiky_bracts) and hasVisualFeature(conical_center)
+</tbox>
+<abox>
+- hasVisualFeature(Target, spiky_bracts)
+- hasVisualFeature(Target, conical_center)
+</abox>
+<dl_explanation>
+- The Target Image displays spiky, silvery-white bracts and a prominent conical center.
+- These features match the visual patterns observed in the examples for class 34.
+- Therefore, the Target Image is classified as 34.
+</dl_explanation>
+
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- 81 sqsubseteq hasVisualFeature(large_petals) and hasVisualFeature(central_stamens)
+- 81 sqsubseteq hasVisualFeature(purple_or_pink_petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, large_petals)
+- hasVisualFeature(Target, central_stamens)
+- hasVisualFeature(Target, purple_or_pink_petals)
+</abox>
+<dl_explanation>
+- The Target Image displays large petals with a distinct central cluster of stamens and features purple/pink coloration.
+- These visual properties match the characteristics observed in the examples for class 81.
+- Therefore, the Target Image is classified as 81.
+</dl_explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[88] | Predicted=[88] | Correct=True
+<tbox>
+- class 34 sqsubseteq hasVisualFeature(spiky_purple_center)
+- class 81 sqsubseteq hasVisualFeature(large_purple_petals)
+- class 88 sqsubseteq hasVisualFeature(red_or_yellow_petals) and hasVisualFeature(round_leaves)
+- class 71 sqsubseteq hasVisualFeature(pink_or_magenta_petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, red_petals)
+- hasVisualFeature(Target, round_leaves)
+</abox>
+<dl_explanation>
+- The Target Image features a red flower with large, rounded petals and visible round green leaves in the background.
+- Comparing this to the examples, class 88 is characterized by red or yellow petals and round leaves.
+- Therefore, the Target Image is classified as 88.
+</dl_explanation>
+
+<response>88</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[71] | Predicted=[71] | Correct=True
+<tbox>
+- 71 sqsubseteq hasVisualFeature(pink_flower)
+- 71 sqsubseteq hasVisualFeature(delicate_petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, pink_flower)
+- hasVisualFeature(Target, delicate_petals)
+</abox>
+<dl_explanation>
+- The Target Image displays pink flowers with delicate, thin petals.
+- These features match the visual characteristics observed in the examples for class 71.
+- Therefore, the Target Image is classified as 71.
+</dl_explanation>
+
+<response>71</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=22.9612 | avg_trial_wall_seconds=5.7244 | avg_trial_api_seconds=5.6567 | system_fallback_count=0

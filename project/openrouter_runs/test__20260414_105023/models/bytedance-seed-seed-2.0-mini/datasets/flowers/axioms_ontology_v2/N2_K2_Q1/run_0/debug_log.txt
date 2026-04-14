@@ -1,0 +1,32 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=bytedance-seed/seed-2.0-mini | N=2 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- Class81 equiv hasVisualFeature(star-shaped flower with 6-8 pointed petals) and hasVisualFeature(central clustered light-colored stamens)
+- Class14 equiv hasVisualFeature(yellow curved ruffled iris petals) and hasVisualFeature(bright yellow flower color)
+</tbox>
+<abox>
+- hasVisualFeature(Target, star-shaped flower with 6-8 pointed petals)
+- hasVisualFeature(Target, central clustered light-colored stamens)
+- hasVisualFeature(Target, magenta-red flower color)
+</abox>
+<dl_explanation>
+The Target Image has the two core visual features defined as necessary and sufficient for Class81: a star-shaped flower with 6-8 pointed petals and a central cluster of light-colored stamens, plus the matching reddish-magenta flower color seen in prior Class81 examples. It does not have the yellow iris-shaped petals or bright yellow color required for Class14, so Class81 is the correct classification.
+</dl_explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- Class14 equiv hasVisualFeature(yellow elongated flower petals) and hasVisualFeature(bright yellow floral color)
+- Class81 equiv hasVisualFeature(dark reddish-purple flower petals) and hasVisualFeature(light colored central stamens)
+</tbox>
+<abox>
+- hasVisualFeature(Target, [yellow elongated flower petals])
+- hasVisualFeature(Target, [bright yellow floral color])
+- hasVisualFeature(Target, [green foliage background])
+</abox>
+<dl_explanation>
+The Target Image has the yellow elongated flower petals, bright yellow floral color, and green foliage background that match the necessary and sufficient visual features for Class14. These features do not align with the dark reddish-purple petals and light central stamens of Class81, so Class14 is the correct label.
+</dl_explanation>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=76.6809 | avg_trial_wall_seconds=38.2984 | avg_trial_api_seconds=38.2582 | system_fallback_count=0

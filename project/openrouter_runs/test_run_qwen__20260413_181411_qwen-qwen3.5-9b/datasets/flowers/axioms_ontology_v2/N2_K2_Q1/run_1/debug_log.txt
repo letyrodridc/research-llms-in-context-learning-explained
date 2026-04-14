@@ -1,0 +1,33 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=qwen/qwen3.5-9b | N=2 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- [81] sqsubseteq hasVisualFeature(pink/purple petals)
+- [81] sqsubseteq hasVisualFeature(broad petals)
+- hasVisualFeature(pink/purple petals) and hasVisualFeature(broad petals) sqsubseteq [81]
+- [14] sqsubseteq hasVisualFeature(yellow petals)
+- hasVisualFeature(yellow petals) sqsubseteq [14]
+</tbox>
+<abox>
+- hasVisualFeature(Target, pink/purple petals)
+- hasVisualFeature(Target, broad petals)
+</abox>
+<dl_explanation>
+- The Target Image contains pink/purple petals and broad petals.
+- These features satisfy the necessary and sufficient conditions for class [81] defined in the TBox.
+- The Target Image does not contain yellow petals, which is a necessary condition for class [14].
+- Therefore, the Target Image belongs to class [81].
+</dl_explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[14] | Predicted=[] | Correct=False
+WARNING: missing_response_tag
+<tbox>
+- 81 sqsubseteq hasVisualFeature(pink_or_purple_petals)
+- 14 sqsubseteq hasVisualFeature(yellow_petals)
+- hasVisualFeature(yellow_petals) sqsubseteq 14
+</tbox>
+<abox>
+- hasVisual
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=1 | total=2 | errors=0 | accuracy=0.5000 | duration_seconds=19.2550 | avg_trial_wall_seconds=9.5868 | avg_trial_api_seconds=9.5490 | system_fallback_count=0

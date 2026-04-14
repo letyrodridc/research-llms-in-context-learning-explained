@@ -1,0 +1,59 @@
+{
+  "title": "Accuracy by Few-Shot Configuration",
+  "alpha": 0.05,
+  "x_field": "config_label",
+  "series_field": "prompt_type",
+  "filters": {},
+  "rows": [
+    {
+      "x": "N=2,K=2,Q=1",
+      "series": "classification",
+      "correct": 12,
+      "total": 12,
+      "accuracy": 1.0,
+      "standard_error": 0.0,
+      "ci95_low": 0.7575,
+      "ci95_high": 1.0
+    },
+    {
+      "x": "N=3,K=2,Q=1",
+      "series": "classification",
+      "correct": 2,
+      "total": 9,
+      "accuracy": 0.2222,
+      "standard_error": 0.13858,
+      "ci95_low": 0.0632,
+      "ci95_high": 0.5474
+    }
+  ],
+  "statistics": {
+    "per_config": [
+      {
+        "config_n": "2",
+        "config_k": "2",
+        "config_q": "1",
+        "alpha": 0.05,
+        "group_field": "prompt_type",
+        "groups": [
+          "classification"
+        ],
+        "matched": true,
+        "omnibus": null,
+        "pairwise": []
+      },
+      {
+        "config_n": "3",
+        "config_k": "2",
+        "config_q": "1",
+        "alpha": 0.05,
+        "group_field": "prompt_type",
+        "groups": [
+          "classification"
+        ],
+        "matched": true,
+        "omnibus": null,
+        "pairwise": []
+      }
+    ]
+  }
+}

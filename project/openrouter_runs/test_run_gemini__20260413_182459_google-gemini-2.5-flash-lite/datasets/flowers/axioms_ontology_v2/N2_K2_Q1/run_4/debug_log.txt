@@ -1,0 +1,49 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash-lite | N=2 K=2 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- hasVisualFeature(Clematis) sqsubseteq hasVisualFeature(purple_petals)
+- hasVisualFeature(Clematis) sqsubseteq hasVisualFeature(many_petals)
+- hasVisualFeature(Clematis) sqsubseteq hasVisualFeature(star_shaped_flower)
+- hasVisualFeature(Iris) sqsubseteq hasVisualFeature(yellow_petals)
+- hasVisualFeature(Iris) sqsubseteq hasVisualFeature(distinct_petal_shape)
+- hasVisualFeature(Iris) sqsubseteq hasVisualFeature(tall_stem)
+- hasVisualFeature(purple_petals) sqsubseteq Clematis
+- hasVisualFeature(many_petals) sqsubseteq Clematis
+- hasVisualFeature(star_shaped_flower) sqsubseteq Clematis
+- hasVisualFeature(yellow_petals) sqsubseteq Iris
+- hasVisualFeature(distinct_petal_shape) sqsubseteq Iris
+- hasVisualFeature(tall_stem) sqsubseteq Iris
+- Clematis equiv hasVisualFeature(purple_petals) and hasVisualFeature(many_petals) and hasVisualFeature(star_shaped_flower)
+- Iris equiv hasVisualFeature(yellow_petals) and hasVisualFeature(distinct_petal_shape) and hasVisualFeature(tall_stem)
+</tbox>
+<abox>
+- hasVisualFeature(Target, purple_petals)
+- hasVisualFeature(Target, many_petals)
+- hasVisualFeature(Target, star_shaped_flower)
+</abox>
+<dl_explanation>
+- The Target Image exhibits purple petals, many petals, and a star-shaped flower structure.
+- The TBox defines the class 'Clematis' as equivalent to having purple petals, many petals, and a star-shaped flower.
+- Since all the necessary and sufficient conditions for 'Clematis' are met by the visual features observed in the Target Image, it is classified as 'Clematis'.
+</dl_explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- hasVisualFeature(yellow_flower) sqsubseteq 14
+- hasVisualFeature(six_petals) sqsubseteq 81
+- hasVisualFeature(six_petals) and hasVisualFeature(pink_purple_color) equiv 81
+- hasVisualFeature(six_petals) and hasVisualFeature(yellow_color) equiv 14
+</tbox>
+<abox>
+- hasVisualFeature(Target, yellow_color)
+- hasVisualFeature(Target, six_petals)
+</abox>
+<dl_explanation>
+- The Target Image has a yellow color and six petals.
+- The TBox states that images with six petals and yellow color are classified as 14.
+- Therefore, the Target Image is classified as 14.
+</dl_explanation>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.7131 | avg_trial_wall_seconds=1.8350 | avg_trial_api_seconds=1.7937 | system_fallback_count=0

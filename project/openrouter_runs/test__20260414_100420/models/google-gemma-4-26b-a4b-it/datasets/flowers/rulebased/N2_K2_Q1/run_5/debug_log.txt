@@ -1,0 +1,35 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=2 K=2 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Large, wide petals
+- Petals are light pink/white
+- Central cluster of stamens/pistils is visible
+- Petal shape is somewhat oval or elongated
+</features>
+<kb>
+- IF flower has large, wide petals (often pink or purple) and a prominent central cluster of stamens, THEN class 81
+- IF flower has yellow petals with a distinct structure and long, blade-like leaves in the background, THEN class 14
+</kb>
+<rule_check>
+- The Target Image shows large, wide, light pink petals with a central cluster of stamens, which matches the visual pattern of class 81. It does not match the yellow color or structure of class 14.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- yellow flower petals
+- petals have a distinct shape with some curving downwards
+- thin, vertical green leaves in the background
+</features>
+<kb>
+- IF flower has large, flat, multi-colored (pink/white) petals with a central cluster of stamens THEN class 81
+- IF flower has yellow petals with a specific structure (upright center and drooping sides) THEN class 14
+</kb>
+<rule_check>
+- The Target Image shows a yellow flower with petals that curve downwards and an upright center, which matches the visual pattern of class 14.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=7.7308 | avg_trial_wall_seconds=3.8426 | avg_trial_api_seconds=3.8056 | system_fallback_count=0

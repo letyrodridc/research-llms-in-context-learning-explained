@@ -1,0 +1,35 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=qwen/qwen3.5-9b | N=2 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Flower color is bright pink/magenta.
+- Flower has five distinct, pointed petals.
+- Center of the flower has a cluster of white stamens.
+- Background shows green foliage.
+</features>
+<kb>
+- IF the flower is pink or purple with five pointed petals and white stamens in the center THEN class is 81.
+- IF the flower is yellow with a distinct petal structure typical of an Iris THEN class is 14.
+</kb>
+<rule_check>
+- The target image shows a pink flower with five pointed petals and white stamens. This matches the visual pattern of class 81 seen in the first, second, and fifth examples. It does not match the yellow Iris pattern of class 14.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- The flower is yellow.
+- The flower has large, drooping outer petals (falls) and upright inner petals (standards).
+- The flower has a distinct central structure typical of an Iris.
+</features>
+<kb>
+- IF the flower is purple with a central stamen cluster and broad petals THEN class is 81.
+- IF the flower is yellow with distinct drooping and upright petals (Iris structure) THEN class is 14.
+</kb>
+<rule_check>
+- The target image shows a yellow flower with the distinct petal structure of an Iris (falls and standards). This matches the visual features of the examples labeled 14. It does not match the purple Clematis-like flowers labeled 81.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=10.4817 | avg_trial_wall_seconds=5.2376 | avg_trial_api_seconds=5.1999 | system_fallback_count=0

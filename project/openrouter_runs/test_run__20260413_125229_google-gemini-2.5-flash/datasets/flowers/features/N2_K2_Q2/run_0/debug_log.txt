@@ -1,0 +1,38 @@
+=== DEBUG LOG | dataset=flowers | prompt=features | model=google/gemini-2.5-flash | N=2 K=2 Q=2 | run=0 ===
+Run 0 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- five petals
+- petals are broad and flat
+- prominent central stamen structure
+- petals are a solid color
+</features>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- five petals
+- petals are broad and flat
+- petals are purple with red stripes
+- prominent central stamen structure
+</features>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- yellow petals
+- petals with dark lines/veins
+- petals with a distinct central lobe pointing downwards
+- petals with smaller, upright lobes
+</features>
+<response>14</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- yellow petals
+- petals with dark brown/reddish streaks
+- three petals pointing upwards
+- three petals pointing downwards
+</features>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=6.6039 | avg_trial_wall_seconds=1.6266 | avg_trial_api_seconds=1.5724 | system_fallback_count=0

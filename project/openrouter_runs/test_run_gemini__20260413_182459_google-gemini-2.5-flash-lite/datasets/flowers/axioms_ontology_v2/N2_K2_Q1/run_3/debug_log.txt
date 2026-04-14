@@ -1,0 +1,38 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash-lite | N=2 K=2 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- clematis sqsubseteq hasVisualFeature(pink_and_white_petals) and hasVisualFeature(star_shaped_flower)
+- iris sqsubseteq hasVisualFeature(yellow_petals) and hasVisualFeature(distinct_petal_shape)
+- hasVisualFeature(pink_and_white_petals) sqsubseteq clematis
+- hasVisualFeature(star_shaped_flower) sqsubseteq clematis
+- hasVisualFeature(yellow_petals) sqsubseteq iris
+- hasVisualFeature(distinct_petal_shape) sqsubseteq iris
+</tbox>
+<abox>
+- hasVisualFeature(Target, pink_and_white_petals)
+- hasVisualFeature(Target, star_shaped_flower)
+</abox>
+<dl_explanation>
+- The Target Image exhibits pink and white petals, which is a characteristic feature of the 'clematis' class according to the TBox.
+- The Target Image also displays a star-shaped flower, another defining feature of the 'clematis' class.
+- Since both necessary and sufficient conditions for 'clematis' (pink_and_white_petals and star_shaped_flower) are observed in the Target Image, it is classified as 'clematis'.
+</dl_explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- Class_14 equiv hasVisualFeature(yellow_petal) and hasVisualFeature(long_green_leaves)
+- Class_81 equiv hasVisualFeature(pink_and_white_petal) and hasVisualFeature(pointed_petal_tip)
+</tbox>
+<abox>
+- hasVisualFeature(Target, yellow_petal)
+- hasVisualFeature(Target, long_green_leaves)
+</abox>
+<dl_explanation>
+- The Target Image exhibits yellow petals and long green leaves.
+- According to the TBox, the presence of yellow petals and long green leaves is a necessary and sufficient condition for an image to be classified as Class_14.
+- Therefore, the Target Image is classified as Class_14.
+</dl_explanation>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.7072 | avg_trial_wall_seconds=1.8317 | avg_trial_api_seconds=1.7940 | system_fallback_count=0

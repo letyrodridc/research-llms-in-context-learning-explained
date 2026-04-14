@@ -1,0 +1,61 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=2 K=2 Q=2 | run=0 ===
+Run 0 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+81 sqsubseteq hasVisualFeature(five_to_six_petals) and hasVisualFeature(prominent_center_stamens)
+14 sqsubseteq hasVisualFeature(three_large_petals_and_three_smaller_upright_petals) and hasVisualFeature(yellow_color)
+</tbox>
+<abox>
+hasVisualFeature(Target, five_to_six_petals)
+hasVisualFeature(Target, prominent_center_stamens)
+</abox>
+<dl_explanation>
+The Target Image contains flowers with five to six petals and prominent center stamens, which are the defining visual features for class 81 as observed in the provided examples. The features of class 14 (three large petals and three smaller upright petals, and yellow color) are not present in the Target Image. Therefore, the Target Image is classified as 81.
+</dl_explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+Clematis sqsubseteq hasVisualFeature(PurplePetals) and hasVisualFeature(ProminentStamens) and hasVisualFeature(SymmetricalPetalArrangement)
+Iris sqsubseteq hasVisualFeature(YellowPetals) and hasVisualFeature(AsymmetricalPetalArrangement)
+</tbox>
+<abox>
+hasVisualFeature(Target, PurplePetals)
+hasVisualFeature(Target, ProminentStamens)
+hasVisualFeature(Target, SymmetricalPetalArrangement)
+</abox>
+<dl_explanation>
+The Target Image exhibits purple petals, prominent stamens, and a symmetrical petal arrangement. These features are consistent with the visual characteristics observed in the examples labeled as Clematis. The Iris examples, in contrast, show yellow petals and an asymmetrical petal arrangement, which are not present in the Target Image. Therefore, based on the observable visual evidence, the Target Image is classified as Clematis.
+</dl_explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+14 sqsubseteq hasVisualFeature(yellowPetals) and hasVisualFeature(threeLargePetalsDrooping) and hasVisualFeature(threeSmallerUprightPetals)
+81 sqsubseteq hasVisualFeature(purplePetals) and hasVisualFeature(fiveToSixPetalsArrangedRadially) and hasVisualFeature(prominentCentralStamens)
+</tbox>
+<abox>
+hasVisualFeature(Target, yellowPetals)
+hasVisualFeature(Target, threeLargePetalsDrooping)
+hasVisualFeature(Target, threeSmallerUprightPetals)
+</abox>
+<dl_explanation>
+The Target Image contains yellow petals, three large petals that are drooping, and three smaller upright petals. These features are consistent with the necessary conditions for class 14. The Target Image does not exhibit purple petals, five to six petals arranged radially, or prominent central stamens, which are characteristic of class 81. Therefore, based on the visual evidence, the Target Image is classified as 14.
+</dl_explanation>
+<response>14</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+Class81 sqsubseteq hasVisualFeature(FivePetals) and hasVisualFeature(CentralStamenCluster)
+Class14 sqsubseteq hasVisualFeature(ThreeLargePetals) and hasVisualFeature(ThreeSmallerUprightPetals) and hasVisualFeature(YellowColor)
+</tbox>
+<abox>
+hasVisualFeature(Target, ThreeLargePetals)
+hasVisualFeature(Target, ThreeSmallerUprightPetals)
+hasVisualFeature(Target, YellowColor)
+</abox>
+<dl_explanation>
+The Target Image contains three large petals, three smaller upright petals, and is yellow in color, which are the defining visual features for Class14. These features are not present in Class81 examples. Therefore, the Target Image is classified as Class14.
+</dl_explanation>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=19.3360 | avg_trial_wall_seconds=4.8214 | avg_trial_api_seconds=4.7636 | system_fallback_count=0

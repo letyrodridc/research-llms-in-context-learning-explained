@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=2 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- 81 sqsubseteq hasVisualFeature(large_petals) and hasVisualFeature(central_stamen_cluster)
+- 14 sqsubseteq hasVisualFeature(yellow_petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, large_petals)
+- hasVisualFeature(Target, central_stamen_cluster)
+- hasVisualFeature(Target, dark_purple_color)
+</abox>
+<dl_explanation>
+- The Target Image features large, distinct petals and a prominent central cluster of stamens, which matches the visual patterns observed in the examples labeled as class 81.
+- While the color is dark purple rather than pink, the structural morphology (large petals and central stamen cluster) is the defining characteristic of class 81 compared to the yellow, differently shaped petals of class 14.
+- Therefore, the Target Image is classified as 81.
+</dl_explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- 81 sqsubseteq hasVisualFeature(pink_and_white_petals)
+- 14 sqsubseteq hasVisualFeature(yellow_petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, yellow_petals)
+</abox>
+<dl_explanation>
+- The Target Image contains yellow petals.
+- According to the TBox, the presence of yellow petals is a characteristic of class 14.
+- Therefore, the Target Image is classified as 14.
+</dl_explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=13.8539 | avg_trial_wall_seconds=6.9048 | avg_trial_api_seconds=6.8673 | system_fallback_count=0

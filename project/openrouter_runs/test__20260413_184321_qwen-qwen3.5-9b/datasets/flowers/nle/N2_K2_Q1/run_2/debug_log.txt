@@ -1,0 +1,13 @@
+=== DEBUG LOG | dataset=flowers | prompt=nle | model=qwen/qwen3.5-9b | N=2 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[81] | Predicted=[] | Correct=False
+WARNING: missing_response_tag
+None
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<explanation>
+The target image shows a bright yellow flower with distinct petal structures and a dark marking in the center, which visually matches the examples labeled 14. It is distinct from the pink and white flowers shown in the examples labeled 81.
+</explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=1 | total=2 | errors=0 | accuracy=0.5000 | duration_seconds=12.1077 | avg_trial_wall_seconds=5.9945 | avg_trial_api_seconds=5.9577 | system_fallback_count=0

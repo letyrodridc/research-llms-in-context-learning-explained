@@ -1,0 +1,53 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=3 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- orange petals
+- green leaves in the background
+- small reddish-brown central structure/stem area
+</features>
+<kb>
+- IF petals are orange THEN class 45
+- IF petals are purple THEN class 44
+- IF petals are pink or white THEN class 77
+</kb>
+<rule_check>
+- The Target Image features orange petals, which matches the pattern observed in the examples for class 45.
+</rule_check>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- purple petals
+- yellow center (stamens/pistils)
+- trumpet-like or cup-like flower shape
+</features>
+<kb>
+- IF [orange/yellow petals] THEN [45]
+- IF [purple petals] THEN [44]
+- IF [pink or white petals with large central structure] THEN [77]
+</kb>
+<rule_check>
+- The Target Image features purple petals and a yellow center, which matches the pattern observed in the examples for class 44.
+</rule_check>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<features>
+- large pink petals
+- large green leaves in the background
+- single large flower structure
+</features>
+<kb>
+- IF [orange or yellow petals] THEN [45]
+- IF [purple petals] THEN [44]
+- IF [pink or white petals with large green leaves] THEN [77]
+</kb>
+<rule_check>
+- The Target Image features large pink petals and large green leaves, which matches the pattern for class 77 seen in the provided examples.
+</rule_check>
+
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=10.3945 | avg_trial_wall_seconds=3.4624 | avg_trial_api_seconds=3.3936 | system_fallback_count=0

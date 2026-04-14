@@ -1,0 +1,79 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemini-2.5-flash-lite | N=4 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[34] | Predicted=[34] | Correct=True
+<features>
+- The flower has spiky, pointed petals.
+- The flower has a central, cone-shaped head with many small florets.
+- The petals are a bluish-purple color.
+- The overall appearance is spiky and somewhat rigid.
+</features>
+<kb>
+- IF a flower has spiky, pointed petals and a central cone-shaped head, THEN it is class 34.
+- IF a flower has broad, delicate petals with a star-like center, THEN it is class 81.
+- IF a flower has ruffled, trumpet-shaped petals and a prominent stamen, THEN it is class 88.
+- IF a flower has multiple layers of ruffled petals with a distinct center, THEN it is class 71.
+</kb>
+<rule_check>
+- The Target Image shows a flower with spiky, pointed petals and a central cone-shaped head. This matches the description for class 34. The other classes describe flowers with different petal structures (broad, delicate, ruffled, trumpet-shaped) which are not present in the Target Image.
+</rule_check>
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- The flower has five petals.
+- The petals are light pink with darker pink stripes down the center.
+- The center of the flower has a cluster of stamens.
+- The flower is shown against a wooden background.
+</features>
+<kb>
+- IF a flower has five petals that are light pink with darker pink stripes down the center, THEN the class is 81.
+- IF a flower has five petals that are purple with darker red stripes down the center, THEN the class is 81.
+- IF a flower has five petals that are light pink and white with pink spots, THEN the class is 71.
+- IF a flower has five petals that are pink and white with pink spots, THEN the class is 71.
+- IF a flower has five petals that are orange, THEN the class is 88.
+- IF a flower has five petals that are red with dark centers, THEN the class is 88.
+- IF a flower has spiky blue-green leaves and a spiky central flower head, THEN the class is 34.
+</kb>
+<rule_check>
+- The Target Image shows a flower with five petals. The petals are predominantly white with prominent pink stripes running down the center of each petal. The center of the flower has stamens. This matches the description of class 81, specifically the example with light pink and darker pink stripes.
+</rule_check>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[88] | Predicted=[88] | Correct=True
+<features>
+- The flower has five petals.
+- The petals are red with a yellow center.
+- The flower has a trumpet-like shape.
+- The leaves are round and green with some lighter speckles.
+</features>
+<kb>
+- IF a flower has five petals, is red with a yellow center, and has a trumpet-like shape, THEN it is class 88.
+- IF a flower has five petals, is pink with darker pink spots, and has a ruffled appearance, THEN it is class 71.
+- IF a flower has many spiky petals that are blue or silver, THEN it is class 34.
+- IF a flower has five petals, is purple with red stripes, and has a prominent stamen, THEN it is class 81.
+</kb>
+<rule_check>
+- The Target Image shows a flower with five red petals and a yellow center, which matches the description for class 88. The leaves are also consistent with the appearance of leaves associated with class 88 in the examples.
+</rule_check>
+<response>88</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[71] | Predicted=[88] | Correct=False
+<features>
+- The flower has multiple petals.
+- The petals are a vibrant orange-red color.
+- The flower has a trumpet-like shape.
+- The flower has a cluster of stamens in the center.
+- The leaves are green and elongated.
+- There is a date stamp "2005/06/13" in the bottom right corner.
+</features>
+<kb>
+- IF the flower has spiky, blue-green leaves and a thistle-like bloom THEN class is 34.
+- IF the flower has large, star-shaped petals with prominent veins and a central stamen cluster THEN class is 81.
+- IF the flower has ruffled, trumpet-shaped petals in shades of orange or red, with a dark center and prominent stamens THEN class is 88.
+- IF the flower has delicate, ruffled petals in shades of pink or white, often with darker spots or veins, and a prominent stamen cluster THEN class is 71.
+</kb>
+<rule_check>
+- The Target Image shows a flower with vibrant orange-red, trumpet-shaped petals and a cluster of stamens in the center. The leaves are green and elongated. This matches the description for class 88, which is characterized by ruffled, trumpet-shaped petals in shades of orange or red, with a dark center and prominent stamens. The other classes do not fit: class 34 has spiky leaves and a thistle-like bloom; class 81 has star-shaped petals with prominent veins; and class 71 has delicate, ruffled petals in pink or white.
+</rule_check>
+<response>88</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=16.2816 | avg_trial_wall_seconds=4.0681 | avg_trial_api_seconds=3.9798 | system_fallback_count=0

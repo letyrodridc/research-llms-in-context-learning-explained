@@ -1,0 +1,43 @@
+=== DEBUG LOG | dataset=flowers | prompt=features | model=mistralai/ministral-8b-2512 | N=4 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[34] | Predicted=[34] | Correct=True
+<features>
+- spiky blue-gray petals radiating outward
+- dense central cluster of small, tightly packed florets
+- elongated, spiny bracts surrounding the flower head
+- green stem with prickly texture
+</features>
+
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- five prominent petals with pinkish-white edges and darker pink veins
+- large, prominent yellow stamens in center
+- petals slightly ruffled with rounded tips
+- green sepals at base of petals
+</features>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[88] | Predicted=[88] | Correct=True
+<features>
+- bright red petals with yellow center
+- five rounded petals with slightly wavy edges
+- small green leaves with visible veins
+- yellow stamens forming a ring in the center
+</features>
+
+<response>88</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[71] | Predicted=[81] | Correct=False
+<features>
+- elongated, tubular red-orange petals with a slight curve
+- bright red-orange central tube with yellowish stamens
+- green, narrow, elongated leaves with visible veins
+- petals arranged in a fan-like, layered structure
+- no visible thorns or spiky elements
+</features>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=9.5552 | avg_trial_wall_seconds=2.3672 | avg_trial_api_seconds=2.3010 | system_fallback_count=0

@@ -1,0 +1,73 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=bytedance-seed/seed-2.0-mini | N=4 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[34] | Predicted=[34] | Correct=True
+<features>
+- Spiky, pointed silvery-blue bracts radiating outwards from the bloom
+- Rounded, textured bumpy olive-gray central flower head
+- Green sturdy stem supporting the main flower cluster
+</features>
+<kb>
+- IF flower has spiky silvery-blue radiating bracts and a rounded bumpy central flower head THEN class 34
+- IF flower has clusters of soft pink/white ruffled petals with darker pink central markings THEN class 71
+- IF flower has bright orange or red cup-shaped ruffled petals THEN class 88
+- IF flower has large broad purple/magenta petals with pale central stamens THEN class 81
+</kb>
+<rule_check>
+The target image matches the first rule exactly: it has the distinct spiky silvery-blue pointed bracts surrounding a rounded, bumpy central flower head, paired with a green stem, which matches the visual patterns seen in the earlier class 34 examples.
+</rule_check>
+
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Single large radially symmetric flower with broad pointed petals
+- Petals have pink longitudinal streaking over a white base
+- Prominent central stamen/reproductive cluster at the flower center
+</features>
+<kb>
+- IF [flower has spiky globe bloom with silvery-blue bracts] THEN [class 34]
+- IF [flower has bright orange/red curved petals with central yellow trumpet structure] THEN [class 88]
+- IF [cluster of small pink/lavender flowers with dark pink central throats] THEN [class 71]
+- IF [single large flower with broad pointed petals with pink veining on white base, prominent central stamen cluster] THEN [class 81]
+</kb>
+<rule_check>
+The target image matches the IF rule for class 81 exactly: it is a single large flower with broad petals marked with pink longitudinal stripes on a white base, with a prominent central stamen cluster, matching the visual features of the previously labeled class 81 Clematis flowers.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[88] | Predicted=[88] | Correct=True
+<features>
+- Single flower with saturated bright red rounded petals
+- Yellow central floral disc
+- Round, veined green leaves surrounding the flower
+</features>
+<kb>
+- IF flower has bright red rounded petals with a yellow central disc and round green leaves THEN class 88
+- IF flower has pink/white ruffled petals with dark pink floral centers THEN class 71
+- IF flower has large purple/magenta petals with a prominent central stamen cluster THEN class 81
+- IF flower has spiky blue/light purple bracts around a fuzzy green central cone THEN class 34
+</kb>
+<rule_check>
+The target image matches the first IF-THEN rule for class 88: it has bright red rounded petals, a yellow central floral disc, and round veined green leaves, identical visually to the previously provided nasturtium examples labeled as 88.
+</rule_check>
+<response>88</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[71] | Predicted=[71] | Correct=True
+<features>
+- Clustered bright red flowers with broad, softly shaped petals
+- Multiple individual blooms present in the image
+- Green leafy foliage in the background
+- Visible central floral stamen structures on each flower
+</features>
+<kb>
+- IF [flower has spiky blue thistle-like bracts and a rounded spiky center] THEN 34
+- IF [flower has 4-6 large distinct petals with a yellow-green central stamen cluster] THEN 81
+- IF [flower has rounded cup-shaped orange/red petals with a distinct dark central marking] THEN 88
+- IF [clustered clusters of broad soft petals in pink/red tones with green foliage background] THEN 71
+</kb>
+<rule_check>
+The target image matches the 71 class rule: it has clustered broad-petaled red flowers (matching the pink/red flower cluster of the 71 examples, just a darker red shade) with green foliage background, matching the pattern for the 71 class exactly aside from the color tone of the blooms.
+</rule_check>
+<response>71</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=105.8558 | avg_trial_wall_seconds=26.4524 | avg_trial_api_seconds=26.3850 | system_fallback_count=0

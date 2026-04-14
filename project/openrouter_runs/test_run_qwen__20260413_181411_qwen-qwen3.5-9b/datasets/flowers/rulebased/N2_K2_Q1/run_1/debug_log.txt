@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=qwen/qwen3.5-9b | N=2 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Flower color is light purple/pink.
+- Petals are broad and overlapping.
+- Center has visible stamens/pistils.
+- Background contains green leaves.
+</features>
+<kb>
+- IF the flower has broad, overlapping petals, is pink/purple, and has a central cluster of reproductive parts THEN class is 81.
+- IF the flower is yellow, has distinct separate petals (some upright, some drooping), and resembles an iris THEN class is 14.
+</kb>
+<rule_check>
+- The target image shows a pink/purple flower with broad petals and a central cluster, which matches the visual pattern of class 81 (Examples 1, 2, 5). It does not match the yellow, distinct-petaled structure of class 14 (Examples 3, 4).
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- Yellow flower color
+- Distinct upright petals (standards) and drooping petals (falls)
+- Dark marking/beard on the drooping petal
+- Green leaves in the background
+</features>
+<kb>
+- IF the flower is yellow and has distinct upright and drooping petals with a dark marking on the falls, THEN the class is 14.
+- IF the flower is pink/purple with six broad petals and a central stamen cluster, THEN the class is 81.
+</kb>
+<rule_check>
+- The Target Image shows a yellow flower with the characteristic structure of an Iris (upright standards and drooping falls with a dark beard). This matches the visual features of the examples labeled 14. It does not match the pink/purple Clematis-like flowers labeled 81.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=14.3004 | avg_trial_wall_seconds=7.1090 | avg_trial_api_seconds=7.0718 | system_fallback_count=0

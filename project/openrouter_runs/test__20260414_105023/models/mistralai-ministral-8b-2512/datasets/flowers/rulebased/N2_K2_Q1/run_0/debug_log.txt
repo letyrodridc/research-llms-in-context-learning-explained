@@ -1,0 +1,49 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=mistralai/ministral-8b-2512 | N=2 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Bright magenta/pink petals with a slightly ruffled or layered edge
+- Central white/yellow stamens forming a distinct star-like pattern
+- Five prominent, rounded petals radiating outward
+- Green foliage visible at the base, partially obscuring the stems
+</features>
+
+<kb>
+- IF [petals are deep purple/blue with a smooth texture and a central white/yellow star-like pattern] THEN [81]
+- IF [petals are bright yellow with a smooth texture, slightly curved, and a central yellow stamens cluster] THEN [14]
+</kb>
+
+<rule_check>
+- The Target Image matches the rule for class **81** because:
+  - The petals are bright magenta/pink, not yellow.
+  - The central stamens form a clear star-like pattern, similar to the labeled examples of class 81.
+  - The petals have a ruffled texture and five rounded lobes, consistent with class 81.
+  - The green foliage and overall shape align with the provided examples of class 81.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- Bright yellow petals with a slightly curved, trumpet-like shape
+- Central yellow stamens with prominent anthers
+- Greenish-yellow slender leaves or stems visible
+- Petals appear slightly ruffled or textured at edges
+- Flower has a vertical orientation with petals spreading outward
+</features>
+
+<kb>
+- IF [petals are deep purple/lavender with a star-like shape and smooth edges] THEN [class 81]
+- IF [petals are bright yellow with a trumpet-like shape, ruffled edges, and central yellow stamens] THEN [class 14]
+</kb>
+
+<rule_check>
+- The Target Image matches the second rule (class 14) because:
+  - The petals are bright yellow, not purple/lavender.
+  - The flower has a trumpet-like shape with ruffled edges.
+  - The central stamens are yellow and prominent, consistent with class 14.
+  - The leaves/stems are greenish-yellow, aligning with the observable patterns of class 14.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.7215 | avg_trial_wall_seconds=1.8201 | avg_trial_api_seconds=1.7802 | system_fallback_count=0

@@ -1,0 +1,97 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=mistralai/ministral-8b-2512 | N=4 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[34] | Predicted=[34] | Correct=True
+<features>
+- Dense spherical cluster of small, spiky, white florets surrounding a central core
+- Florets arranged in a radial pattern with a fuzzy, cotton-like appearance
+- Green, elongated leaves with serrated edges visible in the background
+- Overall plant structure appears coarse and prickly
+</features>
+
+<kb>
+- IF [flower has a spherical cluster of small florets with a fuzzy, cotton-like texture and spiky edges] AND [central core is prominent and surrounded by radial florets] THEN [class 34]
+- IF [large, trumpet-shaped petals with a single prominent color (e.g., purple, pink, red)] AND [petals are smooth and layered] THEN [class 81]
+- IF [bright yellow petals with dark red/purple spots or veins] AND [petals are flat with a slightly ruffled edge] THEN [class 88]
+- IF [petals are soft, delicate, and clustered in a rounded bloom with smooth edges] AND [color is pastel pink or lavender] THEN [class 71]
+</kb>
+
+<rule_check>
+The Target Image best matches the rule for class 34 because:
+- It exhibits a dense spherical cluster of small florets with a fuzzy, cotton-like texture and spiky edges.
+- The radial arrangement of florets surrounding a central core is clearly visible.
+- The background leaves are elongated and serrated, consistent with the examples for class 34.
+- The flower does not fit the smooth trumpet-shaped petals of class 81, the yellow petals with dark spots of class 88, or the delicate pastel petals of class 71.
+</rule_check>
+
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Large, open flower with five prominent petals
+- Petals are soft pink with a gradient fading to white at edges
+- Central yellow stamens with a dense cluster
+- Petals have a slightly ruffled or wavy texture
+- Flower appears to have a slightly drooping or asymmetrical shape
+</features>
+
+<kb>
+- IF [flower has spiky, thistle-like center with purple/pink petals and a spherical seed head] THEN [34]
+- IF [flower has large, ruffled petals in deep purple or pink with a prominent yellow stamen cluster, often with a drooping shape] THEN [81]
+- IF [flower has bright yellow petals with dark red/purple spots or veins, round shape, and broad leaves] THEN [88]
+- IF [flower has small to medium-sized petals in soft pink with a smooth texture, often clustered in groups, and a symmetrical shape] THEN [71]
+</kb>
+
+<rule_check>
+- The Target Image does not match class 34 because it lacks the spiky, thistle-like center and spherical seed head.
+- The Target Image does not match class 88 because it does not have bright yellow petals with dark red/purple spots or veins.
+- The Target Image does not match class 71 because the petals are not small to medium-sized, soft pink, clustered, and symmetrical.
+- The Target Image best matches class 81 because it has large, ruffled petals in soft pink with a gradient fading to white, a prominent yellow stamen cluster, and a drooping or asymmetrical shape.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[88] | Predicted=[88] | Correct=True
+<features>
+- Bright solid orange petals with a smooth, rounded shape
+- Central yellow stamens with a slightly protruding texture
+- Five distinct petal lobes with a slightly wavy edge
+- Greenish background foliage visible at the base
+</features>
+
+<kb>
+- IF [petals are purple with spiky, thorn-like center and elongated tubular florets] THEN [34]
+- IF [petals are large, deep purple/red with a ruffled texture and prominent stamens] THEN [81]
+- IF [petals are yellow with deep red/purple veining or spots and a smooth, rounded shape] THEN [88]
+- IF [petals are pinkish-lavender with a smooth, slightly ruffled edge and a central cluster of stamens] THEN [71]
+</kb>
+
+<rule_check>
+- The Target Image matches the rule for class **88** because it has bright solid orange petals with a smooth, rounded shape and a central yellow stamen cluster, closely resembling the yellow petals with red/purple veining or spots seen in the labeled examples for class 88.
+</rule_check>
+
+<response>88</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[71] | Predicted=[71] | Correct=True
+<features>
+- Single prominent flower with five rounded petals
+- Petals are soft pink with a smooth, slightly glossy texture
+- Central cluster of stamens with a slightly darker pink or lavender hue
+- Petals have a gentle, rounded shape with a slight ruffle at the edges
+- Green, elongated leaves with a smooth surface
+- Flower appears to have a tubular base where petals attach
+</features>
+
+<kb>
+- IF [flower has spiky, thistle-like center with purple florets radiating outward, petals are thin and elongated] THEN [34]
+- IF [flower has large, rounded petals with a deep purple or magenta color, petals are layered and ruffled, tubular base] THEN [81]
+- IF [flower has bright yellow petals with dark red/purple spots or veins, petals are flat and slightly ruffled] THEN [88]
+- IF [flower has soft pink petals with a smooth texture, petals are rounded and ruffled, tubular base, stamens clustered centrally] THEN [71]
+</kb>
+
+<rule_check>
+- The Target Image matches the rule for class [71] because it has soft pink petals with a smooth, slightly glossy texture, rounded petals with a gentle ruffle, a tubular base, and a central cluster of stamens.
+- The flower does not have the spiky center or elongated petals of class [34], the deep purple/magenta color or layered ruffles of class [81], nor the bright yellow petals with dark spots of class [88].
+</rule_check>
+
+<response>71</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=27.8136 | avg_trial_wall_seconds=6.9419 | avg_trial_api_seconds=6.8739 | system_fallback_count=0

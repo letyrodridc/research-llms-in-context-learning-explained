@@ -1,0 +1,43 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=qwen/qwen3.5-9b | N=2 K=2 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- [81] sqsubseteq hasVisualFeature(pink_or_purple_petals)
+- hasVisualFeature(pink_or_purple_petals) sqsubseteq [81]
+- [14] sqsubseteq hasVisualFeature(yellow_petals)
+- hasVisualFeature(yellow_petals) sqsubseteq [14]
+</tbox>
+<abox>
+- hasVisualFeature(target, pink_or_purple_petals)
+</abox>
+<dl_explanation>
+- The target image displays a flower with pink and white petals.
+- According to the TBox, having pink or purple petals is a necessary and sufficient condition for class [81].
+- The target image does not have yellow petals, which would be required for class [14].
+- Therefore, the target image satisfies the axioms for class [81].
+</dl_explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- [81] sqsubseteq hasVisualFeature(pink/purple petals)
+- [81] sqsubseteq hasVisualFeature(distinct flower shape)
+- [14] sqsubseteq hasVisualFeature(yellow petals)
+- [14] sqsubseteq hasVisualFeature(sword-like leaves)
+- hasVisualFeature(yellow petals) sqsubseteq [14]
+- hasVisualFeature(sword-like leaves) sqsubseteq [14]
+</tbox>
+<abox>
+- hasVisualFeature(Target, yellow petals)
+- hasVisualFeature(Target, sword-like leaves)
+</abox>
+<dl_explanation>
+- The Target Image contains yellow petals and sword-like leaves.
+- The TBox axiom [14] sqsubseteq hasVisualFeature(yellow petals) and [14] sqsubseteq hasVisualFeature(sword-like leaves) indicates that these features are necessary for class 14.
+- The ABox assertions confirm the presence of these specific features in the Target Image.
+- Therefore, the Target Image satisfies the conditions for class 14.
+</dl_explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=23.7092 | avg_trial_wall_seconds=11.8324 | avg_trial_api_seconds=11.7945 | system_fallback_count=0

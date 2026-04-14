@@ -1,0 +1,55 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=3 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<tbox>
+- 45 sqsubseteq hasVisualFeature(orange_petals)
+- 44 sqsubseteq hasVisualFeature(purple_petals)
+- 77 sqsubseteq hasVisualFeature(pink_white_petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, orange_petals)
+</abox>
+<dl_explanation>
+- The Target Image contains orange petals.
+- According to the TBox, the presence of orange petals is a characteristic feature of class 45.
+- Therefore, the Target Image is classified as 45.
+</dl_explanation>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<tbox>
+- Class 44 sqsubseteq hasVisualFeature(purple_petals) and hasVisualFeature(yellow_center)
+- Class 45 sqsubseteq hasVisualFeature(orange_petals)
+- Class 77 sqsubseteq hasVisualFeature(pink_white_petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, purple_petals)
+- hasVisualFeature(Target, yellow_center)
+</abox>
+<dl_explanation>
+- The Target Image contains purple petals and a yellow center.
+- According to the TBox, the combination of purple petals and a yellow center is characteristic of Class 44.
+- Therefore, the Target Image is classified as Class 44.
+</dl_explanation>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<tbox>
+- Class 45 sqsubseteq hasVisualFeature(orange_yellow_petals)
+- Class 44 sqsubseteq hasVisualFeature(purple_petals)
+- Class 77 sqsubseteq hasVisualFeature(pink_petals) and hasVisualFeature(large_broad_petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, pink_petals)
+- hasVisualFeature(Target, large_broad_petals)
+</abox>
+<dl_explanation>
+- The Target Image contains pink petals and large, broad petals.
+- These features satisfy the sufficient conditions for Class 77 as established in the examples.
+- Therefore, the Target Image is classified as Class 77.
+</dl_explanation>
+
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=15.8167 | avg_trial_wall_seconds=5.2673 | avg_trial_api_seconds=5.2090 | system_fallback_count=0

@@ -1,0 +1,39 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=qwen/qwen3.5-9b | N=2 K=2 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- [81] sqsubseteq hasVisualFeature(pink_white_petals)
+- [81] sqsubseteq hasVisualFeature(broad_petals)
+- [14] sqsubseteq hasVisualFeature(yellow_petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, pink_white_petals)
+- hasVisualFeature(Target, broad_petals)
+</abox>
+<dl_explanation>
+- The Target Image contains pink and white petals and broad petals.
+- The TBox axiom [81] sqsubseteq hasVisualFeature(pink_white_petals) indicates that class 81 is associated with pink and white petals.
+- The TBox axiom [14] sqsubseteq hasVisualFeature(yellow_petals) indicates that class 14 is associated with yellow petals.
+- Since the Target Image has pink and white petals, it satisfies the condition for class 81.
+- Therefore, the Target Image belongs to class 81.
+</dl_explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[14] | Predicted=[] | Correct=False
+WARNING: missing_response_tag
+<tbox>
+- [Class14] sqsubseteq hasVisualFeature(YellowFlower)
+- hasVisualFeature(YellowFlower) sqsubseteq [Class14]
+- [Class81] sqsubseteq hasVisualFeature(PinkWhiteFlower)
+- hasVisualFeature(PinkWhiteFlower) sqsubseteq [Class81]
+</tbox>
+<abox>
+- hasVisualFeature(Target, YellowFlower)
+- hasVisualFeature(Target, DistinctPetalStructure)
+</abox>
+<dl_explanation>
+- The Target Image displays a yellow flower with distinct petal structures (falls, standards, wings) and green foliage, which matches the visual features observed in the examples labeled as Class 14.
+- The Target Image does not exhibit the pink or white petal structures associated with Class 81.
+- Therefore,
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=1 | total=2 | errors=0 | accuracy=0.5000 | duration_seconds=14.8303 | avg_trial_wall_seconds=7.3744 | avg_trial_api_seconds=7.3353 | system_fallback_count=0

@@ -1,0 +1,90 @@
+=== DEBUG LOG | dataset=flowers | prompt=classification | model=mistralai/ministral-8b-2512 | N=3 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+```xml
+<response>45</response>
+```
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+```xml
+<condition>
+    <example_analysis>
+        <class_44>
+            <visual_features>
+                <feature>Deep purple petals with a velvety texture</feature>
+                <feature>Prominent yellow-green stamens in the center</feature>
+                <feature>Thick, rounded petal edges</feature>
+            </visual_features>
+        </class_44>
+        <class_45>
+            <visual_features>
+                <feature>Bright orange petals with darker orange centers</feature>
+                <feature>Small, tubular shape with slightly ruffled edges</feature>
+                <feature>Greenish leaves visible in the background</feature>
+            </visual_features>
+        </class_45>
+        <class_77>
+            <visual_features>
+                <feature>Large, delicate white or pink petals</feature>
+                <feature>Flat, layered petals resembling a lotus or water lily</feature>
+                <feature>Bright yellow stamens in the center</feature>
+            </visual_features>
+        </class_77>
+    </example_analysis>
+</condition>
+
+<target_image_analysis>
+    <comparison>
+        <feature>Deep purple petals with a velvety texture</feature>
+        <match>Yes</match>
+    </comparison>
+    <comparison>
+        <feature>Thick, rounded petal edges</feature>
+        <match>Yes</match>
+    </comparison>
+    <comparison>
+        <feature>Prominent yellow-green stamens in the center</feature>
+        <match>No (center appears to have dried or brownish elements)</match>
+    </comparison>
+</target_image_analysis>
+
+<response>44</response>
+```
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+```xml
+<observations>
+    <class_45>
+        <features>
+            <petal_color>orange with red spots</petal_color>
+            <shape>smaller, tubular or bell-shaped</shape>
+            <stamen>prominent, often with contrasting colors</stamen>
+        </features>
+    </class_45>
+    <class_44>
+        <features>
+            <petal_color>deep purple or pinkish-purple</petal_color>
+            <shape>broad, rounded petals with a slightly ruffled edge</shape>
+            <stamen>yellowish, centrally located</stamen>
+        </features>
+    </class_44>
+    <class_77>
+        <features>
+            <petal_color>pale pink to bright pink</petal_color>
+            <shape>large, layered petals, symmetrical and flat</shape>
+            <stamen>bright yellow center, prominent and round</stamen>
+            <leaf>broad, green leaves visible</leaf>
+        </features>
+    </class_77>
+</observations>
+
+<target_analysis>
+    <petal_color>pale pink to bright pink</petal_color>
+    <shape>large, layered petals, symmetrical and flat</shape>
+    <stamen>bright yellow center, prominent and round</stamen>
+    <leaf>broad green leaves visible</leaf>
+</target_analysis>
+
+<response>77</response>
+```
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=8.6016 | avg_trial_wall_seconds=2.8519 | avg_trial_api_seconds=2.7987 | system_fallback_count=0

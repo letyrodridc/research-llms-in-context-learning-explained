@@ -1,0 +1,72 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=4 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[34] | Predicted=[34] | Correct=True
+<tbox>
+- Class 34 sqsubseteq hasVisualFeature(blue_spiky_center) and hasVisualFeature(spiky_blue_bracts)
+</tbox>
+<abox>
+- hasVisualFeature(Target, blue_spiky_center)
+- hasVisualFeature(Target, spiky_blue_bracts)
+</abox>
+<dl_explanation>
+- The Target Image contains a central spiky blue structure and surrounding spiky blue bracts.
+- These features match the visual patterns observed in the examples for Class 34.
+- Therefore, the Target Image is classified as Class 34.
+</dl_explanation>
+
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- 81 sqsubseteq hasVisualFeature(light_pink_petals) and hasVisualFeature(striped_petals)
+- 81 sqsubseteq hasVisualFeature(large_petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, light_pink_petals)
+- hasVisualFeature(Target, striped_petals)
+- hasVisualFeature(Target, large_petals)
+</abox>
+<dl_explanation>
+- The Target Image displays large, light pink petals with distinct darker pink stripes running through them.
+- These visual features (light pink petals and striped patterns) match the characteristics observed in the examples for class 81.
+- Therefore, the Target Image is classified as 81.
+</dl_explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[88] | Predicted=[88] | Correct=True
+<tbox>
+- Class 88 sqsubseteq hasVisualFeature(red_petals) and hasVisualFeature(yellow_center)
+</tbox>
+<abox>
+- hasVisualFeature(Target, red_petals)
+- hasVisualFeature(Target, yellow_center)
+</abox>
+<dl_explanation>
+- The Target Image displays a flower with prominent red petals and a visible yellow center.
+- These features match the visual patterns observed in the examples labeled as class 88.
+- Therefore, the Target Image is classified as 88.
+</dl_explanation>
+
+<response>88</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[71] | Predicted=[88] | Correct=False
+<tbox>
+- 71 sqsubseteq hasVisualFeature(pink_petals)
+- 71 sqsubseteq hasVisualFeature(large_petals)
+- 88 sqsubseteq hasVisualFeature(orange_red_petals)
+- 81 sqsubseteq hasVisualFeature(purple_pink_petals)
+- 34 sqsubseteq hasVisualFeature(spiky_blue_center)
+</tbox>
+<abox>
+- hasVisualFeature(Target, orange_red_petals)
+- hasVisualFeature(Target, large_petals)
+</abox>
+<dl_explanation>
+- The Target Image features large, orange-red petals.
+- Comparing this to the examples, class 88 is characterized by orange-red petals, whereas class 71 is pink and class 81 is purple/pink.
+- Therefore, the Target Image belongs to class 88.
+</dl_explanation>
+
+<response>88</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=15.5042 | avg_trial_wall_seconds=3.8629 | avg_trial_api_seconds=3.7935 | system_fallback_count=0

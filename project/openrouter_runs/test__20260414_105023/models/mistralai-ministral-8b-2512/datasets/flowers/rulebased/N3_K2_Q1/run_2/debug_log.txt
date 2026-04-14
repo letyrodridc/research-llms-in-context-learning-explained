@@ -1,0 +1,72 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=mistralai/ministral-8b-2512 | N=3 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- Bright orange-yellow petals with a darker red-orange center
+- Petals have a slightly irregular, ruffled edge
+- Flowers appear in clusters with elongated stems
+- Presence of small, elongated seed pods or buds between flowers
+- Green foliage with serrated or toothed edges
+</features>
+
+<kb>
+- IF [petals are bright purple with a dark maroon center and smooth edges] THEN [class 44]
+- IF [petals are white with a prominent yellow center and layered petal structure] THEN [class 77]
+- IF [petals are bright orange-yellow with darker red-orange centers, ruffled edges, and elongated seed pods/buds visible] THEN [class 45]
+</kb>
+
+<rule_check>
+The Target Image best matches the rule for class 45 because it exhibits bright orange-yellow petals with darker red-orange centers, ruffled edges, and elongated seed pods/buds between the flowers. These features align closely with the observable visual patterns described in the rule for class 45.
+</rule_check>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- Single prominent flower with five broad, rounded petals
+- Petals are deep purple/blue with a smooth gradient, no visible stripes or spots
+- Central stamen cluster is dark brown to black, surrounded by yellow-tipped stamens
+- Petals slightly ruffled or wavy at edges
+- Green slender stems and leaves visible in background
+- Flower appears to have a slightly flattened, open shape
+</features>
+
+<kb>
+- IF [flower has bright orange to yellow petals with red-orange veins and a clustered center] THEN [45]
+- IF [flower has purple petals with dark maroon centers, often with white or yellow stamens, and a slightly ruffled edge] THEN [44]
+- IF [flower has white or pale pink petals with a yellow center, often floating on water or surrounded by green leaves] THEN [77]
+</kb>
+
+<rule_check>
+The Target Image best matches the rule:
+- IF [flower has purple petals with dark maroon centers, often with white or yellow stamens, and a slightly ruffled edge] THEN [44]
+This is because the Target Image shows a single deep purple/blue flower with a dark brown center, ruffled petal edges, and green stems, which aligns with the observable features of class 44.
+</rule_check>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<features>
+- Petals are large, broad, and layered in multiple overlapping segments
+- Petals are predominantly white with a slight creamy or pale tint
+- Central yellow stamen cluster is prominent and circular, surrounded by petals
+- Petals have a smooth, slightly glossy texture
+- Green leafy background visible, indicating aquatic or water-loving plant
+- Petals are symmetrical and radially arranged
+</features>
+
+<kb>
+- IF [petals are bright orange with dark red veins and a compact, star-shaped form] THEN [45]
+- IF [petals are purple with dark maroon centers and a ruffled, layered appearance] THEN [44]
+- IF [petals are large, white or pale pink, layered and radially symmetrical with a prominent yellow central stamen cluster] THEN [77]
+</kb>
+
+<rule_check>
+The Target Image best matches the rule for class 77 because:
+- The petals are large, white, and layered in overlapping segments, matching the "large, white or pale pink, layered and radially symmetrical" pattern.
+- The central yellow stamen cluster is prominent and circular, consistent with the rule for class 77.
+- The smooth, glossy texture and symmetrical arrangement further align with the observable features of class 77.
+</rule_check>
+
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=8.0949 | avg_trial_wall_seconds=2.6957 | avg_trial_api_seconds=2.6433 | system_fallback_count=0

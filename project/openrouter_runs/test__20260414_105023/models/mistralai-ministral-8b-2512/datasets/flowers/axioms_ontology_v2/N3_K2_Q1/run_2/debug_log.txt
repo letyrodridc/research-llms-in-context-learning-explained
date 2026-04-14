@@ -1,0 +1,126 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=mistralai/ministral-8b-2512 | N=3 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+```xml
+<tbox>
+    <!-- Class 45 (Orange-yellow flowers with red centers, clustered in groups) -->
+    [Class45] sqsubseteq hasVisualFeature([bright_orange_yellow_petals]) and
+                      hasVisualFeature([red_orange_center]) and
+                      hasVisualFeature([clustered_flowers_on_stem]) and
+                      hasVisualFeature([small_size])
+
+    <!-- Class 44 (Purple flowers with dark centers, single or paired) -->
+    [Class44] sqsubseteq hasVisualFeature([purple_petals]) and
+                      hasVisualFeature([dark_purple_or_black_center]) and
+                      hasVisualFeature([single_or_pair_of_flowers])
+
+    <!-- Class 77 (White/pink petals, large, with yellow center, aquatic plant) -->
+    [Class77] equiv hasVisualFeature([white_or_pink_petals]) and
+                hasVisualFeature([large_flowers]) and
+                hasVisualFeature([yellow_center]) and
+                hasVisualFeature([water_or_leafy_background])
+</tbox>
+
+<abox>
+    <!-- Target Image Observations -->
+    hasVisualFeature(Target, [bright_orange_yellow_petals])
+    hasVisualFeature(Target, [red_orange_center])
+    hasVisualFeature(Target, [clustered_flowers_on_stem])
+    hasVisualFeature(Target, [small_size])
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits bright orange-yellow petals, red-orange centers, clustered flowers on a stem, and small size. These features directly match the necessary and sufficient conditions for [Class45] as defined in the TBox. The purple/pink petals and dark centers (Class 44) or large white/pink flowers with yellow centers (Class 77) are not present in the Target Image. Therefore, the Target Image satisfies the axioms for [Class45].
+</dl_explanation>
+
+<response>45</response>
+```
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+```xml
+<tbox>
+    <!-- Class 45 (Orange flowers with 5 petals, elongated shape, yellow center) -->
+    [Class_45] sqsubseteq hasVisualFeature([bright_orange_petals]) and
+                      hasVisualFeature([5_petals]) and
+                      hasVisualFeature([elongated_petal_shape]) and
+                      hasVisualFeature([yellow_center]).
+
+    <!-- Class 44 (Purple flowers with 5 petals, darker center, slightly ruffled edges) -->
+    [Class_44] sqsubseteq hasVisualFeature([purple_petals]) and
+                      hasVisualFeature([5_petals]) and
+                      hasVisualFeature([darker_center]) and
+                      hasVisualFeature([ruffled_petal_edges]).
+
+    <!-- Class 77 (Large white/pink petals, broad and flat, yellow stamens) -->
+    [Class_77] equiv hasVisualFeature([large_white_or_pink_petals]) and
+                  hasVisualFeature([broad_flat_petals]) and
+                  hasVisualFeature([yellow_stamens]) and
+                  hasVisualFeature([water_lily_like_structure]).
+</tbox>
+
+<abox>
+    <!-- Target Image Observations -->
+    hasVisualFeature(Target, [large_petals]) and
+    hasVisualFeature(Target, [purple_color]) and
+    hasVisualFeature(Target, [5_petals]) and
+    hasVisualFeature(Target, [elongated_petal_shape]) and
+    hasVisualFeature(Target, [slightly_ruffled_edges]).
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits large petals with a purple hue, five distinct petals, elongated shapes, and slightly ruffled edges. These features align with the necessary and sufficient conditions for [Class_44] as defined in the TBox.
+
+    - The purple petals and ruffled edges are consistent with the observed visual features of Class 44.
+    - The elongated petal shape and five-petal structure further support the classification, as these are also characteristic of Class 44 examples.
+    - The Target Image does not match the bright orange petals or yellow stamens of Class 45 or 77, respectively.
+
+    Therefore, the Target Image satisfies the formal axioms for [Class_44].
+</dl_explanation>
+
+<response>44</response>
+```
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+```xml
+<tbox>
+    <!-- Class 45 (Orange-yellow flowers) -->
+    hasBrightOrangeYellowPetals sqsubseteq [45]
+    [45] sqsubseteq hasBrightOrangeYellowPetals
+    [45] sqsubseteq hasClusteredFlowerArrangement
+
+    <!-- Class 44 (Purple flowers with dark centers) -->
+    hasPurplePetals sqsubseteq [44]
+    [44] sqsubseteq hasPurplePetals
+    [44] sqsubseteq hasDarkCenteredPetals
+    [44] equiv hasPurplePetals and hasDarkCenteredPetals
+
+    <!-- Class 77 (White/pink lotus-like flowers) -->
+    hasLargeWhitePetals sqsubseteq [77]
+    [77] sqsubseteq hasLargeWhitePetals
+    [77] sqsubseteq hasYellowCenter
+    [77] sqsubseteq hasLotusShape
+    [77] equiv hasLargeWhitePetals and hasYellowCenter and hasLotusShape
+</tbox>
+
+<abox>
+    hasLargeWhitePetals(Target, true)
+    hasYellowCenter(Target, true)
+    hasLotusShape(Target, true)
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits three key visual features:
+    1. Large white petals (hasLargeWhitePetals)
+    2. A prominent yellow center (hasYellowCenter)
+    3. A distinct lotus-like shape (hasLotusShape)
+
+    These features directly satisfy the necessary and sufficient conditions for Class 77, as defined in the TBox:
+    - The Target Image contains all three features required by the equivalence axiom for [77].
+    - No other class in the provided examples combines these specific visual traits (bright orange-yellow petals or purple petals with dark centers).
+
+    Therefore, the Target Image logically matches Class 77 based on the observable visual evidence.
+</dl_explanation>
+
+<response>77</response>
+```
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=12.3028 | avg_trial_wall_seconds=4.0731 | avg_trial_api_seconds=4.0167 | system_fallback_count=0

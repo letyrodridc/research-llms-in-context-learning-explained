@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=qwen/qwen3.5-9b | N=2 K=2 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Pink and white petals with a star-like arrangement
+- Visible stamens and pistils in the center
+- Broad, somewhat pointed petal shape
+- Green leaves visible in the background
+</features>
+<kb>
+- IF the flower has pink and white petals with a star-like arrangement and visible stamens in the center THEN class 81
+- IF the flower is yellow with distinct downward-curving petals and upright petals THEN class 14
+</kb>
+<rule_check>
+- The Target Image shows a flower with pink and white petals and a central reproductive structure, which matches the visual pattern of class 81. It does not match the yellow iris pattern of class 14.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- Yellow flower with distinct petal structure
+- Large, drooping lower petals (falls) with dark markings near the base
+- Upright upper petals (standards)
+- Green leaves in the background
+</features>
+<kb>
+- IF the flower is pink or white with a star-like shape and a central cluster of reproductive parts THEN class is 81
+- IF the flower is yellow with large drooping petals (falls) and upright petals (standards) THEN class is 14
+</kb>
+<rule_check>
+- The target image shows a yellow flower with large, drooping petals and upright petals, which matches the visual pattern of the examples labeled 14. It does not match the pink/white star-shaped flower pattern of examples labeled 81.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=11.5559 | avg_trial_wall_seconds=5.7561 | avg_trial_api_seconds=5.7180 | system_fallback_count=0

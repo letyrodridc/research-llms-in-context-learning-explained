@@ -1,0 +1,18 @@
+=== DEBUG LOG | dataset=flowers | prompt=classification | model=mistralai/ministral-8b-2512 | N=4 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[34] | Predicted=[34] | Correct=True
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[88] | Predicted=[88] | Correct=True
+```xml
+<response>88</response>
+```
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[71] | Predicted=[81] | Correct=False
+```xml
+<response>81</response>
+```
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=8.0192 | avg_trial_wall_seconds=1.9840 | avg_trial_api_seconds=1.9130 | system_fallback_count=0

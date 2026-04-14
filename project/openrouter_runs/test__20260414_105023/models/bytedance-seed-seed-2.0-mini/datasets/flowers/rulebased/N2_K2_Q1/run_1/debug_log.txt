@@ -1,0 +1,35 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=bytedance-seed/seed-2.0-mini | N=2 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Broad, star-shaped flower with soft purple veined petals
+- Dense central cluster of reproductive floral parts
+- Green foliage in the surrounding background
+- Dark brown earthy backdrop
+</features>
+<kb>
+- IF flower has broad, star-shaped petals with purple/light pink veining, dense central stamen cluster, and surrounding green foliage THEN label 81
+- IF flower has elongated, curved yellow petals with iris-like structure THEN label 14
+</kb>
+<rule_check>
+The target image matches the first rule for class 81: it has the characteristic star-shaped, veined petals, central floral cluster, and green foliage seen in the previously shown 81 class clematis flowers. It does not match the yellow, curved iris structure of class 14.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- Bright golden-yellow flower with characteristic iris petal structure (three lower broad petals, upper lighter upright petals)
+- Long, narrow green sword-shaped foliage surrounding the flower
+- Subtle darker veining on the yellow flower petals
+</features>
+<kb>
+- IF [yellow flower with classic iris petal shape and long green sword-like leaves] THEN [class 14]
+- IF [pink/purple flower with broad star-shaped petals and light petal edging] THEN [class 81]
+</kb>
+<rule_check>
+The target image matches the first IF-THEN rule: it has the distinct yellow iris flower shape and the characteristic long green sword foliage seen in the previously labeled class 14 examples, with no features matching the pink/purple starflowers of class 81.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=31.9880 | avg_trial_wall_seconds=15.9900 | avg_trial_api_seconds=15.9328 | system_fallback_count=0

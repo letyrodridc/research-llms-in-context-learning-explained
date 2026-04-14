@@ -1,0 +1,47 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=mistralai/ministral-8b-2512 | N=2 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Large, open, papery petals with a ruffled or layered appearance
+- Petals are predominantly light purple/pink with darker veins or streaks near the center
+- Central stamens are prominent, clustered, and slightly protruding
+- Petals are arranged in a symmetrical, star-like shape with overlapping edges
+- Green foliage visible in the background, consistent with garden plants
+</features>
+
+<kb>
+- IF [flower has large, layered, papery petals with ruffled edges, symmetrical star-like shape, and prominent central stamens] THEN [class 81]
+- IF [flower has bright yellow petals, elongated shape with a distinct central yellow stripe, and a more upright growth pattern] THEN [class 14]
+</kb>
+
+<rule_check>
+- The Target Image matches the features of class 81 because:
+  - It has large, layered, papery petals with ruffled edges.
+  - The petals are light purple/pink with darker veins near the center.
+  - The flower exhibits a symmetrical, star-like arrangement with overlapping petals.
+  - The central stamens are prominent and clustered, consistent with the labeled examples of class 81.
+  - The foliage and overall structure align with the visual patterns observed in class 81 examples.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- Bright yellow petals with a distinct orange-yellow center
+- Three prominent, slightly curved petals forming a funnel-like shape
+- Green, elongated leaves with a smooth texture
+- Petals are slightly drooping and overlapping
+- No visible purple or pink hues
+</features>
+
+<kb>
+- IF [flower has bright purple/pink petals with a star-like shape and a central tuft of stamens] THEN [81]
+- IF [flower has bright yellow petals with a funnel-like shape, slightly drooping, and an orange-yellow center] THEN [14]
+</kb>
+
+<rule_check>
+- The Target Image matches the second rule because it exhibits bright yellow petals with a funnel-like shape, slightly drooping, and an orange-yellow center. There are no purple or pink hues present, ruling out class 81.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.6458 | avg_trial_wall_seconds=1.7821 | avg_trial_api_seconds=1.7456 | system_fallback_count=0

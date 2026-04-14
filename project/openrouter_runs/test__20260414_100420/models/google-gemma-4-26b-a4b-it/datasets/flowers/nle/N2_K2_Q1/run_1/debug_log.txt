@@ -1,0 +1,16 @@
+=== DEBUG LOG | dataset=flowers | prompt=nle | model=google/gemma-4-26b-a4b-it | N=2 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<explanation>
+The target image shows a large, light purple flower with multiple wide petals and a prominent central cluster of stamens. This visual pattern matches the examples labeled '81', which feature similar large, multi-petaled purple flowers. In contrast, the examples labeled '14' show yellow flowers with a distinct iris-like structure.
+</explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<explanation>
+The target image shows a yellow flower with large, distinct petals and a structure similar to the yellow flowers in the examples labeled '14'. The examples labeled '81' are purple flowers with a different petal arrangement and color.
+</explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.7123 | avg_trial_wall_seconds=1.8338 | avg_trial_api_seconds=1.7774 | system_fallback_count=0

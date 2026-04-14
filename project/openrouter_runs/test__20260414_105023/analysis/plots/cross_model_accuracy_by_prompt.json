@@ -1,0 +1,293 @@
+{
+  "title": "Cross-Model Accuracy by Prompt Type",
+  "alpha": 0.05,
+  "x_field": "prompt_type",
+  "series_field": "model",
+  "filters": {},
+  "rows": [
+    {
+      "x": "axioms_ontology_v2",
+      "series": "bytedance-seed/seed-2.0-mini",
+      "correct": 36,
+      "total": 36,
+      "accuracy": 1.0,
+      "standard_error": 0.0,
+      "ci95_low": 0.9036,
+      "ci95_high": 1.0
+    },
+    {
+      "x": "axioms_ontology_v2",
+      "series": "mistralai/ministral-8b-2512",
+      "correct": 35,
+      "total": 36,
+      "accuracy": 0.9722,
+      "standard_error": 0.027389,
+      "ci95_low": 0.8583,
+      "ci95_high": 0.9951
+    },
+    {
+      "x": "classification",
+      "series": "bytedance-seed/seed-2.0-mini",
+      "correct": 36,
+      "total": 36,
+      "accuracy": 1.0,
+      "standard_error": 0.0,
+      "ci95_low": 0.9036,
+      "ci95_high": 1.0
+    },
+    {
+      "x": "classification",
+      "series": "mistralai/ministral-8b-2512",
+      "correct": 35,
+      "total": 36,
+      "accuracy": 0.9722,
+      "standard_error": 0.027389,
+      "ci95_low": 0.8583,
+      "ci95_high": 0.9951
+    },
+    {
+      "x": "features",
+      "series": "bytedance-seed/seed-2.0-mini",
+      "correct": 36,
+      "total": 36,
+      "accuracy": 1.0,
+      "standard_error": 0.0,
+      "ci95_low": 0.9036,
+      "ci95_high": 1.0
+    },
+    {
+      "x": "features",
+      "series": "mistralai/ministral-8b-2512",
+      "correct": 35,
+      "total": 36,
+      "accuracy": 0.9722,
+      "standard_error": 0.027389,
+      "ci95_low": 0.8583,
+      "ci95_high": 0.9951
+    },
+    {
+      "x": "nle",
+      "series": "bytedance-seed/seed-2.0-mini",
+      "correct": 36,
+      "total": 36,
+      "accuracy": 1.0,
+      "standard_error": 0.0,
+      "ci95_low": 0.9036,
+      "ci95_high": 1.0
+    },
+    {
+      "x": "nle",
+      "series": "mistralai/ministral-8b-2512",
+      "correct": 35,
+      "total": 36,
+      "accuracy": 0.9722,
+      "standard_error": 0.027389,
+      "ci95_low": 0.8583,
+      "ci95_high": 0.9951
+    },
+    {
+      "x": "rulebased",
+      "series": "bytedance-seed/seed-2.0-mini",
+      "correct": 36,
+      "total": 36,
+      "accuracy": 1.0,
+      "standard_error": 0.0,
+      "ci95_low": 0.9036,
+      "ci95_high": 1.0
+    },
+    {
+      "x": "rulebased",
+      "series": "mistralai/ministral-8b-2512",
+      "correct": 34,
+      "total": 36,
+      "accuracy": 0.9444,
+      "standard_error": 0.038177,
+      "ci95_low": 0.8186,
+      "ci95_high": 0.9846
+    }
+  ],
+  "statistics": {
+    "per_x_level": [
+      {
+        "x_value": "axioms_ontology_v2",
+        "alpha": 0.05,
+        "group_field": "model",
+        "groups": [
+          "bytedance-seed/seed-2.0-mini",
+          "mistralai/ministral-8b-2512"
+        ],
+        "matched": true,
+        "omnibus": {
+          "group_a": "bytedance-seed/seed-2.0-mini",
+          "group_b": "mistralai/ministral-8b-2512",
+          "matched_units": 36,
+          "a_correct_b_wrong": 1,
+          "b_correct_a_wrong": 0,
+          "both_correct": 35,
+          "both_wrong": 0,
+          "p_value": 1.0,
+          "test": "exact_mcnemar",
+          "significant": false
+        },
+        "pairwise": [
+          {
+            "group_a": "bytedance-seed/seed-2.0-mini",
+            "group_b": "mistralai/ministral-8b-2512",
+            "matched_units": 36,
+            "a_correct_b_wrong": 1,
+            "b_correct_a_wrong": 0,
+            "both_correct": 35,
+            "both_wrong": 0,
+            "p_value": 1.0,
+            "p_value_holm": 1.0,
+            "significant_holm": false
+          }
+        ]
+      },
+      {
+        "x_value": "classification",
+        "alpha": 0.05,
+        "group_field": "model",
+        "groups": [
+          "bytedance-seed/seed-2.0-mini",
+          "mistralai/ministral-8b-2512"
+        ],
+        "matched": true,
+        "omnibus": {
+          "group_a": "bytedance-seed/seed-2.0-mini",
+          "group_b": "mistralai/ministral-8b-2512",
+          "matched_units": 36,
+          "a_correct_b_wrong": 1,
+          "b_correct_a_wrong": 0,
+          "both_correct": 35,
+          "both_wrong": 0,
+          "p_value": 1.0,
+          "test": "exact_mcnemar",
+          "significant": false
+        },
+        "pairwise": [
+          {
+            "group_a": "bytedance-seed/seed-2.0-mini",
+            "group_b": "mistralai/ministral-8b-2512",
+            "matched_units": 36,
+            "a_correct_b_wrong": 1,
+            "b_correct_a_wrong": 0,
+            "both_correct": 35,
+            "both_wrong": 0,
+            "p_value": 1.0,
+            "p_value_holm": 1.0,
+            "significant_holm": false
+          }
+        ]
+      },
+      {
+        "x_value": "features",
+        "alpha": 0.05,
+        "group_field": "model",
+        "groups": [
+          "bytedance-seed/seed-2.0-mini",
+          "mistralai/ministral-8b-2512"
+        ],
+        "matched": true,
+        "omnibus": {
+          "group_a": "bytedance-seed/seed-2.0-mini",
+          "group_b": "mistralai/ministral-8b-2512",
+          "matched_units": 36,
+          "a_correct_b_wrong": 1,
+          "b_correct_a_wrong": 0,
+          "both_correct": 35,
+          "both_wrong": 0,
+          "p_value": 1.0,
+          "test": "exact_mcnemar",
+          "significant": false
+        },
+        "pairwise": [
+          {
+            "group_a": "bytedance-seed/seed-2.0-mini",
+            "group_b": "mistralai/ministral-8b-2512",
+            "matched_units": 36,
+            "a_correct_b_wrong": 1,
+            "b_correct_a_wrong": 0,
+            "both_correct": 35,
+            "both_wrong": 0,
+            "p_value": 1.0,
+            "p_value_holm": 1.0,
+            "significant_holm": false
+          }
+        ]
+      },
+      {
+        "x_value": "nle",
+        "alpha": 0.05,
+        "group_field": "model",
+        "groups": [
+          "bytedance-seed/seed-2.0-mini",
+          "mistralai/ministral-8b-2512"
+        ],
+        "matched": true,
+        "omnibus": {
+          "group_a": "bytedance-seed/seed-2.0-mini",
+          "group_b": "mistralai/ministral-8b-2512",
+          "matched_units": 36,
+          "a_correct_b_wrong": 1,
+          "b_correct_a_wrong": 0,
+          "both_correct": 35,
+          "both_wrong": 0,
+          "p_value": 1.0,
+          "test": "exact_mcnemar",
+          "significant": false
+        },
+        "pairwise": [
+          {
+            "group_a": "bytedance-seed/seed-2.0-mini",
+            "group_b": "mistralai/ministral-8b-2512",
+            "matched_units": 36,
+            "a_correct_b_wrong": 1,
+            "b_correct_a_wrong": 0,
+            "both_correct": 35,
+            "both_wrong": 0,
+            "p_value": 1.0,
+            "p_value_holm": 1.0,
+            "significant_holm": false
+          }
+        ]
+      },
+      {
+        "x_value": "rulebased",
+        "alpha": 0.05,
+        "group_field": "model",
+        "groups": [
+          "bytedance-seed/seed-2.0-mini",
+          "mistralai/ministral-8b-2512"
+        ],
+        "matched": true,
+        "omnibus": {
+          "group_a": "bytedance-seed/seed-2.0-mini",
+          "group_b": "mistralai/ministral-8b-2512",
+          "matched_units": 36,
+          "a_correct_b_wrong": 2,
+          "b_correct_a_wrong": 0,
+          "both_correct": 34,
+          "both_wrong": 0,
+          "p_value": 0.5,
+          "test": "exact_mcnemar",
+          "significant": false
+        },
+        "pairwise": [
+          {
+            "group_a": "bytedance-seed/seed-2.0-mini",
+            "group_b": "mistralai/ministral-8b-2512",
+            "matched_units": 36,
+            "a_correct_b_wrong": 2,
+            "b_correct_a_wrong": 0,
+            "both_correct": 34,
+            "both_wrong": 0,
+            "p_value": 0.5,
+            "p_value_holm": 0.5,
+            "significant_holm": false
+          }
+        ]
+      }
+    ]
+  }
+}

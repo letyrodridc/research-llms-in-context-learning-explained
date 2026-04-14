@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=2 K=2 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- Class_81 sqsubseteq hasVisualFeature(pink_petals) and hasVisualFeature(white_edges)
+- Class_14 sqsubseteq hasVisualFeature(yellow_petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, pink_petals)
+- hasVisualFeature(Target, white_edges)
+</abox>
+<dl_explanation>
+- The Target Image displays pink petals with distinct white edges.
+- These features match the defining characteristics of Class_81 established in the examples.
+- Therefore, the Target Image is classified as 81.
+</dl_explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- [14] equiv hasVisualFeature(yellow_petals) and hasVisualFeature(iris_shape)
+- [81] equiv hasVisualFeature(purple_petals) and hasVisualFeature(clematis_shape)
+</tbox>
+<abox>
+- hasVisualFeature(Target, yellow_petals)
+- hasVisualFeature(Target, iris_shape)
+</abox>
+<dl_explanation>
+- The Target Image displays a yellow flower with the distinct petal structure characteristic of an iris.
+- These features (yellow petals and iris shape) satisfy the sufficient and necessary conditions for class 14 defined in the TBox.
+- Therefore, the image is classified as 14.
+</dl_explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=10.9262 | avg_trial_wall_seconds=5.4222 | avg_trial_api_seconds=5.3678 | system_fallback_count=0

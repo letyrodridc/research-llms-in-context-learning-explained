@@ -1,0 +1,75 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=4 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[34] | Predicted=[34] | Correct=True
+<features>
+- Spiky, needle-like purple bracts/petals surrounding a central cone-shaped structure.
+- The central structure is textured and dark/blue-ish.
+- Overall color is lavender/purple and blue.
+</features>
+<kb>
+- IF [spiky, needle-like purple bracts and a central cone] THEN [34]
+- IF [large, smooth petals with a central cluster of stamens] THEN [81]
+- IF [bright orange, rounded petals] THEN [88]
+- IF [vibrant pink/magenta petals with long stamens] THEN [71]
+</kb>
+<rule_check>
+- The Target Image features spiky, needle-like purple structures surrounding a central cone, which matches the pattern seen in the examples for class 34.
+</rule_check>
+
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Large, flat, wide petals
+- Petals are a deep purple color
+- Central cluster of stamens/pistils
+- Green leaves in the background
+</features>
+<kb>
+- IF [spiky, thistle-like texture, blue/lavender color] THEN [34]
+- IF [large, flat petals, wide shape, light purple/lavender color] THEN [81]
+- IF [bright orange color, rounded petals] THEN [88]
+- IF [pink/magenta color, delicate petals, often with spots] THEN [71]
+</kb>
+<rule_check>
+- The target image features large, flat, wide petals with a central cluster of stamens. While the color is a darker purple than the examples for class 81, the structural morphology (large flat petals) matches class 81 much more closely than the spiky texture of 34, the orange color of 88, or the delicate pink petals of 71.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[88] | Predicted=[88] | Correct=True
+<features>
+- bright orange petals
+- large, rounded, green leaves with visible radial veins
+- single large flower in focus
+</features>
+<kb>
+- IF [spiky, purple/blue flower head with thin bracts] THEN [34]
+- IF [large, smooth, purple petals with central stamens] THEN [81]
+- IF [bright orange petals and large, rounded green leaves with radial veins] THEN [88]
+- IF [pink/magenta petals with dark spots/speckles in the center] THEN [71]
+</kb>
+<rule_check>
+- The Target Image features bright orange petals and large, rounded green leaves with distinct radial veins, which matches the pattern seen in the examples for class 88.
+</rule_check>
+
+<response>88</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[71] | Predicted=[71] | Correct=True
+<features>
+- bright pink/magenta flowers
+- large, soft petals
+- green leaves in the background
+</features>
+<kb>
+- IF [spiky, thistle-like, purple/blue flowers] THEN [34]
+- IF [large, flat, light purple/lavender petals with central stamens] THEN [81]
+- IF [bright orange, trumpet-shaped flowers with round green leaves] THEN [88]
+- IF [bright pink/magenta, soft-petaled flowers] THEN [71]
+</kb>
+<rule_check>
+- The Target Image shows bright pink/magenta flowers with soft petals, which matches the pattern for class 71.
+</rule_check>
+
+<response>71</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=29.6808 | avg_trial_wall_seconds=7.3991 | avg_trial_api_seconds=7.3272 | system_fallback_count=0

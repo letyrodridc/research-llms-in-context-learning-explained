@@ -1,0 +1,19 @@
+=== DEBUG LOG | dataset=flowers | prompt=features | model=google/gemini-2.5-flash-lite | N=2 K=2 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- pale pink petals
+- six petals per flower
+- yellow centers
+</features>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- yellow petals
+- prominent central stamen
+- drooping lower petals
+- dark veins on petals
+</features>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.5632 | avg_trial_wall_seconds=1.7789 | avg_trial_api_seconds=1.7161 | system_fallback_count=0

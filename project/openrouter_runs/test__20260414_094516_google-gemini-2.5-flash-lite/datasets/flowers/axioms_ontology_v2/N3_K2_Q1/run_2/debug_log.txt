@@ -1,0 +1,54 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash-lite | N=3 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<tbox>
+- [Class 45] equiv hasVisualFeature(orange_and_yellow_flowers) and hasVisualFeature(cluster_of_flowers)
+- [Class 44] equiv hasVisualFeature(purple_flowers) and hasVisualFeature(single_flower_with_dark_center)
+- [Class 77] equiv hasVisualFeature(pink_or_white_petals) and hasVisualFeature(prominent_yellow_center)
+</tbox>
+<abox>
+- hasVisualFeature(Target, orange_and_yellow_flowers)
+- hasVisualFeature(Target, cluster_of_flowers)
+</abox>
+<dl_explanation>
+- The Target Image displays flowers that are predominantly orange and yellow.
+- The flowers are arranged in a cluster on a stem.
+- These visual features, "orange_and_yellow_flowers" and "cluster_of_flowers", are sufficient to classify the image as Class 45, according to the TBox definition for Class 45.
+</dl_explanation>
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<tbox>
+- [Class 44] equiv hasVisualFeature(purple flower) and hasVisualFeature(5 petals) and hasVisualFeature(white center)
+- [Class 45] equiv hasVisualFeature(orange flower) and hasVisualFeature(4 petals)
+- [Class 77] equiv hasVisualFeature(pink flower) and hasVisualFeature(many petals) and hasVisualFeature(yellow center)
+</tbox>
+<abox>
+- hasVisualFeature(Target, purple flower)
+- hasVisualFeature(Target, 5 petals)
+- hasVisualFeature(Target, white center)
+</abox>
+<dl_explanation>
+- The Target Image displays a purple flower with five petals and a white center.
+- The axioms for Class 44 state that a purple flower with five petals and a white center is a necessary and sufficient condition for an image to be classified as Class 44.
+- The visual features observed in the Target Image perfectly match the definition of Class 44.
+</dl_explanation>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<tbox>
+- [Class 45] equiv hasVisualFeature(yellow_orange_petals) and hasVisualFeature(green_leaves)
+- [Class 44] equiv hasVisualFeature(purple_petals) and hasVisualFeature(green_leaves)
+- [Class 77] equiv hasVisualFeature(white_petals) and hasVisualFeature(green_leaves)
+</tbox>
+<abox>
+- hasVisualFeature(Target, white_petals)
+- hasVisualFeature(Target, green_leaves)
+</abox>
+<dl_explanation>
+- The Target Image has white petals and green leaves.
+- The TBox defines Class 77 as having white petals and green leaves.
+- Therefore, the Target Image is classified as Class 77.
+</dl_explanation>
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=5.0916 | avg_trial_wall_seconds=1.6823 | avg_trial_api_seconds=1.6282 | system_fallback_count=0

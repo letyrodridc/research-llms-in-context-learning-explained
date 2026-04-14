@@ -1,0 +1,45 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=mistralai/ministral-8b-2512 | N=2 K=2 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Large, open flower with multiple overlapping petals
+- Petals are soft pink with white or pale pink veins and edges
+- Central yellow stamens with a slightly fuzzy texture
+- Petals have a ruffled or slightly wavy appearance
+- Flower has a prominent, slightly raised center
+</features>
+
+<kb>
+- IF [flower has large, ruffled petals with pink and white coloration, prominent yellow stamens in the center, and a fuzzy texture] THEN [81]
+- IF [flower has bright yellow petals, elongated shape with a distinct vertical split, and a smooth texture] THEN [14]
+</kb>
+
+<rule_check>
+- The Target Image matches the features of class **81** because it exhibits large, ruffled petals with pink and white hues, a prominent central yellow stamen cluster, and a fuzzy texture. These features align perfectly with the visual patterns observed in the labeled examples for class 81.
+- The Target Image does not match class **14** as it lacks the bright yellow petals, elongated shape, and smooth texture characteristic of that class.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- Bright yellow petals with a smooth, slightly curved shape
+- Distinctive yellow-orange center with visible stamens
+- Long, slender green leaves with parallel veins
+- Petals appear slightly ruffled or textured at the edges
+- Flower is tubular at the base, opening into a wider, flat petal structure
+</features>
+
+<kb>
+- IF [petals are pink/purple with a ruffled, layered appearance and a central yellow staminal column] THEN [81]
+- IF [petals are bright yellow with a smooth, curved shape, ruffled edges, and a yellow-orange center with visible stamens] THEN [14]
+</kb>
+
+<rule_check>
+- The Target Image matches the second rule because it exhibits bright yellow petals with a smooth, curved shape and ruffled edges.
+- The central yellow-orange stamens and long green leaves with parallel veins are also consistent with the second rule.
+- The Target Image does not have pink/purple petals or the layered ruffled structure associated with class 81.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.7432 | avg_trial_wall_seconds=1.8500 | avg_trial_api_seconds=1.8138 | system_fallback_count=0

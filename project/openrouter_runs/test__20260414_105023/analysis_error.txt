@@ -1,0 +1,40 @@
+Traceback (most recent call last):
+  File "C:\Users\Nico\Documents\GitHub\research-llms-in-context-learning-explained\project\run_openrouter_experiment.py", line 646, in run_multi_model_experiment
+    analysis_outputs = analyze_run_directory(experiment_dir)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nico\Documents\GitHub\research-llms-in-context-learning-explained\project\openrouter_mode\analysis.py", line 717, in analyze_run_directory
+    generated_cross_model = _write_cross_model_plots(trial_rows, plots_dir)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nico\Documents\GitHub\research-llms-in-context-learning-explained\project\openrouter_mode\analysis.py", line 605, in _write_cross_model_plots
+    _write_grouped_bar_outputs(
+  File "C:\Users\Nico\Documents\GitHub\research-llms-in-context-learning-explained\project\openrouter_mode\analysis.py", line 503, in _write_grouped_bar_outputs
+    _write_plot_bundle(
+  File "C:\Users\Nico\Documents\GitHub\research-llms-in-context-learning-explained\project\openrouter_mode\analysis.py", line 440, in _write_plot_bundle
+    _write_json(path.with_suffix(".json"), payload)
+  File "C:\Users\Nico\Documents\GitHub\research-llms-in-context-learning-explained\project\openrouter_mode\analysis.py", line 47, in _write_json
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "N:\anaconda3\envs\pimp\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "N:\anaconda3\envs\pimp\Lib\json\encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "N:\anaconda3\envs\pimp\Lib\json\encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "N:\anaconda3\envs\pimp\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "N:\anaconda3\envs\pimp\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "N:\anaconda3\envs\pimp\Lib\json\encoder.py", line 326, in _iterencode_list
+    yield from chunks
+  File "N:\anaconda3\envs\pimp\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "N:\anaconda3\envs\pimp\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "N:\anaconda3\envs\pimp\Lib\json\encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "N:\anaconda3\envs\pimp\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bool is not JSON serializable

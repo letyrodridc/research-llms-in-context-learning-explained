@@ -1,0 +1,55 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=bytedance-seed/seed-2.0-mini | N=3 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<tbox>
+- [45] equiv hasVisualFeature(clustered orange and yellow small flowers) and hasVisualFeature(four-lobed distinct flower petals) and hasVisualFeature(dark reddish brown flower buds on green stems)
+- [44] equiv hasVisualFeature(purple/lavender flowers with dark central centers)
+- [77] equiv hasVisualFeature(large pink/white layered lotus flowers)
+</tbox>
+<abox>
+- hasVisualFeature(Target, [clustered orange and yellow small flowers])
+- hasVisualFeature(Target, [four-lobed distinct flower petals])
+- hasVisualFeature(Target, [dark reddish brown flower buds on green stems])
+</abox>
+<dl_explanation>
+- The Target Image has all the visual features asserted in the ABox: clustered orange and yellow small flowers, four-lobed petals, and dark reddish brown flower buds on green stems.
+- These features exactly match the necessary and sufficient conditions defined in the TBox for class 45.
+- The features do not match the defining traits of 44 (purple/lavender flowers) or 77 (lotus flowers), so class 45 is the correct classification.
+</dl_explanation>
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<tbox>
+- Class44 ⊑ (hasVisualFeature(purple flower petals) ⊓ hasVisualFeature(dark floral center))
+- (hasVisualFeature(purple flower petals) ⊓ hasVisualFeature(dark floral center)) ⊑ Class44
+- Class45 ⊑ hasVisualFeature(orange-yellow small clustered flowers)
+- Class77 ⊑ hasVisualFeature(large pink/white lotus-style flower with prominent central stamen)
+</tbox>
+<abox>
+- hasVisualFeature(Target, purple flower petals)
+- hasVisualFeature(Target, dark brown floral center)
+</abox>
+<dl_explanation>
+- The Target Image has the visual features of purple flower petals and a dark brown floral center as asserted in the ABox.
+- These features satisfy the necessary and sufficient conditions defined in the TBox for Class44, as the training examples for Class44 all have purple petals and dark floral centers.
+- The other classes do not match: Class45 features orange-yellow clustered flowers, and Class77 features large pink/white lotus flowers, neither of which match the Target Image.
+</dl_explanation>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<tbox>
+- Class77 sqsubseteq hasVisualFeature(large layered petals with pale pink/white tips) and hasVisualFeature(central yellow rounded floral reproductive center) and hasVisualFeature(blurred broad green lotus-style background foliage)
+- hasVisualFeature(large layered lotus-style petals) and hasVisualFeature(central yellow floral center) sqsubseteq Class77
+- Class44 sqsubseteq hasVisualFeature(purple bell-shaped flowers with dark central centers)
+- Class45 sqsubseteq hasVisualFeature(clustered small orange/yellow four-petaled flowers)
+</tbox>
+<abox>
+- hasVisualFeature(Target, large layered pale pink/white-tipped petals)
+- hasVisualFeature(Target, central yellow rounded reproductive floral center)
+- hasVisualFeature(Target, blurred broad green foliage consistent with lotus leaves)
+</abox>
+<dl_explanation>
+The Target Image contains the visual features asserted in the ABox: layered pale pink-tipped white petals, a central yellow floral center, and broad green lotus-style background foliage. These features match the necessary and sufficient visual conditions for Class77 from the provided examples, and do not match the purple clustered flowers of Class44 or the small orange/yellow clustered flowers of Class45. Thus Class77 is the correct classification.
+</dl_explanation>
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=96.9942 | avg_trial_wall_seconds=32.3163 | avg_trial_api_seconds=32.2604 | system_fallback_count=0

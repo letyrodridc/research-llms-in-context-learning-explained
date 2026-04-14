@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash-lite | N=2 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- [Class 81] equiv hasVisualFeature(pink_purple_flower) and hasVisualFeature(star_shaped_flower)
+- [Class 14] equiv hasVisualFeature(yellow_flower) and hasVisualFeature(petal_shape_iris)
+</tbox>
+<abox>
+- hasVisualFeature(Target, pink_purple_flower)
+- hasVisualFeature(Target, star_shaped_flower)
+</abox>
+<dl_explanation>
+- The Target Image exhibits a pink-purple color and a star shape, which are the defining characteristics of Class 81 according to the TBox.
+- The presence of these features in the Target Image satisfies the necessary and sufficient conditions for Class 81.
+</dl_explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- [Class 14] equiv hasVisualFeature(yellow_flower) and hasVisualFeature(multiple_petals) and hasVisualFeature(distinct_petal_shape)
+- [Class 81] equiv hasVisualFeature(purple_flower) and hasVisualFeature(multiple_petals) and hasVisualFeature(distinct_petal_shape)
+</tbox>
+<abox>
+- hasVisualFeature(Target, yellow_flower)
+- hasVisualFeature(Target, multiple_petals)
+- hasVisualFeature(Target, distinct_petal_shape)
+</abox>
+<dl_explanation>
+- The Target Image exhibits a yellow flower with multiple petals and a distinct petal shape.
+- The axioms for Class 14 state that a yellow flower with multiple petals and a distinct petal shape is sufficient for classification.
+- Since the Target Image possesses all these features, it is classified as Class 14.
+</dl_explanation>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.0441 | avg_trial_wall_seconds=1.5186 | avg_trial_api_seconds=1.4805 | system_fallback_count=0

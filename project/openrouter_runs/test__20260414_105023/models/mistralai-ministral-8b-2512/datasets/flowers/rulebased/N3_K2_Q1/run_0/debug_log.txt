@@ -1,0 +1,78 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=mistralai/ministral-8b-2512 | N=3 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- Bright orange petals with a slightly tubular shape
+- Petals have a smooth texture with a gradient from bright orange at the edges to slightly darker orange near the center
+- Central cluster of stamens with a yellowish-green hue
+- Petals are arranged in a loose, slightly irregular cluster
+- Presence of green foliage in the background
+</features>
+
+<kb>
+- IF [petals are bright purple with a smooth, velvety texture and a tubular shape, central yellow stamens, and petals arranged in a symmetrical, overlapping pattern] THEN [class 44]
+- IF [petals are bright orange with a smooth texture, tubular shape, and a loose cluster arrangement, central yellowish-green stamens] THEN [class 45]
+- IF [petals are large, white to pale pink with a layered, ruffled appearance, central yellow stamens, and floating on water or surrounded by green leaves] THEN [class 77]
+</kb>
+
+<rule_check>
+- The Target Image matches the rule for class 45 because it has bright orange petals with a smooth texture, tubular shape, and a loose cluster arrangement. The central stamens are yellowish-green, which aligns with the observable features of class 45.
+- The Target Image does not match class 44 due to the absence of purple petals and the symmetrical, overlapping pattern.
+- The Target Image does not match class 77 due to the absence of large white/pale pink ruffled petals and the flower not being on water or having a floating appearance.
+</rule_check>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- Petals are deep purple with a slightly lighter gradient toward the edges
+- Five prominent petals with a slightly ruffled texture
+- Central yellow-green stamen cluster with visible pollen
+- Green foliage visible in the background, consistent with leaf shape in class 44 examples
+- No visible orange or yellow hues in petals
+- Petals are smooth with a glossy sheen
+</features>
+
+<kb>
+- IF [petals are bright orange/yellow with red spots] THEN [45]
+- IF [petals are deep purple with ruffled edges and glossy texture, central yellow-green stamen] THEN [44]
+- IF [petals are white or light pink with a large central yellow stamen, floating on water or surrounded by green leaves] THEN [77]
+</kb>
+
+<rule_check>
+The Target Image best matches the rule for class 44 because:
+- The petals are deep purple with ruffled edges and a glossy texture, consistent with the class 44 examples.
+- The central stamen cluster is yellow-green, matching the visual pattern observed in class 44.
+- The background foliage aligns with the leaf shapes seen in class 44 examples.
+- The image does not exhibit the bright orange/yellow petals with red spots of class 45, nor the white/light pink petals with a large yellow stamen of class 77.
+</rule_check>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<features>
+- Large, fully opened flower with layered petals
+- Petals are smooth, soft pink to light purple in color
+- Central yellow-green stigma surrounded by petals
+- Broad, rounded petal edges with a slightly wavy texture
+- Flower is floating or emerging from water (green leaves visible beneath)
+- Petals overlap in a symmetrical, radial pattern
+</features>
+
+<kb>
+- IF [flower has bright orange-yellow petals with red streaks, small size, and grows on a stem above ground] THEN [45]
+- IF [flower has deep purple petals, slightly ruffled edges, and grows on a stem above ground with green leaves] THEN [44]
+- IF [flower has large, layered petals in soft pink to light purple, central yellow-green stigma, broad petal edges, and is floating or emerging from water with green leaves] THEN [77]
+</kb>
+
+<rule_check>
+- The Target Image matches the third rule because:
+  - It has large, layered petals in soft pink to light purple.
+  - It has a central yellow-green stigma.
+  - The petals are broad with slightly wavy edges, overlapping symmetrically.
+  - The flower is emerging from water, with visible green leaves beneath.
+  - These features align exclusively with the characteristics of label [77].
+</rule_check>
+
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=7.1482 | avg_trial_wall_seconds=2.3551 | avg_trial_api_seconds=2.2997 | system_fallback_count=0

@@ -1,0 +1,50 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=bytedance-seed/seed-2.0-mini | N=3 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<tbox>
+- Class45 equiv hasVisualFeature(orange/reddish-orange clustered small flowers with veined elongated petals) and hasVisualFeature(green narrow foliage)
+- Class44 equiv hasVisualFeature(purple cup-shaped flowers with central stamen) and hasVisualFeature(green foliage)
+- Class77 equiv hasVisualFeature(large layered pink/white lotus flower with yellow central receptacle) and hasVisualFeature(rounded green leaves)
+</tbox>
+<abox>
+- hasVisualFeature(Target, orange/reddish-orange clustered small flowers with veined elongated petals)
+- hasVisualFeature(Target, green narrow foliage background)
+</abox>
+<dl_explanation>
+The Target Image exhibits the paired visual features specified in the TBox axiom for Class45: clustered orange/reddish-orange flowers with veined, elongated petals and a background of green narrow foliage. These ABox assertions exactly match the necessary and sufficient conditions for Class45 derived from the training examples, so 45 is the correct classification.
+</dl_explanation>
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<tbox>
+- Class44 sqsubseteq hasVisualFeature(purple layered petals, central yellow stamen cluster)
+- hasVisualFeature(purple layered petals, central yellow stamen cluster) sqsubseteq Class44
+- Class44 equiv hasVisualFeature(purple bell-shaped flowers) and hasVisualFeature(central stamen cluster)
+</tbox>
+<abox>
+- hasVisualFeature(Target, [purple layered flower petals])
+- hasVisualFeature(Target, [central yellow stamen cluster within dark floral center])
+</abox>
+<dl_explanation>
+- The Target Image contains the visual properties asserted in the ABox.
+- These observed features exactly satisfy the necessary and sufficient class conditions defined in the TBox for Class44, matching the prior labeled Class44 flower examples.
+- The logically derived class is 44.
+</dl_explanation>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<tbox>
+- hasVisualFeature(layered overlapping pink flower petals) sqsubseteq Class77
+- hasVisualFeature(lotus-style floral structure) sqsubseteq Class77
+- Class77 sqsubseteq hasVisualFeature(green foliage/background)
+</tbox>
+<abox>
+- hasVisualFeature(Target, layered overlapping pink flower petals)
+- hasVisualFeature(Target, lotus-style floral structure)
+- hasVisualFeature(Target, green grass and foliage background)
+</abox>
+<dl_explanation>
+The Target Image displays all the visual features defined in the TBox for Class77: it has layered overlapping pink flower petals, a classic lotus floral structure, and a green grass/foliage background. These ABox assertions satisfy the TBox axioms, confirming the Target Image matches Class77.
+</dl_explanation>
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=100.4344 | avg_trial_wall_seconds=33.4748 | avg_trial_api_seconds=33.4175 | system_fallback_count=0

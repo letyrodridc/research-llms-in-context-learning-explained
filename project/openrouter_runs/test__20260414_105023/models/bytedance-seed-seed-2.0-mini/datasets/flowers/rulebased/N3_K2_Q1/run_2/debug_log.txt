@@ -1,0 +1,51 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=bytedance-seed/seed-2.0-mini | N=3 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- Clustered small flowers with four distinct petals per bloom
+- Flower color palette includes bright yellow and warm orange/reddish-orange tones
+- Dark reddish-brown flower buds and stems
+- Blurred green grassy foliage background
+</features>
+<kb>
+- IF flowers are clustered, four-petaled, with yellow/orange hues and reddish-brown buds/stems THEN class 45
+- IF flowers are single purple bloom with a dark central flower center THEN class 44
+- IF flowers are large pink/white lotus-style blooms with a prominent yellow central stamen cluster THEN class77
+</kb>
+<rule_check>
+The target image matches the first rule: it features clustered four-petaled flowers in yellow and orange shades, with dark reddish-brown buds and stems set against a green foliage background, which exactly matches the visual patterns of the labeled examples for class 45.
+</rule_check>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- Single purple/lavender flower with broad, rounded petals
+- Dark purple/brown central flower structure with green and brown reproductive parts
+- Green grassy foliage in the background
+</features>
+<kb>
+- IF flower has purple/lavender petals with a dark central flower throat THEN [44]
+- IF flower has clustered yellow/orange blooms THEN [45]
+- IF flower has large pink/white lotus-style petals with a prominent central receptacle THEN [77]
+</kb>
+<rule_check>
+This target image matches the rule for label 44: it has purple/lavender petals and a dark central flower structure with reproductive parts, exactly matching the visual patterns seen in the previously provided purple flower examples labeled 44.
+</rule_check>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<features>
+- Layered, soft flower petals with pale creamy-white color and subtle pink/purple tips on petal edges
+- Prominent yellow central floral structure with tiny clustered dots across its surface
+- Large rounded green foliage (lotus-style leaves) in the blurred background
+</features>
+<kb>
+- IF [flower has layered lotus-style petals, prominent yellow central dotted receptacle, and large green aquatic foliage background] THEN 77
+</kb>
+<rule_check>
+The target image matches the defining features of the 77 class: it has the characteristic layered petal structure of a lotus flower, the distinctive yellow central spoked/dotted receptacle, pale petals with pink edges, and large green lotus leaves in the background, aligning perfectly with the rule for class 77.
+</rule_check>
+
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=53.9534 | avg_trial_wall_seconds=17.9666 | avg_trial_api_seconds=17.9052 | system_fallback_count=0

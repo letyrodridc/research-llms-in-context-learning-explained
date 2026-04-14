@@ -1,0 +1,16 @@
+=== DEBUG LOG | dataset=flowers | prompt=nle | model=google/gemma-4-26b-a4b-it | N=2 K=2 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<explanation>
+The target image shows flowers with large, flat petals radiating from a central point, which is visually consistent with the structure of the flowers in class 81. Class 14 features yellow flowers with a distinct, more complex petal structure.
+</explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<explanation>
+The target image shows a yellow flower with large, drooping petals and a central structure, which is visually consistent with the examples labeled '14'. The examples labeled '81' show purple/pink flowers with a different petal structure and central pattern.
+</explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=5.0351 | avg_trial_wall_seconds=2.4725 | avg_trial_api_seconds=2.4250 | system_fallback_count=0

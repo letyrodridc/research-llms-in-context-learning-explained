@@ -1,0 +1,35 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=2 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Large, flat petals with a central cluster of stamens/pistils.
+- Petal color is deep purple/burgundy.
+- Petal shape is elongated and somewhat pointed.
+- The structure resembles the clematis flowers in the examples.
+</features>
+<kb>
+- IF [flower has large, flat, spreading petals with a prominent central cluster of stamens] THEN [81]
+- IF [flower has large, drooping, yellow petals with distinct markings] THEN [14]
+</kb>
+<rule_check>
+- The Target Image features large, flat, spreading petals with a prominent central cluster of stamens, which matches the visual pattern of class 81. It does not match the yellow, drooping structure of class 14.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- Yellow petals
+- Large, broad petals with some dark veining/markings in the center
+- Long, green stem and leaves
+</features>
+<kb>
+- IF petals are pink/purple with white edges and a central dark core THEN class is 81
+- IF petals are yellow and broad with dark markings in the center THEN class is 14
+</kb>
+<rule_check>
+- The Target Image features large yellow petals with dark markings in the center, which matches the pattern for class 14.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=11.7145 | avg_trial_wall_seconds=5.8539 | avg_trial_api_seconds=5.8181 | system_fallback_count=0

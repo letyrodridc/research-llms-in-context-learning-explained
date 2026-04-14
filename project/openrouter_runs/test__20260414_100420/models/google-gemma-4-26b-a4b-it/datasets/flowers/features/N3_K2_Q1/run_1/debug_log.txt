@@ -1,0 +1,29 @@
+=== DEBUG LOG | dataset=flowers | prompt=features | model=google/gemma-4-26b-a4b-it | N=3 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- small yellow flowers
+- clusters of blossoms
+- green foliage
+</features>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- purple petals
+- dark center
+- large petal surface
+</features>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<features>
+- pink petals
+- yellow center
+- large green leaves
+</features>
+
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=5.2562 | avg_trial_wall_seconds=1.7365 | avg_trial_api_seconds=1.6799 | system_fallback_count=0

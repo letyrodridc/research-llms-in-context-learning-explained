@@ -1,0 +1,68 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=bytedance-seed/seed-2.0-mini | N=4 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[34] | Predicted=[34] | Correct=True
+<features>
+- Radiating spiky, feathery purple/blue bracts around the flower center
+- Round, bumpy central receptacle with small white dotted spots over a dark base
+- Thorny, spiky floral structure with no flat, wide petals
+</features>
+<kb>
+- IF flower has radiating spiky feathery purple bracts around a bumpy dotted central seed head THEN class 34
+- IF flower has 5-6 flat, star-shaped petals THEN class 81
+- IF flower has rounded orange/red blooms with round shield-shaped leaves THEN class 88
+- IF flower has trumpet-shaped smooth pink/purple petals THEN class71
+</kb>
+<rule_check>
+The target image matches the rule for class 34: it has radiating spiky feathery purple bracts surrounding a bumpy, dotted central receptacle, identical in structure to the previously shown 34 class sea holly flowers.
+</rule_check>
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- The flower has six broad, deep purple petals with subtle veining
+- A central cluster of light-colored, fine, fuzzy stamens around a pale central core
+- Green foliage surrounds the flower in the background
+</features>
+<kb>
+- IF the bloom is a star-shaped flower with 5-6 large, broad petals and a prominent central fuzzy stamen cluster with surrounding green foliage, THEN class 81
+</kb>
+<rule_check>
+The target image matches the rule for class 81 perfectly: it has a star-shaped flower with six broad purple petals, a central light fuzzy stamen cluster, and green background foliage, identical to the previously labeled clematis (class 81) examples.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[88] | Predicted=[88] | Correct=True
+<features>
+- Bright reddish-orange flower with broad, slightly ruffled petals
+- Rounded green leaves with distinct radiating vein patterns
+</features>
+<kb>
+- IF image has bright orange ruffled flowers paired with rounded veined green leaves THEN class 88
+- IF image has spiny purple thistle-style flowers THEN class 34
+- IF image has lavender/purple 6-petaled clematis blooms THEN class 81
+- IF image has funnel-shaped pink/purple azalea flowers THEN class 71
+</kb>
+<rule_check>
+The target image matches the rule for class 88: it has the characteristic bright orange nasturtium flower and the iconic rounded, veined green leaves that are associated with nasturtium plants, matching the previously shown 88 labeled examples.
+</rule_check>
+<response>88</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[71] | Predicted=[71] | Correct=True
+<features>
+- Bright magenta-purple flowers with multiple broad, smooth petals
+- Small, simple dark green oval foliage surrounding the blooms
+- Clustered growth habit with multiple flowers together
+</features>
+<kb>
+- IF flower has bright magenta-purple azalea-style petals paired with small oval green leaves THEN class 71
+- IF flower has spiky thistle-like purple blooms THEN class 34
+- IF flower has bright orange nasturtium blooms along with round green leaves THEN class 88
+- IF flower has large light purple clematis blooms with central yellow stamens THEN class 81
+</kb>
+<rule_check>
+The target image matches the rule for class 71: it has the characteristic magenta-purple azalea flowers with broad petals, paired with small oval green leaves and a clustered growth pattern identical to the previously shown class 71 examples.
+</rule_check>
+
+<response>71</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=90.1894 | avg_trial_wall_seconds=22.5447 | avg_trial_api_seconds=22.4688 | system_fallback_count=0

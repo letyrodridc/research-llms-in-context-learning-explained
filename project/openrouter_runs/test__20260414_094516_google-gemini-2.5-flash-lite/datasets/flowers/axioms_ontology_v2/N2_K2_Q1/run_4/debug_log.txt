@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash-lite | N=2 K=2 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- Class 81 sqsubseteq hasVisualFeature(five_petals) and hasVisualFeature(purple_pink_color)
+- Class 14 sqsubseteq hasVisualFeature(three_petals) and hasVisualFeature(yellow_color)
+</tbox>
+<abox>
+- hasVisualFeature(Target, five_petals)
+- hasVisualFeature(Target, purple_pink_color)
+</abox>
+<dl_explanation>
+- The Target Image exhibits five petals, which is a characteristic of Class 81.
+- The Target Image displays a purple-pink color, which is also a characteristic of Class 81.
+- Based on the presence of these two features, the Target Image is classified as Class 81.
+</dl_explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- hasVisualFeature(yellow_flower) sqsubseteq 14
+- hasVisualFeature(six_petals) sqsubseteq 81
+- hasVisualFeature(six_petals) and hasVisualFeature(pink_purple_color) equiv 81
+- hasVisualFeature(six_petals) and hasVisualFeature(yellow_color) equiv 14
+</tbox>
+<abox>
+- hasVisualFeature(Target, yellow_color)
+- hasVisualFeature(Target, six_petals)
+</abox>
+<dl_explanation>
+- The Target Image has a yellow color and six petals.
+- The TBox states that images with six petals and yellow color are classified as 14.
+- Therefore, the Target Image is classified as 14.
+</dl_explanation>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.3578 | avg_trial_wall_seconds=1.6564 | avg_trial_api_seconds=1.6129 | system_fallback_count=0

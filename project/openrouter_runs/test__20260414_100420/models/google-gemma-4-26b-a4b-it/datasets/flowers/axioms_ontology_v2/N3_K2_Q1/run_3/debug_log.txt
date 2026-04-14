@@ -1,0 +1,55 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=3 K=2 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<tbox>
+- Class 45 sqsubseteq hasVisualFeature(orange_yellow_petals)
+- Class 44 sqsubseteq hasVisualFeature(purple_petals) and hasVisualFeature(dark_center)
+- Class 77 sqsubseteq hasVisualFeature(pink_petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, yellow_petals)
+</abox>
+<dl_explanation>
+- The Target Image features yellow/pale orange petals.
+- Comparing this to the examples: Class 45 is associated with orange/yellow tones, Class 44 with purple, and Class 77 with pink.
+- The visual characteristics of the Target Image most closely align with the color profile of Class 45.
+</dl_explanation>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<tbox>
+- 44 sqsubseteq hasVisualFeature(purple_petals) and hasVisualFeature(dark_center)
+- 45 sqsubseteq hasVisualFeature(orange_petals)
+- 77 sqsubseteq hasVisualFeature(pink_petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, purple_petals)
+- hasVisualFeature(Target, dark_center)
+</abox>
+<dl_explanation>
+- The Target Image contains purple petals and a dark center.
+- According to the TBox, the presence of purple petals and a dark center is characteristic of class 44.
+- Therefore, the Target Image is classified as 44.
+</dl_explanation>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<tbox>
+- Class 45 sqsubseteq hasVisualFeature(orange_petals)
+- Class 44 sqsubseteq hasVisualFeature(purple_petals)
+- Class 77 sqsubseteq hasVisualFeature(pink_petals) and hasVisualFeature(large_yellow_center)
+</tbox>
+<abox>
+- hasVisualFeature(Target, pink_petals)
+- hasVisualFeature(Target, large_yellow_center)
+</abox>
+<dl_explanation>
+- The Target Image contains pink petals and a large yellow center.
+- These features match the necessary and sufficient conditions defined for Class 77 in the TBox.
+- Therefore, the Target Image is classified as Class 77.
+</dl_explanation>
+
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=16.2490 | avg_trial_wall_seconds=5.4011 | avg_trial_api_seconds=5.3410 | system_fallback_count=0

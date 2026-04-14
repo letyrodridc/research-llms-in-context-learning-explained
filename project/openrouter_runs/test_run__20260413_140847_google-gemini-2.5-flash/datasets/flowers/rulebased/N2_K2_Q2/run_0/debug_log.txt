@@ -1,0 +1,68 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=2 Q=2 | run=0 ===
+Run 0 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- The image shows two flowers with five petals each.
+- The petals are broad and flat, forming a star-like shape.
+- The color of the petals is a vibrant pink/magenta.
+- In the center of each flower, there is a cluster of light-colored stamens.
+- The background shows green leaves and some blurred elements.
+</features>
+<kb>
+- IF the flower has broad, flat petals arranged in a star-like shape, typically with 5 or more petals, and a prominent central cluster of stamens, THEN the class is 81.
+- IF the flower has distinct upper and lower petals, with the lower petals often drooping or flaring outwards, and a more complex, often ruffled or ridged structure, THEN the class is 14.
+</kb>
+<rule_check>
+- The Target Image displays flowers with broad, flat petals arranged in a star-like shape, and a prominent central cluster of stamens. This matches the visual features described in the rule for class 81. The flowers do not exhibit the distinct upper and lower petals or the complex, often ruffled structure characteristic of class 14.
+</rule_check>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- The flower has five petals.
+- The petals are purple with a darker reddish-purple stripe down the center of each.
+- The center of the flower has a cluster of light-colored stamens.
+- The flower is open and relatively flat.
+</features>
+<kb>
+- IF the flower has 5 or more broad, flat petals, is purple, and has a prominent light-colored stamen cluster in the center THEN 81
+- IF the flower has distinct upper and lower petals, is yellow, and has a less prominent stamen/pistil structure THEN 14
+</kb>
+<rule_check>
+- The Target Image shows a flower with five broad, flat petals, which are purple with darker stripes, and a prominent light-colored stamen cluster in the center. This strongly matches the visual features described in the rule for class 81. The examples for class 81 also show flowers with similar petal count, shape, and central structure, and similar color variations (purple/dark red). The examples for class 14 show yellow flowers with a different petal arrangement (distinct upper and lower petals) and a less prominent central structure.
+</rule_check>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- The flower is predominantly yellow.
+- The petals are broad and somewhat ruffled or wavy, with some pointing upwards and some downwards.
+- There are dark, thin lines or markings on the lower petals.
+- The flower has a central structure that is also yellow.
+- There is a green stem or bud visible to the left of the flower.
+</features>
+<kb>
+- IF the flower is predominantly purple, has 5-6 broad, flat petals arranged radially, and a prominent light-colored stamen/pistil structure in the center THEN 81
+- IF the flower is predominantly yellow, has broad, somewhat ruffled petals with some pointing up and some down, and often has dark markings on the lower petals THEN 14
+</kb>
+<rule_check>
+- The Target Image shows a flower that is predominantly yellow, has broad, somewhat ruffled petals with some pointing up and some down, and has dark markings on the lower petals. This strongly matches the visual features described in the rule for class 14. It does not match the features for class 81, which describes a purple flower.
+</rule_check>
+<response>14</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- The flower has a predominantly yellow color.
+- The petals are arranged in a complex, somewhat irregular pattern, with some petals pointing upwards and others drooping downwards.
+- There are visible brown/reddish vein-like markings on some of the yellow petals.
+- The background consists of green, elongated leaf-like structures.
+</features>
+<kb>
+- IF the flower is predominantly yellow, has petals arranged with some pointing up and some drooping down, and may have vein-like markings on the petals THEN class 14.
+- IF the flower is predominantly purple or dark red, has 5-6 broad, flat petals arranged in a star-like or circular pattern, and has a distinct central stamen structure THEN class 81.
+</kb>
+<rule_check>
+- The Target Image best matches the rule for class 14. The flower is yellow, and its petals are arranged with some pointing upwards and others drooping downwards, similar to the examples for class 14. It also exhibits vein-like markings on the petals, which is a feature seen in class 14 examples. It does not match the features for class 81, which describes purple/dark red flowers with a different petal arrangement and central structure.
+</rule_check>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=12.1591 | avg_trial_wall_seconds=3.0309 | avg_trial_api_seconds=2.9710 | system_fallback_count=0

@@ -1,0 +1,46 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=mistralai/ministral-8b-2512 | N=2 K=2 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Petals are large, papery, and slightly ruffled with a soft pinkish-white hue
+- Flowers have a prominent central column with multiple stamens
+- Petals are arranged in a rounded, open bloom with a slight downward curve at the edges
+- Greenish sepals at the base of the flower
+- Multiple flowers clustered together on a stem
+</features>
+
+<kb>
+- IF [flowers have large, papery, ruffled petals with a soft pinkish-white color, prominent central column with stamens, and are clustered on a stem] THEN [81]
+- IF [flowers are bright yellow, have a tubular shape with a distinct central column, and are not clustered in a papery bloom] THEN [14]
+</kb>
+
+<rule_check>
+- The Target Image best matches the rule for class 81 because it exhibits the large, papery, ruffled petals with a soft pinkish-white hue, a prominent central column with stamens, and multiple flowers clustered on a stem. These features align closely with the labeled examples of class 81.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- Bright yellow petals with a smooth, slightly curved shape
+- Three prominent, elongated petals with pointed tips
+- Central column structure with yellow stamens
+- Greenish background foliage visible at the base
+- Petals appear slightly ruffled or textured at edges
+</features>
+
+<kb>
+- IF [petals are pink/purple with a ruffled, layered appearance and a central dense core] THEN [81]
+- IF [petals are bright yellow with smooth, elongated, pointed shapes and a central column structure] THEN [14]
+</kb>
+
+<rule_check>
+- The Target Image matches the second rule (IF [petals are bright yellow with smooth, elongated, pointed shapes and a central column structure] THEN [14]) because:
+  - The petals are bright yellow, matching the color pattern in the examples for class 14.
+  - The shape of the petals is elongated and pointed, consistent with the labeled examples for class 14.
+  - The central column structure with visible stamens aligns with the observable features of class 14.
+  - The ruffled edges and pink/purple coloration of class 81 are absent in the Target Image.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=5.6279 | avg_trial_wall_seconds=2.7723 | avg_trial_api_seconds=2.7329 | system_fallback_count=0

@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemini-2.5-flash-lite | N=2 K=2 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- The flower has multiple petals.
+- The petals are light pink with darker pink veins.
+- The center of the flower has yellow stamens.
+- The flower has a star-like shape.
+</features>
+<kb>
+- IF the flower has multiple petals, is pink with darker veins, and has a star-like shape THEN the class is 81.
+- IF the flower is yellow and has a distinct iris shape THEN the class is 14.
+</kb>
+<rule_check>
+- The Target Image shows a flower with multiple petals that are light pink with darker pink veins. The center has yellow stamens and the overall shape is star-like. This matches the description for class 81.
+</rule_check>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- The flower has six petals.
+- The petals are yellow.
+- The petals have dark lines or veins.
+- The flower has a distinctive shape with upright petals and drooping petals.
+- The flower is a single bloom in the center of the image.
+</features>
+<kb>
+- IF the flower has six petals, is pink and white with dark pink stripes, THEN the class is 81.
+- IF the flower has six petals, is purple and pink with darker pink stripes, THEN the class is 81.
+- IF the flower has six petals, is yellow with dark lines, THEN the class is 14.
+</kb>
+<rule_check>
+- The Target Image shows a flower with six yellow petals that have dark lines. This matches the description for class 14.
+</rule_check>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=10.4774 | avg_trial_wall_seconds=5.1985 | avg_trial_api_seconds=5.1578 | system_fallback_count=0

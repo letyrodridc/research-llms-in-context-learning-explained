@@ -1,0 +1,48 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash-lite | N=2 K=2 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- hasVisualFeature(Clematis) sqsubseteq hasVisualFeature(pink and white petals)
+- hasVisualFeature(Clematis) sqsubseteq hasVisualFeature(multiple petals)
+- hasVisualFeature(Clematis) sqsubseteq hasVisualFeature(distinct center)
+- hasVisualFeature(Iris) sqsubseteq hasVisualFeature(yellow petals)
+- hasVisualFeature(Iris) sqsubseteq hasVisualFeature(multiple petals)
+- hasVisualFeature(Iris) sqsubseteq hasVisualFeature(distinct center)
+- hasVisualFeature(pink and white petals) sqsubseteq Clematis
+- hasVisualFeature(yellow petals) sqsubseteq Iris
+- hasVisualFeature(multiple petals) equiv Clematis or Iris
+- hasVisualFeature(distinct center) equiv Clematis or Iris
+</tbox>
+<abox>
+- hasVisualFeature(Target, pink and white petals)
+- hasVisualFeature(Target, multiple petals)
+- hasVisualFeature(Target, distinct center)
+</abox>
+<dl_explanation>
+- The Target Image has pink and white petals, multiple petals, and a distinct center.
+- The TBox states that images with pink and white petals are classified as Clematis.
+- The TBox also states that images with multiple petals and a distinct center can be either Clematis or Iris.
+- Since the Target Image has pink and white petals, it is classified as Clematis (label 81).
+</dl_explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- hasVisualFeature(Iris_Yellow, has_yellow_petals)
+- hasVisualFeature(Iris_Yellow, has_green_leaves)
+- hasVisualFeature(Clematis_Pink_White, has_pink_and_white_petals)
+- hasVisualFeature(Clematis_Pink_White, has_green_leaves)
+- hasVisualFeature(Iris_Yellow, has_dark_lines_on_petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, has_yellow_petals)
+- hasVisualFeature(Target, has_green_leaves)
+- hasVisualFeature(Target, has_dark_lines_on_petals)
+</abox>
+<dl_explanation>
+- The Target Image has yellow petals, green leaves, and dark lines on its petals.
+- The TBox defines Iris_Yellow as having yellow petals, green leaves, and dark lines on petals.
+- Therefore, the Target Image matches the definition of Iris_Yellow.
+</dl_explanation>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.4051 | avg_trial_wall_seconds=1.6983 | avg_trial_api_seconds=1.6550 | system_fallback_count=0

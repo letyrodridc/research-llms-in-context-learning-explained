@@ -1,0 +1,15 @@
+=== DEBUG LOG | dataset=flowers | prompt=nle | model=bytedance-seed/seed-2.0-mini | N=3 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<explanation>The target image features clusters of four-petaled flowers in bright orange and yellow tones, paired with reddish-brown flower buds, which matches the visual characteristics of the label 45 class examples. It does not match the purple blooms of class 44, nor the large pink/white lotus-style flowers of class 77.</explanation>
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<explanation>The target image features a single purple five-petaled flower with a dark central floral structure, matching the visual traits of the 44 class examples, which consist of purple/violet petaled flowers with this characteristic bloom shape. It does not match the yellow/orange clustered flowers of class 45 or the pink/white lotus-style flowers of class 77.</explanation>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<explanation>The target image displays a lotus flower with layered pale petals tipped with pink and a distinct yellow central receptacle, which matches the visual features of the 77 labeled class examples. This differs from the yellow/orange clustered flowers (class 45) and the purple single/multiple flowers (class 44).</explanation>
+
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=33.6255 | avg_trial_wall_seconds=11.1809 | avg_trial_api_seconds=11.1262 | system_fallback_count=0

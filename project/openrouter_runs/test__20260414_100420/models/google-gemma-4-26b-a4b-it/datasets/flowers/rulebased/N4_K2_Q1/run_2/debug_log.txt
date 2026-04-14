@@ -1,0 +1,78 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=4 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[34] | Predicted=[34] | Correct=True
+<features>
+- Spiky, thistle-like texture
+- Central cone-shaped green/textured core
+- Silvery-white or pale blue spiky bracts/petals
+- Sharp, needle-like appearance
+</features>
+<kb>
+- IF [spiky, thistle-like texture with silvery bracts and a central cone] THEN [34]
+- IF [large, smooth petals in purple or magenta colors] THEN [81]
+- IF [trumpet-shaped petals in red or yellow with dark markings] THEN [88]
+- IF [soft, delicate petals in pink or bright magenta] THEN [71]
+</kb>
+<rule_check>
+- The Target Image features a highly spiky, thistle-like structure with a central textured cone and silvery-white spiky bracts. This matches the visual pattern of class 34 seen in the first two examples.
+</rule_check>
+
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Large, broad petals
+- Petals are light pink/white with a distinct dark pink/purple stripe running down the center of each petal
+- Central cluster of stamens/pistils
+- Flower shape is star-like or saucer-like
+</features>
+<kb>
+- IF [flower has spiky, thistle-like texture and purple/blue color] THEN [34]
+- IF [flower has large, broad petals and is solid purple or dark pink] THEN [81]
+- IF [flower has trumpet-shaped petals and is red or yellow with dark spots] THEN [88]
+- IF [flower has soft, delicate petals and is light pink or bright pink] THEN [71]
+</kb>
+<rule_check>
+- The target image features large, broad petals with a very specific pattern: a dark stripe down the center of a lighter petal. This structure is most similar to the Clematis examples (class 81), which feature large, broad petals. While the color pattern is unique, the morphology (large, flat, broad petals) aligns with class 81 rather than the spiky texture of 34, the trumpet shape of 88, or the general soft appearance of 71.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[88] | Predicted=[88] | Correct=True
+<features>
+- large, broad, rounded petals
+- bright orange/red color
+- central yellow/orange throat area
+- simple flower structure with overlapping petals
+</features>
+<kb>
+- IF [spiky, thistle-like texture with purple/blue bracts] THEN [34]
+- IF [large, broad petals, purple/blue color, prominent central stamens] THEN [81]
+- IF [large, broad petals, red or yellow color, often with dark markings in center] THEN [88]
+- IF [large, broad petals, pink or bright magenta color] THEN [71]
+</kb>
+<rule_check>
+- The target image features large, broad, rounded petals in a bright orange-red color with a yellow center. This matches the pattern of class 88 (red/yellow broad petals) more closely than the spiky texture of 34, the purple color of 81, or the pink color of 71.
+</rule_check>
+
+<response>88</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[71] | Predicted=[71] | Correct=True
+<features>
+- pink/magenta colored petals
+- large, somewhat ruffled petals
+- prominent stamens extending from the center
+- green leaves in the background
+</features>
+<kb>
+- IF [spiky, thistle-like structure with purple/blue bracts] THEN [34]
+- IF [large, flat, wide petals in purple/blue shades] THEN [81]
+- IF [trumpet-shaped petals in red or yellow with dark markings] THEN [88]
+- IF [pink or magenta petals with prominent stamens and green leaves] THEN [71]
+</kb>
+<rule_check>
+- The Target Image features pink/magenta petals and prominent stamens, which matches the pattern observed in the examples for class 71.
+</rule_check>
+
+<response>71</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=24.7289 | avg_trial_wall_seconds=6.1622 | avg_trial_api_seconds=6.0926 | system_fallback_count=0

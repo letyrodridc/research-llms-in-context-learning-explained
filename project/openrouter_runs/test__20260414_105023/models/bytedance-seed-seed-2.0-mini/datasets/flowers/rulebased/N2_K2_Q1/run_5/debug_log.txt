@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=bytedance-seed/seed-2.0-mini | N=2 K=2 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Multiple broad, star-arranged petals with pale pink coloration and subtle pink veining
+- Yellow-green central reproductive flower parts
+- Soft, blurred green foliage in the background
+</features>
+<kb>
+- IF flower has pink/white striped petals with dense central reproductive structures THEN class 81
+- IF flower has distinct yellow iris-style petals and shape THEN class 14
+</kb>
+<rule_check>
+The target image features star-shaped pink petals with subtle veining and yellow-green central flower parts, matching the visual pattern of the class 81 examples (the pink/white clematis flowers shown in earlier labeled examples). It does not have the yellow coloration or iris-specific shape that defines class 14, so it best matches the rule for class 81.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- Bright solid yellow flower petals
+- Classic iris flower structure with pointed upper petals and broader lower petals
+- Green foliage in the background
+</features>
+<kb>
+- IF flower has bright yellow iris-style petal structure THEN class 14
+- IF flower has pink/white striped clematis-style petals THEN class 81
+</kb>
+<rule_check>
+The target image has the characteristic bright yellow iris flower shape, with the correct petal arrangement (upper smaller pointed petals, lower broader petals) matching the examples labeled 14. It does not have the pink/white striped petals seen in the class 81 examples, so it matches the first rule for class 14.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=35.6466 | avg_trial_wall_seconds=17.8015 | avg_trial_api_seconds=17.7571 | system_fallback_count=0

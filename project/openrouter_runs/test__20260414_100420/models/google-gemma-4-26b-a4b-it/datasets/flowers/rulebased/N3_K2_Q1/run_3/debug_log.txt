@@ -1,0 +1,55 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=3 K=2 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- small, pale yellow flowers
+- flowers are clustered together
+- petals are rounded
+- green leaves are visible in the background
+</features>
+<kb>
+- IF flowers are orange/reddish-orange and clustered THEN 45
+- IF flowers are purple/violet with a dark center and large petals THEN 44
+- IF flowers are large, pink, and have a prominent yellow center THEN 77
+</kb>
+<rule_check>
+The target image shows small, pale yellow flowers clustered together. While the color is not orange, it is most similar in structure (small clustered flowers) to class 45 compared to the large purple flowers of 44 or the large pink lotus-like flowers of 77. However, looking at the provided examples, class 45 is characterized by orange/yellowish flowers in clusters. The target image's pale yellow color and clustering pattern align most closely with the morphological pattern of class 45.
+</rule_check>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- Large purple petals
+- Dark center with yellow stamens
+- White ring/halo around the dark center
+- Green leaves and buds visible
+</features>
+<kb>
+- IF [orange/yellow petals] THEN [45]
+- IF [purple petals with dark center and white ring] THEN [44]
+- IF [pink petals with large yellow center] THEN [77]
+</kb>
+<rule_check>
+- The Target Image features large purple petals, a dark center, and a distinct white ring around the center, which matches the pattern seen in the examples for class 44.
+</rule_check>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<features>
+- Large pink petals
+- Prominent yellow center (stamen/pistil area)
+- Large green leaves in the background
+</features>
+<kb>
+- IF [orange/yellow flowers with small petals] THEN [45]
+- IF [purple/blue flowers with dark centers and yellow stamens] THEN [44]
+- IF [large pink petals with a prominent yellow center] THEN [77]
+</kb>
+<rule_check>
+- The Target Image features large pink petals and a distinct yellow center, which matches the pattern seen in the examples for class 77.
+</rule_check>
+
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=22.8973 | avg_trial_wall_seconds=7.5920 | avg_trial_api_seconds=7.5371 | system_fallback_count=0

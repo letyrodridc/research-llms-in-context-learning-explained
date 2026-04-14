@@ -1,0 +1,54 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=3 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- Small, clustered yellow/orange flowers
+- Petals are relatively small and rounded
+- Green foliage in the background
+</features>
+<kb>
+- IF flowers are small, clustered, and orange/yellow THEN class 45
+- IF flowers are large, deep purple, and have smooth petals THEN class 44
+- IF flowers are large, pink/white, and have a prominent central seed pod THEN class 77
+</kb>
+<rule_check>
+- The Target Image shows clusters of small orange/yellow flowers, which matches the pattern observed in the examples for class 45.
+</rule_check>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- Purple/violet colored petals
+- Large, cup-shaped or ruffled petals
+- Visible yellow/orange center (stamens/pistils)
+- Dark background or natural outdoor setting
+</features>
+<kb>
+- IF petals are orange or yellow THEN class is 45
+- IF petals are purple or pink with a dark center/cup shape THEN class is 44
+- IF petals are white or pink with a prominent yellow seed pod center THEN class is 77
+</kb>
+<rule_check>
+- The target image features large, ruffled purple petals and a visible center, which matches the visual pattern of class 44 seen in the purple flower example.
+</rule_check>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<features>
+- Large pink petals
+- Prominent yellow center (seed pod/stamen area)
+- Large green leaves in the background
+</features>
+<kb>
+- IF [orange/yellow petals with small centers] THEN [45]
+- IF [purple or light pink petals with dark/yellow centers and thin stems] THEN [44]
+- IF [large pink petals with a distinct yellow central pod] THEN [77]
+</kb>
+<rule_check>
+- The target image features large pink petals and a very distinct, large yellow central structure, which matches the pattern seen in the class 77 examples.
+</rule_check>
+
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=11.4775 | avg_trial_wall_seconds=3.7977 | avg_trial_api_seconds=3.7377 | system_fallback_count=0

@@ -1,0 +1,35 @@
+=== DEBUG LOG | dataset=flowers | prompt=features | model=mistralai/ministral-8b-2512 | N=3 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- bright yellow-orange petals
+- clustered flower arrangement
+- small, tubular flower shapes
+- green stems with fine hairs
+- red-orange center markings
+</features>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- deep purple petals with slight gradient from lighter edges to darker center
+- elongated, slightly curved petal shapes
+- small, clustered stamens with reddish-brown anthers
+- visible green stem and leaf base
+- petals overlapping in a layered, ruffled manner
+</features>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<features>
+- petals with smooth, rounded edges and layered structure
+- central yellow stamens surrounded by pink petals
+- broad, green, flat leaf surface beneath the flower
+- petals with a gradient from light pink at edges to darker pink near center
+- single prominent flower with no visible clusters
+</features>
+
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=3.7867 | avg_trial_wall_seconds=1.2472 | avg_trial_api_seconds=1.1923 | system_fallback_count=0

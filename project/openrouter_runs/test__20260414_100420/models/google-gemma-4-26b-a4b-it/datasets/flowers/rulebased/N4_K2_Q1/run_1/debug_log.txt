@@ -1,0 +1,76 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=4 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[34] | Predicted=[34] | Correct=True
+<features>
+- spiky, thistle-like texture
+- blue/silvery color
+- central cone-shaped flower head
+- sharp, pointed bracts/leaves
+</features>
+<kb>
+- IF [spiky, thistle-like texture AND blue/silvery color] THEN [34]
+- IF [large, smooth petals AND pink/purple color] THEN [81]
+- IF [large, smooth petals AND orange/red color] THEN [88]
+- IF [large, smooth petals AND pink color with speckled center] THEN [71]
+</kb>
+<rule_check>
+- The Target Image features a spiky, thistle-like structure with a blue/silvery color, which matches the pattern seen in class 34.
+</rule_check>
+
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Large, broad petals
+- Petals are light pink/white with a darker pink stripe running down the center
+- Central cluster of stamens
+</features>
+<kb>
+- IF [spiky, blue/silver, cone-shaped center] THEN [34]
+- IF [large, broad petals, single color or striped, central stamens] THEN [81]
+- IF [large, broad petals, orange or red] THEN [88]
+- IF [clusters of pink flowers with speckled centers] THEN [71]
+</kb>
+<rule_check>
+- The target image shows a large flower with broad petals that are white/light pink with a distinct pink stripe down the middle, which matches the pattern of the clematis examples in class 81.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[88] | Predicted=[88] | Correct=True
+<features>
+- Large, broad petals
+- Red color with a yellow/orange center
+- Rounded petal shape
+</features>
+<kb>
+- IF [spiky, blue/silver, cone-shaped center] THEN [34]
+- IF [large, flat petals, pink or purple] THEN [81]
+- IF [large, broad petals, red or orange with yellow center] THEN [88]
+- IF [pink petals with darker spots/speckles] THEN [71]
+</kb>
+<rule_check>
+- The target image features large, broad red petals with a distinct yellow center, which matches the pattern seen in the red/orange flower examples (class 88).
+</rule_check>
+
+<response>88</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[71] | Predicted=[88] | Correct=False
+<features>
+- large, broad petals
+- reddish-orange color
+- trumpet-like or open flower shape
+- green leaves in the background
+</features>
+<kb>
+- IF [spiky, blue/silver, cone-shaped center] THEN [34]
+- IF [large, soft petals, pink or purple] THEN [81]
+- IF [large, soft petals, orange or red] THEN [88]
+- IF [large, soft petals, pink with darker spots/center] THEN [71]
+</kb>
+<rule_check>
+- The target image shows large, soft petals that are reddish-orange in color. This matches the pattern for class 88.
+</rule_check>
+
+<response>88</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=21.3625 | avg_trial_wall_seconds=5.3198 | avg_trial_api_seconds=5.2510 | system_fallback_count=0

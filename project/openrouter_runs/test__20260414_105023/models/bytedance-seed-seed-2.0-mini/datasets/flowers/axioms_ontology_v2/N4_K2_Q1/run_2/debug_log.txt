@@ -1,0 +1,62 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=bytedance-seed/seed-2.0-mini | N=4 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[34] | Predicted=[34] | Correct=True
+<tbox>
+- Class34 equiv hasVisualFeature(spiky thin feathery floral bracts) AND hasVisualFeature(central bumpy textured seed receptacle)
+</tbox>
+<abox>
+- hasVisualFeature(Target, spiky thin feathery floral bracts)
+- hasVisualFeature(Target, central bumpy textured seed receptacle)
+</abox>
+<dl_explanation>
+The Target Image exhibits both visual features specified in the ABox: spiky thin feathery floral bracts surrounding a central bumpy textured seed receptacle. These combined features satisfy the necessary and sufficient conditions defined in the TBox for Class34, aligning with the previously labeled sea holly/thistle example images. Thus, the target image belongs to Class34.
+</dl_explanation>
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- Class81 sqsubseteq hasVisualFeature([broad multi-petaled flower petals])
+- Class81 sqsubseteq hasVisualFeature([prominent central stamen/seed cluster])
+- hasVisualFeature([broad multi-petaled flower]) and hasVisualFeature([central stamen cluster]) sqsubseteq Class81
+</tbox>
+<abox>
+- hasVisualFeature(Target, [broad multi-lobed flower petals])
+- hasVisualFeature(Target, [prominent central stamen/seed cluster])
+- hasVisualFeature(Target, [bicolor pink-white striped flower petals])
+</abox>
+<dl_explanation>
+- The Target Image has the visual features asserted in the ABox: it has broad, multi-petaled striped pink-and-white flowers, plus a prominent central stamen cluster. These features exactly match the necessary and sufficient conditions defined in the TBox for Class81, which were observed in the previously labeled clematis examples. This confirms the Target Image belongs to Class81.
+</dl_explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[88] | Predicted=[88] | Correct=True
+<tbox>
+- Class(88) ⊑ hasVisualFeature(five rounded petals, bright red/orange flower color, yellow central floral disc, rounded green foliage)
+- hasVisualFeature(five rounded petals, bright red/orange flower color, yellow central floral disc) ⊑ Class(88)
+</tbox>
+<abox>
+- hasVisualFeature(Target, five rounded bright red petals)
+- hasVisualFeature(Target, yellow central floral disc)
+- hasVisualFeature(Target, green foliage background)
+</abox>
+<dl_explanation>
+- The Target Image exhibits the visual properties specified in the ABox: five rounded bright red petals, a yellow central floral disc, and a green foliage backdrop.
+- These observed features align with the necessary and sufficient visual conditions defined in the TBox for Class 88, matching the previously presented 88-labeled flower examples.
+- As such, Class 88 is the correct classification for the Target Image.
+</dl_explanation>
+<response>88</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[71] | Predicted=[71] | Correct=True
+<tbox>
+- 71 equiv (hasVisualFeature(pink/red multi-petaled flower blooms) ∧ hasVisualFeature(visible central floral stamens) ∧ hasVisualFeature(oval green foliage))
+</tbox>
+<abox>
+- hasVisualFeature(Target, [deep pink multi-petaled flower blooms])
+- hasVisualFeature(Target, [visible central floral stamens])
+- hasVisualFeature(Target, [oval green foliage])
+</abox>
+<dl_explanation>
+The Target Image's observed visual features exactly match the necessary and sufficient conditions defined for class 71 in the provided labeled examples. The asserted ABox features align with the TBox axioms for 71, so this image belongs to class 71.
+</dl_explanation>
+<response>71</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=133.6469 | avg_trial_wall_seconds=33.3878 | avg_trial_api_seconds=33.3156 | system_fallback_count=0

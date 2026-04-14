@@ -1,0 +1,33 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=bytedance-seed/seed-2.0-mini | N=2 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- Label81 equiv hasVisualFeature(broad star-shaped flower petals) and hasVisualFeature(central stamen cluster)
+- Label14 equiv hasVisualFeature(yellow elongated drooping petals) and hasVisualFeature(dark central petal markings)
+</tbox>
+<abox>
+- hasVisualFeature(Target, broad star-shaped flower petals)
+- hasVisualFeature(Target, central stamen cluster)
+- hasVisualFeature(Target, deep purple flower petals)
+</abox>
+<dl_explanation>
+The Target Image exhibits the defining visual features for Label81: broad star-shaped flower petals and a central stamen cluster. These attributes match the clematis flower training examples for Label81, including both pink-striped and deep-purple variants, and do not align with the yellow iris-specific features of Label14.
+</dl_explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- Class14 ⊑ hasVisualFeature(yellow monochromatic iris flowers with elongated veined petals)
+- hasVisualFeature(yellow monochromatic iris flowers with elongated veined petals) ⊑ Class14
+- Class81 ⊑ hasVisualFeature(pink-white bicolor petals with dark reddish floral center)
+- hasVisualFeature(pink-white bicolor petals with dark reddish floral center) ⊑ Class81
+</tbox>
+<abox>
+- hasVisualFeature(Target, yellow monochromatic iris flowers with elongated veined petals)
+- hasVisualFeature(Target, green grassy background foliage)
+</abox>
+<dl_explanation>
+The Target Image displays the yellow monochromatic iris flower structure and petal veining that are defining features of Class14, matching the prior labeled examples for class 14. The ABox assertions satisfy the sufficient condition axiom for Class14, so this image belongs to Class14.
+</dl_explanation>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=79.0095 | avg_trial_wall_seconds=39.5012 | avg_trial_api_seconds=39.4646 | system_fallback_count=0

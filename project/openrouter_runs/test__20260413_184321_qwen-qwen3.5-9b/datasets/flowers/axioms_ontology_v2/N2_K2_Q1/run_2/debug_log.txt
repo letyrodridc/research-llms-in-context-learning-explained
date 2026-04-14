@@ -1,0 +1,44 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=qwen/qwen3.5-9b | N=2 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- [81] sqsubseteq hasVisualFeature(purple color)
+- [81] sqsubseteq hasVisualFeature(broad petals)
+- [14] sqsubseteq hasVisualFeature(yellow color)
+- [14] sqsubseteq hasVisualFeature(distinct petal shape)
+</tbox>
+<abox>
+- hasVisualFeature(Target, purple color)
+- hasVisualFeature(Target, broad petals)
+- hasVisualFeature(Target, central stamens)
+</abox>
+<dl_explanation>
+- The Target Image contains a flower with purple color and broad petals.
+- The labeled examples for class 81 (Examples 1, 2, 5) consistently show flowers with broad petals and purple or pink hues.
+- The labeled examples for class 14 (Examples 3, 4) consistently show yellow flowers.
+- The visual features of the Target Image (purple color, broad petals) align with the necessary conditions for class 81 derived from the examples.
+- Therefore, the Target Image belongs to class 81.
+</dl_explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- [81] sqsubseteq hasVisualFeature(pink_petals)
+- hasVisualFeature(pink_petals) sqsubseteq [81]
+- [14] sqsubseteq hasVisualFeature(yellow_petals)
+- hasVisualFeature(yellow_petals) sqsubseteq [14]
+</tbox>
+<abox>
+- hasVisualFeature(Target, yellow_petals)
+- hasVisualFeature(Target, green_stems)
+</abox>
+<dl_explanation>
+- The Target Image contains yellow petals and green stems.
+- The TBox axiom [14] sqsubseteq hasVisualFeature(yellow_petals) indicates that images of class 14 must have yellow petals.
+- The TBox axiom hasVisualFeature(yellow_petals) sqsubseteq [14] indicates that observing yellow petals is sufficient to classify the image as class 14.
+- Therefore, the Target Image satisfies the necessary and sufficient conditions for class 14.
+</dl_explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=12.2192 | avg_trial_wall_seconds=6.0687 | avg_trial_api_seconds=6.0321 | system_fallback_count=0

@@ -1,0 +1,27 @@
+=== DEBUG LOG | dataset=flowers | prompt=features | model=google/gemini-2.5-flash-lite | N=3 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- cluster of small yellow and orange flowers
+- four petals per flower
+- green stems and leaves
+</features>
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- purple petals
+- ruffled petal edges
+- dark center with yellow stamens
+</features>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<features>
+- pink petals
+- yellow center
+- green leaves
+- dark background
+</features>
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=4.4302 | avg_trial_wall_seconds=1.4449 | avg_trial_api_seconds=1.3735 | system_fallback_count=0

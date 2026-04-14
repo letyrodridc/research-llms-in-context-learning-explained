@@ -1,0 +1,69 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=mistralai/ministral-8b-2512 | N=2 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+```xml
+<tbox>
+    <!-- Class 81 (Cleome) -->
+    hasVisualFeature([large_pink_petals]) sqsubseteq [81]
+    hasVisualFeature([multiple_petals_arranged_in_star_shape]) sqsubseteq [81]
+    hasVisualFeature([central_pink_stamen_cluster]) sqsubseteq [81]
+    [81] sqsubseteq hasVisualFeature([large_pink_petals]) and hasVisualFeature([multiple_petals_arranged_in_star_shape])
+
+    <!-- Class 14 (Iris) -->
+    hasVisualFeature([yellow_petals]) sqsubseteq [14]
+    hasVisualFeature([distinctive_veined_petals]) sqsubseteq [14]
+    hasVisualFeature([three_prominent_petals_with_white_central_mark]) sqsubseteq [14]
+    [14] equiv hasVisualFeature([yellow_petals]) and hasVisualFeature([distinctive_veined_petals])
+</tbox>
+
+<abox>
+    hasVisualFeature(Target, [large_petals])
+    hasVisualFeature(Target, [multiple_petals_arranged_in_star_shape])
+    hasVisualFeature(Target, [central_pink_stamen_cluster])
+    hasVisualFeature(Target, [deep_purple_color])
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits large petals arranged in a star-like shape, matching the sufficient conditions for Class 81. The central stamen cluster is also pink, consistent with the visual features observed in Class 81 examples. Although the petals are deep purple rather than pink, the overall structural similarity (large petals, star shape, and central stamen cluster) aligns with the necessary and sufficient conditions for Class 81. The yellow petals and veined patterns of Class 14 are absent, ruling out that label.
+</dl_explanation>
+
+<response>81</response>
+```
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+```xml
+<tbox>
+    <!-- Class 81 (Cleome flower) -->
+    hasVisualFeature([petals_with_pink_purple_veins]) sqsubseteq [81]
+    hasVisualFeature([multiple_petals_arranged_in_a_star_shape]) sqsubseteq [81]
+    hasVisualFeature([central_red_pollinator_guide]) sqsubseteq [81]
+    [81] sqsubseteq hasVisualFeature([petals_with_pink_purple_veins]) and
+                          hasVisualFeature([multiple_petals_arranged_in_a_star_shape])
+
+    <!-- Class 14 (Yellow Iris) -->
+    hasVisualFeature([bright_yellow_petals]) sqsubseteq [14]
+    hasVisualFeature([distinct_vertical_veins_or_lines]) sqsubseteq [14]
+    hasVisualFeature([narrow_petals_with_curved_tips]) sqsubseteq [14]
+    [14] equiv hasVisualFeature([bright_yellow_petals]) and
+                  hasVisualFeature([distinct_vertical_veins_or_lines]) and
+                  hasVisualFeature([narrow_petals_with_curved_tips])
+</tbox>
+
+<abox>
+    hasVisualFeature(Target, [bright_yellow_petals])
+    hasVisualFeature(Target, [distinct_vertical_veins_or_lines])
+    hasVisualFeature(Target, [narrow_petals_with_curved_tips])
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits three key visual features:
+    1. Bright yellow petals
+    2. Distinct vertical veins or lines
+    3. Narrow petals with curved tips
+
+    These features directly match the necessary and sufficient conditions for Class 14 in the TBox. The combination of these three visual traits (bright yellow petals, vertical veins, and narrow curved petals) is defined as equivalent to Class 14. Since the Target Image satisfies all these conditions, it logically aligns with Class 14.
+</dl_explanation>
+
+<response>14</response>
+```
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=6.8528 | avg_trial_wall_seconds=3.4048 | avg_trial_api_seconds=3.3691 | system_fallback_count=0

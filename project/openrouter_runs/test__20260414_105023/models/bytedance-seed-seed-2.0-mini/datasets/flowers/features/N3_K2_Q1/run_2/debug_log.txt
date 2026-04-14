@@ -1,0 +1,28 @@
+=== DEBUG LOG | dataset=flowers | prompt=features | model=bytedance-seed/seed-2.0-mini | N=3 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- clustered orange-yellow four-petaled flowers
+- reddish-brown flower buds
+- green out-of-focus foliage background
+</features>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- single purple/lavender flower
+- five distinct flower petals
+- dark colored floral center
+- green grassy background
+</features>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<features>
+- pale pink-white layered petals
+- yellow central floral receptacle
+- blurred green foliage background
+</features>
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=28.2139 | avg_trial_wall_seconds=9.3644 | avg_trial_api_seconds=9.3007 | system_fallback_count=0

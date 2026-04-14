@@ -1,0 +1,75 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash-lite | N=4 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[34] | Predicted=[34] | Correct=True
+<tbox>
+- [Class 34] equiv hasVisualFeature(spiky_petals) and hasVisualFeature(blue_purple_color)
+- [Class 81] equiv hasVisualFeature(star_shaped_petals) and hasVisualFeature(pink_purple_color)
+- [Class 88] equiv hasVisualFeature(trumpet_shaped_petals) and hasVisualFeature(orange_color)
+- [Class 71] equiv hasVisualFeature(funnel_shaped_petals) and hasVisualFeature(pink_purple_color)
+</tbox>
+<abox>
+- hasVisualFeature(Target, spiky_petals)
+- hasVisualFeature(Target, blue_purple_color)
+</abox>
+<dl_explanation>
+- The Target Image exhibits spiky petals and a blue-purple color.
+- These features are sufficient to classify the image as Class 34, according to the TBox definition for Class 34 which states that an image is Class 34 if and only if it has spiky petals and a blue-purple color.
+</dl_explanation>
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- [Class 81] equiv hasVisualFeature(star-shaped flower) and hasVisualFeature(purple petals)
+- [Class 81] equiv hasVisualFeature(star-shaped flower) and hasVisualFeature(pink petals)
+- [Class 34] equiv hasVisualFeature(spiky flower) and hasVisualFeature(blue petals)
+- [Class 88] equiv hasVisualFeature(trumpet-shaped flower) and hasVisualFeature(orange petals)
+- [Class 71] equiv hasVisualFeature(bell-shaped flower) and hasVisualFeature(pink petals)
+- [Class 71] equiv hasVisualFeature(bell-shaped flower) and hasVisualFeature(purple petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, star-shaped flower)
+- hasVisualFeature(Target, purple petals)
+</abox>
+<dl_explanation>
+- The Target Image has a star-shaped flower with purple petals.
+- The TBox defines Class 81 as having a star-shaped flower with either purple or pink petals.
+- The Target Image matches the visual features of Class 81.
+</dl_explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[88] | Predicted=[88] | Correct=True
+<tbox>
+- [Class 34] equiv hasVisualFeature(spiky_flower) and hasVisualFeature(blue_purple_color)
+- [Class 81] equiv hasVisualFeature(star_shaped_flower) and hasVisualFeature(pink_purple_color)
+- [Class 88] equiv hasVisualFeature(trumpet_shaped_flower) and hasVisualFeature(orange_color)
+- [Class 71] equiv hasVisualFeature(bell_shaped_flower) and hasVisualFeature(pink_purple_color)
+</tbox>
+<abox>
+- hasVisualFeature(Target, trumpet_shaped_flower)
+- hasVisualFeature(Target, orange_color)
+</abox>
+<dl_explanation>
+- The Target Image exhibits a trumpet-shaped flower and an orange color.
+- The TBox defines Class 88 as equivalent to having a trumpet-shaped flower and an orange color.
+- Therefore, the Target Image is classified as Class 88.
+</dl_explanation>
+<response>88</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[71] | Predicted=[71] | Correct=True
+<tbox>
+- [34] equiv hasVisualFeature(spiky_petals) and hasVisualFeature(blue_purple_color)
+- [81] equiv hasVisualFeature(star_shaped_petals) and hasVisualFeature(pink_purple_color)
+- [88] equiv hasVisualFeature(trumpet_shaped_petals) and hasVisualFeature(orange_color)
+- [71] equiv hasVisualFeature(funnel_shaped_petals) and hasVisualFeature(pink_purple_color)
+</tbox>
+<abox>
+- hasVisualFeature(Target, funneled_petals)
+- hasVisualFeature(Target, pink_purple_color)
+</abox>
+<dl_explanation>
+- The Target Image exhibits funneled petals and a pink-purple color.
+- The class [71] is defined by the presence of funneled petals and a pink-purple color.
+- Therefore, the Target Image is classified as [71].
+</dl_explanation>
+<response>71</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=7.1367 | avg_trial_wall_seconds=1.7621 | avg_trial_api_seconds=1.6904 | system_fallback_count=0

@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=bytedance-seed/seed-2.0-mini | N=2 K=2 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- Class81 sqsubseteq hasVisualFeature(pink-white striped broad petals)
+- Class81 sqsubseteq hasVisualFeature(central dark brown-purple floral center)
+- Class81 sqsubseteq hasVisualFeature(symmetric arrangement of multiple large petals)
+- hasVisualFeature(pink-white striped broad petals) and hasVisualFeature(central dark floral center) sqsubseteq Class81
+- Class14 equiv hasVisualFeature(solid bright yellow curved petals) and hasVisualFeature(narrow green floral stem)
+</tbox>
+<abox>
+- hasVisualFeature(Target, pink-white striped broad petals)
+- hasVisualFeature(Target, central dark brown-purple floral center)
+- hasVisualFeature(Target, symmetric arrangement of multiple large petals)
+</abox>
+<dl_explanation>
+The Target Image exhibits all the visual features defined for Class81: it has pink-white striped broad petals, a central dark brown-purple floral center, and symmetrically arranged large petals. These match the defining characteristics of Class81 from the provided examples, and the Target Image does not possess the solid yellow curved petals and narrow green stem that define Class14. Thus, 81 is the correct classification.
+</dl_explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- [14] equiv hasVisualFeature(yellow iris flower structure) and hasVisualFeature(bright yellow petals) and hasVisualFeature(long green linear foliage)
+</tbox>
+<abox>
+- hasVisualFeature(Target, [yellow iris flower structure])
+- hasVisualFeature(Target, [bright yellow petals])
+- hasVisualFeature(Target, [long green linear foliage])
+</abox>
+<dl_explanation>
+The Target Image contains all three visual features defined in the TBox as necessary and sufficient for class 14. The observed features match the previously labeled 14 example images, confirming the Target Image belongs to class 14.
+</dl_explanation>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=68.2976 | avg_trial_wall_seconds=34.1448 | avg_trial_api_seconds=34.1068 | system_fallback_count=0

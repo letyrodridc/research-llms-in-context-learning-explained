@@ -1,0 +1,115 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=mistralai/ministral-8b-2512 | N=3 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+```xml
+<tbox>
+    <!-- Class 45 (Orange flowers with red spots, tubular shape, clustered blooms) -->
+    [Class_45] sqsubseteq hasVisualFeature([bright_orange_petals]) and
+                      hasVisualFeature([red_spots_or_marks]) and
+                      hasVisualFeature([tubular_or_funnel_shaped_flowers]) and
+                      hasVisualFeature([clustered_blooms_on_stem]).
+
+    <!-- Class 44 (Purple flowers, broad petals, slightly ruffled edges) -->
+    [Class_44] sqsubseteq hasVisualFeature([deep_purple_petals]) and
+                      hasVisualFeature([broad_flat_petals]) and
+                      hasVisualFeature([ruffled_or_wavy_petals]) and
+                      hasVisualFeature([central_yellow_or_brown_stamen]).
+
+    <!-- Class 77 (Large white/pink petals, layered/ruffled edges, prominent yellow center) -->
+    [Class_77] equiv hasVisualFeature([large_white_or_pink_petals]) and
+                       hasVisualFeature([layered_or_ruffled_petals]) and
+                       hasVisualFeature([prominent_yellow_center]) and
+                       hasVisualFeature([broad_flat_petal_shape]).
+</tbox>
+
+<abox>
+    <!-- Target Image Observations -->
+    hasVisualFeature(Target, [bright_orange_petals]).
+    hasVisualFeature(Target, [red_spots_or_marks]).
+    hasVisualFeature(Target, [tubular_or_funnel_shaped_flowers]).
+    hasVisualFeature(Target, [clustered_blooms_on_stem]).
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits bright orange petals with red spots, tubular/funnel-shaped flowers, and clustered blooms on a stem. These features directly match the necessary and sufficient conditions for [Class_45] as defined in the TBox. The presence of these visual features aligns with the examples of Class 45, which also exhibit these characteristics. The other classes (44 and 77) do not match these features, as Class 44 is characterized by deep purple petals with broad flat shapes and ruffled edges, and Class 77 by large white/pink petals with layered ruffles and a prominent yellow center.
+</dl_explanation>
+
+<response>45</response>
+```
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+```xml
+<tbox>
+    <!-- Class 44 (Purple flowers with multiple petals, slightly ruffled edges, yellow/green center) -->
+    [Class_44] sqsubseteq hasVisualFeature([deep_purple_color]) and
+                     hasVisualFeature([multiple_petals]) and
+                     hasVisualFeature([ruffled_petals]) and
+                     hasVisualFeature([yellow_green_center]).
+
+    <!-- Class 45 (Bright orange/yellow flowers, tubular shape, red spots) -->
+    [Class_45] sqsubseteq hasVisualFeature([bright_orange_yellow_color]) and
+                     hasVisualFeature([tubular_petals]) and
+                     hasVisualFeature([red_spots]).
+
+    <!-- Class 77 (Large white/pink flowers, broad petals, smooth edges, yellow center) -->
+    [Class_77] sqsubseteq hasVisualFeature([large_white_pink_color]) and
+                     hasVisualFeature([broad_petals]) and
+                     hasVisualFeature([smooth_petals]) and
+                     hasVisualFeature([yellow_center]).
+</tbox>
+
+<abox>
+    hasVisualFeature(Target, [deep_purple_color]).
+    hasVisualFeature(Target, [multiple_petals]).
+    hasVisualFeature(Target, [ruffled_petals]).
+    hasVisualFeature(Target, [yellow_green_center]).
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits the following observable visual features:
+    - Deep purple coloration (matches [deep_purple_color]).
+    - Multiple petals (matches [multiple_petals]).
+    - Ruffled petal edges (matches [ruffled_petals]).
+    - A yellow/green center (matches [yellow_green_center]).
+
+    These features align with the TBox axioms for [Class_44], which requires all four properties to be present. The Target Image does not match the bright orange/yellow tubular flowers with red spots (Class 45) nor the large white/pink broad-petaled flowers with smooth edges (Class 77). Therefore, the Target Image satisfies the necessary and sufficient conditions for [Class_44].
+</dl_explanation>
+
+<response>44</response>
+```
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+```xml
+<tbox>
+    <!-- Class 45 (Orange flowers) -->
+    [Class45] sqsubseteq hasVisualFeature([bright_orange_petals]) and hasVisualFeature([irregular_shape]) and hasVisualFeature([small_center_stamen]) and hasVisualFeature([green_leaves_nearby])
+
+    <!-- Class 44 (Purple flowers) -->
+    [Class44] sqsubseteq hasVisualFeature([deep_purple_petals]) and hasVisualFeature([rounded_petals]) and hasVisualFeature([yellow_center_stamen]) and hasVisualFeature([green_leaves_nearby])
+
+    <!-- Class 77 (Pink/White Lotus) -->
+    [Class77] equiv hasVisualFeature([large_petals]) and hasVisualFeature([pale_pink_or_white_color]) and hasVisualFeature([thick_textured_petals]) and hasVisualFeature([green_rounded_leaves])
+</tbox>
+
+<abox>
+    hasVisualFeature(Target, [large_petals])
+    hasVisualFeature(Target, [pale_pink_or_white_color])
+    hasVisualFeature(Target, [thick_textured_petals])
+    hasVisualFeature(Target, [green_rounded_leaves])
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits four key visual features:
+    1. Large petals, which are a defining characteristic of Class 77.
+    2. Pale pink or white coloration, matching the color scheme of Class 77.
+    3. Thick, textured petals, consistent with the lotus flower examples in Class 77.
+    4. Green, rounded leaves, which align with the leaf structure seen in Class 77 examples.
+
+    These features satisfy the necessary and sufficient conditions for Class 77 as defined in the TBox:
+    - The Target Image has all the features required by the equivalence axiom for Class 77.
+    - None of the other classes (44 or 45) match this combination of features.
+</dl_explanation>
+
+<response>77</response>
+```
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=9.7754 | avg_trial_wall_seconds=3.2305 | avg_trial_api_seconds=3.1669 | system_fallback_count=0

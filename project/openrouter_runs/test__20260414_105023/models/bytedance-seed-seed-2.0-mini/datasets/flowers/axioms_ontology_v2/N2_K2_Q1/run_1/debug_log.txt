@@ -1,0 +1,31 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=bytedance-seed/seed-2.0-mini | N=2 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- Class81 equiv hasVisualFeature(broad oval flower petals) and hasVisualFeature(central floral stamen/pistil cluster) and hasVisualFeature(adjacent green foliage leaves)
+- Class14 equiv hasVisualFeature(bright yellow curved floral petals) and hasVisualFeature(tall narrow green leaves)
+</tbox>
+<abox>
+- hasVisualFeature(Target, broad oval flower petals)
+- hasVisualFeature(Target, central floral stamen/pistil cluster)
+- hasVisualFeature(Target, adjacent green foliage leaves)
+</abox>
+<dl_explanation>
+The Target Image has all the necessary and sufficient visual features for Class81: broad oval flower petals, a central cluster of floral reproductive parts, and adjacent green foliage leaves, which matches the previously labeled Class81 flower examples. It lacks the bright yellow petals and narrow sword-like leaves that define Class14, so the correct label is 81.
+</dl_explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- Class14 equiv hasVisualFeature(bright yellow iris-shaped flower) and hasVisualFeature(long green lanceolate leaves)
+- Class81 equiv hasVisualFeature(purple-pink star-like flower petals) and hasVisualFeature(central stamen cluster)
+</tbox>
+<abox>
+- hasVisualFeature(Target, bright yellow iris-shaped flower)
+- hasVisualFeature(Target, long green lanceolate leaves)
+</abox>
+<dl_explanation>
+The Target Image contains the two visual features defined as necessary and sufficient for Class14: bright yellow iris-shaped blooms and long green lanceolate foliage. These assertions satisfy the TBox axioms for Class14, so the correct label is 14.
+</dl_explanation>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=66.9145 | avg_trial_wall_seconds=33.4496 | avg_trial_api_seconds=33.4091 | system_fallback_count=0

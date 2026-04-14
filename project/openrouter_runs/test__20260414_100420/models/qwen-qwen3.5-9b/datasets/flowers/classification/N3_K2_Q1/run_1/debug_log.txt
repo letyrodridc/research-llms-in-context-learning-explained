@@ -1,0 +1,11 @@
+=== DEBUG LOG | dataset=flowers | prompt=classification | model=qwen/qwen3.5-9b | N=3 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[77] | Predicted=[45] | Correct=False
+<response>45</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=3 | errors=0 | accuracy=0.6667 | duration_seconds=13.6395 | avg_trial_wall_seconds=4.5188 | avg_trial_api_seconds=4.4626 | system_fallback_count=0

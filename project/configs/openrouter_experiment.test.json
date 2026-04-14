@@ -1,19 +1,23 @@
 {
-  "schema_version": "openrouter_experiment_v1",
+  "schema_version": "openrouter_experiment_v2",
   "experiment_name": "test",
-  "description": "New Qwen test.",
+  "description": "OpenRouter test run with matched total query budget across n.",
   "env_file": "../../.env",
   "output_root": "../openrouter_runs",
   "prompt_library_path": "openrouter_prompt_library.default.json",
   "model": {
-    "name": "qwen/qwen3.5-9b",
-    "validate_image_input": true,
-    "site_url": null,
-    "app_name": null,
-    "timeout_seconds": null,
-    "max_retries": null,
-    "generation": {
-      "temperature": 0.0
+    "model_name": [
+      "google/gemini-2.5-flash-lite"
+    ],
+    "model_params": {
+      "validate_image_input": true,
+      "site_url": null,
+      "app_name": null,
+      "timeout_seconds": null,
+      "max_retries": null,
+      "generation": {
+        "temperature": 0.0
+      }
     }
   },
   "datasets": [
@@ -30,10 +34,22 @@
     {
       "n": 2,
       "k": 2,
-      "q": 1
+      "q": 1,
+      "runs": 6
+    },
+    {
+      "n": 3,
+      "k": 2,
+      "q": 1,
+      "runs": 4
+    },
+    {
+      "n": 4,
+      "k": 2,
+      "q": 1,
+      "runs": 3
     }
   ],
-  "runs_per_config": 5,
   "seed": 42,
   "analysis": {
     "enabled": true

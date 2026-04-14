@@ -1,0 +1,35 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=2 K=2 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Purple/magenta petals
+- Multiple wide, overlapping petals radiating from a central point
+- Visible central stamen/pistil structure
+- Green foliage in the background
+</features>
+<kb>
+- IF [petals are yellow and have a distinct upright/curved structure] THEN [14]
+- IF [petals are purple/magenta and radiate from a central point] THEN [81]
+</kb>
+<rule_check>
+- The Target Image features purple petals radiating from a central point, which matches the visual pattern of class 81 seen in the first two examples.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- yellow petals
+- large, drooping petals with dark vein-like patterns
+- long, green stem and blade-like leaves
+</features>
+<kb>
+- IF [petals are purple/magenta and have a star-like shape with a central cluster of stamens] THEN [81]
+- IF [petals are yellow and have a distinct drooping structure with dark markings on the petals] THEN [14]
+</kb>
+<rule_check>
+- The Target Image features yellow petals that droop downwards and have dark markings, which matches the pattern seen in the examples for class 14.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=11.0748 | avg_trial_wall_seconds=5.4953 | avg_trial_api_seconds=5.4400 | system_fallback_count=0

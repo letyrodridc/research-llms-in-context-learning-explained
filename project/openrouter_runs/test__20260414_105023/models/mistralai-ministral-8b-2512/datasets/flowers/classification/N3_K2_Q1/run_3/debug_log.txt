@@ -1,0 +1,49 @@
+=== DEBUG LOG | dataset=flowers | prompt=classification | model=mistralai/ministral-8b-2512 | N=3 K=2 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+```xml
+<response>45</response>
+```
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+```xml
+<observations>
+    <class_44>
+        <features>
+            <petal_color>deep purple with white inner petal edges</petal_color>
+            <center>dark brown to black center with yellowish stamens</center>
+            <shape>rounded petals with a slightly ruffled edge</shape>
+        </features>
+    </class_44>
+    <class_45>
+        <features>
+            <petal_color>bright yellow-orange with reddish-brown accents</petal_color>
+            <center>dark brown center</center>
+            <shape>petals with a slightly irregular, wavy edge</shape>
+        </features>
+    </class_45>
+    <class_77>
+        <features>
+            <petal_color>pink to light purple</petal_color>
+            <center>bright yellow center with a dense cluster of stamens</center>
+            <shape>large, broad, and flat petals with a smooth texture</shape>
+        </features>
+    </class_77>
+</observations>
+
+<target_analysis>
+    <features>
+        <petal_color>deep purple with white inner edges</petal_color>
+        <center>dark brown center with yellowish stamens</center>
+        <shape>rounded petals with a slightly ruffled edge</shape>
+    </features>
+</target_analysis>
+
+<response>44</response>
+```
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+```xml
+<response>77</response>
+```
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=4.7699 | avg_trial_wall_seconds=1.5497 | avg_trial_api_seconds=1.4849 | system_fallback_count=0

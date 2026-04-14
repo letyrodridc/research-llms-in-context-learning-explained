@@ -1,0 +1,35 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=2 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- bright pink/magenta petals
+- star-shaped flower structure
+- prominent white/light-colored center with many stamens
+- multiple petals (around 6 visible)
+</features>
+<kb>
+- IF [flower has star-shaped petals and a prominent white/light center with many stamens] THEN [81]
+- IF [flower is yellow with large, drooping petals] THEN [14]
+</kb>
+<rule_check>
+- The Target Image shows a star-shaped flower with bright pink petals and a prominent light-colored center, which matches the pattern seen in class 81.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- yellow petals
+- large, drooping petals
+- complex petal structure
+</features>
+<kb>
+- IF [purple/magenta petals with central stamen cluster] THEN [81]
+- IF [yellow petals with large, drooping structure] THEN [14]
+</kb>
+<rule_check>
+- The Target Image features large, drooping yellow petals, which matches the pattern observed in the examples for class 14.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=8.7706 | avg_trial_wall_seconds=4.3438 | avg_trial_api_seconds=4.2935 | system_fallback_count=0

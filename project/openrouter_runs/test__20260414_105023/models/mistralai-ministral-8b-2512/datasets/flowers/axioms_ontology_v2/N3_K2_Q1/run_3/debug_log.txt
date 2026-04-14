@@ -1,0 +1,122 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=mistralai/ministral-8b-2512 | N=3 K=2 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+```xml
+<tbox>
+    <!-- Class 45 (Orange-yellow flowers with red/orange centers and elongated petals) -->
+    [Class_45] sqsubseteq hasVisualFeature([bright_orange_yellow_petals]) and
+                      hasVisualFeature([red_orange_center]) and
+                      hasVisualFeature([elongated_petals]) and
+                      hasVisualFeature([clustered_flowers_on_stem]).
+
+    <!-- Class 44 (Purple flowers with white centers and dark purple/pink stripes) -->
+    [Class_44] sqsubseteq hasVisualFeature([deep_purple_petals]) and
+                      hasVisualFeature([white_center]) and
+                      hasVisualFeature([dark_purple_stripes]) and
+                      hasVisualFeature([rounded_petals]).
+
+    <!-- Class 77 (Pink lotus-like flowers with broad, layered petals and yellow centers) -->
+    [Class_77] equiv hasVisualFeature([pale_pink_broad_petals]) and
+                      hasVisualFeature([layered_petals]) and
+                      hasVisualFeature([yellow_center]) and
+                      hasVisualFeature([large_flower_size]).
+</tbox>
+
+<abox>
+    hasVisualFeature(Target, [bright_yellow_petals]).
+    hasVisualFeature(Target, [small_center]).
+    hasVisualFeature(Target, [clustered_flowers]).
+    hasVisualFeature(Target, [elongated_petals]).
+    hasVisualFeature(Target, [no_purple_stripes]).
+    hasVisualFeature(Target, [no_layered_structure]).
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits bright yellow petals and elongated petals, which align with the necessary and sufficient conditions for Class 45. It lacks the purple petals, white centers, and dark stripes characteristic of Class 44, and it does not have the broad, layered petals or yellow center typical of Class 77.
+
+    The observed features in the Target Image (bright yellow petals, elongated petals, and clustered flowers) satisfy the TBox axioms for Class 45, confirming that this image belongs to Class 45.
+</dl_explanation>
+
+<response>45</response>
+```
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+```xml
+<tbox>
+    <!-- Class 44 (Purple flowers with white centers and dark centers) -->
+    [Class_44] sqsubseteq hasVisualFeature([deep_purple_petal]) and
+                      hasVisualFeature([white_veined_center]) and
+                      hasVisualFeature([dark_brown_stamen_center]) and
+                      hasVisualFeature([petal_outline_with_ruffled_edges])
+
+    <!-- Class 45 (Orange/yellow flowers with red/orange centers) -->
+    [Class_45] sqsubseteq hasVisualFeature([bright_orange_petal]) and
+                      hasVisualFeature([red_orange_center]) and
+                      hasVisualFeature([petal_with_rounded_edges])
+
+    <!-- Class 77 (Pink lotus-like flowers with yellow centers) -->
+    [Class_77] sqsubseteq hasVisualFeature([pink_petal]) and
+                      hasVisualFeature([yellow_center_stamen]) and
+                      hasVisualFeature([large_petal_spread]) and
+                      hasVisualFeature([smooth_petal_edges])
+</tbox>
+
+<abox>
+    <!-- Observed features in Target Image -->
+    hasVisualFeature(Target, [deep_purple_petal])
+    hasVisualFeature(Target, [white_veined_center])
+    hasVisualFeature(Target, [dark_brown_stamen_center])
+    hasVisualFeature(Target, [petal_outline_with_ruffled_edges])
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits deep purple petals, a white-veined center, a dark brown stamen center, and ruffled petal edges. These features directly match the necessary and sufficient conditions for [Class_44] as defined in the TBox. The bright orange or yellow petals and red/orange centers of [Class_45] are absent, and the pink petals with yellow centers of [Class_77] are also not present. Thus, the Target Image satisfies the axioms for [Class_44].
+</dl_explanation>
+
+<response>44</response>
+```
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+```xml
+<tbox>
+    <!-- Class 45 (Orange/Yellow flowers with red/pink accents and elongated petals) -->
+    [Class_45] sqsubseteq hasVisualFeature([bright_orange_yellow_petals]) and
+                      hasVisualFeature([red_pink_veins_or_accents]) and
+                      hasVisualFeature([elongated_or_tubular_petals]) and
+                      hasVisualFeature([green_leafy_background]).
+
+    <!-- Class 44 (Purple flowers with white centers and yellow stamens) -->
+    [Class_44] sqsubseteq hasVisualFeature([deep_purple_petals]) and
+                      hasVisualFeature([white_center]) and
+                      hasVisualFeature([yellow_stamens]) and
+                      hasVisualFeature([smooth_petals]).
+
+    <!-- Class 77 (Pink/Red lotus flowers with yellow centers, broad petals, and aquatic setting) -->
+    [Class_77] equiv hasVisualFeature([pink_red_petals]) and
+                      hasVisualFeature([yellow_center_stamens]) and
+                      hasVisualFeature([broad_flat_petals]) and
+                      hasVisualFeature([green_leaves_water_background]).
+</tbox>
+
+<abox>
+    hasVisualFeature(Target, [pink_red_petals]).
+    hasVisualFeature(Target, [yellow_center_stamens]).
+    hasVisualFeature(Target, [broad_flat_petals]).
+    hasVisualFeature(Target, [green_leaves_water_background]).
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits the following observable features:
+    - Pink/red petals
+    - Yellow center stamens
+    - Broad, flat petals
+    - Green leaves and a water background
+
+    These features directly match the necessary and sufficient conditions for [Class_77] as defined in the TBox:
+    - The combination of [pink_red_petals], [yellow_center_stamens], [broad_flat_petals], and [green_leaves_water_background] is equivalent to [Class_77].
+    - The Target Image satisfies all these conditions, confirming it belongs to Class 77.
+</dl_explanation>
+
+<response>77</response>
+```
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=21.8453 | avg_trial_wall_seconds=7.2542 | avg_trial_api_seconds=7.1998 | system_fallback_count=0

@@ -1,0 +1,76 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=mistralai/ministral-8b-2512 | N=2 K=2 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+    <!-- Class 81 (Pink Clematis) -->
+    [Class_81] sqsubseteq hasVisualFeature([multiple_petal_floral_structure]) and
+                      hasVisualFeature([pink_or_purple_petals]) and
+                      hasVisualFeature([prominent_stamen_center]) and
+                      hasVisualFeature([delicate_petals_with_veining]).
+
+    <!-- Class 14 (Yellow Iris) -->
+    [Class_14] sqsubseteq hasVisualFeature([three_petal_floral_structure]) and
+                      hasVisualFeature([yellow_petals]) and
+                      hasVisualFeature([vertical_anthers]) and
+                      hasVisualFeature([sword-shaped_leaves_in_background]).
+
+    <!-- Necessary and Sufficient Conditions -->
+    hasVisualFeature([multiple_petal_floral_structure]) and
+    hasVisualFeature([pink_or_purple_petals]) and
+    hasVisualFeature([prominent_stamen_center]) and
+    hasVisualFeature([delicate_petals_with_veining]) equiv [Class_81].
+
+    hasVisualFeature([three_petal_floral_structure]) and
+    hasVisualFeature([yellow_petals]) and
+    hasVisualFeature([vertical_anthers]) and
+    hasVisualFeature([sword-shaped_leaves_in_background]) equiv [Class_14].
+</tbox>
+
+<abox>
+    hasVisualFeature(Target, [multiple_petal_floral_structure]).
+    hasVisualFeature(Target, [pink_or_purple_petals]).
+    hasVisualFeature(Target, [prominent_stamen_center]).
+    hasVisualFeature(Target, [delicate_petals_with_veining]).
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits multiple petals with a floral structure, pink petals, a prominent stamen center, and delicate petals with visible veining. These features directly match the necessary and sufficient conditions for [Class_81] as defined in the TBox. The absence of yellow petals, vertical anthers, or sword-shaped leaves rules out [Class_14]. Thus, the Target Image satisfies the axioms for [Class_81].
+</dl_explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+```xml
+<tbox>
+    <!-- Class 14 (Yellow Iris-like flowers) -->
+    [Class14] sqsubseteq hasVisualFeature([bright_yellow_petals]) and
+                      hasVisualFeature([long_narrow_petals]) and
+                      hasVisualFeature([central_column_stamens]) and
+                      hasVisualFeature([green_leaf_background]);
+
+    <!-- Class 81 (Pink Clematis-like flowers) -->
+    [Class81] sqsubseteq hasVisualFeature([pink_or_light_purple_petals]) and
+                      hasVisualFeature([fluffy_or_feathery_petals]) and
+                      hasVisualFeature([central_white_or_light_heart]) and
+                      hasVisualFeature([green_leaves_in_background]);
+</tbox>
+
+<abox>
+    <!-- Observed features in Target Image -->
+    hasVisualFeature(Target, [bright_yellow_petals]);
+    hasVisualFeature(Target, [long_narrow_petals]);
+    hasVisualFeature(Target, [central_column_stamens]);
+    hasVisualFeature(Target, [green_leaf_background]);
+</abox>
+
+<dl_explanation>
+    The Target Image exhibits four key visual features: bright yellow petals, long narrow petals, a central column of stamens, and green leaves in the background. These features directly satisfy the necessary and sufficient conditions for [Class14] as defined in the TBox.
+
+    The presence of bright yellow petals and long narrow petals aligns with the sufficient condition for [Class14]. The central column of stamens and green leaf background further confirm the classification, as these are also characteristic of the examples labeled as [Class14]. None of the features match the sufficient conditions for [Class81], which requires pink or light purple petals and fluffy petals.
+
+    Therefore, the Target Image logically matches [Class14] based on the provided TBox axioms.
+</dl_explanation>
+
+<response>14</response>
+```
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=7.4387 | avg_trial_wall_seconds=3.6970 | avg_trial_api_seconds=3.6562 | system_fallback_count=0

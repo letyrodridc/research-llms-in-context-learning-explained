@@ -1,0 +1,9 @@
+=== DEBUG LOG | dataset=flowers | prompt=classification | model=qwen/qwen3.5-9b | N=3 K=2 Q=1 | run=0 ===
+Run 0 | Query 1 | ERROR: OpenRouterError: OpenRouter request failed with status 400: {"error": {"message": "Provider returned error", "code": 400, "metadata": {"raw": "{\n  \"id\": \"of7Hgvi-3pDw3Z-9ec2fbbc73af758b\",\n  \"error\": {\n    \"message\": \"Image count 7 exceeds limit 5 per request.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": null,\n    \"code\": null\n  }\n}", "provider_name": "Together", "is_byok": false, "retry_after_seconds": 1}}, "user_id": "user_3BDnlwSyXgLQWEPn8oQ9VwRTm6D"}
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | ERROR: OpenRouterError: OpenRouter request failed with status 400: {"error": {"message": "Provider returned error", "code": 400, "metadata": {"raw": "{\n  \"id\": \"of7HhKX-3pDw3Z-9ec2fbc553e2758b\",\n  \"error\": {\n    \"message\": \"Image count 7 exceeds limit 5 per request.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": null,\n    \"code\": null\n  }\n}", "provider_name": "Together", "is_byok": false, "retry_after_seconds": 2}}, "user_id": "user_3BDnlwSyXgLQWEPn8oQ9VwRTm6D"}
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[77] | Predicted=[45] | Correct=False
+<response>45</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=0 | total=3 | errors=2 | accuracy=0.0000 | duration_seconds=5.8353 | avg_trial_wall_seconds=1.9303 | avg_trial_api_seconds=3.8454 | system_fallback_count=0

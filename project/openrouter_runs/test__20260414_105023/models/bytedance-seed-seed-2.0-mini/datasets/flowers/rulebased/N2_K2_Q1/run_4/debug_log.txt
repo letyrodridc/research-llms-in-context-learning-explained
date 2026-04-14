@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=bytedance-seed/seed-2.0-mini | N=2 K=2 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Large, multi-petaled star-shaped flower in vibrant pink-purple tones
+- Light-colored spiky central stamen cluster at the flower's center
+- Green leafy foliage in the background
+</features>
+<kb>
+- IF [flower has multiple broad pink/purple star-shaped petals with a light central stamen cluster and green foliage background] THEN [class 81]
+- IF [flower is yellow with distinctive curved, ridged iris petals] THEN [class 14]
+</kb>
+<rule_check>
+The target image matches the first rule for class 81: it has the characteristic broad, pink-purple star-shaped petals and light central stamen cluster seen in the prior 81-labeled clematis flower examples, rather than the yellow iris shape of class 14.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- Bright yellow flower with veined, elongated curved petals
+- Slender green upright stem/foliage attached to the bloom
+- Soft blurred green natural background
+</features>
+<kb>
+- IF [flower has bright yellow color with classic iris bloom structure including veined, elongated petals] THEN class 14
+- IF [flower is deep pink/magenta with broad pointed petals and pale central stamen cluster] THEN class 81
+</kb>
+<rule_check>
+The target image displays a bright yellow flower with the characteristic iris blossom shape, matching the visual pattern seen in the examples labeled as class 14, so it best satisfies the first rule in the knowledge base.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=39.6421 | avg_trial_wall_seconds=19.7987 | avg_trial_api_seconds=19.7503 | system_fallback_count=0

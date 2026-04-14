@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=bytedance-seed/seed-2.0-mini | N=2 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- Star-shaped flower with multiple broad, pointed petals
+- Deep reddish-purple petal color with subtle darker veining along each petal
+- Central floral structure with pale yellow/white stalked stamens
+- Green foliage visible in the background
+</features>
+<kb>
+- IF a flower has a star-shaped clematis-style bloom with multiple broad pointed petals and a central tuft of pale stamens THEN class 81
+- IF a flower has bright yellow, elongated iris-style petals with a distinct dark central marking on lower petals THEN class 14
+</kb>
+<rule_check>
+- The target image matches the visual pattern for class 81: it is a star-shaped clematis flower with deep reddish-purple petals and a central pale stamen tuft. It does not have the bright yellow iris-like petals that define class 14, so it best fits class 81.
+</rule_check>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- Bright yellow flower with distinct iris-style layered petals
+- Visible textured veining on the yellow petals
+- Green foliage background surrounding the flower
+</features>
+<kb>
+- IF [flower has bright yellow petals with classic iris floral shape, plus green foliage backdrop] THEN class 14
+- IF [flower has pink-white striped petals with a dark central stamen cluster] THEN class 81
+</kb>
+<rule_check>
+The target image matches the first rule: it has bright yellow iris-style flowers with textured petals, set against a green foliage background, which aligns exactly with the visual patterns of the previously labeled class 14 examples. It does not have the pink-white striped petals and dark central stamen that define class 81.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=48.8606 | avg_trial_wall_seconds=24.4252 | avg_trial_api_seconds=24.3758 | system_fallback_count=0

@@ -1,0 +1,31 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=bytedance-seed/seed-2.0-mini | N=2 K=2 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- Class 81 ⊑ hasVisualFeature(bright pink/purple star-shaped flower with 6-8 broad pointed petals, central clustered whitish stamens, green foliage background)
+- hasVisualFeature(bright pink/purple star-shaped flower with 6-8 broad pointed petals, central clustered whitish stamens, green foliage background) ⊑ Class 81
+- Class 14 ⊑ hasVisualFeature(yellow iris-style elongated curved petaled flower, single central bloom, grassy green foliage, purple-toned background)
+</tbox>
+<abox>
+- hasVisualFeature(Target, bright pink/purple star-shaped flower with 6-8 broad pointed petals, central clustered whitish stamens, green foliage background)
+</abox>
+<dl_explanation>
+The Target Image exhibits all the formal visual features defined for Class 81: it has pink-purple star-shaped flowers with broad pointed petals, a central cluster of whitish stamens, and green leafy foliage as the background. These assertions fully satisfy the necessary and sufficient conditions for Class 81 from the TBox, so 81 is the correct classification.
+</dl_explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- [14] equiv hasVisualFeature(yellow iris-shaped flower petals) and hasVisualFeature(bright yellow petal color with dark vein striations) and hasVisualFeature(green leafy background foliage)
+- [81] equiv hasVisualFeature(magenta/purple 4-6 pointed flower petals) and hasVisualFeature(light colored central floral stamen) and hasVisualFeature(green background foliage)
+</tbox>
+<abox>
+- hasVisualFeature(Target, yellow iris-shaped flower petals)
+- hasVisualFeature(Target, bright yellow petal color with dark vein striations)
+- hasVisualFeature(Target, green leafy background foliage)
+</abox>
+<dl_explanation>
+- The Target Image contains all the visual features specified in the necessary and sufficient conditions for class [14]. The target has iris-style yellow petals with veined bright yellow coloring and a green leafy out-of-focus background, which fully matches the axioms for [14]. These features do not align with the defining traits of [81], which are purple/magenta clematis flowers with light central stamens.
+</dl_explanation>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=76.7564 | avg_trial_wall_seconds=38.3355 | avg_trial_api_seconds=38.2872 | system_fallback_count=0

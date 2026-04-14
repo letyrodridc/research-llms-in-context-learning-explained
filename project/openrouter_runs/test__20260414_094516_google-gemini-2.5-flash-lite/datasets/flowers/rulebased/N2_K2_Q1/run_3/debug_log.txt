@@ -1,0 +1,35 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemini-2.5-flash-lite | N=2 K=2 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- The flower has multiple petals, arranged radially.
+- The petals are predominantly white with pink stripes running lengthwise.
+- The center of the flower has a cluster of stamens.
+- The flower has a star-like shape.
+</features>
+<kb>
+- IF a flower has multiple, radially arranged petals that are white with pink stripes and a star-like shape, THEN the class is 81.
+- IF a flower has multiple, radially arranged petals that are yellow and have a distinct drooping or curved shape, THEN the class is 14.
+</kb>
+<rule_check>
+- The Target Image shows a flower with multiple, radially arranged petals that are white with pink stripes and a star-like shape. This matches the description for class 81. The flower does not have yellow petals or a drooping shape, so it does not match class 14.
+</rule_check>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- The flower has six petals.
+- The petals are yellow.
+- The flower has a distinctive shape with drooping lower petals and upright upper petals.
+- There are dark lines or veins on the lower petals.
+- The flower is surrounded by green leaves.
+</features>
+<kb>
+- IF the flower has six petals, is purple and white with pink stripes, and has a dark center THEN class is 81.
+- IF the flower has six petals, is yellow, and has a distinctive iris-like shape THEN class is 14.
+</kb>
+<rule_check>
+- The Target Image shows a yellow flower with six petals and an iris-like shape. This matches the description for class 14. The flower also has dark lines on its lower petals, which is consistent with some examples of class 14.
+</rule_check>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.2641 | avg_trial_wall_seconds=1.6102 | avg_trial_api_seconds=1.5737 | system_fallback_count=0

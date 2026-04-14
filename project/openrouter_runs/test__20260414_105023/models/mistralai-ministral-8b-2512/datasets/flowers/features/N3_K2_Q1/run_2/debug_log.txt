@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=flowers | prompt=features | model=mistralai/ministral-8b-2512 | N=3 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- bright orange-yellow petals with darker red-orange veins
+- five-petaled structure with slightly uneven edges
+- small central yellow stamens
+- clustered growth on a single stem
+- green foliage background with visible texture
+</features>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- deep purple petals with white veins
+- five elongated petals
+- central yellow stamens with dark anthers
+- slender green stem with narrow leaves
+- no visible water surface or lotus-like structure
+</features>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<features>
+- petals white with slight pinkish edges
+- central yellow stamens forming a dense cluster
+- broad, rounded petal lobes with smooth edges
+- green leafy background with visible veins
+</features>
+
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=4.6993 | avg_trial_wall_seconds=1.5386 | avg_trial_api_seconds=1.4817 | system_fallback_count=0

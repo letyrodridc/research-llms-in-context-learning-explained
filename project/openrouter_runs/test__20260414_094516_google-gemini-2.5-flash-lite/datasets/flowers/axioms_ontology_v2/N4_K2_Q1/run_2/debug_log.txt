@@ -1,0 +1,75 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash-lite | N=4 K=2 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[34] | Predicted=[34] | Correct=True
+<tbox>
+- [Class_34] equiv hasVisualFeature(spiky_petals) and hasVisualFeature(cone_shaped_center)
+- [Class_81] equiv hasVisualFeature(large_petals) and hasVisualFeature(purple_color)
+- [Class_88] equiv hasVisualFeature(red_orange_flower) and hasVisualFeature(round_leaves)
+- [Class_71] equiv hasVisualFeature(pink_purple_flower) and hasVisualFeature(small_petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, spiky_petals)
+- hasVisualFeature(Target, cone_shaped_center)
+</abox>
+<dl_explanation>
+- The Target Image exhibits spiky petals and a cone-shaped center.
+- The TBox defines Class 34 as having both spiky petals and a cone-shaped center.
+- Therefore, the Target Image is classified as Class 34.
+</dl_explanation>
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- [Class 81] equiv hasVisualFeature(Clematis flower) and hasVisualFeature(purple petals) and hasVisualFeature(prominent veins)
+- [Class 34] equiv hasVisualFeature(Eryngium flower) and hasVisualFeature(blue petals) and hasVisualFeature(spiky appearance)
+- [Class 88] equiv hasVisualFeature(Nasturtium flower) and hasVisualFeature(red or yellow petals) and hasVisualFeature(trumpet shape)
+- [Class 71] equiv hasVisualFeature(Azalea flower) and hasVisualFeature(pink or red petals) and hasVisualFeature(funnel shape)
+</tbox>
+<abox>
+- hasVisualFeature(Target, Clematis flower)
+- hasVisualFeature(Target, pink and white petals)
+- hasVisualFeature(Target, prominent veins)
+</abox>
+<dl_explanation>
+- The Target Image displays a flower with characteristics that match the definition of Class 81.
+- Specifically, the Target Image shows a Clematis flower with pink and white petals and prominent veins, which are all sufficient visual features to classify it as Class 81 according to the provided examples.
+</dl_explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[88] | Predicted=[88] | Correct=True
+<tbox>
+- [Class 34] equiv hasVisualFeature(spiky petals) and hasVisualFeature(cone-shaped center)
+- [Class 81] equiv hasVisualFeature(large, flat petals) and hasVisualFeature(prominent stamens)
+- [Class 88] equiv hasVisualFeature(trumpet-shaped flower) and hasVisualFeature(round petals) and hasVisualFeature(yellow center)
+- [Class 71] equiv hasVisualFeature(bell-shaped flower) and hasVisualFeature(multiple petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, trumpet-shaped flower)
+- hasVisualFeature(Target, round petals)
+- hasVisualFeature(Target, yellow center)
+</abox>
+<dl_explanation>
+- The Target Image exhibits a trumpet-shaped flower with round petals and a yellow center.
+- These visual features are sufficient to classify the image as belonging to Class 88, as defined by the axiom: [Class 88] equiv hasVisualFeature(trumpet-shaped flower) and hasVisualFeature(round petals) and hasVisualFeature(yellow center).
+</dl_explanation>
+<response>88</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[71] | Predicted=[71] | Correct=True
+<tbox>
+- [Class 34] equiv hasVisualFeature(spiky_flower_head) and hasVisualFeature(blue_purple_petals)
+- [Class 81] equiv hasVisualFeature(cup_shaped_flower) and hasVisualFeature(purple_pink_petals)
+- [Class 88] equiv hasVisualFeature(cup_shaped_flower) and hasVisualFeature(red_yellow_petals)
+- [Class 71] equiv hasVisualFeature(cup_shaped_flower) and hasVisualFeature(pink_petals)
+</tbox>
+<abox>
+- hasVisualFeature(Target, cup_shaped_flower)
+- hasVisualFeature(Target, pink_petals)
+</abox>
+<dl_explanation>
+- The Target Image displays a flower with a cup shape and pink petals.
+- The TBox defines Class 71 as equivalent to having a cup-shaped flower and pink petals.
+- The ABox asserts that the Target Image has these two visual features.
+- Therefore, the Target Image is classified as Class 71.
+</dl_explanation>
+<response>71</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=7.4810 | avg_trial_wall_seconds=1.8676 | avg_trial_api_seconds=1.7958 | system_fallback_count=0

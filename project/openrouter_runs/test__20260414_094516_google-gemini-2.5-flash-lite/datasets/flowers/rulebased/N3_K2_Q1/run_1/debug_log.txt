@@ -1,0 +1,54 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemini-2.5-flash-lite | N=3 K=2 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- The flower has multiple small, clustered petals.
+- The petals are predominantly yellow with some orange hues.
+- The flower has a somewhat irregular, star-like shape when viewed from above.
+- There are visible green stems and leaves in the background.
+</features>
+<kb>
+- IF a flower has clustered, predominantly orange and yellow petals with a star-like shape, THEN the class is 45.
+- IF a flower has large, delicate, cup-shaped petals in shades of purple or pink, THEN the class is 44.
+- IF a flower has large, distinct white or pink petals radiating from a central yellow structure, THEN the class is 77.
+</kb>
+<rule_check>
+- The Target Image shows a cluster of small flowers with predominantly yellow and orange petals, which matches the description for class 45. The shape and color are consistent with the examples of class 45. The flower does not resemble the large, cup-shaped petals of class 44 or the distinct radiating petals of class 77.
+</rule_check>
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- The flower has multiple petals that are ruffled and somewhat twisted.
+- The color of the flower is a vibrant purple.
+- The center of the flower contains stamens with yellow anthers and green pistils.
+- The flower has a distinct, somewhat trumpet-like shape.
+- The background is blurred and appears to be soil and foliage.
+</features>
+<kb>
+- IF a flower has orange or yellow petals with a ruffled appearance and is clustered, THEN the class is 45.
+- IF a flower has purple petals with a ruffled and twisted appearance, and a dark center with visible stamens, THEN the class is 44.
+- IF a flower has large, distinct white or pink petals with a prominent yellow center and a more open, symmetrical shape, THEN the class is 77.
+</kb>
+<rule_check>
+- The Target Image shows a purple flower with ruffled and twisted petals, and a dark center with visible stamens. This matches the description for class 44.
+</rule_check>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[77] | Predicted=[77] | Correct=True
+<features>
+- The flower has multiple layers of pink petals.
+- The center of the flower is yellow and appears to be a receptacle with seeds or pollen.
+- The flower is surrounded by large, green leaves.
+- The overall shape of the flower is radial, with petals fanning outwards.
+</features>
+<kb>
+- IF a flower has multiple layers of pink petals and a yellow center, surrounded by large green leaves, THEN it is class 77.
+- IF a flower has multiple layers of purple petals and a dark center, with green stems and leaves, THEN it is class 44.
+- IF a flower has multiple layers of orange or reddish-orange petals, with a darker center and green leaves, THEN it is class 45.
+</kb>
+<rule_check>
+- The Target Image shows a flower with multiple layers of pink petals and a yellow center, surrounded by large green leaves. This matches the description for class 77.
+</rule_check>
+<response>77</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=11.6318 | avg_trial_wall_seconds=3.8748 | avg_trial_api_seconds=3.8157 | system_fallback_count=0

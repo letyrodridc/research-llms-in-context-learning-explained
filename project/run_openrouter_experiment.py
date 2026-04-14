@@ -7,6 +7,8 @@ import hashlib
 import json
 import random
 import re
+import subprocess
+import sys
 import time
 import traceback
 from datetime import datetime
@@ -100,6 +102,16 @@ def format_duration(seconds: float) -> str:
 
 def is_developer_instruction_error(error: Exception) -> bool:
     return "developer instruction is not enabled" in str(error).lower()
+
+
+def is_nonrecoverable_request_error(error: Exception) -> bool:
+    text = str(error).lower()
+    return (
+        "invalid_request_error" in text
+        or "image count" in text
+        or "exceeds limit" in text
+        or "status 400" in text
+    )
 
 
 def flatten_system_prompt_into_first_user_message(messages: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -214,7 +226,6 @@ def ensure_episodes_exist(
     repo_root: Path,
     datasets_dict: Dict[str, Any],
     test_configs: List[FewShotConfig],
-    runs_per_config: int,
     seed: int,
 ) -> None:
     from episode_utils import create_and_save_episode_indices
@@ -226,7 +237,7 @@ def ensure_episodes_exist(
         if dataset_name.endswith("_classes"):
             continue
         for config in test_configs:
-            for run_id in range(runs_per_config):
+            for run_id in range(config.runs):
                 expected_paths.append(
                     episodes_root / dataset_name / f"episode_N{config.n}_K{config.k}_Q{config.q}_run{run_id}.npy"
                 )
@@ -246,7 +257,7 @@ def ensure_episodes_exist(
         for config in test_configs:
             available_classes = list(index_map.keys())
             fixed_classes = random.sample(available_classes, config.n)
-            for run_id in range(runs_per_config):
+            for run_id in range(config.runs):
                 create_and_save_episode_indices(
                     class_indices_map=index_map,
                     num_classes=config.n,
@@ -371,103 +382,7 @@ def open_run_artifact_writers(
     return trial_csv_handle, trial_writer, conversations_handle, debug_handle
 
 
-def main() -> None:
-    args = parse_args()
-    from episode_utils import load_episode_from_indices
-    from setup_utils import load_datasets, select_few_shot_images_with_data_fixed, set_seed
-
-    script_dir = Path(__file__).resolve().parent
-    repo_root = script_dir.parent
-    experiment = load_experiment_config(Path(args.config))
-
-    env_path = Path(args.env_file).resolve() if args.env_file else experiment.env_file
-    output_root = Path(args.output_root).resolve() if args.output_root else experiment.output_root
-    dataset_names = [args.dataset] if args.dataset else list(experiment.datasets)
-    prompt_types = [args.prompt_type] if args.prompt_type else list(experiment.prompt_types)
-    model_name = args.model or experiment.model.name
-    skip_analysis = args.skip_analysis or not experiment.analysis.enabled
-    skip_model_validation = args.skip_model_validation or not experiment.model.validate_image_input
-
-    invalid_prompt_types = [
-        prompt_type for prompt_type in prompt_types if prompt_type not in experiment.prompt_library.prompt_specs
-    ]
-    if invalid_prompt_types:
-        raise ValueError(
-            f"Unsupported prompt type override(s): {', '.join(invalid_prompt_types)}"
-        )
-
-    settings = build_openrouter_settings(
-        env_path,
-        cli_model=model_name,
-        site_url_override=experiment.model.site_url,
-        app_name_override=experiment.model.app_name,
-        timeout_seconds_override=experiment.model.timeout_seconds,
-        max_retries_override=experiment.model.max_retries,
-    )
-    client = OpenRouterClient(settings)
-
-    if not skip_model_validation:
-        model_info = client.fetch_model_metadata()
-        supports_images = model_supports_images(model_info)
-        if supports_images is False:
-            raise ValueError(
-                f"The selected model does not advertise image input support in OpenRouter metadata: {settings.model}"
-            )
-        if model_info is None:
-            print(f"[!] Could not find metadata for model {settings.model} in OpenRouter /models.")
-
-    set_seed(experiment.seed)
-    datasets_dict = load_datasets(data_dir=str(repo_root / "data"))
-    invalid_datasets = [dataset_name for dataset_name in dataset_names if dataset_name not in datasets_dict]
-    if invalid_datasets:
-        raise ValueError(f"Unsupported dataset override(s): {', '.join(invalid_datasets)}")
-    selected_datasets_dict = {name: datasets_dict[name] for name in dataset_names}
-    for dataset_name in dataset_names:
-        selected_datasets_dict[f"{dataset_name}_classes"] = datasets_dict.get(f"{dataset_name}_classes")
-    ensure_episodes_exist(
-        repo_root,
-        selected_datasets_dict,
-        experiment.few_shot_configs,
-        experiment.runs_per_config,
-        experiment.seed,
-    )
-
-    queries_per_prompt_dataset = (
-        sum(config.n * config.q for config in experiment.few_shot_configs) * experiment.runs_per_config
-    )
-    total_trial_budget = len(dataset_names) * len(prompt_types) * queries_per_prompt_dataset
-    completed_trials = 0
-    overall_wall_start = time.perf_counter()
-
-    run_timestamp = timestamp_now()
-    run_name = f"{slugify(experiment.experiment_name)}__{run_timestamp}_{slugify(settings.model)}"
-    run_dir = output_root / run_name
-    run_dir.mkdir(parents=True, exist_ok=True)
-
-    write_json(run_dir / "experiment_config.json", experiment.raw_config)
-    write_json(run_dir / "experiment_config_snapshot.json", export_experiment_config_snapshot(experiment))
-    write_json(run_dir / "prompt_library_snapshot.json", export_prompt_library_snapshot(experiment.prompt_library))
-    if experiment.prompt_library.source_path and experiment.prompt_library.source_path.exists():
-        write_json(run_dir / "prompt_library.json", experiment.prompt_library.raw_data)
-
-    resolved_run_snapshot = {
-        "run_timestamp": run_timestamp,
-        "run_name": run_name,
-        "run_dir": str(run_dir),
-        "model": settings.model,
-        "datasets": dataset_names,
-        "prompt_types": prompt_types,
-        "few_shot_configs": [
-            {"n": item.n, "k": item.k, "q": item.q} for item in experiment.few_shot_configs
-        ],
-        "runs_per_config": experiment.runs_per_config,
-        "seed": experiment.seed,
-        "planned_total_trials": total_trial_budget,
-        "env_file": str(env_path),
-        "output_root": str(output_root),
-    }
-    write_json(run_dir / "run_manifest.json", resolved_run_snapshot)
-
+def build_output_schemas(few_shot_configs: List[FewShotConfig]) -> Dict[str, List[str]]:
     trial_fieldnames = [
         "trial_timestamp",
         "dataset",
@@ -506,9 +421,6 @@ def main() -> None:
         "conversation_log_path",
         "raw_response_text",
     ]
-    trial_csv_handle, trial_writer = initialize_csv_writer(run_dir / "trial_results.csv", trial_fieldnames)
-    jsonl_handle = (run_dir / "trial_logs.jsonl").open("w", encoding="utf-8")
-
     run_fieldnames = [
         "dataset",
         "prompt_type",
@@ -527,8 +439,6 @@ def main() -> None:
         "system_fallback_count",
         "artifact_dir",
     ]
-    run_csv_handle, run_writer = initialize_csv_writer(run_dir / "run_accuracy_long.csv", run_fieldnames)
-
     summary_fieldnames = [
         "dataset",
         "prompt_type",
@@ -542,12 +452,336 @@ def main() -> None:
         "avg_trial_api_seconds",
         "system_fallback_count",
     ]
+    wide_fieldnames = ["dataset", "prompt_type", "model"]
+    for config in few_shot_configs:
+        for run_id in range(config.runs):
+            wide_fieldnames.append(f"({config.n},{config.k},{config.q})_run{run_id}")
+    return {
+        "trial": trial_fieldnames,
+        "run": run_fieldnames,
+        "summary": summary_fieldnames,
+        "wide": wide_fieldnames,
+    }
+
+
+def aggregate_multi_model_outputs(
+    experiment_dir: Path,
+    model_dirs: List[Path],
+    *,
+    few_shot_configs: List[FewShotConfig],
+) -> None:
+    schemas = build_output_schemas(few_shot_configs)
+    aggregate_files = {
+        "trial": "trial_results.csv",
+        "run": "run_accuracy_long.csv",
+        "summary": "experiment_summary.csv",
+    }
+
+    for schema_key, filename in aggregate_files.items():
+        output_handle, output_writer = initialize_csv_writer(experiment_dir / filename, schemas[schema_key])
+        try:
+            for model_dir in model_dirs:
+                prefix = model_dir.relative_to(experiment_dir)
+                source_path = model_dir / filename
+                if not source_path.exists():
+                    continue
+                with source_path.open("r", encoding="utf-8", newline="") as source_handle:
+                    for row in csv.DictReader(source_handle):
+                        if "artifact_dir" in row and row["artifact_dir"]:
+                            row["artifact_dir"] = str(prefix / row["artifact_dir"]).replace("\\", "/")
+                        if "conversation_log_path" in row and row["conversation_log_path"]:
+                            row["conversation_log_path"] = str(prefix / row["conversation_log_path"]).replace("\\", "/")
+                        output_writer.writerow(row)
+        finally:
+            output_handle.close()
+
+    combined_jsonl_path = experiment_dir / "trial_logs.jsonl"
+    with combined_jsonl_path.open("w", encoding="utf-8") as combined_handle:
+        for model_dir in model_dirs:
+            prefix = model_dir.relative_to(experiment_dir)
+            source_path = model_dir / "trial_logs.jsonl"
+            if not source_path.exists():
+                continue
+            with source_path.open("r", encoding="utf-8") as source_handle:
+                for line in source_handle:
+                    record = json.loads(line)
+                    if record.get("artifact_dir"):
+                        record["artifact_dir"] = str(prefix / record["artifact_dir"]).replace("\\", "/")
+                    if record.get("conversation_log_path"):
+                        record["conversation_log_path"] = str(prefix / record["conversation_log_path"]).replace("\\", "/")
+                    combined_handle.write(json_dumps(record) + "\n")
+
+    wide_rows: List[Dict[str, Any]] = []
+    for model_dir in model_dirs:
+        source_path = model_dir / "results_wide.csv"
+        if not source_path.exists():
+            continue
+        with source_path.open("r", encoding="utf-8", newline="") as source_handle:
+            wide_rows.extend(csv.DictReader(source_handle))
+
+    with (experiment_dir / "results_wide.csv").open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=schemas["wide"])
+        writer.writeheader()
+        for row in wide_rows:
+            writer.writerow(row)
+
+    write_json(
+        experiment_dir / "models.json",
+        {
+            "models": [
+                {
+                    "model": model_dir.name,
+                    "run_dir": str(model_dir),
+                }
+                for model_dir in model_dirs
+            ]
+        },
+    )
+
+
+def run_multi_model_experiment(
+    *,
+    args: argparse.Namespace,
+    experiment: Any,
+    env_path: Path,
+    output_root: Path,
+    dataset_names: List[str],
+    prompt_types: List[str],
+    skip_analysis: bool,
+    skip_model_validation: bool,
+) -> None:
+    run_timestamp = timestamp_now()
+    experiment_dir = output_root / f"{slugify(experiment.experiment_name)}__{run_timestamp}"
+    models_root = experiment_dir / "models"
+    models_root.mkdir(parents=True, exist_ok=True)
+
+    write_json(experiment_dir / "experiment_config.json", experiment.raw_config)
+    write_json(experiment_dir / "experiment_config_snapshot.json", export_experiment_config_snapshot(experiment))
+    write_json(experiment_dir / "prompt_library_snapshot.json", export_prompt_library_snapshot(experiment.prompt_library))
+    if experiment.prompt_library.source_path and experiment.prompt_library.source_path.exists():
+        write_json(experiment_dir / "prompt_library.json", experiment.prompt_library.raw_data)
+
+    total_per_model = len(dataset_names) * len(prompt_types) * sum(
+        config.n * config.q * config.runs for config in experiment.few_shot_configs
+    )
+    write_json(
+        experiment_dir / "run_manifest.json",
+        {
+            "run_timestamp": run_timestamp,
+            "experiment_name": experiment.experiment_name,
+            "experiment_dir": str(experiment_dir),
+            "model_names": experiment.model.names,
+            "datasets": dataset_names,
+            "prompt_types": prompt_types,
+            "few_shot_configs": [
+                {"n": item.n, "k": item.k, "q": item.q, "runs": item.runs}
+                for item in experiment.few_shot_configs
+            ],
+            "seed": experiment.seed,
+            "planned_total_trials": total_per_model * len(experiment.model.names),
+            "planned_trials_per_model": total_per_model,
+            "env_file": str(env_path),
+            "output_root": str(output_root),
+        },
+    )
+
+    print(
+        f"[*] Starting multi-model OpenRouter experiment | experiment={experiment.experiment_name} | models={len(experiment.model.names)} | experiment_dir={experiment_dir}"
+    )
+    model_dirs: List[Path] = []
+    for model_name in experiment.model.names:
+        model_dir = models_root / slugify(model_name)
+        command = [
+            sys.executable,
+            str(Path(__file__).resolve()),
+            "--config",
+            str(args.config),
+            "--model",
+            model_name,
+            "--output-root",
+            str(models_root),
+        ]
+        if args.dataset:
+            command.extend(["--dataset", args.dataset])
+        if args.prompt_type:
+            command.extend(["--prompt-type", args.prompt_type])
+        if args.env_file:
+            command.extend(["--env-file", args.env_file])
+        if skip_analysis:
+            command.append("--skip-analysis")
+        if skip_model_validation:
+            command.append("--skip-model-validation")
+        if args.debug:
+            command.append("--debug")
+
+        print(f"[*] Launching model sub-run: {model_name}")
+        completed = subprocess.run(command, check=False)
+        if not model_dir.exists():
+            print(
+                f"[WARNING] Model sub-run for {model_name} exited with code {completed.returncode} "
+                "and did not create the expected run directory."
+            )
+            continue
+        model_dirs.append(model_dir)
+        if completed.returncode != 0:
+            failure_path = model_dir / "subrun_error.txt"
+            if not failure_path.exists():
+                failure_path.write_text(
+                    f"Sub-run exited with code {completed.returncode} for model {model_name}\n",
+                    encoding="utf-8",
+                )
+            print(
+                f"[WARNING] Model sub-run for {model_name} exited with code {completed.returncode}. "
+                f"Partial outputs were kept in {model_dir}"
+            )
+
+    aggregate_multi_model_outputs(
+        experiment_dir,
+        model_dirs,
+        few_shot_configs=experiment.few_shot_configs,
+    )
+
+    if not skip_analysis:
+        try:
+            analysis_outputs = analyze_run_directory(experiment_dir)
+            print(f"[+] Combined analysis generated in: {analysis_outputs['analysis_dir']}")
+        except Exception as exc:
+            error_path = experiment_dir / "analysis_error.txt"
+            error_path.write_text(traceback.format_exc(), encoding="utf-8")
+            print(
+                f"[WARNING] Experiment execution finished, but combined analysis failed: {type(exc).__name__}: {exc}. "
+                f"Traceback written to {error_path}"
+            )
+
+    print(f"[+] Multi-model experiment finished. Experiment directory: {experiment_dir}")
+
+
+def main() -> None:
+    args = parse_args()
+    from episode_utils import load_episode_from_indices
+    from setup_utils import load_datasets, select_few_shot_images_with_data_fixed, set_seed
+
+    script_dir = Path(__file__).resolve().parent
+    repo_root = script_dir.parent
+    experiment = load_experiment_config(Path(args.config))
+
+    env_path = Path(args.env_file).resolve() if args.env_file else experiment.env_file
+    output_root = Path(args.output_root).resolve() if args.output_root else experiment.output_root
+    dataset_names = [args.dataset] if args.dataset else list(experiment.datasets)
+    prompt_types = [args.prompt_type] if args.prompt_type else list(experiment.prompt_types)
+    model_name = args.model or experiment.model.name
+    model_names = [args.model] if args.model else list(experiment.model.names)
+    skip_analysis = args.skip_analysis or not experiment.analysis.enabled
+    skip_model_validation = args.skip_model_validation or not experiment.model.validate_image_input
+
+    invalid_prompt_types = [
+        prompt_type for prompt_type in prompt_types if prompt_type not in experiment.prompt_library.prompt_specs
+    ]
+    if invalid_prompt_types:
+        raise ValueError(
+            f"Unsupported prompt type override(s): {', '.join(invalid_prompt_types)}"
+        )
+
+    if len(model_names) > 1 and not args.model:
+        run_multi_model_experiment(
+            args=args,
+            experiment=experiment,
+            env_path=env_path,
+            output_root=output_root,
+            dataset_names=dataset_names,
+            prompt_types=prompt_types,
+            skip_analysis=skip_analysis,
+            skip_model_validation=skip_model_validation,
+        )
+        return
+
+    settings = build_openrouter_settings(
+        env_path,
+        cli_model=model_name,
+        site_url_override=experiment.model.site_url,
+        app_name_override=experiment.model.app_name,
+        timeout_seconds_override=experiment.model.timeout_seconds,
+        max_retries_override=experiment.model.max_retries,
+    )
+    client = OpenRouterClient(settings)
+
+    if not skip_model_validation:
+        model_info = client.fetch_model_metadata()
+        supports_images = model_supports_images(model_info)
+        if supports_images is False:
+            raise ValueError(
+                f"The selected model does not advertise image input support in OpenRouter metadata: {settings.model}"
+            )
+        if model_info is None:
+            print(f"[!] Could not find metadata for model {settings.model} in OpenRouter /models.")
+
+    set_seed(experiment.seed)
+    datasets_dict = load_datasets(data_dir=str(repo_root / "data"))
+    invalid_datasets = [dataset_name for dataset_name in dataset_names if dataset_name not in datasets_dict]
+    if invalid_datasets:
+        raise ValueError(f"Unsupported dataset override(s): {', '.join(invalid_datasets)}")
+    selected_datasets_dict = {name: datasets_dict[name] for name in dataset_names}
+    for dataset_name in dataset_names:
+        selected_datasets_dict[f"{dataset_name}_classes"] = datasets_dict.get(f"{dataset_name}_classes")
+    ensure_episodes_exist(
+        repo_root,
+        selected_datasets_dict,
+        experiment.few_shot_configs,
+        experiment.seed,
+    )
+
+    queries_per_prompt_dataset = sum(
+        config.n * config.q * config.runs for config in experiment.few_shot_configs
+    )
+    total_trial_budget = len(dataset_names) * len(prompt_types) * queries_per_prompt_dataset
+    completed_trials = 0
+    overall_wall_start = time.perf_counter()
+
+    run_timestamp = timestamp_now()
+    if len(experiment.model.names) > 1 and args.model:
+        run_name = slugify(settings.model)
+        run_dir = output_root / run_name
+    else:
+        run_name = f"{slugify(experiment.experiment_name)}__{run_timestamp}_{slugify(settings.model)}"
+        run_dir = output_root / run_name
+    run_dir.mkdir(parents=True, exist_ok=True)
+
+    write_json(run_dir / "experiment_config.json", experiment.raw_config)
+    write_json(run_dir / "experiment_config_snapshot.json", export_experiment_config_snapshot(experiment))
+    write_json(run_dir / "prompt_library_snapshot.json", export_prompt_library_snapshot(experiment.prompt_library))
+    if experiment.prompt_library.source_path and experiment.prompt_library.source_path.exists():
+        write_json(run_dir / "prompt_library.json", experiment.prompt_library.raw_data)
+
+    resolved_run_snapshot = {
+        "run_timestamp": run_timestamp,
+        "run_name": run_name,
+        "run_dir": str(run_dir),
+        "model": settings.model,
+        "datasets": dataset_names,
+        "prompt_types": prompt_types,
+        "few_shot_configs": [
+            {"n": item.n, "k": item.k, "q": item.q, "runs": item.runs}
+            for item in experiment.few_shot_configs
+        ],
+        "seed": experiment.seed,
+        "planned_total_trials": total_trial_budget,
+        "env_file": str(env_path),
+        "output_root": str(output_root),
+    }
+    write_json(run_dir / "run_manifest.json", resolved_run_snapshot)
+
+    schemas = build_output_schemas(experiment.few_shot_configs)
+    trial_fieldnames = schemas["trial"]
+    trial_csv_handle, trial_writer = initialize_csv_writer(run_dir / "trial_results.csv", trial_fieldnames)
+    jsonl_handle = (run_dir / "trial_logs.jsonl").open("w", encoding="utf-8")
+
+    run_fieldnames = schemas["run"]
+    run_csv_handle, run_writer = initialize_csv_writer(run_dir / "run_accuracy_long.csv", run_fieldnames)
+
+    summary_fieldnames = schemas["summary"]
     summary_csv_handle, summary_writer = initialize_csv_writer(run_dir / "experiment_summary.csv", summary_fieldnames)
 
-    wide_fieldnames = ["dataset", "prompt_type", "model"]
-    for config in experiment.few_shot_configs:
-        for run_id in range(experiment.runs_per_config):
-            wide_fieldnames.append(f"({config.n},{config.k},{config.q})_run{run_id}")
+    wide_fieldnames = schemas["wide"]
     wide_rows: Dict[Tuple[str, str], Dict[str, Any]] = {}
 
     system_fallback_warning_printed = False
@@ -584,16 +818,18 @@ def main() -> None:
                 if wide_key not in wide_rows:
                     base_row = {"dataset": dataset_name, "prompt_type": prompt_type, "model": settings.model}
                     for config in experiment.few_shot_configs:
-                        for run_id in range(experiment.runs_per_config):
+                        for run_id in range(config.runs):
                             base_row[f"({config.n},{config.k},{config.q})_run{run_id}"] = "ERROR"
                     wide_rows[wide_key] = base_row
 
                 print(f"[*] Prompt={prompt_type} | expected_trials={queries_per_prompt_dataset}")
 
                 for config in experiment.few_shot_configs:
-                    print(f"[*] Prompt={prompt_type} | Config N={config.n} K={config.k} Q={config.q}")
+                    print(
+                        f"[*] Prompt={prompt_type} | Config N={config.n} K={config.k} Q={config.q} | runs={config.runs}"
+                    )
 
-                    for run_id in range(experiment.runs_per_config):
+                    for run_id in range(config.runs):
                         episode_filepath = (
                             repo_root
                             / "episodes"
@@ -625,7 +861,7 @@ def main() -> None:
                             "dataset": dataset_name,
                             "prompt_type": prompt_type,
                             "model": settings.model,
-                            "config": {"n": config.n, "k": config.k, "q": config.q},
+                            "config": {"n": config.n, "k": config.k, "q": config.q, "runs": config.runs},
                             "run_id": run_id,
                             "seed": experiment.seed,
                             "episode_filepath": str(episode_filepath),
@@ -918,7 +1154,7 @@ def main() -> None:
                                             f"      progress {query_position + 1}/{num_queries_total} | overall {completed_trials}/{total_trial_budget} | elapsed={format_duration(overall_elapsed)} | eta={format_duration(eta_seconds)}"
                                         )
 
-                                    if consecutive_run_errors >= 3:
+                                    if consecutive_run_errors >= 3 and not is_nonrecoverable_request_error(exc):
                                         raise RuntimeError(
                                             "Aborting early because 3 consecutive trial requests failed in the same run. "
                                             f"First repeated error: {first_error_signature or error_signature}"
@@ -1016,8 +1252,16 @@ def main() -> None:
     )
 
     if not skip_analysis:
-        analysis_outputs = analyze_run_directory(run_dir)
-        print(f"[+] Analysis generated in: {analysis_outputs['analysis_dir']}")
+        try:
+            analysis_outputs = analyze_run_directory(run_dir)
+            print(f"[+] Analysis generated in: {analysis_outputs['analysis_dir']}")
+        except Exception as exc:
+            error_path = run_dir / "analysis_error.txt"
+            error_path.write_text(traceback.format_exc(), encoding="utf-8")
+            print(
+                f"[WARNING] Experiment execution finished, but analysis failed: {type(exc).__name__}: {exc}. "
+                f"Traceback written to {error_path}"
+            )
 
 
 if __name__ == "__main__":
