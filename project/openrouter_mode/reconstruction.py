@@ -38,7 +38,9 @@ def reconstruct_classifier_messages(
     from episode_utils import load_episode_from_indices
     from setup_utils import select_few_shot_images_with_data_fixed
 
-    preview_messages = _parse_json_field(row.get("message_preview", ""), [])
+    preview_messages = _parse_json_field(row.get("sent_message_preview", ""), [])
+    if not preview_messages:
+        preview_messages = _parse_json_field(row.get("message_preview", ""), [])
     if not preview_messages:
         raise ValueError("The trial row does not contain a valid message_preview payload.")
 

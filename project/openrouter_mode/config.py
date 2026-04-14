@@ -70,6 +70,10 @@ def build_openrouter_settings(
     env_path: Path,
     cli_model: Optional[str] = None,
     *,
+    site_url_override: Optional[str] = None,
+    app_name_override: Optional[str] = None,
+    timeout_seconds_override: Optional[int] = None,
+    max_retries_override: Optional[int] = None,
     env_model_key: str = "OPENROUTER_MODEL",
     app_name_keys: Iterable[str] = ("OPENROUTER_APP_NAME",),
     default_app_name: str = "research-llms-icl-openrouter",
@@ -90,10 +94,21 @@ def build_openrouter_settings(
             f"{env_model_key} is missing. Set it in {env_path} or pass --model."
         )
 
-    site_url = os.getenv("OPENROUTER_SITE_URL", "").strip() or None
-    app_name = _first_non_empty_env(app_name_keys, default_app_name)
-    timeout_seconds = int(_first_non_empty_env(timeout_keys, "180"))
-    max_retries = int(_first_non_empty_env(retry_keys, "4"))
+    site_url = site_url_override
+    if site_url is None:
+        site_url = os.getenv("OPENROUTER_SITE_URL", "").strip() or None
+
+    app_name = app_name_override or _first_non_empty_env(app_name_keys, default_app_name)
+    timeout_seconds = (
+        int(timeout_seconds_override)
+        if timeout_seconds_override is not None
+        else int(_first_non_empty_env(timeout_keys, "180"))
+    )
+    max_retries = (
+        int(max_retries_override)
+        if max_retries_override is not None
+        else int(_first_non_empty_env(retry_keys, "4"))
+    )
 
     return OpenRouterSettings(
         api_key=api_key,

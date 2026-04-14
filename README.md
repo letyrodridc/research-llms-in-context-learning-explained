@@ -50,32 +50,87 @@ This repository now includes a separate OpenRouter-based execution mode that doe
 
 ### Run
 
-Run all datasets and all prompt types:
+The experiment runner now uses a JSON config as the source of truth for:
+
+- prompt text and per-condition generation limits
+- model and OpenRouter request settings
+- datasets and prompt conditions to run
+- few-shot `N/K/Q` settings and repetitions
+- output root and logging behavior
+
+Default files:
+
+- experiment config: [`project/configs/openrouter_experiment.full.json`](./project/configs/openrouter_experiment.full.json)
+- smoke config: [`project/configs/openrouter_experiment.smoke.json`](./project/configs/openrouter_experiment.smoke.json)
+- prompt library: [`project/configs/openrouter_prompt_library.default.json`](./project/configs/openrouter_prompt_library.default.json)
+
+Run the full config:
 
 ```bash
-python project/run_openrouter_experiment.py --dataset all --prompt-type all
+python project/run_openrouter_experiment.py --config project/configs/openrouter_experiment.full.json
 ```
 
-Run a single dataset and prompt type:
+Run a small smoke test:
 
 ```bash
-python project/run_openrouter_experiment.py --dataset pets --prompt-type classification
+python project/run_openrouter_experiment.py --config project/configs/openrouter_experiment.smoke.json
 ```
 
-The OpenRouter experiment prompts are sourced from [`new_prompts.txt`](./new_prompts.txt). Each run also saves a `prompt_library_snapshot.json` file so the exact prompt text used by that run is preserved with the outputs.
+Optional CLI overrides still exist for quick slices:
+
+```bash
+python project/run_openrouter_experiment.py --config project/configs/openrouter_experiment.full.json --dataset pets --prompt-type nle --model google/gemini-2.5-flash
+```
+
+The default OpenRouter experiment prompts are now sourced from [`project/configs/openrouter_prompt_library.default.json`](./project/configs/openrouter_prompt_library.default.json), not directly from `new_prompts.txt`. Each run saves both a literal copy of the experiment JSON and a resolved prompt-library snapshot so the exact setup is reproducible.
 
 ### Outputs
 
 Each execution creates a timestamped directory under `project/openrouter_runs/` containing:
 
-- `config.json`: run configuration snapshot
+- `experiment_config.json`: literal copy of the experiment JSON used
+- `experiment_config_snapshot.json`: resolved config with absolute paths and hashes
+- `prompt_library.json`: literal prompt library copy when loaded from a file
+- `prompt_library_snapshot.json`: resolved prompt definitions used by the run
+- `run_manifest.json`: top-level run metadata
 - `trial_results.csv`: one row per trial/query
-- `trial_logs.jsonl`: raw per-trial logs, including the API payload metadata and model output
+- `trial_logs.jsonl`: raw per-trial logs, including exact messages, request attempts, payload metadata, and model output
 - `run_accuracy_long.csv`: one row per `(dataset, prompt, N, K, Q, run)`
 - `experiment_summary.csv`: one row per `(dataset, prompt)` with aggregate timing and accuracy
 - `results_wide.csv`: wide-format summary, similar to the local scripts
-- `debug_logs/`: human-readable logs per dataset and prompt type
+- `datasets/<dataset>/<prompt_type>/N*_K*_Q*/run_*/`: sharded trial CSVs, exact conversation logs, debug logs, and run summaries
 - `analysis/`: generated tables, plots, and statistical test outputs
+
+New runs store image references in logs instead of embedding large base64 image payloads, so the JSONL files stay much easier to inspect manually.
+
+### Changing only the JSON
+
+To run different experiment variants, duplicate one of the JSON configs and change only the fields you need:
+
+- `model.name`: OpenRouter model ID
+- `datasets`: list of dataset names
+- `prompt_types`: list of experimental conditions
+- `few_shot_configs`: list of `{ "n": ..., "k": ..., "q": ... }`
+- `runs_per_config`: number of episode repetitions
+- `output_root`: base directory for run folders
+- `model.generation`: request hyperparameters such as `temperature`
+- `prompt_library_path` or inline `prompt_library`: prompt definitions and per-condition `max_tokens`
+
+### Local Dashboard
+
+You can open an interactive browser dashboard for any run directory:
+
+```bash
+python project/run_openrouter_dashboard.py --run-dir project/openrouter_runs/<run_dir_name>
+```
+
+The dashboard shows:
+
+- experiment parameters and snapshots
+- per-prompt summary metrics
+- all trials with filters
+- reconstructed conversations with dataset images rendered in-place
+- parsed XML blocks from the model response
 
 ## OpenRouter Judge Pipeline
 

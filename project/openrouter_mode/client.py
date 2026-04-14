@@ -83,6 +83,7 @@ class OpenRouterClient:
         messages: List[Dict[str, Any]],
         max_tokens: int,
         temperature: float = 0.0,
+        generation_params: Optional[Dict[str, Any]] = None,
     ) -> OpenRouterResponse:
         payload = {
             "model": self.settings.model,
@@ -90,6 +91,8 @@ class OpenRouterClient:
             "max_tokens": max_tokens,
             "temperature": temperature,
         }
+        if generation_params:
+            payload.update(generation_params)
 
         last_error: Optional[str] = None
 

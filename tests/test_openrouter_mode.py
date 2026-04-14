@@ -17,9 +17,12 @@ if str(PROJECT_ROOT) not in sys.path:
 from openrouter_mode.analysis import analyze_run_directory
 from openrouter_mode.client import OpenRouterClient, extract_message_text, model_supports_images
 from openrouter_mode.config import OpenRouterSettings
+from openrouter_mode.dashboard import RunDataStore
+from openrouter_mode.experiment_config import load_experiment_config
 from openrouter_mode.judge_analysis import analyze_judge_run_directory
 from openrouter_mode.judge_prompts import JUDGE_PROMPT_SPECS
 from openrouter_mode.prompts import PROMPT_SPECS, pil_image_to_data_url
+from run_openrouter_experiment import sanitize_messages_for_logging
 
 
 class FakeResponse:
@@ -107,6 +110,181 @@ class OpenRouterModeTests(unittest.TestCase):
         )
         self.assertIn("<explanation>", PROMPT_SPECS["nle"].system_prompt)
         self.assertIn("Visual Grounding", JUDGE_PROMPT_SPECS["nle"].system_prompt)
+
+    def test_experiment_config_loads_prompt_library_and_paths(self):
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            prompt_library_path = tmp_path / "prompt_library.json"
+            prompt_library_path.write_text(
+                """
+{
+  "schema_version": "openrouter_prompt_library_v1",
+  "name": "tmp",
+  "shared_system_prompt": "Header\\n\\n{CONDITION_INSTRUCTION}\\n\\n<response>label</response>",
+  "query_template": "Options: [{OPTIONS}]",
+  "prompt_types": {
+    "classification": {"condition_instruction": "Return only the label.", "max_tokens": 32, "generation": {"temperature": 0.0}},
+    "nle": {"condition_instruction": "<explanation>why</explanation>", "max_tokens": 64, "generation": {"temperature": 0.0}},
+    "features": {"condition_instruction": "<features>- x</features>", "max_tokens": 64, "generation": {"temperature": 0.0}},
+    "rulebased": {"condition_instruction": "<kb>- rule</kb>", "max_tokens": 64, "generation": {"temperature": 0.0}},
+    "axioms_ontology_v2": {"condition_instruction": "<tbox>- axiom</tbox>", "max_tokens": 64, "generation": {"temperature": 0.0}}
+  }
+}
+                """.strip(),
+                encoding="utf-8",
+            )
+            config_path = tmp_path / "experiment.json"
+            config_path.write_text(
+                f"""
+{{
+  "schema_version": "openrouter_experiment_v1",
+  "experiment_name": "tmp-run",
+  "env_file": ".env",
+  "output_root": "outputs",
+  "prompt_library_path": "{prompt_library_path.name}",
+  "model": {{
+    "name": "test/model",
+    "validate_image_input": true,
+    "generation": {{"temperature": 0.0}}
+  }},
+  "datasets": ["pets"],
+  "prompt_types": ["classification", "nle"],
+  "few_shot_configs": [{{"n": 2, "k": 1, "q": 3}}],
+  "runs_per_config": 1,
+  "seed": 7
+}}
+                """.strip(),
+                encoding="utf-8",
+            )
+
+            loaded = load_experiment_config(config_path)
+
+            self.assertEqual(loaded.experiment_name, "tmp-run")
+            self.assertEqual(loaded.model.name, "test/model")
+            self.assertEqual(loaded.datasets, ["pets"])
+            self.assertEqual(loaded.prompt_types, ["classification", "nle"])
+            self.assertEqual(loaded.few_shot_configs[0].n, 2)
+            self.assertEqual(loaded.output_root, (tmp_path / "outputs").resolve())
+            self.assertIn("Return only the label.", loaded.prompt_library.prompt_specs["classification"].system_prompt)
+
+    def test_sanitize_messages_for_logging_replaces_data_urls_with_image_refs(self):
+        messages = [
+            {"role": "system", "content": "hello"},
+            {
+                "role": "user",
+                "content": [
+                    {"type": "text", "text": "What is this?"},
+                    {"type": "image_url", "image_url": {"url": "data:image/jpeg;base64,AAA"}},
+                ],
+            },
+        ]
+        image_refs = [{"kind": "query", "dataset_index": 10, "order_index": 1}]
+
+        sanitized = sanitize_messages_for_logging(messages, image_refs)
+
+        self.assertEqual(sanitized[0]["content"], "hello")
+        self.assertEqual(sanitized[1]["content"][0]["text"], "What is this?")
+        self.assertEqual(sanitized[1]["content"][1]["type"], "image_ref")
+        self.assertEqual(sanitized[1]["content"][1]["image_ref"]["dataset_index"], 10)
+
+    def test_dashboard_store_lists_trials_without_loading_datasets(self):
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            run_dir = Path(tmp_dir)
+            trial_rows = [
+                {
+                    "trial_timestamp": "2026-03-20T12:00:00",
+                    "dataset": "pets",
+                    "prompt_type": "classification",
+                    "model": "test/model",
+                    "config_n": "2",
+                    "config_k": "1",
+                    "config_q": "9",
+                    "run_id": "0",
+                    "query_index_within_episode": "0",
+                    "support_indices": "[1,2]",
+                    "query_dataset_index": "10",
+                    "expected_label": "Bombay",
+                    "predicted_label": "Bombay",
+                    "correct": "1",
+                    "error": "",
+                    "warning": "",
+                    "parse_issue": "",
+                    "system_fallback_applied": "0",
+                    "trial_wall_seconds": "0.5",
+                    "latency_seconds": "0.5",
+                    "response_id": "a",
+                    "finish_reason": "stop",
+                    "usage_prompt_tokens": "10",
+                    "usage_completion_tokens": "5",
+                    "usage_total_tokens": "15",
+                    "provider": "{}",
+                    "episode_filepath": "episode.npy",
+                    "class_options": "[\"Bombay\"]",
+                    "image_refs": "[]",
+                    "prompt_hash": "abc",
+                    "message_preview": "[]",
+                    "sent_prompt_hash": "abc",
+                    "sent_message_preview": "[]",
+                    "artifact_dir": "datasets/pets/classification/N2_K1_Q9/run_0",
+                    "conversation_log_path": "datasets/pets/classification/N2_K1_Q9/run_0/conversations.jsonl",
+                    "raw_response_text": "<response>Bombay</response>",
+                }
+            ]
+            run_rows = [
+                {
+                    "dataset": "pets",
+                    "prompt_type": "classification",
+                    "model": "test/model",
+                    "config_n": "2",
+                    "config_k": "1",
+                    "config_q": "9",
+                    "run_id": "0",
+                    "correct": "1",
+                    "total": "1",
+                    "errors": "0",
+                    "accuracy": "1.0000",
+                    "run_duration_seconds": "0.5",
+                    "avg_trial_wall_seconds": "0.5",
+                    "avg_trial_api_seconds": "0.4",
+                    "system_fallback_count": "0",
+                    "artifact_dir": "datasets/pets/classification/N2_K1_Q9/run_0",
+                }
+            ]
+            summary_rows = [
+                {
+                    "dataset": "pets",
+                    "prompt_type": "classification",
+                    "model": "test/model",
+                    "total_correct": "1",
+                    "total_trials": "1",
+                    "total_errors": "0",
+                    "overall_accuracy": "1.0000",
+                    "total_duration_seconds": "0.5",
+                    "avg_trial_wall_seconds": "0.5",
+                    "avg_trial_api_seconds": "0.4",
+                    "system_fallback_count": "0",
+                }
+            ]
+
+            for filename, rows in [
+                ("trial_results.csv", trial_rows),
+                ("run_accuracy_long.csv", run_rows),
+                ("experiment_summary.csv", summary_rows),
+            ]:
+                with (run_dir / filename).open("w", encoding="utf-8", newline="") as handle:
+                    writer = csv.DictWriter(handle, fieldnames=list(rows[0].keys()))
+                    writer.writeheader()
+                    writer.writerows(rows)
+
+            (run_dir / "run_manifest.json").write_text('{"run_name":"demo"}', encoding="utf-8")
+
+            store = RunDataStore(run_dir)
+            trials = store.list_trials()
+            summary = store.summary_payload()
+
+            self.assertEqual(len(trials), 1)
+            self.assertEqual(trials[0]["trial_id"], "0")
+            self.assertEqual(summary["trial_count"], 1)
 
     def test_openrouter_client_parses_openai_compatible_response(self):
         session = FakeSession()

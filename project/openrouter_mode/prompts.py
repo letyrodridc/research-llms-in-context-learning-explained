@@ -2,13 +2,16 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from io import BytesIO
-from typing import Any, Dict, List, Tuple
+from pathlib import Path
+from typing import Any, Dict, List, Mapping, Optional, Tuple
 import base64
+import hashlib
+import json
 
 from PIL import Image
 
 from .config import PROMPT_TYPES
-from .prompt_assets import build_asset_snapshot, require_assignment_blocks
+from .prompt_assets import repo_root
 
 
 @dataclass(frozen=True)
@@ -16,51 +19,135 @@ class PromptSpec:
     prompt_type: str
     system_prompt: str
     condition_instruction: str
+    query_template: str
     max_tokens: int
+    generation: Dict[str, Any]
 
 
-PROMPT_ASSET_FILENAME = "new_prompts.txt"
-PROMPT_ASSET_KEYS = (
-    "SHARED_SYSTEM_PROMPT",
-    "BASELINE_CONDITION_INSTRUCTION",
-    "NLE_CONDITION_INSTRUCTION",
-    "FEATURES_CONDITION_INSTRUCTION",
-    "LOGIC_RULES_CONDITION_INSTRUCTION",
-    "DL_AXIOMS_CONDITION_INSTRUCTION",
-)
-PROMPT_ASSETS = require_assignment_blocks(PROMPT_ASSET_FILENAME, PROMPT_ASSET_KEYS)
-
-CONDITION_INSTRUCTIONS = {
-    "classification": PROMPT_ASSETS["BASELINE_CONDITION_INSTRUCTION"],
-    "nle": PROMPT_ASSETS["NLE_CONDITION_INSTRUCTION"],
-    "features": PROMPT_ASSETS["FEATURES_CONDITION_INSTRUCTION"],
-    "rulebased": PROMPT_ASSETS["LOGIC_RULES_CONDITION_INSTRUCTION"],
-    "axioms_ontology_v2": PROMPT_ASSETS["DL_AXIOMS_CONDITION_INSTRUCTION"],
-}
-PROMPT_MAX_TOKENS = {
-    "classification": 256,
-    "nle": 512,
-    "features": 512,
-    "rulebased": 768,
-    "axioms_ontology_v2": 1024,
-}
+@dataclass(frozen=True)
+class LoadedPromptLibrary:
+    source_path: Optional[Path]
+    raw_data: Dict[str, Any]
+    prompt_specs: Dict[str, PromptSpec]
 
 
-def _build_system_prompt(prompt_type: str) -> str:
-    return PROMPT_ASSETS["SHARED_SYSTEM_PROMPT"].format(
-        CONDITION_INSTRUCTION=CONDITION_INSTRUCTIONS[prompt_type]
+DEFAULT_PROMPT_LIBRARY_PATH = repo_root() / "project" / "configs" / "openrouter_prompt_library.default.json"
+
+
+def _read_json_file(path: Path) -> Dict[str, Any]:
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except FileNotFoundError as exc:
+        raise FileNotFoundError(f"Prompt library file not found: {path}") from exc
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"Prompt library file is not valid JSON: {path}: {exc}") from exc
+
+    if not isinstance(data, dict):
+        raise ValueError(f"Prompt library root must be a JSON object: {path}")
+    return data
+
+
+def _require_string(raw: Mapping[str, Any], key: str) -> str:
+    value = raw.get(key)
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError(f"Prompt library field `{key}` must be a non-empty string.")
+    return value.strip()
+
+
+def _load_prompt_specs(raw_data: Mapping[str, Any]) -> Dict[str, PromptSpec]:
+    schema_version = raw_data.get("schema_version")
+    if schema_version != "openrouter_prompt_library_v1":
+        raise ValueError(
+            "Prompt library `schema_version` must be `openrouter_prompt_library_v1`."
+        )
+
+    shared_system_prompt = _require_string(raw_data, "shared_system_prompt")
+    query_template = _require_string(raw_data, "query_template")
+    if "{CONDITION_INSTRUCTION}" not in shared_system_prompt:
+        raise ValueError(
+            "Prompt library `shared_system_prompt` must contain the `{CONDITION_INSTRUCTION}` placeholder."
+        )
+    if "{OPTIONS}" not in query_template:
+        raise ValueError(
+            "Prompt library `query_template` must contain the `{OPTIONS}` placeholder."
+        )
+
+    prompt_types_raw = raw_data.get("prompt_types")
+    if not isinstance(prompt_types_raw, dict):
+        raise ValueError("Prompt library field `prompt_types` must be an object.")
+
+    missing = [prompt_type for prompt_type in PROMPT_TYPES if prompt_type not in prompt_types_raw]
+    if missing:
+        raise ValueError(
+            f"Prompt library is missing required prompt types: {', '.join(missing)}"
+        )
+
+    prompt_specs: Dict[str, PromptSpec] = {}
+    for prompt_type in PROMPT_TYPES:
+        prompt_raw = prompt_types_raw[prompt_type]
+        if not isinstance(prompt_raw, dict):
+            raise ValueError(f"Prompt definition for `{prompt_type}` must be an object.")
+
+        condition_instruction = _require_string(prompt_raw, "condition_instruction")
+        prompt_query_template = prompt_raw.get("query_template", query_template)
+        if not isinstance(prompt_query_template, str) or "{OPTIONS}" not in prompt_query_template:
+            raise ValueError(
+                f"Prompt definition for `{prompt_type}` must provide a `query_template` containing `{{OPTIONS}}`."
+            )
+
+        generation = prompt_raw.get("generation") or {}
+        if not isinstance(generation, dict):
+            raise ValueError(f"Prompt definition for `{prompt_type}` field `generation` must be an object.")
+
+        try:
+            max_tokens = int(prompt_raw["max_tokens"])
+        except (KeyError, TypeError, ValueError) as exc:
+            raise ValueError(
+                f"Prompt definition for `{prompt_type}` must provide an integer `max_tokens`."
+            ) from exc
+        if max_tokens <= 0:
+            raise ValueError(f"Prompt definition for `{prompt_type}` must use a positive `max_tokens`.")
+
+        system_prompt = shared_system_prompt.replace(
+            "{CONDITION_INSTRUCTION}",
+            condition_instruction,
+        )
+        prompt_specs[prompt_type] = PromptSpec(
+            prompt_type=prompt_type,
+            system_prompt=system_prompt,
+            condition_instruction=condition_instruction,
+            query_template=prompt_query_template,
+            max_tokens=max_tokens,
+            generation=dict(generation),
+        )
+    return prompt_specs
+
+
+def load_prompt_library(
+    path: Optional[Path] = None,
+    *,
+    raw_data: Optional[Dict[str, Any]] = None,
+    source_path: Optional[Path] = None,
+) -> LoadedPromptLibrary:
+    if raw_data is not None:
+        prompt_specs = _load_prompt_specs(raw_data)
+        return LoadedPromptLibrary(
+            source_path=source_path.resolve() if source_path else None,
+            raw_data=dict(raw_data),
+            prompt_specs=prompt_specs,
+        )
+
+    resolved_path = (path or DEFAULT_PROMPT_LIBRARY_PATH).resolve()
+    loaded_raw_data = _read_json_file(resolved_path)
+    return LoadedPromptLibrary(
+        source_path=resolved_path,
+        raw_data=loaded_raw_data,
+        prompt_specs=_load_prompt_specs(loaded_raw_data),
     )
 
 
-PROMPT_SPECS = {
-    prompt_type: PromptSpec(
-        prompt_type=prompt_type,
-        system_prompt=_build_system_prompt(prompt_type),
-        condition_instruction=CONDITION_INSTRUCTIONS[prompt_type],
-        max_tokens=PROMPT_MAX_TOKENS[prompt_type],
-    )
-    for prompt_type in PROMPT_TYPES
-}
+DEFAULT_PROMPT_LIBRARY = load_prompt_library()
+PROMPT_SPECS = DEFAULT_PROMPT_LIBRARY.prompt_specs
 
 
 def pil_image_to_data_url(image: Image.Image, image_format: str = "JPEG") -> str:
@@ -82,27 +169,30 @@ def _label_text(label_id: Any, class_names: Any) -> str:
     return str(label_id)
 
 
-def _build_query_text(prompt_type: str, options_str: str) -> str:
-    if prompt_type not in PROMPT_TYPES:
-        raise ValueError(f"Unsupported prompt_type: {prompt_type}")
-    return (
-        "Target Image:\n"
-        "Classify this image using only the labeled examples above.\n"
-        f"Valid labels: [{options_str}]\n"
-        "Follow the exact XML structure required by the system instructions."
-    )
+def export_prompt_library_snapshot(
+    prompt_library: Optional[LoadedPromptLibrary] = None,
+) -> Dict[str, Any]:
+    prompt_library = prompt_library or DEFAULT_PROMPT_LIBRARY
+    source_snapshot: Dict[str, Any] = {
+        "path": str(prompt_library.source_path) if prompt_library.source_path else None,
+        "sha256": "",
+    }
+    if prompt_library.source_path and prompt_library.source_path.exists():
+        text = prompt_library.source_path.read_text(encoding="utf-8")
+        source_snapshot["sha256"] = hashlib.sha256(text.encode("utf-8")).hexdigest()
 
-
-def export_prompt_library_snapshot() -> Dict[str, Any]:
     return {
-        "source_asset": build_asset_snapshot(PROMPT_ASSET_FILENAME, PROMPT_ASSET_KEYS),
+        "source_asset": source_snapshot,
+        "raw_prompt_library": prompt_library.raw_data,
         "prompt_types": {
             prompt_type: {
                 "system_prompt": spec.system_prompt,
                 "condition_instruction": spec.condition_instruction,
+                "query_template": spec.query_template,
                 "max_tokens": spec.max_tokens,
+                "generation": spec.generation,
             }
-            for prompt_type, spec in PROMPT_SPECS.items()
+            for prompt_type, spec in prompt_library.prompt_specs.items()
         },
     }
 
@@ -113,11 +203,13 @@ def build_openrouter_messages(
     shots: List[Tuple[Any, Any]],
     query: Tuple[Any, Any],
     class_names: Any,
+    prompt_specs: Optional[Mapping[str, PromptSpec]] = None,
 ) -> Tuple[List[Dict[str, Any]], List[str]]:
-    if prompt_type not in PROMPT_TYPES:
+    prompt_specs = prompt_specs or PROMPT_SPECS
+    if prompt_type not in prompt_specs:
         raise ValueError(f"Unsupported prompt_type: {prompt_type}")
 
-    spec = PROMPT_SPECS[prompt_type]
+    spec = prompt_specs[prompt_type]
     messages: List[Dict[str, Any]] = [{"role": "system", "content": spec.system_prompt}]
 
     valid_labels: List[str] = []
@@ -146,7 +238,7 @@ def build_openrouter_messages(
     query_img_pil = _tensor_to_pil(query_img_tensor)
     query_data_url = pil_image_to_data_url(query_img_pil)
     options_str = ", ".join(valid_labels)
-    query_text = _build_query_text(prompt_type, options_str)
+    query_text = spec.query_template.replace("{OPTIONS}", options_str)
 
     messages.append(
         {

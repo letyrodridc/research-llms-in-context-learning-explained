@@ -1,0 +1,15 @@
+0. Configure your experiment in project/configs/your-new.json
+
+1. Create a file named `.env` at the repo root:
+   `research-llms-in-context-learning-explained\.env`
+
+2. Put the OpenRouter API key there in plain `KEY=value` format, one variable per line:
+
+OPENROUTER_API_KEY=your_real_openrouter_api_key_here
+
+3. Then run:
+python project/run_openrouter_experiment.py --config project/configs/your_desired_experiment.json
+
+4. After experiment is finished, you can view results in dashboard:
+
+python project/run_openrouter_dashboard.py --run-dir project/openrouter_runs/your-run-folder
