@@ -24,6 +24,7 @@ from openrouter_mode.experiment_config import (
     export_experiment_config_snapshot,
     load_experiment_config,
 )
+from openrouter_mode.prompt_assets import repo_relative_path
 from openrouter_mode.prompts import (
     PromptSpec,
     build_openrouter_messages,
@@ -342,7 +343,7 @@ def build_trial_record_base(
         "support_indices": json_dumps(list(map(int, support_indices))),
         "query_dataset_index": int(query_dataset_index),
         "expected_label": expected_label,
-        "episode_filepath": str(episode_filepath),
+        "episode_filepath": repo_relative_path(episode_filepath),
         "class_options": json_dumps(class_options),
         "image_refs": json_dumps(build_image_refs(support_indices, query_dataset_index)),
         "prompt_hash": stable_prompt_hash(messages),

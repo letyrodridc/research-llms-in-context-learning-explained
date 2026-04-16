@@ -7,7 +7,7 @@ import hashlib
 import json
 
 from .config import DATASET_CHOICES, PROMPT_TYPES, TESTS
-from .prompt_assets import repo_root
+from .prompt_assets import repo_relative_path, repo_root
 from .prompts import DEFAULT_PROMPT_LIBRARY_PATH, LoadedPromptLibrary, load_prompt_library
 
 
@@ -307,15 +307,15 @@ def export_experiment_config_snapshot(config: LoadedExperimentConfig) -> Dict[st
     return {
         "schema_version": "openrouter_experiment_snapshot_v1",
         "source_config": {
-            "path": str(config.config_path),
+            "path": repo_relative_path(config.config_path),
             "sha256": _sha256_text(source_text),
             "raw": config.raw_config,
         },
         "resolved": {
             "experiment_name": config.experiment_name,
             "description": config.description,
-            "env_file": str(config.env_file),
-            "output_root": str(config.output_root),
+            "env_file": repo_relative_path(config.env_file),
+            "output_root": repo_relative_path(config.output_root),
             "datasets": config.datasets,
             "prompt_types": config.prompt_types,
             "few_shot_configs": [

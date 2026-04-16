@@ -18,11 +18,12 @@ from openrouter_mode.analysis import analyze_run_directory
 from openrouter_mode.client import OpenRouterClient, extract_message_text, model_supports_images
 from openrouter_mode.config import OpenRouterSettings
 from openrouter_mode.dashboard import RunDataStore
-from openrouter_mode.experiment_config import load_experiment_config
+from openrouter_mode.experiment_config import export_experiment_config_snapshot, load_experiment_config
 from openrouter_mode.judge_analysis import analyze_judge_run_directory
 from openrouter_mode.judge_prompts import JUDGE_PROMPT_SPECS
+from openrouter_mode.prompt_assets import repo_relative_path, resolve_repo_path
 from openrouter_mode.prompts import PROMPT_SPECS, pil_image_to_data_url
-from run_openrouter_experiment import sanitize_messages_for_logging
+from run_openrouter_experiment import build_trial_record_base, sanitize_messages_for_logging
 
 
 class FakeResponse:
@@ -189,6 +190,49 @@ class OpenRouterModeTests(unittest.TestCase):
         self.assertEqual(sanitized[1]["content"][0]["text"], "What is this?")
         self.assertEqual(sanitized[1]["content"][1]["type"], "image_ref")
         self.assertEqual(sanitized[1]["content"][1]["image_ref"]["dataset_index"], 10)
+
+    def test_export_experiment_config_snapshot_uses_repo_relative_paths(self):
+        loaded = load_experiment_config(REPO_ROOT / "project" / "configs" / "openrouter_experiment.test.json")
+
+        snapshot = export_experiment_config_snapshot(loaded)
+
+        self.assertEqual(snapshot["source_config"]["path"], "project\\configs\\openrouter_experiment.test.json")
+        self.assertEqual(snapshot["resolved"]["env_file"], ".env")
+        self.assertEqual(snapshot["resolved"]["output_root"], "project\\openrouter_runs")
+
+    def test_build_trial_record_base_stores_repo_relative_episode_path(self):
+        episode_path = REPO_ROOT / "episodes" / "seed_42" / "pets" / "episode_N2_K1_Q1_run0.npy"
+        artifact_dir = REPO_ROOT / "project" / "openrouter_runs" / "demo" / "datasets" / "pets" / "classification" / "N2_K1_Q1" / "run_0"
+        run_dir = REPO_ROOT / "project" / "openrouter_runs" / "demo"
+        messages = [{"role": "system", "content": "hello"}]
+
+        record = build_trial_record_base(
+            run_id=0,
+            dataset_name="pets",
+            prompt_type="classification",
+            config_tuple=type("Cfg", (), {"n": 2, "k": 1, "q": 1})(),
+            support_indices=[1, 2],
+            query_dataset_index=10,
+            query_index_within_episode=0,
+            expected_label="Bombay",
+            episode_filepath=episode_path,
+            class_options=["Bombay", "Siamese"],
+            messages=messages,
+            model_name="test/model",
+            artifact_dir=artifact_dir,
+            run_dir=run_dir,
+        )
+
+        self.assertEqual(record["episode_filepath"], repo_relative_path(episode_path))
+
+    def test_resolve_repo_path_remaps_old_absolute_repo_paths(self):
+        old_machine_path = Path(
+            "C:/Users/Someone/Documents/GitHub/research-llms-in-context-learning-explained/README.md"
+        )
+
+        resolved = resolve_repo_path(old_machine_path)
+
+        self.assertEqual(resolved, (REPO_ROOT / "README.md").resolve())
 
     def test_dashboard_store_lists_trials_without_loading_datasets(self):
         with tempfile.TemporaryDirectory() as tmp_dir:

@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Any, Dict, List
 import json
 
+from .prompt_assets import resolve_repo_path
 from .prompts import _tensor_to_pil, pil_image_to_data_url
 
 
@@ -44,7 +45,7 @@ def reconstruct_classifier_messages(
     if not preview_messages:
         raise ValueError("The trial row does not contain a valid message_preview payload.")
 
-    episode_filepath = Path(row["episode_filepath"])
+    episode_filepath = resolve_repo_path(row["episode_filepath"])
     query_index_within_episode = int(row["query_index_within_episode"])
     episode_data = load_episode_from_indices(str(episode_filepath), dataset, class_names)
     _indices, shots, query, _query_class_names = select_few_shot_images_with_data_fixed(

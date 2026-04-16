@@ -14,6 +14,33 @@ def repo_root() -> Path:
     return Path(__file__).resolve().parents[2]
 
 
+def repo_relative_path(path: Path) -> str:
+    resolved = path.resolve()
+    root = repo_root().resolve()
+    try:
+        return str(resolved.relative_to(root))
+    except ValueError:
+        return str(resolved)
+
+
+def resolve_repo_path(path_value: str | Path) -> Path:
+    candidate = Path(path_value)
+    root = repo_root().resolve()
+    if candidate.is_absolute():
+        if candidate.exists():
+            return candidate
+        parts_lower = [part.lower() for part in candidate.parts]
+        root_name = root.name.lower()
+        if root_name in parts_lower:
+            anchor_index = parts_lower.index(root_name)
+            suffix = Path(*candidate.parts[anchor_index + 1 :])
+            remapped = (root / suffix).resolve()
+            if remapped.exists():
+                return remapped
+        return candidate
+    return (root / candidate).resolve()
+
+
 @lru_cache(maxsize=None)
 def load_assignment_blocks(filename: str) -> Dict[str, str]:
     path = repo_root() / filename
@@ -42,7 +69,7 @@ def build_asset_snapshot(filename: str, required_keys: Iterable[str]) -> Dict[st
     text = path.read_text(encoding="utf-8")
     require_assignment_blocks(filename, required_keys)
     return {
-        "path": str(path),
+        "path": repo_relative_path(path),
         "sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(),
         "required_keys": list(required_keys),
     }
