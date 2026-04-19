@@ -671,6 +671,45 @@ def analyze_run_directory(run_dir: Path) -> Dict[str, Path]:
         config_prompt,
     )
 
+    # ── Paper tables ─────────────────────────────────────────────────────────
+    prompt_model   = _aggregate_accuracy(trial_rows, ["prompt_type", "model"])
+    prompt_dset    = _aggregate_accuracy(trial_rows, ["prompt_type", "dataset"])
+    config_model   = _aggregate_accuracy(trial_rows, ["config_n", "config_k", "model"])
+    model_dset     = _aggregate_accuracy(trial_rows, ["model", "dataset"])
+    full_breakdown = _aggregate_accuracy(trial_rows, ["prompt_type", "model", "dataset"])
+    full_nk        = _aggregate_accuracy(trial_rows, ["prompt_type", "model", "dataset", "config_n", "config_k"])
+
+    _write_csv(
+        tables_dir / "accuracy_by_prompt_and_model.csv",
+        ["prompt_type", "model", "correct", "total", "accuracy", "standard_error", "ci95_low", "ci95_high"],
+        prompt_model,
+    )
+    _write_csv(
+        tables_dir / "accuracy_by_prompt_and_dataset.csv",
+        ["prompt_type", "dataset", "correct", "total", "accuracy", "standard_error", "ci95_low", "ci95_high"],
+        prompt_dset,
+    )
+    _write_csv(
+        tables_dir / "accuracy_by_config_and_model.csv",
+        ["config_n", "config_k", "model", "correct", "total", "accuracy", "standard_error", "ci95_low", "ci95_high"],
+        config_model,
+    )
+    _write_csv(
+        tables_dir / "accuracy_by_model_and_dataset.csv",
+        ["model", "dataset", "correct", "total", "accuracy", "standard_error", "ci95_low", "ci95_high"],
+        model_dset,
+    )
+    _write_csv(
+        tables_dir / "accuracy_by_prompt_model_dataset.csv",
+        ["prompt_type", "model", "dataset", "correct", "total", "accuracy", "standard_error", "ci95_low", "ci95_high"],
+        full_breakdown,
+    )
+    _write_csv(
+        tables_dir / "accuracy_full_breakdown.csv",
+        ["prompt_type", "model", "dataset", "config_n", "config_k", "correct", "total", "accuracy", "standard_error", "ci95_low", "ci95_high"],
+        full_nk,
+    )
+
     _write_grouped_bar_outputs(
         title="Overall Accuracy by Prompt Type",
         path=plots_dir / "overall_accuracy_by_prompt.png",
@@ -738,6 +777,12 @@ def analyze_run_directory(run_dir: Path) -> Dict[str, Path]:
         "- `tables/overall_accuracy_by_prompt.csv`",
         "- `tables/accuracy_by_dataset_and_prompt.csv`",
         "- `tables/accuracy_by_config_and_prompt.csv`",
+        "- `tables/accuracy_by_prompt_and_model.csv`",
+        "- `tables/accuracy_by_prompt_and_dataset.csv`",
+        "- `tables/accuracy_by_config_and_model.csv`",
+        "- `tables/accuracy_by_model_and_dataset.csv`",
+        "- `tables/accuracy_by_prompt_model_dataset.csv`",
+        "- `tables/accuracy_full_breakdown.csv`",
         "",
         "## Plots",
         "- `plots/overall_accuracy_by_prompt.png` + companion JSON",
