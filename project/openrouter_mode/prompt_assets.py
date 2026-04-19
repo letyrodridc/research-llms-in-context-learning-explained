@@ -24,8 +24,35 @@ def repo_relative_path(path: Path) -> str:
 
 
 def resolve_repo_path(path_value: str | Path) -> Path:
-    candidate = Path(path_value)
     root = repo_root().resolve()
+    path_str = str(path_value)
+
+    # Handle Windows-style paths (backslashes or drive letter like C:\).
+    # On Linux these are not parsed as hierarchical paths, so we split manually
+    # and try successively shorter suffixes until one resolves under repo_root.
+    if "\\" in path_str:
+        win_parts = path_str.replace("/", "\\").split("\\")
+        # Skip leading drive component (e.g. "C:")
+        start = 1 if win_parts and win_parts[0].endswith(":") else 0
+        for i in range(start, len(win_parts)):
+            sub = win_parts[i:]
+            if not sub:
+                continue
+            suffix = Path(sub[0])
+            for part in sub[1:]:
+                suffix = suffix / part
+            remapped = (root / suffix).resolve()
+            if remapped.exists():
+                return remapped
+        # Fallback: join remaining parts without existence check
+        sub = win_parts[start:]
+        if sub:
+            suffix = Path(sub[0])
+            for part in sub[1:]:
+                suffix = suffix / part
+            return (root / suffix).resolve()
+
+    candidate = Path(path_value)
     if candidate.is_absolute():
         if candidate.exists():
             return candidate
