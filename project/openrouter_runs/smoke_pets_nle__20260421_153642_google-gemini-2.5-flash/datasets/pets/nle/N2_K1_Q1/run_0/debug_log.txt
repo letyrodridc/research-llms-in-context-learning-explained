@@ -1,0 +1,10 @@
+=== DEBUG LOG | dataset=pets | prompt=nle | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[Bombay] | Predicted=[Bombay] | Correct=True
+<explanation>The target image displays an animal with entirely black fur, pointed ears, and yellow eyes. This combination of features is consistent with the visual characteristics observed in the provided example for the 'Bombay' class, which also shows a black cat with yellow eyes and pointed ears. The 'American Bulldog' example, in contrast, shows a dog with brown and white fur and floppy ears.</explanation>
+<response>Bombay</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[American Bulldog] | Predicted=[American Bulldog] | Correct=True
+<explanation>The target image shows an animal with a white and brown coat, a broad head, and a muscular build, which are visual features consistent with the American Bulldog example. The Bombay example, in contrast, shows a completely black cat.</explanation>
+<response>American Bulldog</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=8.4394 | avg_trial_wall_seconds=4.2164 | avg_trial_api_seconds=3.9939 | system_fallback_count=0

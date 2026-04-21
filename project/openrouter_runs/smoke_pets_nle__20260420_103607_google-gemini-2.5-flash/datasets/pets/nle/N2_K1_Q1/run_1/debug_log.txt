@@ -1,0 +1,10 @@
+=== DEBUG LOG | dataset=pets | prompt=nle | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[Bombay] | Predicted=[Bombay] | Correct=True
+<explanation>The target image shows an animal with black fur, pointed ears, and yellow eyes, consistent with the visual features of the Bombay example. The American Bulldog example shows a white puppy with floppy ears and a different facial structure.</explanation>
+<response>Bombay</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[American Bulldog] | Predicted=[American Bulldog] | Correct=True
+<explanation>The target image shows an animal with a short snout, floppy ears, and a white coat, which are visual features consistent with the 'American Bulldog' example. The 'Bombay' example shows a black cat with pointed ears and a longer snout, which are not present in the target image.</explanation>
+<response>American Bulldog</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.3420 | avg_trial_wall_seconds=1.6639 | avg_trial_api_seconds=1.4107 | system_fallback_count=0

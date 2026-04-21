@@ -1,0 +1,31 @@
+=== DEBUG LOG | dataset=pets | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[Bombay] | Predicted=[Bombay] | Correct=True
+<tbox>
+Bombay ≡ hasVisualFeature(black_fur) ⊓ hasVisualFeature(yellow_eyes)
+American_Bulldog ⊑ hasVisualFeature(white_fur) ⊓ hasVisualFeature(puppy_dog)
+</tbox>
+<abox>
+hasVisualFeature(Query, black_fur)
+hasVisualFeature(Query, yellow_eyes)
+</abox>
+<dl_explanation>
+Rule(s) fired: Bombay ≡ hasVisualFeature(black_fur) ⊓ hasVisualFeature(yellow_eyes)
+</dl_explanation>
+<response>Bombay</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[American Bulldog] | Predicted=[American Bulldog] | Correct=True
+<tbox>
+AmericanBulldog ⊑ hasVisualFeature(WhiteFur) ⊓ hasVisualFeature(FloppyEars) ⊓ hasVisualFeature(WrinkledSnout)
+Bombay ⊑ hasVisualFeature(BlackFur) ⊓ hasVisualFeature(YellowEyes) ⊓ hasVisualFeature(PointedEars)
+</tbox>
+<abox>
+hasVisualFeature(Query, WhiteFur)
+hasVisualFeature(Query, FloppyEars)
+hasVisualFeature(Query, WrinkledSnout)
+</abox>
+<dl_explanation>
+AmericanBulldog ⊑ hasVisualFeature(WhiteFur) ⊓ hasVisualFeature(FloppyEars) ⊓ hasVisualFeature(WrinkledSnout)
+</dl_explanation>
+<response>American Bulldog</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.6748 | avg_trial_wall_seconds=1.8293 | avg_trial_api_seconds=1.5491 | system_fallback_count=0

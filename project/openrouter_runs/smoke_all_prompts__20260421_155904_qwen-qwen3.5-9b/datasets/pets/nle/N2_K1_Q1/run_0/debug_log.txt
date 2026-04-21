@@ -1,0 +1,16 @@
+=== DEBUG LOG | dataset=pets | prompt=nle | model=qwen/qwen3.5-9b | N=2 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[Bombay] | Predicted=[Bombay] | Correct=True
+<explanation>
+The target image displays a black cat with yellow eyes and a sleek coat. This visual appearance matches the characteristics of the "Bombay" class shown in the first example, which is also a black cat. The second example shows a dog, which is visually distinct from the target image.
+</explanation>
+
+<response>Bombay</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[American Bulldog] | Predicted=[American Bulldog] | Correct=True
+<explanation>
+The target image features a dog with a white coat and brown markings, sitting on a blanket. This visual evidence aligns with the characteristics of the "American Bulldog" class shown in the second example, distinguishing it from the "Bombay" class which is a black cat.
+</explanation>
+
+<response>American Bulldog</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=58.9091 | avg_trial_wall_seconds=29.4516 | avg_trial_api_seconds=29.2288 | system_fallback_count=0

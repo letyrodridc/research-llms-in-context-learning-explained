@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[Bombay] | Predicted=[Bombay] | Correct=True
+<features>
+- animal type: cat
+- fur color: black
+- eye color: yellow
+- body posture: standing
+</features>
+<kb>
+- IF [animal type = cat AND fur color = black AND eye color = yellow] THEN [Bombay]
+- IF [animal type = dog AND fur color = brown and white AND eye color = brown AND facial features = wrinkled forehead] THEN [American Bulldog]
+</kb>
+<rule_check>
+- The rule for Bombay fires because the target image shows a cat with black fur and yellow eyes.
+</rule_check>
+<response>Bombay</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[American Bulldog] | Predicted=[American Bulldog] | Correct=True
+<features>
+- animal type: dog
+- fur color: predominantly white with brown patches
+- face shape: broad snout, wrinkled forehead
+- ear shape: folded
+</features>
+<kb>
+- IF [animal type = cat AND fur color = black AND eye color = green] THEN [Bombay]
+- IF [animal type = dog AND fur color = predominantly white with brown patches AND face shape = broad snout, wrinkled forehead AND ear shape = folded] THEN [American Bulldog]
+</kb>
+<rule_check>
+- The rule for American Bulldog fires because the target image shows a dog with predominantly white fur and brown patches, a broad snout, a wrinkled forehead, and folded ears, which matches the observable features of the American Bulldog example.
+</rule_check>
+<response>American Bulldog</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.4255 | avg_trial_wall_seconds=2.1648 | avg_trial_api_seconds=1.9415 | system_fallback_count=0

@@ -1,0 +1,16 @@
+=== DEBUG LOG | dataset=pets | prompt=nle | model=google/gemma-4-26b-a4b-it | N=2 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[Bombay] | Predicted=[Bombay] | Correct=True
+<explanation>
+The target image shows a cat with solid black fur and yellow/gold eyes, which matches the visual characteristics of the Bombay cat shown in the first example.
+</explanation>
+
+<response>Bombay</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[American Bulldog] | Predicted=[American Bulldog] | Correct=True
+<explanation>
+The target image shows a dog with physical characteristics similar to the "American Bulldog" example, specifically the facial structure, snout shape, and coloring pattern (white with dark patches around the eyes).
+</explanation>
+
+<response>American Bulldog</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=9.1480 | avg_trial_wall_seconds=4.5666 | avg_trial_api_seconds=4.3233 | system_fallback_count=0

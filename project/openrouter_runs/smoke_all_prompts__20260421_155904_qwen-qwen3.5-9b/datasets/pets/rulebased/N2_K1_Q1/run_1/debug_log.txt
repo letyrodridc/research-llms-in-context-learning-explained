@@ -1,0 +1,35 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=qwen/qwen3.5-9b | N=2 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[Bombay] | Predicted=[Bombay] | Correct=True
+<features>
+- animal type: cat
+- fur color: black
+- eye color: yellow
+- ear shape: pointed
+- posture: lying down
+</features>
+<kb>
+- IF [animal type = cat] AND [fur color = black] AND [eye color = yellow] THEN [Bombay]
+- IF [animal type = dog] AND [fur color = white/cream] AND [ear shape = floppy] THEN [American Bulldog]
+</kb>
+<rule_check>
+- The rule for "Bombay" fires because the target image shows a black cat with yellow eyes and pointed ears, matching the visual features of the first example. The rule for "American Bulldog" does not fire because the animal is clearly a cat, not a white dog.
+</rule_check>
+
+<response>Bombay</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[American Bulldog] | Predicted=[American Bulldog] | Correct=True
+<features>
+- animal type = dog
+- fur color = white
+</features>
+<kb>
+- IF animal type = cat AND fur color = black THEN Bombay
+- IF animal type = dog AND fur color = white THEN American Bulldog
+</kb>
+<rule_check>
+- The target image shows a dog with white fur. This matches the rule for American Bulldog.
+</rule_check>
+
+<response>American Bulldog</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=28.5334 | avg_trial_wall_seconds=14.2642 | avg_trial_api_seconds=14.0455 | system_fallback_count=0

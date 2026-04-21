@@ -1,0 +1,37 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=qwen/qwen3.5-9b | N=2 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[Bombay] | Predicted=[Bombay] | Correct=True
+<features>
+- animal type: cat
+- coat color: solid black
+- eye color: yellow/green
+- posture: standing
+</features>
+<kb>
+- IF [animal type = cat] AND [coat color = solid black] AND [eye color = yellow/green] THEN [Bombay]
+- IF [animal type = dog] AND [coat color = tan and white] AND [face features = wrinkled] THEN [American Bulldog]
+</kb>
+<rule_check>
+- The rule for "Bombay" fires because the target image shows a cat with a solid black coat and yellow/green eyes, matching the observable features of the first example.
+- The rule for "American Bulldog" does not fire because the animal is a cat, not a dog.
+</rule_check>
+
+<response>Bombay</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[American Bulldog] | Predicted=[American Bulldog] | Correct=True
+<features>
+- animal type: dog
+- coat color: white with brown patches
+- facial features: short snout, black nose, floppy ears, facial wrinkles
+- body structure: stocky, muscular build
+</features>
+<kb>
+- IF [animal type = cat] AND [coat color = black] THEN [Bombay]
+- IF [animal type = dog] AND [facial features = short snout, wrinkles] THEN [American Bulldog]
+</kb>
+<rule_check>
+- The rule for American Bulldog fires because the image shows a dog with a short snout, facial wrinkles, and a stocky build. The rule for Bombay does not fire because the animal is a dog, not a black cat.
+</rule_check>
+
+<response>American Bulldog</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=13.1854 | avg_trial_wall_seconds=6.5805 | avg_trial_api_seconds=6.3620 | system_fallback_count=0

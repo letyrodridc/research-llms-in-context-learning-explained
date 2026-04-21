@@ -1,0 +1,31 @@
+=== DEBUG LOG | dataset=pets | prompt=axioms_ontology_v2 | model=qwen/qwen3.5-9b | N=2 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[Bombay] | Predicted=[Bombay] | Correct=True
+<tbox>
+- Bombay ⊑ hasVisualFeature(BlackCat)
+- hasVisualFeature(BlackCat) ⊑ Bombay
+</tbox>
+<abox>
+- hasVisualFeature(Target, BlackCat)
+</abox>
+<dl_explanation>
+- Rule(s) fired: Bombay ≡ hasVisualFeature(BlackCat)
+</dl_explanation>
+
+<response>Bombay</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[American Bulldog] | Predicted=[American Bulldog] | Correct=True
+<tbox>
+- [American Bulldog] ⊑ hasVisualFeature(WhiteFur)
+- hasVisualFeature(WhiteFur) ⊓ hasVisualFeature(Dog) ⊑ [American Bulldog]
+</tbox>
+<abox>
+- hasVisualFeature(Target, WhiteFur)
+- hasVisualFeature(Target, Dog)
+</abox>
+<dl_explanation>
+- Rule(s) fired: [American Bulldog] ≡ hasVisualFeature(WhiteFur) ⊓ hasVisualFeature(Dog)
+</dl_explanation>
+
+<response>American Bulldog</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=37.1580 | avg_trial_wall_seconds=18.5755 | avg_trial_api_seconds=18.2729 | system_fallback_count=0

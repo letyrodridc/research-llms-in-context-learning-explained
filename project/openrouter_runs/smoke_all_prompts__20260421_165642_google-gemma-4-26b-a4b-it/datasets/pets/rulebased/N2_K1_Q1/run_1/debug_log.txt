@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=2 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[Bombay] | Predicted=[Bombay] | Correct=True
+<features>
+- animal type, cat
+- fur color, black
+- eye color, yellow/gold
+</features>
+<kb>
+- IF [animal type = cat AND fur color = black] THEN [Bombay]
+- IF [animal type = dog AND fur color = white] THEN [American Bulldog]
+</kb>
+<rule_check>
+- The rule for [Bombay] fires because the image shows a black cat with yellow eyes.
+</rule_check>
+
+<response>Bombay</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[American Bulldog] | Predicted=[American Bulldog] | Correct=True
+<features>
+- animal type, dog
+- fur color, white
+- ear shape, floppy/folded
+</features>
+<kb>
+- IF [animal type = cat AND fur color = black] THEN [Bombay]
+- IF [animal type = dog AND fur color = white] THEN [American Bulldog]
+</kb>
+<rule_check>
+- The rule "IF [animal type = dog AND fur color = white] THEN [American Bulldog]" fires because the image shows a white dog.
+</rule_check>
+
+<response>American Bulldog</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=8.2417 | avg_trial_wall_seconds=4.1031 | avg_trial_api_seconds=3.9209 | system_fallback_count=0

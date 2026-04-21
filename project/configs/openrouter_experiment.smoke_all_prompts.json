@@ -1,13 +1,13 @@
 {
   "schema_version": "openrouter_experiment_v2",
-  "experiment_name": "smoke_pets_nle",
-  "description": "Small smoke test to validate OpenRouter connectivity, prompts, and output layout.",
+  "experiment_name": "smoke_all_prompts",
+  "description": "Smoke test that runs all prompt types once with a single model and a single few-shot config.",
   "env_file": "../../.env",
   "output_root": "../openrouter_runs",
   "prompt_library_path": "openrouter_prompt_library.default.json",
   "model": {
     "model_name": [
-      "google/gemini-2.5-flash"
+      "google/gemma-4-26b-a4b-it"
     ],
     "model_params": {
       "validate_image_input": true,
@@ -18,7 +18,11 @@
     "pets"
   ],
   "prompt_types": [
-    "nle"
+    "classification",
+    "nle",
+    "features",
+    "rulebased",
+    "axioms_ontology_v2"
   ],
   "few_shot_configs": [
     {

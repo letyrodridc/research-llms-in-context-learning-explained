@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=pets | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=2 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[Bombay] | Predicted=[Bombay] | Correct=True
+<tbox>
+- Bombay ≡ hasVisualFeature(black_fur) ⊓ hasVisualFeature(yellow_eyes)
+- American Bulldog ≡ hasVisualFeature(white_fur)
+</tbox>
+<abox>
+- hasVisualFeature(Query, black_fur)
+- hasVisualFeature(Query, yellow_eyes)
+</abox>
+<dl_explanation>
+- Rule(s) fired: Bombay ≡ hasVisualFeature(black_fur) ⊓ hasVisualFeature(yellow_eyes)
+</dl_explanation>
+
+<response>Bombay</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[American Bulldog] | Predicted=[American Bulldog] | Correct=True
+<tbox>
+- American Bulldog ⊑ hasVisualFeature(white_fur)
+- American Bulldog ⊑ hasVisualFeature(short_hair)
+- Bombay ⊑ hasVisualFeature(black_fur)
+</tbox>
+<abox>
+- hasVisualFeature(Query, white_fur)
+- hasVisualFeature(Query, short_hair)
+</abox>
+<dl_explanation>
+- Rule(s) fired: American Bulldog ⊑ hasVisualFeature(white_fur)
+- Rule(s) fired: American Bulldog ⊑ hasVisualFeature(short_hair)
+</dl_explanation>
+
+<response>American Bulldog</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.5287 | avg_trial_wall_seconds=1.7479 | avg_trial_api_seconds=1.5105 | system_fallback_count=0
