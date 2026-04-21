@@ -13,3 +13,28 @@ python project/run_openrouter_experiment.py --config project/configs/your_desire
 4. After experiment is finished, you can view results in dashboard:
 
 python project/run_openrouter_dashboard.py --run-dir project/openrouter_runs/your-run-folder
+
+---
+
+RUN FULL EXPERIMENT ON A SINGLE PC (WITHOUT KEEPING THE TERMINAL OPEN)
+
+Use the unified config that includes all 4 models and runs analysis automatically:
+
+  Config: project/configs/openrouter_experiment.full.single.json
+
+Launch inside a tmux session so the process keeps running after you close the terminal or SSH connection:
+
+  # Create the session
+  tmux new-session -d -s icl_full
+
+  # Launch the experiment inside it
+  tmux send-keys -t icl_full \
+    "cd /mnt/homeGPU/cquiles/ICL/ICL && conda activate /mnt/homeGPU/cquiles/ICL/ICL/research-explain && python project/run_openrouter_experiment.py --config project/configs/openrouter_experiment.full.single.json" Enter
+
+  # Reconnect to check progress at any time:
+  tmux attach -t icl_full
+
+  # Detach without killing the process: Ctrl+B then D
+
+Total: 2080 API calls (4 models x 520 trials). Results go to a single folder under
+project/openrouter_runs/full_experiment_single__<timestamp>/ — no manual merge needed.

@@ -121,9 +121,41 @@ Si falla con error HTTP 429 → rate limit, espera unos segundos y reintenta.
 
 ---
 
-## 2. Ejecución del experimento completo
+## 2. Alternativa: experimento completo en un solo PC (sin supervisión)
 
-### 2.1 PC A (tú, Linux) — Gemini 2.5 Flash + Qwen3.5-9B
+> Si quieres correr los 4 modelos en una sola máquina sin tener que estar
+> pendiente, usa el config unificado y lánzalo dentro de una sesión **tmux**.
+> El proceso sigue ejecutándose aunque cierres el terminal o la conexión SSH.
+
+```bash
+# 1. Crear sesión tmux (se queda viva aunque cierres el terminal)
+tmux new-session -d -s icl_full
+
+# 2. Lanzar el experimento dentro de la sesión
+tmux send-keys -t icl_full \
+  "cd /mnt/homeGPU/cquiles/ICL/ICL && conda activate /mnt/homeGPU/cquiles/ICL/ICL/research-explain && python project/run_openrouter_experiment.py --config project/configs/openrouter_experiment.full.single.json" Enter
+
+# 3. Para reconectarte y ver el progreso en cualquier momento:
+tmux attach -t icl_full
+```
+
+El config `openrouter_experiment.full.single.json` incluye los 4 modelos en
+secuencia y ejecuta el análisis automáticamente al terminar. Los resultados
+quedan en un único directorio `openrouter_runs/full_experiment_single__<timestamp>/`
+sin necesidad de fusión manual.
+
+| Total llamadas | Tiempo estimado |
+|---------------|----------------|
+| 2080 (4 modelos × 520) | ~3-5 horas |
+
+> Si el proceso ya está corriendo y quieres salir de la sesión sin matarlo:
+> `Ctrl+B` y luego `D` (detach).
+
+---
+
+## 3. Ejecución distribuida (dos PCs en paralelo)
+
+### 3.1 PC A (tú, Linux) — Gemini 2.5 Flash + Qwen3.5-9B
 
 ```bash
 # Desde la raíz del repo
@@ -228,7 +260,7 @@ deterministas con temperature=0 y mismos episodios).
 
 ---
 
-### 2.2 PC B (compañero, Windows) — Gemma 4 26B + Llama 3.2 11B Vision
+### 3.2 PC B (compañero, Windows) — Gemma 4 26B + Llama 3.2 11B Vision
 
 **En Anaconda Prompt o PowerShell:**
 
@@ -261,7 +293,7 @@ project\openrouter_runs\full_experiment_pc_b__<timestamp>\
 
 ---
 
-## 3. Subir resultados a GitHub
+## 4. Subir resultados a GitHub
 
 ### PC A — al terminar su ejecución
 
@@ -288,7 +320,7 @@ git push origin nico
 
 ---
 
-## 4. Fusión y análisis final
+## 5. Fusión y análisis final
 
 Una vez que **ambos** han hecho push, cualquiera de los dos hace:
 
@@ -303,7 +335,7 @@ ls project/openrouter_runs/
 # full_experiment_pc_b__<timestamp>/
 ```
 
-### 4.1 Crear directorio fusionado
+### 5.1 Crear directorio fusionado
 
 **Linux:**
 ```bash
@@ -329,7 +361,7 @@ Copy-Item -Recurse `
   project\openrouter_runs\full_experiment_merged\models\
 ```
 
-### 4.2 Verificar que están los 4 modelos
+### 5.2 Verificar que están los 4 modelos
 
 ```bash
 ls project/openrouter_runs/full_experiment_merged/models/
@@ -345,7 +377,7 @@ meta-llama--llama-3-2-11b-vision-instruct/
 
 Si falta alguna → el push/pull no se hizo bien, o hay un error en el cp.
 
-### 4.3 Lanzar el análisis
+### 5.3 Lanzar el análisis
 
 ```bash
 python project/run_openrouter_dashboard.py \
@@ -362,7 +394,7 @@ analyze_run_directory(Path('project/openrouter_runs/full_experiment_merged'))
 "
 ```
 
-### 4.4 Output del análisis
+### 5.4 Output del análisis
 
 ```
 project/openrouter_runs/full_experiment_merged/
@@ -386,7 +418,7 @@ project/openrouter_runs/full_experiment_merged/
 
 ---
 
-## 5. Resumen del flujo completo
+## 6. Resumen del flujo completo
 
 ```
 AMBOS
@@ -417,7 +449,7 @@ CUALQUIERA DE LOS DOS (cuando ambos hayan hecho push)
 
 ---
 
-## 6. Errores comunes y cómo resolverlos
+## 7. Errores comunes y cómo resolverlos
 
 | Error | Causa | Solución |
 |-------|-------|----------|
@@ -430,7 +462,7 @@ CUALQUIERA DE LOS DOS (cuando ambos hayan hecho push)
 
 ---
 
-## 7. Checklist antes de lanzar el experimento real
+## 8. Checklist antes de lanzar el experimento real
 
 - [ ] `.env` existe en la raíz del repo con `OPENROUTER_API_KEY` válida
 - [ ] `git pull` hecho — estás en la última versión de la rama `nico`
