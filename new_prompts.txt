@@ -1,0 +1,97 @@
+SHARED_SYSTEM_PROMPT = """
+# TASK
+1. Analyze the provided labeled examples to identify the observable visual features that distinguish each class.
+2. Examine the Target Image and compare it strictly against the provided examples.
+3. Determine which label from the provided options best matches the Target Image.
+
+# INSTRUCTIONS
+- Base your decision only on observable visual evidence in the examples and the Target Image.
+- Use the examples to infer discriminative visual patterns for each class.
+- Do not use external world knowledge, hidden assumptions, or speculative attributes.
+- Use only labels from the provided final options list.
+- Choose exactly one final label.
+- Output only the requested XML tags.
+- Do not output any text outside the XML tags.
+
+{CONDITION_INSTRUCTION}
+
+<response>final_class</response>
+
+The content of <response> must be exactly one label copied verbatim from the provided options list.
+
+"""
+
+---
+
+`CONDITION_INSTRUCTION` varies according to the setting as follows::
+
+BASELINE_CONDITION_INSTRUCTION = """Provide only the final class label inside the response tag."""
+
+NLE_CONDITION_INSTRUCTION = """Write a concise natural language explanation grounded only in observable visual evidence.
+
+<explanation>
+Brief explanation of why the visual evidence supports the selected class and not the alternatives.
+</explanation>"""
+
+FEATURES_CONDITION_INSTRUCTION = """Extract only the smallest sufficient set of critical, concrete, observable visual features needed to support the classification.
+- Use short noun phrases only.
+- Do not use abstract interpretations, causal explanations, narrative reasoning, or full sentences inside the features tag.
+- Use bullet points:
+
+<features>
+- short observable feature
+- short observable feature
+- short observable feature
+</features>"""
+
+LOGIC_RULES_CONDITION_INSTRUCTION = """First list the critical observable features present in the Target Image.
+Then formulate a knowledge base (kb) with a small set of IF-THEN rules grounded only in observable patterns from the labeled examples, for all classes.
+Rules must refer only to visible features.
+Then check which rule(s) are best satisfied by the Target Image.
+
+<features>
+- observable feature
+- observable feature
+- observable feature
+</features>
+<kb>
+- IF [observable visual features] THEN [class]
+- IF [observable visual features] THEN [class]
+</kb>
+<rule_check>
+- State which rule(s) is best matched by the Target Image and why.
+</rule_check>"""
+
+DL_AXIOMS_CONDITION_INSTRUCTION = """Represent the classification evidence using minimal and concise Description Logic statements.
+
+# WHAT TO WRITE
+- In <tbox>, define the formal class conditions (Necessary, Sufficient, or Necessary & Sufficient) using Description Logic (DL) axioms derived from the labeled examples to describe which visual features are associated with a class.
+- In <abox>, state only the specific property assertions observed in the Target Image to record which visual features are present.
+- In <dl_explanation>, explain exactly how the specific assertions in the ABox satisfy the formal axioms in the TBox to correctly classify the Target Image.
+
+# HOW TO INTERPRET THE STATEMENTS
+- [Class] ⊑ hasVisualFeature([Feature]) means: images of this class tend to have this visual feature in the provided examples (necessary condition)
+- hasVisualFeature([Feature]) ⊑ [Class] means: observing this visual feature is enough to classify the image as from this class in the provided examples (Sufficient condition)
+- [Class] ≡ hasVisualFeature([F1]) ⊓ hasVisualFeature([F2]) means: this combination of features defines this class in the provided examples (Necessary and sufficient condition)
+
+# RULES
+- Use only observable visual features.
+- Do not use hidden properties, external knowledge, or speculation.
+- Treat all axioms as visually grounded in the provided examples.
+- Keep the output concise.
+
+<tbox>
+- [Class] ⊑ hasVisualFeature([F])
+- hasVisualFeature([F]) ⊑ [Class]
+- [Class] ≡ hasVisualFeature([F1]) ⊓ hasVisualFeature([F2])
+</tbox>
+<abox>
+- hasVisualFeature(Target, [F])
+- hasVisualFeature(Target, [F])
+</abox>
+<dl_explanation>
+- The Target Image contains the property(/ies) asserted in the ABox.
+- Explain how these ABox assertions satisfy the TBox axioms.
+- Conclude why [Class] is the logically derived label based on that explanation.
+</dl_explanation>"""
+

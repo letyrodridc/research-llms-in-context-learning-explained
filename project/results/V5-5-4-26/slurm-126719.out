@@ -1,671 +1,0 @@
-=== Paso 1: Generando episodios estáticos ===
-[*] Starting episode generation (run once for all prompts)...
-Loading Flower102...
-Loading OxfordPets...
-Loading CIFAR-10...
-Loading DTD...
-All datasets loaded.
-
---- Processing dataset: pets ---
-Episode indices saved to: episodes/pets/episode_N2_K2_Q9_run0.npy
-Episode indices saved to: episodes/pets/episode_N2_K2_Q9_run1.npy
-Episode indices saved to: episodes/pets/episode_N2_K2_Q9_run2.npy
-Episode indices saved to: episodes/pets/episode_N2_K1_Q9_run0.npy
-Episode indices saved to: episodes/pets/episode_N2_K1_Q9_run1.npy
-Episode indices saved to: episodes/pets/episode_N2_K1_Q9_run2.npy
-Episode indices saved to: episodes/pets/episode_N3_K1_Q9_run0.npy
-Episode indices saved to: episodes/pets/episode_N3_K1_Q9_run1.npy
-Episode indices saved to: episodes/pets/episode_N3_K1_Q9_run2.npy
-Episode indices saved to: episodes/pets/episode_N4_K1_Q9_run0.npy
-Episode indices saved to: episodes/pets/episode_N4_K1_Q9_run1.npy
-Episode indices saved to: episodes/pets/episode_N4_K1_Q9_run2.npy
-
---- Processing dataset: cifar10 ---
-Episode indices saved to: episodes/cifar10/episode_N2_K2_Q9_run0.npy
-Episode indices saved to: episodes/cifar10/episode_N2_K2_Q9_run1.npy
-Episode indices saved to: episodes/cifar10/episode_N2_K2_Q9_run2.npy
-Episode indices saved to: episodes/cifar10/episode_N2_K1_Q9_run0.npy
-Episode indices saved to: episodes/cifar10/episode_N2_K1_Q9_run1.npy
-Episode indices saved to: episodes/cifar10/episode_N2_K1_Q9_run2.npy
-Episode indices saved to: episodes/cifar10/episode_N3_K1_Q9_run0.npy
-Episode indices saved to: episodes/cifar10/episode_N3_K1_Q9_run1.npy
-Episode indices saved to: episodes/cifar10/episode_N3_K1_Q9_run2.npy
-Episode indices saved to: episodes/cifar10/episode_N4_K1_Q9_run0.npy
-Episode indices saved to: episodes/cifar10/episode_N4_K1_Q9_run1.npy
-Episode indices saved to: episodes/cifar10/episode_N4_K1_Q9_run2.npy
-
---- Processing dataset: flowers ---
-Episode indices saved to: episodes/flowers/episode_N2_K2_Q9_run0.npy
-Episode indices saved to: episodes/flowers/episode_N2_K2_Q9_run1.npy
-Episode indices saved to: episodes/flowers/episode_N2_K2_Q9_run2.npy
-Episode indices saved to: episodes/flowers/episode_N2_K1_Q9_run0.npy
-Episode indices saved to: episodes/flowers/episode_N2_K1_Q9_run1.npy
-Episode indices saved to: episodes/flowers/episode_N2_K1_Q9_run2.npy
-Episode indices saved to: episodes/flowers/episode_N3_K1_Q9_run0.npy
-Episode indices saved to: episodes/flowers/episode_N3_K1_Q9_run1.npy
-Episode indices saved to: episodes/flowers/episode_N3_K1_Q9_run2.npy
-Episode indices saved to: episodes/flowers/episode_N4_K1_Q9_run0.npy
-Episode indices saved to: episodes/flowers/episode_N4_K1_Q9_run1.npy
-Episode indices saved to: episodes/flowers/episode_N4_K1_Q9_run2.npy
-
---- Processing dataset: dtd ---
-Episode indices saved to: episodes/dtd/episode_N2_K2_Q9_run0.npy
-Episode indices saved to: episodes/dtd/episode_N2_K2_Q9_run1.npy
-Episode indices saved to: episodes/dtd/episode_N2_K2_Q9_run2.npy
-Episode indices saved to: episodes/dtd/episode_N2_K1_Q9_run0.npy
-Episode indices saved to: episodes/dtd/episode_N2_K1_Q9_run1.npy
-Episode indices saved to: episodes/dtd/episode_N2_K1_Q9_run2.npy
-Episode indices saved to: episodes/dtd/episode_N3_K1_Q9_run0.npy
-Episode indices saved to: episodes/dtd/episode_N3_K1_Q9_run1.npy
-Episode indices saved to: episodes/dtd/episode_N3_K1_Q9_run2.npy
-Episode indices saved to: episodes/dtd/episode_N4_K1_Q9_run0.npy
-Episode indices saved to: episodes/dtd/episode_N4_K1_Q9_run1.npy
-Episode indices saved to: episodes/dtd/episode_N4_K1_Q9_run2.npy
-
-[+] All episodes have been generated and saved in the 'episodes/' folder!
-[+] Now the prompt scripts can read exactly the same images.
-=== Episodios listos ===
-Iniciando run_prompt_classification.py | Modelo: gemma3 | Dataset: flowers | GPU local: 0
-Iniciando run_prompt_classification.py | Modelo: gemma3 | Dataset: pets | GPU local: 1
-Iniciando run_prompt_classification.py | Modelo: gemma3 | Dataset: cifar10 | GPU local: 2
-`torch_dtype` is deprecated! Use `dtype` instead!
-`torch_dtype` is deprecated! Use `dtype` instead!
-`torch_dtype` is deprecated! Use `dtype` instead!
-[*] Starting experiment: Classification | Model: gemma3 | Dataset: flowers
-Loading Flower102...
-Loading OxfordPets...
-Loading CIFAR-10...
-Loading DTD...
-All datasets loaded.
-Loading model: google/gemma-3-12b-it...
-Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Classification | Model: gemma3 | Dataset: cifar10
-Loading Flower102...
-Loading OxfordPets...
-Loading CIFAR-10...
-Loading DTD...
-All datasets loaded.
-Loading model: google/gemma-3-12b-it...
-Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Classification | Model: gemma3 | Dataset: pets
-Loading Flower102...
-Loading OxfordPets...
-Loading CIFAR-10...
-Loading DTD...
-All datasets loaded.
-Loading model: google/gemma-3-12b-it...
-Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files:  20%|██        | 1/5 [02:57<11:51, 177.92s/it]Fetching 5 files:  20%|██        | 1/5 [02:57<11:51, 177.86s/it]Fetching 5 files:  20%|██        | 1/5 [02:58<11:53, 178.49s/it]Fetching 5 files:  40%|████      | 2/5 [04:20<06:04, 121.62s/it]Fetching 5 files:  40%|████      | 2/5 [04:20<06:05, 121.87s/it]Fetching 5 files:  40%|████      | 2/5 [04:20<06:06, 122.05s/it]Fetching 5 files:  60%|██████    | 3/5 [04:32<02:23, 71.89s/it] Fetching 5 files: 100%|██████████| 5/5 [04:32<00:00, 54.59s/it]
-Fetching 5 files:  60%|██████    | 3/5 [04:33<02:23, 71.95s/it] Fetching 5 files: 100%|██████████| 5/5 [04:33<00:00, 54.63s/it]
-Fetching 5 files:  60%|██████    | 3/5 [04:33<02:23, 71.99s/it] Fetching 5 files: 100%|██████████| 5/5 [04:33<00:00, 54.66s/it]
-Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:58<03:52, 58.11s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:58<03:53, 58.40s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:58<03:53, 58.42s/it]Loading checkpoint shards:  40%|████      | 2/5 [01:57<02:57, 59.05s/it]Loading checkpoint shards:  40%|████      | 2/5 [01:58<02:57, 59.28s/it]Loading checkpoint shards:  40%|████      | 2/5 [01:58<02:58, 59.40s/it]Loading checkpoint shards:  60%|██████    | 3/5 [02:57<01:58, 59.31s/it]Loading checkpoint shards:  60%|██████    | 3/5 [02:57<01:59, 59.52s/it]Loading checkpoint shards:  60%|██████    | 3/5 [02:58<01:59, 59.54s/it]Loading checkpoint shards:  80%|████████  | 4/5 [03:57<00:59, 59.56s/it]Loading checkpoint shards:  80%|████████  | 4/5 [03:58<00:59, 59.71s/it]Loading checkpoint shards:  80%|████████  | 4/5 [03:57<00:59, 59.70s/it]Loading checkpoint shards: 100%|██████████| 5/5 [04:55<00:00, 58.87s/it]Loading checkpoint shards: 100%|██████████| 5/5 [04:55<00:00, 59.05s/it]
-Loading checkpoint shards: 100%|██████████| 5/5 [04:55<00:00, 58.88s/it]Loading checkpoint shards: 100%|██████████| 5/5 [04:55<00:00, 58.88s/it]Loading checkpoint shards: 100%|██████████| 5/5 [04:55<00:00, 59.08s/it]
-Loading checkpoint shards: 100%|██████████| 5/5 [04:55<00:00, 59.10s/it]
-Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
-Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
-Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
-The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
-The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
-The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
-Model google/gemma-3-12b-it loaded successfully.
-GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
-[*] Evaluating Config: N=2, K=2, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=2, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 17/18 correct (Accuracy: 0.9444)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=3, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 26/27 correct (Accuracy: 0.9630)
-   -> Run 1 Result: 26/27 correct (Accuracy: 0.9630)
-   -> Run 2 Result: 27/27 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=4, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 35/36 correct (Accuracy: 0.9722)
-   -> Run 1 Result: 36/36 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 33/36 correct (Accuracy: 0.9167)
-Model google/gemma-3-12b-it loaded successfully.
-GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
-[*] Evaluating Config: N=2, K=2, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=2, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 17/18 correct (Accuracy: 0.9444)
-   -> Run 2 Result: 17/18 correct (Accuracy: 0.9444)
-[*] Evaluating Config: N=3, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 27/27 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 27/27 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 27/27 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=4, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 36/36 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 36/36 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 36/36 correct (Accuracy: 1.0000)
-Model google/gemma-3-12b-it loaded successfully.
-GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
-[*] Evaluating Config: N=2, K=2, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 17/18 correct (Accuracy: 0.9444)
-[*] Evaluating Config: N=2, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 16/18 correct (Accuracy: 0.8889)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=3, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 27/27 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 25/27 correct (Accuracy: 0.9259)
-   -> Run 2 Result: 23/27 correct (Accuracy: 0.8519)
-[*] Evaluating Config: N=4, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 34/36 correct (Accuracy: 0.9444)
-   -> Run 1 Result: 30/36 correct (Accuracy: 0.8333)
-   -> Run 2 Result: 32/36 correct (Accuracy: 0.8889)
-Iniciando run_prompt_classification.py | Modelo: gemma3 | Dataset: dtd | GPU local: 0
-Iniciando run_nle.py | Modelo: gemma3 | Dataset: flowers | GPU local: 1
-Iniciando run_nle.py | Modelo: gemma3 | Dataset: pets | GPU local: 2
-`torch_dtype` is deprecated! Use `dtype` instead!
-`torch_dtype` is deprecated! Use `dtype` instead!
-`torch_dtype` is deprecated! Use `dtype` instead!
-[*] Starting experiment: NLE | Model: gemma3 | Dataset: flowers
-Loading Flower102...
-Loading OxfordPets...
-Loading CIFAR-10...
-Loading DTD...
-All datasets loaded.
-Loading model: google/gemma-3-12b-it...
-Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: NLE | Model: gemma3 | Dataset: pets
-Loading Flower102...
-Loading OxfordPets...
-Loading CIFAR-10...
-Loading DTD...
-All datasets loaded.
-Loading model: google/gemma-3-12b-it...
-Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Classification | Model: gemma3 | Dataset: dtd
-Loading Flower102...
-Loading OxfordPets...
-Loading CIFAR-10...
-Loading DTD...
-All datasets loaded.
-Loading model: google/gemma-3-12b-it...
-Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:46<03:07, 46.80s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:46<03:06, 46.64s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:47<03:10, 47.57s/it]Loading checkpoint shards:  40%|████      | 2/5 [01:01<01:23, 27.97s/it]Loading checkpoint shards:  40%|████      | 2/5 [01:01<01:23, 27.82s/it]Loading checkpoint shards:  40%|████      | 2/5 [01:02<01:25, 28.40s/it]Loading checkpoint shards:  60%|██████    | 3/5 [01:12<00:40, 20.15s/it]Loading checkpoint shards:  60%|██████    | 3/5 [01:17<00:44, 22.44s/it]Loading checkpoint shards:  60%|██████    | 3/5 [01:19<00:46, 23.26s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:25<00:17, 17.53s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:32<00:19, 19.43s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:34<00:20, 20.14s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:39<00:00, 15.98s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:39<00:00, 19.84s/it]
-Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
-Loading checkpoint shards: 100%|██████████| 5/5 [01:45<00:00, 17.01s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:45<00:00, 21.03s/it]
-Loading checkpoint shards: 100%|██████████| 5/5 [01:46<00:00, 17.01s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:46<00:00, 21.25s/it]
-Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
-Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
-The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
-The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
-The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
-Model google/gemma-3-12b-it loaded successfully.
-GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
-[*] Evaluating Config: N=2, K=2, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=2, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=3, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 24/27 correct (Accuracy: 0.8889)
-   -> Run 1 Result: 25/27 correct (Accuracy: 0.9259)
-   -> Run 2 Result: 26/27 correct (Accuracy: 0.9630)
-[*] Evaluating Config: N=4, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 30/36 correct (Accuracy: 0.8333)
-   -> Run 1 Result: 31/36 correct (Accuracy: 0.8611)
-   -> Run 2 Result: 32/36 correct (Accuracy: 0.8889)
-Model google/gemma-3-12b-it loaded successfully.
-GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
-[*] Evaluating Config: N=2, K=2, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=2, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=3, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 24/27 correct (Accuracy: 0.8889)
-   -> Run 1 Result: 26/27 correct (Accuracy: 0.9630)
-   -> Run 2 Result: 27/27 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=4, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 36/36 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 36/36 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 34/36 correct (Accuracy: 0.9444)
-Model google/gemma-3-12b-it loaded successfully.
-GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
-[*] Evaluating Config: N=2, K=2, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=2, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 17/18 correct (Accuracy: 0.9444)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=3, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 27/27 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 27/27 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 27/27 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=4, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 36/36 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 36/36 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 36/36 correct (Accuracy: 1.0000)
-Iniciando run_nle.py | Modelo: gemma3 | Dataset: cifar10 | GPU local: 0
-Iniciando run_nle.py | Modelo: gemma3 | Dataset: dtd | GPU local: 1
-Iniciando run_prompt_features.py | Modelo: gemma3 | Dataset: flowers | GPU local: 2
-`torch_dtype` is deprecated! Use `dtype` instead!
-`torch_dtype` is deprecated! Use `dtype` instead!
-`torch_dtype` is deprecated! Use `dtype` instead!
-[*] Starting experiment: Features | Model: gemma3 | Dataset: flowers
-Loading Flower102...
-Loading OxfordPets...
-Loading CIFAR-10...
-Loading DTD...
-All datasets loaded.
-Loading model: google/gemma-3-12b-it...
-Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: NLE | Model: gemma3 | Dataset: cifar10
-Loading Flower102...
-Loading OxfordPets...
-Loading CIFAR-10...
-Loading DTD...
-All datasets loaded.
-Loading model: google/gemma-3-12b-it...
-Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: NLE | Model: gemma3 | Dataset: dtd
-Loading Flower102...
-Loading OxfordPets...
-Loading CIFAR-10...
-Loading DTD...
-All datasets loaded.
-Loading model: google/gemma-3-12b-it...
-Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:09<00:39,  9.83s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:10<00:42, 10.55s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:10<00:42, 10.53s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:55<01:32, 30.80s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:55<01:31, 30.56s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:55<01:32, 30.99s/it]Loading checkpoint shards:  60%|██████    | 3/5 [01:36<01:11, 35.70s/it]Loading checkpoint shards:  60%|██████    | 3/5 [01:37<01:11, 35.75s/it]Loading checkpoint shards:  60%|██████    | 3/5 [01:36<01:11, 35.61s/it]Loading checkpoint shards:  80%|████████  | 4/5 [02:36<00:44, 44.99s/it]Loading checkpoint shards:  80%|████████  | 4/5 [02:36<00:45, 45.11s/it]Loading checkpoint shards:  80%|████████  | 4/5 [02:36<00:45, 45.00s/it]Loading checkpoint shards: 100%|██████████| 5/5 [03:31<00:00, 48.68s/it]Loading checkpoint shards: 100%|██████████| 5/5 [03:31<00:00, 42.28s/it]
-Loading checkpoint shards: 100%|██████████| 5/5 [03:31<00:00, 48.69s/it]Loading checkpoint shards: 100%|██████████| 5/5 [03:31<00:00, 48.75s/it]Loading checkpoint shards: 100%|██████████| 5/5 [03:31<00:00, 42.27s/it]
-Loading checkpoint shards: 100%|██████████| 5/5 [03:31<00:00, 42.37s/it]
-Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
-Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
-Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
-The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
-The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
-The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
-Model google/gemma-3-12b-it loaded successfully.
-GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
-[*] Evaluating Config: N=2, K=2, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 17/18 correct (Accuracy: 0.9444)
-[*] Evaluating Config: N=2, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 17/18 correct (Accuracy: 0.9444)
-   -> Run 1 Result: 17/18 correct (Accuracy: 0.9444)
-   -> Run 2 Result: 17/18 correct (Accuracy: 0.9444)
-[*] Evaluating Config: N=3, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 25/27 correct (Accuracy: 0.9259)
-   -> Run 1 Result: 26/27 correct (Accuracy: 0.9630)
-   -> Run 2 Result: 25/27 correct (Accuracy: 0.9259)
-[*] Evaluating Config: N=4, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 34/36 correct (Accuracy: 0.9444)
-   -> Run 1 Result: 30/36 correct (Accuracy: 0.8333)
-   -> Run 2 Result: 34/36 correct (Accuracy: 0.9444)
-Model google/gemma-3-12b-it loaded successfully.
-GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
-[*] Evaluating Config: N=2, K=2, Q=9 over 3 runs...
-   -> Run 0 Result: 17/18 correct (Accuracy: 0.9444)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=2, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=3, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 21/27 correct (Accuracy: 0.7778)
-   -> Run 1 Result: 26/27 correct (Accuracy: 0.9630)
-   -> Run 2 Result: 25/27 correct (Accuracy: 0.9259)
-[*] Evaluating Config: N=4, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 30/36 correct (Accuracy: 0.8333)
-   -> Run 1 Result: 31/36 correct (Accuracy: 0.8611)
-   -> Run 2 Result: 33/36 correct (Accuracy: 0.9167)
-Model google/gemma-3-12b-it loaded successfully.
-GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
-[*] Evaluating Config: N=2, K=2, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=2, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=3, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 26/27 correct (Accuracy: 0.9630)
-   -> Run 1 Result: 26/27 correct (Accuracy: 0.9630)
-   -> Run 2 Result: 27/27 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=4, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 35/36 correct (Accuracy: 0.9722)
-   -> Run 1 Result: 36/36 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 32/36 correct (Accuracy: 0.8889)
-Iniciando run_prompt_features.py | Modelo: gemma3 | Dataset: pets | GPU local: 0
-Iniciando run_prompt_features.py | Modelo: gemma3 | Dataset: cifar10 | GPU local: 1
-Iniciando run_prompt_features.py | Modelo: gemma3 | Dataset: dtd | GPU local: 2
-`torch_dtype` is deprecated! Use `dtype` instead!
-`torch_dtype` is deprecated! Use `dtype` instead!
-`torch_dtype` is deprecated! Use `dtype` instead!
-[*] Starting experiment: Features | Model: gemma3 | Dataset: cifar10
-Loading Flower102...
-Loading OxfordPets...
-Loading CIFAR-10...
-Loading DTD...
-All datasets loaded.
-Loading model: google/gemma-3-12b-it...
-Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Features | Model: gemma3 | Dataset: dtd
-Loading Flower102...
-Loading OxfordPets...
-Loading CIFAR-10...
-Loading DTD...
-All datasets loaded.
-Loading model: google/gemma-3-12b-it...
-Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Features | Model: gemma3 | Dataset: pets
-Loading Flower102...
-Loading OxfordPets...
-Loading CIFAR-10...
-Loading DTD...
-All datasets loaded.
-Loading model: google/gemma-3-12b-it...
-Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:58<03:55, 58.89s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:59<03:56, 59.05s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:59<03:56, 59.05s/it]Loading checkpoint shards:  40%|████      | 2/5 [01:59<03:00, 60.07s/it]Loading checkpoint shards:  40%|████      | 2/5 [02:00<03:01, 60.45s/it]Loading checkpoint shards:  40%|████      | 2/5 [02:00<03:01, 60.34s/it]Loading checkpoint shards:  60%|██████    | 3/5 [02:14<01:18, 39.25s/it]Loading checkpoint shards:  60%|██████    | 3/5 [02:14<01:18, 39.23s/it]Loading checkpoint shards:  60%|██████    | 3/5 [02:15<01:19, 39.72s/it]Loading checkpoint shards:  80%|████████  | 4/5 [02:28<00:29, 29.32s/it]Loading checkpoint shards:  80%|████████  | 4/5 [02:29<00:29, 29.69s/it]Loading checkpoint shards:  80%|████████  | 4/5 [02:31<00:30, 30.50s/it]Loading checkpoint shards: 100%|██████████| 5/5 [02:40<00:00, 23.23s/it]Loading checkpoint shards: 100%|██████████| 5/5 [02:40<00:00, 32.17s/it]
-Loading checkpoint shards: 100%|██████████| 5/5 [02:42<00:00, 23.77s/it]Loading checkpoint shards: 100%|██████████| 5/5 [02:42<00:00, 32.55s/it]
-Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
-Loading checkpoint shards: 100%|██████████| 5/5 [02:43<00:00, 23.84s/it]Loading checkpoint shards: 100%|██████████| 5/5 [02:43<00:00, 32.78s/it]
-Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
-Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
-The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
-The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
-The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
-Model google/gemma-3-12b-it loaded successfully.
-GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
-[*] Evaluating Config: N=2, K=2, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 17/18 correct (Accuracy: 0.9444)
-[*] Evaluating Config: N=2, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 15/18 correct (Accuracy: 0.8333)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 17/18 correct (Accuracy: 0.9444)
-[*] Evaluating Config: N=3, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 25/27 correct (Accuracy: 0.9259)
-   -> Run 1 Result: 25/27 correct (Accuracy: 0.9259)
-   -> Run 2 Result: 23/27 correct (Accuracy: 0.8519)
-[*] Evaluating Config: N=4, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 35/36 correct (Accuracy: 0.9722)
-   -> Run 1 Result: 29/36 correct (Accuracy: 0.8056)
-   -> Run 2 Result: 33/36 correct (Accuracy: 0.9167)
-Model google/gemma-3-12b-it loaded successfully.
-GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
-[*] Evaluating Config: N=2, K=2, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=2, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 17/18 correct (Accuracy: 0.9444)
-[*] Evaluating Config: N=3, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 27/27 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 27/27 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 27/27 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=4, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 36/36 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 36/36 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 36/36 correct (Accuracy: 1.0000)
-Model google/gemma-3-12b-it loaded successfully.
-GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
-[*] Evaluating Config: N=2, K=2, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=2, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=3, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 24/27 correct (Accuracy: 0.8889)
-   -> Run 1 Result: 25/27 correct (Accuracy: 0.9259)
-   -> Run 2 Result: 27/27 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=4, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 29/36 correct (Accuracy: 0.8056)
-   -> Run 1 Result: 32/36 correct (Accuracy: 0.8889)
-   -> Run 2 Result: 33/36 correct (Accuracy: 0.9167)
-Iniciando run_prompt_rulebased.py | Modelo: gemma3 | Dataset: flowers | GPU local: 0
-Iniciando run_prompt_rulebased.py | Modelo: gemma3 | Dataset: pets | GPU local: 1
-Iniciando run_prompt_rulebased.py | Modelo: gemma3 | Dataset: cifar10 | GPU local: 2
-`torch_dtype` is deprecated! Use `dtype` instead!
-`torch_dtype` is deprecated! Use `dtype` instead!
-`torch_dtype` is deprecated! Use `dtype` instead!
-[*] Starting experiment: Rule-Based | Model: gemma3 | Dataset: flowers
-Loading Flower102...
-Loading OxfordPets...
-Loading CIFAR-10...
-Loading DTD...
-All datasets loaded.
-Loading model: google/gemma-3-12b-it...
-Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Rule-Based | Model: gemma3 | Dataset: cifar10
-Loading Flower102...
-Loading OxfordPets...
-Loading CIFAR-10...
-Loading DTD...
-All datasets loaded.
-Loading model: google/gemma-3-12b-it...
-Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Rule-Based | Model: gemma3 | Dataset: pets
-Loading Flower102...
-Loading OxfordPets...
-Loading CIFAR-10...
-Loading DTD...
-All datasets loaded.
-Loading model: google/gemma-3-12b-it...
-Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:10<00:40, 10.19s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:10<00:41, 10.46s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:10<00:43, 10.76s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:23<00:36, 12.23s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:24<00:36, 12.33s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:24<00:38, 12.79s/it]Loading checkpoint shards:  60%|██████    | 3/5 [01:22<01:06, 33.39s/it]Loading checkpoint shards:  60%|██████    | 3/5 [01:22<01:06, 33.43s/it]Loading checkpoint shards:  60%|██████    | 3/5 [01:22<01:06, 33.20s/it]Loading checkpoint shards:  80%|████████  | 4/5 [02:23<00:44, 44.20s/it]Loading checkpoint shards:  80%|████████  | 4/5 [02:23<00:44, 44.23s/it]Loading checkpoint shards:  80%|████████  | 4/5 [02:23<00:44, 44.10s/it]Loading checkpoint shards: 100%|██████████| 5/5 [03:18<00:00, 47.99s/it]Loading checkpoint shards: 100%|██████████| 5/5 [03:18<00:00, 39.63s/it]
-Loading checkpoint shards: 100%|██████████| 5/5 [03:18<00:00, 48.14s/it]Loading checkpoint shards: 100%|██████████| 5/5 [03:18<00:00, 39.69s/it]
-Loading checkpoint shards: 100%|██████████| 5/5 [03:18<00:00, 48.15s/it]Loading checkpoint shards: 100%|██████████| 5/5 [03:18<00:00, 39.68s/it]
-Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
-Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
-Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
-The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
-The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
-The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
-Model google/gemma-3-12b-it loaded successfully.
-GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
-[*] Evaluating Config: N=2, K=2, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=2, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 17/18 correct (Accuracy: 0.9444)
-   -> Run 2 Result: 17/18 correct (Accuracy: 0.9444)
-[*] Evaluating Config: N=3, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 27/27 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 27/27 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 27/27 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=4, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 36/36 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 36/36 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 36/36 correct (Accuracy: 1.0000)
-Model google/gemma-3-12b-it loaded successfully.
-GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
-[*] Evaluating Config: N=2, K=2, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=2, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=3, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 25/27 correct (Accuracy: 0.9259)
-   -> Run 1 Result: 26/27 correct (Accuracy: 0.9630)
-   -> Run 2 Result: 27/27 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=4, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 36/36 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 35/36 correct (Accuracy: 0.9722)
-   -> Run 2 Result: 36/36 correct (Accuracy: 1.0000)
-Model google/gemma-3-12b-it loaded successfully.
-GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
-[*] Evaluating Config: N=2, K=2, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 17/18 correct (Accuracy: 0.9444)
-[*] Evaluating Config: N=2, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 17/18 correct (Accuracy: 0.9444)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 17/18 correct (Accuracy: 0.9444)
-[*] Evaluating Config: N=3, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 26/27 correct (Accuracy: 0.9630)
-   -> Run 1 Result: 25/27 correct (Accuracy: 0.9259)
-   -> Run 2 Result: 23/27 correct (Accuracy: 0.8519)
-[*] Evaluating Config: N=4, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 36/36 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 29/36 correct (Accuracy: 0.8056)
-   -> Run 2 Result: 34/36 correct (Accuracy: 0.9444)
-Iniciando run_prompt_rulebased.py | Modelo: gemma3 | Dataset: dtd | GPU local: 0
-Iniciando run_prompt_axioms.py | Modelo: gemma3 | Dataset: flowers | GPU local: 1
-Iniciando run_prompt_axioms.py | Modelo: gemma3 | Dataset: pets | GPU local: 2
-`torch_dtype` is deprecated! Use `dtype` instead!
-`torch_dtype` is deprecated! Use `dtype` instead!
-`torch_dtype` is deprecated! Use `dtype` instead!
-[*] Starting experiment: Rule-Based | Model: gemma3 | Dataset: dtd
-Loading Flower102...
-Loading OxfordPets...
-Loading CIFAR-10...
-Loading DTD...
-All datasets loaded.
-Loading model: google/gemma-3-12b-it...
-Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Ontology Axioms V2 | Model: gemma3 | Dataset: pets
-Loading Flower102...
-Loading OxfordPets...
-Loading CIFAR-10...
-Loading DTD...
-All datasets loaded.
-Loading model: google/gemma-3-12b-it...
-Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s][*] Starting experiment: Ontology Axioms V2 | Model: gemma3 | Dataset: flowers
-Loading Flower102...
-Loading OxfordPets...
-Loading CIFAR-10...
-Loading DTD...
-All datasets loaded.
-Loading model: google/gemma-3-12b-it...
-Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [01:46<07:07, 106.91s/it]Loading checkpoint shards:  20%|██        | 1/5 [01:46<07:07, 106.97s/it]Loading checkpoint shards:  20%|██        | 1/5 [01:47<07:08, 107.09s/it]Loading checkpoint shards:  40%|████      | 2/5 [02:02<02:39, 53.29s/it] Loading checkpoint shards:  40%|████      | 2/5 [02:02<02:39, 53.30s/it] Loading checkpoint shards:  40%|████      | 2/5 [02:02<02:40, 53.37s/it] Loading checkpoint shards:  60%|██████    | 3/5 [02:16<01:10, 35.35s/it]Loading checkpoint shards:  60%|██████    | 3/5 [02:16<01:10, 35.46s/it]Loading checkpoint shards:  60%|██████    | 3/5 [02:18<01:12, 36.08s/it]Loading checkpoint shards:  80%|████████  | 4/5 [02:31<00:27, 27.18s/it]Loading checkpoint shards:  80%|████████  | 4/5 [02:31<00:27, 27.26s/it]Loading checkpoint shards:  80%|████████  | 4/5 [02:34<00:28, 28.09s/it]Loading checkpoint shards: 100%|██████████| 5/5 [02:43<00:00, 21.78s/it]Loading checkpoint shards: 100%|██████████| 5/5 [02:43<00:00, 32.71s/it]
-Loading checkpoint shards: 100%|██████████| 5/5 [02:43<00:00, 21.89s/it]Loading checkpoint shards: 100%|██████████| 5/5 [02:43<00:00, 32.80s/it]
-Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
-Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
-Loading checkpoint shards: 100%|██████████| 5/5 [02:46<00:00, 22.30s/it]Loading checkpoint shards: 100%|██████████| 5/5 [02:46<00:00, 33.25s/it]
-Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
-The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
-The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
-The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
-Model google/gemma-3-12b-it loaded successfully.
-GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
-[*] Evaluating Config: N=2, K=2, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=2, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=3, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 25/27 correct (Accuracy: 0.9259)
-   -> Run 1 Result: 25/27 correct (Accuracy: 0.9259)
-   -> Run 2 Result: 23/27 correct (Accuracy: 0.8519)
-[*] Evaluating Config: N=4, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 28/36 correct (Accuracy: 0.7778)
-   -> Run 1 Result: 31/36 correct (Accuracy: 0.8611)
-   -> Run 2 Result: 34/36 correct (Accuracy: 0.9444)
-Model google/gemma-3-12b-it loaded successfully.
-GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
-[*] Evaluating Config: N=2, K=2, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=2, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 17/18 correct (Accuracy: 0.9444)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 17/18 correct (Accuracy: 0.9444)
-[*] Evaluating Config: N=3, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 26/27 correct (Accuracy: 0.9630)
-   -> Run 1 Result: 26/27 correct (Accuracy: 0.9630)
-   -> Run 2 Result: 27/27 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=4, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 36/36 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 36/36 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 34/36 correct (Accuracy: 0.9444)
-Model google/gemma-3-12b-it loaded successfully.
-GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
-[*] Evaluating Config: N=2, K=2, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=2, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 17/18 correct (Accuracy: 0.9444)
-   -> Run 2 Result: 17/18 correct (Accuracy: 0.9444)
-[*] Evaluating Config: N=3, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 27/27 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 27/27 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 27/27 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=4, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 36/36 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 36/36 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 36/36 correct (Accuracy: 1.0000)
-Iniciando run_prompt_axioms.py | Modelo: gemma3 | Dataset: cifar10 | GPU local: 0
-Iniciando run_prompt_axioms.py | Modelo: gemma3 | Dataset: dtd | GPU local: 1
-`torch_dtype` is deprecated! Use `dtype` instead!
-`torch_dtype` is deprecated! Use `dtype` instead!
-[*] Starting experiment: Ontology Axioms V2 | Model: gemma3 | Dataset: dtd
-Loading Flower102...
-Loading OxfordPets...
-Loading CIFAR-10...
-Loading DTD...
-All datasets loaded.
-Loading model: google/gemma-3-12b-it...
-[*] Starting experiment: Ontology Axioms V2 | Model: gemma3 | Dataset: cifar10
-Loading Flower102...
-Loading OxfordPets...
-Loading CIFAR-10...
-Loading DTD...
-All datasets loaded.
-Loading model: google/gemma-3-12b-it...
-Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:06<00:27,  6.91s/it]Loading checkpoint shards:  20%|██        | 1/5 [00:07<00:28,  7.16s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:48<01:21, 27.00s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:48<01:21, 27.09s/it]Loading checkpoint shards:  60%|██████    | 3/5 [01:01<00:41, 20.91s/it]Loading checkpoint shards:  60%|██████    | 3/5 [01:01<00:41, 20.93s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:11<00:16, 16.56s/it]Loading checkpoint shards:  80%|████████  | 4/5 [01:11<00:16, 16.70s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:20<00:00, 13.93s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:20<00:00, 16.17s/it]
-Loading checkpoint shards: 100%|██████████| 5/5 [01:21<00:00, 13.98s/it]Loading checkpoint shards: 100%|██████████| 5/5 [01:21<00:00, 16.22s/it]
-Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
-Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
-The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
-The following generation flags are not valid and may be ignored: ['top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
-Model google/gemma-3-12b-it loaded successfully.
-GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
-[*] Evaluating Config: N=2, K=2, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=2, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 18/18 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=3, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 25/27 correct (Accuracy: 0.9259)
-   -> Run 1 Result: 25/27 correct (Accuracy: 0.9259)
-   -> Run 2 Result: 27/27 correct (Accuracy: 1.0000)
-[*] Evaluating Config: N=4, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 28/36 correct (Accuracy: 0.7778)
-   -> Run 1 Result: 31/36 correct (Accuracy: 0.8611)
-   -> Run 2 Result: 35/36 correct (Accuracy: 0.9722)
-Model google/gemma-3-12b-it loaded successfully.
-GPU 0: Allocated=7.26GB | Reserved=11.39GB | Free=16.38GB / 23.64GB
-[*] Evaluating Config: N=2, K=2, Q=9 over 3 runs...
-   -> Run 0 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 17/18 correct (Accuracy: 0.9444)
-[*] Evaluating Config: N=2, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 16/18 correct (Accuracy: 0.8889)
-   -> Run 1 Result: 18/18 correct (Accuracy: 1.0000)
-   -> Run 2 Result: 17/18 correct (Accuracy: 0.9444)
-[*] Evaluating Config: N=3, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 27/27 correct (Accuracy: 1.0000)
-   -> Run 1 Result: 24/27 correct (Accuracy: 0.8889)
-   -> Run 2 Result: 24/27 correct (Accuracy: 0.8889)
-[*] Evaluating Config: N=4, K=1, Q=9 over 3 runs...
-   -> Run 0 Result: 35/36 correct (Accuracy: 0.9722)
-   -> Run 1 Result: 31/36 correct (Accuracy: 0.8611)
-   -> Run 2 Result: 32/36 correct (Accuracy: 0.8889)
-¡Todos los experimentos han finalizado!

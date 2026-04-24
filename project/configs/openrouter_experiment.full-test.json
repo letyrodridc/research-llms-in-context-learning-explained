@@ -1,0 +1,63 @@
+{
+  "schema_version": "openrouter_experiment_v2",
+  "experiment_name": "test",
+  "description": "OpenRouter multi-model test run with matched total query budget across n.",
+  "env_file": "../../.env",
+  "output_root": "../openrouter_runs",
+  "prompt_library_path": "openrouter_prompt_library.default.json",
+  "model": {
+    "model_name": [
+      "mistralai/ministral-8b-2512",
+      "bytedance-seed/seed-2.0-mini"
+    ],
+    "model_params": {
+      "validate_image_input": true,
+      "site_url": null,
+      "app_name": null,
+      "timeout_seconds": null,
+      "max_retries": null,
+      "generation": {
+        "temperature": 0.0
+      }
+    }
+  },
+  "datasets": [
+    "flowers"
+  ],
+  "prompt_types": [
+    "classification",
+    "nle",
+    "features",
+    "rulebased",
+    "axioms_ontology_v2"
+  ],
+  "few_shot_configs": [
+    {
+      "n": 2,
+      "k": 2,
+      "q": 1,
+      "runs": 6
+    },
+    {
+      "n": 3,
+      "k": 2,
+      "q": 1,
+      "runs": 4
+    },
+    {
+      "n": 4,
+      "k": 2,
+      "q": 1,
+      "runs": 3
+    }
+  ],
+  "seed": 42,
+  "analysis": {
+    "enabled": true
+  },
+  "logging": {
+    "write_full_conversations": true,
+    "write_request_payloads": true,
+    "write_sharded_logs": true
+  }
+}
