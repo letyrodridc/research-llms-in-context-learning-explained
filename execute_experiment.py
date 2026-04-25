@@ -2,6 +2,7 @@ import argparse
 import sys
 import os
 import subprocess
+import itertools
 from pathlib import Path
 
 def parse_args():
@@ -19,30 +20,29 @@ def parse_args():
     
     # OpenRouter specific
     parser.add_argument("--config", type=str, help="Path to OpenRouter experiment config JSON (overrides other params if provided)")
-    import itertools
-    from pathlib import Path
+    
+    return parser.parse_args()
 
-    ...
+def run_local(args):
+    # Import the Local Experiment Runner from the pipeline module
+    from pipeline.experiments.experiment_runner import ExperimentRunner
+    
+    # Generate test grid if N, K, and Q are provided
+    tests = None
+    if args.n and args.k and args.q:
+        tests = list(itertools.product(args.n, args.k, args.q))
+    
+    runner = ExperimentRunner(
+        model_name=args.model,
+        dataset_names=args.dataset,
+        prompt_types=args.prompt_type,
+        prompt_library_path=args.prompt_library,
+        tests=tests,
+        runs=args.runs,
+        seed=args.seed
+    )
+    runner.run()
 
-    def run_local(args):
-        # Import the Local Experiment Runner from the pipeline module
-        from pipeline.experiments.experiment_runner import ExperimentRunner
-
-        # Generate test grid if N, K, and Q are provided
-        tests = None
-        if args.n and args.k and args.q:
-            tests = list(itertools.product(args.n, args.k, args.q))
-
-        runner = ExperimentRunner(
-            model_name=args.model,
-            dataset_names=args.dataset,
-            prompt_types=args.prompt_type,
-            prompt_library_path=args.prompt_library,
-            tests=tests,
-            runs=args.runs,
-            seed=args.seed
-        )
-        runner.run()
 def run_openrouter(args):
     # Run experiment via OpenRouter API
     if args.config:
@@ -77,6 +77,7 @@ def run_openrouter(args):
             json.dump(temp_config, f)
 
         cmd = [sys.executable, "pipeline/experiments/run_openrouter_experiment.py", "--config", config_path]
+    
     subprocess.run(cmd)
 
 if __name__ == "__main__":
