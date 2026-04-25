@@ -26,8 +26,8 @@ Generate few-shot episodes for reproducibility. This ensures all models evaluate
 # Generate the default balanced test grid for all datasets
 python generate_test_set.py --seed 42
 
-# Generate a specific configuration (e.g., 2-way, 1-shot)
-python generate_test_set.py --n 2 --k 1 --q 9 --runs 5 --datasets pets flowers
+# Generate a combinatorial grid (e.g., 2-way and 3-way, for both 1-shot and 5-shot)
+python generate_test_set.py --n 2 3 --k 1 5 --q 1 --runs 5
 ```
 
 ### Stage 2: Run Experiments
