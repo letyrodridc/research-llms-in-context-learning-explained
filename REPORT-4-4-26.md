@@ -4,7 +4,7 @@
 
 ### 1. Experiment prompts now come from `new_prompts.txt`
 
-- The OpenRouter experiment pipeline no longer uses the old hardcoded prompt texts in `project/openrouter_mode/prompts.py`.
+- The OpenRouter experiment pipeline no longer uses the old hardcoded prompt texts in `pipeline/experiments/prompts.py`.
 - It now loads the prompt blocks from `new_prompts.txt` and builds the active prompt library from that file.
 - The existing prompt types are preserved so the rest of the pipeline still works:
   - `classification`
@@ -27,11 +27,11 @@
 
 ### 3. I added a new independent judge pipeline
 
-- New runner: `project/run_openrouter_judge.py`
-- New judge prompt loader: `project/openrouter_mode/judge_prompts.py`
-- New judge analysis module: `project/openrouter_mode/judge_analysis.py`
-- New trial reconstruction module: `project/openrouter_mode/reconstruction.py`
-- New prompt-asset loader shared by both experiment and judge: `project/openrouter_mode/prompt_assets.py`
+- New runner: `pipeline/run_openrouter_judge.py`
+- New judge prompt loader: `pipeline/experiments/judge_prompts.py`
+- New judge analysis module: `pipeline/experiments/judge_analysis.py`
+- New trial reconstruction module: `pipeline/experiments/reconstruction.py`
+- New prompt-asset loader shared by both experiment and judge: `pipeline/experiments/prompt_assets.py`
 
 This judge pipeline is intentionally decoupled from the experiment runner, so you can rerun judging without rerunning experiments.
 
@@ -59,7 +59,7 @@ So the judge sees the full classifier context, including images, without needing
 
 ### 5. The judge outputs scores, tables, plots, and stats
 
-The judge scores the five XML dimensions from `jugde_prompts.txt`:
+The judge scores the five XML dimensions from `judge_prompts.txt`:
 
 - `visual_grounding`
 - `discriminative_support`
@@ -122,7 +122,7 @@ You can switch to it by changing the env var or passing `--judge-model`.
 
 ### 1. Environment setup
 
-Use the project environment from `research-explain.yml`, then configure `.env`.
+Use the pipeline environment from `research-explain.yml`, then configure `.env`.
 
 Example `.env` values:
 
@@ -148,19 +148,19 @@ Notes:
 Run all datasets and all prompt types:
 
 ```bash
-python project/run_openrouter_experiment.py --dataset all --prompt-type all
+python pipeline/run_openrouter_experiment.py --dataset all --prompt-type all
 ```
 
 Run a narrower experiment:
 
 ```bash
-python project/run_openrouter_experiment.py --dataset pets --prompt-type rulebased
+python pipeline/run_openrouter_experiment.py --dataset pets --prompt-type rulebased
 ```
 
 The runner creates a directory like:
 
 ```text
-project/openrouter_runs/20260404_123456_<model-slug>/
+pipeline/openrouter_runs/20260404_123456_<model-slug>/
 ```
 
 Key files there:
@@ -179,43 +179,43 @@ Key files there:
 Judge all explanation-style prompts from one experiment run:
 
 ```bash
-python project/run_openrouter_judge.py --run-dir project/openrouter_runs/<run_dir_name> --prompt-type all
+python pipeline/run_openrouter_judge.py --run-dir pipeline/openrouter_runs/<run_dir_name> --prompt-type all
 ```
 
 Judge only one prompt type:
 
 ```bash
-python project/run_openrouter_judge.py --run-dir project/openrouter_runs/<run_dir_name> --prompt-type nle
+python pipeline/run_openrouter_judge.py --run-dir pipeline/openrouter_runs/<run_dir_name> --prompt-type nle
 ```
 
 Judge only one dataset:
 
 ```bash
-python project/run_openrouter_judge.py --run-dir project/openrouter_runs/<run_dir_name> --dataset pets --prompt-type all
+python pipeline/run_openrouter_judge.py --run-dir pipeline/openrouter_runs/<run_dir_name> --dataset pets --prompt-type all
 ```
 
 Judge multiple experiment runs together:
 
 ```bash
-python project/run_openrouter_judge.py --run-dir project/openrouter_runs/<run_a> project/openrouter_runs/<run_b> --prompt-type all
+python pipeline/run_openrouter_judge.py --run-dir pipeline/openrouter_runs/<run_a> pipeline/openrouter_runs/<run_b> --prompt-type all
 ```
 
 Limit the number of judged trials for a smoke test:
 
 ```bash
-python project/run_openrouter_judge.py --run-dir project/openrouter_runs/<run_dir_name> --prompt-type all --limit 20
+python pipeline/run_openrouter_judge.py --run-dir pipeline/openrouter_runs/<run_dir_name> --prompt-type all --limit 20
 ```
 
 Override the judge model from CLI:
 
 ```bash
-python project/run_openrouter_judge.py --run-dir project/openrouter_runs/<run_dir_name> --prompt-type all --judge-model google/gemini-3.1-flash-lite-preview
+python pipeline/run_openrouter_judge.py --run-dir pipeline/openrouter_runs/<run_dir_name> --prompt-type all --judge-model google/gemini-3.1-flash-lite-preview
 ```
 
 The judge runner creates a directory like:
 
 ```text
-project/judge_runs/20260404_130501_<judge-model-slug>/
+pipeline/judge_runs/20260404_130501_<judge-model-slug>/
 ```
 
 Key files there:
@@ -230,7 +230,7 @@ Key files there:
 
 The judge request is structured so the model receives:
 
-- the judge system prompt from `jugde_prompts.txt`
+- the judge system prompt from `judge_prompts.txt`
 - the condition-specific judge description
 - the classifier system prompt
 - every support example shown to the classifier
@@ -251,9 +251,9 @@ The judge pipeline currently supports:
 - `rulebased`
 - `axioms_ontology_v2`
 
-It does **not** currently judge the plain `classification` baseline, because `jugde_prompts.txt` only defines explanation-oriented condition descriptions.
+It does **not** currently judge the plain `classification` baseline, because `judge_prompts.txt` only defines explanation-oriented condition descriptions.
 
-If you want baseline judging too, the clean next step is to add a baseline judge condition block to `jugde_prompts.txt` and wire it into `project/openrouter_mode/judge_prompts.py`.
+If you want baseline judging too, the clean next step is to add a baseline judge condition block to `judge_prompts.txt` and wire it into `pipeline/experiments/judge_prompts.py`.
 
 ## Validation I ran
 
@@ -261,8 +261,8 @@ I ran:
 
 ```bash
 python -m unittest tests.test_openrouter_mode -v
-python project/run_openrouter_experiment.py --help
-python project/run_openrouter_judge.py --help
+python pipeline/run_openrouter_experiment.py --help
+python pipeline/run_openrouter_judge.py --help
 ```
 
 Results:
@@ -275,9 +275,9 @@ Results:
 ### Prompt file names
 
 - The experiment prompt source file is `new_prompts.txt`
-- The judge prompt source file is `jugde_prompts.txt`
+- The judge prompt source file is `judge_prompts.txt`
 
-I preserved the existing filename `jugde_prompts.txt` exactly as-is, even though it is misspelled, to avoid breaking your current workspace assumptions.
+I renamed the file from `jugde_prompts.txt` to `judge_prompts.txt` to fix the misspelling and updated all references.
 
 ### Reproducibility
 
@@ -290,26 +290,26 @@ That means if you later change either prompt file, old run directories still pre
 
 ### Dependency note
 
-The runners still depend on the full project environment for actual execution because dataset loading goes through `torch` and `torchvision`.
+The runners still depend on the full pipeline environment for actual execution because dataset loading goes through `torch` and `torchvision`.
 
 ## Files added or changed
 
 Changed:
 
-- `project/openrouter_mode/prompts.py`
-- `project/openrouter_mode/config.py`
-- `project/run_openrouter_experiment.py`
+- `pipeline/experiments/prompts.py`
+- `pipeline/experiments/config.py`
+- `pipeline/run_openrouter_experiment.py`
 - `.env.example`
 - `README.md`
 - `tests/test_openrouter_mode.py`
 
 Added:
 
-- `project/openrouter_mode/prompt_assets.py`
-- `project/openrouter_mode/judge_prompts.py`
-- `project/openrouter_mode/reconstruction.py`
-- `project/openrouter_mode/judge_analysis.py`
-- `project/run_openrouter_judge.py`
+- `pipeline/experiments/prompt_assets.py`
+- `pipeline/experiments/judge_prompts.py`
+- `pipeline/experiments/reconstruction.py`
+- `pipeline/experiments/judge_analysis.py`
+- `pipeline/run_openrouter_judge.py`
 
 ## Suggested next steps
 

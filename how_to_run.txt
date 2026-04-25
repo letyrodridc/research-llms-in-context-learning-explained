@@ -1,4 +1,4 @@
-0. Configure your experiment in project/configs/your-new.json
+0. Configure your experiment in pipeline/configs/your-new.json
 
 1. Create a file named `.env` at the repo root:
    `research-llms-in-context-learning-explained\.env`
@@ -8,11 +8,11 @@
 OPENROUTER_API_KEY=your_real_openrouter_api_key_here
 
 3. Then run:
-python project/run_openrouter_experiment.py --config project/configs/your_desired_experiment.json
+python pipeline/run_openrouter_experiment.py --config pipeline/configs/your_desired_experiment.json
 
-4. After experiment is finished, you can view results in dashboard:
+4. After experiment is finished, you can view results in Results Dashboard:
 
-python project/run_openrouter_dashboard.py --run-dir project/openrouter_runs/your-run-folder
+python pipeline/run_results_Results Dashboard.py --run-dir pipeline/openrouter_runs/your-run-folder
 
 ---
 
@@ -20,7 +20,7 @@ RUN FULL EXPERIMENT ON A SINGLE PC (WITHOUT KEEPING THE TERMINAL OPEN)
 
 Use the unified config that includes all 4 models and runs analysis automatically:
 
-  Config: project/configs/openrouter_experiment.full.single.json
+  Config: pipeline/configs/openrouter_experiment.full.single.json
 
 Launch inside a tmux session so the process keeps running after you close the terminal or SSH connection:
 
@@ -29,7 +29,7 @@ Launch inside a tmux session so the process keeps running after you close the te
 
   # Launch the experiment inside it
   tmux send-keys -t icl_full \
-    "cd /mnt/homeGPU/cquiles/ICL/ICL && conda activate /mnt/homeGPU/cquiles/ICL/ICL/research-explain && python project/run_openrouter_experiment.py --config project/configs/openrouter_experiment.full.single.json" Enter
+    "cd /mnt/homeGPU/cquiles/ICL/ICL && conda activate /mnt/homeGPU/cquiles/ICL/ICL/research-explain && python pipeline/run_openrouter_experiment.py --config pipeline/configs/openrouter_experiment.full.single.json" Enter
 
   # Reconnect to check progress at any time:
   tmux attach -t icl_full
@@ -37,4 +37,4 @@ Launch inside a tmux session so the process keeps running after you close the te
   # Detach without killing the process: Ctrl+B then D
 
 Total: 2080 API calls (4 models x 520 trials). Results go to a single folder under
-project/openrouter_runs/full_experiment_single__<timestamp>/ — no manual merge needed.
+pipeline/openrouter_runs/full_experiment_single__<timestamp>/ — no manual merge needed.

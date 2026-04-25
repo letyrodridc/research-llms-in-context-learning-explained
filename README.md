@@ -1,177 +1,143 @@
-# research-llms-in-context-learning-explained
+# ICL Explainability Pipeline
 
-This repository contains research and experiments related to In-Context Learning (ICL) in Large Language Models.
+This repository contains a robust framework for researching **In-Context Learning (ICL)** and **Explainability** in Large Language Models (LLMs). It supports both local model execution (via PyTorch/Transformers) and remote execution (via OpenRouter).
 
-## Installation
+## 🚀 Quick Start
 
-To set up the development environment, you can use the provided Conda environment file:
-
-### Prerequisites
-
-- [Miniconda](https://docs.anaconda.com/free/miniconda/index.html) or [Anaconda](https://www.anaconda.com/download/) installed on your system.
-
-### Steps
-
-1. **Clone the repository:**
-
-   ```bash
-   git clone git@github.com:letyrodridc/research-llms-in-context-learning-explained.git
-   cd research-llms-in-context-learning-explained
-   ```
-
-2. **Create the Conda environment:**
-
-   ```bash
-   conda env create -f research-explain.yml
-   ```
-
-3. **Activate the environment:**
-
-   ```bash
-   conda activate research-explain
-   ```
-
-## Usage
-
-Once the environment is activated, you can start exploring the notebooks and scripts in this repository.
-
-## OpenRouter Mode
-
-This repository now includes a separate OpenRouter-based execution mode that does not overwrite the original local-model scripts.
-
-### Setup
-
-1. Copy `.env.example` to `.env`
-2. Set:
-   - `OPENROUTER_API_KEY`
-   - `OPENROUTER_MODEL`
-   - `OPENROUTER_JUDGE_MODEL` for the independent judge pipeline
-   - optionally `OPENROUTER_SITE_URL`, `OPENROUTER_APP_NAME`, `OPENROUTER_JUDGE_APP_NAME`, `OPENROUTER_TIMEOUT_SECONDS`, `OPENROUTER_MAX_RETRIES`
-
-### Run
-
-The experiment runner now uses a JSON config as the source of truth for:
-
-- prompt text and per-condition generation limits
-- model and OpenRouter request settings
-- datasets and prompt conditions to run
-- few-shot `N/K/Q` settings and repetitions
-- output root and logging behavior
-
-Default files:
-
-- experiment config: [`project/configs/openrouter_experiment.full.json`](./project/configs/openrouter_experiment.full.json)
-- smoke config: [`project/configs/openrouter_experiment.smoke.json`](./project/configs/openrouter_experiment.smoke.json)
-- prompt library: [`project/configs/openrouter_prompt_library.default.json`](./project/configs/openrouter_prompt_library.default.json)
-
-Run the full config:
-
+### 1. Installation
 ```bash
-python project/run_openrouter_experiment.py --config project/configs/openrouter_experiment.full.json
+conda env create -f research-explain.yml
+conda activate research-explain
 ```
 
-Run a small smoke test:
+### 2. Configure Environment
+Copy `.env.example` to `.env` and set your `OPENROUTER_API_KEY` if using remote models.
+
+---
+
+## 🛠 Unified Research Pipeline (Recommended)
+
+The pipeline consists of four main stages: **Generation**, **Inference**, **Evaluation**, and **Analysis**.
+
+### Stage 1: Generate Test Sets (Episodes)
+Generate few-shot episodes for reproducibility. This ensures all models evaluate exactly the same images.
 
 ```bash
-python project/run_openrouter_experiment.py --config project/configs/openrouter_experiment.smoke.json
+# Generate the default balanced test grid for all datasets
+python generate_test_set.py --seed 42
+
+# Generate a specific configuration (e.g., 2-way, 1-shot)
+python generate_test_set.py --n 2 --k 1 --q 9 --runs 5 --datasets pets flowers
 ```
 
-Optional CLI overrides still exist for quick slices:
+### Stage 2: Run Experiments
+Execute classification experiments with different prompt strategies. You can run multiple datasets, prompt types, and configurations in a single command (the model will only load once).
 
 ```bash
-python project/run_openrouter_experiment.py --config project/configs/openrouter_experiment.full.json --dataset pets --prompt-type nle --model google/gemini-2.5-flash
+# Batch Local execution (runs N=2 and N=3, for both classification and nle, only 1 model load)
+python execute_experiment.py --mode local --model gemma3 --dataset flowers pets --prompt-type classification nle --n 2 3 --k 1 --q 1
+
+# Batch OpenRouter execution
+python execute_experiment.py --mode openrouter --model google/gemini-2.0-flash-001 --dataset flowers pets --prompt-type nle --n 2 3 --k 1 5 --q 1
 ```
 
-The default OpenRouter experiment prompts are now sourced from [`project/configs/openrouter_prompt_library.default.json`](./project/configs/openrouter_prompt_library.default.json), not directly from `new_prompts.txt`. Each run saves both a literal copy of the experiment JSON and a resolved prompt-library snapshot so the exact setup is reproducible.
+**Parameters:**
+- `--mode`: `local` or `openrouter`.
+- `--model`: `gemma3`, `qwen-vl` (local) or any OpenRouter ID.
+- `--dataset`: One or more datasets (`flowers`, `pets`, `cifar10`, `dtd`).
+- `--prompt-type`: One or more prompt types (`classification`, `nle`, `features`, `rulebased`, `axioms_ontology_v2`).
+- `--n`, `--k`, `--q`: List of values for N-way, K-shot, and Q-queries (creates a combinatorial grid).
 
-### Outputs
+### 💡 Combinatorial Grid Execution
 
-Each execution creates a timestamped directory under `project/openrouter_runs/` containing:
+The pipeline supports **Cartesian Product** generation for parameters. If you provide multiple values for any argument, the runner will automatically iterate through all possible combinations.
 
-- `experiment_config.json`: literal copy of the experiment JSON used
-- `experiment_config_snapshot.json`: resolved config with absolute paths and hashes
-- `prompt_library.json`: literal prompt library copy when loaded from a file
-- `prompt_library_snapshot.json`: resolved prompt definitions used by the run
-- `run_manifest.json`: top-level run metadata
-- `trial_results.csv`: one row per trial/query
-- `trial_logs.jsonl`: raw per-trial logs, including exact messages, request attempts, payload metadata, and model output
-- `run_accuracy_long.csv`: one row per `(dataset, prompt, N, K, Q, run)`
-- `experiment_summary.csv`: one row per `(dataset, prompt)` with aggregate timing and accuracy
-- `results_wide.csv`: wide-format summary, similar to the local scripts
-- `datasets/<dataset>/<prompt_type>/N*_K*_Q*/run_*/`: sharded trial CSVs, exact conversation logs, debug logs, and run summaries
-- `analysis/`: generated tables, plots, and statistical test outputs
+**Example:**
+```bash
+python execute_experiment.py --mode local --model gemma3 --dataset pets --prompt-type nle --n 2 3 --k 1 5 --q 1
+```
+The command above will automatically execute **4 configurations** in sequence without reloading the model:
+1.  **N=2, K=1**
+2.  **N=2, K=5**
+3.  **N=3, K=1**
+4.  **N=3, K=5**
 
-New runs store image references in logs instead of embedding large base64 image payloads, so the JSONL files stay much easier to inspect manually.
+This works for `--dataset`, `--prompt-type`, `--n`, `--k`, and `--q`. It is the most efficient way to run full benchmarks on local GPUs.
 
-### Changing only the JSON
-
-To run different experiment variants, duplicate one of the JSON configs and change only the fields you need:
-
-- `model.name`: OpenRouter model ID
-- `datasets`: list of dataset names
-- `prompt_types`: list of experimental conditions
-- `few_shot_configs`: list of `{ "n": ..., "k": ..., "q": ... }`
-- `runs_per_config`: number of episode repetitions
-- `output_root`: base directory for run folders
-- `model.generation`: request hyperparameters such as `temperature`
-- `prompt_library_path` or inline `prompt_library`: prompt definitions and per-condition `max_tokens`
-
-### Local Dashboard
-
-You can open an interactive browser dashboard for any run directory:
+### Stage 3: Evaluate Explanations (Judge)
+Use a powerful model (local or remote) to act as a judge. You can evaluate multiple run directories at once.
 
 ```bash
-python project/run_openrouter_dashboard.py --run-dir project/openrouter_runs/<run_dir_name>
+# Evaluate multiple runs in a single command
+python execute_judge.py --mode local --model gemma3 --run-dir pipeline/local_runs/run1 pipeline/local_runs/run2 pipeline/local_runs/run3
 ```
 
-The dashboard shows:
-
-- experiment parameters and snapshots
-- per-prompt summary metrics
-- all trials with filters
-- reconstructed conversations with dataset images rendered in-place
-- parsed XML blocks from the model response
-
-## OpenRouter Judge Pipeline
-
-The repository also includes an independent LLM-as-a-judge runner. It consumes one or more existing experiment run directories, reconstructs the exact classifier context from the stored trial metadata plus the episode files, and asks a judge model to score the explanation quality.
-
-### Judge prompt source
-
-- Judge prompts and condition descriptions are sourced from [`jugde_prompts.txt`](./jugde_prompts.txt).
-- The judge pipeline currently supports the explanation-style prompt types: `nle`, `features`, `rulebased`, and `axioms_ontology_v2`.
-
-### Judge run
-
-Run the judge on one experiment directory and all judgeable prompt types:
-
+### Stage 4: Analyze & Visualize
+Open the Results Dashboard to inspect results and reconstructed conversations.
 ```bash
-python project/run_openrouter_judge.py --run-dir project/openrouter_runs/<run_dir_name> --prompt-type all
+python pipeline/dashboard/run_results_dashboard.py --run-dir pipeline/openrouter_runs/your_run_dir
 ```
 
-Run the judge on a subset:
+## 🌐 OpenRouter Integration (Remote Models)
 
+You can run experiments using any model supported by OpenRouter (e.g., Gemini, GPT-4o, Claude, Llama 3).
+
+### 1. Setup
+Ensure your `.env` file contains your API key:
+```env
+OPENROUTER_API_KEY=your_key_here
+```
+
+### 2. Single Experiment (CLI)
+Run a specific configuration via the API:
 ```bash
-python project/run_openrouter_judge.py --run-dir project/openrouter_runs/<run_dir_name> --dataset pets --prompt-type rulebased
+python execute_experiment.py --mode openrouter --model google/gemini-2.0-flash-001 --dataset pets --prompt-type nle --n 2 --k 1 --q 1
 ```
 
-### Judge outputs
+### 3. Batch Execution (Config File)
+To run large-scale experiments with multiple models and datasets, use a JSON configuration:
+```bash
+python pipeline/experiments/run_openrouter_experiment.py --config pipeline/configs/openrouter_experiment.full.json
+```
 
-Each judge execution creates a timestamped directory under `project/judge_runs/` containing:
+### 4. Evaluation (Judge via API)
+You can also use a remote model as a judge:
+```bash
+python execute_judge.py --mode openrouter --model google/gemini-2.0-flash-001 --run-dir pipeline/openrouter_runs/your_run_dir
+```
 
-- `config.json`: judge configuration snapshot and selected source run directories
-- `judge_prompt_library_snapshot.json`: exact judge prompt definitions used
-- `judge_results.csv`: one row per judged trial with all five judge dimensions and the aggregate score
-- `judge_logs.jsonl`: raw per-trial judge logs, including request previews and OpenRouter payload metadata
-- `analysis/`: generated judge tables, plots, and statistical test outputs
+---
 
-### Notes
+## 📂 Pipeline Structure
 
-- The OpenRouter runner reuses the same episode protocol as the local mode.
-- If the `episodes/` files are missing, it regenerates them using the current fixed `N, K, Q` settings.
-- The runner validates the selected OpenRouter model against `/api/v1/models` unless `--skip-model-validation` is used.
-- Timing is recorded at trial level and run level, and the console prints progress, elapsed time, and a rough ETA during execution.
-- If a provider rejects the `system` or developer-style instruction, the runner can retry by folding that instruction into the first user message, and it records a visible warning in console output, logs, and CSV results.
-- If several trial requests fail consecutively, the runner aborts early instead of silently burning through the full experiment budget.
-- Statistical outputs currently include descriptive accuracy tables, confidence intervals, pairwise McNemar tests at trial level, pairwise Wilcoxon tests at run level, and a Friedman test when enough prompt types are present.
-- The judge pipeline is intentionally decoupled from the experiment runner, so you can rerun judging with different judge prompts or judge models without rerunning the classifier experiments.
+- **`generate_test_set.py`**: Unified entry point for episode generation.
+- **`execute_experiment.py`**: Unified entry point for all classification tests.
+- **`execute_judge.py`**: Unified entry point for LLM-as-a-judge evaluation.
+- **`pipeline/`**: Core logic and utilities.
+  - `utils/`: Abstraction layer for local/remote inference and image utilities.
+  - `experiments/`: Orchestrates classification experiments.
+  - `evaluation/`: Orchestrates LLM-as-a-judge evaluation workflows.
+  - `dashboard/`: Visualization and reconstruction tools.
+  - `configs/`: Centralized JSON libraries for prompts and experiment configs.
+  - `scripts/`: Generation and legacy entry points.
+- **`episodes/`**: Generated few-shot episodes for reproducibility.
+
+---
+
+## ⚙️ Advanced Usage
+
+### Customizing Prompts
+Modify `pipeline/configs/openrouter_prompt_library.default.json` to change the system instructions for all models simultaneously.
+
+### Batch Experiments
+For large-scale evaluations, use JSON configuration files:
+```bash
+python pipeline/run_openrouter_experiment.py --config pipeline/configs/openrouter_experiment.full.json
+```
+
+---
+
+## 📝 Notes
+- **Reproducibility**: All experiments use fixed seeds and pre-generated episodes located in `episodes/`.
+- **Inference Engine**: Automatically handles token limits, temperatures, and provider fallbacks for system prompts.
+- **Judge Metrics**: Evaluations include Visual Grounding, Discriminative Support, Inferential Coherence, Clarity, and Format Compliance.

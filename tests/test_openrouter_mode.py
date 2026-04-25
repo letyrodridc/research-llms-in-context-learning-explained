@@ -10,20 +10,20 @@ from PIL import Image
 import sys
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-PROJECT_ROOT = REPO_ROOT / "project"
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
+PIPELINE_ROOT = REPO_ROOT / "pipeline"
+if str(PIPELINE_ROOT) not in sys.path:
+    sys.path.insert(0, str(PIPELINE_ROOT))
 
-from openrouter_mode.analysis import analyze_run_directory
-from openrouter_mode.client import OpenRouterClient, extract_message_text, model_supports_images
-from openrouter_mode.config import OpenRouterSettings
-from openrouter_mode.dashboard import RunDataStore
-from openrouter_mode.experiment_config import export_experiment_config_snapshot, load_experiment_config
-from openrouter_mode.judge_analysis import analyze_judge_run_directory
-from openrouter_mode.judge_prompts import JUDGE_PROMPT_SPECS
-from openrouter_mode.prompt_assets import repo_relative_path, resolve_repo_path
-from openrouter_mode.prompts import PROMPT_SPECS, pil_image_to_data_url
-from run_openrouter_experiment import build_trial_record_base, sanitize_messages_for_logging
+from pipeline.experiments.analysis import analyze_run_directory
+from pipeline.utils.client import OpenRouterClient, extract_message_text, model_supports_images
+from pipeline.experiments.config import OpenRouterSettings
+from pipeline.dashboard.dashboard import RunDataStore
+from pipeline.experiments.experiment_config import export_experiment_config_snapshot, load_experiment_config
+from pipeline.evaluation.judge_analysis import analyze_judge_run_directory
+from pipeline.evaluation.judge_prompts import JUDGE_PROMPT_SPECS
+from pipeline.utils.prompt_assets import repo_relative_path, resolve_repo_path
+from pipeline.experiments.prompts import PROMPT_SPECS, pil_image_to_data_url
+from pipeline.experiments.run_openrouter_experiment import build_trial_record_base, sanitize_messages_for_logging
 
 
 class FakeResponse:
@@ -192,18 +192,18 @@ class OpenRouterModeTests(unittest.TestCase):
         self.assertEqual(sanitized[1]["content"][1]["image_ref"]["dataset_index"], 10)
 
     def test_export_experiment_config_snapshot_uses_repo_relative_paths(self):
-        loaded = load_experiment_config(REPO_ROOT / "project" / "configs" / "openrouter_experiment.test.json")
+        loaded = load_experiment_config(REPO_ROOT / "pipeline" / "configs" / "openrouter_experiment.test.json")
 
         snapshot = export_experiment_config_snapshot(loaded)
 
-        self.assertEqual(snapshot["source_config"]["path"], "project\\configs\\openrouter_experiment.test.json")
+        self.assertEqual(snapshot["source_config"]["path"], "pipeline\\configs\\openrouter_experiment.test.json")
         self.assertEqual(snapshot["resolved"]["env_file"], ".env")
-        self.assertEqual(snapshot["resolved"]["output_root"], "project\\openrouter_runs")
+        self.assertEqual(snapshot["resolved"]["output_root"], "pipeline\\openrouter_runs")
 
     def test_build_trial_record_base_stores_repo_relative_episode_path(self):
         episode_path = REPO_ROOT / "episodes" / "seed_42" / "pets" / "episode_N2_K1_Q1_run0.npy"
-        artifact_dir = REPO_ROOT / "project" / "openrouter_runs" / "demo" / "datasets" / "pets" / "classification" / "N2_K1_Q1" / "run_0"
-        run_dir = REPO_ROOT / "project" / "openrouter_runs" / "demo"
+        artifact_dir = REPO_ROOT / "pipeline" / "openrouter_runs" / "demo" / "datasets" / "pets" / "classification" / "N2_K1_Q1" / "run_0"
+        run_dir = REPO_ROOT / "pipeline" / "openrouter_runs" / "demo"
         messages = [{"role": "system", "content": "hello"}]
 
         record = build_trial_record_base(

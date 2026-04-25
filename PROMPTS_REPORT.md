@@ -1,26 +1,26 @@
 # Prompt Report
 
-Este documento resume las prompts del experimento actual, cómo se usan dentro del protocolo few-shot, qué diferencias reales hay entre ellas y qué convendría mejorar antes de escalar experimentos o comparar modelos por API.
+This document summarizes the prompts used in the current experiment, their role within the few-shot protocol, the actual differences between them, and recommended improvements before scaling experiments or comparing models via API.
 
-## Contexto Compartido
+## Shared Context
 
-Las cinco variantes comparten la misma estructura general:
+All five variants share the same general structure:
 
-1. Un `system prompt` que define el rol y las restricciones.
-2. `K` ejemplos por clase en formato few-shot.
-3. Cada ejemplo few-shot usa:
-   - `user`: imagen + `"What is the class of this image?"`
+1. A `system prompt` defining the role and constraints.
+2. `K` examples per class in a few-shot format.
+3. Each few-shot example uses:
+   - `user`: image + `"What is the class of this image?"`
    - `assistant`: `<response>label</response>`
-4. La query final usa:
-   - una imagen nueva
-   - una instrucción textual que fuerza una de las `N` clases vistas
-5. La evaluación solo mira el contenido dentro de `<response>...</response>`.
+4. The final query uses:
+   - A new image.
+   - A textual instruction that forces the choice of one of the `N` seen classes.
+5. Evaluation only considers the content within the `<response>...</response>` tags.
 
-Eso significa que la diferencia experimental real no está en los datos ni en el protocolo de evaluación, sino en la forma de pedirle al modelo que razone antes de clasificar.
+This means that the actual experimental difference lies not in the data or the evaluation protocol, but in how the model is asked to reason before classifying.
 
-## Plantilla Few-Shot Compartida
+## Shared Few-Shot Template
 
-### Ejemplos de soporte
+### Support Examples
 
 ```text
 User:
@@ -31,15 +31,17 @@ Assistant:
 <response>{label}</response>
 ```
 
-### Query final
+### Final Query
 
-Siempre se le pide elegir exactamente una clase de una lista cerrada:
+The model is always asked to choose exactly one class from a closed list:
 
 ```text
 You MUST choose exactly one from [{options_str}]
 ```
 
-Eso es bueno porque reduce bastante la ambigüedad del output y hace más robusta la evaluación automática.
+This is beneficial as it significantly reduces output ambiguity and makes automatic evaluation more robust.
+
+---
 
 ## 1. Classification
 
@@ -70,29 +72,27 @@ The label of this new image in format XML <response>output_class</response>
 Based on the examples seen, what is the class of this image? You MUST choose exactly one from [{options_str}]
 ```
 
-### Qué intenta medir
+### Purpose
+Acts as the cleanest baseline: few-shot classification with minimal extra structure.
 
-Es la baseline más limpia: clasificación few-shot con el mínimo extra de estructura.
+### Advantages
+- Simplest variant and easiest to interpret.
+- Lower risk of the model "getting lost" generating long explanations.
+- Best reference for comparing whether explanations help or hinder performance.
 
-### Ventajas
+### Disadvantages
+- Asks to "reason step-by-step" but does not force the model to show that reasoning.
+- This instruction may induce latent reasoning but leaves no traceability.
+- If the model uses prior knowledge, it is difficult to audit later.
 
-- Es la variante más simple y más fácil de interpretar.
-- Tiene menos riesgo de que el modelo “se pierda” generando explicaciones largas.
-- Es la mejor referencia para comparar si las explicaciones ayudan o perjudican.
+### Potential Improvements
+- For a strictly mute baseline, remove "Reason step-by-step".
+- For an explainable baseline, request a minimal one-line structured justification.
+- Add a stronger clause such as: "If uncertain, still choose one of the provided labels and do not invent labels."
 
-### Desventajas
+---
 
-- Pide “reason step-by-step” pero no obliga a mostrar ese razonamiento.
-- Esa instrucción puede inducir razonamiento latente, pero no deja trazabilidad.
-- Si el modelo usa conocimiento previo igual, después es difícil auditarlo.
-
-### Mejoras posibles
-
-- Si querés baseline realmente estricta, sacar `Reason step-by-step`.
-- Si querés baseline explicable, pedir una justificación mínima estructurada de una línea.
-- Agregar una cláusula más fuerte tipo: `If uncertain, still choose one of the provided labels and do not invent labels.`
-
-## 2. NLE
+## 2. NLE (Natural Language Explanation)
 
 ### System Prompt
 
@@ -117,31 +117,29 @@ Based on the examples seen, what is the class of this image? You MUST choose exa
 WARNING: For this final target image, remember to provide your step-by-step Natural Language Explanation FIRST, and then wrap your final classification in <response>output_class</response> tags.
 ```
 
-### Qué intenta medir
+### Purpose
+To measure if forcing the model to verbalize an explanation in natural language improves or hinders classification accuracy.
 
-Si obligar al modelo a verbalizar una explicación en lenguaje natural mejora o empeora la clasificación.
+### Advantages
+- Readable and easy to inspect manually.
+- Useful for detecting if the model attends to reasonable features.
+- A natural way to audit errors.
 
-### Ventajas
+### Disadvantages
+- "Natural language explanation" is very open-ended.
+- May produce plausible but post-hoc explanations.
+- Does not enforce a stable structure across runs and models.
+- Mixing free-form explanation with classification may increase length and cost without gaining precision.
 
-- Es legible y fácil de inspeccionar manualmente.
-- Sirve bien para detectar si el modelo está atendiendo a rasgos razonables.
-- Es una forma natural de auditar errores.
-
-### Desventajas
-
-- “Natural language explanation” es muy abierta.
-- Puede producir explicaciones plausibles pero post-hoc.
-- No fuerza una estructura estable entre corridas y modelos.
-- Mezcla explicación libre con clasificación, lo que puede aumentar longitud y costo sin ganar precisión.
-
-### Mejoras posibles
-
-- Forzar una plantilla más corta:
+### Potential Improvements
+- Enforce a shorter template:
   - `Observed cues: ...`
   - `Contrast with alternatives: ...`
   - `<response>...</response>`
-- Limitar la explicación a 2-3 frases.
-- Pedir evidencia comparativa explícita entre clases candidatas, no solo descripción de la elegida.
+- Limit the explanation to 2-3 sentences.
+- Request explicit comparative evidence between candidate classes, not just a description of the chosen one.
+
+---
 
 ## 3. Features
 
@@ -179,36 +177,33 @@ Features:
 <response>output_class</response>
 ```
 
-### Qué intenta medir
+### Purpose
+To measure if forcing the model through an explicit visual feature extraction stage improves decision-making.
 
-Si obligar al modelo a pasar por una etapa explícita de extracción de rasgos visuales mejora la decisión.
+### Advantages
+- Introduces a more concrete structure than NLE.
+- Pushes the model to use observable visual evidence.
+- Easier to compare across outputs than free-form explanations.
 
-### Ventajas
+### Disadvantages
+- Significant internal inconsistency:
+  - Initially asks to look at color, texture, and shape.
+  - Subsequently prohibits using color, size, length, texture, and shape as "features."
+- Examples in the query (`e.g., Specific color/texture`) contradict the system prompt.
+- "Physical components" works well for objects but less so for flowers, textures, or breeds where differences often lie in pattern, shape, or color.
 
-- Introduce una estructura más concreta que NLE.
-- Empuja al modelo a usar evidencia visual observable.
-- Es más fácil de comparar entre outputs que una explicación libre.
-
-### Desventajas
-
-- Hay una inconsistencia interna importante:
-  - al principio dice que mire color, textura y shape;
-  - después prohíbe usar color, tamaño, longitud, textura y shape como “features”.
-- Los ejemplos incluidos en la query (`e.g., Specific color/texture`) contradicen el system prompt.
-- “Componentes físicos” funciona bien para objetos, pero peor para flores, texturas o razas donde muchas diferencias son de patrón, forma o color.
-
-### Mejoras posibles
-
-- Separar claramente:
+### Potential Improvements
+- Clearly separate:
   - `parts/components`
   - `surface patterns`
   - `global shape cues`
   - `color cues`
-- Para datasets como `flowers` y `dtd`, permitir explícitamente patrón, simetría, textura y distribución cromática.
-- Reemplazar la regla actual por algo más general:
-  - `Use only directly observable visual cues; do not use taxonomy or world knowledge.`
+- For datasets like `flowers` and `dtd`, explicitly allow pattern, symmetry, texture, and color distribution.
+- Replace the current rule with something more general: "Use only directly observable visual cues; do not use taxonomy or world knowledge."
 
-## 4. Rulebased
+---
+
+## 4. Rule-based
 
 ### System Prompt
 
@@ -251,41 +246,34 @@ Rule Check:
 <response>output_class</response>
 ```
 
-### Qué intenta medir
+### Purpose
+To measure if structuring reasoning as explicit `IF-THEN` rules helps the model discriminate better.
 
-Si estructurar el razonamiento como reglas explícitas tipo `IF-THEN` ayuda al modelo a discriminar mejor.
+### Advantages
+- Makes an intermediate reasoning path visible.
+- More auditable than NLE.
+- The `Rule Check` part can reveal if the model is comparing classes or just justifying a pre-made decision.
 
-### Ventajas
+### Disadvantages
+- "At least one IF-THEN rule per class" with very few shots may induce narrative overfitting.
+- May invent rules that are too strong based on very little evidence.
+- Mixes three difficult tasks:
+  - Feature extraction.
+  - Rule induction.
+  - Classification.
+- Significant increase in token cost.
 
-- Hace visible una forma de razonamiento intermedia.
-- Es más auditable que NLE.
-- La parte `Rule Check` puede revelar si el modelo está comparando clases o solo justificando una decisión ya tomada.
+### Potential Improvements
+- Request tentative rather than definitional rules: "Propose provisional visual rules supported by the examples."
+- Force contrast: "For each candidate class, state one supporting cue and one conflicting cue."
+- Limit the number of rules: "At most one short rule per class."
+- Request a match score per class instead of a long explanation.
 
-### Desventajas
-
-- “At least one IF-THEN rule per class” con muy pocos shots puede inducir sobreajuste narrativo.
-- Puede inventar reglas demasiado fuertes a partir de muy poca evidencia.
-- Mezcla tres tareas difíciles:
-  - extraer features,
-  - inducir reglas,
-  - clasificar.
-- El costo en tokens crece bastante.
-
-### Mejoras posibles
-
-- Pedir reglas tentativas y no definicionales:
-  - `Propose provisional visual rules supported by the examples.`
-- Forzar contraste:
-  - `For each candidate class, state one supporting cue and one conflicting cue.`
-- Limitar cantidad de reglas:
-  - `At most one short rule per class.`
-- Pedir un score de match por clase en vez de explicación larga.
+---
 
 ## 5. Axioms / Ontology
 
-### System Prompt
-
-Versión resumida de lo que hoy se le pide:
+### System Prompt (Summary)
 
 ```text
 You are an expert Explainable Vision-Language Agent ... explain classification using Description Logics (DL) axioms according to a knowledge base (KB) built from the few-shot examples.
@@ -323,145 +311,134 @@ Description Logics’ Ontological Axioms
 The ABox assertion presents [Properties/Assertions], which satisfies the TBox [necessary/sufficient/necessary & sufficient] condition [axiom] to classify it as [class].
 ```
 
-### Qué intenta medir
+### Purpose
+To measure if a much more formal ontological reasoning structure changes performance or explanatory quality.
 
-Si una estructura de razonamiento ontológico, mucho más formal, cambia la performance o la calidad explicativa.
+### Advantages
+- Strongest condition in terms of structural explicitness.
+- Interesting as an interpretability experiment.
+- Clearly reveals when the model is "filling in" formalism without visual anchoring.
 
-### Ventajas
+### Disadvantages
+- Likely the prompt with the highest cognitive load and risk of formal hallucination.
+- Requests DL/OWL/TBox/ABox despite minimal few-shot evidence.
+- Conceptual examples (e.g., pizza/triangle/centaur) are far from the actual experimental domain.
+- Strongly incentivizes the invention of pseudo-ontologies that sound correct but lack support.
+- Least comparable to a natural visual classification task.
 
-- Es la condición más fuerte en términos de explicitud estructural.
-- Puede ser interesante como experimento de interpretabilidad.
-- Hace muy visible cuándo el modelo está “rellenando” formalismo sin anclaje visual.
-
-### Desventajas
-
-- Es probablemente la prompt con más carga cognitiva y más riesgo de alucinación formal.
-- Pide DL/OWL/TBox/ABox aunque la evidencia few-shot es mínima.
-- Los ejemplos conceptuales tipo pizza/triangle/centaur están muy lejos del dominio real del experimento.
-- Incentiva fuertemente la invención de pseudo-ontologías que suenan bien pero no están sustentadas.
-- Es la menos comparable con una tarea natural de clasificación visual.
-
-### Mejoras posibles
-
-- Bajar mucho la ambición formal.
-- Reemplazar OWL/DL duro por una versión “soft schema”:
+### Potential Improvements
+- Significantly lower formal ambition.
+- Replace strict OWL/DL with a "soft schema":
   - `Class hypothesis`
   - `Observed cues`
   - `Necessary-like cues`
   - `Most diagnostic cue`
-- Si querés seguir con ontologías, usar un mini lenguaje controlado más simple y consistente con visión:
+- If continuing with ontologies, use a simpler, vision-consistent controlled language:
   - `Class -> diagnostic visual cues`
   - `Observed instance -> cues present`
   - `Decision -> best-matching class`
 
-## Comparación General
+---
 
-## Complejidad
+## General Comparison
 
-- `classification`: baja
-- `nle`: baja-media
-- `features`: media
-- `rulebased`: media-alta
-- `axioms_ontology_v2`: muy alta
+### Complexity
+- `classification`: Low
+- `nle`: Low-Medium
+- `features`: Medium
+- `rulebased`: Medium-High
+- `axioms_ontology_v2`: Very High
 
-## Riesgo de alucinación explicativa
+### Risk of Explanatory Hallucination
+- `classification`: Low
+- `nle`: Medium
+- `features`: Medium
+- `rulebased`: Medium-High
+- `axioms_ontology_v2`: High
 
-- `classification`: bajo
-- `nle`: medio
-- `features`: medio
-- `rulebased`: medio-alto
-- `axioms_ontology_v2`: alto
+### Ease of Error Auditing
+- `classification`: Low
+- `nle`: Medium
+- `features`: High
+- `rulebased`: High
+- `axioms_ontology_v2`: Medium
 
-## Facilidad de auditar errores
+### Expected Token Cost
+- `classification`: Low
+- `nle`: Medium
+- `features`: Medium
+- `rulebased`: High
+- `axioms_ontology_v2`: Very High
 
-- `classification`: baja
-- `nle`: media
-- `features`: alta
-- `rulebased`: alta
-- `axioms_ontology_v2`: media
+### Experimental Quality (Clean Comparison)
+- `classification`: Very Good
+- `nle`: Good
+- `features`: Good if inconsistency is corrected.
+- `rulebased`: Acceptable, but already mixes multiple operations.
+- `axioms_ontology_v2`: Weak as a clean benchmark; interesting as an exploratory condition.
 
-## Costo esperado en tokens
+---
 
-- `classification`: bajo
-- `nle`: medio
-- `features`: medio
-- `rulebased`: alto
-- `axioms_ontology_v2`: muy alto
+## Transversal Issues
 
-## Calidad experimental como comparación limpia
+### 1. Inconsistency Between Prompts
+Not all prompts request the exact same type of visual evidence. Some prioritize color/texture/shape, others restrict them, and others convert them into ontological pseudo-properties.
 
-- `classification`: muy buena
-- `nle`: buena
-- `features`: buena si se corrige la inconsistencia
-- `rulebased`: aceptable, pero ya mezcla varias operaciones
-- `axioms_ontology_v2`: débil como benchmark limpio, interesante como condición exploratoria
+### 2. High Cognitive Load in System Prompts
+Especially in `rulebased` and `axioms`, the system prompt is very long. This can:
+- Increase cost.
+- Introduce noise.
+- Make format adherence more fragile.
+- Negatively affect smaller models.
 
-## Problemas Transversales
+### 3. Lack of Dataset Calibration
+Not all datasets benefit from the same "feature language."
+- `cifar10`: Global objects; works well with parts and shape.
+- `pets`: Fine features, fur, morphology, face, ears.
+- `flowers`: Color, petal shape, arrangement.
+- `dtd`: Texture and pattern, where "physical components" do not apply well.
 
-### 1. Inconsistencia entre prompts
+### 4. Absence of a "Compact Explain" Variant
+There is a significant gap between:
+- Near-mute baseline.
+- Free-form explanation.
+- Feature schema.
+- Rules.
+- Heavy ontology.
 
-No todas están pidiendo exactamente el mismo tipo de evidencia visual. Algunas privilegian color/textura/shape, otras los restringen, y otras los convierten en pseudo-propiedades ontológicas.
+A short, stable intermediate condition is missing.
 
-### 2. Demasiada carga en el system prompt
+---
 
-Especialmente en `rulebased` y `axioms`, el system prompt es muy largo. Eso puede:
+## Practical Recommendations
 
-- aumentar costo,
-- meter ruido,
-- hacer más frágil la adherencia al formato,
-- perjudicar modelos más chicos.
+To compare prompts seriously and migrate to OpenRouter with reasonable costs, I would prioritize this hierarchy:
 
-### 3. Falta de calibración por dataset
+1. Maintain `classification` as the primary baseline.
+2. Refine `features` to be consistent across all datasets.
+3. Maintain `nle` as a simple explanatory condition.
+4. Keep `rulebased` as a secondary structured reasoning condition.
+5. Treat `axioms_ontology_v2` as an exploratory experiment rather than a core condition.
 
-No todos los datasets se benefician del mismo tipo de “feature language”.
+---
 
-- `cifar10`: objetos globales, funciona bien con partes y forma.
-- `pets`: rasgos finos, pelaje, morfología, cara, orejas.
-- `flowers`: color, forma de pétalos, disposición.
-- `dtd`: textura y patrón, donde “componentes físicos” no aplica bien.
+## Recommended Improved Versions
 
-### 4. Falta de una variante “compact explain”
+To clean up the benchmark, I would propose the following family:
 
-Hay salto grande entre:
+- `classification_strict`: Final class only.
+- `classification_brief_justification`: 1-2 brief sentences.
+- `classification_visual_cues`: 2-4 observable cues, no world knowledge.
+- `classification_comparative`: Why this class and not others.
+- `classification_rulecheck`: Compact version of rules, without ontology.
 
-- baseline casi muda,
-- explicación libre,
-- esquema de features,
-- reglas,
-- ontología pesada.
+---
 
-Falta una condición intermedia, corta y estable.
+## Conclusion
 
-## Recomendación Práctica
+The current prompts form a good progression of "increasing explanatory structure," but they are not all equally well-calibrated.
 
-Si el objetivo es comparar prompts de forma seria y después migrar a OpenRouter con costo razonable, yo priorizaría esta jerarquía:
-
-1. Mantener `classification` como baseline principal.
-2. Refinar `features` para que sea consistente con todos los datasets.
-3. Mantener `nle` como condición explicativa simple.
-4. Dejar `rulebased` como condición secundaria de razonamiento estructurado.
-5. Tratar `axioms_ontology_v2` como experimento exploratorio, no como condición principal.
-
-## Versión Mejorada Recomendada
-
-Si después querés limpiar el benchmark, yo propondría una familia así:
-
-- `classification_strict`
-  - solo clase final
-- `classification_brief_justification`
-  - 1-2 frases breves
-- `classification_visual_cues`
-  - 2-4 cues observables, sin world knowledge
-- `classification_comparative`
-  - por qué esta clase y no las otras
-- `classification_rulecheck`
-  - versión compacta de reglas, sin ontología
-
-## Conclusión
-
-Hoy las prompts forman una buena progresión de “más estructura explicativa”, pero no todas están igualmente bien calibradas.
-
-La más sólida como baseline es `classification`.
-La más prometedora para interpretabilidad útil es `features`, si se corrige la inconsistencia sobre qué cuenta como feature.
-`rulebased` puede servir si se compacta.
-`axioms_ontology_v2` es interesante como stress test de formalismo, pero demasiado pesada y propensa a pseudo-explicaciones para usarla como condición central.
+- `classification` is the most solid baseline.
+- `features` is the most promising for useful interpretability, provided the feature definition inconsistency is corrected.
+- `rulebased` can be useful if compacted.
+- `axioms_ontology_v2` is an interesting stress test of formalism but is too heavy and prone to pseudo-explanations for use as a central condition.
