@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=meta-llama/llama-4-scout | N=2 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- number of petals: 6
+- color: pink
+- center color: white
+</features>
+<kb>
+- IF number of petals = 6 AND color = purple THEN 81
+- IF number of petals = 3 THEN 14
+</kb>
+<rule_check>
+- The Query Image has 6 petals and a pink color, which does not exactly match rule 81 due to the color difference (pink vs. purple), but it matches more closely with rule 81 than with rule 14.
+</rule_check>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- petal color: yellow
+- petal shape: curved downwards
+- number of petals: 3 pairs
+</features>
+<kb>
+- IF petal color = purple AND petal shape = wavy THEN 81
+- IF petal color = yellow AND petal shape = curved downwards THEN 14
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF petal color = yellow AND petal shape = curved downwards THEN 14, because the Query Image has yellow petals that are curved downwards, matching the features of class 14.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=1.6736 | avg_trial_wall_seconds=0.8270 | avg_trial_api_seconds=0.6821 | system_fallback_count=0

@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=meta-llama/llama-4-scout | N=2 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- color: purple
+- petals: 5
+- center: spiky
+</features>
+<kb>
+- IF color = purple AND petals = 5 THEN 81
+- IF color = yellow THEN 14
+</kb>
+
+<rule_check>
+- The rule for class 81 fires because the Query Image has a purple color and 5 petals, matching the conditions for class 81.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- color: yellow
+- shape: petal shape
+- leaves: long and green
+</features>
+<kb>
+- IF color = purple AND petals = 4 THEN 81
+- IF color = yellow AND petals = 3 THEN 14
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF color = yellow AND petals = 3 THEN 14. This is because the Query Image has a yellow color and what appears to be 3 petals, matching the conditions for class 14.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=18.2660 | avg_trial_wall_seconds=9.1224 | avg_trial_api_seconds=9.0522 | system_fallback_count=0
