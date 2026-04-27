@@ -132,18 +132,24 @@ class RunDataStore:
     def list_trials(self) -> List[Dict[str, Any]]:
         output: List[Dict[str, Any]] = []
         for row in self.trial_rows:
+            class_id_map = _parse_json_field(row.get("class_id_map", ""), {})
+            expected_id = row["expected_label"]
+            predicted_id = row["predicted_label"]
             output.append(
                 {
                     "trial_id": row["_trial_id"],
                     "dataset": row["dataset"],
                     "prompt_type": row["prompt_type"],
+                    "model": row.get("model", ""),
                     "config_n": row.get("config_n") or row.get("n", "N/A"),
                     "config_k": row.get("config_k") or row.get("k", "N/A"),
                     "config_q": row.get("config_q") or row.get("q", "N/A"),
                     "run_id": row["run_id"],
                     "query_index_within_episode": row["query_index_within_episode"],
-                    "expected_label": row["expected_label"],
-                    "predicted_label": row["predicted_label"],
+                    "expected_label": expected_id,
+                    "predicted_label": predicted_id,
+                    "expected_name": class_id_map.get(expected_id, expected_id),
+                    "predicted_name": class_id_map.get(predicted_id, predicted_id),
                     "correct": row["correct"],
                     "parse_issue": row.get("parse_issue", ""),
                     "warning": row.get("warning", ""),
@@ -211,55 +217,116 @@ def _dashboard_html() -> str:
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Results Dashboard</title>
+  <title>OpenRouter Run Dashboard</title>
   <style>
+    *, *::before, *::after { box-sizing: border-box; }
     body { font-family: Segoe UI, Arial, sans-serif; margin: 0; background: #f5f2ea; color: #1f2430; }
-    .layout { display: grid; grid-template-columns: 420px 1fr; min-height: 100vh; }
-    .sidebar { background: #fffaf1; border-right: 1px solid #d9d0bf; padding: 16px; overflow: auto; }
+    .layout { display: grid; grid-template-columns: 440px 1fr; min-height: 100vh; }
+    .sidebar { background: #fffaf1; border-right: 1px solid #d9d0bf; padding: 16px; overflow: auto; display: flex; flex-direction: column; gap: 10px; }
     .main { padding: 20px; overflow: auto; }
-    h1,h2,h3 { margin: 0 0 12px; }
+    h2, h3 { margin: 0 0 10px; }
     .card { background: white; border: 1px solid #d9d0bf; border-radius: 12px; padding: 14px; margin-bottom: 14px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
-    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-    .stat { background: #fff7e3; border-radius: 10px; padding: 10px; }
+
+    /* collapsible sections */
+    details.section { background: white; border: 1px solid #d9d0bf; border-radius: 12px; margin-bottom: 14px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); overflow: hidden; }
+    details.section > summary { padding: 12px 14px; font-weight: 700; cursor: pointer; user-select: none; list-style: none; display: flex; align-items: center; gap: 8px; background: #f7f2e8; }
+    details.section > summary::-webkit-details-marker { display: none; }
+    details.section > summary::before { content: '▶'; font-size: 11px; transition: transform 0.15s; }
+    details.section[open] > summary::before { transform: rotate(90deg); }
+    details.section > .section-body { padding: 14px; }
+
     .trial-row { padding: 10px; border-top: 1px solid #ece4d7; cursor: pointer; }
     .trial-row:hover { background: #fff7e3; }
     .trial-row.active { background: #ffe8b5; }
-    .ok { color: #0a7f3f; }
-    .bad { color: #a12a2a; }
+    .ok { color: #0a7f3f; font-weight: 600; }
+    .bad { color: #a12a2a; font-weight: 600; }
     .warn { color: #8b5e00; }
-    pre { white-space: pre-wrap; word-break: break-word; background: #faf7f0; padding: 10px; border-radius: 8px; border: 1px solid #e5dccb; }
+    pre { white-space: pre-wrap; word-break: break-word; background: #faf7f0; padding: 10px; border-radius: 8px; border: 1px solid #e5dccb; margin: 0; }
     .message { border: 1px solid #ddd1be; border-radius: 12px; margin-bottom: 12px; background: white; overflow: hidden; }
-    .message-header { padding: 8px 12px; font-weight: 700; background: #f1eadc; }
+    .message-header { padding: 8px 12px; font-weight: 700; background: #f1eadc; text-transform: capitalize; }
     .message-body { padding: 12px; }
     .content-part { margin-bottom: 10px; }
-    img.preview { max-width: 280px; max-height: 280px; border-radius: 10px; border: 1px solid #d8cdb7; display: block; }
-    .toolbar { display: flex; gap: 8px; margin-bottom: 10px; }
-    select, button { padding: 8px 10px; border-radius: 8px; border: 1px solid #c9bea9; background: white; }
+    .img-wrap { display: inline-block; margin: 4px 8px 4px 0; vertical-align: top; }
+    .img-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; color: #5a4e3a; }
+    .img-label.support { color: #1a6aa0; }
+    .img-label.query { color: #7b3f00; }
+    img.preview { max-width: 200px; max-height: 200px; border-radius: 10px; border: 2px solid #d8cdb7; display: block; }
+    img.preview.query-img { border-color: #c47b2a; }
+    img.preview.support-img { border-color: #4a90d9; }
+    .filters { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .filters label { font-size: 12px; font-weight: 600; color: #5a4e3a; }
+    .filters select { width: 100%; padding: 6px 8px; border-radius: 8px; border: 1px solid #c9bea9; background: white; font-size: 13px; }
+    .filter-model { grid-column: 1 / -1; }
+    .trial-count { font-size: 12px; color: #7a6e5e; margin-top: 6px; }
     table { width: 100%; border-collapse: collapse; }
-    th, td { text-align: left; padding: 8px; border-bottom: 1px solid #ede4d6; }
-    .pill { display: inline-block; padding: 2px 8px; border-radius: 999px; background: #efe6d3; margin-right: 6px; }
+    th, td { text-align: left; padding: 8px; border-bottom: 1px solid #ede4d6; font-size: 13px; }
+    th { background: #f7f2e8; font-weight: 600; }
+    .pill { display: inline-block; padding: 2px 8px; border-radius: 999px; background: #efe6d3; margin-right: 4px; font-size: 12px; }
+    .run-meta { font-size: 13px; }
+    .run-meta strong { font-size: 15px; display: block; margin-bottom: 4px; }
+    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .stat { background: #fff7e3; border-radius: 10px; padding: 10px; font-size: 13px; }
   </style>
 </head>
 <body>
   <div class="layout">
     <div class="sidebar">
-      <h2>Results Dashboard</h2>
-      <div id="runMeta" class="card"></div>
-      <div class="card">
-        <div class="toolbar">
-          <select id="datasetFilter"></select>
-          <select id="promptFilter"></select>
+      <div id="runMeta" class="card run-meta"></div>
+
+      <details class="section" open>
+        <summary>Trials</summary>
+        <div class="section-body">
+          <div class="filters">
+            <div class="filter-model">
+              <label for="modelFilter">Model</label>
+              <select id="modelFilter"></select>
+            </div>
+            <div>
+              <label for="datasetFilter">Dataset</label>
+              <select id="datasetFilter"></select>
+            </div>
+            <div>
+              <label for="promptFilter">Condition</label>
+              <select id="promptFilter"></select>
+            </div>
+          </div>
+          <div id="trialCount" class="trial-count"></div>
+          <div id="trialList"></div>
         </div>
-        <div id="trialList"></div>
-      </div>
+      </details>
     </div>
+
     <div class="main">
-      <div id="summaryCard" class="card"></div>
-      <div id="configCard" class="card"></div>
+      <details class="section" open>
+        <summary>Experiment Summary</summary>
+        <div class="section-body" id="summaryBody"></div>
+      </details>
+      <details class="section">
+        <summary>Config Snapshot</summary>
+        <div class="section-body" id="configBody"></div>
+      </details>
       <div id="trialDetail"></div>
     </div>
   </div>
+
   <script>
+    const PROMPT_LABELS = {
+      'classification':       'Classification without explanation',
+      'nle':                  'Natural language explanation',
+      'features':             'Features-based explanation',
+      'rulebased':            'Feature-value based explanations',
+      'axioms_ontology_v2':   'DL Axioms',
+    };
+    const DATASET_LABELS = {
+      'flowers': 'Flowers 102',
+      'pets':    'Oxford Pets',
+      'cifar10': 'CIFAR-10',
+      'dtd':     'DTD',
+    };
+    function labelPrompt(v) { return PROMPT_LABELS[v] || v; }
+    function labelDataset(v) { return DATASET_LABELS[v] || v; }
+    function labelModel(v) { return v ? v.split('/').pop() : v; }
+
     let allTrials = [];
     let activeTrialId = null;
 
@@ -273,60 +340,73 @@ def _dashboard_html() -> str:
     async function loadSummary() {
       const summary = await fetch('/api/summary').then(r => r.json());
       document.getElementById('runMeta').innerHTML = `
-        <div><strong>${escapeHtml(summary.run_name)}</strong></div>
-        <div>${escapeHtml(summary.run_dir)}</div>
+        <strong>${escapeHtml(summary.run_name)}</strong>
+        <div style="color:#7a6e5e;font-size:12px;">${escapeHtml(summary.run_dir)}</div>
         <div style="margin-top:8px;"><span class="pill">Trials: ${summary.trial_count}</span></div>
       `;
 
-      const rows = summary.experiment_summary.map(row => `
+      const rows = (summary.experiment_summary || []).map(row => `
         <tr>
-          <td>${escapeHtml(row.prompt_type)}</td>
+          <td>${escapeHtml(labelPrompt(row.prompt_type))}</td>
           <td>${escapeHtml(row.overall_accuracy)}</td>
           <td>${escapeHtml(row.total_trials)}</td>
           <td>${escapeHtml(row.total_errors)}</td>
         </tr>
       `).join('');
-      document.getElementById('summaryCard').innerHTML = `
-        <h3>Experiment Summary</h3>
+      document.getElementById('summaryBody').innerHTML = `
         <table>
-          <thead><tr><th>Prompt</th><th>Accuracy</th><th>Trials</th><th>Errors</th></tr></thead>
+          <thead><tr><th>Condition</th><th>Accuracy</th><th>Trials</th><th>Errors</th></tr></thead>
           <tbody>${rows}</tbody>
         </table>
       `;
 
-      document.getElementById('configCard').innerHTML = `
-        <h3>Config Snapshot</h3>
+      document.getElementById('configBody').innerHTML = `
         <pre>${escapeHtml(JSON.stringify(summary.experiment_config || summary.experiment_snapshot || {}, null, 2))}</pre>
       `;
     }
 
     async function loadTrials() {
       allTrials = await fetch('/api/trials').then(r => r.json());
+
+      const models   = ['all', ...new Set(allTrials.map(t => t.model).filter(Boolean))];
       const datasets = ['all', ...new Set(allTrials.map(t => t.dataset))];
-      const prompts = ['all', ...new Set(allTrials.map(t => t.prompt_type))];
-      document.getElementById('datasetFilter').innerHTML = datasets.map(v => `<option value="${v}">${v}</option>`).join('');
-      document.getElementById('promptFilter').innerHTML = prompts.map(v => `<option value="${v}">${v}</option>`).join('');
+      const prompts  = ['all', ...new Set(allTrials.map(t => t.prompt_type))];
+
+      document.getElementById('modelFilter').innerHTML =
+        models.map(v => `<option value="${v}">${v === 'all' ? 'All models' : escapeHtml(labelModel(v))}</option>`).join('');
+      document.getElementById('datasetFilter').innerHTML =
+        datasets.map(v => `<option value="${v}">${v === 'all' ? 'All datasets' : escapeHtml(labelDataset(v))}</option>`).join('');
+      document.getElementById('promptFilter').innerHTML =
+        prompts.map(v => `<option value="${v}">${v === 'all' ? 'All conditions' : escapeHtml(labelPrompt(v))}</option>`).join('');
+
+      document.getElementById('modelFilter').addEventListener('change', renderTrialList);
       document.getElementById('datasetFilter').addEventListener('change', renderTrialList);
       document.getElementById('promptFilter').addEventListener('change', renderTrialList);
       renderTrialList();
     }
 
     function renderTrialList() {
+      const modelFilter   = document.getElementById('modelFilter').value;
       const datasetFilter = document.getElementById('datasetFilter').value;
-      const promptFilter = document.getElementById('promptFilter').value;
+      const promptFilter  = document.getElementById('promptFilter').value;
+
       const filtered = allTrials.filter(trial =>
-        (datasetFilter === 'all' || trial.dataset === datasetFilter) &&
-        (promptFilter === 'all' || trial.prompt_type === promptFilter)
+        (modelFilter   === 'all' || trial.model        === modelFilter)   &&
+        (datasetFilter === 'all' || trial.dataset      === datasetFilter) &&
+        (promptFilter  === 'all' || trial.prompt_type  === promptFilter)
       );
+
+      document.getElementById('trialCount').textContent = `${filtered.length} trial${filtered.length !== 1 ? 's' : ''}`;
       document.getElementById('trialList').innerHTML = filtered.map(trial => `
         <div class="trial-row ${trial.trial_id === activeTrialId ? 'active' : ''}" onclick="showTrial('${trial.trial_id}')">
-          <div style="display:flex; justify-content: space-between;">
-            <strong>${escapeHtml(trial.prompt_type)}</strong>
-            ${trial.judge_scores ? `<span class="pill" style="background:#e3f2fd; font-size:0.8em;">Judge: ${trial.judge_scores.visual_grounding}/5</span>` : ''}
+          <div style="display:flex; justify-content: space-between; align-items: center;">
+            <strong>${escapeHtml(labelPrompt(trial.prompt_type))}</strong>
+            ${trial.judge_scores ? `<span class="pill" style="background:#e3f2fd;">Judge: ${escapeHtml(trial.judge_scores.visual_grounding)}/5</span>` : ''}
           </div>
-          <div>${escapeHtml(trial.dataset)} | run=${trial.run_id} q=${trial.query_index_within_episode}</div>
-          <div class="${trial.correct === '1' ? 'ok' : 'bad'}">${trial.correct === '1' ? 'correct' : 'incorrect'}</div>
-          ${(trial.parse_issue || trial.warning || trial.error) ? `<div class="warn">${escapeHtml(trial.parse_issue || trial.warning || trial.error)}</div>` : ''}
+          <div style="font-size:12px;color:#5a4e3a;">${escapeHtml(labelDataset(trial.dataset))} &nbsp;·&nbsp; ${escapeHtml(labelModel(trial.model))}</div>
+          <div style="font-size:12px;">run ${escapeHtml(trial.run_id)} &nbsp;·&nbsp; expected: <em>${escapeHtml(trial.expected_name)}</em> &nbsp;·&nbsp; predicted: <em>${escapeHtml(trial.predicted_name)}</em></div>
+          <div class="${trial.correct === '1' ? 'ok' : 'bad'}">${trial.correct === '1' ? '✓ correct' : '✗ incorrect'}</div>
+          ${(trial.parse_issue || trial.warning || trial.error) ? `<div class="warn">⚠ ${escapeHtml(trial.parse_issue || trial.warning || trial.error)}</div>` : ''}
         </div>
       `).join('');
     }
@@ -335,26 +415,13 @@ def _dashboard_html() -> str:
       activeTrialId = trialId;
       renderTrialList();
       const detail = await fetch(`/api/trial?trial_id=${trialId}`).then(r => r.json());
-      
-      let judgeHtml = '';
-      if (detail.judge_scores) {
-        judgeHtml = `
-          <div class="card" style="border-left: 5px solid #2196f3;">
-            <h3>👨‍⚖️ Judge Evaluation</h3>
-            <div class="stat-grid">
-              <div class="stat"><strong>Visual Grounding</strong><br/>${detail.judge_scores.visual_grounding}/5</div>
-              <div class="stat"><strong>Discriminative</strong><br/>${detail.judge_scores.discriminative_support}/5</div>
-              <div class="stat"><strong>Coherence</strong><br/>${detail.judge_scores.inferential_coherence}/5</div>
-              <div class="stat"><strong>Clarity</strong><br/>${detail.judge_scores.clarity}/5</div>
-              <div class="stat"><strong>Compliance</strong><br/>${detail.judge_scores.format_compliance}/5</div>
-            </div>
-            <div style="margin-top:12px;">
-              <strong>Full Critique:</strong>
-              <pre style="font-size:0.9em; max-height: 200px; overflow-y: auto;">${escapeHtml(detail.judge_scores.raw_judge_output)}</pre>
-            </div>
-          </div>
-        `;
-      }
+
+      const meta = detail.metadata;
+      const classIdMap = detail.class_id_map || {};
+      const expectedId = meta.expected_label || '';
+      const predictedId = meta.predicted_label || '';
+      const expectedName = classIdMap[expectedId] || expectedId;
+      const predictedName = classIdMap[predictedId] || predictedId;
 
       const messages = detail.conversation.map(message => {
         if (typeof message.content === 'string') {
@@ -362,17 +429,17 @@ def _dashboard_html() -> str:
             <div class="message">
               <div class="message-header">${escapeHtml(message.role)}</div>
               <div class="message-body"><pre>${escapeHtml(message.content)}</pre></div>
-            </div>
-          `;
+            </div>`;
         }
         const parts = message.content.map(part => {
           if (part.type === 'text') {
             return `<div class="content-part"><pre>${escapeHtml(part.text)}</pre></div>`;
           }
           if (part.type === 'image_ref') {
-            return `<div class="content-part">
-              <div><span class="pill">${escapeHtml(part.image_ref.kind)}</span><span class="pill">idx=${part.image_ref.dataset_index}</span></div>
-              <img class="preview" src="${part.image_ref.url}" />
+            const kind = part.image_ref.kind;
+            return `<div class="content-part img-wrap">
+              <div class="img-label ${kind}">${escapeHtml(kind)}</div>
+              <img class="preview ${kind}-img" src="${part.image_ref.url}" />
             </div>`;
           }
           return `<div class="content-part"><pre>${escapeHtml(JSON.stringify(part, null, 2))}</pre></div>`;
@@ -381,38 +448,79 @@ def _dashboard_html() -> str:
           <div class="message">
             <div class="message-header">${escapeHtml(message.role)}</div>
             <div class="message-body">${parts}</div>
-          </div>
-        `;
+          </div>`;
       }).join('');
 
       const parsed = detail.parsed_response.length
-        ? detail.parsed_response.map(block => `<div class="card"><h3>&lt;${escapeHtml(block.tag)}&gt;</h3><pre>${escapeHtml(block.content)}</pre></div>`).join('')
-        : '<div class="card"><h3>Parsed XML</h3><div>No XML blocks parsed from the model response.</div></div>';
+        ? detail.parsed_response.map(b => `<div style="margin-bottom:10px;"><strong>&lt;${escapeHtml(b.tag)}&gt;</strong><pre style="margin-top:6px;">${escapeHtml(b.content)}</pre></div>`).join('')
+        : '<div style="color:#7a6e5e;">No XML blocks parsed from the model response.</div>';
+
+      const promptDisplay = labelPrompt(meta.prompt_type || '');
+      const datasetDisplay = labelDataset(meta.dataset || '');
+      const modelDisplay = labelModel(meta.model || '');
+
+      const judgeHtml = detail.judge_scores ? `
+        <details class="section" open>
+          <summary>👨‍⚖️ Judge Evaluation</summary>
+          <div class="section-body">
+            <div class="stat-grid">
+              <div class="stat"><strong>Visual Grounding</strong><br/>${escapeHtml(detail.judge_scores.visual_grounding)}/5</div>
+              <div class="stat"><strong>Discriminative</strong><br/>${escapeHtml(detail.judge_scores.discriminative_support)}/5</div>
+              <div class="stat"><strong>Coherence</strong><br/>${escapeHtml(detail.judge_scores.inferential_coherence)}/5</div>
+              <div class="stat"><strong>Clarity</strong><br/>${escapeHtml(detail.judge_scores.clarity)}/5</div>
+              <div class="stat"><strong>Compliance</strong><br/>${escapeHtml(detail.judge_scores.format_compliance)}/5</div>
+            </div>
+            <div style="margin-top:12px;">
+              <strong>Full Critique:</strong>
+              <pre style="font-size:0.9em; max-height: 200px; overflow-y: auto;">${escapeHtml(detail.judge_scores.raw_judge_output)}</pre>
+            </div>
+          </div>
+        </details>` : '';
 
       document.getElementById('trialDetail').innerHTML = `
         ${judgeHtml}
-        <div class="card" style="border-top: 5px solid #ffa000;">
-          <h3>📝 Full Model Output</h3>
-          <pre style="font-size: 1.05em; background: #fffde7; border: 1px solid #ffe082;">${escapeHtml(detail.raw_response)}</pre>
-        </div>
-        <div class="card">
-          <h3>Trial Metadata</h3>
-          <pre>${escapeHtml(JSON.stringify(detail.metadata, null, 2))}</pre>
-        </div>
-        <div class="card">
-          <h3>Conversation</h3>
-          ${messages}
-        </div>
-        ${parsed}
+        <details class="section" open>
+          <summary>Trial Metadata</summary>
+          <div class="section-body">
+            <table>
+              <tr><th>Condition</th><td>${escapeHtml(promptDisplay)}</td></tr>
+              <tr><th>Dataset</th><td>${escapeHtml(datasetDisplay)}</td></tr>
+              <tr><th>Model</th><td>${escapeHtml(modelDisplay)}</td></tr>
+              <tr><th>Config</th><td>${escapeHtml(meta.config_n)}‑way &nbsp;${escapeHtml(meta.config_k)}‑shot</td></tr>
+              <tr><th>Run / Query</th><td>run ${escapeHtml(meta.run_id)} &nbsp;·&nbsp; query ${escapeHtml(meta.query_index_within_episode)}</td></tr>
+              <tr><th>Expected</th><td><strong>${escapeHtml(expectedName)}</strong> <span style="color:#7a6e5e;font-size:12px;">(id=${escapeHtml(expectedId)})</span></td></tr>
+              <tr><th>Predicted</th><td><strong class="${meta.correct === '1' ? 'ok' : 'bad'}">${escapeHtml(predictedName)}</strong> <span style="color:#7a6e5e;font-size:12px;">(id=${escapeHtml(predictedId)})</span></td></tr>
+              <tr><th>Result</th><td class="${meta.correct === '1' ? 'ok' : 'bad'}">${meta.correct === '1' ? '✓ correct' : '✗ incorrect'}</td></tr>
+              <tr><th>Class IDs</th><td><pre style="font-size:12px;">${escapeHtml(JSON.stringify(classIdMap, null, 2))}</pre></td></tr>
+              ${meta.latency_seconds ? `<tr><th>Latency</th><td>${escapeHtml(meta.latency_seconds)} s</td></tr>` : ''}
+              ${meta.usage_total_tokens ? `<tr><th>Tokens</th><td>${escapeHtml(meta.usage_total_tokens)}</td></tr>` : ''}
+              ${meta.parse_issue ? `<tr><th>Parse issue</th><td class="warn">${escapeHtml(meta.parse_issue)}</td></tr>` : ''}
+              ${meta.error ? `<tr><th>Error</th><td class="bad">${escapeHtml(meta.error)}</td></tr>` : ''}
+            </table>
+          </div>
+        </details>
+
+        <details class="section" open>
+          <summary>Conversation</summary>
+          <div class="section-body">${messages}</div>
+        </details>
+
+        <details class="section" open>
+          <summary>Model Response</summary>
+          <div class="section-body">${parsed}</div>
+        </details>
+
+        <details class="section">
+          <summary>📝 Full Model Output (raw)</summary>
+          <div class="section-body"><pre style="font-size: 0.95em; background: #fffde7; border: 1px solid #ffe082;">${escapeHtml(detail.raw_response || '')}</pre></div>
+        </details>
       `;
     }
 
     async function bootstrap() {
       await loadSummary();
       await loadTrials();
-      if (allTrials.length) {
-        showTrial(allTrials[0].trial_id);
-      }
+      if (allTrials.length) showTrial(allTrials[0].trial_id);
     }
     bootstrap();
   </script>
