@@ -108,7 +108,7 @@ Each is scored 1–5; the runner also writes an `overall_score` (mean of the 10)
 #### Running the judge
 
 ```bash
-# Default: judge model from OPENROUTER_JUDGE_MODEL in .env (default: openai/gpt-4o-mini)
+# Default: judge model from OPENROUTER_JUDGE_MODEL in .env (default: openai/gpt-5-mini, reasoning_effort=high)
 python execute_judge.py --run-dir pipeline/openrouter_runs/<run_dir>
 
 # Multiple runs at once
@@ -151,7 +151,7 @@ pipeline/openrouter_runs/<run_dir>/
 ├── trial_results.csv                  # the original classifier trials
 ├── ...
 └── judge_outputs/
-    └── <judge_model_slug>/            # e.g. openai-gpt-4o-mini
+    └── <judge_model_slug>/            # e.g. openai-gpt-5-mini
         ├── judge_results.csv          # one row per judged trial, with the 10 scores + overall_score
         ├── judge_logs.jsonl           # full judge requests/responses including raw payloads
         ├── config.json                # snapshot of judge run config (model, filters, timestamp)
@@ -234,7 +234,7 @@ The judge runs only via OpenRouter. See **Stage 3** above for the full descripti
 parameters, the 10 evaluation dimensions, output layout, and dashboard integration.
 
 ```bash
-python execute_judge.py --run-dir pipeline/openrouter_runs/your_run_dir --judge-model openai/gpt-4o-mini
+python execute_judge.py --run-dir pipeline/openrouter_runs/your_run_dir --judge-model openai/gpt-5-mini
 ```
 
 ---
