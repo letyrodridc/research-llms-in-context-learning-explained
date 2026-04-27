@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Dict
 
-from .config import JUDGEABLE_PROMPT_TYPES
+from ..experiments.config import JUDGEABLE_PROMPT_TYPES
 from ..utils.prompt_assets import build_asset_snapshot, require_assignment_blocks
 
 
@@ -42,7 +42,7 @@ JUDGE_PROMPT_SPECS = {
         system_prompt=JUDGE_PROMPT_ASSETS["JUDGE_PROMPT"].format(
             CONDITION_DESCRIPTION=JUDGE_CONDITION_DESCRIPTIONS[prompt_type]
         ),
-        max_tokens=512,
+        max_tokens=1024,
     )
     for prompt_type in JUDGEABLE_PROMPT_TYPES
 }

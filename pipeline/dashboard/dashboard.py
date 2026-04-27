@@ -104,16 +104,19 @@ class RunDataStore:
         self.run_manifest = _read_json_if_exists(self.run_dir / "run_manifest.json")
         self._datasets_cache: Optional[Dict[str, Any]] = None
 
-        # Load Judge Results if they exist
-        self.judge_data = {}
+        # Load Judge Results if they exist (supports both legacy flat layout
+        # `judge_outputs/judge_results_*.csv` and the unified per-judge-model
+        # subdir layout `judge_outputs/<judge_model>/judge_results.csv`).
+        self.judge_data: Dict[str, Dict[str, str]] = {}
         judge_dir = self.run_dir / "judge_outputs"
         if judge_dir.exists():
-            for judge_file in judge_dir.glob("judge_results_*.csv"):
-                j_rows = _read_csv_safe(judge_file)
-                for jr in j_rows:
-                    # Key by dataset+prompt_type+run_id+query_index
-                    key = f"{jr['dataset']}_{jr['prompt_type']}_{jr['run_id']}_{jr['query_index']}"
-                    self.judge_data[key] = jr
+            for pattern in ("judge_results_*.csv", "*/judge_results.csv"):
+                for judge_file in judge_dir.glob(pattern):
+                    j_rows = _read_csv_safe(judge_file)
+                    for jr in j_rows:
+                        query_idx = jr.get("query_index_within_episode") or jr.get("query_index", "")
+                        key = f"{jr['dataset']}_{jr['prompt_type']}_{jr['run_id']}_{query_idx}"
+                        self.judge_data[key] = jr
 
         for idx, row in enumerate(self.trial_rows):
             row["_trial_id"] = str(idx)
@@ -317,6 +320,18 @@ def _dashboard_html() -> str:
       'rulebased':            'Feature-value based explanations',
       'axioms_ontology_v2':   'DL Axioms',
     };
+    const JUDGE_DIMENSIONS = [
+      ['textual_groundedness',      'Textual Groundedness'],
+      ['hallucination_free',        'Hallucination free'],
+      ['concept_counting',          'Concept counting'],
+      ['comprehensibility',         'Comprehensibility'],
+      ['conciseness',               'Conciseness'],
+      ['specificity',               'Specificity'],
+      ['discriminativeness',        'Discriminativeness'],
+      ['instruction_following',     'Instruction following'],
+      ['logical_coherence',         'Logical coherence'],
+      ['explanation_reproducibility', 'Reproducibility'],
+    ];
     const DATASET_LABELS = {
       'flowers': 'Flowers 102',
       'pets':    'Oxford Pets',
@@ -401,7 +416,7 @@ def _dashboard_html() -> str:
         <div class="trial-row ${trial.trial_id === activeTrialId ? 'active' : ''}" onclick="showTrial('${trial.trial_id}')">
           <div style="display:flex; justify-content: space-between; align-items: center;">
             <strong>${escapeHtml(labelPrompt(trial.prompt_type))}</strong>
-            ${trial.judge_scores ? `<span class="pill" style="background:#e3f2fd;">Judge: ${escapeHtml(trial.judge_scores.visual_grounding)}/5</span>` : ''}
+            ${trial.judge_scores ? `<span class="pill" style="background:#e3f2fd;">Judge: ${escapeHtml(trial.judge_scores.overall_score || '?')}</span>` : ''}
           </div>
           <div style="font-size:12px;color:#5a4e3a;">${escapeHtml(labelDataset(trial.dataset))} &nbsp;·&nbsp; ${escapeHtml(labelModel(trial.model))}</div>
           <div style="font-size:12px;">run ${escapeHtml(trial.run_id)} &nbsp;·&nbsp; expected: <em>${escapeHtml(trial.expected_name)}</em> &nbsp;·&nbsp; predicted: <em>${escapeHtml(trial.predicted_name)}</em></div>
@@ -459,23 +474,26 @@ def _dashboard_html() -> str:
       const datasetDisplay = labelDataset(meta.dataset || '');
       const modelDisplay = labelModel(meta.model || '');
 
-      const judgeHtml = detail.judge_scores ? `
+      const judgeHtml = detail.judge_scores ? (() => {
+        const stats = JUDGE_DIMENSIONS.map(([key, label]) => {
+          const val = detail.judge_scores[key];
+          const display = val === undefined || val === '' ? '—' : `${escapeHtml(val)}/5`;
+          return `<div class="stat"><strong>${escapeHtml(label)}</strong><br/>${display}</div>`;
+        }).join('');
+        const overall = detail.judge_scores.overall_score || '?';
+        const critique = detail.judge_scores.judge_raw_response_text || detail.judge_scores.raw_judge_output || '';
+        return `
         <details class="section" open>
-          <summary>👨‍⚖️ Judge Evaluation</summary>
+          <summary>👨‍⚖️ Judge Evaluation &nbsp; <span class="pill" style="background:#e3f2fd;">Overall: ${escapeHtml(overall)}</span></summary>
           <div class="section-body">
-            <div class="stat-grid">
-              <div class="stat"><strong>Visual Grounding</strong><br/>${escapeHtml(detail.judge_scores.visual_grounding)}/5</div>
-              <div class="stat"><strong>Discriminative</strong><br/>${escapeHtml(detail.judge_scores.discriminative_support)}/5</div>
-              <div class="stat"><strong>Coherence</strong><br/>${escapeHtml(detail.judge_scores.inferential_coherence)}/5</div>
-              <div class="stat"><strong>Clarity</strong><br/>${escapeHtml(detail.judge_scores.clarity)}/5</div>
-              <div class="stat"><strong>Compliance</strong><br/>${escapeHtml(detail.judge_scores.format_compliance)}/5</div>
-            </div>
+            <div class="stat-grid" style="grid-template-columns: repeat(5, 1fr);">${stats}</div>
             <div style="margin-top:12px;">
               <strong>Full Critique:</strong>
-              <pre style="font-size:0.9em; max-height: 200px; overflow-y: auto;">${escapeHtml(detail.judge_scores.raw_judge_output)}</pre>
+              <pre style="font-size:0.9em; max-height: 240px; overflow-y: auto;">${escapeHtml(critique)}</pre>
             </div>
           </div>
-        </details>` : '';
+        </details>`;
+      })() : '';
 
       document.getElementById('trialDetail').innerHTML = `
         ${judgeHtml}

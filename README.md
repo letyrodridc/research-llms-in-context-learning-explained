@@ -64,18 +64,147 @@ The command above will automatically execute **4 configurations** in sequence wi
 
 This works for `--dataset`, `--prompt-type`, `--n`, `--k`, and `--q`. It is the most efficient way to run full benchmarks on local GPUs.
 
-### Stage 3: Evaluate Explanations (Judge)
-Use a powerful model (local or remote) to act as a judge. You can evaluate multiple run directories at once.
+### Stage 3: Evaluate Explanations (LLM-as-a-Judge)
+
+After running classification experiments you can score the **quality of the generated
+explanations** with a separate "judge" LLM. The judge runs over OpenRouter (single
+unified pipeline) and evaluates each explanation on **10 dimensions** using a 1-to-5
+scale.
+
+#### What the judge sees
+
+For each trial with an explanation (`nle`, `features`, `rulebased`, `axioms_ontology_v2`
+— `classification` is skipped because there is no explanation to judge):
+
+1. The **query image** that was being classified.
+2. The **set of candidate class labels** (translated to human-readable names via
+   `class_id_map`).
+3. The **predicted class** (also as a name, not the numeric ID).
+4. The **raw model output** (the explanation to evaluate).
+5. A **condition description** specific to the prompt type (e.g. for `nle` it explains
+   that the model was asked to produce an `<explanation>` block, etc.).
+
+The judge does **not** see the support images or the full classifier conversation —
+only what is needed to evaluate the explanation in isolation. The system prompt the
+judge receives is loaded from `judge_prompts.txt` (top-level repo file).
+
+#### The 10 evaluation dimensions
+
+| # | Dimension | What it checks |
+|---|---|---|
+| 1 | **Textual Groundedness** | Every relevant concept in the image is mentioned in the explanation |
+| 2 | **Hallucination free** | Every claim in the explanation is visible in the image |
+| 3 | **Concept counting** | The explanation accurately quantifies counted features (e.g. 5 vs 6 petals) |
+| 4 | **Comprehensibility** | Readable and accessible to end-users without unnecessary complexity |
+| 5 | **Conciseness** | Conveys only the strictly necessary information |
+| 6 | **Specificity** | Uses precise, non-generic details about the sample (local) |
+| 7 | **Discriminativeness** | Highlights features that uniquely identify the predicted class vs others (global) |
+| 8 | **Instruction following** | Output adheres to the required XML/structural format |
+| 9 | **Logical coherence** | Sentences connect into a valid, smooth deduction |
+| 10 | **Explanation Reproducibility** | Stability of extracted features across identical runs |
+
+Each is scored 1–5; the runner also writes an `overall_score` (mean of the 10).
+
+#### Running the judge
 
 ```bash
-# Evaluate multiple runs in a single command
-python execute_judge.py --mode local --model gemma3 --run-dir pipeline/local_runs/run1 pipeline/local_runs/run2 pipeline/local_runs/run3
+# Default: judge model from OPENROUTER_JUDGE_MODEL in .env (default: openai/gpt-4o-mini)
+python execute_judge.py --run-dir pipeline/openrouter_runs/<run_dir>
+
+# Multiple runs at once
+python execute_judge.py --run-dir pipeline/openrouter_runs/run_a pipeline/openrouter_runs/run_b
+
+# Override the judge model from the command line
+python execute_judge.py --run-dir pipeline/openrouter_runs/<run_dir> --judge-model anthropic/claude-haiku-4-5
+
+# Smoke test: judge only the first 5 trials and skip post-run analysis
+python execute_judge.py --run-dir pipeline/openrouter_runs/<run_dir> --limit 5 --skip-analysis
 ```
 
-### Stage 4: Analyze & Visualize
-Open the Results Dashboard to inspect results and reconstructed conversations.
+You can also invoke the runner module directly (equivalent):
+
 ```bash
-python pipeline/dashboard/run_results_dashboard.py --run-dir pipeline/openrouter_runs/your_run_dir
+python -m pipeline.evaluation.run_openrouter_judge --run-dir pipeline/openrouter_runs/<run_dir>
+```
+
+#### Parameters
+
+| Flag | Default | Description |
+|---|---|---|
+| `--run-dir` | (required) | One or more experiment run directories containing `trial_results.csv`. Trials with `error` or with `prompt_type=classification` are skipped. |
+| `--judge-model` | `OPENROUTER_JUDGE_MODEL` env var | Any OpenRouter model ID with vision support. |
+| `--dataset` | `all` | Filter by `flowers`, `pets`, `cifar10`, or `dtd`. |
+| `--prompt-type` | `all` | Filter by a single judgeable prompt type (`nle`, `features`, `rulebased`, `axioms_ontology_v2`). |
+| `--limit` | none | Cap on the number of trials to judge after filtering. Useful for smoke tests. |
+| `--env-file` | `<repo>/.env` | Alternative `.env` path. |
+| `--skip-analysis` | off | Skip generating tables and plots after judging. |
+| `--skip-model-validation` | off | Skip the OpenRouter `/models` lookup that checks the judge has vision support. |
+| `--debug` | off | Print per-trial progress. |
+
+#### Where results are saved
+
+The output is **nested inside each source experiment run directory** so that the
+dashboard finds it natively. Layout per run dir:
+
+```
+pipeline/openrouter_runs/<run_dir>/
+├── trial_results.csv                  # the original classifier trials
+├── ...
+└── judge_outputs/
+    └── <judge_model_slug>/            # e.g. openai-gpt-4o-mini
+        ├── judge_results.csv          # one row per judged trial, with the 10 scores + overall_score
+        ├── judge_logs.jsonl           # full judge requests/responses including raw payloads
+        ├── config.json                # snapshot of judge run config (model, filters, timestamp)
+        ├── judge_prompt_library_snapshot.json  # exact judge prompts used
+        └── analysis/                  # generated unless --skip-analysis
+            ├── tables/                # CSVs: mean per prompt, per dataset, per dimension
+            ├── plots/                 # PNG figures
+            └── stats/                 # Wilcoxon / Friedman tests across prompt types
+```
+
+Running the judge again with a **different** `--judge-model` writes to a sibling
+subdirectory (e.g. `judge_outputs/anthropic-claude-haiku-4-5/`) so multiple judges can
+coexist without overwriting each other.
+
+Key columns of `judge_results.csv`:
+
+| Column | Meaning |
+|---|---|
+| `dataset`, `prompt_type`, `config_n/k/q`, `run_id`, `query_index_within_episode` | Identity of the trial being judged |
+| `predicted_label`, `class_options` | What the classifier predicted and the candidate IDs (judge-side names are reconstructable via `class_id_map` in the source CSV) |
+| `textual_groundedness`, `hallucination_free`, …, `explanation_reproducibility` | The 10 individual scores (1–5) |
+| `overall_score` | Mean of the 10 scores (1–5) |
+| `judge_parse_error` | Non-empty if the judge's output was missing tags |
+| `latency_seconds`, `usage_*_tokens`, `provider` | API metadata |
+| `judge_raw_response_text` | The full judge response (XML + any extra prose) |
+| `judge_message_preview` | What the judge actually saw, with images replaced by hashes |
+
+#### Viewing results in the dashboard
+
+The dashboard automatically detects judge data in any `<run_dir>/judge_outputs/` and
+attaches the scores to each trial.
+
+```bash
+python pipeline/dashboard/run_results_dashboard.py --run-dir pipeline/openrouter_runs/<run_dir>
+# Opens at http://127.0.0.1:8765
+```
+
+In the UI:
+
+- **Trial list (sidebar)**: every trial that was judged shows a `Judge: X.XX` pill with
+  its `overall_score`. Use the Model / Dataset / Condition filters to narrow down.
+- **Trial detail (main panel)**: an expandable **Judge Evaluation** section appears
+  with a 5×2 grid of the 10 dimensions and the full critique (`judge_raw_response_text`).
+- **Class names**: classifier inputs/outputs are shown as human-readable names (with the
+  numeric ID in muted parentheses) via the `class_id_map` stored in each trial.
+
+### Stage 4: Analyze & Visualize
+Open the Results Dashboard to inspect classifier results, reconstructed conversations,
+and judge evaluations:
+
+```bash
+python pipeline/dashboard/run_results_dashboard.py --run-dir pipeline/openrouter_runs/<run_dir>
+# Opens at http://127.0.0.1:8765
 ```
 
 ## 🌐 OpenRouter Integration (Remote Models)
@@ -101,9 +230,11 @@ python -m pipeline.experiments.run_openrouter_experiment --config pipeline/confi
 ```
 
 ### 4. Evaluation (Judge via API)
-You can also use a remote model as a judge:
+The judge runs only via OpenRouter. See **Stage 3** above for the full description of
+parameters, the 10 evaluation dimensions, output layout, and dashboard integration.
+
 ```bash
-python execute_judge.py --mode openrouter --model google/gemini-2.0-flash-001 --run-dir pipeline/openrouter_runs/your_run_dir
+python execute_judge.py --run-dir pipeline/openrouter_runs/your_run_dir --judge-model openai/gpt-4o-mini
 ```
 
 ---
@@ -141,4 +272,10 @@ python -m pipeline.experiments.run_openrouter_experiment --config pipeline/confi
 ## 📝 Notes
 - **Reproducibility**: All experiments use fixed seeds and pre-generated episodes located in `episodes/`.
 - **Inference Engine**: Automatically handles token limits, temperatures, and provider fallbacks for system prompts.
-- **Judge Metrics**: Evaluations include Visual Grounding, Discriminative Support, Inferential Coherence, Clarity, and Format Compliance.
+- **Judge Metrics**: Explanations are scored on 10 dimensions (Textual Groundedness,
+  Hallucination Free, Concept Counting, Comprehensibility, Conciseness, Specificity,
+  Discriminativeness, Instruction Following, Logical Coherence, Explanation
+  Reproducibility) plus an aggregate `overall_score`. See **Stage 3** for details.
+- **Class IDs vs names**: The classifier sees only numeric class IDs (no semantic
+  prior), but the judge and the dashboard always show human-readable class names via
+  the `class_id_map` stored in each trial.

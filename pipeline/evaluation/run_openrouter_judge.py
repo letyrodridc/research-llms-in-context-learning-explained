@@ -18,11 +18,16 @@ from .reconstruction import reconstruct_classifier_messages
 
 
 SCORE_FIELDS = (
-    "visual_grounding",
-    "discriminative_support",
-    "inferential_coherence",
-    "clarity",
-    "format_compliance",
+    "textual_groundedness",
+    "hallucination_free",
+    "concept_counting",
+    "comprehensibility",
+    "conciseness",
+    "specificity",
+    "discriminativeness",
+    "instruction_following",
+    "logical_coherence",
+    "explanation_reproducibility",
 )
 
 
@@ -193,6 +198,32 @@ def _parse_json_list(value: str) -> List[Any]:
     return []
 
 
+def _parse_json_dict(value: str) -> Dict[str, Any]:
+    if not value:
+        return {}
+    try:
+        parsed = json.loads(value)
+    except json.JSONDecodeError:
+        return {}
+    if isinstance(parsed, dict):
+        return parsed
+    return {}
+
+
+def _extract_query_image_part(classifier_messages: List[Dict[str, Any]]) -> Dict[str, Any] | None:
+    """Returns the image_url part of the last user message (the query image)."""
+    for message in reversed(classifier_messages):
+        if message.get("role") != "user":
+            continue
+        content = message.get("content")
+        if not isinstance(content, list):
+            continue
+        for part in reversed(content):
+            if isinstance(part, dict) and part.get("type") == "image_url":
+                return part
+    return None
+
+
 def build_trial_selection(
     *,
     run_dirs: List[Path],
@@ -237,74 +268,34 @@ def build_trial_selection(
 
 
 def build_judge_user_content(row: Dict[str, str], classifier_messages: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    class_options = _parse_json_list(row.get("class_options", ""))
-    predicted_label = row.get("predicted_label", "").strip() or "<missing>"
+    """Build the user content for the judge: query image + class names + predicted name + raw output.
+
+    Class IDs are translated to human-readable names using `class_id_map` from the trial CSV
+    so the judge sees meaningful labels instead of numeric IDs.
+    """
+    class_id_map = _parse_json_dict(row.get("class_id_map", ""))
+    class_options_ids = _parse_json_list(row.get("class_options", ""))
+    class_names = [class_id_map.get(str(cid), str(cid)) for cid in class_options_ids]
+
+    predicted_id = (row.get("predicted_label") or "").strip()
+    predicted_name = class_id_map.get(predicted_id, predicted_id) if predicted_id else "<missing>"
+
+    raw_output = row.get("raw_response_text", "") or "<empty response>"
 
     content: List[Dict[str, Any]] = [
-        {
-            "type": "text",
-            "text": (
-                "Evaluate the candidate classifier output using the exact classifier context below.\n"
-                f"Explanation condition: {row['prompt_type']}\n"
-                f"Candidate class labels: {class_options}\n"
-                f"Classifier predicted label: {predicted_label}\n"
-                "Do not evaluate correctness against ground truth. Evaluate only the explanation quality and required format."
-            ),
-        }
+        {"type": "text", "text": f"Candidate class labels: {class_names}"},
+        {"type": "text", "text": f"Predicted class: {predicted_name}"},
+        {"type": "text", "text": "Query image:"},
     ]
 
-    total_user_messages = sum(1 for message in classifier_messages if message.get("role") == "user")
-    seen_user_messages = 0
-    support_example_index = 0
-
-    for message_index, message in enumerate(classifier_messages, start=1):
-        role = message.get("role", "")
-        payload = message.get("content")
-
-        if role == "system":
-            content.append({"type": "text", "text": f"Classifier system prompt:\n{payload}"})
-            continue
-
-        if role == "assistant":
-            content.append({"type": "text", "text": f"Classifier assistant message #{message_index}:\n{payload}"})
-            continue
-
-        if role != "user":
-            content.append({"type": "text", "text": f"Classifier message #{message_index} ({role}):\n{payload}"})
-            continue
-
-        seen_user_messages += 1
-        is_target_message = seen_user_messages == total_user_messages
-        if not is_target_message:
-            support_example_index += 1
-
-        header = (
-            "Final target image and classifier user prompt"
-            if is_target_message
-            else f"Support example {support_example_index} shown to the classifier"
-        )
-        content.append({"type": "text", "text": header})
-
-        if isinstance(payload, str):
-            content.append({"type": "text", "text": payload})
-            continue
-
-        for part in payload or []:
-            if part.get("type") == "text":
-                content.append({"type": "text", "text": part.get("text", "")})
-                continue
-            if part.get("type") == "image_url":
-                content.append(part)
-                continue
-            content.append({"type": "text", "text": json_dumps(part)})
+    query_image_part = _extract_query_image_part(classifier_messages)
+    if query_image_part is not None:
+        content.append(query_image_part)
 
     content.append(
         {
             "type": "text",
-            "text": (
-                "Candidate classifier output to evaluate:\n"
-                f"{row.get('raw_response_text', '') or '<empty response>'}"
-            ),
+            "text": f"Candidate model output (explanation) to evaluate:\n{raw_output}",
         }
     )
     return content
@@ -315,7 +306,7 @@ def main() -> None:
     from ..utils.setup_utils import load_datasets, set_seed
 
     script_dir = Path(__file__).resolve().parent
-    repo_root = script_dir.parent
+    repo_root = script_dir.parent.parent
     env_path = Path(args.env_file).resolve() if args.env_file else repo_root / ".env"
     output_root = Path(args.output_root).resolve() if args.output_root else script_dir / "judge_runs"
     source_run_dirs = [Path(path).resolve() for path in args.run_dirs]
@@ -351,8 +342,7 @@ def main() -> None:
         raise ValueError("No source trials matched the requested filters.")
 
     run_timestamp = timestamp_now()
-    run_dir = output_root / f"{run_timestamp}_{slugify(settings.model)}"
-    run_dir.mkdir(parents=True, exist_ok=True)
+    judge_model_slug = slugify(settings.model)
 
     config_snapshot = {
         "run_timestamp": run_timestamp,
@@ -368,11 +358,6 @@ def main() -> None:
         "timeout_seconds": settings.timeout_seconds,
         "max_retries": settings.max_retries,
     }
-    (run_dir / "config.json").write_text(json_dumps(config_snapshot) + "\n", encoding="utf-8")
-    (run_dir / "judge_prompt_library_snapshot.json").write_text(
-        json_dumps(export_judge_prompt_library_snapshot()) + "\n",
-        encoding="utf-8",
-    )
 
     fieldnames = [
         "judge_timestamp",
@@ -407,11 +392,25 @@ def main() -> None:
         "judge_message_preview",
         "judge_raw_response_text",
     ]
-    csv_handle, writer = initialize_csv_writer(run_dir / "judge_results.csv", fieldnames)
-    jsonl_handle = (run_dir / "judge_logs.jsonl").open("w", encoding="utf-8")
-
     set_seed(42)
     datasets_dict = load_datasets(data_dir=str(repo_root / "data"))
+
+    # Per-source-run-dir output handles (lazy init)
+    output_handles: Dict[Path, Tuple[Any, csv.DictWriter, Any]] = {}
+
+    def get_writer_for(source_run_dir: Path) -> Tuple[Any, csv.DictWriter, Any]:
+        if source_run_dir not in output_handles:
+            judge_dir = source_run_dir / "judge_outputs" / judge_model_slug
+            judge_dir.mkdir(parents=True, exist_ok=True)
+            (judge_dir / "config.json").write_text(json_dumps(config_snapshot) + "\n", encoding="utf-8")
+            (judge_dir / "judge_prompt_library_snapshot.json").write_text(
+                json_dumps(export_judge_prompt_library_snapshot()) + "\n",
+                encoding="utf-8",
+            )
+            csv_h, csv_w = initialize_csv_writer(judge_dir / "judge_results.csv", fieldnames)
+            jsonl_h = (judge_dir / "judge_logs.jsonl").open("w", encoding="utf-8")
+            output_handles[source_run_dir] = (csv_h, csv_w, jsonl_h)
+        return output_handles[source_run_dir]
 
     total_trials = len(selected_rows)
     completed_trials = 0
@@ -422,6 +421,7 @@ def main() -> None:
         for row in selected_rows:
             trial_wall_start = time.perf_counter()
             source_run_dir = Path(row["_source_run_dir"])
+            csv_handle, writer, jsonl_handle = get_writer_for(source_run_dir)
             prompt_type = row["prompt_type"]
             dataset_name = row["dataset"]
             dataset = datasets_dict[dataset_name]
@@ -583,18 +583,26 @@ def main() -> None:
                     f"{type(exc).__name__}: {exc}"
                 )
     finally:
-        csv_handle.close()
-        jsonl_handle.close()
+        for csv_h, _csv_w, jsonl_h in output_handles.values():
+            csv_h.close()
+            jsonl_h.close()
 
     total_duration = time.perf_counter() - overall_wall_start
+    output_dirs = [src / "judge_outputs" / judge_model_slug for src in output_handles]
     print(
-        f"[+] Judge run finished. Run directory: {run_dir} | "
+        f"[+] Judge run finished. Output dirs: {len(output_dirs)} | "
         f"total_duration={format_duration(total_duration)} | judged_trials={completed_trials}/{total_trials}"
     )
+    for d in output_dirs:
+        print(f"    - {d}")
 
     if not args.skip_analysis:
-        analysis_outputs = analyze_judge_run_directory(run_dir)
-        print(f"[+] Judge analysis generated in: {analysis_outputs['analysis_dir']}")
+        for d in output_dirs:
+            try:
+                analysis_outputs = analyze_judge_run_directory(d)
+                print(f"[+] Judge analysis generated in: {analysis_outputs['analysis_dir']}")
+            except Exception as exc:
+                print(f"[WARNING] Analysis failed for {d}: {type(exc).__name__}: {exc}")
 
 
 if __name__ == "__main__":

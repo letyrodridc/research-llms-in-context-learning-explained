@@ -15,11 +15,16 @@ from scipy.stats import friedmanchisquare, wilcoxon
 
 
 DIMENSION_FIELDS = (
-    "visual_grounding",
-    "discriminative_support",
-    "inferential_coherence",
-    "clarity",
-    "format_compliance",
+    "textual_groundedness",
+    "hallucination_free",
+    "concept_counting",
+    "comprehensibility",
+    "conciseness",
+    "specificity",
+    "discriminativeness",
+    "instruction_following",
+    "logical_coherence",
+    "explanation_reproducibility",
 )
 
 

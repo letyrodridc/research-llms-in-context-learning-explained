@@ -1,33 +1,52 @@
 import argparse
+import subprocess
 import sys
-from pathlib import Path
+
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Unified ICL Judge Runner")
-    parser.add_argument("--mode", type=str, choices=["local", "openrouter"], required=True, help="Execution mode for the judge: local or openrouter")
-    parser.add_argument("--model", type=str, required=True, help="Judge model name (e.g., gemma3, qwen-vl or OpenRouter ID)")
-    parser.add_argument("--run-dir", type=str, nargs="+", required=True, help="Directories of the experiment runs to judge")
-    parser.add_argument("--judge-library", type=str, default="pipeline/configs/judge_library.json", help="Path to judge prompt library JSON")
-    parser.add_argument("--limit", type=int, default=None, help="Limit the number of trials to judge")
-    
+    parser = argparse.ArgumentParser(
+        description="Run LLM-as-a-judge evaluation on existing OpenRouter experiment runs."
+    )
+    parser.add_argument("--run-dir", nargs="+", required=True, help="One or more experiment run directories containing trial_results.csv.")
+    parser.add_argument("--judge-model", type=str, default=None, help="Override OPENROUTER_JUDGE_MODEL.")
+    parser.add_argument("--dataset", type=str, default="all", help="Filter trials by dataset (default: all).")
+    parser.add_argument("--prompt-type", type=str, default="all", help="Filter trials by prompt type (default: all).")
+    parser.add_argument("--limit", type=int, default=None, help="Cap on the number of trials to judge.")
+    parser.add_argument("--env-file", type=str, default=None, help="Path to a .env file.")
+    parser.add_argument("--skip-analysis", action="store_true", help="Skip judge tables, plots, and statistics.")
+    parser.add_argument("--skip-model-validation", action="store_true", help="Skip the OpenRouter model metadata check.")
+    parser.add_argument("--debug", action="store_true", help="Print extra progress details.")
     return parser.parse_args()
 
-if __name__ == "__main__":
+
+def main():
     args = parse_args()
-    
-    # Add pipeline directory to system path for module discovery
-    pipeline_path = Path(__file__).parent / "pipeline"
-    sys.path.append(str(pipeline_path))
-    
-    from pipeline.evaluation.judge_runner import JudgeRunner
-    
-    # Iterate over provided run directories
-    for run_path in args.run_dir:
-        print(f"\n[*] EVALUATING RUN: {run_path}")
-        runner = JudgeRunner(
-            mode=args.mode,
-            model_name=args.model,
-            judge_library_path=args.judge_library,
-            run_dir=run_path
-        )
-        runner.run(limit=args.limit)
+    cmd = [
+        sys.executable,
+        "-m",
+        "pipeline.evaluation.run_openrouter_judge",
+        "--run-dir",
+        *args.run_dir,
+    ]
+    if args.judge_model:
+        cmd += ["--judge-model", args.judge_model]
+    if args.dataset != "all":
+        cmd += ["--dataset", args.dataset]
+    if args.prompt_type != "all":
+        cmd += ["--prompt-type", args.prompt_type]
+    if args.limit is not None:
+        cmd += ["--limit", str(args.limit)]
+    if args.env_file:
+        cmd += ["--env-file", args.env_file]
+    if args.skip_analysis:
+        cmd.append("--skip-analysis")
+    if args.skip_model_validation:
+        cmd.append("--skip-model-validation")
+    if args.debug:
+        cmd.append("--debug")
+
+    sys.exit(subprocess.run(cmd, check=False).returncode)
+
+
+if __name__ == "__main__":
+    main()
