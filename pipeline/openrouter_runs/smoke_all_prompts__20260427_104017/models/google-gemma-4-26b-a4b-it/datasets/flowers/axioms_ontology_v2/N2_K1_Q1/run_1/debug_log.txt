@@ -1,0 +1,37 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=2 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- Class81 ⊑ hasVisualFeature([purple_petals]) ⊓ hasVisualFeature([star_shaped_center])
+- Class14 ⊑ hasVisualFeature([yellow_petals]) ⊓ hasVisualFeature([curved_petals])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [pink_petals])
+- hasVisualFeature(Query, [star_shaped_center])
+- hasVisualFeature(Query, [white_edges])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: Class81 ⊑ hasVisualFeature([purple_petals]) ⊓ hasVisualFeature([star_shaped_center])
+- Note: The query image exhibits the star-shaped center and petal structure characteristic of the purple/pink flower class (81) rather than the yellow curved petal class (14).
+</dl_explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- 81 ⊑ hasVisualFeature([purple_petals])
+- 14 ⊑ hasVisualFeature([yellow_petals])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [yellow_petals])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: 14 ⊑ hasVisualFeature([yellow_petals])
+</dl_explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=19.8941 | avg_trial_wall_seconds=9.9182 | avg_trial_api_seconds=9.8138 | system_fallback_count=0

@@ -97,7 +97,7 @@ python execute_experiment.py --mode openrouter --model google/gemini-2.0-flash-0
 ### 3. Batch Execution (Config File)
 To run large-scale experiments with multiple models and datasets, use a JSON configuration:
 ```bash
-python pipeline/experiments/run_openrouter_experiment.py --config pipeline/configs/openrouter_experiment.full.json
+python -m pipeline.experiments.run_openrouter_experiment --config pipeline/configs/openrouter_experiment.full.json
 ```
 
 ### 4. Evaluation (Judge via API)

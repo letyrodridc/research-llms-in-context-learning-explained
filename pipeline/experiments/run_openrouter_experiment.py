@@ -597,7 +597,8 @@ def run_multi_model_experiment(
         model_dir = models_root / slugify(model_name)
         command = [
             sys.executable,
-            str(Path(__file__).resolve()),
+            "-m",
+            "pipeline.experiments.run_openrouter_experiment",
             "--config",
             str(args.config),
             "--model",
