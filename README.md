@@ -132,7 +132,8 @@ Modify `pipeline/configs/openrouter_prompt_library.default.json` to change the s
 ### Batch Experiments
 For large-scale evaluations, use JSON configuration files:
 ```bash
-python pipeline/run_openrouter_experiment.py --config pipeline/configs/openrouter_experiment.full.json
+python -m pipeline.experiments.run_openrouter_experiment --config pipeline/configs/openrouter_experiment.full.json
+python -m pipeline.experiments.run_openrouter_experiment --config pipeline/configs/openrouter_experiment.smoke_all_prompts.json
 ```
 
 ---
