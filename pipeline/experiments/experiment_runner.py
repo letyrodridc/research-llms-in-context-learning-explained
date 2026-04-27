@@ -61,25 +61,30 @@ class ExperimentRunner:
     def build_messages(self, prompt_config, shots, query, class_names):
         """Constructs the chat message history."""
         messages = [{"role": "system", "content": prompt_config['system_prompt']}]
-        valid_labels = set()
+        valid_label_ids = []
+        seen_label_ids = set()
+        class_id_map = {}
 
         for img_tensor, label_id in shots:
             img_pil = T.ToPILImage()(img_tensor)
-            label_text = class_names[label_id] if class_names else str(label_id)
-            valid_labels.add(label_text)
+            label_str = str(label_id)
+            if label_id not in seen_label_ids:
+                seen_label_ids.add(label_id)
+                valid_label_ids.append(label_str)
+                class_id_map[label_str] = str(class_names[label_id]) if class_names else label_str
 
             messages.append({
-                "role": "user", 
+                "role": "user",
                 "content": [
                     {"type": "image", "image": img_pil},
                     {"type": "text", "text": "What is the class of this image?"}
                 ]
             })
-            messages.append({"role": "assistant", "content": f"<response>{label_text}</response>"})
+            messages.append({"role": "assistant", "content": f"<response>{label_str}</response>"})
 
         query_img_tensor, _ = query
         query_img_pil = T.ToPILImage()(query_img_tensor)
-        options_str = ", ".join(sorted(list(valid_labels)))
+        options_str = ", ".join(valid_label_ids)
         query_text = prompt_config['query_template'].replace("{OPTIONS}", options_str)
 
         messages.append({
@@ -89,7 +94,7 @@ class ExperimentRunner:
                 {"type": "text", "text": query_text}
             ]
         })
-        return messages
+        return messages, class_id_map
 
     def run(self):
         set_seed(self.seed)
@@ -145,25 +150,25 @@ class ExperimentRunner:
                                     indices, shots, query, class_names = select_few_shot_images_with_data_fixed(
                                         data, i, dataset, all_class_names
                                     )
-                                    messages = self.build_messages(prompt_config, shots, query, class_names)
-                                    
+                                    messages, class_id_map = self.build_messages(prompt_config, shots, query, class_names)
+
                                     result = run_icl_inference(
-                                        model, processor, self.model_name, messages, 
+                                        model, processor, self.model_name, messages,
                                         temperature=prompt_config['temperature'],
                                         max_new_tokens=prompt_config['max_tokens']
                                     )
-                                    
+
                                     label_extracted = extract_response(result)
                                     label_id = query[1]
-                                    label_text = class_names[label_id] if class_names else str(label_id)
+                                    label_text = str(label_id)
 
                                     is_correct = False
                                     if label_extracted:
                                         label_extracted_clean = str(label_extracted).strip().lower()
-                                        label_text_clean = str(label_text).strip().lower()
+                                        label_text_clean = label_text.lower()
                                         is_correct = label_extracted_clean == label_text_clean
                                         if is_correct: correct += 1
-                                    
+
                                     trial_records.append({
                                         "dataset": dataset_name,
                                         "prompt_type": prompt_type,
@@ -173,7 +178,8 @@ class ExperimentRunner:
                                         "expected_label": label_text,
                                         "correct": 1 if is_correct else 0,
                                         "raw_response_text": result,
-                                        "class_options": json.dumps(sorted(list(class_names)) if class_names else []),
+                                        "class_options": json.dumps(list(class_id_map.keys())),
+                                        "class_id_map": json.dumps(class_id_map),
                                         "support_indices": json.dumps([int(x) for x in data['support_indices']]),
                                         "query_dataset_index": int(data['query_indices'][i]),
                                         "episode_filepath": filepath,

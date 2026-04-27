@@ -163,10 +163,10 @@ def _tensor_to_pil(image_tensor: Any) -> Image.Image:
     return ToPILImage()(image_tensor)
 
 
-def _label_text(label_id: Any, class_names: Any) -> str:
-    if class_names:
-        return str(class_names[label_id])
-    return str(label_id)
+def _class_id_map_entry(label_id: Any, class_names: Any) -> Tuple[str, str]:
+    key = str(label_id)
+    value = str(class_names[label_id]) if class_names else key
+    return key, value
 
 
 def export_prompt_library_snapshot(
@@ -204,7 +204,7 @@ def build_openrouter_messages(
     query: Tuple[Any, Any],
     class_names: Any,
     prompt_specs: Optional[Mapping[str, PromptSpec]] = None,
-) -> Tuple[List[Dict[str, Any]], List[str]]:
+) -> Tuple[List[Dict[str, Any]], List[str], Dict[str, str]]:
     prompt_specs = prompt_specs or PROMPT_SPECS
     if prompt_type not in prompt_specs:
         raise ValueError(f"Unsupported prompt_type: {prompt_type}")
@@ -213,13 +213,16 @@ def build_openrouter_messages(
     messages: List[Dict[str, Any]] = [{"role": "system", "content": spec.system_prompt}]
 
     valid_labels: List[str] = []
-    seen_labels = set()
+    seen_label_ids: set = set()
+    class_id_map: Dict[str, str] = {}
 
     for img_tensor, label_id in shots:
-        label_text = _label_text(label_id, class_names)
-        if label_text not in seen_labels:
-            valid_labels.append(label_text)
-            seen_labels.add(label_text)
+        label_str = str(label_id)
+        if label_id not in seen_label_ids:
+            valid_labels.append(label_str)
+            seen_label_ids.add(label_id)
+            k, v = _class_id_map_entry(label_id, class_names)
+            class_id_map[k] = v
 
         img_pil = _tensor_to_pil(img_tensor)
         data_url = pil_image_to_data_url(img_pil)
@@ -232,7 +235,7 @@ def build_openrouter_messages(
                 ],
             }
         )
-        messages.append({"role": "assistant", "content": f"<response>{label_text}</response>"})
+        messages.append({"role": "assistant", "content": f"<response>{label_str}</response>"})
 
     query_img_tensor, _ = query
     query_img_pil = _tensor_to_pil(query_img_tensor)
@@ -250,4 +253,4 @@ def build_openrouter_messages(
         }
     )
 
-    return messages, valid_labels
+    return messages, valid_labels, class_id_map

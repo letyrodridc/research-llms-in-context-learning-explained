@@ -81,6 +81,7 @@ def load_datasets(data_dir='./data'):
     val_set   = Flowers102(root=data_dir, split='val', download=True, transform=transform)
     flowers_full = ConcatDataset([train_set, val_set])
     datasets['flowers'] = flowers_full
+    datasets['flowers_classes'] = train_set.classes
 
     print(f"Loading OxfordPets into {data_dir}...")
     datasets['pets'] = OxfordIIITPet(root=data_dir, split='trainval', download=True, transform=transform)

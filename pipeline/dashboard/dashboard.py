@@ -172,6 +172,7 @@ class RunDataStore:
             },
             "judge_scores": row.get("_judge_scores"),
             "class_options": _parse_json_field(row.get("class_options", ""), []),
+            "class_id_map": _parse_json_field(row.get("class_id_map", ""), {}),
             "image_refs": _parse_json_field(row.get("image_refs", ""), []),
             "conversation": _browser_messages(
                 reconstructed.classifier_messages,

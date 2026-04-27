@@ -325,6 +325,7 @@ def build_trial_record_base(
     expected_label: str,
     episode_filepath: Path,
     class_options: List[str],
+    class_id_map: Dict[str, str],
     messages: List[Dict[str, Any]],
     model_name: str,
     artifact_dir: Path,
@@ -345,6 +346,7 @@ def build_trial_record_base(
         "expected_label": expected_label,
         "episode_filepath": repo_relative_path(episode_filepath),
         "class_options": json_dumps(class_options),
+        "class_id_map": json_dumps(class_id_map),
         "image_refs": json_dumps(build_image_refs(support_indices, query_dataset_index)),
         "prompt_hash": stable_prompt_hash(messages),
         "message_preview": json_dumps(message_preview(messages)),
@@ -413,6 +415,7 @@ def build_output_schemas(few_shot_configs: List[FewShotConfig]) -> Dict[str, Lis
         "provider",
         "episode_filepath",
         "class_options",
+        "class_id_map",
         "image_refs",
         "prompt_hash",
         "message_preview",
@@ -663,7 +666,7 @@ def main() -> None:
     from ..utils.setup_utils import load_datasets, select_few_shot_images_with_data_fixed, set_seed
 
     script_dir = Path(__file__).resolve().parent
-    repo_root = script_dir.parent
+    repo_root = script_dir.parent.parent
     experiment = load_experiment_config(Path(args.config))
 
     env_path = Path(args.env_file).resolve() if args.env_file else experiment.env_file
@@ -893,10 +896,8 @@ def main() -> None:
                                 )
                                 support_indices = list(map(int, data["support_indices"]))
                                 query_dataset_index = int(data["query_indices"][query_position])
-                                expected_label = str(
-                                    query_class_names[query[1]] if query_class_names else query[1]
-                                )
-                                messages, class_options = build_openrouter_messages(
+                                expected_label = str(query[1])
+                                messages, class_options, class_id_map = build_openrouter_messages(
                                     prompt_type=prompt_type,
                                     shots=shots,
                                     query=query,
@@ -914,6 +915,7 @@ def main() -> None:
                                     expected_label=expected_label,
                                     episode_filepath=episode_filepath,
                                     class_options=class_options,
+                                    class_id_map=class_id_map,
                                     messages=messages,
                                     model_name=settings.model,
                                     artifact_dir=artifact_dir,

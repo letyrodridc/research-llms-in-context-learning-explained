@@ -47,7 +47,7 @@ def run_openrouter(args):
     # Run experiment via OpenRouter API
     if args.config:
         # Use existing JSON configuration file
-        cmd = [sys.executable, "pipeline/experiments/run_openrouter_experiment.py", "--config", args.config]
+        cmd = [sys.executable, "-m", "pipeline.experiments.run_openrouter_experiment", "--config", args.config]
     else:
         # Generate a temporary configuration for the single/batch run requested via CLI
         import json
@@ -76,7 +76,7 @@ def run_openrouter(args):
         with open(config_path, "w") as f:
             json.dump(temp_config, f)
 
-        cmd = [sys.executable, "pipeline/experiments/run_openrouter_experiment.py", "--config", config_path]
+        cmd = [sys.executable, "-m", "pipeline.experiments.run_openrouter_experiment", "--config", config_path]
     
     subprocess.run(cmd)
 
