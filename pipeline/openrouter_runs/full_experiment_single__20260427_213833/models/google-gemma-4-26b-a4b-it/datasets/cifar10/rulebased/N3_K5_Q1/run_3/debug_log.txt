@@ -1,0 +1,57 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=3 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- object: airplane
+- object color: white and purple
+- background: ground/tarmac
+</features>
+<kb>
+- IF [object = airplane] THEN [0]
+- IF [object = frog/toad/amphibian] THEN [6]
+- IF [object = horse] THEN [7]
+</kb>
+
+<rule_check>
+- The rule "IF [object = airplane] THEN [0]" fires because the Query Image contains a large, winged vehicle characteristic of an airplane.
+</rule_check>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- subject: green animal
+- subject shape: small, rounded body
+- subject texture: bumpy/textured skin
+</features>
+
+<kb>
+- IF [subject = airplane/vehicle] THEN [0]
+- IF [subject = small green/brown textured animal] THEN [6]
+- IF [subject = large four-legged mammal] THEN [7]
+</kb>
+
+<rule_check>
+- The rule for class 6 fires because the Query Image contains a small, green, textured animal, which matches the pattern seen in the examples for class 6.
+</rule_check>
+
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- subject: horse
+- color: brown/tan
+- environment: grassy field
+</features>
+<kb>
+- IF [subject = airplane/vehicle] THEN [0]
+- IF [subject = animal with small limbs/reptile/amphibian] THEN [6]
+- IF [subject = horse] THEN [7]
+</kb>
+
+<rule_check>
+- The rule "IF [subject = horse] THEN [7]" fires because the Query Image clearly depicts a horse in a field.
+</rule_check>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=9.7029 | avg_trial_wall_seconds=3.2317 | avg_trial_api_seconds=3.0688 | system_fallback_count=0

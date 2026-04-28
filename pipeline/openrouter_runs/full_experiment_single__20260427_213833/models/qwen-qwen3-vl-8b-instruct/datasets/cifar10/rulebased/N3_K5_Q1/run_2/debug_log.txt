@@ -1,0 +1,48 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=3 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- observable feature: object is an aircraft
+- observable feature: object has wings
+- observable feature: object is in flight
+</features>
+<kb>
+- IF [object is an aircraft AND object has wings AND object is in flight] THEN [0]
+- IF [object is a frog AND object has distinct skin texture] THEN [6]
+- IF [object is a horse AND object has mane and tail] THEN [7]
+</kb>
+
+<rule_check>
+- Rule 1 fires because the Query Image shows an aircraft with wings in flight, matching the condition for class 0.
+</rule_check>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- observable feature: rounded body shape
+- observable feature: visible limbs
+- observable feature: textured skin
+</features>
+<kb>
+- IF [observable visual features = rounded body shape AND observable visual features = visible limbs AND observable visual features = textured skin] THEN [6]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows a rounded body shape, visible limbs, and textured skin, which matches the features described in the rule for class 6.
+</rule_check>
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- observable feature: animal with four legs and a long neck
+- observable feature: animal with a rider on its back
+- observable feature: animal jumping over an obstacle
+</features>
+<kb>
+- IF [animal with four legs and a long neck AND animal with a rider on its back AND animal jumping over an obstacle] THEN [7]
+</kb>
+<rule_check>
+- Rule 1 fires because the image shows an animal with four legs and a long neck (horse), with a rider on its back, and it is jumping over an obstacle.
+</rule_check>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=11.7822 | avg_trial_wall_seconds=3.9230 | avg_trial_api_seconds=3.5961 | system_fallback_count=0

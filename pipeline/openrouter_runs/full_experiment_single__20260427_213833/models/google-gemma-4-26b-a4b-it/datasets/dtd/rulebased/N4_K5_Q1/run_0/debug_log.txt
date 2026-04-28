@@ -1,0 +1,76 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=4 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[43] | Predicted=[43] | Correct=True
+<features>
+- pattern: grid of square indentations
+- color: golden brown
+- texture: baked food surface
+</features>
+<kb>
+- IF [pattern = grid of square indentations AND color = golden brown] THEN [43]
+- IF [pattern = abstract/painterly AND color = varied] THEN [34]
+- IF [pattern = polka dots AND color = varied] THEN [10]
+- IF [pattern = bumpy/spiky/textured AND color = varied] THEN [4]
+</kb>
+
+<rule_check>
+- The rule for class 43 fires because the image shows a golden brown surface with a distinct grid of square indentations, matching the pattern seen in the first five examples.
+</rule_check>
+
+<response>43</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[34] | Predicted=[34] | Correct=True
+<features>
+- texture: brush strokes/swirls
+- color: teal/greenish-blue
+- pattern: non-geometric, irregular strokes
+</features>
+<kb>
+- IF [pattern = grid/waffle pattern] THEN [43]
+- IF [pattern = irregular strokes/swirls/abstract] THEN [34]
+- IF [pattern = polka dots] THEN [10]
+- IF [pattern = bumpy/spiky/textured surface] THEN [4]
+</kb>
+
+<rule_check>
+- The rule for class 34 fires because the image contains irregular, swirling brush strokes and an abstract pattern, which matches the visual characteristics of the other images in class 34.
+</rule_check>
+
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[10] | Predicted=[34] | Correct=False
+<features>
+- pattern: grid of small colored squares/circles
+- colors: red, blue, yellow, green, orange
+</features>
+<kb>
+- IF [pattern = grid of square/circular indentations AND color = brown/tan/yellow] THEN [43]
+- IF [pattern = abstract shapes/colors/textures] THEN [34]
+- IF [pattern = grid of colored circles/dots] THEN [10]
+- IF [pattern = textured surface with spikes/bumps/indentations] THEN [4]
+</kb>
+
+<rule_check>
+- The Query Image features a grid of small, colorful squares/circles. While it shares a grid structure with class 43, the colors are highly varied (red, blue, yellow, etc.) rather than being monochromatic or food-like, and the pattern of dots is more characteristic of the "dots" pattern seen in class 10, although the shapes are more square-like. However, looking at the provided examples, class 10 is defined by a pattern of colored circles. The query image is an abstract pattern of colorful shapes. Given the options, class 34 represents abstract/artistic patterns.
+</rule_check>
+
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- surface texture: sharp, pointed, spike-like protrusions
+- color: yellow/greenish
+</features>
+<kb>
+- IF [surface texture = grid-like pattern] THEN [43]
+- IF [surface texture = painted/abstract/textured colors] THEN [34]
+- IF [surface texture = polka dots] THEN [10]
+- IF [surface texture = bumpy/spiky/irregular protrusions] THEN [4]
+</kb>
+
+<rule_check>
+- The rule for class 4 fires because the Query Image displays a surface covered in sharp, pointed, spike-like protrusions, which matches the "bumpy/spiky/irregular protrusions" pattern seen in the class 4 examples.
+</rule_check>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=19.6617 | avg_trial_wall_seconds=4.9122 | avg_trial_api_seconds=4.2455 | system_fallback_count=0

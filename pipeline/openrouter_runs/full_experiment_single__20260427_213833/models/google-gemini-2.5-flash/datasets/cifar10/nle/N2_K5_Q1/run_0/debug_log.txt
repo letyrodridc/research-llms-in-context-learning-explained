@@ -1,0 +1,10 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=nle | model=google/gemini-2.5-flash | N=2 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[8] | Predicted=[8] | Correct=True
+<explanation>The query image displays a vessel on water, which is a characteristic feature of all examples labeled '8'. In contrast, examples labeled '7' consistently show horses, which are not present in the query image.</explanation>
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[7] | Predicted=[7] | Correct=True
+<explanation>The query image displays a four-legged animal with a saddle on its back, standing on a green surface, which is consistent with the visual characteristics observed in the examples labeled '7'. The examples labeled '8' consistently show boats or ships on water.</explanation>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=2.2483 | avg_trial_wall_seconds=1.1215 | avg_trial_api_seconds=1.0288 | system_fallback_count=0

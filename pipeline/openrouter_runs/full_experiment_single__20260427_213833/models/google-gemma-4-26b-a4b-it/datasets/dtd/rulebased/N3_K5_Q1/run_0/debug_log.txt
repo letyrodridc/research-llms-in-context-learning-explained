@@ -1,0 +1,56 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=3 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- surface: asphalt/pavement
+- features: multiple irregular holes/depressions in the surface
+- contents: some holes appear to contain water or debris
+</features>
+<kb>
+- IF [surface = asphalt AND features = multiple irregular holes/depressions] THEN [32]
+- IF [surface = textured material AND features = uniform pattern of lines or colors] THEN [8]
+- IF [surface = textured material AND features = repetitive bumps or small protrusions] THEN [4]
+</kb>
+
+<rule_check>
+- The rule for class 32 fires because the image shows an asphalt surface with multiple irregular holes/depressions.
+</rule_check>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- texture: fine, grid-like, woven pattern
+- color: black
+- object: bag/tote with straps
+</features>
+<kb>
+- IF [texture = fine grid/woven AND color = black/brown/patterned] THEN [8]
+- IF [surface = bumpy/pitted/water-filled/potholes] THEN [32]
+- IF [surface = rounded bumps/protrusions] THEN [4]
+</kb>
+
+<rule_check>
+- The rule for class 8 fires because the Query Image shows a fine, grid-like woven texture on a dark object, which matches the pattern seen in the examples for class 8.
+</rule_check>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- texture: bumpy, repetitive, scale-like pattern
+- color: black and white/grayscale
+- shape: rounded, protruding nodules
+</features>
+<kb>
+- IF [texture = scale-like/bumpy AND color = grayscale/black/white] THEN [4]
+- IF [texture = flat/puddle/road] THEN [32]
+- IF [texture = fabric/patterned/solid] THEN [8]
+</kb>
+
+<rule_check>
+- The rule for class 4 is satisfied because the image shows a repetitive, bumpy, scale-like texture with rounded nodules, consistent with the patterns seen in the class 4 examples.
+</rule_check>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=11.6808 | avg_trial_wall_seconds=3.8902 | avg_trial_api_seconds=3.3679 | system_fallback_count=0

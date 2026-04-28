@@ -1,0 +1,55 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemini-2.5-flash | N=3 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<features>
+- main subject: animal-like shape
+- color of main subject: light brown and white
+- background: blurry, multi-colored (pink, blue, brown)
+- posture: sitting or lying down
+- head position: facing forward, mouth open
+</features>
+<kb>
+- IF [main subject is an animal-like shape AND has light brown and white fur AND is in a sitting or lying posture] THEN [3]
+- IF [main subject is a vehicle-like shape AND has a large rectangular cargo area AND is yellow] THEN [9]
+- IF [main subject is a vehicle-like shape AND has a sleek, rounded body AND is silver] THEN [1]
+</kb>
+<rule_check>
+- The rule for class 3 fires because the query image shows a main subject that is an animal-like shape, has light brown and white fur, and appears to be in a sitting or lying posture.
+</rule_check>
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[9] | Predicted=[9] | Correct=True
+<features>
+- main object shape: rectangular, boxy
+- main object color: dark green/black and white
+- presence of wheels: visible
+- object type: vehicle
+- background: outdoor, possibly road and trees
+</features>
+<kb>
+- IF [main object is a vehicle AND has a boxy shape AND is not a car] THEN [9]
+- IF [main object is a car AND has a sleek, rounded shape] THEN [1]
+- IF [main object is an animal, specifically a cat, and is resting on a ledge] THEN [3]
+</kb>
+<rule_check>
+- The rule for class 9 fires because the query image shows a vehicle with a boxy, rectangular shape, which is characteristic of a truck, and it is clearly not a car.
+</rule_check>
+<response>9</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[1] | Predicted=[1] | Correct=True
+<features>
+- object shape: elongated, rectangular body with rounded edges
+- object color: two-tone, blue and white
+- wheels: visible, circular, metallic
+- background: blurry green and dark areas
+</features>
+<kb>
+- IF [object shape is elongated and rectangular with rounded edges AND object color is two-tone (blue and white) AND wheels are visible] THEN [1]
+- IF [object is an animal, specifically a cat, with fur and visible ears] THEN [3]
+- IF [object is a large vehicle with a prominent cargo box on the back, typically yellow or orange] THEN [9]
+</kb>
+<rule_check>
+- The rule for class 1 fires because the query image shows an elongated, rectangular vehicle with rounded edges, a two-tone blue and white color scheme, and visible wheels.
+</rule_check>
+<response>1</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=4.5140 | avg_trial_wall_seconds=1.5008 | avg_trial_api_seconds=1.4668 | system_fallback_count=0

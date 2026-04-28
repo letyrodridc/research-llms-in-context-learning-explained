@@ -1,0 +1,16 @@
+=== DEBUG LOG | dataset=flowers | prompt=nle | model=google/gemma-4-26b-a4b-it | N=2 K=5 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[75] | Predicted=[75] | Correct=True
+<explanation>
+The query image shows a trumpet-shaped flower with a central throat and radiating lines on the petals, which is visually consistent with the examples labeled as class 75.
+</explanation>
+
+<response>75</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[35] | Predicted=[35] | Correct=True
+<explanation>
+The query image shows a flower with large, distinct petals and a prominent, ruffled central lip (labellum), which is characteristic of the orchid examples (class 35). In contrast, class 75 examples show trumpet-shaped flowers with a continuous corolla.
+</explanation>
+
+<response>35</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=9.3066 | avg_trial_wall_seconds=4.6496 | avg_trial_api_seconds=4.2894 | system_fallback_count=0

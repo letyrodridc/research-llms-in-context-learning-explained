@@ -1,0 +1,30 @@
+=== DEBUG LOG | dataset=pets | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=4 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[20] | Predicted=[20] | Correct=True
+<explanation>
+The query image shows a long-haired cat with a distinct tabby pattern and large, round eyes. This visual evidence matches the examples classified as '20', which all depict long-haired cats with similar features.
+</explanation>
+
+<response>20</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<explanation>
+The query image shows a white, fluffy dog with a long tail and a distinct facial structure, consistent with the visual features of the Samoyed breed seen in the labeled examples for class 29. The dog is outdoors on grass, which matches the setting in the example images for class 29.
+</explanation>
+
+<response>29</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[28] | Predicted=[28] | Correct=True
+<explanation>
+The image shows a dog with a distinctive brown and white coat, a large head, and a broad face, which matches the visual characteristics of the Saint Bernard breed seen in the labeled examples for class 28.
+</explanation>
+
+<response>28</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[13] | Predicted=[13] | Correct=True
+<explanation>
+The query image shows a white dog sitting on a paved surface next to a car. This is visually consistent with the examples of class 13, which all depict dogs with distinct black and white spotted or patched coats, often with long, floppy ears. The dog in the query image, while white, has a similar posture and context (outdoors near a vehicle) that aligns with the class 13 examples, particularly the one sitting on grass with a blurred background.
+</explanation>
+
+<response>13</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=20.7826 | avg_trial_wall_seconds=5.1920 | avg_trial_api_seconds=3.0577 | system_fallback_count=0

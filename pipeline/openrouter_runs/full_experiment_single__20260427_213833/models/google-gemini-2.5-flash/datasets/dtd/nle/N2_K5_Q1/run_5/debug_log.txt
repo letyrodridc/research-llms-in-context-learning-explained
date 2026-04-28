@@ -1,0 +1,10 @@
+=== DEBUG LOG | dataset=dtd | prompt=nle | model=google/gemini-2.5-flash | N=2 K=5 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[17] | Predicted=[17] | Correct=True
+<explanation>The query image displays a surface with distinct, parallel, and undulating lines or ridges. This visual characteristic of repeating linear patterns is consistently observed in the examples labeled '17'. In contrast, examples labeled '32' show irregular depressions, holes, or uneven surfaces, which are not present in the query image.</explanation>
+<response>17</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<explanation>The query image displays multiple irregular depressions in a paved surface, some containing water, which is consistent with the visual characteristics of the examples labeled '32'. The examples for '17' show regular, repeating patterns or textures, which are not present in the query image.</explanation>
+<response>32</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=2.7732 | avg_trial_wall_seconds=1.3842 | avg_trial_api_seconds=1.0207 | system_fallback_count=0

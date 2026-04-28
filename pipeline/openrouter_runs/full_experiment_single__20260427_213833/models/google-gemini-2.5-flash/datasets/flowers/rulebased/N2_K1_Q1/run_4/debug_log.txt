@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- flower color: purple with lighter streaks
+- number of petals: 6
+- petal shape: broad, somewhat pointed at the tip
+- center of flower: light yellow/white filaments
+- background: green leaves and brown soil
+</features>
+<kb>
+- IF [flower color is purple/pink with lighter streaks AND number of petals is 6-8 AND center of flower has light yellow/white filaments] THEN [81]
+- IF [flower color is yellow AND number of petals is 3 large outer petals and 3 smaller inner petals AND center of flower has dark yellow/brown markings] THEN [14]
+</kb>
+<rule_check>
+- The rule for class 81 fires because the query image shows a flower that is purple with lighter streaks, has 6 petals, and a center with light yellow/white filaments.
+</rule_check>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- flower color: yellow
+- flower shape: irregular, with three prominent petals pointing downwards and three smaller petals pointing upwards
+- central markings: dark yellow/brownish lines on the lower petals
+</features>
+<kb>
+- IF [flower color is yellow AND flower shape is irregular with prominent downward-pointing petals AND central markings are dark yellow/brownish lines] THEN [14]
+- IF [flower color is pink and white striped AND flower shape is regular with multiple broad petals AND central part is yellow and fuzzy] THEN [81]
+</kb>
+<rule_check>
+- The rule for class 14 fires because the query image shows a flower that is yellow, has an irregular shape with prominent downward-pointing petals, and exhibits dark yellow/brownish lines as central markings, which matches the features described for class 14.
+</rule_check>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.1023 | avg_trial_wall_seconds=1.5466 | avg_trial_api_seconds=1.4070 | system_fallback_count=0

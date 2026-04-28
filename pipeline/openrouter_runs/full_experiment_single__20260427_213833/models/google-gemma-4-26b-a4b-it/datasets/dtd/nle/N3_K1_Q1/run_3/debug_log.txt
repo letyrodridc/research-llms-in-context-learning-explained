@@ -1,0 +1,23 @@
+=== DEBUG LOG | dataset=dtd | prompt=nle | model=google/gemma-4-26b-a4b-it | N=3 K=1 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<explanation>
+The query image shows a highly textured, wrinkled surface with many fine lines and folds, which is visually similar to the deep wrinkles and skin texture seen in the example for class 45.
+</explanation>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[10] | Predicted=[10] | Correct=True
+<explanation>
+The query image consists of a pattern of multiple circular dots distributed across a solid background. This visual pattern matches the characteristics of the second example (label 10), which also features a pattern of multiple colored dots on a solid background.
+</explanation>
+
+<response>10</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[19] | Predicted=[19] | Correct=True
+<explanation>
+The query image features intricate, interlacing knotwork patterns in gold and red, which is visually consistent with the patterns and style shown in the example for class 19.
+</explanation>
+
+<response>19</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=6.0706 | avg_trial_wall_seconds=2.0206 | avg_trial_api_seconds=1.8256 | system_fallback_count=0

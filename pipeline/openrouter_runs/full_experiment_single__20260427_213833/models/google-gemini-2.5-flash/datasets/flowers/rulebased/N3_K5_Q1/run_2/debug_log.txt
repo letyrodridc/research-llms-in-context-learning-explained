@@ -1,0 +1,54 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemini-2.5-flash | N=3 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[87] | Predicted=[87] | Correct=True
+<features>
+- petal shape: upward-curving, somewhat heart-shaped or teardrop-shaped
+- petal color: white
+- flower arrangement: multiple flowers visible, some in focus, some out of focus
+- stem: visible, dark, slender
+- leaves: dark green, visible at the base of the flowers
+</features>
+<kb>
+- IF [petal shape is upward-curving and somewhat heart-shaped or teardrop-shaped] THEN [87]
+- IF [flower has a prominent, elongated, scale-like pink or reddish-pink bract with small purple flowers emerging from it] THEN [92]
+- IF [flower is yellow with large, broad petals, some curving downwards and some upwards, and often has dark markings near the center] THEN [14]
+</kb>
+<rule_check>
+- The rule for class 87 fires because the Query Image displays flowers with petals that are upward-curving and have a shape that can be described as somewhat heart-shaped or teardrop-shaped, which is consistent with the examples for class 87.
+</rule_check>
+<response>87</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[92] | Predicted=[92] | Correct=True
+<features>
+- main flower structure: elongated, spiky, bright pink/red, with a distinct ribbed or layered texture
+- secondary flower parts: small, purple, petal-like structures emerging from the base of the main structure
+- foliage: long, thin, green leaves
+- background: dark, out-of-focus
+</features>
+<kb>
+- IF [flower color is predominantly yellow AND flower has large, broad petals with some dark markings near the center] THEN [14]
+- IF [flower petals are typically pink or light purple, often appearing somewhat closed or cup-shaped, and lack a prominent central spike] THEN [87]
+- IF [flower features a prominent, elongated, spiky, bright pink/red central structure AND small, purple, petal-like structures emerge from its base AND long, thin green leaves are present] THEN [92]
+</kb>
+<rule_check>
+- The rule for class 92 fires because the Query Image displays a prominent, elongated, spiky, bright pink/red central structure, with small, purple, petal-like structures emerging from its base, and long, thin green leaves, which are all consistent with the features defined for class 92.
+</rule_check>
+<response>92</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- flower color: yellow
+- petal shape: broad, somewhat drooping lower petals
+- central markings: dark lines/spots on the lower central petal
+- overall flower structure: open, with distinct upper and lower petals
+</features>
+<kb>
+- IF [flower color is predominantly pink/magenta AND petals are curved upwards, forming a cup-like or bell-like shape] THEN [87]
+- IF [flower has a prominent, elongated, spiky pink/red bract structure AND small purple flowers emerging from the sides of the bract] THEN [92]
+- IF [flower color is predominantly yellow AND petals are broad with some drooping, AND there are dark markings on the lower central petal] THEN [14]
+</kb>
+<rule_check>
+- The rule for class 14 fires because the query image shows a flower that is predominantly yellow, has broad petals with some drooping, and exhibits dark markings on the lower central petal.
+</rule_check>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=8.0094 | avg_trial_wall_seconds=2.6678 | avg_trial_api_seconds=2.0608 | system_fallback_count=0

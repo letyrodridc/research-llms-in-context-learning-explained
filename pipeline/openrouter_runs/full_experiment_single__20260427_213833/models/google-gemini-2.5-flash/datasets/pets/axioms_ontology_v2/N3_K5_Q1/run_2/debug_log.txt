@@ -1,0 +1,51 @@
+=== DEBUG LOG | dataset=pets | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=3 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[21] | Predicted=[21] | Correct=True
+<tbox>
+Class21 ⊑ hasVisualFeature(SmallSize) ⊓ hasVisualFeature(ShortHair) ⊓ (hasVisualFeature(BlackAndTanCoat) ⊔ hasVisualFeature(TanCoat)) ⊓ hasVisualFeature(PointedEars)
+Class26 ⊑ hasVisualFeature(MediumToLargeSize) ⊓ hasVisualFeature(LongHair) ⊓ hasVisualFeature(BlueEyes) ⊓ (hasVisualFeature(WhiteAndGreyCoat) ⊔ hasVisualFeature(CreamCoat) ⊔ hasVisualFeature(SealPointCoat))
+Class15 ⊑ hasVisualFeature(LargeSize) ⊓ hasVisualFeature(LongHair) ⊓ hasVisualFeature(WhiteCoat)
+</tbox>
+<abox>
+hasVisualFeature(Query, SmallSize)
+hasVisualFeature(Query, ShortHair)
+hasVisualFeature(Query, BlackAndTanCoat)
+hasVisualFeature(Query, PointedEars)
+</abox>
+<dl_explanation>
+Rule(s) fired: Class21 ⊑ hasVisualFeature(SmallSize) ⊓ hasVisualFeature(ShortHair) ⊓ (hasVisualFeature(BlackAndTanCoat) ⊔ hasVisualFeature(TanCoat)) ⊓ hasVisualFeature(PointedEars)
+</dl_explanation>
+<response>21</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[26] | Predicted=[26] | Correct=True
+<tbox>
+Ragdoll ⊑ hasVisualFeature(long_hair) ⊓ hasVisualFeature(blue_eyes) ⊓ hasVisualFeature(pointed_coloration)
+MiniaturePinscher ⊑ hasVisualFeature(short_hair) ⊓ hasVisualFeature(erect_ears) ⊓ hasVisualFeature(dark_coat_with_tan_markings)
+GreatPyrenees ⊑ hasVisualFeature(long_white_coat) ⊓ hasVisualFeature(large_size) ⊓ hasVisualFeature(double_dewclaws)
+</tbox>
+<abox>
+hasVisualFeature(Query, long_hair)
+hasVisualFeature(Query, blue_eyes)
+hasVisualFeature(Query, pointed_coloration)
+</abox>
+<dl_explanation>
+Ragdoll ⊑ hasVisualFeature(long_hair) ⊓ hasVisualFeature(blue_eyes) ⊓ hasVisualFeature(pointed_coloration)
+</dl_explanation>
+<response>26</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[15] | Predicted=[15] | Correct=True
+<tbox>
+Class_15 ⊑ hasVisualFeature(WhiteFur) ⊓ hasVisualFeature(LargeBuild) ⊓ hasVisualFeature(Dog)
+Class_21 ⊑ hasVisualFeature(SmallBuild) ⊓ hasVisualFeature(Dog)
+Class_26 ⊑ hasVisualFeature(Cat) ⊓ hasVisualFeature(LongHair)
+</tbox>
+<abox>
+hasVisualFeature(Query, WhiteFur)
+hasVisualFeature(Query, LargeBuild)
+hasVisualFeature(Query, Dog)
+</abox>
+<dl_explanation>
+Class_15 ⊑ hasVisualFeature(WhiteFur) ⊓ hasVisualFeature(LargeBuild) ⊓ hasVisualFeature(Dog)
+</dl_explanation>
+<response>15</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=8.7214 | avg_trial_wall_seconds=2.9042 | avg_trial_api_seconds=2.1526 | system_fallback_count=0

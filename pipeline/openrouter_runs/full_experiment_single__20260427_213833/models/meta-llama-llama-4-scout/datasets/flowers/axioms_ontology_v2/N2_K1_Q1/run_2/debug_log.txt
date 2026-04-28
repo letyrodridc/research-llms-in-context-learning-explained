@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=meta-llama/llama-4-scout | N=2 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- [81] ⊑ hasVisualFeature([petals-many])
+- [81] ⊑ hasVisualFeature([stamens-central])
+- hasVisualFeature([petals-few]) ⊑ [14]
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [petals-many])
+- hasVisualFeature(Query, [stamens-central])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [81] ⊑ hasVisualFeature([petals-many]), [81] ⊑ hasVisualFeature([stamens-central])
+</dl_explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- [81] ⊑ hasVisualFeature([big-petals-many])
+- [14] ⊑ hasVisualFeature([yellow-petals-up])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [yellow-petals-up])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [14] ⊑ hasVisualFeature([yellow-petals-up])
+</dl_explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=7.2478 | avg_trial_wall_seconds=3.6093 | avg_trial_api_seconds=3.2326 | system_fallback_count=0

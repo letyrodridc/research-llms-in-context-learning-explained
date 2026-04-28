@@ -1,0 +1,80 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=4 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[7] | Predicted=[4] | Correct=False
+<features>
+- subject: four-legged animal
+- subject color: brown
+- subject posture: running/walking
+- background: grassy field
+</features>
+<kb>
+- IF [subject = white horse] THEN [7]
+- IF [subject = boat] THEN [8]
+- IF [subject = bird in flight] THEN [0]
+- IF [subject = deer/brown four-legged animal] THEN [4]
+</kb>
+
+<rule_check>
+- The rule for class 4 fires because the subject is a brown four-legged animal in a grassy field, which matches the visual pattern of the deer in the example for class 4.
+</rule_check>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- subject: boat
+- environment: water/sky
+</features>
+<kb>
+- IF [subject = horse] THEN [7]
+- IF [subject = boat] THEN [8]
+- IF [subject = bird] THEN [0]
+- IF [subject = deer] THEN [4]
+</kb>
+
+<rule_check>
+- The rule "IF [subject = boat] THEN [8]" fires because the Query Image depicts a boat on the water.
+</rule_check>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[0] | Predicted=[8] | Correct=False
+<features>
+- subject: vehicle/boat
+- subject color: white and red
+- background: water/dock
+</features>
+<kb>
+- IF [subject is a four-legged animal (horse)] THEN [7]
+- IF [subject is a boat/watercraft] THEN [8]
+- IF [subject is a bird in flight] THEN [0]
+- IF [subject is a four-legged animal (deer)] THEN [4]
+</kb>
+
+<rule_check>
+- The rule "IF [subject is a boat/watercraft] THEN [8]" fires because the image depicts a boat.
+</rule_check>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- subject: four-legged animal
+- subject color: brown/tan
+- subject pattern: spots/mottled texture
+- background: blurry, light-colored ground/vegetation
+</features>
+
+<kb>
+- IF [subject = white horse] THEN [7]
+- IF [subject = boat] THEN [8]
+- IF [subject = bird in flight] THEN [0]
+- IF [subject = tan/brown four-legged animal] THEN [4]
+</kb>
+
+<rule_check>
+- The rule "IF [subject = tan/brown four-legged animal] THEN [4]" fires because the query image depicts a tan/brown four-legged animal with a mottled pattern, which matches the visual characteristics of the animal in class 4.
+</rule_check>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=4 | errors=0 | accuracy=0.5000 | duration_seconds=12.5489 | avg_trial_wall_seconds=3.1355 | avg_trial_api_seconds=3.0827 | system_fallback_count=0

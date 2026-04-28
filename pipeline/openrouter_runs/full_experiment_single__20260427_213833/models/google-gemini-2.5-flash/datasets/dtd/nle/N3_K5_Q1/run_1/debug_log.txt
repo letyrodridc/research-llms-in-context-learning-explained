@@ -1,0 +1,14 @@
+=== DEBUG LOG | dataset=dtd | prompt=nle | model=google/gemini-2.5-flash | N=3 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[32] | Predicted=[32] | Correct=True
+<explanation>The query image displays a damaged road surface with a visible hole containing water and loose debris. This visual characteristic of a damaged road with a distinct hole is consistently present in all examples labeled as '32'. The other classes, '8' and '4', show patterns of fabric/texture or bumpy/spiky surfaces, respectively, which are not present in the query image.</explanation>
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<explanation>The query image exhibits a fine, repeating pattern of intersecting lines, creating a woven or cross-hatched texture. This visual characteristic is consistently present in the examples labeled '8', which include images of fabric, a wallet, and cross-hatch drawings. In contrast, class '32' examples show irregular, rough textures of damaged roads, and class '4' examples display bumpy, organic textures of fruits or snow. Therefore, the query image aligns best with the visual features of class '8'.</explanation>
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[4] | Predicted=[4] | Correct=True
+<explanation>The query image displays a surface with numerous small, raised, rounded protrusions arranged in a grid-like pattern. This visual characteristic of a textured surface with many small, distinct bumps or protuberances is consistently observed in the examples labeled '4'. The examples for '8' show woven or cross-hatched patterns, and '32' shows large, irregular depressions or cracks in a road surface, neither of which matches the query image.</explanation>
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=6.4728 | avg_trial_wall_seconds=2.1551 | avg_trial_api_seconds=1.5907 | system_fallback_count=0

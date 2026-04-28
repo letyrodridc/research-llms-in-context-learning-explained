@@ -1,0 +1,47 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=3 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<tbox>
+Class_3 ⊑ hasVisualFeature(animal_face) ⊓ hasVisualFeature(black_and_white_fur)
+Class_9 ⊑ hasVisualFeature(truck_shape) ⊓ hasVisualFeature(white_color)
+Class_1 ⊑ hasVisualFeature(car_shape) ⊓ hasVisualFeature(light_color)
+</tbox>
+<abox>
+hasVisualFeature(Query, animal_face)
+</abox>
+<dl_explanation>
+</dl_explanation>
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[9] | Predicted=[9] | Correct=True
+<tbox>
+Class_3 ⊑ hasVisualFeature(animal_like_shape) ⊓ hasVisualFeature(black_and_white_pattern)
+Class_9 ⊑ hasVisualFeature(large_vehicle_shape) ⊓ hasVisualFeature(truck_like_cabin) ⊓ hasVisualFeature(cargo_area_or_tank)
+Class_1 ⊑ hasVisualFeature(car_like_shape) ⊓ hasVisualFeature(sleek_design) ⊓ hasVisualFeature(visible_headlights)
+</tbox>
+<abox>
+hasVisualFeature(Query, large_vehicle_shape)
+hasVisualFeature(Query, truck_like_cabin)
+hasVisualFeature(Query, cargo_area_or_tank)
+</abox>
+<dl_explanation>
+Class_9 ⊑ hasVisualFeature(large_vehicle_shape) ⊓ hasVisualFeature(truck_like_cabin) ⊓ hasVisualFeature(cargo_area_or_tank)
+</dl_explanation>
+<response>9</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[1] | Predicted=[1] | Correct=True
+<tbox>
+1 ⊑ hasVisualFeature(car_shape) ⊓ hasVisualFeature(headlights) ⊓ hasVisualFeature(grille)
+9 ⊑ hasVisualFeature(truck_shape) ⊓ hasVisualFeature(large_cabin) ⊓ hasVisualFeature(cargo_area)
+3 ⊑ hasVisualFeature(animal_shape) ⊓ hasVisualFeature(fur_texture) ⊓ hasVisualFeature(distinct_face)
+</tbox>
+<abox>
+hasVisualFeature(Query, car_shape)
+hasVisualFeature(Query, headlights)
+hasVisualFeature(Query, grille)
+</abox>
+<dl_explanation>
+Rule(s) fired: 1 ⊑ hasVisualFeature(car_shape) ⊓ hasVisualFeature(headlights) ⊓ hasVisualFeature(grille)
+</dl_explanation>
+<response>1</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=4.0394 | avg_trial_wall_seconds=1.3438 | avg_trial_api_seconds=1.2986 | system_fallback_count=0

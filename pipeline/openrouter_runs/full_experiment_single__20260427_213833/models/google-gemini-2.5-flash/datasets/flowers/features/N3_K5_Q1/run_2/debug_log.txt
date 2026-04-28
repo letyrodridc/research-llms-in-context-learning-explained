@@ -1,0 +1,27 @@
+=== DEBUG LOG | dataset=flowers | prompt=features | model=google/gemini-2.5-flash | N=3 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[87] | Predicted=[87] | Correct=True
+<features>
+- petals curved upwards and backwards
+- petals fused at the base forming a cup-like structure
+- distinct dark center at the base of the petals
+</features>
+<response>87</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[92] | Predicted=[92] | Correct=True
+<features>
+- prominent pink, spiky, leaf-like structure
+- small purple flowers emerging from the base of the pink structure
+- long, thin green leaves
+</features>
+<response>92</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- large yellow petals
+- petals with visible veins
+- some petals curving downwards
+- green stem and leaves
+</features>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=4.4585 | avg_trial_wall_seconds=1.4833 | avg_trial_api_seconds=0.9335 | system_fallback_count=0

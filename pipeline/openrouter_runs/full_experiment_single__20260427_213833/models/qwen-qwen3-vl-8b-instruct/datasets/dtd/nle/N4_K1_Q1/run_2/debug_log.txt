@@ -1,0 +1,30 @@
+=== DEBUG LOG | dataset=dtd | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=4 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[18] | Predicted=[18] | Correct=True
+<explanation>
+The Query Image displays a dark, uniform surface with a repeating hexagonal pattern, similar to the texture seen in the example labeled '18'. The hexagonal structure and the metallic sheen are consistent with the visual features of that class.
+</explanation>
+
+<response>18</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[22] | Predicted=[22] | Correct=True
+<explanation>
+The image displays a pattern of evenly spaced horizontal lines with a single vertical line on the left, which is characteristic of lined paper. This matches the visual pattern of the pink striped example (label 22), which also features parallel lines.
+</explanation>
+
+<response>22</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[23] | Predicted=[23] | Correct=True
+<explanation>
+The Query Image displays a surface with a complex, web-like pattern of intersecting lines and veins, resembling natural stone or rock formations. This is visually similar to the example labeled '23', which shows a dark, veined marble texture with intricate, branching patterns. Both share the characteristic of irregular, organic, vein-like structures over a mottled background.
+</explanation>
+
+<response>23</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[27] | Predicted=[27] | Correct=True
+<explanation>
+The Query Image displays a pattern of repeating geometric shapes formed by intersecting lines, creating a lattice or grid-like structure. This is visually consistent with the pattern seen in the example labeled '27', which shows a perforated metal sheet with a regular array of holes forming a grid. Both share the characteristic of a structured, repeating geometric pattern formed by lines or openings.
+</explanation>
+
+<response>27</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=8.6528 | avg_trial_wall_seconds=2.1612 | avg_trial_api_seconds=1.7229 | system_fallback_count=0

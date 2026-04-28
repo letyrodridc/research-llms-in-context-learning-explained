@@ -1,0 +1,77 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemini-2.5-flash | N=4 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[86] | Predicted=[86] | Correct=True
+<features>
+- petal color: predominantly white with some pink/purple at the base
+- petal shape: broad, somewhat rounded, overlapping petals
+- flower center: visible stamens and pistil, often with a reddish or yellowish hue
+- overall flower shape: cup-shaped or star-shaped, open
+- number of petals: multiple, typically 6 or more
+</features>
+<kb>
+- IF [petals are broad and overlapping, forming a cup or star shape, and the flower center has visible stamens/pistil] THEN [86]
+- IF [petals are distinct, often with spurs, and the flower has a complex, multi-layered appearance] THEN [83]
+- IF [petals are broad and flat, forming a wide, open bloom, with a prominent central stamen column] THEN [82]
+- IF [flower has a large, dense, central dome-like structure surrounded by pointed, often colorful bracts] THEN [12]
+</kb>
+<rule_check>
+- The rule for class 86 fires because the Query Image displays flowers with broad, overlapping petals forming a cup-like shape, and a visible center with stamens, which are consistent with the observable features of class 86 examples.
+</rule_check>
+<response>86</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[83] | Predicted=[83] | Correct=True
+<features>
+- flower shape: complex, with multiple layers of petals and prominent spurs extending backward
+- petal color: two distinct colors, purple/blue on the outer layer and white/light blue on the inner layer
+- center: yellow stamens
+- overall structure: appears to be composed of two sets of petals, one inverted over the other
+</features>
+<kb>
+- IF [flower shape is large, open, and bell-shaped with 5-8 broad petals, and a prominent central stamen column] THEN [82]
+- IF [flower shape is a large, dense, cone-like structure with numerous pointed bracts or petals radiating outwards, and a fuzzy or spiky center] THEN [12]
+- IF [flower shape is large, with 5-8 broad, often overlapping petals, and a visible central reproductive structure, but without prominent spurs or a complex multi-layered structure] THEN [86]
+- IF [flower shape is complex, with distinct outer and inner petals, often with prominent spurs extending backward, and a visible central cluster of stamens] THEN [83]
+</kb>
+<rule_check>
+- The rule for class 83 fires for the Query Image because the flower has a complex shape with distinct outer (purple/blue) and inner (white/light blue) petals, and prominent spurs extending backward, which are all characteristic features of class 83.
+</rule_check>
+<response>83</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[82] | Predicted=[82] | Correct=True
+<features>
+- petal color: pink
+- petal shape: broad, rounded, slightly overlapping
+- number of petals: 5 visible
+- center of flower: prominent stamen and pistil structure, yellow pollen on stamen, red/dark pink base
+- leaves: dark green, visible in the background
+</features>
+<kb>
+- IF [petals are broad and rounded, typically 5 visible, with a prominent central stamen/pistil structure] THEN [82]
+- IF [petals are elongated and often pointed, forming a cup-like or star-like shape, with a central stamen/pistil structure that may be less prominent or have a different form] THEN [86]
+- IF [petals are distinctively shaped with spurs extending backward, often bi-colored, and a prominent yellow center] THEN [83]
+- IF [flower has a large, dense, brush-like center surrounded by multiple layers of pointed, often stiff, bract-like petals] THEN [12]
+</kb>
+<rule_check>
+- The rule for class 82 fires because the Query Image shows a flower with broad, rounded, slightly overlapping petals, and a prominent central stamen and pistil structure, which are all consistent with the observable features of class 82 examples.
+</rule_check>
+<response>82</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[12] | Predicted=[12] | Correct=True
+<features>
+- flower shape: large, cup-like structure with many pointed petals/bracts arranged in layers
+- central part: prominent, dome-shaped, covered with numerous fine, hair-like or filament-like structures
+- color of petals/bracts: predominantly pink, with some lighter shades towards the base and darker tips
+- color of central part: whitish to light green/yellowish
+- foliage: dark green, oval-shaped leaves visible around the base of the flower
+</features>
+<kb>
+- IF [flower has large, layered, pointed petals/bracts and a prominent, dome-shaped central part with fine structures] THEN [12]
+- IF [flower has distinct inner and outer petals, often bi-colored, with a prominent yellow stamen cluster in the center, and a spurred appearance] THEN [83]
+- IF [flower has large, broad, often overlapping petals, a prominent central pistil and stamens extending outwards, and a generally open, flat or slightly cupped shape] THEN [82]
+- IF [flower has large, often elongated, cup-shaped petals that are typically pink or white, with a visible central reproductive structure] THEN [86]
+</kb>
+<rule_check>
+The rule for class 12 fires for the Query Image because the flower exhibits a large, cup-like structure with many pointed petals/bracts arranged in layers, and a prominent, dome-shaped central part covered with numerous fine, hair-like or filament-like structures. These features are consistent with the examples provided for class 12.
+</rule_check>
+<response>12</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=15.0150 | avg_trial_wall_seconds=3.7491 | avg_trial_api_seconds=3.1901 | system_fallback_count=0

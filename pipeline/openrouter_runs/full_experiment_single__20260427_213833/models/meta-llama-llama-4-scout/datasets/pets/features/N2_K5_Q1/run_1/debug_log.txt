@@ -1,0 +1,21 @@
+=== DEBUG LOG | dataset=pets | prompt=features | model=meta-llama/llama-4-scout | N=2 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[36] | Predicted=[36] | Correct=True
+<features>
+- small dog
+- long fur
+- brown and black coat
+</features>
+
+<response>36</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- blue eyes
+- brown and black face
+- white fur
+- pointy ears
+</features>
+
+<response>6</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=6.3335 | avg_trial_wall_seconds=3.1648 | avg_trial_api_seconds=1.9116 | system_fallback_count=0

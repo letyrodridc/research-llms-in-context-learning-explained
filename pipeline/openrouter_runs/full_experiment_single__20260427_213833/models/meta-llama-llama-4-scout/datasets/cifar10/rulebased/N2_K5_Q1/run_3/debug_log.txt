@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=meta-llama/llama-4-scout | N=2 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- color: gray
+- color: white
+- object: boat
+</features>
+<kb>
+- IF [object = boat AND color = red] THEN [8]
+- IF [object = horse] THEN [7]
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF [object = boat AND color = gray OR color = white] THEN [8], because the image shows a boat with gray and white colors.
+</rule_check>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- color: brown and white
+- color: brown and black
+- object: horse
+</features>
+<kb>
+- IF [object = horse AND color = brown and black] THEN [7]
+- IF [object = horse AND color = brown and white] THEN [7]
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF [object = horse AND color = brown and white] THEN [7], because the Query Image shows a horse with a brown and white color pattern.
+</rule_check>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.9006 | avg_trial_wall_seconds=2.4454 | avg_trial_api_seconds=2.2484 | system_fallback_count=0

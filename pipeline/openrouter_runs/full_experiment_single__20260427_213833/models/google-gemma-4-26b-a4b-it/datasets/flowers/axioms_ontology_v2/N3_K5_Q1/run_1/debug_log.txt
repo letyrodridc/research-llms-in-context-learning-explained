@@ -1,0 +1,56 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=3 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[87] | Predicted=[87] | Correct=True
+<tbox>
+- [87] ≡ hasVisualFeature([light_pink_petals]) ⊓ hasVisualFeature([dark_magenta_center])
+- [92] ≡ hasVisualFeature([spike_like_inflorescence]) ⊓ hasVisualFeature([long_narrow_leaves])
+- [14] ≡ hasVisualFeature([yellow_petals]) ⊓ hasVisualFeature([broad_leaves])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [light_pink_petals])
+- hasVisualFeature(Query, [dark_magenta_center])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [87] ≡ hasVisualFeature([light_pink_petals]) ⊓ hasVisualFeature([dark_magenta_center])
+</dl_explanation>
+
+<response>87</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[92] | Predicted=[92] | Correct=True
+<tbox>
+- [87] ⊑ hasVisualFeature([pink_or_purple_petals]) ⊓ hasVisualFeature([broad_petals])
+- [92] ≡ hasVisualFeature([cone_shaped_inflorescence]) ⊓ hasVisualFeature([long_thin_leaves])
+- [14] ≡ hasVisualFeature([yellow_petals]) ⊓ hasVisualFeature([iris_shape])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [cone_shaped_inflorescence])
+- hasVisualFeature(Query, [long_thin_leaves])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [92] ≡ hasVisualFeature([cone_shaped_inflorescence]) ⊓ hasVisualFeature([long_thin_leaves])
+</dl_explanation>
+
+<response>92</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- [87] ⊑ hasVisualFeature([pink_or_purple_petals]) ⊓ hasVisualFeature([reflexed_petals])
+- [92] ⊑ hasVisualFeature([spiky_inflorescence]) ⊓ hasVisualFeature([long_narrow_leaves])
+- [14] ≡ hasVisualFeature([yellow_petals]) ⊓ hasVisualFeature([broad_petals_with_veins])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [yellow_petals])
+- hasVisualFeature(Query, [broad_petals_with_veins])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [14] ≡ hasVisualFeature([yellow_petals]) ⊓ hasVisualFeature([broad_petals_with_veins])
+</dl_explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=102.3171 | avg_trial_wall_seconds=34.1032 | avg_trial_api_seconds=33.6756 | system_fallback_count=0

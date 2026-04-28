@@ -1,0 +1,65 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=4 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- observable feature: large antlers
+- observable feature: brown fur
+- observable feature: standing in grass
+</features>
+<kb>
+- IF [observable visual features = large antlers AND observable visual features = brown fur AND observable visual features = standing in grass] THEN [4]
+- IF [observable visual features = small body AND observable visual features = perched on branch] THEN [2]
+- IF [observable visual features = warty skin AND observable visual features = sitting on ground] THEN [6]
+- IF [observable visual features = horse shape AND observable visual features = four legs] THEN [7]
+</kb>
+<rule_check>
+- Rule 1 fires because the image shows large antlers, brown fur, and the animal is standing in grass, which matches the features for class 4.
+</rule_check>
+<response>4</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[2] | Predicted=[2] | Correct=True
+<features>
+- observable feature: bird
+- observable feature: perched on a branch
+- observable feature: brown feathers
+- observable feature: visible head and beak
+</features>
+<kb>
+- IF [observable visual features = bird AND perched on a branch AND visible head and beak] THEN [2]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows a bird perched on a branch with a visible head and beak, matching the features in the rule for class 2.
+</rule_check>
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- observable feature: animal has a rounded body
+- observable feature: animal has large eyes
+- observable feature: animal has smooth, moist-looking skin
+</features>
+<kb>
+- IF [animal has a rounded body AND large eyes AND smooth, moist-looking skin] THEN [6]
+</kb>
+<rule_check>
+- The rule for class 6 is satisfied because the Query Image shows an animal with a rounded body, large eyes, and smooth, moist-looking skin, which matches the features of a frog.
+</rule_check>
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- observable feature: presence of a rider on the animal
+- observable feature: animal is white in color
+- observable feature: animal has a long body and legs
+</features>
+<kb>
+- IF [animal is white AND rider is present] THEN [7]
+- IF [animal is small and has wings or feather-like texture] THEN [2]
+- IF [animal is stout and has warty skin] THEN [6]
+- IF [animal has antlers or deer-like head shape] THEN [4]
+</kb>
+<rule_check>
+- Rule 1 fires because the animal is white and a rider is present, matching the condition for class 7.
+</rule_check>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=13.3988 | avg_trial_wall_seconds=3.3475 | avg_trial_api_seconds=2.9596 | system_fallback_count=0

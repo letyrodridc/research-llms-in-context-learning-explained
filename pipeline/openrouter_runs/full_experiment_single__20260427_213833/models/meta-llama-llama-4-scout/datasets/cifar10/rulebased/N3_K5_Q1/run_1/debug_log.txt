@@ -1,0 +1,53 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=meta-llama/llama-4-scout | N=3 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- observable feature: camouflage pattern
+- observable feature: wings
+- observable feature: propeller
+</features>
+<kb>
+- IF [camouflage pattern = present AND wings = present AND propeller = present] THEN [0]
+- IF [fur = present AND body = present] THEN [6]
+- IF [body = present AND legs = present AND no wings] THEN [7]
+</kb>
+
+<rule_check>
+- Rule 0 fires for the Query Image because it has a camouflage pattern, wings, and a propeller, which are features observed in the provided examples for class 0.
+</rule_check>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- color: brown
+- color: white
+- color: black
+</features>
+<kb>
+- IF [color = brown AND color = white AND color = black] THEN [6]
+- IF [color = white] THEN [7]
+- IF [color = black] THEN [0]
+</kb>
+
+<rule_check>
+- Rule [6] fires for the Query Image because it has brown, white, and black colors.
+</rule_check>
+
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- rider: present
+- horse: present
+</features>
+<kb>
+- IF rider: present AND horse: present THEN 7
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF rider: present AND horse: present THEN 7, because the image shows a rider on a horse.
+</rule_check>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=8.1149 | avg_trial_wall_seconds=2.7008 | avg_trial_api_seconds=2.3706 | system_fallback_count=0

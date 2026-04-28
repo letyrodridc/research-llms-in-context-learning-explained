@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=2 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[75] | Predicted=[75] | Correct=True
+<features>
+- observable feature: flower has a trumpet-shaped bloom
+- observable feature: flower has a distinct color gradient from center to edge
+- observable feature: flower is surrounded by green leaves
+</features>
+<kb>
+- IF [flower has a trumpet-shaped bloom AND flower has a distinct color gradient from center to edge AND flower is surrounded by green leaves] THEN [75]
+- IF [flower has multiple petals arranged in a flat, spreading pattern AND flower has a central labellum with contrasting color] THEN [35]
+</kb>
+
+<rule_check>
+- Rule 1 fires for the Query Image because the flower clearly exhibits a trumpet-shaped bloom, a distinct color gradient from center to edge (white center fading to pink), and is surrounded by green leaves, which are all features consistent with class 75.
+</rule_check>
+
+<response>75</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[35] | Predicted=[35] | Correct=True
+<features>
+- observable feature: flower has multiple petals with ruffled edges
+- observable feature: center of flower has a distinct purple and yellow pattern
+- observable feature: background contains green leaves and a blurred indoor setting
+</features>
+<kb>
+- IF [flower has multiple petals with ruffled edges AND center has purple and yellow pattern] THEN [35]
+- IF [flower has a trumpet-shaped bloom with smooth edges AND single color gradient] THEN [75]
+</kb>
+<rule_check>
+- Rule 1 fires because the flower in the Query Image has multiple petals with ruffled edges and a center with a distinct purple and yellow pattern, matching the features of class 35.
+</rule_check>
+<response>35</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=8.4255 | avg_trial_wall_seconds=4.2073 | avg_trial_api_seconds=3.0852 | system_fallback_count=0

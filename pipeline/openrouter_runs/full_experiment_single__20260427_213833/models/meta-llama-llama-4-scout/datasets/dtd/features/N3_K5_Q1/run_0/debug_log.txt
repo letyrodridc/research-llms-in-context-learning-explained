@@ -1,0 +1,27 @@
+=== DEBUG LOG | dataset=dtd | prompt=features | model=meta-llama/llama-4-scout | N=3 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- rough road surface
+- multiple potholes
+- white line on road
+</features>
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- visible weave
+- visible texture
+</features>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- rough surface
+- bumpy texture
+- rounded protrusions
+</features>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=8.4856 | avg_trial_wall_seconds=2.8265 | avg_trial_api_seconds=1.2011 | system_fallback_count=0

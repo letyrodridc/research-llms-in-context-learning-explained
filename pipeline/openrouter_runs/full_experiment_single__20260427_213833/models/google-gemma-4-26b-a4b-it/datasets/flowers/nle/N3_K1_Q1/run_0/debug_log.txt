@@ -1,0 +1,23 @@
+=== DEBUG LOG | dataset=flowers | prompt=nle | model=google/gemma-4-26b-a4b-it | N=3 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[71] | Predicted=[71] | Correct=True
+<explanation>
+The query image shows bright pink/magenta flowers with long, thin stamens protruding from the center, surrounded by dark green leaves. This visual pattern matches the first example (label 71), which also features pink flowers with prominent stamens and similar foliage.
+</explanation>
+
+<response>71</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[68] | Predicted=[68] | Correct=True
+<explanation>
+The query image shows white flowers with a prominent yellow center, which is visually identical to the features shown in the example for class 68.
+</explanation>
+
+<response>68</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[33] | Predicted=[33] | Correct=True
+<explanation>
+The query image features a bright pink flower with a yellow center and fine, needle-like green foliage in the background. This visual pattern matches the third example, which also shows a pink flower with a yellow center and similar fine foliage, corresponding to class 33.
+</explanation>
+
+<response>33</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=37.2848 | avg_trial_wall_seconds=12.4208 | avg_trial_api_seconds=12.2080 | system_fallback_count=0

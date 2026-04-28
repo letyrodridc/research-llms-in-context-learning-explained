@@ -1,0 +1,23 @@
+=== DEBUG LOG | dataset=pets | prompt=nle | model=meta-llama/llama-4-scout | N=3 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[21] | Predicted=[21] | Correct=True
+<explanation>
+The image shows a small dog with a black and brown coat, standing on a path. The dog has erect ears and a short, smooth coat with a distinctive black and tan pattern. This appearance is consistent with the labeled examples of class 21, which also feature small dogs with similar coat patterns and erect ears.
+</explanation>
+
+<response>21</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[26] | Predicted=[26] | Correct=True
+<explanation>
+The image shows a cat with a fluffy coat, blue eyes, and a pink nose. The cat's appearance, including its fur color and eye color, matches the labeled examples for class 26. 
+</explanation>
+
+<response>26</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[15] | Predicted=[15] | Correct=True
+<explanation>
+The image shows a dog with a white coat and a black nose, lying on a carpet. The dog's appearance and posture are similar to those of other dogs labeled as 15 in the provided examples, which are also large, white dogs. 
+</explanation>
+
+<response>15</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=9.8022 | avg_trial_wall_seconds=3.2648 | avg_trial_api_seconds=1.7330 | system_fallback_count=0

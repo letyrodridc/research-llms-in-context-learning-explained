@@ -1,0 +1,52 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=meta-llama/llama-4-scout | N=3 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<features>
+- color: brown and gray
+- object type: animal
+- environment: snowy
+</features>
+<kb>
+- IF object type = animal AND color = brown AND environment = snowy THEN 3
+- IF object type = vehicle AND color = red THEN 9
+- IF object type = vehicle AND color = white THEN 1
+</kb>
+<rule_check>
+- The rule that fires for the Query Image is: IF object type = animal AND color = brown AND environment = snowy THEN 3, because the Query Image shows a brown animal in a snowy environment.
+</rule_check>
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[9] | Predicted=[9] | Correct=True
+<features>
+- color: yellow and gray
+- vehicle type: truck
+- cab color: yellow
+</features>
+<kb>
+- IF color: red and vehicle type: truck THEN 9
+- IF color: white and vehicle type: car THEN 1
+- IF color: brown and vehicle type: animal THEN 3
+</kb>
+<rule_check>
+- The rule for class 9 is partially satisfied because the vehicle type is a truck, but the color is not red; it is yellow and gray.
+- The rule for class 1 is not satisfied because the vehicle type is a truck, not a car.
+- The rule for class 3 is not satisfied because the vehicle is not an animal.
+</rule_check>
+<response>9</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[1] | Predicted=[1] | Correct=True
+<features>
+- number of doors: 4
+- color: gray
+- type: sedan
+</features>
+<kb>
+- IF number of doors = 4 AND type = sedan THEN 1
+- IF type = truck THEN 9
+- IF number of doors = 2 AND color = brown THEN 3
+</kb>
+<rule_check>
+- The rule that fires for the Query Image is: IF number of doors = 4 AND type = sedan THEN 1. This is because the Query Image shows a vehicle with 4 doors and appears to be a sedan.
+</rule_check>
+<response>1</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=4.8532 | avg_trial_wall_seconds=1.6151 | avg_trial_api_seconds=1.5037 | system_fallback_count=0

@@ -1,0 +1,58 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=google/gemini-2.5-flash | N=3 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[35] | Predicted=[35] | Correct=True
+<features>
+- animal type: dog
+- fur color: light brown/tan
+- fur texture: shaggy/fluffy
+- eyes: visible, dark
+- nose: visible, dark
+- mouth: open, tongue visible
+- posture: lying down
+</features>
+<kb>
+- IF [animal type = dog AND fur color = light brown/tan AND fur texture = shaggy/fluffy] THEN [35]
+- IF [animal type = cat AND fur color = grey AND eyes = orange] THEN [9]
+- IF [animal type = cat AND fur color = grey AND posture = sitting upright] THEN [27]
+</kb>
+<rule_check>
+- The rule for class 35 fires because the Query Image shows an animal that is clearly a dog, with light brown/tan, shaggy/fluffy fur, which matches the observable features of the example for class 35.
+</rule_check>
+<response>35</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[9] | Predicted=[9] | Correct=True
+<features>
+- animal type: cat
+- fur color: light grey/tan
+- eye color: amber/yellowish-brown
+- face shape: round
+- ears: pointed, medium size
+</features>
+<kb>
+- IF [animal type = dog AND fur color = light brown/tan AND eyes are closed or partially closed] THEN [35]
+- IF [animal type = cat AND fur color = light grey/tan AND eye color = amber/yellowish-brown AND face shape = round] THEN [9]
+- IF [animal type = cat AND fur color = dark grey AND eye color = green AND body is slender] THEN [27]
+</kb>
+<rule_check>
+- The rule for class 9 fires because the Query Image shows a cat with light grey/tan fur, amber/yellowish-brown eyes, and a round face, which matches the observable features for this class.
+</rule_check>
+<response>9</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[27] | Predicted=[27] | Correct=True
+<features>
+- animal type: cat
+- fur color: grey
+- tail: long and thin
+- body posture: crouching/walking on a wall
+- eyes: light colored
+</features>
+<kb>
+- IF [animal type = dog AND fur color = light brown AND body posture = lying down] THEN [35]
+- IF [animal type = cat AND fur color = light grey AND body posture = sitting with front paws forward AND eyes = orange] THEN [9]
+- IF [animal type = cat AND fur color = grey AND body posture = sitting upright AND tail = long and thin] THEN [27]
+</kb>
+<rule_check>
+- The rule for class 27 fires because the Query Image shows a cat with grey fur, a long and thin tail, and a body posture that is consistent with the general characteristics of a cat, even if not strictly "sitting upright" as in the example, the overall appearance aligns more with 27 than 9 or 35. The cat in the query image is also a Russian Blue, which is the breed associated with class 27.
+</rule_check>
+<response>27</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=5.4957 | avg_trial_wall_seconds=1.8301 | avg_trial_api_seconds=1.6164 | system_fallback_count=0

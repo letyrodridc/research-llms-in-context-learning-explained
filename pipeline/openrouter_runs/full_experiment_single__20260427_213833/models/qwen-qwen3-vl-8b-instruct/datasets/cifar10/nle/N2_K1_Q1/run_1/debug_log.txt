@@ -1,0 +1,16 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=2 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<explanation>
+The Query Image shows a black and white cat with distinct green eyes, which is visually consistent with the example labeled '3' (a cat). The example labeled '0' (an airplane) is clearly not applicable as the subject is a feline, not an aircraft.
+</explanation>
+
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[0] | Predicted=[0] | Correct=True
+<explanation>
+The Query Image shows an aircraft in flight, viewed from below, with its landing gear extended. This is visually consistent with the second example, which also depicts an aircraft (a red one) on the ground, suggesting both are grounded or in a low-altitude state. The first example (labeled 3) shows a blurry figure on a red surface, which does not match the aircraft theme. Therefore, the Query Image aligns with class 0.
+</explanation>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.5747 | avg_trial_wall_seconds=1.7720 | avg_trial_api_seconds=1.7080 | system_fallback_count=0

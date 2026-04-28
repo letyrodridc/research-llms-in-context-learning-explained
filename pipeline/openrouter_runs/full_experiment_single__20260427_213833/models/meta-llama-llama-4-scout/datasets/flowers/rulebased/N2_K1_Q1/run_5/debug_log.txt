@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=meta-llama/llama-4-scout | N=2 K=1 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- number of petals: 6
+- color of petals: purple
+- shape of petals: pointed
+</features>
+<kb>
+- IF number of petals = 6 AND color of petals = purple THEN 81
+- IF number of petals = 3 AND color of petals = yellow THEN 14
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF number of petals = 6 AND color of petals = purple THEN 81, because the Query Image has 6 petals and purple petals.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- color: yellow
+- petals: 3
+- shape: curved
+</features>
+<kb>
+- IF color: purple AND petals: 6 THEN 81
+- IF color: yellow AND petals: 3 AND shape: curved THEN 14
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF color: yellow AND petals: 3 AND shape: curved THEN 14, because the Query Image has a yellow color, 3 petals, and curved shape.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=8.5984 | avg_trial_wall_seconds=4.2942 | avg_trial_api_seconds=3.9468 | system_fallback_count=0

@@ -1,0 +1,15 @@
+=== DEBUG LOG | dataset=flowers | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=2 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[75] | Predicted=[75] | Correct=True
+<explanation>
+The Query Image shows flowers with a distinct trumpet-like shape, vibrant purple and blue hues with lighter centers, and are set against green foliage. These visual features match the examples classified as '75', which consistently display similar flower morphology and coloration.
+</explanation>
+
+<response>75</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[35] | Predicted=[35] | Correct=True
+<explanation>
+The Query Image displays a flower with light purple petals and a distinctively shaped central lip with darker purple markings, which matches the visual characteristics of the orchid examples labeled as class 35. The flower in the Query Image does not exhibit the trumpet-shaped bloom with radial symmetry seen in class 75.
+</explanation>
+<response>35</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=9.0869 | avg_trial_wall_seconds=4.5388 | avg_trial_api_seconds=3.4769 | system_fallback_count=0

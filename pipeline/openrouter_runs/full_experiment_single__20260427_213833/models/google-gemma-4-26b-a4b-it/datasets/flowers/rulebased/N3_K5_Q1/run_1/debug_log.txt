@@ -1,0 +1,58 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=3 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[87] | Predicted=[87] | Correct=True
+<features>
+- flower color: light pink/lavender petals
+- flower center: dark magenta/purple base/center
+- petal shape: large, swept-back petals
+</features>
+<kb>
+- IF [flower color = light pink/lavender AND flower center = dark magenta/purple] THEN [87]
+- IF [flower shape = spike-like/conical with long thin leaves] THEN [92]
+- IF [flower color = yellow AND petal shape = broad/drooping] THEN [14]
+</kb>
+
+<rule_check>
+- The rule for class 87 fires because the Query Image shows light pink petals with a distinct dark magenta/purple center, matching the pattern seen in the examples for class 87.
+</rule_check>
+
+<response>87</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[92] | Predicted=[92] | Correct=True
+<features>
+- flower structure: upright, cone-shaped inflorescence with layered bracts
+- flower color: pink/light purple bracts
+- small flowers: small purple flowers emerging from the bracts
+- leaves: long, thin, green strap-like leaves
+</features>
+<kb>
+- IF [flower structure = large petals with dark centers] THEN [87]
+- IF [flower structure = upright cone-shaped inflorescence with layered bracts AND small flowers emerge from bracts] THEN [92]
+- IF [flower structure = large yellow petals with dark veins] THEN [14]
+</kb>
+
+<rule_check>
+- The rule for class 92 fires because the Query Image shows an upright, cone-shaped inflorescence with pink/light purple layered bracts and small purple flowers emerging from the sides, which matches the pattern seen in the support images for class 92.
+</rule_check>
+
+<response>92</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- flower color: yellow
+- petal pattern: dark veins/lines on the lower petals
+- petal shape: large, broad, drooping petals
+- leaf shape: long, narrow, blade-like green leaves
+</features>
+<kb>
+- IF [flower color = yellow AND petal pattern = dark veins AND petal shape = broad/drooping] THEN [14]
+- IF [flower color = pink/purple/white AND petal shape = cup-like or upright petals with dark centers] THEN [87]
+- IF [flower color = pink/purple AND flower structure = large central spike/cone with small side flowers] THEN [92]
+</kb>
+
+<rule_check>
+- The rule for class 14 fires because the Query Image features a yellow flower with distinct dark veins on its broad, drooping petals and long, narrow green leaves, matching the pattern seen in the examples for class 14.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=38.9049 | avg_trial_wall_seconds=12.9662 | avg_trial_api_seconds=12.4131 | system_fallback_count=0

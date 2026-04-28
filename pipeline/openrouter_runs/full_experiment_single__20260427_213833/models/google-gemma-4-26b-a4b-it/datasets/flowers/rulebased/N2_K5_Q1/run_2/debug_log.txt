@@ -1,0 +1,40 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=2 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[75] | Predicted=[75] | Correct=True
+<features>
+- flower shape: trumpet-shaped/funnel-shaped
+- flower color: pink/purple with a white center
+- petal texture: smooth with radial lines/folds
+- background: green leaves and a wooden fence
+</features>
+
+<kb>
+- IF [flower shape = trumpet-shaped AND flower color = pink/purple/blue/white AND petal texture = smooth with radial lines] THEN [75]
+- IF [flower shape = orchid-like with large distinct petals AND flower color = white/pink/purple with a dark center/lip] THEN [35]
+</kb>
+
+<rule_check>
+- The rule for class 75 fires because the Query Image shows a trumpet-shaped flower with pink/purple petals, a white center, and smooth petals with radial lines, matching the pattern seen in the examples for class 75.
+</rule_check>
+
+<response>75</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[35] | Predicted=[35] | Correct=True
+<features>
+- flower shape: large petals with a prominent, ruffled, trumpet-like center (labellum)
+- petal texture: wavy/ruffled edges
+- petal color: light purple/lavender petals with a bright pink/magenta center
+- leaf shape: long, narrow, strap-like leaves
+</features>
+
+<kb>
+- IF [flower shape = trumpet-like/funnel-shaped AND petal color = blue/purple/pink/white AND leaves = broad/heart-shaped] THEN [75]
+- IF [flower shape = large petals with ruffled center AND petal color = light purple/pink/white with dark center AND leaves = long/narrow/strap-like] THEN [35]
+</kb>
+
+<rule_check>
+- The rule for class 35 fires because the Query Image shows large petals with a distinct ruffled, trumpet-like center (labellum), light purple petals with a bright pink center, and long, narrow, strap-like leaves, matching the patterns seen in the class 35 examples.
+</rule_check>
+
+<response>35</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=60.2123 | avg_trial_wall_seconds=30.1026 | avg_trial_api_seconds=29.8477 | system_fallback_count=0

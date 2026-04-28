@@ -1,0 +1,23 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=3 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[0] | Predicted=[0] | Correct=True
+<explanation>
+The Query Image shows an airplane on a tarmac, which is visually consistent with the class '0' examples (airplanes in flight or on ground). The other classes, '6' (frogs) and '7' (horses), are clearly distinct biological entities and do not match the visual evidence of an aircraft.
+</explanation>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<explanation>
+The Query Image shows a green, amphibian-like creature with visible limbs and a distinct body shape, consistent with the visual evidence of frogs in the labeled examples (class 6). The coloration and form match the examples of frogs, distinguishing it from the aircraft (class 0) and horses (class 7).
+</explanation>
+
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[7] | Predicted=[7] | Correct=True
+<explanation>
+The image shows a four-legged animal with a long body, a distinct head with a mane, and a tail, consistent with the visual features of horses seen in the labeled examples under class 7.
+</explanation>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=5.8980 | avg_trial_wall_seconds=1.9637 | avg_trial_api_seconds=1.6061 | system_fallback_count=0

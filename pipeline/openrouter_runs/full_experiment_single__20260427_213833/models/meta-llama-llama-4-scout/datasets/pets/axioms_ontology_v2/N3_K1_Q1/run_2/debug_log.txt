@@ -1,0 +1,55 @@
+=== DEBUG LOG | dataset=pets | prompt=axioms_ontology_v2 | model=meta-llama/llama-4-scout | N=3 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[35] | Predicted=[35] | Correct=True
+<tbox>
+- [35] ⊑ hasVisualFeature([F1])
+- hasVisualFeature([F2]) ⊑ [9]
+- [27] ⊑ hasVisualFeature([F3])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [F1])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [35] ⊑ hasVisualFeature([F1])
+</dl_explanation>
+
+<response>35</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[9] | Predicted=[] | Correct=False
+WARNING: unclosed_response_tag
+<tbox>
+- [35] ⊑ hasVisualFeature([F5])
+- [9] ≡ hasVisualFeature([F6]) ⊓ hasVisualFeature([F7])
+- [27] ⊑ hasVisualFeature([F8])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [F6])
+- hasVisualFeature(Query, [F7])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [9] ≡ hasVisualFeature([F6]) ⊓ hasVisualFeature([F7])
+</dl_explanation>
+
+<response>9
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[27] | Predicted=[9] | Correct=False
+<tbox>
+- [9] ⊑ hasVisualFeature([Feline])
+- [27] ⊑ hasVisualFeature([Feline])
+- [35] ⊑ hasVisualFeature([Canine])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [Feline])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [9] ⊑ hasVisualFeature([Feline]), [27] ⊑ hasVisualFeature([Feline])
+</dl_explanation>
+
+<response>9</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=1 | total=3 | errors=0 | accuracy=0.3333 | duration_seconds=7.4043 | avg_trial_wall_seconds=2.4566 | avg_trial_api_seconds=2.1221 | system_fallback_count=0

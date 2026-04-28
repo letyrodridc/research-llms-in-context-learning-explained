@@ -1,0 +1,50 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=3 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[21] | Predicted=[21] | Correct=True
+<features>
+- observable feature: black and tan coat
+- observable feature: large, erect ears
+- observable feature: small, pointed muzzle
+</features>
+<kb>
+- IF [observable visual features = black and tan coat AND observable visual features = large, erect ears AND observable visual features = small, pointed muzzle] THEN [21]
+- IF [observable visual features = fluffy white coat AND observable visual features = long fur] THEN [26]
+- IF [observable visual features = large white fluffy coat AND observable visual features = long fur] THEN [15]
+</kb>
+
+<rule_check>
+- Rule 1 fires for the Query Image because it matches the observable features: black and tan coat, large erect ears, and small pointed muzzle, which are characteristic of class 21 as seen in the labeled examples.
+</rule_check>
+
+<response>21</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[26] | Predicted=[26] | Correct=True
+<features>
+- observable feature: long fur
+- observable feature: pointed ears
+- observable feature: light-colored face with dark markings around eyes and ears
+</features>
+<kb>
+- IF [long fur AND pointed ears AND light-colored face with dark markings around eyes and ears] THEN [26]
+- IF [short fur AND pointed ears AND tan and black coloring] THEN [21]
+- IF [long fur AND large size AND fluffy appearance] THEN [15]
+</kb>
+<rule_check>
+- Rule 1 fires because the image shows a cat with long fur, pointed ears, and a light-colored face with dark markings around the eyes and ears, which matches the features described in the rule for class 26.
+</rule_check>
+<response>26</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[15] | Predicted=[15] | Correct=True
+<features>
+- observable feature: the animal is a dog
+- observable feature: the dog has a predominantly white coat
+- observable feature: the dog has a large, fluffy body
+</features>
+<kb>
+- IF [observable visual features = the animal is a dog AND observable visual features = the dog has a predominantly white coat AND observable visual features = the dog has a large, fluffy body] THEN [15]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows a dog with a predominantly white coat and a large, fluffy body, which matches the conditions for class 15.
+</rule_check>
+<response>15</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=15.9900 | avg_trial_wall_seconds=5.3241 | avg_trial_api_seconds=3.7548 | system_fallback_count=0

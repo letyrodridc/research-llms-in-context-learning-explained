@@ -1,0 +1,15 @@
+=== DEBUG LOG | dataset=pets | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=2 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[36] | Predicted=[36] | Correct=True
+<explanation>
+The query image shows a small dog with long, shaggy fur, a distinct facial structure with pointed ears, and a body shape consistent with the examples labeled as class 36. The visual features match those of the Yorkshire Terrier in the provided examples.
+</explanation>
+
+<response>36</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<explanation>
+The query image shows a cat with distinct features: large, bright blue eyes, a long, fluffy coat with color-point markings (dark face, ears, and paws on a lighter body), and a calm, seated posture. These visual characteristics are consistent with the examples labeled as class 6, which all depict cats with similar physical traits.
+</explanation>
+<response>6</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=6.0157 | avg_trial_wall_seconds=3.0041 | avg_trial_api_seconds=2.0348 | system_fallback_count=0

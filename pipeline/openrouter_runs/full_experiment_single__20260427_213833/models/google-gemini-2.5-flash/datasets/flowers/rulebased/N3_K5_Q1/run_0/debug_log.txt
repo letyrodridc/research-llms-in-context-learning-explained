@@ -1,0 +1,53 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemini-2.5-flash | N=3 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[87] | Predicted=[87] | Correct=True
+<features>
+- flower color: pink/magenta
+- petal shape: upward-curving, somewhat pointed at the top, wider at the top than the base
+- flower structure: multiple petals forming a cup-like or bell-like shape, with petals appearing to fold back
+- stem: thin, dark stem supporting the flower
+- background: blurred green foliage
+</features>
+<kb>
+- IF [flower color is pink/magenta/red AND petals are upward-curving and wider at the top than the base, forming a cup-like shape] THEN [87]
+- IF [flower has a prominent pink/magenta bract with small purple/lavender flowers emerging from it] THEN [92]
+- IF [flower color is yellow AND petals are broad and flat, with some having dark markings near the center] THEN [14]
+</kb>
+<rule_check>
+- The rule for class 87 fires because the query image shows a flower that is pink/magenta in color, and its petals are upward-curving, wider at the top than the base, and form a cup-like shape, which is consistent with the examples for class 87.
+</rule_check>
+<response>87</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[92] | Predicted=[92] | Correct=True
+<features>
+- main flower structure: elongated, spiky, pink/red, with small purple flowers emerging from its sides
+- background: dark, mostly black
+- leaves: long, thin, green leaves visible around the base and sides of the main structure
+</features>
+<kb>
+- IF [flower petals are distinct, often curled upwards, and the overall flower shape is somewhat bell-like or cup-like, with colors typically in shades of pink, red, or purple, and often showing water droplets] THEN [87]
+- IF [the main flower structure is an elongated, spiky, often pink or reddish bract from which smaller, typically purple or blue flowers emerge, and is surrounded by long, thin green leaves] THEN [92]
+- IF [the flower is predominantly yellow, with distinct petals that include a larger, often patterned lower petal, and the overall shape is characteristic of an iris] THEN [14]
+</kb>
+<rule_check>
+- The rule for class 92 fires because the Query Image displays an elongated, spiky, pink main flower structure with smaller purple flowers emerging from its sides, and it is surrounded by long, thin green leaves, which matches the description for class 92.
+</rule_check>
+<response>92</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- flower color: yellow
+- flower shape: irregular petals, some pointing upwards, some downwards
+- petal markings: dark lines radiating from the center on the lower petals
+- background: green foliage
+</features>
+<kb>
+- IF [flower color is pink/purple AND petals are reflexed upwards] THEN [87]
+- IF [flower has a prominent pink/purple spiky bract AND small purple flowers emerging from it] THEN [92]
+- IF [flower color is yellow AND petals are irregular with some pointing up and some down AND dark lines are present on lower petals] THEN [14]
+</kb>
+<rule_check>
+- The rule for class 14 fires because the query image shows a yellow flower with irregular petals, some pointing upwards and some downwards, and dark lines radiating from the center on the lower petals.
+</rule_check>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=7.4591 | avg_trial_wall_seconds=2.4825 | avg_trial_api_seconds=1.8977 | system_fallback_count=0

@@ -1,0 +1,38 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=meta-llama/llama-4-scout | N=2 K=1 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- color: brown and light brown
+- pattern: woven
+- material: strips of material
+</features>
+
+<kb>
+- IF pattern = woven AND color = brown and light brown AND material = strips of material THEN 44
+- IF pattern = chevron AND color = gray THEN 29
+</kb>
+
+<rule_check>
+- The rule for class 44 is satisfied because the Query Image shows a woven pattern with brown and light brown colors, made of strips of material. 
+- The rule for class 29 is not satisfied because the Query Image does not show a chevron pattern or gray color.
+</rule_check>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<features>
+- color: pink
+- pattern: horizontal lines
+- texture: smooth
+</features>
+<kb>
+- IF pattern = horizontal lines AND color = pink THEN 29
+- IF pattern = diamond AND color = brown THEN 44
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF pattern = horizontal lines AND color = pink THEN 29. This is because the Query Image exhibits horizontal lines and a pink color, matching the conditions of this rule.
+</rule_check>
+
+<response>29</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=6.0199 | avg_trial_wall_seconds=3.0027 | avg_trial_api_seconds=2.7192 | system_fallback_count=0

@@ -1,0 +1,40 @@
+=== DEBUG LOG | dataset=dtd | prompt=features | model=meta-llama/llama-4-scout | N=4 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[43] | Predicted=[43] | Correct=True
+<features>
+- grid pattern
+- brown color
+- syrup
+</features>
+<response>43</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[34] | Predicted=[4] | Correct=False
+<features>
+- blurry image
+- green and red colors
+- vegetable
+</features>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[10] | Predicted=[34] | Correct=False
+<features>
+- red dots
+- blue dots
+- white dots
+- black dots
+</features>
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[4] | Predicted=[43] | Correct=False
+<features>
+- varied small squash
+- orange color
+- yellow color
+- brown color
+- green color
+- bumpy texture
+</features>
+
+<response>43</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=1 | total=4 | errors=0 | accuracy=0.2500 | duration_seconds=14.9620 | avg_trial_wall_seconds=3.7385 | avg_trial_api_seconds=1.7085 | system_fallback_count=0

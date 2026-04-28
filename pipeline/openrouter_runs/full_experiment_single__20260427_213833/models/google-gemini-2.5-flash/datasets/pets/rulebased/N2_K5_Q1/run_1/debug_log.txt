@@ -1,0 +1,35 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[36] | Predicted=[36] | Correct=True
+<features>
+- animal type: dog
+- fur color: black and tan/brown
+- fur texture: shaggy/long
+- ear shape: small, pointed, partially covered by fur
+- snout: short
+</features>
+<kb>
+- IF [animal type = dog AND fur color = black and tan/brown AND fur texture = shaggy/long] THEN [36]
+- IF [animal type = cat AND fur color = cream/white with dark brown/black points AND eye color = blue] THEN [6]
+</kb>
+<rule_check>
+- The rule for class 36 fires because the Query Image shows an animal that is clearly a dog, with black and tan/brown shaggy/long fur, which matches the observable features of the examples for class 36.
+</rule_check>
+<response>36</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- animal type: cat
+- fur color: white/cream body with dark brown/black points (face, ears)
+- eye color: blue
+- fur length: long
+</features>
+<kb>
+- IF [animal type = dog AND fur color = black and tan/brown AND fur length = medium to long] THEN [36]
+- IF [animal type = cat AND fur color = white/cream body with dark points AND eye color = blue AND fur length = long] THEN [6]
+</kb>
+<rule_check>
+- The rule for class 6 fires because the query image shows a cat with a white/cream body and dark points on its face and ears, blue eyes, and long fur, which matches the observable features for class 6.
+</rule_check>
+<response>6</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.2637 | avg_trial_wall_seconds=2.1289 | avg_trial_api_seconds=1.6633 | system_fallback_count=0

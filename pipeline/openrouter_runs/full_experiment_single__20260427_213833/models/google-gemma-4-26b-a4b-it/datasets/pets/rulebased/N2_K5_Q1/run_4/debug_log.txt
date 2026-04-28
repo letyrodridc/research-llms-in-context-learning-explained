@@ -1,0 +1,40 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=2 K=5 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[36] | Predicted=[36] | Correct=True
+<features>
+- animal: dog
+- fur color: light brown/tan
+- fur texture: long and shaggy
+- mouth: open with tongue visible
+</features>
+
+<kb>
+- IF [animal = dog AND fur texture = long/shaggy] THEN [36]
+- IF [animal = cat AND fur color = cream/white with dark face] THEN [6]
+</kb>
+
+<rule_check>
+- The rule for class 36 fires because the image shows a dog with long, shaggy fur, matching the pattern seen in the support images for class 36.
+</rule_check>
+
+<response>36</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- animal type: cat
+- fur color: cream/white body with dark brown/black face and ears
+- eye color: blue
+- fur texture: long/fluffy
+</features>
+
+<kb>
+- IF [animal type = dog AND fur color = tan/brown/black] THEN [36]
+- IF [animal type = cat AND fur color = cream/white with dark face AND eye color = blue] THEN [6]
+</kb>
+
+<rule_check>
+- The rule for class 6 is satisfied because the image shows a cat with a cream-colored body, a dark face, and blue eyes, matching the pattern seen in the provided cat examples.
+</rule_check>
+
+<response>6</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=6.8280 | avg_trial_wall_seconds=3.4119 | avg_trial_api_seconds=2.9061 | system_fallback_count=0

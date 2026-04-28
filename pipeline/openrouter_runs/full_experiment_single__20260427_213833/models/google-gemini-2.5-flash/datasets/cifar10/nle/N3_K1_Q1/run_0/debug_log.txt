@@ -1,0 +1,20 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=nle | model=google/gemini-2.5-flash | N=3 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<explanation>
+The query image displays a blurred animal with light fur, a dark nose, and dark eyes, which aligns with the visual characteristics of the animal in example 3. Examples 1 and 9 depict vehicles, which are visually distinct from the query image.
+</explanation>
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[9] | Predicted=[9] | Correct=True
+<explanation>
+The query image visually matches the characteristics of class 9. Both the query image and the example for class 9 depict a large, boxy vehicle with a prominent cab and a long cargo area, consistent with a truck. The other classes, 1 and 3, show a car and an animal respectively, which are visually distinct from the query image.
+</explanation>
+<response>9</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[1] | Predicted=[1] | Correct=True
+<explanation>
+The query image displays a vehicle with a distinct front grille, headlights, and a generally sleek, low-profile body shape, consistent with the visual characteristics observed in the examples labeled '1'. The other classes, '3' and '9', represent a cat and a truck respectively, which have clearly different forms and features compared to the query image.
+</explanation>
+<response>1</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=5.7126 | avg_trial_wall_seconds=1.9023 | avg_trial_api_seconds=1.8580 | system_fallback_count=0

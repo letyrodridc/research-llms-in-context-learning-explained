@@ -1,0 +1,35 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[2] | Predicted=[2] | Correct=True
+<features>
+- animal type: dog
+- fur color: predominantly black with a white patch on the chest
+- collar color: green
+- ears: cropped and pointed
+- tail: short and black
+</features>
+<kb>
+- IF [animal type = dog AND fur color = white with brown patches AND ears = natural AND tail = natural] THEN [2]
+- IF [animal type = cat AND fur color = light with dark spots/stripes AND tail = dark with stripes] THEN [5]
+</kb>
+<rule_check>
+- None of the rules in the knowledge base directly fire for the Query Image as its features (black dog with cropped ears) do not perfectly match the specific features described for either class 2 (white dog with brown patches) or class 5 (light cat with dark spots). However, the Query Image clearly depicts a dog, which aligns with the animal type for class 2.
+</rule_check>
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[5] | Predicted=[5] | Correct=True
+<features>
+- fur pattern: striped/tabby
+- ear shape: pointed, upright
+- eye color: yellowish-green
+- overall color: brown and black stripes on a lighter brown/tan background
+</features>
+<kb>
+- IF [fur pattern is striped/tabby AND ear shape is pointed/upright] THEN [5]
+- IF [fur pattern is patchy/blotchy AND ear shape is rounded] THEN [2]
+</kb>
+<rule_check>
+- The rule for class 5 fires because the Query Image shows a fur pattern that is clearly striped/tabby and the ear shape is pointed and upright.
+</rule_check>
+<response>5</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.5869 | avg_trial_wall_seconds=1.7916 | avg_trial_api_seconds=1.6929 | system_fallback_count=0

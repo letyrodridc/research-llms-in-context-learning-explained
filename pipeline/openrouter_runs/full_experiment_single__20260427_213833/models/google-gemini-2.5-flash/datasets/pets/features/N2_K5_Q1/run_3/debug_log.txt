@@ -1,0 +1,23 @@
+=== DEBUG LOG | dataset=pets | prompt=features | model=google/gemini-2.5-flash | N=2 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[36] | Predicted=[36] | Correct=True
+<features>
+- small dog
+- long, shaggy fur
+- fur color combination of black/dark grey and tan/brown
+- small, pointed ears
+- small, dark eyes
+- small, dark nose
+</features>
+<response>36</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- pointed ears
+- blue eyes
+- dark brown face mask
+- white fur on body
+- light brown fur on face and ears
+</features>
+<response>6</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=2.7360 | avg_trial_wall_seconds=1.3658 | avg_trial_api_seconds=0.9037 | system_fallback_count=0

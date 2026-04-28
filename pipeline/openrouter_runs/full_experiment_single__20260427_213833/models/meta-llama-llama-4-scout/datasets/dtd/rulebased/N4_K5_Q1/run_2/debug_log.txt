@@ -1,0 +1,82 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=meta-llama/llama-4-scout | N=4 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[43] | Predicted=[43] | Correct=True
+<features>
+- color: pink
+- pattern: square
+</features>
+<kb>
+- IF [color = brown AND pattern = square] THEN [43]
+- IF [color = multi-color AND pattern = various] THEN [34]
+- IF [color = multi-color AND pattern = dot] THEN [10]
+- IF [color = green AND pattern = various] THEN [4]
+</kb>
+
+<rule_check>
+- The Query Image has a pink color and a square pattern. None of the rules in the kb directly match this description.
+</rule_check>
+
+<response>43</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[34] | Predicted=[34] | Correct=True
+<features>
+- color: black
+- color: orange
+- color: white
+- color: gray
+- pattern: drips
+</features>
+<kb>
+- IF [color = black AND color = orange AND color = white AND color = gray AND pattern = drips] THEN [34]
+- IF [color = brown AND pattern = waffle] THEN [43]
+- IF [pattern = dots OR pattern = circles] THEN [10]
+- IF [texture = spiky] THEN [4]
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: [color = black AND color = orange AND color = white AND color = gray AND pattern = drips] because the image shows black drips on an orange, white, and gray background.
+</rule_check>
+
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[10] | Predicted=[10] | Correct=True
+<features>
+- black circular spots: present
+- white background: present
+- gray circular spots: present
+</features>
+<kb>
+- IF [black circular spots = present AND white background = present AND gray circular spots = present] THEN [10]
+- IF [black circular spots = absent AND white background = absent AND gray circular spots = absent] THEN [43]
+- IF [black circular spots = absent AND white background = absent AND gray circular spots = absent] THEN [34]
+- IF [black circular spots = absent AND white background = absent AND gray circular spots = absent] THEN [4]
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is:  - IF [black circular spots = present AND white background = present AND gray circular spots = present] THEN [10]
+</rule_check>
+
+<response>10</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- texture: rough
+- color: black and white
+- shape: scales
+</features>
+<kb>
+- IF [texture = rough AND color = black and white AND shape = scales] THEN [4]
+- IF [texture = rough AND color = green AND shape = scales] THEN [4]
+- IF [color = multi-color AND pattern = polka dots] THEN [10]
+- IF [color = brown AND pattern = waffle] THEN [43]
+- IF [color = gray AND pattern = clouds] THEN [34]
+</kb>
+
+<rule_check>
+- The rule that best satisfies the Query Image is: 
+  - IF [texture = rough AND color = black and white AND shape = scales] THEN [4]
+  - Because the Query Image has a rough texture, is black and white, and has a scale-like shape.
+</rule_check>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=23.2690 | avg_trial_wall_seconds=5.8153 | avg_trial_api_seconds=3.7165 | system_fallback_count=0

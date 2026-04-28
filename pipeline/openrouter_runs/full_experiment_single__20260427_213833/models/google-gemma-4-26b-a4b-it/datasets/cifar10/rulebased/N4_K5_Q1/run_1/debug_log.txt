@@ -1,0 +1,82 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=4 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- subject: four-legged animal
+- color: light brown/tan and white/greyish
+- environment: green grass
+- body shape: medium-sized, somewhat rounded body
+</features>
+
+<kb>
+- IF [subject = bird] THEN [2]
+- IF [subject = frog/toad] THEN [6]
+- IF [subject = horse] THEN [7]
+- IF [subject = deer/antelope/ungulate with slender legs and specific head shape] THEN [4]
+</kb>
+
+<rule_check>
+- The rule for class 4 is best satisfied because the subject is a four-legged ungulate with a body shape and coloring consistent with the deer/antelope examples provided in class 4.
+</rule_check>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[2] | Predicted=[2] | Correct=True
+<features>
+- subject: bird
+- color: brown and white
+- posture: perched/standing
+</features>
+<kb>
+- IF [subject = bird] THEN [2]
+- IF [subject = deer/antelope] THEN [4]
+- IF [subject = frog/toad] THEN [6]
+- IF [subject = horse] THEN [7]
+</kb>
+
+<rule_check>
+- The rule for class 2 fires because the Query Image depicts a bird.
+</rule_check>
+
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- subject: small green animal
+- subject: amphibian-like appearance
+- background: green foliage/leaves
+</features>
+
+<kb>
+- IF [subject = bird OR subject = winged animal] THEN [2]
+- IF [subject = deer OR subject = horned mammal] THEN [4]
+- IF [subject = frog OR subject = toad OR subject = green amphibian] THEN [6]
+- IF [subject = horse OR subject = large ungulate] THEN [7]
+</kb>
+
+<rule_check>
+- The rule for class 6 fires because the Query Image shows a small green animal with an amphibian-like appearance against a background of green foliage, matching the patterns seen in the class 6 examples.
+</rule_check>
+
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- subject: horse
+- color: white/light grey
+- background: black
+</features>
+
+<kb>
+- IF [subject = bird] THEN [2]
+- IF [subject = frog/toad] THEN [6]
+- IF [subject = horse] THEN [7]
+- IF [subject = deer/antelope] THEN [4]
+</kb>
+
+<rule_check>
+- The rule "IF [subject = horse] THEN [7]" fires because the Query Image depicts a horse.
+</rule_check>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=15.0435 | avg_trial_wall_seconds=3.7523 | avg_trial_api_seconds=3.5873 | system_fallback_count=0

@@ -1,0 +1,99 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=4 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[18] | Predicted=[27] | Correct=False
+<features>
+- pattern: repetitive small hexagonal/circular holes
+- color: black/dark grey
+- texture: perforated mesh
+</features>
+<kb>
+- IF [pattern = large irregular polygonal cracks/lines] THEN [18]
+- IF [pattern = vertical stripes/lines] THEN [22]
+- IF [pattern = irregular white vein-like networks on dark background] THEN [23]
+- IF [pattern = repetitive small circular holes] THEN [27]
+</kb>
+<rule_check>
+- The rule for class 27 fires because the Query Image displays a repetitive pattern of small holes across the surface, similar to the perforated pattern in the example for class 27.
+</rule_check>
+
+<response>27</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[22] | Predicted=[22] | Correct=True
+<features>
+- pattern: horizontal parallel lines
+- color: white background with pink/purple lines
+- structure: vertical line on the left margin
+</features>
+<kb>
+- IF [pattern = polygonal/cellular texture] THEN [18]
+- IF [pattern = vertical stripes] THEN [22]
+- IF [pattern = irregular marble/vein texture] THEN [23]
+- IF [pattern = grid of holes/dots] THEN [27]
+- IF [pattern = horizontal parallel lines] THEN [22]
+</kb>
+
+<rule_check>
+The query image contains horizontal parallel lines. While class 22 is defined by vertical stripes in the example, it is the only class representing a striped/lined pattern. However, looking at the options, none perfectly match "horizontal lines" if 22 is strictly vertical. Re-evaluating the examples: 18 is cellular, 22 is stripes, 23 is marble, 27 is dots. The query image is a lined paper pattern. In many classification tasks of this type, "stripes" (22) covers both vertical and horizontal linear patterns.
+</rule_check>
+
+<response>22</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[23] | Predicted=[23] | Correct=True
+<features>
+- pattern: irregular, branching, vein-like lines
+- color: grey/brown tones
+- texture: rocky/stone-like surface
+</features>
+<kb>
+- IF [pattern = hexagonal/polygonal cells] THEN [18]
+- IF [pattern = vertical stripes] THEN [22]
+- IF [pattern = irregular, branching, vein-like lines] THEN [23]
+- IF [pattern = regular grid of small holes/dots] THEN [27]
+</kb>
+
+<rule_check>
+- The rule for class 23 fires because the image displays irregular, branching, vein-like lines on a rocky surface, which matches the pattern described for class 23.
+</rule_check>
+
+<response>23</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[27] | Predicted=[27] | Correct=True
+<features>
+- pattern: vertical black bars with rectangular cutouts
+- color: black bars against a lighter background
+</features>
+<kb>
+- IF [pattern = tan/brown polygonal cracked texture] THEN [18]
+- IF [pattern = pink vertical stripes] THEN [22]
+- IF [pattern = white marble-like veins on dark background] THEN [23]
+- IF [pattern = regular grid of small circular holes] THEN [27]
+</kb>
+
+<rule_check>
+None of the rules in the knowledge base perfectly match the query image's specific pattern of black bars with rectangular cutouts. However, looking at the provided options and the previous examples, the query image does not match the polygonal texture (18), the pink stripes (22), the marble veins (23), or the circular holes (27). 
+
+Wait, re-evaluating the query image and the provided labels. The query image shows a black metal grate/fence with rectangular openings. None of the provided labels (18, 22, 23, 27) describe this pattern based on the examples. 
+
+Let's re-examine the examples:
+18: Tan polygonal pattern.
+22: Pink vertical stripes.
+23: White veins on dark.
+27: Circular holes in a grid.
+
+The query image is a black grid of rectangular holes. This is most similar in structure to 27 (a grid of holes), though the shape is rectangular rather than circular. However, looking at the prompt again, I must choose one. 
+
+Actually, looking at the query image again, it is a black metal structure. If I must choose from the provided labels, and none fit, I must look for the closest structural similarity. 27 is a grid of holes. The query is a grid of rectangular holes.
+
+Wait, I see the prompt asks to classify using *only* the labeled examples. If the query image is not represented, I should check if I misidentified the query image. The query image is a black metal fence with rectangular cutouts. 
+
+Let's re-read the instructions. "Determine which label from the provided options best matches the Query Image."
+
+If the query image is a black metal grate, and 27 is a metal grate with circular holes, 27 is the closest structural match.
+
+However, looking at the image again, it's a black pattern. 22 is pink stripes. 23 is white veins. 18 is tan polygons. 27 is a grid of holes. The query is a grid of holes.
+
+Therefore, 27 is the best match.
+</rule_check>
+
+<response>27</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=20.3258 | avg_trial_wall_seconds=5.0759 | avg_trial_api_seconds=4.8652 | system_fallback_count=0

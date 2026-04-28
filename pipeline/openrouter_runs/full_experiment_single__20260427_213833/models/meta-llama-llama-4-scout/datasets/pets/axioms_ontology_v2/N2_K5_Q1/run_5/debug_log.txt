@@ -1,0 +1,37 @@
+=== DEBUG LOG | dataset=pets | prompt=axioms_ontology_v2 | model=meta-llama/llama-4-scout | N=2 K=5 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[36] | Predicted=[36] | Correct=True
+<tbox>
+- [36] ⊑ hasVisualFeature([small_dog])
+- hasVisualFeature([blue_eyes]) ⊑ [6]
+- [6] ⊑ hasVisualFeature([cat])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [small_dog])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [36] ⊑ hasVisualFeature([small_dog])
+</dl_explanation>
+
+<response>36</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<tbox>
+- [36] ⊑ hasVisualFeature([long hair]) ⊓ hasVisualFeature([small size]) ⊓ hasVisualFeature([dog])
+- [6] ⊑ hasVisualFeature([long hair]) ⊓ hasVisualFeature([whiskers]) ⊓ hasVisualFeature([cat])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [long hair]) 
+- hasVisualFeature(Query, [whiskers]) 
+- hasVisualFeature(Query, [cat ears])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [6] ⊑ hasVisualFeature([long hair]) ⊓ hasVisualFeature([whiskers]) ⊓ hasVisualFeature([cat])
+</dl_explanation>
+
+<response>6</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=7.7078 | avg_trial_wall_seconds=3.8445 | avg_trial_api_seconds=2.7707 | system_fallback_count=0

@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=meta-llama/llama-4-scout | N=2 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[75] | Predicted=[75] | Correct=True
+<features>
+- color: pink
+- petal shape: round
+- center color: white
+</features>
+<kb>
+- IF color = pink AND petal shape = round AND center color = white THEN 75
+- IF color = not pink AND petal shape = not round AND center color = not white THEN 35
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF color = pink AND petal shape = round AND center color = white THEN 75, because the Query Image has a pink color, a round petal shape, and a white center.
+</rule_check>
+
+<response>75</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[35] | Predicted=[35] | Correct=True
+<features>
+- color: pink
+- petal shape: orchid-like
+- center color: pink
+</features>
+<kb>
+- IF color = pink AND petal shape = orchid-like AND center color = pink THEN 35
+- IF color = blue AND petal shape = trumpet-like THEN 75
+</kb>
+
+<rule_check>
+- The rule for class 35 fires because the query image has a pink color, an orchid-like petal shape, and a pink center color.
+</rule_check>
+
+<response>35</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=10.8105 | avg_trial_wall_seconds=5.4000 | avg_trial_api_seconds=3.9491 | system_fallback_count=0

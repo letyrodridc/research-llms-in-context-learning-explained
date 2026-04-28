@@ -1,0 +1,14 @@
+=== DEBUG LOG | dataset=pets | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=2 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[2] | Predicted=[2] | Correct=True
+<explanation>
+The query image shows a dog with a light brown coat, floppy ears, and a pink bandana. This matches the visual features of the first example (a light brown dog with floppy ears and a red collar), which is labeled as class 2. The second example is a cat, which is clearly different in species and appearance.
+</explanation>
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[5] | Predicted=[5] | Correct=True
+<explanation>
+The query image shows a cat with a distinct tabby pattern and green eyes, sitting upright on a textured surface. This matches the visual characteristics of the cat in example 5, which also has a tabby pattern and is sitting on a similar textured surface. The cat in example 2 is a different breed with a different coat pattern and posture.
+</explanation>
+<response>5</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=8.5494 | avg_trial_wall_seconds=4.2708 | avg_trial_api_seconds=4.0350 | system_fallback_count=0

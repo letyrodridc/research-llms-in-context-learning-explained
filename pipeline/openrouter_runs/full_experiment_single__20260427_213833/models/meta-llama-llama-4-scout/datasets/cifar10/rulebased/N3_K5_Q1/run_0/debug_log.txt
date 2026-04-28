@@ -1,0 +1,56 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=meta-llama/llama-4-scout | N=3 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- airplane: airplane
+- blurry: blurry
+- sky: sky
+</features>
+<kb>
+- IF [airplane = airplane AND blurry = blurry AND sky = sky] THEN [0]
+- IF [blurry = blurry AND green = green] THEN [6]
+- IF [blurry = blurry AND horse = horse] THEN [7]
+</kb>
+
+<rule_check>
+- Rule 0 fires for the Query Image because it contains an airplane, is blurry, and has a sky.
+</rule_check>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- color: gray
+- color: brown
+- shape: irregular
+</features>
+<kb>
+- IF [color = gray AND color = brown AND shape = irregular] THEN [6]
+- IF [color = white AND shape = long] THEN [0]
+- IF [color = brown AND shape = horse] THEN [7]
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: [color = gray AND color = brown AND shape = irregular] THEN [6], because the Query Image shows a gray and brown irregular shape.
+</rule_check>
+
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- color: brown
+- color: brown
+- body type: horse
+</features>
+<kb>
+- IF color = brown AND body type = horse THEN 7
+- IF color = black AND body type = animal THEN 6
+- IF color = white AND body type = airplane THEN 0
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF color = brown AND body type = horse THEN 7, because the Query Image shows a brown horse.
+</rule_check>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=9.7168 | avg_trial_wall_seconds=3.2311 | avg_trial_api_seconds=2.9067 | system_fallback_count=0

@@ -1,0 +1,31 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=2 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[2] | Predicted=[2] | Correct=True
+<features>
+- observable feature: animal is a dog
+- observable feature: dog has light tan fur
+- observable feature: dog is standing on a green carpet
+</features>
+<kb>
+- IF [animal is a dog AND dog has light tan fur] THEN [2]
+- IF [animal is a cat AND cat has dark tabby markings] THEN [5]
+</kb>
+<rule_check>
+- Rule 1 fires because the animal is a dog and has light tan fur, matching the condition for class 2.
+</rule_check>
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[5] | Predicted=[5] | Correct=True
+<features>
+- observable feature: animal is a cat
+- observable feature: cat has distinct brown and black striped pattern on fur
+- observable feature: cat is lying down on a white surface
+</features>
+<kb>
+- IF [animal is a cat AND cat has distinct brown and black striped pattern on fur] THEN [5]
+</kb>
+<rule_check>
+- Rule from kb fires: The cat in the Query Image has a distinct brown and black striped pattern on its fur, matching the condition for class 5.
+</rule_check>
+<response>5</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.8066 | avg_trial_wall_seconds=2.3992 | avg_trial_api_seconds=2.1341 | system_fallback_count=0

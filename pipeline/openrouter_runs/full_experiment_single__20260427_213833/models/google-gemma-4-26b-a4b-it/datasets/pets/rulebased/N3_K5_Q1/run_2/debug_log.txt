@@ -1,0 +1,61 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=3 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[21] | Predicted=[21] | Correct=True
+<features>
+- animal type: dog
+- coat color: black and tan
+- ear shape: large, upright/pointed
+- body size: small
+</features>
+
+<kb>
+- IF [animal type = dog AND coat color = black and tan AND body size = small] THEN [21]
+- IF [animal type = cat AND coat color = multi-colored/white/grey] THEN [26]
+- IF [animal type = dog AND coat color = white AND body size = large] THEN [15]
+</kb>
+
+<rule_check>
+- The rule for class 21 fires because the Query Image shows a small dog with a black and tan coat and large upright ears, matching the patterns seen in the support images for class 21.
+</rule_check>
+
+<response>21</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[26] | Predicted=[26] | Correct=True
+<features>
+- animal type: cat
+- fur color: white
+- fur texture: short/smooth
+- eye color: dark
+</features>
+<kb>
+- IF [animal type = cat] THEN [26]
+- IF [animal type = dog AND fur color = tan/brown/black] THEN [21]
+- IF [animal type = dog AND fur color = white AND fur texture = long/fluffy] THEN [15]
+</kb>
+
+<rule_check>
+- The rule "IF [animal type = cat] THEN [26]" fires because the Query Image shows a cat.
+</rule_check>
+
+<response>26</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[15] | Predicted=[15] | Correct=True
+<features>
+- animal type: dog
+- fur color: white
+- fur texture: thick/fluffy
+- size: large
+</features>
+
+<kb>
+- IF [animal type = dog AND fur color = white AND fur texture = thick/fluffy] THEN [15]
+- IF [animal type = dog AND fur color = black/tan] THEN [21]
+- IF [animal type = cat AND fur texture = long/fluffy] THEN [26]
+</kb>
+
+<rule_check>
+- The rule for class 15 fires because the Query Image shows a large dog with thick, white fur.
+</rule_check>
+
+<response>15</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=11.1976 | avg_trial_wall_seconds=3.7285 | avg_trial_api_seconds=3.1753 | system_fallback_count=0

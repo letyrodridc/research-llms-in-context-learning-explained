@@ -1,0 +1,30 @@
+=== DEBUG LOG | dataset=flowers | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=4 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[7] | Predicted=[7] | Correct=True
+<explanation>
+The Query Image displays a flower with bright orange, spiky petals and contrasting blue structures, set against a dark background. This matches the visual features of the first example image, which also shows a bird-of-paradise flower with similar orange and blue coloration and spiky petal shapes.
+</explanation>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<explanation>
+The Query Image displays flowers with a distinct pattern of white and purple-pink petals, featuring a central cluster of stamens. This matches the visual characteristics of the pink and white flower in the example labeled '29', which also has a similar petal structure and coloration.
+</explanation>
+
+<response>29</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[8] | Predicted=[8] | Correct=True
+<explanation>
+The Query Image shows a purple flower with a drooping, bell-like shape and visible water droplets on its petals. This matches the visual features of the example labeled '8', which also displays a purple, bell-shaped flower with a similar structure and texture.
+</explanation>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<explanation>
+The Query Image shows a yellow-orange flower with a distinct central disc and radiating petals, similar in structure and color to the flowers in the labeled example for class 4. The shape and arrangement of petals are consistent with the daisy-like flowers in class 4, distinguishing it from the other classes which feature different petal arrangements, colors, or flower forms.
+</explanation>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=9.9620 | avg_trial_wall_seconds=2.4885 | avg_trial_api_seconds=1.8988 | system_fallback_count=0

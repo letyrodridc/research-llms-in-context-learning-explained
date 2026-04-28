@@ -1,0 +1,79 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=meta-llama/llama-4-scout | N=4 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[86] | Predicted=[86] | Correct=True
+<features>
+- observable feature: petal shape
+- observable feature: petal color
+- observable feature: flower size
+</features>
+<kb>
+- IF [petal shape = rounded AND petal color = white AND flower size = large] THEN [86]
+- IF [petal shape = pointed AND petal color = purple AND flower size = small] THEN [83]
+- IF [petal shape = rounded AND petal color = yellow AND flower size = large] THEN [82]
+- IF [petal shape = pointed AND petal color = pink AND flower size = small] THEN [12]
+</kb>
+
+<rule_check>
+- The Query Image has: petal shape = rounded, petal color = white, and flower size = large. 
+- Rule fired: IF [petal shape = rounded AND petal color = white AND flower size = large] THEN [86].
+</rule_check>
+
+<response>86</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[83] | Predicted=[83] | Correct=True
+<features>
+- observable feature: purple and white petals
+- observable feature: yellow stamens
+- observable feature: long, thin purple protrusions
+</features>
+<kb>
+- IF [observable visual features = large, showy petals AND/OR prominent stamens] THEN [82]
+- IF [observable visual features = purple and white petals AND long, thin purple protrusions] THEN [83]
+- IF [observable visual features = pink or red petals] THEN [86]
+- IF [observable visual features = large, round center AND pointed petals] THEN [12]
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF [observable visual features = purple and white petals AND long, thin purple protrusions] THEN [83], because the Query Image has purple and white petals and long, thin purple protrusions.
+</rule_check>
+
+<response>83</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[82] | Predicted=[82] | Correct=True
+<features>
+- large petal: pink
+- small petal: red
+- stamen: yellow
+</features>
+<kb>
+- IF [large petal: yellow AND small petal: red AND stamen: yellow] THEN [82]
+- IF [large petal: pink AND small petal: purple AND stamen: yellow] THEN [83]
+- IF [large petal: pink AND small petal: red AND stamen: yellow] THEN [82]
+- IF [large petal: white AND small petal: pink AND stamen: brown] THEN [86]
+</kb>
+
+<rule_check>
+- Rule 3 fires for the Query Image because it has a large petal that is pink, small petal that is red, and stamen that is yellow.
+</rule_check>
+
+<response>82</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[12] | Predicted=[12] | Correct=True
+<features>
+- color: pink
+- color: white
+- shape: round
+- shape: petal
+</features>
+<kb>
+- IF [color = pink AND color = white AND shape = petal] THEN [12]
+- IF [color = pink] THEN [86]
+- IF [shape = round] THEN [12]
+</kb>
+
+<rule_check>
+- Rule 12 fires because the image shows a flower with a round shape and pink and white colors, and petal-like protrusions.
+</rule_check>
+
+<response>12</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=23.7459 | avg_trial_wall_seconds=5.9331 | avg_trial_api_seconds=3.9672 | system_fallback_count=0

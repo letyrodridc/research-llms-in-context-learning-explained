@@ -1,0 +1,11 @@
+=== DEBUG LOG | dataset=pets | prompt=classification | model=meta-llama/llama-4-scout | N=3 K=1 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[35] | Predicted=[35] | Correct=True
+<response>35</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[9] | Predicted=[9] | Correct=True
+<response>9</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[27] | Predicted=[9] | Correct=False
+<response>9</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=3 | errors=0 | accuracy=0.6667 | duration_seconds=3.2074 | avg_trial_wall_seconds=1.0677 | avg_trial_api_seconds=0.7381 | system_fallback_count=0

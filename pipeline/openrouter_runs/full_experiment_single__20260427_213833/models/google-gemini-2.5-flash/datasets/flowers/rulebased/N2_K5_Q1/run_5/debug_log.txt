@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=5 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[75] | Predicted=[75] | Correct=True
+<features>
+- flower shape: trumpet-shaped/funnel-shaped
+- petal arrangement: fused petals forming a single structure
+- center of flower: distinct, lighter color with a small, dark center
+- color: predominantly blue with purple veins radiating from the center
+- background: green leaves
+</features>
+<kb>
+- IF [flower shape is trumpet-shaped or funnel-shaped AND petals are fused AND there are prominent veins radiating from the center] THEN [75]
+- IF [flower shape is orchid-like with distinct, separate petals AND a prominent, often frilly or ruffled labellum (lip petal) at the bottom] THEN [35]
+</kb>
+<rule_check>
+- The rule for class 75 fires because the Query Image shows a trumpet-shaped flower with fused petals and prominent veins radiating from the center, which matches the observable features of the examples for class 75.
+</rule_check>
+<response>75</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[35] | Predicted=[35] | Correct=True
+<features>
+- flower shape: open, flat, with distinct petals
+- petal count: 5-6 visible petals
+- petal arrangement: radial symmetry, with a prominent central petal (labellum) that is often ruffled or distinct in color/shape
+- flower color: predominantly pink/purple, with a contrasting darker center on the labellum
+- background: dark, suggesting a close-up shot of the flower
+</features>
+<kb>
+- IF [flower shape is trumpet-like or funnel-shaped AND/OR flower has a smooth, unsegmented appearance] THEN [75]
+- IF [flower shape is open and flat with distinct, often ruffled petals AND flower has a prominent, often contrasting central labellum] THEN [35]
+</kb>
+<rule_check>
+- The rule for class 35 fires because the Query Image shows an open, flat flower with distinct, somewhat ruffled petals and a prominent central labellum that has a contrasting darker color, which aligns with the observable features of class 35 examples.
+</rule_check>
+<response>35</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.9944 | avg_trial_wall_seconds=1.9945 | avg_trial_api_seconds=1.7767 | system_fallback_count=0

@@ -1,0 +1,141 @@
+{
+  "title": "Overall Accuracy by Model",
+  "alpha": 0.05,
+  "x_field": "model",
+  "series_field": null,
+  "filters": {},
+  "rows": [
+    {
+      "x": "google/gemini-2.5-flash",
+      "series": "accuracy",
+      "correct": 1391,
+      "total": 1440,
+      "accuracy": 0.966,
+      "standard_error": 0.004778,
+      "ci95_low": 0.9553,
+      "ci95_high": 0.9742
+    },
+    {
+      "x": "google/gemma-4-26b-a4b-it",
+      "series": "accuracy",
+      "correct": 1349,
+      "total": 1440,
+      "accuracy": 0.9368,
+      "standard_error": 0.006412,
+      "ci95_low": 0.923,
+      "ci95_high": 0.9482
+    },
+    {
+      "x": "meta-llama/llama-4-scout",
+      "series": "accuracy",
+      "correct": 1275,
+      "total": 1440,
+      "accuracy": 0.8854,
+      "standard_error": 0.008394,
+      "ci95_low": 0.8679,
+      "ci95_high": 0.9009
+    },
+    {
+      "x": "qwen/qwen3-vl-8b-instruct",
+      "series": "accuracy",
+      "correct": 1316,
+      "total": 1440,
+      "accuracy": 0.9139,
+      "standard_error": 0.007393,
+      "ci95_low": 0.8983,
+      "ci95_high": 0.9273
+    }
+  ],
+  "statistics": {
+    "alpha": 0.05,
+    "group_field": "model",
+    "groups": [
+      "google/gemini-2.5-flash",
+      "google/gemma-4-26b-a4b-it",
+      "meta-llama/llama-4-scout",
+      "qwen/qwen3-vl-8b-instruct"
+    ],
+    "matched": true,
+    "omnibus": {
+      "test": "cochrans_q",
+      "matched_units": 1440,
+      "statistic": 105.0216606498195,
+      "p_value": 0.0,
+      "significant": true
+    },
+    "pairwise": [
+      {
+        "group_a": "google/gemini-2.5-flash",
+        "group_b": "google/gemma-4-26b-a4b-it",
+        "matched_units": 1440,
+        "a_correct_b_wrong": 70,
+        "b_correct_a_wrong": 28,
+        "both_correct": 1321,
+        "both_wrong": 21,
+        "p_value": 2.6402449757572137e-05,
+        "p_value_holm": 7.920734927271641e-05,
+        "significant_holm": true
+      },
+      {
+        "group_a": "google/gemini-2.5-flash",
+        "group_b": "meta-llama/llama-4-scout",
+        "matched_units": 1440,
+        "a_correct_b_wrong": 135,
+        "b_correct_a_wrong": 19,
+        "both_correct": 1256,
+        "both_wrong": 30,
+        "p_value": 9.596243937526397e-23,
+        "p_value_holm": 5.757746362515838e-22,
+        "significant_holm": true
+      },
+      {
+        "group_a": "google/gemini-2.5-flash",
+        "group_b": "qwen/qwen3-vl-8b-instruct",
+        "matched_units": 1440,
+        "a_correct_b_wrong": 109,
+        "b_correct_a_wrong": 34,
+        "both_correct": 1282,
+        "both_wrong": 15,
+        "p_value": 2.330505592014365e-10,
+        "p_value_holm": 1.1652527960071824e-09,
+        "significant_holm": true
+      },
+      {
+        "group_a": "google/gemma-4-26b-a4b-it",
+        "group_b": "meta-llama/llama-4-scout",
+        "matched_units": 1440,
+        "a_correct_b_wrong": 108,
+        "b_correct_a_wrong": 34,
+        "both_correct": 1241,
+        "both_wrong": 57,
+        "p_value": 3.56672340077316e-10,
+        "p_value_holm": 1.426689360309264e-09,
+        "significant_holm": true
+      },
+      {
+        "group_a": "google/gemma-4-26b-a4b-it",
+        "group_b": "qwen/qwen3-vl-8b-instruct",
+        "matched_units": 1440,
+        "a_correct_b_wrong": 77,
+        "b_correct_a_wrong": 44,
+        "both_correct": 1272,
+        "both_wrong": 47,
+        "p_value": 0.0034509399701825403,
+        "p_value_holm": 0.004524341152649781,
+        "significant_holm": true
+      },
+      {
+        "group_a": "meta-llama/llama-4-scout",
+        "group_b": "qwen/qwen3-vl-8b-instruct",
+        "matched_units": 1440,
+        "a_correct_b_wrong": 66,
+        "b_correct_a_wrong": 107,
+        "both_correct": 1209,
+        "both_wrong": 58,
+        "p_value": 0.0022621705763248906,
+        "p_value_holm": 0.004524341152649781,
+        "significant_holm": true
+      }
+    ]
+  }
+}

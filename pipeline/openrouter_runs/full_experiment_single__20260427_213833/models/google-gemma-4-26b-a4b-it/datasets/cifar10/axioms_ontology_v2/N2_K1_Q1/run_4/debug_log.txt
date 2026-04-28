@@ -1,0 +1,35 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=2 K=1 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<tbox>
+- [3] ⊑ hasVisualFeature([animal]) ⊓ hasVisualFeature([furry])
+- [0] ⊑ hasVisualFeature([vehicle]) ⊓ hasVisualFeature([flying])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [animal])
+- hasVisualFeature(Query, [furry])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [3] ⊑ hasVisualFeature([animal]) ⊓ hasVisualFeature([furry])
+</dl_explanation>
+
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[0] | Predicted=[0] | Correct=True
+<tbox>
+- [0] ⊑ hasVisualFeature([aircraft])
+- [3] ⊑ hasVisualFeature([animal])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [aircraft])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [0] ⊑ hasVisualFeature([aircraft])
+</dl_explanation>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=5.7795 | avg_trial_wall_seconds=2.8853 | avg_trial_api_seconds=2.8566 | system_fallback_count=0

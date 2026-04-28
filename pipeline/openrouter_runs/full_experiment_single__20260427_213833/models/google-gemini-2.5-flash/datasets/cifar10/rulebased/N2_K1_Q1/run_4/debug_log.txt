@@ -1,0 +1,33 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<features>
+- object shape: animal-like, with visible ears and eyes
+- object pattern: striped fur
+- background: dark, possibly green or black
+</features>
+<kb>
+- IF [object shape = animal-like, with visible ears and eyes AND object pattern = striped fur] THEN [3]
+- IF [object shape = aircraft-like AND background = blue sky] THEN [0]
+</kb>
+<rule_check>
+- The rule for class 3 fires because the Query Image shows an animal-like object with visible ears and eyes, and a striped fur pattern.
+</rule_check>
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- object shape: elongated body with wings
+- object color: dark green/camouflage
+- background color: blue
+- object orientation: angled, not perfectly horizontal or vertical
+</features>
+<kb>
+- IF [object shape = elongated body with wings AND object color = light grey/white AND background color = blue] THEN [0]
+- IF [object shape = animal-like AND object color = white and orange/brown] THEN [3]
+</kb>
+<rule_check>
+- No rule from the knowledge base fires for the Query Image. The Query Image shows an object with an elongated body and wings against a blue background, similar to class 0. However, the object's color is dark green/camouflage, which does not match the light grey/white color specified in the rule for class 0. The features of the Query Image do not align with the features defined for class 3 either.
+</rule_check>
+<response>0</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=2.6552 | avg_trial_wall_seconds=1.3230 | avg_trial_api_seconds=1.2935 | system_fallback_count=0

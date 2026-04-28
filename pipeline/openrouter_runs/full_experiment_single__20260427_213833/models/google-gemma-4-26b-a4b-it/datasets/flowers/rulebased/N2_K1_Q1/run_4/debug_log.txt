@@ -1,0 +1,37 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=2 K=1 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- petal color: purple/pink with white edges
+- petal shape: broad, pointed petals
+- center: prominent cluster of stamens/pistils
+</features>
+<kb>
+- IF [petal color = purple/pink with white edges AND center = prominent cluster of stamens] THEN [81]
+- IF [petal color = yellow AND petal shape = complex/iris-like] THEN [14]
+</kb>
+
+<rule_check>
+- The rule for class 81 fires because the Query Image features purple/pink petals with white edges and a prominent central cluster of stamens, matching the visual patterns seen in the first example.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- flower color: yellow
+- petal shape: large, broad, somewhat irregular petals
+- leaf shape: long, narrow, blade-like leaves
+</features>
+
+<kb>
+- IF [flower color = pink/purple AND petal shape = multiple pointed petals] THEN [81]
+- IF [flower color = yellow AND petal shape = large, broad petals AND leaf shape = long, narrow blades] THEN [14]
+</kb>
+
+<rule_check>
+- The rule for class 14 fires because the Query Image features a yellow flower with large, broad petals and long, narrow blade-like leaves, matching the pattern seen in the second example.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=22.9977 | avg_trial_wall_seconds=11.4972 | avg_trial_api_seconds=11.3619 | system_fallback_count=0

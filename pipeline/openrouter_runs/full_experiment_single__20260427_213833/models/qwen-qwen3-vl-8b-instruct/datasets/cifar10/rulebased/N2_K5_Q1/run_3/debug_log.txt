@@ -1,0 +1,30 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=2 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- observable feature: the image shows a boat
+- observable feature: the boat has a white hull
+- observable feature: the boat has a cabin or superstructure
+</features>
+<kb>
+- IF [observable visual features = boat AND observable visual features = white hull AND observable visual features = cabin or superstructure] THEN [8]
+- IF [observable visual features = horse] THEN [7]
+</kb>
+<rule_check>
+- Rule 1 fires because the image contains a boat with a white hull and a cabin or superstructure, which matches the features for class 8.
+</rule_check>
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- observable feature: the subject is a horse
+- observable feature: the horse has a distinct pattern of white and brown patches on its body
+</features>
+<kb>
+- IF [observable visual features = the subject is a horse] THEN [7]
+</kb>
+<rule_check>
+- Rule 1 fires because the subject in the Query Image is a horse, which matches the condition for class 7.
+</rule_check>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=5.5145 | avg_trial_wall_seconds=2.7537 | avg_trial_api_seconds=2.5803 | system_fallback_count=0

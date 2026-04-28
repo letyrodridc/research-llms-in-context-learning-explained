@@ -1,0 +1,38 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=meta-llama/llama-4-scout | N=2 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[36] | Predicted=[36] | Correct=True
+<features>
+- fur color: black, brown, gray
+- fur length: long
+- ear shape: erect
+- eye color: not visible
+</features>
+<kb>
+- IF [fur color = black AND fur color = brown AND fur length = long AND ear shape = erect] THEN [36]
+- IF [fur color = white AND fur color = brown AND fur color = black AND eye color = blue] THEN [6]
+</kb>
+
+<rule_check>
+- The rule for class 36 fires for the Query Image because it has black, brown, and long fur, and erect ears.
+</rule_check>
+
+<response>36</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- long fur: present
+- blue eyes: absent
+- black nose: present
+- black ears: present
+- white and brown fur: present
+</features>
+<kb>
+- IF [long fur = present AND blue eyes = absent AND black nose = present AND black ears = present AND white and brown fur = present] THEN [6]
+</kb>
+
+<rule_check>
+- The rule for class 6 fires for the Query Image because it has long fur, a black nose, black ears, and white and brown fur, and does not have blue eyes.
+</rule_check>
+
+<response>6</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=6.9476 | avg_trial_wall_seconds=3.4687 | avg_trial_api_seconds=2.7109 | system_fallback_count=0

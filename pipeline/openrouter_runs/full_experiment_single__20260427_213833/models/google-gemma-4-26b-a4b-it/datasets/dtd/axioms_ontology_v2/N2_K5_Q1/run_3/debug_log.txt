@@ -1,0 +1,38 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=2 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[17] | Predicted=[17] | Correct=True
+<tbox>
+- [17] ⊑ hasVisualFeature([parallel_lines])
+- [32] ⊑ hasVisualFeature([puddles])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [parallel_lines])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [17] ⊑ hasVisualFeature([parallel_lines])
+</dl_explanation>
+
+<response>17</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<tbox>
+- 17 ⊑ hasVisualFeature([parallel_lines])
+- 17 ⊑ hasVisualFeature([uniform_texture])
+- 32 ⊑ hasVisualFeature([puddles])
+- 32 ⊑ hasVisualFeature([uneven_ground])
+- 32 ≡ hasVisualFeature([puddles]) ⊓ hasVisualFeature([uneven_ground])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [puddles])
+- hasVisualFeature(Query, [uneven_ground])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: 32 ≡ hasVisualFeature([puddles]) ⊓ hasVisualFeature([uneven_ground])
+</dl_explanation>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=10.1064 | avg_trial_wall_seconds=5.0461 | avg_trial_api_seconds=4.4737 | system_fallback_count=0

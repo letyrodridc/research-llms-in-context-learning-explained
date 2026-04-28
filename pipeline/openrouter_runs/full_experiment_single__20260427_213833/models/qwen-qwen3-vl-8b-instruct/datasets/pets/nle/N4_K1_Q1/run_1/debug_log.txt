@@ -1,0 +1,30 @@
+=== DEBUG LOG | dataset=pets | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=4 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[19] | Predicted=[19] | Correct=True
+<explanation>
+The query image shows a young dog with a fluffy, brown and black coat, lying on grass. This matches the visual features of the first example (label 19), which is also a young dog with a similar coat color and fluffy appearance, lying on grass.
+</explanation>
+
+<response>19</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<explanation>
+The cat in the query image has a cream-colored body with dark points on its ears, face, paws, and tail, which is characteristic of a Siamese cat. This matches the visual features of the cat in the example labeled '32'.
+</explanation>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[26] | Predicted=[32] | Correct=False
+<explanation>
+The cat in the query image has a distinct color pattern with a light-colored body and darker points on the ears, face, and tail, which is characteristic of a Siamese cat. This matches the visual features of the cat in the example labeled '32'.
+</explanation>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[20] | Predicted=[20] | Correct=True
+<explanation>
+The cat in the query image is a long-haired breed with a fluffy coat and a distinct color pattern, matching the visual characteristics of the cat in example 20, which is also long-haired and has a similar coloration.
+</explanation>
+
+<response>20</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=9.1293 | avg_trial_wall_seconds=2.2812 | avg_trial_api_seconds=1.7546 | system_fallback_count=0

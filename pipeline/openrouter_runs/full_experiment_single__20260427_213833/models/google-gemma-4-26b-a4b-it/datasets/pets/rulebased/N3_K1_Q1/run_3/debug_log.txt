@@ -1,0 +1,61 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=3 K=1 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[35] | Predicted=[35] | Correct=True
+<features>
+- fur texture: long, shaggy, and coarse-looking
+- fur color: white/cream
+- animal type: dog
+</features>
+
+<kb>
+- IF [fur texture = shaggy AND fur color = white/cream] THEN [35]
+- IF [fur texture = short AND fur color = grey AND eyes = orange/copper] THEN [9]
+- IF [fur texture = short AND fur color = grey AND eyes = light/pale] THEN [27]
+</kb>
+
+<rule_check>
+- The rule for class 35 fires because the Query Image shows an animal with long, shaggy, white/cream-colored fur.
+</rule_check>
+
+<response>35</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[9] | Predicted=[9] | Correct=True
+<features>
+- animal type: cat
+- fur color: grey
+- eye color: yellow/amber
+- posture: lying down
+</features>
+
+<kb>
+- IF [animal type = dog] THEN [35]
+- IF [animal type = cat AND eye color = orange/amber AND face is looking at camera] THEN [9]
+- IF [animal type = cat AND eye color = light/pale AND background contains plants] THEN [27]
+</kb>
+
+<rule_check>
+- The rule for class 9 is best satisfied because the subject is a grey cat with prominent amber/yellow eyes looking towards the camera. While class 27 is also a grey cat, the eye color in the query image is a deep amber/yellow similar to the example for class 9, and the direct gaze matches class 9 more closely than the side/upward gaze in class 27.
+</rule_check>
+
+<response>9</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[27] | Predicted=[27] | Correct=True
+<features>
+- animal type: cat
+- fur color: grey
+- eye color: light/greenish
+- posture: lying down
+</features>
+
+<kb>
+- IF [animal type = dog] THEN [35]
+- IF [animal type = cat AND fur color = grey AND eye color = orange/amber] THEN [9]
+- IF [animal type = cat AND fur color = grey AND eye color = light/greenish] THEN [27]
+</kb>
+
+<rule_check>
+- The rule for class 27 fires because the image shows a grey cat with light/greenish eyes.
+</rule_check>
+
+<response>27</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=12.0425 | avg_trial_wall_seconds=4.0124 | avg_trial_api_seconds=3.8695 | system_fallback_count=0

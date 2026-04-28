@@ -1,0 +1,50 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=3 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- observable feature: surface is white
+- observable feature: surface is heavily crumpled with many folds
+- observable feature: surface has a matte texture
+</features>
+<kb>
+- IF [surface is white AND surface is heavily crumpled with many folds] THEN [45]
+- IF [surface is pink AND has colorful polka dots] THEN [10]
+- IF [surface has a woven lattice pattern] THEN [19]
+</kb>
+<rule_check>
+- Rule 1 fires because the surface is white and heavily crumpled with many folds, matching the features of class 45.
+</rule_check>
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[10] | Predicted=[10] | Correct=True
+<features>
+- observable feature: presence of colorful polka dots
+- observable feature: background is black
+- observable feature: fabric texture visible
+</features>
+<kb>
+- IF [presence of colorful polka dots AND background is black] THEN [10]
+- IF [interwoven pattern of lines forming a grid] THEN [19]
+- IF [wavy, ridged texture with light and shadow] THEN [45]
+</kb>
+<rule_check>
+- Rule 1 fires because the image has colorful polka dots on a black background, matching the condition for class 10.
+</rule_check>
+<response>10</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[19] | Predicted=[45] | Correct=False
+<features>
+- observable feature: metallic sheen
+- observable feature: interlocking circular shapes
+- observable feature: reflective surface
+</features>
+<kb>
+- IF [observable visual features = metallic sheen AND observable visual features = interlocking circular shapes] THEN [45]
+- IF [observable visual features = colorful polka dots on a light background] THEN [10]
+- IF [observable visual features = dark background with light interwoven lattice pattern] THEN [19]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image has metallic sheen and interlocking circular shapes, which matches the condition for class 45.
+</rule_check>
+<response>45</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=3 | errors=0 | accuracy=0.6667 | duration_seconds=10.3706 | avg_trial_wall_seconds=3.4508 | avg_trial_api_seconds=3.0426 | system_fallback_count=0

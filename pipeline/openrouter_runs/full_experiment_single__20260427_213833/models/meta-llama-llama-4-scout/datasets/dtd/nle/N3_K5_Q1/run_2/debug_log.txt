@@ -1,0 +1,23 @@
+=== DEBUG LOG | dataset=dtd | prompt=nle | model=meta-llama/llama-4-scout | N=3 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[32] | Predicted=[32] | Correct=True
+<explanation>
+The image shows a road with several potholes and cracks, indicating a deteriorated condition. This visual evidence aligns with the characteristics of roads in class 32, which includes images of damaged roads with potholes and cracks.
+</explanation>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[8] | Predicted=[4] | Correct=False
+<explanation>
+The image shows a detailed black-and-white drawing of leaves, which aligns with the visual features of class 4, characterized by organic and natural elements.
+</explanation>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[4] | Predicted=[4] | Correct=True
+<explanation>
+The image shows a food item that appears to be a type of flatbread or pastry, possibly a pineapple pizza. The presence of what seems to be pineapple and ham or pepperoni on top aligns more with class 4, which includes food items.
+</explanation>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=3 | errors=0 | accuracy=0.6667 | duration_seconds=9.9759 | avg_trial_wall_seconds=3.3178 | avg_trial_api_seconds=1.7921 | system_fallback_count=0

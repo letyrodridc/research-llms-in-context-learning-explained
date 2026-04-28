@@ -1,0 +1,39 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=meta-llama/llama-4-scout | N=2 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[17] | Predicted=[17] | Correct=True
+<features>
+- wood grain: visible
+- wood surface: light brown
+- hand: present
+- tool: present
+</features>
+<kb>
+- IF [wood grain = visible AND wood surface = light brown AND hand = present AND tool = present] THEN [17]
+- IF [muddy surface = visible OR puddles = visible OR hole = visible] THEN [32]
+</kb>
+
+<rule_check>
+- The rule for class 17 fires because the image shows a wood surface with visible grain, a light brown color, a hand, and a tool.
+</rule_check>
+
+<response>17</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- water: present
+- rocky terrain: present
+- hole: absent
+- stripes: absent
+- color: varied
+</features>
+<kb>
+- IF [stripes = present] THEN [17]
+- IF [hole = present OR mud = present] THEN [32]
+</kb>
+
+<rule_check>
+- The Query Image does not have stripes, a hole, or mud, but it does have water and rocky terrain. None of the rules in the kb directly apply, but based on the absence of stripes and presence of water and rocky terrain, it seems not to match class 17. The image seems to not match class 32 either.
+</rule_check>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=7.8072 | avg_trial_wall_seconds=3.8997 | avg_trial_api_seconds=2.7075 | system_fallback_count=0

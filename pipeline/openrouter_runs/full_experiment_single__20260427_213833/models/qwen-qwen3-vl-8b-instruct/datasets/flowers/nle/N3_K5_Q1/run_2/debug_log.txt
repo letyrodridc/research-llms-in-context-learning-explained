@@ -1,0 +1,23 @@
+=== DEBUG LOG | dataset=flowers | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=3 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[87] | Predicted=[87] | Correct=True
+<explanation>
+The Query Image shows a white flower with a distinct, downward-curving petal shape and a central dark spot, which matches the visual pattern of the class 87 examples (pink/white cyclamens) rather than the pink/purple bromeliads (class 92) or yellow irises (class 14).
+</explanation>
+
+<response>87</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[92] | Predicted=[92] | Correct=True
+<explanation>
+The Query Image displays a plant with a prominent, spiky pink inflorescence and smaller purple flowers at its base, surrounded by long, slender green leaves. This visual structure is consistent with the examples classified as '92', which all feature similar pink, spiky bracts and purple flowers, characteristic of the Bromeliad family.
+</explanation>
+
+<response>92</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[14] | Predicted=[14] | Correct=True
+<explanation>
+The Query Image displays a yellow flower with distinct, drooping petals and a prominent central structure, which is visually consistent with the examples classified as '14'. The shape and arrangement of the petals, along with the presence of green leaves and stems, match the visual patterns observed in the '14' class examples.
+</explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=12.5553 | avg_trial_wall_seconds=4.1808 | avg_trial_api_seconds=2.2473 | system_fallback_count=0

@@ -1,0 +1,23 @@
+=== DEBUG LOG | dataset=flowers | prompt=nle | model=google/gemma-4-26b-a4b-it | N=3 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[87] | Predicted=[87] | Correct=True
+<explanation>
+The query image shows a flower with large, vibrant pink/red petals that curve upwards and backwards, similar to the structure seen in the examples labeled 87. The petal shape and the way they are arranged on the stem match the visual patterns of class 87.
+</explanation>
+
+<response>87</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[92] | Predicted=[92] | Correct=True
+<explanation>
+The image shows a plant with a prominent, pink, cone-shaped inflorescence (bracts) and small purple flowers emerging from it, which is visually consistent with the examples labeled as class 92.
+</explanation>
+
+<response>92</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[14] | Predicted=[14] | Correct=True
+<explanation>
+The query image shows a yellow flower with large, distinct petals and dark markings near the center, which is visually identical to the examples provided for class 14.
+</explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=16.6085 | avg_trial_wall_seconds=5.5299 | avg_trial_api_seconds=5.0119 | system_fallback_count=0

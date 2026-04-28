@@ -1,0 +1,18 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=nle | model=google/gemini-2.5-flash | N=4 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[4] | Predicted=[4] | Correct=True
+<explanation>The query image displays a large, brown animal with visible antlers, lying down in a green, grassy area. This visual characteristic of a large, brown animal with antlers is consistently present in the examples labeled as class 4, which depict deer or similar antlered animals. The other classes (2, 6, 7) show birds, frogs, or horses, none of which share these specific visual features.</explanation>
+<response>4</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[2] | Predicted=[2] | Correct=True
+<explanation>The query image displays a creature with a small, compact body, a distinct head, and a tail, perched on a branch. This visual characteristic of a small, winged animal with a tail, often seen perched, is consistently present in the examples labeled '2' (birds).</explanation>
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[6] | Predicted=[6] | Correct=True
+<explanation>The query image displays a small, green, squat animal with visible limbs, consistent with the visual characteristics of the examples labeled '6' (frogs/toads). This differs from the elongated bodies of '4' (deer), the winged forms of '2' (birds), and the large, four-legged shapes of '7' (horses).</explanation>
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[7] | Predicted=[7] | Correct=True
+<explanation>The query image displays a large, four-legged animal with a rider on its back, which is consistent with the visual characteristics observed in the examples labeled '7' (horses). The other classes (birds, deer, frogs) do not show this combination of features.</explanation>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=4.8592 | avg_trial_wall_seconds=1.2119 | avg_trial_api_seconds=1.0432 | system_fallback_count=0

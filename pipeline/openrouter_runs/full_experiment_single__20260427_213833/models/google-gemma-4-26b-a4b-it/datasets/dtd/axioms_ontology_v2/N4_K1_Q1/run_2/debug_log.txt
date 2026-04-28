@@ -1,0 +1,97 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=4 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[18] | Predicted=[27] | Correct=False
+<tbox>
+- [18] ⊑ hasVisualFeature([cracked_skin_pattern])
+- [22] ⊑ hasVisualFeature([vertical_stripes])
+- [23] ⊑ hasVisualFeature([marble_vein_pattern])
+- [27] ≡ hasVisualFeature([perforated_holes_pattern])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [perforated_holes_pattern])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [27] ≡ hasVisualFeature([perforated_holes_pattern])
+</dl_explanation>
+
+<response>27</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[22] | Predicted=[None of the provided labels match the Query Image based on the visual evidence in the examples.] | Correct=False
+WARNING: response_label_not_in_options
+<tbox>
+- [18] ⊑ hasVisualFeature([hexagonal_pattern]) ⊓ hasVisualFeature([tan_color])
+- [22] ⊑ hasVisualFeature([vertical_stripes]) ⊓ hasVisualFeature([pink_color])
+- [23] ⊑ hasVisualFeature([veined_pattern]) ⊓ hasVisualFeature([grey_color])
+- [27] ⊑ hasVisualFeature([perforated_pattern]) ⊓ hasVisualFeature([grey_color])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [horizontal_lines])
+- hasVisualFeature(Query, [white_background])
+- hasVisualFeature(Query, [vertical_red_line])
+</abox>
+
+<dl_explanation>
+- No rules from the provided TBox match the observed features of the Query Image.
+</dl_explanation>
+
+<response>None of the provided labels match the Query Image based on the visual evidence in the examples.</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[23] | Predicted=[23] | Correct=True
+<tbox>
+- Class18 ⊑ hasVisualFeature([hexagonal_pattern])
+- Class22 ⊑ hasVisualFeature([vertical_stripes])
+- Class23 ≡ hasVisualFeature([veined_texture]) ⊓ hasVisualFeature([irregular_cracks])
+- Class27 ⊑ hasVisualFeature([perforated_holes])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [veined_texture])
+- hasVisualFeature(Query, [irregular_cracks])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: Class23 ≡ hasVisualFeature([veined_texture]) ⊓ hasVisualFeature([irregular_cracks])
+</dl_explanation>
+
+<response>23</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[27] | Predicted=[27] | Correct=True
+<tbox>
+- [18] ⊑ hasVisualFeature([cracked_skin_pattern])
+- [22] ⊑ hasVisualFeature([vertical_stripes])
+- [23] ⊑ hasVisualFeature([marble_vein_pattern])
+- [27] ⊑ hasVisualFeature([perforated_holes])
+- [Class_Query] ⊑ hasVisualFeature([grid_pattern]) ⊓ hasVisualFeature([vertical_bars])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [grid_pattern])
+- hasVisualFeature(Query, [vertical_bars])
+</abox>
+
+<dl_explanation>
+- The query image does not match the specific visual features of classes 18, 22, 23, or 27.
+- However, looking at the provided options and the visual patterns:
+- 18: cracked skin/scales
+- 22: pink vertical stripes
+- 23: marble texture
+- 27: metal with holes
+- The query image shows a metal grate/grid. None of the provided labels perfectly match the query image based on the examples provided.
+- Re-evaluating the query image: It is a metal grate with a grid pattern.
+- Re-evaluating the options: 18 (skin), 22 (stripes), 23 (marble), 27 (perforated holes).
+- The query image is a grid, which is most visually similar in "material/structure" to 27 (perforated metal), though the pattern is different.
+- Wait, looking closer at the query image, it is a metal fence/grate.
+- Let's re-examine the provided examples.
+- Example 1: 18 (cracked skin)
+- Example 2: 22 (pink stripes)
+- Example 3: 23 (marble)
+- Example 4: 27 (perforated holes)
+- Query: Metal grid.
+- If I must choose from [18, 22, 23, 27], and the query is a metal structure with holes/gaps, 27 is the closest category (perforated/patterned metal).
+</dl_explanation>
+
+<response>27</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=4 | errors=0 | accuracy=0.5000 | duration_seconds=26.5769 | avg_trial_wall_seconds=6.6212 | avg_trial_api_seconds=6.3750 | system_fallback_count=0

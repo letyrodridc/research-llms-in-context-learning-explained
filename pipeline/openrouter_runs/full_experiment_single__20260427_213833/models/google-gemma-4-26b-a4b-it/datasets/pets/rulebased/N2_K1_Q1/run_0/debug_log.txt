@@ -1,0 +1,38 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=2 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[2] | Predicted=[2] | Correct=True
+<features>
+- animal type: dog
+- color: tan/light brown
+- accessory: pink bandana
+</features>
+
+<kb>
+- IF [animal type = dog] THEN [2]
+- IF [animal type = cat] THEN [5]
+</kb>
+
+<rule_check>
+- The rule "IF [animal type = dog] THEN [2]" fires because the Query Image depicts a dog.
+</rule_check>
+
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[5] | Predicted=[5] | Correct=True
+<features>
+- animal type: cat
+- fur pattern: stripes
+- accessory: collar with a pink heart-shaped tag
+</features>
+
+<kb>
+- IF [animal type = dog] THEN [2]
+- IF [animal type = cat] THEN [5]
+</kb>
+
+<rule_check>
+- The rule "IF [animal type = cat] THEN [5]" fires because the image depicts a cat with striped fur.
+</rule_check>
+
+<response>5</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.6219 | avg_trial_wall_seconds=2.3035 | avg_trial_api_seconds=2.2256 | system_fallback_count=0

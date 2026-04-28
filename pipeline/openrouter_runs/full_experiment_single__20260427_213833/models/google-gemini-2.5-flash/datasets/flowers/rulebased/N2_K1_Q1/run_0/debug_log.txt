@@ -1,0 +1,35 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- flower color: purple
+- number of petals: 5
+- petal shape: broad, somewhat pointed at the tip
+- center of flower: light-colored, spiky stamens
+- background: green leaves
+</features>
+<kb>
+- IF [flower color is purple AND number of petals is 5 AND center of flower has light-colored, spiky stamens] THEN [81]
+- IF [flower color is yellow AND petals are arranged in a complex, irregular shape with some drooping] THEN [14]
+</kb>
+<rule_check>
+- The rule for class 81 fires because the Query Image shows a flower with a purple color, 5 broad petals, and a light-colored, spiky center, which matches the observable features for class 81.
+</rule_check>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- flower color: yellow
+- petal shape: elongated, some curving downwards
+- flower center: not prominently visible, blends with petal color
+- surrounding foliage: green, elongated leaves
+</features>
+<kb>
+- IF [flower color = purple AND flower center = prominent, light-colored stamens AND petal shape = broad, flat] THEN [81]
+- IF [flower color = yellow AND petal shape = elongated, some curving downwards AND flower center = blends with petal color] THEN [14]
+</kb>
+<rule_check>
+- The rule for class 14 fires because the query image shows a flower with a yellow color, elongated petals where some curve downwards, and the flower center blends with the petal color, which matches the features defined for class 14.
+</rule_check>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.0673 | avg_trial_wall_seconds=1.5267 | avg_trial_api_seconds=1.3927 | system_fallback_count=0

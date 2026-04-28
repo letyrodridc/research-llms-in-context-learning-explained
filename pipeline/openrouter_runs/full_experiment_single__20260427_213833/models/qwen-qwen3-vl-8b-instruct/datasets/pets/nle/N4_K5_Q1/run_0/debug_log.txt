@@ -1,0 +1,30 @@
+=== DEBUG LOG | dataset=pets | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=4 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[20] | Predicted=[20] | Correct=True
+<explanation>
+The query image shows a long-haired cat with a distinct tabby pattern and large, pointed ears, which matches the visual characteristics of the cats in class 20 from the examples.
+</explanation>
+
+<response>20</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<explanation>
+The query image shows a white, fluffy dog with a thick coat and a bushy tail, sitting in grass. This matches the visual characteristics of the Samoyed dogs in the labeled examples (class 29), which are also white, fluffy, and have similar facial features and body structure.
+</explanation>
+
+<response>29</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[28] | Predicted=[28] | Correct=True
+<explanation>
+The image shows a dog with a distinctive black and white coat, large droopy ears, and a prominent white blaze on its face, which matches the visual characteristics of the Saint Bernard breed seen in the labeled examples for class 28.
+</explanation>
+
+<response>28</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[13] | Predicted=[13] | Correct=True
+<explanation>
+The query image shows a dog with a white and brown spotted coat, floppy ears, and a somewhat scruffy appearance. This matches the visual characteristics of the dogs in class 13, which are all white and brown spotted dogs with floppy ears and a similar overall look.
+</explanation>
+
+<response>13</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=16.7148 | avg_trial_wall_seconds=4.1760 | avg_trial_api_seconds=2.2920 | system_fallback_count=0

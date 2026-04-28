@@ -1,0 +1,74 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=meta-llama/llama-4-scout | N=4 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[18] | Predicted=[18] | Correct=True
+<tbox>
+- [18] ⊑ hasVisualFeature([hexagonal_pattern])
+- [22] ⊑ hasVisualFeature([stripes])
+- [23] ⊑ hasVisualFeature([marble_texture])
+- [27] ⊑ hasVisualFeature([perforated_metal])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [hexagonal_pattern])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [18] ⊑ hasVisualFeature([hexagonal_pattern])
+</dl_explanation>
+
+<response>18</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[22] | Predicted=[18] | Correct=False
+<tbox>
+- [18] ⊑ hasVisualFeature([horizontal_stripes])
+- [22] ⊑ hasVisualFeature([vertical_stripes])
+- [23] ⊑ hasVisualFeature([marble_texture])
+- [27] ⊑ hasVisualFeature([perforated_pattern])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [horizontal_stripes])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [18] ⊑ hasVisualFeature([horizontal_stripes])
+</dl_explanation>
+
+<response>18</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[23] | Predicted=[23] | Correct=True
+<tbox>
+- [18] ⊑ hasVisualFeature([F1])
+- [22] ⊑ hasVisualFeature([F2])
+- [23] ⊑ hasVisualFeature([F3])
+- [27] ⊑ hasVisualFeature([F4])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [F3])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [23] ⊑ hasVisualFeature([F3])
+</dl_explanation>
+
+<response>23</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[27] | Predicted=[18] | Correct=False
+<tbox>
+- [18] ⊑ hasVisualFeature([F1])
+- [22] ⊑ hasVisualFeature([F2])
+- [23] ⊑ hasVisualFeature([F3])
+- [27] ⊑ hasVisualFeature([F4])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [F1])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [18] ⊑ hasVisualFeature([F1])
+</dl_explanation>
+
+<response>18</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=4 | errors=0 | accuracy=0.5000 | duration_seconds=16.7505 | avg_trial_wall_seconds=4.1857 | avg_trial_api_seconds=3.6538 | system_fallback_count=0

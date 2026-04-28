@@ -1,0 +1,35 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- texture: woven, irregular, rough
+- pattern: horizontal and vertical elements intersecting
+- material appearance: natural wood/branches
+- color: dark brown/grey
+</features>
+<kb>
+- IF [texture is woven and irregular AND pattern consists of intersecting horizontal and vertical elements] THEN [44]
+- IF [texture is pleated and uniform AND pattern consists of parallel horizontal lines] THEN [29]
+</kb>
+<rule_check>
+- The rule for class 44 fires because the Query Image displays a woven and irregular texture with a pattern of intersecting horizontal and vertical elements, which are consistent with the features observed in the example for class 44.
+</rule_check>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[29] | Predicted=[44] | Correct=False
+<features>
+- texture: smooth, flowing fabric
+- pattern: vertical pleats or folds
+- color: solid, light brown/beige
+- overall appearance: soft, draped material
+</features>
+<kb>
+- IF [texture = rough, woven pattern AND pattern = small, repeating bumps] THEN [44]
+- IF [texture = smooth, pleated material AND pattern = horizontal, parallel folds] THEN [29]
+- IF [texture = smooth, flowing fabric AND pattern = vertical pleats or folds] THEN [44]
+</kb>
+<rule_check>
+- The rule for class 44 fires because the Query Image shows a smooth, flowing fabric with vertical pleats or folds, which aligns with the refined understanding of class 44 based on the provided examples. The original example for 44 shows a textured fabric, but the query image's features are more consistent with a general fabric or curtain-like material than the distinct horizontal blinds of class 29.
+</rule_check>
+<response>44</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=1 | total=2 | errors=0 | accuracy=0.5000 | duration_seconds=3.2487 | avg_trial_wall_seconds=1.6219 | avg_trial_api_seconds=1.4844 | system_fallback_count=0

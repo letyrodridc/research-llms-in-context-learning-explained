@@ -1,0 +1,56 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=3 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[21] | Predicted=[21] | Correct=True
+<features>
+- observable feature: black and tan coat
+- observable feature: large, erect ears
+- observable feature: small size
+</features>
+<kb>
+- IF [observable visual features = black and tan coat AND observable visual features = large, erect ears AND observable visual features = small size] THEN [21]
+- IF [observable visual features = fluffy white coat AND observable visual features = large size] THEN [15]
+- IF [observable visual features = long fur AND observable visual features = pointed ears AND observable visual features = blue eyes] THEN [26]
+</kb>
+
+<rule_check>
+- Rule 1 fires for the Query Image because it matches the observable features: black and tan coat, large erect ears, and small size, which are characteristic of class 21.
+</rule_check>
+
+<response>21</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[26] | Predicted=[26] | Correct=True
+<features>
+- observable feature: the animal is a cat
+- observable feature: the cat has long fur
+- observable feature: the cat has a white chest and paws
+- observable feature: the cat has dark markings on its face and ears
+- observable feature: the cat has blue eyes
+</features>
+<kb>
+- IF [the animal is a cat AND long fur AND white chest and paws AND dark facial markings AND blue eyes] THEN [26]
+- IF [the animal is a dog AND fluffy white coat AND large size] THEN [15]
+- IF [the animal is a dog AND small size AND black and tan coat AND large ears] THEN [21]
+</kb>
+<rule_check>
+- Rule 1 fires because the animal is a cat with long fur, white chest and paws, dark facial markings, and blue eyes, which matches the features of class 26.
+</rule_check>
+<response>26</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[15] | Predicted=[15] | Correct=True
+<features>
+- observable feature: dog
+- observable feature: large size
+- observable feature: fluffy white fur
+</features>
+<kb>
+- IF [observable visual features = dog AND observable visual features = large size AND observable visual features = fluffy white fur] THEN [15]
+- IF [observable visual features = cat] THEN [26]
+- IF [observable visual features = small dog AND observable visual features = black and tan fur] THEN [21]
+</kb>
+
+<rule_check>
+- Rule 1 fires because the image shows a dog that is large in size and has fluffy white fur, matching the conditions for class 15.
+</rule_check>
+
+<response>15</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=14.3580 | avg_trial_wall_seconds=4.7820 | avg_trial_api_seconds=3.4952 | system_fallback_count=0

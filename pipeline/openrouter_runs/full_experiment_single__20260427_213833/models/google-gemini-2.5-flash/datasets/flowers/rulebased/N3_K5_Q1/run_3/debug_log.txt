@@ -1,0 +1,53 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemini-2.5-flash | N=3 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[87] | Predicted=[87] | Correct=True
+<features>
+- flower color: red/dark pink
+- petal shape: reflexed upwards, forming a cup-like structure at the base
+- flower center: dark, with visible stamens/pistil
+- leaves: visible in the background, dark green with lighter markings
+</features>
+<kb>
+- IF [flower color is yellow AND petals are broad and spread out, with some pointing upwards and some downwards] THEN [14]
+- IF [flower has a prominent, elongated, pink/red bract (spathe) with small purple flowers emerging from it AND leaves are long and thin, grass-like] THEN [92]
+- IF [flower color is pink/red/white AND petals are reflexed upwards, often forming a cup-like structure at the base] THEN [87]
+</kb>
+<rule_check>
+- The rule for class 87 fires because the query image shows a flower with a red color and petals that are reflexed upwards, forming a cup-like structure at the base, which is consistent with the observable features of class 87 examples.
+</rule_check>
+<response>87</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[92] | Predicted=[92] | Correct=True
+<features>
+- main flower structure: large, elongated, pink, scale-like bracts
+- smaller flowers: purple, emerging from the pink structure
+- leaves: long, thin, green, grass-like
+</features>
+<kb>
+- IF [flower petals are distinct and separate, often curled upwards, and the overall flower shape is cup-like or bell-like, with a darker base] THEN [87]
+- IF [main flower structure is a large, elongated, pink or reddish bract with smaller purple flowers emerging from it, and leaves are long and thin] THEN [92]
+- IF [flower is yellow with distinct upper and lower petals, and a prominent central yellow area with darker lines] THEN [14]
+</kb>
+<rule_check>
+- The rule for class 92 fires because the Query Image shows a large, elongated, pink structure with smaller purple flowers emerging from it, and long, thin leaves, which matches the observable features for class 92.
+</rule_check>
+<response>92</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- flower color: yellow
+- petal shape: three large, drooping lower petals and three smaller, upright upper petals
+- central pattern: dark brown/reddish lines forming a pattern on the lower petals
+- stem: green, upright
+- background: green foliage
+</features>
+<kb>
+- IF [flower color is predominantly pink/magenta AND petals are reflexed upwards from a central point AND flower shape is generally bell-like or cup-like] THEN [87]
+- IF [flower has a prominent, elongated, paddle-shaped or feather-like pink/red bract AND small purple/blue flowers emerging from the bract AND long, thin green leaves] THEN [92]
+- IF [flower color is yellow AND petals are arranged with three large, drooping lower petals and three smaller, upright upper petals AND there is a distinct dark pattern at the base of the lower petals] THEN [14]
+</kb>
+<rule_check>
+- The rule for class 14 fires because the Query Image shows a flower that is yellow, has three large drooping lower petals and three smaller upright upper petals, and exhibits a distinct dark pattern at the base of the lower petals.
+</rule_check>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=8.3917 | avg_trial_wall_seconds=2.7946 | avg_trial_api_seconds=2.2808 | system_fallback_count=0

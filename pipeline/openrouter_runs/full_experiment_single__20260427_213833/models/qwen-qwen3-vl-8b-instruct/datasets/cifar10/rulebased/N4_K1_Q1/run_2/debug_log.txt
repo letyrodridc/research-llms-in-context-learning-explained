@@ -1,0 +1,64 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=4 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- observable feature: animal is a horse
+- observable feature: horse is brown
+- observable feature: horse is in motion (running)
+</features>
+<kb>
+- IF [animal is a horse AND horse is brown AND horse is in motion] THEN [7]
+- IF [animal is a horse AND horse is white] THEN [7]
+- IF [animal is a bird] THEN [0]
+- IF [animal is a deer] THEN [4]
+</kb>
+<rule_check>
+- Rule 1 fires because the animal is a horse, it is brown, and it is in motion, matching the condition for class 7.
+</rule_check>
+<response>7</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- observable feature: large white vessel
+- observable feature: docked or stationary
+- observable feature: water in background
+</features>
+<kb>
+- IF [observable visual features = large white vessel AND docked or stationary AND water in background] THEN [8]
+</kb>
+<rule_check>
+- Rule 1 fires because the image shows a large white vessel that is docked or stationary with water in the background, matching the condition for class 8.
+</rule_check>
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[0] | Predicted=[7] | Correct=False
+<features>
+- observable feature: object has wings
+- observable feature: object has tail
+- observable feature: object has cockpit
+</features>
+<kb>
+- IF [observable visual features = object has wings AND object has tail AND object has cockpit] THEN [7]
+- IF [observable visual features = object has propeller AND object has wings] THEN [8]
+- IF [observable visual features = object has wings AND object is in flight] THEN [0]
+- IF [observable visual features = object has four legs AND object has antlers] THEN [4]
+</kb>
+<rule_check>
+- Rule 1 fires because the object has wings, a tail, and a cockpit, matching the features of class 7.
+</rule_check>
+<response>7</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- observable feature: four-legged animal
+- observable feature: brownish fur
+- observable feature: small antlers or horn-like structures
+</features>
+<kb>
+- IF [four-legged animal AND brownish fur AND small antlers or horn-like structures] THEN [4]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows a four-legged animal with brownish fur and small antlers or horn-like structures, matching the features for class 4.
+</rule_check>
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=9.3788 | avg_trial_wall_seconds=2.3419 | avg_trial_api_seconds=2.2166 | system_fallback_count=0

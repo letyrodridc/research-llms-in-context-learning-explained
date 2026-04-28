@@ -1,0 +1,58 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=3 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<tbox>
+- Class45 ⊑ hasVisualFeature([horizontal_rippled_texture])
+- Class10 ⊑ hasVisualFeature([polka_dots_on_white_background])
+- Class19 ⊑ hasVisualFeature([intricate_floral_pattern])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [crinkled_texture])
+- hasVisualFeature(Query, [purple_color])
+</abox>
+
+<dl_explanation>
+- No rules from the TBox matched the specific visual features of the Query Image.
+</dl_explanation>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[10] | Predicted=[10] | Correct=True
+<tbox>
+- Class45 ⊑ hasVisualFeature([horizontal_rippled_texture])
+- Class10 ≡ hasVisualFeature([polka_dots]) ⊓ hasVisualFeature([multi_colored_dots_on_white_background])
+- Class19 ⊑ hasVisualFeature([intricate_floral_pattern])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [polka_dots])
+- hasVisualFeature(Query, [light_colored_dots_on_dark_background])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: Class10 ≡ hasVisualFeature([polka_dots]) ⊓ hasVisualFeature([multi_colored_dots_on_white_background]) (Note: The pattern of dots is the primary identifier for Class 10)
+</dl_explanation>
+
+<response>10</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[19] | Predicted=[None of the provided labels match the Query Image.] | Correct=False
+WARNING: response_label_not_in_options
+<tbox>
+- Class45 ⊑ hasVisualFeature([horizontal_rippled_texture])
+- Class10 ⊑ hasVisualFeature([polka_dots_on_white_background])
+- Class19 ⊑ hasVisualFeature([intricate_floral_pattern])
+- Class_New ≡ hasVisualFeature([intertwined_carved_animal_figures])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [intertwined_carved_animal_figures])
+- hasVisualFeature(Query, [carved_wood_texture])
+</abox>
+
+<dl_explanation>
+- No rules from the provided classes (45, 10, 19) match the visual features of the Query Image.
+</dl_explanation>
+
+<response>None of the provided labels match the Query Image.</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=3 | errors=0 | accuracy=0.6667 | duration_seconds=10.4679 | avg_trial_wall_seconds=3.4875 | avg_trial_api_seconds=3.2559 | system_fallback_count=0

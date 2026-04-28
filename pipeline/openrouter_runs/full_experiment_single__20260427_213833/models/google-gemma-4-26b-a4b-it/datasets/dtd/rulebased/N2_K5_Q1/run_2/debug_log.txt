@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=2 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[17] | Predicted=[17] | Correct=True
+<features>
+- repetitive parallel lines: present
+- horizontal orientation of lines: present
+- uniform texture: present
+</features>
+<kb>
+- IF [repetitive parallel lines = present] THEN [17]
+- IF [puddles on ground = present] THEN [32]
+</kb>
+<rule_check>
+- The rule for class 17 fires because the image consists of a pattern of repetitive, parallel, horizontal lines.
+</rule_check>
+
+<response>17</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- dark, textured ground surface: present
+- large, irregular hole/depression: present
+- puddle of water within the depression: present
+</features>
+
+<kb>
+- IF [surface is composed of parallel lines or ridges] THEN [17]
+- IF [surface is dark, textured ground with irregular holes/puddles] THEN [32]
+</kb>
+
+<rule_check>
+- The rule for class 32 fires because the image shows a dark, textured ground surface with a large, irregular hole containing a puddle, matching the pattern seen in the support images for class 32.
+</rule_check>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=6.6256 | avg_trial_wall_seconds=3.3108 | avg_trial_api_seconds=2.9240 | system_fallback_count=0

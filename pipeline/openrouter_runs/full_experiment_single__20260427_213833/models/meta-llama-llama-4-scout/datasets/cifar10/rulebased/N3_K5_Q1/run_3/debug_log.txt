@@ -1,0 +1,57 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=meta-llama/llama-4-scout | N=3 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- airplane: present
+- blurry: present
+- white: present
+- blue: present
+</features>
+<kb>
+- IF airplane = present AND blurry = present AND white = present AND blue = present THEN 0
+- IF blurry = present AND brown = present AND green = absent THEN 6
+- IF blurry = present AND horse = present THEN 7
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is:  IF airplane = present AND blurry = present AND white = present AND blue = present THEN 0, because the image shows a blurry airplane with white and blue colors.
+</rule_check>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- color: green
+- color: black
+- object: animal
+</features>
+<kb>
+- IF [color = green AND color = black AND object = animal] THEN [6]
+- IF [object = horse OR object = rider AND object = horse] THEN [7]
+- IF [object = airplane] THEN [0]
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF [color = green AND color = black AND object = animal] THEN [6], because the Query Image shows an animal with green and black colors.
+</rule_check>
+
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- color: brown
+- color: black
+- object: horse
+</features>
+<kb>
+- IF [object = horse AND color = brown AND color = black] THEN [7]
+- IF [object = frog OR object = lizard] THEN [6]
+- IF [object = airplane] THEN [0]
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF [object = horse AND color = brown AND color = black] THEN [7], because the Query Image shows a brown horse with a black mane and tail.
+</rule_check>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=10.9094 | avg_trial_wall_seconds=3.6293 | avg_trial_api_seconds=3.2803 | system_fallback_count=0

@@ -1,0 +1,27 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<tbox>
+0 ⊑ hasVisualFeature(dark_object_with_wings_and_tail)
+3 ⊑ hasVisualFeature(human_figure_in_white_clothing)
+</tbox>
+<abox>
+</abox>
+<dl_explanation>
+</dl_explanation>
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[0] | Predicted=[0] | Correct=True
+<tbox>
+0 ⊑ hasVisualFeature(dark_object_with_wings) ⊓ hasVisualFeature(flying_in_sky)
+3 ⊑ hasVisualFeature(multiple_figures) ⊓ hasVisualFeature(light_colored_clothing)
+</tbox>
+<abox>
+hasVisualFeature(Query, dark_object_with_wings)
+hasVisualFeature(Query, flying_in_sky)
+</abox>
+<dl_explanation>
+0 ⊑ hasVisualFeature(dark_object_with_wings) ⊓ hasVisualFeature(flying_in_sky)
+</dl_explanation>
+<response>0</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=2.1369 | avg_trial_wall_seconds=1.0651 | avg_trial_api_seconds=1.0330 | system_fallback_count=0

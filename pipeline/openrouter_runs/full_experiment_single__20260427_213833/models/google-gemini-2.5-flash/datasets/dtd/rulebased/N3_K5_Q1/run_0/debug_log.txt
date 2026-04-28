@@ -1,0 +1,54 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemini-2.5-flash | N=3 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- surface texture: rough and uneven
+- presence of depressions: multiple, elongated, and irregular depressions
+- content of depressions: some depressions contain loose debris (gravel, small rocks)
+- overall appearance: damaged road surface
+</features>
+<kb>
+- IF [surface texture is rough and uneven AND presence of multiple, irregular depressions, often containing water or debris] THEN [32]
+- IF [surface texture is patterned with fine lines or grids, or smooth with distinct pockets/slots, or abstract geometric patterns] THEN [8]
+- IF [surface texture is covered with numerous small, raised, rounded bumps or droplets] THEN [4]
+</kb>
+<rule_check>
+- The rule for class 32 fires because the Query Image displays a rough and uneven surface texture with multiple, elongated, and irregular depressions containing loose debris, which is consistent with the observable features of class 32 examples.
+</rule_check>
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- overall color: dark (black)
+- texture: finely woven or cross-hatched pattern
+- shape: rectangular bag with handles and some decorative elements
+- surface: generally flat with some folds and protrusions from the bag's structure
+</features>
+<kb>
+- IF [image shows a surface with distinct, raised, often rounded or irregular bumps/protrusions, or a pattern of distinct, separated elements] THEN [4]
+- IF [image shows a surface with a fine, uniform, often linear or cross-hatched texture, or a flat object with such a texture] THEN [8]
+- IF [image shows a road surface with visible depressions, cracks, or puddles, indicating damage or unevenness] THEN [32]
+</kb>
+<rule_check>
+- The rule for class 8 fires because the Query Image displays a surface with a fine, uniform, cross-hatched texture, which is a key characteristic of examples in class 8. The texture is consistent across the main body of the bag.
+</rule_check>
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- surface texture: bumpy and irregular
+- shape of bumps: rounded, scale-like, overlapping
+- arrangement of bumps: organized in a spiral or diagonal pattern
+- color: grayscale, dark tones
+- background: solid dark/black
+</features>
+<kb>
+- IF [surface has distinct, raised, often rounded or irregular bumps/protrusions that create a textured, non-flat appearance] THEN [4]
+- IF [surface has a uniform, often linear or woven pattern, or is a flat object with minimal texture] THEN [8]
+- IF [image shows a road surface with visible depressions, cracks, or water-filled holes] THEN [32]
+</kb>
+<rule_check>
+- The rule for class 4 fires because the Query Image clearly shows a surface with distinct, raised, rounded, and irregular bumps/protrusions, creating a highly textured, non-flat appearance. This matches the observable features of the Query Image.
+</rule_check>
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=8.6109 | avg_trial_wall_seconds=2.8679 | avg_trial_api_seconds=2.2707 | system_fallback_count=0

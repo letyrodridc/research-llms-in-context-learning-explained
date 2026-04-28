@@ -1,0 +1,77 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=google/gemini-2.5-flash | N=4 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[19] | Predicted=[19] | Correct=True
+<features>
+- animal type: dog
+- fur color: brown and black
+- fur texture: long and shaggy
+- face color: black mask with lighter brown/grey around eyes and muzzle
+- body position: lying down
+</features>
+<kb>
+- IF [animal type = dog AND fur color = brown and black AND fur texture = long and shaggy AND face color = black mask with lighter brown/grey around eyes and muzzle] THEN [19]
+- IF [animal type = cat AND fur color = light brown/cream with dark brown points AND eye color = blue] THEN [32]
+- IF [animal type = cat AND fur color = brown and white with dark brown points AND fur texture = long] THEN [26]
+- IF [animal type = cat AND fur color = tabby (brown/black stripes) and white AND fur texture = short/medium] THEN [20]
+</kb>
+<rule_check>
+- The rule for class 19 fires because the Query Image shows a dog with brown and black long, shaggy fur, and a black mask on its face with lighter brown/grey around the eyes and muzzle.
+</rule_check>
+<response>19</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[32] | Predicted=[19] | Correct=False
+<features>
+- fur color pattern: light body with dark brown points (face, ears)
+- eye color: yellow/light
+- face mask: dark brown
+- ear color: dark brown
+</features>
+<kb>
+- IF [fur color pattern = light body with dark brown points AND eye color = blue] THEN [32]
+- IF [fur color pattern = light body with dark brown points AND eye color = yellow/light AND fur length = medium/long] THEN [26]
+- IF [fur color pattern = light body with dark brown points AND eye color = yellow/light AND fur length = short/medium] THEN [19]
+- IF [fur color pattern = tabby with white paws] THEN [20]
+</kb>
+<rule_check>
+- The rule for class 19 fires because the Query Image shows a cat with a light body and dark brown points on its face and ears, yellow/light eyes, and short to medium fur length. This matches the features observed in the Query Image.
+</rule_check>
+<response>19</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[26] | Predicted=[26] | Correct=True
+<features>
+- fur color: predominantly white with some brown/grey patches
+- fur length: long and fluffy
+- eye color: blue
+- face markings: brown/grey patches on forehead and around eyes, white muzzle
+</features>
+<kb>
+- IF [fur color is predominantly brown/black with some lighter areas AND/OR fur is long and shaggy AND/OR animal is a dog] THEN [19]
+- IF [fur color is light cream/tan with dark brown points on face, ears, paws, and tail AND eyes are blue AND fur is short to medium] THEN [32]
+- IF [fur color is predominantly brown with a white chest and face markings AND fur is long and fluffy AND eyes are blue] THEN [26]
+- IF [fur color is tabby striped brown/black with white paws and chest AND fur is short to medium] THEN [20]
+</kb>
+<rule_check>
+- The rule for class 26 fires because the Query Image shows a cat with predominantly brown fur (patches) and a white chest, long and fluffy fur, and blue eyes.
+</rule_check>
+<response>26</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[20] | Predicted=[20] | Correct=True
+<features>
+- fur color: light brown/cream with subtle tabby markings
+- ear shape: large, pointed, with tufts of fur inside
+- eye color: green/hazel
+- nose color: pink
+- face shape: broad, with prominent muzzle
+- body type: appears to be a cat
+</features>
+<kb>
+- IF [animal is a dog with long, shaggy brown fur and a black muzzle] THEN [19]
+- IF [animal is a cat with light cream body fur, dark brown points (face, ears, paws, tail), and blue eyes] THEN [32]
+- IF [animal is a cat with dark brown fur on the back and face, white fur on the chest and belly, and blue eyes] THEN [26]
+- IF [animal is a cat with tabby markings (stripes/spots) on brown/cream fur, white paws, and green/yellow eyes] THEN [20]
+</kb>
+<rule_check>
+- The rule for class 20 fires because the Query Image shows a cat with tabby markings on light brown/cream fur and green/hazel eyes. While white paws are not explicitly visible, the overall pattern of tabby markings on brown/cream fur and eye color aligns with the features observed in the example for class 20.
+</rule_check>
+<response>20</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=9.2970 | avg_trial_wall_seconds=2.3229 | avg_trial_api_seconds=2.0557 | system_fallback_count=0

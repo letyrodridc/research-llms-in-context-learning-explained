@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=meta-llama/llama-4-scout | N=2 K=5 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[17] | Predicted=[17] | Correct=True
+<tbox>
+- [17] ⊑ hasVisualFeature([vertical_lines])
+- hasVisualFeature([cracks_or_holes]) ⊑ [32]
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [vertical_lines])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [17] ⊑ hasVisualFeature([vertical_lines])
+</dl_explanation>
+
+<response>17</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<tbox>
+- [17] ⊑ hasVisualFeature([groove])
+- [32] ⊑ hasVisualFeature([crack])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [crack])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [32] ⊑ hasVisualFeature([crack])
+</dl_explanation>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.9423 | avg_trial_wall_seconds=2.4688 | avg_trial_api_seconds=1.8773 | system_fallback_count=0

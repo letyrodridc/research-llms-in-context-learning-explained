@@ -1,0 +1,50 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=3 K=1 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[71] | Predicted=[71] | Correct=True
+<features>
+- observable feature: petals are light pink with darker pink speckles near the center
+- observable feature: center has prominent stamens
+- observable feature: background shows green leaves
+</features>
+<kb>
+- IF [petals are light pink with darker pink speckles near the center AND center has prominent stamens] THEN [71]
+- IF [petals are white AND center has yellow stamens] THEN [68]
+- IF [petals are pink AND center has yellow stamens] THEN [33]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image has light pink petals with darker pink speckles near the center and a center with prominent stamens, matching the features described in the IF condition for class 71.
+</rule_check>
+<response>71</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[68] | Predicted=[68] | Correct=True
+<features>
+- observable feature: flower color is white
+- observable feature: center has yellow stamens
+- observable feature: petals are broad and slightly notched at the tips
+</features>
+<kb>
+- IF [flower color is white AND center has yellow stamens AND petals are broad and slightly notched at the tips] THEN [68]
+- IF [flower color is red AND center has yellow stamens] THEN [71]
+- IF [flower color is pink AND center has yellow stamens] THEN [33]
+</kb>
+<rule_check>
+- Rule for class 68 fires because the Query Image has a white flower with a yellow center and broad, slightly notched petals, matching the features in the IF condition for class 68.
+</rule_check>
+<response>68</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[33] | Predicted=[33] | Correct=True
+<features>
+- observable feature: flower color is purple
+- observable feature: flower has a yellow center
+- observable feature: flower has multiple petals
+</features>
+<kb>
+- IF [flower color is purple AND flower has a yellow center] THEN [33]
+- IF [flower color is white AND flower has a yellow center] THEN [68]
+- IF [flower color is red AND flower has a yellow center] THEN [71]
+</kb>
+<rule_check>
+- Rule 1 fires because the flower in the Query Image is purple and has a yellow center, matching the condition for class 33.
+</rule_check>
+<response>33</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=17.2020 | avg_trial_wall_seconds=5.7304 | avg_trial_api_seconds=5.3647 | system_fallback_count=0

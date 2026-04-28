@@ -1,0 +1,10 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=nle | model=google/gemini-2.5-flash | N=2 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[8] | Predicted=[8] | Correct=True
+<explanation>The query image displays a large object on water, characterized by a long, horizontal base and vertical structures extending upwards from the base. This visual pattern is consistently observed in all examples labeled '8', which depict various types of boats or ships. In contrast, examples labeled '7' consistently show the distinct four-legged, equine body shape of a horse on land. Therefore, based on the observable visual features, the query image aligns with class '8'.</explanation>
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[7] | Predicted=[7] | Correct=True
+<explanation>The query image displays a four-legged animal with a brown body and lighter colored lower legs, standing in what appears to be an outdoor setting. This visual pattern, specifically the body shape, number of legs, and overall posture, is consistently observed in all examples labeled '7'. In contrast, examples labeled '8' consistently show objects that are clearly boats or ships, characterized by their presence on water and distinct hull shapes, which are not present in the query image.</explanation>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.2466 | avg_trial_wall_seconds=1.6191 | avg_trial_api_seconds=1.5042 | system_fallback_count=0

@@ -1,0 +1,33 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[17] | Predicted=[17] | Correct=True
+<features>
+- pattern: horizontal parallel lines
+- texture: corrugated or ribbed
+- color: grey/silver
+</features>
+<kb>
+- IF [image contains a pattern of parallel lines or grooves, either vertical or horizontal, on a surface or object] THEN [17]
+- IF [image contains irregular depressions or holes in a surface, often filled with liquid, indicating damage or unevenness] THEN [32]
+</kb>
+<rule_check>
+- The rule for class 17 fires because the Query Image clearly displays a pattern of horizontal parallel lines, consistent with the description of corrugated or ribbed surfaces seen in the examples for class 17.
+</rule_check>
+<response>17</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- surface texture: rough, granular, uneven
+- presence of distinct features: a single, dark, irregular depression
+- content of depression: appears to be wet or muddy, reflecting some light
+- overall pattern: no repeating linear patterns
+</features>
+<kb>
+- IF [image contains repeating parallel lines or grooves, or a textured surface with a consistent linear pattern] THEN [17]
+- IF [image contains one or more irregular depressions or holes in a surface, often filled with liquid or debris, and the surface is generally rough or uneven without clear linear patterns] THEN [32]
+</kb>
+<rule_check>
+- The rule for class 32 fires because the Query Image contains a single, irregular depression in a rough, uneven surface, which appears to be a pothole. There are no repeating linear patterns as seen in class 17 examples.
+</rule_check>
+<response>32</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.1164 | avg_trial_wall_seconds=2.0560 | avg_trial_api_seconds=1.7348 | system_fallback_count=0

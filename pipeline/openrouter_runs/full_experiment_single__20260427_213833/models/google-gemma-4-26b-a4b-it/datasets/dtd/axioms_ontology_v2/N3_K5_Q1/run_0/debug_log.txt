@@ -1,0 +1,55 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=3 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[32] | Predicted=[32] | Correct=True
+<tbox>
+- [32] ⊑ hasVisualFeature([pothole])
+- [32] ⊑ hasVisualFeature([asphalt_surface])
+- [8] ≡ hasVisualFeature([texture_pattern])
+- [4] ≡ hasVisualFeature([repetitive_bumps])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [pothole])
+- hasVisualFeature(Query, [asphalt_surface])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [32] ⊑ hasVisualFeature([pothole])
+</dl_explanation>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<tbox>
+- 32 ⊑ hasVisualFeature([pothole_on_road])
+- 8 ≡ hasVisualFeature([textured_surface])
+- 4 ≡ hasVisualFeature([repetitive_bumps])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [textured_surface])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: 8 ≡ hasVisualFeature([textured_surface])
+</dl_explanation>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[4] | Predicted=[4] | Correct=True
+<tbox>
+- [32] ⊑ hasVisualFeature([pothole]) ⊓ hasVisualFeature([water_puddle])
+- [8] ≡ hasVisualFeature([texture_pattern])
+- [4] ≡ hasVisualFeature([repetitive_bumps])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [repetitive_bumps])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [4] ≡ hasVisualFeature([repetitive_bumps])
+</dl_explanation>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=10.5917 | avg_trial_wall_seconds=3.5280 | avg_trial_api_seconds=2.8620 | system_fallback_count=0

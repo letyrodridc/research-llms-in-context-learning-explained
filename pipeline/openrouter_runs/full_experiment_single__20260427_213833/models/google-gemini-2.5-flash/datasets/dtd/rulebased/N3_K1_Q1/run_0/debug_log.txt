@@ -1,0 +1,54 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemini-2.5-flash | N=3 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- texture: crumpled/wrinkled
+- pattern: irregular folds and creases
+- color: solid lime green
+- objects: none
+</features>
+<kb>
+- IF [texture = crumpled/wrinkled AND pattern = irregular folds and creases AND objects = none] THEN [45]
+- IF [pattern = small, multi-colored dots evenly distributed AND objects = none] THEN [10]
+- IF [pattern = intricate knot-like design AND objects = central circular gem] THEN [19]
+</kb>
+<rule_check>
+- The rule for class 45 fires because the Query Image exhibits a crumpled/wrinkled texture with irregular folds and creases, and no discernible objects, which matches the features observed in the example for class 45.
+</rule_check>
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[10] | Predicted=[10] | Correct=True
+<features>
+- pattern: multiple, scattered, circular shapes
+- color of circles: varied (brown, pink, blue, beige, green)
+- size of circles: varied (small to large)
+- background: light, uniform color
+- texture: subtle, cross-hatched lines within circles
+</features>
+<kb>
+- IF [image shows a textured, crumpled, or folded surface with no distinct repeating pattern or objects] THEN [45]
+- IF [image shows multiple, scattered, circular shapes of various colors and sizes on a uniform background] THEN [10]
+- IF [image shows an intricate, interwoven metallic design with a central, circular, colored gem] THEN [19]
+</kb>
+<rule_check>
+- The rule for class 10 fires because the Query Image clearly displays multiple, scattered, circular shapes of various colors and sizes on a uniform background, which directly matches the observable features.
+</rule_check>
+<response>10</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[19] | Predicted=[19] | Correct=True
+<features>
+- overall pattern: intricate, interwoven, and curvilinear designs
+- color palette: rich, vibrant, and varied, including gold, red, blue, and green
+- subject matter: multiple human figures depicted within distinct sections of the pattern
+- texture: appears to be a flat, painted or illuminated surface
+</features>
+<kb>
+- IF [overall pattern = intricate, interwoven, and curvilinear designs AND color palette = rich, vibrant, and varied AND subject matter = multiple human figures] THEN [19]
+- IF [overall pattern = random, small, colored dots AND color palette = multiple distinct colors on a light background] THEN [10]
+- IF [overall pattern = wrinkled, uneven surface AND color palette = monochromatic or very limited color range] THEN [45]
+</kb>
+<rule_check>
+- The rule for class 19 fires because the Query Image displays an intricate, interwoven, and curvilinear overall pattern, a rich, vibrant, and varied color palette, and features multiple human figures, which aligns with the observable features of the Query Image.
+</rule_check>
+<response>19</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=5.9405 | avg_trial_wall_seconds=1.9784 | avg_trial_api_seconds=1.8186 | system_fallback_count=0

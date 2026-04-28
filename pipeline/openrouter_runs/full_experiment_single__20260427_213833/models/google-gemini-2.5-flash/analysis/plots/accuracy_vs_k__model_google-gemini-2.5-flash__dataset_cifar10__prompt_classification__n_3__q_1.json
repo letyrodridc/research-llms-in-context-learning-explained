@@ -1,0 +1,65 @@
+{
+  "title": "Accuracy vs k | google/gemini-2.5-flash | cifar10 | classification | n=3, q=1",
+  "alpha": 0.05,
+  "x_field": "config_k",
+  "series_field": null,
+  "filters": {
+    "model": "google/gemini-2.5-flash",
+    "dataset": "cifar10",
+    "prompt_type": "classification",
+    "config_n": "3",
+    "config_q": "1"
+  },
+  "rows": [
+    {
+      "x": "1",
+      "series": "accuracy",
+      "correct": 11,
+      "total": 12,
+      "accuracy": 0.9167,
+      "standard_error": 0.079786,
+      "ci95_low": 0.6461,
+      "ci95_high": 0.9851
+    },
+    {
+      "x": "5",
+      "series": "accuracy",
+      "correct": 12,
+      "total": 12,
+      "accuracy": 1.0,
+      "standard_error": 0.0,
+      "ci95_low": 0.7575,
+      "ci95_high": 1.0
+    }
+  ],
+  "statistics": {
+    "alpha": 0.05,
+    "group_field": "config_k",
+    "groups": [
+      "1",
+      "5"
+    ],
+    "matched": false,
+    "omnibus": {
+      "test": "fisher_exact",
+      "statistic": 0.0,
+      "p_value": 1.0,
+      "significant": false,
+      "matched_units": null
+    },
+    "pairwise": [
+      {
+        "group_a": "1",
+        "group_b": "5",
+        "odds_ratio": 0.0,
+        "p_value": 1.0,
+        "a_correct": 11,
+        "a_wrong": 1,
+        "b_correct": 12,
+        "b_wrong": 0,
+        "p_value_holm": 1.0,
+        "significant_holm": false
+      }
+    ]
+  }
+}

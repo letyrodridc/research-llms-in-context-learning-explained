@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=axioms_ontology_v2 | model=meta-llama/llama-4-scout | N=2 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<tbox>
+- [0] ⊑ hasVisualFeature([pointy_ears]) 
+- [0] ⊑ hasVisualFeature([long_body])
+- [3] ≡ hasVisualFeature([fluffy_fur]) ⊓ hasVisualFeature([blue_eyes])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [fluffy_fur])
+- hasVisualFeature(Query, [blue_eyes])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [3] ≡ hasVisualFeature([fluffy_fur]) ⊓ hasVisualFeature([blue_eyes])
+</dl_explanation>
+
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[0] | Predicted=[0] | Correct=True
+<tbox>
+- [Class0] ⊑ hasVisualFeature([F0])
+- [Class3] ≡ hasVisualFeature([F3]) ⊓ hasVisualFeature([F4])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [F0])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [Class0] ⊑ hasVisualFeature([F0])
+</dl_explanation>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.9297 | avg_trial_wall_seconds=1.9609 | avg_trial_api_seconds=1.9022 | system_fallback_count=0

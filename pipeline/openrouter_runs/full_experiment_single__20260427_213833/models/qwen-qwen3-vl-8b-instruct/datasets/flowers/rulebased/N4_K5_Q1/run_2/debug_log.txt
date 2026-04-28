@@ -1,0 +1,65 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=4 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[86] | Predicted=[86] | Correct=True
+<features>
+- observable feature: large, showy flower with multiple petals
+- observable feature: petals are pinkish-white with a gradient to darker pink at the base
+- observable feature: flower has a cup-like or bowl-like shape
+- observable feature: visible green leaves and branches in the background
+</features>
+<kb>
+- IF [flower has large, showy, cup-like petals that are pinkish-white with a darker pink base AND visible green leaves and branches] THEN [86]
+- IF [flower has distinctively shaped petals with a central yellow cluster and outer sepals that are different in color] THEN [83]
+- IF [flower has large, showy petals with a distinct color gradient from center to edge and prominent stamens] THEN [82]
+- IF [flower has a dense, spiky, crown-like structure with pointed bracts] THEN [12]
+</kb>
+<rule_check>
+- Rule for class 86 fires because the Query Image shows a large, showy, cup-like flower with pinkish-white petals that darken at the base, and green leaves and branches are visible in the background, matching the features described in the rule for class 86.
+</rule_check>
+<response>86</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[83] | Predicted=[83] | Correct=True
+<features>
+- observable feature: flower has five petals
+- observable feature: petals are light blue and white
+- observable feature: center is yellow
+</features>
+<kb>
+- IF [flower has five petals AND petals are light blue and white AND center is yellow] THEN [83]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows a flower with five petals, light blue and white petals, and a yellow center, which matches the features described in the rule for class 83.
+</rule_check>
+<response>83</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[82] | Predicted=[82] | Correct=True
+<features>
+- observable feature: flower has five broad petals
+- observable feature: petals are a solid, vibrant red color
+- observable feature: center of flower has a prominent stamen structure
+</features>
+<kb>
+- IF [flower has five broad petals AND petals are solid red AND center has prominent stamen] THEN [82]
+</kb>
+<rule_check>
+- Rule 1 from the kb fires for the Query Image because the flower clearly has five broad petals, the petals are a solid, vibrant red color, and the center features a prominent stamen structure, matching the conditions for class 82.
+</rule_check>
+<response>82</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[12] | Predicted=[12] | Correct=True
+<features>
+- observable feature: flower has a large, rounded, central disc
+- observable feature: outer petals are pointed and arranged in a star-like pattern
+- observable feature: color is predominantly white with pinkish-red tips on outer petals
+</features>
+<kb>
+- IF [flower has a large, rounded, central disc AND outer petals are pointed and arranged in a star-like pattern] THEN [12]
+- IF [flower has multiple large, overlapping petals with a distinct center] THEN [86]
+- IF [flower has five petals with a distinct yellow center and sepals extending outward] THEN [83]
+- IF [flower has large, showy petals with a distinct center and often a contrasting color] THEN [82]
+</kb>
+<rule_check>
+- Rule 1 from kb fires because the Query Image shows a flower with a large, rounded, central disc and outer petals that are pointed and arranged in a star-like pattern, which matches the features of class 12.
+</rule_check>
+<response>12</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=20.8569 | avg_trial_wall_seconds=5.2098 | avg_trial_api_seconds=3.4293 | system_fallback_count=0

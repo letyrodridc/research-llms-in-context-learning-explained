@@ -1,0 +1,75 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=4 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[43] | Predicted=[43] | Correct=True
+<tbox>
+- [43] ≡ hasVisualFeature([grid_pattern]) ⊓ hasVisualFeature([square_indentations])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [grid_pattern])
+- hasVisualFeature(Query, [square_indentations])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [43] ≡ hasVisualFeature([grid_pattern]) ⊓ hasVisualFeature([square_indentations])
+</dl_explanation>
+
+<response>43</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[34] | Predicted=[4] | Correct=False
+<tbox>
+- [43] ⊑ hasVisualFeature([grid_pattern])
+- [34] ⊑ hasVisualFeature([abstract_art_style])
+- [10] ⊑ hasVisualFeature([polka_dots])
+- [4] ⊑ hasVisualFeature([textured_surface])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [textured_surface])
+- hasVisualFeature(Query, [organic_shape])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [4] ⊑ hasVisualFeature([textured_surface])
+</dl_explanation>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[10] | Predicted=[10] | Correct=True
+<tbox>
+- [10] ⊑ hasVisualFeature([dots])
+- [34] ⊑ hasVisualFeature([abstract_patterns])
+- [43] ⊑ hasVisualFeature([grid_pattern])
+- [4] ⊑ hasVisualFeature([textured_surface])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [dots])
+- hasVisualFeature(Query, [abstract_patterns])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [10] ⊑ hasVisualFeature([dots])
+</dl_explanation>
+
+<response>10</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<tbox>
+- [43] ⊑ hasVisualFeature([grid_pattern])
+- [34] ⊑ hasVisualFeature([abstract_art_style])
+- [10] ⊑ hasVisualFeature([polka_dots])
+- [4] ⊑ hasVisualFeature([textured_surface])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [textured_surface])
+- hasVisualFeature(Query, [bumpy_texture])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [4] ⊑ hasVisualFeature([textured_surface])
+</dl_explanation>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=21.1341 | avg_trial_wall_seconds=5.2802 | avg_trial_api_seconds=3.1407 | system_fallback_count=0

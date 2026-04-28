@@ -1,0 +1,58 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=meta-llama/llama-4-scout | N=3 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- color: white
+- texture: crumpled
+- pattern: irregular
+</features>
+<kb>
+- IF texture: crumpled AND color: white THEN 45
+- IF pattern: polka dots THEN 10
+- IF pattern: lattice THEN 19
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF texture: crumpled AND color: white THEN 45, because the Query Image shows a crumpled texture and a white color.
+</rule_check>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[10] | Predicted=[10] | Correct=True
+<features>
+- color of background: black
+- presence of dots: yes
+- colors of dots: multicolored (red, pink, orange, yellow, green, blue, purple)
+</features>
+
+<kb>
+- IF color of background = black AND presence of dots = yes AND colors of dots = multicolored THEN 10
+- IF color of background = pink AND presence of dots = yes AND colors of dots = multicolored THEN 10
+- IF presence of pattern = stripes THEN 45
+- IF presence of pattern = interwoven lines THEN 19
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF color of background = black AND presence of dots = yes AND colors of dots = multicolored THEN 10. This is because the Query Image has a black background, multicolored dots, and no other features matching the other rules.
+</rule_check>
+
+<response>10</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[19] | Predicted=[19] | Correct=True
+<features>
+- metallic ring: interconnected
+- metallic ring: smooth
+- metallic ring: shiny
+</features>
+<kb>
+- IF [metallic ring: woven AND metallic ring: smooth] THEN [19]
+- IF [color: pink AND pattern: polka dots] THEN [10]
+- IF [skin: wrinkled] THEN [45]
+</kb>
+
+<rule_check>
+- The Query Image shows interconnected, smooth, and shiny metallic rings, which matches the features of class 19.
+</rule_check>
+
+<response>19</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=11.7268 | avg_trial_wall_seconds=3.9055 | avg_trial_api_seconds=3.7127 | system_fallback_count=0

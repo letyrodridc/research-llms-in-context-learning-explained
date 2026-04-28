@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=2 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[75] | Predicted=[75] | Correct=True
+<tbox>
+- [75] ≡ hasVisualFeature([funnel-shaped_flower]) ⊓ hasVisualFeature([trumpet-like_shape])
+- [35] ≡ hasVisualFeature([orchid-like_petals]) ⊓ hasVisualFeature([complex_petal_structure])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [funnel-shaped_flower])
+- hasVisualFeature(Query, [trumpet-like_shape])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [75] ≡ hasVisualFeature([funnel-shaped_flower]) ⊓ hasVisualFeature([trumpet-like_shape])
+</dl_explanation>
+
+<response>75</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[35] | Predicted=[35] | Correct=True
+<tbox>
+- [75] ⊑ hasVisualFeature([funnel_shaped_flower]) ⊓ hasVisualFeature([smooth_petals])
+- [35] ⊑ hasVisualFeature([complex_orchid_structure]) ⊓ hasVisualFeature([frilled_labellum])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [complex_orchid_structure])
+- hasVisualFeature(Query, [frilled_labellum])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [35] ⊑ hasVisualFeature([complex_orchid_structure]) ⊓ hasVisualFeature([frilled_labellum])
+</dl_explanation>
+
+<response>35</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=26.0252 | avg_trial_wall_seconds=13.0100 | avg_trial_api_seconds=12.4901 | system_fallback_count=0

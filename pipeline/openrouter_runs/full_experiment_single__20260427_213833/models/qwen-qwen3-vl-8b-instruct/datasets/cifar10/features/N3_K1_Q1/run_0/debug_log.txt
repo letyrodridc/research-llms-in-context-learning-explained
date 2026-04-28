@@ -1,0 +1,26 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=features | model=qwen/qwen3-vl-8b-instruct | N=3 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<features>
+- feline face
+- tan fur
+- blurred background
+</features>
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[9] | Predicted=[9] | Correct=True
+<features>
+- large white body
+- cargo container
+- truck cab
+</features>
+<response>9</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[1] | Predicted=[1] | Correct=True
+<features>
+- dark-colored vehicle
+- four doors
+- front grille visible
+</features>
+<response>1</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=2.8920 | avg_trial_wall_seconds=0.9625 | avg_trial_api_seconds=0.8874 | system_fallback_count=0

@@ -1,0 +1,32 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=2 K=5 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- observable feature: large vessel with multiple vertical masts or towers
+- observable feature: presence of a red flag or marking on top
+- observable feature: blue and white color scheme on hull
+</features>
+<kb>
+- IF [observable visual features = large vessel with multiple vertical masts or towers AND presence of a red flag or marking on top] THEN [8]
+- IF [observable visual features = horse or rider silhouette without masts or towers] THEN [7]
+</kb>
+<rule_check>
+- Rule 1 fires for the Query Image because it shows a large vessel with multiple vertical masts or towers and a red flag or marking on top, which matches the conditions for class 8.
+</rule_check>
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- observable feature: presence of a horse
+- observable feature: horse is standing
+- observable feature: no human rider visible
+</features>
+<kb>
+- IF [presence of a horse AND horse is standing AND no human rider visible] THEN [7]
+- IF [presence of a horse AND human rider visible] THEN [7]
+</kb>
+<rule_check>
+- Rule 1 fires because the image shows a horse standing with no human rider visible, which matches the condition for class 7.
+</rule_check>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=6.2167 | avg_trial_wall_seconds=3.1023 | avg_trial_api_seconds=3.0206 | system_fallback_count=0

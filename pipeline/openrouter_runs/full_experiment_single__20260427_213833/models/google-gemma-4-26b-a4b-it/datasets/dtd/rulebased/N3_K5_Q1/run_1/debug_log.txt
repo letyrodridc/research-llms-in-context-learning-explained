@@ -1,0 +1,58 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=3 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- surface: asphalt/pavement
+- feature: large hole/pothole in the surface
+- feature: water/puddle inside the hole
+- texture: rough, broken edges around the hole
+</features>
+
+<kb>
+- IF [surface = asphalt AND feature = hole/pothole] THEN [32]
+- IF [surface = texture/patterned/solid color/drawing] THEN [8]
+- IF [surface = bumpy/textured organic/irregular shape] THEN [4]
+</kb>
+
+<rule_check>
+- The rule for class 32 fires because the image shows a broken asphalt surface with a significant pothole containing water.
+</rule_check>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- texture: fine, uniform, cross-hatched pattern
+- color: black
+- object type: leather-like material, likely a wallet or bag
+</features>
+<kb>
+- IF [surface shows cracks, potholes, or road damage] THEN [32]
+- IF [surface is a solid, uniform color or texture like leather, fabric, or a drawing] THEN [8]
+- IF [surface is bumpy, irregular, or organic like skin or fruit] THEN [4]
+</kb>
+
+<rule_check>
+- The rule for class 8 is satisfied because the image shows a uniform, fine-textured black surface characteristic of a manufactured object like a wallet, rather than road damage (32) or organic bumpy textures (4).
+</rule_check>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[4] | Predicted=[32] | Correct=False
+<features>
+- surface: paved/tiled ground
+- pattern: repeating small circular/rounded bumps or indentations
+- texture: regular, geometric pattern
+</features>
+<kb>
+- IF [surface = asphalt/road AND contains holes/puddles/cracks] THEN [32]
+- IF [image = monochromatic/sketch/solid color/fabric/wallet] THEN [8]
+- IF [surface = organic/bumpy/textured skin or fruit] THEN [4]
+</kb>
+
+<rule_check>
+- The Query Image shows a paved surface with a highly regular, repeating pattern of small circular bumps. This does not match the irregular holes/cracks of class 32, the monochromatic/sketch nature of class 8, or the organic/fruit texture of class 4. However, looking at the provided examples for class 32, they all depict road damage (potholes, cracks, puddles). The query image shows a textured pavement. Re-evaluating the options: Class 32 is the only class associated with road/pavement surfaces in the examples.
+</rule_check>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=3 | errors=0 | accuracy=0.6667 | duration_seconds=20.2215 | avg_trial_wall_seconds=6.7327 | avg_trial_api_seconds=6.1467 | system_fallback_count=0

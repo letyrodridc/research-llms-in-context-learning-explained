@@ -1,0 +1,77 @@
+=== DEBUG LOG | dataset=pets | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=4 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[20] | Predicted=[20] | Correct=True
+<tbox>
+- [20] ⊑ hasVisualFeature([long_fur]) ⊓ hasVisualFeature([pointed_ears])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [long_fur])
+- hasVisualFeature(Query, [pointed_ears])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [20] ⊑ hasVisualFeature([long_fur]) ⊓ hasVisualFeature([pointed_ears])
+</dl_explanation>
+
+<response>20</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<tbox>
+- 20 ⊑ hasVisualFeature([long_hair]) ⊓ hasVisualFeature([cat_features])
+- 29 ⊑ hasVisualFeature([white_fur]) ⊓ hasVisualFeature([dog_features])
+- 28 ⊑ hasVisualFeature([brown_and_white_fur]) ⊓ hasVisualFeature([dog_features])
+- 13 ⊑ hasVisualFeature([spotted_fur]) ⊓ hasVisualFeature([dog_features])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [white_fur])
+- hasVisualFeature(Query, [dog_features])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: 29 ⊑ hasVisualFeature([white_fur]) ⊓ hasVisualFeature([dog_features])
+</dl_explanation>
+
+<response>29</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[28] | Predicted=[28] | Correct=True
+<tbox>
+- [20] ⊑ hasVisualFeature([long_hair]) ⊓ hasVisualFeature([cat_features])
+- [29] ⊑ hasVisualFeature([white_fur]) ⊓ hasVisualFeature([dog_features])
+- [28] ⊑ hasVisualFeature([brown_and_white_pattern]) ⊓ hasVisualFeature([large_dog_features])
+- [13] ⊑ hasVisualFeature([spotted_pattern]) ⊓ hasVisualFeature([dog_features])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [brown_and_white_pattern])
+- hasVisualFeature(Query, [large_dog_features])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [28] ⊑ hasVisualFeature([brown_and_white_pattern]) ⊓ hasVisualFeature([large_dog_features])
+</dl_explanation>
+
+<response>28</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[13] | Predicted=[13] | Correct=True
+<tbox>
+- 13 ⊑ hasVisualFeature([white_base_coat]) ⊓ hasVisualFeature([brown_spots])
+- 13 ⊑ hasVisualFeature([floppy_ears])
+- 20 ⊑ hasVisualFeature([long_fur]) ⊓ hasVisualFeature([pointed_ears])
+- 28 ⊑ hasVisualFeature([large_size]) ⊓ hasVisualFeature([brown_and_white_patches])
+- 29 ⊑ hasVisualFeature([all_white_coat])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [white_base_coat])
+- hasVisualFeature(Query, [brown_spots])
+- hasVisualFeature(Query, [floppy_ears])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: 13 ⊑ hasVisualFeature([white_base_coat]) ⊓ hasVisualFeature([brown_spots])
+</dl_explanation>
+
+<response>13</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=20.5946 | avg_trial_wall_seconds=5.1457 | avg_trial_api_seconds=4.5805 | system_fallback_count=0

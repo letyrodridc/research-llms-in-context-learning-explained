@@ -1,0 +1,32 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=2 K=1 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[2] | Predicted=[2] | Correct=True
+<features>
+- observable feature: dog with brown and white fur
+- observable feature: dog lying on ground
+- observable feature: background with graffiti on a building
+</features>
+<kb>
+- IF [observable visual features = dog with brown and white fur AND dog lying on ground] THEN [2]
+- IF [observable visual features = cat with spotted fur] THEN [5]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows a dog with brown and white fur lying on the ground, matching the condition for class 2.
+- Rule 2 does not fire because the image is not a cat with spotted fur.
+</rule_check>
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[5] | Predicted=[5] | Correct=True
+<features>
+- observable feature: cat with large blue eyes
+- observable feature: cat with light-colored fur and dark markings
+- observable feature: cat lying next to a pink rose
+</features>
+<kb>
+- IF [cat with large blue eyes AND light-colored fur with dark markings] THEN [5]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows a cat with large blue eyes and light-colored fur with dark markings, matching the condition for class 5.
+</rule_check>
+<response>5</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=5.3475 | avg_trial_wall_seconds=2.6704 | avg_trial_api_seconds=2.4172 | system_fallback_count=0

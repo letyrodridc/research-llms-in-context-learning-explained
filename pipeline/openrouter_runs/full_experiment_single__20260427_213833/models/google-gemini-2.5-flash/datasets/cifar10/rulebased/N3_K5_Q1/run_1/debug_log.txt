@@ -1,0 +1,56 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemini-2.5-flash | N=3 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- object shape: elongated body with wings and tail
+- object texture/pattern: camouflage pattern (green, brown, blue)
+- object presence: propeller visible at the front
+- background: clear blue sky with some white cloud
+- object orientation: horizontal, flying
+</features>
+<kb>
+- IF [object shape is an elongated body with wings and a tail AND object is flying in the sky] THEN [0]
+- IF [object shape is a squat, irregular body AND object has textured skin AND object is on the ground or held] THEN [6]
+- IF [object shape is a quadrupedal animal with a mane and tail AND object is on the ground] THEN [7]
+</kb>
+<rule_check>
+- The rule for class 0 fires because the query image shows an object with an elongated body, wings, and a tail, and it is flying in the sky.
+</rule_check>
+<response>0</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- main object shape: squat, broad, and somewhat irregular
+- main object texture: mottled, bumpy, and rough
+- main object color: shades of brown and tan
+- background: dark, rocky, and earthy tones
+- presence of distinct limbs: visible but indistinct
+</features>
+<kb>
+- IF [main object shape is elongated with distinct wings and tail, or a large, dark, triangular shape, or a visible wing against a sky background] THEN [0]
+- IF [main object shape is squat, broad, and irregular, with mottled or bumpy texture, and colors in shades of brown, tan, or green] THEN [6]
+- IF [main object shape is a quadruped with a distinct head, body, and tail, typically brown or white, and standing on grass or dirt] THEN [7]
+</kb>
+<rule_check>
+- The rule for class 6 fires because the query image shows a main object that is squat, broad, and irregular in shape, with a mottled, bumpy texture, and colors in shades of brown and tan. These features are consistent with the examples provided for class 6.
+</rule_check>
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- main subject: horse with a rider
+- horse color: dark brown/black
+- rider attire: dark top, white pants
+- background: blurred green and brown
+- posture: horse is walking, rider is seated
+</features>
+<kb>
+- IF [main subject is an airplane or part of an airplane] THEN [0]
+- IF [main subject is a frog or toad] THEN [6]
+- IF [main subject is a horse, with or without a rider] THEN [7]
+</kb>
+<rule_check>
+- The rule "IF [main subject is a horse, with or without a rider] THEN [7]" fires for the Query Image because the main subject is clearly a horse with a rider, which aligns with the observable features of the image.
+</rule_check>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=5.6060 | avg_trial_wall_seconds=1.8651 | avg_trial_api_seconds=1.7224 | system_fallback_count=0

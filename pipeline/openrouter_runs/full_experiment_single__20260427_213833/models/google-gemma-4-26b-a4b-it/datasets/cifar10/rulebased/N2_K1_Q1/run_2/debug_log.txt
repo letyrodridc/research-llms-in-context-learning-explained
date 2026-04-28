@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=2 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<features>
+- subject: animal with reddish-brown fur
+- setting: climbing on a tree trunk
+</features>
+<kb>
+- IF [subject = animal with reddish-brown fur AND setting = tree] THEN [3]
+- IF [subject = aircraft AND setting = sky] THEN [0]
+</kb>
+
+<rule_check>
+- The rule for class 3 fires because the image shows a reddish-brown animal climbing a tree.
+</rule_check>
+
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- subject: aircraft/airplane
+- background: sky/clouds
+</features>
+<kb>
+- IF [subject = aircraft/airplane] THEN [0]
+- IF [subject = cat] THEN [3]
+</kb>
+
+<rule_check>
+- The rule "IF [subject = aircraft/airplane] THEN [0]" fires because the image depicts an aircraft in the sky.
+</rule_check>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.0907 | avg_trial_wall_seconds=2.0436 | avg_trial_api_seconds=2.0033 | system_fallback_count=0

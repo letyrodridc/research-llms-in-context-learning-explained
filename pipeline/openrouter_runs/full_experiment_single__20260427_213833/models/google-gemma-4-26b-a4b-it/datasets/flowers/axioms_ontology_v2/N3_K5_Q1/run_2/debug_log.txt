@@ -1,0 +1,52 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=3 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[87] | Predicted=[87] | Correct=True
+<tbox>
+- [87] ⊑ hasVisualFeature([upward_pointing_petals]) ⊓ hasVisualFeature([cup_like_shape])
+- [92] ⊑ hasVisualFeature([pink_bracts]) ⊓ hasVisualFeature([blue_flowers])
+- [14] ⊑ hasVisualFeature([yellow_petals]) ⊓ hasVisualFeature([dark_veins_on_petals])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [upward_pointing_petals])
+- hasVisualFeature(Query, [cup_like_shape])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [87] ⊑ hasVisualFeature([upward_pointing_petals]) ⊓ hasVisualFeature([cup_like_shape])
+</dl_explanation>
+
+<response>87</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[92] | Predicted=[92] | Correct=True
+<tbox>
+- 92 ≡ hasVisualFeature([pink_spiky_inflorescence]) ⊓ hasVisualFeature([purple_petals])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [pink_spiky_inflorescence])
+- hasVisualFeature(Query, [purple_petals])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: 92 ≡ hasVisualFeature([pink_spiky_inflorescence]) ⊓ hasVisualFeature([purple_petals])
+</dl_explanation>
+
+<response>92</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- [14] ≡ hasVisualFeature([yellow_petals]) ⊓ hasVisualFeature([dark_veins_on_petals])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [yellow_petals])
+- hasVisualFeature(Query, [dark_veins_on_petals])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [14] ≡ hasVisualFeature([yellow_petals]) ⊓ hasVisualFeature([dark_veins_on_petals])
+</dl_explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=93.3891 | avg_trial_wall_seconds=31.1171 | avg_trial_api_seconds=30.6578 | system_fallback_count=0

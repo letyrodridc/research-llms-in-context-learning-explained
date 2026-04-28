@@ -1,0 +1,65 @@
+{
+  "title": "Accuracy vs k | qwen/qwen3-vl-8b-instruct | cifar10 | rulebased | n=4, q=1",
+  "alpha": 0.05,
+  "x_field": "config_k",
+  "series_field": null,
+  "filters": {
+    "model": "qwen/qwen3-vl-8b-instruct",
+    "dataset": "cifar10",
+    "prompt_type": "rulebased",
+    "config_n": "4",
+    "config_q": "1"
+  },
+  "rows": [
+    {
+      "x": "1",
+      "series": "accuracy",
+      "correct": 9,
+      "total": 12,
+      "accuracy": 0.75,
+      "standard_error": 0.125,
+      "ci95_low": 0.4677,
+      "ci95_high": 0.9111
+    },
+    {
+      "x": "5",
+      "series": "accuracy",
+      "correct": 12,
+      "total": 12,
+      "accuracy": 1.0,
+      "standard_error": 0.0,
+      "ci95_low": 0.7575,
+      "ci95_high": 1.0
+    }
+  ],
+  "statistics": {
+    "alpha": 0.05,
+    "group_field": "config_k",
+    "groups": [
+      "1",
+      "5"
+    ],
+    "matched": false,
+    "omnibus": {
+      "test": "fisher_exact",
+      "statistic": 0.0,
+      "p_value": 0.21739130434782608,
+      "significant": false,
+      "matched_units": null
+    },
+    "pairwise": [
+      {
+        "group_a": "1",
+        "group_b": "5",
+        "odds_ratio": 0.0,
+        "p_value": 0.21739130434782608,
+        "a_correct": 9,
+        "a_wrong": 3,
+        "b_correct": 12,
+        "b_wrong": 0,
+        "p_value_holm": 0.21739130434782608,
+        "significant_holm": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+=== DEBUG LOG | dataset=pets | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=4 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[20] | Predicted=[20] | Correct=True
+<tbox>
+20 ⊑ hasVisualFeature(long_fur) ⊓ hasVisualFeature(pointed_ears) ⊓ hasVisualFeature(prominent_whiskers)
+29 ⊑ hasVisualFeature(white_fur) ⊓ hasVisualFeature(fluffy_tail) ⊓ hasVisualFeature(dog_like_face)
+28 ⊑ hasVisualFeature(large_size) ⊓ hasVisualFeature(brown_and_white_fur) ⊓ hasVisualFeature(droopy_cheeks)
+13 ⊑ hasVisualFeature(white_fur_with_spots) ⊓ hasVisualFeature(medium_length_fur) ⊓ hasVisualFeature(floppy_ears)
+</tbox>
+<abox>
+hasVisualFeature(Query, long_fur)
+hasVisualFeature(Query, pointed_ears)
+hasVisualFeature(Query, prominent_whiskers)
+</abox>
+<dl_explanation>
+Rule(s) fired: 20 ⊑ hasVisualFeature(long_fur) ⊓ hasVisualFeature(pointed_ears) ⊓ hasVisualFeature(prominent_whiskers)
+</dl_explanation>
+<response>20</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<tbox>
+20 ⊑ hasVisualFeature(long_fur) ⊓ hasVisualFeature(pointed_ears) ⊓ hasVisualFeature(visible_whiskers)
+29 ⊑ hasVisualFeature(white_fur) ⊓ hasVisualFeature(fluffy_tail) ⊓ hasVisualFeature(pointed_ears) ⊓ hasVisualFeature(smiling_expression)
+28 ⊑ hasVisualFeature(large_size) ⊓ hasVisualFeature(brown_and_white_fur) ⊓ hasVisualFeature(droopy_ears)
+13 ⊑ hasVisualFeature(white_fur_with_spots) ⊓ hasVisualFeature(medium_length_fur) ⊓ hasVisualFeature(floppy_ears)
+</tbox>
+<abox>
+hasVisualFeature(Query, white_fur)
+hasVisualFeature(Query, fluffy_tail)
+hasVisualFeature(Query, pointed_ears)
+hasVisualFeature(Query, smiling_expression)
+</abox>
+<dl_explanation>
+Rule(s) fired: 29 ⊑ hasVisualFeature(white_fur) ⊓ hasVisualFeature(fluffy_tail) ⊓ hasVisualFeature(pointed_ears) ⊓ hasVisualFeature(smiling_expression)
+</dl_explanation>
+<response>29</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[28] | Predicted=[28] | Correct=True
+<tbox>
+St_Bernard ⊑ hasVisualFeature(WhiteAndBrownFur) ⊓ hasVisualFeature(LargeBuild) ⊓ hasVisualFeature(DroopyEyes) ⊓ hasVisualFeature(BlackMaskAroundEyes)
+Maine_Coon ⊑ hasVisualFeature(LongHair) ⊓ hasVisualFeature(TuftedEars) ⊓ hasVisualFeature(BushyTail)
+English_Setter ⊑ hasVisualFeature(WhiteFurWithSpots) ⊓ hasVisualFeature(LongFeatheredTail) ⊓ hasVisualFeature(DroopyEars)
+Samoyed ⊑ hasVisualFeature(WhiteFluffyFur) ⊓ hasVisualFeature(CurledTail) ⊓ hasVisualFeature(SmilingExpression)
+</tbox>
+<abox>
+hasVisualFeature(Query, WhiteAndBrownFur)
+hasVisualFeature(Query, LargeBuild)
+hasVisualFeature(Query, DroopyEyes)
+hasVisualFeature(Query, BlackMaskAroundEyes)
+</abox>
+<dl_explanation>
+St_Bernard ⊑ hasVisualFeature(WhiteAndBrownFur) ⊓ hasVisualFeature(LargeBuild) ⊓ hasVisualFeature(DroopyEyes) ⊓ hasVisualFeature(BlackMaskAroundEyes)
+</dl_explanation>
+<response>28</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[13] | Predicted=[13] | Correct=True
+<tbox>
+English_Setter ⊑ hasVisualFeature(WhiteCoatWithBrownSpots) ⊓ hasVisualFeature(LongFloppyEars) ⊓ hasVisualFeature(MediumLengthHair)
+Maine_Coon ⊑ hasVisualFeature(LongHair) ⊓ hasVisualFeature(PointedEars) ⊓ hasVisualFeature(TuftedEars)
+Samoyed ⊑ hasVisualFeature(WhiteFluffyCoat) ⊓ hasVisualFeature(CurledTail) ⊓ hasVisualFeature(PointedEars)
+Saint_Bernard ⊑ hasVisualFeature(BrownAndWhiteCoat) ⊓ hasVisualFeature(LargeBuild) ⊓ hasVisualFeature(FloppyEars)
+</tbox>
+<abox>
+hasVisualFeature(Query, WhiteCoatWithBrownSpots)
+hasVisualFeature(Query, LongFloppyEars)
+hasVisualFeature(Query, MediumLengthHair)
+</abox>
+<dl_explanation>
+English_Setter ⊑ hasVisualFeature(WhiteCoatWithBrownSpots) ⊓ hasVisualFeature(LongFloppyEars) ⊓ hasVisualFeature(MediumLengthHair)
+</dl_explanation>
+<response>13</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=14.3589 | avg_trial_wall_seconds=3.5869 | avg_trial_api_seconds=2.8710 | system_fallback_count=0

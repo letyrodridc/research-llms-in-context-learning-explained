@@ -1,0 +1,27 @@
+=== DEBUG LOG | dataset=dtd | prompt=features | model=google/gemini-2.5-flash | N=3 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- multiple irregular depressions in a paved surface
+- exposed aggregate and debris within the depressions
+- some depressions contain standing water or appear wet
+- overall rough and uneven texture of the surface
+</features>
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- fine grid pattern
+- woven texture
+- uniform pattern across surface
+</features>
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- repeating raised bumps/scales
+- textured surface
+- organic or irregular shapes
+</features>
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=5.3284 | avg_trial_wall_seconds=1.7741 | avg_trial_api_seconds=1.4183 | system_fallback_count=0

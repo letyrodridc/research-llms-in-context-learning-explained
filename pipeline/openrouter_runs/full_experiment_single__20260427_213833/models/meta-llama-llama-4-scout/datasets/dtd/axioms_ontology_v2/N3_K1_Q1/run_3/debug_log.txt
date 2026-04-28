@@ -1,0 +1,52 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=meta-llama/llama-4-scout | N=3 K=1 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<tbox>
+- [45] ⊑ hasVisualFeature([wrinkled_skin])
+- [10] ⊑ hasVisualFeature([polka_dots])
+- [19] ⊑ hasVisualFeature([ornate_design])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [wrinkled_surface])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [45] ⊑ hasVisualFeature([wrinkled_skin])
+</dl_explanation>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[10] | Predicted=[10] | Correct=True
+<tbox>
+- [10] ⊑ hasVisualFeature([dots])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [dots])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [10] ⊑ hasVisualFeature([dots])
+</dl_explanation>
+
+<response>10</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[19] | Predicted=[19] | Correct=True
+<tbox>
+- [45] ⊑ hasVisualFeature([F1])
+- [10] ⊑ hasVisualFeature([F2])
+- [19] ≡ hasVisualFeature([F3]) ⊓ hasVisualFeature([F4])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [F3])
+- hasVisualFeature(Query, [F4])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [19] ≡ hasVisualFeature([F3]) ⊓ hasVisualFeature([F4])
+</dl_explanation>
+
+<response>19</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=4.6713 | avg_trial_wall_seconds=1.5555 | avg_trial_api_seconds=1.1557 | system_fallback_count=0

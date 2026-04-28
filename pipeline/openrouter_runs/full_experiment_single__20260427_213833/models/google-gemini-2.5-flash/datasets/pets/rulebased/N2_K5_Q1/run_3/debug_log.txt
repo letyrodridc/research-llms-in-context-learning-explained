@@ -1,0 +1,38 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[36] | Predicted=[36] | Correct=True
+<features>
+- animal type: dog
+- fur color: black and tan/brown
+- face shape: small, rounded snout
+- ears: small, pointed, partially covered by fur
+- eyes: dark, small
+- body posture: lying down
+- presence of gifts: yes, two wrapped gifts
+- background: white fabric with green tree patterns
+</features>
+<kb>
+- IF [animal type = dog AND fur color = black and tan/brown AND face shape = small, rounded snout AND ears = small, pointed, partially covered by fur] THEN [36]
+- IF [animal type = cat AND fur color = cream/white with darker points on face, ears, and tail AND eyes = blue] THEN [6]
+</kb>
+<rule_check>
+- The rule for class 36 fires because the query image shows an animal that is clearly a dog, with black and tan/brown fur, a small, rounded snout, and small, pointed ears partially covered by fur. These features are consistent with the examples provided for class 36.
+</rule_check>
+<response>36</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- animal type: cat
+- fur color pattern: light body with darker points (face, ears, paws, tail)
+- eye color: blue
+- face shape: somewhat rounded with a distinct dark mask
+</features>
+<kb>
+- IF [animal type = dog AND fur color pattern = brown and black/grey AND small size] THEN [36]
+- IF [animal type = cat AND fur color pattern = light body with darker points AND eye color = blue] THEN [6]
+</kb>
+<rule_check>
+- The rule "IF [animal type = cat AND fur color pattern = light body with darker points AND eye color = blue] THEN [6]" fires for the Query Image. The image clearly shows a cat with a light-colored body and darker fur on its face, ears, and possibly paws (though not fully visible), and distinct blue eyes.
+</rule_check>
+<response>6</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=6.7378 | avg_trial_wall_seconds=3.3600 | avg_trial_api_seconds=2.8281 | system_fallback_count=0

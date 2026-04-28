@@ -1,0 +1,23 @@
+=== DEBUG LOG | dataset=flowers | prompt=nle | model=meta-llama/llama-4-scout | N=3 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[87] | Predicted=[87] | Correct=True
+<explanation>
+The Query Image shows a flower with a distinctive shape, featuring pale purple petals that are rounded and slightly curved, with a darker purple center. This flower has a similar appearance to the examples labeled as 87, which also display pale purple petals and a darker center. The shape and coloration of the Query Image's flower are most consistent with the characteristics observed in the examples labeled as 87.
+</explanation>
+
+<response>87</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[92] | Predicted=[92] | Correct=True
+<explanation>
+The Query Image shows a plant with long, thin green leaves and a pink flower that has not yet bloomed, along with a small purple flower. This matches the visual features of class 92, which includes similar plants with long leaves and flowers that have not yet bloomed or are small and purple.
+</explanation>
+
+<response>92</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[14] | Predicted=[14] | Correct=True
+<explanation>
+The Query Image shows a yellow flower with a specific structure, having three petals and three sepals that are similar in shape and size, which is characteristic of the Iris class. This visual pattern matches the provided labeled examples of class 14.
+</explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=12.1676 | avg_trial_wall_seconds=4.0520 | avg_trial_api_seconds=2.2142 | system_fallback_count=0

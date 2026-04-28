@@ -1,0 +1,56 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=google/gemini-2.5-flash | N=3 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[21] | Predicted=[21] | Correct=True
+<features>
+- coat color: black and tan
+- ear shape: erect, pointed
+- body size: small
+- tail: short, docked or naturally short and curled
+</features>
+<kb>
+- IF [coat color = black and tan AND ear shape = erect, pointed AND body size = small] THEN [21]
+- IF [coat color = predominantly white or cream AND fur texture = long and fluffy AND tail = long and fluffy] THEN [15]
+- IF [coat color = predominantly white or cream with some darker markings on face/ears/tail AND fur texture = long and fluffy AND eye color = blue] THEN [26]
+</kb>
+<rule_check>
+- The rule for class 21 fires because the Query Image shows a dog with a black and tan coat, erect and pointed ears, and a small body size.
+</rule_check>
+<response>21</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[26] | Predicted=[26] | Correct=True
+<features>
+- animal type: cat
+- fur length: long and fluffy
+- fur color: predominantly white with some light brown/grey markings on face, ears, and tail
+- eye color: blue
+- nose color: pink
+- body posture: sitting upright
+</features>
+<kb>
+- IF [animal type = dog AND fur length = short AND fur color = black and tan OR fur color = brown] THEN [21]
+- IF [animal type = cat AND fur length = long and fluffy AND fur color = predominantly white with some light brown/grey markings AND eye color = blue] THEN [26]
+- IF [animal type = dog AND fur length = long and fluffy AND fur color = predominantly white] THEN [15]
+</kb>
+<rule_check>
+- The rule for class 26 fires because the Query Image shows a cat with long and fluffy fur, predominantly white fur with light brown/grey markings, and blue eyes. These features are consistent with the examples provided for class 26.
+</rule_check>
+<response>26</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[15] | Predicted=[15] | Correct=True
+<features>
+- animal type: dog
+- fur color: predominantly white
+- fur length: long and fluffy
+- ear shape: floppy, not erect
+- body size: large
+</features>
+<kb>
+- IF [animal type = dog AND fur color = black and tan AND ear shape = erect AND body size = small] THEN [21]
+- IF [animal type = cat AND fur color = white with some light brown/grey markings AND fur length = long AND eye color = blue] THEN [26]
+- IF [animal type = dog AND fur color = predominantly white AND fur length = long and fluffy AND ear shape = floppy AND body size = large] THEN [15]
+</kb>
+<rule_check>
+- The rule for class 15 fires because the Query Image shows a dog that is predominantly white, has long and fluffy fur, floppy ears, and appears to be a large-bodied dog.
+</rule_check>
+<response>15</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=6.7121 | avg_trial_wall_seconds=2.2352 | avg_trial_api_seconds=1.6195 | system_fallback_count=0

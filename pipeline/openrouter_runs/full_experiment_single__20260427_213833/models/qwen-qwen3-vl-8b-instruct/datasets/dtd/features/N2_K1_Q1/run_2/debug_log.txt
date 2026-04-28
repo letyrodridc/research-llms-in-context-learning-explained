@@ -1,0 +1,18 @@
+=== DEBUG LOG | dataset=dtd | prompt=features | model=qwen/qwen3-vl-8b-instruct | N=2 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- woven pattern
+- wooden strips
+- interlaced strands
+</features>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[29] | Predicted=[44] | Correct=False
+<features>
+- diagonal ribbed texture
+- warm brown color
+- layered overlapping folds
+</features>
+<response>44</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=1 | total=2 | errors=0 | accuracy=0.5000 | duration_seconds=2.5040 | avg_trial_wall_seconds=1.2504 | avg_trial_api_seconds=0.8949 | system_fallback_count=0

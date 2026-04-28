@@ -1,0 +1,80 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=meta-llama/llama-4-scout | N=4 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- color: brown
+- color: white
+- body position: lying down
+- environment: grass
+</features>
+<kb>
+- IF [color = brown AND color = white AND body position = lying down AND environment = grass] THEN [4]
+- IF [color = brown AND color = black] THEN [2]
+- IF [environment = water] THEN [2]
+- IF [body part = wings] THEN [2]
+- IF [body position = standing] THEN [6]
+- IF [body part = legs] THEN [6]
+- IF [color = white] THEN [7]
+</kb>
+
+<rule_check>
+- Rule 4 fires for the Query Image because it has a brown and white color, is lying down, and is on grass.
+</rule_check>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[2] | Predicted=[2] | Correct=True
+<features>
+- blurry image: blurry
+- bird: bird
+- brown color: brown
+- sitting on branch: sitting on branch
+</features>
+<kb>
+- IF [blurry image = blurry AND bird = bird AND brown color = brown AND sitting on branch = sitting on branch] THEN [2]
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: 2, because the image is blurry, contains a bird, has a brown color, and the bird is sitting on a branch.
+</rule_check>
+
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- color: green
+- color: brown
+</features>
+<kb>
+- IF [color = green AND color = brown] THEN [6]
+- IF [color = brown AND color = white] THEN [7]
+- IF [color = black AND color = yellow] THEN [2]
+- IF [color = gray AND color = white] THEN [4]
+</kb>
+
+<rule_check>
+- Rule 6 fires for the Query Image because it has green and brown colors.
+</rule_check>
+
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- blurry: yes
+- rider: yes
+- horse: yes
+- white: yes
+</features>
+<kb>
+- IF [blurry = yes AND rider = yes AND horse = yes AND white = yes] THEN [7]
+- IF [blurry = yes AND rider = no AND horse = no AND small = yes AND bird = yes] THEN [2]
+- IF [blurry = yes AND rider = no AND horse = no AND small = no AND frog = yes] THEN [6]
+- IF [blurry = yes AND rider = yes AND horse = yes AND white = no] THEN [7]
+</kb>
+
+<rule_check>
+- Rule 7 fires for the Query Image because it contains a blurry image of a rider and a horse, and the horse appears to be white.
+</rule_check>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=11.8174 | avg_trial_wall_seconds=2.9420 | avg_trial_api_seconds=2.5727 | system_fallback_count=0

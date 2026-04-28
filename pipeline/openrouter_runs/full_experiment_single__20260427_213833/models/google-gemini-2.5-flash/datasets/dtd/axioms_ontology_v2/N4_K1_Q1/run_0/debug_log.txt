@@ -1,0 +1,60 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=4 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[18] | Predicted=[18] | Correct=True
+<tbox>
+Class18 ⊑ hasVisualFeature(hexagonal_pattern) ⊓ hasVisualFeature(honeycomb_like_cells) ⊓ hasVisualFeature(varying_shades_of_orange_and_dark_spots)
+Class22 ⊑ hasVisualFeature(white_background) ⊓ hasVisualFeature(horizontal_blue_lines) ⊓ hasVisualFeature(vertical_red_line_on_left) ⊓ hasVisualFeature(three_circular_holes_on_left)
+Class23 ⊑ hasVisualFeature(greenish_background) ⊓ hasVisualFeature(irregular_reddish_and_whitish_veins) ⊓ hasVisualFeature(marbled_texture)
+Class27 ⊑ hasVisualFeature(metallic_surface) ⊓ hasVisualFeature(rows_of_circular_holes) ⊓ hasVisualFeature(raised_edges_around_holes)
+</tbox>
+<abox>
+hasVisualFeature(Query, hexagonal_pattern)
+hasVisualFeature(Query, honeycomb_like_cells)
+hasVisualFeature(Query, varying_shades_of_purple_and_yellow)
+</abox>
+<dl_explanation>
+Class18 ⊑ hasVisualFeature(hexagonal_pattern) ⊓ hasVisualFeature(honeycomb_like_cells) ⊓ hasVisualFeature(varying_shades_of_orange_and_dark_spots)
+</dl_explanation>
+<response>18</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[22] | Predicted=[22] | Correct=True
+<tbox>
+Class18 ⊑ hasVisualFeature(HexagonalPattern)
+Class22 ⊑ hasVisualFeature(HorizontalLines) ⊓ hasVisualFeature(VerticalLine) ⊓ hasVisualFeature(HolesOnLeftEdge)
+Class23 ⊑ hasVisualFeature(IrregularVeins) ⊓ hasVisualFeature(GreenishColor)
+Class27 ⊑ hasVisualFeature(GridOfCircularHoles) ⊓ hasVisualFeature(MetallicSurface)
+</tbox>
+<abox>
+</abox>
+<dl_explanation>
+</dl_explanation>
+<response>22</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[23] | Predicted=[23] | Correct=True
+<tbox>
+23 ⊑ hasVisualFeature(irregular_veins) ⊓ hasVisualFeature(marbled_texture)
+</tbox>
+<abox>
+hasVisualFeature(Query, irregular_veins)
+hasVisualFeature(Query, marbled_texture)
+</abox>
+<dl_explanation>
+Rule(s) fired: 23 ⊑ hasVisualFeature(irregular_veins) ⊓ hasVisualFeature(marbled_texture)
+</dl_explanation>
+<response>23</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[27] | Predicted=[18] | Correct=False
+<tbox>
+Class18 ⊑ hasVisualFeature(hexagonal_cells)
+Class22 ⊑ hasVisualFeature(horizontal_lines) ⊓ hasVisualFeature(vertical_line) ⊓ hasVisualFeature(circular_holes_on_left_edge)
+Class23 ⊑ hasVisualFeature(marbled_pattern) ⊓ hasVisualFeature(irregular_lines)
+Class27 ⊑ hasVisualFeature(circular_holes_arranged_in_rows_and_columns) ⊓ hasVisualFeature(metallic_surface)
+</tbox>
+<abox>
+hasVisualFeature(Query, hexagonal_cells)
+</abox>
+<dl_explanation>
+Class18 ⊑ hasVisualFeature(hexagonal_cells)
+</dl_explanation>
+<response>18</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=6.9410 | avg_trial_wall_seconds=1.7337 | avg_trial_api_seconds=1.5042 | system_fallback_count=0

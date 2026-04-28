@@ -1,0 +1,32 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=2 K=5 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[75] | Predicted=[75] | Correct=True
+<features>
+- observable feature: flower has a trumpet-shaped bloom
+- observable feature: flower has a deep purple center
+- observable feature: flower is surrounded by green leaves
+</features>
+<kb>
+- IF [flower has a trumpet-shaped bloom AND flower has a deep purple center AND flower is surrounded by green leaves] THEN [75]
+- IF [flower has distinct petals with a central lip AND flower is typically orchid-shaped] THEN [35]
+</kb>
+<rule_check>
+- Rule 1 fires for the Query Image because the flower clearly has a trumpet-shaped bloom, a deep purple center, and is surrounded by green leaves, which matches the features of class 75.
+</rule_check>
+<response>75</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[35] | Predicted=[35] | Correct=True
+<features>
+- observable feature: flower has multiple petals with a distinct, ruffled lip
+- observable feature: flower is purple with a lighter center
+- observable feature: background is dark, emphasizing the flower
+</features>
+<kb>
+- IF [flower has multiple petals with a distinct, ruffled lip AND background is dark] THEN [35]
+- IF [flower has a trumpet-like shape with a deep purple center AND background is green foliage] THEN [75]
+</kb>
+<rule_check>
+- Rule 1 fires because the flower has multiple petals with a distinct, ruffled lip and the background is dark, which matches the features of class 35.
+</rule_check>
+<response>35</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=8.4919 | avg_trial_wall_seconds=4.2400 | avg_trial_api_seconds=3.2109 | system_fallback_count=0

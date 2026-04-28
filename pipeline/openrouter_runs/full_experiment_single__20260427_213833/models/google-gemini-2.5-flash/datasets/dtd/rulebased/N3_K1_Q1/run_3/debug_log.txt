@@ -1,0 +1,53 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemini-2.5-flash | N=3 K=1 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[45] | Predicted=[19] | Correct=False
+<features>
+- texture: crumpled, wrinkled, uneven surface
+- color: light beige/off-white
+- pattern: irregular lines and folds
+</features>
+<kb>
+- IF [image shows a close-up of a human face with prominent wrinkles] THEN [45]
+- IF [image shows a pattern of multiple, distinct, colored circular dots on a light background] THEN [10]
+- IF [image shows an intricate, ornate, abstract pattern with swirling lines and circular motifs, predominantly in shades of gold and brown] THEN [19]
+</kb>
+<rule_check>
+- None of the rules from the knowledge base fire for the Query Image. The Query Image displays a crumpled, wrinkled texture that does not match the features of a human face (45), colored dots (10), or an ornate abstract pattern (19).
+</rule_check>
+<response>19</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[10] | Predicted=[10] | Correct=True
+<features>
+- primary pattern: multiple circular shapes
+- background color: green
+- circle colors: black, white, light green, and some with a yellow/gold inner circle
+- circle sizes: varied, from small to large
+- circle arrangement: scattered, non-uniform
+</features>
+<kb>
+- IF [image contains a close-up of a human face with visible skin texture and features] THEN [45]
+- IF [image contains a pattern of multiple, distinct, scattered circular shapes of various colors on a contrasting background] THEN [10]
+- IF [image contains intricate, ornate, curvilinear patterns with a dominant golden/brown color scheme, resembling ancient manuscript illumination] THEN [19]
+</kb>
+<rule_check>
+- The rule for class 10 fires because the Query Image contains a pattern of multiple, distinct, scattered circular shapes of various colors (black, white, light green, and some with yellow/gold inner circles) on a contrasting green background.
+</rule_check>
+<response>10</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[19] | Predicted=[19] | Correct=True
+<features>
+- dominant colors: yellow, orange, red
+- pattern type: intricate interwoven lines and knots
+- presence of animal-like figures: yes, stylized
+- overall texture: smooth, painted appearance
+</features>
+<kb>
+- IF [image depicts a human face with visible wrinkles and dark skin tones] THEN [45]
+- IF [image shows a pattern of multiple colored dots on a light background] THEN [10]
+- IF [image features intricate, interwoven, often abstract or stylized patterns, frequently with a dominant yellow/gold and red/brown color scheme] THEN [19]
+</kb>
+<rule_check>
+- The rule for class 19 fires because the Query Image features intricate, interwoven patterns with a dominant yellow/gold and red color scheme, which is consistent with the observable features in the example for class 19.
+</rule_check>
+<response>19</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=3 | errors=0 | accuracy=0.6667 | duration_seconds=5.4415 | avg_trial_wall_seconds=1.8043 | avg_trial_api_seconds=1.6078 | system_fallback_count=0

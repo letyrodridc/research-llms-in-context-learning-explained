@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=pets | prompt=axioms_ontology_v2 | model=qwen/qwen3-vl-8b-instruct | N=2 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[36] | Predicted=[36] | Correct=True
+<tbox>
+- [36] ⊑ hasVisualFeature([F1])
+- hasVisualFeature([F2]) ⊑ [6]
+- [36] ≡ hasVisualFeature([F3]) ⊓ hasVisualFeature([F4])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [F3])
+- hasVisualFeature(Query, [F4])
+</abox>
+<dl_explanation>
+- Rule(s) fired: [36] ≡ hasVisualFeature([F3]) ⊓ hasVisualFeature([F4])
+</dl_explanation>
+
+<response>36</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<tbox>
+- [36] ⊑ hasVisualFeature([F1])
+- hasVisualFeature([F2]) ⊑ [6]
+- [6] ≡ hasVisualFeature([F3]) ⊓ hasVisualFeature([F4])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [F3])
+- hasVisualFeature(Query, [F4])
+</abox>
+<dl_explanation>
+- Rule(s) fired: [6] ≡ hasVisualFeature([F3]) ⊓ hasVisualFeature([F4])
+</dl_explanation>
+
+<response>6</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=11.9777 | avg_trial_wall_seconds=5.9832 | avg_trial_api_seconds=5.0144 | system_fallback_count=0

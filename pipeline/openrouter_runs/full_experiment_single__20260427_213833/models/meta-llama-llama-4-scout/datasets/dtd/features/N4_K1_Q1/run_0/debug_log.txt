@@ -1,0 +1,38 @@
+=== DEBUG LOG | dataset=dtd | prompt=features | model=meta-llama/llama-4-scout | N=4 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[18] | Predicted=[18] | Correct=True
+<features>
+- Hexagonal pattern
+- Varied colors
+- Purple and gold colors
+</features>
+
+<response>18</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[22] | Predicted=[22] | Correct=True
+<features>
+- long vertical lines
+- striped pattern
+- fabric texture
+</features>
+
+<response>22</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[23] | Predicted=[18] | Correct=False
+<features>
+- brown color
+- marbling pattern
+- veining
+</features>
+
+<response>18</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[27] | Predicted=[18] | Correct=False
+<features>
+- Small circular holes
+- Uniform grid pattern
+- Light reflection on surface
+</features>
+
+<response>18</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=4 | errors=0 | accuracy=0.5000 | duration_seconds=6.8695 | avg_trial_wall_seconds=1.7161 | avg_trial_api_seconds=1.1842 | system_fallback_count=0

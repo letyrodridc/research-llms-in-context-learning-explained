@@ -1,0 +1,18 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=nle | model=google/gemini-2.5-flash | N=4 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[4] | Predicted=[6] | Correct=False
+<explanation>The query image shows a small, light-colored animal with a rounded body shape, which is consistent with the visual characteristics of the animals in class 6 (frogs/toads). The background is green, similar to some examples in class 6. The other classes (2, 4, 7) depict birds, deer/moose, and horses, respectively, which have distinct shapes and features not present in the query image.</explanation>
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[2] | Predicted=[2] | Correct=True
+<explanation>The query image displays a small, feathered creature with a beak and wings, consistent with the visual characteristics observed in the examples labeled '2' (birds). The other classes show animals with different body structures (e.g., deer, frogs, horses).</explanation>
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[6] | Predicted=[6] | Correct=True
+<explanation>The query image displays a green and brown mottled pattern, which is consistent with the visual characteristics of the examples labeled as '6' (frogs). These examples often show a textured, camouflaged appearance that blends with natural surroundings, similar to the query image. The other classes (birds, deer, horses) do not exhibit this specific pattern or texture.</explanation>
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[7] | Predicted=[7] | Correct=True
+<explanation>The query image displays an animal with a distinct equine body shape, including a mane and tail, and four legs. This visual characteristic is consistently present in all examples labeled '7', which depict horses. The other classes (2, 4, 6) show birds, deer/moose, and frogs, respectively, none of which share the body structure seen in the query image.</explanation>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=6.2634 | avg_trial_wall_seconds=1.5619 | avg_trial_api_seconds=1.3959 | system_fallback_count=0

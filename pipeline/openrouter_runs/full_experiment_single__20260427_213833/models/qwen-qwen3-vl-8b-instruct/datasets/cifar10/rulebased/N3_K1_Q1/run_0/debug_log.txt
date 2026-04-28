@@ -1,0 +1,50 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=3 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<features>
+- observable feature: animal with fur
+- observable feature: facial features resembling a feline
+- observable feature: light brown or tan coloration
+</features>
+<kb>
+- IF [observable visual features = animal with fur AND observable visual features = facial features resembling a feline AND observable visual features = light brown or tan coloration] THEN [3]
+- IF [observable visual features = vehicle with large boxy structure] THEN [9]
+- IF [observable visual features = vehicle with sleek body and headlights] THEN [1]
+</kb>
+<rule_check>
+- Rule 1 fires because the image shows an animal with fur, feline facial features, and light brown/tan coloration, which matches the features of class 3.
+</rule_check>
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[9] | Predicted=[9] | Correct=True
+<features>
+- observable feature: vehicle type is a truck with a large cargo container
+- observable feature: vehicle color is white
+- observable feature: vehicle is on a road or paved surface
+</features>
+<kb>
+- IF [vehicle type is a truck with a large cargo container] THEN [9]
+- IF [vehicle type is a car with a visible hood and windshield] THEN [1]
+- IF [vehicle type is a cat lying down] THEN [3]
+</kb>
+<rule_check>
+- Rule 1 fires because the vehicle is a truck with a large cargo container, matching the condition for class 9.
+</rule_check>
+<response>9</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[1] | Predicted=[1] | Correct=True
+<features>
+- observable feature: vehicle type is a car
+- observable feature: vehicle color is dark (black)
+- observable feature: vehicle is in an indoor setting
+</features>
+<kb>
+- IF [vehicle type is a car AND vehicle color is dark] THEN [1]
+- IF [vehicle type is a truck] THEN [9]
+- IF [vehicle type is a cat] THEN [3]
+</kb>
+<rule_check>
+- Rule 1 fires because the vehicle is a car and its color is dark, matching the condition for class 1.
+</rule_check>
+<response>1</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=8.8871 | avg_trial_wall_seconds=2.9591 | avg_trial_api_seconds=2.8486 | system_fallback_count=0

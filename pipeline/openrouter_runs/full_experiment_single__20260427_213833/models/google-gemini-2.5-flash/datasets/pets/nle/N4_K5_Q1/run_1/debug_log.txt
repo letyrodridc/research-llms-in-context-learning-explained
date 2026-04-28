@@ -1,0 +1,18 @@
+=== DEBUG LOG | dataset=pets | prompt=nle | model=google/gemini-2.5-flash | N=4 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[20] | Predicted=[20] | Correct=True
+<explanation>The query image displays a feline with long fur, prominent ear tufts, and a distinct facial structure, which are consistent visual features observed in the examples labeled as class 20. The other classes (13, 28, 29) represent dogs with different fur textures, ear shapes, and overall body structures.</explanation>
+<response>20</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<explanation>The query image shows a dog with thick, white fur and a curled tail, which are consistent visual features observed in the examples labeled as class 29. The other classes (20, 28, 13) show cats or dogs with different fur textures, colors, and ear/tail shapes.</explanation>
+<response>29</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[28] | Predicted=[28] | Correct=True
+<explanation>The query image displays a dog with a distinctive brown, white, and black coat pattern, particularly a white blaze on its forehead and a dark mask around its eyes. This pattern, along with the overall head shape and floppy ears, is consistently observed in the examples labeled '28'. The other classes (20, 29, 13) show different coat patterns, ear shapes, and overall appearances (cats, all-white fluffy dogs, or spotted dogs with longer, wavier fur).</explanation>
+<response>28</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[13] | Predicted=[13] | Correct=True
+<explanation>The query image shows a dog with predominantly white fur and long, floppy ears, which is consistent with the visual characteristics observed in the examples for class 13. The other classes (20, 29, 28) show cats or dogs with different fur patterns, ear shapes, or overall body structures.</explanation>
+<response>13</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=9.5243 | avg_trial_wall_seconds=2.3793 | avg_trial_api_seconds=1.5807 | system_fallback_count=0

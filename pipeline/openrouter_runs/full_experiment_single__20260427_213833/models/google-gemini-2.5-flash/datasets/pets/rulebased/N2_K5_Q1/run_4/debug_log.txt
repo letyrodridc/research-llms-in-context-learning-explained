@@ -1,0 +1,37 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=5 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[36] | Predicted=[36] | Correct=True
+<features>
+- animal type: dog
+- fur color: light brown/tan with some darker brown/black
+- fur texture: long, shaggy
+- ears: floppy, covered by fur
+- facial expression: mouth open, tongue visible, appearing to smile
+- eyes: mostly obscured by fur, but visible as dark spots
+</features>
+<kb>
+- IF [animal type = dog AND fur is long and shaggy AND ears are often covered by fur] THEN [36]
+- IF [animal type = cat AND fur is mostly white/cream with dark brown points on face, ears, paws, and tail AND eyes are typically blue] THEN [6]
+</kb>
+<rule_check>
+- The rule for class 36 fires because the Query Image shows a dog with long, shaggy fur and ears that appear to be covered by fur, consistent with the features observed in the examples for class 36.
+</rule_check>
+<response>36</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- animal type: cat
+- fur color: mostly white/cream with darker brown/black points on face, ears, and tail
+- eye color: blue
+- fur length: long
+- ear shape: pointed, upright
+</features>
+<kb>
+- IF [animal type = dog AND fur color = brown/black/tan AND fur length = long AND ear shape = pointed, upright] THEN [36]
+- IF [animal type = cat AND fur color = mostly white/cream with darker points AND eye color = blue AND fur length = long AND ear shape = pointed, upright] THEN [6]
+</kb>
+<rule_check>
+- The rule for class 6 fires because the Query Image shows an animal that is a cat, has mostly white/cream fur with darker points on its face, ears, and tail, has blue eyes, long fur, and pointed, upright ears.
+</rule_check>
+<response>6</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.8625 | avg_trial_wall_seconds=1.9188 | avg_trial_api_seconds=1.5634 | system_fallback_count=0

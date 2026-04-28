@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[2] | Predicted=[2] | Correct=True
+<features>
+- body shape: robust
+- snout: prominent, elongated
+- ears: floppy, triangular
+- fur pattern: solid, light brown/tan
+- tail: not fully visible, appears short
+</features>
+<kb>
+- IF [body shape = robust AND snout = prominent, elongated AND ears = floppy, triangular AND fur pattern = solid, light brown/tan] THEN [2]
+- IF [body shape = slender AND snout = short AND ears = pointed, erect AND fur pattern = striped/spotted AND tail = long, striped] THEN [5]
+</kb>
+<rule_check>
+- The rule for class 2 fires because the Query Image shows a robust body shape, a prominent and elongated snout, floppy and triangular ears, and a solid, light brown/tan fur pattern. These features are consistent with the examples provided for class 2.
+</rule_check>
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[5] | Predicted=[5] | Correct=True
+<features>
+- fur pattern: striped/spotted
+- ears: pointed, upright
+- snout: short
+- body shape: slender
+- tail: long, striped
+</features>
+<kb>
+- IF [fur pattern is solid or with minimal markings AND/OR snout is elongated] THEN [2]
+- IF [fur pattern is striped or spotted AND/OR ears are pointed and upright AND/OR snout is short] THEN [5]
+</kb>
+<rule_check>
+- The rule for class 5 fires because the query image shows a fur pattern that is clearly striped/spotted, and the ears are pointed and upright, and the snout is short.
+</rule_check>
+<response>5</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.4363 | avg_trial_wall_seconds=1.7142 | avg_trial_api_seconds=1.5800 | system_fallback_count=0

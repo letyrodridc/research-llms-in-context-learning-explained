@@ -1,0 +1,16 @@
+=== DEBUG LOG | dataset=flowers | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=2 K=1 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<explanation>
+The Query Image shows a flower with deep purple petals and a distinct central cluster of stamens, which matches the visual pattern of the first example (a pink clematis) in terms of petal shape and central structure, despite the color difference. The second example (yellow iris) has a different petal arrangement and lacks the clematis-like central structure.
+</explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<explanation>
+The Query Image displays a yellow flower with three prominent outer petals and three inner petals, characteristic of an iris. This matches the visual pattern of the labeled example for class 14, which also shows a yellow iris with similar petal structure and green foliage background.
+</explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.3711 | avg_trial_wall_seconds=2.1651 | avg_trial_api_seconds=1.8847 | system_fallback_count=0

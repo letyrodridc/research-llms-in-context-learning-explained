@@ -1,0 +1,35 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=2 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- [81] ≡ hasPetalColor([purple]) ⊓ hasCenterFeature([prominent_white_stamens])
+- [14] ≡ hasPetalColor([yellow])
+</tbox>
+
+<abox>
+- hasPetalColor(Query, [purple])
+- hasCenterFeature(Query, [prominent_white_stamens])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [81] ≡ hasPetalColor([purple]) ⊓ hasCenterFeature([prominent_white_stamens])
+</dl_explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- [81] ⊑ hasVisualFeature([purple_petals]) ⊓ hasVisualFeature([white_center])
+- [14] ⊑ hasVisualFeature([yellow_petals])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [yellow_petals])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [14] ⊑ hasVisualFeature([yellow_petals])
+</dl_explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=8.8831 | avg_trial_wall_seconds=4.4393 | avg_trial_api_seconds=4.2896 | system_fallback_count=0

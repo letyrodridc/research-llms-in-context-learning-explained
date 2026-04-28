@@ -1,0 +1,59 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=4 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[7] | Predicted=[7] | Correct=True
+<tbox>
+Class7 ⊑ hasVisualFeature(OrangePetals) ⊓ hasVisualFeature(BluePetals) ⊓ hasVisualFeature(PointedPetals) ⊓ hasVisualFeature(GreenStem)
+</tbox>
+<abox>
+hasVisualFeature(Query, OrangePetals)
+hasVisualFeature(Query, BluePetals)
+hasVisualFeature(Query, PointedPetals)
+hasVisualFeature(Query, GreenStem)
+</abox>
+<dl_explanation>
+Rule(s) fired: Class7 ⊑ hasVisualFeature(OrangePetals) ⊓ hasVisualFeature(BluePetals) ⊓ hasVisualFeature(PointedPetals) ⊓ hasVisualFeature(GreenStem)
+</dl_explanation>
+<response>7</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<tbox>
+Class_7 ⊑ hasVisualFeature(elongated_orange_petal_with_blue_tip)
+Class_29 ⊑ hasVisualFeature(multiple_flowers_with_frilly_petals) ⊓ hasVisualFeature(pink_and_white_color_pattern)
+Class_8 ⊑ hasVisualFeature(bell_shaped_purple_and_white_flowers_on_a_stem)
+Class_4 ⊑ hasVisualFeature(single_orange_flower_with_a_dark_center)
+</tbox>
+<abox>
+hasVisualFeature(Query, multiple_flowers_with_frilly_petals)
+hasVisualFeature(Query, pink_and_white_color_pattern)
+</abox>
+<dl_explanation>
+Class_29 ⊑ hasVisualFeature(multiple_flowers_with_frilly_petals) ⊓ hasVisualFeature(pink_and_white_color_pattern)
+</dl_explanation>
+<response>29</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[8] | Predicted=[8] | Correct=True
+<tbox>
+8 ⊑ hasVisualFeature(purple_and_white_hooded_flowers)
+</tbox>
+<abox>
+hasVisualFeature(Query, purple_and_white_hooded_flowers)
+</abox>
+<dl_explanation>
+Rule(s) fired: 8 ⊑ hasVisualFeature(purple_and_white_hooded_flowers)
+</dl_explanation>
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<tbox>
+Class4 ≡ hasVisualFeature(orange_petals) ⊓ hasVisualFeature(central_disk_florets) ⊓ hasVisualFeature(multiple_layers_of_petals)
+</tbox>
+<abox>
+hasVisualFeature(Query, orange_petals)
+hasVisualFeature(Query, central_disk_florets)
+hasVisualFeature(Query, multiple_layers_of_petals)
+</abox>
+<dl_explanation>
+Rule(s) fired: Class4 ≡ hasVisualFeature(orange_petals) ⊓ hasVisualFeature(central_disk_florets) ⊓ hasVisualFeature(multiple_layers_of_petals)
+</dl_explanation>
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=6.5233 | avg_trial_wall_seconds=1.6292 | avg_trial_api_seconds=1.4122 | system_fallback_count=0

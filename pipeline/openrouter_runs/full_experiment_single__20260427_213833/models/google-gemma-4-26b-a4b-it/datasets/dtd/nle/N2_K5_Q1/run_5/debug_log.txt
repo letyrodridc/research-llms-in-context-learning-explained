@@ -1,0 +1,16 @@
+=== DEBUG LOG | dataset=dtd | prompt=nle | model=google/gemma-4-26b-a4b-it | N=2 K=5 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[17] | Predicted=[17] | Correct=True
+<explanation>
+The image shows a repetitive, textured pattern of parallel, wavy lines. This visual pattern of continuous, linear, and repetitive structures is most similar to the examples in class 17, which all feature various types of parallel lines or grooves (wood grain, sand ridges, corrugated metal, etc.), whereas class 32 features irregular holes, pits, or depressions.
+</explanation>
+
+<response>17</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<explanation>
+The query image shows a paved surface (asphalt/road) with several depressions filled with water, which are characteristic of potholes. This visual pattern matches the examples provided for class 32.
+</explanation>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=5.2059 | avg_trial_wall_seconds=2.5991 | avg_trial_api_seconds=2.1420 | system_fallback_count=0

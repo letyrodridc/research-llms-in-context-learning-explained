@@ -1,0 +1,78 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=4 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[86] | Predicted=[86] | Correct=True
+<tbox>
+- [86] ⊑ hasVisualFeature([large_petals]) ⊓ hasVisualFeature([broad_petals])
+- [83] ⊑ hasVisualFeature([spurred_petals]) ⊓ hasVisualFeature([central_yellow_stamens])
+- [82] ⊑ hasVisualFeature([funnel_shape]) ⊓ hasVisualFeature([prominent_central_stamen_column])
+- [12] ⊑ hasVisualFeature([cone_like_center]) ⊓ hasVisualFeature([pointed_bracts])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [large_petals])
+- hasVisualFeature(Query, [broad_petals])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [86] ⊑ hasVisualFeature([large_petals]) ⊓ hasVisualFeature([broad_petals])
+</dl_explanation>
+
+<response>86</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[83] | Predicted=[83] | Correct=True
+<tbox>
+- [83] ≡ hasVisualFeature([two-toned_petals]) ⊓ hasVisualFeature([spurred_petals])
+- [86] ≡ hasVisualFeature([large_broad_petals])
+- [82] ≡ hasVisualFeature([prominent_central_stamen])
+- [12] ≡ hasVisualFeature([large_central_dome_structure])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [two-toned_petals])
+- hasVisualFeature(Query, [spurred_petals])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [83] ≡ hasVisualFeature([two-toned_petals]) ⊓ hasVisualFeature([spurred_petals])
+</dl_explanation>
+
+<response>83</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[82] | Predicted=[82] | Correct=True
+<tbox>
+- [82] ⊑ hasVisualFeature([large_petals]) ⊓ hasVisualFeature([prominent_central_stamen])
+- [86] ⊑ hasVisualFeature([large_petals]) ⊓ hasVisualFeature([no_prominent_central_stamen])
+- [83] ⊑ hasVisualFeature([spurred_petals])
+- [12] ⊑ hasVisualFeature([large_central_dome])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [large_petals])
+- hasVisualFeature(Query, [prominent_central_stamen])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [82] ⊑ hasVisualFeature([large_petals]) ⊓ hasVisualFeature([prominent_central_stamen])
+</dl_explanation>
+
+<response>82</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[12] | Predicted=[12] | Correct=True
+<tbox>
+- [86] ⊑ hasVisualFeature([large_broad_petals]) ⊓ hasVisualFeature([magnolia_shape])
+- [83] ⊑ hasVisualFeature([spurred_petals]) ⊓ hasVisualFeature([central_yellow_stamen])
+- [82] ⊑ hasVisualFeature([trumpet_shape]) ⊓ hasVisualFeature([long_central_stamen])
+- [12] ≡ hasVisualFeature([large_central_dome]) ⊓ hasVisualFeature([pointed_outer_petals])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [large_central_dome])
+- hasVisualFeature(Query, [pointed_outer_petals])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [12] ≡ hasVisualFeature([large_central_dome]) ⊓ hasVisualFeature([pointed_outer_petals])
+</dl_explanation>
+
+<response>12</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=138.4269 | avg_trial_wall_seconds=34.6022 | avg_trial_api_seconds=33.8874 | system_fallback_count=0

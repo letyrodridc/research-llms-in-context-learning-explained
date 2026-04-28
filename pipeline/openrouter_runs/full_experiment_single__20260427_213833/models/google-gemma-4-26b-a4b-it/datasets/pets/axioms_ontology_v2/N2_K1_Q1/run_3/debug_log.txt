@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=pets | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=2 K=1 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[2] | Predicted=[2] | Correct=True
+<tbox>
+- [2] ⊑ hasVisualFeature([canine])
+- [5] ⊑ hasVisualFeature([feline])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [canine])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [2] ⊑ hasVisualFeature([canine])
+</dl_explanation>
+
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[5] | Predicted=[5] | Correct=True
+<tbox>
+- [2] ⊑ hasVisualFeature([canine_features])
+- [5] ⊑ hasVisualFeature([feline_features])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [feline_features])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [5] ⊑ hasVisualFeature([feline_features])
+</dl_explanation>
+
+<response>5</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.9806 | avg_trial_wall_seconds=1.9868 | avg_trial_api_seconds=1.8389 | system_fallback_count=0

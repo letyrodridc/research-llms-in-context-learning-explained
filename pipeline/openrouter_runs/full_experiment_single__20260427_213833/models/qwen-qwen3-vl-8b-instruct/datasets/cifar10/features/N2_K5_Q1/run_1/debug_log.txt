@@ -1,0 +1,18 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=features | model=qwen/qwen3-vl-8b-instruct | N=2 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- large vessel
+- multiple masts
+- dark hull
+</features>
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- four-legged animal
+- brown coat
+- white lower legs
+</features>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.6773 | avg_trial_wall_seconds=1.8368 | avg_trial_api_seconds=1.6040 | system_fallback_count=0

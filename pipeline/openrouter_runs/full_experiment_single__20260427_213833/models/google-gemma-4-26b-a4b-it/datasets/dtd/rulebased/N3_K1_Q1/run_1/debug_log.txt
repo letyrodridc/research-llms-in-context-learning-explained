@@ -1,0 +1,57 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=3 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- texture: crumpled, irregular, folded
+- color: purple/pinkish
+</features>
+
+<kb>
+- IF [texture = horizontal lines/ripples AND color = grey/greenish] THEN [45]
+- IF [pattern = scattered colored dots on white background] THEN [10]
+- IF [pattern = intricate floral/geometric repeating pattern] THEN [19]
+</kb>
+
+<rule_check>
+The query image does not match the pattern of scattered dots (10) or the intricate floral pattern (19). While it doesn't perfectly match the horizontal ripples of 45, it is a texture-based image. However, looking at the provided options and the nature of the query image (a texture), none of the rules perfectly fire based on the strict definitions provided in the examples. Re-evaluating the query image: it is a texture. Class 45 is a texture (ripples). Class 10 is a pattern of dots. Class 19 is a pattern of flowers. The query image is a texture. Comparing the texture of 45 (ripples) to the query (crumpled), 45 is the only texture-based class.
+</rule_check>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[10] | Predicted=[10] | Correct=True
+<features>
+- background color: black
+- pattern: small, light-colored (beige/tan) dots
+- pattern arrangement: scattered dots on a dark fabric-like texture with vertical folds
+</features>
+<kb>
+- IF [background color = greyish-blue AND pattern = horizontal wavy lines] THEN [45]
+- IF [background color = white AND pattern = multi-colored circles] THEN [10]
+- IF [background color = dark/black AND pattern = complex floral/ornamental motifs] THEN [19]
+- IF [background color = black AND pattern = small light-colored dots] THEN [10]
+</kb>
+
+<rule_check>
+- The Query Image features a black background with small, light-colored dots. Comparing this to the provided examples, class 10 contains a pattern of dots on a background. While the background color in the example for 10 is white and the query is black, the "dot" pattern is the most distinguishing feature shared with class 10 compared to the wavy lines of 45 or the floral patterns of 19.
+</rule_check>
+
+<response>10</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[19] | Predicted=[19] | Correct=True
+<features>
+- pattern: intricate carved wood with interlocking curved shapes and animal-like figures
+- texture: wood grain visible
+- color: brown/tan
+</features>
+<kb>
+- IF [pattern = horizontal wavy lines] THEN [45]
+- IF [pattern = scattered colored dots on white background] THEN [10]
+- IF [pattern = intricate carved wood with interlocking curved shapes] THEN [19]
+</kb>
+
+<rule_check>
+- The rule for class 19 fires because the Query Image features an intricate carved pattern with interlocking curved shapes, which matches the visual style of the example for class 19.
+</rule_check>
+
+<response>19</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=13.4195 | avg_trial_wall_seconds=4.4710 | avg_trial_api_seconds=4.3112 | system_fallback_count=0

@@ -1,0 +1,48 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=3 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[3] | Predicted=[1] | Correct=False
+<features>
+- observable feature: blurry image of a cat with dark facial markings
+- observable feature: cat sitting upright on a colorful surface
+- observable feature: visible ears and eyes despite blur
+</features>
+<kb>
+- IF [observable visual features = blurry image of a cat with dark facial markings AND cat sitting upright] THEN [1]
+- IF [observable visual features = blurry image of a truck] THEN [9]
+- IF [observable visual features = blurry image of a dog lying down] THEN [3]
+</kb>
+<rule_check>
+- Rule 1 fires because the image shows a cat with dark facial markings sitting upright, matching the condition for class 1.
+</rule_check>
+<response>1</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[9] | Predicted=[9] | Correct=True
+<features>
+- observable feature: large vehicle
+- observable feature: front grille and headlights
+- observable feature: cargo or container on top
+</features>
+<kb>
+- IF [observable visual features = large vehicle AND observable visual features = front grille and headlights AND observable visual features = cargo or container on top] THEN [9]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows a large vehicle with a front grille and headlights and a cargo or container on top, matching the features for class 9.
+</rule_check>
+<response>9</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[1] | Predicted=[1] | Correct=True
+<features>
+- observable feature: two-tone color scheme (blue and white)
+- observable feature: boxy body shape
+- observable feature: presence of windows along the side
+</features>
+<kb>
+- IF [observable visual features = two-tone color scheme AND boxy body shape AND presence of windows along the side] THEN [1]
+- IF [observable visual features = large cargo box on top] THEN [9]
+- IF [observable visual features = low profile and sporty rear design] THEN [3]
+</kb>
+<rule_check>
+- Rule 1 fires because the image shows a two-tone color scheme (blue and white), a boxy body shape, and windows along the side, which matches the features for class 1.
+</rule_check>
+<response>1</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=3 | errors=0 | accuracy=0.6667 | duration_seconds=11.8182 | avg_trial_wall_seconds=3.9368 | avg_trial_api_seconds=3.8513 | system_fallback_count=0

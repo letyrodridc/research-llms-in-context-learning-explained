@@ -1,0 +1,59 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=meta-llama/llama-4-scout | N=3 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- road surface: asphalt
+- pothole: large
+- pothole: multiple
+- road marking: present
+- surrounding environment: urban
+</features>
+<kb>
+- IF [road surface = asphalt AND pothole = large AND pothole = multiple AND road marking = present AND surrounding environment = urban] THEN [32]
+- IF [road surface = not asphalt AND pothole = not present] THEN [8]
+- IF [road surface = not asphalt AND pothole = present] THEN [4]
+</kb>
+
+<rule_check>
+- The rule for class 32 fires for the Query Image because it has a large and multiple potholes on an asphalt road surface with road markings and an urban environment.
+</rule_check>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- observable feature: texture - rough
+- observable feature: material - fabric
+- observable feature: color - black
+</features>
+<kb>
+- IF [texture = rough AND material = fabric AND color = black] THEN [8]
+- IF [texture = rough AND material = fabric AND color = other] THEN [4]
+- IF [texture = smooth AND material = other] THEN [32]
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF [texture = rough AND material = fabric AND color = black] THEN [8], because the Query Image has a rough texture, appears to be made of fabric, and is black.
+</rule_check>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[4] | Predicted=[8] | Correct=False
+<features>
+- observable feature: pink color
+- observable feature: blue color
+- observable feature: yellow color
+- observable feature: floral pattern
+</features>
+<kb>
+- IF [floral pattern = present AND pink color = present AND blue color = present AND yellow color = present] THEN [8]
+- IF [surface = rough AND holes = present] THEN [4]
+- IF [pothole = present] THEN [32]
+</kb>
+
+<rule_check>
+- The rule that best satisfies the Query Image is: IF [floral pattern = present AND pink color = present AND blue color = present AND yellow color = present] THEN [8], because the Query Image shows a floral pattern with pink, blue, and yellow colors.
+</rule_check>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=3 | errors=0 | accuracy=0.6667 | duration_seconds=14.0294 | avg_trial_wall_seconds=4.6719 | avg_trial_api_seconds=2.9694 | system_fallback_count=0

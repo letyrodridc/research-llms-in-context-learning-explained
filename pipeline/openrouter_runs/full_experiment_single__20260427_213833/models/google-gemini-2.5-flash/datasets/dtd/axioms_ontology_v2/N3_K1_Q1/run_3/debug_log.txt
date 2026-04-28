@@ -1,0 +1,52 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=3 K=1 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[45] | Predicted=[10] | Correct=False
+<tbox>
+10 ⊑ hasVisualFeature(multiple_colored_dots) ⊓ hasVisualFeature(light_background)
+19 ⊑ hasVisualFeature(intricate_patterns) ⊓ hasVisualFeature(earthy_tones) ⊓ hasVisualFeature(abstract_shapes)
+45 ⊑ hasVisualFeature(heavily_wrinkled_skin) ⊓ hasVisualFeature(close_up_face) ⊓ hasVisualFeature(dark_background)
+</tbox>
+<abox>
+</abox>
+<dl_explanation>
+</dl_explanation>
+<response>10</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[10] | Predicted=[10] | Correct=True
+<tbox>
+hasVisualFeature(PolkaDotPattern) ⊑ [10]
+hasVisualFeature(IntricatePattern) ⊑ [19]
+hasVisualFeature(WrinkledFace) ⊑ [45]
+</tbox>
+<abox>
+hasVisualFeature(Query, PolkaDotPattern)
+</abox>
+<dl_explanation>
+Rule(s) fired: hasVisualFeature(PolkaDotPattern) ⊑ [10]
+</dl_explanation>
+<response>10</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[19] | Predicted=[19] | Correct=True
+<tbox>
+19 ⊑ hasVisualFeature(interlaced_patterns)
+19 ⊑ hasVisualFeature(ornate_design)
+19 ⊑ hasVisualFeature(earth_tone_color_palette)
+45 ⊑ hasVisualFeature(close_up_portrait)
+45 ⊑ hasVisualFeature(aged_skin_texture)
+45 ⊑ hasVisualFeature(visible_wrinkles)
+10 ⊑ hasVisualFeature(polka_dot_pattern)
+10 ⊑ hasVisualFeature(multiple_colors_of_dots)
+10 ⊑ hasVisualFeature(light_background)
+</tbox>
+<abox>
+hasVisualFeature(Query, interlaced_patterns)
+hasVisualFeature(Query, ornate_design)
+hasVisualFeature(Query, earth_tone_color_palette)
+</abox>
+<dl_explanation>
+Rule(s) fired: 19 ⊑ hasVisualFeature(interlaced_patterns)
+Rule(s) fired: 19 ⊑ hasVisualFeature(ornate_design)
+Rule(s) fired: 19 ⊑ hasVisualFeature(earth_tone_color_palette)
+</dl_explanation>
+<response>19</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=3 | errors=0 | accuracy=0.6667 | duration_seconds=4.4811 | avg_trial_wall_seconds=1.4909 | avg_trial_api_seconds=1.3012 | system_fallback_count=0

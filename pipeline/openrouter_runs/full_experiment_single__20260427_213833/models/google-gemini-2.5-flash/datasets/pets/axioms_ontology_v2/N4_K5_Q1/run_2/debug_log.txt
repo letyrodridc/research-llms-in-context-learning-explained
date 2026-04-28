@@ -1,0 +1,70 @@
+=== DEBUG LOG | dataset=pets | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=4 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[20] | Predicted=[20] | Correct=True
+<tbox>
+20 ⊑ hasVisualFeature(cat) ⊓ hasVisualFeature(long_fur) ⊓ hasVisualFeature(pointed_ears)
+29 ⊑ hasVisualFeature(dog) ⊓ hasVisualFeature(white_fur) ⊓ hasVisualFeature(fluffy_tail)
+28 ⊑ hasVisualFeature(dog) ⊓ hasVisualFeature(white_and_brown_fur) ⊓ hasVisualFeature(droopy_ears)
+13 ⊑ hasVisualFeature(dog) ⊓ hasVisualFeature(long_fur) ⊓ hasVisualFeature(spotted_coat) ⊓ hasVisualFeature(droopy_ears)
+</tbox>
+<abox>
+hasVisualFeature(Query, cat)
+hasVisualFeature(Query, long_fur)
+hasVisualFeature(Query, pointed_ears)
+</abox>
+<dl_explanation>
+Rule(s) fired: 20 ⊑ hasVisualFeature(cat) ⊓ hasVisualFeature(long_fur) ⊓ hasVisualFeature(pointed_ears)
+</dl_explanation>
+<response>20</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<tbox>
+hasVisualFeature(WhiteFluffyFur, [29]) ⊓ hasVisualFeature(CurledTail, [29]) ⊓ hasVisualFeature(PointedEars, [29]) ⊓ hasVisualFeature(DarkEyes, [29]) ⊓ hasVisualFeature(BlackNose, [29]) ⊓ hasVisualFeature(TongueOut, [29]) ⊑ [29]
+</tbox>
+<abox>
+hasVisualFeature(Query, WhiteFluffyFur)
+hasVisualFeature(Query, CurledTail)
+hasVisualFeature(Query, PointedEars)
+hasVisualFeature(Query, DarkEyes)
+hasVisualFeature(Query, BlackNose)
+hasVisualFeature(Query, TongueOut)
+</abox>
+<dl_explanation>
+Rule(s) fired: hasVisualFeature(WhiteFluffyFur, [29]) ⊓ hasVisualFeature(CurledTail, [29]) ⊓ hasVisualFeature(PointedEars, [29]) ⊓ hasVisualFeature(DarkEyes, [29]) ⊓ hasVisualFeature(BlackNose, [29]) ⊓ hasVisualFeature(TongueOut, [29]) ⊑ [29]
+</dl_explanation>
+<response>29</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[28] | Predicted=[28] | Correct=True
+<tbox>
+20 ⊑ hasVisualFeature(long_fur) ⊓ hasVisualFeature(pointed_ears) ⊓ hasVisualFeature(cat_like_face)
+29 ⊑ hasVisualFeature(white_fluffy_fur) ⊓ hasVisualFeature(curled_tail) ⊓ hasVisualFeature(pointed_ears) ⊓ hasVisualFeature(dog_like_face)
+28 ⊑ hasVisualFeature(large_size) ⊓ hasVisualFeature(white_and_brown_fur) ⊓ hasVisualFeature(droopy_ears) ⊓ hasVisualFeature(dog_like_face)
+13 ⊑ hasVisualFeature(medium_size) ⊓ hasVisualFeature(speckled_fur) ⊓ hasVisualFeature(droopy_ears) ⊓ hasVisualFeature(dog_like_face)
+</tbox>
+<abox>
+hasVisualFeature(Query, large_size)
+hasVisualFeature(Query, white_and_brown_fur)
+hasVisualFeature(Query, droopy_ears)
+hasVisualFeature(Query, dog_like_face)
+</abox>
+<dl_explanation>
+Rule(s) fired: 28 ⊑ hasVisualFeature(large_size) ⊓ hasVisualFeature(white_and_brown_fur) ⊓ hasVisualFeature(droopy_ears) ⊓ hasVisualFeature(dog_like_face)
+</dl_explanation>
+<response>28</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[13] | Predicted=[13] | Correct=True
+<tbox>
+13 ⊑ hasVisualFeature(long_floppy_ears) ⊓ hasVisualFeature(speckled_fur)
+20 ⊑ hasVisualFeature(long_fur) ⊓ hasVisualFeature(pointed_ears)
+28 ⊑ hasVisualFeature(short_floppy_ears) ⊓ hasVisualFeature(white_and_brown_fur) ⊓ hasVisualFeature(dark_patches_around_eyes)
+29 ⊑ hasVisualFeature(fluffy_white_fur) ⊓ hasVisualFeature(pointed_ears) ⊓ hasVisualFeature(curled_tail)
+</tbox>
+<abox>
+hasVisualFeature(Query, long_floppy_ears)
+hasVisualFeature(Query, speckled_fur)
+</abox>
+<dl_explanation>
+Rule(s) fired: 13 ⊑ hasVisualFeature(long_floppy_ears) ⊓ hasVisualFeature(speckled_fur)
+</dl_explanation>
+<response>13</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=10.9772 | avg_trial_wall_seconds=2.7415 | avg_trial_api_seconds=1.9478 | system_fallback_count=0

@@ -1,0 +1,31 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=2 K=1 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<features>
+- observable feature: blurry image
+- observable feature: dark, indistinct shapes
+- observable feature: appears to be a person or animal lying down
+</features>
+<kb>
+- IF [observable visual features = blurry image AND observable visual features = dark, indistinct shapes AND observable visual features = appears to be a person or animal lying down] THEN [3]
+- IF [observable visual features = sharp, defined shape AND observable visual features = aircraft-like silhouette] THEN [0]
+</kb>
+<rule_check>
+- Rule 1 fires because the image is blurry, contains dark indistinct shapes, and appears to depict a person or animal lying down, matching the features for class 3.
+</rule_check>
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- observable feature: object is a large, dark, winged aircraft
+- observable feature: object has a distinct, wide, flat wing structure
+- observable feature: object is positioned against a cloudy sky and ground terrain
+</features>
+<kb>
+- IF [object is a large, dark, winged aircraft with a distinct, wide, flat wing structure] THEN [0]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows a large, dark, winged aircraft with a distinct, wide, flat wing structure, matching the condition for class 0.
+</rule_check>
+<response>0</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=5.5592 | avg_trial_wall_seconds=2.7779 | avg_trial_api_seconds=2.7071 | system_fallback_count=0

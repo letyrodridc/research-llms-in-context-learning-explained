@@ -1,0 +1,50 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=3 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- observable feature: object is an airplane
+- observable feature: object has wings and tail fins
+- observable feature: object is on ground or near ground
+</features>
+<kb>
+- IF [object is an airplane AND object has wings and tail fins AND object is on ground or near ground] THEN [0]
+- IF [object has greenish-brown skin and rounded body] THEN [6]
+- IF [object has horse-like body shape and legs] THEN [7]
+</kb>
+
+<rule_check>
+- Rule 1 fires because the Query Image shows an airplane with wings and tail fins, positioned on the ground or near ground, matching the features defined for class 0.
+</rule_check>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- observable feature: green coloration
+- observable feature: rounded body shape
+- observable feature: visible eyes and limbs
+</features>
+<kb>
+- IF [observable visual features = green coloration AND rounded body shape AND visible eyes and limbs] THEN [6]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows a green, rounded-bodied creature with visible eyes and limbs, matching the features described in the rule for class 6.
+</rule_check>
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- observable feature: four-legged animal
+- observable feature: long body with mane and tail
+- observable feature: standing on grassy field
+</features>
+<kb>
+- IF [four-legged animal AND long body with mane and tail AND standing on grassy field] THEN [7]
+</kb>
+
+<rule_check>
+- Rule from kb fires: The Query Image shows a four-legged animal with a long body, mane, and tail, standing on a grassy field, which matches the condition for class 7.
+</rule_check>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=10.6679 | avg_trial_wall_seconds=3.5525 | avg_trial_api_seconds=3.2233 | system_fallback_count=0

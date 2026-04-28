@@ -1,0 +1,32 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=2 K=5 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[17] | Predicted=[17] | Correct=True
+<features>
+- observable feature: wavy, ridged texture
+- observable feature: pinkish-brown color
+- observable feature: surface appears sandy or granular
+</features>
+<kb>
+- IF [observable visual features = wavy, ridged texture AND observable visual features = pinkish-brown color AND observable visual features = sandy or granular surface] THEN [17]
+- IF [observable visual features = irregular depressions AND observable visual features = earthy tones AND observable visual features = ground surface] THEN [32]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image exhibits a wavy, ridged texture, pinkish-brown color, and a sandy or granular surface, which matches the features described in the rule for class 17.
+</rule_check>
+<response>17</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- observable feature: surface is asphalt
+- observable feature: surface has multiple holes/potholes
+- observable feature: holes are irregular in shape and size
+</features>
+<kb>
+- IF [surface is asphalt AND surface has multiple holes/potholes] THEN [32]
+- IF [surface has parallel lines or grooves] THEN [17]
+</kb>
+<rule_check>
+- Rule 1 fires because the surface is asphalt and has multiple holes/potholes, matching the condition for class 32.
+</rule_check>
+<response>32</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=8.3001 | avg_trial_wall_seconds=4.1413 | avg_trial_api_seconds=3.1135 | system_fallback_count=0

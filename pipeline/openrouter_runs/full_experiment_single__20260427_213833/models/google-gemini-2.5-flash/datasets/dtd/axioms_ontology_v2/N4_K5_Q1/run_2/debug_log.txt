@@ -1,0 +1,71 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=4 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[43] | Predicted=[43] | Correct=True
+<tbox>
+43 ⊑ hasVisualFeature(grid_pattern) ⊓ hasVisualFeature(square_or_rectangular_depressions)
+10 ⊑ hasVisualFeature(multiple_circular_shapes)
+4 ⊑ hasVisualFeature(spiky_or_bumpy_texture)
+34 ⊑ hasVisualFeature(abstract_brushstrokes_or_blurry_shapes)
+</tbox>
+<abox>
+hasVisualFeature(Query, grid_pattern)
+hasVisualFeature(Query, square_or_rectangular_depressions)
+</abox>
+<dl_explanation>
+Rule(s) fired: 43 ⊑ hasVisualFeature(grid_pattern) ⊓ hasVisualFeature(square_or_rectangular_depressions)
+</dl_explanation>
+<response>43</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[34] | Predicted=[34] | Correct=True
+<tbox>
+Class43 ⊑ hasVisualFeature(grid_pattern) ⊓ hasVisualFeature(baked_texture)
+Class10 ⊑ hasVisualFeature(multiple_circular_shapes) ⊓ hasVisualFeature(varied_colors)
+Class4 ⊑ hasVisualFeature(spiky_texture) ⊓ hasVisualFeature(green_color)
+Class34 ⊑ hasVisualFeature(abstract_composition) ⊓ hasVisualFeature(brush_strokes_or_splatters)
+</tbox>
+<abox>
+hasVisualFeature(Query, abstract_composition)
+hasVisualFeature(Query, brush_strokes_or_splatters)
+</abox>
+<dl_explanation>
+Class34 ⊑ hasVisualFeature(abstract_composition) ⊓ hasVisualFeature(brush_strokes_or_splatters)
+</dl_explanation>
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[10] | Predicted=[10] | Correct=True
+<tbox>
+10 ⊑ hasVisualFeature(PolkaDots)
+34 ⊑ hasVisualFeature(AbstractPattern)
+4 ⊑ hasVisualFeature(SpikyTexture)
+43 ⊑ hasVisualFeature(WafflePattern)
+</tbox>
+<abox>
+hasVisualFeature(Query, PolkaDots)
+</abox>
+<dl_explanation>
+Rule(s) fired: 10 ⊑ hasVisualFeature(PolkaDots)
+</dl_explanation>
+<response>10</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<tbox>
+4 ⊑ hasVisualFeature(SpikyTexture)
+4 ⊑ hasVisualFeature(IrregularBumps)
+4 ⊑ hasVisualFeature(LeafShape)
+10 ⊑ hasVisualFeature(PolkaDots)
+10 ⊑ hasVisualFeature(CircularPatterns)
+34 ⊑ hasVisualFeature(AbstractBrushstrokes)
+34 ⊑ hasVisualFeature(BlurredShapes)
+43 ⊑ hasVisualFeature(GridPattern)
+43 ⊑ hasVisualFeature(SquareDepressions)
+</tbox>
+<abox>
+hasVisualFeature(Query, SpikyTexture)
+hasVisualFeature(Query, IrregularBumps)
+</abox>
+<dl_explanation>
+4 ⊑ hasVisualFeature(SpikyTexture)
+4 ⊑ hasVisualFeature(IrregularBumps)
+</dl_explanation>
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=11.0724 | avg_trial_wall_seconds=2.7658 | avg_trial_api_seconds=1.9428 | system_fallback_count=0

@@ -1,0 +1,60 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=3 K=1 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[71] | Predicted=[71] | Correct=True
+<features>
+- petal color: light pink/white with dark pink/magenta speckles/spots in the center
+- petal texture: slightly ruffled edges
+- center features: prominent stamens
+</features>
+
+<kb>
+- IF [petal color = red] THEN [71]
+- IF [petal color = white with yellow center] THEN [68]
+- IF [petal color = pink with yellow center] THEN [33]
+- IF [petal color = light pink/white with dark pink speckles] THEN [71]
+</kb>
+
+<rule_check>
+The Query Image shows light pink/white petals with distinct dark pink speckles in the center. Comparing this to the examples, the red flower (71) has a similar structure of large petals with speckled centers, whereas the other classes have solid colors (white or solid pink) with distinct yellow centers.
+</rule_check>
+
+<response>71</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[68] | Predicted=[68] | Correct=True
+<features>
+- petal color: white
+- center color: yellow
+- petal texture: smooth with subtle veins
+</features>
+<kb>
+- IF [petal color = red] THEN [71]
+- IF [petal color = white AND center color = yellow] THEN [68]
+- IF [petal color = pink] THEN [33]
+</kb>
+
+<rule_check>
+- The rule for class 68 fires because the Query Image has white petals and a yellow center.
+</rule_check>
+
+<response>68</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[33] | Predicted=[33] | Correct=True
+<features>
+- petal color: light purple/lavender
+- petal texture: fine longitudinal lines/veins
+- center color: yellowish-green
+- center texture: textured/granular
+- stem/foliage: thin, feathery green leaves
+</features>
+<kb>
+- IF [petal color = red] THEN [71]
+- IF [petal color = white] THEN [68]
+- IF [petal color = pink OR light purple AND petal texture = fine longitudinal lines] THEN [33]
+</kb>
+
+<rule_check>
+- The rule for class 33 fires because the Query Image features light purple petals with fine longitudinal lines, which matches the pattern established by the pink flower in the example for class 33.
+</rule_check>
+
+<response>33</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=58.1746 | avg_trial_wall_seconds=19.3890 | avg_trial_api_seconds=19.1906 | system_fallback_count=0

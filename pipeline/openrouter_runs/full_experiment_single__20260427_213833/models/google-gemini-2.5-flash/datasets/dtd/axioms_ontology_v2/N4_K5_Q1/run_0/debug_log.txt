@@ -1,0 +1,65 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=4 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[43] | Predicted=[43] | Correct=True
+<tbox>
+43 ⊑ hasVisualFeature(GridPattern) ⊓ hasVisualFeature(SquareOrDiamondShapes) ⊓ hasVisualFeature(BrownOrYellowishColor)
+34 ⊑ hasVisualFeature(AbstractPattern) ⊓ hasVisualFeature(VariedColors) ⊓ hasVisualFeature(BrushStrokesOrSplatter)
+10 ⊑ hasVisualFeature(PolkaDots) ⊓ hasVisualFeature(CircularShapes) ⊓ hasVisualFeature(MultipleColors)
+4 ⊑ hasVisualFeature(BumpyTexture) ⊓ hasVisualFeature(IrregularShapes) ⊓ hasVisualFeature(MonochromaticOrDullColors)
+</tbox>
+<abox>
+hasVisualFeature(Query, GridPattern)
+hasVisualFeature(Query, SquareOrDiamondShapes)
+hasVisualFeature(Query, BrownOrYellowishColor)
+</abox>
+<dl_explanation>
+Rule(s) fired: 43 ⊑ hasVisualFeature(GridPattern) ⊓ hasVisualFeature(SquareOrDiamondShapes) ⊓ hasVisualFeature(BrownOrYellowishColor)
+</dl_explanation>
+<response>43</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[34] | Predicted=[34] | Correct=True
+<tbox>
+Class_43 ⊑ hasVisualFeature(GridPattern)
+Class_34 ⊑ hasVisualFeature(AbstractBrushstrokes)
+Class_10 ⊑ hasVisualFeature(PolkaDotPattern)
+Class_4 ⊑ hasVisualFeature(BumpyTexture)
+</tbox>
+<abox>
+hasVisualFeature(Query, AbstractBrushstrokes)
+</abox>
+<dl_explanation>
+Class_34 ⊑ hasVisualFeature(AbstractBrushstrokes)
+</dl_explanation>
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[10] | Predicted=[34] | Correct=False
+<tbox>
+Class43 ⊑ hasVisualFeature(GridPattern) ⊓ hasVisualFeature(UniformTexture)
+Class34 ⊑ hasVisualFeature(AbstractPattern) ⊓ hasVisualFeature(VariedColors)
+Class10 ⊑ hasVisualFeature(PolkaDotPattern) ⊓ hasVisualFeature(CircularShapes)
+Class4 ⊑ hasVisualFeature(BumpyTexture) ⊓ hasVisualFeature(IrregularProtrusions)
+</tbox>
+<abox>
+hasVisualFeature(Query, AbstractPattern)
+hasVisualFeature(Query, VariedColors)
+</abox>
+<dl_explanation>
+Class34 ⊑ hasVisualFeature(AbstractPattern) ⊓ hasVisualFeature(VariedColors)
+</dl_explanation>
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<tbox>
+43 ⊑ hasVisualFeature(grid_pattern)
+34 ⊑ hasVisualFeature(abstract_or_random_pattern)
+10 ⊑ hasVisualFeature(polka_dots)
+4 ⊑ hasVisualFeature(bumpy_or_spiky_texture)
+</tbox>
+<abox>
+hasVisualFeature(Query, bumpy_or_spiky_texture)
+</abox>
+<dl_explanation>
+Rule(s) fired: 4 ⊑ hasVisualFeature(bumpy_or_spiky_texture)
+</dl_explanation>
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=11.7224 | avg_trial_wall_seconds=2.9282 | avg_trial_api_seconds=2.2205 | system_fallback_count=0

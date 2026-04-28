@@ -1,0 +1,16 @@
+=== DEBUG LOG | dataset=pets | prompt=nle | model=google/gemma-4-26b-a4b-it | N=2 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[2] | Predicted=[2] | Correct=True
+<explanation>
+The query image shows a dog with short tan fur and a pink bandana, which matches the visual characteristics of the animal in the example labeled '2'.
+</explanation>
+
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[5] | Predicted=[5] | Correct=True
+<explanation>
+The query image shows a small animal with fur, whiskers, and pointed ears, which is characteristic of a cat. Comparing this to the provided examples, class 5 is a cat, whereas class 2 is a dog.
+</explanation>
+
+<response>5</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.5928 | avg_trial_wall_seconds=1.7945 | avg_trial_api_seconds=1.6494 | system_fallback_count=0

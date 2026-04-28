@@ -1,0 +1,32 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=2 K=5 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[75] | Predicted=[75] | Correct=True
+<tbox>
+75 ⊑ hasVisualFeature(funnel_shaped_flower) ⊓ hasVisualFeature(petals_fused_at_base) ⊓ hasVisualFeature(prominent_radial_lines_on_petals)
+35 ⊑ hasVisualFeature(distinct_petals_and_sepals) ⊓ hasVisualFeature(prominent_labellum) ⊓ hasVisualFeature(complex_flower_structure)
+</tbox>
+<abox>
+hasVisualFeature(Query, funnel_shaped_flower)
+hasVisualFeature(Query, petals_fused_at_base)
+hasVisualFeature(Query, prominent_radial_lines_on_petals)
+</abox>
+<dl_explanation>
+Rule(s) fired: 75 ⊑ hasVisualFeature(funnel_shaped_flower) ⊓ hasVisualFeature(petals_fused_at_base) ⊓ hasVisualFeature(prominent_radial_lines_on_petals)
+</dl_explanation>
+<response>75</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[35] | Predicted=[35] | Correct=True
+<tbox>
+35 ⊑ hasVisualFeature(multiple_petals) ⊓ hasVisualFeature(distinct_central_petal_or_lip) ⊓ hasVisualFeature(varied_petal_shapes)
+75 ⊑ hasVisualFeature(single_bell_or_trumpet_shape) ⊓ hasVisualFeature(smooth_petals) ⊓ hasVisualFeature(central_throat_or_eye)
+</tbox>
+<abox>
+hasVisualFeature(Query, multiple_petals)
+hasVisualFeature(Query, distinct_central_petal_or_lip)
+hasVisualFeature(Query, varied_petal_shapes)
+</abox>
+<dl_explanation>
+Rule(s) fired: 35 ⊑ hasVisualFeature(multiple_petals) ⊓ hasVisualFeature(distinct_central_petal_or_lip) ⊓ hasVisualFeature(varied_petal_shapes)
+</dl_explanation>
+<response>35</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.0988 | avg_trial_wall_seconds=2.0463 | avg_trial_api_seconds=1.6647 | system_fallback_count=0

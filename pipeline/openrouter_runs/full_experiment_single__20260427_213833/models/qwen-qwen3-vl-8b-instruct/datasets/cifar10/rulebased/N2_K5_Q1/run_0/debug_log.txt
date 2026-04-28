@@ -1,0 +1,32 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=2 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- observable feature: large vessel with multiple decks and structures
+- observable feature: presence of water and dock-like background
+- observable feature: blurred but clearly man-made and not a horse
+</features>
+<kb>
+- IF [observable visual features = large vessel with multiple decks and structures AND observable visual features = presence of water and dock-like background] THEN [8]
+- IF [observable visual features = horse or rider] THEN [7]
+</kb>
+<rule_check>
+- Rule 1 fires because the image shows a large vessel with multiple decks and structures, and it is situated in water with a dock-like background, which matches the features for class 8.
+</rule_check>
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- observable feature: presence of a horse with a rider
+- observable feature: horse is white with red markings
+- observable feature: rider is standing beside the horse
+</features>
+<kb>
+- IF [presence of a horse with a rider AND horse is white with red markings AND rider is standing beside the horse] THEN [7]
+- IF [presence of a boat or ship in water] THEN [8]
+</kb>
+<rule_check>
+- Rule 1 fires because the image shows a horse with a rider, the horse is white with red markings, and the rider is standing beside the horse, which matches the conditions for class 7.
+</rule_check>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=5.2820 | avg_trial_wall_seconds=2.6387 | avg_trial_api_seconds=2.4332 | system_fallback_count=0

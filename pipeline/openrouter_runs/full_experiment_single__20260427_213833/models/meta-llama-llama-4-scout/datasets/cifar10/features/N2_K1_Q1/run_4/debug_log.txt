@@ -1,0 +1,22 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=features | model=meta-llama/llama-4-scout | N=2 K=1 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<features>
+- pointed ears
+- yellow eyes
+- striped fur
+- whiskers
+</features>
+
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- large wingspan
+- dark green color
+- multiple engines
+- propeller
+</features>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=1.7367 | avg_trial_wall_seconds=0.8654 | avg_trial_api_seconds=0.8171 | system_fallback_count=0

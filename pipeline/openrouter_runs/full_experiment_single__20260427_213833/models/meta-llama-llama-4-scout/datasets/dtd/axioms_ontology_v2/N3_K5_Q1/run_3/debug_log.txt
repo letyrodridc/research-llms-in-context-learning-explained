@@ -1,0 +1,58 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=meta-llama/llama-4-scout | N=3 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[32] | Predicted=[32] | Correct=True
+<tbox>
+- [32] ⊑ hasVisualFeature([Pothole])
+- [32] ⊑ hasVisualFeature([Road])
+- hasVisualFeature([Asphalt]) ⊑ [32]
+- [8] ⊑ hasVisualFeature([Fabric])
+- [4] ⊑ hasVisualFeature([Braided])
+- [4] ⊑ hasVisualFeature([Fiber])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [Pothole])
+- hasVisualFeature(Query, [Road])
+- hasVisualFeature(Query, [Asphalt])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [32] ⊑ hasVisualFeature([Pothole]) , [32] ⊑ hasVisualFeature([Road]) , hasVisualFeature([Asphalt]) ⊑ [32]
+</dl_explanation>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<tbox>
+- [Class8] ⊑ hasVisualFeature([F5])
+- hasVisualFeature([F6]) ⊑ [Class32]
+- [Class4] ≡ hasVisualFeature([F7]) ⊓ hasVisualFeature([F8])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [F5])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [Class8] ⊑ hasVisualFeature([F5])
+</dl_explanation>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[4] | Predicted=[8] | Correct=False
+<tbox>
+- [Class4] ≡ hasVisualFeature([F5]) ⊓ hasVisualFeature([F6])
+- [Class8] ⊑ hasVisualFeature([F7])
+- [Class32] ≡ hasVisualFeature([F3]) ⊓ hasVisualFeature([F4])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [F7])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [Class8] ⊑ hasVisualFeature([F7])
+</dl_explanation>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=3 | errors=0 | accuracy=0.6667 | duration_seconds=18.1698 | avg_trial_wall_seconds=6.0533 | avg_trial_api_seconds=4.4232 | system_fallback_count=0

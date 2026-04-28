@@ -1,0 +1,35 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=2 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<tbox>
+- [3] ⊑ hasVisualFeature([animal_face]) ⊓ hasVisualFeature([furry_texture])
+- [0] ⊑ hasVisualFeature([aerodynamic_shape]) ⊓ hasVisualFeature([metallic_surface])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [animal_face])
+- hasVisualFeature(Query, [furry_texture])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [3] ⊑ hasVisualFeature([animal_face]) ⊓ hasVisualFeature([furry_texture])
+</dl_explanation>
+
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[0] | Predicted=[0] | Correct=True
+<tbox>
+- [0] ⊑ hasVisualFeature([dark_silhouette_against_light_background])
+- [3] ⊑ hasVisualFeature([foreground_elements_obscuring_subject])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [dark_silhouette_against_light_background])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [0] ⊑ hasVisualFeature([dark_silhouette_against_light_background])
+</dl_explanation>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=6.4882 | avg_trial_wall_seconds=3.2410 | avg_trial_api_seconds=3.2215 | system_fallback_count=0

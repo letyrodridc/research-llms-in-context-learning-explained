@@ -1,0 +1,57 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=meta-llama/llama-4-scout | N=3 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[35] | Predicted=[35] | Correct=True
+<features>
+- fur: long and shaggy
+- color: light brown and white
+- nose: black
+- tongue: visible
+</features>
+<kb>
+- IF fur = long and shaggy AND color = light brown and white AND nose = black AND tongue = visible THEN 35
+- IF fur = short and smooth AND color = gray AND eyes = yellow THEN 9
+- IF fur = short and smooth AND color = gray AND sitting THEN 27
+</kb>
+
+<rule_check>
+- The rule for class 35 is satisfied because the Query Image has long and shaggy fur, a light brown and white color, a black nose, and a visible tongue.
+</rule_check>
+
+<response>35</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[9] | Predicted=[9] | Correct=True
+<features>
+- fur color: light gray
+- eye color: yellow
+- ear shape: pointed
+</features>
+<kb>
+- IF [fur color = light brown AND body type = dog] THEN [35]
+- IF [fur color = gray AND eye color = yellow AND ear shape = pointed] THEN [9]
+- IF [fur color = gray AND body type = cat AND sitting posture = on books] THEN [27]
+</kb>
+
+<rule_check>
+- The rule for class 9 fires because the Query Image has fur color = light gray, eye color = yellow, and ear shape = pointed, which match the features of class 9.
+</rule_check>
+
+<response>9</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[27] | Predicted=[27] | Correct=True
+<features>
+- color of animal: gray
+- type of animal: cat
+- posture of animal: sitting
+</features>
+<kb>
+- IF type of animal = dog AND color of animal = brown THEN 35
+- IF type of animal = cat THEN 9
+- IF type of animal = cat AND color of animal = gray THEN 27
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF type of animal = cat THEN 9, and IF type of animal = cat AND color of animal = gray THEN 27, because the Query Image shows a cat, which matches the condition for class 9, and more specifically, a gray cat, which matches the condition for class 27.
+</rule_check>
+
+<response>27</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=10.7227 | avg_trial_wall_seconds=3.5719 | avg_trial_api_seconds=3.1242 | system_fallback_count=0

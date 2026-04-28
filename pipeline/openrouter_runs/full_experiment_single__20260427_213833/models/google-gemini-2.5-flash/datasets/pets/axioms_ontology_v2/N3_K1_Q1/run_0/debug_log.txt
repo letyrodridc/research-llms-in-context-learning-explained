@@ -1,0 +1,51 @@
+=== DEBUG LOG | dataset=pets | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=3 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[35] | Predicted=[35] | Correct=True
+<tbox>
+35 ⊑ hasVisualFeature(dog) ⊓ hasVisualFeature(light_brown_fur) ⊓ hasVisualFeature(shaggy_fur)
+9 ⊑ hasVisualFeature(cat) ⊓ hasVisualFeature(dark_grey_fur) ⊓ hasVisualFeature(short_fur) ⊓ hasVisualFeature(amber_eyes)
+27 ⊑ hasVisualFeature(cat) ⊓ hasVisualFeature(grey_fur) ⊓ hasVisualFeature(short_fur) ⊓ hasVisualFeature(green_eyes)
+</tbox>
+<abox>
+hasVisualFeature(Query, dog)
+hasVisualFeature(Query, light_brown_fur)
+hasVisualFeature(Query, shaggy_fur)
+</abox>
+<dl_explanation>
+Rule(s) fired: 35 ⊑ hasVisualFeature(dog) ⊓ hasVisualFeature(light_brown_fur) ⊓ hasVisualFeature(shaggy_fur)
+</dl_explanation>
+<response>35</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[9] | Predicted=[9] | Correct=True
+<tbox>
+9 ⊑ hasVisualFeature(Cat) ⊓ hasVisualFeature(GreyFur) ⊓ hasVisualFeature(OrangeEyes) ⊓ hasVisualFeature(ShortHair)
+27 ⊑ hasVisualFeature(Cat) ⊓ hasVisualFeature(GreyFur) ⊓ hasVisualFeature(GreenEyes) ⊓ hasVisualFeature(ShortHair)
+35 ⊑ hasVisualFeature(Dog) ⊓ hasVisualFeature(LightBrownFur) ⊓ hasVisualFeature(ShaggyHair)
+</tbox>
+<abox>
+hasVisualFeature(Query, Cat)
+hasVisualFeature(Query, GreyFur)
+hasVisualFeature(Query, OrangeEyes)
+hasVisualFeature(Query, ShortHair)
+</abox>
+<dl_explanation>
+9 ⊑ hasVisualFeature(Cat) ⊓ hasVisualFeature(GreyFur) ⊓ hasVisualFeature(OrangeEyes) ⊓ hasVisualFeature(ShortHair)
+</dl_explanation>
+<response>9</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[27] | Predicted=[27] | Correct=True
+<tbox>
+9 ⊑ hasVisualFeature(gray_fur) ⊓ hasVisualFeature(round_face) ⊓ hasVisualFeature(amber_eyes)
+27 ⊑ hasVisualFeature(gray_fur) ⊓ hasVisualFeature(triangular_ears) ⊓ hasVisualFeature(green_eyes)
+35 ⊑ hasVisualFeature(light_brown_fur) ⊓ hasVisualFeature(fluffy_fur) ⊓ hasVisualFeature(small_ears)
+</tbox>
+<abox>
+hasVisualFeature(Query, gray_fur)
+hasVisualFeature(Query, triangular_ears)
+hasVisualFeature(Query, green_eyes)
+</abox>
+<dl_explanation>
+Rule(s) fired: 27 ⊑ hasVisualFeature(gray_fur) ⊓ hasVisualFeature(triangular_ears) ⊓ hasVisualFeature(green_eyes)
+</dl_explanation>
+<response>27</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=5.0399 | avg_trial_wall_seconds=1.6770 | avg_trial_api_seconds=1.4815 | system_fallback_count=0

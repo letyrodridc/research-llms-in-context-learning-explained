@@ -1,0 +1,53 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemini-2.5-flash | N=3 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<features>
+- main subject: animal head
+- animal color: light brown/tan
+- background: blurry, possibly indoor or abstract
+- overall shape: rounded, organic
+</features>
+<kb>
+- IF [main subject is an animal with fur and a distinct head shape] THEN [3]
+- IF [main subject is a large vehicle with a cabin and a cargo area] THEN [9]
+- IF [main subject is a car with headlights and a visible front grille] THEN [1]
+</kb>
+<rule_check>
+- The rule for class 3 fires because the query image clearly shows the head of an animal with fur, which aligns with the features observed in the example for class 3 (a cat).
+</rule_check>
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[9] | Predicted=[9] | Correct=True
+<features>
+- object shape: large, rectangular body with a distinct cab at the front
+- object color: predominantly white with a dark grey/black bumper and lower front
+- background: blurred outdoor setting, possibly a road or parking area
+- visible details: front grille, windshield, and headlights are somewhat discernible
+</features>
+<kb>
+- IF [object shape is a small, four-legged animal with fur AND/OR object color is black and white] THEN [3]
+- IF [object shape is a large vehicle with a distinct cab and a rectangular cargo area AND/OR object color is predominantly white] THEN [9]
+- IF [object shape is a sleek, low-profile vehicle with a rounded front AND/OR object color is light grey/silver] THEN [1]
+</kb>
+<rule_check>
+- The rule for class 9 fires because the Query Image shows a large vehicle with a distinct cab and a rectangular cargo area, and its color is predominantly white, which matches the features described in the rule.
+</rule_check>
+<response>9</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[1] | Predicted=[1] | Correct=True
+<features>
+- overall shape: elongated, rectangular body with rounded edges
+- visible components: headlights, grille, wheels, side mirrors
+- color: predominantly dark (black)
+- background: indoor setting, possibly a showroom, with other blurred objects
+</features>
+<kb>
+- IF [overall shape is elongated and rectangular with visible headlights, grille, and wheels] THEN [1]
+- IF [overall shape is elongated and rectangular with a large cargo area or tank, and visible wheels] THEN [9]
+- IF [overall shape is small, compact, and irregular with visible fur patterns] THEN [3]
+</kb>
+<rule_check>
+- The rule for class 1 fires because the Query Image shows an object with an elongated and rectangular overall shape, and clearly visible headlights, a grille, and wheels, which are characteristic features of the examples in class 1.
+</rule_check>
+<response>1</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=6.8525 | avg_trial_wall_seconds=2.2820 | avg_trial_api_seconds=2.2395 | system_fallback_count=0

@@ -1,0 +1,85 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=meta-llama/llama-4-scout | N=4 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- observable feature: orange petals
+- observable feature: blue stamen
+- observable feature: long leaves
+</features>
+<kb>
+- IF [observable visual features = orange petals AND observable visual features = blue stamen AND observable visual features = long leaves] THEN [7]
+- IF [observable visual features = pink petals AND observable visual features = red center] THEN [29]
+- IF [observable visual features = purple petals] THEN [8]
+- IF [observable visual features = yellow petals] THEN [4]
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF [observable visual features = orange petals AND observable visual features = blue stamen AND observable visual features = long leaves] THEN [7], because the Query Image has orange petals, blue stamen, and long leaves.
+</rule_check>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<features>
+- color: pink, white, and red
+- petal shape: rounded with serrated edges
+- flower size: small to medium
+- arrangement: clustered
+</features>
+
+<kb>
+- IF color = orange AND petal shape = long and pointed THEN 7
+- IF color = pink and white AND petal shape = rounded with serrated edges THEN 29
+- IF color = purple AND flower shape = tubular THEN 8
+- IF color = yellow AND petal shape = short and rounded THEN 4
+- IF color = pink, white, and red AND petal shape = rounded with serrated edges AND arrangement = clustered THEN 29
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF color = pink, white, and red AND petal shape = rounded with serrated edges AND arrangement = clustered THEN 29, because the Query Image shows flowers that are pink, white, and red, with rounded petals that have serrated edges, and they are arranged in clusters.
+</rule_check>
+
+<response>29</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- color: purple and white
+- petal shape: irregular, curved
+- flower shape: unique, with pointed parts
+</features>
+
+<kb>
+- IF color = orange AND flower shape = round THEN 4
+- IF color = pink and red AND petal shape = jagged THEN 29
+- IF color = purple AND flower shape = irregular THEN 8
+- IF color = orange AND yellow AND flower shape = bird-like THEN 7
+</kb>
+
+<rule_check>
+- The Query Image does not match rule 4 because its color is not orange and its flower shape is not round.
+- The Query Image does not match rule 29 because its color is not pink and red, and its petal shape is not jagged.
+- The Query Image matches rule 8 because its color is purple and its flower shape is irregular.
+- The Query Image does not match rule 7 because its color is not orange and yellow, and its flower shape is not bird-like.
+</rule_check>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- color: yellow
+- petal arrangement: many small petals around a central cluster
+- petal shape: thin and pointed
+</features>
+<kb>
+- IF color = orange AND petal arrangement = few large petals THEN 7
+- IF color = pink AND petal arrangement = many small petals with a distinct red center THEN 29
+- IF color = purple AND petal arrangement = few large, ruffled petals THEN 8
+- IF color = yellow AND petal arrangement = many small petals around a central cluster THEN 4
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF color = yellow AND petal arrangement = many small petals around a central cluster THEN 4, because the Query Image has a yellow color and many small petals arranged around a central cluster.
+</rule_check>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=19.6888 | avg_trial_wall_seconds=4.9196 | avg_trial_api_seconds=4.4193 | system_fallback_count=0

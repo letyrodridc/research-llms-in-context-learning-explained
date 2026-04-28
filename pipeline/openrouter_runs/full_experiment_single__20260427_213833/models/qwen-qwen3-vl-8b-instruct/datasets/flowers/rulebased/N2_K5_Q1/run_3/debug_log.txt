@@ -1,0 +1,32 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=2 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[75] | Predicted=[75] | Correct=True
+<features>
+- observable feature: flower has five distinct petals forming a trumpet shape
+- observable feature: flower is purple with a lighter center
+- observable feature: flower is surrounded by green leaves
+</features>
+<kb>
+- IF [flower has five distinct petals forming a trumpet shape AND flower is surrounded by green leaves] THEN [75]
+- IF [flower has large, broad petals with fringed edges AND flower is pink or purple with a contrasting center] THEN [35]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows a flower with five distinct petals forming a trumpet shape and is surrounded by green leaves, matching the features of class 75.
+</rule_check>
+<response>75</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[35] | Predicted=[35] | Correct=True
+<features>
+- observable feature: flower has multiple petals with a distinct central lip
+- observable feature: petals are pinkish-purple with a darker magenta center
+- observable feature: flower shape is complex and non-radial, with a prominent column
+</features>
+<kb>
+- IF [flower has multiple petals with a distinct central lip AND petals are pinkish-purple with a darker magenta center AND flower shape is complex and non-radial with a prominent column] THEN [35]
+- IF [flower is a simple, five-petaled, trumpet-shaped bloom with radial symmetry] THEN [75]
+</kb>
+<rule_check>
+- Rule 1 fires for the Query Image because the flower exhibits multiple petals with a distinct central lip, pinkish-purple petals with a darker magenta center, and a complex, non-radial shape with a prominent column, which are all features consistent with class 35.
+</rule_check>
+<response>35</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=7.8095 | avg_trial_wall_seconds=3.8980 | avg_trial_api_seconds=3.0619 | system_fallback_count=0

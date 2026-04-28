@@ -1,0 +1,56 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=3 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<tbox>
+- [45] ⊑ hasVisualFeature([wrinkled_texture]) ⊓ hasVisualFeature([linear_folds])
+- [10] ≡ hasVisualFeature([polka_dots]) ⊓ hasVisualFeature([pink_background])
+- [19] ≡ hasVisualFeature([interwoven_pattern]) ⊓ hasVisualFeature([grid_like_structure])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [wrinkled_texture])
+- hasVisualFeature(Query, [linear_folds])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [45] ⊑ hasVisualFeature([wrinkled_texture]) ⊓ hasVisualFeature([linear_folds])
+</dl_explanation>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[10] | Predicted=[10] | Correct=True
+<tbox>
+- Class45 ⊑ hasVisualFeature([wrinkled_texture])
+- Class10 ≡ hasVisualFeature([polka_dots]) ⊓ hasVisualFeature([colored_dots_on_background])
+- Class19 ⊑ hasVisualFeature([interwoven_pattern])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [polka_dots])
+- hasVisualFeature(Query, [colored_dots_on_background])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: Class10 ≡ hasVisualFeature([polka_dots]) ⊓ hasVisualFeature([colored_dots_on_background])
+</dl_explanation>
+
+<response>10</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[19] | Predicted=[19] | Correct=True
+<tbox>
+- Class45 ⊑ hasVisualFeature([wrinkled_texture])
+- Class10 ⊑ hasVisualFeature([polka_dots]) ⊓ hasVisualFeature([pink_background])
+- Class19 ⊑ hasVisualFeature([interwoven_pattern]) ⊓ hasVisualFeature([metallic_texture])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [interwoven_pattern])
+- hasVisualFeature(Query, [metallic_texture])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: Class19 ⊑ hasVisualFeature([interwoven_pattern]) ⊓ hasVisualFeature([metallic_texture])
+</dl_explanation>
+
+<response>19</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=9.5243 | avg_trial_wall_seconds=3.1732 | avg_trial_api_seconds=3.0259 | system_fallback_count=0

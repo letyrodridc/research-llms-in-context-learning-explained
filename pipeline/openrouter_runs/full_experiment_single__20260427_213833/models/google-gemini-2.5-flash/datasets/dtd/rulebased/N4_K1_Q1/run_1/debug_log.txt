@@ -1,0 +1,74 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemini-2.5-flash | N=4 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[18] | Predicted=[None] | Correct=False
+WARNING: response_label_not_in_options
+<features>
+- pattern: repeating hexagonal grid
+- color: light orange lines on a white background
+- texture: smooth, uniform
+</features>
+<kb>
+- IF [pattern = repeating triangular shapes AND color = light grey] THEN [18]
+- IF [pattern = repeating vertical stripes AND color = dark and light alternating] THEN [22]
+- IF [pattern = irregular veins and blotches AND color = reddish-orange with darker lines] THEN [23]
+- IF [pattern = repeating diamond-shaped holes AND color = metallic grey] THEN [27]
+</kb>
+<rule_check>
+- None of the rules in the knowledge base directly fire for the Query Image as its features (repeating hexagonal grid, light orange lines on a white background) do not match the specific patterns and colors defined for classes 18, 22, 23, or 27. The Query Image has a distinct hexagonal pattern not seen in any of the examples.
+</rule_check>
+<response>None</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[22] | Predicted=[22] | Correct=True
+<features>
+- pattern: horizontal stripes
+- stripe color: alternating pink and white
+- stripe width: thin and consistent
+- texture: fabric-like
+</features>
+<kb>
+- IF [pattern = geometric triangles OR pattern = irregular textured surface] THEN [18]
+- IF [pattern = vertical stripes] THEN [22]
+- IF [pattern = irregular veins and blotches] THEN [23]
+- IF [pattern = repeating diamond-shaped holes] THEN [27]
+</kb>
+<rule_check>
+No rule from the knowledge base directly fires for the Query Image because none of the defined rules account for a pattern of horizontal stripes. The closest pattern is "stripes" in class 22, but it specifies "vertical stripes", which is not present in the Query Image.
+</rule_check>
+<response>22</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[23] | Predicted=[23] | Correct=True
+<features>
+- color: dark brown/black with reddish-brown patches
+- pattern: irregular, mottled, granular texture
+- texture: rough, non-uniform
+</features>
+<kb>
+- IF [color is predominantly white/light grey AND pattern is composed of small, repeating, embossed triangular shapes] THEN [18]
+- IF [color is composed of alternating dark and light vertical stripes AND texture is woven] THEN [22]
+- IF [color is predominantly reddish-orange AND pattern includes irregular veins and blotches, some appearing as scratches] THEN [23]
+- IF [color is metallic grey AND pattern is composed of repeating, diamond-shaped perforations with visible depth/shadows] THEN [27]
+- IF [color is dark brown/black with reddish-brown patches AND pattern is irregular, mottled, and granular] THEN [23]
+</kb>
+<rule_check>
+- The rule for class 23 fires because the Query Image exhibits a dark brown/black color with reddish-brown patches, and an irregular, mottled, and granular pattern, which aligns with the characteristics of natural stone patterns seen in class 23, even if the specific colors are different from the example, the overall texture and pattern type are similar.
+</rule_check>
+<response>23</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[27] | Predicted=[27] | Correct=True
+<features>
+- color: dark grey/black
+- pattern: repeating small circular/oval holes
+- arrangement: grid-like, diagonal alignment of holes
+- texture: perforated, uniform
+</features>
+<kb>
+- IF [image has a uniform light color with a repeating pattern of small, raised triangular shapes] THEN [18]
+- IF [image has vertical stripes of alternating dark and light colors] THEN [22]
+- IF [image has a reddish-orange color with irregular veins and blotches] THEN [23]
+- IF [image has a metallic grey color with a repeating pattern of diamond-shaped holes or raised diamond-like features] THEN [27]
+</kb>
+<rule_check>
+The query image does not perfectly match any of the provided classes based on the strict visual features. However, class 27 is characterized by a metallic grey color and a repeating pattern of holes, which is the closest match. The query image has a dark grey/black color and a repeating pattern of small circular/oval holes, which shares the 'repeating pattern of holes' characteristic with class 27, despite the difference in hole shape and exact color. The other classes (18, 22, 23) have distinctly different patterns (triangles, stripes, irregular veins) and colors (light, striped, reddish-orange) that do not align with the query image's features.
+</rule_check>
+<response>27</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=8.6934 | avg_trial_wall_seconds=2.1710 | avg_trial_api_seconds=1.9326 | system_fallback_count=0

@@ -1,0 +1,37 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[2] | Predicted=[2] | Correct=True
+<features>
+- animal type: dog
+- fur color: black and white
+- ears: pointed, erect
+- mouth: open, tongue visible
+- eyes: dark
+</features>
+<kb>
+- IF [animal type = dog] THEN [2]
+- IF [animal type = cat] THEN [5]
+</kb>
+<rule_check>
+- The rule "IF [animal type = dog] THEN [2]" fires because the Query Image clearly depicts a dog, as evidenced by its overall body shape, facial structure, and posture, which are consistent with the visual characteristics of dogs seen in the provided examples.
+</rule_check>
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[5] | Predicted=[5] | Correct=True
+<features>
+- fur pattern: striped/tabby
+- ears: pointed, upright
+- nose: small, pink
+- eyes: closed
+- body shape: slender
+- presence of collar: yes, red
+</features>
+<kb>
+- IF [ears are rounded AND/OR snout is prominent AND/OR body is muscular] THEN [2]
+- IF [fur pattern is striped/tabby AND/OR ears are pointed AND/OR nose is small] THEN [5]
+</kb>
+<rule_check>
+- The rule for class 5 fires because the Query Image shows a striped/tabby fur pattern, pointed ears, and a small nose.
+</rule_check>
+<response>5</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.5414 | avg_trial_wall_seconds=1.7685 | avg_trial_api_seconds=1.6268 | system_fallback_count=0

@@ -1,0 +1,46 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=3 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[0] | Predicted=[0] | Correct=True
+<tbox>
+0 ⊑ hasVisualFeature(airplane)
+6 ⊑ hasVisualFeature(frog)
+7 ⊑ hasVisualFeature(horse)
+</tbox>
+<abox>
+hasVisualFeature(Query, airplane)
+</abox>
+<dl_explanation>
+Rule(s) fired: 0 ⊑ hasVisualFeature(airplane)
+</dl_explanation>
+<response>0</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<tbox>
+6 ⊑ hasVisualFeature(frog_like_shape) ⊓ hasVisualFeature(green_or_brown_color) ⊓ hasVisualFeature(short_limbs)
+7 ⊑ hasVisualFeature(horse_like_shape) ⊓ hasVisualFeature(brown_color) ⊓ hasVisualFeature(four_legs)
+0 ⊑ hasVisualFeature(airplane_shape) ⊓ hasVisualFeature(wings)
+</tbox>
+<abox>
+hasVisualFeature(Query, frog_like_shape)
+hasVisualFeature(Query, green_or_brown_color)
+hasVisualFeature(Query, short_limbs)
+</abox>
+<dl_explanation>
+Rule(s) fired: 6 ⊑ hasVisualFeature(frog_like_shape) ⊓ hasVisualFeature(green_or_brown_color) ⊓ hasVisualFeature(short_limbs)
+</dl_explanation>
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[7] | Predicted=[7] | Correct=True
+<tbox>
+7 ⊑ hasVisualFeature(HorseShape) ⊓ hasVisualFeature(FourLegs) ⊓ hasVisualFeature(ManeAndTail)
+</tbox>
+<abox>
+hasVisualFeature(Query, HorseShape)
+hasVisualFeature(Query, FourLegs)
+hasVisualFeature(Query, ManeAndTail)
+</abox>
+<dl_explanation>
+Rule(s) fired: 7 ⊑ hasVisualFeature(HorseShape) ⊓ hasVisualFeature(FourLegs) ⊓ hasVisualFeature(ManeAndTail)
+</dl_explanation>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=5.4617 | avg_trial_wall_seconds=1.8177 | avg_trial_api_seconds=1.7461 | system_fallback_count=0

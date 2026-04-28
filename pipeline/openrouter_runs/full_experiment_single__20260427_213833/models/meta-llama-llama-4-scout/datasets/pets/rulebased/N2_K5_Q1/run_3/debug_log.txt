@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=meta-llama/llama-4-scout | N=2 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[36] | Predicted=[36] | Correct=True
+<features>
+- color of fur: black, brown, gray
+- type of animal: dog
+- size of animal: small
+</features>
+<kb>
+- IF type of animal = dog AND color of fur = black, brown, gray THEN 36
+- IF type of animal = cat THEN 6
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF type of animal = dog AND color of fur = black, brown, gray THEN 36, because the Query Image shows a small dog with black, brown, and gray fur.
+</rule_check>
+
+<response>36</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- blue eyes: feature value
+- brown and white fur: feature value
+- pointy ears: feature value
+</features>
+<kb>
+- IF [blue eyes = feature value AND brown and white fur = feature value AND pointy ears = feature value] THEN [6]
+- IF [small size = feature value AND brown and black fur = feature value AND floppy ears = feature value] THEN [36]
+</kb>
+
+<rule_check>
+- The rule for class 6 fires for the Query Image because it has blue eyes, brown and white fur, and pointy ears.
+</rule_check>
+
+<response>6</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=8.1291 | avg_trial_wall_seconds=4.0591 | avg_trial_api_seconds=2.9739 | system_fallback_count=0

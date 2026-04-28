@@ -1,0 +1,53 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemini-2.5-flash | N=3 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- surface texture: rough and uneven
+- presence of holes/depressions: large, irregular hole in the surface
+- contents of hole: water and small rocks/debris
+- surrounding material: dark grey, cracked asphalt
+</features>
+<kb>
+- IF [surface texture is rough and uneven AND presence of holes/depressions is visible AND contents of hole include water or debris] THEN [32]
+- IF [surface texture shows a distinct, repeating pattern of lines or small shapes, often appearing woven or textured, or is a smooth, uniform color] THEN [8]
+- IF [surface texture is highly irregular, bumpy, or spiky, resembling natural organic forms or rough, uneven terrain] THEN [4]
+</kb>
+<rule_check>
+- The rule for class 32 fires because the Query Image shows a rough and uneven surface with a large, irregular hole containing water and small rocks, which aligns with the observable features for this class.
+</rule_check>
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- surface texture: fine, repeating cross-hatch pattern
+- color: predominantly black
+- object: appears to be a wallet or similar item with stitching
+- overall appearance: smooth, uniform texture with a subtle pattern
+</features>
+<kb>
+- IF [surface texture is rough, bumpy, or irregular with distinct protrusions or depressions] THEN [4]
+- IF [surface texture is characterized by a repeating pattern of lines, grids, or fine cross-hatching, often appearing as a woven or textured fabric/material] THEN [8]
+- IF [surface texture shows significant damage, cracks, holes, or large irregular depressions, often associated with a road surface] THEN [32]
+</kb>
+<rule_check>
+- The rule for class 8 fires because the Query Image displays a surface texture characterized by a fine, repeating cross-hatch pattern, which is consistent with the description for class 8.
+</rule_check>
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- surface texture: regular pattern of raised dots
+- surface material: light-colored, possibly concrete or metal, with some darker stains
+- overall pattern: grid-like arrangement of square or rectangular sections, each containing the dot pattern
+- lighting: shadows indicate a light source from an angle, creating depth for the raised dots
+</features>
+<kb>
+- IF [surface texture = irregular, rough, or broken AND/OR presence of distinct holes or depressions] THEN [32]
+- IF [surface texture = woven, cross-hatched lines, or smooth with visible stitching] THEN [8]
+- IF [surface texture = bumpy, spiky, or irregular raised protrusions covering the surface] THEN [4]
+</kb>
+<rule_check>
+- The rule for class 4 fires because the Query Image displays a surface texture with a regular pattern of raised dots, which can be described as bumpy or having raised protrusions covering the surface, similar to the examples in class 4. The regularity of the pattern does not negate the "bumpy" characteristic.
+</rule_check>
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=8.8646 | avg_trial_wall_seconds=2.9525 | avg_trial_api_seconds=2.4557 | system_fallback_count=0

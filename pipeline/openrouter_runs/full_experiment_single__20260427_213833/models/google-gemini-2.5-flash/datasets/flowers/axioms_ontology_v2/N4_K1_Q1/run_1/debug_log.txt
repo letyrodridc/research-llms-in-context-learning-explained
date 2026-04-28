@@ -1,0 +1,63 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=4 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[7] | Predicted=[7] | Correct=True
+<tbox>
+7 ⊑ hasVisualFeature(orangePetals) ⊓ hasVisualFeature(bluePetals) ⊓ hasVisualFeature(elongatedShape)
+29 ⊑ hasVisualFeature(pinkPetals) ⊓ hasVisualFeature(frillyEdges) ⊓ hasVisualFeature(roundShape)
+8 ⊑ hasVisualFeature(purplePetals) ⊓ hasVisualFeature(hoodedShape)
+4 ⊑ hasVisualFeature(yellowPetals) ⊓ hasVisualFeature(daisyLikeShape)
+</tbox>
+<abox>
+hasVisualFeature(Query, orangePetals)
+hasVisualFeature(Query, bluePetals)
+hasVisualFeature(Query, elongatedShape)
+</abox>
+<dl_explanation>
+Rule(s) fired: 7 ⊑ hasVisualFeature(orangePetals) ⊓ hasVisualFeature(bluePetals) ⊓ hasVisualFeature(elongatedShape)
+</dl_explanation>
+<response>7</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<tbox>
+Class29 ⊑ hasVisualFeature(PetalColor(Pink)) ⊓ hasVisualFeature(PetalShape(FringedEdges)) ⊓ hasVisualFeature(FlowerArrangement(SingleFlower))
+</tbox>
+<abox>
+hasVisualFeature(Query, PetalColor(PinkAndWhite))
+hasVisualFeature(Query, PetalShape(FringedEdges))
+hasVisualFeature(Query, FlowerArrangement(MultipleFlowers))
+</abox>
+<dl_explanation>
+No direct rule fires for the exact combination of features in the Query Image. However, Class 29 is characterized by fringed petal edges, which is a prominent feature in the Query Image. The Query Image also shows multiple flowers, while the example for Class 29 shows a single flower. The petal color is also different (pink and white vs. solid pink). Given the limited examples, the most distinguishing feature shared is the fringed petal edges, which is a strong indicator for Class 29.
+</dl_explanation>
+<response>29</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[8] | Predicted=[8] | Correct=True
+<tbox>
+8 ⊑ hasVisualFeature(purple_blue_bell_shaped_petals) ⊓ hasVisualFeature(clustered_arrangement)
+</tbox>
+<abox>
+hasVisualFeature(Query, purple_blue_bell_shaped_petals)
+hasVisualFeature(Query, clustered_arrangement)
+</abox>
+<dl_explanation>
+Rule(s) fired: 8 ⊑ hasVisualFeature(purple_blue_bell_shaped_petals) ⊓ hasVisualFeature(clustered_arrangement)
+</dl_explanation>
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<tbox>
+4 ⊑ hasVisualFeature(yellow_orange_petals) ⊓ hasVisualFeature(daisy_like_shape) ⊓ hasVisualFeature(visible_stem)
+7 ⊑ hasVisualFeature(orange_and_blue_petals) ⊓ hasVisualFeature(bird_like_shape) ⊓ hasVisualFeature(prominent_green_stem)
+8 ⊑ hasVisualFeature(blue_purple_hooded_petals) ⊓ hasVisualFeature(bell_shaped_or_hooded_flower) ⊓ hasVisualFeature(multiple_flowers_on_stem)
+29 ⊑ hasVisualFeature(pink_frilly_petals) ⊓ hasVisualFeature(flat_round_shape) ⊓ hasVisualFeature(dense_petals)
+</tbox>
+<abox>
+hasVisualFeature(Query, yellow_orange_petals)
+hasVisualFeature(Query, daisy_like_shape)
+hasVisualFeature(Query, visible_stem)
+</abox>
+<dl_explanation>
+Rule(s) fired: 4 ⊑ hasVisualFeature(yellow_orange_petals) ⊓ hasVisualFeature(daisy_like_shape) ⊓ hasVisualFeature(visible_stem)
+</dl_explanation>
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=7.3139 | avg_trial_wall_seconds=1.8244 | avg_trial_api_seconds=1.6106 | system_fallback_count=0

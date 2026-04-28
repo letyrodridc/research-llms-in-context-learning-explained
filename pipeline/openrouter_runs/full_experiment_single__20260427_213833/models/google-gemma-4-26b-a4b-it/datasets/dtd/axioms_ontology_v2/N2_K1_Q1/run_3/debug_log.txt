@@ -1,0 +1,39 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=2 K=1 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[44] | Predicted=[44] | Correct=True
+<tbox>
+- [44] ⊑ hasVisualFeature([green_texture]) ⊓ hasVisualFeature([fine_grain])
+- [29] ⊑ hasVisualFeature([blue_color]) ⊓ hasVisualFeature([pleated_folds])
+- [pattern_class] ≡ hasVisualFeature([checkered_pattern]) ⊓ hasVisualFeature([monochrome_shades])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [checkered_pattern])
+- hasVisualFeature(Query, [monochrome_shades])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [pattern_class] ≡ hasVisualFeature([checkered_pattern]) ⊓ hasVisualFeature([monochrome_shades])
+- Note: The provided labels [44, 29] do not match the visual features of the query image. However, based on the instruction to choose from the provided options, neither 44 nor 29 describes the query image. Re-evaluating the prompt constraints.
+</dl_explanation>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<tbox>
+- [44] ⊑ hasVisualFeature([green_texture])
+- [29] ⊑ hasVisualFeature([blue_pleated_fabric])
+- [unknown_class] ≡ hasVisualFeature([brown_tufted_fabric]) ⊓ hasVisualFeature([diamond_pattern])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [brown_tufted_fabric])
+- hasVisualFeature(Query, [diamond_pattern])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: None of the provided labels (44, 29) match the observed features.
+</dl_explanation>
+
+<response>29</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=7.2587 | avg_trial_wall_seconds=3.6266 | avg_trial_api_seconds=3.5227 | system_fallback_count=0

@@ -1,0 +1,18 @@
+=== DEBUG LOG | dataset=dtd | prompt=features | model=qwen/qwen3-vl-8b-instruct | N=2 K=1 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- woven pattern with interlaced strips
+- natural wood color variation
+- visible grain texture
+</features>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[29] | Predicted=[44] | Correct=False
+<features>
+- parallel horizontal slats
+- uniform light pink color
+- visible stitching along slat edges
+</features>
+<response>44</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=1 | total=2 | errors=0 | accuracy=0.5000 | duration_seconds=2.6645 | avg_trial_wall_seconds=1.3282 | avg_trial_api_seconds=1.0656 | system_fallback_count=0

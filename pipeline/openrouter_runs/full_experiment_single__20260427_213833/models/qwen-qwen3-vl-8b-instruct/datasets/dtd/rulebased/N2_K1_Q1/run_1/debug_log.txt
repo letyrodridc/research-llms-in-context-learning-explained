@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=2 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- observable feature: interlaced natural fibers
+- observable feature: irregular woven pattern
+- observable feature: brownish color
+</features>
+<kb>
+- IF [observable visual features = interlaced natural fibers AND observable visual features = irregular woven pattern] THEN [44]
+- IF [observable visual features = parallel horizontal slats AND observable visual features = light yellow color] THEN [29]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows interlaced natural fibers and an irregular woven pattern, which matches the features for class 44.
+- Rule 2 does not fire because the Query Image does not show parallel horizontal slats or a light yellow color.
+</rule_check>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<features>
+- observable feature: vertical pleats
+- observable feature: smooth, shiny fabric surface
+- observable feature: uniform color
+</features>
+<kb>
+- IF [observable visual features = vertical pleats AND observable visual features = smooth, shiny fabric surface] THEN [29]
+- IF [observable visual features = woven texture AND observable visual features = uniform color] THEN [44]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows vertical pleats and a smooth, shiny fabric surface, which matches the condition for class 29.
+- Rule 2 does not fire because the Query Image does not show a woven texture.
+</rule_check>
+<response>29</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=5.4038 | avg_trial_wall_seconds=2.6952 | avg_trial_api_seconds=2.4009 | system_fallback_count=0

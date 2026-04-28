@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=2 K=1 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- pattern: herringbone/zigzag pattern
+- texture: repetitive small rectangular/slanted elements
+- color: brown/tan tones
+</features>
+<kb>
+- IF [pattern = herringbone/zigzag AND texture = repetitive small elements] THEN [44]
+- IF [pattern = horizontal lines/folds AND texture = smooth/paper-like] THEN [29]
+</kb>
+<rule_check>
+- The rule for class 44 is best satisfied because the image displays a clear herringbone/zigzag pattern made of small, repetitive elements, which is distinct from the horizontal folds seen in class 29.
+</rule_check>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<features>
+- pattern: repetitive parallel lines/slats
+- shape: curved, spiral, or fan-like arrangement
+- color: white/light gray
+- texture: smooth, geometric
+</features>
+<kb>
+- IF [pattern = woven branches/twigs AND texture = rough/natural] THEN [44]
+- IF [pattern = repetitive parallel slats/folds AND shape = curved/fan-like] THEN [29]
+</kb>
+
+<rule_check>
+- The rule for class 29 fires because the image shows a repetitive pattern of smooth, parallel slats arranged in a curved, fan-like structure, which matches the visual characteristics of the second example.
+</rule_check>
+
+<response>29</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=6.3424 | avg_trial_wall_seconds=3.1667 | avg_trial_api_seconds=3.0698 | system_fallback_count=0

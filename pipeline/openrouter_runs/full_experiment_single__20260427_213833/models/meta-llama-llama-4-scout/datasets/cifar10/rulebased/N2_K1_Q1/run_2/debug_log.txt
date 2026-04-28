@@ -1,0 +1,38 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=meta-llama/llama-4-scout | N=2 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<features>
+- color: orange
+- object: animal
+- location: tree
+</features>
+<kb>
+- IF color = orange AND object = animal AND location = tree THEN 3
+- IF object = airplane THEN 0
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF color = orange AND object = animal AND location = tree THEN 3, because the Query Image shows an orange animal on a tree.
+</rule_check>
+
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[0] | Predicted=[] | Correct=False
+WARNING: unclosed_response_tag
+<features>
+- color: gray and black
+- object shape: airplane
+- background: blurry
+</features>
+
+<kb>
+- IF object shape = airplane AND color = gray and black THEN 0
+- IF object shape = cat THEN 3
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF object shape = airplane AND color = gray and black THEN 0, because the Query Image shows an airplane with gray and black color.
+</rule_check>
+
+<response>0
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=1 | total=2 | errors=0 | accuracy=0.5000 | duration_seconds=4.0058 | avg_trial_wall_seconds=1.9804 | avg_trial_api_seconds=1.9128 | system_fallback_count=0

@@ -1,0 +1,59 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=3 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[87] | Predicted=[87] | Correct=True
+<features>
+- petal color: pink/purple
+- petal shape: large, rounded, upward-pointing petals
+- stem: single thin stem
+- flower structure: petals reflexed or pointing upwards from a central base
+</features>
+
+<kb>
+- IF [petal color = pink/purple AND petal shape = large, rounded, upward-pointing] THEN [87]
+- IF [flower structure = cone-like/spiky bracts with small blue/purple flowers] THEN [92]
+- IF [petal color = yellow AND petal shape = large, drooping/spreading with dark markings] THEN [14]
+</kb>
+
+<rule_check>
+- The rule for class 87 fires because the Query Image shows large, rounded, pink/purple petals that point upwards, which matches the pattern seen in the examples for class 87.
+</rule_check>
+
+<response>87</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[92] | Predicted=[92] | Correct=True
+<features>
+- central structure: large, pink, cone-shaped/spiky bracts
+- side flowers: small, purple, delicate petals
+- background: dark/black
+</features>
+<kb>
+- IF [petals are large, upright, and colored pink, purple, or red] THEN [87]
+- IF [central structure is a large pink/red spiky cone with small purple side flowers] THEN [92]
+- IF [petals are large, yellow, and have dark markings in the center] THEN [14]
+</kb>
+
+<rule_check>
+- The rule for class 92 fires because the image features a prominent, large, pink, spiky central structure accompanied by small purple flowers on the sides.
+</rule_check>
+
+<response>92</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- flower color: yellow
+- petal pattern: dark brown/black veins/lines on the lower petals
+- petal shape: large, broad, drooping petals
+</features>
+
+<kb>
+- IF [flower color = yellow AND petal pattern = dark lines on lower petals] THEN [14]
+- IF [flower color = pink/purple/red AND petals are upright/reflexed] THEN [87]
+- IF [flower color = pink/purple AND flower structure is a large cone-like bract with small flowers] THEN [92]
+</kb>
+
+<rule_check>
+- The rule for class 14 fires because the Query Image shows a yellow flower with distinct dark lines on the broad, drooping petals, matching the pattern seen in the examples for class 14.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=21.8406 | avg_trial_wall_seconds=7.2758 | avg_trial_api_seconds=6.7411 | system_fallback_count=0

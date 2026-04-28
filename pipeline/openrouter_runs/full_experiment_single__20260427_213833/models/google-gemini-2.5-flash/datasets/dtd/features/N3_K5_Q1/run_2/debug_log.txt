@@ -1,0 +1,27 @@
+=== DEBUG LOG | dataset=dtd | prompt=features | model=google/gemini-2.5-flash | N=3 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- uneven ground surface
+- multiple depressions or holes
+- presence of standing water in some depressions
+- exposed aggregate or broken pavement
+</features>
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- cross-hatching texture
+- black and white drawing style
+- abstract or stylized forms
+</features>
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- numerous small, raised, rounded protrusions
+- irregular surface texture
+- organic, natural forms
+</features>
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=4.8373 | avg_trial_wall_seconds=1.6104 | avg_trial_api_seconds=1.0384 | system_fallback_count=0
