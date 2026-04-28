@@ -1,0 +1,23 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=3 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[0] | Predicted=[0] | Correct=True
+<explanation>
+The Query Image shows an airplane in flight against a blue sky, which matches the visual pattern of the class '0' examples (airplanes). The other classes, '6' (frogs) and '7' (horses), are clearly not represented by any visual features in the Query Image.
+</explanation>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<explanation>
+The Query Image shows a blurry, earth-toned creature with a rounded body and visible limbs, consistent with the visual characteristics of the frog examples (class 6) provided in the labeled examples. The shape and context (ground/soil) align with the frog class, not the airplane (class 0) or horse (class 7) examples.
+</explanation>
+
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[7] | Predicted=[7] | Correct=True
+<explanation>
+The image shows a four-legged animal with a long mane and tail, standing in a grassy field, which matches the visual characteristics of a horse as seen in the labeled examples for class 7.
+</explanation>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=6.6040 | avg_trial_wall_seconds=2.1992 | avg_trial_api_seconds=1.8559 | system_fallback_count=0

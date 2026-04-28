@@ -1,0 +1,32 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=2 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[17] | Predicted=[17] | Correct=True
+<features>
+- observable feature: wavy, undulating lines
+- observable feature: textured surface
+- observable feature: reddish-brown color
+</features>
+<kb>
+- IF [observable visual features = wavy, undulating lines AND textured surface] THEN [17]
+- IF [observable visual features = irregular, broken surface with dark patches] THEN [32]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows wavy, undulating lines and a textured surface, which matches the features described in the IF condition for class 17.
+</rule_check>
+<response>17</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- observable feature: presence of multiple circular depressions on a paved surface
+- observable feature: surface texture appears worn and uneven
+- observable feature: visible patches of lighter material filling some depressions
+</features>
+<kb>
+- IF [presence of multiple circular depressions on a paved surface AND surface texture appears worn and uneven] THEN [32]
+- IF [presence of parallel linear grooves or strips on a surface] THEN [17]
+</kb>
+<rule_check>
+- Rule for class 32 fires because the Query Image shows multiple circular depressions on a paved surface and the surface texture is worn and uneven, matching the observable features described in the rule.
+</rule_check>
+<response>32</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=9.8017 | avg_trial_wall_seconds=4.8986 | avg_trial_api_seconds=3.9407 | system_fallback_count=0

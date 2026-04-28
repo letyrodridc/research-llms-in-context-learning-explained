@@ -1,0 +1,50 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=3 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- observable feature: texture appears as flowing, organic, and irregular folds
+- observable feature: color is predominantly pinkish-purple with lighter highlights
+- observable feature: no repeating patterns or distinct shapes
+</features>
+<kb>
+- IF [texture is flowing and irregular with no repeating patterns] THEN [45]
+- IF [texture is uniform with repeating circular shapes] THEN [10]
+- IF [texture is complex, symmetrical, and composed of repeating geometric and floral motifs] THEN [19]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image has a flowing, irregular texture with no repeating patterns, matching the description for class 45.
+</rule_check>
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[10] | Predicted=[10] | Correct=True
+<features>
+- observable feature: pattern consists of multiple small, round dots
+- observable feature: dots are arranged in a scattered, non-uniform pattern
+- observable feature: background is dark, contrasting with the lighter dots
+</features>
+<kb>
+- IF [pattern consists of multiple small, round dots AND dots are arranged in a scattered, non-uniform pattern AND background is dark, contrasting with the lighter dots] THEN [10]
+- IF [pattern consists of wavy, parallel lines] THEN [45]
+- IF [pattern consists of intricate, repeating geometric and floral motifs] THEN [19]
+</kb>
+<rule_check>
+- Rule 1 fires because the image has a scattered pattern of small, round dots on a dark background, matching the description for class 10.
+</rule_check>
+<response>10</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[19] | Predicted=[19] | Correct=True
+<features>
+- observable feature: intricate interwoven patterns
+- observable feature: flowing, curvilinear lines
+- observable feature: carved or relief texture
+</features>
+<kb>
+- IF [observable visual features = intricate interwoven patterns AND flowing, curvilinear lines AND carved or relief texture] THEN [19]
+- IF [observable visual features = polka dots] THEN [10]
+- IF [observable visual features = wavy, horizontal lines] THEN [45]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image exhibits intricate interwoven patterns, flowing curvilinear lines, and a carved or relief texture, which matches the features described in the condition for class 19.
+</rule_check>
+<response>19</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=14.2719 | avg_trial_wall_seconds=4.7515 | avg_trial_api_seconds=4.3127 | system_fallback_count=0

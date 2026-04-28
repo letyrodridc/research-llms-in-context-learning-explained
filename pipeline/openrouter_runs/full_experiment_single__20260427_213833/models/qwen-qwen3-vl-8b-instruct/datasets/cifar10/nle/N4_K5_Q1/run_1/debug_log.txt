@@ -1,0 +1,30 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=4 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[4] | Predicted=[4] | Correct=True
+<explanation>
+The Query Image shows a small, four-legged mammal with visible ears and a snout, standing in green grass. This matches the visual pattern of the deer-like animals in the labeled examples under class 4, which consistently depict deer or similar ungulates in grassy environments.
+</explanation>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[2] | Predicted=[2] | Correct=True
+<explanation>
+The query image shows a small bird with a brownish body and a lighter underbelly, perched on a surface. This matches the visual characteristics of the birds in the labeled examples (e.g., the bird in the second example), which are classified as class 2.
+</explanation>
+
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[6] | Predicted=[4] | Correct=False
+<explanation>
+The image shows a blurry, dark, and textured form that lacks clear features of any of the previously shown classes. It does not resemble the distinct shapes of birds, frogs, horses, or deer. The visual evidence is too indistinct to confidently assign it to any of the provided classes.
+</explanation>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[7] | Predicted=[7] | Correct=True
+<explanation>
+The image shows a white horse rearing up, which matches the visual pattern of horses in the labeled examples (class 7). The animal has the distinct body shape, legs, and posture of a horse, even with the blur.
+</explanation>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=12.6058 | avg_trial_wall_seconds=3.1489 | avg_trial_api_seconds=2.7804 | system_fallback_count=0

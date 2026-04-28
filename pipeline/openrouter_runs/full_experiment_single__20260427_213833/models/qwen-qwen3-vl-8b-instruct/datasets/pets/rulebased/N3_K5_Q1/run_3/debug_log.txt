@@ -1,0 +1,51 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=3 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[21] | Predicted=[21] | Correct=True
+<features>
+- observable feature: black and tan coat
+- observable feature: small size
+- observable feature: pointed ears
+</features>
+<kb>
+- IF [observable visual features = black and tan coat AND small size AND pointed ears] THEN [21]
+- IF [observable visual features = fluffy white coat AND large size] THEN [15]
+- IF [observable visual features = long white fur AND blue eyes] THEN [26]
+</kb>
+
+<rule_check>
+- Rule 1 fires because the Query Image shows a black and tan coat, small size, and pointed ears, which matches the features for class 21.
+</rule_check>
+
+<response>21</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[26] | Predicted=[26] | Correct=True
+<features>
+- observable feature: long fur
+- observable feature: blue eyes
+- observable feature: white and brown coloration
+</features>
+<kb>
+- IF [long fur AND blue eyes AND white and brown coloration] THEN [26]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows long fur, blue eyes, and white and brown coloration, which matches the condition for class 26.
+</rule_check>
+<response>26</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[15] | Predicted=[15] | Correct=True
+<features>
+- observable feature: dog
+- observable feature: fluffy white fur
+- observable feature: standing posture
+</features>
+<kb>
+- IF [observable visual features = dog AND observable visual features = fluffy white fur AND observable visual features = standing posture] THEN [15]
+- IF [observable visual features = cat] THEN [26]
+</kb>
+
+<rule_check>
+- Rule 1 fires because the Query Image shows a dog with fluffy white fur and a standing posture, which matches the features described in the IF condition for class 15.
+</rule_check>
+
+<response>15</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=14.5307 | avg_trial_wall_seconds=4.8402 | avg_trial_api_seconds=3.3663 | system_fallback_count=0

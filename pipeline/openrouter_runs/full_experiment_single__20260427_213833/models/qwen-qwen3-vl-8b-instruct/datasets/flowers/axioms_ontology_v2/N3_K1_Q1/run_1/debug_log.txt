@@ -1,0 +1,51 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=qwen/qwen3-vl-8b-instruct | N=3 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[71] | Predicted=[71] | Correct=True
+<tbox>
+- [71] ⊑ hasVisualFeature([F1])
+- hasVisualFeature([F2]) ⊑ [68]
+- [33] ≡ hasVisualFeature([F3]) ⊓ hasVisualFeature([F4])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [F1])
+</abox>
+<dl_explanation>
+- Rule(s) fired: [71] ⊑ hasVisualFeature([F1])
+- </dl_explanation>
+
+<response>71</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[68] | Predicted=[68] | Correct=True
+<tbox>
+- [68] ⊑ hasVisualFeature([F1])
+- hasVisualFeature([F2]) ⊑ [33]
+- [71] ≡ hasVisualFeature([F3]) ⊓ hasVisualFeature([F4])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [F1])
+</abox>
+<dl_explanation>
+- Rule(s) fired: [68] ⊑ hasVisualFeature([F1])
+- </dl_explanation>
+
+<response>68</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[33] | Predicted=[68] | Correct=False
+<tbox>
+- [33] ⊑ hasVisualFeature([F1])
+- hasVisualFeature([F2]) ⊑ [68]
+- [71] ≡ hasVisualFeature([F3]) ⊓ hasVisualFeature([F4])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [F1])
+- hasVisualFeature(Query, [F2])
+</abox>
+<dl_explanation>
+- Rule(s) fired:  hasVisualFeature([F2]) ⊑ [68]
+- </dl_explanation>
+
+<response>68</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=3 | errors=0 | accuracy=0.6667 | duration_seconds=12.3698 | avg_trial_wall_seconds=4.1203 | avg_trial_api_seconds=3.7062 | system_fallback_count=0

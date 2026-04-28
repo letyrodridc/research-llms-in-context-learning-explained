@@ -1,0 +1,26 @@
+=== DEBUG LOG | dataset=pets | prompt=features | model=qwen/qwen3-vl-8b-instruct | N=3 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[35] | Predicted=[35] | Correct=True
+<features>
+- shaggy fur
+- open mouth with tongue
+- sitting position
+</features>
+<response>35</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[9] | Predicted=[9] | Correct=True
+<features>
+- gray fur
+- round eyes
+- pointed ears
+</features>
+<response>9</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[27] | Predicted=[27] | Correct=True
+<features>
+- gray fur
+- sitting posture
+- outdoor setting
+</features>
+<response>27</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=6.2949 | avg_trial_wall_seconds=2.0958 | avg_trial_api_seconds=1.6730 | system_fallback_count=0

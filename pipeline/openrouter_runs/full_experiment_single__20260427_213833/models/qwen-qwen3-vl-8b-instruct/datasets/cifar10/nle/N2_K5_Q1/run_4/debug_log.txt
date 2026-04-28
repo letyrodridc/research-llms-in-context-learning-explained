@@ -1,0 +1,16 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=2 K=5 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[8] | Predicted=[8] | Correct=True
+<explanation>
+The Query Image shows a large vessel on water, consistent with the visual evidence of other boats in the labeled examples (class 8). The shape, size, and context of the vessel match the pattern established for class 8.
+</explanation>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[7] | Predicted=[7] | Correct=True
+<explanation>
+The image shows a four-legged animal with a distinct equine body shape, including a long neck, mane, tail, and hooves, consistent with the visual evidence of horses in the labeled examples for class 7.
+</explanation>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.3482 | avg_trial_wall_seconds=2.1719 | avg_trial_api_seconds=1.9221 | system_fallback_count=0

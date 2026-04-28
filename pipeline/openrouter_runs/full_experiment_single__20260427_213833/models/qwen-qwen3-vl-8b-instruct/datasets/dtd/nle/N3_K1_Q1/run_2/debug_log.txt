@@ -1,0 +1,23 @@
+=== DEBUG LOG | dataset=dtd | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=3 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<explanation>
+The Query Image shows a surface with numerous irregular, overlapping folds and creases, characteristic of crumpled paper. This is visually distinct from the labeled examples: the first (45) shows a wavy, skin-like texture; the second (10) shows a patterned, colorful surface; and the third (19) shows a rigid, interwoven lattice. The crumpled texture in the Query Image matches the visual evidence of the first example (45) in its undulating, wrinkled appearance, though the material is paper rather than skin. The most similar visual pattern is the wavy, folded surface in example 45.
+</explanation>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[10] | Predicted=[10] | Correct=True
+<explanation>
+The Query Image shows a dark fabric with a pattern of multicolored, scattered polka dots. This is visually similar to the second example, which is a pink lantern with multicolored polka dots. Both share the key feature of colorful, round dots on a contrasting background.
+</explanation>
+
+<response>10</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[19] | Predicted=[45] | Correct=False
+<explanation>
+The Query Image shows a metallic, interlocking structure with distinct, rounded loops, resembling a chain or a complex knot. This is visually distinct from the examples: the first (45) shows a wavy, organic texture; the second (10) shows a colorful, patterned paper lantern; and the third (19) shows a rigid, geometric lattice. The Query Image’s interlocking, metallic, and looped form does not match any of the other examples’ visual patterns.
+</explanation>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=3 | errors=0 | accuracy=0.6667 | duration_seconds=8.5528 | avg_trial_wall_seconds=2.8485 | avg_trial_api_seconds=2.5361 | system_fallback_count=0

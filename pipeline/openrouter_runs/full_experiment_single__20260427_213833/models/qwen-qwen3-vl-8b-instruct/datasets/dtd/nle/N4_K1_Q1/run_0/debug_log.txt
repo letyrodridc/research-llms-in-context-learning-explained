@@ -1,0 +1,30 @@
+=== DEBUG LOG | dataset=dtd | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=4 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[18] | Predicted=[18] | Correct=True
+<explanation>
+The Query Image displays a pattern of hexagonal shapes arranged in a grid, similar to the first example which also shows a hexagonal pattern. The coloration in the Query Image is predominantly purple and yellow, which matches the color scheme of the first example (18) that features orange and black hexagons. Both images share the same geometric structure and pattern repetition, making 18 the most visually consistent match.
+</explanation>
+
+<response>18</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[22] | Predicted=[22] | Correct=True
+<explanation>
+The Query Image shows a curtain with vertical stripes and a gathered top, which visually matches the pattern and structure of the example labeled '22' (lined paper with a red margin and holes), as both exhibit a consistent, repeating linear pattern.
+</explanation>
+
+<response>22</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[23] | Predicted=[23] | Correct=True
+<explanation>
+The image displays a surface with a swirling, organic pattern of dark and light brown veins on a darker background, which is visually consistent with the marble texture shown in the example labeled '23'.
+</explanation>
+
+<response>23</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[27] | Predicted=[27] | Correct=True
+<explanation>
+The image displays a uniform, repeating pattern of small, circular indentations arranged in a grid, which matches the visual evidence of the example labeled '27' (a perforated metal surface). The pattern and texture are consistent with that class.
+</explanation>
+
+<response>27</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=7.8456 | avg_trial_wall_seconds=1.9587 | avg_trial_api_seconds=1.5224 | system_fallback_count=0

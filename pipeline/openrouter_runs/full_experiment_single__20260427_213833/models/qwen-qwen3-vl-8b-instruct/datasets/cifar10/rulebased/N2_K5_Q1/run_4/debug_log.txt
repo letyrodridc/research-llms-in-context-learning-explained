@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=2 K=5 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- observable feature: presence of a large watercraft with a hull and superstructure
+- observable feature: vessel is on water
+- observable feature: vessel has a distinct deck and cabin area
+</features>
+<kb>
+- IF [observable visual features = presence of a large watercraft with a hull and superstructure AND observable visual features = vessel is on water AND observable visual features = vessel has a distinct deck and cabin area] THEN [8]
+- IF [observable visual features = four-legged animal with mane and tail AND observable visual features = standing on ground] THEN [7]
+</kb>
+<rule_check>
+- Rule 1 fires for the Query Image because the image clearly shows a large watercraft with a hull and superstructure, situated on water, and featuring a distinct deck and cabin area, which matches the conditions for class 8.
+</rule_check>
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- observable feature: four-legged animal
+- observable feature: long mane and tail
+- observable feature: standing posture
+- observable feature: brown coat
+</features>
+<kb>
+- IF [four-legged animal AND long mane and tail AND standing posture] THEN [7]
+- IF [watercraft AND on water] THEN [8]
+</kb>
+<rule_check>
+- Rule 1 fires because the image shows a four-legged animal with a long mane and tail, standing on land, which matches the features of class 7.
+- Rule 2 does not fire because the subject is not a watercraft.
+</rule_check>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=7.6908 | avg_trial_wall_seconds=3.8396 | avg_trial_api_seconds=3.7246 | system_fallback_count=0

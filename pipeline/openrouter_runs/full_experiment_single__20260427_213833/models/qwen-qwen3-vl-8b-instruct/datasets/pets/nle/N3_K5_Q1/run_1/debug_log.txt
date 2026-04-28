@@ -1,0 +1,23 @@
+=== DEBUG LOG | dataset=pets | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=3 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[21] | Predicted=[21] | Correct=True
+<explanation>
+The query image shows a small dog with a black and tan coat, large ears, and a distinct facial pattern. This matches the visual features of the dogs in class 21 from the examples, which all have similar black and tan coloring, pointed ears, and small size.
+</explanation>
+
+<response>21</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[26] | Predicted=[26] | Correct=True
+<explanation>
+The query image shows a cat with distinct features: large blue eyes, a white chest and paws, and dark markings on its face and ears. These visual characteristics are consistent with the examples classified as '26', which all depict cats with similar coloration and facial patterns.
+</explanation>
+
+<response>26</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[15] | Predicted=[15] | Correct=True
+<explanation>
+The query image shows a large, fluffy, light-colored dog lying in a grassy field. This matches the visual characteristics of the class 15 examples, which all depict large, white or cream-colored dogs, often in outdoor settings. The dog in the query image is clearly a large breed with a thick coat and a similar coloration to the examples in class 15.
+</explanation>
+
+<response>15</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=15.8019 | avg_trial_wall_seconds=5.2592 | avg_trial_api_seconds=3.5809 | system_fallback_count=0

@@ -1,0 +1,31 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=2 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[75] | Predicted=[75] | Correct=True
+<features>
+- observable feature: flower has trumpet-shaped petals
+- observable feature: flower color is blue/purple with lighter center
+- observable feature: background includes green leaves and a wire fence
+</features>
+<kb>
+- IF [flower has trumpet-shaped petals AND flower color is blue/purple with lighter center] THEN [75]
+- IF [flower has long, slender petals with distinct lip AND background is dark] THEN [35]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows a flower with trumpet-shaped petals and blue/purple color with a lighter center, matching the features of class 75.
+</rule_check>
+<response>75</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[35] | Predicted=[35] | Correct=True
+<features>
+- observable feature: flower has multiple petals
+- observable feature: center of flower is purple and yellow
+- observable feature: background contains green leaves
+</features>
+<kb>
+- IF [flower has multiple petals AND center is purple and yellow AND background has green leaves] THEN [35]
+</kb>
+<rule_check>
+- Rule from kb fires: The Query Image has multiple petals, a purple and yellow center, and green leaves in the background, matching the condition for class 35.
+</rule_check>
+<response>35</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=7.6356 | avg_trial_wall_seconds=3.8153 | avg_trial_api_seconds=2.8608 | system_fallback_count=0

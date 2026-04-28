@@ -1,0 +1,52 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=3 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[87] | Predicted=[87] | Correct=True
+<features>
+- observable feature: flower has deep red petals
+- observable feature: flower has a dark central throat
+- observable feature: flower has a cup-like shape
+</features>
+<kb>
+- IF [flower has deep red petals AND flower has a dark central throat AND flower has a cup-like shape] THEN [87]
+- IF [flower has a pinkish-purple inflorescence AND spiky bracts] THEN [92]
+- IF [flower has bright yellow petals AND three distinct upright petals AND three drooping petals] THEN [14]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows a flower with deep red petals, a dark central throat, and a cup-like shape, which matches the features of class 87.
+</rule_check>
+<response>87</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[92] | Predicted=[92] | Correct=True
+<features>
+- observable feature: flower has a tall, spiky, pink inflorescence
+- observable feature: flower has a small, purple, star-shaped bloom at the base of the spiky structure
+- observable feature: background is dark, emphasizing the flower
+</features>
+<kb>
+- IF [flower has a tall, spiky, pink inflorescence AND a small, purple, star-shaped bloom at its base] THEN [92]
+- IF [flower is yellow with three distinct petals and a prominent central fall petal] THEN [14]
+- IF [flower is pink with cup-shaped petals and a prominent central tube] THEN [87]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows a tall, spiky, pink inflorescence with a small, purple, star-shaped bloom at its base, which matches the description for class 92.
+</rule_check>
+<response>92</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- observable feature: flower is yellow
+- observable feature: flower has three large outer petals and three inner petals
+- observable feature: flower has a distinct central pattern
+</features>
+<kb>
+- IF [flower is yellow AND flower has three large outer petals and three inner petals AND flower has a distinct central pattern] THEN [14]
+- IF [flower is pink AND flower has a spiky, cone-like structure] THEN [92]
+- IF [flower is pink AND flower has a cup-like shape with multiple petals] THEN [87]
+</kb>
+
+<rule_check>
+- Rule 1 fires because the Query Image shows a yellow flower with three large outer petals, three inner petals, and a distinct central pattern, which matches the features of class 14.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=17.2351 | avg_trial_wall_seconds=5.7425 | avg_trial_api_seconds=4.1349 | system_fallback_count=0

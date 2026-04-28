@@ -1,0 +1,15 @@
+=== DEBUG LOG | dataset=dtd | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=2 K=5 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[17] | Predicted=[17] | Correct=True
+<explanation>
+The image shows vertical wooden planks with a smooth, consistent grain pattern and a warm brown color, which matches the visual characteristics of the examples classified as '17'. The texture and arrangement are consistent with the wooden paneling seen in the labeled examples for class 17.
+</explanation>
+
+<response>17</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<explanation>
+The image shows a road surface with visible damage, including cracks and depressions filled with dirt or gravel, which matches the visual evidence of the '32' class examples (e.g., potholes, cracked asphalt). This is distinct from the '17' class, which features uniform, linear, or ribbed textures without such surface degradation.
+</explanation>
+<response>32</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=9.4139 | avg_trial_wall_seconds=4.7050 | avg_trial_api_seconds=3.6395 | system_fallback_count=0

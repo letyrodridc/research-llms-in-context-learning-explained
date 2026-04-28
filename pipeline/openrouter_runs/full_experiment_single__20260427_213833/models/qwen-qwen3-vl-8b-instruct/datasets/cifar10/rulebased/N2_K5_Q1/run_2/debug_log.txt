@@ -1,0 +1,35 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=2 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- observable feature: large vessel with multiple decks
+- observable feature: orange hull color
+- observable feature: visible superstructure and mast
+</features>
+<kb>
+- IF [observable visual features = large vessel with multiple decks AND/OR observable visual features = orange hull color] THEN [8]
+- IF [observable visual features = horse or equine figure] THEN [7]
+</kb>
+
+<rule_check>
+- Rule 1 fires because the image shows a large vessel with multiple decks and an orange hull, which matches the features for class 8.
+</rule_check>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- observable feature: presence of a horse
+- observable feature: presence of a rider on the horse
+- observable feature: horse is white in color
+</features>
+<kb>
+- IF [presence of a horse AND presence of a rider on the horse] THEN [7]
+- IF [presence of a boat OR presence of a ship OR presence of a watercraft] THEN [8]
+</kb>
+<rule_check>
+- Rule 1 fires because the image clearly shows a horse with a rider, which matches the condition for class 7.
+- Rule 2 does not fire because there is no boat, ship, or watercraft visible.
+</rule_check>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=11.9621 | avg_trial_wall_seconds=5.9781 | avg_trial_api_seconds=5.7575 | system_fallback_count=0

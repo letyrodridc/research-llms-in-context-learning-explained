@@ -1,0 +1,16 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=2 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[8] | Predicted=[8] | Correct=True
+<explanation>
+The Query Image shows a large vessel with a distinct hull and superstructure, consistent with the visual features of the class labeled '8' in the provided examples, which include various types of boats and ships. The image does not show any horses or equestrian-related features, which are characteristic of class '7'.
+</explanation>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[7] | Predicted=[7] | Correct=True
+<explanation>
+The image shows a horse, which is consistently classified as class 7 in the provided examples. The visual evidence, despite blurriness, clearly depicts a horse with a rider and tack, matching the pattern of other class 7 images.
+</explanation>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=5.6087 | avg_trial_wall_seconds=2.8019 | avg_trial_api_seconds=2.5410 | system_fallback_count=0

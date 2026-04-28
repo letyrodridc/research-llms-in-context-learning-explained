@@ -1,0 +1,30 @@
+=== DEBUG LOG | dataset=dtd | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=4 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[43] | Predicted=[43] | Correct=True
+<explanation>
+The image displays a close-up of a golden-brown, grid-patterned food item, consistent with the visual features of waffles seen in the labeled examples under class 43. The texture, color, and repeating square grid pattern match those examples.
+</explanation>
+
+<response>43</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[34] | Predicted=[34] | Correct=True
+<explanation>
+The image displays a textured surface with visible brushstroke-like marks and a uniform greenish hue, which is consistent with the visual evidence of the "34" class examples, such as the abstract painting and the scratched surface, both of which show similar brushwork or textured patterns.
+</explanation>
+
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[10] | Predicted=[34] | Correct=False
+<explanation>
+The image displays a vibrant, abstract pattern composed of repeating geometric shapes, specifically circles and diamonds, arranged in a grid. This is visually consistent with the abstract, colorful, and patterned nature of the examples classified as '34', which include abstract paintings and textured surfaces with varied coloration and form.
+</explanation>
+
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<explanation>
+The Query Image shows a textured surface with a pattern of raised, irregular, spiky protrusions, similar to the durian fruit in the labeled examples. This matches the visual pattern of class 4, which is associated with spiky, textured surfaces.
+</explanation>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=18.8993 | avg_trial_wall_seconds=4.7187 | avg_trial_api_seconds=3.0043 | system_fallback_count=0

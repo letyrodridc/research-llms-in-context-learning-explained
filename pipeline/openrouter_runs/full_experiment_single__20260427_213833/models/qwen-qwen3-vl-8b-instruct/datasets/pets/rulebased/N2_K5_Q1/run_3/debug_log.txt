@@ -1,0 +1,32 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=2 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[36] | Predicted=[36] | Correct=True
+<features>
+- observable feature: dog with long, silky fur
+- observable feature: dog has a black and tan coat
+- observable feature: dog is lying down
+</features>
+<kb>
+- IF [observable visual features = dog with long, silky fur AND observable visual features = dog has a black and tan coat] THEN [36]
+- IF [observable visual features = cat with blue eyes AND observable visual features = white fur with dark points] THEN [6]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows a dog with long, silky fur and a black and tan coat, which matches the features for class 36.
+</rule_check>
+<response>36</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- observable feature: the animal is a cat
+- observable feature: the cat has blue eyes
+- observable feature: the cat has a light-colored body with darker points on the face, ears, and tail
+</features>
+<kb>
+- IF [the animal is a cat AND the cat has blue eyes AND the cat has a light-colored body with darker points on the face, ears, and tail] THEN [6]
+- IF [the animal is a dog] THEN [36]
+</kb>
+<rule_check>
+- Rule 1 fires because the animal is a cat, it has blue eyes, and it has a light-colored body with darker points on the face, ears, and tail, which matches the features of class 6.
+</rule_check>
+<response>6</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=10.3086 | avg_trial_wall_seconds=5.1501 | avg_trial_api_seconds=4.1881 | system_fallback_count=0

@@ -1,0 +1,32 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=2 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- observable feature: flower has five broad, rounded petals
+- observable feature: center of flower has a dense cluster of stamens
+- observable feature: flower color is deep purple
+</features>
+<kb>
+- IF [flower has five broad, rounded petals AND center has dense stamen cluster] THEN [81]
+- IF [flower has three petals with prominent falls AND yellow color] THEN [14]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows a flower with five broad, rounded petals and a dense stamen cluster in the center, matching the features of class 81.
+</rule_check>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- observable feature: flower color is yellow
+- observable feature: flower has three upright petals and three drooping petals
+- observable feature: flower has a distinct central structure with yellow and brown markings
+</features>
+<kb>
+- IF [flower color is yellow AND flower has three upright petals and three drooping petals AND flower has a distinct central structure with yellow and brown markings] THEN [14]
+- IF [flower color is deep purple AND flower has large, broad petals with a white center] THEN [81]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows a yellow flower with three upright and three drooping petals and a distinct central structure with yellow and brown markings, which matches the features for class 14.
+</rule_check>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=6.1723 | avg_trial_wall_seconds=3.0679 | avg_trial_api_seconds=2.8211 | system_fallback_count=0

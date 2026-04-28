@@ -1,0 +1,23 @@
+=== DEBUG LOG | dataset=dtd | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=3 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[32] | Predicted=[32] | Correct=True
+<explanation>
+The image shows a damaged road surface with a large, irregularly shaped depression filled with water, which is characteristic of a pothole. This matches the visual pattern of the labeled example images classified as '32', which consistently depict various forms of road damage and potholes.
+</explanation>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<explanation>
+The image shows a black wallet with a textured surface and a visible brand logo, which matches the visual characteristics of the examples classified as '8' (a black wallet with stitching and texture).
+</explanation>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[4] | Predicted=[32] | Correct=False
+<explanation>
+The Query Image shows a surface with a grid of small, evenly spaced, circular indentations, which is visually consistent with the pattern seen in the example labeled '32' (a road with potholes). The texture and arrangement of the indentations in the Query Image match the visual evidence of the '32' class.
+</explanation>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=3 | errors=0 | accuracy=0.6667 | duration_seconds=10.8861 | avg_trial_wall_seconds=3.6253 | avg_trial_api_seconds=2.2535 | system_fallback_count=0

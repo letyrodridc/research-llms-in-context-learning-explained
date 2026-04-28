@@ -1,0 +1,64 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=4 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[18] | Predicted=[18] | Correct=True
+<features>
+- observable feature: pattern of hexagonal shapes
+- observable feature: dark coloration
+- observable feature: metallic sheen
+</features>
+<kb>
+- IF [pattern of hexagonal shapes AND dark coloration AND metallic sheen] THEN [18]
+- IF [pattern of vertical stripes] THEN [22]
+- IF [veined, marbled pattern with white and dark tones] THEN [23]
+- IF [pattern of uniform circular holes] THEN [27]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows a pattern of hexagonal shapes, is dark in coloration, and has a metallic sheen, matching the features described in the IF condition for class 18.
+</rule_check>
+<response>18</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[22] | Predicted=[22] | Correct=True
+<features>
+- observable feature: presence of parallel horizontal lines
+- observable feature: presence of a single vertical line on the left edge
+- observable feature: light-colored background
+</features>
+<kb>
+- IF [presence of parallel horizontal lines AND presence of a single vertical line on the left edge] THEN [22]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows parallel horizontal lines and a single vertical line on the left edge, matching the pattern in class 22.
+</rule_check>
+<response>22</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[23] | Predicted=[23] | Correct=True
+<features>
+- observable feature: surface has irregular, branching, vein-like patterns
+- observable feature: background is dark grayish-brown with lighter streaks
+- observable feature: texture appears rough and natural
+</features>
+<kb>
+- IF [surface has irregular, branching, vein-like patterns AND background is dark grayish-brown with lighter streaks AND texture appears rough and natural] THEN [23]
+</kb>
+<rule_check>
+- Rule for class 23 fires because the Query Image exhibits irregular, branching, vein-like patterns on a dark grayish-brown background with lighter streaks and a rough, natural texture, matching the visual pattern of the labeled example for class 23.
+</rule_check>
+<response>23</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[27] | Predicted=[22] | Correct=False
+<features>
+- observable feature: pattern of repeating geometric shapes
+- observable feature: shapes are interconnected and form a lattice
+- observable feature: dark color with visible background through openings
+</features>
+<kb>
+- IF [pattern of repeating geometric shapes AND interconnected lattice] THEN [22]
+- IF [pattern of repeating hexagons] THEN [18]
+- IF [veined, irregular white patterns on dark background] THEN [23]
+- IF [uniform grid of circular holes] THEN [27]
+</kb>
+<rule_check>
+- Rule for class 22 fires because the image shows a pattern of repeating geometric shapes that are interconnected and form a lattice, matching the description of class 22.
+</rule_check>
+<response>22</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=15.6910 | avg_trial_wall_seconds=3.9204 | avg_trial_api_seconds=3.4725 | system_fallback_count=0

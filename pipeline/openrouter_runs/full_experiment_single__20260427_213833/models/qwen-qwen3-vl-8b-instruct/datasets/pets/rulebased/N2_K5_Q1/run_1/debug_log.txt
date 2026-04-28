@@ -1,0 +1,33 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=2 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[36] | Predicted=[36] | Correct=True
+<features>
+- observable feature: small dog
+- observable feature: long, shaggy fur
+- observable feature: dark and light brown coloration
+</features>
+<kb>
+- IF [observable visual features = small dog AND observable visual features = long, shaggy fur AND observable visual features = dark and light brown coloration] THEN [36]
+- IF [observable visual features = cat] THEN [6]
+</kb>
+
+<rule_check>
+- Rule 1 fires for the Query Image because the dog's small size, long shaggy fur, and dark/light brown coloration match the features described in the examples for class 36.
+</rule_check>
+
+<response>36</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- observable feature: long fur
+- observable feature: blue eyes
+- observable feature: dark points on face and ears
+</features>
+<kb>
+- IF [long fur AND blue eyes AND dark points on face and ears] THEN [6]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows long fur, blue eyes, and dark points on the face and ears, which matches the features described in the rule for class 6.
+</rule_check>
+<response>6</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=7.0737 | avg_trial_wall_seconds=3.5327 | avg_trial_api_seconds=2.4804 | system_fallback_count=0

@@ -1,0 +1,26 @@
+=== DEBUG LOG | dataset=flowers | prompt=features | model=qwen/qwen3-vl-8b-instruct | N=3 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[71] | Predicted=[71] | Correct=True
+<features>
+- pink petals with darker pink spots
+- multiple flowers clustered together
+- green leaves visible in background
+</features>
+<response>71</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[68] | Predicted=[68] | Correct=True
+<features>
+- white petals
+- yellow center
+- green leaves in background
+</features>
+<response>68</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[33] | Predicted=[33] | Correct=True
+<features>
+- white petals
+- yellow center
+- green background
+</features>
+<response>33</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=4.2300 | avg_trial_wall_seconds=1.4070 | avg_trial_api_seconds=1.2211 | system_fallback_count=0

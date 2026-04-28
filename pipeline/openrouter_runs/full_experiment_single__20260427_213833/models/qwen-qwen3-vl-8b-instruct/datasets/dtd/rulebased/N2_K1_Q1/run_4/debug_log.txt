@@ -1,0 +1,31 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=2 K=1 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- observable feature: woven pattern with interlaced strips
+- observable feature: material appears to be wood or similar natural fiber
+- observable feature: color is brown with visible grain and variation
+</features>
+<kb>
+- IF [woven pattern with interlaced strips AND material appears to be wood or similar natural fiber AND color is brown with visible grain and variation] THEN [44]
+- IF [woven pattern with interlaced strips AND material appears metallic or grayish AND color is uniform or light gray] THEN [29]
+</kb>
+<rule_check>
+- Rule 1 fires for the Query Image because it matches the woven pattern with interlaced strips, material appearing as wood or similar natural fiber, and the brown color with visible grain and variation, which are the defining features of class 44.
+</rule_check>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<features>
+- observable feature: horizontal slats
+- observable feature: uniform spacing between slats
+- observable feature: soft, diffused lighting
+</features>
+<kb>
+- IF [observable visual features = horizontal slats AND/OR observable visual features = uniform spacing between slats] THEN [29]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows horizontal slats with uniform spacing, which matches the pattern in class 29.
+</rule_check>
+<response>29</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=6.5827 | avg_trial_wall_seconds=3.2895 | avg_trial_api_seconds=2.9571 | system_fallback_count=0

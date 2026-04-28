@@ -1,0 +1,46 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=3 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[71] | Predicted=[71] | Correct=True
+<features>
+- observable feature: flower color is pink
+- observable feature: flower has multiple petals
+- observable feature: flower has visible stamens
+</features>
+<kb>
+- IF [flower color is pink AND flower has visible stamens] THEN [71]
+- IF [flower is white AND has yellow center] THEN [68]
+- IF [flower is pink AND has yellow center] THEN [33]
+</kb>
+<rule_check>
+- Rule 1 fires because the flower is pink and has visible stamens, matching the features of class 71.
+</rule_check>
+<response>71</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[68] | Predicted=[68] | Correct=True
+<features>
+- observable feature: flower is white
+- observable feature: flower has five petals
+- observable feature: center of flower is yellow with green base
+</features>
+<kb>
+- IF [flower is white AND has five petals AND center is yellow with green base] THEN [68]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows a white flower with five petals and a yellow center with a green base, matching the description for class 68.
+</rule_check>
+<response>68</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[33] | Predicted=[33] | Correct=True
+<features>
+- observable feature: flower color is red
+- observable feature: flower has a yellow center
+- observable feature: petals are broad and slightly pointed
+</features>
+<kb>
+- IF [flower color is red AND flower has a yellow center AND petals are broad and slightly pointed] THEN [33]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows a red flower with a yellow center and broad, slightly pointed petals, which matches the features described in the rule for class 33.
+</rule_check>
+<response>33</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=7.5255 | avg_trial_wall_seconds=2.5052 | avg_trial_api_seconds=2.0831 | system_fallback_count=0

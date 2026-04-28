@@ -1,0 +1,30 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=4 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[7] | Predicted=[7] | Correct=True
+<explanation>
+The Query Image shows a brown horse in motion, running on grass. Comparing this to the labeled examples, the first example (class 7) is a white horse, which is visually similar in form and context (a horse on grass) but differs in color. The other examples (class 0: bird, class 4: deer, class 8: boat) are clearly different in form and context. Since the Query Image is a horse, and class 7 is the only horse example provided, it is the best match despite the color difference.
+</explanation>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<explanation>
+The Query Image shows a large white vessel, likely a cruise ship or ferry, docked near water with mountains in the background. This is visually consistent with the second example, which also depicts a large white boat on water. Both images feature a similar scale and context of a watercraft in a natural setting, supporting the classification as class 8.
+</explanation>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[0] | Predicted=[8] | Correct=False
+<explanation>
+The Query Image shows a blurry object with a distinct wing structure and tail, consistent with the visual features of an airplane. This matches the class labeled '8' in the provided examples, which also depicts an airplane.
+</explanation>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<explanation>
+The Query Image shows a small, four-legged animal with a brownish coat and visible antlers, standing on a ground surface. This is visually consistent with the fourth example, which also depicts a similar-looking animal (a deer or fawn) in a natural setting. The other examples show a horse (7), a boat (8), and a bird in flight (0), none of which match the visual features of the Query Image.
+</explanation>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=8.7246 | avg_trial_wall_seconds=2.1800 | avg_trial_api_seconds=2.0823 | system_fallback_count=0

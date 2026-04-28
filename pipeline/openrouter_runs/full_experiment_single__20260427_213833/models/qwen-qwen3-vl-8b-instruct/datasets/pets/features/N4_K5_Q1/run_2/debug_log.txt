@@ -1,0 +1,37 @@
+=== DEBUG LOG | dataset=pets | prompt=features | model=qwen/qwen3-vl-8b-instruct | N=4 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[20] | Predicted=[20] | Correct=True
+<features>
+- long fur
+- pointed ears
+- green eyes
+</features>
+<response>20</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<features>
+- white fur
+- fluffy tail
+- black nose
+- tongue out
+</features>
+<response>29</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[28] | Predicted=[28] | Correct=True
+<features>
+- large size
+- white and brown fur
+- short muzzle
+- droopy jowls
+- tongue out
+</features>
+<response>28</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[13] | Predicted=[13] | Correct=True
+<features>
+- white and brown fur
+- floppy ears
+- spotted pattern
+</features>
+<response>13</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=14.6851 | avg_trial_wall_seconds=3.6651 | avg_trial_api_seconds=1.6608 | system_fallback_count=0

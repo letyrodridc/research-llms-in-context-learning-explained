@@ -1,0 +1,16 @@
+=== DEBUG LOG | dataset=dtd | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=2 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[44] | Predicted=[44] | Correct=True
+<explanation>
+The image displays a woven texture with interlaced strips of material, showing a pattern of repeating rectangular shapes with visible grain and color variation. This is consistent with the visual evidence of the labeled example for class 44, which also shows a woven pattern with similar structural characteristics.
+</explanation>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[29] | Predicted=[44] | Correct=False
+<explanation>
+The Query Image displays a pattern of overlapping, curved, brownish-orange layers with a distinct texture, resembling stacked or folded material. This is visually distinct from the labeled examples: Example 44 shows a uniform, diagonal weave pattern (like carbon fiber), while Example 29 shows vertical, translucent curtains with a soft, diffused light effect. The Query Image’s layered, organic, and textured appearance does not match either example’s structure or material properties.
+</explanation>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=1 | total=2 | errors=0 | accuracy=0.5000 | duration_seconds=5.2554 | avg_trial_wall_seconds=2.6243 | avg_trial_api_seconds=2.3035 | system_fallback_count=0

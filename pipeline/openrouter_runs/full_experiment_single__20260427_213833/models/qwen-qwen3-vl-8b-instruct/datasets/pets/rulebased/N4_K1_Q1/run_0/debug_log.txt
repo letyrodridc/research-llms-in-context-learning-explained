@@ -1,0 +1,66 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=4 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[19] | Predicted=[19] | Correct=True
+<features>
+- observable feature: large dog
+- observable feature: long fur
+- observable feature: black muzzle and face
+</features>
+<kb>
+- IF [observable visual features = large dog AND observable visual features = long fur AND observable visual features = black muzzle and face] THEN [19]
+- IF [observable visual features = cat] THEN [32]
+- IF [observable visual features = fluffy cat with white fur] THEN [26]
+- IF [observable visual features = long-haired cat with grey and white fur] THEN [20]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows a large dog with long fur and a black muzzle and face, matching the features for class 19.
+</rule_check>
+<response>19</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- observable feature: the cat has a light-colored body with dark points on its ears, face, paws, and tail
+- observable feature: the cat is curled up and sleeping
+- observable feature: the cat is resting in a soft, light-colored bed or窝
+</features>
+<kb>
+- IF [observable visual features = cat with light body and dark points on ears, face, paws, and tail] THEN [32]
+- IF [observable visual features = cat with light body and dark points on ears, face, paws, and tail AND cat is curled up and sleeping] THEN [32]
+</kb>
+<rule_check>
+- Rule 1 fires because the cat in the image has a light-colored body with dark points on its ears, face, paws, and tail, which matches the defining feature for class 32.
+- Rule 2 also fires because the cat is curled up and sleeping, which is an additional observable feature consistent with class 32.
+</rule_check>
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[26] | Predicted=[26] | Correct=True
+<features>
+- observable feature: long fur
+- observable feature: light-colored body with darker tail tip
+- observable feature: blue eyes
+</features>
+<kb>
+- IF [long fur AND light-colored body with darker tail tip AND blue eyes] THEN [26]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows long fur, a light-colored body with a darker tail tip, and blue eyes, which matches the features described in the rule for class 26.
+</rule_check>
+<response>26</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[20] | Predicted=[26] | Correct=False
+<features>
+- observable feature: the cat has a tabby coat pattern with distinct stripes
+- observable feature: the cat has a white chest and underbelly
+- observable feature: the cat has large, pointed ears
+</features>
+<kb>
+- IF [observable visual features = tabby coat pattern with stripes AND white chest] THEN [26]
+- IF [observable visual features = long, fluffy fur AND colorpoint markings] THEN [32]
+- IF [observable visual features = long, fluffy fur AND pointed ears AND light-colored eyes] THEN [20]
+- IF [observable visual features = large, fluffy dog with long fur] THEN [19]
+</kb>
+<rule_check>
+- Rule 1 (class 26) fires because the cat has a tabby coat pattern with stripes and a white chest, which matches the features of the cat in the third example.
+</rule_check>
+<response>26</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=15.7545 | avg_trial_wall_seconds=3.9361 | avg_trial_api_seconds=3.4143 | system_fallback_count=0

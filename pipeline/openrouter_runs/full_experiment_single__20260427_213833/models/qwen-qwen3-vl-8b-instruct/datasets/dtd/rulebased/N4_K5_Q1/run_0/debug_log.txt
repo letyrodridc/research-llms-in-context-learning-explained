@@ -1,0 +1,70 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=4 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[43] | Predicted=[43] | Correct=True
+<features>
+- observable feature: grid-like pattern of square indentations
+- observable feature: golden-brown color
+- observable feature: surface texture consistent with cooked batter
+</features>
+<kb>
+- IF [grid-like pattern of square indentations AND golden-brown color AND surface texture consistent with cooked batter] THEN [43]
+- IF [abstract brushstrokes AND non-representational forms] THEN [34]
+- IF [repeating circular patterns AND polka dot design] THEN [10]
+- IF [rough, spiky, or porous surface texture] THEN [4]
+</kb>
+
+<rule_check>
+- Rule 1 from the kb fires for the Query Image because it matches the grid-like pattern of square indentations, golden-brown color, and surface texture consistent with cooked batter, which are all features present in the Query Image.
+</rule_check>
+
+<response>43</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[34] | Predicted=[34] | Correct=True
+<features>
+- observable feature: surface has broad, sweeping brushstroke marks
+- observable feature: color is a uniform teal-green
+- observable feature: texture appears smooth with slight sheen
+</features>
+<kb>
+- IF [surface has broad, sweeping brushstroke marks AND color is uniform teal-green] THEN [34]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows broad, sweeping brushstroke marks and a uniform teal-green color, matching the visual pattern of class 34.
+</rule_check>
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[10] | Predicted=[34] | Correct=False
+<features>
+- observable feature: pattern of repeating geometric shapes
+- observable feature: presence of multiple colors
+- observable feature: abstract, non-representational style
+</features>
+<kb>
+- IF [pattern of repeating geometric shapes AND abstract, non-representational style] THEN [34]
+- IF [pattern of repeating geometric shapes AND multiple colors] THEN [34]
+</kb>
+<rule_check>
+- Rule 1 fires because the image has a pattern of repeating geometric shapes and an abstract, non-representational style.
+- Rule 2 fires because the image has a pattern of repeating geometric shapes and multiple colors.
+</rule_check>
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- observable feature: surface has a spiky, textured pattern
+- observable feature: color is yellowish-green
+- observable feature: a finger is touching the surface
+</features>
+<kb>
+- IF [surface has a spiky, textured pattern AND color is yellowish-green] THEN [4]
+- IF [surface has a grid-like pattern AND color is golden brown] THEN [43]
+- IF [surface has a polka dot pattern] THEN [10]
+- IF [surface has abstract brushstrokes and blended colors] THEN [34]
+</kb>
+
+<rule_check>
+- Rule 1 fires because the surface has a spiky, textured pattern and the color is yellowish-green, matching the features of class 4.
+</rule_check>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=20.3050 | avg_trial_wall_seconds=5.0739 | avg_trial_api_seconds=3.1127 | system_fallback_count=0

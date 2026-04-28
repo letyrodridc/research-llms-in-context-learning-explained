@@ -1,0 +1,16 @@
+=== DEBUG LOG | dataset=dtd | prompt=nle | model=qwen/qwen3-vl-8b-instruct | N=2 K=1 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[44] | Predicted=[44] | Correct=True
+<explanation>
+The Query Image displays a tightly woven pattern with a distinct herringbone or zigzag design, using thin, uniform strands in a golden-brown hue. This is visually consistent with the labeled example for class 44, which also features a similar woven texture and coloration. In contrast, class 29 shows a different texture with layered, folded, and stacked elements, which does not match the woven structure in the Query Image.
+</explanation>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<explanation>
+The Query Image displays a spiral pattern formed by numerous thin, parallel, light-colored slats. This is visually distinct from the first example (44), which shows a woven, textured pattern of dark, irregularly shaped strands. The second example (29) shows stacked, folded, and creased paper-like material with a more uniform, layered appearance. The Query Image's spiral and smooth, uniform slats more closely match the layered, folded structure of example 29, despite the color difference.
+</explanation>
+
+<response>29</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.8011 | avg_trial_wall_seconds=2.3962 | avg_trial_api_seconds=2.0907 | system_fallback_count=0

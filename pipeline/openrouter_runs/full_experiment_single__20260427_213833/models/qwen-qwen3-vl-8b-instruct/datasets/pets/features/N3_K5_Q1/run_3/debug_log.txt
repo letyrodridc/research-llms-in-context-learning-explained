@@ -1,0 +1,26 @@
+=== DEBUG LOG | dataset=pets | prompt=features | model=qwen/qwen3-vl-8b-instruct | N=3 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[21] | Predicted=[21] | Correct=True
+<features>
+- small dog
+- black and tan coat
+- pointed ears
+</features>
+<response>21</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[26] | Predicted=[26] | Correct=True
+<features>
+- long white fur
+- blue eyes
+- pointed ears
+</features>
+<response>26</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[15] | Predicted=[15] | Correct=True
+<features>
+- long white fur
+- large size
+- outdoor setting
+</features>
+<response>15</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=8.2520 | avg_trial_wall_seconds=2.7455 | avg_trial_api_seconds=1.2511 | system_fallback_count=0

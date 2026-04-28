@@ -1,0 +1,69 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=4 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[19] | Predicted=[19] | Correct=True
+<features>
+- observable feature: animal is a dog
+- observable feature: fur is long and shaggy
+- observable feature: color is brown and black
+</features>
+<kb>
+- IF [animal is a dog AND fur is long and shaggy] THEN [19]
+- IF [animal is a cat AND eyes are large and blue] THEN [32]
+- IF [animal is a cat AND fur is long and fluffy] THEN [26]
+- IF [animal is a cat AND fur has tabby pattern] THEN [20]
+</kb>
+<rule_check>
+- Rule 1 fires because the animal is a dog and has long, shaggy fur, matching the features of class 19.
+</rule_check>
+<response>19</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- observable feature: cat with dark points on ears, face, and paws
+- observable feature: light-colored body
+- observable feature: large, bright eyes
+</features>
+<kb>
+- IF [cat with dark points on ears, face, and paws AND light-colored body AND large, bright eyes] THEN [32]
+</kb>
+<rule_check>
+- Rule 1 fires because the Query Image shows a cat with dark points on ears, face, and paws, a light-colored body, and large, bright eyes, which matches the features defining class 32.
+</rule_check>
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[26] | Predicted=[26] | Correct=True
+<features>
+- observable feature: fluffy white fur with light brown patches
+- observable feature: large blue eyes
+- observable feature: sitting posture on a metal patio table
+</features>
+<kb>
+- IF [fluffy white fur with light brown patches AND large blue eyes] THEN [26]
+- IF [tabby pattern AND lying down] THEN [20]
+- IF [siamese colorpoint pattern AND lying down] THEN [32]
+- IF [leonberger-like dog features] THEN [19]
+</kb>
+<rule_check>
+- Rule for class 26 fires because the image shows fluffy white fur with light brown patches and large blue eyes, matching the features of the Birman cat in example 26.
+</rule_check>
+<response>26</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[20] | Predicted=[20] | Correct=True
+<features>
+- observable feature: long fur
+- observable feature: pointed ears
+- observable feature: light brown coloration
+</features>
+<kb>
+- IF [long fur AND pointed ears AND light brown coloration] THEN [20]
+- IF [pointed ears AND dark mask on face AND light body] THEN [32]
+- IF [long fur AND dark mask on face AND light body] THEN [26]
+- IF [striped fur AND lying down] THEN [19]
+</kb>
+
+<rule_check>
+- Rule for class 20 is satisfied because the Query Image shows long fur, pointed ears, and light brown coloration, matching the condition for class 20.
+</rule_check>
+
+<response>20</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=14.0273 | avg_trial_wall_seconds=3.5045 | avg_trial_api_seconds=3.0483 | system_fallback_count=0

@@ -1,0 +1,50 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=qwen/qwen3-vl-8b-instruct | N=3 K=1 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<features>
+- observable feature: animal is a feline
+- observable feature: animal has dark fur
+- observable feature: animal is sitting upright
+</features>
+<kb>
+- IF [animal is a feline AND animal has dark fur AND animal is sitting upright] THEN [3]
+- IF [vehicle is red AND vehicle has a bed] THEN [9]
+- IF [vehicle is red AND vehicle has a convertible top] THEN [1]
+</kb>
+<rule_check>
+- Rule 1 fires because the animal is a feline with dark fur sitting upright, which matches the features of class 3.
+</rule_check>
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[9] | Predicted=[9] | Correct=True
+<features>
+- observable feature: vehicle is blue
+- observable feature: vehicle has open hood
+- observable feature: person is visible near vehicle
+</features>
+<kb>
+- IF [vehicle is blue AND vehicle has open hood] THEN [9]
+- IF [vehicle is red AND vehicle has open hood] THEN [9]
+- IF [vehicle is red AND vehicle has open hood] THEN [1]
+</kb>
+<rule_check>
+- Rule 1 fires because the vehicle is blue and has an open hood, matching the condition for class 9.
+</rule_check>
+<response>9</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[1] | Predicted=[1] | Correct=True
+<features>
+- observable feature: vehicle type is a sedan
+- observable feature: vehicle color is blue
+- observable feature: vehicle has four doors
+</features>
+<kb>
+- IF [vehicle type is a sedan AND vehicle color is blue] THEN [1]
+- IF [vehicle type is a truck] THEN [9]
+- IF [vehicle type is a kitten] THEN [3]
+</kb>
+<rule_check>
+- Rule 1 fires because the vehicle is a sedan and its color is blue, matching the condition for class 1.
+</rule_check>
+<response>1</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=8.4728 | avg_trial_wall_seconds=2.8224 | avg_trial_api_seconds=2.7292 | system_fallback_count=0
