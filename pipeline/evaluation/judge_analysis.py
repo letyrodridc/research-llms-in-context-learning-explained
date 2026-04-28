@@ -272,6 +272,102 @@ def _friedman_trial_overall(rows: List[Dict[str, str]]) -> List[Dict[str, Any]]:
     ]
 
 
+def _short_label(label: str, max_len: int = 22) -> str:
+    if "/" in label:
+        label = label.split("/")[-1]
+    return label if len(label) <= max_len else label[:max_len - 1] + "…"
+
+
+def _build_grouped_dim_scores(
+    rows: List[Dict[str, str]],
+    x_key: str,
+    series_key: str,
+) -> Tuple[List[str], Dict[str, Dict[str, Dict[str, float]]]]:
+    """Group per-dimension scores by (x_key, series_key).
+
+    Returns (x_labels, {series_val: {x_val: {dimension: mean_score}}}).
+    """
+    x_labels = sorted({row[x_key] for row in rows if row.get(x_key)})
+    series_vals = sorted({row[series_key] for row in rows if row.get(series_key)})
+
+    buckets: Dict[str, Dict[str, Dict[str, List[float]]]] = {
+        s: {x: {d: [] for d in DIMENSION_FIELDS} for x in x_labels}
+        for s in series_vals
+    }
+    for row in rows:
+        x = row.get(x_key, "")
+        s = row.get(series_key, "")
+        if not x or not s:
+            continue
+        for dim in DIMENSION_FIELDS:
+            v = _safe_float(row.get(dim))
+            if not math.isnan(v):
+                buckets[s][x][dim].append(v)
+
+    series_data: Dict[str, Dict[str, Dict[str, float]]] = {
+        s: {
+            x: {dim: mean(vals) if vals else 0.0 for dim, vals in dim_scores.items()}
+            for x, dim_scores in x_data.items()
+        }
+        for s, x_data in buckets.items()
+    }
+    return x_labels, series_data
+
+
+def _plot_metric_dashboard(
+    *,
+    title: str,
+    path: Path,
+    x_labels: List[str],
+    series_data: Dict[str, Dict[str, Dict[str, float]]],
+) -> None:
+    """3×3 grid of grouped bar charts — one panel per dimension."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fig, axes = plt.subplots(3, 3, figsize=(18, 13))
+    colors = plt.rcParams["axes.prop_cycle"].by_key()["color"]
+    series_names = list(series_data.keys())
+    n_series = max(len(series_names), 1)
+    bar_width = 0.75 / n_series
+    positions = list(range(len(x_labels)))
+    short_x = [_short_label(x) for x in x_labels]
+
+    for panel_idx, (dim, dim_label) in enumerate(zip(DIMENSION_FIELDS, DIMENSION_LABELS)):
+        ax = axes[panel_idx // 3][panel_idx % 3]
+        for s_idx, s_name in enumerate(series_names):
+            offset = (s_idx - (n_series - 1) / 2) * bar_width
+            values = [series_data[s_name].get(x, {}).get(dim, 0.0) for x in x_labels]
+            ax.bar(
+                [p + offset for p in positions],
+                values,
+                width=bar_width,
+                label=_short_label(s_name),
+                color=colors[s_idx % len(colors)],
+                alpha=0.85,
+            )
+        ax.set_title(dim_label.replace("\n", " "), fontsize=9, fontweight="bold")
+        ax.set_xticks(positions)
+        ax.set_xticklabels(short_x, rotation=25, ha="right", fontsize=7)
+        ax.set_ylim(0, 5.5)
+        ax.set_yticks([1, 2, 3, 4, 5])
+        ax.set_ylabel("Mean Score", fontsize=7)
+        ax.tick_params(axis="y", labelsize=7)
+        ax.axhline(y=3.0, color="gray", linestyle="--", linewidth=0.5, alpha=0.5)
+
+    handles, labels = axes[0][0].get_legend_handles_labels()
+    fig.legend(
+        handles, labels,
+        loc="lower center",
+        ncol=min(n_series, 6),
+        fontsize=8,
+        bbox_to_anchor=(0.5, 0.00),
+        frameon=True,
+    )
+    fig.suptitle(title, fontsize=13, fontweight="bold")
+    plt.tight_layout(rect=[0, 0.06, 1, 0.97])
+    plt.savefig(path, dpi=150, bbox_inches="tight")
+    plt.close()
+
+
 def analyze_judge_run_directory(run_dir: Path) -> Dict[str, Path]:
     judge_results_path = run_dir / "judge_results.csv"
     if not judge_results_path.exists():
@@ -439,6 +535,42 @@ def analyze_judge_run_directory(run_dir: Path) -> Dict[str, Path]:
             )
             radar_dataset_files.append(f"radar_by_dataset/radar_{prompt_type}.png")
 
+    # --- 9-metric dashboards ---
+    dashboard_files: List[str] = []
+
+    # By condition (x=prompt_type, series=model) — primary research question
+    x_labels_cond, series_cond = _build_grouped_dim_scores(scored_rows, "prompt_type", "source_model")
+    if x_labels_cond and series_cond:
+        _plot_metric_dashboard(
+            title="All Metrics by Experimental Condition  (series = model)",
+            path=plots_dir / "dashboard_by_condition.png",
+            x_labels=x_labels_cond,
+            series_data=series_cond,
+        )
+        dashboard_files.append("plots/dashboard_by_condition.png")
+
+    # By model (x=model, series=condition)
+    x_labels_model, series_model = _build_grouped_dim_scores(scored_rows, "source_model", "prompt_type")
+    if x_labels_model and series_model:
+        _plot_metric_dashboard(
+            title="All Metrics by Model  (series = experimental condition)",
+            path=plots_dir / "dashboard_by_model.png",
+            x_labels=x_labels_model,
+            series_data=series_model,
+        )
+        dashboard_files.append("plots/dashboard_by_model.png")
+
+    # By dataset (x=dataset, series=condition)
+    x_labels_ds, series_ds = _build_grouped_dim_scores(scored_rows, "dataset", "prompt_type")
+    if x_labels_ds and series_ds:
+        _plot_metric_dashboard(
+            title="All Metrics by Dataset  (series = experimental condition)",
+            path=plots_dir / "dashboard_by_dataset.png",
+            x_labels=x_labels_ds,
+            series_data=series_ds,
+        )
+        dashboard_files.append("plots/dashboard_by_dataset.png")
+
     report_path = analysis_dir / "report.md"
     best_prompt = ""
     if overall_table:
@@ -451,18 +583,23 @@ def analyze_judge_run_directory(run_dir: Path) -> Dict[str, Path]:
         f"- Prompt types analyzed: {', '.join(sorted({row['prompt_type'] for row in scored_rows}))}" if scored_rows else "- Prompt types analyzed: n/a",
         f"- Best prompt by mean overall judge score: `{best_prompt}`" if best_prompt else "- Best prompt by mean overall judge score: n/a",
         "",
+        "## 9-metric dashboards (no averaging — all dimensions shown)",
+        *[f"- `{f}`" for f in dashboard_files],
+        "",
+        "## Per-dimension detail plots",
+        "- `plots/score_by_dimension_and_prompt.png`",
+        "- `plots/radar_by_prompt.png`" if len(prompt_radar_series) >= 2 else "- Radar by prompt: not generated (need ≥2 prompt types)",
+        "- `plots/radar_by_model.png`" if len(source_models) >= 2 else "- Radar by model: not generated (need ≥2 models)",
+        *[f"- `plots/{f}`" for f in radar_dataset_files],
+        "",
+        "## Summary plots (overall score)",
+        "- `plots/overall_score_by_prompt.png`",
+        "- `plots/overall_score_by_dataset_and_prompt.png`",
+        "",
         "## Generated tables",
         "- `tables/overall_mean_scores_by_prompt.csv`",
         "- `tables/mean_scores_by_dataset_and_prompt.csv`",
         "- `tables/mean_scores_by_dimension_and_prompt.csv`",
-        "",
-        "## Generated plots",
-        "- `plots/overall_score_by_prompt.png`",
-        "- `plots/score_by_dimension_and_prompt.png`",
-        "- `plots/overall_score_by_dataset_and_prompt.png`",
-        "- `plots/radar_by_prompt.png`" if len(prompt_radar_series) >= 2 else "- Radar by prompt: not generated (need ≥2 prompt types)",
-        "- `plots/radar_by_model.png`" if len(source_models) >= 2 else "- Radar by model: not generated (need ≥2 models)",
-        *[f"- `plots/{f}`" for f in radar_dataset_files],
         "",
         "## Statistical tests",
         "- `stats/pairwise_wilcoxon_trial_overall_score.csv`" if wilcoxon_rows else "- Pairwise Wilcoxon not generated",

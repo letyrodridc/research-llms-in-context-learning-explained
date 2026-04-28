@@ -75,13 +75,39 @@ def load_datasets(data_dir='./data'):
         ResizeToWidth(target_width=224),
     ])
 
-    print(f"Loading Flower102 into {data_dir}...")  
+    print(f"Loading Flower102 into {data_dir}...")
     # torchvision datasets download only if not present when download=True
     train_set = Flowers102(root=data_dir, split='train', download=True, transform=transform)
     val_set   = Flowers102(root=data_dir, split='val', download=True, transform=transform)
     flowers_full = ConcatDataset([train_set, val_set])
     datasets['flowers'] = flowers_full
-    datasets['flowers_classes'] = train_set.classes
+    # Flowers102 in torchvision does not expose a .classes attribute; use the
+    # standard Oxford 102 Flowers category names (0-indexed, matching _labels).
+    datasets['flowers_classes'] = [
+        "pink primrose", "hard-leaved pocket orchid", "canterbury bells",
+        "sword lily", "english marigold", "tiger lily", "moon orchid",
+        "bird of paradise", "monkshood", "globe thistle", "snapdragon",
+        "colt's foot", "king protea", "spear thistle", "yellow iris",
+        "globe-thistle", "purple coneflower", "peruvian lily", "balloon flower",
+        "giant white arum lily", "fire lily", "pincushion flower", "fritillary",
+        "red ginger", "grape hyacinth", "corn poppy", "prince of wales feathers",
+        "stemless gentian", "artichoke", "sweet william", "carnation",
+        "garden phlox", "love in the mist", "mexican aster", "alpine sea holly",
+        "ruby-lipped cattleya", "cape flower", "great masterwort", "siam tulip",
+        "lenten rose", "barbeton daisy", "daffodil", "sword lily", "poinsettia",
+        "bolero deep blue", "wallflower", "marigold", "buttercup", "daisy",
+        "common dandelion", "petunia", "wild pansy", "primula", "sunflower",
+        "pelargonium", "bishop of llandaff", "gaura", "geranium", "orange dahlia",
+        "pink-yellow dahlia", "cautleya spicata", "japanese anemone",
+        "black-eyed susan", "silverbush", "californian poppy", "osteospermum",
+        "spring crocus", "iris", "windflower", "tree poppy", "gazania", "azalea",
+        "water lily", "rose", "thorn apple", "morning glory", "passion flower",
+        "lotus", "toad lily", "anthurium", "frangipani", "clematis", "hibiscus",
+        "columbine", "desert-rose", "tree mallow", "magnolia", "cyclamen",
+        "watercress", "canna lily", "hippeastrum", "bee balm", "ball moss",
+        "foxglove", "bougainvillea", "camellia", "mallow", "mexican petunia",
+        "bromelia", "blanket flower", "trumpet creeper", "blackberry lily",
+    ]
 
     print(f"Loading OxfordPets into {data_dir}...")
     datasets['pets'] = OxfordIIITPet(root=data_dir, split='trainval', download=True, transform=transform)
