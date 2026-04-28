@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=meta-llama/llama-4-scout | N=2 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[17] | Predicted=[17] | Correct=True
+<features>
+- observable feature: lines
+- observable feature: horizontal
+</features>
+<kb>
+- IF [observable visual features = lines AND observable visual features = horizontal] THEN [17]
+- IF [observable visual features = potholes] THEN [32]
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF [observable visual features = lines AND observable visual features = horizontal] THEN [17], because the Query Image shows a surface with many horizontal lines.
+</rule_check>
+
+<response>17</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- observable feature: pothole
+- observable feature: road surface
+</features>
+<kb>
+- IF [observable visual features = striped pattern AND observable visual features = uniform color] THEN [17]
+- IF [observable visual features = pothole AND observable visual features = road surface] THEN [32]
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF [observable visual features = pothole AND observable visual features = road surface] THEN [32], because the Query Image shows a pothole on a road surface.
+</rule_check>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=8.8690 | avg_trial_wall_seconds=4.4304 | avg_trial_api_seconds=3.3680 | system_fallback_count=0

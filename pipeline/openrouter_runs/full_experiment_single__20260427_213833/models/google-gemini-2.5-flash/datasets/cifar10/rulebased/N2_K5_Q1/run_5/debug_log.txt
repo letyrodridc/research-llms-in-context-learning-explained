@@ -1,0 +1,35 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=5 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- object shape: elongated, horizontal
+- object location: centered, occupying most of the horizontal space
+- background: water at the bottom, sky and structures at the top
+- presence of masts/towers: two prominent vertical structures
+- presence of flag: small red flag visible
+</features>
+<kb>
+- IF [object shape is elongated and horizontal AND object is on water AND background includes sky] THEN [8]
+- IF [object shape is that of a four-legged animal AND object is on land or in a natural setting] THEN [7]
+</kb>
+<rule_check>
+- The rule for class 8 fires because the query image shows an elongated, horizontal object (a ship) on water, with a sky background, which matches the observable features for class 8.
+</rule_check>
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- main subject: animal with four legs
+- background: green and brown, possibly grass and trees
+- color of subject: dark brown/black
+- posture of subject: standing
+</features>
+<kb>
+- IF [main subject is a boat or ship on water] THEN [8]
+- IF [main subject is a horse, possibly with a rider, on land] THEN [7]
+</kb>
+<rule_check>
+- The rule for class 7 fires because the query image clearly shows an animal with four legs, resembling a horse, standing on what appears to be land (indicated by green and brown background), which aligns with the observable features of the examples for class 7.
+</rule_check>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.5545 | avg_trial_wall_seconds=2.2654 | avg_trial_api_seconds=2.1497 | system_fallback_count=0

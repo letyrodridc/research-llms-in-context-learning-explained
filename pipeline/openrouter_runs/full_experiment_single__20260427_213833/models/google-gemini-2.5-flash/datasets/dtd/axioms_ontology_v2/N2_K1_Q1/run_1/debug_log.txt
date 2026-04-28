@@ -1,0 +1,33 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[44] | Predicted=[None] | Correct=False
+WARNING: response_label_not_in_options
+<tbox>
+44 ⊑ hasVisualFeature(tightly_packed_small_bumps)
+29 ⊑ hasVisualFeature(horizontal_pleated_structure)
+</tbox>
+<abox>
+hasVisualFeature(Query, woven_horizontal_sticks)
+</abox>
+<dl_explanation>
+- No direct rules fired for the observed features.
+- The query image does not exhibit features of class 44 (tightly_packed_small_bumps) or class 29 (horizontal_pleated_structure).
+- Based on the provided examples, there is no sufficient condition to classify the Query Image into either class.
+</dl_explanation>
+<response>
+None
+</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<tbox>
+44 ⊑ hasVisualFeature(dense_pattern_of_small_raised_bumps)
+29 ⊑ hasVisualFeature(horizontal_pleats_or_slats) ⊓ hasVisualFeature(diagonal_orientation)
+</tbox>
+<abox>
+hasVisualFeature(Query, vertical_folds_or_pleats)
+</abox>
+<dl_explanation>
+No direct rule fired. The query image shows vertical folds, which is not explicitly defined in the provided TBox for either class 44 or 29. However, the visual feature of "pleats" is present in class 29, although in a horizontal and diagonal orientation. The query image's vertical folds are visually distinct from the dense pattern of small raised bumps of class 44. While not a perfect match, the presence of pleat-like structures makes it more similar to class 29 than class 44.
+</dl_explanation>
+<response>29</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=1 | total=2 | errors=0 | accuracy=0.5000 | duration_seconds=3.7008 | avg_trial_wall_seconds=1.8481 | avg_trial_api_seconds=1.7216 | system_fallback_count=0

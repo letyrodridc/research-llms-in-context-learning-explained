@@ -1,0 +1,56 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemini-2.5-flash | N=3 K=1 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<features>
+- main subject: animal
+- animal posture: sitting upright
+- animal color: grey
+- background: blurred, possibly outdoor
+</features>
+<kb>
+- IF [main subject = animal AND animal posture = sitting upright] THEN [3]
+- IF [main subject = vehicle AND vehicle type = truck] THEN [9]
+- IF [main subject = vehicle AND vehicle type = car] THEN [1]
+</kb>
+<rule_check>
+- The rule "IF [main subject = animal AND animal posture = sitting upright] THEN [3]" fires because the Query Image clearly shows an animal sitting upright.
+</rule_check>
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[9] | Predicted=[1] | Correct=False
+<features>
+- primary object color: blue
+- object type: vehicle
+- presence of wheels: yes
+- presence of a person: yes
+- object shape: car-like
+</features>
+<kb>
+- IF [primary object color = red AND object type = car AND object shape = car-like] THEN [1]
+- IF [primary object color = red AND object type = truck AND object shape = truck-like] THEN [9]
+- IF [primary object color = light brown/tan AND object type = animal AND object shape = small, furry] THEN [3]
+- IF [primary object color = blue AND object type = vehicle AND object shape = car-like AND presence of a person = yes] THEN [1]
+</kb>
+<rule_check>
+- The rule for class 1 fires because the Query Image shows a blue, car-like vehicle with a person, which aligns with the features observed in the examples for class 1 (a car). While the color is different from the example for class 1, the overall shape and presence of a vehicle are consistent with a car.
+</rule_check>
+<response>1</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[1] | Predicted=[1] | Correct=True
+<features>
+- object shape: elongated, rectangular body with rounded edges
+- object color: dark blue
+- visible wheels: two wheels visible on the side
+- visible lights: front headlights are visible and illuminated
+- background: solid, light purple color
+</features>
+<kb>
+- IF [object shape is small and fluffy AND object color is light brown/orange AND visible features resemble a small animal] THEN [3]
+- IF [object shape is a truck-like vehicle with a flatbed AND object color is red AND visible wheels are present] THEN [9]
+- IF [object shape is an elongated car-like vehicle with a distinct front and back AND object color is red or dark blue AND visible wheels are present AND visible headlights are present] THEN [1]
+</kb>
+<rule_check>
+- The rule for class 1 fires because the Query Image shows an elongated car-like vehicle with a distinct front and back, it is dark blue, has visible wheels, and visible headlights.
+</rule_check>
+<response>1</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=3 | errors=0 | accuracy=0.6667 | duration_seconds=5.3944 | avg_trial_wall_seconds=1.7965 | avg_trial_api_seconds=1.7547 | system_fallback_count=0

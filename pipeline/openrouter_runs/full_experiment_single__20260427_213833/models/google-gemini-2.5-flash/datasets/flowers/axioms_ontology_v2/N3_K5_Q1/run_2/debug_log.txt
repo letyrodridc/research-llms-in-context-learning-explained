@@ -1,0 +1,53 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=3 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[87] | Predicted=[87] | Correct=True
+<tbox>
+87 ⊑ hasVisualFeature(UpwardCurlingPetals) ⊓ hasVisualFeature(BellShape)
+92 ⊑ hasVisualFeature(SpikyInflorescence) ⊓ hasVisualFeature(SmallPurpleFlowers)
+14 ⊑ hasVisualFeature(YellowPetals) ⊓ hasVisualFeature(ProminentCentralMarking)
+</tbox>
+<abox>
+hasVisualFeature(Query, UpwardCurlingPetals)
+hasVisualFeature(Query, BellShape)
+</abox>
+<dl_explanation>
+Rule(s) fired: 87 ⊑ hasVisualFeature(UpwardCurlingPetals) ⊓ hasVisualFeature(BellShape)
+</dl_explanation>
+<response>87</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[92] | Predicted=[92] | Correct=True
+<tbox>
+hasVisualFeature(PinkSpikyBract, 'pink spiky bract')
+hasVisualFeature(PurplePetals, 'purple petals')
+hasVisualFeature(YellowPetals, 'yellow petals')
+hasVisualFeature(PinkPetals, 'pink petals')
+hasVisualFeature(UpwardCurvingPetals, 'upward curving petals')
+
+92 ≡ hasVisualFeature(PinkSpikyBract) ⊓ hasVisualFeature(PurplePetals)
+87 ≡ hasVisualFeature(PinkPetals) ⊓ hasVisualFeature(UpwardCurvingPetals)
+14 ≡ hasVisualFeature(YellowPetals)
+</tbox>
+<abox>
+hasVisualFeature(Query, PinkSpikyBract)
+hasVisualFeature(Query, PurplePetals)
+</abox>
+<dl_explanation>
+Rule(s) fired: 92 ≡ hasVisualFeature(PinkSpikyBract) ⊓ hasVisualFeature(PurplePetals)
+</dl_explanation>
+<response>92</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+Class87 ⊑ hasVisualFeature(PinkPetals) ⊓ hasVisualFeature(UpwardCurvingPetals)
+Class92 ⊑ hasVisualFeature(PinkSpikyBract) ⊓ hasVisualFeature(PurpleFlowers)
+Class14 ⊑ hasVisualFeature(YellowPetals) ⊓ hasVisualFeature(DownwardCurvingPetals)
+</tbox>
+<abox>
+hasVisualFeature(Query, YellowPetals)
+hasVisualFeature(Query, DownwardCurvingPetals)
+</abox>
+<dl_explanation>
+Class14 ⊑ hasVisualFeature(YellowPetals) ⊓ hasVisualFeature(DownwardCurvingPetals)
+</dl_explanation>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=5.9059 | avg_trial_wall_seconds=1.9655 | avg_trial_api_seconds=1.4762 | system_fallback_count=0

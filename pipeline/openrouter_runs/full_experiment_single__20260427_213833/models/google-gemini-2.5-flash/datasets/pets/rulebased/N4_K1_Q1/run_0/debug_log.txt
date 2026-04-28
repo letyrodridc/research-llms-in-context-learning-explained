@@ -1,0 +1,77 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=google/gemini-2.5-flash | N=4 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[19] | Predicted=[19] | Correct=True
+<features>
+- animal type: dog
+- fur color: brown, black, and white
+- fur length: long
+- face mask: black
+- tongue: visible and pink
+</features>
+<kb>
+- IF [animal type = dog AND fur color = brown, black, and white AND fur length = long AND face mask = black] THEN [19]
+- IF [animal type = cat AND fur color = cream and dark brown/black AND face mask = dark brown/black] THEN [32]
+- IF [animal type = cat AND fur color = white and light brown/grey AND fur length = long AND mouth = open with tongue visible] THEN [26]
+- IF [animal type = cat AND fur color = grey tabby and white/cream AND fur length = long] THEN [20]
+</kb>
+<rule_check>
+- The rule for class 19 fires because the Query Image shows a dog with long brown, black, and white fur, and a distinct black face mask.
+</rule_check>
+<response>19</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- fur color pattern: light body with dark extremities (face, ears, paws, tail)
+- eye color: blue
+- animal type: cat
+</features>
+<kb>
+- IF [animal type = cat AND fur color pattern = light body with dark extremities AND eye color = blue] THEN [32]
+- IF [animal type = cat AND fur color pattern = mostly white/cream with some light brown/grey patches AND long fur] THEN [26]
+- IF [animal type = cat AND fur color pattern = tabby (grey/black stripes) with long fur] THEN [20]
+- IF [animal type = dog AND fur color pattern = reddish-brown with long fur] THEN [19]
+</kb>
+<rule_check>
+- The rule for class 32 fires because the Query Image shows a cat with a light body and dark extremities (face, ears, paws, tail), and blue eyes, which matches the observable features of the examples for class 32.
+</rule_check>
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[26] | Predicted=[26] | Correct=True
+<features>
+- fur color: predominantly white with some light brown/grey markings on face and tail
+- eye color: blue
+- fur length: long and fluffy
+- body shape: somewhat stocky, sitting upright with front paws tucked in
+- tail: long and fluffy, with a darker tip
+</features>
+<kb>
+- IF [fur color is predominantly white/cream with some light brown/grey markings AND eye color is blue AND fur is long and fluffy] THEN [26]
+- IF [fur color is predominantly light brown/tan with dark brown markings on face, ears, paws, and tail AND eye color is blue] THEN [32]
+- IF [fur color is a mix of grey, black, and white tabby patterns AND fur is long and fluffy AND ears have prominent tufts] THEN [20]
+- IF [fur color is reddish-brown/tan AND fur is long and dense AND body is large and muscular] THEN [19]
+</kb>
+<rule_check>
+- The rule for class 26 fires because the Query Image shows a cat with predominantly white/cream fur, some light brown/grey markings on its face and tail, and blue eyes, consistent with the features observed in the example for class 26.
+</rule_check>
+<response>26</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[20] | Predicted=[20] | Correct=True
+<features>
+- animal type: cat
+- fur pattern: tabby stripes
+- fur color: brown, black, white
+- fur length: long
+- ear tufts: present
+- tail: long and bushy
+</features>
+<kb>
+- IF [animal type = dog AND fur length = long AND fur color = brown/tan] THEN [19]
+- IF [animal type = cat AND fur pattern = colorpoint AND fur length = short to medium] THEN [32]
+- IF [animal type = cat AND fur length = very long AND fur color = light (white/cream) with some darker patches AND facial expression = mouth open] THEN [26]
+- IF [animal type = cat AND fur length = long AND fur pattern = tabby stripes AND ear tufts = present] THEN [20]
+</kb>
+<rule_check>
+- The rule for class 20 fires because the Query Image shows a cat with long fur, tabby stripes, and visible ear tufts.
+</rule_check>
+<response>20</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=7.6780 | avg_trial_wall_seconds=1.9131 | avg_trial_api_seconds=1.7328 | system_fallback_count=0

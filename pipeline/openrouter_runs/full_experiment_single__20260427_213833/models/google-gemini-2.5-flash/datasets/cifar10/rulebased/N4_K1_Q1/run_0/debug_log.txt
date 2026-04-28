@@ -1,0 +1,76 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemini-2.5-flash | N=4 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- main object shape: four-legged animal with a mane and tail
+- main object color: light/white
+- background: green (grass-like) and dark areas
+</features>
+<kb>
+- IF [main object is a four-legged animal AND background is green] THEN [7]
+- IF [main object is a boat with a sail AND background is water and sky] THEN [8]
+- IF [main object is an airplane AND background is a runway] THEN [0]
+- IF [main object is a four-legged animal with a slender body AND background is green] THEN [4]
+</kb>
+<rule_check>
+- The rule for class 7 fires because the query image shows a four-legged animal with a mane and tail, and the background is predominantly green, consistent with the features observed in the example for class 7. The animal's shape and the green background are key indicators.
+</rule_check>
+<response>7</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- main object shape: elongated, horizontal
+- main object location: centered horizontally, slightly above the vertical center
+- background: mostly water below the object, sky above the object
+- object color: dark, possibly blue/green/grey
+- presence of mast/sail: no
+- presence of wings/tail: no
+- presence of legs/body: no
+</features>
+<kb>
+- IF [main object is an animal with four legs and a body] THEN [7]
+- IF [main object is a boat with a prominent sail] THEN [8]
+- IF [main object is an airplane with wings and a tail] THEN [0]
+- IF [main object is an animal with four legs and a body, in a green environment] THEN [4]
+</kb>
+<rule_check>
+- None of the provided rules directly fire for the Query Image as it depicts a large ship without sails, wings, or animal features. However, comparing the visual features, the Query Image shows a large object on water, which is most similar to the "boat" category (8) among the given options, despite lacking a sail. The other categories (animals, airplane) are clearly not applicable. Given the limited options and examples, the closest match based on the environment (water) and general object type (vessel) would be 8.
+</rule_check>
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- main object shape: elongated body with wings and tail fins
+- main object color: dark silhouette
+- background: light blue sky and light brown ground
+- presence of a distinct red circular object: yes, on the right side
+</features>
+<kb>
+- IF [main object shape is elongated with wings and tail fins AND main object is white with purple/red markings] THEN [0]
+- IF [main object is an animal with four legs AND main object is grey or brown] THEN [7]
+- IF [main object is an animal with four legs AND main object is light brown/orange] THEN [4]
+- IF [main object is a boat with a triangular sail AND main object is on water] THEN [8]
+</kb>
+<rule_check>
+- The rule for class 0 states that the main object should be an elongated shape with wings and tail fins, and be white with purple/red markings. The Query Image shows an elongated object with wings and tail fins, which aligns with the shape description. Although the color is a dark silhouette, the overall form strongly matches the airplane in class 0. The other classes represent animals or a sailboat, which do not match the visual features of the Query Image.
+</rule_check>
+<response>0</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- main object color: brown/tan
+- main object shape: quadrupedal animal-like
+- background: green vegetation and brown/tan ground
+- presence of vertical brown/reddish object on left: yes
+</features>
+<kb>
+- IF [main object is a large, light-colored quadruped AND background is green] THEN [7]
+- IF [main object is a sailboat with a white sail AND background is water and sky] THEN [8]
+- IF [main object is a white airplane with purple/red markings AND background is an airfield] THEN [0]
+- IF [main object is a small, brown/tan quadruped AND background is predominantly green vegetation] THEN [4]
+</kb>
+<rule_check>
+- The rule for class 4 fires because the query image shows a small, brown/tan quadrupedal animal, and the background is predominantly green vegetation, which aligns with the features observed in the example for class 4.
+</rule_check>
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=7.3159 | avg_trial_wall_seconds=1.8273 | avg_trial_api_seconds=1.7662 | system_fallback_count=0

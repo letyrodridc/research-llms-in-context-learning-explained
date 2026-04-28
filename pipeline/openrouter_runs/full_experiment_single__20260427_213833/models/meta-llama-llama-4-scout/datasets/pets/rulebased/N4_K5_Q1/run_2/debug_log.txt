@@ -1,0 +1,76 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=meta-llama/llama-4-scout | N=4 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[20] | Predicted=[20] | Correct=True
+<features>
+- long fur: present
+- pointy ears: present
+- yellow eyes: present
+- striped pattern: present
+</features>
+<kb>
+- IF [long fur = present AND pointy ears = present AND yellow eyes = present AND striped pattern = present] THEN [20]
+- IF [long fur = absent AND floppy ears = present AND black nose = present AND white fur = present] THEN [29]
+- IF [long fur = absent AND floppy ears = present AND black nose = present AND brown fur = present] THEN [28]
+- IF [long fur = absent AND floppy ears = present AND black spots = present AND white fur = present] THEN [13]
+</kb>
+<rule_check>
+- The rule that fires for the Query Image is: IF [long fur = present AND pointy ears = present AND yellow eyes = present AND striped pattern = present] THEN [20], because the Query Image has long fur, pointy ears, yellow eyes, and a striped pattern.
+</rule_check>
+<response>20</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<features>
+- fur color: white
+- fur length: long
+- ear shape: pointy
+- tongue: out
+</features>
+<kb>
+- IF [fur color = white AND fur length = long AND ear shape = pointy AND tongue = out] THEN [29]
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF [fur color = white AND fur length = long AND ear shape = pointy AND tongue = out] THEN [29], because the Query Image shows a white, long-furred dog with pointy ears and its tongue out.
+</rule_check>
+
+<response>29</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[28] | Predicted=[28] | Correct=True
+<features>
+- large dog: true
+- white and brown fur: true
+- black marking: true
+</features>
+<kb>
+- IF [large dog = true AND white and brown fur = true AND black marking = true] THEN [class=28]
+- IF [large dog = true AND white fur = true] THEN [class=29]
+- IF [observable visual features = feature value AND/OR observable visual features = feature value] THEN [class=20]
+- IF [observable visual features = feature value AND/OR observable visual features = feature value] THEN [class=13]
+</kb>
+
+<rule_check>
+- The rule for class 28 fires because the image shows a large dog with white and brown fur and black markings.
+</rule_check>
+
+<response>28</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[13] | Predicted=[13] | Correct=True
+<features>
+- color: white
+- color: brown
+- color: black
+- spots: yes
+</features>
+<kb>
+- IF [color = white AND color = brown AND spots = yes] THEN [13]
+- IF [color = white AND color = black] THEN [28]
+- IF [color = white] THEN [29]
+- IF [spots = no AND color = orange] THEN [20]
+</kb>
+
+<rule_check>
+- Rule 13 fires for the Query Image because the image shows a dog with white, brown colors and spots.
+</rule_check>
+
+<response>13</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=23.4833 | avg_trial_wall_seconds=5.8669 | avg_trial_api_seconds=3.8602 | system_fallback_count=0

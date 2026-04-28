@@ -1,0 +1,54 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=3 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[32] | Predicted=[32] | Correct=True
+<tbox>
+- [32] ⊑ hasVisualFeature([pothole_on_road])
+- [8] ⊑ hasVisualFeature([texture_pattern])
+- [4] ⊑ hasVisualFeature([bumpy_or_porous_surface])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [pothole_on_road])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [32] ⊑ hasVisualFeature([pothole_on_road])
+</dl_explanation>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<tbox>
+- [32] ⊑ hasVisualFeature([pothole_or_crack])
+- [8] ≡ hasVisualFeature([textured_surface])
+- [4] ≡ hasVisualFeature([bumpy_or_porous_texture])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [textured_surface])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [8] ≡ hasVisualFeature([textured_surface])
+</dl_explanation>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[4] | Predicted=[8] | Correct=False
+<tbox>
+- [32] ⊑ hasVisualFeature([potholes_or_craters]) ⊓ hasVisualFeature([irregular_terrain])
+- [8] ⊑ hasVisualFeature([textile_texture]) ⊓ hasVisualFeature([patterned_surface])
+- [4] ⊑ hasVisualFeature([repetitive_bumps_or_holes]) ⊓ hasVisualFeature([textured_surface])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [textile_texture])
+- hasVisualFeature(Query, [patterned_surface])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [8] ⊑ hasVisualFeature([textile_texture]) ⊓ hasVisualFeature([patterned_surface])
+</dl_explanation>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=3 | errors=0 | accuracy=0.6667 | duration_seconds=11.0003 | avg_trial_wall_seconds=3.6641 | avg_trial_api_seconds=2.9719 | system_fallback_count=0

@@ -1,0 +1,20 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=features | model=google/gemma-4-26b-a4b-it | N=2 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<features>
+- brown fur
+- climbing tree trunk
+- animal body shape
+</features>
+
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- airplane silhouette
+- wings
+- fuselage
+</features>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=2.0047 | avg_trial_wall_seconds=0.9998 | avg_trial_api_seconds=0.9607 | system_fallback_count=0

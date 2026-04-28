@@ -1,0 +1,55 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=meta-llama/llama-4-scout | N=3 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<tbox>
+- [45] ⊑ hasVisualFeature([crinkled])
+- hasVisualFeature([polka_dots]) ⊑ [10]
+- [19] ≡ hasVisualFeature([metallic_pattern]) ⊓ hasVisualFeature([stone])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [crinkled])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [45] ⊑ hasVisualFeature([crinkled])
+</dl_explanation>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[10] | Predicted=[10] | Correct=True
+<tbox>
+- [45] ⊑ hasVisualFeature([wrinkles])
+- hasVisualFeature([dots]) ⊑ [10]
+- [19] ≡ hasVisualFeature([metallic]) ⊓ hasVisualFeature([stone])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [dots])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  hasVisualFeature([dots]) ⊑ [10]
+</dl_explanation>
+
+<response>10</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[19] | Predicted=[45] | Correct=False
+<tbox>
+- [45] ⊑ hasVisualFeature([F1, wrinkled])
+- [10] ⊑ hasVisualFeature([F2, colorful dots])
+- [19] ⊑ hasVisualFeature([F3, metal jewelry])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [F4, intricate design])
+- hasVisualFeature(Query, [F5, multiple figures])
+- hasVisualFeature(Query, [F6, ornate pattern])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  none
+</dl_explanation>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=3 | errors=0 | accuracy=0.6667 | duration_seconds=10.2930 | avg_trial_wall_seconds=3.4277 | avg_trial_api_seconds=2.9864 | system_fallback_count=0

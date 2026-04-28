@@ -1,0 +1,55 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=3 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- surface: asphalt/pavement with multiple depressions
+- depressions: filled with water (puddles)
+- environment: outdoor road/path
+</features>
+<kb>
+- IF [surface has multiple water-filled depressions/puddles] THEN [32]
+- IF [surface has abstract geometric/metallic patterns] THEN [8]
+- IF [surface has organic textures like bumps, spikes, or gourds] THEN [4]
+</kb>
+
+<rule_check>
+- The rule for class 32 fires because the Query Image shows an asphalt surface with several distinct depressions filled with water (puddles).
+</rule_check>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- texture: cross-hatched/sketched pattern
+- color: black and white
+- shape: irregular, organic form
+</features>
+<kb>
+- IF [surface contains holes, cracks, or puddles in asphalt/ground] THEN [32]
+- IF [surface shows repetitive geometric patterns, textures, or fabric-like weaves] THEN [8]
+- IF [surface shows organic, bumpy, spiky, or irregular natural/jewelry textures] THEN [4]
+</kb>
+
+<rule_check>
+- The rule for class 8 is best satisfied because the image displays a distinct, repetitive cross-hatched/sketched texture pattern across the entire surface, similar to the patterned textures seen in the class 8 examples.
+</rule_check>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- surface texture: bumpy, spiky, and yellowish
+- object type: organic/fruit-like appearance
+</features>
+<kb>
+- IF [surface texture = smooth/pavement with holes/puddles] THEN [32]
+- IF [surface texture = geometric patterns/fabrics/metal] THEN [8]
+- IF [surface texture = bumpy, spiky, or organic/fruit-like] THEN [4]
+</kb>
+
+<rule_check>
+- The rule for class 4 fires because the Query Image shows a highly textured, spiky, and yellowish organic surface, which matches the patterns seen in the examples for class 4.
+</rule_check>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=12.7439 | avg_trial_wall_seconds=4.2454 | avg_trial_api_seconds=3.7734 | system_fallback_count=0

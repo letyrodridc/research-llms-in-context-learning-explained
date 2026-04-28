@@ -1,0 +1,32 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+81 ⊑ hasVisualFeature(PetalsArePurpleAndWhiteStriped) ⊓ hasVisualFeature(PetalsAreBroadAndFlat) ⊓ hasVisualFeature(StamensAreYellowAndCentral)
+14 ⊑ hasVisualFeature(PetalsAreYellow) ⊓ hasVisualFeature(PetalsAreNarrowAndUpright) ⊓ hasVisualFeature(StamensAreYellowAndCentral)
+</tbox>
+<abox>
+hasVisualFeature(Query, PetalsArePurpleAndWhiteStriped)
+hasVisualFeature(Query, PetalsAreBroadAndFlat)
+hasVisualFeature(Query, StamensAreYellowAndCentral)
+</abox>
+<dl_explanation>
+Rule(s) fired: 81 ⊑ hasVisualFeature(PetalsArePurpleAndWhiteStriped) ⊓ hasVisualFeature(PetalsAreBroadAndFlat) ⊓ hasVisualFeature(StamensAreYellowAndCentral)
+</dl_explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+14 ≡ hasVisualFeature(yellow_petals) ⊓ hasVisualFeature(three_prominent_petals_pointing_outward) ⊓ hasVisualFeature(dark_lines_on_lower_petals)
+81 ≡ hasVisualFeature(pink_and_white_striped_petals) ⊓ hasVisualFeature(multiple_petals_forming_a_star_shape) ⊓ hasVisualFeature(yellow_center)
+</tbox>
+<abox>
+hasVisualFeature(Query, yellow_petals)
+hasVisualFeature(Query, three_prominent_petals_pointing_outward)
+hasVisualFeature(Query, dark_lines_on_lower_petals)
+</abox>
+<dl_explanation>
+Rule(s) fired: 14 ≡ hasVisualFeature(yellow_petals) ⊓ hasVisualFeature(three_prominent_petals_pointing_outward) ⊓ hasVisualFeature(dark_lines_on_lower_petals)
+</dl_explanation>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.5400 | avg_trial_wall_seconds=1.7601 | avg_trial_api_seconds=1.6141 | system_fallback_count=0

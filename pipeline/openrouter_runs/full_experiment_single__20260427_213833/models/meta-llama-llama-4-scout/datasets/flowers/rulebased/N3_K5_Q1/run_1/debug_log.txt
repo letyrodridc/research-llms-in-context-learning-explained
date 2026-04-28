@@ -1,0 +1,58 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=meta-llama/llama-4-scout | N=3 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[87] | Predicted=[87] | Correct=True
+<features>
+- observable feature: petals = 4
+- observable feature: petal color = light purple
+- observable feature: center color = dark purple
+</features>
+<kb>
+- IF [petals = 4 AND petal color = light purple AND center color = dark purple] THEN [87]
+- IF [petals > 5 AND petal color = pink] THEN [92]
+- IF [petals = 3 AND petal color = yellow] THEN [14]
+</kb>
+
+<rule_check>
+- Rule 87 fires for the Query Image because it has 4 petals, light purple petals, and a dark purple center.
+</rule_check>
+
+<response>87</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[92] | Predicted=[92] | Correct=True
+<features>
+- color: pink
+- shape: long and thin
+- plant type: flowering plant
+- leaf shape: long and thin
+- background: rocks
+</features>
+<kb>
+- IF [color = pink AND shape = long and thin AND plant type = flowering plant AND leaf shape = long and thin AND background = rocks] THEN [92]
+- IF [color = white AND shape = petals AND plant type = flowering plant] THEN [87]
+- IF [color = yellow AND shape = petals] THEN [14]
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: 92, because the Query Image has a pink color, long and thin shape, and long and thin leaves, and a background of rocks.
+</rule_check>
+
+<response>92</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- color: yellow
+- petals: 3
+- center: yellow
+</features>
+<kb>
+- IF [color = yellow AND petals = 3 AND center = yellow] THEN [14]
+- IF [color = pink AND petals = 5] THEN [87]
+- IF [color = pink AND petals = 1] THEN [92]
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF [color = yellow AND petals = 3 AND center = yellow] THEN [14], because the Query Image has a yellow color, 3 petals, and a yellow center.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=13.8971 | avg_trial_wall_seconds=4.6305 | avg_trial_api_seconds=3.2013 | system_fallback_count=0

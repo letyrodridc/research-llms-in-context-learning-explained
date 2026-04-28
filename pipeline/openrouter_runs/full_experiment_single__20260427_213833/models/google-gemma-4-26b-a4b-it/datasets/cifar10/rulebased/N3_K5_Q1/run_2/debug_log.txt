@@ -1,0 +1,57 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=3 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- object: airplane
+- background: blue sky
+- orientation: flying
+</features>
+<kb>
+- IF [object = airplane] THEN [0]
+- IF [object = frog/toad] THEN [6]
+- IF [object = horse] THEN [7]
+</kb>
+
+<rule_check>
+- The rule for class 0 fires because the Query Image contains an airplane flying in a blue sky.
+</rule_check>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- subject: amphibian-like creature
+- skin texture: bumpy/textured
+- color: light brown/tan
+- body shape: squat and rounded
+</features>
+<kb>
+- IF [subject = aircraft/bird-like object] THEN [0]
+- IF [subject = amphibian/reptile-like creature with bumpy skin] THEN [6]
+- IF [subject = large four-legged mammal] THEN [7]
+</kb>
+
+<rule_check>
+- The rule for class 6 fires because the Query Image depicts a squat, bumpy-skinned creature consistent with the examples labeled as class 6.
+</rule_check>
+
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- subject: horse
+- background: green foliage/trees
+- foreground: red and white fence/barrier
+</features>
+<kb>
+- IF [subject = airplane OR subject = biplane OR subject = bird] THEN [0]
+- IF [subject = frog OR subject = toad OR subject = reptile] THEN [6]
+- IF [subject = horse] THEN [7]
+</kb>
+
+<rule_check>
+- The rule "IF [subject = horse] THEN [7]" fires because the Query Image clearly depicts a horse jumping over a fence.
+</rule_check>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=9.7409 | avg_trial_wall_seconds=3.2416 | avg_trial_api_seconds=3.0848 | system_fallback_count=0

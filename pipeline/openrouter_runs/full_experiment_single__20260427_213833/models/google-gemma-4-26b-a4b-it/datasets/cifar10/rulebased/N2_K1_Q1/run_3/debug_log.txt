@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=2 K=1 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<features>
+- subject: animal (cat)
+- color: grey and white
+- background: indoor setting
+</features>
+<kb>
+- IF [subject = animal] THEN [3]
+- IF [subject = vehicle] THEN [0]
+</kb>
+<rule_check>
+- The rule "IF [subject = animal] THEN [3]" fires because the image contains a grey and white animal (cat).
+</rule_check>
+
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- object: dark silhouette of a flying vehicle
+- background: blue sky with white clouds
+- shape: long body with wings and a tail fin
+</features>
+
+<kb>
+- IF [object = dark silhouette of a flying vehicle AND background = blue sky] THEN [0]
+- IF [object = animal with fur AND background = indoor/outdoor setting] THEN [3]
+</kb>
+
+<rule_check>
+- The rule for class 0 fires because the image contains a dark silhouette of a flying vehicle against a blue sky background.
+</rule_check>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.8602 | avg_trial_wall_seconds=2.4275 | avg_trial_api_seconds=2.4020 | system_fallback_count=0

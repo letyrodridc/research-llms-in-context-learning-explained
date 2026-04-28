@@ -1,0 +1,35 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- texture: woven pattern
+- material: natural fibers, possibly wood or straw
+- color: shades of brown
+- pattern: diagonal interlocking strips
+</features>
+<kb>
+- IF [texture = woven pattern AND material = natural fibers AND pattern = diagonal interlocking strips] THEN [44]
+- IF [texture = vertical folds AND material = fabric AND color = light/white] THEN [29]
+</kb>
+<rule_check>
+- The rule for class 44 fires because the Query Image displays a woven pattern made of natural fibers with diagonal interlocking strips, which matches the observable features of class 44.
+</rule_check>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[29] | Predicted=[44] | Correct=False
+<features>
+- texture: wavy, layered, fibrous
+- color: shades of brown and orange
+- pattern: irregular, overlapping strips
+- light: unevenly distributed, creating shadows and highlights
+</features>
+<kb>
+- IF [texture = regular diagonal lines AND color = black and beige] THEN [44]
+- IF [texture = vertical folds AND color = light/white AND presence of objects in foreground] THEN [29]
+- IF [texture = wavy, layered, fibrous AND color = shades of brown and orange AND pattern = irregular, overlapping strips] THEN [44]
+</kb>
+<rule_check>
+- The rule for class 44 fires because the Query Image exhibits a wavy, layered, fibrous texture, shades of brown and orange colors, and an irregular, overlapping strips pattern, which aligns with the features observed in the example for class 44.
+</rule_check>
+<response>44</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=1 | total=2 | errors=0 | accuracy=0.5000 | duration_seconds=5.0816 | avg_trial_wall_seconds=2.5377 | avg_trial_api_seconds=2.4167 | system_fallback_count=0

@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[36] | Predicted=[36] | Correct=True
+<features>
+- animal type: dog
+- fur color: black, tan, and gray/white
+- ears: erect, pointed
+- snout: short
+- eyes: dark
+</features>
+<kb>
+- IF [animal type = dog AND fur color includes black, tan, and gray/white AND ears are erect and pointed AND snout is short] THEN [36]
+- IF [animal type = cat AND fur color is light with dark points AND eyes are blue] THEN [6]
+</kb>
+<rule_check>
+- The rule for class 36 fires because the Query Image shows a dog with black, tan, and gray/white fur, erect and pointed ears, and a short snout.
+</rule_check>
+<response>36</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- animal type: cat
+- fur color: light body with dark brown/black points (face, ears, paws, tail)
+- eye color: blue
+- fur length: long and fluffy
+- body posture: sitting upright
+</features>
+<kb>
+- IF [animal type = cat AND fur color = light body with dark brown/black points AND eye color = blue AND fur length = long and fluffy] THEN [6]
+- IF [animal type = dog AND fur color = black and tan/brown with some grey/white AND fur length = medium to long] THEN [36]
+</kb>
+<rule_check>
+- The rule for class 6 fires because the Query Image shows an animal that is clearly a cat, has a light-colored body with dark brown/black points on its face, ears, and paws, has blue eyes, and long, fluffy fur. These features are consistent with the examples provided for class 6.
+</rule_check>
+<response>6</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.0335 | avg_trial_wall_seconds=2.0141 | avg_trial_api_seconds=1.6804 | system_fallback_count=0

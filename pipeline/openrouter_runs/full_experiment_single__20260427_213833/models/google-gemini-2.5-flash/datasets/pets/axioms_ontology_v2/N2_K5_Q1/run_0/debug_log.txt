@@ -1,0 +1,35 @@
+=== DEBUG LOG | dataset=pets | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=2 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[36] | Predicted=[36] | Correct=True
+<tbox>
+Class36 ⊑ hasVisualFeature(SmallSize) ⊓ hasVisualFeature(LongHair) ⊓ hasVisualFeature(ErectEars) ⊓ hasVisualFeature(BrownAndBlackFur)
+Class6 ⊑ hasVisualFeature(MediumSize) ⊓ hasVisualFeature(LongHair) ⊓ hasVisualFeature(BlueEyes) ⊓ hasVisualFeature(PointedColoration) ⊓ hasVisualFeature(DarkEars)
+</tbox>
+<abox>
+hasVisualFeature(Query, SmallSize)
+hasVisualFeature(Query, LongHair)
+hasVisualFeature(Query, ErectEars)
+hasVisualFeature(Query, BrownAndBlackFur)
+</abox>
+<dl_explanation>
+Class36 ⊑ hasVisualFeature(SmallSize) ⊓ hasVisualFeature(LongHair) ⊓ hasVisualFeature(ErectEars) ⊓ hasVisualFeature(BrownAndBlackFur)
+</dl_explanation>
+<response>36</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<tbox>
+Class_36 ⊑ hasVisualFeature(small_size) ⊓ hasVisualFeature(long_hair) ⊓ hasVisualFeature(brown_and_black_fur) ⊓ hasVisualFeature(pointed_ears)
+Class_6 ⊑ hasVisualFeature(medium_size) ⊓ hasVisualFeature(long_hair) ⊓ hasVisualFeature(light_colored_body_with_darker_extremities) ⊓ hasVisualFeature(blue_eyes) ⊓ hasVisualFeature(pointed_ears)
+</tbox>
+<abox>
+hasVisualFeature(Query, medium_size)
+hasVisualFeature(Query, long_hair)
+hasVisualFeature(Query, light_colored_body_with_darker_extremities)
+hasVisualFeature(Query, blue_eyes)
+hasVisualFeature(Query, pointed_ears)
+</abox>
+<dl_explanation>
+Class_6 ⊑ hasVisualFeature(medium_size) ⊓ hasVisualFeature(long_hair) ⊓ hasVisualFeature(light_colored_body_with_darker_extremities) ⊓ hasVisualFeature(blue_eyes) ⊓ hasVisualFeature(pointed_ears)
+</dl_explanation>
+<response>6</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.1347 | avg_trial_wall_seconds=2.0623 | avg_trial_api_seconds=1.7041 | system_fallback_count=0

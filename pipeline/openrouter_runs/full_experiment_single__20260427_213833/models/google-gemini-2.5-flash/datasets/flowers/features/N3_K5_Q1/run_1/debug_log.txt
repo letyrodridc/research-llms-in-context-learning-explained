@@ -1,0 +1,28 @@
+=== DEBUG LOG | dataset=flowers | prompt=features | model=google/gemini-2.5-flash | N=3 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[87] | Predicted=[87] | Correct=True
+<features>
+- petals curving upwards and backwards
+- petals fused at the base forming a cup-like structure
+- distinct color difference between the base and the tips of the petals
+- petals are generally broad and rounded at the tips
+</features>
+<response>87</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[92] | Predicted=[92] | Correct=True
+<features>
+- elongated, cone-shaped pink/purple bracts
+- small purple flowers emerging from the bracts
+- long, thin green leaves
+</features>
+<response>92</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- yellow petals
+- three large, drooping lower petals
+- three smaller, upright upper petals
+- dark lines or patterns on the lower petals
+</features>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=6.1638 | avg_trial_wall_seconds=2.0519 | avg_trial_api_seconds=1.4597 | system_fallback_count=0

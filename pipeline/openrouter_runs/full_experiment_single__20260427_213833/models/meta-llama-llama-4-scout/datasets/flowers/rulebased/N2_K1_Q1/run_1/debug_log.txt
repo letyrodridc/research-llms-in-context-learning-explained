@@ -1,0 +1,37 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=meta-llama/llama-4-scout | N=2 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- observable feature: petal color
+- observable feature: petal shape
+- observable feature: petal number
+</features>
+<kb>
+- IF petal color = purple AND petal shape = rounded THEN 81
+- IF petal color = yellow AND petal shape = curved THEN 14
+</kb>
+
+<rule_check>
+- The Query Image has petals that are pink, which does not exactly match either rule. However, the shape of the petals is more similar to the example labeled 81, with rounded petals. The number of petals and their arrangement also resemble those in the example labeled 81.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- observable feature: petal shape
+- observable feature: petal color
+- observable feature: leaf shape
+</features>
+<kb>
+- IF petal shape = curved AND petal color = purple THEN 81
+- IF petal shape = straight AND petal color = yellow THEN 14
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF petal shape = straight AND petal color = yellow THEN 14, 
+because the Query Image has petals that are straight and yellow.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=8.6242 | avg_trial_wall_seconds=4.3063 | avg_trial_api_seconds=3.9459 | system_fallback_count=0

@@ -1,0 +1,55 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemini-2.5-flash | N=3 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- object shape: elongated body with wings extending from the sides
+- object position: appears to be in the sky
+- object color: shades of blue and green
+- presence of propeller: visible at the front of the object
+</features>
+<kb>
+- IF [object shape = elongated body with wings AND object position = in the sky OR object position = on the ground] THEN [0]
+- IF [object shape = squat, rounded body with visible limbs AND object position = on the ground or partially submerged] THEN [6]
+- IF [object shape = four-legged animal with a mane and tail AND object position = on the ground] THEN [7]
+</kb>
+<rule_check>
+- The rule for class 0 fires because the query image shows an object with an elongated body and wings, and it is positioned in the sky, which matches the observable features for class 0.
+</rule_check>
+<response>0</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- overall shape: somewhat rounded, irregular blob
+- color: predominantly light brown/tan with some darker spots/texture
+- texture: mottled, bumpy appearance
+- limbs: short, thick limbs visible, suggesting a squat posture
+- background: appears to be a textured, earthy surface
+</features>
+<kb>
+- IF [overall shape is elongated with distinct wings and/or tail, or a clear outline of an aircraft] THEN [0]
+- IF [overall shape is a squat, somewhat rounded or irregular blob, with mottled or bumpy texture, and short, thick limbs visible] THEN [6]
+- IF [overall shape is a large, four-legged animal with a distinct head, body, and tail, often with a mane or bridle visible] THEN [7]
+</kb>
+<rule_check>
+- The rule for class 6 fires because the Query Image shows an overall squat, somewhat rounded, irregular blob shape, with a mottled/bumpy texture, and short, thick limbs visible, which aligns with the observable features of class 6 examples.
+</rule_check>
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- main subject: animal with a rider
+- animal shape: quadrupedal, horse-like
+- background: green/brown, possibly foliage
+- foreground: brown, possibly ground
+- additional objects: red and white striped barrier
+</features>
+<kb>
+- IF [main subject is an airplane or aircraft] THEN [0]
+- IF [main subject is a frog or toad] THEN [6]
+- IF [main subject is a horse, with or without a rider] THEN [7]
+</kb>
+<rule_check>
+- The rule "IF [main subject is a horse, with or without a rider] THEN [7]" fires because the query image clearly shows a horse with a rider as the main subject.
+</rule_check>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=6.4777 | avg_trial_wall_seconds=2.1526 | avg_trial_api_seconds=1.9841 | system_fallback_count=0

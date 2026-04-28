@@ -1,0 +1,53 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=meta-llama/llama-4-scout | N=3 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[71] | Predicted=[71] | Correct=True
+<tbox>
+- [71] ⊑ hasVisualFeature([big_and_showy_flowers])
+- [68] ⊑ hasVisualFeature([white_petal_and_yellow_center])
+- [33] ⊑ hasVisualFeature([single_pink_flower])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [big_and_showy_flowers])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [71] ⊑ hasVisualFeature([big_and_showy_flowers])
+</dl_explanation>
+
+<response>71</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[68] | Predicted=[68] | Correct=True
+<tbox>
+- [71] ⊑ hasVisualFeature([pink-color, multiple-petals])
+- hasVisualFeature([white-color, multiple-petals, yellow-center]) ⊑ [68]
+- [33] ⊑ hasVisualFeature([single-flower, pink-color, yellow-center, many-petals])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [white-color, multiple-petals, yellow-center])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  hasVisualFeature([white-color, multiple-petals, yellow-center]) ⊑ [68]
+</dl_explanation>
+
+<response>68</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[33] | Predicted=[33] | Correct=True
+<tbox>
+- [71] ⊑ hasVisualFeature([big-petals-many-colors])
+- [68] ⊑ hasVisualFeature([star-shaped-petals-white])
+- [33] ⊑ hasVisualFeature([single-petals-pink-yellow-center])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [single-petals-pink-yellow-center])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [33] ⊑ hasVisualFeature([single-petals-pink-yellow-center])
+</dl_explanation>
+
+<response>33</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=10.0581 | avg_trial_wall_seconds=3.3453 | avg_trial_api_seconds=3.0143 | system_fallback_count=0

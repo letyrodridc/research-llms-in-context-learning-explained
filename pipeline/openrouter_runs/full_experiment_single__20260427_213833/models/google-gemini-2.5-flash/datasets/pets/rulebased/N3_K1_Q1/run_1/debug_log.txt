@@ -1,0 +1,57 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=google/gemini-2.5-flash | N=3 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[35] | Predicted=[35] | Correct=True
+<features>
+- animal type: dog
+- fur color: light brown/tan
+- fur texture: shaggy/wavy
+- object in mouth: green stick-like object
+- eye color: one brown, one yellow/amber
+</features>
+<kb>
+- IF [animal type = dog AND fur color = light brown/tan AND fur texture = shaggy/wavy] THEN [35]
+- IF [animal type = cat AND fur color = grey AND eye color = yellow/green AND body shape = rounded] THEN [27]
+- IF [animal type = cat AND fur color = grey AND body shape = rounded AND location = sink] THEN [9]
+</kb>
+<rule_check>
+- The rule for class 35 fires because the Query Image shows a dog with light brown/tan, shaggy/wavy fur, which matches the defining features for this class.
+</rule_check>
+<response>35</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[9] | Predicted=[9] | Correct=True
+<features>
+- animal type: cat
+- fur color: solid grey/blue
+- eye color: yellow/orange
+- body shape: stocky/round
+- head shape: round
+- ear shape: short, rounded tips
+</features>
+<kb>
+- IF [animal type = cat AND fur color = solid grey/blue AND eye color = yellow/orange AND body shape = stocky/round AND head shape = round AND ear shape = short, rounded tips] THEN [9]
+- IF [animal type = cat AND fur color = solid grey/blue AND eye color = yellow/green AND body shape = slender/athletic AND head shape = wedge-shaped AND ear shape = large, pointed] THEN [27]
+- IF [animal type = dog AND fur color = light brown/tan AND fur texture = shaggy/wavy AND face obscured by fur AND wearing a bandana] THEN [35]
+</kb>
+<rule_check>
+- The rule for class 9 fires because the Query Image shows a cat with solid grey/blue fur, yellow/orange eyes, a stocky/round body, a round head, and short, rounded ear tips, which matches all the specified features for class 9.
+</rule_check>
+<response>9</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[27] | Predicted=[27] | Correct=True
+<features>
+- animal type: cat
+- fur color: solid grey
+- eye color: green
+- ear shape: pointed, relatively large
+- body posture: lying down, front paws crossed
+</features>
+<kb>
+- IF [animal type = dog AND fur texture = shaggy AND fur color = light brown/tan] THEN [35]
+- IF [animal type = cat AND fur color = solid grey AND body shape = stout/round AND ears = relatively small and rounded] THEN [9]
+- IF [animal type = cat AND fur color = solid grey AND eye color = green/yellow AND ears = pointed and relatively large] THEN [27]
+</kb>
+<rule_check>
+- The rule for class 27 fires because the Query Image shows a cat with solid grey fur, green eyes, and pointed, relatively large ears.
+</rule_check>
+<response>27</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=6.4983 | avg_trial_wall_seconds=2.1645 | avg_trial_api_seconds=1.9591 | system_fallback_count=0

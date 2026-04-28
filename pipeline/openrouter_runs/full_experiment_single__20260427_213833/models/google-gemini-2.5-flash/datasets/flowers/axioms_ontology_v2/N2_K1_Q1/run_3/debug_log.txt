@@ -1,0 +1,32 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+81 ⊑ hasVisualFeature(FlowerPetals[color(pink, white), shape(broad, pointed_tip), count(6-8)]) ⊓ hasVisualFeature(FlowerCenter[color(dark_red), texture(fuzzy)]) ⊓ hasVisualFeature(Background[color(green)])
+14 ⊑ hasVisualFeature(FlowerPetals[color(yellow), shape(irregular, drooping), count(3-6)]) ⊓ hasVisualFeature(FlowerCenter[color(yellow, white), texture(smooth)]) ⊓ hasVisualFeature(Background[color(green)])
+</tbox>
+<abox>
+hasVisualFeature(Query, FlowerPetals[color(purple), shape(broad, pointed_tip), count(5)])
+hasVisualFeature(Query, FlowerCenter[color(light_green), texture(fuzzy)])
+hasVisualFeature(Query, Background[color(green)])
+</abox>
+<dl_explanation>
+The query image shares the visual features of broad, pointed-tip petals and a fuzzy flower center with class 81, despite differences in color and petal count. It does not share the irregular, drooping petals or smooth flower center of class 14.
+</dl_explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+14 ⊑ hasVisualFeature(yellow_petals) ⊓ hasVisualFeature(three_large_downward_petals) ⊓ hasVisualFeature(three_smaller_upward_petals)
+81 ⊑ hasVisualFeature(pink_and_white_petals) ⊓ hasVisualFeature(six_to_eight_petals) ⊓ hasVisualFeature(central_dark_red_stamen_cluster)
+</tbox>
+<abox>
+hasVisualFeature(Query, yellow_petals)
+hasVisualFeature(Query, three_large_downward_petals)
+hasVisualFeature(Query, three_smaller_upward_petals)
+</abox>
+<dl_explanation>
+Rule(s) fired: 14 ⊑ hasVisualFeature(yellow_petals) ⊓ hasVisualFeature(three_large_downward_petals) ⊓ hasVisualFeature(three_smaller_upward_petals)
+</dl_explanation>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.1716 | avg_trial_wall_seconds=2.0830 | avg_trial_api_seconds=1.9225 | system_fallback_count=0

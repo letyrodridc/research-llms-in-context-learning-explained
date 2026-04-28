@@ -1,0 +1,82 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=4 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- subject: white horse
+- background: green grass and dark foliage
+</features>
+<kb>
+- IF [subject = white horse] THEN [7]
+- IF [subject = sailboat] THEN [8]
+- IF [subject = airplane] THEN [0]
+- IF [subject = deer] THEN [4]
+</kb>
+
+<rule_check>
+- The rule "IF [subject = white horse] THEN [7]" fires because the Query Image depicts a white horse.
+</rule_check>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- object: large dark vessel with structures on top
+- setting: water/sea
+</features>
+
+<kb>
+- IF [object = large dark vessel AND setting = water] THEN [8]
+- IF [object = animal AND setting = grass] THEN [4 or 7]
+- IF [object = airplane] THEN [0]
+</kb>
+
+<rule_check>
+- The query image shows a large dark vessel on the water. While class 8 is a sailboat, the visual pattern of a large vessel on water is most closely related to the maritime theme of class 8 compared to the other options (airplane, animal, or horse). However, looking at the provided examples, class 8 is a sailboat. Let's re-evaluate.
+- Class 7: Horse (animal on grass)
+- Class 8: Sailboat (vessel on water)
+- Class 0: Airplane (aircraft)
+- Class 4: Animal (on grass)
+- The query image is a large ship on water. Among the choices, class 8 is the only one representing a water vessel.
+</rule_check>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- object: dark-colored aircraft/plane
+- background: sandy/desert-like ground and blue sky
+</features>
+
+<kb>
+- IF [object = white aircraft] THEN [0]
+- IF [object = brown animal in grass] THEN [4]
+- IF [object = grey horse in grass] THEN [7]
+- IF [object = white sailboat on water] THEN [8]
+</kb>
+
+<rule_check>
+The query image shows a dark-colored aircraft. While the provided examples for class 0 show a white aircraft, the query image is the only one containing an aircraft. However, looking at the available labels and the visual content, the query image is an aircraft. Re-evaluating the classes: 0 is an airplane. The query image is a dark airplane.
+</rule_check>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- subject: animal
+- subject color: brown
+- background: dark/shadowy area with some green foliage
+</features>
+
+<kb>
+- IF [subject is a white/grey four-legged animal in a field] THEN [7]
+- IF [subject is a white triangular sail on water] THEN [8]
+- IF [subject is a large white aircraft] THEN [0]
+- IF [subject is a brown animal in a green field] THEN [4]
+</kb>
+
+<rule_check>
+- The Query Image shows a brown animal in a dark/shadowy environment with some green, which most closely aligns with the pattern of a brown animal seen in class 4, although the background is darker.
+</rule_check>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=14.5575 | avg_trial_wall_seconds=3.6376 | avg_trial_api_seconds=3.5914 | system_fallback_count=0

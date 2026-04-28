@@ -1,0 +1,55 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=meta-llama/llama-4-scout | N=3 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- observable feature: potholes
+- observable feature: road
+</features>
+<kb>
+- IF [potholes = present AND road = present] THEN [32]
+- IF [texture = smooth AND surface = flat] THEN [8]
+- IF [bumps = present AND surface = rough] THEN [4]
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF [potholes = present AND road = present] THEN [32], because the Query Image shows potholes on a road.
+</rule_check>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- texture: fabric
+- color: black
+- pattern: visible grid
+</features>
+<kb>
+- IF [texture = fabric AND color = various AND pattern = various] THEN [8]
+- IF [texture = rough AND color = gray AND pattern = potholes] THEN [32]
+- IF [texture = smooth AND color = various AND pattern = bumps] THEN [4]
+</kb>
+
+<rule_check>
+- The Query Image shows a fabric texture, which aligns with classes 8. The color is primarily black, and the pattern is a visible grid, which is consistent with class 8.
+</rule_check>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[4] | Predicted=[32] | Correct=False
+<features>
+- texture: rough
+- pattern: scale-like
+- color: dark
+</features>
+<kb>
+- IF [texture = rough AND pattern = scale-like AND color = dark] THEN [32]
+- IF [texture = smooth AND pattern = grid AND color = bright] THEN [8]
+- IF [texture = bumpy AND pattern = rounded AND color = varied] THEN [4]
+</kb>
+
+<rule_check>
+- The rule for class 32 fires for the Query Image because it has a rough texture, a scale-like pattern, and a dark color.
+</rule_check>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=3 | errors=0 | accuracy=0.6667 | duration_seconds=13.8796 | avg_trial_wall_seconds=4.6225 | avg_trial_api_seconds=3.1557 | system_fallback_count=0

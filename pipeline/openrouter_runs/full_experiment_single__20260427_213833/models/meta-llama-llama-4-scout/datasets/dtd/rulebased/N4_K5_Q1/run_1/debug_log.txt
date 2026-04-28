@@ -1,0 +1,78 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=meta-llama/llama-4-scout | N=4 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[43] | Predicted=[43] | Correct=True
+<features>
+- waffle pattern: present
+- syrup: present
+</features>
+<kb>
+- IF waffle pattern = present AND syrup = absent THEN 43
+- IF waffle pattern = absent AND syrup = absent THEN 34
+- IF waffle pattern = absent AND syrup = absent AND dots = present THEN 10
+- IF waffle pattern = absent AND dots = absent AND texture = present THEN 4
+</kb>
+
+<rule_check>
+- The Query Image has waffle pattern and syrup, which does not directly match any rule. However, based on the presence of waffle pattern and syrup, it seems closest to class 43.
+</rule_check>
+
+<response>43</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[34] | Predicted=[43] | Correct=False
+<features>
+- color: green
+- color: red
+- object: tomato
+</features>
+<kb>
+- IF [object = tomato] THEN [43]
+- IF [color = green AND color = red AND object = tomato] THEN [43]
+- IF [color = black AND color = white] THEN [34]
+- IF [color = pink] THEN [10]
+- IF [object = sand OR object = earring OR object = blue object OR object = bump] THEN [4]
+</kb>
+
+<rule_check>
+- Rule [43] is satisfied for the Query Image because it contains a tomato, which matches the condition for class 43. 
+</rule_check>
+
+<response>43</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[10] | Predicted=[34] | Correct=False
+<features>
+- dot pattern: present
+- abstract art style: present
+</features>
+<kb>
+- IF [dot pattern = present AND abstract art style = present] THEN [34]
+- IF [dot pattern = present] THEN [10]
+- IF [abstract art style = present] THEN [34]
+</kb>
+
+<rule_check>
+- Rule 34 fires because the image exhibits an abstract art style and a dot pattern.
+</rule_check>
+
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[4] | Predicted=[43] | Correct=False
+<features>
+- color: orange
+- color: yellow
+- color: brown
+- shape: various
+- texture: bumpy
+</features>
+<kb>
+- IF [color = orange AND/OR color = yellow AND/OR color = brown AND shape = various AND texture = bumpy] THEN [43]
+- IF [color = black AND/OR color = white AND texture = smooth] THEN [34]
+- IF [color = pink AND/OR color = red AND pattern = polka dots] THEN [10]
+- IF [texture = bumpy AND/OR shape = organic] THEN [4]
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF [color = orange AND/OR color = yellow AND/OR color = brown AND shape = various AND texture = bumpy] THEN [43], because the image shows variously shaped and colored squash and gourds, which have a bumpy texture.
+</rule_check>
+
+<response>43</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=1 | total=4 | errors=0 | accuracy=0.2500 | duration_seconds=19.4894 | avg_trial_wall_seconds=4.8700 | avg_trial_api_seconds=2.9733 | system_fallback_count=0

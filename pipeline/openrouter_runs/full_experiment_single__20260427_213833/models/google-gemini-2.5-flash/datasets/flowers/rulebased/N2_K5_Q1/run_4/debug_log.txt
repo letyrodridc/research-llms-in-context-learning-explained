@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=5 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[75] | Predicted=[75] | Correct=True
+<features>
+- flower shape: trumpet-shaped, fused petals
+- petal arrangement: radial symmetry, petals appear to be fused into a single structure
+- center of flower: distinct, lighter color (yellowish-white) with radiating lines of color (purple)
+- overall color: predominantly white/light blue with purple stripes
+- background: green leaves and foliage
+</features>
+<kb>
+- IF [flower shape is trumpet-shaped with fused petals AND/OR flower has radial symmetry with a distinct center and radiating lines] THEN [75]
+- IF [flower shape is orchid-like with distinct, often ruffled petals AND/OR flower has a prominent labellum (lip petal) that is often a different color or texture] THEN [35]
+</kb>
+<rule_check>
+- The rule for class 75 fires because the Query Image displays a trumpet-shaped flower with fused petals and radial symmetry, featuring a distinct center with radiating purple lines, which are all consistent with the observable features of class 75 examples.
+</rule_check>
+<response>75</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[35] | Predicted=[35] | Correct=True
+<features>
+- flower shape: irregular, with distinct petals and a prominent central lip
+- petal arrangement: five main petals, with two upper petals, two side petals, and one lower, larger, often frilly lip petal
+- central part: distinct, often contrasting color, with a yellow or orange center
+- overall color: light purple/pink petals with a darker purple/pink and yellow/orange central lip
+- background: dark, out of focus, with some green leaves visible
+</features>
+<kb>
+- IF [flower shape is trumpet-like or funnel-shaped AND/OR petals are fused forming a single bell-like structure AND/OR flower has a prominent central starburst pattern] THEN [75]
+- IF [flower shape is irregular with distinct petals, including a prominent central lip AND/OR flower has a complex central structure with contrasting colors] THEN [35]
+</kb>
+<rule_check>
+- The rule for class 35 fires for the Query Image because the flower has an irregular shape with distinct petals, including a prominent central lip, and a complex central structure with contrasting colors (light purple petals, darker purple and yellow central lip). These features are consistent with the examples provided for class 35.
+</rule_check>
+<response>35</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=5.7293 | avg_trial_wall_seconds=2.8621 | avg_trial_api_seconds=2.5311 | system_fallback_count=0

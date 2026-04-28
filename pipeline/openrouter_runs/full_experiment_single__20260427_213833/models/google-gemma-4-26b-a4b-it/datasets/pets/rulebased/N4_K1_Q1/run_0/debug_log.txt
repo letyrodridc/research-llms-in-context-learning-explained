@@ -1,0 +1,85 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=4 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[19] | Predicted=[19] | Correct=True
+<features>
+- animal type: dog
+- fur color: brown and black
+- fur texture: thick/fluffy
+- facial features: large black snout, long pink tongue
+</features>
+
+<kb>
+- IF [animal type = dog] THEN [19]
+- IF [animal type = cat AND fur color = tan/cream with dark face] THEN [32]
+- IF [animal type = cat AND fur color = white/cream] THEN [26]
+- IF [animal type = cat AND fur color = grey/tabby] THEN [20]
+</kb>
+
+<rule_check>
+- The rule "IF [animal type = dog] THEN [19]" fires because the Query Image depicts a dog.
+</rule_check>
+
+<response>19</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- animal type: cat
+- fur color: cream/light tan body with dark brown/black face and tail
+- ear color: dark
+- pattern: point coloration (dark extremities)
+</features>
+
+<kb>
+- IF [animal type = dog] THEN [19]
+- IF [animal type = cat AND fur color = cream/light tan body with dark brown/black face and tail] THEN [32]
+- IF [animal type = cat AND fur color = white/cream with long fluffy fur] THEN [26]
+- IF [animal type = cat AND fur color = grey/brown tabby with long fluffy fur] THEN [20]
+</kb>
+
+<rule_check>
+- The rule for class 32 fires because the Query Image shows a cat with a light-colored body and dark-colored face and tail (point coloration), which matches the pattern seen in the second example.
+</rule_check>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[26] | Predicted=[26] | Correct=True
+<features>
+- animal type: cat
+- fur color: white/cream
+- fur texture: long/fluffy
+- tail color: dark/grey tip
+</features>
+<kb>
+- IF [animal type = dog] THEN [19]
+- IF [animal type = cat AND fur color = Siamese pattern (dark face/ears/paws)] THEN [32]
+- IF [animal type = cat AND fur color = light/cream AND fur texture = long/fluffy] THEN [26]
+- IF [animal type = cat AND fur color = grey/tabby AND fur texture = long/fluffy] THEN [20]
+</kb>
+
+<rule_check>
+- The rule for class 26 fires because the Query Image shows a cat with light/cream colored long, fluffy fur.
+</rule_check>
+
+<response>26</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[20] | Predicted=[20] | Correct=True
+<features>
+- animal type: cat
+- fur pattern: tabby stripes (dark stripes on lighter background)
+- fur color: brown, black, and white
+- fur texture: medium length
+</features>
+
+<kb>
+- IF [animal type = dog] THEN [19]
+- IF [animal type = cat AND fur pattern = solid/point color] THEN [32]
+- IF [animal type = cat AND fur pattern = solid/light color] THEN [26]
+- IF [animal type = cat AND fur pattern = tabby stripes] THEN [20]
+</kb>
+
+<rule_check>
+- The rule for class 20 fires because the Query Image shows a cat with distinct dark tabby stripes on its body.
+</rule_check>
+
+<response>20</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=13.1231 | avg_trial_wall_seconds=3.2774 | avg_trial_api_seconds=3.0184 | system_fallback_count=0

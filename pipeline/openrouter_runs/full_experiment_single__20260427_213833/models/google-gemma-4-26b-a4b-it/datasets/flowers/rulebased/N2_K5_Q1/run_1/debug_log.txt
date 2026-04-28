@@ -1,0 +1,40 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=2 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[75] | Predicted=[75] | Correct=True
+<features>
+- flower shape: trumpet-shaped/funnel-shaped
+- flower color: deep blue/purple with a lighter center
+- petal texture: smooth with radial lines
+- background: green leaves and a fence
+</features>
+
+<kb>
+- IF [flower shape = trumpet-shaped AND flower color = blue/purple/pink] THEN [75]
+- IF [flower shape = orchid-like with distinct petals and labellum] THEN [35]
+</kb>
+
+<rule_check>
+- The rule for class 75 fires because the Query Image shows trumpet-shaped flowers in shades of blue and purple, which matches the pattern seen in the first five examples.
+</rule_check>
+
+<response>75</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[35] | Predicted=[35] | Correct=True
+<features>
+- flower shape: large petals with a distinct central trumpet-like structure (labellum)
+- petal texture: smooth, broad petals
+- flower color: light purple/lavender
+- background: dark/shadowed
+</features>
+
+<kb>
+- IF [flower shape = funnel-shaped/circular AND petal color = blue/purple/pink/white] THEN [75]
+- IF [flower shape = complex/orchid-like with a central labellum AND petal shape = elongated/broad petals] THEN [35]
+</kb>
+
+<rule_check>
+- The rule for class 35 fires because the Query Image shows a complex flower structure with elongated petals and a prominent, ruffled central labellum, which matches the pattern seen in the examples for class 35.
+</rule_check>
+
+<response>35</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=47.2413 | avg_trial_wall_seconds=23.6161 | avg_trial_api_seconds=23.2379 | system_fallback_count=0

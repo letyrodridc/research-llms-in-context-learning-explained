@@ -1,0 +1,77 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemini-2.5-flash | N=4 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[43] | Predicted=[43] | Correct=True
+<features>
+- color: predominantly pink/magenta
+- pattern: grid of raised square shapes
+- texture: smooth, glossy, possibly wet or gelatinous
+- shape of elements: squares with rounded edges
+</features>
+<kb>
+- IF [image shows a grid pattern of square or rectangular indentations/protrusions, often with a textured or baked appearance] THEN [43]
+- IF [image shows abstract patterns, brushstrokes, or blurred elements, often with varied colors and no clear distinct objects] THEN [34]
+- IF [image shows a pattern of distinct, often circular or oval, dots or small shapes scattered or arranged on a background] THEN [10]
+- IF [image shows a textured surface with sharp, pointed, or irregular protrusions, often organic in nature] THEN [4]
+</kb>
+<rule_check>
+- The rule for class 43 fires because the Query Image displays a clear grid pattern of raised square shapes, which aligns with the description of a grid pattern of square or rectangular indentations/protrusions.
+</rule_check>
+<response>43</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[34] | Predicted=[34] | Correct=True
+<features>
+- presence of abstract shapes and splatters: yes
+- presence of dripping paint: yes
+- presence of multiple colors: yes (black, orange, white)
+- absence of grid patterns: yes
+- absence of distinct circular patterns: yes
+- absence of textured surfaces with spikes or bumps: yes
+</features>
+<kb>
+- IF [image contains abstract shapes, splatters, or broad brushstrokes, and lacks clear, repetitive geometric patterns or natural textures like spikes/bumps] THEN [34]
+- IF [image contains a grid pattern with square or rectangular indentations, often with a uniform color or toppings] THEN [43]
+- IF [image contains numerous distinct circular patterns or dots, often arranged in a repetitive or semi-repetitive manner] THEN [10]
+- IF [image contains a highly textured surface with numerous sharp, pointed spikes or rounded bumps, resembling a fruit rind or a similar organic texture] THEN [4]
+</kb>
+<rule_check>
+- The rule for class 34 fires because the Query Image clearly displays abstract shapes, splatters, and dripping paint, which are characteristics of abstract art, and it lacks the clear, repetitive geometric patterns or natural textures seen in other classes.
+</rule_check>
+<response>34</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[10] | Predicted=[10] | Correct=True
+<features>
+- pattern: polka dots
+- dot color: black and grey
+- background color: white
+- dot arrangement: scattered
+- dot size: varied, some larger, some smaller
+</features>
+<kb>
+- IF [image shows a pattern of multiple distinct, generally circular shapes (dots) scattered across a background] THEN [10]
+- IF [image shows a textured surface with sharp, pointed protrusions or a rough, bumpy, irregular surface] THEN [4]
+- IF [image shows a grid-like pattern of raised squares or rectangles, often with a golden-brown color, possibly with toppings] THEN [43]
+- IF [image shows abstract brushstrokes, blurred elements, or a scene with indistinct forms and varied colors, resembling a painting or artistic rendering] THEN [34]
+</kb>
+<rule_check>
+- The rule for class 10 fires because the Query Image clearly shows a pattern of multiple distinct, generally circular shapes (dots) scattered across a white background, which is consistent with the examples of class 10.
+</rule_check>
+<response>10</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- texture: rough, bumpy, scaly
+- shape of individual elements: irregular, somewhat pointed or rounded protrusions
+- arrangement of elements: overlapping, dense, forming a larger conical or elongated shape
+- color: grayscale, dark tones
+</features>
+<kb>
+- IF [image shows a pattern of distinct, often rounded or pointed, protrusions or elements that are densely packed and/or overlapping, creating a textured surface] THEN [4]
+- IF [image shows a grid-like pattern of square or rectangular indentations, often with a uniform color or topping] THEN [43]
+- IF [image shows a pattern of distinct, often circular or oval, dots or rings, which may be uniformly or irregularly distributed] THEN [10]
+- IF [image shows abstract brushstrokes, blurred shapes, or a general lack of distinct, repeating patterns or clear objects] THEN [34]
+</kb>
+<rule_check>
+- The rule for class 4 fires because the Query Image displays a pattern of distinct, irregular, and somewhat pointed or rounded protrusions that are densely packed and overlapping, creating a textured surface, which is consistent with the observable features of class 4 examples.
+</rule_check>
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=13.8774 | avg_trial_wall_seconds=3.4674 | avg_trial_api_seconds=2.7567 | system_fallback_count=0

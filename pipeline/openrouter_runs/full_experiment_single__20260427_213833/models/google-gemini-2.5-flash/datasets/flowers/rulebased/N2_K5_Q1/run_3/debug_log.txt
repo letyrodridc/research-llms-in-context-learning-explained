@@ -1,0 +1,37 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[75] | Predicted=[75] | Correct=True
+<features>
+- flower shape: trumpet-shaped
+- flower color: purple and pink
+- flower center: lighter color, almost white
+- petals: fused, forming a single bell-like structure
+- leaves: heart-shaped, green
+- growth habit: climbing/vining (implied by leaves and background)
+</features>
+<kb>
+- IF [flower shape is trumpet-shaped AND petals are fused AND flower center is lighter than the outer petals] THEN [75]
+- IF [flower has distinct petals, typically 3 sepals and 3 petals, with a prominent labellum (lip) that is often frilly or distinctly colored, and the overall shape is more open and complex than a simple trumpet] THEN [35]
+</kb>
+<rule_check>
+The rule for class 75 fires because the Query Image shows flowers that are trumpet-shaped, have fused petals, and a lighter center, which are all consistent with the observable features of class 75 examples.
+</rule_check>
+<response>75</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[35] | Predicted=[35] | Correct=True
+<features>
+- flower color: predominantly light purple/pink
+- flower shape: irregular petals, with a distinct, often frilly, lower lip
+- flower center: darker purple/pink and yellow/orange hues in the center of the lower lip
+- number of flowers: multiple flowers visible, one prominent in the foreground
+- background: green leaves and some blurred structures
+</features>
+<kb>
+- IF [flower shape is bell-shaped or trumpet-shaped AND flower color is predominantly blue or purple with a white/yellow center] THEN [75]
+- IF [flower shape has irregular petals with a distinct, often frilly, lower lip AND flower color is predominantly pink, purple, or white with a contrasting darker center on the lower lip] THEN [35]
+</kb>
+<rule_check>
+- The rule for class 35 fires because the Query Image shows a flower with irregular petals and a distinct, frilly lower lip. The flower is predominantly light purple/pink with a darker purple/pink and yellow/orange center on the lower lip, which matches the description for class 35.
+</rule_check>
+<response>35</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.8286 | avg_trial_wall_seconds=2.4122 | avg_trial_api_seconds=2.0016 | system_fallback_count=0

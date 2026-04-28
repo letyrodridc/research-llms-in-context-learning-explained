@@ -1,0 +1,56 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=3 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<tbox>
+- [3] ⊑ hasVisualFeature([animal_face]) ⊓ hasVisualFeature([furry_texture])
+- [9] ⊑ hasVisualFeature([vehicle_body]) ⊓ hasVisualFeature([large_size])
+- [1] ⊑ hasVisualFeature([car_shape]) ⊓ hasVisualFeature([metallic_surface])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [animal_face])
+- hasVisualFeature(Query, [furry_texture])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [3] ⊑ hasVisualFeature([animal_face]) ⊓ hasVisualFeature([furry_texture])
+</dl_explanation>
+
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[9] | Predicted=[9] | Correct=True
+<tbox>
+- [3] ⊑ hasVisualFeature([animal_features])
+- [9] ⊑ hasVisualFeature([large_vehicle_features]) ⊓ hasVisualFeature([white_body])
+- [1] ⊑ hasVisualFeature([passenger_car_features])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [large_vehicle_features])
+- hasVisualFeature(Query, [white_body])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [9] ⊑ hasVisualFeature([large_vehicle_features]) ⊓ hasVisualFeature([white_body])
+</dl_explanation>
+
+<response>9</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[1] | Predicted=[1] | Correct=True
+<tbox>
+- [1] ≡ hasVisualFeature([car_shape]) ⊓ hasVisualFeature([metallic_surface])
+- [3] ≡ hasVisualFeature([animal_shape]) ⊓ hasVisualFeature([furry_texture])
+- [9] ≡ hasVisualFeature([large_vehicle_shape]) ⊓ hasVisualFeature([truck_features])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [car_shape])
+- hasVisualFeature(Query, [metallic_surface])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [1] ≡ hasVisualFeature([car_shape]) ⊓ hasVisualFeature([metallic_surface])
+</dl_explanation>
+
+<response>1</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=11.2247 | avg_trial_wall_seconds=3.7385 | avg_trial_api_seconds=3.6955 | system_fallback_count=0

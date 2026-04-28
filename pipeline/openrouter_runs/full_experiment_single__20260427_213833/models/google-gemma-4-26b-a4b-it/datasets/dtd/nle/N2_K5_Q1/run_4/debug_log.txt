@@ -1,0 +1,16 @@
+=== DEBUG LOG | dataset=dtd | prompt=nle | model=google/gemma-4-26b-a4b-it | N=2 K=5 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[17] | Predicted=[17] | Correct=True
+<explanation>
+The query image shows a surface composed of parallel vertical lines/strips, which is a pattern consistent with the textures shown in class 17 (corrugated or paneled surfaces). Class 32 is characterized by irregular, broken, and uneven surfaces like potholes in asphalt, which does not match this image.
+</explanation>
+
+<response>17</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<explanation>
+The query image shows a damaged asphalt road surface with large, irregular holes and uneven textures, which matches the visual characteristics of the examples labeled as class 32.
+</explanation>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.4307 | avg_trial_wall_seconds=2.2132 | avg_trial_api_seconds=1.8713 | system_fallback_count=0

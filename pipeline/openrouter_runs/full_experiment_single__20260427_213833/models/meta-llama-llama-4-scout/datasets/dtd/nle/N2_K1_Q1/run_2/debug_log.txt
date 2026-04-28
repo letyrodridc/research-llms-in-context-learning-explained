@@ -1,0 +1,18 @@
+=== DEBUG LOG | dataset=dtd | prompt=nle | model=meta-llama/llama-4-scout | N=2 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[44] | Predicted=[44] | Correct=True
+<explanation>
+The Query Image shows a woven pattern made of brown strips, which does not match the description of class 29. The image does not contain any curtains or silhouettes of objects, which are characteristics of class 29. Instead, it resembles a woven material. However, class 44 shows a similar pattern of woven or checkered design, suggesting that the Query Image is more likely to be of class 44.
+</explanation>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[29] | Predicted=[44] | Correct=False
+<explanation>
+The Query Image shows a pattern of folds and creases in a material that resembles fabric or sand, with a dominant color tone that is not as dark as the Query Image in label 29 but has a similar fold and pleat pattern. However, upon closer inspection, the Query Image more closely resembles the pattern in label 44 due to its similar fold lines and color tones, suggesting that it is more akin to fabric or a similar pliable material.
+
+
+</explanation>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=1 | total=2 | errors=0 | accuracy=0.5000 | duration_seconds=2.8416 | avg_trial_wall_seconds=1.4192 | avg_trial_api_seconds=1.0730 | system_fallback_count=0

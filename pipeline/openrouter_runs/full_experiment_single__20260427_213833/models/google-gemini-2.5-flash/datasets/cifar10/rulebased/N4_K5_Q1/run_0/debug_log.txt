@@ -1,0 +1,78 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemini-2.5-flash | N=4 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- presence of antlers: yes
+- body shape: elongated, four legs
+- background color: predominantly blue
+- animal color: dark brown/grey with some lighter areas
+</features>
+<kb>
+- IF [presence of antlers = yes AND body shape = elongated, four legs] THEN [4]
+- IF [presence of a beak = yes OR long neck = yes OR small body with wings = yes] THEN [2]
+- IF [body shape = broad, short legs AND skin texture = bumpy/smooth] THEN [6]
+- IF [body shape = robust, four legs, no antlers] THEN [7]
+</kb>
+<rule_check>
+- The rule for class 4 fires because the Query Image clearly shows an animal with antlers and an elongated body with four legs.
+</rule_check>
+<response>4</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[2] | Predicted=[2] | Correct=True
+<features>
+- prominent head and neck: visible
+- long, slender neck: visible
+- small head relative to neck: visible
+- beak: visible, short and broad
+- eye: visible, dark with a red area around it
+- color of neck: light brown/tan
+- color of beak/snout area: pink/red
+- background: blurred green and brown, suggesting foliage
+</features>
+<kb>
+- IF [animal has antlers AND/OR is a large brown quadruped] THEN [4]
+- IF [animal has a prominent head and neck, a beak, and often distinct color patterns on its body or head] THEN [2]
+- IF [animal is a frog or toad, often with textured skin and visible limbs] THEN [6]
+- IF [animal is a horse, typically a large quadruped with a mane and tail] THEN [7]
+</kb>
+<rule_check>
+- The rule for class 2 fires because the Query Image shows an animal with a prominent head and neck, a visible beak, and distinct color patterns (red around the eye and on the beak/snout area), which are consistent with the features observed in the examples for class 2.
+</rule_check>
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- prominent eye: dark, round, with a lighter center
+- skin texture: mottled, rough, brownish-tan
+- head shape: broad, somewhat flattened
+- background: blurred green and brown
+</features>
+<kb>
+- IF [animal has antlers] THEN [4]
+- IF [animal has a beak AND/OR prominent neck AND/OR feathers] THEN [2]
+- IF [animal has prominent, often bulging eyes AND/OR mottled, rough skin AND/OR a broad, flattened head] THEN [6]
+- IF [animal has a mane AND/OR is large and quadrupedal with a distinct head and body shape] THEN [7]
+</kb>
+<rule_check>
+- The rule for class 6 fires because the Query Image shows an animal with prominent, dark, round eyes, mottled and rough brownish-tan skin texture, and a broad, somewhat flattened head shape, which are all consistent with the features observed in the examples for class 6 (frogs/toads).
+</rule_check>
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- main subject: horse with a rider
+- horse color: brown/tan
+- background: green and dark horizontal lines
+- overall shape: quadrupedal animal with a human on its back
+</features>
+<kb>
+- IF [main subject is a bird OR main subject is an ostrich OR main subject is a small bird-like creature] THEN [2]
+- IF [main subject is a deer-like animal OR main subject is a brown animal with antlers OR main subject is a brown animal in a field] THEN [4]
+- IF [main subject is a frog OR main subject is a toad] THEN [6]
+- IF [main subject is a horse OR main subject is a horse with a rider] THEN [7]
+</kb>
+<rule_check>
+- The rule for class 7 fires because the query image clearly shows a horse with a rider, which directly matches the conditions for this class.
+</rule_check>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=11.2841 | avg_trial_wall_seconds=2.8185 | avg_trial_api_seconds=2.6091 | system_fallback_count=0

@@ -1,0 +1,31 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=2 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[75] | Predicted=[75] | Correct=True
+<tbox>
+Class75 ⊑ hasVisualFeature(BellShapedFlower) ⊓ hasVisualFeature(GreenLeaves)
+Class35 ⊑ hasVisualFeature(OrchidFlower) ⊓ hasVisualFeature(ProminentLabellum)
+</tbox>
+<abox>
+hasVisualFeature(Query, BellShapedFlower)
+hasVisualFeature(Query, GreenLeaves)
+</abox>
+<dl_explanation>
+Rule(s) fired: Class75 ⊑ hasVisualFeature(BellShapedFlower) ⊓ hasVisualFeature(GreenLeaves)
+</dl_explanation>
+<response>75</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[35] | Predicted=[35] | Correct=True
+<tbox>
+35 ⊑ hasVisualFeature(OrchidShape) ⊓ hasVisualFeature(ProminentLabellum) ⊓ hasVisualFeature(MultiplePetals)
+75 ⊑ hasVisualFeature(TrumpetShape) ⊓ hasVisualFeature(SingleFlower) ⊓ hasVisualFeature(BlueOrPurpleColor)
+</tbox>
+<abox>
+hasVisualFeature(Query, OrchidShape)
+hasVisualFeature(Query, ProminentLabellum)
+hasVisualFeature(Query, MultiplePetals)
+</abox>
+<dl_explanation>
+Rule(s) fired: 35 ⊑ hasVisualFeature(OrchidShape) ⊓ hasVisualFeature(ProminentLabellum) ⊓ hasVisualFeature(MultiplePetals)
+</dl_explanation>
+<response>35</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.0272 | avg_trial_wall_seconds=2.0082 | avg_trial_api_seconds=1.5891 | system_fallback_count=0

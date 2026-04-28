@@ -1,0 +1,54 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=3 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[0] | Predicted=[0] | Correct=True
+<tbox>
+- [0] ⊑ hasVisualFeature([airplane])
+- [6] ⊑ hasVisualFeature([amphibian])
+- [7] ⊑ hasVisualFeature([horse])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [airplane])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [0] ⊑ hasVisualFeature([airplane])
+</dl_explanation>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<tbox>
+- [0] ⊑ hasVisualFeature([aircraft])
+- [6] ≡ hasVisualFeature([small_animal]) ⊓ hasVisualFeature([four_legs])
+- [7] ≡ hasVisualFeature([large_animal]) ⊓ hasVisualFeature([four_legs])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [small_animal])
+- hasVisualFeature(Query, [four_legs])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [6] ≡ hasVisualFeature([small_animal]) ⊓ hasVisualFeature([four_legs])
+</dl_explanation>
+
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[7] | Predicted=[7] | Correct=True
+<tbox>
+- [0] ⊑ hasVisualFeature([airplane])
+- [6] ⊑ hasVisualFeature([amphibian])
+- [7] ⊑ hasVisualFeature([horse])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [horse])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [7] ⊑ hasVisualFeature([horse])
+</dl_explanation>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=10.2070 | avg_trial_wall_seconds=3.3981 | avg_trial_api_seconds=3.3059 | system_fallback_count=0

@@ -1,0 +1,40 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=features | model=meta-llama/llama-4-scout | N=4 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- small ears
+- small eyes
+- small nose
+- white and brown fur
+- small body
+</features>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[2] | Predicted=[2] | Correct=True
+<features>
+- small body
+- brown and white color
+- short beak
+</features>
+
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- blurry
+- green
+- leaves
+</features>
+
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- horse
+- white
+- rearing
+</features>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=7.3363 | avg_trial_wall_seconds=1.8257 | avg_trial_api_seconds=1.3415 | system_fallback_count=0

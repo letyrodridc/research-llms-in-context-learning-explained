@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=pets | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=2 K=5 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[36] | Predicted=[36] | Correct=True
+<tbox>
+Class_36 ⊑ hasVisualFeature(LongHair) ⊓ hasVisualFeature(SmallSize) ⊓ hasVisualFeature(ErectEars) ⊓ hasVisualFeature(BrownAndBlackFur)
+Class_6 ⊑ hasVisualFeature(LongHair) ⊓ hasVisualFeature(MediumSize) ⊓ hasVisualFeature(BlueEyes) ⊓ hasVisualFeature(PointColoration)
+</tbox>
+<abox>
+hasVisualFeature(Query, LongHair)
+hasVisualFeature(Query, SmallSize)
+hasVisualFeature(Query, ErectEars)
+hasVisualFeature(Query, BrownAndBlackFur)
+</abox>
+<dl_explanation>
+Class_36 ⊑ hasVisualFeature(LongHair) ⊓ hasVisualFeature(SmallSize) ⊓ hasVisualFeature(ErectEars) ⊓ hasVisualFeature(BrownAndBlackFur)
+</dl_explanation>
+<response>36</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<tbox>
+6 ⊑ hasVisualFeature(cat_like_animal) ⊓ hasVisualFeature(light_colored_fur_on_body) ⊓ hasVisualFeature(dark_colored_fur_on_face_and_ears) ⊓ hasVisualFeature(blue_eyes)
+36 ⊑ hasVisualFeature(dog_like_animal) ⊓ hasVisualFeature(brown_and_black_fur) ⊓ hasVisualFeature(long_fur) ⊓ hasVisualFeature(erect_ears)
+</tbox>
+<abox>
+hasVisualFeature(Query, cat_like_animal)
+hasVisualFeature(Query, light_colored_fur_on_body)
+hasVisualFeature(Query, dark_colored_fur_on_face_and_ears)
+hasVisualFeature(Query, blue_eyes)
+</abox>
+<dl_explanation>
+Rule(s) fired: 6 ⊑ hasVisualFeature(cat_like_animal) ⊓ hasVisualFeature(light_colored_fur_on_body) ⊓ hasVisualFeature(dark_colored_fur_on_face_and_ears) ⊓ hasVisualFeature(blue_eyes)
+</dl_explanation>
+<response>6</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.9216 | avg_trial_wall_seconds=1.9577 | avg_trial_api_seconds=1.6700 | system_fallback_count=0

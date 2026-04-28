@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=meta-llama/llama-4-scout | N=2 K=1 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[2] | Predicted=[2] | Correct=True
+<features>
+- color: black
+- color: green
+- type: dog
+</features>
+<kb>
+- IF type = dog AND color = black THEN 2
+- IF type = cat AND color = brown THEN 5
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF type = dog AND color = black THEN 2, because the Query Image shows a black dog.
+</rule_check>
+
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[5] | Predicted=[5] | Correct=True
+<features>
+- eye color: green
+- fur pattern: striped
+- whiskers: present
+</features>
+<kb>
+- IF fur pattern = striped AND eye color = green AND whiskers = present THEN 5
+- IF fur pattern = brindle AND eye color = brown THEN 2
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF fur pattern = striped AND eye color = green AND whiskers = present THEN 5, because the Query Image shows a cat with a striped fur pattern, green eyes, and present whiskers.
+</rule_check>
+
+<response>5</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=5.8308 | avg_trial_wall_seconds=2.9111 | avg_trial_api_seconds=2.6776 | system_fallback_count=0

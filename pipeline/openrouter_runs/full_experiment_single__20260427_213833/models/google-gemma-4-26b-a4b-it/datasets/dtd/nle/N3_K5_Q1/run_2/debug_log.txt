@@ -1,0 +1,23 @@
+=== DEBUG LOG | dataset=dtd | prompt=nle | model=google/gemma-4-26b-a4b-it | N=3 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[32] | Predicted=[32] | Correct=True
+<explanation>
+The query image shows a road surface with multiple depressions and puddles of water, which is consistent with the visual patterns of potholes and damaged road surfaces seen in the examples labeled '32'.
+</explanation>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<explanation>
+The query image shows a textured, patterned surface with a cross-hatched or stippled appearance, which is visually similar to the texture patterns seen in the examples for class 8.
+</explanation>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[4] | Predicted=[4] | Correct=True
+<explanation>
+The query image shows a close-up of a textured, yellowish surface with sharp, pointed protrusions. This visual pattern of spikes/bumps is consistent with the examples provided for class 4.
+</explanation>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=6.9266 | avg_trial_wall_seconds=2.3065 | avg_trial_api_seconds=1.9817 | system_fallback_count=0

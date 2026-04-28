@@ -1,0 +1,30 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[44] | Predicted=[44] | Correct=True
+<tbox>
+44 ⊑ hasVisualFeature(WovenPattern) ⊓ hasVisualFeature(MadeOfRope) ⊓ hasVisualFeature(BrownColor)
+29 ⊑ hasVisualFeature(WavyZigzagPattern) ⊓ hasVisualFeature(MonochromaticGray) ⊓ hasVisualFeature(SmoothTexture)
+</tbox>
+<abox>
+hasVisualFeature(Query, WovenPattern)
+hasVisualFeature(Query, BrownColor)
+</abox>
+<dl_explanation>
+Rule(s) fired: 44 ⊑ hasVisualFeature(WovenPattern) ⊓ hasVisualFeature(MadeOfRope) ⊓ hasVisualFeature(BrownColor)
+</dl_explanation>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<tbox>
+29 ⊑ hasVisualFeature(zigzag_pattern) ⊓ hasVisualFeature(monochromatic_gray_color) ⊓ hasVisualFeature(fine_texture)
+44 ⊑ hasVisualFeature(braided_pattern) ⊓ hasVisualFeature(brown_color) ⊓ hasVisualFeature(coarse_texture)
+</tbox>
+<abox>
+hasVisualFeature(Query, horizontal_folds)
+hasVisualFeature(Query, light_pink_color)
+hasVisualFeature(Query, visible_strings)
+</abox>
+<dl_explanation>
+</dl_explanation>
+<response>29</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=2.6055 | avg_trial_wall_seconds=1.2972 | avg_trial_api_seconds=1.1997 | system_fallback_count=0

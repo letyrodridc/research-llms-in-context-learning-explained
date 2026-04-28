@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[17] | Predicted=[17] | Correct=True
+<features>
+- texture: rough, fibrous
+- pattern: wavy, parallel lines
+- color: reddish-brown
+- surface: uneven, raised ridges
+</features>
+<kb>
+- IF [image contains distinct, parallel lines or strips, which can be straight or slightly curved, and the surface appears relatively uniform or constructed] THEN [17]
+- IF [image contains irregular, broken, or uneven surfaces, often with depressions, holes, or puddles, indicating damage or natural erosion] THEN [32]
+</kb>
+<rule_check>
+- The rule for class 17 fires because the Query Image displays distinct, parallel lines that are wavy, and the surface appears to be a uniform texture, consistent with the "lines or strips" and "relatively uniform or constructed" aspects of the rule.
+</rule_check>
+<response>17</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- surface texture: rough and uneven
+- surface integrity: broken, with visible holes and patches of different materials
+- presence of distinct patterns: irregular shapes and varying shades of grey and black, indicating damage
+- overall appearance: deteriorated road or ground surface
+</features>
+<kb>
+- IF [surface texture is smooth and uniform AND/OR exhibits clear, repeating linear patterns] THEN [17]
+- IF [surface texture is rough and uneven AND/OR shows signs of damage like holes, cracks, or irregular patches] THEN [32]
+</kb>
+<rule_check>
+- The rule for class 32 fires because the query image displays a surface that is rough and uneven, with visible holes, cracks, and irregular patches of different materials, consistent with a damaged road or ground surface.
+</rule_check>
+<response>32</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.1606 | avg_trial_wall_seconds=2.0771 | avg_trial_api_seconds=1.7496 | system_fallback_count=0

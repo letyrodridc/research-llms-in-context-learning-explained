@@ -1,0 +1,38 @@
+=== DEBUG LOG | dataset=dtd | prompt=features | model=google/gemma-4-26b-a4b-it | N=4 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[18] | Predicted=[27] | Correct=False
+<features>
+- small repeating hexagonal pattern
+- dark color
+- grid-like texture
+</features>
+
+<response>27</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[22] | Predicted=[22] | Correct=True
+<features>
+- horizontal parallel lines
+- vertical line on left
+- white background
+</features>
+
+<response>22</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[23] | Predicted=[23] | Correct=True
+<features>
+- irregular dark veins
+- greyish-brown background
+- cracked texture
+</features>
+
+<response>23</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[27] | Predicted=[22] | Correct=False
+<features>
+- vertical black bars
+- rectangular cutouts
+- grid pattern
+</features>
+
+<response>22</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=4 | errors=0 | accuracy=0.5000 | duration_seconds=5.6901 | avg_trial_wall_seconds=1.4212 | avg_trial_api_seconds=1.1433 | system_fallback_count=0

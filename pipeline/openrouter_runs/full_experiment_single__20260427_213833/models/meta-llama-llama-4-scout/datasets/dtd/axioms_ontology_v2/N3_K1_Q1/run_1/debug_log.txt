@@ -1,0 +1,55 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=meta-llama/llama-4-scout | N=3 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<tbox>
+- [45] ⊑ hasVisualFeature([F5])
+- hasVisualFeature([F6]) ⊑ [10]
+- [19] ≡ hasVisualFeature([F7]) ⊓ hasVisualFeature([F8])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [F5])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [45] ⊑ hasVisualFeature([F5])
+</dl_explanation>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[10] | Predicted=[10] | Correct=True
+<tbox>
+- [45] ⊑ hasVisualFeature([water])
+- [10] ⊑ hasVisualFeature([multicolored_dots])
+- [19] ⊑ hasVisualFeature([floral_pattern])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [dots])
+- hasVisualFeature(Query, [monochromatic])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [10] ⊑ hasVisualFeature([multicolored_dots])
+</dl_explanation>
+
+<response>10</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[19] | Predicted=[19] | Correct=True
+<tbox>
+- [45] ⊑ hasVisualFeature([wavy lines])
+- hasVisualFeature([dots]) ⊑ [10]
+- [19] ≡ hasVisualFeature([floral pattern]) ⊓ hasVisualFeature([intricate design])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [intricate design])
+- hasVisualFeature(Query, [floral pattern])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [19] ≡ hasVisualFeature([floral pattern]) ⊓ hasVisualFeature([intricate design])
+</dl_explanation>
+
+<response>19</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=9.4874 | avg_trial_wall_seconds=3.1609 | avg_trial_api_seconds=2.7237 | system_fallback_count=0

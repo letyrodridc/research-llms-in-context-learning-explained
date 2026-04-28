@@ -1,0 +1,37 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=2 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[17] | Predicted=[17] | Correct=True
+<features>
+- parallel lines: present
+- surface texture: smooth with grooves
+- color: light tan/wood color
+</features>
+<kb>
+- IF [parallel lines = present AND surface texture = smooth with grooves] THEN [17]
+- IF [potholes = present OR uneven ground = present] THEN [32]
+</kb>
+
+<rule_check>
+- The rule for class 17 fires because the image shows a surface with distinct, parallel grooves/lines, similar to the patterns seen in the examples for class 17.
+</rule_check>
+
+<response>17</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- rocky terrain: present
+- flowing water/stream: present
+- natural landscape: present
+</features>
+
+<kb>
+- IF [parallel lines/grooves/ridges are present] THEN [17]
+- IF [potholes, cracks, or uneven ground in a road/natural landscape are present] THEN [32]
+</kb>
+
+<rule_check>
+- The Query Image shows a natural landscape with rocks and a stream. While it is a natural landscape, it does not feature the repetitive parallel lines/grooves characteristic of class 17. It also does not feature the specific road-based potholes or cracks characteristic of class 32. However, looking at the provided examples, class 32 is associated with uneven, broken, or cratered ground in a landscape context. The Query Image shows a rugged, uneven rocky landscape. Comparing the options, class 32 is the closer fit for a non-patterned, irregular natural landscape compared to the highly patterned class 17.
+</rule_check>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=7.7199 | avg_trial_wall_seconds=3.8577 | avg_trial_api_seconds=3.5200 | system_fallback_count=0

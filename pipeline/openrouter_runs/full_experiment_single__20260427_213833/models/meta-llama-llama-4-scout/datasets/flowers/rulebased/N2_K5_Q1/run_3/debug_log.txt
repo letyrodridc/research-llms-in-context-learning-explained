@@ -1,0 +1,37 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=meta-llama/llama-4-scout | N=2 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[75] | Predicted=[75] | Correct=True
+<features>
+- color: purple
+- shape: trumpet
+- leaves: green
+</features>
+<kb>
+- IF color = blue AND shape = trumpet THEN 75
+- IF color = purple AND shape = trumpet AND leaves = green THEN 75
+- IF color = pink AND shape = orchid THEN 35
+</kb>
+
+<rule_check>
+- The Query Image has a purple color, a trumpet shape, and green leaves, so it matches the rule for class 75.
+</rule_check>
+
+<response>75</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[35] | Predicted=[35] | Correct=True
+<features>
+- color: pink
+- flower shape: orchid
+- center color: purple
+</features>
+<kb>
+- IF color = blue AND flower shape = morning glory THEN 75
+- IF color = pink AND flower shape = orchid THEN 35
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF color = pink AND flower shape = orchid THEN 35, because the Query Image has a pink color and an orchid flower shape.
+</rule_check>
+
+<response>35</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=8.3860 | avg_trial_wall_seconds=4.1824 | avg_trial_api_seconds=3.0808 | system_fallback_count=0

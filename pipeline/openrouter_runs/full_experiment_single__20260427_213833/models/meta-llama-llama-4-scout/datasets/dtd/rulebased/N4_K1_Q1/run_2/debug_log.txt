@@ -1,0 +1,77 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=meta-llama/llama-4-scout | N=4 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[18] | Predicted=[27] | Correct=False
+<features>
+- small circular holes: present
+- pattern of small circles: present
+- dark background: present
+- light source: present
+</features>
+
+<kb>
+- IF small circular holes = present AND pattern of small circles = present AND dark background = present THEN 27
+- IF small circular holes = present AND pattern of small circles = present AND light source = present THEN 27
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF small circular holes = present AND pattern of small circles = present AND light source = present THEN 27. This is because the Query Image has small circular holes, a pattern of small circles, and a light source.
+</rule_check>
+
+<response>27</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[22] | Predicted=[22] | Correct=True
+<features>
+- observable feature: lined pattern
+- observable feature: red line
+</features>
+<kb>
+- IF observable visual features = lined pattern AND observable visual features = red line THEN 22
+- IF observable visual features = marble pattern THEN 23
+- IF observable visual features = perforated pattern THEN 27
+- IF observable visual features = honeycomb pattern THEN 18
+</kb>
+
+<rule_check>
+- The rule for class 22 fires because the Query Image shows a lined pattern and a red line.
+</rule_check>
+
+<response>22</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[23] | Predicted=[18] | Correct=False
+<features>
+- observable feature: crack pattern
+- observable feature: color
+</features>
+<kb>
+- IF observable visual features = crack pattern AND observable visual features = brown color THEN 18
+- IF observable visual features = striped pattern AND observable visual features = pink color THEN 22
+- IF observable visual features = vein pattern AND observable visual features = white and gray color THEN 23
+- IF observable visual features = hole pattern AND observable visual features = metal color THEN 27
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF observable visual features = crack pattern AND observable visual features = brown color THEN 18, because the Query Image shows a crack pattern with brown color.
+</rule_check>
+
+<response>18</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[27] | Predicted=[27] | Correct=True
+<features>
+- grid pattern: present
+- rectangular openings: present
+- metal grid: present
+</features>
+
+<kb>
+- IF grid pattern = present AND rectangular openings = present AND metal grid = present THEN 27
+- IF striped pattern = present THEN 22
+- IF marble pattern = present THEN 23
+- IF honeycomb pattern = present THEN 18
+</kb>
+
+<rule_check>
+- The rule for class 27 fires because the Query Image shows a grid pattern with rectangular openings and appears to be made of a metal grid.
+</rule_check>
+
+<response>27</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=4 | errors=0 | accuracy=0.5000 | duration_seconds=12.3711 | avg_trial_wall_seconds=3.0889 | avg_trial_api_seconds=2.5920 | system_fallback_count=0

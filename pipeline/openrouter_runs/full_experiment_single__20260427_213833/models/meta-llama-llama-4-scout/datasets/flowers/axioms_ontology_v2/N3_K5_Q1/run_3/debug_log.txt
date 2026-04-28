@@ -1,0 +1,54 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=meta-llama/llama-4-scout | N=3 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[87] | Predicted=[87] | Correct=True
+<tbox>
+- [87] ⊑ hasVisualFeature([bulb-shaped-petals])
+- [92] ⊑ hasVisualFeature([long-thin-petals])
+- [14] ⊑ hasVisualFeature([yellow-petals])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [bulb-shaped-petals])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [87] ⊑ hasVisualFeature([bulb-shaped-petals])
+</dl_explanation>
+
+<response>87</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[92] | Predicted=[92] | Correct=True
+<tbox>
+- [87] ⊑ hasVisualFeature([petal shape])
+- [92] ≡ hasVisualFeature([bract]) ⊓ hasVisualFeature([petal color])
+- [14] ⊑ hasVisualFeature([petal count])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [bract])
+- hasVisualFeature(Query, [petal color])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [92] ≡ hasVisualFeature([bract]) ⊓ hasVisualFeature([petal color])
+</dl_explanation>
+
+<response>92</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- [87] ⊑ hasVisualFeature([Cyclamen])
+- [92] ⊑ hasVisualFeature([Bromeliad])
+- [14] ⊑ hasVisualFeature([Yellow_Iris])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [Yellow_Iris])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [14] ⊑ hasVisualFeature([Yellow_Iris])
+</dl_explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=14.6541 | avg_trial_wall_seconds=4.8823 | avg_trial_api_seconds=3.1768 | system_fallback_count=0

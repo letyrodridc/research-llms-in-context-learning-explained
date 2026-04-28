@@ -1,0 +1,24 @@
+=== DEBUG LOG | dataset=pets | prompt=nle | model=google/gemini-2.5-flash | N=4 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[20] | Predicted=[20] | Correct=True
+<explanation>
+The query image displays a cat with long, fluffy fur, prominent ear tufts, and a distinctive facial structure, including a broad muzzle and expressive eyes. These visual characteristics are consistently observed in the examples labeled '20', which all depict Maine Coon cats. The other classes (29, 28, 13) show dogs with different fur textures, ear shapes, and overall body structures that do not match the query image.
+</explanation>
+<response>20</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<explanation>
+The query image displays a dog with entirely white, long, and fluffy fur, small dark eyes, and a dark nose. Its ears are small and rounded, and its tail is curled upwards and fluffy. These features are consistently observed in the examples labeled '29'. The other classes show different fur patterns (spotted, tabby) or different fur colors (brown, black, orange) and different ear/tail shapes.
+</explanation>
+<response>29</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[28] | Predicted=[28] | Correct=True
+<explanation>
+The query image displays a dog with a distinctive brown, white, and black coat pattern, particularly on its face, and a large build. This visual pattern, including the color distribution and overall head shape, is consistently observed in the examples labeled '28'. The other classes (20, 29, 13) show different coat patterns, colors, and facial structures.
+</explanation>
+<response>28</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[13] | Predicted=[13] | Correct=True
+<explanation>The query image displays a dog with white fur and brown/orange spots, and long, floppy ears. This visual pattern is consistently observed in the examples labeled as 13, which also show dogs with spotted white and brown/orange fur and similar ear characteristics. The other classes (20, 28, 29) show different fur patterns, colors, and ear shapes.</explanation>
+<response>13</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=9.9274 | avg_trial_wall_seconds=2.4798 | avg_trial_api_seconds=1.5510 | system_fallback_count=0

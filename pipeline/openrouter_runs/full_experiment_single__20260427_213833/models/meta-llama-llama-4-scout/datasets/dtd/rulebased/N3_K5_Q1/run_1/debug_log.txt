@@ -1,0 +1,55 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=meta-llama/llama-4-scout | N=3 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- observable feature: water in pothole
+- observable feature: rocks in pothole
+- observable feature: large pothole
+</features>
+<kb>
+- IF [observable visual features = water in pothole AND observable visual features = rocks in pothole AND observable visual features = large pothole] THEN [32]
+- IF [observable visual features = smooth surface] THEN [8]
+- IF [observable visual features = bumpy surface AND observable visual features = organic] THEN [4]
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF [observable visual features = water in pothole AND observable visual features = rocks in pothole AND observable visual features = large pothole] THEN [32], because the Query Image shows a large pothole with water and rocks.
+</rule_check>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[8] | Predicted=[32] | Correct=False
+<features>
+- observable feature: texture
+- observable feature: material
+- observable feature: color
+</features>
+<kb>
+- IF [texture = smooth AND material = leather AND color = black] THEN [32]
+- IF [texture = fabric AND color = various] THEN [8]
+- IF [texture = bumpy AND material = organic] THEN [4]
+</kb>
+
+<rule_check>
+- The Query Image shows a smooth texture, a material that appears to be leather, and a color that is black. Therefore, the rule that fires is: IF [texture = smooth AND material = leather AND color = black] THEN [32].
+</rule_check>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[4] | Predicted=[32] | Correct=False
+<features>
+- observable feature: raised dots
+- observable feature: tile
+</features>
+<kb>
+- IF [observable visual features = raised dots AND/OR observable visual features = tile] THEN [32]
+- IF [observable visual features = smooth surface] THEN [8]
+- IF [observable visual features = bumpy surface AND/OR observable visual features = organic shape] THEN [4]
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF [observable visual features = raised dots AND/OR observable visual features = tile] THEN [32], because the Query Image shows a surface covered with raised dots on tiles.
+</rule_check>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=1 | total=3 | errors=0 | accuracy=0.3333 | duration_seconds=14.7271 | avg_trial_wall_seconds=4.9032 | avg_trial_api_seconds=3.2875 | system_fallback_count=0

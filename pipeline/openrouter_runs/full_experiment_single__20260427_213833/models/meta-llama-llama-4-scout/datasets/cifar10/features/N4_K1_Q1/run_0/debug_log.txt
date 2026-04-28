@@ -1,0 +1,41 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=features | model=meta-llama/llama-4-scout | N=4 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- white animal
+- four legs
+- mane
+- standing
+</features>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[8] | Predicted=[] | Correct=False
+WARNING: unclosed_response_tag
+features>
+- large object
+- in water
+- multiple sections
+- tall structures
+</features>
+
+<response>7</
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- long body
+- multiple fins
+- no color
+</features>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[4] | Predicted=[7] | Correct=False
+<features>
+- brown animal
+- white legs
+- standing on grass
+</features>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=4 | errors=0 | accuracy=0.5000 | duration_seconds=3.6995 | avg_trial_wall_seconds=0.9187 | avg_trial_api_seconds=0.8191 | system_fallback_count=0

@@ -1,0 +1,38 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=meta-llama/llama-4-scout | N=2 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[75] | Predicted=[75] | Correct=True
+<features>
+- color: pink
+- petal shape: round
+- center color: white
+- leaf shape: not visible
+</features>
+<kb>
+- IF color = purple AND petal shape = trumpet THEN 75
+- IF color = pink or purple AND center color = yellow or white AND petal shape = orchid THEN 35
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF color = pink or purple AND center color = yellow or white AND petal shape = orchid THEN 35, because the Query Image has a pink color, a white center, and a petal shape that resembles an orchid more than a trumpet.
+</rule_check>
+
+<response>75</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[35] | Predicted=[35] | Correct=True
+<features>
+- color: pink
+- shape: irregular
+- petals: 6
+- center color: orange, pink, yellow
+</features>
+<kb>
+- IF color = purple AND shape = trumpet THEN 75
+- IF color = pink AND petals = 6 AND center color = orange, pink, yellow THEN 35
+</kb>
+
+<rule_check>
+- The Query Image has a color of pink, 6 petals, and a center color of orange, pink, yellow, which matches the rule for class 35.
+</rule_check>
+
+<response>35</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=9.4189 | avg_trial_wall_seconds=4.7002 | avg_trial_api_seconds=3.3601 | system_fallback_count=0

@@ -1,0 +1,78 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=4 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- subject: four-legged animal
+- subject color: brown/dark
+- subject shape: equine-like silhouette
+</features>
+<kb>
+- IF [subject = four-legged animal AND subject shape = equine-like silhouette] THEN [7]
+- IF [subject = large vessel in water] THEN [8]
+- IF [subject = aircraft in sky] THEN [0]
+- IF [subject = small four-legged animal in grass] THEN [4]
+</kb>
+
+<rule_check>
+- The rule for class 7 fires because the image depicts a brown, four-legged animal with an equine-like silhouette.
+</rule_check>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- object: large vessel/ship
+- object: tall mast/structure
+- background: water and horizon
+</features>
+<kb>
+- IF [object = airplane AND background = sky] THEN [0]
+- IF [object = animal AND background = grass/field] THEN [4]
+- IF [object = large vessel/ship AND background = water] THEN [8]
+- IF [object = animal (horse-like) AND background = field] THEN [7]
+</kb>
+
+<rule_check>
+- The rule for class 8 fires because the image contains a large vessel/ship on the water.
+</rule_check>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- object: airplane
+- background: blue sky
+- color: white and red patterns on wings/body
+</features>
+
+<kb>
+- IF [object = airplane AND background = blue sky] THEN [0]
+- IF [object = deer/animal AND background = green grass] THEN [4]
+- IF [object = horse AND background = light ground] THEN [7]
+- IF [object = ship AND background = blue water/sky] THEN [8]
+</kb>
+
+<rule_check>
+- The rule for class 0 fires because the image contains an airplane against a blue sky.
+</rule_check>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- subject: animal with antlers
+- background: snowy/white landscape
+</features>
+<kb>
+- IF [subject = animal with antlers] THEN [4]
+- IF [subject = horse] THEN [7]
+- IF [subject = ship] THEN [8]
+- IF [subject = airplane] THEN [0]
+</kb>
+
+<rule_check>
+- The rule for class 4 fires because the subject is an animal with antlers.
+</rule_check>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=10.9590 | avg_trial_wall_seconds=2.7380 | avg_trial_api_seconds=2.6748 | system_fallback_count=0

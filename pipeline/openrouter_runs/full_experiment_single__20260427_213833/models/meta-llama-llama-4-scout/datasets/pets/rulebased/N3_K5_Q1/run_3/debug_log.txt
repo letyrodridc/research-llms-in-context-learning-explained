@@ -1,0 +1,57 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=meta-llama/llama-4-scout | N=3 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[21] | Predicted=[21] | Correct=True
+<features>
+- color: black and brown
+- ears: erect and pointed
+- body: small
+</features>
+<kb>
+- IF [color = black and brown AND ears = erect and pointed AND body = small] THEN [21]
+- IF [color = white AND body = large] THEN [15]
+- IF [color = white AND blue eyes] THEN [26]
+</kb>
+
+<rule_check>
+- Rule 1 fires for the Query Image because the observable features of the Query Image match the conditions: color = black and brown, ears = erect and pointed, and body = small.
+</rule_check>
+
+<response>21</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[26] | Predicted=[26] | Correct=True
+<features>
+- color: white
+- color: gray
+- color: blue
+</features>
+<kb>
+- IF [color = white AND color = gray AND color = blue] THEN [26]
+- IF [color = black AND color = brown] THEN [21]
+- IF [color = white AND color = cream] THEN [15]
+</kb>
+
+<rule_check>
+- Rule 26 fires for the Query Image because the observable features of the Query Image, specifically color: white, color: gray, and color: blue, match the conditions in the rule for class 26.
+</rule_check>
+
+<response>26</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[15] | Predicted=[15] | Correct=True
+<features>
+- fur color: light golden
+- fur length: long
+- ear type: floppy
+- mouth: open
+</features>
+<kb>
+- IF [fur color = black AND fur length = short AND ear type = pointy AND mouth = closed] THEN [21]
+- IF [fur color = white AND fur length = long AND eye color = blue] THEN [26]
+- IF [fur color = light golden AND fur length = long AND ear type = floppy] THEN [15]
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF [fur color = light golden AND fur length = long AND ear type = floppy] THEN [15], because the Query Image has light golden fur, long fur, and floppy ears.
+</rule_check>
+
+<response>15</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=15.0334 | avg_trial_wall_seconds=5.0033 | avg_trial_api_seconds=3.6511 | system_fallback_count=0

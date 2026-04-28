@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=meta-llama/llama-4-scout | N=2 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- observable feature: dark color
+- observable feature: chevron pattern
+</features>
+<kb>
+- IF observable feature: dark color AND observable feature: chevron pattern THEN 44
+- IF observable feature: light color AND observable feature: stripe pattern THEN 29
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF observable feature: dark color AND observable feature: chevron pattern THEN 44. This rule fires because the Query Image exhibits a dark color and a chevron pattern.
+</rule_check>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+features>
+- color: red
+- pattern: pleated
+- texture: smooth
+</features>
+
+<kb>
+- IF color = green AND pattern = textured THEN 44
+- IF pattern = pleated THEN 29
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF pattern = pleated THEN 29, because the Query Image shows a pleated pattern.
+</rule_check>
+
+<response>29</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=7.0288 | avg_trial_wall_seconds=3.5062 | avg_trial_api_seconds=3.2132 | system_fallback_count=0

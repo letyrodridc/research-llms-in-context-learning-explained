@@ -1,0 +1,101 @@
+{
+  "title": "Accuracy vs n | google/gemma-4-26b-a4b-it | dtd | features | k=1, q=1",
+  "alpha": 0.05,
+  "x_field": "config_n",
+  "series_field": null,
+  "filters": {
+    "model": "google/gemma-4-26b-a4b-it",
+    "dataset": "dtd",
+    "prompt_type": "features",
+    "config_k": "1",
+    "config_q": "1"
+  },
+  "rows": [
+    {
+      "x": "2",
+      "series": "accuracy",
+      "correct": 7,
+      "total": 12,
+      "accuracy": 0.5833,
+      "standard_error": 0.142319,
+      "ci95_low": 0.3195,
+      "ci95_high": 0.8067
+    },
+    {
+      "x": "3",
+      "series": "accuracy",
+      "correct": 11,
+      "total": 12,
+      "accuracy": 0.9167,
+      "standard_error": 0.079786,
+      "ci95_low": 0.6461,
+      "ci95_high": 0.9851
+    },
+    {
+      "x": "4",
+      "series": "accuracy",
+      "correct": 7,
+      "total": 12,
+      "accuracy": 0.5833,
+      "standard_error": 0.142319,
+      "ci95_low": 0.3195,
+      "ci95_high": 0.8067
+    }
+  ],
+  "statistics": {
+    "alpha": 0.05,
+    "group_field": "config_n",
+    "groups": [
+      "2",
+      "3",
+      "4"
+    ],
+    "matched": false,
+    "omnibus": {
+      "test": "chi_square_independence",
+      "statistic": 4.189090909090909,
+      "degrees_of_freedom": 2,
+      "p_value": 0.12312619738960515,
+      "significant": false,
+      "matched_units": null
+    },
+    "pairwise": [
+      {
+        "group_a": "2",
+        "group_b": "3",
+        "odds_ratio": 0.12727272727272726,
+        "p_value": 0.15495259888852567,
+        "a_correct": 7,
+        "a_wrong": 5,
+        "b_correct": 11,
+        "b_wrong": 1,
+        "p_value_holm": 0.464857796665577,
+        "significant_holm": false
+      },
+      {
+        "group_a": "2",
+        "group_b": "4",
+        "odds_ratio": 1.0,
+        "p_value": 1.0,
+        "a_correct": 7,
+        "a_wrong": 5,
+        "b_correct": 7,
+        "b_wrong": 5,
+        "p_value_holm": 1.0,
+        "significant_holm": false
+      },
+      {
+        "group_a": "3",
+        "group_b": "4",
+        "odds_ratio": 7.857142857142857,
+        "p_value": 0.15495259888852567,
+        "a_correct": 11,
+        "a_wrong": 1,
+        "b_correct": 7,
+        "b_wrong": 5,
+        "p_value_holm": 0.464857796665577,
+        "significant_holm": false
+      }
+    ]
+  }
+}

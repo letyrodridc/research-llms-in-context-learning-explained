@@ -1,0 +1,18 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=features | model=qwen/qwen3-vl-8b-instruct | N=2 K=5 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- large vessel
+- on water
+- multiple decks
+</features>
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- four-legged animal
+- brown coat
+- standing posture
+</features>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=2.5203 | avg_trial_wall_seconds=1.2534 | avg_trial_api_seconds=0.9716 | system_fallback_count=0

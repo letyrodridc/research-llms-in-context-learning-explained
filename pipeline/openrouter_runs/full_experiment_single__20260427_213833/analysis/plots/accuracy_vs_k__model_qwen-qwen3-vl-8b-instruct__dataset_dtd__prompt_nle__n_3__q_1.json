@@ -1,0 +1,65 @@
+{
+  "title": "Accuracy vs k | qwen/qwen3-vl-8b-instruct | dtd | nle | n=3, q=1",
+  "alpha": 0.05,
+  "x_field": "config_k",
+  "series_field": null,
+  "filters": {
+    "model": "qwen/qwen3-vl-8b-instruct",
+    "dataset": "dtd",
+    "prompt_type": "nle",
+    "config_n": "3",
+    "config_q": "1"
+  },
+  "rows": [
+    {
+      "x": "1",
+      "series": "accuracy",
+      "correct": 10,
+      "total": 12,
+      "accuracy": 0.8333,
+      "standard_error": 0.107583,
+      "ci95_low": 0.552,
+      "ci95_high": 0.953
+    },
+    {
+      "x": "5",
+      "series": "accuracy",
+      "correct": 9,
+      "total": 12,
+      "accuracy": 0.75,
+      "standard_error": 0.125,
+      "ci95_low": 0.4677,
+      "ci95_high": 0.9111
+    }
+  ],
+  "statistics": {
+    "alpha": 0.05,
+    "group_field": "config_k",
+    "groups": [
+      "1",
+      "5"
+    ],
+    "matched": false,
+    "omnibus": {
+      "test": "fisher_exact",
+      "statistic": 1.6666666666666667,
+      "p_value": 1.0,
+      "significant": false,
+      "matched_units": null
+    },
+    "pairwise": [
+      {
+        "group_a": "1",
+        "group_b": "5",
+        "odds_ratio": 1.6666666666666667,
+        "p_value": 1.0,
+        "a_correct": 10,
+        "a_wrong": 2,
+        "b_correct": 9,
+        "b_wrong": 3,
+        "p_value_holm": 1.0,
+        "significant_holm": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<features>
+- dominant color: light brown/tan
+- presence of eyes: yes, blue
+- overall shape: irregular, soft edges
+- texture: blurry, fur-like
+</features>
+<kb>
+- IF [dominant color is light brown/tan AND presence of eyes is yes AND overall shape is irregular, soft edges AND texture is blurry, fur-like] THEN [3]
+- IF [dominant color is dark grey/black AND presence of eyes is no AND overall shape is angular, distinct AND texture is blurry, metallic-like] THEN [0]
+</kb>
+<rule_check>
+- The rule for class 3 fires because the query image has a dominant light brown/tan color, visible blue eyes, an irregular shape with soft edges, and a blurry, fur-like texture.
+</rule_check>
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- object shape: irregular, elongated, dark silhouette
+- background: light, blurry, uniform
+- object orientation: diagonal, pointing upwards to the right
+</features>
+<kb>
+- IF [object shape is an irregular, elongated, dark silhouette AND background is light and uniform] THEN [0]
+- IF [object is a blurry, light-colored shape partially obscured by dark, blurry foreground elements] THEN [3]
+</kb>
+<rule_check>
+- The rule for class 0 fires because the query image shows an irregular, elongated, dark silhouette against a light and uniform background.
+</rule_check>
+<response>0</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=5.1611 | avg_trial_wall_seconds=2.5782 | avg_trial_api_seconds=2.5411 | system_fallback_count=0

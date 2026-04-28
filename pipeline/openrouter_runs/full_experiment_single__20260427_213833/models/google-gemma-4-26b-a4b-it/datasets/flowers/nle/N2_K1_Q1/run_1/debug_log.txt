@@ -1,0 +1,16 @@
+=== DEBUG LOG | dataset=flowers | prompt=nle | model=google/gemma-4-26b-a4b-it | N=2 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<explanation>
+The query image shows large, multi-petaled flowers with a prominent central cluster of stamens and a color pattern consisting of a darker center stripe on each petal. This visual structure is identical to the flower in the example labeled '81', whereas the example labeled '14' shows a yellow iris with a different petal structure.
+</explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<explanation>
+The query image shows a yellow flower with large, drooping petals and a central structure, which matches the visual characteristics of the flower in the example labeled '14'.
+</explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=9.7566 | avg_trial_wall_seconds=4.8739 | avg_trial_api_seconds=4.7366 | system_fallback_count=0

@@ -1,0 +1,37 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=meta-llama/llama-4-scout | N=2 K=1 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<features>
+- color: light brown
+- object type: animal
+- ears: pointy
+- collar: blue
+</features>
+<kb>
+- IF observable visual features = animal AND observable visual features = pointy ears AND observable visual features = light brown THEN 3
+- IF observable visual features = vehicle THEN 0
+</kb>
+
+<rule_check>
+- The rule for class 3 fires because the Query Image shows an animal with pointy ears and a light brown color, which matches the features for class 3. 
+</rule_check>
+
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- observable feature: presence of clouds
+- observable feature: dark object
+- observable feature: presence of sky
+</features>
+<kb>
+- IF [observable visual features = presence of clouds AND observable visual features = dark object AND observable visual features = presence of sky] THEN [0]
+- IF [observable visual features = presence of clouds AND observable visual features = dark object AND observable visual features = presence of sky] THEN [3]
+</kb>
+
+<rule_check>
+- The rule for class 0 is satisfied because the Query Image contains a dark object (the airplane), presence of clouds, and a blue sky.
+</rule_check>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.0532 | avg_trial_wall_seconds=1.5030 | avg_trial_api_seconds=1.4589 | system_fallback_count=0

@@ -1,0 +1,30 @@
+=== DEBUG LOG | dataset=pets | prompt=nle | model=google/gemma-4-26b-a4b-it | N=4 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[20] | Predicted=[20] | Correct=True
+<explanation>
+The query image shows a cat with long, thick fur, prominent ears, and a facial structure consistent with the examples labeled as class 20 (Maine Coon).
+</explanation>
+
+<response>20</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<explanation>
+The query image shows a white, fluffy dog with pointed ears and a bushy tail, which matches the visual characteristics of the dogs in the examples labeled '29'.
+</explanation>
+
+<response>29</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[28] | Predicted=[28] | Correct=True
+<explanation>
+The query image shows a large dog with a white body and dark brown patches on its face and ears, which is characteristic of the Saint Bernard breed shown in the provided examples for class 28.
+</explanation>
+
+<response>28</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[13] | Predicted=[13] | Correct=True
+<explanation>
+The query image shows a dog with long, floppy ears and a white coat with brown/tan patches and dark spots. This visual pattern matches the examples provided for class 13, which feature dogs with similar ear shapes and spotted/patched coat patterns.
+</explanation>
+
+<response>13</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=10.0059 | avg_trial_wall_seconds=2.4988 | avg_trial_api_seconds=2.0727 | system_fallback_count=0

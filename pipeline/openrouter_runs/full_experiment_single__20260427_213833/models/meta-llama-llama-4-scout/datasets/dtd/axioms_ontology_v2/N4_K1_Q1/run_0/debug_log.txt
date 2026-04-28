@@ -1,0 +1,74 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=meta-llama/llama-4-scout | N=4 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[18] | Predicted=[18] | Correct=True
+<tbox>
+- [18] ⊑ hasVisualFeature([hexagons])
+- [22] ⊑ hasVisualFeature([lines])
+- [23] ⊑ hasVisualFeature([map])
+- [27] ⊑ hasVisualFeature([holes])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [hexagons])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [18] ⊑ hasVisualFeature([hexagons])
+</dl_explanation>
+
+<response>18</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[22] | Predicted=[22] | Correct=True
+<tbox>
+- [18] ⊑ hasVisualFeature([hexagonal_cells])
+- [22] ⊑ hasVisualFeature([lined_paper])
+- [23] ⊑ hasVisualFeature([aerial_view])
+- [27] ⊑ hasVisualFeature([circular_holes])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [stripes])
+</abox>
+
+<dl_explanation>
+- None of the provided TBox rules directly match the observed feature of stripes in the Query Image based on the given classes.
+</dl_explanation>
+
+<response>22</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[23] | Predicted=[23] | Correct=True
+<tbox>
+- [18] ⊑ hasVisualFeature([hexagonal_cells])
+- [22] ⊑ hasVisualFeature([lined_paper])
+- [23] ⊑ hasVisualFeature([aerial_view])
+- [27] ⊑ hasVisualFeature([circular_holes])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [veins])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  none
+</dl_explanation>
+
+<response>23</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[27] | Predicted=[18] | Correct=False
+<tbox>
+- [18] ⊑ hasVisualFeature([hexagonal_cells])
+- [22] ⊑ hasVisualFeature([lined_paper])
+- [23] ⊑ hasVisualFeature([aerial_view])
+- [27] ⊑ hasVisualFeature([circular_holes])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [hexagonal_cells])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [18] ⊑ hasVisualFeature([hexagonal_cells])
+</dl_explanation>
+
+<response>18</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=15.8566 | avg_trial_wall_seconds=3.9563 | avg_trial_api_seconds=3.4920 | system_fallback_count=0

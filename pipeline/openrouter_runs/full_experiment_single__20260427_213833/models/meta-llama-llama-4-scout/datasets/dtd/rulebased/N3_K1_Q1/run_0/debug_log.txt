@@ -1,0 +1,58 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=meta-llama/llama-4-scout | N=3 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[45] | Predicted=[45] | Correct=True
+<features>
+- color: green
+- texture: wrinkled
+- pattern: uniform
+</features>
+<kb>
+- IF color = gray AND texture = wrinkled THEN 45
+- IF pattern = polka dots AND color = multicolor THEN 10
+- IF texture = smooth AND pattern = knotwork AND color = metallic THEN 19
+</kb>
+
+<rule_check>
+- The Query Image has a green color and a wrinkled texture but no polka dots or knotwork, so it doesn't fire the rules for classes 10 or 19. Although it shares the wrinkled texture with class 45, its green color doesn't match the gray color of class 45.
+</rule_check>
+
+<response>45</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[10] | Predicted=[10] | Correct=True
+<features>
+- color: multicolored
+- pattern: polka dots
+- size: varied
+</features>
+<kb>
+- IF pattern = polka dots AND color = multicolored THEN 10
+- IF pattern = solid THEN 45
+- IF pattern = celtic knot AND color = purple AND silver THEN 19
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF pattern = polka dots AND color = multicolored THEN 10, because the Query Image shows a multicolored polka dot pattern.
+</rule_check>
+
+<response>10</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[19] | Predicted=[19] | Correct=True
+features>
+- color palette: vibrant and varied
+- figures: multiple
+- design: intricate
+- background: yellow
+</features>
+
+<kb>
+- IF observable visual features = vibrant and varied AND figures = multiple AND design = intricate THEN 19
+- IF observable visual features = uniform AND figures = none AND design = simple THEN 45
+- IF observable visual features = dots AND figures = none AND design = repetitive THEN 10
+</kb>
+
+<rule_check>
+- The Query Image has a vibrant and varied color palette, multiple figures, and an intricate design, which matches the conditions for class 19.
+</rule_check>
+
+<response>19</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=10.7668 | avg_trial_wall_seconds=3.5839 | avg_trial_api_seconds=3.1501 | system_fallback_count=0

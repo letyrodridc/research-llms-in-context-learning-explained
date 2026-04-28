@@ -1,0 +1,78 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemini-2.5-flash | N=4 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[43] | Predicted=[43] | Correct=True
+<features>
+- overall pattern: grid of square indentations
+- color: golden brown with darker liquid in indentations
+- texture: crispy appearance, liquid appears viscous and shiny
+- specific action: liquid (syrup) being poured onto the surface
+</features>
+<kb>
+- IF [overall pattern is a grid of square or diamond-shaped indentations AND/OR color is golden brown AND/OR liquid is present in indentations] THEN [43]
+- IF [image shows abstract brushstrokes, drips, or blurred lines, often with multiple colors] THEN [34]
+- IF [image shows multiple circular shapes (polka dots) of varying sizes and colors on a background] THEN [10]
+- IF [image shows a textured surface with raised, irregular, or rounded bumps, often in a single dominant color or natural pattern] THEN [4]
+</kb>
+<rule_check>
+- The rule for class 43 fires because the Query Image clearly displays an overall pattern of a grid of square indentations, a golden brown color, and a liquid (syrup) present in these indentations, which are all characteristic features of class 43 examples.
+</rule_check>
+<response>43</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[34] | Predicted=[4] | Correct=False
+<features>
+- dominant color: green
+- secondary color: red
+- texture: smooth, slightly glossy
+- shape: indistinct, rounded forms
+- pattern: no discernible repeating pattern
+- focus: blurry
+</features>
+<kb>
+- IF [image contains a repeating pattern of square or rectangular indentations/protrusions, often with a golden-brown or pink color] THEN [43]
+- IF [image contains abstract brushstrokes, drips, or blurred lines, often with multiple colors and no clear object representation] THEN [34]
+- IF [image contains a repeating pattern of circular dots of various sizes and colors on a contrasting background] THEN [10]
+- IF [image contains textured surfaces with irregular, organic, or geometric bumps/protrusions, or distinct object shapes with texture, and lacks repeating patterns of squares, circles, or abstract brushstrokes] THEN [4]
+</kb>
+<rule_check>
+- The rule for class 4 fires because the query image shows indistinct, rounded forms and a smooth, slightly glossy texture, which are consistent with "distinct object shapes with texture" and "irregular, organic, or geometric bumps/protrusions" when considering the blurriness. It lacks the repeating square/rectangular patterns of class 43, the abstract brushstrokes of class 34, and the repeating circular dots of class 10.
+</rule_check>
+<response>4</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[10] | Predicted=[10] | Correct=True
+<features>
+- pattern: dots
+- dot arrangement: organized into swirling and curving lines
+- dot size: varied, from very small to medium
+- dot color: predominantly red and dark red, with some black/dark blue
+- background color: white/light cream
+</features>
+<kb>
+- IF [image contains a grid-like pattern of raised squares or depressions, often with a uniform color or texture] THEN [43]
+- IF [image displays abstract brushstrokes, drips, or blurred lines, often with varied colors and textures, lacking distinct, repeating geometric patterns] THEN [34]
+- IF [image features multiple, distinct, circular shapes (dots) scattered across a background, often with varying sizes and colors, but not necessarily forming complex, organized patterns] THEN [10]
+- IF [image shows a textured surface with irregular, raised, or bumpy forms, or distinct, non-circular, repeating shapes] THEN [4]
+</kb>
+<rule_check>
+- The rule for class 10 fires because the Query Image clearly features multiple, distinct, circular shapes (dots) scattered across a background, which is a primary characteristic of the examples in class 10. While the dots in the Query Image form more complex, organized patterns than some of the class 10 examples, the fundamental visual feature of "multiple, distinct, circular shapes (dots) scattered across a background" is present and aligns best with class 10 compared to the other classes.
+</rule_check>
+<response>10</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- texture: bumpy/warty and ridged
+- shape: irregular, varied, some roundish, some elongated
+- color: varied, predominantly orange, yellow, green, brown, white
+- pattern: some items have stripes or mottled patterns
+- arrangement: clustered, piled
+</features>
+<kb>
+- IF [texture = bumpy/warty or ridged AND shape = irregular or varied AND color = varied, often natural tones] THEN [4]
+- IF [texture = grid-like pattern of raised squares or depressions AND color = golden brown or pink] THEN [43]
+- IF [pattern = scattered circular dots of various sizes AND color = varied, often bright or pastel] THEN [10]
+- IF [texture = brushstrokes, drips, or blurred lines AND color = varied, often abstract] THEN [34]
+</kb>
+<rule_check>
+- The rule for class 4 fires because the Query Image displays items with bumpy/warty and ridged textures, irregular and varied shapes, and varied natural colors (orange, yellow, green, brown, white).
+</rule_check>
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=16.9753 | avg_trial_wall_seconds=4.2418 | avg_trial_api_seconds=3.5957 | system_fallback_count=0

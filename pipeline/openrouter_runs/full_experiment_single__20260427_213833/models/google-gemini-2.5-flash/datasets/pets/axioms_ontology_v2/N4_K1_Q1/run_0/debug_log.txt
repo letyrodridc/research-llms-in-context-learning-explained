@@ -1,0 +1,64 @@
+=== DEBUG LOG | dataset=pets | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=4 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[19] | Predicted=[19] | Correct=True
+<tbox>
+Class19 ⊑ hasVisualFeature(long_brown_fur) ⊓ hasVisualFeature(black_face_mask) ⊓ hasVisualFeature(large_size)
+Class32 ⊑ hasVisualFeature(short_cream_and_dark_brown_fur) ⊓ hasVisualFeature(blue_eyes) ⊓ hasVisualFeature(pointed_ears)
+Class26 ⊑ hasVisualFeature(long_white_and_light_brown_fur) ⊓ hasVisualFeature(pink_nose) ⊓ hasVisualFeature(mouth_open_showing_tongue)
+Class20 ⊑ hasVisualFeature(long_grey_and_white_striped_fur) ⊓ hasVisualFeature(yellow_eyes) ⊓ hasVisualFeature(fluffy_tail)
+</tbox>
+<abox>
+hasVisualFeature(Query, long_brown_fur)
+hasVisualFeature(Query, black_face_mask)
+hasVisualFeature(Query, large_size)
+</abox>
+<dl_explanation>
+Class19 ⊑ hasVisualFeature(long_brown_fur) ⊓ hasVisualFeature(black_face_mask) ⊓ hasVisualFeature(large_size)
+</dl_explanation>
+<response>19</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<tbox>
+Class32 ⊑ hasVisualFeature(pointed_ears) ⊓ hasVisualFeature(dark_face_mask) ⊓ hasVisualFeature(light_body_dark_extremities_coloration) ⊓ hasVisualFeature(short_to_medium_hair)
+</tbox>
+<abox>
+hasVisualFeature(Query, pointed_ears)
+hasVisualFeature(Query, dark_face_mask)
+hasVisualFeature(Query, light_body_dark_extremities_coloration)
+hasVisualFeature(Query, short_to_medium_hair)
+</abox>
+<dl_explanation>
+Class32 ⊑ hasVisualFeature(pointed_ears) ⊓ hasVisualFeature(dark_face_mask) ⊓ hasVisualFeature(light_body_dark_extremities_coloration) ⊓ hasVisualFeature(short_to_medium_hair)
+</dl_explanation>
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[26] | Predicted=[26] | Correct=True
+<tbox>
+Ragdoll ⊑ hasVisualFeature(long_fur) ⊓ hasVisualFeature(blue_eyes) ⊓ hasVisualFeature(white_or_light_colored_body) ⊓ hasVisualFeature(darker_tail_tip)
+</tbox>
+<abox>
+hasVisualFeature(Query, long_fur)
+hasVisualFeature(Query, blue_eyes)
+hasVisualFeature(Query, white_or_light_colored_body)
+hasVisualFeature(Query, darker_tail_tip)
+</abox>
+<dl_explanation>
+Ragdoll ⊑ hasVisualFeature(long_fur) ⊓ hasVisualFeature(blue_eyes) ⊓ hasVisualFeature(white_or_light_colored_body) ⊓ hasVisualFeature(darker_tail_tip)
+</dl_explanation>
+<response>26</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[20] | Predicted=[20] | Correct=True
+<tbox>
+Class_19 ⊑ hasVisualFeature(long_brown_fur) ⊓ hasVisualFeature(large_dog)
+Class_32 ⊑ hasVisualFeature(short_cream_and_dark_brown_fur) ⊓ hasVisualFeature(blue_eyes) ⊓ hasVisualFeature(cat)
+Class_26 ⊑ hasVisualFeature(long_white_and_light_brown_fur) ⊓ hasVisualFeature(cat)
+Class_20 ⊑ hasVisualFeature(long_grey_and_white_striped_fur) ⊓ hasVisualFeature(cat)
+</tbox>
+<abox>
+hasVisualFeature(Query, long_brown_and_white_striped_fur)
+hasVisualFeature(Query, cat)
+</abox>
+<dl_explanation>
+</dl_explanation>
+<response>20</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=6.8746 | avg_trial_wall_seconds=1.7161 | avg_trial_api_seconds=1.5210 | system_fallback_count=0

@@ -1,0 +1,16 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=nle | model=google/gemma-4-26b-a4b-it | N=2 K=5 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[8] | Predicted=[8] | Correct=True
+<explanation>
+The query image shows a large vessel on the water with masts and a superstructure, which matches the visual characteristics of the objects in class 8 (boats/ships).
+</explanation>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[7] | Predicted=[7] | Correct=True
+<explanation>
+The query image shows a dark-colored horse standing in an outdoor setting. This matches the visual characteristics of the examples labeled as class 7.
+</explanation>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.4638 | avg_trial_wall_seconds=1.7299 | avg_trial_api_seconds=1.6107 | system_fallback_count=0

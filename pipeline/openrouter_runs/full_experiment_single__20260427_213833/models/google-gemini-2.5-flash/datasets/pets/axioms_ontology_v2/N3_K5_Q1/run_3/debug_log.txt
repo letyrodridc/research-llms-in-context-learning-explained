@@ -1,0 +1,49 @@
+=== DEBUG LOG | dataset=pets | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=3 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[21] | Predicted=[21] | Correct=True
+<tbox>
+21 ⊑ hasVisualFeature(short_black_and_tan_fur) ⊓ hasVisualFeature(pointed_or_floppy_ears)
+26 ⊑ hasVisualFeature(long_white_and_brown_fur) ⊓ hasVisualFeature(blue_eyes) ⊓ hasVisualFeature(fluffy_tail)
+15 ⊑ hasVisualFeature(long_white_fur) ⊓ hasVisualFeature(large_size)
+</tbox>
+<abox>
+hasVisualFeature(Query, short_black_and_tan_fur)
+hasVisualFeature(Query, pointed_or_floppy_ears)
+</abox>
+<dl_explanation>
+Rule(s) fired: 21 ⊑ hasVisualFeature(short_black_and_tan_fur) ⊓ hasVisualFeature(pointed_or_floppy_ears)
+</dl_explanation>
+<response>21</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[26] | Predicted=[26] | Correct=True
+<tbox>
+Ragdoll ⊑ hasVisualFeature(WhiteFur) ⊓ hasVisualFeature(BlueEyes) ⊓ hasVisualFeature(FluffyTail)
+MiniaturePinscher ⊑ hasVisualFeature(BlackAndTanFur) ⊓ hasVisualFeature(PointedEars)
+GreatPyrenees ⊑ hasVisualFeature(WhiteFur) ⊓ hasVisualFeature(LargeBuild) ⊓ hasVisualFeature(LongHair)
+</tbox>
+<abox>
+hasVisualFeature(Query, WhiteFur)
+hasVisualFeature(Query, BlueEyes)
+hasVisualFeature(Query, FluffyTail)
+</abox>
+<dl_explanation>
+Ragdoll ⊑ hasVisualFeature(WhiteFur) ⊓ hasVisualFeature(BlueEyes) ⊓ hasVisualFeature(FluffyTail)
+</dl_explanation>
+<response>26</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[15] | Predicted=[15] | Correct=True
+<tbox>
+Class21 ⊑ hasVisualFeature(short_fur) ⊓ hasVisualFeature(dark_fur_with_tan_markings) ⊓ hasVisualFeature(pointed_or_floppy_ears)
+Class26 ⊑ hasVisualFeature(long_fur) ⊓ hasVisualFeature(light_colored_fur_with_darker_points) ⊓ hasVisualFeature(blue_eyes) ⊓ hasVisualFeature(pointed_ears)
+Class15 ⊑ hasVisualFeature(long_fur) ⊓ hasVisualFeature(white_or_cream_fur) ⊓ hasVisualFeature(floppy_ears)
+</tbox>
+<abox>
+hasVisualFeature(Query, long_fur)
+hasVisualFeature(Query, white_or_cream_fur)
+hasVisualFeature(Query, floppy_ears)
+</abox>
+<dl_explanation>
+Class15 ⊑ hasVisualFeature(long_fur) ⊓ hasVisualFeature(white_or_cream_fur) ⊓ hasVisualFeature(floppy_ears)
+</dl_explanation>
+<response>15</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=6.2000 | avg_trial_wall_seconds=2.0607 | avg_trial_api_seconds=1.7328 | system_fallback_count=0

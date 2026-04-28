@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=meta-llama/llama-4-scout | N=2 K=5 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[75] | Predicted=[75] | Correct=True
+<features>
+- color: blue
+- shape: round
+- center: light
+</features>
+<kb>
+- IF [color = purple AND/OR color = pink] THEN [75]
+- IF [shape = star AND color = pink] THEN [35]
+</kb>
+
+<rule_check>
+- The rule that best satisfies the Query Image is:  IF [color = purple AND/OR color = pink] THEN [75] because the color of the Query Image is blue which doesn't exactly match any rule but the shape and light center resemble class 75.
+</rule_check>
+
+<response>75</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[35] | Predicted=[35] | Correct=True
+<features>
+- color: pink
+- petal shape: orchid-like
+- petal number: 6
+</features>
+<kb>
+- IF color = purple AND petal shape = trumpet-like AND petal number = 5 THEN 75
+- IF color = pink AND petal shape = orchid-like AND petal number = 6 THEN 35
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF color = pink AND petal shape = orchid-like AND petal number = 6 THEN 35, because the Query Image has a pink color, orchid-like petal shape, and 6 petals.
+</rule_check>
+
+<response>35</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=8.5457 | avg_trial_wall_seconds=4.2702 | avg_trial_api_seconds=3.1784 | system_fallback_count=0

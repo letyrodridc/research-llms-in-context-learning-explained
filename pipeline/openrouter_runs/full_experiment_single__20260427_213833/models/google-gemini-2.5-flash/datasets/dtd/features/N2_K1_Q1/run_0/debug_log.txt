@@ -1,0 +1,18 @@
+=== DEBUG LOG | dataset=dtd | prompt=features | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- repeating V-shaped pattern
+- small, dense texture elements
+- uniform pattern across the image
+</features>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[29] | Predicted=[44] | Correct=False
+<features>
+- vertical folds/pleats
+- solid color
+- no horizontal stripes
+</features>
+<response>44</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=1 | total=2 | errors=0 | accuracy=0.5000 | duration_seconds=3.0111 | avg_trial_wall_seconds=1.5026 | avg_trial_api_seconds=1.3570 | system_fallback_count=0

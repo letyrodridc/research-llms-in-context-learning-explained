@@ -1,0 +1,23 @@
+=== DEBUG LOG | dataset=flowers | prompt=nle | model=google/gemma-4-26b-a4b-it | N=3 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[71] | Predicted=[71] | Correct=True
+<explanation>
+The query image shows pink flowers with thin, prominent stamens and ruffled petals, which matches the visual characteristics of the flowers in the example labeled 71.
+</explanation>
+
+<response>71</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[68] | Predicted=[68] | Correct=True
+<explanation>
+The query image shows a white flower with multiple petals and a prominent yellow center, which matches the visual characteristics of the second example (labeled 68).
+</explanation>
+
+<response>68</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[33] | Predicted=[33] | Correct=True
+<explanation>
+The query image shows a flower with large, distinct petals radiating from a central yellow disk, which is visually similar to the structure of the flower in class 33 (though the color is different, the petal shape and central disk structure are the most comparable among the provided options).
+</explanation>
+
+<response>33</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=16.9947 | avg_trial_wall_seconds=5.6618 | avg_trial_api_seconds=5.4914 | system_fallback_count=0

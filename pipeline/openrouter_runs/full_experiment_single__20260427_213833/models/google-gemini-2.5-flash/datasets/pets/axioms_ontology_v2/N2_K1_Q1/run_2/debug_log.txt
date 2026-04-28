@@ -1,0 +1,30 @@
+=== DEBUG LOG | dataset=pets | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[2] | Predicted=[2] | Correct=True
+<tbox>
+2 ⊑ hasVisualFeature(dog) ⊓ hasVisualFeature(light_brown_fur)
+5 ⊑ hasVisualFeature(cat) ⊓ hasVisualFeature(striped_fur)
+</tbox>
+<abox>
+hasVisualFeature(Query, dog)
+hasVisualFeature(Query, light_brown_fur)
+</abox>
+<dl_explanation>
+Rule(s) fired: 2 ⊑ hasVisualFeature(dog) ⊓ hasVisualFeature(light_brown_fur)
+</dl_explanation>
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[5] | Predicted=[5] | Correct=True
+<tbox>
+5 ⊑ hasVisualFeature(cat) ⊓ hasVisualFeature(striped_or_spotted_fur)
+2 ⊑ hasVisualFeature(dog) ⊓ hasVisualFeature(solid_or_minimal_pattern_fur)
+</tbox>
+<abox>
+hasVisualFeature(Query, cat)
+hasVisualFeature(Query, striped_or_spotted_fur)
+</abox>
+<dl_explanation>
+Rule(s) fired: 5 ⊑ hasVisualFeature(cat) ⊓ hasVisualFeature(striped_or_spotted_fur)
+</dl_explanation>
+<response>5</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=2.5566 | avg_trial_wall_seconds=1.2744 | avg_trial_api_seconds=1.2112 | system_fallback_count=0

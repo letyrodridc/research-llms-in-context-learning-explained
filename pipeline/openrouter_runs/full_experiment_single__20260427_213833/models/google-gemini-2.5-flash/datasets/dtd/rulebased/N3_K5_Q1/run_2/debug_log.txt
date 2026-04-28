@@ -1,0 +1,56 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemini-2.5-flash | N=3 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- surface texture: rough, uneven, broken
+- presence of holes/depressions: multiple, varying sizes
+- presence of water: small puddles within depressions
+- material: dark grey/brown, possibly asphalt or dirt
+- overall appearance: damaged, deteriorated road or path
+</features>
+<kb>
+- IF [surface texture is rough, uneven, broken AND/OR presence of holes/depressions AND/OR presence of water in depressions] THEN [32]
+- IF [surface texture is patterned, woven, or has distinct geometric shapes/lines] THEN [8]
+- IF [surface texture is bumpy, spiky, or consists of many small, raised, rounded elements] THEN [4]
+</kb>
+<rule_check>
+- The rule for class 32 fires because the query image clearly shows a rough, uneven, and broken surface with multiple holes and depressions, some containing water, which are all features consistent with the examples of class 32.
+</rule_check>
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- image type: drawing/illustration
+- color: black and white
+- texture: visible hatching/cross-hatching lines
+- shape: organic, leaf-like, with jagged edges
+- overall pattern: no repeating geometric pattern
+</features>
+<kb>
+- IF [image type = drawing/illustration AND color = black and white AND texture = visible hatching/cross-hatching lines] THEN [8]
+- IF [texture = raised bumps or irregular surfaces AND/OR objects are organic shapes with distinct surface features] THEN [4]
+- IF [surface is damaged or uneven, often with depressions or holes, and may contain liquid] THEN [32]
+</kb>
+<rule_check>
+- The rule for class 8 fires because the Query Image is a drawing/illustration, it is black and white, and it clearly shows visible hatching/cross-hatching lines to create texture and shading.
+</rule_check>
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- color: predominantly yellow with some brown/green spots
+- texture: bumpy, spiky, or irregular surface with distinct protrusions
+- shape: organic, irregular, and somewhat conical or pointed protrusions
+- arrangement: dense, overlapping arrangement of the protrusions
+- presence of human finger: a human finger is touching the surface
+</features>
+<kb>
+- IF [image shows a surface with distinct, often pointed or rounded, protrusions or indentations, creating a highly irregular and textured appearance, and may include organic forms or patterns] THEN [4]
+- IF [image shows a surface with a woven, cross-hatched, or finely patterned texture, often appearing as a fabric or a grid, or abstract geometric patterns] THEN [8]
+- IF [image shows a damaged or uneven ground surface, often with holes, cracks, or puddles, indicating a state of disrepair or natural erosion] THEN [32]
+</kb>
+<rule_check>
+- The rule for class 4 fires because the Query Image displays a surface with distinct, pointed, and irregular protrusions, creating a highly textured appearance, which is consistent with the observable features of class 4 examples (e.g., spiky fruit, bumpy gourds, textured metal, or leaf with raised dots).
+</rule_check>
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=8.6874 | avg_trial_wall_seconds=2.8920 | avg_trial_api_seconds=2.4960 | system_fallback_count=0

@@ -1,0 +1,65 @@
+{
+  "title": "Accuracy vs k | google/gemma-4-26b-a4b-it | dtd | rulebased | n=4, q=1",
+  "alpha": 0.05,
+  "x_field": "config_k",
+  "series_field": null,
+  "filters": {
+    "model": "google/gemma-4-26b-a4b-it",
+    "dataset": "dtd",
+    "prompt_type": "rulebased",
+    "config_n": "4",
+    "config_q": "1"
+  },
+  "rows": [
+    {
+      "x": "1",
+      "series": "accuracy",
+      "correct": 11,
+      "total": 12,
+      "accuracy": 0.9167,
+      "standard_error": 0.079786,
+      "ci95_low": 0.6461,
+      "ci95_high": 0.9851
+    },
+    {
+      "x": "5",
+      "series": "accuracy",
+      "correct": 9,
+      "total": 12,
+      "accuracy": 0.75,
+      "standard_error": 0.125,
+      "ci95_low": 0.4677,
+      "ci95_high": 0.9111
+    }
+  ],
+  "statistics": {
+    "alpha": 0.05,
+    "group_field": "config_k",
+    "groups": [
+      "1",
+      "5"
+    ],
+    "matched": false,
+    "omnibus": {
+      "test": "fisher_exact",
+      "statistic": 3.6666666666666665,
+      "p_value": 0.5900621118012422,
+      "significant": false,
+      "matched_units": null
+    },
+    "pairwise": [
+      {
+        "group_a": "1",
+        "group_b": "5",
+        "odds_ratio": 3.6666666666666665,
+        "p_value": 0.5900621118012422,
+        "a_correct": 11,
+        "a_wrong": 1,
+        "b_correct": 9,
+        "b_wrong": 3,
+        "p_value_holm": 0.5900621118012422,
+        "significant_holm": false
+      }
+    ]
+  }
+}

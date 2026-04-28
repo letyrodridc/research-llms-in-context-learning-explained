@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[75] | Predicted=[75] | Correct=True
+<features>
+- flower shape: trumpet-shaped, fused petals
+- flower color: predominantly pink/magenta with a white center
+- petal structure: petals appear fused, forming a single, open bell-like structure
+- central part: white with a small, light-colored dot in the very center
+- background: blurred, showing a branch, green foliage, and a fence
+</features>
+<kb>
+- IF [flower shape is trumpet-shaped with fused petals AND/OR flower has a distinct central color different from the outer petal color] THEN [75]
+- IF [flower has distinct, separate petals, often with a complex, multi-lobed or ruffled labellum (lip petal)] THEN [35]
+</kb>
+<rule_check>
+- The rule for class 75 fires because the Query Image shows a trumpet-shaped flower with fused petals and a distinct central white color contrasting with the outer pink/magenta petals.
+</rule_check>
+<response>75</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[35] | Predicted=[35] | Correct=True
+<features>
+- flower shape: distinct petals, not trumpet-shaped
+- petal arrangement: five main petals, with a prominent, frilly lower lip petal
+- flower color: predominantly light pink/lavender with a darker pink/magenta and yellow/white center
+</features>
+<kb>
+- IF [flower shape is trumpet-shaped AND/OR flower has a central dark eye] THEN [75]
+- IF [flower has distinct petals, a prominent frilly lower lip petal, and a complex multi-colored center] THEN [35]
+</kb>
+<rule_check>
+- The rule for class 35 fires because the Query Image shows a flower with distinct petals, a prominent frilly lower lip petal, and a complex multi-colored center (light pink, dark pink/magenta, yellow, and white).
+</rule_check>
+<response>35</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.4253 | avg_trial_wall_seconds=2.2103 | avg_trial_api_seconds=1.6047 | system_fallback_count=0

@@ -1,0 +1,60 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=4 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[4] | Predicted=[4] | Correct=True
+<tbox>
+4 ⊑ hasVisualFeature(Antlers) ⊓ hasVisualFeature(QuadrupedalBody)
+2 ⊑ hasVisualFeature(Feathers) ⊓ hasVisualFeature(Beak)
+6 ⊑ hasVisualFeature(AmphibianBody) ⊓ hasVisualFeature(ShortLimbs)
+7 ⊑ hasVisualFeature(EquineBody) ⊓ hasVisualFeature(Mane)
+</tbox>
+<abox>
+hasVisualFeature(Query, Antlers)
+hasVisualFeature(Query, QuadrupedalBody)
+</abox>
+<dl_explanation>
+4 ⊑ hasVisualFeature(Antlers) ⊓ hasVisualFeature(QuadrupedalBody)
+</dl_explanation>
+<response>4</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[2] | Predicted=[2] | Correct=True
+<tbox>
+2 ⊑ hasVisualFeature(long_neck) ⊓ hasVisualFeature(beak) ⊓ hasVisualFeature(feathers)
+4 ⊑ hasVisualFeature(antlers) ⊓ hasVisualFeature(fur)
+6 ⊑ hasVisualFeature(short_legs) ⊓ hasVisualFeature(webbed_feet) ⊓ hasVisualFeature(smooth_skin)
+7 ⊑ hasVisualFeature(mane) ⊓ hasVisualFeature(tail) ⊓ hasVisualFeature(hooves)
+</tbox>
+<abox>
+hasVisualFeature(Query, long_neck)
+hasVisualFeature(Query, beak)
+hasVisualFeature(Query, feathers)
+</abox>
+<dl_explanation>
+Rule(s) fired: 2 ⊑ hasVisualFeature(long_neck) ⊓ hasVisualFeature(beak) ⊓ hasVisualFeature(feathers)
+</dl_explanation>
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[6] | Predicted=[6] | Correct=True
+<tbox>
+6 ⊑ hasVisualFeature(brown_skin) ⊓ hasVisualFeature(visible_eye)
+</tbox>
+<abox>
+hasVisualFeature(Query, brown_skin)
+hasVisualFeature(Query, visible_eye)
+</abox>
+<dl_explanation>
+Rule(s) fired: 6 ⊑ hasVisualFeature(brown_skin) ⊓ hasVisualFeature(visible_eye)
+</dl_explanation>
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[7] | Predicted=[7] | Correct=True
+<tbox>
+7 ⊑ hasVisualFeature(horse)
+</tbox>
+<abox>
+hasVisualFeature(Query, horse)
+</abox>
+<dl_explanation>
+Rule(s) fired: 7 ⊑ hasVisualFeature(horse)
+</dl_explanation>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=9.9046 | avg_trial_wall_seconds=2.4697 | avg_trial_api_seconds=2.2740 | system_fallback_count=0

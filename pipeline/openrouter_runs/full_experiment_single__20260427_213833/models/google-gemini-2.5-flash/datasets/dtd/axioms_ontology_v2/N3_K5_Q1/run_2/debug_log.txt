@@ -1,0 +1,55 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=3 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[32] | Predicted=[32] | Correct=True
+<tbox>
+32 ⊑ hasVisualFeature(potholes) ⊓ hasVisualFeature(uneven_surface)
+8 ⊑ hasVisualFeature(patterned_surface)
+4 ⊑ hasVisualFeature(bumpy_texture)
+</tbox>
+<abox>
+hasVisualFeature(Query, potholes)
+hasVisualFeature(Query, uneven_surface)
+</abox>
+<dl_explanation>
+Rule(s) fired: 32 ⊑ hasVisualFeature(potholes) ⊓ hasVisualFeature(uneven_surface)
+</dl_explanation>
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<tbox>
+Class_32 ⊑ hasVisualFeature(IrregularSurface) ⊓ hasVisualFeature(Depressions)
+Class_8 ⊑ hasVisualFeature(PatternedSurface)
+Class_4 ⊑ hasVisualFeature(BumpyTexture)
+</tbox>
+<abox>
+hasVisualFeature(Query, PatternedSurface)
+</abox>
+<dl_explanation>
+Rule(s) fired: Class_8 ⊑ hasVisualFeature(PatternedSurface)
+</dl_explanation>
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[4] | Predicted=[4] | Correct=True
+<tbox>
+Class4 ⊑ hasVisualFeature(BumpySurface) ⊓ hasVisualFeature(IrregularShapes)
+Class4 ⊑ hasVisualFeature(OrganicTexture)
+Class4 ⊑ hasVisualFeature(VariedColoration)
+Class8 ⊑ hasVisualFeature(PatternedSurface) ⊓ hasVisualFeature(GeometricShapes)
+Class8 ⊑ hasVisualFeature(TextileTexture)
+Class32 ⊑ hasVisualFeature(DamagedSurface) ⊓ hasVisualFeature(IrregularDepressions)
+Class32 ⊑ hasVisualFeature(RoughTexture)
+</tbox>
+<abox>
+hasVisualFeature(Query, BumpySurface)
+hasVisualFeature(Query, IrregularShapes)
+hasVisualFeature(Query, OrganicTexture)
+hasVisualFeature(Query, VariedColoration)
+</abox>
+<dl_explanation>
+Class4 ⊑ hasVisualFeature(BumpySurface)
+Class4 ⊑ hasVisualFeature(IrregularShapes)
+Class4 ⊑ hasVisualFeature(OrganicTexture)
+Class4 ⊑ hasVisualFeature(VariedColoration)
+</dl_explanation>
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=7.4998 | avg_trial_wall_seconds=2.4977 | avg_trial_api_seconds=1.8660 | system_fallback_count=0

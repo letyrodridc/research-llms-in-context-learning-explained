@@ -1,0 +1,75 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemini-2.5-flash | N=4 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- animal body shape: large, elongated, four legs, prominent head with antlers
+- animal color: brown/tan
+- background: green (grass/foliage) and some vertical dark shapes (trees)
+- posture: lying down
+</features>
+<kb>
+- IF [animal body shape is large and elongated with four legs and a prominent head, often with antlers, and the animal color is brown/tan] THEN [4]
+- IF [animal body shape is small and compact with wings and a beak, and the animal color varies (brown, yellow, black, white)] THEN [2]
+- IF [animal body shape is broad and flattened, with visible texture on the skin, and the animal color is mottled green/brown] THEN [6]
+- IF [animal body shape is large and muscular with four legs, a mane, and a tail, and the animal color is white or brown] THEN [7]
+</kb>
+<rule_check>
+- The rule for class 4 fires because the Query Image shows an animal with a large, elongated body, four legs, a prominent head with visible antlers, and a brown/tan color, which matches the observable features for class 4.
+</rule_check>
+<response>4</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[2] | Predicted=[2] | Correct=True
+<features>
+- overall shape: small, compact body with a distinct head and tail
+- presence of wings: visible, folded against the body
+- presence of legs: visible, gripping a branch
+- presence of beak: small, pointed beak visible on the head
+- background: clear blue sky
+- posture: perched on a branch
+</features>
+<kb>
+- IF [overall shape is small and compact AND has visible wings and a beak AND is often perched on a branch] THEN [2]
+- IF [overall shape is larger and elongated AND has four legs and a distinct head with ears AND is typically on the ground or in foliage] THEN [4]
+- IF [overall shape is broad and flattened AND has visible limbs and often textured skin AND is typically on a flat surface or in water] THEN [6]
+- IF [overall shape is large and robust AND has four legs, a mane, and a tail AND is typically on the ground, sometimes with a rider] THEN [7]
+</kb>
+<rule_check>
+- The rule for class 2 fires because the Query Image shows an animal with a small, compact body, visible wings, a beak, and it is perched on a branch, which aligns with the observable features for class 2.
+</rule_check>
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- main subject: green, small, four-legged animal
+- background: dark, out of focus
+- foreground: light brown/pinkish, out of focus, possibly a hand or branch
+</features>
+<kb>
+- IF [main subject is a large, four-legged mammal, often brown or white] THEN [4]
+- IF [main subject is a bird, typically small with wings and a beak] THEN [2]
+- IF [main subject is a frog or toad, typically green or brown, with a squat body and four legs] THEN [6]
+- IF [main subject is a horse, a large, four-legged mammal, often ridden or in a field] THEN [7]
+</kb>
+<rule_check>
+- The rule for class 6 fires because the query image shows a green, small, four-legged animal with a squat body, which is consistent with the description of a frog or toad.
+</rule_check>
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- main subject: horse with a rider
+- horse color: white/light
+- background: dark green foliage and white fence
+- rider attire: white helmet, red and white top, dark pants
+</features>
+<kb>
+- IF [main subject is a deer-like animal] THEN [4]
+- IF [main subject is a bird] THEN [2]
+- IF [main subject is a frog/toad] THEN [6]
+- IF [main subject is a horse, possibly with a rider] THEN [7]
+</kb>
+<rule_check>
+- The rule "IF [main subject is a horse, possibly with a rider] THEN [7]" fires for the Query Image because the image clearly shows a horse with a rider, which aligns with the observable features of class 7 examples.
+</rule_check>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=18.0057 | avg_trial_wall_seconds=4.4992 | avg_trial_api_seconds=4.3209 | system_fallback_count=0

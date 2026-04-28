@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[17] | Predicted=[17] | Correct=True
+<features>
+- surface pattern: parallel lines
+- line orientation: horizontal and diagonal
+- line texture: smooth, light-colored wood grain
+- overall texture: smooth with some rough patches
+- presence of objects: hand and tool
+</features>
+<kb>
+- IF [surface pattern = parallel lines AND line texture = smooth or textured] THEN [17]
+- IF [surface pattern = irregular holes or depressions AND surface texture = rough or uneven] THEN [32]
+</kb>
+<rule_check>
+- The rule for class 17 fires because the query image clearly shows a surface with a pattern of parallel lines, which are the planks of wood. The lines are smooth, consistent with the examples in class 17.
+</rule_check>
+<response>17</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- presence of a flowing body of water: yes
+- presence of large, irregular rock formations: yes
+- presence of a natural depression or channel: yes
+- texture of the ground/surface: rough, rocky, uneven
+- overall scene: natural landscape with water flowing through a rocky channel
+</features>
+<kb>
+- IF [image shows a pattern of parallel lines or grooves, either straight or curved, on a surface or object] THEN [17]
+- IF [image shows a natural or artificial depression, hole, or uneven surface, often associated with rough terrain, damaged ground, or a natural cavity] THEN [32]
+</kb>
+<rule_check>
+- The rule for class 32 fires because the Query Image shows a natural depression or channel formed by rocks through which water flows, which aligns with the description of a natural cavity or uneven surface. It does not show a pattern of parallel lines or grooves.
+</rule_check>
+<response>32</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=5.1445 | avg_trial_wall_seconds=2.5691 | avg_trial_api_seconds=2.1824 | system_fallback_count=0

@@ -1,0 +1,78 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemini-2.5-flash | N=4 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[4] | Predicted=[6] | Correct=False
+<features>
+- main object shape: somewhat oval/roundish with indistinct features
+- main object color: light brown/tan and dark brown/black
+- background color: predominantly green
+- background texture: blurry, suggesting grass or foliage
+- object orientation: appears to be facing forward or slightly upwards
+- presence of distinct limbs/appendages: not clearly discernible, but hints of wing-like structures
+</features>
+<kb>
+- IF [main object is a large, four-legged mammal, often with antlers or a long mane, and typically brown or dark in color] THEN [4 or 7]
+- IF [main object is a bird, characterized by wings, a beak, and often distinct plumage, and can be in various poses like standing, flying, or perched] THEN [2]
+- IF [main object is a frog or toad, characterized by a squat body, visible limbs, and often green or mottled brown coloration, typically on ground or foliage] THEN [6]
+- IF [main object is a horse, characterized by a distinct equine body shape, often with a mane and tail, and typically standing or running] THEN [7]
+- IF [main object is a deer or moose, characterized by a distinct cervine body shape, often with antlers, and typically standing or grazing in a natural environment] THEN [4]
+</kb>
+<rule_check>
+- The query image shows a small, somewhat oval/roundish object with light and dark brown colors, surrounded by a green, blurry background. The features are indistinct, but the overall shape and color do not match the clear, large, four-legged mammals (horses or deer/moose) seen in classes 4 and 7. It also does not clearly show the distinct features of a bird (beak, clear wings, specific plumage) as in class 2, nor the squat body and visible limbs of a frog/toad as in class 6. However, the indistinct, somewhat rounded shape and mottled brown/green appearance, combined with the blurry green background, are most consistent with the highly blurred examples of class 6 (frogs/toads) where the animal blends into its environment and specific features are hard to discern. The examples in class 6 show animals that are often camouflaged and less distinctly outlined than the other animal classes.
+</rule_check>
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[2] | Predicted=[2] | Correct=True
+<features>
+- body shape: small, rounded body
+- presence of wings: visible wings
+- presence of tail: visible tail feathers
+- presence of beak: visible beak
+- presence of legs: visible legs
+- posture: standing upright
+</features>
+<kb>
+- IF [body shape is large and elongated AND/OR presence of antlers] THEN [4]
+- IF [body shape is small and rounded AND presence of wings AND presence of beak AND presence of tail] THEN [2]
+- IF [body shape is broad and flattened AND presence of prominent eyes AND presence of short limbs] THEN [6]
+- IF [body shape is large and robust AND presence of mane AND presence of tail] THEN [7]
+</kb>
+<rule_check>
+- The rule for class 2 fires because the Query Image shows a small, rounded body, visible wings, a visible beak, and visible tail feathers, which are all consistent with the features observed in the examples for class 2.
+</rule_check>
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- overall color: predominantly green and brown
+- texture: mottled, blurry, indistinct shapes
+- discernible objects: none clearly identifiable as an animal from the other classes
+</features>
+<kb>
+- IF [animal is large, quadrupedal, with antlers or distinct head/body shape, and often brown/grey] THEN [4]
+- IF [animal is a bird, with wings, feathers, and a beak, often seen perched or flying] THEN [2]
+- IF [animal is a frog or toad, with a squat body, visible limbs, and often green/brown/mottled skin] THEN [6]
+- IF [animal is a horse, large, quadrupedal, with a mane and tail, and a distinct equine body shape] THEN [7]
+</kb>
+<rule_check>
+- The rule for class 6 fires because the query image shows a mottled, blurry, predominantly green and brown pattern, which is consistent with the appearance of a frog or toad, especially when camouflaged or viewed closely as in the examples for class 6. The other classes (4, 2, 7) depict animals with more distinct, larger body shapes, wings, or antlers, none of which are discernible in the query image.
+</rule_check>
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- animal body shape: large, four-legged, with a distinct head, torso, and tail
+- color: predominantly light (white/grey)
+- posture: rearing up on hind legs
+- background: dark, uniform
+</features>
+<kb>
+- IF [animal body shape is large and four-legged AND color is predominantly brown, black, or tan AND/OR has antlers] THEN [4]
+- IF [animal body shape is a bird with wings, a beak, and feathers AND/OR has a long neck] THEN [2]
+- IF [animal body shape is a frog or toad, typically squat with visible limbs and often camouflaged coloring] THEN [6]
+- IF [animal body shape is large, four-legged, with a distinct head, torso, and tail AND color is predominantly brown, black, white, or grey] THEN [7]
+</kb>
+<rule_check>
+- The rule for class 7 fires because the Query Image shows an animal with a large, four-legged body shape, a distinct head, torso, and tail, and its color is predominantly light (white/grey), which aligns with the color variations seen in class 7 examples.
+</rule_check>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=10.7792 | avg_trial_wall_seconds=2.6927 | avg_trial_api_seconds=2.5203 | system_fallback_count=0

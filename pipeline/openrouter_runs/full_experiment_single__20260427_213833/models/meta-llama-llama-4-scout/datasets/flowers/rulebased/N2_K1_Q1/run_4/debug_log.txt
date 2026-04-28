@@ -1,0 +1,37 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=meta-llama/llama-4-scout | N=2 K=1 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- color: purple
+- petal shape: irregular
+- number of petals: 6
+- leaf shape: irregular
+</features>
+<kb>
+- IF color = purple AND petal shape = irregular AND number of petals = 6 THEN 81
+- IF color = yellow AND petal shape = regular THEN 14
+</kb>
+
+<rule_check>
+- The rule for class 81 fires because the Query Image has a purple color, irregular petal shape, and 6 petals.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- observable feature: petal shape
+- observable feature: petal color
+- observable feature: leaf shape
+</features>
+<kb>
+- IF [petal shape = curved AND petal color = yellow AND leaf shape = long] THEN [14]
+- IF [petal shape = star AND petal color = pink AND leaf shape = oval] THEN [81]
+</kb>
+
+<rule_check>
+- The Query Image has curved petals, yellow color, and long leaves. Therefore, the rule that fires is: IF [petal shape = curved AND petal color = yellow AND leaf shape = long] THEN [14].
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=9.5365 | avg_trial_wall_seconds=4.7645 | avg_trial_api_seconds=4.4022 | system_fallback_count=0

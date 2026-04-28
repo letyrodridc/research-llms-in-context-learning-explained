@@ -1,0 +1,200 @@
+{
+  "title": "Overall Accuracy by Prompt Type",
+  "alpha": 0.05,
+  "x_field": "prompt_type",
+  "series_field": null,
+  "filters": {},
+  "rows": [
+    {
+      "x": "axioms_ontology_v2",
+      "series": "accuracy",
+      "correct": 1038,
+      "total": 1152,
+      "accuracy": 0.901,
+      "standard_error": 0.008798,
+      "ci95_low": 0.8824,
+      "ci95_high": 0.917
+    },
+    {
+      "x": "classification",
+      "series": "accuracy",
+      "correct": 1080,
+      "total": 1152,
+      "accuracy": 0.9375,
+      "standard_error": 0.007132,
+      "ci95_low": 0.922,
+      "ci95_high": 0.9501
+    },
+    {
+      "x": "features",
+      "series": "accuracy",
+      "correct": 1072,
+      "total": 1152,
+      "accuracy": 0.9306,
+      "standard_error": 0.00749,
+      "ci95_low": 0.9144,
+      "ci95_high": 0.9438
+    },
+    {
+      "x": "nle",
+      "series": "accuracy",
+      "correct": 1078,
+      "total": 1152,
+      "accuracy": 0.9358,
+      "standard_error": 0.007223,
+      "ci95_low": 0.9201,
+      "ci95_high": 0.9485
+    },
+    {
+      "x": "rulebased",
+      "series": "accuracy",
+      "correct": 1063,
+      "total": 1152,
+      "accuracy": 0.9227,
+      "standard_error": 0.007867,
+      "ci95_low": 0.9059,
+      "ci95_high": 0.9368
+    }
+  ],
+  "statistics": {
+    "alpha": 0.05,
+    "group_field": "prompt_type",
+    "groups": [
+      "axioms_ontology_v2",
+      "classification",
+      "features",
+      "nle",
+      "rulebased"
+    ],
+    "matched": true,
+    "omnibus": {
+      "test": "cochrans_q",
+      "matched_units": 1152,
+      "statistic": 36.75471698113208,
+      "p_value": 2.023527866379382e-07,
+      "significant": true
+    },
+    "pairwise": [
+      {
+        "group_a": "axioms_ontology_v2",
+        "group_b": "classification",
+        "matched_units": 1152,
+        "a_correct_b_wrong": 24,
+        "b_correct_a_wrong": 66,
+        "both_correct": 1014,
+        "both_wrong": 48,
+        "p_value": 1.0902049191089246e-05,
+        "p_value_holm": 0.00010902049191089245,
+        "significant_holm": true
+      },
+      {
+        "group_a": "axioms_ontology_v2",
+        "group_b": "features",
+        "matched_units": 1152,
+        "a_correct_b_wrong": 29,
+        "b_correct_a_wrong": 63,
+        "both_correct": 1009,
+        "both_wrong": 51,
+        "p_value": 0.000509090224349734,
+        "p_value_holm": 0.004072721794797872,
+        "significant_holm": true
+      },
+      {
+        "group_a": "axioms_ontology_v2",
+        "group_b": "nle",
+        "matched_units": 1152,
+        "a_correct_b_wrong": 22,
+        "b_correct_a_wrong": 62,
+        "both_correct": 1016,
+        "both_wrong": 52,
+        "p_value": 1.4655953475888016e-05,
+        "p_value_holm": 0.00013190358128299215,
+        "significant_holm": true
+      },
+      {
+        "group_a": "axioms_ontology_v2",
+        "group_b": "rulebased",
+        "matched_units": 1152,
+        "a_correct_b_wrong": 34,
+        "b_correct_a_wrong": 59,
+        "both_correct": 1004,
+        "both_wrong": 55,
+        "p_value": 0.012400602797937593,
+        "p_value_holm": 0.08680421958556316,
+        "significant_holm": false
+      },
+      {
+        "group_a": "classification",
+        "group_b": "features",
+        "matched_units": 1152,
+        "a_correct_b_wrong": 20,
+        "b_correct_a_wrong": 12,
+        "both_correct": 1060,
+        "both_wrong": 60,
+        "p_value": 0.21532714972272515,
+        "p_value_holm": 0.8613085988909006,
+        "significant_holm": false
+      },
+      {
+        "group_a": "classification",
+        "group_b": "nle",
+        "matched_units": 1152,
+        "a_correct_b_wrong": 19,
+        "b_correct_a_wrong": 17,
+        "both_correct": 1061,
+        "both_wrong": 55,
+        "p_value": 0.8679394004284404,
+        "p_value_holm": 0.9170322595893551,
+        "significant_holm": false
+      },
+      {
+        "group_a": "classification",
+        "group_b": "rulebased",
+        "matched_units": 1152,
+        "a_correct_b_wrong": 39,
+        "b_correct_a_wrong": 22,
+        "both_correct": 1041,
+        "both_wrong": 50,
+        "p_value": 0.03961701489849968,
+        "p_value_holm": 0.2377020893909981,
+        "significant_holm": false
+      },
+      {
+        "group_a": "features",
+        "group_b": "nle",
+        "matched_units": 1152,
+        "a_correct_b_wrong": 11,
+        "b_correct_a_wrong": 17,
+        "both_correct": 1061,
+        "both_wrong": 63,
+        "p_value": 0.34492845088243484,
+        "p_value_holm": 0.9170322595893551,
+        "significant_holm": false
+      },
+      {
+        "group_a": "features",
+        "group_b": "rulebased",
+        "matched_units": 1152,
+        "a_correct_b_wrong": 35,
+        "b_correct_a_wrong": 26,
+        "both_correct": 1037,
+        "both_wrong": 54,
+        "p_value": 0.30567741986311836,
+        "p_value_holm": 0.9170322595893551,
+        "significant_holm": false
+      },
+      {
+        "group_a": "nle",
+        "group_b": "rulebased",
+        "matched_units": 1152,
+        "a_correct_b_wrong": 37,
+        "b_correct_a_wrong": 22,
+        "both_correct": 1041,
+        "both_wrong": 52,
+        "p_value": 0.06744461190078899,
+        "p_value_holm": 0.33722305950394493,
+        "significant_holm": false
+      }
+    ]
+  }
+}

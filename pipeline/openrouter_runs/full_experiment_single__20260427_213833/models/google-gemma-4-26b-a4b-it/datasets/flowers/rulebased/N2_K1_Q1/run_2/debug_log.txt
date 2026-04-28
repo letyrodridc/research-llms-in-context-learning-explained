@@ -1,0 +1,37 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=2 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- petal color: light purple/lavender
+- petal shape: elongated, pointed tips
+- center structure: prominent cluster of thin filaments/stamens
+- background: green leaves and dark soil
+</features>
+<kb>
+- IF [petal color = pink/purple AND center structure = prominent cluster of thin filaments] THEN [81]
+- IF [petal color = yellow AND petal shape = large drooping petals] THEN [14]
+</kb>
+
+<rule_check>
+- The rule for class 81 fires because the Query Image features light purple petals and a prominent central cluster of thin filaments, matching the pattern seen in the first example.
+</rule_check>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- petal color: yellow
+- petal shape: large, broad, drooping/spreading petals
+- stem/leaf structure: long, green, blade-like leaves
+</features>
+<kb>
+- IF [petal color = pink AND petal shape = multiple pointed petals around a center] THEN [81]
+- IF [petal color = yellow AND petal shape = large, broad, drooping/spreading petals] THEN [14]
+</kb>
+
+<rule_check>
+- The rule for class 14 fires because the Query Image features yellow petals with a broad, drooping shape and long green leaves, matching the pattern seen in the second example.
+</rule_check>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=36.1788 | avg_trial_wall_seconds=18.0865 | avg_trial_api_seconds=17.9529 | system_fallback_count=0

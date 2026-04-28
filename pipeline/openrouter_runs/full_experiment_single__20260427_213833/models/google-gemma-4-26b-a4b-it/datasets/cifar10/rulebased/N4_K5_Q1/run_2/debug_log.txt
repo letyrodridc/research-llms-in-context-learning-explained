@@ -1,0 +1,81 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=4 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- animal: large mammal
+- head feature: prominent antlers
+- body color: light brown/tan
+- background: green foliage/grass
+</features>
+
+<kb>
+- IF [animal = large mammal AND head feature = antlers] THEN [4]
+- IF [animal = bird] THEN [2]
+- IF [animal = amphibian/frog] THEN [6]
+- IF [animal = horse] THEN [7]
+</kb>
+
+<rule_check>
+- The rule for class 4 fires because the Query Image shows a large mammal with prominent antlers, which matches the pattern seen in the support images for class 4.
+</rule_check>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[2] | Predicted=[2] | Correct=True
+<features>
+- subject: small bird
+- subject color: brown/tan
+- subject position: perched on a branch
+- background: blue sky
+</features>
+<kb>
+- IF [subject = bird] THEN [2]
+- IF [subject = deer] THEN [4]
+- IF [subject = frog/toad] THEN [6]
+- IF [subject = horse] THEN [7]
+</kb>
+
+<rule_check>
+- The rule "IF [subject = bird] THEN [2]" fires because the Query Image depicts a small feathered animal (a bird) perched on a branch against a blue sky.
+</rule_check>
+
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- animal type: frog/amphibian
+- color: green
+- skin texture: bumpy/textured
+</features>
+<kb>
+- IF [animal type = bird] THEN [2]
+- IF [animal type = deer] THEN [4]
+- IF [animal type = frog/amphibian] THEN [6]
+- IF [animal type = horse] THEN [7]
+</kb>
+
+<rule_check>
+- The rule for class 6 fires because the Query Image shows a green, textured amphibian (frog), which matches the visual patterns of class 6 in the examples.
+</rule_check>
+
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- subject: large four-legged animal
+- subject color: white
+- subject presence: person riding the animal
+</features>
+<kb>
+- IF [subject = bird] THEN [2]
+- IF [subject = deer] THEN [4]
+- IF [subject = frog/toad] THEN [6]
+- IF [subject = horse AND person is riding it] THEN [7]
+</kb>
+
+<rule_check>
+- The rule for class 7 fires because the image shows a large white four-legged animal (horse) with a person riding it, which matches the pattern seen in the class 7 examples.
+</rule_check>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=15.7447 | avg_trial_wall_seconds=3.9341 | avg_trial_api_seconds=3.7337 | system_fallback_count=0

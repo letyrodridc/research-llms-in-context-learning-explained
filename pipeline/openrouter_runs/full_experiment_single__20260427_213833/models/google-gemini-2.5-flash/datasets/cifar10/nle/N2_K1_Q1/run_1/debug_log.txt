@@ -1,0 +1,10 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=nle | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<explanation>The query image visually matches the examples labeled '3' due to the presence of an animal with fur, specifically a cat, which is consistent with the visual content of the provided examples for class '3'. The examples for class '0' clearly show an airplane, which is not present in the query image.</explanation>
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[0] | Predicted=[0] | Correct=True
+<explanation>The query image visually matches class 0 due to the presence of an aircraft with wings and a visible landing gear, similar to the example provided for class 0. Class 3 examples show a different object, which is not an aircraft.</explanation>
+<response>0</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=2.2149 | avg_trial_wall_seconds=1.1055 | avg_trial_api_seconds=1.0695 | system_fallback_count=0

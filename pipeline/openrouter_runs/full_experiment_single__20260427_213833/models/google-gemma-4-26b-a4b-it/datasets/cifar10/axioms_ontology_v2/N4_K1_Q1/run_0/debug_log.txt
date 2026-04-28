@@ -1,0 +1,93 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=4 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[7] | Predicted=[7] | Correct=True
+<tbox>
+- [7] ⊑ hasVisualFeature([four-legged_animal])
+- [7] ⊑ hasVisualFeature([equine_shape])
+- [8] ⊑ hasVisualFeature([sail_on_water])
+- [0] ⊑ hasVisualFeature([airplane_on_ground])
+- [4] ⊑ hasVisualFeature([small_animal_in_grass])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [four-legged_animal])
+- hasVisualFeature(Query, [equine_shape])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [7] ⊑ hasVisualFeature([four-legged_animal]) ⊓ hasVisualFeature([equine_shape])
+</dl_explanation>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<tbox>
+- [7] ⊑ hasVisualFeature([four-legged_animal]) ⊓ hasVisualFeature([grass_background])
+- [8] ⊑ hasVisualFeature([sail_on_water])
+- [0] ⊑ hasVisualFeature([airplane_on_ground])
+- [4] ⊑ hasVisualFeature([animal_in_grass])
+- [Ship_Class] ≡ hasVisualFeature([large_vessel_on_water])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [large_vessel_on_water])
+- hasVisualFeature(Query, [water_background])
+</abox>
+
+<dl_explanation>
+- The query image shows a large vessel on water. However, looking at the provided labels [7, 8, 0, 4], none of them explicitly match a "ship" based on the provided examples. 
+- Re-evaluating the provided examples:
+  - 7: Horse (animal)
+  - 8: Sailboat (vessel with sail)
+  - 0: Airplane (aircraft)
+  - 4: Animal (deer/small animal)
+- The query image is a large ship. In many classification tasks of this type, if a specific class isn't provided, we look for the closest visual category. However, the instructions say "Use only labels from the provided final options list."
+- Looking at the options: 7 (Horse), 8 (Sailboat), 0 (Airplane), 4 (Animal).
+- A ship is a vessel. A sailboat (8) is a type of vessel.
+- Wait, let's look at the image again. It is a large ship/vessel.
+- If the options are strictly [7, 8, 0, 4], and the image is a ship, there might be a mismatch in the prompt's provided examples vs the query.
+- Let's re-examine the query image. It is a large ship on water.
+- Option 8 is a sailboat. A sailboat is a vessel on water.
+- Let's check if any other label fits. 7 is a horse. 0 is an airplane. 4 is an animal.
+- 8 is the only vessel-related class.
+</dl_explanation>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[0] | Predicted=[0] | Correct=True
+<tbox>
+- 0 ⊑ hasVisualFeature([airplane])
+- 4 ⊑ hasVisualFeature([animal_in_grass])
+- 7 ⊑ hasVisualFeature([horse])
+- 8 ⊑ hasVisualFeature([sailboat])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [airplane])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: 0 ⊑ hasVisualFeature([airplane])
+</dl_explanation>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[4] | Predicted=[7] | Correct=False
+<tbox>
+- [7] ⊑ hasVisualFeature([four-legged_animal]) ⊓ hasVisualFeature([standing_in_grass])
+- [8] ⊑ hasVisualFeature([boat_with_sail])
+- [0] ⊑ hasVisualFeature([airplane])
+- [4] ⊑ hasVisualFeature([four-legged_animal]) ⊓ hasVisualFeature([small_size])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [four-legged_animal])
+- hasVisualFeature(Query, [standing_in_grass])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [7] ⊑ hasVisualFeature([four-legged_animal]) ⊓ hasVisualFeature([standing_in_grass])
+</dl_explanation>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=18.7732 | avg_trial_wall_seconds=4.6884 | avg_trial_api_seconds=4.6471 | system_fallback_count=0

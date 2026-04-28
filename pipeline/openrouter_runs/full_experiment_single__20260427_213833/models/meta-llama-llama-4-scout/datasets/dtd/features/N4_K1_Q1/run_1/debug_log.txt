@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=dtd | prompt=features | model=meta-llama/llama-4-scout | N=4 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[18] | Predicted=[18] | Correct=True
+features>
+- small hexagons
+- repeating pattern
+- light colors
+</features>
+
+<response>18</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[22] | Predicted=[22] | Correct=True
+<features>
+- horizontal stripes
+- pink and white colors
+</features>
+
+<response>22</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[23] | Predicted=[23] | Correct=True
+<features>
+- dark background
+- red and orange spots
+- marble pattern
+</features>
+
+<response>23</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[27] | Predicted=[18] | Correct=False
+<features>
+- small holes
+- uniform black
+</features>
+
+<response>18</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=7.0600 | avg_trial_wall_seconds=1.7633 | avg_trial_api_seconds=1.2548 | system_fallback_count=0

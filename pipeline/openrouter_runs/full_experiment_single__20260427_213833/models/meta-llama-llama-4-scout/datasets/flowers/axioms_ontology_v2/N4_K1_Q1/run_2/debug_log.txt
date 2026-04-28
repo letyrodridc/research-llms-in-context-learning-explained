@@ -1,0 +1,75 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=meta-llama/llama-4-scout | N=4 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[7] | Predicted=[7] | Correct=True
+<tbox>
+- [7] ⊑ hasVisualFeature([long petals])
+- [29] ⊑ hasVisualFeature([pink color])
+- [8] ⊑ hasVisualFeature([purple color])
+- [4] ⊑ hasVisualFeature([round shape])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [long petals])
+- hasVisualFeature(Query, [yellow and orange colors])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [7] ⊑ hasVisualFeature([long petals])
+</dl_explanation>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<tbox>
+- [7] ⊑ hasVisualFeature([orange-color, long-petals])
+- [29] ⊑ hasVisualFeature([pink-color, round-petals])
+- [8] ⊑ hasVisualFeature([purple-color, long-petals])
+- [4] ⊑ hasVisualFeature([yellow-color, round-petals])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [pink-color, round-petals])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [29] ⊑ hasVisualFeature([pink-color, round-petals])
+</dl_explanation>
+
+<response>29</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[8] | Predicted=[8] | Correct=True
+<tbox>
+- [7] ⊑ hasVisualFeature([long curved petals])
+- [29] ⊑ hasVisualFeature([pink with red center])
+- [8] ⊑ hasVisualFeature([purple bell-shaped flowers])
+- [4] ⊑ hasVisualFeature([yellow daisy-like flower])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [purple bell-shaped flowers])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [8] ⊑ hasVisualFeature([purple bell-shaped flowers])
+</dl_explanation>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<tbox>
+- [7] ⊑ hasVisualFeature([long-petals])
+- [29] ⊑ hasVisualFeature([pink-color])
+- [8] ⊑ hasVisualFeature([tall-petal-structure])
+- [4] ⊑ hasVisualFeature([round-petals])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [round-petals])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [4] ⊑ hasVisualFeature([round-petals])
+</dl_explanation>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=14.6643 | avg_trial_wall_seconds=3.6630 | avg_trial_api_seconds=3.2003 | system_fallback_count=0

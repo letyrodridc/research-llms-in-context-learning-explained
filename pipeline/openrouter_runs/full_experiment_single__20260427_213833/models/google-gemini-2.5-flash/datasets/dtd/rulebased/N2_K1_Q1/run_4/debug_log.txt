@@ -1,0 +1,33 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- texture pattern: woven, diagonal, criss-cross
+- material appearance: flat, wide strips
+- color: shades of brown
+</features>
+<kb>
+- IF [texture pattern = woven, diagonal, criss-cross AND material appearance = rope-like strands] THEN [44]
+- IF [texture pattern = wavy, zigzag AND material appearance = thin, pleated fabric] THEN [29]
+</kb>
+<rule_check>
+- The rule for class 44 fires because the Query Image displays a woven, diagonal, criss-cross texture pattern, which is consistent with the pattern observed in the example for class 44. However, the material appearance in the Query Image is flat, wide strips, which differs from the rope-like strands in the example for class 44.
+</rule_check>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<features>
+- overall pattern: horizontal folds
+- texture: smooth with slight variations in color/shade
+- color: light pink/peach
+- visible elements: thin vertical strings
+</features>
+<kb>
+- IF [overall pattern = diagonal weave AND texture = coarse, fibrous] THEN [44]
+- IF [overall pattern = horizontal folds AND texture = smooth with slight variations AND visible elements = thin vertical strings] THEN [29]
+</kb>
+<rule_check>
+- The rule for class 29 fires because the Query Image displays a pattern of horizontal folds, a smooth texture with slight variations in color/shade, and thin vertical strings, which are all consistent with the features observed in the example for class 29.
+</rule_check>
+<response>29</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=3.0789 | avg_trial_wall_seconds=1.5349 | avg_trial_api_seconds=1.3899 | system_fallback_count=0

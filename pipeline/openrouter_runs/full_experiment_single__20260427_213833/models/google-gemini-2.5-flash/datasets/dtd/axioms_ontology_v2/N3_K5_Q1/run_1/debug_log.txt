@@ -1,0 +1,44 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=3 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[32] | Predicted=[32] | Correct=True
+<tbox>
+32 ⊑ hasVisualFeature(damaged_road_surface) ⊓ hasVisualFeature(irregular_shapes_or_holes)
+</tbox>
+<abox>
+hasVisualFeature(Query, damaged_road_surface)
+hasVisualFeature(Query, irregular_shapes_or_holes)
+</abox>
+<dl_explanation>
+Rule(s) fired: 32 ⊑ hasVisualFeature(damaged_road_surface) ⊓ hasVisualFeature(irregular_shapes_or_holes)
+</dl_explanation>
+<response>32</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<tbox>
+Class 32 ⊑ hasVisualFeature(IrregularSurface) ⊓ hasVisualFeature(Depressions)
+Class 8 ⊑ hasVisualFeature(TexturedSurface) ⊓ hasVisualFeature(FineLinesOrGrids)
+Class 4 ⊑ hasVisualFeature(BumpySurface) ⊓ hasVisualFeature(Protrusions)
+</tbox>
+<abox>
+hasVisualFeature(Query, TexturedSurface)
+hasVisualFeature(Query, FineLinesOrGrids)
+</abox>
+<dl_explanation>
+Class 8 ⊑ hasVisualFeature(TexturedSurface) ⊓ hasVisualFeature(FineLinesOrGrids)
+</dl_explanation>
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[4] | Predicted=[4] | Correct=True
+<tbox>
+4 ⊑ hasVisualFeature(bumpy_texture)
+8 ⊑ hasVisualFeature(linear_patterns)
+32 ⊑ hasVisualFeature(damaged_surface)
+</tbox>
+<abox>
+hasVisualFeature(Query, bumpy_texture)
+</abox>
+<dl_explanation>
+Rule(s) fired: 4 ⊑ hasVisualFeature(bumpy_texture)
+</dl_explanation>
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=6.2104 | avg_trial_wall_seconds=2.0677 | avg_trial_api_seconds=1.4574 | system_fallback_count=0

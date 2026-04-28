@@ -1,0 +1,101 @@
+{
+  "title": "Accuracy vs n | google/gemini-2.5-flash | dtd | rulebased | k=1, q=1",
+  "alpha": 0.05,
+  "x_field": "config_n",
+  "series_field": null,
+  "filters": {
+    "model": "google/gemini-2.5-flash",
+    "dataset": "dtd",
+    "prompt_type": "rulebased",
+    "config_k": "1",
+    "config_q": "1"
+  },
+  "rows": [
+    {
+      "x": "2",
+      "series": "accuracy",
+      "correct": 10,
+      "total": 12,
+      "accuracy": 0.8333,
+      "standard_error": 0.107583,
+      "ci95_low": 0.552,
+      "ci95_high": 0.953
+    },
+    {
+      "x": "3",
+      "series": "accuracy",
+      "correct": 11,
+      "total": 12,
+      "accuracy": 0.9167,
+      "standard_error": 0.079786,
+      "ci95_low": 0.6461,
+      "ci95_high": 0.9851
+    },
+    {
+      "x": "4",
+      "series": "accuracy",
+      "correct": 9,
+      "total": 12,
+      "accuracy": 0.75,
+      "standard_error": 0.125,
+      "ci95_low": 0.4677,
+      "ci95_high": 0.9111
+    }
+  ],
+  "statistics": {
+    "alpha": 0.05,
+    "group_field": "config_n",
+    "groups": [
+      "2",
+      "3",
+      "4"
+    ],
+    "matched": false,
+    "omnibus": {
+      "test": "chi_square_independence",
+      "statistic": 1.2,
+      "degrees_of_freedom": 2,
+      "p_value": 0.5488116360940265,
+      "significant": false,
+      "matched_units": null
+    },
+    "pairwise": [
+      {
+        "group_a": "2",
+        "group_b": "3",
+        "odds_ratio": 0.45454545454545453,
+        "p_value": 1.0,
+        "a_correct": 10,
+        "a_wrong": 2,
+        "b_correct": 11,
+        "b_wrong": 1,
+        "p_value_holm": 1.0,
+        "significant_holm": false
+      },
+      {
+        "group_a": "2",
+        "group_b": "4",
+        "odds_ratio": 1.6666666666666667,
+        "p_value": 1.0,
+        "a_correct": 10,
+        "a_wrong": 2,
+        "b_correct": 9,
+        "b_wrong": 3,
+        "p_value_holm": 1.0,
+        "significant_holm": false
+      },
+      {
+        "group_a": "3",
+        "group_b": "4",
+        "odds_ratio": 3.6666666666666665,
+        "p_value": 0.5900621118012422,
+        "a_correct": 11,
+        "a_wrong": 1,
+        "b_correct": 9,
+        "b_wrong": 3,
+        "p_value_holm": 1.0,
+        "significant_holm": false
+      }
+    ]
+  }
+}

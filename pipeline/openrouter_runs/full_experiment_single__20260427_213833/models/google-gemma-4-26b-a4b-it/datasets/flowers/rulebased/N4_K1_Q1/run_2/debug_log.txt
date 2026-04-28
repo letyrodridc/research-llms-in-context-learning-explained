@@ -1,0 +1,79 @@
+=== DEBUG LOG | dataset=flowers | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=4 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- flower color: orange and blue
+- flower shape: pointed, bird-like petals
+- leaf type: large, green, broad leaves
+</features>
+<kb>
+- IF [flower color = orange and blue AND flower shape = pointed, bird-like petals] THEN [7]
+- IF [flower color = pink with red center] THEN [29]
+- IF [flower color = purple] THEN [8]
+- IF [flower color = yellow] THEN [4]
+</kb>
+
+<rule_check>
+- The rule for class 7 fires because the Query Image features orange and blue pointed petals that resemble a bird shape, matching the pattern seen in the first example.
+</rule_check>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<features>
+- flower color: pink with a dark red/magenta center
+- petal shape: serrated or fringed edges
+- flower arrangement: clustered/growing in a group
+</features>
+<kb>
+- IF [flower color = orange/yellow AND petal shape = pointed/spiky] THEN [7]
+- IF [flower color = pink with dark red center AND petal shape = serrated] THEN [29]
+- IF [flower color = purple AND petal shape = bell-shaped/tubular] THEN [8]
+- IF [flower color = yellow AND petal shape = rounded/oval] THEN [4]
+</kb>
+
+<rule_check>
+- The rule for class 29 fires because the Query Image shows pink flowers with a distinct dark red center and serrated petal edges, matching the pattern seen in the second example.
+</rule_check>
+
+<response>29</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 3 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- flower color: purple and white
+- petal shape: hooded/tubular structure
+- petal texture: smooth
+</features>
+<kb>
+- IF [flower color = orange and blue AND petal shape = pointed/spiky] THEN [7]
+- IF [flower color = pink and red AND petal shape = rounded/fringed] THEN [29]
+- IF [flower color = purple and white AND petal shape = hooded/tubular] THEN [8]
+- IF [flower color = yellow AND petal shape = many thin petals] THEN [4]
+</kb>
+
+<rule_check>
+- The rule for class 8 fires because the Query Image features purple and white colors and a hooded/tubular petal structure, matching the pattern seen in the third example.
+</rule_check>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- petal color: yellow/orange
+- petal shape: elongated, multiple layers
+- center: dark brown/textured center
+</features>
+
+<kb>
+- IF [petal color = orange AND petal shape = pointed/spiky AND structure = bird-like] THEN [7]
+- IF [petal color = pink AND petal color = red center AND petal shape = serrated edges] THEN [29]
+- IF [petal color = purple AND petal shape = bell-shaped/tubular] THEN [8]
+- IF [petal color = yellow/orange AND petal shape = elongated AND center = dark/textured] THEN [4]
+</kb>
+
+<rule_check>
+- The rule for class 4 fires because the Query Image features yellow/orange elongated petals and a dark, textured center, matching the pattern seen in the example for class 4.
+</rule_check>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=27.3673 | avg_trial_wall_seconds=6.8390 | avg_trial_api_seconds=6.5224 | system_fallback_count=0

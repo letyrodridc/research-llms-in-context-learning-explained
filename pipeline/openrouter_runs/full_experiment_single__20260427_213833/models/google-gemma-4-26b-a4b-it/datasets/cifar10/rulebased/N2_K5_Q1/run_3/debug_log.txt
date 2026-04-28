@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=2 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- object: boat/vessel
+- color: white/light-colored hull
+- setting: water/dock
+</features>
+<kb>
+- IF [object = boat/vessel] THEN [8]
+- IF [object = horse] THEN [7]
+</kb>
+
+<rule_check>
+- The rule for class 8 fires because the Query Image depicts a boat/vessel on the water.
+</rule_check>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- subject: horse
+- subject color: brown and white
+- subject posture: standing
+</features>
+<kb>
+- IF [subject = horse] THEN [7]
+- IF [subject = boat or ship] THEN [8]
+</kb>
+
+<rule_check>
+- The rule "IF [subject = horse] THEN [7]" fires because the Query Image depicts a horse.
+</rule_check>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=5.2277 | avg_trial_wall_seconds=2.6114 | avg_trial_api_seconds=2.5747 | system_fallback_count=0

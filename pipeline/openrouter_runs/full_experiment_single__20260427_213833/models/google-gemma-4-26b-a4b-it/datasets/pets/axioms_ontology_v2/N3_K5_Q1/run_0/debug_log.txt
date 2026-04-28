@@ -1,0 +1,58 @@
+=== DEBUG LOG | dataset=pets | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=3 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[21] | Predicted=[21] | Correct=True
+<tbox>
+- [21] ⊑ hasVisualFeature([small_size]) ⊓ hasVisualFeature([black_and_tan_color]) ⊓ hasVisualFeature([large_upright_ears])
+- [26] ⊑ hasVisualFeature([cat_species]) ⊓ hasVisualFeature([fluffy_fur])
+- [15] ⊑ hasVisualFeature([large_size]) ⊓ hasVisualFeature([white_or_cream_color])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [small_size])
+- hasVisualFeature(Query, [black_and_tan_color])
+- hasVisualFeature(Query, [large_upright_ears])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [21] ⊑ hasVisualFeature([small_size]) ⊓ hasVisualFeature([black_and_tan_color]) ⊓ hasVisualFeature([large_upright_ears])
+</dl_explanation>
+
+<response>21</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[26] | Predicted=[26] | Correct=True
+<tbox>
+- [21] ⊑ hasVisualFeature([small_size]) ⊓ hasVisualFeature([short_hair]) ⊓ hasVisualFeature([pointed_ears])
+- [26] ⊑ hasVisualFeature([fluffy_fur]) ⊓ hasVisualFeature([long_hair])
+- [15] ⊑ hasVisualFeature([large_size]) ⊓ hasVisualFeature([white_fur])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [fluffy_fur])
+- hasVisualFeature(Query, [long_hair])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [26] ⊑ hasVisualFeature([fluffy_fur]) ⊓ hasVisualFeature([long_hair])
+</dl_explanation>
+
+<response>26</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[15] | Predicted=[15] | Correct=True
+<tbox>
+- [21] ⊑ hasVisualFeature([small_size]) ⊓ hasVisualFeature([short_hair]) ⊓ hasVisualFeature([pointed_ears])
+- [26] ⊑ hasVisualFeature([small_size]) ⊓ hasVisualFeature([long_hair])
+- [15] ⊑ hasVisualFeature([large_size]) ⊓ hasVisualFeature([long_hair]) ⊓ hasVisualFeature([white_fur])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [large_size])
+- hasVisualFeature(Query, [long_hair])
+- hasVisualFeature(Query, [white_fur])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [15] ⊑ hasVisualFeature([large_size]) ⊓ hasVisualFeature([long_hair]) ⊓ hasVisualFeature([white_fur])
+</dl_explanation>
+
+<response>15</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=14.4122 | avg_trial_wall_seconds=4.8009 | avg_trial_api_seconds=4.4715 | system_fallback_count=0

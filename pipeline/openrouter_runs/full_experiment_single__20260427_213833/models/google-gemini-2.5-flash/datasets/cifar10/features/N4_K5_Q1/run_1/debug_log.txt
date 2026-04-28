@@ -1,0 +1,38 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=features | model=google/gemini-2.5-flash | N=4 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[4] | Predicted=[2] | Correct=False
+<features>
+- small, indistinct animal shape
+- light brown/tan body color
+- two prominent, light-colored wings
+- green background
+</features>
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[2] | Predicted=[2] | Correct=True
+<features>
+- small body size
+- short legs
+- small head with a beak
+- feathered body
+</features>
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- green and brown mottled pattern
+- indistinct shape
+- blends with background
+</features>
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- four legs
+- tail
+- mane
+- horse-like body shape
+- standing on hind legs
+</features>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=8.1127 | avg_trial_wall_seconds=2.0236 | avg_trial_api_seconds=1.8188 | system_fallback_count=0

@@ -1,0 +1,37 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=features | model=google/gemini-2.5-flash | N=4 K=1 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- four-legged animal
+- light-colored body
+- long mane and tail
+- standing on green ground
+</features>
+<response>7</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<features>
+- large vessel on water
+- multiple structures on deck
+- no prominent sail
+</features>
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- elongated body with wings
+- tail section
+- landing gear visible
+- distinct shape against a clear sky and ground
+</features>
+<response>0</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<features>
+- brown body
+- four legs
+- visible head and neck
+- green foliage in background
+</features>
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=2.9701 | avg_trial_wall_seconds=0.7409 | avg_trial_api_seconds=0.6904 | system_fallback_count=0

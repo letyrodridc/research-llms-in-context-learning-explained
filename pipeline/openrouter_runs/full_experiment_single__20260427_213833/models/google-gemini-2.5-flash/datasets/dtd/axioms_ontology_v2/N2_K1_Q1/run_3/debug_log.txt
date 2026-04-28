@@ -1,0 +1,24 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[44] | Predicted=[44] | Correct=True
+<tbox>
+Class44 ⊑ hasVisualFeature(monochromatic_dark_green_color) ⊓ hasVisualFeature(subtle_horizontal_and_vertical_lines)
+Class29 ⊑ hasVisualFeature(blue_color) ⊓ hasVisualFeature(vertical_folds) ⊓ hasVisualFeature(thin_red_lines_between_folds)
+</tbox>
+<abox>
+</abox>
+<dl_explanation>
+</dl_explanation>
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<tbox>
+29 ⊑ hasVisualFeature(VerticalLines) ⊓ hasVisualFeature(WavyTexture) ⊓ hasVisualFeature(BlueColor)
+44 ⊑ hasVisualFeature(HorizontalLines) ⊓ hasVisualFeature(DarkGreenColor) ⊓ hasVisualFeature(FineTexture)
+</tbox>
+<abox>
+</abox>
+<dl_explanation>
+</dl_explanation>
+<response>29</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=2.7489 | avg_trial_wall_seconds=1.3664 | avg_trial_api_seconds=1.1865 | system_fallback_count=0

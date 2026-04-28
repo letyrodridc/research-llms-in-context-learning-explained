@@ -1,0 +1,56 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=3 K=1 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[71] | Predicted=[71] | Correct=True
+<tbox>
+- Class71 ⊑ hasVisualFeature([red_petals]) ⊓ hasVisualFeature([speckled_center])
+- Class68 ⊑ hasVisualFeature([white_petals]) ⊓ hasVisualFeature([yellow_center])
+- Class33 ⊑ hasVisualFeature([pink_petals]) ⊓ hasVisualFeature([yellow_center])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [light_pink_petals])
+- hasVisualFeature(Query, [speckled_center])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: Class71 ⊑ hasVisualFeature([red_petals]) ⊓ hasVisualFeature([speckled_center])
+</dl_explanation>
+
+<response>71</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[68] | Predicted=[68] | Correct=True
+<tbox>
+- [71] ⊑ hasVisualFeature([red_petals])
+- [68] ≡ hasVisualFeature([white_petals]) ⊓ hasVisualFeature([yellow_center])
+- [33] ⊑ hasVisualFeature([pink_petals])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [white_petals])
+- hasVisualFeature(Query, [yellow_center])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [68] ≡ hasVisualFeature([white_petals]) ⊓ hasVisualFeature([yellow_center])
+</dl_explanation>
+
+<response>68</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 3 | Expected=[33] | Predicted=[33] | Correct=True
+<tbox>
+- [71] ⊑ hasVisualFeature([red_petals])
+- [68] ⊑ hasVisualFeature([white_petals])
+- [33] ≡ hasVisualFeature([pink_petals]) ⊓ hasVisualFeature([yellow_center])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [pink_petals])
+- hasVisualFeature(Query, [yellow_center])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [33] ≡ hasVisualFeature([pink_petals]) ⊓ hasVisualFeature([yellow_center])
+</dl_explanation>
+
+<response>33</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=17.5701 | avg_trial_wall_seconds=5.8551 | avg_trial_api_seconds=5.6555 | system_fallback_count=0

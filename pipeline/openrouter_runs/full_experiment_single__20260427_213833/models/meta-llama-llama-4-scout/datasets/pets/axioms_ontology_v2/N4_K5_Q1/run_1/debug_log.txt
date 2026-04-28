@@ -1,0 +1,57 @@
+=== DEBUG LOG | dataset=pets | prompt=axioms_ontology_v2 | model=meta-llama/llama-4-scout | N=4 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[20] | Predicted=[20] | Correct=True
+<response>20</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<tbox>
+- [20] ⊑ hasVisualFeature([long hair]) ⊓ hasVisualFeature([whiskers]) ⊓ hasVisualFeature([claws])
+- [29] ⊑ hasVisualFeature([long hair]) ⊓ hasVisualFeature([fluffy tail]) 
+- [28] ⊑ hasVisualFeature([large size]) ⊓ hasVisualFeature([brown color]) ⊓ hasVisualFeature([white color])
+- [13] ⊑ hasVisualFeature([spots]) ⊓ hasVisualFeature([long ears])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [long hair]) ⊓ hasVisualFeature([fluffy tail])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [29] ≡ hasVisualFeature([long hair]) ⊓ hasVisualFeature([fluffy tail])
+</dl_explanation>
+
+<response>29</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[28] | Predicted=[28] | Correct=True
+<tbox>
+- [Class28] ≡ hasVisualFeature([F5]) ⊓ hasVisualFeature([F6])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [F5])
+- hasVisualFeature(Query, [F6])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [Class28] ≡ hasVisualFeature([F5]) ⊓ hasVisualFeature([F6])
+</dl_explanation>
+
+<response>28</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[13] | Predicted=[13] | Correct=True
+<tbox>
+- [Class13] ⊑ hasVisualFeature([F15])
+- hasVisualFeature([F16]) ⊑ [Class20]
+- [Class28] ≡ hasVisualFeature([F17]) ⊓ hasVisualFeature([F18])
+- [Class29] ⊑ hasVisualFeature([F19])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [F15])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [Class13] ⊑ hasVisualFeature([F15])
+</dl_explanation>
+
+<response>13</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=20.1789 | avg_trial_wall_seconds=5.0417 | avg_trial_api_seconds=3.1831 | system_fallback_count=0

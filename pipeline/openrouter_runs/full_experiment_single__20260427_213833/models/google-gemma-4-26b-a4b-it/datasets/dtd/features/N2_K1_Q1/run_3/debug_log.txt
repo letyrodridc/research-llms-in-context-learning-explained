@@ -1,0 +1,21 @@
+=== DEBUG LOG | dataset=dtd | prompt=features | model=google/gemma-4-26b-a4b-it | N=2 K=1 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- black and white checkerboard pattern
+- small rectangular tiles
+- diagonal grid arrangement
+</features>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[29] | Predicted=[44] | Correct=False
+<features>
+- tufted pattern
+- diamond-shaped folds
+- button-like indentations
+- brown fabric
+</features>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=1 | total=2 | errors=0 | accuracy=0.5000 | duration_seconds=2.9211 | avg_trial_wall_seconds=1.4572 | avg_trial_api_seconds=1.2620 | system_fallback_count=0

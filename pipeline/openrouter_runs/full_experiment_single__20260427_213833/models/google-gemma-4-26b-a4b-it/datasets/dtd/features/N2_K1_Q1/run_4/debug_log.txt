@@ -1,0 +1,21 @@
+=== DEBUG LOG | dataset=dtd | prompt=features | model=google/gemma-4-26b-a4b-it | N=2 K=1 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[44] | Predicted=[44] | Correct=True
+<features>
+- wide flat woven strips
+- brown color
+- diagonal interlaced pattern
+</features>
+
+<response>44</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[29] | Predicted=[unknown] | Correct=False
+WARNING: response_label_not_in_options
+<features>
+- horizontal parallel slats
+- light pink color
+- repeating layered structure
+</features>
+
+<response>unknown</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=1 | total=2 | errors=0 | accuracy=0.5000 | duration_seconds=2.4202 | avg_trial_wall_seconds=1.2053 | avg_trial_api_seconds=1.1270 | system_fallback_count=0

@@ -1,0 +1,44 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=3 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<tbox>
+Class3 ⊑ hasVisualFeature(Animal) ⊓ hasVisualFeature(LightColoredFur) ⊓ hasVisualFeature(DarkFace)
+</tbox>
+<abox>
+hasVisualFeature(Query, Animal)
+hasVisualFeature(Query, LightColoredFur)
+hasVisualFeature(Query, DarkFace)
+</abox>
+<dl_explanation>
+Rule(s) fired: Class3 ⊑ hasVisualFeature(Animal) ⊓ hasVisualFeature(LightColoredFur) ⊓ hasVisualFeature(DarkFace)
+</dl_explanation>
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[9] | Predicted=[9] | Correct=True
+<tbox>
+Class_3 ⊑ hasVisualFeature(animal_on_ledge)
+Class_9 ⊑ hasVisualFeature(truck_with_cargo_box)
+Class_1 ⊑ hasVisualFeature(car_from_rear_view)
+</tbox>
+<abox>
+hasVisualFeature(Query, truck_with_cargo_box)
+</abox>
+<dl_explanation>
+Class_9 ⊑ hasVisualFeature(truck_with_cargo_box)
+</dl_explanation>
+<response>9</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[1] | Predicted=[1] | Correct=True
+<tbox>
+1 ⊑ hasVisualFeature(car_shape) ⊓ hasVisualFeature(rear_view)
+9 ⊑ hasVisualFeature(truck_shape) ⊓ hasVisualFeature(side_view)
+3 ⊑ hasVisualFeature(animal_shape) ⊓ hasVisualFeature(side_view)
+</tbox>
+<abox>
+hasVisualFeature(Query, car_shape)
+hasVisualFeature(Query, side_view)
+</abox>
+<dl_explanation>
+</dl_explanation>
+<response>1</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=3.2393 | avg_trial_wall_seconds=1.0702 | avg_trial_api_seconds=1.0152 | system_fallback_count=0

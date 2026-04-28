@@ -1,0 +1,59 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=3 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[0] | Predicted=[0] | Correct=True
+<features>
+- object: airplane
+- background: blue sky
+</features>
+<kb>
+- IF [object = airplane] THEN [0]
+- IF [object = frog/toad/amphibian] THEN [6]
+- IF [object = horse] THEN [7]
+</kb>
+
+<rule_check>
+- The rule for class 0 fires because the Query Image contains an airplane against a blue sky.
+</rule_check>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- subject: small animal
+- subject color: brownish/tan
+- subject texture: fuzzy/furry
+- background: dark/rocky
+</features>
+
+<kb>
+- IF [subject is an aircraft/wing/tail] THEN [0]
+- IF [subject is a small furry animal/amphibian] THEN [6]
+- IF [subject is a large four-legged mammal] THEN [7]
+</kb>
+
+<rule_check>
+- The rule for class 6 fires because the Query Image depicts a small, furry animal, which matches the visual patterns seen in the examples for class 6 (frogs, small mammals).
+</rule_check>
+
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[7] | Predicted=[7] | Correct=True
+<features>
+- subject: large four-legged animal
+- subject color: brown/dark
+- subject activity: being ridden by a person
+- background: grassy field/fence
+</features>
+
+<kb>
+- IF [subject is an aircraft/wing/tail] THEN [0]
+- IF [subject is a small animal like a frog or toad] THEN [6]
+- IF [subject is a large four-legged animal like a horse] THEN [7]
+</kb>
+
+<rule_check>
+- The rule for class 7 fires because the Query Image depicts a large four-legged animal (a horse) being ridden, which matches the pattern of the examples in class 7.
+</rule_check>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=10.0812 | avg_trial_wall_seconds=3.3568 | avg_trial_api_seconds=3.2486 | system_fallback_count=0

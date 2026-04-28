@@ -1,0 +1,37 @@
+=== DEBUG LOG | dataset=pets | prompt=axioms_ontology_v2 | model=meta-llama/llama-4-scout | N=2 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[2] | Predicted=[2] | Correct=True
+<tbox>
+- [2] ⊑ hasVisualFeature([F5])
+- hasVisualFeature([F6]) ⊑ [5]
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [F5])
+</abox>
+
+<dl_explanation>
+- [2] ⊑ hasVisualFeature([F5])
+</dl_explanation>
+
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[5] | Predicted=[2] | Correct=False
+<tbox>
+- [2] ⊑ hasVisualFeature([long ears]) 
+- [2] ⊑ hasVisualFeature([whiskers]) 
+- [5] ⊑ hasVisualFeature([short ears]) 
+- [5] ⊑ hasVisualFeature([striped or mottled fur])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [long ears])
+- hasVisualFeature(Query, [whiskers])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [2] ⊑ hasVisualFeature([long ears]) , [2] ⊑ hasVisualFeature([whiskers])
+</dl_explanation>
+
+<response>2</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=1 | total=2 | errors=0 | accuracy=0.5000 | duration_seconds=4.8501 | avg_trial_wall_seconds=2.4082 | avg_trial_api_seconds=2.0986 | system_fallback_count=0

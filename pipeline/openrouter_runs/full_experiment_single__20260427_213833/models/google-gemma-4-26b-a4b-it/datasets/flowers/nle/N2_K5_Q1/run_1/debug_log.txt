@@ -1,0 +1,16 @@
+=== DEBUG LOG | dataset=flowers | prompt=nle | model=google/gemma-4-26b-a4b-it | N=2 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[75] | Predicted=[75] | Correct=True
+<explanation>
+The query image shows trumpet-shaped flowers with a funnel-like structure and radial lines leading to a central point, which is characteristic of the visual patterns seen in the examples labeled as class 75.
+</explanation>
+
+<response>75</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[35] | Predicted=[35] | Correct=True
+<explanation>
+The query image shows a flower with large, distinct petals and a prominent, ruffled central lip, which is characteristic of the orchid-like structure seen in the examples labeled '35'. In contrast, class '75' features trumpet-shaped flowers with a continuous petal surface.
+</explanation>
+
+<response>35</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=10.1393 | avg_trial_wall_seconds=5.0655 | avg_trial_api_seconds=4.5112 | system_fallback_count=0

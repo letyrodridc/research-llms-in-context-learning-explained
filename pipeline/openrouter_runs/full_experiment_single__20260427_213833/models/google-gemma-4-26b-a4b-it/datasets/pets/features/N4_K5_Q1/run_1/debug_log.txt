@@ -1,0 +1,40 @@
+=== DEBUG LOG | dataset=pets | prompt=features | model=google/gemma-4-26b-a4b-it | N=4 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[20] | Predicted=[20] | Correct=True
+<features>
+- long fur
+- pointed ears
+- tabby pattern
+- whiskers
+</features>
+
+<response>20</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[29] | Predicted=[29] | Correct=True
+<features>
+- white fur
+- long fur
+- medium size
+</features>
+
+<response>29</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[28] | Predicted=[28] | Correct=True
+<features>
+- large brown and white dog
+- floppy ears
+- white facial stripe
+- dark patches around eyes
+</features>
+
+<response>28</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[13] | Predicted=[13] | Correct=True
+<features>
+- white fur
+- medium build
+- floppy ears
+</features>
+
+<response>13</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=13.2854 | avg_trial_wall_seconds=3.3195 | avg_trial_api_seconds=2.8166 | system_fallback_count=0

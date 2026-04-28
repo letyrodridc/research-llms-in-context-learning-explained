@@ -1,0 +1,36 @@
+=== DEBUG LOG | dataset=flowers | prompt=features | model=meta-llama/llama-4-scout | N=4 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[86] | Predicted=[86] | Correct=True
+<features>
+- large white flower
+- multiple petals
+- brown center
+</features>
+<response>86</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[83] | Predicted=[83] | Correct=True
+<features>
+- purple and white petals
+- long thin stamens
+- yellow center
+</features>
+
+<response>83</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[82] | Predicted=[82] | Correct=True
+<features>
+- large flower
+- pink color
+- yellow stamens
+- red center
+- five petals
+</features>
+<response>82</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[12] | Predicted=[12] | Correct=True
+<features>
+- large white center
+- thin white and pink petals
+</features>
+<response>12</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=15.2706 | avg_trial_wall_seconds=3.8087 | avg_trial_api_seconds=1.3557 | system_fallback_count=0

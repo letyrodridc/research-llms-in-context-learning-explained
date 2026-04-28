@@ -1,0 +1,54 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=meta-llama/llama-4-scout | N=3 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[87] | Predicted=[87] | Correct=True
+<tbox>
+- [87] ⊑ hasVisualFeature([bulb-shaped_flowers])
+- hasVisualFeature([trompet-shaped]) ⊑ [92]
+- [14] ⊑ hasVisualFeature([yellow-color])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [bulb-shaped_flowers])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [87] ⊑ hasVisualFeature([bulb-shaped_flowers])
+</dl_explanation>
+
+<response>87</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[92] | Predicted=[92] | Correct=True
+<tbox>
+- [87] ⊑ hasVisualFeature([bulbous_shape])
+- [92] ⊑ hasVisualFeature([bract])
+- [14] ⊑ hasVisualFeature([bearded_iris])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [bract])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [92] ⊑ hasVisualFeature([bract])
+</dl_explanation>
+
+<response>92</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 3 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- [14] ≡ hasColor(Yellow) ⊓ hasShape(Iris-like)
+- [87] ≡ hasColor(Pink) ⊓ hasShape(Tulip-like)
+- [92] ≡ hasColor(Purple) ⊓ hasShape(Bromeliad-like)
+</tbox>
+
+<abox>
+- hasColor(Query, Yellow)
+- hasShape(Query, Iris-like)
+</abox>
+
+<dl_explanation>
+- Rule(s) fired:  [14] ≡ hasColor(Yellow) ⊓ hasShape(Iris-like)
+</dl_explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=3 | total=3 | errors=0 | accuracy=1.0000 | duration_seconds=13.2763 | avg_trial_wall_seconds=4.4229 | avg_trial_api_seconds=2.9392 | system_fallback_count=0

@@ -1,0 +1,10 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=nle | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[3] | Predicted=[3] | Correct=True
+<explanation>The query image shows a blurred, reddish-brown object with a lighter underside, positioned vertically against a dark, textured background, which visually aligns with the characteristics of the animal in example 3. Example 0, in contrast, features a distinct aircraft shape against a sky background with a prominent sun, which is not present in the query image.</explanation>
+<response>3</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[0] | Predicted=[0] | Correct=True
+<explanation>The query image visually matches class 0 due to the presence of a distinct object with discernible wings and a fuselage-like structure, similar to the labeled example for class 0. This object is set against a background that appears to be a sky, consistent with the aerial context of class 0. In contrast, class 3 examples show an animal's face with fur patterns, which are not present in the query image.</explanation>
+<response>0</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=1.8863 | avg_trial_wall_seconds=0.9409 | avg_trial_api_seconds=0.8986 | system_fallback_count=0

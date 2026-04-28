@@ -1,0 +1,101 @@
+{
+  "title": "Accuracy vs n | qwen/qwen3-vl-8b-instruct | dtd | axioms_ontology_v2 | k=5, q=1",
+  "alpha": 0.05,
+  "x_field": "config_n",
+  "series_field": null,
+  "filters": {
+    "model": "qwen/qwen3-vl-8b-instruct",
+    "dataset": "dtd",
+    "prompt_type": "axioms_ontology_v2",
+    "config_k": "5",
+    "config_q": "1"
+  },
+  "rows": [
+    {
+      "x": "2",
+      "series": "accuracy",
+      "correct": 9,
+      "total": 12,
+      "accuracy": 0.75,
+      "standard_error": 0.125,
+      "ci95_low": 0.4677,
+      "ci95_high": 0.9111
+    },
+    {
+      "x": "3",
+      "series": "accuracy",
+      "correct": 10,
+      "total": 12,
+      "accuracy": 0.8333,
+      "standard_error": 0.107583,
+      "ci95_low": 0.552,
+      "ci95_high": 0.953
+    },
+    {
+      "x": "4",
+      "series": "accuracy",
+      "correct": 8,
+      "total": 12,
+      "accuracy": 0.6667,
+      "standard_error": 0.136083,
+      "ci95_low": 0.3906,
+      "ci95_high": 0.8619
+    }
+  ],
+  "statistics": {
+    "alpha": 0.05,
+    "group_field": "config_n",
+    "groups": [
+      "2",
+      "3",
+      "4"
+    ],
+    "matched": false,
+    "omnibus": {
+      "test": "chi_square_independence",
+      "statistic": 0.8888888888888888,
+      "degrees_of_freedom": 2,
+      "p_value": 0.6411803884299545,
+      "significant": false,
+      "matched_units": null
+    },
+    "pairwise": [
+      {
+        "group_a": "2",
+        "group_b": "3",
+        "odds_ratio": 0.6,
+        "p_value": 1.0,
+        "a_correct": 9,
+        "a_wrong": 3,
+        "b_correct": 10,
+        "b_wrong": 2,
+        "p_value_holm": 1.0,
+        "significant_holm": false
+      },
+      {
+        "group_a": "2",
+        "group_b": "4",
+        "odds_ratio": 1.5,
+        "p_value": 1.0,
+        "a_correct": 9,
+        "a_wrong": 3,
+        "b_correct": 8,
+        "b_wrong": 4,
+        "p_value_holm": 1.0,
+        "significant_holm": false
+      },
+      {
+        "group_a": "3",
+        "group_b": "4",
+        "odds_ratio": 2.5,
+        "p_value": 0.6404053612291598,
+        "a_correct": 10,
+        "a_wrong": 2,
+        "b_correct": 8,
+        "b_wrong": 4,
+        "p_value_holm": 1.0,
+        "significant_holm": false
+      }
+    ]
+  }
+}

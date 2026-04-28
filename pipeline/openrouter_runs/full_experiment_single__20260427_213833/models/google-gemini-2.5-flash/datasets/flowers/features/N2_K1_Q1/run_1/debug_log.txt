@@ -1,0 +1,21 @@
+=== DEBUG LOG | dataset=flowers | prompt=features | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<features>
+- multiple petals
+- petals with a central darker stripe
+- prominent central stamen structure
+- stamen structure with multiple filaments and anthers
+</features>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<features>
+- yellow petals
+- three prominent downward-curving petals
+- three smaller, upright petals
+- dark linear markings on lower petals
+- green, elongated leaves in background
+</features>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=1.7948 | avg_trial_wall_seconds=0.8954 | avg_trial_api_seconds=0.7570 | system_fallback_count=0

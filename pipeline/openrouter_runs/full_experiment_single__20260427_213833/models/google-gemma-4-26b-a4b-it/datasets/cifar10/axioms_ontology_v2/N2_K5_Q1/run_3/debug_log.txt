@@ -1,0 +1,37 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=2 K=5 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[8] | Predicted=[8] | Correct=True
+<tbox>
+- [8] ⊑ hasVisualFeature([water_vessel])
+- [7] ⊑ hasVisualFeature([equine])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [water_vessel])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [8] ⊑ hasVisualFeature([water_vessel])
+</dl_explanation>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[7] | Predicted=[7] | Correct=True
+<tbox>
+- [7] ⊑ hasVisualFeature([animal])
+- [7] ⊑ hasVisualFeature([four_legs])
+- [7] ⊑ hasVisualFeature([equine_shape])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [animal])
+- hasVisualFeature(Query, [four_legs])
+- hasVisualFeature(Query, [equine_shape])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [7] ⊑ hasVisualFeature([animal]), [7] ⊑ hasVisualFeature([four_legs]), [7] ⊑ hasVisualFeature([equine_shape])
+</dl_explanation>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=7.1443 | avg_trial_wall_seconds=3.5699 | avg_trial_api_seconds=3.4793 | system_fallback_count=0

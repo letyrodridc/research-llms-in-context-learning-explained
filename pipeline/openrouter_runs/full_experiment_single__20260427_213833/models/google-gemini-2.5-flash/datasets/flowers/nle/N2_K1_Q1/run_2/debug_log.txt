@@ -1,0 +1,10 @@
+=== DEBUG LOG | dataset=flowers | prompt=nle | model=google/gemini-2.5-flash | N=2 K=1 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<explanation>The Query Image displays a flower with multiple broad petals arranged radially around a central stamen structure, similar to the visual characteristics of the example labeled '81'. The example labeled '14' shows a flower with a distinct, more complex structure of petals that are not arranged in a simple radial pattern, and a prominent central spike, which is not present in the Query Image.</explanation>
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<explanation>The query image displays a yellow flower with distinct petal shapes and a central structure that closely matches the visual characteristics of the flower in example 14. In contrast, example 81 shows a pink flower with a different petal arrangement and central structure.</explanation>
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=2.8751 | avg_trial_wall_seconds=1.4344 | avg_trial_api_seconds=1.2899 | system_fallback_count=0

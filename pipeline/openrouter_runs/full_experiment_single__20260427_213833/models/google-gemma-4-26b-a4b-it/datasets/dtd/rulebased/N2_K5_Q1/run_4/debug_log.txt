@@ -1,0 +1,35 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemma-4-26b-a4b-it | N=2 K=5 Q=1 | run=4 ===
+Run 4 | Query 1 | Expected=[17] | Predicted=[17] | Correct=True
+<features>
+- vertical parallel lines: present
+- wood texture/color: present
+</features>
+<kb>
+- IF [parallel lines are horizontal OR parallel lines are vertical OR surface is corrugated OR surface is bark-like OR surface is smooth/ribbed] THEN [17]
+- IF [surface is asphalt with holes/puddles] THEN [32]
+</kb>
+
+<rule_check>
+- The rule for class 17 fires because the image contains prominent vertical parallel lines forming a textured surface, similar to the patterns seen in the support images for class 17.
+</rule_check>
+
+<response>17</response>
+--------------------------------------------------------------------------------
+Run 4 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- surface: dark, rough asphalt/pavement
+- features: large irregular holes/depressions in the surface
+- features: puddles of water within the depressions
+</features>
+<kb>
+- IF [surface = textured/patterned (lines, ridges, bark, or smooth curves)] THEN [17]
+- IF [surface = dark, rough pavement with irregular holes and puddles] THEN [32]
+</kb>
+
+<rule_check>
+- The rule for class 32 fires because the image shows a dark, rough road surface with large, irregular holes and puddles of water, matching the pattern seen in the provided examples for class 32.
+</rule_check>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=4 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=6.3059 | avg_trial_wall_seconds=3.1509 | avg_trial_api_seconds=2.8663 | system_fallback_count=0

@@ -1,0 +1,39 @@
+=== DEBUG LOG | dataset=flowers | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=2 K=1 Q=1 | run=3 ===
+Run 3 | Query 1 | Expected=[81] | Predicted=[81] | Correct=True
+<tbox>
+- Class81 ⊑ hasVisualFeature([pink_petals]) ⊓ hasVisualFeature([white_stripe_on_petals])
+- Class14 ⊑ hasVisualFeature([yellow_petals])
+- Class81 ⊑ hasVisualFeature([star_shaped_flower_structure])
+- Class14 ⊑ hasVisualFeature([irregular_petal_shape])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [purple_petals])
+- hasVisualFeature(Query, [star_shaped_flower_structure])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: Class81 ⊑ hasVisualFeature([star_shaped_flower_structure])
+- Note: While the color is purple rather than pink, the structural pattern (star-shaped petals with central stamens) matches the morphology of Class 81.
+</dl_explanation>
+
+<response>81</response>
+--------------------------------------------------------------------------------
+Run 3 | Query 2 | Expected=[14] | Predicted=[14] | Correct=True
+<tbox>
+- [81] ⊑ hasVisualFeature([pink_and_white_petals]) ⊓ hasVisualFeature([star_shaped_flower])
+- [14] ⊑ hasVisualFeature([yellow_petals]) ⊓ hasVisualFeature([iris_like_structure])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [yellow_petals])
+- hasVisualFeature(Query, [iris_like_structure])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [14] ⊑ hasVisualFeature([yellow_petals]) ⊓ hasVisualFeature([iris_like_structure])
+</dl_explanation>
+
+<response>14</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=3 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=32.8959 | avg_trial_wall_seconds=16.4456 | avg_trial_api_seconds=16.2703 | system_fallback_count=0

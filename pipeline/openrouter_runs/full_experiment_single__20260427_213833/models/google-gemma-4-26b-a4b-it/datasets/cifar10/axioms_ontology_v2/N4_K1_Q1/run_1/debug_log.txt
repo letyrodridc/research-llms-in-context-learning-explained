@@ -1,0 +1,79 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=4 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[7] | Predicted=[7] | Correct=True
+<tbox>
+- [7] ⊑ hasVisualFeature([brown_four_legged_animal])
+- [8] ⊑ hasVisualFeature([large_white_vessel_on_water])
+- [0] ⊑ hasVisualFeature([aircraft_in_sky])
+- [4] ⊑ hasVisualFeature([small_brown_animal_in_grass])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [brown_four_legged_animal])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [7] ⊑ hasVisualFeature([brown_four_legged_animal])
+</dl_explanation>
+
+<response>7</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[8] | Predicted=[8] | Correct=True
+<tbox>
+- [7] ⊑ hasVisualFeature([four-legged_brown_animal])
+- [8] ⊑ hasVisualFeature([large_watercraft])
+- [0] ⊑ hasVisualFeature([aircraft_in_sky])
+- [4] ⊑ hasVisualFeature([small_four-legged_animal_on_grass])
+- [8] ≡ hasVisualFeature([large_watercraft]) ⊓ hasVisualFeature([water_environment])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [large_watercraft])
+- hasVisualFeature(Query, [water_environment])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [8] ≡ hasVisualFeature([large_watercraft]) ⊓ hasVisualFeature([water_environment])
+</dl_explanation>
+
+<response>8</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[0] | Predicted=[0] | Correct=True
+<tbox>
+- [0] ≡ hasVisualFeature([airplane]) ⊓ hasVisualFeature([sky_background])
+- [4] ≡ hasVisualFeature([animal]) ⊓ hasVisualFeature([grass_background])
+- [7] ≡ hasVisualFeature([horse]) ⊓ hasVisualFeature([ground_background])
+- [8] ≡ hasVisualFeature([ship]) ⊓ hasVisualFeature([water_background])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [airplane])
+- hasVisualFeature(Query, [sky_background])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [0] ≡ hasVisualFeature([airplane]) ⊓ hasVisualFeature([sky_background])
+</dl_explanation>
+
+<response>0</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[4] | Predicted=[4] | Correct=True
+<tbox>
+- [0] ⊑ hasVisualFeature([airplane])
+- [4] ⊑ hasVisualFeature([animal_on_grass])
+- [7] ⊑ hasVisualFeature([horse])
+- [8] ⊑ hasVisualFeature([ship])
+- [4] ≡ hasVisualFeature([animal]) ⊓ hasVisualFeature([grass_background])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [animal])
+- hasVisualFeature(Query, [grass_background])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [4] ≡ hasVisualFeature([animal]) ⊓ hasVisualFeature([grass_background])
+</dl_explanation>
+
+<response>4</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=4 | total=4 | errors=0 | accuracy=1.0000 | duration_seconds=14.4982 | avg_trial_wall_seconds=3.6230 | avg_trial_api_seconds=3.5616 | system_fallback_count=0

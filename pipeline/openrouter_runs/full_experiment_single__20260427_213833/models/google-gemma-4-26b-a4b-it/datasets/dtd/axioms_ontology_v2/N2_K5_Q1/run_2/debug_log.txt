@@ -1,0 +1,35 @@
+=== DEBUG LOG | dataset=dtd | prompt=axioms_ontology_v2 | model=google/gemma-4-26b-a4b-it | N=2 K=5 Q=1 | run=2 ===
+Run 2 | Query 1 | Expected=[17] | Predicted=[17] | Correct=True
+<tbox>
+- [17] ≡ hasVisualFeature([parallel_lines])
+- [32] ≡ hasVisualFeature([puddles_on_road])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [parallel_lines])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [17] ≡ hasVisualFeature([parallel_lines])
+</dl_explanation>
+
+<response>17</response>
+--------------------------------------------------------------------------------
+Run 2 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<tbox>
+- [17] ⊑ hasVisualFeature([parallel_lines]) ⊓ hasVisualFeature([repetitive_pattern])
+- [32] ⊑ hasVisualFeature([potholes]) ⊓ hasVisualFeature([asphalt_surface])
+</tbox>
+
+<abox>
+- hasVisualFeature(Query, [potholes])
+- hasVisualFeature(Query, [asphalt_surface])
+</abox>
+
+<dl_explanation>
+- Rule(s) fired: [32] ⊑ hasVisualFeature([potholes]) ⊓ hasVisualFeature([asphalt_surface])
+</dl_explanation>
+
+<response>32</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=2 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=6.3055 | avg_trial_wall_seconds=3.1483 | avg_trial_api_seconds=2.7347 | system_fallback_count=0

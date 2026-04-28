@@ -1,0 +1,34 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=google/gemini-2.5-flash | N=2 K=5 Q=1 | run=5 ===
+Run 5 | Query 1 | Expected=[17] | Predicted=[17] | Correct=True
+<features>
+- texture: wavy, parallel lines
+- color: reddish-brown
+- surface: uneven, raised ridges
+</features>
+<kb>
+- IF [image contains distinct, parallel lines or stripes, either straight or slightly wavy, forming a repetitive pattern across the surface] THEN [17]
+- IF [image contains irregular depressions, holes, or significant breaks in a surface, often indicating damage or natural erosion] THEN [32]
+</kb>
+<rule_check>
+- The rule for class 17 fires because the Query Image displays distinct, parallel, wavy lines forming a repetitive pattern across the surface, which is consistent with the observable features of class 17 examples.
+</rule_check>
+<response>17</response>
+--------------------------------------------------------------------------------
+Run 5 | Query 2 | Expected=[32] | Predicted=[32] | Correct=True
+<features>
+- surface texture: rough and uneven
+- presence of holes: multiple, irregular-shaped holes
+- contents of holes: some holes contain water/puddles
+- overall pattern: no discernible repeating pattern of lines or stripes
+- material: appears to be asphalt or concrete, damaged
+</features>
+<kb>
+- IF [image shows a surface with distinct, often irregular, depressions or holes, which may contain water or debris, and lacks a uniform, repeating linear pattern] THEN [32]
+- IF [image shows a surface dominated by a clear, repeating pattern of parallel lines or stripes, or uniform planks/slats] THEN [17]
+</kb>
+<rule_check>
+- The rule for class 32 fires because the Query Image clearly shows a surface with multiple distinct, irregular-shaped holes, some containing water, and there is no uniform, repeating linear pattern present.
+</rule_check>
+<response>32</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=5 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=4.0360 | avg_trial_wall_seconds=2.0155 | avg_trial_api_seconds=1.5792 | system_fallback_count=0

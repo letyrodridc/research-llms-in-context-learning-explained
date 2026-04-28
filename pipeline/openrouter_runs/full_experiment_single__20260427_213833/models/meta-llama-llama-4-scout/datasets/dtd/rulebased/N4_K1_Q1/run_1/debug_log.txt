@@ -1,0 +1,82 @@
+=== DEBUG LOG | dataset=dtd | prompt=rulebased | model=meta-llama/llama-4-scout | N=4 K=1 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[18] | Predicted=[18] | Correct=True
+<features>
+- small circles: many
+- small circles: orange outline
+- small circles: white interior
+</features>
+<kb>
+- IF small circles = many AND small circles = orange outline AND small circles = white interior THEN 18
+- IF small circles = not present THEN 22
+- IF small circles = not present AND large veins = present THEN 23
+- IF small circles = not present AND small rectangles = present THEN 27
+</kb>
+
+<rule_check>
+- Rule for class 18 fires because the Query Image has many small circles with an orange outline and a white interior.
+</rule_check>
+
+<response>18</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[22] | Predicted=[18] | Correct=False
+<features>
+- horizontal stripes: present
+- pink and white colors: present
+- small logo: present
+</features>
+
+<kb>
+- IF horizontal stripes = present AND pink and white colors = present THEN 18
+- IF horizontal stripes = absent AND black and white colors = present THEN 22
+- IF marble pattern = present AND red color = present THEN 23
+- IF metal grid pattern = present THEN 27
+</kb>
+
+<rule_check>
+- The rule for class 18 is satisfied because the Query Image has horizontal stripes and pink and white colors.
+</rule_check>
+
+<response>18</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[23] | Predicted=[23] | Correct=True
+<features>
+- color: dark
+- color: brown
+- pattern: marbled
+</features>
+<kb>
+- IF pattern = marbled AND color = dark AND color = brown THEN 23
+- IF pattern = striped THEN 22
+- IF pattern = grid THEN 27
+- IF color = white AND pattern = embossed THEN 18
+</kb>
+
+<rule_check>
+- The rule for class 23 fires for the Query Image because it has a marbled pattern with dark and brown colors.
+</rule_check>
+
+<response>23</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[27] | Predicted=[18] | Correct=False
+<features>
+- small dots: present
+- gray color: no
+- red color: no
+- stripes: no
+- metal dots: no
+</features>
+
+<kb>
+- IF small dots = present AND gray color = no AND red color = no AND stripes = no THEN 18
+- IF stripes = present THEN 22
+- IF red color = present THEN 23
+- IF metal dots = present THEN 27
+</kb>
+
+<rule_check>
+- The rule for class 18 seems to be satisfied because the image has small dots, and it does not have gray color, red color, or stripes.
+</rule_check>
+
+<response>18</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=2 | total=4 | errors=0 | accuracy=0.5000 | duration_seconds=12.7253 | avg_trial_wall_seconds=3.1800 | avg_trial_api_seconds=2.6757 | system_fallback_count=0

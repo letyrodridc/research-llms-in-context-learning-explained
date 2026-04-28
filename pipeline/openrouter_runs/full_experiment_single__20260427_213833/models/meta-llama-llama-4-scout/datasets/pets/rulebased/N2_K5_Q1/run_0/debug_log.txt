@@ -1,0 +1,38 @@
+=== DEBUG LOG | dataset=pets | prompt=rulebased | model=meta-llama/llama-4-scout | N=2 K=5 Q=1 | run=0 ===
+Run 0 | Query 1 | Expected=[36] | Predicted=[36] | Correct=True
+<features>
+- fur color: brown and black
+- fur length: long
+- ear shape: erect and floppy
+- eye color: not visible
+</features>
+<kb>
+- IF [fur color = brown and black AND fur length = long AND ear shape = erect or floppy] THEN [36]
+- IF [fur color = white and black AND fur length = long AND eye color = blue] THEN [6]
+</kb>
+
+<rule_check>
+- The rule that fires for the Query Image is: IF [fur color = brown and black AND fur length = long AND ear shape = erect or floppy] THEN [36], because the Query Image shows a dog with brown and black fur, long fur, and erect or floppy ears.
+</rule_check>
+
+<response>36</response>
+--------------------------------------------------------------------------------
+Run 0 | Query 2 | Expected=[6] | Predicted=[6] | Correct=True
+<features>
+- color of fur: white
+- color of fur: gray
+- color of eyes: blue
+- type of ears: pointy
+</features>
+<kb>
+- IF color of fur = white AND color of fur = gray AND color of eyes = blue AND type of ears = pointy THEN 6
+- IF color of fur = brown AND color of fur = gray THEN 36
+</kb>
+
+<rule_check>
+- The rule for class 6 is satisfied because the query image has white and gray fur, blue eyes, and pointy ears.
+</rule_check>
+
+<response>6</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=0 | correct=2 | total=2 | errors=0 | accuracy=1.0000 | duration_seconds=9.6713 | avg_trial_wall_seconds=4.8187 | avg_trial_api_seconds=3.6208 | system_fallback_count=0

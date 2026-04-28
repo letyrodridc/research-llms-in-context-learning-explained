@@ -1,0 +1,64 @@
+=== DEBUG LOG | dataset=cifar10 | prompt=axioms_ontology_v2 | model=google/gemini-2.5-flash | N=4 K=5 Q=1 | run=1 ===
+Run 1 | Query 1 | Expected=[4] | Predicted=[2] | Correct=False
+<tbox>
+2 ⊑ hasVisualFeature(BirdShape)
+4 ⊑ hasVisualFeature(DeerLikeShape)
+6 ⊑ hasVisualFeature(FrogShape)
+7 ⊑ hasVisualFeature(HorseShape)
+</tbox>
+<abox>
+hasVisualFeature(Query, BirdShape)
+</abox>
+<dl_explanation>
+Rule(s) fired: 2 ⊑ hasVisualFeature(BirdShape)
+</dl_explanation>
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 2 | Expected=[2] | Predicted=[2] | Correct=True
+<tbox>
+2 ⊑ hasVisualFeature(BirdShape) ⊓ hasVisualFeature(Feathers)
+4 ⊑ hasVisualFeature(DeerShape) ⊓ hasVisualFeature(Antlers_or_Horns)
+6 ⊑ hasVisualFeature(FrogShape) ⊓ hasVisualFeature(GreenishSkin)
+7 ⊑ hasVisualFeature(HorseShape) ⊓ hasVisualFeature(Mane_and_Tail)
+</tbox>
+<abox>
+hasVisualFeature(Query, BirdShape)
+hasVisualFeature(Query, Feathers)
+</abox>
+<dl_explanation>
+Rule(s) fired: 2 ⊑ hasVisualFeature(BirdShape) ⊓ hasVisualFeature(Feathers)
+</dl_explanation>
+<response>2</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 3 | Expected=[6] | Predicted=[6] | Correct=True
+<tbox>
+Class_4 ⊑ hasVisualFeature(large_mammal) ⊓ hasVisualFeature(antlers_or_horns_present_or_implied) ⊓ hasVisualFeature(brown_or_dark_fur) ⊓ hasVisualFeature(outdoor_setting)
+Class_2 ⊑ hasVisualFeature(bird) ⊓ hasVisualFeature(feathers) ⊓ hasVisualFeature(beak) ⊓ hasVisualFeature(wings_present_or_implied)
+Class_6 ⊑ hasVisualFeature(amphibian) ⊓ hasVisualFeature(greenish_or_brownish_skin) ⊓ hasVisualFeature(bulging_eyes) ⊓ hasVisualFeature(short_limbs)
+Class_7 ⊑ hasVisualFeature(horse) ⊓ hasVisualFeature(mane_and_tail) ⊓ hasVisualFeature(four_legs) ⊓ hasVisualFeature(solid_color_coat)
+</tbox>
+<abox>
+hasVisualFeature(Query, amphibian)
+hasVisualFeature(Query, greenish_or_brownish_skin)
+hasVisualFeature(Query, bulging_eyes)
+hasVisualFeature(Query, short_limbs)
+</abox>
+<dl_explanation>
+Class_6 ⊑ hasVisualFeature(amphibian) ⊓ hasVisualFeature(greenish_or_brownish_skin) ⊓ hasVisualFeature(bulging_eyes) ⊓ hasVisualFeature(short_limbs)
+</dl_explanation>
+<response>6</response>
+--------------------------------------------------------------------------------
+Run 1 | Query 4 | Expected=[7] | Predicted=[7] | Correct=True
+<tbox>
+7 ⊑ hasVisualFeature(horse_like_body) ⊓ hasVisualFeature(four_legs)
+</tbox>
+<abox>
+hasVisualFeature(Query, horse_like_body)
+hasVisualFeature(Query, four_legs)
+</abox>
+<dl_explanation>
+Rule(s) fired: 7 ⊑ hasVisualFeature(horse_like_body) ⊓ hasVisualFeature(four_legs)
+</dl_explanation>
+<response>7</response>
+--------------------------------------------------------------------------------
+RUN SUMMARY | run=1 | correct=3 | total=4 | errors=0 | accuracy=0.7500 | duration_seconds=9.0978 | avg_trial_wall_seconds=2.2719 | avg_trial_api_seconds=2.0274 | system_fallback_count=0
