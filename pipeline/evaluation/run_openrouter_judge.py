@@ -416,7 +416,11 @@ def main() -> None:
 
     def get_writer_for(source_run_dir: Path) -> Tuple[Any, csv.DictWriter, Any]:
         if source_run_dir not in output_handles:
-            judge_dir = source_run_dir / "judge_outputs" / judge_model_slug
+            base_judge_dir = source_run_dir / "judge_outputs" / judge_model_slug
+            if (base_judge_dir / "judge_results.csv").exists():
+                judge_dir = source_run_dir / "judge_outputs" / f"{judge_model_slug}_{run_timestamp}"
+            else:
+                judge_dir = base_judge_dir
             judge_dir.mkdir(parents=True, exist_ok=True)
             (judge_dir / "config.json").write_text(json_dumps(config_snapshot) + "\n", encoding="utf-8")
             (judge_dir / "judge_prompt_library_snapshot.json").write_text(

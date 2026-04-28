@@ -1,0 +1,44 @@
+{
+  "schema_version": "openrouter_experiment_v2",
+  "experiment_name": "smoke_for_judge_expl",
+  "description": "Smoke test that runs all prompt types once with a single model and a single few-shot config.",
+  "env_file": "../../.env",
+  "output_root": "../openrouter_runs",
+  "prompt_library_path": "openrouter_prompt_library.default.json",
+  "model": {
+    "model_name": [
+      "meta-llama/llama-4-scout"
+    ],
+    "model_params": {
+      "validate_image_input": true,
+      "generation": { "temperature": 0.0 }
+    }
+  },
+  "datasets": [
+    "flowers"
+  ],
+  "prompt_types": [
+    "classification",
+    "nle",
+    "features",
+    "rulebased",
+    "axioms_ontology_v2"
+  ],
+  "few_shot_configs": [
+    {
+      "n": 2,
+      "k": 1,
+      "q": 1,
+      "runs": 1
+    }
+  ],
+  "seed": 42,
+  "analysis": {
+    "enabled": true
+  },
+  "logging": {
+    "write_full_conversations": true,
+    "write_request_payloads": true,
+    "write_sharded_logs": true
+  }
+}
