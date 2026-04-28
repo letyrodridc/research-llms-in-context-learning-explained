@@ -462,7 +462,7 @@ def main() -> None:
                         messages=messages_to_send,
                         max_tokens=judge_prompt_specs[prompt_type].max_tokens,
                         temperature=0.0,
-                        generation_params={"reasoning_effort": "high"},
+                        generation_params={"reasoning_effort": "medium"},
                     )
                 except Exception as exc:
                     if is_developer_instruction_error(exc):
@@ -471,7 +471,7 @@ def main() -> None:
                             messages=messages_to_send,
                             max_tokens=judge_prompt_specs[prompt_type].max_tokens,
                             temperature=0.0,
-                            generation_params={"reasoning_effort": "high"},
+                            generation_params={"reasoning_effort": "medium"},
                         )
                         warning_text = (
                             "Provider rejected system/developer instruction. "

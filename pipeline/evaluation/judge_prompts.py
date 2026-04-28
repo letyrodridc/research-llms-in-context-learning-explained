@@ -38,7 +38,7 @@ JUDGE_CONDITION_DESCRIPTIONS = {
 
 
 def build_judge_prompt_specs(explain_scores: bool = False) -> Dict[str, JudgePromptSpec]:
-    max_tokens = 8192 if explain_scores else 4096
+    max_tokens = 16384
     addon = JUDGE_PROMPT_ASSETS["JUDGE_EXPLAIN_ADDON"] if explain_scores else ""
     return {
         prompt_type: JudgePromptSpec(
