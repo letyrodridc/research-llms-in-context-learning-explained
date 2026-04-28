@@ -104,19 +104,28 @@ class RunDataStore:
         self.run_manifest = _read_json_if_exists(self.run_dir / "run_manifest.json")
         self._datasets_cache: Optional[Dict[str, Any]] = None
 
+        # Build trial lookup for cross-referencing from judge trials
+        self._trial_lookup: Dict[str, Dict[str, str]] = {}
+        for row in self.trial_rows:
+            key = f"{row['dataset']}_{row['prompt_type']}_{row['run_id']}_{row['query_index_within_episode']}"
+            self._trial_lookup[key] = row
+
         # Load Judge Results if they exist (supports both legacy flat layout
         # `judge_outputs/judge_results_*.csv` and the unified per-judge-model
         # subdir layout `judge_outputs/<judge_model>/judge_results.csv`).
         self.judge_data: Dict[str, Dict[str, str]] = {}
+        self.judge_rows: List[Dict[str, str]] = []
         judge_dir = self.run_dir / "judge_outputs"
         if judge_dir.exists():
             for pattern in ("judge_results_*.csv", "*/judge_results.csv"):
-                for judge_file in judge_dir.glob(pattern):
+                for judge_file in sorted(judge_dir.glob(pattern)):
                     j_rows = _read_csv_safe(judge_file)
                     for jr in j_rows:
                         query_idx = jr.get("query_index_within_episode") or jr.get("query_index", "")
                         key = f"{jr['dataset']}_{jr['prompt_type']}_{jr['run_id']}_{query_idx}"
                         self.judge_data[key] = jr
+                        jr["_judge_trial_id"] = str(len(self.judge_rows))
+                        self.judge_rows.append(jr)
 
         for idx, row in enumerate(self.trial_rows):
             row["_trial_id"] = str(idx)
@@ -192,6 +201,88 @@ class RunDataStore:
             "parsed_response": _extract_xml_blocks(row.get("raw_response_text", "")),
         }
 
+    def list_judge_trials(self) -> List[Dict[str, Any]]:
+        output: List[Dict[str, Any]] = []
+        for jr in self.judge_rows:
+            query_idx = jr.get("query_index_within_episode", "")
+            trial_key = f"{jr.get('dataset', '')}_{jr.get('prompt_type', '')}_{jr.get('run_id', '')}_{query_idx}"
+            source = self._trial_lookup.get(trial_key, {})
+            output.append(
+                {
+                    "judge_trial_id": jr["_judge_trial_id"],
+                    "judge_model": jr.get("judge_model", ""),
+                    "source_model": jr.get("source_model", ""),
+                    "dataset": jr.get("dataset", ""),
+                    "prompt_type": jr.get("prompt_type", ""),
+                    "config_n": jr.get("config_n", ""),
+                    "config_k": jr.get("config_k", ""),
+                    "config_q": jr.get("config_q", ""),
+                    "run_id": jr.get("run_id", ""),
+                    "query_index_within_episode": query_idx,
+                    "overall_score": jr.get("overall_score", ""),
+                    "judge_parse_error": jr.get("judge_parse_error", ""),
+                    "source_correct": source.get("correct", ""),
+                    "source_expected_label": source.get("expected_label", ""),
+                    "source_predicted_label": source.get("predicted_label", ""),
+                }
+            )
+        return output
+
+    def get_judge_trial(self, judge_trial_id: str) -> Dict[str, Any]:
+        jr = self.judge_rows[int(judge_trial_id)]
+        dataset_name = jr.get("dataset", "")
+        prompt_type = jr.get("prompt_type", "")
+        run_id = jr.get("run_id", "")
+        query_idx = jr.get("query_index_within_episode", "")
+
+        trial_key = f"{dataset_name}_{prompt_type}_{run_id}_{query_idx}"
+        source = self._trial_lookup.get(trial_key, {})
+        query_dataset_index = source.get("query_dataset_index", "")
+        class_id_map = _parse_json_field(source.get("class_id_map", ""), {})
+
+        raw_preview = jr.get("judge_message_preview", "")
+        judge_messages_preview = _parse_json_field(raw_preview, [])
+
+        # Replace stripped image_url parts with real API URLs
+        browser_judge_messages: List[Dict[str, Any]] = []
+        for msg in judge_messages_preview:
+            content = msg.get("content")
+            if isinstance(content, str):
+                browser_judge_messages.append({"role": msg.get("role"), "content": content})
+                continue
+            new_parts: List[Dict[str, Any]] = []
+            for part in (content or []):
+                if part.get("type") == "image_url" and query_dataset_index:
+                    new_parts.append(
+                        {
+                            "type": "image_ref",
+                            "image_ref": {
+                                "kind": "query",
+                                "dataset_index": int(query_dataset_index),
+                                "dataset": dataset_name,
+                                "url": f"/api/image?dataset={dataset_name}&index={query_dataset_index}",
+                            },
+                        }
+                    )
+                else:
+                    new_parts.append(part)
+            browser_judge_messages.append({"role": msg.get("role"), "content": new_parts})
+
+        return {
+            "judge_trial_id": judge_trial_id,
+            "metadata": {k: v for k, v in jr.items() if not k.startswith("_")},
+            "judge_messages": browser_judge_messages,
+            "judge_raw_response": jr.get("judge_raw_response_text", ""),
+            "parsed_judge_response": _extract_xml_blocks(jr.get("judge_raw_response_text", "")),
+            "class_id_map": class_id_map,
+            "source_trial": {
+                "correct": source.get("correct", ""),
+                "expected_label": source.get("expected_label", ""),
+                "predicted_label": source.get("predicted_label", ""),
+                "class_id_map": class_id_map,
+            } if source else None,
+        }
+
     def load_image_bytes(self, dataset_name: str, dataset_index: int) -> bytes:
         datasets = self._load_datasets()
         dataset = datasets[dataset_name]
@@ -224,13 +315,23 @@ def _dashboard_html() -> str:
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     body { font-family: Segoe UI, Arial, sans-serif; margin: 0; background: #f5f2ea; color: #1f2430; }
-    .layout { display: grid; grid-template-columns: 440px 1fr; min-height: 100vh; }
+
+    /* Tab bar */
+    .tab-bar { display: flex; gap: 0; background: #2c2a26; padding: 0 16px; }
+    .tab-btn { padding: 12px 24px; color: #c8b89a; font-size: 14px; font-weight: 600; cursor: pointer; border: none; background: none; border-bottom: 3px solid transparent; transition: color 0.15s, border-color 0.15s; }
+    .tab-btn:hover { color: #ffe8b5; }
+    .tab-btn.active { color: #ffe8b5; border-bottom-color: #f5a623; }
+
+    /* Tab panels */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .layout { display: grid; grid-template-columns: 440px 1fr; min-height: calc(100vh - 44px); }
     .sidebar { background: #fffaf1; border-right: 1px solid #d9d0bf; padding: 16px; overflow: auto; display: flex; flex-direction: column; gap: 10px; }
     .main { padding: 20px; overflow: auto; }
     h2, h3 { margin: 0 0 10px; }
     .card { background: white; border: 1px solid #d9d0bf; border-radius: 12px; padding: 14px; margin-bottom: 14px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
 
-    /* collapsible sections */
     details.section { background: white; border: 1px solid #d9d0bf; border-radius: 12px; margin-bottom: 14px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); overflow: hidden; }
     details.section > summary { padding: 12px 14px; font-weight: 700; cursor: pointer; user-select: none; list-style: none; display: flex; align-items: center; gap: 8px; background: #f7f2e8; }
     details.section > summary::-webkit-details-marker { display: none; }
@@ -259,7 +360,7 @@ def _dashboard_html() -> str:
     .filters { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
     .filters label { font-size: 12px; font-weight: 600; color: #5a4e3a; }
     .filters select { width: 100%; padding: 6px 8px; border-radius: 8px; border: 1px solid #c9bea9; background: white; font-size: 13px; }
-    .filter-model { grid-column: 1 / -1; }
+    .filter-full { grid-column: 1 / -1; }
     .trial-count { font-size: 12px; color: #7a6e5e; margin-top: 6px; }
     table { width: 100%; border-collapse: collapse; }
     th, td { text-align: left; padding: 8px; border-bottom: 1px solid #ede4d6; font-size: 13px; }
@@ -269,46 +370,90 @@ def _dashboard_html() -> str:
     .run-meta strong { font-size: 15px; display: block; margin-bottom: 4px; }
     .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
     .stat { background: #fff7e3; border-radius: 10px; padding: 10px; font-size: 13px; }
+    .explanation-box { background: #fff8e1; border: 2px solid #f9a825; border-radius: 8px; padding: 10px; }
   </style>
 </head>
 <body>
-  <div class="layout">
-    <div class="sidebar">
-      <div id="runMeta" class="card run-meta"></div>
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('classification')">Classification Results</button>
+    <button class="tab-btn" onclick="switchTab('judge')">Judge Evaluation</button>
+  </div>
 
-      <details class="section" open>
-        <summary>Trials</summary>
-        <div class="section-body">
-          <div class="filters">
-            <div class="filter-model">
-              <label for="modelFilter">Model</label>
-              <select id="modelFilter"></select>
+  <!-- ─── CLASSIFICATION TAB ─── -->
+  <div id="tab-classification" class="tab-panel active">
+    <div class="layout">
+      <div class="sidebar">
+        <div id="runMeta" class="card run-meta"></div>
+        <details class="section" open>
+          <summary>Trials</summary>
+          <div class="section-body">
+            <div class="filters">
+              <div class="filter-full">
+                <label for="modelFilter">Model</label>
+                <select id="modelFilter"></select>
+              </div>
+              <div>
+                <label for="datasetFilter">Dataset</label>
+                <select id="datasetFilter"></select>
+              </div>
+              <div>
+                <label for="promptFilter">Condition</label>
+                <select id="promptFilter"></select>
+              </div>
             </div>
-            <div>
-              <label for="datasetFilter">Dataset</label>
-              <select id="datasetFilter"></select>
-            </div>
-            <div>
-              <label for="promptFilter">Condition</label>
-              <select id="promptFilter"></select>
-            </div>
+            <div id="trialCount" class="trial-count"></div>
+            <div id="trialList"></div>
           </div>
-          <div id="trialCount" class="trial-count"></div>
-          <div id="trialList"></div>
-        </div>
-      </details>
+        </details>
+      </div>
+      <div class="main">
+        <details class="section" open>
+          <summary>Experiment Summary</summary>
+          <div class="section-body" id="summaryBody"></div>
+        </details>
+        <details class="section">
+          <summary>Config Snapshot</summary>
+          <div class="section-body" id="configBody"></div>
+        </details>
+        <div id="trialDetail"></div>
+      </div>
     </div>
+  </div>
 
-    <div class="main">
-      <details class="section" open>
-        <summary>Experiment Summary</summary>
-        <div class="section-body" id="summaryBody"></div>
-      </details>
-      <details class="section">
-        <summary>Config Snapshot</summary>
-        <div class="section-body" id="configBody"></div>
-      </details>
-      <div id="trialDetail"></div>
+  <!-- ─── JUDGE TAB ─── -->
+  <div id="tab-judge" class="tab-panel">
+    <div class="layout">
+      <div class="sidebar">
+        <div id="judgeRunMeta" class="card run-meta"></div>
+        <details class="section" open>
+          <summary>Judge Trials</summary>
+          <div class="section-body">
+            <div class="filters">
+              <div class="filter-full">
+                <label for="judgeModelFilter">Judge Model</label>
+                <select id="judgeModelFilter"></select>
+              </div>
+              <div class="filter-full">
+                <label for="sourceModelFilter">Source Model</label>
+                <select id="sourceModelFilter"></select>
+              </div>
+              <div>
+                <label for="judgeDatasetFilter">Dataset</label>
+                <select id="judgeDatasetFilter"></select>
+              </div>
+              <div>
+                <label for="judgePromptFilter">Condition</label>
+                <select id="judgePromptFilter"></select>
+              </div>
+            </div>
+            <div id="judgeTrialCount" class="trial-count"></div>
+            <div id="judgeTrialList"></div>
+          </div>
+        </details>
+      </div>
+      <div class="main">
+        <div id="judgeTrialDetail"></div>
+      </div>
     </div>
   </div>
 
@@ -321,16 +466,15 @@ def _dashboard_html() -> str:
       'axioms_ontology_v2':   'DL Axioms',
     };
     const JUDGE_DIMENSIONS = [
-      ['textual_groundedness',      'Textual Groundedness'],
-      ['hallucination_free',        'Hallucination free'],
-      ['concept_counting',          'Concept counting'],
-      ['comprehensibility',         'Comprehensibility'],
-      ['conciseness',               'Conciseness'],
-      ['specificity',               'Specificity'],
-      ['discriminativeness',        'Discriminativeness'],
-      ['instruction_following',     'Instruction following'],
-      ['logical_coherence',         'Logical coherence'],
-      ['explanation_reproducibility', 'Reproducibility'],
+      ['textual_groundedness',  'Textual Groundedness'],
+      ['hallucination_free',    'Hallucination free'],
+      ['concept_counting',      'Concept counting'],
+      ['comprehensibility',     'Comprehensibility'],
+      ['conciseness',           'Conciseness'],
+      ['specificity',           'Specificity'],
+      ['discriminativeness',    'Discriminativeness'],
+      ['instruction_following', 'Instruction following'],
+      ['logical_coherence',     'Logical coherence'],
     ];
     const DATASET_LABELS = {
       'flowers': 'Flowers 102',
@@ -342,8 +486,20 @@ def _dashboard_html() -> str:
     function labelDataset(v) { return DATASET_LABELS[v] || v; }
     function labelModel(v) { return v ? v.split('/').pop() : v; }
 
+    // ── Tab switching ──────────────────────────────────────────────
+    function switchTab(name) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('tab-' + name).classList.add('active');
+      document.querySelector(`.tab-btn[onclick="switchTab('${name}')"]`).classList.add('active');
+      if (name === 'judge' && allJudgeTrials.length === 0) loadJudgeTrials();
+    }
+
+    // ── Shared helpers ─────────────────────────────────────────────
     let allTrials = [];
     let activeTrialId = null;
+    let allJudgeTrials = [];
+    let activeJudgeTrialId = null;
 
     function escapeHtml(value) {
       return (value ?? '').toString()
@@ -352,13 +508,52 @@ def _dashboard_html() -> str:
         .replaceAll('>', '&gt;');
     }
 
+    function renderMessages(messages) {
+      return messages.map(message => {
+        if (typeof message.content === 'string') {
+          return `<div class="message">
+            <div class="message-header">${escapeHtml(message.role)}</div>
+            <div class="message-body"><pre>${escapeHtml(message.content)}</pre></div>
+          </div>`;
+        }
+        const parts = (message.content || []).map(part => {
+          if (part.type === 'text') {
+            return `<div class="content-part"><pre>${escapeHtml(part.text)}</pre></div>`;
+          }
+          if (part.type === 'image_ref') {
+            const kind = part.image_ref.kind || 'query';
+            return `<div class="content-part img-wrap">
+              <div class="img-label ${kind}">${escapeHtml(kind)}</div>
+              <img class="preview ${kind}-img" src="${part.image_ref.url}" />
+            </div>`;
+          }
+          return `<div class="content-part"><pre>${escapeHtml(JSON.stringify(part, null, 2))}</pre></div>`;
+        }).join('');
+        return `<div class="message">
+          <div class="message-header">${escapeHtml(message.role)}</div>
+          <div class="message-body">${parts}</div>
+        </div>`;
+      }).join('');
+    }
+
+    function renderScoresGrid(scores) {
+      return JUDGE_DIMENSIONS.map(([key, label]) => {
+        const val = scores[key];
+        const display = val === undefined || val === '' ? '—' : `${escapeHtml(String(val))}/5`;
+        return `<div class="stat"><strong>${escapeHtml(label)}</strong><br/>${display}</div>`;
+      }).join('');
+    }
+
+    // ── Classification tab ─────────────────────────────────────────
     async function loadSummary() {
       const summary = await fetch('/api/summary').then(r => r.json());
-      document.getElementById('runMeta').innerHTML = `
+      const metaHtml = `
         <strong>${escapeHtml(summary.run_name)}</strong>
         <div style="color:#7a6e5e;font-size:12px;">${escapeHtml(summary.run_dir)}</div>
         <div style="margin-top:8px;"><span class="pill">Trials: ${summary.trial_count}</span></div>
       `;
+      document.getElementById('runMeta').innerHTML = metaHtml;
+      document.getElementById('judgeRunMeta').innerHTML = metaHtml;
 
       const rows = (summary.experiment_summary || []).map(row => `
         <tr>
@@ -374,7 +569,6 @@ def _dashboard_html() -> str:
           <tbody>${rows}</tbody>
         </table>
       `;
-
       document.getElementById('configBody').innerHTML = `
         <pre>${escapeHtml(JSON.stringify(summary.experiment_config || summary.experiment_snapshot || {}, null, 2))}</pre>
       `;
@@ -401,27 +595,27 @@ def _dashboard_html() -> str:
     }
 
     function renderTrialList() {
-      const modelFilter   = document.getElementById('modelFilter').value;
-      const datasetFilter = document.getElementById('datasetFilter').value;
-      const promptFilter  = document.getElementById('promptFilter').value;
+      const modelF   = document.getElementById('modelFilter').value;
+      const datasetF = document.getElementById('datasetFilter').value;
+      const promptF  = document.getElementById('promptFilter').value;
 
-      const filtered = allTrials.filter(trial =>
-        (modelFilter   === 'all' || trial.model        === modelFilter)   &&
-        (datasetFilter === 'all' || trial.dataset      === datasetFilter) &&
-        (promptFilter  === 'all' || trial.prompt_type  === promptFilter)
+      const filtered = allTrials.filter(t =>
+        (modelF   === 'all' || t.model       === modelF)   &&
+        (datasetF === 'all' || t.dataset     === datasetF) &&
+        (promptF  === 'all' || t.prompt_type === promptF)
       );
 
       document.getElementById('trialCount').textContent = `${filtered.length} trial${filtered.length !== 1 ? 's' : ''}`;
-      document.getElementById('trialList').innerHTML = filtered.map(trial => `
-        <div class="trial-row ${trial.trial_id === activeTrialId ? 'active' : ''}" onclick="showTrial('${trial.trial_id}')">
+      document.getElementById('trialList').innerHTML = filtered.map(t => `
+        <div class="trial-row ${t.trial_id === activeTrialId ? 'active' : ''}" onclick="showTrial('${t.trial_id}')">
           <div style="display:flex; justify-content: space-between; align-items: center;">
-            <strong>${escapeHtml(labelPrompt(trial.prompt_type))}</strong>
-            ${trial.judge_scores ? `<span class="pill" style="background:#e3f2fd;">Judge: ${escapeHtml(trial.judge_scores.overall_score || '?')}</span>` : ''}
+            <strong>${escapeHtml(labelPrompt(t.prompt_type))}</strong>
+            ${t.judge_scores ? `<span class="pill" style="background:#e3f2fd;">Judge: ${escapeHtml(t.judge_scores.overall_score || '?')}</span>` : ''}
           </div>
-          <div style="font-size:12px;color:#5a4e3a;">${escapeHtml(labelDataset(trial.dataset))} &nbsp;·&nbsp; ${escapeHtml(labelModel(trial.model))}</div>
-          <div style="font-size:12px;">run ${escapeHtml(trial.run_id)} &nbsp;·&nbsp; expected: <em>${escapeHtml(trial.expected_name)}</em> &nbsp;·&nbsp; predicted: <em>${escapeHtml(trial.predicted_name)}</em></div>
-          <div class="${trial.correct === '1' ? 'ok' : 'bad'}">${trial.correct === '1' ? '✓ correct' : '✗ incorrect'}</div>
-          ${(trial.parse_issue || trial.warning || trial.error) ? `<div class="warn">⚠ ${escapeHtml(trial.parse_issue || trial.warning || trial.error)}</div>` : ''}
+          <div style="font-size:12px;color:#5a4e3a;">${escapeHtml(labelDataset(t.dataset))} &nbsp;·&nbsp; ${escapeHtml(labelModel(t.model))}</div>
+          <div style="font-size:12px;">run ${escapeHtml(t.run_id)} &nbsp;·&nbsp; expected: <em>${escapeHtml(t.expected_name)}</em> &nbsp;·&nbsp; predicted: <em>${escapeHtml(t.predicted_name)}</em></div>
+          <div class="${t.correct === '1' ? 'ok' : 'bad'}">${t.correct === '1' ? '✓ correct' : '✗ incorrect'}</div>
+          ${(t.parse_issue || t.warning || t.error) ? `<div class="warn">⚠ ${escapeHtml(t.parse_issue || t.warning || t.error)}</div>` : ''}
         </div>
       `).join('');
     }
@@ -438,48 +632,14 @@ def _dashboard_html() -> str:
       const expectedName = classIdMap[expectedId] || expectedId;
       const predictedName = classIdMap[predictedId] || predictedId;
 
-      const messages = detail.conversation.map(message => {
-        if (typeof message.content === 'string') {
-          return `
-            <div class="message">
-              <div class="message-header">${escapeHtml(message.role)}</div>
-              <div class="message-body"><pre>${escapeHtml(message.content)}</pre></div>
-            </div>`;
-        }
-        const parts = message.content.map(part => {
-          if (part.type === 'text') {
-            return `<div class="content-part"><pre>${escapeHtml(part.text)}</pre></div>`;
-          }
-          if (part.type === 'image_ref') {
-            const kind = part.image_ref.kind;
-            return `<div class="content-part img-wrap">
-              <div class="img-label ${kind}">${escapeHtml(kind)}</div>
-              <img class="preview ${kind}-img" src="${part.image_ref.url}" />
-            </div>`;
-          }
-          return `<div class="content-part"><pre>${escapeHtml(JSON.stringify(part, null, 2))}</pre></div>`;
-        }).join('');
-        return `
-          <div class="message">
-            <div class="message-header">${escapeHtml(message.role)}</div>
-            <div class="message-body">${parts}</div>
-          </div>`;
-      }).join('');
+      const messages = renderMessages(detail.conversation);
 
       const parsed = detail.parsed_response.length
         ? detail.parsed_response.map(b => `<div style="margin-bottom:10px;"><strong>&lt;${escapeHtml(b.tag)}&gt;</strong><pre style="margin-top:6px;">${escapeHtml(b.content)}</pre></div>`).join('')
         : '<div style="color:#7a6e5e;">No XML blocks parsed from the model response.</div>';
 
-      const promptDisplay = labelPrompt(meta.prompt_type || '');
-      const datasetDisplay = labelDataset(meta.dataset || '');
-      const modelDisplay = labelModel(meta.model || '');
-
       const judgeHtml = detail.judge_scores ? (() => {
-        const stats = JUDGE_DIMENSIONS.map(([key, label]) => {
-          const val = detail.judge_scores[key];
-          const display = val === undefined || val === '' ? '—' : `${escapeHtml(val)}/5`;
-          return `<div class="stat"><strong>${escapeHtml(label)}</strong><br/>${display}</div>`;
-        }).join('');
+        const stats = renderScoresGrid(detail.judge_scores);
         const overall = detail.judge_scores.overall_score || '?';
         const critique = detail.judge_scores.judge_raw_response_text || detail.judge_scores.raw_judge_output || '';
         return `
@@ -501,9 +661,9 @@ def _dashboard_html() -> str:
           <summary>Trial Metadata</summary>
           <div class="section-body">
             <table>
-              <tr><th>Condition</th><td>${escapeHtml(promptDisplay)}</td></tr>
-              <tr><th>Dataset</th><td>${escapeHtml(datasetDisplay)}</td></tr>
-              <tr><th>Model</th><td>${escapeHtml(modelDisplay)}</td></tr>
+              <tr><th>Condition</th><td>${escapeHtml(labelPrompt(meta.prompt_type || ''))}</td></tr>
+              <tr><th>Dataset</th><td>${escapeHtml(labelDataset(meta.dataset || ''))}</td></tr>
+              <tr><th>Model</th><td>${escapeHtml(meta.model || '')}</td></tr>
               <tr><th>Config</th><td>${escapeHtml(meta.config_n)}‑way &nbsp;${escapeHtml(meta.config_k)}‑shot</td></tr>
               <tr><th>Run / Query</th><td>run ${escapeHtml(meta.run_id)} &nbsp;·&nbsp; query ${escapeHtml(meta.query_index_within_episode)}</td></tr>
               <tr><th>Expected</th><td><strong>${escapeHtml(expectedName)}</strong> <span style="color:#7a6e5e;font-size:12px;">(id=${escapeHtml(expectedId)})</span></td></tr>
@@ -517,17 +677,14 @@ def _dashboard_html() -> str:
             </table>
           </div>
         </details>
-
         <details class="section" open>
           <summary>Conversation</summary>
           <div class="section-body">${messages}</div>
         </details>
-
         <details class="section" open>
           <summary>Model Response</summary>
           <div class="section-body">${parsed}</div>
         </details>
-
         <details class="section">
           <summary>📝 Full Model Output (raw)</summary>
           <div class="section-body"><pre style="font-size: 0.95em; background: #fffde7; border: 1px solid #ffe082;">${escapeHtml(detail.raw_response || '')}</pre></div>
@@ -535,6 +692,140 @@ def _dashboard_html() -> str:
       `;
     }
 
+    // ── Judge tab ──────────────────────────────────────────────────
+    async function loadJudgeTrials() {
+      allJudgeTrials = await fetch('/api/judge-trials').then(r => r.json());
+      if (allJudgeTrials.length === 0) {
+        document.getElementById('judgeTrialList').innerHTML = '<div style="padding:16px;color:#7a6e5e;">No judge results found for this run.</div>';
+        document.getElementById('judgeTrialCount').textContent = '0 trials';
+        return;
+      }
+
+      const judgeModels  = ['all', ...new Set(allJudgeTrials.map(t => t.judge_model).filter(Boolean))];
+      const srcModels    = ['all', ...new Set(allJudgeTrials.map(t => t.source_model).filter(Boolean))];
+      const datasets     = ['all', ...new Set(allJudgeTrials.map(t => t.dataset))];
+      const prompts      = ['all', ...new Set(allJudgeTrials.map(t => t.prompt_type))];
+
+      document.getElementById('judgeModelFilter').innerHTML =
+        judgeModels.map(v => `<option value="${v}">${v === 'all' ? 'All judge models' : escapeHtml(labelModel(v))}</option>`).join('');
+      document.getElementById('sourceModelFilter').innerHTML =
+        srcModels.map(v => `<option value="${v}">${v === 'all' ? 'All source models' : escapeHtml(labelModel(v))}</option>`).join('');
+      document.getElementById('judgeDatasetFilter').innerHTML =
+        datasets.map(v => `<option value="${v}">${v === 'all' ? 'All datasets' : escapeHtml(labelDataset(v))}</option>`).join('');
+      document.getElementById('judgePromptFilter').innerHTML =
+        prompts.map(v => `<option value="${v}">${v === 'all' ? 'All conditions' : escapeHtml(labelPrompt(v))}</option>`).join('');
+
+      document.getElementById('judgeModelFilter').addEventListener('change', renderJudgeList);
+      document.getElementById('sourceModelFilter').addEventListener('change', renderJudgeList);
+      document.getElementById('judgeDatasetFilter').addEventListener('change', renderJudgeList);
+      document.getElementById('judgePromptFilter').addEventListener('change', renderJudgeList);
+      renderJudgeList();
+    }
+
+    function renderJudgeList() {
+      const judgeModelF  = document.getElementById('judgeModelFilter').value;
+      const srcModelF    = document.getElementById('sourceModelFilter').value;
+      const datasetF     = document.getElementById('judgeDatasetFilter').value;
+      const promptF      = document.getElementById('judgePromptFilter').value;
+
+      const filtered = allJudgeTrials.filter(t =>
+        (judgeModelF === 'all' || t.judge_model   === judgeModelF) &&
+        (srcModelF   === 'all' || t.source_model  === srcModelF)   &&
+        (datasetF    === 'all' || t.dataset        === datasetF)   &&
+        (promptF     === 'all' || t.prompt_type    === promptF)
+      );
+
+      document.getElementById('judgeTrialCount').textContent = `${filtered.length} trial${filtered.length !== 1 ? 's' : ''}`;
+      document.getElementById('judgeTrialList').innerHTML = filtered.map(t => {
+        const scoreColor = parseFloat(t.overall_score) >= 4 ? '#e8f5e9' : parseFloat(t.overall_score) >= 2.5 ? '#fff8e1' : '#ffebee';
+        return `
+        <div class="trial-row ${t.judge_trial_id === activeJudgeTrialId ? 'active' : ''}" onclick="showJudgeTrial('${t.judge_trial_id}')">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <strong>${escapeHtml(labelPrompt(t.prompt_type))}</strong>
+            ${t.overall_score ? `<span class="pill" style="background:${scoreColor};">Score: ${escapeHtml(t.overall_score)}</span>` : ''}
+          </div>
+          <div style="font-size:12px;color:#5a4e3a;">${escapeHtml(labelDataset(t.dataset))} &nbsp;·&nbsp; ${escapeHtml(labelModel(t.source_model))}</div>
+          <div style="font-size:12px;">run ${escapeHtml(t.run_id)} &nbsp;·&nbsp; query ${escapeHtml(t.query_index_within_episode)}</div>
+          ${t.source_correct !== '' ? `<div class="${t.source_correct === '1' ? 'ok' : 'bad'}" style="font-size:12px;">${t.source_correct === '1' ? '✓ classifier correct' : '✗ classifier incorrect'}</div>` : ''}
+          ${t.judge_parse_error ? `<div class="warn" style="font-size:11px;">⚠ parse error</div>` : ''}
+        </div>`;
+      }).join('');
+    }
+
+    async function showJudgeTrial(judgeTrialId) {
+      activeJudgeTrialId = judgeTrialId;
+      renderJudgeList();
+      const detail = await fetch(`/api/judge-trial?id=${judgeTrialId}`).then(r => r.json());
+      const meta = detail.metadata;
+      const classIdMap = detail.class_id_map || {};
+      const src = detail.source_trial || {};
+      const srcCorrect = src.correct;
+      const overall = meta.overall_score || '?';
+
+      const scoresHtml = `
+        <details class="section" open>
+          <summary>Scores &nbsp;<span class="pill" style="background:#e3f2fd;">Overall: ${escapeHtml(overall)}</span></summary>
+          <div class="section-body">
+            <div class="stat-grid" style="grid-template-columns: repeat(5, 1fr);">${renderScoresGrid(meta)}</div>
+          </div>
+        </details>`;
+
+      const judgeConvHtml = `
+        <details class="section" open>
+          <summary>What the judge received</summary>
+          <div class="section-body">
+            ${renderMessages(detail.judge_messages)}
+          </div>
+        </details>`;
+
+      const parsedJudge = detail.parsed_judge_response && detail.parsed_judge_response.length
+        ? detail.parsed_judge_response
+            .filter(b => !b.tag.endsWith('_reasoning'))
+            .map(b => `<div style="margin-bottom:10px;"><strong>&lt;${escapeHtml(b.tag)}&gt;</strong><pre style="margin-top:6px;">${escapeHtml(b.content)}</pre></div>`)
+            .join('')
+        : '';
+
+      const reasoningBlocks = detail.parsed_judge_response
+        ? detail.parsed_judge_response.filter(b => b.tag.endsWith('_reasoning'))
+        : [];
+      const reasoningHtml = reasoningBlocks.length ? `
+        <details class="section">
+          <summary>Score reasoning (per dimension)</summary>
+          <div class="section-body">
+            ${reasoningBlocks.map(b => `<div style="margin-bottom:10px;"><strong>${escapeHtml(b.tag.replace('_reasoning', ''))}</strong><pre style="margin-top:4px;font-size:0.9em;">${escapeHtml(b.content)}</pre></div>`).join('')}
+          </div>
+        </details>` : '';
+
+      document.getElementById('judgeTrialDetail').innerHTML = `
+        <details class="section" open>
+          <summary>Judge Metadata</summary>
+          <div class="section-body">
+            <table>
+              <tr><th>Judge Model</th><td>${escapeHtml(meta.judge_model || '')}</td></tr>
+              <tr><th>Source Model</th><td>${escapeHtml(meta.source_model || '')}</td></tr>
+              <tr><th>Condition</th><td>${escapeHtml(labelPrompt(meta.prompt_type || ''))}</td></tr>
+              <tr><th>Dataset</th><td>${escapeHtml(labelDataset(meta.dataset || ''))}</td></tr>
+              <tr><th>Config</th><td>${escapeHtml(meta.config_n)}‑way &nbsp;${escapeHtml(meta.config_k)}‑shot</td></tr>
+              <tr><th>Run / Query</th><td>run ${escapeHtml(meta.run_id)} &nbsp;·&nbsp; query ${escapeHtml(meta.query_index_within_episode)}</td></tr>
+              ${srcCorrect !== undefined ? `<tr><th>Classifier result</th><td class="${srcCorrect === '1' ? 'ok' : 'bad'}">${srcCorrect === '1' ? '✓ correct' : '✗ incorrect'}</td></tr>` : ''}
+              ${meta.latency_seconds ? `<tr><th>Judge latency</th><td>${escapeHtml(meta.latency_seconds)} s</td></tr>` : ''}
+              ${meta.usage_total_tokens ? `<tr><th>Judge tokens</th><td>${escapeHtml(meta.usage_total_tokens)}</td></tr>` : ''}
+              ${meta.judge_parse_error ? `<tr><th>Parse error</th><td class="warn">${escapeHtml(meta.judge_parse_error)}</td></tr>` : ''}
+            </table>
+          </div>
+        </details>
+        ${scoresHtml}
+        ${reasoningHtml}
+        ${judgeConvHtml}
+        ${parsedJudge ? `<details class="section" open><summary>Judge Response (parsed)</summary><div class="section-body">${parsedJudge}</div></details>` : ''}
+        <details class="section">
+          <summary>📝 Full Judge Output (raw)</summary>
+          <div class="section-body"><pre style="font-size:0.9em;background:#fffde7;border:1px solid #ffe082;">${escapeHtml(detail.judge_raw_response || '')}</pre></div>
+        </details>
+      `;
+    }
+
+    // ── Bootstrap ──────────────────────────────────────────────────
     async function bootstrap() {
       await loadSummary();
       await loadTrials();
@@ -580,6 +871,14 @@ class DashboardHandler(BaseHTTPRequestHandler):
             query = parse_qs(parsed.query)
             trial_id = query.get("trial_id", ["0"])[0]
             self._send_json(self.store.get_trial(trial_id))
+            return
+        if parsed.path == "/api/judge-trials":
+            self._send_json(self.store.list_judge_trials())
+            return
+        if parsed.path == "/api/judge-trial":
+            query = parse_qs(parsed.query)
+            judge_trial_id = query.get("id", ["0"])[0]
+            self._send_json(self.store.get_judge_trial(judge_trial_id))
             return
         if parsed.path == "/api/image":
             query = parse_qs(parsed.query)

@@ -13,7 +13,7 @@ from typing import Any, Dict, List, Tuple
 from ..utils.client import OpenRouterClient, model_supports_images
 from ..experiments.config import DATASET_CHOICES, JUDGEABLE_PROMPT_TYPES, build_openrouter_settings
 from .judge_analysis import analyze_judge_run_directory
-from .judge_prompts import JUDGE_PROMPT_SPECS, export_judge_prompt_library_snapshot
+from .judge_prompts import build_judge_prompt_specs, export_judge_prompt_library_snapshot
 from .reconstruction import reconstruct_classifier_messages
 
 
@@ -27,7 +27,6 @@ SCORE_FIELDS = (
     "discriminativeness",
     "instruction_following",
     "logical_coherence",
-    "explanation_reproducibility",
 )
 
 
@@ -57,6 +56,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--skip-analysis", action="store_true", help="Skip judge tables, plots, and statistics.")
     parser.add_argument("--skip-model-validation", action="store_true", help="Skip the OpenRouter model metadata check.")
     parser.add_argument("--debug", action="store_true", help="Print extra progress details.")
+    parser.add_argument(
+        "--explain-scores",
+        action="store_true",
+        help="Ask the judge to include a brief reasoning for each dimension score (debug mode, higher token budget).",
+    )
     return parser.parse_args()
 
 
@@ -139,6 +143,16 @@ def extract_scores_from_judge_response(text: str) -> Tuple[Dict[str, int], str]:
     if missing_fields:
         return scores, f"Missing or invalid XML score tags: {', '.join(missing_fields)}"
     return scores, ""
+
+
+def extract_reasoning_from_judge_response(text: str) -> Dict[str, str]:
+    reasoning: Dict[str, str] = {}
+    for field in SCORE_FIELDS:
+        tag = f"{field}_reasoning"
+        match = re.search(fr"<{tag}>(.*?)</{tag}>", text, flags=re.IGNORECASE | re.DOTALL)
+        if match:
+            reasoning[tag] = match.group(1).strip()
+    return reasoning
 
 
 def message_preview(messages: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -353,6 +367,7 @@ def main() -> None:
         "prompt_type_filter": args.prompt_type,
         "selected_trials": len(selected_rows),
         "limit": args.limit,
+        "explain_scores": args.explain_scores,
         "site_url": settings.site_url,
         "app_name": settings.app_name,
         "timeout_seconds": settings.timeout_seconds,
@@ -392,6 +407,7 @@ def main() -> None:
         "judge_message_preview",
         "judge_raw_response_text",
     ]
+    judge_prompt_specs = build_judge_prompt_specs(explain_scores=args.explain_scores)
     set_seed(42)
     datasets_dict = load_datasets(data_dir=str(repo_root / "data"))
 
@@ -404,7 +420,7 @@ def main() -> None:
             judge_dir.mkdir(parents=True, exist_ok=True)
             (judge_dir / "config.json").write_text(json_dumps(config_snapshot) + "\n", encoding="utf-8")
             (judge_dir / "judge_prompt_library_snapshot.json").write_text(
-                json_dumps(export_judge_prompt_library_snapshot()) + "\n",
+                json_dumps(export_judge_prompt_library_snapshot(explain_scores=args.explain_scores)) + "\n",
                 encoding="utf-8",
             )
             csv_h, csv_w = initialize_csv_writer(judge_dir / "judge_results.csv", fieldnames)
@@ -430,7 +446,7 @@ def main() -> None:
             reconstructed = reconstruct_classifier_messages(row, dataset, class_names)
             judge_user_content = build_judge_user_content(row, reconstructed.classifier_messages)
             judge_messages = [
-                {"role": "system", "content": JUDGE_PROMPT_SPECS[prompt_type].system_prompt},
+                {"role": "system", "content": judge_prompt_specs[prompt_type].system_prompt},
                 {"role": "user", "content": judge_user_content},
             ]
 
@@ -440,7 +456,7 @@ def main() -> None:
                 try:
                     response = client.create_chat_completion(
                         messages=messages_to_send,
-                        max_tokens=JUDGE_PROMPT_SPECS[prompt_type].max_tokens,
+                        max_tokens=judge_prompt_specs[prompt_type].max_tokens,
                         temperature=0.0,
                         generation_params={"reasoning_effort": "high"},
                     )
@@ -449,7 +465,7 @@ def main() -> None:
                         messages_to_send = flatten_system_prompt_into_first_user_message(judge_messages)
                         response = client.create_chat_completion(
                             messages=messages_to_send,
-                            max_tokens=JUDGE_PROMPT_SPECS[prompt_type].max_tokens,
+                            max_tokens=judge_prompt_specs[prompt_type].max_tokens,
                             temperature=0.0,
                             generation_params={"reasoning_effort": "high"},
                         )
@@ -467,6 +483,7 @@ def main() -> None:
                         raise
 
                 scores, parse_error = extract_scores_from_judge_response(response.text)
+                reasoning = extract_reasoning_from_judge_response(response.text) if args.explain_scores else {}
                 overall_score = ""
                 if len(scores) == len(SCORE_FIELDS):
                     overall_score = f"{sum(scores[field] for field in SCORE_FIELDS) / len(SCORE_FIELDS):.4f}"
@@ -515,6 +532,7 @@ def main() -> None:
                     json_dumps(
                         {
                             **result_row,
+                            **reasoning,
                             "judge_request_preview": message_preview(messages_to_send),
                             "judge_raw_response_payload": response.raw_json,
                         }

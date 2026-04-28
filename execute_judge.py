@@ -16,6 +16,7 @@ def parse_args():
     parser.add_argument("--skip-analysis", action="store_true", help="Skip judge tables, plots, and statistics.")
     parser.add_argument("--skip-model-validation", action="store_true", help="Skip the OpenRouter model metadata check.")
     parser.add_argument("--debug", action="store_true", help="Print extra progress details.")
+    parser.add_argument("--explain-scores", action="store_true", help="Include per-dimension reasoning in judge output (debug mode).")
     return parser.parse_args()
 
 
@@ -44,6 +45,8 @@ def main():
         cmd.append("--skip-model-validation")
     if args.debug:
         cmd.append("--debug")
+    if args.explain_scores:
+        cmd.append("--explain-scores")
 
     sys.exit(subprocess.run(cmd, check=False).returncode)
 

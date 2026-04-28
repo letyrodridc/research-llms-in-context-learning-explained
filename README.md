@@ -68,7 +68,7 @@ This works for `--dataset`, `--prompt-type`, `--n`, `--k`, and `--q`. It is the 
 
 After running classification experiments you can score the **quality of the generated
 explanations** with a separate "judge" LLM. The judge runs over OpenRouter (single
-unified pipeline) and evaluates each explanation on **10 dimensions** using a 1-to-5
+unified pipeline) and evaluates each explanation on **9 dimensions** using a 1-to-5
 scale.
 
 #### What the judge sees
@@ -101,9 +101,8 @@ judge receives is loaded from `judge_prompts.txt` (top-level repo file).
 | 7 | **Discriminativeness** | Highlights features that uniquely identify the predicted class vs others (global) |
 | 8 | **Instruction following** | Output adheres to the required XML/structural format |
 | 9 | **Logical coherence** | Sentences connect into a valid, smooth deduction |
-| 10 | **Explanation Reproducibility** | Stability of extracted features across identical runs |
 
-Each is scored 1–5; the runner also writes an `overall_score` (mean of the 10).
+Each is scored 1–5; the runner also writes an `overall_score` (mean of the 9).
 
 #### Running the judge
 
@@ -119,6 +118,9 @@ python execute_judge.py --run-dir pipeline/openrouter_runs/<run_dir> --judge-mod
 
 # Smoke test: judge only the first 5 trials and skip post-run analysis
 python execute_judge.py --run-dir pipeline/openrouter_runs/<run_dir> --limit 5 --skip-analysis
+
+# Debug mode: include per-dimension reasoning to inspect judge quality
+python execute_judge.py --run-dir pipeline/openrouter_runs/<run_dir> --limit 10 --explain-scores --debug
 ```
 
 You can also invoke the runner module directly (equivalent):
@@ -140,6 +142,7 @@ python -m pipeline.evaluation.run_openrouter_judge --run-dir pipeline/openrouter
 | `--skip-analysis` | off | Skip generating tables and plots after judging. |
 | `--skip-model-validation` | off | Skip the OpenRouter `/models` lookup that checks the judge has vision support. |
 | `--debug` | off | Print per-trial progress. |
+| `--explain-scores` | off | Ask the judge to add a one-sentence reasoning for each dimension score. Increases token budget to 4096. Reasoning is saved in `judge_logs.jsonl` only (not the CSV). Useful for verifying judge quality on a small subset before running the full experiment. |
 
 #### Where results are saved
 
@@ -152,13 +155,14 @@ pipeline/openrouter_runs/<run_dir>/
 ├── ...
 └── judge_outputs/
     └── <judge_model_slug>/            # e.g. openai-gpt-5-mini
-        ├── judge_results.csv          # one row per judged trial, with the 10 scores + overall_score
-        ├── judge_logs.jsonl           # full judge requests/responses including raw payloads
+        ├── judge_results.csv          # one row per judged trial, with the 9 scores + overall_score
+        ├── judge_logs.jsonl           # full judge requests/responses; includes per-dimension reasoning when --explain-scores is used
         ├── config.json                # snapshot of judge run config (model, filters, timestamp)
         ├── judge_prompt_library_snapshot.json  # exact judge prompts used
         └── analysis/                  # generated unless --skip-analysis
             ├── tables/                # CSVs: mean per prompt, per dataset, per dimension
-            ├── plots/                 # PNG figures
+            ├── plots/                 # PNG bar charts + radar charts (see below)
+            │   └── radar_by_dataset/  # one radar per prompt type, series = datasets
             └── stats/                 # Wilcoxon / Friedman tests across prompt types
 ```
 
@@ -166,14 +170,22 @@ Running the judge again with a **different** `--judge-model` writes to a sibling
 subdirectory (e.g. `judge_outputs/anthropic-claude-haiku-4-5/`) so multiple judges can
 coexist without overwriting each other.
 
+Radar charts generated in `plots/`:
+
+| File | What it shows |
+|---|---|
+| `radar_by_prompt.png` | All prompt types overlaid; axes = 9 dimensions |
+| `radar_by_model.png` | All source models overlaid (generated only if >1 model in the run) |
+| `radar_by_dataset/radar_{prompt}.png` | One chart per prompt type; series = datasets |
+
 Key columns of `judge_results.csv`:
 
 | Column | Meaning |
 |---|---|
 | `dataset`, `prompt_type`, `config_n/k/q`, `run_id`, `query_index_within_episode` | Identity of the trial being judged |
 | `predicted_label`, `class_options` | What the classifier predicted and the candidate IDs (judge-side names are reconstructable via `class_id_map` in the source CSV) |
-| `textual_groundedness`, `hallucination_free`, …, `explanation_reproducibility` | The 10 individual scores (1–5) |
-| `overall_score` | Mean of the 10 scores (1–5) |
+| `textual_groundedness`, `hallucination_free`, …, `logical_coherence` | The 9 individual scores (1–5) |
+| `overall_score` | Mean of the 9 scores (1–5) |
 | `judge_parse_error` | Non-empty if the judge's output was missing tags |
 | `latency_seconds`, `usage_*_tokens`, `provider` | API metadata |
 | `judge_raw_response_text` | The full judge response (XML + any extra prose) |
@@ -189,14 +201,16 @@ python pipeline/dashboard/run_results_dashboard.py --run-dir pipeline/openrouter
 # Opens at http://127.0.0.1:8765
 ```
 
-In the UI:
+The dashboard has two tabs:
 
-- **Trial list (sidebar)**: every trial that was judged shows a `Judge: X.XX` pill with
-  its `overall_score`. Use the Model / Dataset / Condition filters to narrow down.
-- **Trial detail (main panel)**: an expandable **Judge Evaluation** section appears
-  with a 5×2 grid of the 10 dimensions and the full critique (`judge_raw_response_text`).
-- **Class names**: classifier inputs/outputs are shown as human-readable names (with the
-  numeric ID in muted parentheses) via the `class_id_map` stored in each trial.
+**Classification Results tab:**
+- **Trial list (sidebar)**: every trial that was judged shows a `Judge: X.XX` pill with its `overall_score`. Use the Model / Dataset / Condition filters to narrow down.
+- **Trial detail (main panel)**: an expandable **Judge Evaluation** section with a grid of the 9 dimensions and the full critique (`judge_raw_response_text`).
+- **Class names**: classifier inputs/outputs are shown as human-readable names (with the numeric ID in muted parentheses) via the `class_id_map` stored in each trial.
+
+**Judge Evaluation tab** (separate from classification):
+- **Judge trial list (sidebar)**: one entry per judged trial. Filters: Judge Model, Source Model, Dataset, Condition. Score pills are color-coded by quality.
+- **Judge trial detail (main panel)**: shows what the judge actually received — system prompt, user message with the query image, and the explanation being evaluated — plus the 9 dimension scores, optional per-dimension reasoning (if the run was done with `--explain-scores`), and the raw judge response.
 
 ### Stage 4: Analyze & Visualize
 Open the Results Dashboard to inspect classifier results, reconstructed conversations,
@@ -272,10 +286,10 @@ python -m pipeline.experiments.run_openrouter_experiment --config pipeline/confi
 ## 📝 Notes
 - **Reproducibility**: All experiments use fixed seeds and pre-generated episodes located in `episodes/`.
 - **Inference Engine**: Automatically handles token limits, temperatures, and provider fallbacks for system prompts.
-- **Judge Metrics**: Explanations are scored on 10 dimensions (Textual Groundedness,
+- **Judge Metrics**: Explanations are scored on 9 dimensions (Textual Groundedness,
   Hallucination Free, Concept Counting, Comprehensibility, Conciseness, Specificity,
-  Discriminativeness, Instruction Following, Logical Coherence, Explanation
-  Reproducibility) plus an aggregate `overall_score`. See **Stage 3** for details.
+  Discriminativeness, Instruction Following, Logical Coherence) plus an aggregate
+  `overall_score`. Use `--explain-scores` to get per-dimension reasoning in the JSONL logs. See **Stage 3** for details.
 - **Class IDs vs names**: The classifier sees only numeric class IDs (no semantic
   prior), but the judge and the dashboard always show human-readable class names via
   the `class_id_map` stored in each trial.

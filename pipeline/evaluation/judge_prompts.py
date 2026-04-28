@@ -22,6 +22,7 @@ JUDGE_PROMPT_ASSET_KEYS = (
     "FEATURES_JUDGE_CONDITION_DESCRIPTION",
     "LOGIC_RULES_JUDGE_CONDITION_DESCRIPTION",
     "DL_AXIOMS_JUDGE_CONDITION_DESCRIPTION",
+    "JUDGE_EXPLAIN_ADDON",
 )
 JUDGE_PROMPT_ASSETS = require_assignment_blocks(
     JUDGE_PROMPT_ASSET_FILENAME,
@@ -35,31 +36,40 @@ JUDGE_CONDITION_DESCRIPTIONS = {
     "axioms_ontology_v2": JUDGE_PROMPT_ASSETS["DL_AXIOMS_JUDGE_CONDITION_DESCRIPTION"],
 }
 
-JUDGE_PROMPT_SPECS = {
-    prompt_type: JudgePromptSpec(
-        prompt_type=prompt_type,
-        condition_description=JUDGE_CONDITION_DESCRIPTIONS[prompt_type],
-        system_prompt=JUDGE_PROMPT_ASSETS["JUDGE_PROMPT"].format(
-            CONDITION_DESCRIPTION=JUDGE_CONDITION_DESCRIPTIONS[prompt_type]
-        ),
-        max_tokens=1024,
-    )
-    for prompt_type in JUDGEABLE_PROMPT_TYPES
-}
+
+def build_judge_prompt_specs(explain_scores: bool = False) -> Dict[str, JudgePromptSpec]:
+    max_tokens = 4096 if explain_scores else 1024
+    addon = JUDGE_PROMPT_ASSETS["JUDGE_EXPLAIN_ADDON"] if explain_scores else ""
+    return {
+        prompt_type: JudgePromptSpec(
+            prompt_type=prompt_type,
+            condition_description=JUDGE_CONDITION_DESCRIPTIONS[prompt_type],
+            system_prompt=JUDGE_PROMPT_ASSETS["JUDGE_PROMPT"].format(
+                CONDITION_DESCRIPTION=JUDGE_CONDITION_DESCRIPTIONS[prompt_type]
+            ) + addon,
+            max_tokens=max_tokens,
+        )
+        for prompt_type in JUDGEABLE_PROMPT_TYPES
+    }
 
 
-def export_judge_prompt_library_snapshot() -> Dict[str, Any]:
+JUDGE_PROMPT_SPECS = build_judge_prompt_specs(explain_scores=False)
+
+
+def export_judge_prompt_library_snapshot(explain_scores: bool = False) -> Dict[str, Any]:
+    specs = build_judge_prompt_specs(explain_scores=explain_scores)
     return {
         "source_asset": build_asset_snapshot(
             JUDGE_PROMPT_ASSET_FILENAME,
             JUDGE_PROMPT_ASSET_KEYS,
         ),
+        "explain_scores": explain_scores,
         "prompt_types": {
             prompt_type: {
                 "system_prompt": spec.system_prompt,
                 "condition_description": spec.condition_description,
                 "max_tokens": spec.max_tokens,
             }
-            for prompt_type, spec in JUDGE_PROMPT_SPECS.items()
+            for prompt_type, spec in specs.items()
         },
     }

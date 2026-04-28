@@ -8,6 +8,7 @@ from typing import Any, Dict, Iterable, List, Sequence, Tuple
 import csv
 import math
 
+import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -24,7 +25,18 @@ DIMENSION_FIELDS = (
     "discriminativeness",
     "instruction_following",
     "logical_coherence",
-    "explanation_reproducibility",
+)
+
+DIMENSION_LABELS = (
+    "Groundedness",
+    "Hallucination\nFree",
+    "Concept\nCounting",
+    "Comprehen-\nsibility",
+    "Conciseness",
+    "Specificity",
+    "Discrimina-\ntiveness",
+    "Instruction\nFollowing",
+    "Logical\nCoherence",
 )
 
 
@@ -129,6 +141,43 @@ def _plot_bar(
         plt.legend()
     plt.tight_layout()
     plt.savefig(path, dpi=160)
+    plt.close()
+
+
+def _plot_radar(
+    *,
+    title: str,
+    path: Path,
+    categories: Sequence[str],
+    series: Dict[str, List[float]],
+    y_max: float = 5.0,
+) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    N = len(categories)
+    angles = np.linspace(0, 2 * np.pi, N, endpoint=False).tolist()
+    angles += angles[:1]
+
+    fig, ax = plt.subplots(figsize=(7, 7), subplot_kw={"projection": "polar"})
+    ax.set_theta_offset(np.pi / 2)
+    ax.set_theta_direction(-1)
+    ax.set_xticks(angles[:-1])
+    ax.set_xticklabels(categories, size=8)
+    ax.set_ylim(0, y_max)
+    ax.set_yticks([1, 2, 3, 4, 5])
+    ax.set_yticklabels(["1", "2", "3", "4", "5"], size=7)
+    ax.yaxis.set_tick_params(labelsize=7)
+
+    colors = plt.rcParams["axes.prop_cycle"].by_key()["color"]
+    for idx, (label, values) in enumerate(series.items()):
+        data = values + values[:1]
+        color = colors[idx % len(colors)]
+        ax.plot(angles, data, linewidth=1.5, linestyle="solid", label=label, color=color)
+        ax.fill(angles, data, alpha=0.08, color=color)
+
+    ax.legend(loc="upper right", bbox_to_anchor=(1.3, 1.15), fontsize=8)
+    ax.set_title(title, size=10, pad=18)
+    plt.tight_layout()
+    plt.savefig(path, dpi=160, bbox_inches="tight")
     plt.close()
 
 
@@ -330,6 +379,66 @@ def analyze_judge_run_directory(run_dir: Path) -> Dict[str, Path]:
         series=dataset_series,
     )
 
+    # --- Radar charts ---
+    radar_categories = list(DIMENSION_LABELS)
+
+    # 1. radar_by_prompt.png — one series per prompt type
+    prompt_radar_series: Dict[str, List[float]] = {}
+    for prompt_type in sorted({row["prompt_type"] for row in dimension_table}):
+        prompt_radar_series[prompt_type] = [
+            next(
+                (_safe_float(r["mean_score"]) for r in dimension_table if r["prompt_type"] == prompt_type and r["dimension"] == dim),
+                0.0,
+            )
+            for dim in DIMENSION_FIELDS
+        ]
+    if len(prompt_radar_series) >= 2:
+        _plot_radar(
+            title="Judge Scores by Dimension and Prompt Type",
+            path=plots_dir / "radar_by_prompt.png",
+            categories=radar_categories,
+            series=prompt_radar_series,
+        )
+
+    # 2. radar_by_model.png — one series per source model (only if >1 model)
+    source_models = sorted({row["source_model"] for row in scored_rows if row.get("source_model")})
+    if len(source_models) >= 2:
+        model_dim_table = _mean_score_table(scored_rows, ["source_model"])
+        model_radar_series: Dict[str, List[float]] = {}
+        for model_row in model_dim_table:
+            model_label = model_row["source_model"]
+            model_radar_series[model_label] = [_safe_float(model_row.get(dim, 0.0)) for dim in DIMENSION_FIELDS]
+        _plot_radar(
+            title="Judge Scores by Dimension and Source Model",
+            path=plots_dir / "radar_by_model.png",
+            categories=radar_categories,
+            series=model_radar_series,
+        )
+
+    # 3. radar_by_dataset/radar_{prompt_type}.png — per prompt type, one series per dataset
+    radar_dataset_dir = plots_dir / "radar_by_dataset"
+    prompt_dataset_table = _mean_score_table(scored_rows, ["prompt_type", "dataset"])
+    all_datasets = sorted({row["dataset"] for row in scored_rows})
+    radar_dataset_files: List[str] = []
+    for prompt_type in sorted({row["prompt_type"] for row in scored_rows}):
+        dataset_radar_series: Dict[str, List[float]] = {}
+        for dataset_name in all_datasets:
+            matched = next(
+                (r for r in prompt_dataset_table if r["prompt_type"] == prompt_type and r["dataset"] == dataset_name),
+                None,
+            )
+            if matched:
+                dataset_radar_series[dataset_name] = [_safe_float(matched.get(dim, 0.0)) for dim in DIMENSION_FIELDS]
+        if len(dataset_radar_series) >= 2:
+            radar_file = radar_dataset_dir / f"radar_{prompt_type}.png"
+            _plot_radar(
+                title=f"Judge Scores by Dimension and Dataset — {prompt_type}",
+                path=radar_file,
+                categories=radar_categories,
+                series=dataset_radar_series,
+            )
+            radar_dataset_files.append(f"radar_by_dataset/radar_{prompt_type}.png")
+
     report_path = analysis_dir / "report.md"
     best_prompt = ""
     if overall_table:
@@ -351,6 +460,9 @@ def analyze_judge_run_directory(run_dir: Path) -> Dict[str, Path]:
         "- `plots/overall_score_by_prompt.png`",
         "- `plots/score_by_dimension_and_prompt.png`",
         "- `plots/overall_score_by_dataset_and_prompt.png`",
+        "- `plots/radar_by_prompt.png`" if len(prompt_radar_series) >= 2 else "- Radar by prompt: not generated (need ≥2 prompt types)",
+        "- `plots/radar_by_model.png`" if len(source_models) >= 2 else "- Radar by model: not generated (need ≥2 models)",
+        *[f"- `plots/{f}`" for f in radar_dataset_files],
         "",
         "## Statistical tests",
         "- `stats/pairwise_wilcoxon_trial_overall_score.csv`" if wilcoxon_rows else "- Pairwise Wilcoxon not generated",
