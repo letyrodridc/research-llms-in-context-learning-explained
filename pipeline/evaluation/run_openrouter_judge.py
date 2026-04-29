@@ -5,7 +5,9 @@ import csv
 import hashlib
 import json
 import re
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
@@ -284,8 +286,8 @@ def build_trial_selection(
 def build_judge_user_content(row: Dict[str, str], classifier_messages: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """Build the user content for the judge: query image + class names + predicted name + raw output.
 
-    Class IDs are translated to human-readable names using `class_id_map` from the trial CSV
-    so the judge sees meaningful labels instead of numeric IDs.
+    The class ID mapping is explicitly shown so the judge can resolve numeric class references
+    that appear inside the classifier's explanation text (e.g. "class 3 has petals...").
     """
     class_id_map = _parse_json_dict(row.get("class_id_map", ""))
     class_options_ids = _parse_json_list(row.get("class_options", ""))
@@ -296,8 +298,13 @@ def build_judge_user_content(row: Dict[str, str], classifier_messages: List[Dict
 
     raw_output = row.get("raw_response_text", "") or "<empty response>"
 
+    id_mapping_text = ", ".join(
+        f"{cid}={class_id_map.get(str(cid), str(cid))}" for cid in class_options_ids
+    )
+
     content: List[Dict[str, Any]] = [
         {"type": "text", "text": f"Candidate class labels: {class_names}"},
+        {"type": "text", "text": f"Class ID mapping: {id_mapping_text}"},
         {"type": "text", "text": f"Predicted class: {predicted_name}"},
         {"type": "text", "text": "Query image:"},
     ]
@@ -435,177 +442,178 @@ def main() -> None:
     total_trials = len(selected_rows)
     completed_trials = 0
     overall_wall_start = time.perf_counter()
-    system_fallback_warning_printed = False
+    _system_fallback_warned = threading.Event()
 
-    try:
-        for row in selected_rows:
-            trial_wall_start = time.perf_counter()
-            source_run_dir = Path(row["_source_run_dir"])
-            csv_handle, writer, jsonl_handle = get_writer_for(source_run_dir)
-            prompt_type = row["prompt_type"]
-            dataset_name = row["dataset"]
-            dataset = datasets_dict[dataset_name]
-            class_names = datasets_dict.get(f"{dataset_name}_classes")
+    # Closure capturing read-only shared state; creates its own client per thread.
+    def _judge_one_trial(row: Dict[str, str]) -> Tuple[Path, Dict[str, Any], Dict[str, Any], bool, str]:
+        trial_wall_start = time.perf_counter()
+        source_run_dir = Path(row["_source_run_dir"])
+        prompt_type    = row["prompt_type"]
+        dataset_name   = row["dataset"]
+        dataset        = datasets_dict[dataset_name]
+        class_names    = datasets_dict.get(f"{dataset_name}_classes")
+        trial_client   = OpenRouterClient(settings)  # own requests.Session per thread
 
-            reconstructed = reconstruct_classifier_messages(row, dataset, class_names)
+        try:
+            reconstructed      = reconstruct_classifier_messages(row, dataset, class_names)
             judge_user_content = build_judge_user_content(row, reconstructed.classifier_messages)
             judge_messages = [
                 {"role": "system", "content": judge_prompt_specs[prompt_type].system_prompt},
-                {"role": "user", "content": judge_user_content},
+                {"role": "user",   "content": judge_user_content},
             ]
 
-            warning_text = ""
+            warning_text     = ""
             messages_to_send = judge_messages
             try:
-                try:
-                    response = client.create_chat_completion(
+                response = trial_client.create_chat_completion(
+                    messages=messages_to_send,
+                    max_tokens=judge_prompt_specs[prompt_type].max_tokens,
+                    temperature=0.0,
+                    generation_params={"reasoning_effort": "medium"},
+                )
+            except Exception as exc:
+                if is_developer_instruction_error(exc):
+                    messages_to_send = flatten_system_prompt_into_first_user_message(judge_messages)
+                    response = trial_client.create_chat_completion(
                         messages=messages_to_send,
                         max_tokens=judge_prompt_specs[prompt_type].max_tokens,
                         temperature=0.0,
                         generation_params={"reasoning_effort": "medium"},
                     )
-                except Exception as exc:
-                    if is_developer_instruction_error(exc):
-                        messages_to_send = flatten_system_prompt_into_first_user_message(judge_messages)
-                        response = client.create_chat_completion(
-                            messages=messages_to_send,
-                            max_tokens=judge_prompt_specs[prompt_type].max_tokens,
-                            temperature=0.0,
-                            generation_params={"reasoning_effort": "medium"},
+                    warning_text = (
+                        "Provider rejected system/developer instruction. "
+                        "Retried with the judge system prompt folded into the first user message."
+                    )
+                    if not _system_fallback_warned.is_set():
+                        print(
+                            "[WARNING] Judge provider rejected the system instruction. "
+                            "Retrying with the system prompt folded into the first user message."
                         )
-                        warning_text = (
-                            "Provider rejected system/developer instruction. "
-                            "Retried with the judge system prompt folded into the first user message."
+                        _system_fallback_warned.set()
+                else:
+                    raise
+
+            scores, parse_error = extract_scores_from_judge_response(response.text)
+            reasoning           = extract_reasoning_from_judge_response(response.text) if args.explain_scores else {}
+            overall_score       = ""
+            if len(scores) == len(SCORE_FIELDS):
+                overall_score = f"{sum(scores[field] for field in SCORE_FIELDS) / len(SCORE_FIELDS):.4f}"
+
+            trial_wall_seconds = time.perf_counter() - trial_wall_start
+            result_row = {
+                "judge_timestamp":              datetime.now().astimezone().isoformat(),
+                "source_run_dir":               str(source_run_dir),
+                "source_run_name":              row["_source_run_name"],
+                "source_model":                 row["model"],
+                "judge_model":                  settings.model,
+                "dataset":                      dataset_name,
+                "prompt_type":                  prompt_type,
+                "config_n":                     row["config_n"],
+                "config_k":                     row["config_k"],
+                "config_q":                     row["config_q"],
+                "run_id":                       row["run_id"],
+                "query_index_within_episode":   row["query_index_within_episode"],
+                "predicted_label":              row.get("predicted_label", ""),
+                "class_options":                row.get("class_options", ""),
+                "classifier_raw_response_text": row.get("raw_response_text", ""),
+                "overall_score":                overall_score,
+                "judge_parse_error":            parse_error,
+                "warning":                      warning_text,
+                "trial_wall_seconds":           f"{trial_wall_seconds:.4f}",
+                "latency_seconds":              f"{response.latency_seconds:.4f}",
+                "response_id":                  response.request_id or "",
+                "finish_reason":                response.finish_reason or "",
+                "usage_prompt_tokens":          response.usage.get("prompt_tokens", ""),
+                "usage_completion_tokens":      response.usage.get("completion_tokens", ""),
+                "usage_total_tokens":           response.usage.get("total_tokens", ""),
+                "provider":                     json_dumps(response.provider),
+                "source_prompt_hash":           row.get("prompt_hash", ""),
+                "judge_prompt_hash":            stable_prompt_hash(messages_to_send),
+                "judge_message_preview":        json_dumps(message_preview(messages_to_send)),
+                "judge_raw_response_text":      response.text,
+            }
+            for field in SCORE_FIELDS:
+                result_row[field] = scores.get(field, "")
+
+            jsonl_payload = {
+                **result_row,
+                **reasoning,
+                "judge_request_preview":      message_preview(messages_to_send),
+                "judge_raw_response_payload": response.raw_json,
+            }
+            debug_line = (
+                f"[*] Judged {row['_source_run_name']} {dataset_name} {prompt_type} "
+                f"run={row['run_id']} query={row['query_index_within_episode']} "
+                f"overall={overall_score or 'n/a'} parse_error={bool(parse_error)}"
+            ) if args.debug else ""
+            return (source_run_dir, result_row, jsonl_payload, False, debug_line)
+
+        except Exception as exc:
+            trial_wall_seconds = time.perf_counter() - trial_wall_start
+            result_row = {
+                "judge_timestamp":              datetime.now().astimezone().isoformat(),
+                "source_run_dir":               str(source_run_dir),
+                "source_run_name":              row["_source_run_name"],
+                "source_model":                 row["model"],
+                "judge_model":                  settings.model,
+                "dataset":                      dataset_name,
+                "prompt_type":                  prompt_type,
+                "config_n":                     row["config_n"],
+                "config_k":                     row["config_k"],
+                "config_q":                     row["config_q"],
+                "run_id":                       row["run_id"],
+                "query_index_within_episode":   row["query_index_within_episode"],
+                "predicted_label":              row.get("predicted_label", ""),
+                "class_options":                row.get("class_options", ""),
+                "classifier_raw_response_text": row.get("raw_response_text", ""),
+                "overall_score":                "",
+                "judge_parse_error":            f"{type(exc).__name__}: {exc}",
+                "warning":                      "",
+                "trial_wall_seconds":           f"{trial_wall_seconds:.4f}",
+                "latency_seconds":              "",
+                "response_id":                  "",
+                "finish_reason":                "",
+                "usage_prompt_tokens":          "",
+                "usage_completion_tokens":      "",
+                "usage_total_tokens":           "",
+                "provider":                     "",
+                "source_prompt_hash":           row.get("prompt_hash", ""),
+                "judge_prompt_hash":            "",
+                "judge_message_preview":        "",
+                "judge_raw_response_text":      "",
+            }
+            for field in SCORE_FIELDS:
+                result_row[field] = ""
+            error_line = (
+                f"[ERROR] Judge failed for source_run={row['_source_run_name']} dataset={dataset_name} "
+                f"prompt={prompt_type} run={row['run_id']} query={row['query_index_within_episode']} -> "
+                f"{type(exc).__name__}: {exc}"
+            )
+            return (source_run_dir, result_row, result_row, True, error_line)
+
+    _write_lock = threading.Lock()
+    try:
+        with ThreadPoolExecutor(max_workers=20) as executor:
+            futures = {executor.submit(_judge_one_trial, row): row for row in selected_rows}
+            for future in as_completed(futures):
+                source_run_dir, result_row, jsonl_payload, is_error, print_line = future.result()
+                with _write_lock:
+                    csv_handle, writer, jsonl_handle = get_writer_for(source_run_dir)
+                    writer.writerow(result_row)
+                    csv_handle.flush()
+                    jsonl_handle.write(json_dumps(jsonl_payload) + "\n")
+                    jsonl_handle.flush()
+                    completed_trials += 1
+                    if print_line:
+                        print(print_line)
+                    if not is_error and (completed_trials % 10 == 0 or completed_trials == total_trials):
+                        elapsed  = time.perf_counter() - overall_wall_start
+                        avg_time = elapsed / completed_trials
+                        eta      = avg_time * (total_trials - completed_trials)
+                        print(
+                            f"[*] Judge progress {completed_trials}/{total_trials} | "
+                            f"elapsed={format_duration(elapsed)} | eta={format_duration(eta)}"
                         )
-                        if not system_fallback_warning_printed:
-                            print(
-                                "[WARNING] Judge provider rejected the system instruction. "
-                                "Retrying with the system prompt folded into the first user message."
-                            )
-                            system_fallback_warning_printed = True
-                    else:
-                        raise
-
-                scores, parse_error = extract_scores_from_judge_response(response.text)
-                reasoning = extract_reasoning_from_judge_response(response.text) if args.explain_scores else {}
-                overall_score = ""
-                if len(scores) == len(SCORE_FIELDS):
-                    overall_score = f"{sum(scores[field] for field in SCORE_FIELDS) / len(SCORE_FIELDS):.4f}"
-
-                trial_wall_seconds = time.perf_counter() - trial_wall_start
-                completed_trials += 1
-                result_row = {
-                    "judge_timestamp": datetime.now().astimezone().isoformat(),
-                    "source_run_dir": str(source_run_dir),
-                    "source_run_name": row["_source_run_name"],
-                    "source_model": row["model"],
-                    "judge_model": settings.model,
-                    "dataset": dataset_name,
-                    "prompt_type": prompt_type,
-                    "config_n": row["config_n"],
-                    "config_k": row["config_k"],
-                    "config_q": row["config_q"],
-                    "run_id": row["run_id"],
-                    "query_index_within_episode": row["query_index_within_episode"],
-                    "predicted_label": row.get("predicted_label", ""),
-                    "class_options": row.get("class_options", ""),
-                    "classifier_raw_response_text": row.get("raw_response_text", ""),
-                    "overall_score": overall_score,
-                    "judge_parse_error": parse_error,
-                    "warning": warning_text,
-                    "trial_wall_seconds": f"{trial_wall_seconds:.4f}",
-                    "latency_seconds": f"{response.latency_seconds:.4f}",
-                    "response_id": response.request_id or "",
-                    "finish_reason": response.finish_reason or "",
-                    "usage_prompt_tokens": response.usage.get("prompt_tokens", ""),
-                    "usage_completion_tokens": response.usage.get("completion_tokens", ""),
-                    "usage_total_tokens": response.usage.get("total_tokens", ""),
-                    "provider": json_dumps(response.provider),
-                    "source_prompt_hash": row.get("prompt_hash", ""),
-                    "judge_prompt_hash": stable_prompt_hash(messages_to_send),
-                    "judge_message_preview": json_dumps(message_preview(messages_to_send)),
-                    "judge_raw_response_text": response.text,
-                }
-                for field in SCORE_FIELDS:
-                    result_row[field] = scores.get(field, "")
-
-                writer.writerow(result_row)
-                csv_handle.flush()
-
-                jsonl_handle.write(
-                    json_dumps(
-                        {
-                            **result_row,
-                            **reasoning,
-                            "judge_request_preview": message_preview(messages_to_send),
-                            "judge_raw_response_payload": response.raw_json,
-                        }
-                    )
-                    + "\n"
-                )
-                jsonl_handle.flush()
-
-                if args.debug:
-                    print(
-                        f"[*] Judged {row['_source_run_name']} {dataset_name} {prompt_type} "
-                        f"run={row['run_id']} query={row['query_index_within_episode']} "
-                        f"overall={overall_score or 'n/a'} parse_error={bool(parse_error)}"
-                    )
-                elif completed_trials % 10 == 0 or completed_trials == total_trials:
-                    elapsed = time.perf_counter() - overall_wall_start
-                    avg_time = elapsed / completed_trials if completed_trials else 0.0
-                    eta_seconds = avg_time * (total_trials - completed_trials)
-                    print(
-                        f"[*] Judge progress {completed_trials}/{total_trials} | "
-                        f"elapsed={format_duration(elapsed)} | eta={format_duration(eta_seconds)}"
-                    )
-
-            except Exception as exc:
-                completed_trials += 1
-                trial_wall_seconds = time.perf_counter() - trial_wall_start
-                result_row = {
-                    "judge_timestamp": datetime.now().astimezone().isoformat(),
-                    "source_run_dir": str(source_run_dir),
-                    "source_run_name": row["_source_run_name"],
-                    "source_model": row["model"],
-                    "judge_model": settings.model,
-                    "dataset": dataset_name,
-                    "prompt_type": prompt_type,
-                    "config_n": row["config_n"],
-                    "config_k": row["config_k"],
-                    "config_q": row["config_q"],
-                    "run_id": row["run_id"],
-                    "query_index_within_episode": row["query_index_within_episode"],
-                    "predicted_label": row.get("predicted_label", ""),
-                    "class_options": row.get("class_options", ""),
-                    "classifier_raw_response_text": row.get("raw_response_text", ""),
-                    "overall_score": "",
-                    "judge_parse_error": f"{type(exc).__name__}: {exc}",
-                    "warning": "",
-                    "trial_wall_seconds": f"{trial_wall_seconds:.4f}",
-                    "latency_seconds": "",
-                    "response_id": "",
-                    "finish_reason": "",
-                    "usage_prompt_tokens": "",
-                    "usage_completion_tokens": "",
-                    "usage_total_tokens": "",
-                    "provider": "",
-                    "source_prompt_hash": row.get("prompt_hash", ""),
-                    "judge_prompt_hash": "",
-                    "judge_message_preview": "",
-                    "judge_raw_response_text": "",
-                }
-                for field in SCORE_FIELDS:
-                    result_row[field] = ""
-                writer.writerow(result_row)
-                csv_handle.flush()
-                jsonl_handle.write(json_dumps(result_row) + "\n")
-                jsonl_handle.flush()
-                print(
-                    f"[ERROR] Judge failed for source_run={row['_source_run_name']} dataset={dataset_name} "
-                    f"prompt={prompt_type} run={row['run_id']} query={row['query_index_within_episode']} -> "
-                    f"{type(exc).__name__}: {exc}"
-                )
     finally:
         for csv_h, _csv_w, jsonl_h in output_handles.values():
             csv_h.close()
