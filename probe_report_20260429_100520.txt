@@ -1,0 +1,125 @@
+========================================================================
+JUDGE PROBE REPORT
+========================================================================
+Generated      : 2026-04-29T10:05:20.676946+02:00
+Judge model    : openai/gpt-5-mini
+Reasoning effort: medium  (hardcoded in run_openrouter_judge.py)
+Max tokens     : 16,384
+Run dir(s)     : /mnt/homeGPU/cquiles/ICL/ICL/pipeline/openrouter_runs/full_experiment_single__20260427_213833
+
+────────────────────────────────────────────────────────────────────────
+SAMPLE SELECTION
+────────────────────────────────────────────────────────────────────────
+  Total judgeable trials in full dataset : 4,608
+  Probe size                             : 64
+  Selection strategy                     : 1 per (dataset × model × condition)
+
+────────────────────────────────────────────────────────────────────────
+TRIAL LOG
+────────────────────────────────────────────────────────────────────────
+  [  1/64]  cifar10    / gemini-2.5-flash             / axioms_ontology_v2  SUCCESS  tokens: 2,460+1,477=3,937
+  [  2/64]  cifar10    / gemini-2.5-flash             / features  SUCCESS  tokens: 2,214+1,229=3,443
+  [  3/64]  cifar10    / gemini-2.5-flash             / nle  SUCCESS  tokens: 2,239+1,120=3,359
+  [  4/64]  cifar10    / gemini-2.5-flash             / rulebased  SUCCESS  tokens: 2,412+1,249=3,661
+  [  5/64]  cifar10    / gemma-4-26b-a4b-it           / axioms_ontology_v2  SUCCESS  tokens: 2,476+1,472=3,948
+  [  6/64]  cifar10    / gemma-4-26b-a4b-it           / features  SUCCESS  tokens: 2,207+1,062=3,269
+  [  7/64]  cifar10    / gemma-4-26b-a4b-it           / nle  SUCCESS  tokens: 2,208+1,298=3,506
+  [  8/64]  cifar10    / gemma-4-26b-a4b-it           / rulebased  SUCCESS  tokens: 2,349+1,230=3,579
+  [  9/64]  cifar10    / llama-4-scout                / axioms_ontology_v2  SUCCESS  tokens: 2,485+1,758=4,243
+  [ 10/64]  cifar10    / llama-4-scout                / features  SUCCESS  tokens: 2,209+977=3,186
+  [ 11/64]  cifar10    / llama-4-scout                / nle  SUCCESS  tokens: 2,239+1,273=3,512
+  [ 12/64]  cifar10    / llama-4-scout                / rulebased  SUCCESS  tokens: 2,357+1,603=3,960
+  [ 13/64]  cifar10    / qwen3-vl-8b-instruct         / axioms_ontology_v2  SUCCESS  tokens: 2,434+1,635=4,069
+  [ 14/64]  cifar10    / qwen3-vl-8b-instruct         / features  SUCCESS  tokens: 2,206+1,043=3,249
+  [ 15/64]  cifar10    / qwen3-vl-8b-instruct         / nle  SUCCESS  tokens: 2,241+1,237=3,478
+  [ 16/64]  cifar10    / qwen3-vl-8b-instruct         / rulebased  SUCCESS  tokens: 2,391+1,234=3,625
+  [ 17/64]  dtd        / gemini-2.5-flash             / axioms_ontology_v2  SUCCESS  tokens: 2,428+1,206=3,634
+  [ 18/64]  dtd        / gemini-2.5-flash             / features  SUCCESS  tokens: 2,213+1,089=3,302
+  [ 19/64]  dtd        / gemini-2.5-flash             / nle  SUCCESS  tokens: 2,265+1,239=3,504
+  [ 20/64]  dtd        / gemini-2.5-flash             / rulebased  SUCCESS  tokens: 2,937+2,004=4,941
+  [ 21/64]  dtd        / gemma-4-26b-a4b-it           / axioms_ontology_v2  SUCCESS  tokens: 3,078+1,488=4,566
+  [ 22/64]  dtd        / gemma-4-26b-a4b-it           / features  SUCCESS  tokens: 2,208+1,131=3,339
+  [ 23/64]  dtd        / gemma-4-26b-a4b-it           / nle  SUCCESS  tokens: 2,494+1,512=4,006
+  [ 24/64]  dtd        / gemma-4-26b-a4b-it           / rulebased  SUCCESS  tokens: 2,644+1,512=4,156
+  [ 25/64]  dtd        / llama-4-scout                / axioms_ontology_v2  SUCCESS  tokens: 2,427+1,743=4,170
+  [ 26/64]  dtd        / llama-4-scout                / features  SUCCESS  tokens: 2,207+1,174=3,381
+  [ 27/64]  dtd        / llama-4-scout                / nle  SUCCESS  tokens: 2,239+1,119=3,358
+  [ 28/64]  dtd        / llama-4-scout                / rulebased  SUCCESS  tokens: 2,359+1,165=3,524
+  [ 29/64]  dtd        / qwen3-vl-8b-instruct         / axioms_ontology_v2  SUCCESS  tokens: 2,430+1,070=3,500
+  [ 30/64]  dtd        / qwen3-vl-8b-instruct         / features  SUCCESS  tokens: 2,209+799=3,008
+  [ 31/64]  dtd        / qwen3-vl-8b-instruct         / nle  SUCCESS  tokens: 2,260+1,271=3,531
+  [ 32/64]  dtd        / qwen3-vl-8b-instruct         / rulebased  SUCCESS  tokens: 2,399+1,182=3,581
+  [ 33/64]  flowers    / gemini-2.5-flash             / axioms_ontology_v2  SUCCESS  tokens: 2,503+1,534=4,037
+  [ 34/64]  flowers    / gemini-2.5-flash             / features  SUCCESS  tokens: 2,198+1,178=3,376
+  [ 35/64]  flowers    / gemini-2.5-flash             / nle  SUCCESS  tokens: 2,235+1,054=3,289
+  [ 36/64]  flowers    / gemini-2.5-flash             / rulebased  SUCCESS  tokens: 2,399+1,383=3,782
+  [ 37/64]  flowers    / gemma-4-26b-a4b-it           / axioms_ontology_v2  SUCCESS  tokens: 2,457+1,832=4,289
+  [ 38/64]  flowers    / gemma-4-26b-a4b-it           / features  SUCCESS  tokens: 2,197+1,140=3,337
+  [ 39/64]  flowers    / gemma-4-26b-a4b-it           / nle  SUCCESS  tokens: 2,196+1,243=3,439
+  [ 40/64]  flowers    / gemma-4-26b-a4b-it           / rulebased  SUCCESS  tokens: 2,348+1,204=3,552
+  [ 41/64]  flowers    / llama-4-scout                / axioms_ontology_v2  SUCCESS  tokens: 2,423+1,426=3,849
+  [ 42/64]  flowers    / llama-4-scout                / features  SUCCESS  tokens: 2,197+1,082=3,279
+  [ 43/64]  flowers    / llama-4-scout                / nle  SUCCESS  tokens: 2,242+1,373=3,615
+  [ 44/64]  flowers    / llama-4-scout                / rulebased  SUCCESS  tokens: 2,367+1,194=3,561
+  [ 45/64]  flowers    / qwen3-vl-8b-instruct         / axioms_ontology_v2  SUCCESS  tokens: 2,460+1,945=4,405
+  [ 46/64]  flowers    / qwen3-vl-8b-instruct         / features  SUCCESS  tokens: 2,201+1,215=3,416
+  [ 47/64]  flowers    / qwen3-vl-8b-instruct         / nle  SUCCESS  tokens: 2,230+942=3,172
+  [ 48/64]  flowers    / qwen3-vl-8b-instruct         / rulebased  SUCCESS  tokens: 2,365+1,573=3,938
+  [ 49/64]  pets       / gemini-2.5-flash             / axioms_ontology_v2  SUCCESS  tokens: 2,459+1,856=4,315
+  [ 50/64]  pets       / gemini-2.5-flash             / features  SUCCESS  tokens: 2,214+1,127=3,341
+  [ 51/64]  pets       / gemini-2.5-flash             / nle  SUCCESS  tokens: 2,233+1,506=3,739
+  [ 52/64]  pets       / gemini-2.5-flash             / rulebased  SUCCESS  tokens: 2,344+1,339=3,683
+  [ 53/64]  pets       / gemma-4-26b-a4b-it           / axioms_ontology_v2  SUCCESS  tokens: 2,429+1,553=3,982
+  [ 54/64]  pets       / gemma-4-26b-a4b-it           / features  SUCCESS  tokens: 2,204+1,275=3,479
+  [ 55/64]  pets       / gemma-4-26b-a4b-it           / nle  SUCCESS  tokens: 2,199+975=3,174
+  [ 56/64]  pets       / gemma-4-26b-a4b-it           / rulebased  SUCCESS  tokens: 2,331+1,196=3,527
+  [ 57/64]  pets       / llama-4-scout                / axioms_ontology_v2  SUCCESS  tokens: 2,453+1,398=3,851
+  [ 58/64]  pets       / llama-4-scout                / features  SUCCESS  tokens: 2,216+949=3,165
+  [ 59/64]  pets       / llama-4-scout                / nle  SUCCESS  tokens: 2,224+1,027=3,251
+  [ 60/64]  pets       / llama-4-scout                / rulebased  SUCCESS  tokens: 2,395+1,312=3,707
+  [ 61/64]  pets       / qwen3-vl-8b-instruct         / axioms_ontology_v2  SUCCESS  tokens: 2,430+1,199=3,629
+  [ 62/64]  pets       / qwen3-vl-8b-instruct         / features  SUCCESS  tokens: 2,207+1,166=3,373
+  [ 63/64]  pets       / qwen3-vl-8b-instruct         / nle  SUCCESS  tokens: 2,235+1,913=4,148
+  [ 64/64]  pets       / qwen3-vl-8b-instruct         / rulebased  SUCCESS  tokens: 2,372+1,105=3,477
+
+────────────────────────────────────────────────────────────────────────
+FETCHING ACTUAL COSTS  (OpenRouter /api/v1/generation)
+────────────────────────────────────────────────────────────────────────
+  Waiting 3 s for OpenRouter to settle...
+  Cost source : OpenRouter generation API (actual)
+
+========================================================================
+SUMMARY
+========================================================================
+
+  Probe trials      : 64
+  Successful        : 64  (100.0%)
+  Failed            : 0
+
+  Token usage (successful trials)
+    Input  mean/trial : 2,341
+    Output mean/trial : 1,309
+    Total  mean/trial : 3,651
+    Probe total       : 233,702 tokens
+
+  Cost (64 successful trials)
+    Source            : OpenRouter generation API (actual)
+    Mean per trial    : $0.0029
+    Probe total       : $0.1827
+
+────────────────────────────────────────────────────────────────────────
+  EXTRAPOLATION TO FULL RUN
+────────────────────────────────────────────────────────────────────────
+    Total judgeable trials : 4,608
+    Mean cost per trial    : $0.0029
+    Estimated total cost   : $13.1541
+    Conservative (+20%)    : $15.7849
+    Optimistic   (−20%)    : $10.5233
+
+    NOTE: estimate assumes same judge model, reasoning_effort=medium,
+    max_tokens=16,384.
+    Actual cost varies with explanation length per trial.
+
+────────────────────────────────────────────────────────────────────────
+  Report written to : /mnt/homeGPU/cquiles/ICL/ICL/probe_report_20260429_100520.txt
+========================================================================

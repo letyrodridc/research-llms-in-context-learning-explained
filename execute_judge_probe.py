@@ -18,8 +18,10 @@ import json
 import math
 import os
 import sys
+import threading
 import time
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
 from statistics import mean
@@ -288,29 +290,28 @@ def main() -> None:
 
     probe_results: List[Dict[str, Any]] = []
 
-    for idx, row in enumerate(selected, start=1):
+    # Closure capturing read-only shared state; creates its own client per thread.
+    def _run_one_trial(idx: int, total: int, row: Dict[str, str]) -> Tuple[int, str, Dict[str, Any]]:
         dataset_name = row["dataset"]
         model_name   = row["model"]
         prompt_type  = row["prompt_type"]
-        label = f"{dataset_name:10s} / {model_name.split('/')[-1]:28s} / {prompt_type}"
-        prefix = f"  [{idx:3d}/{len(selected)}]  {label}"
+        label  = f"{dataset_name:10s} / {model_name.split('/')[-1]:28s} / {prompt_type}"
+        prefix = f"  [{idx:3d}/{total}]  {label}"
 
-        source_run_dir = Path(row["_source_run_dir"])
-        dataset = datasets_dict[dataset_name]
-        class_names = datasets_dict.get(f"{dataset_name}_classes")
-        spec = judge_prompt_specs[prompt_type]
+        dataset      = datasets_dict[dataset_name]
+        class_names  = datasets_dict.get(f"{dataset_name}_classes")
+        spec         = judge_prompt_specs[prompt_type]
+        trial_client = OpenRouterClient(settings)  # own requests.Session per thread
 
-        print(f"{prefix}  ...", flush=True)
         try:
-            trial = reconstruct_classifier_messages(row, dataset, class_names)
+            trial        = reconstruct_classifier_messages(row, dataset, class_names)
             user_content = build_judge_user_content(row, trial.classifier_messages)
             messages = [
                 {"role": "system", "content": spec.system_prompt},
                 {"role": "user",   "content": user_content},
             ]
-            print(f"{prefix}  calling judge...", flush=True)
             try:
-                response = client.create_chat_completion(
+                response = trial_client.create_chat_completion(
                     messages=messages,
                     max_tokens=spec.max_tokens,
                     temperature=0.0,
@@ -319,7 +320,7 @@ def main() -> None:
             except Exception as exc:
                 if is_developer_instruction_error(exc):
                     messages = flatten_system_prompt_into_first_user_message(messages)
-                    response = client.create_chat_completion(
+                    response = trial_client.create_chat_completion(
                         messages=messages,
                         max_tokens=spec.max_tokens,
                         temperature=0.0,
@@ -336,14 +337,13 @@ def main() -> None:
             response_id       = response.request_id or ""
 
             status_tag = "SUCCESS" if not parse_error else f"PARSE_WARN ({parse_error[:40]})"
-            emit(
+            log_line = (
                 f"{prefix}  {status_tag}  "
                 f"tokens: {_fmt_tokens(prompt_tokens)}+{_fmt_tokens(completion_tokens)}"
                 f"={_fmt_tokens(total_tokens)}"
                 + (f"  finish={finish_reason}" if finish_reason != "stop" else "")
             )
-
-            probe_results.append({
+            result = {
                 "cell": (dataset_name, model_name, prompt_type),
                 "success": True,
                 "parse_error": parse_error,
@@ -352,11 +352,12 @@ def main() -> None:
                 "total_tokens": total_tokens,
                 "response_id": response_id,
                 "actual_cost": None,
-            })
+            }
+            return (idx, log_line, result)
 
         except Exception as exc:
-            emit(f"{prefix}  FAILED  {type(exc).__name__}: {str(exc)[:80]}")
-            probe_results.append({
+            log_line = f"{prefix}  FAILED  {type(exc).__name__}: {str(exc)[:80]}"
+            result = {
                 "cell": (dataset_name, model_name, prompt_type),
                 "success": False,
                 "parse_error": str(exc),
@@ -365,7 +366,27 @@ def main() -> None:
                 "total_tokens": 0,
                 "response_id": "",
                 "actual_cost": None,
-            })
+            }
+            return (idx, log_line, result)
+
+    _print_lock = threading.Lock()
+    trial_log: List[Tuple[int, str]] = []  # collected for ordered report file
+
+    with ThreadPoolExecutor(max_workers=8) as executor:
+        futures = {
+            executor.submit(_run_one_trial, idx, len(selected), row): idx
+            for idx, row in enumerate(selected, start=1)
+        }
+        for future in as_completed(futures):
+            idx, log_line, result = future.result()
+            with _print_lock:
+                print(log_line, flush=True)
+            trial_log.append((idx, log_line))
+            probe_results.append(result)
+
+    # Add trial lines to the report in original order
+    for _, log_line in sorted(trial_log):
+        lines.append(log_line)
 
     # --- Fetch actual costs from OpenRouter generation API ---
     emit()
