@@ -88,7 +88,7 @@ The judge does **not** see the support images or the full classifier conversatio
 only what is needed to evaluate the explanation in isolation. The system prompt the
 judge receives is loaded from `judge_prompts.txt` (top-level repo file).
 
-#### The 10 evaluation dimensions
+#### The 9 evaluation dimensions
 
 | # | Dimension | What it checks |
 |---|---|---|
@@ -104,10 +104,20 @@ judge receives is loaded from `judge_prompts.txt` (top-level repo file).
 
 Each is scored 1–5; the runner also writes an `overall_score` (mean of the 9).
 
+#### Cost estimation before running (probe)
+
+Before committing to a full judge run (~4,600 trials), use the probe script to measure actual token usage and extrapolate cost on a representative sample (1 trial per dataset × model × condition):
+
+```bash
+python execute_judge_probe.py --run-dir pipeline/openrouter_runs/<run_dir>
+```
+
+This runs ~64 real judge calls, fetches actual costs from OpenRouter, and writes a `probe_report_<timestamp>.txt` with the extrapolation. For the current experiment: ~$13 estimated for the full run with `gpt-5-mini`.
+
 #### Running the judge
 
 ```bash
-# Default: judge model from OPENROUTER_JUDGE_MODEL in .env (default: openai/gpt-5-mini, reasoning_effort=high)
+# Default: judge model from OPENROUTER_JUDGE_MODEL in .env (default: openai/gpt-5-mini, reasoning_effort=medium)
 python execute_judge.py --run-dir pipeline/openrouter_runs/<run_dir>
 
 # Multiple runs at once
@@ -122,6 +132,8 @@ python execute_judge.py --run-dir pipeline/openrouter_runs/<run_dir> --limit 5 -
 # Debug mode: include per-dimension reasoning to inspect judge quality
 python execute_judge.py --run-dir pipeline/openrouter_runs/<run_dir> --limit 10 --explain-scores --debug
 ```
+
+The judge runner executes trials with **20 parallel workers** (via `ThreadPoolExecutor`). For 4,608 trials this takes ~2 hours instead of ~36 hours sequential. Trial rows in `judge_results.csv` may not be in the same order as the source CSV — this is expected and does not affect the dashboard or analysis (both use key-based lookups).
 
 You can also invoke the runner module directly (equivalent):
 
@@ -160,23 +172,49 @@ pipeline/openrouter_runs/<run_dir>/
         ├── config.json                # snapshot of judge run config (model, filters, timestamp)
         ├── judge_prompt_library_snapshot.json  # exact judge prompts used
         └── analysis/                  # generated unless --skip-analysis
-            ├── tables/                # CSVs: mean per prompt, per dataset, per dimension
+            ├── tables/                # paper-ready CSVs (mean ± SE per cell; see below)
             ├── plots/                 # PNG bar charts + radar charts (see below)
             │   └── radar_by_dataset/  # one radar per prompt type, series = datasets
             └── stats/                 # Wilcoxon / Friedman tests across prompt types
 ```
 
+All tables report **mean ± SE** for each metric cell (`<metric>` = mean, `<metric>_se` = standard error). The SE is computed as `std(scores) / sqrt(n)` across the trials in that cell, capturing variability across different episodes and query images.
+
+#### Paper tables
+
+| File | Description |
+|---|---|
+| `tables/B1_metrics_by_prompt.csv` | **Table B1** — 9 metrics × prompt type, aggregated over all models and datasets. Main result table for the judge pipeline. Rows = 4 explanation conditions (`nle`, `features`, `rulebased`, `axioms_ontology_v2`); columns = 9 dimensions + overall, each with mean and SE. |
+| `tables/B2_metrics_by_model.csv` | **Table B2** — 9 metrics × source model, aggregated over datasets and conditions. Shows per-model explanation quality profile (e.g. is Gemini more hallucination-free than Llama?). |
+| `tables/B3_metrics_by_dataset.csv` | **Table B3** — 9 metrics × dataset, aggregated over models and conditions. Shows whether visual complexity (e.g. DTD textures vs Flowers) affects explanation quality. |
+| `tables/B4_correlation_metric_accuracy.csv` | **Table B4** — Spearman ρ between each judge dimension and binary classification accuracy, broken down by prompt type × dimension (1 000-sample bootstrap 95 % CI). Requires `trial_results.csv` in the parent run dir. Connects explanation quality to classification performance — a key novel finding. |
+
+#### Appendix tables
+
+| File | Description |
+|---|---|
+| `tables/B5_metrics_by_model_and_prompt.csv` | **Table B5** — 9 metrics × (source model × prompt type). |
+| `tables/B6_metrics_by_model_and_dataset.csv` | **Table B6** — 9 metrics × (source model × dataset). |
+| `tables/B7_metrics_by_model_dataset_and_prompt.csv` | **Table B7** — 9 metrics × (source model × dataset × prompt type). Most granular breakdown. |
+
+#### Supporting tables
+
+| File | Description |
+|---|---|
+| `tables/mean_scores_by_dataset_and_prompt.csv` | 9 metrics × (dataset × prompt type) cross-table, mean ± SE. |
+| `tables/mean_scores_by_dimension_and_prompt.csv` | Long format: (prompt type, dimension) → mean ± SE. |
+
 Running the judge again with a **different** `--judge-model` writes to a sibling
 subdirectory (e.g. `judge_outputs/anthropic-claude-haiku-4-5/`) so multiple judges can
 coexist without overwriting each other.
 
-Radar charts generated in `plots/`:
+Radar / spider charts generated in `plots/`:
 
 | File | What it shows |
 |---|---|
-| `radar_by_prompt.png` | All prompt types overlaid; axes = 9 dimensions |
-| `radar_by_model.png` | All source models overlaid (generated only if >1 model in the run) |
-| `radar_by_dataset/radar_{prompt}.png` | One chart per prompt type; series = datasets |
+| `radar_by_prompt.png` | **Fig. principal** — all prompt types as overlaid lines; axes = 9 dimensions. Answers the central research question: which explanation type excels in which dimensions? |
+| `radar_by_model.png` | All source models overlaid; axes = 9 dimensions. Generated only if >1 model in the run. |
+| `radar_by_dataset/radar_{prompt}.png` | One chart per prompt type; series = datasets. Optional appendix figure. |
 
 Key columns of `judge_results.csv`:
 
@@ -291,5 +329,6 @@ python -m pipeline.experiments.run_openrouter_experiment --config pipeline/confi
   Discriminativeness, Instruction Following, Logical Coherence) plus an aggregate
   `overall_score`. Use `--explain-scores` to get per-dimension reasoning in the JSONL logs. See **Stage 3** for details.
 - **Class IDs vs names**: The classifier sees only numeric class IDs (no semantic
-  prior), but the judge and the dashboard always show human-readable class names via
-  the `class_id_map` stored in each trial.
+  prior). The judge receives the full `class_id_map` (e.g. `0=rose, 1=daisy, ...`) so
+  it can resolve numeric references that appear inside the explanation text (e.g.
+  "class 3 has rounded petals…"). The dashboard always shows human-readable names.
