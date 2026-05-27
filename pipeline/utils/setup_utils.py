@@ -141,8 +141,10 @@ def build_class_index_map(dataset):
 
 # --- 3. MODEL LOADING ---
 MODEL_IDS = {
-    "gemma4":   "/gpfs/projects/ugr92/ICL/hf_cache/gemma-4-26B-A4B-it",
-    "qwen3-vl": "/gpfs/projects/ugr92/ICL/hf_cache/Qwen3-VL-8B-Instruct",
+    "gemma4":                  "/gpfs/projects/ugr92/ICL/hf_cache/gemma-4-26B-A4B-it",
+    "qwen3-vl":                "/gpfs/projects/ugr92/ICL/hf_cache/Qwen3-VL-8B-Instruct",
+    # Local LLM-as-a-judge model used by pipeline/evaluation/local_judge.py.
+    "qwen3-vl-32b-thinking":   "/gpfs/projects/ugr92/ICL/hf_cache/Qwen3-VL-32B-Thinking",
 }
 
 def print_gpu_memory():
@@ -154,18 +156,27 @@ def print_gpu_memory():
         print(f"GPU {i}: Allocated={allocated:.2f}GB | Reserved={reserved:.2f}GB | Free={free:.2f}GB / {total:.2f}GB")
 
 
-def load_model_globally(model_name):
-    """Loads a specified model and its processor."""
+def load_model_globally(model_name, *, quantization="auto"):
+    """Loads a specified model and its processor.
+
+    Args:
+        model_name: key in MODEL_IDS (e.g. "qwen3-vl", "qwen3-vl-32b-thinking", "gemma4").
+        quantization: "auto" (default mapping per model), "bf16" (no quantization),
+                      or "nf4" (4-bit NF4 via bitsandbytes). The 32B-Thinking judge
+                      defaults to BF16; the 8B inference model defaults to NF4.
+    """
     torch.cuda.empty_cache()
     gc.collect()
-    
-    model_id = MODEL_IDS.get(model_name.lower())
+
+    key = model_name.lower()
+    model_id = MODEL_IDS.get(key)
     if not model_id:
         raise ValueError(f"Unknown model: {model_name}. Available: {list(MODEL_IDS.keys())}")
 
     print(f"Loading model: {model_id}...")
 
-    if "gemma4" in model_name.lower():
+    if "gemma4" in key:
+        # Gemma4 always uses NF4 in this repo regardless of `quantization`.
         quantization_config = BitsAndBytesConfig(
             load_in_4bit=True,
             bnb_4bit_compute_dtype=torch.bfloat16,
@@ -180,23 +191,40 @@ def load_model_globally(model_name):
             low_cpu_mem_usage=True,
         )
 
-    elif "qwen3-vl" in model_name.lower():
-        quantization_config = BitsAndBytesConfig(
-            load_in_4bit=True,
-            bnb_4bit_quant_type="nf4",
-            bnb_4bit_compute_dtype=torch.bfloat16,
-        )
-        model = Qwen3VLForConditionalGeneration.from_pretrained(
-            model_id,
-            quantization_config=quantization_config,
-            torch_dtype=torch.bfloat16,
-            device_map="auto",
-        )
+    elif "qwen3-vl" in key:
+        # Default policy: 8B inference -> NF4, 32B-Thinking judge -> BF16.
+        if quantization == "auto":
+            quantization = "bf16" if "32b-thinking" in key else "nf4"
+
+        if quantization == "nf4":
+            quantization_config = BitsAndBytesConfig(
+                load_in_4bit=True,
+                bnb_4bit_quant_type="nf4",
+                bnb_4bit_compute_dtype=torch.bfloat16,
+            )
+            model = Qwen3VLForConditionalGeneration.from_pretrained(
+                model_id,
+                quantization_config=quantization_config,
+                torch_dtype=torch.bfloat16,
+                device_map="auto",
+            )
+        elif quantization == "bf16":
+            model = Qwen3VLForConditionalGeneration.from_pretrained(
+                model_id,
+                torch_dtype=torch.bfloat16,
+                device_map="auto",
+                low_cpu_mem_usage=True,
+            )
+        else:
+            raise ValueError(
+                f"Unsupported quantization mode for {model_name}: {quantization}. "
+                "Use 'auto', 'bf16', or 'nf4'."
+            )
 
     processor = AutoProcessor.from_pretrained(model_id)
     print(f"Model {model_id} loaded successfully.")
     print_gpu_memory()
-    
+
     return model, processor
 
 
