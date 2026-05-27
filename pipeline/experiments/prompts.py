@@ -112,6 +112,8 @@ def _load_prompt_specs(raw_data: Mapping[str, Any]) -> Dict[str, PromptSpec]:
             "{CONDITION_INSTRUCTION}",
             condition_instruction,
         )
+        if "system_prompt" in prompt_raw:
+            system_prompt = _require_string(prompt_raw, "system_prompt")
         prompt_specs[prompt_type] = PromptSpec(
             prompt_type=prompt_type,
             system_prompt=system_prompt,
@@ -215,6 +217,28 @@ def build_openrouter_messages(
     valid_labels: List[str] = []
     seen_label_ids: set = set()
     class_id_map: Dict[str, str] = {}
+
+    if prompt_type == "zero_shot":
+        for _, label_id in shots:
+            if label_id not in seen_label_ids:
+                valid_labels.append(str(label_id))
+                seen_label_ids.add(label_id)
+                k, v = _class_id_map_entry(label_id, class_names)
+                class_id_map[k] = v
+        query_img_tensor, _ = query
+        query_data_url = pil_image_to_data_url(_tensor_to_pil(query_img_tensor))
+        options_str = ", ".join(valid_labels)
+        query_text = spec.query_template.replace("{OPTIONS}", options_str)
+        messages.append(
+            {
+                "role": "user",
+                "content": [
+                    {"type": "text", "text": query_text},
+                    {"type": "image_url", "image_url": {"url": query_data_url}},
+                ],
+            }
+        )
+        return messages, valid_labels, class_id_map
 
     for img_tensor, label_id in shots:
         label_str = str(label_id)

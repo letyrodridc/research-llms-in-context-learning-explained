@@ -20,6 +20,7 @@ PROMPT_TYPES = (
     "features",
     "rulebased",
     "axioms_ontology_v2",
+    "zero_shot",
 )
 JUDGEABLE_PROMPT_TYPES = (
     "nle",

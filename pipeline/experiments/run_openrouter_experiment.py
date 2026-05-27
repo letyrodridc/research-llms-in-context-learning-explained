@@ -347,7 +347,10 @@ def build_trial_record_base(
         "episode_filepath": repo_relative_path(episode_filepath),
         "class_options": json_dumps(class_options),
         "class_id_map": json_dumps(class_id_map),
-        "image_refs": json_dumps(build_image_refs(support_indices, query_dataset_index)),
+        "image_refs": json_dumps(build_image_refs(
+            [] if prompt_type == "zero_shot" else support_indices,
+            query_dataset_index,
+        )),
         "prompt_hash": stable_prompt_hash(messages),
         "message_preview": json_dumps(message_preview(messages)),
         "sent_prompt_hash": "",

@@ -32,6 +32,15 @@
         "temperature": 0.0
       }
     },
+    "zero_shot": {
+      "system_prompt": "# TASK\nClassify the Query Image into one of the provided classes.\n\n# INSTRUCTIONS\n- Use your visual knowledge to identify the class of the image.\n- Choose exactly one label from the provided options list.\n- Do not output any text outside the XML tags.\n- The final line of the entire answer must be <response>final_class</response>.\n\n{CONDITION_INSTRUCTION}\n\n<response>final_class</response>\n\nThe content of <response> must be exactly one label copied verbatim from the provided options list.\n",
+      "condition_instruction": "Provide only the final class label inside the response tag.",
+      "query_template": "Query Image:\nClassify this image.\nValid labels: [{OPTIONS}]\nRespond with exactly one label from the list.",
+      "max_tokens": 256,
+      "generation": {
+        "temperature": 0.0
+      }
+    },
     "axioms_ontology_v2": {
       "condition_instruction": "Represent the classification evidence using minimal and concise Description Logic statements.\n\n# WHAT TO WRITE\n- In <tbox>, define the formal class conditions (Necessary, Sufficient, or Necessary & Sufficient) using Description Logic (DL) axioms in Web Ontology Language (OWL 2) derived from the labeled examples to describe which visual features are associated with each class.\n- In <abox>, state only the specific property assertions in DL OWL 2 observed in the Query Image to record which visual features are present.\n- In <dl_explanation>, list only the exact TBox rules triggered by the ABox assertions to classify the Query Image. Do not use natural language—include only the fired TBox rules.\n\n# HOW TO INTERPRET THE STATEMENTS\n- [Class1] ⊑ hasVisualFeature([F1]) means: images of this class tend to have this visual feature in the provided examples (necessary condition)\n- hasVisualFeature([F1]) ⊑ [Class1] means: observing this visual feature is enough to classify the image as from this class in the provided examples (Sufficient condition)\n- [Class1] ≡ hasVisualFeature([F1]) ⊓ hasVisualFeature([F2]) means: this combination of features defines this class in the provided examples (Necessary and sufficient condition)\n\n# RULES\n- Use only observable visual features.\n- Do not use hidden properties, external knowledge, or speculation.\n- Treat all axioms as visually grounded in the provided examples.\n- Keep the output concise.\n\n<tbox>\n- [Class1] ⊑ hasVisualFeature([F1])\n- hasVisualFeature([F2]) ⊑ [Class2]\n- [Class3] ≡ hasVisualFeature([F3]) ⊓ hasVisualFeature([F4])\n</tbox>\n\n<abox>\n- hasVisualFeature(Query, [F3])\n- hasVisualFeature(Query, [F4])\n</abox>\n<dl_explanation>\n- Rule(s) fired:  [Class3] ≡ hasVisualFeature([F3]) ⊓ hasVisualFeature([F4])\n- </dl_explanation>",
       "max_tokens": 1024,

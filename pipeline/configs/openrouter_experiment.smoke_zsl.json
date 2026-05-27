@@ -1,0 +1,27 @@
+{
+  "schema_version": "openrouter_experiment_v2",
+  "experiment_name": "smoke_zsl",
+  "description": "Smoke test for ZSL baseline vs classification baseline (visible in dashboard).",
+  "env_file": "../../.env",
+  "output_root": "../openrouter_runs",
+  "prompt_library_path": "openrouter_prompt_library.default.json",
+  "model": {
+    "model_name": ["meta-llama/llama-4-scout"],
+    "model_params": {
+      "validate_image_input": true,
+      "generation": { "temperature": 0.0 }
+    }
+  },
+  "datasets": ["pets"],
+  "prompt_types": ["classification", "zero_shot"],
+  "few_shot_configs": [
+    { "n": 2, "k": 1, "q": 1, "runs": 1 }
+  ],
+  "seed": 42,
+  "analysis": { "enabled": true },
+  "logging": {
+    "write_full_conversations": true,
+    "write_request_payloads": false,
+    "write_sharded_logs": false
+  }
+}
