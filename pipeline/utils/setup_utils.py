@@ -19,16 +19,12 @@ from PIL import Image
 from torch.utils.data import ConcatDataset
 
 from transformers import (
-    AutoProcessor, 
-    BitsAndBytesConfig, 
-    Gemma3ForConditionalGeneration,
-    Qwen2VLForConditionalGeneration
+    AutoProcessor,
+    BitsAndBytesConfig,
+    Gemma4ForConditionalGeneration,
+    Qwen3VLForConditionalGeneration
 )
-
-try:
-    from qwen_vl_utils import process_vision_info
-except ImportError:
-    pass  # If you only install transformers, ignore this error
+# qwen_vl_utils eliminado: Qwen3-VL integra el procesamiento de imágenes en apply_chat_template
 
 # --- 1. GLOBAL CONFIGURATIONS ---
 # Force CUDA kernels to synchronize for easier debugging
@@ -145,10 +141,8 @@ def build_class_index_map(dataset):
 
 # --- 3. MODEL LOADING ---
 MODEL_IDS = {
-    "llava": "llava-hf/llava-1.5-7b-hf",
-    "gemma3": "google/gemma-3-12b-it",
-    "bakllava": "llava-hf/bakLlava-v1-hf",
-    "qwen-vl": "Qwen/Qwen2-VL-7B-Instruct",
+    "gemma4":   "/gpfs/projects/ugr92/ICL/hf_cache/gemma-4-26B-A4B-it",
+    "qwen3-vl": "/gpfs/projects/ugr92/ICL/hf_cache/Qwen3-VL-8B-Instruct",
 }
 
 def print_gpu_memory():
@@ -171,33 +165,32 @@ def load_model_globally(model_name):
 
     print(f"Loading model: {model_id}...")
 
-    if "gemma" in model_name.lower():
+    if "gemma4" in model_name.lower():
         quantization_config = BitsAndBytesConfig(
             load_in_4bit=True,
             bnb_4bit_compute_dtype=torch.bfloat16,
             bnb_4bit_use_double_quant=True,
             bnb_4bit_quant_type="nf4"
         )
-        model = Gemma3ForConditionalGeneration.from_pretrained(
-            model_id, 
-            torch_dtype=torch.bfloat16, 
+        model = Gemma4ForConditionalGeneration.from_pretrained(
+            model_id,
+            torch_dtype=torch.bfloat16,
             quantization_config=quantization_config,
             device_map="auto",
             low_cpu_mem_usage=True,
         )
-        
-    elif "qwen-vl" in model_name.lower():
+
+    elif "qwen3-vl" in model_name.lower():
         quantization_config = BitsAndBytesConfig(
             load_in_4bit=True,
             bnb_4bit_quant_type="nf4",
-            bnb_4bit_compute_dtype=torch.float16,
+            bnb_4bit_compute_dtype=torch.bfloat16,
         )
-        model = Qwen2VLForConditionalGeneration.from_pretrained(
+        model = Qwen3VLForConditionalGeneration.from_pretrained(
             model_id,
             quantization_config=quantization_config,
-            torch_dtype=torch.float16,
+            torch_dtype=torch.bfloat16,
             device_map="auto",
-            trust_remote_code=True,
         )
 
     processor = AutoProcessor.from_pretrained(model_id)
@@ -252,31 +245,15 @@ def run_icl_inference(model, processor, model_name, messages, content_parts=None
                         part["type"] = "image"
                         part["image"] = decode_data_url(url)
      
-    if "qwen-vl" in model_name.lower():
-        text_prompt = processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
-        image_inputs, video_inputs = process_vision_info(messages)
-        inputs = processor(
-            text=[text_prompt],
-            images=image_inputs,
-            videos=video_inputs,
-            padding=True,
-            return_tensors="pt",
-        )
-    else:
-        text_prompt = processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
-        if content_parts:
-            all_images_pil = [part["image"] for part in content_parts if part["type"] == "image"]
-        else:
-            content_parts_flat = [part["content"] for part in messages if type(part["content"]) == list]
-            content_parts_flat = list(itertools.chain.from_iterable(content_parts_flat))
-            all_images_pil = [part["image"] for part in content_parts_flat if part["type"] == "image"]
-
-        inputs = processor(
-            text=[text_prompt],
-            images=all_images_pil,
-            padding=True,
-            return_tensors="pt",
-        )
+    # Gemma4 y Qwen3-VL usan el mismo path unificado:
+    # apply_chat_template con tokenize=True maneja imágenes y texto en un solo paso.
+    inputs = processor.apply_chat_template(
+        messages,
+        tokenize=True,
+        add_generation_prompt=True,
+        return_dict=True,
+        return_tensors="pt",
+    )
 
     inputs = inputs.to(model.device)
     
@@ -295,7 +272,6 @@ def run_icl_inference(model, processor, model_name, messages, content_parts=None
             full_decoded = processor.batch_decode(generated_ids, skip_special_tokens=False, clean_up_tokenization_spaces=False)
         except Exception:
             full_decoded = ["<decoding_failed>"]
-        print("DEBUG text_prompt:", text_prompt)
         print("DEBUG input_ids lengths:", [len(x) for x in inputs.input_ids])
         print("DEBUG full_generated:", full_decoded)
            
