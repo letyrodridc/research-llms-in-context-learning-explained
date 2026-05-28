@@ -18,12 +18,19 @@ from torchvision.datasets import Flowers102, OxfordIIITPet, CIFAR10, DTD
 from PIL import Image
 from torch.utils.data import ConcatDataset
 
-from transformers import (
-    AutoProcessor,
-    BitsAndBytesConfig,
-    Gemma4ForConditionalGeneration,
-    Qwen3VLForConditionalGeneration
-)
+from transformers import AutoProcessor, BitsAndBytesConfig
+
+# These two architectures live in different transformers versions; not every
+# install ships both. Import lazily so the module is still usable if only one
+# is available (e.g. an environment that has Qwen3-VL but not Gemma4 yet).
+try:
+    from transformers import Gemma4ForConditionalGeneration  # type: ignore
+except ImportError:  # pragma: no cover - depends on transformers version
+    Gemma4ForConditionalGeneration = None  # type: ignore[assignment]
+try:
+    from transformers import Qwen3VLForConditionalGeneration  # type: ignore
+except ImportError:  # pragma: no cover - depends on transformers version
+    Qwen3VLForConditionalGeneration = None  # type: ignore[assignment]
 # qwen_vl_utils eliminado: Qwen3-VL integra el procesamiento de imágenes en apply_chat_template
 
 # --- 1. GLOBAL CONFIGURATIONS ---
@@ -160,22 +167,34 @@ def load_model_globally(model_name, *, quantization="auto"):
     """Loads a specified model and its processor.
 
     Args:
-        model_name: key in MODEL_IDS (e.g. "qwen3-vl", "qwen3-vl-32b-thinking", "gemma4").
-        quantization: "auto" (default mapping per model), "bf16" (no quantization),
-                      or "nf4" (4-bit NF4 via bitsandbytes). The 32B-Thinking judge
-                      defaults to BF16; the 8B inference model defaults to NF4.
+        model_name: either a key registered in :data:`MODEL_IDS`
+            (e.g. ``"qwen3-vl"``, ``"qwen3-vl-32b-thinking"``, ``"gemma4"``)
+            **or** a direct model path / Hugging Face hub repo id
+            (e.g. ``"Qwen/Qwen3-VL-2B-Instruct"`` or ``"/gpfs/.../my-model"``).
+            Architecture is dispatched on substring match against the lowered
+            name (``"gemma4"`` / ``"qwen3-vl"``), so direct IDs need to keep
+            those substrings in them.
+        quantization: ``"auto"`` (default mapping per model), ``"bf16"`` (no
+            quantization), or ``"nf4"`` (4-bit NF4 via bitsandbytes). The
+            32B-Thinking judge defaults to BF16; the 8B inference model
+            defaults to NF4.
     """
     torch.cuda.empty_cache()
     gc.collect()
 
     key = model_name.lower()
-    model_id = MODEL_IDS.get(key)
-    if not model_id:
-        raise ValueError(f"Unknown model: {model_name}. Available: {list(MODEL_IDS.keys())}")
+    model_id = MODEL_IDS.get(key, model_name)
+    # `key` drives the architecture branch below; if the caller passed a raw
+    # HF id like "Qwen/Qwen3-VL-2B-Instruct" we still want the qwen3-vl branch.
 
     print(f"Loading model: {model_id}...")
 
     if "gemma4" in key:
+        if Gemma4ForConditionalGeneration is None:
+            raise ImportError(
+                "Gemma4ForConditionalGeneration is not available in this transformers "
+                "install. Upgrade transformers to a version that ships gemma4 support."
+            )
         # Gemma4 always uses NF4 in this repo regardless of `quantization`.
         quantization_config = BitsAndBytesConfig(
             load_in_4bit=True,
@@ -192,6 +211,11 @@ def load_model_globally(model_name, *, quantization="auto"):
         )
 
     elif "qwen3-vl" in key:
+        if Qwen3VLForConditionalGeneration is None:
+            raise ImportError(
+                "Qwen3VLForConditionalGeneration is not available in this transformers "
+                "install. Upgrade transformers to a version that ships Qwen3-VL support."
+            )
         # Default policy: 8B inference -> NF4, 32B-Thinking judge -> BF16.
         if quantization == "auto":
             quantization = "bf16" if "32b-thinking" in key else "nf4"
@@ -220,6 +244,13 @@ def load_model_globally(model_name, *, quantization="auto"):
                 f"Unsupported quantization mode for {model_name}: {quantization}. "
                 "Use 'auto', 'bf16', or 'nf4'."
             )
+
+    else:
+        raise ValueError(
+            f"Could not infer architecture from model name `{model_name}`. "
+            f"Expected the name to contain 'gemma4' or 'qwen3-vl', or to be a "
+            f"key in MODEL_IDS ({list(MODEL_IDS.keys())})."
+        )
 
     processor = AutoProcessor.from_pretrained(model_id)
     print(f"Model {model_id} loaded successfully.")
