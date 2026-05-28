@@ -222,8 +222,13 @@ def build_judge_messages(
         }
     )
 
+    # Newer transformers (e.g. 5.x) iterate over message["content"] expecting a
+    # list of content-part dicts even for the system role; passing a raw string
+    # there raises ``TypeError: string indices must be integers`` inside
+    # ``apply_chat_template``. Wrap as a single text part for compatibility
+    # with both old (string-accepting) and new (list-only) versions.
     return [
-        {"role": "system", "content": system_prompt},
+        {"role": "system", "content": [{"type": "text", "text": system_prompt}]},
         {"role": "user", "content": user_content},
     ]
 
