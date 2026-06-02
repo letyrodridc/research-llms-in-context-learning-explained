@@ -243,7 +243,19 @@ class RunDataStore:
         raw_preview = jr.get("judge_message_preview", "")
         judge_messages_preview = _parse_json_field(raw_preview, [])
 
-        # Replace stripped image_url parts with real API URLs
+        # Build ordered image list for local-judge PIL parts: [support…, query].
+        # support_indices comes from the source classifier trial row.
+        support_indices_raw = _parse_json_field(source.get("support_indices", ""), [])
+        pil_image_refs: List[tuple] = [
+            ("support", int(idx)) for idx in support_indices_raw
+        ]
+        if query_dataset_index:
+            pil_image_refs.append(("query", int(query_dataset_index)))
+        pil_cursor = 0
+
+        # Replace image parts with real API URLs.
+        # Handles both OpenRouter-style {"type": "image_url"} and local-judge
+        # {"type": "image", "format": "pil"} placeholders.
         browser_judge_messages: List[Dict[str, Any]] = []
         for msg in judge_messages_preview:
             content = msg.get("content")
@@ -261,6 +273,20 @@ class RunDataStore:
                                 "dataset_index": int(query_dataset_index),
                                 "dataset": dataset_name,
                                 "url": f"/api/image?dataset={dataset_name}&index={query_dataset_index}",
+                            },
+                        }
+                    )
+                elif part.get("type") == "image" and part.get("format") == "pil" and pil_cursor < len(pil_image_refs):
+                    kind, idx = pil_image_refs[pil_cursor]
+                    pil_cursor += 1
+                    new_parts.append(
+                        {
+                            "type": "image_ref",
+                            "image_ref": {
+                                "kind": kind,
+                                "dataset_index": idx,
+                                "dataset": dataset_name,
+                                "url": f"/api/image?dataset={dataset_name}&index={idx}",
                             },
                         }
                     )
