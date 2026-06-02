@@ -60,7 +60,10 @@ class ExperimentRunner:
 
     def build_messages(self, prompt_config, shots, query, class_names):
         """Constructs the chat message history."""
-        messages = [{"role": "system", "content": prompt_config['system_prompt']}]
+        # transformers 5.x iterates over message["content"] expecting a list of
+        # dicts; a raw string triggers "string indices must be integers" inside
+        # apply_chat_template (same fix already applied to local_judge.py).
+        messages = [{"role": "system", "content": [{"type": "text", "text": prompt_config['system_prompt']}]}]
         valid_label_ids = []
         seen_label_ids = set()
         class_id_map = {}
@@ -80,7 +83,7 @@ class ExperimentRunner:
                     {"type": "text", "text": "What is the class of this image?"}
                 ]
             })
-            messages.append({"role": "assistant", "content": f"<response>{label_str}</response>"})
+            messages.append({"role": "assistant", "content": [{"type": "text", "text": f"<response>{label_str}</response>"}]})
 
         query_img_tensor, _ = query
         query_img_pil = T.ToPILImage()(query_img_tensor)
@@ -172,6 +175,10 @@ class ExperimentRunner:
                                     trial_records.append({
                                         "dataset": dataset_name,
                                         "prompt_type": prompt_type,
+                                        "model": self.model_name,
+                                        "config_n": way,
+                                        "config_k": shot,
+                                        "config_q": query_count,
                                         "run_id": run_id,
                                         "query_index_within_episode": i,
                                         "predicted_label": label_extracted or "PARSE_ERROR",

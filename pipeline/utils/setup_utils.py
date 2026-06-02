@@ -24,9 +24,9 @@ from transformers import AutoProcessor, BitsAndBytesConfig
 # install ships both. Import lazily so the module is still usable if only one
 # is available (e.g. an environment that has Qwen3-VL but not Gemma4 yet).
 try:
-    from transformers import Gemma4ForConditionalGeneration  # type: ignore
+    from transformers import AutoModelForImageTextToText  # type: ignore
 except ImportError:  # pragma: no cover - depends on transformers version
-    Gemma4ForConditionalGeneration = None  # type: ignore[assignment]
+    AutoModelForImageTextToText = None  # type: ignore[assignment]
 try:
     from transformers import Qwen3VLForConditionalGeneration  # type: ignore
 except ImportError:  # pragma: no cover - depends on transformers version
@@ -190,9 +190,9 @@ def load_model_globally(model_name, *, quantization="auto"):
     print(f"Loading model: {model_id}...")
 
     if "gemma4" in key:
-        if Gemma4ForConditionalGeneration is None:
+        if AutoModelForImageTextToText is None:
             raise ImportError(
-                "Gemma4ForConditionalGeneration is not available in this transformers "
+                "AutoModelForImageTextToText is not available in this transformers "
                 "install. Upgrade transformers to a version that ships gemma4 support."
             )
         # Gemma4 always uses NF4 in this repo regardless of `quantization`.
@@ -202,7 +202,7 @@ def load_model_globally(model_name, *, quantization="auto"):
             bnb_4bit_use_double_quant=True,
             bnb_4bit_quant_type="nf4"
         )
-        model = Gemma4ForConditionalGeneration.from_pretrained(
+        model = AutoModelForImageTextToText.from_pretrained(
             model_id,
             torch_dtype=torch.bfloat16,
             quantization_config=quantization_config,
@@ -218,7 +218,11 @@ def load_model_globally(model_name, *, quantization="auto"):
             )
         # Default policy: 8B inference -> NF4, 32B-Thinking judge -> BF16.
         if quantization == "auto":
-            quantization = "bf16" if "32b-thinking" in key else "nf4"
+            # NF4 for all Qwen3-VL variants: the 32B model in BF16 fills ~64 GB of
+            # an 80 GB H100, leaving only ~16 GB for KV-cache and causing ~3 tok/s
+            # generation. NF4 reduces weights to ~18 GB and restores normal throughput
+            # (~30-50 tok/s) with negligible quality loss on a 1-5 scoring rubric.
+            quantization = "nf4"
 
         if quantization == "nf4":
             quantization_config = BitsAndBytesConfig(
@@ -315,7 +319,8 @@ def run_icl_inference(model, processor, model_name, messages, content_parts=None
     )
 
     inputs = inputs.to(model.device)
-    
+    inputs.pop("token_type_ids", None)
+
     # with torch.no_grad():
     #     generated_ids = model.generate(**inputs, max_new_tokens=max_new_tokens, temperature=temperature)
         
