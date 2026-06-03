@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <base target="_top">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <style>
+    body { background-color: #f8f9fa; padding: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    .card { border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; }
+    .log-box { 
+      background-color: #272822; 
+      color: #f8f8f2; 
+      padding: 15px; 
+      border-radius: 5px; 
+      font-family: monospace; 
+      white-space: pre-wrap; 
+      max-height: 500px;
+      overflow-y: auto;
+    }
+    .dimension-title { font-weight: bold; color: #0d6efd; display: inline-block;}
+    .info-icon { cursor: pointer; color: #0dcaf0; margin-left: 8px; font-size: 1.1rem; transition: color 0.2s;}
+    .info-icon:hover { color: #087990; }
+    .form-check-inline { margin-right: 15px; }
+    #app, #done { display: none; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2 class="text-center mb-4">Evaluación Humana de Explicaciones ICL</h2>
+  
+  <div class="card p-4 text-center" id="uploadSection">
+    <h4>1. Sube tu archivo de log asignado (.txt)</h4>
+    <p class="text-muted">El archivo se lee en tu PC y los resultados se guardarán en la nube.</p>
+    <input type="file" id="fileInput" accept=".txt" class="form-control w-50 mx-auto">
+  </div>
+
+  <div id="done" class="text-center mt-5">
+    <h3 class="text-success">¡Evaluación de este archivo completada!</h3>
+    <p>Todos los resultados ya fueron guardados exitosamente en la base de datos central.</p>
+    <button class="btn btn-outline-primary btn-lg mt-3" onclick="location.reload()">Cargar otro archivo</button>
+  </div>
+
+  <div id="app">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card p-3 h-100">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5>Progreso: <span id="progressBadge" class="badge bg-primary"></span></h5>
+          </div>
+          <p class="mb-1"><b>Clase Esperada:</b> <span id="trueClass" class="text-success fw-bold"></span></p>
+          <p class="mb-2"><b>¿Predicción Correcta?:</b> <span id="isCorrect" class="text-danger fw-bold"></span></p>
+          <div class="log-box" id="logContent"></div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card p-3">
+          <form id="evalForm" onsubmit="submitForm(event)">
+            <div id="metrics-container"></div>
+            
+            <div class="mb-3 mt-3">
+              <label class="form-label fw-bold">Comentarios u observaciones (Opcional):</label>
+              <textarea class="form-control" id="comentarios" rows="2" placeholder="Ej: Falla en la extracción del atributo X..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary w-100" id="submitBtn">Guardar y Siguiente</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="infoModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-light">
+        <h5 class="modal-title text-primary fw-bold" id="modalTitle">Detalle de la Métrica</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modalBody" style="font-size: 1.05rem;">
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Entendido</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  let logs = [];
+  let currentLogIndex = 0;
+  let fileName = "";
+
+  // Diccionario con las definiciones completas del paper para el Modal
+  const metrics = [
+    { 
+      id: 'TG', 
+      name: '1. Textual Groundedness (TG)', 
+      desc: '¿Captura todos los objetos/atributos relevantes de la imagen?',
+      fullDesc: '<b>Fundamentación Textual (Textual Groundedness)</b><br><br>Evalúa en qué medida el texto generado captura todos los objetos, atributos y relaciones espaciales relevantes que están explícitamente presentes en la imagen.<br><br><span class="badge bg-danger">1 punto:</span> Omisiones severas de conceptos clave.<br><span class="badge bg-success">5 puntos:</span> Cero omisiones; fundamentación visual perfecta.'
+    },
+    { 
+      id: 'HF', 
+      name: '2. Hallucination-Free (HF)', 
+      desc: '¿Libre de alucinaciones? (1=Severas, 5=Totalmente fiel)',
+      fullDesc: '<b>Libre de Alucinaciones (Hallucination-Free)</b><br><br>Evalúa si cada afirmación hecha en la explicación se puede verificar visualmente en la imagen. Se penaliza severamente la invención de características inexistentes.<br><br><span class="badge bg-danger">1 punto:</span> Alucinaciones severas y evidentes.<br><span class="badge bg-success">5 puntos:</span> Cero alucinaciones; totalmente fiel a la imagen.'
+    },
+    { 
+      id: 'CC', 
+      name: '3. Concept Counting (CC)', 
+      desc: '¿El conteo de atributos/objetos es preciso?',
+      fullDesc: '<b>Conteo de Conceptos (Concept Counting)</b><br><br>Evalúa la precisión cuantitativa. Penaliza cualquier discrepancia entre la cantidad de elementos mencionados en el texto (ej. "4 patas", "3 pétalos") y la cantidad real visible en la imagen.<br><br><span class="badge bg-danger">1 punto:</span> 0% de características bien contadas.<br><span class="badge bg-success">5 puntos:</span> 100% de características numéricas precisas.'
+    },
+    { 
+      id: 'CP', 
+      name: '4. Comprehensibility (CP)', 
+      desc: '¿Es simple, fácil de leer y accesible?',
+      fullDesc: '<b>Comprensibilidad (Comprehensibility)</b><br><br>Evalúa si la explicación es simple, fluida, fácil de leer y accesible para un usuario humano que intenta entender la clasificación visual.<br><br><span class="badge bg-danger">1 punto:</span> Texto altamente complejo, confuso o ilegible.<br><span class="badge bg-success">5 puntos:</span> Texto perfectamente comprensible y claro.'
+    },
+    { 
+      id: 'Cn', 
+      name: '5. Conciseness (Cn)', 
+      desc: '¿Es conciso? (Sin redundancias ni palabras de relleno)',
+      fullDesc: '<b>Concisión (Conciseness)</b><br><br>Evalúa si el modelo transmite la información necesaria de manera eficiente, penalizando respuestas innecesariamente largas, repeticiones cíclicas o palabras de relleno.<br><br><span class="badge bg-danger">1 punto:</span> Altamente verboso; casi todo el texto es redundante.<br><span class="badge bg-success">5 puntos:</span> Perfectamente concisa; no se puede quitar nada sin perder significado.'
+    },
+    { 
+      id: 'S', 
+      name: '6. Specificity (S)', 
+      desc: '¿Se basa en detalles concretos no genéricos?',
+      fullDesc: '<b>Especificidad (Specificity)</b><br><br>Evalúa si la explicación se basa exclusivamente en detalles concretos y precisos del sujeto clasificado, evitando descripciones vagas o genéricas que podrían aplicar a cualquier objeto.<br><br><span class="badge bg-danger">1 punto:</span> Altamente vaga; 0% de detalles concretos (ej. "es un objeto").<br><span class="badge bg-success">5 puntos:</span> 100% específica con detalles concretos del target.'
+    },
+    { 
+      id: 'LD', 
+      name: '7. Local Discriminativeness (LD)', 
+      desc: '¿Resalta características patognomónicas únicas de esta clase?',
+      fullDesc: '<b>Discriminatividad Local (Local Discriminativeness)</b><br><br>Evalúa si la explicación resalta características únicas (patognomónicas) que verdaderamente apoyan a la clase predicha por encima de las demás opciones <i>dentro de ese mismo trial</i>.<br><br><span class="badge bg-danger">1 punto:</span> No resalta ninguna característica discriminativa (0%).<br><span class="badge bg-success">5 puntos:</span> Resalta perfectamente qué hace única a esta imagen frente al resto (100%).'
+    },
+    { 
+      id: 'IF', 
+      name: '8. Instruction Following (IF)', 
+      desc: '¿Cumplió el formato/restricciones (ej. tags XML)?',
+      fullDesc: '<b>Seguimiento de Instrucciones (Instruction Following)</b><br><br>Evalúa qué tan fielmente cumplió el modelo con todas las restricciones explícitas de estructura y formato solicitadas en el prompt (como usar los tags XML &lt;response&gt;, &lt;explanation&gt;, etc.).<br><br><span class="badge bg-danger">1 punto:</span> Ignoró completamente el formato (0% adherencia).<br><span class="badge bg-success">5 puntos:</span> Formato seguido al pie de la letra (100% adherencia).'
+    },
+    { 
+      id: 'LC', 
+      name: '9. Logical Coherence (LC)', 
+      desc: '¿Axiomas y deducciones lógicas conectadas fluidamente?',
+      fullDesc: '<b>Coherencia Lógica (Logical Coherence)</b><br><br>Específico para Lógicas de Descripción y reglas. Evalúa si las oraciones, aserciones o axiomas generados se conectan de manera lógica para formar una deducción válida y sin fisuras entre premisas y conclusiones.<br><br><span class="badge bg-danger">1 punto:</span> Cláusulas lógicamente contradictorias o totalmente desconectadas.<br><span class="badge bg-success">5 puntos:</span> Deducción formal implacable y coherente.'
+    }
+  ];
+
+  // Instancia del modal de Bootstrap
+  let infoModal;
+
+  document.addEventListener("DOMContentLoaded", function() {
+    infoModal = new bootstrap.Modal(document.getElementById('infoModal'));
+  });
+
+  // Función para abrir el modal con la info correcta
+  function showMetricInfo(metricId) {
+    const metric = metrics.find(m => m.id === metricId);
+    if(metric) {
+      document.getElementById('modalTitle').innerText = metric.name;
+      document.getElementById('modalBody').innerHTML = metric.fullDesc;
+      infoModal.show();
+    }
+  }
+
+  function renderForm() {
+    let html = '';
+    metrics.forEach(m => {
+      // Se agregó el ícono (i) que llama a showMetricInfo(id)
+      html += `<div class="mb-2 border-bottom pb-2">
+                 <div class="d-flex align-items-center">
+                   <div class="dimension-title">${m.name}</div>
+                   <i class="bi bi-info-circle-fill info-icon" title="Ver detalle de calificación" onclick="showMetricInfo('${m.id}')"></i>
+                 </div>
+                 <small class="text-muted d-block mb-1">${m.desc}</small>`;
+      for(let i=1; i<=5; i++) {
+        html += `<div class="form-check form-check-inline">
+                   <input class="form-check-input" type="radio" name="${m.id}" value="${i}" required>
+                   <label class="form-check-label">${i}</label>
+                 </div>`;
+      }
+      html += `</div>`;
+    });
+    document.getElementById('metrics-container').innerHTML = html;
+  }
+
+  // Leer archivo local
+  document.getElementById('fileInput').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    fileName = file.name;
+    
+    const reader = new FileReader();
+    reader.onload = function(event) {
+      parseLogFile(event.target.result);
+    };
+    reader.readAsText(file);
+  });
+
+  // Parsear el archivo de log
+  function parseLogFile(text) {
+    const blocks = text.split('----------------------------------------');
+    logs = [];
+    
+    blocks.forEach(block => {
+      block = block.trim();
+      if (!block.startsWith('Run')) return; 
+      
+      const lines = block.split('\n');
+      const headerLine = lines[0]; 
+      
+      let expected = "N/A", correct = "N/A";
+      const expectedMatch = headerLine.match(/Expected:\s*\[(.*?)\]/);
+      if (expectedMatch) expected = expectedMatch[1];
+      
+      const correctMatch = headerLine.match(/Correct:\s*(True|False)/);
+      if (correctMatch) correct = correctMatch[1];
+      
+      const content = lines.slice(1).join('\n'); 
+      logs.push({ header: headerLine, expected, correct, content });
+    });
+
+    if (logs.length > 0) {
+      document.getElementById('uploadSection').style.display = 'none';
+      document.getElementById('app').style.display = 'block';
+      currentLogIndex = 0;
+      showCurrentLog();
+    } else {
+      alert("No se encontraron trials en formato válido en el archivo.");
+    }
+  }
+
+  function showCurrentLog() {
+    if (currentLogIndex >= logs.length) {
+      document.getElementById('app').style.display = 'none';
+      document.getElementById('done').style.display = 'block';
+      return;
+    }
+
+    const log = logs[currentLogIndex];
+    document.getElementById('progressBadge').innerText = `Trial ${currentLogIndex + 1} de ${logs.length}`;
+    document.getElementById('trueClass').innerText = log.expected;
+    document.getElementById('isCorrect').innerText = log.correct;
+    
+    let safeContent = log.content.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    document.getElementById('logContent').innerHTML = `<b>${log.header}</b><br><br>${safeContent}`;
+    
+    document.getElementById('evalForm').reset();
+    window.scrollTo(0, 0);
+  }
+
+  // Enviar a Google Sheets
+  function submitForm(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.innerText = "Guardando en la nube...";
+    
+    const log = logs[currentLogIndex];
+    let payload = {
+      fileName: fileName,
+      trial: log.header,
+      expected: log.expected,
+      correct: log.correct,
+      comments: document.getElementById('comentarios').value
+    };
+
+    metrics.forEach(m => {
+      let selected = document.querySelector(`input[name="${m.id}"]:checked`);
+      payload[m.id] = selected ? selected.value : "";
+    });
+
+    google.script.run
+      .withSuccessHandler(function() {
+        btn.disabled = false;
+        btn.innerText = "Guardar y Siguiente";
+        currentLogIndex++;
+        showCurrentLog();
+      })
+      .withFailureHandler(function(error) {
+        alert("Error al guardar: " + error.message);
+        btn.disabled = false;
+        btn.innerText = "Reintentar Guardar";
+      })
+      .saveEvaluation(payload);
+  }
+
+  renderForm();
+</script>
+</body>
+</html>
