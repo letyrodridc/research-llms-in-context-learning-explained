@@ -6,13 +6,19 @@ var VALID_USERS = {
   "nacho": "eval2026"
 };
 
-// Run this function ONCE from the Apps Script editor to set up the spreadsheet columns
+// 1. SERVE THE HTML INTERFACE
+function doGet() {
+  return HtmlService.createHtmlOutputFromFile('Index')
+      .setTitle('Visual HITL Evaluation Dashboard')
+      .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+}
+
+// 2. SETUP THE SPREADSHEET COLUMNS
+// Run this function ONCE from the Apps Script editor
 function setupSheet() {
   var activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-  
-  // FAIL-SAFE: Check if the script is properly bound to a Google Sheet
   if (!activeSpreadsheet) {
-    throw new Error("CRITICAL ERROR: This script is not attached to a Google Sheet. You must open your Google Sheet, click 'Extensions' > 'Apps Script', and paste this code there. Do not create the script from script.google.com directly.");
+    throw new Error("CRITICAL ERROR: Script is not bound to a Google Sheet.");
   }
 
   var sheet = activeSpreadsheet.getActiveSheet();
@@ -29,80 +35,39 @@ function setupSheet() {
   }
 }
 
-// Handles incoming POST requests (Both Login and Save Evaluation)
-function doPost(e) {
-  try {
-    var data = JSON.parse(e.postData.contents);
-    
-    // 1. AUTHENTICATION CHECK
-    var user = (data.username || "").toLowerCase();
-    var pass = data.password || "";
-    
-    if (!VALID_USERS[user] || VALID_USERS[user] !== pass) {
-      return ContentService.createTextOutput(JSON.stringify({
-          "status": "error", 
-          "message": "Authentication failed. Invalid username or password."
-        }))
-        .setMimeType(ContentService.MimeType.JSON)
-        .setHeader("Access-Control-Allow-Origin", "*");
-    }
-
-    // 2. ACTION: LOGIN (Just checking credentials)
-    if (data.action === "login") {
-      return ContentService.createTextOutput(JSON.stringify({
-          "status": "success", 
-          "message": "Login successful."
-        }))
-        .setMimeType(ContentService.MimeType.JSON)
-        .setHeader("Access-Control-Allow-Origin", "*");
-    }
-
-    // 3. ACTION: SAVE EVALUATION
-    if (data.action === "save") {
-      var activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-      if (!activeSpreadsheet) {
-        throw new Error("Server Error: Script is not bound to a spreadsheet.");
-      }
-      var sheet = activeSpreadsheet.getActiveSheet();
-      
-      var row = [
-        new Date(),           
-        user,                 
-        data.dataset,         
-        data.promptType,      
-        data.sourceModel,     
-        data.queryIndex,      
-        data.predicted,       
-        data.correct,         
-        data.TG, data.HF, data.CC, data.CP, data.Cn, data.S, data.LD, data.IF, data.LC, 
-        data.comments
-      ];
-      
-      sheet.appendRow(row);
-      
-      return ContentService.createTextOutput(JSON.stringify({"status": "success"}))
-        .setMimeType(ContentService.MimeType.JSON)
-        .setHeader("Access-Control-Allow-Origin", "*");
-    }
-      
-  } catch(error) {
-    return ContentService.createTextOutput(JSON.stringify({"status": "error", "message": error.toString()}))
-      .setMimeType(ContentService.MimeType.JSON)
-      .setHeader("Access-Control-Allow-Origin", "*");
+// 3. AUTHENTICATE USER
+function authenticate(username, password) {
+  var user = (username || "").toLowerCase();
+  if (VALID_USERS[user] && VALID_USERS[user] === password) {
+    return { status: "success" };
   }
+  return { status: "error", message: "Invalid username or password." };
 }
 
-// Handles preflight CORS requests from the browser
-function doOptions(e) {
-  var headers = {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type",
-    "Access-Control-Max-Age": "86400"
-  };
-  var response = ContentService.createTextOutput();
-  for (var key in headers) {
-    response.setHeader(key, headers[key]);
+// 4. SAVE EVALUATION TO GOOGLE SHEETS
+function saveEvaluation(payload) {
+  // Double-check authentication on the server side for security
+  var auth = authenticate(payload.username, payload.password);
+  if (auth.status !== "success") {
+    throw new Error("Authentication failed during save operation.");
   }
-  return response;
+
+  var activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = activeSpreadsheet.getActiveSheet();
+  
+  var row = [
+    new Date(),           
+    payload.username,                 
+    payload.dataset,         
+    payload.promptType,      
+    payload.sourceModel,     
+    payload.queryIndex,      
+    payload.predicted,       
+    payload.correct,         
+    payload.TG, payload.HF, payload.CC, payload.CP, payload.Cn, payload.S, payload.LD, payload.IF, payload.LC, 
+    payload.comments
+  ];
+  
+  sheet.appendRow(row);
+  return { status: "success" };
 }

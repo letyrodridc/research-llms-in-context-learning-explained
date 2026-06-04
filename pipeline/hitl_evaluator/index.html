@@ -26,14 +26,40 @@
     .info-icon:hover { color: #087990; }
     .form-check-inline { margin-right: 15px; }
     
-    #app, #done { display: none; }
+    #mainApp, #uploadSection, #done { display: none; }
+    
+    /* Login Screen Overlay */
+    #loginScreen {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background-color: #f0f2f5; z-index: 1050; display: flex;
+      justify-content: center; align-items: center;
+    }
   </style>
 </head>
 <body>
 
+<div id="loginScreen">
+  <div class="card p-5 shadow-lg" style="width: 400px; border-radius: 15px;">
+    <h3 class="text-center fw-bold mb-4 text-primary"><i class="bi bi-shield-lock me-2"></i>HITL Evaluator</h3>
+    <form id="loginForm" onsubmit="handleLogin(event)">
+      <div class="mb-3">
+        <label class="form-label fw-bold">Researcher Username</label>
+        <input type="text" class="form-control" id="loginUser" required placeholder="e.g., leticia">
+      </div>
+      <div class="mb-4">
+        <label class="form-label fw-bold">Password</label>
+        <input type="password" class="form-control" id="loginPass" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100 fw-bold py-2" id="loginBtn">Authenticate Access</button>
+      <div id="loginError" class="text-danger text-center mt-3 fw-bold small"></div>
+    </form>
+  </div>
+</div>
+
 <div class="container-fluid p-4">
   <h2 class="text-center mb-4 fw-bold text-secondary">Visual HITL Evaluation Dashboard</h2>
-  
+  <p class="text-center text-muted mb-4">Logged in as: <span id="displayUser" class="fw-bold text-primary"></span></p>
+
   <div class="config-card mx-auto" id="uploadSection" style="max-width: 900px;">
     <h4 class="mb-4"><i class="bi bi-file-earmark-spreadsheet-fill me-2 text-success"></i>Upload Evaluation Data</h4>
     
@@ -57,7 +83,7 @@
     <button class="btn btn-outline-primary mt-3" onclick="location.reload()">Load another CSV</button>
   </div>
 
-  <div id="app">
+  <div id="mainApp">
     <div class="row">
       
       <div class="col-md-3">
@@ -130,8 +156,9 @@
   let currentLogIndex = 0;
   let localImages = {}; 
   let infoModal;
+  
+  let authCredentials = { username: "", password: "" };
 
-  // HuggingFace Datasets API Configuration
   const HF_CONFIG = {
     "cifar10": { repo: "cifar10", config: "plain_text", split: "test", imgCol: "img" },
     "pets": { repo: "timm/oxford-iiit-pet", config: "default", split: "test", imgCol: "image" },
@@ -142,6 +169,40 @@
   document.addEventListener("DOMContentLoaded", function() {
     infoModal = new bootstrap.Modal(document.getElementById('infoModal'));
   });
+
+  // --- GOOGLE APPS SCRIPT AUTHENTICATION ---
+  function handleLogin(e) {
+    e.preventDefault();
+    const btn = document.getElementById('loginBtn');
+    const errorDiv = document.getElementById('loginError');
+    const user = document.getElementById('loginUser').value.trim();
+    const pass = document.getElementById('loginPass').value.trim();
+    
+    btn.disabled = true;
+    btn.innerText = "Authenticating...";
+    errorDiv.innerText = "";
+
+    google.script.run
+      .withSuccessHandler(function(result) {
+        if (result.status === "success") {
+          authCredentials.username = user;
+          authCredentials.password = pass;
+          document.getElementById('loginScreen').style.display = 'none';
+          document.getElementById('uploadSection').style.display = 'block';
+          document.getElementById('displayUser').innerText = user.toUpperCase();
+        } else {
+          errorDiv.innerText = result.message;
+          btn.disabled = false;
+          btn.innerText = "Authenticate Access";
+        }
+      })
+      .withFailureHandler(function(error) {
+        errorDiv.innerText = "Server Error: " + error.message;
+        btn.disabled = false;
+        btn.innerText = "Authenticate Access";
+      })
+      .authenticate(user, pass);
+  }
 
   const metrics = [
     { id: 'TG', name: '1. Textual Groundedness', desc: 'Does it capture relevant attributes?', fullDesc: '<b>Textual Groundedness</b><br>Evaluates to what extent the text captures all relevant objects and attributes present in the image.<br><span class="badge bg-danger">1:</span> Severe omissions.<br><span class="badge bg-success">5:</span> Perfect visual grounding.' },
@@ -212,7 +273,6 @@
     logs = [];
     data.forEach(row => {
       let explanation = row.raw_response_text || row.classifier_raw_response_text;
-      
       if (explanation) {
         logs.push({
           dataset: row.dataset || "Unknown",
@@ -228,7 +288,7 @@
 
     if (logs.length > 0) {
       document.getElementById('uploadSection').style.display = 'none';
-      document.getElementById('app').style.display = 'block';
+      document.getElementById('mainApp').style.display = 'block';
       currentLogIndex = 0;
       showCurrentLog();
     } else {
@@ -238,13 +298,12 @@
 
   async function showCurrentLog() {
     if (currentLogIndex >= logs.length) {
-      document.getElementById('app').style.display = 'none';
+      document.getElementById('mainApp').style.display = 'none';
       document.getElementById('done').style.display = 'block';
       return;
     }
 
     const log = logs[currentLogIndex];
-    
     document.getElementById('progressBadge').innerText = `Trial ${currentLogIndex + 1} of ${logs.length}`;
     document.getElementById('datasetName').innerText = log.dataset;
     document.getElementById('modelName').innerText = log.sourceModel;
@@ -270,17 +329,14 @@
     loader.classList.remove('d-none'); 
 
     let hfConfig = HF_CONFIG[log.dataset.toLowerCase()];
-    
     if (hfConfig && log.queryIndex) {
         try {
             const hfUrl = `https://datasets-server.huggingface.co/rows?dataset=${hfConfig.repo}&config=${hfConfig.config}&split=${hfConfig.split}&offset=${log.queryIndex}&length=1`;
-            
             const response = await fetch(hfUrl);
             if (!response.ok) throw new Error("HF API Failed");
             
             const data = await response.json();
             const rowData = data.rows[0].row;
-            
             if (rowData[hfConfig.imgCol] && rowData[hfConfig.imgCol].src) {
                 imgEl.src = rowData[hfConfig.imgCol].src;
                 nameEl.innerText = `Loaded from HuggingFace (Index: ${log.queryIndex})`;
@@ -312,8 +368,8 @@
     document.getElementById('logContent').scrollTo(0, 0);
   }
 
-  // --- SUBMIT VIA FETCH API TO GOOGLE APPS SCRIPT ---
-  async function submitForm(e) {
+  // --- SAVE DIRECTLY VIA GOOGLE APPS SCRIPT ---
+  function submitForm(e) {
     e.preventDefault();
     const btn = document.getElementById('submitBtn');
     btn.disabled = true; 
@@ -321,6 +377,8 @@
     
     const log = logs[currentLogIndex];
     let payload = {
+      username: authCredentials.username,
+      password: authCredentials.password,
       dataset: log.dataset,
       promptType: log.promptType,
       sourceModel: log.sourceModel,
@@ -335,37 +393,25 @@
       payload[m.id] = selected ? selected.value : "";
     });
 
-    // -------------------------------------------------------------
-    // IMPORTANT: REPLACE THIS URL WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
-    // -------------------------------------------------------------
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxc1duU12Pb9ahN0mOZogH5vcXmjgw2_F_qjRKfEYbPQwYb8v62w376r21pxz4MVp0wZw/exec";
-
-    try {
-      const response = await fetch(SCRIPT_URL, {
-        method: 'POST',
-        // 'text/plain' is used to avoid CORS preflight issues with Google Apps Script
-        headers: {
-          'Content-Type': 'text/plain;charset=utf-8', 
-        },
-        body: JSON.stringify(payload)
-      });
-      
-      const result = await response.json();
-      
-      if (result.status === "success") {
+    google.script.run
+      .withSuccessHandler(function(result) {
+        if (result.status === "success") {
+          btn.disabled = false; 
+          btn.innerText = "Save and Next Trial";
+          currentLogIndex++; 
+          showCurrentLog();
+        } else {
+          alert("Error: " + result.message);
+          btn.disabled = false; 
+          btn.innerText = "Retry Save";
+        }
+      })
+      .withFailureHandler(function(error) {
+        alert("Connection Error: " + error.message);
         btn.disabled = false; 
-        btn.innerText = "Save and Next Trial";
-        currentLogIndex++; 
-        showCurrentLog();
-      } else {
-        throw new Error(result.message || "Unknown error saving to sheet");
-      }
-
-    } catch (error) {
-      alert("Connection Error: " + error.message);
-      btn.disabled = false; 
-      btn.innerText = "Retry Save";
-    }
+        btn.innerText = "Retry Save";
+      })
+      .saveEvaluation(payload);
   }
 
   // Initialize
