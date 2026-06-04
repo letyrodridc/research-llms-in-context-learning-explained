@@ -1,74 +1,111 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <base target="_top">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visual HITL Evaluation Dashboard</title>
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
   <style>
-    body { background-color: #f8f9fa; padding: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    .card { border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; }
+    body { background-color: #f0f2f5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    .config-card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 20px;}
+    .app-card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); height: 100%;}
+    
     .log-box { 
-      background-color: #272822; 
-      color: #f8f8f2; 
-      padding: 15px; 
-      border-radius: 5px; 
-      font-family: monospace; 
-      white-space: pre-wrap; 
-      max-height: 500px;
-      overflow-y: auto;
+      background-color: #1e1e1e; color: #d4d4d4; padding: 15px; 
+      border-radius: 5px; font-family: 'Consolas', monospace; 
+      white-space: pre-wrap; height: 60vh; overflow-y: auto; font-size: 0.95rem;
     }
+    
+    .img-preview { width: 100%; max-height: 400px; object-fit: contain; border-radius: 8px; background: #e9ecef; }
     .dimension-title { font-weight: bold; color: #0d6efd; display: inline-block;}
-    .info-icon { cursor: pointer; color: #0dcaf0; margin-left: 8px; font-size: 1.1rem; transition: color 0.2s;}
+    .info-icon { cursor: pointer; color: #0dcaf0; margin-left: 8px; transition: color 0.2s;}
     .info-icon:hover { color: #087990; }
     .form-check-inline { margin-right: 15px; }
+    
     #app, #done { display: none; }
   </style>
 </head>
 <body>
 
-<div class="container">
-  <h2 class="text-center mb-4">Evaluación Humana de Explicaciones ICL</h2>
+<div class="container-fluid p-4">
+  <h2 class="text-center mb-4 fw-bold text-secondary">Visual HITL Evaluation Dashboard</h2>
   
-  <div class="card p-4 text-center" id="uploadSection">
-    <h4>1. Sube tu archivo de log asignado (.txt)</h4>
-    <p class="text-muted">El archivo se lee en tu PC y los resultados se guardarán en la nube.</p>
-    <input type="file" id="fileInput" accept=".txt" class="form-control w-50 mx-auto">
+  <div class="config-card mx-auto" id="uploadSection" style="max-width: 900px;">
+    <h4 class="mb-4"><i class="bi bi-file-earmark-spreadsheet-fill me-2 text-success"></i>Upload Evaluation Data</h4>
+    
+    <div class="mb-4">
+      <label class="form-label fw-bold">1. Upload Results CSV (trial_results.csv or judge_results.csv):</label>
+      <input type="file" id="csvFileInput" accept=".csv" class="form-control border-primary shadow-sm" style="height: 50px; font-size: 1.1rem;">
+      <small class="text-muted mt-1 d-block">The app will automatically extract explanations, models, and fetch images from HuggingFace via API.</small>
+    </div>
+
+    <div class="alert alert-secondary mt-3">
+      <label class="form-label fw-bold mb-1"><i class="bi bi-folder-fill text-warning me-2"></i>(Optional Fallback) Local Image Folder:</label>
+      <input type="file" id="imageDir" webkitdirectory directory multiple class="form-control form-control-sm">
+      <small class="text-muted">Only use this if HuggingFace images fail to load. Select the local dataset folder.</small>
+      <div id="dirStatus" class="text-success fw-bold mt-1" style="font-size: 0.85rem;"></div>
+    </div>
   </div>
 
   <div id="done" class="text-center mt-5">
-    <h3 class="text-success">¡Evaluación de este archivo completada!</h3>
-    <p>Todos los resultados ya fueron guardados exitosamente en la base de datos central.</p>
-    <button class="btn btn-outline-primary btn-lg mt-3" onclick="location.reload()">Cargar otro archivo</button>
+    <h3 class="text-success"><i class="bi bi-check-circle-fill" style="font-size: 3rem;"></i><br>Evaluation Completed!</h3>
+    <p class="mt-2 text-muted">All results have been successfully saved to Google Sheets.</p>
+    <button class="btn btn-outline-primary mt-3" onclick="location.reload()">Load another CSV</button>
   </div>
 
   <div id="app">
     <div class="row">
-      <div class="col-md-6">
-        <div class="card p-3 h-100">
-          <div class="d-flex justify-content-between align-items-center mb-2">
-            <h5>Progreso: <span id="progressBadge" class="badge bg-primary"></span></h5>
+      
+      <div class="col-md-3">
+        <div class="app-card">
+          <h5 class="border-bottom pb-2 mb-3"><i class="bi bi-image me-2"></i>Visual Context</h5>
+          <div class="mb-3">
+            <span id="progressBadge" class="badge bg-primary fs-6 mb-2"></span><br>
+            <span class="fs-6 text-muted">Dataset:</span> <span id="datasetName" class="fw-bold"></span><br>
+            <span class="fs-6 text-muted">Correct Prediction?:</span> <span id="isCorrect" class="fw-bold"></span>
           </div>
-          <p class="mb-1"><b>Clase Esperada:</b> <span id="trueClass" class="text-success fw-bold"></span></p>
-          <p class="mb-2"><b>¿Predicción Correcta?:</b> <span id="isCorrect" class="text-danger fw-bold"></span></p>
+          
+          <div class="position-relative">
+            <div id="imgLoader" class="position-absolute top-50 start-50 translate-middle d-none">
+              <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+            </div>
+            <img id="queryImage" class="img-preview shadow-sm" src="" alt="Waiting for image..." onerror="this.src=''; this.alt='Image not found. Use local folder fallback.'">
+          </div>
+          <p id="imageFilenameTag" class="text-muted text-center mt-2 small font-monospace"></p>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div class="app-card">
+          <h5 class="border-bottom pb-2 mb-3"><i class="bi bi-robot me-2"></i>Model Explanation (XML)</h5>
+          <div class="mb-2">
+            <span class="badge bg-secondary me-2">Model: <span id="modelName"></span></span>
+            <span class="badge bg-info text-dark">Prompt: <span id="promptType"></span></span>
+          </div>
           <div class="log-box" id="logContent"></div>
         </div>
       </div>
 
-      <div class="col-md-6">
-        <div class="card p-3">
+      <div class="col-md-4">
+        <div class="app-card" style="height: 60vh; overflow-y: auto;">
+          <h5 class="border-bottom pb-2 mb-3"><i class="bi bi-ui-checks me-2"></i>Human Rubric</h5>
           <form id="evalForm" onsubmit="submitForm(event)">
             <div id="metrics-container"></div>
             
             <div class="mb-3 mt-3">
-              <label class="form-label fw-bold">Comentarios u observaciones (Opcional):</label>
-              <textarea class="form-control" id="comentarios" rows="2" placeholder="Ej: Falla en la extracción del atributo X..."></textarea>
+              <label class="form-label fw-bold text-secondary">Comments (Optional):</label>
+              <textarea class="form-control" id="comentarios" rows="2" placeholder="E.g., Model failed to extract attribute X..."></textarea>
             </div>
             
-            <button type="submit" class="btn btn-primary w-100" id="submitBtn">Guardar y Siguiente</button>
+            <button type="submit" class="btn btn-primary w-100 fw-bold py-2" id="submitBtn">Save and Next Trial</button>
           </form>
         </div>
       </div>
+
     </div>
   </div>
 </div>
@@ -77,14 +114,11 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header bg-light">
-        <h5 class="modal-title text-primary fw-bold" id="modalTitle">Detalle de la Métrica</h5>
+        <h5 class="modal-title text-primary fw-bold" id="modalTitle">Metric Details</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body" id="modalBody" style="font-size: 1.05rem;">
-        </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Entendido</button>
-      </div>
+      <div class="modal-body" id="modalBody" style="font-size: 1.05rem;"></div>
+      <div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Got it</button></div>
     </div>
   </div>
 </div>
@@ -94,74 +128,33 @@
 <script>
   let logs = [];
   let currentLogIndex = 0;
-  let fileName = "";
-
-  // Diccionario con las definiciones completas del paper para el Modal
-  const metrics = [
-    { 
-      id: 'TG', 
-      name: '1. Textual Groundedness (TG)', 
-      desc: '¿Captura todos los objetos/atributos relevantes de la imagen?',
-      fullDesc: '<b>Fundamentación Textual (Textual Groundedness)</b><br><br>Evalúa en qué medida el texto generado captura todos los objetos, atributos y relaciones espaciales relevantes que están explícitamente presentes en la imagen.<br><br><span class="badge bg-danger">1 punto:</span> Omisiones severas de conceptos clave.<br><span class="badge bg-success">5 puntos:</span> Cero omisiones; fundamentación visual perfecta.'
-    },
-    { 
-      id: 'HF', 
-      name: '2. Hallucination-Free (HF)', 
-      desc: '¿Libre de alucinaciones? (1=Severas, 5=Totalmente fiel)',
-      fullDesc: '<b>Libre de Alucinaciones (Hallucination-Free)</b><br><br>Evalúa si cada afirmación hecha en la explicación se puede verificar visualmente en la imagen. Se penaliza severamente la invención de características inexistentes.<br><br><span class="badge bg-danger">1 punto:</span> Alucinaciones severas y evidentes.<br><span class="badge bg-success">5 puntos:</span> Cero alucinaciones; totalmente fiel a la imagen.'
-    },
-    { 
-      id: 'CC', 
-      name: '3. Concept Counting (CC)', 
-      desc: '¿El conteo de atributos/objetos es preciso?',
-      fullDesc: '<b>Conteo de Conceptos (Concept Counting)</b><br><br>Evalúa la precisión cuantitativa. Penaliza cualquier discrepancia entre la cantidad de elementos mencionados en el texto (ej. "4 patas", "3 pétalos") y la cantidad real visible en la imagen.<br><br><span class="badge bg-danger">1 punto:</span> 0% de características bien contadas.<br><span class="badge bg-success">5 puntos:</span> 100% de características numéricas precisas.'
-    },
-    { 
-      id: 'CP', 
-      name: '4. Comprehensibility (CP)', 
-      desc: '¿Es simple, fácil de leer y accesible?',
-      fullDesc: '<b>Comprensibilidad (Comprehensibility)</b><br><br>Evalúa si la explicación es simple, fluida, fácil de leer y accesible para un usuario humano que intenta entender la clasificación visual.<br><br><span class="badge bg-danger">1 punto:</span> Texto altamente complejo, confuso o ilegible.<br><span class="badge bg-success">5 puntos:</span> Texto perfectamente comprensible y claro.'
-    },
-    { 
-      id: 'Cn', 
-      name: '5. Conciseness (Cn)', 
-      desc: '¿Es conciso? (Sin redundancias ni palabras de relleno)',
-      fullDesc: '<b>Concisión (Conciseness)</b><br><br>Evalúa si el modelo transmite la información necesaria de manera eficiente, penalizando respuestas innecesariamente largas, repeticiones cíclicas o palabras de relleno.<br><br><span class="badge bg-danger">1 punto:</span> Altamente verboso; casi todo el texto es redundante.<br><span class="badge bg-success">5 puntos:</span> Perfectamente concisa; no se puede quitar nada sin perder significado.'
-    },
-    { 
-      id: 'S', 
-      name: '6. Specificity (S)', 
-      desc: '¿Se basa en detalles concretos no genéricos?',
-      fullDesc: '<b>Especificidad (Specificity)</b><br><br>Evalúa si la explicación se basa exclusivamente en detalles concretos y precisos del sujeto clasificado, evitando descripciones vagas o genéricas que podrían aplicar a cualquier objeto.<br><br><span class="badge bg-danger">1 punto:</span> Altamente vaga; 0% de detalles concretos (ej. "es un objeto").<br><span class="badge bg-success">5 puntos:</span> 100% específica con detalles concretos del target.'
-    },
-    { 
-      id: 'LD', 
-      name: '7. Local Discriminativeness (LD)', 
-      desc: '¿Resalta características patognomónicas únicas de esta clase?',
-      fullDesc: '<b>Discriminatividad Local (Local Discriminativeness)</b><br><br>Evalúa si la explicación resalta características únicas (patognomónicas) que verdaderamente apoyan a la clase predicha por encima de las demás opciones <i>dentro de ese mismo trial</i>.<br><br><span class="badge bg-danger">1 punto:</span> No resalta ninguna característica discriminativa (0%).<br><span class="badge bg-success">5 puntos:</span> Resalta perfectamente qué hace única a esta imagen frente al resto (100%).'
-    },
-    { 
-      id: 'IF', 
-      name: '8. Instruction Following (IF)', 
-      desc: '¿Cumplió el formato/restricciones (ej. tags XML)?',
-      fullDesc: '<b>Seguimiento de Instrucciones (Instruction Following)</b><br><br>Evalúa qué tan fielmente cumplió el modelo con todas las restricciones explícitas de estructura y formato solicitadas en el prompt (como usar los tags XML &lt;response&gt;, &lt;explanation&gt;, etc.).<br><br><span class="badge bg-danger">1 punto:</span> Ignoró completamente el formato (0% adherencia).<br><span class="badge bg-success">5 puntos:</span> Formato seguido al pie de la letra (100% adherencia).'
-    },
-    { 
-      id: 'LC', 
-      name: '9. Logical Coherence (LC)', 
-      desc: '¿Axiomas y deducciones lógicas conectadas fluidamente?',
-      fullDesc: '<b>Coherencia Lógica (Logical Coherence)</b><br><br>Específico para Lógicas de Descripción y reglas. Evalúa si las oraciones, aserciones o axiomas generados se conectan de manera lógica para formar una deducción válida y sin fisuras entre premisas y conclusiones.<br><br><span class="badge bg-danger">1 punto:</span> Cláusulas lógicamente contradictorias o totalmente desconectadas.<br><span class="badge bg-success">5 puntos:</span> Deducción formal implacable y coherente.'
-    }
-  ];
-
-  // Instancia del modal de Bootstrap
+  let localImages = {}; 
   let infoModal;
+
+  // HuggingFace Datasets API Configuration
+  const HF_CONFIG = {
+    "cifar10": { repo: "cifar10", config: "plain_text", split: "test", imgCol: "img" },
+    "pets": { repo: "timm/oxford-iiit-pet", config: "default", split: "test", imgCol: "image" },
+    "flowers": { repo: "nelorth/oxford-flowers", config: "default", split: "test", imgCol: "image" },
+    "dtd": { repo: "food101", config: "default", split: "validation", imgCol: "image" } 
+  };
 
   document.addEventListener("DOMContentLoaded", function() {
     infoModal = new bootstrap.Modal(document.getElementById('infoModal'));
   });
 
-  // Función para abrir el modal con la info correcta
+  const metrics = [
+    { id: 'TG', name: '1. Textual Groundedness', desc: 'Does it capture relevant attributes?', fullDesc: '<b>Textual Groundedness</b><br>Evaluates to what extent the text captures all relevant objects and attributes present in the image.<br><span class="badge bg-danger">1:</span> Severe omissions.<br><span class="badge bg-success">5:</span> Perfect visual grounding.' },
+    { id: 'HF', name: '2. Hallucination-Free', desc: 'Free of visual hallucinations?', fullDesc: '<b>Hallucination-Free</b><br>Penalizes the invention of non-existent features.<br><span class="badge bg-danger">1:</span> Severe hallucinations.<br><span class="badge bg-success">5:</span> Completely faithful to the image.' },
+    { id: 'CC', name: '3. Concept Counting', desc: 'Is attribute counting accurate?', fullDesc: '<b>Concept Counting</b><br>Evaluates quantitative precision.<br><span class="badge bg-danger">1:</span> 0% accurate.<br><span class="badge bg-success">5:</span> 100% accurate.' },
+    { id: 'CP', name: '4. Comprehensibility', desc: 'Is it simple and easy to read?', fullDesc: '<b>Comprehensibility</b><br>Evaluates reading fluency and accessibility for human users.<br><span class="badge bg-danger">1:</span> Highly confusing text.<br><span class="badge bg-success">5:</span> Perfectly clear.' },
+    { id: 'Cn', name: '5. Conciseness', desc: 'Is it concise? (No redundancies)', fullDesc: '<b>Conciseness</b><br>Penalizes filler words, cyclic repetitions, or unnecessarily long answers.<br><span class="badge bg-danger">1:</span> Highly redundant.<br><span class="badge bg-success">5:</span> Maximum efficiency.' },
+    { id: 'S',  name: '6. Specificity', desc: 'Specific details of the subject?', fullDesc: '<b>Specificity</b><br>Penalizes vague descriptions (e.g., "it is an object").<br><span class="badge bg-danger">1:</span> Highly vague.<br><span class="badge bg-success">5:</span> 100% specific.' },
+    { id: 'LD', name: '7. Discriminativeness', desc: 'Highlights pathognomonic features?', fullDesc: '<b>Local Discriminativeness</b><br>Evaluates if the explanation highlights unique features that separate the predicted class from other options.<br><span class="badge bg-danger">1:</span> Does not discriminate.<br><span class="badge bg-success">5:</span> Perfect discrimination.' },
+    { id: 'IF', name: '8. Instruction Following', desc: 'Followed XML tags/format rules?', fullDesc: '<b>Instruction Following</b><br>Adherence to the explicit structure/format requested.<br><span class="badge bg-danger">1:</span> Ignored format.<br><span class="badge bg-success">5:</span> Strict adherence.' },
+    { id: 'LC', name: '9. Logical Coherence', desc: 'Valid connection of axioms?', fullDesc: '<b>Logical Coherence</b><br>Evaluates if generated axioms form a valid deduction without contradictions.<br><span class="badge bg-danger">1:</span> Logical contradictions.<br><span class="badge bg-success">5:</span> Flawless formal deduction.' }
+  ];
+
   function showMetricInfo(metricId) {
     const metric = metrics.find(m => m.id === metricId);
     if(metric) {
@@ -174,13 +167,12 @@
   function renderForm() {
     let html = '';
     metrics.forEach(m => {
-      // Se agregó el ícono (i) que llama a showMetricInfo(id)
-      html += `<div class="mb-2 border-bottom pb-2">
+      html += `<div class="mb-3 border-bottom pb-2">
                  <div class="d-flex align-items-center">
                    <div class="dimension-title">${m.name}</div>
-                   <i class="bi bi-info-circle-fill info-icon" title="Ver detalle de calificación" onclick="showMetricInfo('${m.id}')"></i>
+                   <i class="bi bi-info-circle-fill info-icon" onclick="showMetricInfo('${m.id}')"></i>
                  </div>
-                 <small class="text-muted d-block mb-1">${m.desc}</small>`;
+                 <small class="text-muted d-block mb-1" style="font-size:0.8rem;">${m.desc}</small>`;
       for(let i=1; i<=5; i++) {
         html += `<div class="form-check form-check-inline">
                    <input class="form-check-input" type="radio" name="${m.id}" value="${i}" required>
@@ -192,40 +184,46 @@
     document.getElementById('metrics-container').innerHTML = html;
   }
 
-  // Leer archivo local
-  document.getElementById('fileInput').addEventListener('change', function(e) {
-    const file = e.target.files[0];
-    if (!file) return;
-    fileName = file.name;
-    
-    const reader = new FileReader();
-    reader.onload = function(event) {
-      parseLogFile(event.target.result);
-    };
-    reader.readAsText(file);
+  document.getElementById('imageDir').addEventListener('change', function(e) {
+    for(let file of e.target.files) {
+      localImages[file.name] = file; 
+      localImages[file.webkitRelativePath] = file;
+    }
+    document.getElementById('dirStatus').innerText = `✅ ${e.target.files.length} fallback images loaded in memory.`;
   });
 
-  // Parsear el archivo de log
-  function parseLogFile(text) {
-    const blocks = text.split('----------------------------------------');
+  document.getElementById('csvFileInput').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    Papa.parse(file, {
+      header: true,
+      skipEmptyLines: true,
+      complete: function(results) {
+        processCSVData(results.data);
+      },
+      error: function(err) {
+        alert("Error parsing CSV: " + err.message);
+      }
+    });
+  });
+
+  function processCSVData(data) {
     logs = [];
-    
-    blocks.forEach(block => {
-      block = block.trim();
-      if (!block.startsWith('Run')) return; 
+    data.forEach(row => {
+      let explanation = row.raw_response_text || row.classifier_raw_response_text;
       
-      const lines = block.split('\n');
-      const headerLine = lines[0]; 
-      
-      let expected = "N/A", correct = "N/A";
-      const expectedMatch = headerLine.match(/Expected:\s*\[(.*?)\]/);
-      if (expectedMatch) expected = expectedMatch[1];
-      
-      const correctMatch = headerLine.match(/Correct:\s*(True|False)/);
-      if (correctMatch) correct = correctMatch[1];
-      
-      const content = lines.slice(1).join('\n'); 
-      logs.push({ header: headerLine, expected, correct, content });
+      if (explanation) {
+        logs.push({
+          dataset: row.dataset || "Unknown",
+          promptType: row.prompt_type || "Unknown",
+          sourceModel: row.source_model || row.model || "Unknown",
+          queryIndex: row.query_dataset_index || row.query_index_within_episode || "0",
+          predicted: row.predicted_label || "N/A",
+          correct: row.correct || row.is_correct || "N/A",
+          content: explanation
+        });
+      }
     });
 
     if (logs.length > 0) {
@@ -234,11 +232,11 @@
       currentLogIndex = 0;
       showCurrentLog();
     } else {
-      alert("No se encontraron trials en formato válido en el archivo.");
+      alert("No valid explanations found in the CSV.");
     }
   }
 
-  function showCurrentLog() {
+  async function showCurrentLog() {
     if (currentLogIndex >= logs.length) {
       document.getElementById('app').style.display = 'none';
       document.getElementById('done').style.display = 'block';
@@ -246,29 +244,88 @@
     }
 
     const log = logs[currentLogIndex];
-    document.getElementById('progressBadge').innerText = `Trial ${currentLogIndex + 1} de ${logs.length}`;
-    document.getElementById('trueClass').innerText = log.expected;
-    document.getElementById('isCorrect').innerText = log.correct;
+    
+    document.getElementById('progressBadge').innerText = `Trial ${currentLogIndex + 1} of ${logs.length}`;
+    document.getElementById('datasetName').innerText = log.dataset;
+    document.getElementById('modelName').innerText = log.sourceModel;
+    document.getElementById('promptType').innerText = log.promptType;
+    
+    const isCorrectEl = document.getElementById('isCorrect');
+    isCorrectEl.innerText = log.correct;
+    if (String(log.correct).trim().toLowerCase() === "true") {
+        isCorrectEl.className = "text-success fw-bold";
+    } else {
+        isCorrectEl.className = "text-danger fw-bold";
+    }
     
     let safeContent = log.content.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    document.getElementById('logContent').innerHTML = `<b>${log.header}</b><br><br>${safeContent}`;
+    document.getElementById('logContent').innerHTML = safeContent;
     
+    const imgEl = document.getElementById('queryImage');
+    const nameEl = document.getElementById('imageFilenameTag');
+    const loader = document.getElementById('imgLoader');
+    
+    imgEl.src = "";
+    nameEl.innerText = `HF API Index: ${log.queryIndex}`;
+    loader.classList.remove('d-none'); 
+
+    let hfConfig = HF_CONFIG[log.dataset.toLowerCase()];
+    
+    if (hfConfig && log.queryIndex) {
+        try {
+            const hfUrl = `https://datasets-server.huggingface.co/rows?dataset=${hfConfig.repo}&config=${hfConfig.config}&split=${hfConfig.split}&offset=${log.queryIndex}&length=1`;
+            
+            const response = await fetch(hfUrl);
+            if (!response.ok) throw new Error("HF API Failed");
+            
+            const data = await response.json();
+            const rowData = data.rows[0].row;
+            
+            if (rowData[hfConfig.imgCol] && rowData[hfConfig.imgCol].src) {
+                imgEl.src = rowData[hfConfig.imgCol].src;
+                nameEl.innerText = `Loaded from HuggingFace (Index: ${log.queryIndex})`;
+                loader.classList.add('d-none');
+                return; 
+            }
+        } catch (error) {
+            console.warn("HuggingFace fetch failed, trying local fallback.", error);
+        }
+    }
+
+    let fileObj = null;
+    for(let key in localImages) {
+        if(key.includes(String(log.queryIndex))) {
+            fileObj = localImages[key]; 
+            break;
+        }
+    }
+    
+    if (fileObj) {
+        imgEl.src = URL.createObjectURL(fileObj);
+        nameEl.innerText = `Local Fallback: ${fileObj.name}`;
+    } else {
+        nameEl.innerText = `⚠️ Image not found. (HF API Failed & No Local File)`;
+    }
+    
+    loader.classList.add('d-none');
     document.getElementById('evalForm').reset();
-    window.scrollTo(0, 0);
+    document.getElementById('logContent').scrollTo(0, 0);
   }
 
-  // Enviar a Google Sheets
-  function submitForm(e) {
+  // --- SUBMIT VIA FETCH API TO GOOGLE APPS SCRIPT ---
+  async function submitForm(e) {
     e.preventDefault();
     const btn = document.getElementById('submitBtn');
-    btn.disabled = true;
-    btn.innerText = "Guardando en la nube...";
+    btn.disabled = true; 
+    btn.innerText = "Saving to Database...";
     
     const log = logs[currentLogIndex];
     let payload = {
-      fileName: fileName,
-      trial: log.header,
-      expected: log.expected,
+      dataset: log.dataset,
+      promptType: log.promptType,
+      sourceModel: log.sourceModel,
+      queryIndex: log.queryIndex,
+      predicted: log.predicted,
       correct: log.correct,
       comments: document.getElementById('comentarios').value
     };
@@ -278,21 +335,40 @@
       payload[m.id] = selected ? selected.value : "";
     });
 
-    google.script.run
-      .withSuccessHandler(function() {
-        btn.disabled = false;
-        btn.innerText = "Guardar y Siguiente";
-        currentLogIndex++;
+    // -------------------------------------------------------------
+    // IMPORTANT: REPLACE THIS URL WITH YOUR GOOGLE APPS SCRIPT WEB APP URL
+    // -------------------------------------------------------------
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxc1duU12Pb9ahN0mOZogH5vcXmjgw2_F_qjRKfEYbPQwYb8v62w376r21pxz4MVp0wZw/exec";
+
+    try {
+      const response = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        // 'text/plain' is used to avoid CORS preflight issues with Google Apps Script
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8', 
+        },
+        body: JSON.stringify(payload)
+      });
+      
+      const result = await response.json();
+      
+      if (result.status === "success") {
+        btn.disabled = false; 
+        btn.innerText = "Save and Next Trial";
+        currentLogIndex++; 
         showCurrentLog();
-      })
-      .withFailureHandler(function(error) {
-        alert("Error al guardar: " + error.message);
-        btn.disabled = false;
-        btn.innerText = "Reintentar Guardar";
-      })
-      .saveEvaluation(payload);
+      } else {
+        throw new Error(result.message || "Unknown error saving to sheet");
+      }
+
+    } catch (error) {
+      alert("Connection Error: " + error.message);
+      btn.disabled = false; 
+      btn.innerText = "Retry Save";
+    }
   }
 
+  // Initialize
   renderForm();
 </script>
 </body>
