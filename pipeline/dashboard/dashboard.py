@@ -107,7 +107,7 @@ class RunDataStore:
         # Build trial lookup for cross-referencing from judge trials
         self._trial_lookup: Dict[str, Dict[str, str]] = {}
         for row in self.trial_rows:
-            key = f"{row['dataset']}_{row['prompt_type']}_{row['run_id']}_{row['query_index_within_episode']}"
+            key = f"{row['dataset']}_{row['prompt_type']}_{row.get('model', '')}_{row['run_id']}_{row['query_index_within_episode']}"
             self._trial_lookup[key] = row
 
         # Load Judge Results if they exist (supports both legacy flat layout
@@ -122,7 +122,8 @@ class RunDataStore:
                     j_rows = _read_csv_safe(judge_file)
                     for jr in j_rows:
                         query_idx = jr.get("query_index_within_episode") or jr.get("query_index", "")
-                        key = f"{jr['dataset']}_{jr['prompt_type']}_{jr['run_id']}_{query_idx}"
+                        source_model = jr.get("source_model", "")
+                        key = f"{jr['dataset']}_{jr['prompt_type']}_{source_model}_{jr['run_id']}_{query_idx}"
                         self.judge_data[key] = jr
                         jr["_judge_trial_id"] = str(len(self.judge_rows))
                         self.judge_rows.append(jr)
@@ -130,7 +131,8 @@ class RunDataStore:
         for idx, row in enumerate(self.trial_rows):
             row["_trial_id"] = str(idx)
             # Link judge data to trial row
-            key = f"{row['dataset']}_{row['prompt_type']}_{row['run_id']}_{row['query_index_within_episode']}"
+            model = row.get("model", "")
+            key = f"{row['dataset']}_{row['prompt_type']}_{model}_{row['run_id']}_{row['query_index_within_episode']}"
             if key in self.judge_data:
                 row["_judge_scores"] = self.judge_data[key]
 
@@ -205,13 +207,15 @@ class RunDataStore:
         output: List[Dict[str, Any]] = []
         for jr in self.judge_rows:
             query_idx = jr.get("query_index_within_episode", "")
-            trial_key = f"{jr.get('dataset', '')}_{jr.get('prompt_type', '')}_{jr.get('run_id', '')}_{query_idx}"
+            source_model = jr.get("source_model", "")
+            trial_key = f"{jr.get('dataset', '')}_{jr.get('prompt_type', '')}_{source_model}_{jr.get('run_id', '')}_{query_idx}"
             source = self._trial_lookup.get(trial_key, {})
             output.append(
                 {
                     "judge_trial_id": jr["_judge_trial_id"],
                     "judge_model": jr.get("judge_model", ""),
-                    "source_model": jr.get("source_model", ""),
+                    "judge_mode": jr.get("judge_mode", ""),
+                    "source_model": source_model,
                     "dataset": jr.get("dataset", ""),
                     "prompt_type": jr.get("prompt_type", ""),
                     "config_n": jr.get("config_n", ""),
@@ -235,7 +239,8 @@ class RunDataStore:
         run_id = jr.get("run_id", "")
         query_idx = jr.get("query_index_within_episode", "")
 
-        trial_key = f"{dataset_name}_{prompt_type}_{run_id}_{query_idx}"
+        source_model = jr.get("source_model", "")
+        trial_key = f"{dataset_name}_{prompt_type}_{source_model}_{run_id}_{query_idx}"
         source = self._trial_lookup.get(trial_key, {})
         query_dataset_index = source.get("query_dataset_index", "")
         class_id_map = _parse_json_field(source.get("class_id_map", ""), {})
@@ -243,19 +248,21 @@ class RunDataStore:
         raw_preview = jr.get("judge_message_preview", "")
         judge_messages_preview = _parse_json_field(raw_preview, [])
 
-        # Build ordered image list for local-judge PIL parts: [support…, query].
-        # support_indices comes from the source classifier trial row.
+        # Build ordered image list matching what was actually sent to the judge.
+        # num_support_images_shown=0 for query_only, >0 for query_and_support.
         support_indices_raw = _parse_json_field(source.get("support_indices", ""), [])
+        num_support_shown = int(jr.get("num_support_images_shown", 0) or 0)
         pil_image_refs: List[tuple] = [
-            ("support", int(idx)) for idx in support_indices_raw
+            ("support", int(idx)) for idx in support_indices_raw[:num_support_shown]
         ]
         if query_dataset_index:
             pil_image_refs.append(("query", int(query_dataset_index)))
         pil_cursor = 0
 
-        # Replace image parts with real API URLs.
+        # Replace image placeholders with real API URLs.
         # Handles both OpenRouter-style {"type": "image_url"} and local-judge
         # {"type": "image", "format": "pil"} placeholders.
+        # Both advance the same pil_cursor so order is preserved.
         browser_judge_messages: List[Dict[str, Any]] = []
         for msg in judge_messages_preview:
             content = msg.get("content")
@@ -264,15 +271,17 @@ class RunDataStore:
                 continue
             new_parts: List[Dict[str, Any]] = []
             for part in (content or []):
-                if part.get("type") == "image_url" and query_dataset_index:
+                if part.get("type") == "image_url" and pil_cursor < len(pil_image_refs):
+                    kind, idx = pil_image_refs[pil_cursor]
+                    pil_cursor += 1
                     new_parts.append(
                         {
                             "type": "image_ref",
                             "image_ref": {
-                                "kind": "query",
-                                "dataset_index": int(query_dataset_index),
+                                "kind": kind,
+                                "dataset_index": idx,
                                 "dataset": dataset_name,
-                                "url": f"/api/image?dataset={dataset_name}&index={query_dataset_index}",
+                                "url": f"/api/image?dataset={dataset_name}&index={idx}",
                             },
                         }
                     )
@@ -462,6 +471,10 @@ def _dashboard_html() -> str:
               <div class="filter-full">
                 <label for="sourceModelFilter">Source Model</label>
                 <select id="sourceModelFilter"></select>
+              </div>
+              <div class="filter-full">
+                <label for="judgeModeFilter">Judge Mode</label>
+                <select id="judgeModeFilter"></select>
               </div>
               <div>
                 <label for="judgeDatasetFilter">Dataset</label>
@@ -729,13 +742,18 @@ def _dashboard_html() -> str:
 
       const judgeModels  = ['all', ...new Set(allJudgeTrials.map(t => t.judge_model).filter(Boolean))];
       const srcModels    = ['all', ...new Set(allJudgeTrials.map(t => t.source_model).filter(Boolean))];
+      const judgeModes   = ['all', ...new Set(allJudgeTrials.map(t => t.judge_mode).filter(Boolean))];
       const datasets     = ['all', ...new Set(allJudgeTrials.map(t => t.dataset))];
       const prompts      = ['all', ...new Set(allJudgeTrials.map(t => t.prompt_type))];
+
+      const MODE_LABELS = { 'query_only': 'Query only', 'query_and_support': 'Query + support' };
 
       document.getElementById('judgeModelFilter').innerHTML =
         judgeModels.map(v => `<option value="${v}">${v === 'all' ? 'All judge models' : escapeHtml(labelModel(v))}</option>`).join('');
       document.getElementById('sourceModelFilter').innerHTML =
         srcModels.map(v => `<option value="${v}">${v === 'all' ? 'All source models' : escapeHtml(labelModel(v))}</option>`).join('');
+      document.getElementById('judgeModeFilter').innerHTML =
+        judgeModes.map(v => `<option value="${v}">${v === 'all' ? 'Both modes' : escapeHtml(MODE_LABELS[v] || v)}</option>`).join('');
       document.getElementById('judgeDatasetFilter').innerHTML =
         datasets.map(v => `<option value="${v}">${v === 'all' ? 'All datasets' : escapeHtml(labelDataset(v))}</option>`).join('');
       document.getElementById('judgePromptFilter').innerHTML =
@@ -743,6 +761,7 @@ def _dashboard_html() -> str:
 
       document.getElementById('judgeModelFilter').addEventListener('change', renderJudgeList);
       document.getElementById('sourceModelFilter').addEventListener('change', renderJudgeList);
+      document.getElementById('judgeModeFilter').addEventListener('change', renderJudgeList);
       document.getElementById('judgeDatasetFilter').addEventListener('change', renderJudgeList);
       document.getElementById('judgePromptFilter').addEventListener('change', renderJudgeList);
       renderJudgeList();
@@ -751,12 +770,14 @@ def _dashboard_html() -> str:
     function renderJudgeList() {
       const judgeModelF  = document.getElementById('judgeModelFilter').value;
       const srcModelF    = document.getElementById('sourceModelFilter').value;
+      const judgeModeF   = document.getElementById('judgeModeFilter').value;
       const datasetF     = document.getElementById('judgeDatasetFilter').value;
       const promptF      = document.getElementById('judgePromptFilter').value;
 
       const filtered = allJudgeTrials.filter(t =>
         (judgeModelF === 'all' || t.judge_model   === judgeModelF) &&
         (srcModelF   === 'all' || t.source_model  === srcModelF)   &&
+        (judgeModeF  === 'all' || t.judge_mode    === judgeModeF)  &&
         (datasetF    === 'all' || t.dataset        === datasetF)   &&
         (promptF     === 'all' || t.prompt_type    === promptF)
       );
@@ -770,7 +791,7 @@ def _dashboard_html() -> str:
             <strong>${escapeHtml(labelPrompt(t.prompt_type))}</strong>
             ${t.overall_score ? `<span class="pill" style="background:${scoreColor};">Score: ${escapeHtml(t.overall_score)}</span>` : ''}
           </div>
-          <div style="font-size:12px;color:#5a4e3a;">${escapeHtml(labelDataset(t.dataset))} &nbsp;·&nbsp; ${escapeHtml(labelModel(t.source_model))}</div>
+          <div style="font-size:12px;color:#5a4e3a;">${escapeHtml(labelDataset(t.dataset))} &nbsp;·&nbsp; ${escapeHtml(labelModel(t.source_model))} &nbsp;·&nbsp; ${escapeHtml(t.judge_mode || '')}</div>
           <div style="font-size:12px;">run ${escapeHtml(t.run_id)} &nbsp;·&nbsp; query ${escapeHtml(t.query_index_within_episode)}</div>
           ${t.source_correct !== '' ? `<div class="${t.source_correct === '1' ? 'ok' : 'bad'}" style="font-size:12px;">${t.source_correct === '1' ? '✓ classifier correct' : '✗ classifier incorrect'}</div>` : ''}
           ${t.judge_parse_error ? `<div class="warn" style="font-size:11px;">⚠ parse error</div>` : ''}
@@ -828,6 +849,7 @@ def _dashboard_html() -> str:
           <div class="section-body">
             <table>
               <tr><th>Judge Model</th><td>${escapeHtml(meta.judge_model || '')}</td></tr>
+              <tr><th>Judge Mode</th><td>${escapeHtml(meta.judge_mode || '')}</td></tr>
               <tr><th>Source Model</th><td>${escapeHtml(meta.source_model || '')}</td></tr>
               <tr><th>Condition</th><td>${escapeHtml(labelPrompt(meta.prompt_type || ''))}</td></tr>
               <tr><th>Dataset</th><td>${escapeHtml(labelDataset(meta.dataset || ''))}</td></tr>
