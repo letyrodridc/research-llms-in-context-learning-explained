@@ -111,6 +111,14 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Ask the judge to include a brief reasoning for each dimension score (debug mode).",
     )
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help=(
+            "Skip trials already present in an existing judge_results.csv and append "
+            "new results to it instead of starting a fresh output directory."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -291,6 +299,41 @@ def _build_support_labels(row: Dict[str, str], dataset: Any, class_names: Any) -
 # --- Main loop ---------------------------------------------------------------
 
 
+def _trial_key(row: Dict[str, str]) -> tuple:
+    return (
+        row["_source_run_name"],
+        row.get("model", row.get("source_model", "")),
+        row["dataset"],
+        row["prompt_type"],
+        row["config_n"],
+        row["config_k"],
+        row["config_q"],
+        row["run_id"],
+        row["query_index_within_episode"],
+    )
+
+
+def _load_done_trial_keys(judge_results_csv: Path) -> frozenset:
+    """Return the set of trial keys already written to an existing judge_results.csv."""
+    if not judge_results_csv.exists():
+        return frozenset()
+    done: set = set()
+    with judge_results_csv.open("r", encoding="utf-8", newline="") as fh:
+        for row in csv.DictReader(fh):
+            done.add((
+                row.get("source_run_name", ""),
+                row.get("source_model", ""),
+                row.get("dataset", ""),
+                row.get("prompt_type", ""),
+                row.get("config_n", ""),
+                row.get("config_k", ""),
+                row.get("config_q", ""),
+                row.get("run_id", ""),
+                row.get("query_index_within_episode", ""),
+            ))
+    return frozenset(done)
+
+
 def main() -> None:
     args = parse_args()
     from ..utils.setup_utils import load_datasets, load_model_globally, set_seed
@@ -309,6 +352,25 @@ def main() -> None:
     if not selected_rows:
         raise ValueError("No source trials matched the requested filters.")
 
+    judge_model_slug = f"{slugify(args.model)}-local-{args.judge_mode}"
+
+    if args.resume:
+        done_keys: frozenset = frozenset()
+        for run_dir in source_run_dirs:
+            base = (
+                output_root / run_dir.name / judge_model_slug
+                if output_root is not None
+                else run_dir / "judge_outputs" / judge_model_slug
+            )
+            done_keys |= _load_done_trial_keys(base / "judge_results.csv")
+        before = len(selected_rows)
+        selected_rows = [r for r in selected_rows if _trial_key(r) not in done_keys]
+        skipped = before - len(selected_rows)
+        print(f"[+] Resume: {skipped} trials skipped (already judged), {len(selected_rows)} remaining.")
+        if not selected_rows:
+            print("[+] All trials already judged — nothing to do.")
+            return
+
     print(
         f"[+] Loading judge model `{args.model}` "
         f"(quantization={args.quantization}, mode={args.judge_mode})..."
@@ -316,7 +378,6 @@ def main() -> None:
     model, processor = load_model_globally(args.model, quantization=args.quantization)
 
     run_timestamp = timestamp_now()
-    judge_model_slug = f"{slugify(args.model)}-local-{args.judge_mode}"
 
     config_snapshot = {
         "run_timestamp": run_timestamp,
@@ -382,18 +443,30 @@ def main() -> None:
                 base_judge_dir = output_root / source_run_dir.name / judge_model_slug
             else:
                 base_judge_dir = source_run_dir / "judge_outputs" / judge_model_slug
-            if (base_judge_dir / "judge_results.csv").exists():
-                judge_dir = base_judge_dir.parent / f"{judge_model_slug}_{run_timestamp}"
-            else:
+            existing_csv = base_judge_dir / "judge_results.csv"
+            if args.resume and existing_csv.exists():
                 judge_dir = base_judge_dir
-            judge_dir.mkdir(parents=True, exist_ok=True)
-            (judge_dir / "config.json").write_text(json_dumps(config_snapshot) + "\n", encoding="utf-8")
-            (judge_dir / "judge_prompt_library_snapshot.json").write_text(
-                json_dumps(export_judge_prompt_library_snapshot(explain_scores=args.explain_scores)) + "\n",
-                encoding="utf-8",
-            )
-            csv_h, csv_w = initialize_csv_writer(judge_dir / "judge_results.csv", fieldnames)
-            jsonl_h = (judge_dir / "judge_logs.jsonl").open("w", encoding="utf-8")
+                judge_dir.mkdir(parents=True, exist_ok=True)
+                resume_config = {**config_snapshot, "resume_timestamp": run_timestamp}
+                (judge_dir / f"config_resume_{run_timestamp}.json").write_text(
+                    json_dumps(resume_config) + "\n", encoding="utf-8"
+                )
+                csv_h = existing_csv.open("a", encoding="utf-8", newline="")
+                csv_w = csv.DictWriter(csv_h, fieldnames=fieldnames)
+                jsonl_h = (judge_dir / "judge_logs.jsonl").open("a", encoding="utf-8")
+            else:
+                if existing_csv.exists():
+                    judge_dir = base_judge_dir.parent / f"{judge_model_slug}_{run_timestamp}"
+                else:
+                    judge_dir = base_judge_dir
+                judge_dir.mkdir(parents=True, exist_ok=True)
+                (judge_dir / "config.json").write_text(json_dumps(config_snapshot) + "\n", encoding="utf-8")
+                (judge_dir / "judge_prompt_library_snapshot.json").write_text(
+                    json_dumps(export_judge_prompt_library_snapshot(explain_scores=args.explain_scores)) + "\n",
+                    encoding="utf-8",
+                )
+                csv_h, csv_w = initialize_csv_writer(judge_dir / "judge_results.csv", fieldnames)
+                jsonl_h = (judge_dir / "judge_logs.jsonl").open("w", encoding="utf-8")
             output_handles[source_run_dir] = (csv_h, csv_w, jsonl_h)
         return output_handles[source_run_dir]
 

@@ -47,6 +47,9 @@
 #   # Smoke test (limitar a 5 trials por tarea):
 #   sbatch --array=0 slurm/mn5_local_judge.sh <RUN_DIR> 5
 #
+#   # Reanudar una tarea que hizo timeout (ej. job 6 = flowers×axioms×query_only):
+#   sbatch --array=6 slurm/mn5_local_judge.sh <RUN_DIR> "" resume
+#
 # NOTA: Para resultados de inferencia LOCAL (pipeline/local_runs/) los CSV ya
 # están divididos por dataset/prompt_type. Pasa el directorio padre como
 # RUN_DIR o múltiples dirs separados por espacio entre comillas:
@@ -57,6 +60,7 @@ set -euo pipefail
 
 RUN_DIR="${1:?ERROR: pasa el directorio del experimento como primer argumento}"
 LIMIT="${2:-}"    # segundo arg opcional: cap de trials por tarea (útil para smoke)
+RESUME="${3:-}"   # tercer arg opcional: cualquier valor no vacío activa --resume
 
 # --- Mapa dataset × prompt_type × modo según SLURM_ARRAY_TASK_ID -------------
 # task_id = dataset_idx*8 + prompt_idx*2 + mode_idx
@@ -95,10 +99,21 @@ echo "[+] Run dir(s)   : ${RUN_DIR}"
 echo "[+] Limit        : ${LIMIT:-<full>}"
 nvidia-smi --query-gpu=index,name,memory.total,memory.free --format=csv,noheader || true
 
+# --- Presupuesto de tokens: axioms_ontology_v2 requiere más margen -----------
+# Los axiomas DL generan cadenas de razonamiento largas en el modelo thinking;
+# 32768 evita truncaciones y los loops que causan parse_error (~28% sin este fix).
+MAX_NEW_TOKENS=16384
+if [[ "${PROMPT_TYPE}" == "axioms_ontology_v2" ]]; then
+    MAX_NEW_TOKENS=32768
+fi
+
 # --- Construir args extras ---------------------------------------------------
 EXTRA_ARGS=()
 if [[ -n "${LIMIT}" ]]; then
     EXTRA_ARGS+=("--limit" "${LIMIT}")
+fi
+if [[ -n "${RESUME}" ]]; then
+    EXTRA_ARGS+=("--resume")
 fi
 
 # RUN_DIR puede contener múltiples dirs separados por espacios
@@ -110,7 +125,7 @@ python execute_local_judge.py \
     --judge-mode "${JUDGE_MODE}" \
     --model qwen3-vl-32b-thinking \
     --quantization nf4 \
-    --max-new-tokens 16384 \
+    --max-new-tokens "${MAX_NEW_TOKENS}" \
     --repetition-penalty 1.05 \
     --debug \
     "${EXTRA_ARGS[@]}"

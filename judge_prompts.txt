@@ -172,6 +172,8 @@ Expected explanation format:
 - The <abox> block should list only the specific property assertions observable in the Query image (e.g., hasVisualFeature(Query, [FeatureObserved])).
 - The <dl_explanation> block should list only the exact TBox rules fired by the ABox assertions — no natural language, only the fired rules and the resulting class.
 - All statements must be grounded strictly in the provided examples; no hidden features, external knowledge, or speculation.
+
+IMPORTANT — reasoning budget: analyse each scoring dimension in at most 4-5 sentences, assign a score, then move immediately to the next dimension. Once you have scored all nine dimensions, write the <evaluation> XML block immediately. Do not re-read, re-examine, or reconsider any dimension after scoring it.
 """
 
 JUDGE_EXPLAIN_ADDON = """

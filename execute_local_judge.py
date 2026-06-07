@@ -58,6 +58,11 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Include per-dimension reasoning in judge output (debug mode).",
     )
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="Skip already-judged trials and append to the existing judge_results.csv.",
+    )
     return parser.parse_args()
 
 
@@ -94,6 +99,8 @@ def main() -> None:
         cmd.append("--debug")
     if args.explain_scores:
         cmd.append("--explain-scores")
+    if args.resume:
+        cmd.append("--resume")
 
     sys.exit(subprocess.run(cmd, check=False).returncode)
 
