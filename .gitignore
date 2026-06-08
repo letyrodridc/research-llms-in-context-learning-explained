@@ -23,4 +23,7 @@ condaenv.*.requirements.txt
 *.sh
 
 # Experiment run outputs
-pipeline/openrouter_runs/
+pipeline/openrouter_runs/*
+!pipeline/openrouter_runs/full_experiment_single__20260427_213833/
+!pipeline/openrouter_runs/full_experiment_single__20260427_213833/**
+pipeline/openrouter_runs/full_experiment_single__20260427_213833/trial_logs.jsonl
