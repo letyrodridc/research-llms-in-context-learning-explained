@@ -31,10 +31,11 @@
 
   /* ── support images ── */
   .support-grid { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 8px; }
-  .support-thumb { width: 80px; text-align: center; }
-  .support-thumb img { width: 80px; height: 80px; object-fit: contain;
+  .support-thumb { width: 100px; text-align: center; }
+  .support-thumb img { width: 100px; height: 100px; object-fit: contain;
                        border-radius: 6px; background: #e9ecef; }
-  .support-thumb small { font-size: 0.7rem; color: #666; display: block; }
+  .support-thumb small { font-size: 0.68rem; color: #555; display: block;
+                         word-break: break-word; line-height: 1.2; }
 
   /* ── rubric form ── */
   .metric-row { border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 10px; }
@@ -91,7 +92,7 @@
     </div>
     <div class="d-flex gap-2">
       <button class="btn btn-sm btn-outline-success" id="exportBtn" onclick="exportCSV()">
-        <i class="bi bi-download me-1"></i>Exportar CSV
+        <i class="bi bi-download me-1"></i>Export CSV
       </button>
     </div>
   </div>
@@ -136,14 +137,12 @@
           </h6>
           <pre class="exp-box" id="expBox"></pre>
 
-          <details class="mt-3">
-            <summary class="text-muted" style="cursor:pointer;font-size:.9rem;">
-              <i class="bi bi-images me-1"></i>Ver support images
-            </summary>
-            <div class="support-grid" id="supportGrid">
-              <span class="text-muted small">Loading…</span>
-            </div>
-          </details>
+          <div class="mt-3">
+            <p class="text-muted mb-1" style="font-size:.9rem;">
+              <i class="bi bi-images me-1"></i>Support images
+            </p>
+            <div class="support-grid" id="supportGrid"></div>
+          </div>
         </div>
       </div>
 
@@ -158,14 +157,14 @@
 
             <div class="mb-3">
               <label class="form-label fw-bold small text-secondary">
-                Notas adicionales (opcional):
+                Additional notes (optional):
               </label>
               <textarea class="form-control form-control-sm" id="notesField"
-                        rows="2" placeholder="Observaciones libres…"></textarea>
+                        rows="2" placeholder="Free observations…"></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary w-100 fw-bold" id="saveBtn">
-              <i class="bi bi-check-lg me-1"></i>Guardar y Siguiente
+              <i class="bi bi-check-lg me-1"></i>Save and Next
             </button>
             <div id="saveMsg" class="text-center small mt-2 text-success fw-bold" style="display:none"></div>
           </form>
@@ -178,14 +177,14 @@
   <!-- Bottom navigation -->
   <div class="nav-bar">
     <button class="btn btn-outline-secondary btn-sm" onclick="navigate(-1)">
-      <i class="bi bi-arrow-left"></i> Anterior
+      <i class="bi bi-arrow-left"></i> Previous
     </button>
     <select id="itemSelect" class="form-select form-select-sm"
             style="width:auto;max-width:320px;font-size:.82rem;"
             onchange="loadItem(parseInt(this.value))">
     </select>
     <button class="btn btn-outline-secondary btn-sm" onclick="navigate(1)">
-      Siguiente <i class="bi bi-arrow-right"></i>
+      Next <i class="bi bi-arrow-right"></i>
     </button>
   </div>
 
@@ -196,13 +195,13 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content text-center p-4">
       <i class="bi bi-check-circle-fill text-success" style="font-size:4rem"></i>
-      <h4 class="mt-3 fw-bold">¡Anotación completa!</h4>
-      <p class="text-muted">Has evaluado todos los items. Descarga tu CSV y haz git push.</p>
+      <h4 class="mt-3 fw-bold">Annotation complete!</h4>
+      <p class="text-muted">You have evaluated all items. Download your CSV and git push.</p>
       <button class="btn btn-success btn-lg mt-2" onclick="exportCSV()">
-        <i class="bi bi-download me-1"></i>Descargar CSV final
+        <i class="bi bi-download me-1"></i>Download final CSV
       </button>
       <button class="btn btn-outline-secondary mt-2" data-bs-dismiss="modal">
-        Revisar anotaciones
+        Review annotations
       </button>
     </div>
   </div>
@@ -214,103 +213,103 @@
 const METRICS = [
   {
     id: "human_LD", name: "1. Local Discriminativeness (LD)",
-    short: "¿Destaca features patognomónicas?",
+    short: "Does it highlight pathognomonic features?",
     rubric: `<b>Local Discriminativeness (LD)</b><br>
-Evalúa si la explicación destaca features que distinguen la clase predicha de las demás opciones.<br><br>
-<b>1</b> — No discriminativa: 0% features patognomónicas<br>
-<b>2</b> — Débilmente discriminativa: 1-33% features patognomónicas<br>
-<b>3</b> — Moderadamente discriminativa: 34-66% features patognomónicas<br>
-<b>4</b> — Fuertemente discriminativa: 67-99% features patognomónicas<br>
-<b>5</b> — Perfectamente discriminativa: 100% features patognomónicas<br><br>
-<i>Features patognomónicas = features que distinguen la clase predicha de las otras opciones del episodio.</i>`
+Assesses whether the explanation highlights features that distinguish the predicted class from the other options in the episode.<br><br>
+<b>1</b> — Non-discriminative: 0% pathognomonic features<br>
+<b>2</b> — Weakly discriminative: 1–33% pathognomonic features<br>
+<b>3</b> — Moderately discriminative: 34–66% pathognomonic features<br>
+<b>4</b> — Strongly discriminative: 67–99% pathognomonic features<br>
+<b>5</b> — Perfectly discriminative: 100% pathognomonic features<br><br>
+<i>Pathognomonic features = features that distinguish the predicted class from the other episode options.</i>`
   },
   {
     id: "human_TG", name: "2. Textual Groundedness (TG)",
-    short: "¿Captura todos los conceptos relevantes de la imagen?",
+    short: "Does it capture all relevant concepts from the image?",
     rubric: `<b>Textual Groundedness (TG)</b><br>
-Evalúa en qué medida el texto captura todos los objetos y atributos relevantes presentes en la imagen.<br><br>
-<b>1</b> — No grounded: omisiones severas de conceptos clave de la imagen<br>
-<b>2</b> — Débilmente grounded: omisiones mayores<br>
-<b>3</b> — Moderadamente grounded: pocas omisiones<br>
-<b>4</b> — Fuertemente grounded: una omisión<br>
-<b>5</b> — Perfectamente grounded: cero omisiones de conceptos relevantes`
+Assesses the degree to which the text captures all relevant objects and attributes present in the image.<br><br>
+<b>1</b> — Not grounded: severe omissions of key image concepts<br>
+<b>2</b> — Weakly grounded: major omissions<br>
+<b>3</b> — Moderately grounded: few omissions<br>
+<b>4</b> — Strongly grounded: one omission<br>
+<b>5</b> — Perfectly grounded: zero omissions of relevant concepts`
   },
   {
     id: "human_HF", name: "3. Hallucination-Free (HF)",
-    short: "¿Sin alucinaciones visuales?",
+    short: "No visual hallucinations?",
     rubric: `<b>Hallucination-Free (HF)</b><br>
-Penaliza la invención de features que no existen en la imagen.<br><br>
-<b>1</b> — Alucinaciones severas: múltiples claims inventados<br>
-<b>2</b> — Alucinaciones mayores<br>
-<b>3</b> — Pocas alucinaciones<br>
-<b>4</b> — Una alucinación<br>
-<b>5</b> — Sin alucinaciones: todos los claims son visualmente verificables en la imagen`
+Penalises the invention of features that do not exist in the image.<br><br>
+<b>1</b> — Severe hallucinations: multiple invented claims<br>
+<b>2</b> — Major hallucinations<br>
+<b>3</b> — Few hallucinations<br>
+<b>4</b> — One hallucination<br>
+<b>5</b> — Hallucination-free: all claims are visually verifiable in the image`
   },
   {
     id: "human_IF", name: "4. Instruction Following (IF)",
-    short: "¿Siguió el formato/estructura solicitado?",
+    short: "Did it follow the requested format/structure?",
     rubric: `<b>Instruction Following (IF)</b><br>
-Adherencia a la estructura y formato explícitamente solicitados en el prompt.<br><br>
-<b>1</b> — Sin adherencia: 0% de instrucciones seguidas<br>
-<b>2</b> — Adherencia débil: 1-33%<br>
-<b>3</b> — Adherencia parcial: 34-66%<br>
-<b>4</b> — Adherencia fuerte: 67-99%<br>
-<b>5</b> — Adherencia perfecta: 100% del formato y estructura requeridos`
+Adherence to the structure and format explicitly requested in the prompt.<br><br>
+<b>1</b> — No adherence: 0% of instructions followed<br>
+<b>2</b> — Weak adherence: 1–33%<br>
+<b>3</b> — Partial adherence: 34–66%<br>
+<b>4</b> — Strong adherence: 67–99%<br>
+<b>5</b> — Perfect adherence: 100% of required format and structure`
   },
   {
     id: "human_CC", name: "5. Concept Counting (CC)",
-    short: "¿Cuenta correctamente los atributos?",
+    short: "Does it count attributes correctly?",
     rubric: `<b>Concept Counting (CC)</b><br>
-Evalúa la precisión cuantitativa: si el número de objetos/atributos mencionados es correcto.<br><br>
-<b>1</b> — 0% preciso en conteo<br>
-<b>2</b> — 1-33% preciso<br>
-<b>3</b> — 34-66% preciso<br>
-<b>4</b> — 67-99% preciso<br>
-<b>5</b> — 100% preciso en conteo de conceptos`
+Evaluates quantitative accuracy: whether the number of objects/attributes mentioned is correct.<br><br>
+<b>1</b> — 0% accurate in counting<br>
+<b>2</b> — 1–33% accurate<br>
+<b>3</b> — 34–66% accurate<br>
+<b>4</b> — 67–99% accurate<br>
+<b>5</b> — 100% accurate in concept counting`
   },
   {
     id: "human_CP", name: "6. Comprehensibility (CP)",
-    short: "¿Es simple y fácil de leer?",
+    short: "Is it simple and easy to read?",
     rubric: `<b>Comprehensibility (CP)</b><br>
-Evalúa la fluidez de lectura y accesibilidad para el usuario humano.<br><br>
-<b>1</b> — Texto altamente confuso o ilegible<br>
-<b>2</b> — Difícil de seguir<br>
-<b>3</b> — Comprensible con esfuerzo<br>
-<b>4</b> — Claro y fluido<br>
-<b>5</b> — Perfectamente claro y accesible`
+Evaluates reading fluency and accessibility for the human user.<br><br>
+<b>1</b> — Highly confusing or unreadable text<br>
+<b>2</b> — Difficult to follow<br>
+<b>3</b> — Understandable with effort<br>
+<b>4</b> — Clear and fluent<br>
+<b>5</b> — Perfectly clear and accessible`
   },
   {
     id: "human_Cn", name: "7. Conciseness (Cn)",
-    short: "¿Concisa? (sin redundancias)",
+    short: "Concise? (no redundancies)",
     rubric: `<b>Conciseness (Cn)</b><br>
-Penaliza relleno, repeticiones cíclicas o respuestas innecesariamente largas.<br><br>
-<b>1</b> — Altamente redundante o verboso<br>
-<b>2</b> — Bastante redundante<br>
-<b>3</b> — Alguna redundancia<br>
-<b>4</b> — Eficiente con mínima redundancia<br>
-<b>5</b> — Máxima eficiencia, sin palabras de relleno`
+Penalises filler, cyclic repetitions, or unnecessarily long responses.<br><br>
+<b>1</b> — Highly redundant or verbose<br>
+<b>2</b> — Quite redundant<br>
+<b>3</b> — Some redundancy<br>
+<b>4</b> — Efficient with minimal redundancy<br>
+<b>5</b> — Maximum efficiency, no filler words`
   },
   {
     id: "human_S", name: "8. Specificity (S)",
-    short: "¿Detalles específicos del sujeto?",
+    short: "Specific details about the subject?",
     rubric: `<b>Specificity (S)</b><br>
-Penaliza descripciones vagas (ej. "es un objeto", "tiene color").<br><br>
-<b>1</b> — Altamente vaga, sin detalles concretos<br>
-<b>2</b> — Pocas especificidades<br>
-<b>3</b> — Moderadamente específica<br>
-<b>4</b> — Bastante específica<br>
-<b>5</b> — 100% específica, con detalles concretos y precisos`
+Penalises vague descriptions (e.g. "it is an object", "it has colour").<br><br>
+<b>1</b> — Highly vague, no concrete details<br>
+<b>2</b> — Few specifics<br>
+<b>3</b> — Moderately specific<br>
+<b>4</b> — Quite specific<br>
+<b>5</b> — 100% specific, with concrete and precise details`
   },
   {
     id: "human_LC", name: "9. Logical Coherence (LC)",
-    short: "¿Conexión lógica válida entre axiomas?",
+    short: "Valid logical connection between axioms?",
     rubric: `<b>Logical Coherence (LC)</b><br>
-Evalúa si los axiomas/razonamientos forman una deducción válida sin contradicciones.<br><br>
-<b>1</b> — Contradicciones lógicas evidentes<br>
-<b>2</b> — Incoherencias mayores<br>
-<b>3</b> — Coherente con algunas inconsistencias<br>
-<b>4</b> — Mayoritariamente coherente<br>
-<b>5</b> — Deducción formal impecable, sin contradicciones`
+Evaluates whether the axioms/reasoning form a valid deduction without contradictions.<br><br>
+<b>1</b> — Evident logical contradictions<br>
+<b>2</b> — Major incoherencies<br>
+<b>3</b> — Coherent with some inconsistencies<br>
+<b>4</b> — Mostly coherent<br>
+<b>5</b> — Flawless formal deduction, no contradictions`
   },
 ];
 
@@ -363,11 +362,10 @@ function buildMetricsForm() {
       <div class="d-flex align-items-center justify-content-between">
         <span class="metric-title">${m.name}</span>
         <button type="button" class="btn btn-link btn-sm p-0 text-info"
-                onclick="toggleRubric('rubric_${m.id}')" title="Ver rúbrica">
+                onclick="toggleRubric('rubric_${m.id}')" title="View rubric">
           <i class="bi bi-info-circle"></i>
         </button>
       </div>
-      <small class="text-muted d-block mb-1">${m.short}</small>
       <div class="radio-group">
         ${[1,2,3,4,5].map(v => `
           <input type="radio" name="${m.id}" id="${m.id}_${v}" value="${v}" required>
@@ -400,10 +398,10 @@ async function loadItem(idx) {
   const corrBadge = document.getElementById("correctBadge");
   if (data.correct) {
     corrBadge.className = "badge badge-correct";
-    corrBadge.innerHTML = '<i class="bi bi-check-lg me-1"></i>Correcto';
+    corrBadge.innerHTML = '<i class="bi bi-check-lg me-1"></i>Correct';
   } else {
     corrBadge.className = "badge badge-incorrect";
-    corrBadge.innerHTML = '<i class="bi bi-x-lg me-1"></i>Incorrecto';
+    corrBadge.innerHTML = '<i class="bi bi-x-lg me-1"></i>Incorrect';
   }
 
   document.getElementById("metaCondition").textContent = `${data.condition} — ${data.prompt_type}`;
@@ -426,15 +424,22 @@ async function loadItem(idx) {
   expBox.textContent = data.explanation || "(no explanation text found)";
   expBox.scrollTop = 0;
 
-  // Support images (lazy — only when <details> is opened)
+  // Support images — rendered immediately
   const grid = document.getElementById("supportGrid");
-  grid.innerHTML = `<span class="text-muted small">Click "Ver support images" to load…</span>`;
-  grid._loaded = false;
-  grid._itemIdx = idx;
-  grid._nSupport = data.n_support;
-
-  document.querySelector("details").open = false;
-  document.querySelector("details").addEventListener("toggle", onSupportToggle, { once: true });
+  grid.innerHTML = "";
+  const supportInfo = data.support_info || [];
+  for (let k = 0; k < data.n_support; k++) {
+    const meta = supportInfo[k] || {};
+    const label = meta.class_name
+      ? `[${meta.class_id}] ${meta.class_name}`
+      : `[${meta.class_id ?? k}]`;
+    const wrap = document.createElement("div");
+    wrap.className = "support-thumb";
+    wrap.innerHTML = `<img src="/api/image/support/${idx}/${k}?t=${Date.now()}"
+                          alt="${label}" loading="lazy">
+                      <small title="${label}">${label}</small>`;
+    grid.appendChild(wrap);
+  }
 
   // Pre-fill form if already annotated
   const existing = data.existing_annotation;
@@ -455,29 +460,12 @@ async function loadItem(idx) {
   syncItemSelect();
 }
 
-function onSupportToggle(e) {
-  if (!e.target.open) return;
-  const grid = document.getElementById("supportGrid");
-  if (grid._loaded) return;
-  grid._loaded = true;
-  const idx = grid._itemIdx;
-  const n   = grid._nSupport;
-  grid.innerHTML = "";
-  for (let k = 0; k < n; k++) {
-    const wrap = document.createElement("div");
-    wrap.className = "support-thumb";
-    wrap.innerHTML = `<img src="/api/image/support/${idx}/${k}?t=${Date.now()}"
-                          alt="support ${k+1}" loading="lazy">
-                      <small>S${k+1}</small>`;
-    grid.appendChild(wrap);
-  }
-}
 
 /* ── save ─────────────────────────────────────────────────────────────── */
 async function saveAndNext() {
   const btn = document.getElementById("saveBtn");
   btn.disabled = true;
-  btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Guardando…';
+  btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Saving…';
 
   // Collect form values
   const data = await fetch(`/api/item/${currentIdx}`).then(r => r.json());
@@ -492,8 +480,8 @@ async function saveAndNext() {
 
   if (!allFilled) {
     btn.disabled = false;
-    btn.innerHTML = '<i class="bi bi-check-lg me-1"></i>Guardar y Siguiente';
-    alert("Por favor puntúa todas las 9 métricas antes de guardar.");
+    btn.innerHTML = '<i class="bi bi-check-lg me-1"></i>Save and Next';
+    alert("Please rate all 9 metrics before saving.");
     return;
   }
 
@@ -504,9 +492,9 @@ async function saveAndNext() {
   });
 
   if (!resp.ok) {
-    alert("Error al guardar. Inténtalo de nuevo.");
+    alert("Save failed. Please try again.");
     btn.disabled = false;
-    btn.innerHTML = '<i class="bi bi-check-lg me-1"></i>Guardar y Siguiente';
+    btn.innerHTML = '<i class="bi bi-check-lg me-1"></i>Save and Next';
     return;
   }
 
@@ -514,10 +502,10 @@ async function saveAndNext() {
   updateProgressBar();
   buildItemSelect();
 
-  btn.innerHTML = '<i class="bi bi-check-circle-fill me-1"></i>¡Guardado!';
+  btn.innerHTML = '<i class="bi bi-check-circle-fill me-1"></i>Saved!';
   setTimeout(() => {
     btn.disabled = false;
-    btn.innerHTML = '<i class="bi bi-check-lg me-1"></i>Guardar y Siguiente';
+    btn.innerHTML = '<i class="bi bi-check-lg me-1"></i>Save and Next';
   }, 800);
 
   // Check if all done
@@ -548,8 +536,8 @@ async function navigate(delta) {
 }
 
 function updateNavInfo(idx, itemId) {
-  document.getElementById("navInfo").textContent =
-    `Item ID ${itemId} · pos ${idx+1}/${totalItems}`;
+  const el = document.getElementById("navInfo");
+  if (el) el.textContent = `Item ID ${itemId} · pos ${idx+1}/${totalItems}`;
 }
 
 function buildItemSelect() {
@@ -570,7 +558,7 @@ function syncItemSelect() {
 function updateProgressBar() {
   const pct = totalItems > 0 ? (annotatedIds.size / totalItems * 100).toFixed(1) : 0;
   document.getElementById("progressText").textContent =
-    `${annotatedIds.size} / ${totalItems} completados`;
+    `${annotatedIds.size} / ${totalItems} completed`;
   document.getElementById("progressPct").textContent = `${pct}%`;
   document.getElementById("progressBar").style.width = pct + "%";
 }

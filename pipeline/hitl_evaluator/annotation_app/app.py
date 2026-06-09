@@ -104,6 +104,16 @@ def get_item(item_idx: int):
         row.get("raw_response_text") or ""
     )
 
+    support_info = []
+    for k, si in enumerate(support_indices):
+        _, _lbl = DATASETS[row["dataset"]][int(si)]
+        support_info.append({
+            "k":             k,
+            "dataset_index": int(si),
+            "class_id":      int(_lbl),
+            "class_name":    _class_name(row["dataset"], _lbl),
+        })
+
     return jsonify({
         "item_idx":          item_idx,
         "item_id":           item_id,
@@ -120,6 +130,7 @@ def get_item(item_idx: int):
         "stratum":           row["stratum"],
         "explanation":       str(explanation),
         "n_support":         len(support_indices),
+        "support_info":      support_info,
         "existing_annotation": existing,
         # Judge scores (for reference display)
         "judge_scores": {
