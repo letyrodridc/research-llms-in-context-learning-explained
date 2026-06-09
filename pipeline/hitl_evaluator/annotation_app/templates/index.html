@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HITL Annotation — {{ annotator | upper }}</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<style>
+  body { background: #f0f2f5; font-family: 'Segoe UI', sans-serif; }
+  #app { display: none; }
+
+  /* ── header ── */
+  .top-bar { background: #fff; border-bottom: 1px solid #dee2e6;
+             padding: 10px 20px; display: flex; align-items: center;
+             justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  .progress-bar-custom { height: 8px; border-radius: 4px; }
+
+  /* ── cards ── */
+  .panel { background: #fff; border-radius: 10px; padding: 16px;
+           box-shadow: 0 2px 8px rgba(0,0,0,.07); height: 100%; }
+
+  /* ── query image ── */
+  #queryImg { width: 100%; max-height: 320px; object-fit: contain;
+              border-radius: 8px; background: #e9ecef; }
+
+  /* ── explanation ── */
+  .exp-box { background: #1e1e1e; color: #d4d4d4; font-family: 'Consolas', monospace;
+             font-size: 0.88rem; white-space: pre-wrap; padding: 12px;
+             border-radius: 6px; height: 55vh; overflow-y: auto; }
+
+  /* ── support images ── */
+  .support-grid { display: flex; flex-wrap: wrap; gap: 8px; padding-top: 8px; }
+  .support-thumb { width: 80px; text-align: center; }
+  .support-thumb img { width: 80px; height: 80px; object-fit: contain;
+                       border-radius: 6px; background: #e9ecef; }
+  .support-thumb small { font-size: 0.7rem; color: #666; display: block; }
+
+  /* ── rubric form ── */
+  .metric-row { border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 10px; }
+  .metric-title { font-weight: 600; color: #0d6efd; }
+  .rubric-text { font-size: 0.8rem; color: #555; background: #f8f9fa;
+                 border-radius: 6px; padding: 8px; margin-top: 6px; }
+  .radio-group label { cursor: pointer; padding: 2px 8px; border-radius: 4px;
+                       border: 1px solid #dee2e6; margin-right: 4px; font-size: 0.9rem; }
+  .radio-group input[type=radio] { display: none; }
+  .radio-group input[type=radio]:checked + label { background: #0d6efd; color: #fff; border-color: #0d6efd; }
+
+  /* ── bottom nav ── */
+  .nav-bar { background: #fff; border-top: 1px solid #dee2e6;
+             padding: 10px 20px; display: flex; justify-content: space-between;
+             align-items: center; position: sticky; bottom: 0; z-index: 100; }
+
+  /* ── correct badge ── */
+  .badge-correct { background: #198754; }
+  .badge-incorrect { background: #dc3545; }
+
+  #loadingOverlay {
+    position: fixed; inset: 0; background: rgba(255,255,255,.85);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; z-index: 9999; font-size: 1.2rem; gap: 16px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Loading overlay ─────────────────────────────────────────────────── -->
+<div id="loadingOverlay">
+  <div class="spinner-border text-primary" style="width:3rem;height:3rem;" role="status"></div>
+  <span id="loadingMsg">Loading annotation app…</span>
+</div>
+
+<!-- ── Main app ────────────────────────────────────────────────────────── -->
+<div id="app">
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="d-flex align-items-center gap-3">
+      <strong class="text-primary fs-5"><i class="bi bi-ui-checks me-1"></i>HITL Evaluator</strong>
+      <span class="badge bg-secondary" id="annotatorBadge"></span>
+    </div>
+    <div style="width:280px">
+      <div class="d-flex justify-content-between small mb-1">
+        <span id="progressText" class="fw-bold"></span>
+        <span id="progressPct" class="text-muted"></span>
+      </div>
+      <div class="progress progress-bar-custom">
+        <div class="progress-bar progress-bar-custom" id="progressBar"
+             role="progressbar" style="width:0%"></div>
+      </div>
+    </div>
+    <div class="d-flex gap-2">
+      <button class="btn btn-sm btn-outline-success" id="exportBtn" onclick="exportCSV()">
+        <i class="bi bi-download me-1"></i>Exportar CSV
+      </button>
+    </div>
+  </div>
+
+  <!-- 3-column layout -->
+  <div class="container-fluid p-3">
+    <div class="row g-3" style="min-height: calc(100vh - 130px);">
+
+      <!-- LEFT: Image + metadata -->
+      <div class="col-md-3">
+        <div class="panel">
+          <div class="d-flex justify-content-between align-items-start mb-2">
+            <span class="badge bg-primary" id="itemBadge">Item ?/?</span>
+            <span class="badge" id="correctBadge">?</span>
+          </div>
+
+          <div class="position-relative mb-2">
+            <div id="imgSpinner" class="position-absolute top-50 start-50 translate-middle">
+              <div class="spinner-border text-primary spinner-border-sm" role="status"></div>
+            </div>
+            <img id="queryImg" src="" alt="Loading…" onerror="this.alt='Image not found'">
+          </div>
+          <p class="text-center text-muted small mb-3" id="imgCaption"></p>
+
+          <!-- Metadata -->
+          <table class="table table-sm table-borderless mb-0" style="font-size:.85rem">
+            <tr><th class="text-muted fw-normal">Condition</th><td id="metaCondition" class="fw-bold"></td></tr>
+            <tr><th class="text-muted fw-normal">Model</th><td id="metaModel" class="small"></td></tr>
+            <tr><th class="text-muted fw-normal">Dataset</th><td id="metaDataset"></td></tr>
+            <tr><th class="text-muted fw-normal">Config</th><td id="metaConfig"></td></tr>
+            <tr><th class="text-muted fw-normal">Expected</th><td id="metaExpected"></td></tr>
+            <tr><th class="text-muted fw-normal">Predicted</th><td id="metaPredicted"></td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- CENTER: Explanation + support images -->
+      <div class="col-md-5">
+        <div class="panel">
+          <h6 class="border-bottom pb-2 mb-3">
+            <i class="bi bi-robot me-1 text-secondary"></i>Model Explanation
+          </h6>
+          <pre class="exp-box" id="expBox"></pre>
+
+          <details class="mt-3">
+            <summary class="text-muted" style="cursor:pointer;font-size:.9rem;">
+              <i class="bi bi-images me-1"></i>Ver support images
+            </summary>
+            <div class="support-grid" id="supportGrid">
+              <span class="text-muted small">Loading…</span>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <!-- RIGHT: Rubric form -->
+      <div class="col-md-4">
+        <div class="panel" style="overflow-y:auto; max-height: calc(100vh - 130px);">
+          <h6 class="border-bottom pb-2 mb-3">
+            <i class="bi bi-clipboard-check me-1 text-secondary"></i>Human Rubric
+          </h6>
+          <form id="rubricForm">
+            <div id="metricsContainer"></div>
+
+            <div class="mb-3">
+              <label class="form-label fw-bold small text-secondary">
+                Notas adicionales (opcional):
+              </label>
+              <textarea class="form-control form-control-sm" id="notesField"
+                        rows="2" placeholder="Observaciones libres…"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 fw-bold" id="saveBtn">
+              <i class="bi bi-check-lg me-1"></i>Guardar y Siguiente
+            </button>
+            <div id="saveMsg" class="text-center small mt-2 text-success fw-bold" style="display:none"></div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom navigation -->
+  <div class="nav-bar">
+    <button class="btn btn-outline-secondary btn-sm" onclick="navigate(-1)">
+      <i class="bi bi-arrow-left"></i> Anterior
+    </button>
+    <span class="text-muted small" id="navInfo"></span>
+    <button class="btn btn-outline-secondary btn-sm" onclick="navigate(1)">
+      Siguiente <i class="bi bi-arrow-right"></i>
+    </button>
+  </div>
+
+</div><!-- #app -->
+
+<!-- ── Done modal ──────────────────────────────────────────────────────── -->
+<div class="modal fade" id="doneModal" tabindex="-1" data-bs-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-4">
+      <i class="bi bi-check-circle-fill text-success" style="font-size:4rem"></i>
+      <h4 class="mt-3 fw-bold">¡Anotación completa!</h4>
+      <p class="text-muted">Has evaluado todos los items. Descarga tu CSV y haz git push.</p>
+      <button class="btn btn-success btn-lg mt-2" onclick="exportCSV()">
+        <i class="bi bi-download me-1"></i>Descargar CSV final
+      </button>
+      <button class="btn btn-outline-secondary mt-2" data-bs-dismiss="modal">
+        Revisar anotaciones
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+/* ── metric definitions ───────────────────────────────────────────────── */
+const METRICS = [
+  {
+    id: "human_LD", name: "1. Local Discriminativeness (LD)",
+    short: "¿Destaca features patognomónicas?",
+    rubric: `<b>Local Discriminativeness (LD)</b><br>
+Evalúa si la explicación destaca features que distinguen la clase predicha de las demás opciones.<br><br>
+<b>1</b> — No discriminativa: 0% features patognomónicas<br>
+<b>2</b> — Débilmente discriminativa: 1-33% features patognomónicas<br>
+<b>3</b> — Moderadamente discriminativa: 34-66% features patognomónicas<br>
+<b>4</b> — Fuertemente discriminativa: 67-99% features patognomónicas<br>
+<b>5</b> — Perfectamente discriminativa: 100% features patognomónicas<br><br>
+<i>Features patognomónicas = features que distinguen la clase predicha de las otras opciones del episodio.</i>`
+  },
+  {
+    id: "human_TG", name: "2. Textual Groundedness (TG)",
+    short: "¿Captura todos los conceptos relevantes de la imagen?",
+    rubric: `<b>Textual Groundedness (TG)</b><br>
+Evalúa en qué medida el texto captura todos los objetos y atributos relevantes presentes en la imagen.<br><br>
+<b>1</b> — No grounded: omisiones severas de conceptos clave de la imagen<br>
+<b>2</b> — Débilmente grounded: omisiones mayores<br>
+<b>3</b> — Moderadamente grounded: pocas omisiones<br>
+<b>4</b> — Fuertemente grounded: una omisión<br>
+<b>5</b> — Perfectamente grounded: cero omisiones de conceptos relevantes`
+  },
+  {
+    id: "human_HF", name: "3. Hallucination-Free (HF)",
+    short: "¿Sin alucinaciones visuales?",
+    rubric: `<b>Hallucination-Free (HF)</b><br>
+Penaliza la invención de features que no existen en la imagen.<br><br>
+<b>1</b> — Alucinaciones severas: múltiples claims inventados<br>
+<b>2</b> — Alucinaciones mayores<br>
+<b>3</b> — Pocas alucinaciones<br>
+<b>4</b> — Una alucinación<br>
+<b>5</b> — Sin alucinaciones: todos los claims son visualmente verificables en la imagen`
+  },
+  {
+    id: "human_IF", name: "4. Instruction Following (IF)",
+    short: "¿Siguió el formato/estructura solicitado?",
+    rubric: `<b>Instruction Following (IF)</b><br>
+Adherencia a la estructura y formato explícitamente solicitados en el prompt.<br><br>
+<b>1</b> — Sin adherencia: 0% de instrucciones seguidas<br>
+<b>2</b> — Adherencia débil: 1-33%<br>
+<b>3</b> — Adherencia parcial: 34-66%<br>
+<b>4</b> — Adherencia fuerte: 67-99%<br>
+<b>5</b> — Adherencia perfecta: 100% del formato y estructura requeridos`
+  },
+  {
+    id: "human_CC", name: "5. Concept Counting (CC)",
+    short: "¿Cuenta correctamente los atributos?",
+    rubric: `<b>Concept Counting (CC)</b><br>
+Evalúa la precisión cuantitativa: si el número de objetos/atributos mencionados es correcto.<br><br>
+<b>1</b> — 0% preciso en conteo<br>
+<b>2</b> — 1-33% preciso<br>
+<b>3</b> — 34-66% preciso<br>
+<b>4</b> — 67-99% preciso<br>
+<b>5</b> — 100% preciso en conteo de conceptos`
+  },
+  {
+    id: "human_CP", name: "6. Comprehensibility (CP)",
+    short: "¿Es simple y fácil de leer?",
+    rubric: `<b>Comprehensibility (CP)</b><br>
+Evalúa la fluidez de lectura y accesibilidad para el usuario humano.<br><br>
+<b>1</b> — Texto altamente confuso o ilegible<br>
+<b>2</b> — Difícil de seguir<br>
+<b>3</b> — Comprensible con esfuerzo<br>
+<b>4</b> — Claro y fluido<br>
+<b>5</b> — Perfectamente claro y accesible`
+  },
+  {
+    id: "human_Cn", name: "7. Conciseness (Cn)",
+    short: "¿Concisa? (sin redundancias)",
+    rubric: `<b>Conciseness (Cn)</b><br>
+Penaliza relleno, repeticiones cíclicas o respuestas innecesariamente largas.<br><br>
+<b>1</b> — Altamente redundante o verboso<br>
+<b>2</b> — Bastante redundante<br>
+<b>3</b> — Alguna redundancia<br>
+<b>4</b> — Eficiente con mínima redundancia<br>
+<b>5</b> — Máxima eficiencia, sin palabras de relleno`
+  },
+  {
+    id: "human_S", name: "8. Specificity (S)",
+    short: "¿Detalles específicos del sujeto?",
+    rubric: `<b>Specificity (S)</b><br>
+Penaliza descripciones vagas (ej. "es un objeto", "tiene color").<br><br>
+<b>1</b> — Altamente vaga, sin detalles concretos<br>
+<b>2</b> — Pocas especificidades<br>
+<b>3</b> — Moderadamente específica<br>
+<b>4</b> — Bastante específica<br>
+<b>5</b> — 100% específica, con detalles concretos y precisos`
+  },
+  {
+    id: "human_LC", name: "9. Logical Coherence (LC)",
+    short: "¿Conexión lógica válida entre axiomas?",
+    rubric: `<b>Logical Coherence (LC)</b><br>
+Evalúa si los axiomas/razonamientos forman una deducción válida sin contradicciones.<br><br>
+<b>1</b> — Contradicciones lógicas evidentes<br>
+<b>2</b> — Incoherencias mayores<br>
+<b>3</b> — Coherente con algunas inconsistencias<br>
+<b>4</b> — Mayoritariamente coherente<br>
+<b>5</b> — Deducción formal impecable, sin contradicciones`
+  },
+];
+
+/* ── state ────────────────────────────────────────────────────────────── */
+let currentIdx = 0;
+let totalItems = 0;
+let annotatedIds = new Set();
+let progressData = {};
+let doneModal;
+
+/* ── init ─────────────────────────────────────────────────────────────── */
+document.addEventListener("DOMContentLoaded", async () => {
+  doneModal = new bootstrap.Modal(document.getElementById("doneModal"));
+  buildMetricsForm();
+
+  document.getElementById("rubricForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    await saveAndNext();
+  });
+
+  const prog = await fetch("/api/progress").then(r => r.json());
+  totalItems   = prog.total;
+  annotatedIds = new Set(prog.annotated_ids.map(String));
+  progressData = prog.annotations;
+
+  updateProgressBar();
+
+  // Navigate to first unannotated item
+  let startIdx = 0;
+  for (let i = 0; i < totalItems; i++) {
+    const item = await fetch(`/api/item/${i}`).then(r => r.json());
+    if (!annotatedIds.has(String(item.item_id))) { startIdx = i; break; }
+    if (i === totalItems - 1) startIdx = i; // all done, show last
+  }
+
+  document.getElementById("loadingOverlay").style.display = "none";
+  document.getElementById("app").style.display = "block";
+  await loadItem(startIdx);
+});
+
+/* ── build metrics form ───────────────────────────────────────────────── */
+function buildMetricsForm() {
+  const container = document.getElementById("metricsContainer");
+  container.innerHTML = METRICS.map(m => `
+    <div class="metric-row">
+      <div class="d-flex align-items-center justify-content-between">
+        <span class="metric-title">${m.name}</span>
+        <button type="button" class="btn btn-link btn-sm p-0 text-info"
+                onclick="toggleRubric('rubric_${m.id}')" title="Ver rúbrica">
+          <i class="bi bi-info-circle"></i>
+        </button>
+      </div>
+      <small class="text-muted d-block mb-1">${m.short}</small>
+      <div class="radio-group">
+        ${[1,2,3,4,5].map(v => `
+          <input type="radio" name="${m.id}" id="${m.id}_${v}" value="${v}" required>
+          <label for="${m.id}_${v}">${v}</label>
+        `).join("")}
+      </div>
+      <div id="rubric_${m.id}" class="rubric-text" style="display:none">${m.rubric}</div>
+    </div>
+  `).join("");
+}
+
+function toggleRubric(id) {
+  const el = document.getElementById(id);
+  el.style.display = el.style.display === "none" ? "block" : "none";
+}
+
+/* ── load item ────────────────────────────────────────────────────────── */
+async function loadItem(idx) {
+  currentIdx = idx;
+  document.getElementById("imgSpinner").style.display = "block";
+  document.getElementById("saveMsg").style.display = "none";
+
+  const data = await fetch(`/api/item/${idx}`).then(r => r.json());
+
+  // Update badges / metadata
+  document.getElementById("annotatorBadge").textContent =
+    `{{ annotator | upper }} — Item ${idx+1}/${data.total}`;
+  document.getElementById("itemBadge").textContent = `Item ${idx+1} / ${data.total}`;
+
+  const corrBadge = document.getElementById("correctBadge");
+  if (data.correct) {
+    corrBadge.className = "badge badge-correct";
+    corrBadge.innerHTML = '<i class="bi bi-check-lg me-1"></i>Correcto';
+  } else {
+    corrBadge.className = "badge badge-incorrect";
+    corrBadge.innerHTML = '<i class="bi bi-x-lg me-1"></i>Incorrecto';
+  }
+
+  document.getElementById("metaCondition").textContent = data.condition;
+  document.getElementById("metaModel").textContent     = data.model_short;
+  document.getElementById("metaDataset").textContent   = data.dataset;
+  document.getElementById("metaConfig").textContent    = `${data.config_n}-way ${data.config_k}-shot`;
+  document.getElementById("metaExpected").textContent  = data.expected_label;
+  document.getElementById("metaPredicted").textContent = data.predicted_label;
+  document.getElementById("imgCaption").textContent    =
+    `Query image · ${data.dataset} · index ${data.item_id}`;
+
+  // Load query image
+  const img = document.getElementById("queryImg");
+  img.onload = () => { document.getElementById("imgSpinner").style.display = "none"; };
+  img.onerror = () => { document.getElementById("imgSpinner").style.display = "none"; };
+  img.src = `/api/image/query/${idx}?t=${Date.now()}`;
+
+  // Explanation
+  const expBox = document.getElementById("expBox");
+  expBox.textContent = data.explanation || "(no explanation text found)";
+  expBox.scrollTop = 0;
+
+  // Support images (lazy — only when <details> is opened)
+  const grid = document.getElementById("supportGrid");
+  grid.innerHTML = `<span class="text-muted small">Click "Ver support images" to load…</span>`;
+  grid._loaded = false;
+  grid._itemIdx = idx;
+  grid._nSupport = data.n_support;
+
+  document.querySelector("details").open = false;
+  document.querySelector("details").addEventListener("toggle", onSupportToggle, { once: true });
+
+  // Pre-fill form if already annotated
+  const existing = data.existing_annotation;
+  document.getElementById("rubricForm").reset();
+  document.getElementById("notesField").value = "";
+  if (existing && Object.keys(existing).length > 0) {
+    METRICS.forEach(m => {
+      const val = existing[m.id];
+      if (val) {
+        const radio = document.querySelector(`input[name="${m.id}"][value="${val}"]`);
+        if (radio) radio.checked = true;
+      }
+    });
+    document.getElementById("notesField").value = existing.annotator_notes || "";
+  }
+
+  updateNavInfo(idx, data.item_id);
+}
+
+function onSupportToggle(e) {
+  if (!e.target.open) return;
+  const grid = document.getElementById("supportGrid");
+  if (grid._loaded) return;
+  grid._loaded = true;
+  const idx = grid._itemIdx;
+  const n   = grid._nSupport;
+  grid.innerHTML = "";
+  for (let k = 0; k < n; k++) {
+    const wrap = document.createElement("div");
+    wrap.className = "support-thumb";
+    wrap.innerHTML = `<img src="/api/image/support/${idx}/${k}?t=${Date.now()}"
+                          alt="support ${k+1}" loading="lazy">
+                      <small>S${k+1}</small>`;
+    grid.appendChild(wrap);
+  }
+}
+
+/* ── save ─────────────────────────────────────────────────────────────── */
+async function saveAndNext() {
+  const btn = document.getElementById("saveBtn");
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Guardando…';
+
+  // Collect form values
+  const data = await fetch(`/api/item/${currentIdx}`).then(r => r.json());
+  const payload = { item_id: data.item_id };
+  let allFilled = true;
+  METRICS.forEach(m => {
+    const checked = document.querySelector(`input[name="${m.id}"]:checked`);
+    if (!checked) { allFilled = false; }
+    payload[m.id] = checked ? checked.value : "";
+  });
+  payload.annotator_notes = document.getElementById("notesField").value;
+
+  if (!allFilled) {
+    btn.disabled = false;
+    btn.innerHTML = '<i class="bi bi-check-lg me-1"></i>Guardar y Siguiente';
+    alert("Por favor puntúa todas las 9 métricas antes de guardar.");
+    return;
+  }
+
+  const resp = await fetch("/api/save", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+
+  if (!resp.ok) {
+    alert("Error al guardar. Inténtalo de nuevo.");
+    btn.disabled = false;
+    btn.innerHTML = '<i class="bi bi-check-lg me-1"></i>Guardar y Siguiente';
+    return;
+  }
+
+  annotatedIds.add(String(data.item_id));
+  updateProgressBar();
+
+  btn.innerHTML = '<i class="bi bi-check-circle-fill me-1"></i>¡Guardado!';
+  setTimeout(() => {
+    btn.disabled = false;
+    btn.innerHTML = '<i class="bi bi-check-lg me-1"></i>Guardar y Siguiente';
+  }, 800);
+
+  // Check if all done
+  if (annotatedIds.size >= totalItems) {
+    doneModal.show();
+    return;
+  }
+
+  // Navigate to next unannotated item
+  for (let i = currentIdx + 1; i < totalItems; i++) {
+    const item = await fetch(`/api/item/${i}`).then(r => r.json());
+    if (!annotatedIds.has(String(item.item_id))) {
+      await loadItem(i);
+      window.scrollTo(0, 0);
+      return;
+    }
+  }
+  // No next unannotated — show done
+  doneModal.show();
+}
+
+/* ── navigation ───────────────────────────────────────────────────────── */
+async function navigate(delta) {
+  const next = currentIdx + delta;
+  if (next < 0 || next >= totalItems) return;
+  await loadItem(next);
+  window.scrollTo(0, 0);
+}
+
+function updateNavInfo(idx, itemId) {
+  document.getElementById("navInfo").textContent =
+    `Item ID ${itemId} · pos ${idx+1}/${totalItems}`;
+}
+
+/* ── progress bar ─────────────────────────────────────────────────────── */
+function updateProgressBar() {
+  const pct = totalItems > 0 ? (annotatedIds.size / totalItems * 100).toFixed(1) : 0;
+  document.getElementById("progressText").textContent =
+    `${annotatedIds.size} / ${totalItems} completados`;
+  document.getElementById("progressPct").textContent = `${pct}%`;
+  document.getElementById("progressBar").style.width = pct + "%";
+}
+
+/* ── export ───────────────────────────────────────────────────────────── */
+function exportCSV() {
+  window.location.href = "/api/export";
+}
+</script>
+</body>
+</html>
