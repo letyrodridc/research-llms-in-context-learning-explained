@@ -180,7 +180,10 @@
     <button class="btn btn-outline-secondary btn-sm" onclick="navigate(-1)">
       <i class="bi bi-arrow-left"></i> Anterior
     </button>
-    <span class="text-muted small" id="navInfo"></span>
+    <select id="itemSelect" class="form-select form-select-sm"
+            style="width:auto;max-width:320px;font-size:.82rem;"
+            onchange="loadItem(parseInt(this.value))">
+    </select>
     <button class="btn btn-outline-secondary btn-sm" onclick="navigate(1)">
       Siguiente <i class="bi bi-arrow-right"></i>
     </button>
@@ -317,6 +320,7 @@ let totalItems = 0;
 let annotatedIds = new Set();
 let progressData = {};
 let doneModal;
+let allItemsIndex = [];
 
 /* ── init ─────────────────────────────────────────────────────────────── */
 document.addEventListener("DOMContentLoaded", async () => {
@@ -334,6 +338,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   progressData = prog.annotations;
 
   updateProgressBar();
+
+  allItemsIndex = await fetch("/api/items_index").then(r => r.json());
+  buildItemSelect();
 
   // Navigate to first unannotated item
   let startIdx = 0;
@@ -399,7 +406,7 @@ async function loadItem(idx) {
     corrBadge.innerHTML = '<i class="bi bi-x-lg me-1"></i>Incorrecto';
   }
 
-  document.getElementById("metaCondition").textContent = data.condition;
+  document.getElementById("metaCondition").textContent = `${data.condition} — ${data.prompt_type}`;
   document.getElementById("metaModel").textContent     = data.model_short;
   document.getElementById("metaDataset").textContent   = data.dataset;
   document.getElementById("metaConfig").textContent    = `${data.config_n}-way ${data.config_k}-shot`;
@@ -445,6 +452,7 @@ async function loadItem(idx) {
   }
 
   updateNavInfo(idx, data.item_id);
+  syncItemSelect();
 }
 
 function onSupportToggle(e) {
@@ -504,6 +512,7 @@ async function saveAndNext() {
 
   annotatedIds.add(String(data.item_id));
   updateProgressBar();
+  buildItemSelect();
 
   btn.innerHTML = '<i class="bi bi-check-circle-fill me-1"></i>¡Guardado!';
   setTimeout(() => {
@@ -541,6 +550,20 @@ async function navigate(delta) {
 function updateNavInfo(idx, itemId) {
   document.getElementById("navInfo").textContent =
     `Item ID ${itemId} · pos ${idx+1}/${totalItems}`;
+}
+
+function buildItemSelect() {
+  const sel = document.getElementById("itemSelect");
+  sel.innerHTML = allItemsIndex.map(it => {
+    const done = annotatedIds.has(String(it.item_id)) ? "✓" : "○";
+    return `<option value="${it.idx}">${done} ${it.item_id} · ${it.condition}/${it.prompt_type} · ${it.dataset}</option>`;
+  }).join("");
+  sel.value = currentIdx;
+}
+
+function syncItemSelect() {
+  const sel = document.getElementById("itemSelect");
+  if (sel) sel.value = currentIdx;
 }
 
 /* ── progress bar ─────────────────────────────────────────────────────── */

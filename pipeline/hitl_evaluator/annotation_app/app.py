@@ -110,6 +110,7 @@ def get_item(item_idx: int):
         "total":             len(ANNOTATOR_DF),
         "dataset":           row["dataset"],
         "condition":         row["condition"],
+        "prompt_type":       row["prompt_type"],
         "model_short":       row["model_short"],
         "config_n":          int(row["config_n"]),
         "config_k":          int(row["config_k"]),
@@ -133,6 +134,24 @@ def get_item(item_idx: int):
             "LC": row.get("logical_coherence"),
         },
     })
+
+
+@app.get("/api/items_index")
+def items_index():
+    """Lightweight list of all items for the navigation dropdown."""
+    rows = []
+    for idx, (_, row) in enumerate(ANNOTATOR_DF.iterrows()):
+        item_id = int(row["item_id"])
+        rows.append({
+            "idx":        idx,
+            "item_id":    item_id,
+            "condition":  row["condition"],
+            "prompt_type": row["prompt_type"],
+            "dataset":    row["dataset"],
+            "correct":    bool(int(row["correct"])),
+            "annotated":  str(item_id) in PROGRESS["annotations"],
+        })
+    return jsonify(rows)
 
 
 @app.get("/api/image/query/<int:item_idx>")
