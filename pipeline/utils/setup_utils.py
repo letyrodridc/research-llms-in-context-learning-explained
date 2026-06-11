@@ -18,13 +18,6 @@ from torchvision.datasets import Flowers102, OxfordIIITPet, CIFAR10, DTD
 from PIL import Image
 from torch.utils.data import ConcatDataset
 
-from transformers import (
-    AutoProcessor, 
-    BitsAndBytesConfig, 
-    Gemma3ForConditionalGeneration,
-    Qwen2VLForConditionalGeneration
-)
-
 try:
     from qwen_vl_utils import process_vision_info
 except ImportError:
@@ -162,9 +155,16 @@ def print_gpu_memory():
 
 def load_model_globally(model_name):
     """Loads a specified model and its processor."""
+    from transformers import (
+        AutoProcessor,
+        BitsAndBytesConfig,
+        Gemma3ForConditionalGeneration,
+        Qwen2VLForConditionalGeneration,
+    )
+
     torch.cuda.empty_cache()
     gc.collect()
-    
+
     model_id = MODEL_IDS.get(model_name.lower())
     if not model_id:
         raise ValueError(f"Unknown model: {model_name}. Available: {list(MODEL_IDS.keys())}")
