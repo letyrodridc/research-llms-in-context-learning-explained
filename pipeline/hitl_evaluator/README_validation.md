@@ -1,123 +1,123 @@
-# HITL Validation — Instrucciones Completas
+# HITL Validation — Complete Instructions
 
-Este documento contiene todo lo que cada investigador necesita para completar la validación humana del experimento ICL.
+This document contains everything each researcher needs to complete the human validation of the ICL experiment.
 
 ---
 
-## Por qué 192 muestras y cómo se seleccionaron
+## Why 192 samples and how they were selected
 
-### El experimento completo
+### The full experiment
 
-El experimento evaluó 4,608 trials con explicación: 4 modelos × 4 datasets × 4 condiciones de explicación (E2-E5) × 72 episodios por combinación. Cada episodio es una clasificación independiente con un support set distinto. El juez LLM puntuó los 4,608 trials automáticamente en 9 métricas (escala 1-5).
+The experiment evaluated 4,608 trials with explanation: 4 models × 4 datasets × 4 explanation conditions (E2-E5) × 72 episodes per combination. Each episode is an independent classification with a distinct support set. The LLM judge scored the 4,608 trials automatically across 9 metrics (scale 1-5).
 
-### Qué es un stratum
+### What is a stratum
 
-Un stratum es una combinación única de (condición × modelo × dataset). Por ejemplo: "E3 + Gemini 2.5 Flash + Oxford Flowers" es un stratum. Hay 4 × 4 × 4 = 64 strata en total. Cada uno contiene 72 episodios.
+A stratum is a unique combination of (condition × model × dataset). For example: "E3 + Gemini 2.5 Flash + Oxford Flowers" is a stratum. There are 4 × 4 × 4 = 64 strata in total. Each contains 72 episodes.
 
-### Por qué 192 muestras
+### Why 192 samples
 
-Queremos que la validación humana cubra TODAS las combinaciones del experimento de forma equilibrada, no solo las más frecuentes o más fáciles. La solución es coger el mismo número de muestras de cada stratum: 3 muestras × 64 strata = 192 muestras totales.
+We want the human validation to cover ALL combinations of the experiment in a balanced way, not just the most frequent or easiest ones. The solution is to take the same number of samples from each stratum: 3 samples × 64 strata = 192 total samples.
 
-192 / 4,608 = 4.2% del total — porcentaje estándar para validación de LLM-as-a-judge en la literatura (rango típico: 3-10% estratificado).
+192 / 4,608 = 4.2% of the total — a standard percentage for LLM-as-a-judge validation in the literature (typical stratified range: 3-10%).
 
-### Por qué 3 muestras por stratum y no más
+### Why 3 samples per stratum and no more
 
-- Con 3 por stratum, cada anotador evalúa 128 items (manejable en 3-4 días sin degradación de calidad por fatiga)
-- Con 5 por stratum serían 320 muestras, 160 items por persona
-- 3 es el mínimo para tener variabilidad dentro del stratum y poder detectar si el juez es consistente o errático en esa combinación
+- With 3 per stratum, each annotator evaluates 128 items (manageable in 3-4 days without quality degradation due to fatigue).
+- With 5 per stratum it would be 320 samples, 160 items per person.
+- 3 is the minimum to have variability within the stratum and be able to detect if the judge is consistent or erratic in that combination.
 
-### Por qué forzamos al menos 1 predicción incorrecta por stratum
+### Why we force at least 1 incorrect prediction per stratum
 
-Si solo evaluáramos predicciones correctas, las métricas estarían sesgadas: los modelos tienden a generar mejores explicaciones cuando aciertan. Forzar al menos 1 incorrecto por stratum garantiza que evaluamos también la calidad de las explicaciones en casos de error, que es precisamente donde la validación humana es más informativa.
+If we only evaluated correct predictions, the metrics would be biased: models tend to generate better explanations when they are correct. Forcing at least 1 incorrect per stratum ensures that we also evaluate the quality of explanations in error cases, which is precisely where human validation is most informative.
 
-14 de los 64 strata tienen 0 incorrectos disponibles (concentrados en flowers y pets, donde los modelos alcanzan casi 100% de accuracy) — en esos casos se seleccionan 3 correctos y queda documentado en human_validation_sample.csv.
+14 out of the 64 strata have 0 incorrects available (concentrated in flowers and pets, where models reach almost 100% accuracy) — in those cases, 3 corrects are selected, and it is documented in human_validation_sample.csv.
 
-### Por qué seed=42
+### Why seed=42
 
-Para reproducibilidad: cualquier investigador con los mismos datos puede regenerar exactamente las mismas 192 muestras ejecutando `python sample_for_validation.py`. El seed está documentado en la columna `selection_seed` de human_validation_sample.csv.
+For reproducibility: any researcher with the same data can regenerate exactly the same 192 samples by running `python sample_for_validation.py`. The seed is documented in the `selection_seed` column of human_validation_sample.csv.
 
-### Cómo se reparten entre anotadores
+### How they are distributed among annotators
 
-Para calcular acuerdo inter-anotador (Cohen's κ), cada item debe ser evaluado por 2 personas distintas:
+To calculate inter-annotator agreement (Cohen's κ), each item must be evaluated by 2 different people:
 
 - Items 1-64:   Carmen + Leticia
 - Items 65-128: Leticia + Nico
 - Items 129-192: Carmen + Nico
 
-Cada anotador evalúa 128 items. Ningún item se repite dentro del CSV de una misma persona.
+Each annotator evaluates 128 items. No item is repeated within the CSV of the same person.
 
 ---
 
-## Para Carmen — Paso 0: Generación de datos (solo una vez, en el servidor)
+## For Carmen — Step 0: Data generation (only once, on the server)
 
-> **Solo lo hace Carmen, una vez, en el servidor donde están los datos del experimento.**
+> **Only Carmen does this, once, on the server where the experiment data is located.**
 
 ```bash
-# 1. Activar entorno
+# 1. Activate environment
 conda activate /mnt/homeGPU/cquiles/ICL/ICL/research-explain
 
-# 2. Ir al directorio del repo
+# 2. Go to the repo directory
 cd /mnt/homeGPU/cquiles/ICL/ICL
 
-# 3. Ejecutar el script de muestreo
+# 3. Run the sampling script
 python pipeline/hitl_evaluator/sample_for_validation.py
 ```
 
-El script genera:
-- `pipeline/hitl_evaluator/human_validation_sample.csv` — las 192 muestras seleccionadas
-- `pipeline/hitl_evaluator/annotations_carmen.csv` — tus 128 items
-- `pipeline/hitl_evaluator/annotations_leticia.csv` — los 128 items de Leticia
-- `pipeline/hitl_evaluator/annotations_nico.csv` — los 128 items de Nico
+The script generates:
+- `pipeline/hitl_evaluator/human_validation_sample.csv` — the 192 selected samples
+- `pipeline/hitl_evaluator/annotations_carmen.csv` — your 128 items
+- `pipeline/hitl_evaluator/annotations_leticia.csv` — Leticia's 128 items
+- `pipeline/hitl_evaluator/annotations_nico.csv` — Nico's 128 items
 
-También imprime un **audit report** con las estadísticas del muestreo y las excepciones (strata con pocos incorrectos). Léelo antes de continuar.
+It also prints an **audit report** with the sampling statistics and exceptions (strata with few incorrects). Read it before continuing.
 
 ```bash
-# 4. Subir los CSVs al repo
+# 4. Push the CSVs to the repo
 git add pipeline/hitl_evaluator/annotations_*.csv pipeline/hitl_evaluator/human_validation_sample.csv
 git commit -m "hitl: generate 192-item validation sample and annotator CSVs"
 git push
 ```
 
-Leticia y Nico harán `git pull` para obtener sus CSVs.
+Leticia and Nico will do `git pull` to get their CSVs.
 
 ---
 
-## Para Carmen — Anotación
+## For Carmen — Annotation
 
 ```bash
-# 1. Activar entorno
+# 1. Activate environment
 conda activate /mnt/homeGPU/cquiles/ICL/ICL/research-explain
 
-# 2. Ir al directorio de la app
+# 2. Go to the app directory
 cd /mnt/homeGPU/cquiles/ICL/ICL/pipeline/hitl_evaluator
 
-# 3. Asegúrate de tener los datasets en data/
-#    (ya los tienes en el servidor, no hace falta descargar nada)
+# 3. Make sure you have the datasets in data/
+#    (you already have them on the server, no need to download anything)
 
-# 4. Lanzar la app
+# 4. Launch the app
 python annotation_app/app.py --annotator carmen --data-dir ../../data
 
-# 5. Abrir en el navegador:
+# 5. Open in browser:
 #    http://127.0.0.1:8766
 ```
 
-**Qué verás en la app:**
-- Columna izquierda: la imagen query del trial, con la clase predicha (verde si correcto, rojo si incorrecto)
-- Columna central: el texto de la explicación generada por el modelo, y las support images en un desplegable
-- Columna derecha: las 9 métricas para puntuar (botones 1-5)
+**What you will see in the app:**
+- Left column: the trial query image, with the predicted class (green if correct, red if incorrect)
+- Center column: the explanation text generated by the model, and the support images in a dropdown
+- Right column: the 9 metrics to score (buttons 1-5)
 
-**Cómo anotar:**
-1. Lee la explicación del modelo y observa la imagen
-2. Puntúa cada una de las 9 métricas del 1 al 5 (haz clic en el ℹ para ver la rúbrica completa)
-3. Pulsa **"Guardar y Siguiente"** → la anotación se guarda inmediatamente en disco
-4. Repite para los 128 items
+**How to annotate:**
+1. Read the model's explanation and observe the image.
+2. Score each of the 9 metrics from 1 to 5 (click on the ℹ to see the full rubric).
+3. Click **"Save and Next"** ("Guardar y Siguiente") → the annotation is saved immediately to disk.
+4. Repeat for the 128 items.
 
-**Si cierras el navegador y quieres retomar:** vuelve a ejecutar el mismo comando y la app retomará automáticamente en el primer item sin completar.
+**If you close the browser and want to resume:** run the same command again and the app will automatically resume at the first incomplete item.
 
-**Al terminar los 128 items:**
-1. Pulsa el botón **"Exportar CSV"** → descarga `annotations_carmen_final.csv`
-2. Guárdalo en `pipeline/hitl_evaluator/`
-3. Sube al repo:
+**When finishing the 128 items:**
+1. Click the **"Export CSV"** button → downloads `annotations_carmen_final.csv`
+2. Save it in `pipeline/hitl_evaluator/`
+3. Push to the repo:
    ```bash
    git add pipeline/hitl_evaluator/annotations_carmen_final.csv
    git commit -m "hitl: carmen annotations complete"
@@ -126,36 +126,36 @@ python annotation_app/app.py --annotator carmen --data-dir ../../data
 
 ---
 
-## Para Leticia — Instalación y anotación
+## For Leticia — Installation and annotation
 
-### Paso 1: Obtener el código y los datos
+### Step 1: Get the code and data
 
 ```bash
-# Clonar el repo (o hacer pull si ya lo tienes)
-git clone <URL_DEL_REPO>
-cd <nombre_del_repo>
+# Clone the repo (or pull if you already have it)
+git clone <REPO_URL>
+cd <repo_name>
 
-# O si ya tienes el repo:
+# Or if you already have the repo:
 git pull
 ```
 
-### Paso 2: Instalar el entorno
+### Step 2: Install the environment
 
 ```bash
-# Instalar miniconda si no lo tienes:
+# Install miniconda if you don't have it:
 # https://docs.conda.io/en/latest/miniconda.html
 
-# Crear el entorno (solo la primera vez):
+# Create the environment (only the first time):
 conda env create -f environment.yml
-# O si hay un requirements.txt:
+# Or if there is a requirements.txt:
 conda create -n research-explain python=3.10
 conda activate research-explain
 pip install -r requirements.txt
 ```
 
-### Paso 3: Descargar los datasets
+### Step 3: Download the datasets
 
-Los datasets de imágenes no están en el repo (son demasiado grandes). Descárgalos automáticamente con:
+The image datasets are not in the repo (they are too large). Download them automatically with:
 
 ```bash
 conda activate research-explain
@@ -163,13 +163,13 @@ python -c "
 import sys; sys.path.insert(0, '.')
 from pipeline.utils.setup_utils import load_datasets
 load_datasets('data/')
-print('Datasets descargados correctamente.')
+print('Datasets downloaded successfully.')
 "
 ```
 
-Esto descarga automáticamente Flowers-102, Oxford Pets, CIFAR-10 y DTD en la carpeta `data/`. Tardará unos minutos la primera vez.
+This automatically downloads Flowers-102, Oxford Pets, CIFAR-10, and DTD into the `data/` folder. It will take a few minutes the first time.
 
-### Paso 4: Lanzar la app
+### Step 4: Launch the app
 
 ```bash
 conda activate research-explain
@@ -177,15 +177,15 @@ cd pipeline/hitl_evaluator
 python annotation_app/app.py --annotator leticia --data-dir ../../data
 ```
 
-Abre **http://127.0.0.1:8767** en tu navegador.
+Open **http://127.0.0.1:8767** in your browser.
 
-### Paso 5: Anotar
+### Step 5: Annotate
 
-Sigue las mismas instrucciones que Carmen (ver sección anterior). Tienes 128 items.
+Follow the same instructions as Carmen (see previous section). You have 128 items.
 
-### Paso 6: Exportar y subir
+### Step 6: Export and push
 
-Al terminar, pulsa "Exportar CSV" → guarda `annotations_leticia_final.csv` en `pipeline/hitl_evaluator/`, luego:
+When finished, click "Export CSV" → save `annotations_leticia_final.csv` in `pipeline/hitl_evaluator/`, then:
 
 ```bash
 git add pipeline/hitl_evaluator/annotations_leticia_final.csv
@@ -195,9 +195,9 @@ git push
 
 ---
 
-## Para Nico — Instalación y anotación
+## For Nico — Installation and annotation
 
-Sigue exactamente los mismos pasos que Leticia (Paso 1 al 6), pero en el Paso 4 usa `--annotator nico`:
+Follow exactly the same steps as Leticia (Step 1 to 6), but in Step 4 use `--annotator nico`:
 
 ```bash
 conda activate research-explain
@@ -205,9 +205,9 @@ cd pipeline/hitl_evaluator
 python annotation_app/app.py --annotator nico --data-dir ../../data
 ```
 
-Abre **http://127.0.0.1:8768** en tu navegador.
+Open **http://127.0.0.1:8768** in your browser.
 
-Al exportar, el archivo se llamará `annotations_nico_final.csv`. Súbelo al repo:
+When exporting, the file will be named `annotations_nico_final.csv`. Push it to the repo:
 
 ```bash
 git add pipeline/hitl_evaluator/annotations_nico_final.csv
@@ -217,65 +217,102 @@ git push
 
 ---
 
-## Para Carmen — Análisis final
+## For Carmen — Final analysis
 
-> **Hacer esto solo cuando los 3 hayáis hecho push de vuestros CSVs finales.**
+> **Do this only when all 3 of you have pushed your final CSVs.**
 
 ```bash
-# 1. Obtener los CSVs de los 3 anotadores
+# 1. Get the CSVs from the 3 annotadores
 git pull
 
-# 2. Verificar que están los 3 archivos:
+# 2. Verify that the 3 files are there:
 ls pipeline/hitl_evaluator/annotations_*_final.csv
-# Debe mostrar: annotations_carmen_final.csv  annotations_leticia_final.csv  annotations_nico_final.csv
+# Should show: annotations_carmen_final.csv  annotations_leticia_final.csv  annotations_nico_final.csv
 
-# 3. Ejecutar el análisis
+# 3. Run the analysis
 conda activate /mnt/homeGPU/cquiles/ICL/ICL/research-explain
 cd /mnt/homeGPU/cquiles/ICL/ICL
 python pipeline/hitl_evaluator/analysis_human_validation.py
 ```
 
-### Qué calcula el análisis
+### What the analysis calculates
 
-**Cohen's κ ponderado (pesos lineales):**
-Mide el acuerdo entre los 2 anotadores de cada item, para cada una de las 9 métricas.
-- κ > 0.6: acuerdo sustancial → los anotadores ven las mismas cosas
-- κ 0.4-0.6: acuerdo moderado → aceptable para métricas subjetivas
-- κ < 0.4: acuerdo débil → la métrica puede ser difícil de calibrar
+**Weighted Cohen's κ (linear weights):**
+Measures the agreement between the 2 annotators of each item, for each of the 9 metrics.
+- κ > 0.6: substantial agreement → annotators see the same things
+- κ 0.4-0.6: moderate agreement → acceptable for subjective metrics
+- κ < 0.4: weak agreement → the metric might be difficult to calibrate
 
-**Spearman ρ y MAE (juez vs. humanos):**
-Mide si el juez LLM ordena los items de forma similar a como lo hacen los humanos.
-- ρ > 0.5: el juez captura bien el ordenamiento humano
-- MAE < 1.0: el juez se desvía menos de 1 punto en promedio de los humanos
+**Spearman ρ and MAE (judge vs. humans):**
+Measures if the LLM judge ranks the items similarly to how humans do.
+- ρ > 0.5: the judge captures the human ranking well
+- MAE < 1.0: the judge deviates less than 1 point on average from humans
 
-Para el paper: usa κ como argumento de fiabilidad inter-anotador y ρ/MAE como argumento de validez del juez LLM.
+For the paper: use κ as an argument for inter-annotator reliability and ρ/MAE as an argument for LLM judge validity.
 
-### Resultados generados
+### Generated results
 
-Los resultados se guardan en `pipeline/hitl_evaluator/results/`:
+The results are saved in `pipeline/hitl_evaluator/results/`:
 
-| Archivo | Contenido |
+| File | Content |
 |---------|-----------|
-| `alignment_results.csv` | Tabla con κ, ρ, MAE por métrica |
-| `table_alignment.tex` | Tabla LaTeX lista para el paper |
-| `scatter_judge_vs_human.png` | Scatter: puntuación del juez vs. media humana (por métrica) |
-| `heatmap_kappa_by_annotator_pair.png` | Heatmap de κ por par de anotadores y métrica |
-| `boxplot_diff_by_condition.png` | Boxplot de diferencia juez-humano por condición (E2-E5) |
+| `alignment_results.csv` | Table with κ, ρ, MAE per metric |
+| `table_alignment.tex` | LaTeX table ready for the paper |
+| `scatter_judge_vs_human.png` | Scatter: judge score vs. human mean (per metric) |
+| `heatmap_kappa_by_annotator_pair.png` | Heatmap of κ per annotator pair and metric |
+| `boxplot_diff_by_condition.png` | Boxplot of judge-human difference by condition (E2-E5) |
 
 ---
 
-## Referencia rápida — Rúbricas
+## Quick Reference — Rubrics
 
-| Métrica | Pregunta clave |
+| Metric | Key Question |
 |---------|---------------|
-| LD — Local Discriminativeness | ¿Destaca features que distinguen esta clase de las otras? |
-| TG — Textual Groundedness | ¿Captura todos los conceptos relevantes de la imagen? |
-| HF — Hallucination-Free | ¿Sin alucinaciones (claims que no están en la imagen)? |
-| IF — Instruction Following | ¿Siguió el formato/estructura pedido en el prompt? |
-| CC — Concept Counting | ¿Cuenta correctamente los atributos? |
-| CP — Comprehensibility | ¿Es clara y fácil de leer? |
-| Cn — Conciseness | ¿Concisa, sin redundancias? |
-| S — Specificity | ¿Específica, con detalles concretos? |
-| LC — Logical Coherence | ¿Los razonamientos/axiomas son coherentes entre sí? |
+| LD — Local Discriminativeness | Does it highlight features that distinguish this class from the others? |
+| TG — Textual Groundedness | Does it capture all relevant concepts in the image? |
+| HF — Hallucination-Free | Free of hallucinations (claims not in the image)? |
+| IF — Instruction Following | Did it follow the requested format/structure in the prompt? |
+| CC — Concept Counting | Does it count the attributes correctly? |
+| CP — Comprehensibility | Is it clear and easy to read? |
+| Cn — Conciseness | Concise, without redundancies? |
+| S — Specificity | Specific, with concrete details? |
+| LC — Logical Coherence | Are the reasoning/axioms coherent with each other? |
 
-Todas en escala **1 (muy malo) → 5 (perfecto)**. Usa el botón ℹ en la app para ver la rúbrica completa de cada métrica.
+All on a scale **1 (very bad) → 5 (perfect)**. Use the ℹ button in the app to see the full rubric for each metric.
+
+---
+
+## Comparison Analysis (Judge vs. Humans) - Detail and Scoring
+
+This additional step allows detailed comparison of the LLM judge's evaluations against human annotators, calculating an agreement "score" and generating interactive visualizations.
+
+### 1. Generate the comparison CSV
+
+Run the script to combine the results from the three annotators and calculate the absolute distances per dimension:
+
+```bash
+python process_csv.py
+```
+
+This will generate the file `comparison_results.csv` with `dist_` columns for each of the 9 dimensions.
+
+### 2. Analysis and Visualization in Jupyter
+
+Open the `analysis.ipynb` notebook to explore the results:
+
+```bash
+jupyter notebook analysis.ipynb
+```
+
+**Scoring Logic (Score):**
+The notebook calculates a proximity metric for each dimension and trial:
+- **1.0**: If the distance between the judge and human is **0** (exact match).
+- **0.75**: If the distance is **1** (very close).
+- **0.0**: In any other case.
+
+**Included Visualizations:**
+The notebook automatically generates bar charts and heatmaps broken down by:
+- **Annotator Name** (`annotator`)
+- **Dimension** (TG, HF, CC, etc.)
+- **Condition** (E2-E5)
+- **Dataset** (CIFAR-10, Flowers, etc.)
