@@ -243,24 +243,54 @@ Mide el acuerdo entre los 2 anotadores de cada item, para cada una de las 9 mét
 - κ 0.4-0.6: acuerdo moderado → aceptable para métricas subjetivas
 - κ < 0.4: acuerdo débil → la métrica puede ser difícil de calibrar
 
+Se calcula tanto globalmente (los 192 items agregados) como por par de anotadores (carmen_leticia, carmen_nico, leticia_nico) para detectar si alguna combinación tiene calibraciones muy distintas.
+
+**Calibración por anotador:**
+Comprueba si los anotadores usan el rango numérico de la escala de forma similar. Diferencias sistemáticas de >0.5 puntos en la media global entre anotadores indican falta de calibración y deben mencionarse como limitación en el paper. No implica que un anotador esté equivocado, sino que usan el extremo alto o bajo de la escala de forma distinta.
+
 **Spearman ρ y MAE (juez vs. humanos):**
-Mide si el juez LLM ordena los items de forma similar a como lo hacen los humanos.
+Mide si el juez LLM ordena y puntúa los items de forma similar a como lo hacen los humanos.
 - ρ > 0.5: el juez captura bien el ordenamiento humano
 - MAE < 1.0: el juez se desvía menos de 1 punto en promedio de los humanos
 
-Para el paper: usa κ como argumento de fiabilidad inter-anotador y ρ/MAE como argumento de validez del juez LLM.
+**Sesgo sistemático (bias):**
+Para cada métrica se calcula la diferencia media (juez − media_humana), su desviación típica y los porcentajes de veces que el juez puntúa más alto, más bajo o igual. Un sesgo negativo significa que el juez es más estricto que los humanos; positivo, más generoso. Siempre interpretar el sesgo junto con la tabla de calibración: un sesgo aparente puede deberse a que la media humana está inflada por un anotador sistemáticamente más generoso.
+
+Para el paper: usa κ como argumento de fiabilidad inter-anotador, ρ/MAE como argumento de validez del juez LLM, y el bias chart para documentar y justificar cualquier desviación sistemática del juez.
 
 ### Resultados generados
 
 Los resultados se guardan en `pipeline/hitl_evaluator/results/`:
 
+#### Tablas CSV
+
 | Archivo | Contenido |
 |---------|-----------|
-| `alignment_results.csv` | Tabla con κ, ρ, MAE por métrica |
-| `table_alignment.tex` | Tabla LaTeX lista para el paper |
-| `scatter_judge_vs_human.png` | Scatter: puntuación del juez vs. media humana (por métrica) |
-| `heatmap_kappa_by_annotator_pair.png` | Heatmap de κ por par de anotadores y métrica |
-| `boxplot_diff_by_condition.png` | Boxplot de diferencia juez-humano por condición (E2-E5) |
+| `alignment_results.csv` | Tabla base: κ, ρ, MAE por métrica |
+| `full_summary.csv` | Tabla maestra: κ, ρ, MAE, sesgo, std, % higher/lower, human_mean, judge_mean — todo en una fila por métrica |
+| `items_with_scores.csv` | Tabla completa item a item: scores de ann1, ann2, media humana y score del juez para los 192 items |
+| `calibration_by_annotator.csv` | Media por anotador × métrica + media global y nº de items — revela diferencias de calibración |
+| `bias_judge_vs_human.csv` | Sesgo del juez por métrica: mean, std, mediana, min, max y % veces que el juez puntúa más alto/más bajo/igual |
+| `score_comparison_human_vs_judge.csv` | Medias y medianas de human_mean vs judge por métrica, con std y diferencia |
+| `kappa_by_pair_and_metric.csv` | κ para cada par de anotadores (carmen_leticia, carmen_nico, leticia_nico) × métrica, más medias y diferencia absoluta media |
+| `bias_by_condition_and_metric.csv` | Sesgo del juez desglosado por condición (E2-E5) × métrica — detecta si el juez es más o menos fiable según el tipo de prompt |
+
+#### Tabla LaTeX
+
+| Archivo | Contenido |
+|---------|-----------|
+| `table_alignment.tex` | Tabla con κ, ρ, MAE por métrica lista para incluir en el paper |
+
+#### Gráficas
+
+| Archivo | Contenido |
+|---------|-----------|
+| `scatter_judge_vs_human.png` | 9 scatter plots (uno por métrica): juez en eje X, media humana en eje Y, diagonal perfecta en negro. Muestra ρ y n en cada panel |
+| `heatmap_kappa_by_annotator_pair.png` | Heatmap de κ por par de anotadores × métrica. Permite ver qué pares discrepan más y en qué métricas |
+| `heatmap_annotator_calibration.png` | Heatmap de puntuación media por anotador × métrica. La gráfica más útil para detectar diferencias de calibración |
+| `violin_score_distributions.png` | Violines por métrica mostrando la distribución de scores de cada anotador y del juez lado a lado. Confirma visualmente las diferencias de calibración y el rango que usa cada uno |
+| `bias_barchart_judge_vs_human.png` | Barras horizontales con media(juez−humano) ± 1 SD por métrica. Rojo = juez infravalora, verde = juez sobrevalora |
+| `boxplot_diff_by_condition.png` | Boxplot de (juez−humano) por condición E2-E5 para cada métrica. Detecta si el sesgo del juez varía según el tipo de prompt |
 
 ---
 
