@@ -90,25 +90,44 @@ class RunDataStore:
     def __init__(self, run_dir: Path) -> None:
         self.run_dir = run_dir.resolve()
         self.repo_root = repo_root()
-        self.trial_rows = _read_csv_safe(self.run_dir / "trial_results.csv")
+
+        # Support both single-model layout (trial_results.csv at root) and
+        # multi-model layout (models/<slug>/trial_results.csv).
+        root_csv = self.run_dir / "trial_results.csv"
+        if root_csv.exists():
+            self.trial_rows = _read_csv_safe(root_csv)
+        else:
+            self.trial_rows = []
+            models_dir = self.run_dir / "models"
+            if models_dir.exists():
+                for model_dir in sorted(models_dir.iterdir()):
+                    if model_dir.is_dir():
+                        for row in _read_csv_safe(model_dir / "trial_results.csv"):
+                            self.trial_rows.append(row)
+
         self.summary_rows = _read_csv_safe(self.run_dir / "experiment_summary.csv")
         self.run_rows = _read_csv_safe(self.run_dir / "run_accuracy_long.csv")
-        
+
         # Fallback for local experiments which use a different summary filename
         if not self.summary_rows:
             self.summary_rows = _read_csv_safe(self.run_dir / "results_summary.csv")
-            
+
         self.experiment_config = _read_json_if_exists(self.run_dir / "experiment_config.json")
         self.experiment_snapshot = _read_json_if_exists(self.run_dir / "experiment_config_snapshot.json")
         self.prompt_library = _read_json_if_exists(self.run_dir / "prompt_library_snapshot.json")
         self.run_manifest = _read_json_if_exists(self.run_dir / "run_manifest.json")
         self._datasets_cache: Optional[Dict[str, Any]] = None
 
-        # Build trial lookup for cross-referencing from judge trials
+        # Build trial lookup for cross-referencing from judge trials.
+        # Keys: plain `dataset_prompt_run_q` AND model-prefixed `model_dataset_prompt_run_q`
+        # so that multi-model runs resolve to the correct trial row per source model.
         self._trial_lookup: Dict[str, Dict[str, str]] = {}
         for row in self.trial_rows:
-            key = f"{row['dataset']}_{row['prompt_type']}_{row['run_id']}_{row['query_index_within_episode']}"
-            self._trial_lookup[key] = row
+            base_key = f"{row['dataset']}_{row['prompt_type']}_{row['run_id']}_{row['query_index_within_episode']}"
+            model = row.get("model", "")
+            self._trial_lookup[base_key] = row  # last-writer-wins (query image is same across models)
+            if model:
+                self._trial_lookup[f"{model}\x00{base_key}"] = row
 
         # Load Judge Results if they exist (supports both legacy flat layout
         # `judge_outputs/judge_results_*.csv` and the unified per-judge-model
@@ -122,17 +141,23 @@ class RunDataStore:
                     j_rows = _read_csv_safe(judge_file)
                     for jr in j_rows:
                         query_idx = jr.get("query_index_within_episode") or jr.get("query_index", "")
-                        key = f"{jr['dataset']}_{jr['prompt_type']}_{jr['run_id']}_{query_idx}"
-                        self.judge_data[key] = jr
+                        base_key = f"{jr['dataset']}_{jr['prompt_type']}_{jr['run_id']}_{query_idx}"
+                        src_model = jr.get("source_model", "")
+                        model_key = f"{src_model}\x00{base_key}" if src_model else base_key
+                        self.judge_data[model_key] = jr
+                        if base_key not in self.judge_data:
+                            self.judge_data[base_key] = jr
                         jr["_judge_trial_id"] = str(len(self.judge_rows))
                         self.judge_rows.append(jr)
 
         for idx, row in enumerate(self.trial_rows):
             row["_trial_id"] = str(idx)
-            # Link judge data to trial row
-            key = f"{row['dataset']}_{row['prompt_type']}_{row['run_id']}_{row['query_index_within_episode']}"
-            if key in self.judge_data:
-                row["_judge_scores"] = self.judge_data[key]
+            # Link judge data to trial row (model-aware first, then fallback)
+            base_key = f"{row['dataset']}_{row['prompt_type']}_{row['run_id']}_{row['query_index_within_episode']}"
+            model = row.get("model", "")
+            judge_row = self.judge_data.get(f"{model}\x00{base_key}") or self.judge_data.get(base_key)
+            if judge_row:
+                row["_judge_scores"] = judge_row
 
     def _load_datasets(self) -> Dict[str, Any]:
         if self._datasets_cache is None:
@@ -169,6 +194,7 @@ class RunDataStore:
                     "latency_seconds": row.get("latency_seconds", ""),
                     "usage_total_tokens": row.get("usage_total_tokens", ""),
                     "judge_scores": row.get("_judge_scores"),
+                    "case_label": row.get("case_label", ""),
                 }
             )
         return output
@@ -205,8 +231,9 @@ class RunDataStore:
         output: List[Dict[str, Any]] = []
         for jr in self.judge_rows:
             query_idx = jr.get("query_index_within_episode", "")
-            trial_key = f"{jr.get('dataset', '')}_{jr.get('prompt_type', '')}_{jr.get('run_id', '')}_{query_idx}"
-            source = self._trial_lookup.get(trial_key, {})
+            base_key = f"{jr.get('dataset', '')}_{jr.get('prompt_type', '')}_{jr.get('run_id', '')}_{query_idx}"
+            src_model = jr.get("source_model", "")
+            source = self._trial_lookup.get(f"{src_model}\x00{base_key}") or self._trial_lookup.get(base_key, {})
             output.append(
                 {
                     "judge_trial_id": jr["_judge_trial_id"],
@@ -224,6 +251,7 @@ class RunDataStore:
                     "source_correct": source.get("correct", ""),
                     "source_expected_label": source.get("expected_label", ""),
                     "source_predicted_label": source.get("predicted_label", ""),
+                    "case_label": source.get("case_label", ""),
                 }
             )
         return output
@@ -234,9 +262,10 @@ class RunDataStore:
         prompt_type = jr.get("prompt_type", "")
         run_id = jr.get("run_id", "")
         query_idx = jr.get("query_index_within_episode", "")
+        src_model = jr.get("source_model", "")
 
-        trial_key = f"{dataset_name}_{prompt_type}_{run_id}_{query_idx}"
-        source = self._trial_lookup.get(trial_key, {})
+        base_key = f"{dataset_name}_{prompt_type}_{run_id}_{query_idx}"
+        source = self._trial_lookup.get(f"{src_model}\x00{base_key}") or self._trial_lookup.get(base_key, {})
         query_dataset_index = source.get("query_dataset_index", "")
         class_id_map = _parse_json_field(source.get("class_id_map", ""), {})
 
@@ -326,9 +355,9 @@ def _dashboard_html() -> str:
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
 
-    .layout { display: grid; grid-template-columns: 440px 1fr; min-height: calc(100vh - 44px); }
-    .sidebar { background: #fffaf1; border-right: 1px solid #d9d0bf; padding: 16px; overflow: auto; display: flex; flex-direction: column; gap: 10px; }
-    .main { padding: 20px; overflow: auto; }
+    .layout { display: grid; grid-template-columns: 440px 1fr; height: calc(100vh - 44px); }
+    .sidebar { background: #fffaf1; border-right: 1px solid #d9d0bf; padding: 16px; overflow-y: auto; }
+    .main { padding: 20px; overflow-y: auto; }
     h2, h3 { margin: 0 0 10px; }
     .card { background: white; border: 1px solid #d9d0bf; border-radius: 12px; padding: 14px; margin-bottom: 14px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
 
@@ -347,14 +376,17 @@ def _dashboard_html() -> str:
     .warn { color: #8b5e00; }
     pre { white-space: pre-wrap; word-break: break-word; background: #faf7f0; padding: 10px; border-radius: 8px; border: 1px solid #e5dccb; margin: 0; }
     .message { border: 1px solid #ddd1be; border-radius: 12px; margin-bottom: 12px; background: white; overflow: hidden; }
-    .message-header { padding: 8px 12px; font-weight: 700; background: #f1eadc; text-transform: capitalize; }
+    .message-header { padding: 8px 12px; font-weight: 700; background: #f1eadc; text-transform: capitalize; cursor: pointer; user-select: none; list-style: none; display: flex; align-items: center; gap: 6px; }
+    .message-header::-webkit-details-marker { display: none; }
+    .message-header::before { content: '▶'; font-size: 10px; transition: transform 0.15s; }
+    details.message[open] > .message-header::before { transform: rotate(90deg); }
     .message-body { padding: 12px; }
     .content-part { margin-bottom: 10px; }
     .img-wrap { display: inline-block; margin: 4px 8px 4px 0; vertical-align: top; }
     .img-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; color: #5a4e3a; }
     .img-label.support { color: #1a6aa0; }
     .img-label.query { color: #7b3f00; }
-    img.preview { max-width: 200px; max-height: 200px; border-radius: 10px; border: 2px solid #d8cdb7; display: block; }
+    img.preview { max-width: 260px; max-height: 260px; border-radius: 10px; border: 2px solid #d8cdb7; display: block; }
     img.preview.query-img { border-color: #c47b2a; }
     img.preview.support-img { border-color: #4a90d9; }
     .filters { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
@@ -510,11 +542,13 @@ def _dashboard_html() -> str:
 
     function renderMessages(messages) {
       return messages.map(message => {
+        const isSystem = message.role === 'system';
+        const openAttr = isSystem ? '' : ' open';
         if (typeof message.content === 'string') {
-          return `<div class="message">
-            <div class="message-header">${escapeHtml(message.role)}</div>
+          return `<details class="message"${openAttr}>
+            <summary class="message-header">${escapeHtml(message.role)}</summary>
             <div class="message-body"><pre>${escapeHtml(message.content)}</pre></div>
-          </div>`;
+          </details>`;
         }
         const parts = (message.content || []).map(part => {
           if (part.type === 'text') {
@@ -529,10 +563,10 @@ def _dashboard_html() -> str:
           }
           return `<div class="content-part"><pre>${escapeHtml(JSON.stringify(part, null, 2))}</pre></div>`;
         }).join('');
-        return `<div class="message">
-          <div class="message-header">${escapeHtml(message.role)}</div>
+        return `<details class="message"${openAttr}>
+          <summary class="message-header">${escapeHtml(message.role)}</summary>
           <div class="message-body">${parts}</div>
-        </div>`;
+        </details>`;
       }).join('');
     }
 
@@ -608,6 +642,7 @@ def _dashboard_html() -> str:
       document.getElementById('trialCount').textContent = `${filtered.length} trial${filtered.length !== 1 ? 's' : ''}`;
       document.getElementById('trialList').innerHTML = filtered.map(t => `
         <div class="trial-row ${t.trial_id === activeTrialId ? 'active' : ''}" onclick="showTrial('${t.trial_id}')">
+          ${t.case_label ? `<div style="font-size:10px;font-weight:700;color:#7b3f00;background:#fff3e0;padding:1px 6px;border-radius:4px;margin-bottom:3px;display:inline-block;">${escapeHtml(t.case_label)}</div>` : ''}
           <div style="display:flex; justify-content: space-between; align-items: center;">
             <strong>${escapeHtml(labelPrompt(t.prompt_type))}</strong>
             ${t.judge_scores ? `<span class="pill" style="background:#e3f2fd;">Judge: ${escapeHtml(t.judge_scores.overall_score || '?')}</span>` : ''}
@@ -655,7 +690,11 @@ def _dashboard_html() -> str:
         </details>`;
       })() : '';
 
+      const caseLabelHtml = meta.case_label
+        ? `<div style="font-size:13px;font-weight:700;color:#7b3f00;background:#fff3e0;border:1px solid #f5a623;padding:6px 12px;border-radius:8px;margin-bottom:12px;">${escapeHtml(meta.case_label)}</div>`
+        : '';
       document.getElementById('trialDetail').innerHTML = `
+        ${caseLabelHtml}
         ${judgeHtml}
         <details class="section" open>
           <summary>Trial Metadata</summary>
@@ -677,8 +716,8 @@ def _dashboard_html() -> str:
             </table>
           </div>
         </details>
-        <details class="section" open>
-          <summary>Conversation</summary>
+        <details class="section">
+          <summary>Conversation (support images + query)</summary>
           <div class="section-body">${messages}</div>
         </details>
         <details class="section" open>
@@ -740,6 +779,7 @@ def _dashboard_html() -> str:
         const scoreColor = parseFloat(t.overall_score) >= 4 ? '#e8f5e9' : parseFloat(t.overall_score) >= 2.5 ? '#fff8e1' : '#ffebee';
         return `
         <div class="trial-row ${t.judge_trial_id === activeJudgeTrialId ? 'active' : ''}" onclick="showJudgeTrial('${t.judge_trial_id}')">
+          ${t.case_label ? `<div style="font-size:10px;font-weight:700;color:#7b3f00;background:#fff3e0;padding:1px 6px;border-radius:4px;margin-bottom:3px;display:inline-block;">${escapeHtml(t.case_label)}</div>` : ''}
           <div style="display:flex; justify-content:space-between; align-items:center;">
             <strong>${escapeHtml(labelPrompt(t.prompt_type))}</strong>
             ${t.overall_score ? `<span class="pill" style="background:${scoreColor};">Score: ${escapeHtml(t.overall_score)}</span>` : ''}
@@ -796,7 +836,11 @@ def _dashboard_html() -> str:
           </div>
         </details>` : '';
 
+      const judgeCaseLabelHtml = meta.case_label
+        ? `<div style="font-size:13px;font-weight:700;color:#7b3f00;background:#fff3e0;border:1px solid #f5a623;padding:6px 12px;border-radius:8px;margin-bottom:12px;">${escapeHtml(meta.case_label)}</div>`
+        : '';
       document.getElementById('judgeTrialDetail').innerHTML = `
+        ${judgeCaseLabelHtml}
         <details class="section" open>
           <summary>Judge Metadata</summary>
           <div class="section-body">
