@@ -309,3 +309,40 @@ Los resultados se guardan en `pipeline/hitl_evaluator/results/`:
 | LC — Logical Coherence | ¿Los razonamientos/axiomas son coherentes entre sí? |
 
 Todas en escala **1 (muy malo) → 5 (perfecto)**. Usa el botón ℹ en la app para ver la rúbrica completa de cada métrica.
+
+---
+
+## Comparison Analysis (Judge vs. Humans) - Detail and Scoring
+
+This additional step allows detailed comparison of the LLM judge's evaluations against human annotators, calculating an agreement "score" and generating interactive visualizations.
+
+### 1. Generate the comparison CSV
+
+Run the script to combine the results from the three annotators and calculate the absolute distances per dimension:
+
+```bash
+python process_csv.py
+```
+
+This will generate the file `comparison_results.csv` with `dist_` columns for each of the 9 dimensions.
+
+### 2. Analysis and Visualization in Jupyter
+
+Open the `analysis.ipynb` notebook to explore the results:
+
+```bash
+jupyter notebook analysis.ipynb
+```
+
+**Scoring Logic (Score):**
+The notebook calculates a proximity metric for each dimension and trial:
+- **1.0**: If the distance between the judge and human is **0** (exact match).
+- **0.75**: If the distance is **1** (very close).
+- **0.0**: In any other case.
+
+**Included Visualizations:**
+The notebook automatically generates bar charts and heatmaps broken down by:
+- **Annotator Name** (`annotator`)
+- **Dimension** (TG, HF, CC, etc.)
+- **Condition** (E2-E5)
+- **Dataset** (CIFAR-10, Flowers, etc.)
